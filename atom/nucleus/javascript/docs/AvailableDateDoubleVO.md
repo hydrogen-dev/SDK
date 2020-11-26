@@ -9,5 +9,6 @@ Name | Type | Description | Notes
 **_date** | **String** | date | [optional] 
 **value** | **Number** | value | [optional] 
 **valueAvailable** | **Number** | valueAvailable | [optional] 
+**valuePending** | **Number** | valuePending | [optional] 
 
 

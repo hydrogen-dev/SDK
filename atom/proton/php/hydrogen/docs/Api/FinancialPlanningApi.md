@@ -28,8 +28,7 @@ Calculate the achievable education costs
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -42,10 +41,12 @@ $config =
         \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}
-$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
+}$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -93,8 +94,7 @@ Calculate the necessary periodic deposit amount to achieve education costs
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -107,10 +107,12 @@ $config =
         \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}
-$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
+}$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -158,8 +160,7 @@ Calculate the achievable percentage of education costs that can be covered
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -172,10 +173,12 @@ $config =
         \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}
-$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
+}$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -223,8 +226,7 @@ Calculate the necessary down payment for the mortgage
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -237,10 +239,12 @@ $config =
         \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}
-$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
+}$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -288,8 +292,7 @@ Calculate the achievable home price for the mortgage
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -302,10 +305,12 @@ $config =
         \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}
-$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
+}$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -353,8 +358,7 @@ Calculate the periodic payment for the mortgage
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -367,10 +371,12 @@ $config =
         \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}
-$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
+}$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -418,8 +424,7 @@ Calculate the achievable purchase amount
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -432,10 +437,12 @@ $config =
         \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}
-$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
+}$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -483,8 +490,7 @@ Calculate the necessary periodic deposit amount to achieve the purchase amount
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -497,10 +503,12 @@ $config =
         \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}
-$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
+}$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -548,8 +556,7 @@ Calculate the necessary time horizon to achieve the purchase amount
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -562,10 +569,12 @@ $config =
         \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}
-$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
+}$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -613,8 +622,7 @@ Calculate the necessary period deposit amount to achieve the retirement expenses
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -627,10 +635,12 @@ $config =
         \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}
-$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
+}$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -678,8 +688,7 @@ Calculate the achievable retirement expenses
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -692,10 +701,12 @@ $config =
         \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}
-$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
+}$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -743,8 +754,7 @@ Calculate the achievable percentage of retirement expenses that can be covered
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -757,10 +767,12 @@ $config =
         \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}
-$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
+}$apiInstance = new com\hydrogen\proton\Api\FinancialPlanningApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),

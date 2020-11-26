@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**end_date** | **datetime** |  | [optional] 
+**end_date** | **date** |  | [optional] 
 **security_asset_class** | **str** |  | [optional] 
 **security_countries** | [**list[SecurityCountryVO]**](SecurityCountryVO.md) |  | [optional] 
 **security_create_date** | **datetime** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **security_ticker** | **str** |  | [optional] 
 **security_update_date** | **datetime** |  | [optional] 
 **security_weight** | **float** |  | [optional] 
-**start_date** | **datetime** |  | [optional] 
+**start_date** | **date** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

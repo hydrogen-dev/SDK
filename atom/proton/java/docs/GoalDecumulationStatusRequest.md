@@ -4,27 +4,28 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientId** | [**UUID**](UUID.md) |  |  [optional]
-**adjustForCompounding** | **Boolean** |  |  [optional]
-**compoundingRate** | **Float** |  |  [optional]
-**horizonFrequency** | [**HorizonFrequencyEnum**](#HorizonFrequencyEnum) |  |  [optional]
-**confTgt** | **Float** |  |  [optional]
-**dHorizon** | **Integer** |  |  [optional]
-**tradingDaysPerYear** | **Integer** |  |  [optional]
-**withdrawalTax** | **Float** |  |  [optional]
-**threshType** | [**ThreshTypeEnum**](#ThreshTypeEnum) |  |  [optional]
-**recommendType** | [**RecommendTypeEnum**](#RecommendTypeEnum) |  |  [optional]
 **goalId** | [**UUID**](UUID.md) |  |  [optional]
-**depositConfig** | **List&lt;Object&gt;** |  |  [optional]
-**n** | **Integer** |  |  [optional]
-**recommendationConfig** | **Object** |  |  [optional]
-**thresh** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**aHorizon** | **Integer** |  |  [optional]
-**withdrawalConfig** | [**List&lt;GoalWithdrawalConfig&gt;**](GoalWithdrawalConfig.md) |  |  [optional]
 **currInv** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**pRet** | **List&lt;Float&gt;** |  | 
-**pRisk** | **List&lt;Float&gt;** |  | 
+**dHorizon** | **Integer** |  |  [optional]
+**n** | **Integer** |  |  [optional]
+**horizonFrequency** | [**HorizonFrequencyEnum**](#HorizonFrequencyEnum) |  |  [optional]
+**clientId** | [**UUID**](UUID.md) |  |  [optional]
 **removeOutliers** | **Boolean** |  |  [optional]
+**withdrawalConfig** | [**List&lt;GoalWithdrawalConfig&gt;**](GoalWithdrawalConfig.md) |  |  [optional]
+**aHorizon** | **Integer** |  |  [optional]
+**confTgt** | **Float** |  |  [optional]
+**pRet** | **List&lt;Float&gt;** |  | 
+**threshType** | [**ThreshTypeEnum**](#ThreshTypeEnum) |  |  [optional]
+**thresh** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**depositConfig** | [**List&lt;DecumulationGoalDepositConfig&gt;**](DecumulationGoalDepositConfig.md) |  |  [optional]
+**recommendationConfig** | [**RecommendationConfig**](RecommendationConfig.md) |  |  [optional]
+**compoundingRate** | **Float** |  |  [optional]
+**withdrawalTax** | **Float** |  |  [optional]
+**tradingDaysPerYear** | **Integer** |  |  [optional]
+**adjustForCompounding** | **Boolean** |  |  [optional]
+**pRisk** | **List&lt;Float&gt;** |  | 
+**createLog** | **Boolean** |  |  [optional]
+**recommendType** | [**RecommendTypeEnum**](#RecommendTypeEnum) |  |  [optional]
 
 
 <a name="HorizonFrequencyEnum"></a>

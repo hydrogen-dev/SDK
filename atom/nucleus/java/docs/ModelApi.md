@@ -18,7 +18,7 @@ Method | HTTP request | Description
 [**getModelAllUsingGet**](ModelApi.md#getModelAllUsingGet) | **GET** /model | List all models
 [**getModelAssetSizeAllUsingGet**](ModelApi.md#getModelAssetSizeAllUsingGet) | **GET** /model_asset_size | List all model asset sizes
 [**getModelAssetSizeUsingGet**](ModelApi.md#getModelAssetSizeUsingGet) | **GET** /model_asset_size/{model_asset_size_id} | Retrieve a model asset size
-[**getModelCommentAllUsingGet**](ModelApi.md#getModelCommentAllUsingGet) | **GET** /model_comment | List all model commentary
+[**getModelCommentAllUsingGet**](ModelApi.md#getModelCommentAllUsingGet) | **GET** /model_comment | List all model commentaries
 [**getModelCommentUsingGet**](ModelApi.md#getModelCommentUsingGet) | **GET** /model_comment/{model_comment_id} | Retrieve a model commentary
 [**getModelHoldingAllUsingGet**](ModelApi.md#getModelHoldingAllUsingGet) | **GET** /model_holding | List all model holdings
 [**getModelHoldingUsingGet**](ModelApi.md#getModelHoldingUsingGet) | **GET** /model_holding/{model_holding_id} | Retrieve a model holding
@@ -42,8 +42,8 @@ Create a new asset size record for a model.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -54,10 +54,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 ModelAssetSize req = new ModelAssetSize(); // ModelAssetSize | req
@@ -99,8 +103,8 @@ Model composition changes represent a change in a model’s holdings.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -111,10 +115,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 OrderReconcileRequest changeRequest = new OrderReconcileRequest(); // OrderReconcileRequest | changeRequest
@@ -158,8 +166,8 @@ Create a new comment for a model available for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -170,10 +178,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 ModelComment modelCommentRequest = new ModelComment(); // ModelComment | modelCommentRequest
@@ -215,8 +227,8 @@ Create a new model holding record for a specific model and date.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -227,10 +239,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 ModelHolding modelHoldingRequest = new ModelHolding(); // ModelHolding | modelHoldingRequest
@@ -272,8 +288,8 @@ Create a new transaction record for a security under a model for a specific date
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -284,10 +300,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 ModelTransaction modelTransactionRequest = new ModelTransaction(); // ModelTransaction | modelTransactionRequest
@@ -329,8 +349,8 @@ Create a new model for your firm to which a portfolios can later subscribe.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -341,10 +361,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 Model modelInfoRequest = new Model(); // Model | modelInfoRequest
@@ -386,8 +410,8 @@ Permanently delete a model asset size record for a model.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -398,10 +422,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 UUID modelAssetSizeId = new UUID(); // UUID | UUID model_asset_size_id
@@ -442,8 +470,8 @@ Permanently delete a model comment for a model
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -454,10 +482,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 UUID modelCommentId = new UUID(); // UUID | UUID model_comment_id
@@ -498,8 +530,8 @@ Permanently delete a model holding record for a model.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -510,10 +542,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 UUID modelHoldingId = new UUID(); // UUID | UUID model_holding_id
@@ -554,8 +590,8 @@ Permanently delete a model transaction for a model.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -566,10 +602,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 UUID modelTransactionId = new UUID(); // UUID | UUID model_transaction_id
@@ -610,8 +650,8 @@ Permanently delete a model for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -622,10 +662,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 UUID modelId = new UUID(); // UUID | UUID model_id
@@ -666,8 +710,8 @@ Get details for all models defined for your firm to which portfolios can subscri
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -678,10 +722,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 Boolean ascending = false; // Boolean | ascending
@@ -723,7 +771,7 @@ Name | Type | Description  | Notes
 
 <a name="getModelAssetSizeAllUsingGet"></a>
 # **getModelAssetSizeAllUsingGet**
-> PageModelAssetSize getModelAssetSizeAllUsingGet(ascending, filter, orderBy, page, size)
+> PageModelAssetSize getModelAssetSizeAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size)
 
 List all model asset sizes
 
@@ -731,8 +779,8 @@ Get a list of asset sizes per date for all models defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -743,19 +791,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 ModelApi apiInstance = new ModelApi();
 Boolean ascending = false; // Boolean | ascending
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PageModelAssetSize result = apiInstance.getModelAssetSizeAllUsingGet(ascending, filter, orderBy, page, size);
+    PageModelAssetSize result = apiInstance.getModelAssetSizeAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ModelApi#getModelAssetSizeAllUsingGet");
@@ -768,6 +821,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -788,7 +842,7 @@ Name | Type | Description  | Notes
 
 <a name="getModelAssetSizeUsingGet"></a>
 # **getModelAssetSizeUsingGet**
-> ModelAssetSize getModelAssetSizeUsingGet(modelAssetSizeId)
+> ModelAssetSize getModelAssetSizeUsingGet(modelAssetSizeId, currencyConversion)
 
 Retrieve a model asset size
 
@@ -796,8 +850,8 @@ Retrieve the information for a model asset size record for a model.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -808,15 +862,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 ModelApi apiInstance = new ModelApi();
 UUID modelAssetSizeId = new UUID(); // UUID | UUID model_asset_size_id
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    ModelAssetSize result = apiInstance.getModelAssetSizeUsingGet(modelAssetSizeId);
+    ModelAssetSize result = apiInstance.getModelAssetSizeUsingGet(modelAssetSizeId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ModelApi#getModelAssetSizeUsingGet");
@@ -829,6 +888,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **modelAssetSizeId** | [**UUID**](.md)| UUID model_asset_size_id |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
@@ -847,14 +907,14 @@ Name | Type | Description  | Notes
 # **getModelCommentAllUsingGet**
 > PageModelComment getModelCommentAllUsingGet(ascending, filter, orderBy, page, size)
 
-List all model commentary
+List all model commentaries
 
 List all comments for all models defined by your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -865,10 +925,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 Boolean ascending = false; // Boolean | ascending
@@ -918,8 +982,8 @@ Retrieve the information for a model comment for a model.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -930,10 +994,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 UUID modelCommentId = new UUID(); // UUID | UUID model_comment_id
@@ -975,8 +1043,8 @@ Get all model holding records for all models defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -987,10 +1055,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 Boolean ascending = false; // Boolean | ascending
@@ -1040,8 +1112,8 @@ Retrieve the information for a model holding record for a model.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -1052,10 +1124,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 UUID modelHoldingId = new UUID(); // UUID | UUID model_holding_id
@@ -1097,8 +1173,8 @@ Get details for all transaction records for all models defined by your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -1109,10 +1185,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 Boolean ascending = false; // Boolean | ascending
@@ -1162,8 +1242,8 @@ Retrieve the information for a model transaction for a model.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -1174,10 +1254,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 UUID modelTransactionId = new UUID(); // UUID | UUID model_transaction_id
@@ -1219,8 +1303,8 @@ Get the information for a model for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -1231,10 +1315,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 UUID modelId = new UUID(); // UUID | UUID model_id
@@ -1276,8 +1364,8 @@ Update a model asset size record for a model.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -1288,10 +1376,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 ModelAssetSize modelAssetSize = new ModelAssetSize(); // ModelAssetSize | model_asset_size
@@ -1335,8 +1427,8 @@ Update a model comment for a model.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -1347,10 +1439,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 ModelComment modelComment = new ModelComment(); // ModelComment | model_comment
@@ -1394,8 +1490,8 @@ Update a model holding record for a model.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -1406,10 +1502,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 ModelHolding modelHolding = new ModelHolding(); // ModelHolding | model_holding
@@ -1453,8 +1553,8 @@ Update a model transaction for a model.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -1465,10 +1565,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 ModelTransaction modelTransaction = new ModelTransaction(); // ModelTransaction | model_transaction
@@ -1512,8 +1616,8 @@ Update a model for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
@@ -1524,10 +1628,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ModelApi apiInstance = new ModelApi();
 Model model = new Model(); // Model | model

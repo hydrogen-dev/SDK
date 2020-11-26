@@ -22,10 +22,8 @@ Calculate the necessary fixed annuity contribution period
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import AnnuitiesApi;
 
@@ -33,14 +31,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 AnnuitiesApi apiInstance = new AnnuitiesApi();
 AnnuityCalculatorAccumulationHorizonRequest annuityCalculatorAccumulationHorizonRequest = new AnnuityCalculatorAccumulationHorizonRequest(); // AnnuityCalculatorAccumulationHorizonRequest | Request payload for Annuity Calculator - Accumulation Horizon
@@ -82,10 +82,8 @@ Calculate the achievable fixed annuity amount
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import AnnuitiesApi;
 
@@ -93,14 +91,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 AnnuitiesApi apiInstance = new AnnuitiesApi();
 AnnuityCalculatorAnnuityAmountRequest annuityCalculatorAnnuityAmountRequest = new AnnuityCalculatorAnnuityAmountRequest(); // AnnuityCalculatorAnnuityAmountRequest | Request payload for Annuity Calculator - Annuity Amount
@@ -142,10 +142,8 @@ Calculate the achievable fixed annuity payout period
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import AnnuitiesApi;
 
@@ -153,14 +151,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 AnnuitiesApi apiInstance = new AnnuitiesApi();
 AnnuityCalculatorDecumulationHorizonRequest annuityCalculatorDecumulationHorizonRequest = new AnnuityCalculatorDecumulationHorizonRequest(); // AnnuityCalculatorDecumulationHorizonRequest | Request payload for Annuity Calculator - Decumulation Horizon
@@ -202,10 +202,8 @@ Calculate the necessary periodic deposit amount for a fixed annuity
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import AnnuitiesApi;
 
@@ -213,14 +211,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 AnnuitiesApi apiInstance = new AnnuitiesApi();
 AnnuityCalculatorDepositAmountRequest annuityCalculatorDepositAmountRequest = new AnnuityCalculatorDepositAmountRequest(); // AnnuityCalculatorDepositAmountRequest | Request payload for Annuity Calculator - Deposit Amount
@@ -262,10 +262,8 @@ Calculate the necessary initial balance for a fixed annuity
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import AnnuitiesApi;
 
@@ -273,14 +271,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 AnnuitiesApi apiInstance = new AnnuitiesApi();
 AnnuityCalculatorInitialBalanceRequest annuityCalculatorInitialBalanceRequest = new AnnuityCalculatorInitialBalanceRequest(); // AnnuityCalculatorInitialBalanceRequest | Request payload for Annuity Calculator - Initial Balance
@@ -322,10 +322,8 @@ Project the behavior of a variable annuity over time
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import AnnuitiesApi;
 
@@ -333,14 +331,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 AnnuitiesApi apiInstance = new AnnuitiesApi();
 VariableAnnuityRequest variableAnnuityRequest = new VariableAnnuityRequest(); // VariableAnnuityRequest | Request payload for Variable Annuity

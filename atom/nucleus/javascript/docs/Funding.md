@@ -22,10 +22,13 @@ Name | Type | Description | Notes
 **metadata** | **{String: String}** | metadata | [optional] 
 **nextRequestDate** | **Date** | nextRequestDate | [optional] 
 **portfolioId** | **String** | portfolioId | [optional] 
+**receivingBankLinkId** | **String** | receivingBankLinkId | [optional] 
 **secondaryId** | **String** |  | [optional] 
 **startDate** | **Date** | startDate | 
 **supportTicketId** | **String** | supportTicketId | [optional] 
+**thresholdAmount** | **Number** | thresholdAmount | [optional] 
 **transferId** | **String** | transferId | [optional] 
+**transferType** | **String** | transferType | [optional] 
 **updateDate** | **Date** |  | [optional] 
 
 

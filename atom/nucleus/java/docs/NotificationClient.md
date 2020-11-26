@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **createDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **id** | [**UUID**](UUID.md) |  |  [optional]
 **isRead** | **Boolean** |  |  [optional]
+**isSent** | **Boolean** |  |  [optional]
 **metadata** | **Map&lt;String, String&gt;** | metadata |  [optional]
 **notificationContent** | **String** | notification_content | 
 **notificationDate** | [**OffsetDateTime**](OffsetDateTime.md) | notification_date | 

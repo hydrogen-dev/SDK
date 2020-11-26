@@ -4,17 +4,18 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**decumulationHorizon** | **Integer** |  | 
-**annuityAmount** | **Float** |  | 
-**depositSchedule** | **Object** |  |  [optional]
-**initialBalance** | **Float** |  |  [optional]
-**portfolioReturn** | **Float** |  | 
-**taxRate** | **Float** |  |  [optional]
 **inflationRate** | **Float** |  |  [optional]
-**aggregationAccountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
-**accountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
-**accumulationHorizon** | **Integer** |  |  [optional]
 **annuityFrequencyInterval** | [**AnnuityFrequencyIntervalEnum**](#AnnuityFrequencyIntervalEnum) |  |  [optional]
+**depositSchedule** | [**AnnuityDepositSchedule**](AnnuityDepositSchedule.md) |  |  [optional]
+**portfolioReturn** | **Float** |  | 
+**createLog** | **Boolean** |  |  [optional]
+**aggregationAccountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
+**initialBalance** | **Float** |  |  [optional]
+**decumulationHorizon** | **Integer** |  | 
+**taxRate** | **Float** |  |  [optional]
+**accountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
+**annuityAmount** | **Float** |  | 
+**accumulationHorizon** | **Integer** |  |  [optional]
 
 
 <a name="AnnuityFrequencyIntervalEnum"></a>

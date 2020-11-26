@@ -42,6 +42,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -106,6 +109,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -148,7 +154,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteGoalTrackUsingDelete**
-> deleteGoalTrackUsingDelete($goal_track_id, $goal_track_id2)
+> deleteGoalTrackUsingDelete($goal_track_id)
 
 Delete a goal track record
 
@@ -170,6 +176,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -180,10 +189,9 @@ $apiInstance = new com\hydrogen\nucleus\Api\GoalApi(
     $config
 );
 $goal_track_id = "goal_track_id_example"; // string | UUID goal_track_id
-$goal_track_id2 = "goal_track_id_example"; // string | goal_track_id
 
 try {
-    $apiInstance->deleteGoalTrackUsingDelete($goal_track_id, $goal_track_id2);
+    $apiInstance->deleteGoalTrackUsingDelete($goal_track_id);
 } catch (Exception $e) {
     echo 'Exception when calling GoalApi->deleteGoalTrackUsingDelete: ', $e->getMessage(), PHP_EOL;
 }
@@ -195,7 +203,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **goal_track_id** | [**string**](../Model/.md)| UUID goal_track_id |
- **goal_track_id2** | [**string**](../Model/.md)| goal_track_id |
 
 ### Return type
 
@@ -235,6 +242,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -298,6 +308,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -348,7 +361,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getGoalAssetSizeAllUsingGet**
-> \com\hydrogen\nucleus\Model\AvailableDateDoubleVO[] getGoalAssetSizeAllUsingGet($client_id, $goal_id, $end_date, $get_latest, $portfolio_goal, $sort_type, $start_date)
+> \com\hydrogen\nucleus\Model\AvailableDateDoubleVO[] getGoalAssetSizeAllUsingGet($client_id, $goal_id, $currency_conversion, $end_date, $get_latest, $portfolio_goal, $sort_type, $start_date)
 
 List goal asset sizes
 
@@ -370,6 +383,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -381,14 +397,15 @@ $apiInstance = new com\hydrogen\nucleus\Api\GoalApi(
 );
 $client_id = "client_id_example"; // string | client_id
 $goal_id = "goal_id_example"; // string | UUID goal_id
-$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | end_date
+$currency_conversion = "currency_conversion_example"; // string | Currency Code
+$end_date = new \DateTime("2013-10-20"); // \DateTime | end date
 $get_latest = false; // bool | get_latest
 $portfolio_goal = false; // bool | portfolio_goal
 $sort_type = "sort_type_example"; // string | sort_type
-$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | start_date
+$start_date = new \DateTime("2013-10-20"); // \DateTime | start date
 
 try {
-    $result = $apiInstance->getGoalAssetSizeAllUsingGet($client_id, $goal_id, $end_date, $get_latest, $portfolio_goal, $sort_type, $start_date);
+    $result = $apiInstance->getGoalAssetSizeAllUsingGet($client_id, $goal_id, $currency_conversion, $end_date, $get_latest, $portfolio_goal, $sort_type, $start_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GoalApi->getGoalAssetSizeAllUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -402,11 +419,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_id** | [**string**](../Model/.md)| client_id |
  **goal_id** | [**string**](../Model/.md)| UUID goal_id |
- **end_date** | **\DateTime**| end_date | [optional]
+ **currency_conversion** | **string**| Currency Code | [optional]
+ **end_date** | **\DateTime**| end date | [optional]
  **get_latest** | **bool**| get_latest | [optional] [default to false]
  **portfolio_goal** | **bool**| portfolio_goal | [optional] [default to false]
  **sort_type** | **string**| sort_type | [optional]
- **start_date** | **\DateTime**| start_date | [optional]
+ **start_date** | **\DateTime**| start date | [optional]
 
 ### Return type
 
@@ -424,7 +442,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getGoalHoldingAllUsingGet**
-> \com\hydrogen\nucleus\Model\PortfolioHoldingAgg[] getGoalHoldingAllUsingGet($client_id, $goal_id, $end_date, $portfolio_goal, $start_date)
+> \com\hydrogen\nucleus\Model\PortfolioHoldingAgg[] getGoalHoldingAllUsingGet($client_id, $goal_id, $currency_conversion, $end_date, $portfolio_goal, $start_date)
 
 List goal holdings
 
@@ -446,6 +464,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -457,12 +478,13 @@ $apiInstance = new com\hydrogen\nucleus\Api\GoalApi(
 );
 $client_id = "client_id_example"; // string | client_id
 $goal_id = "goal_id_example"; // string | UUID goal_id
-$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | end_date
+$currency_conversion = "currency_conversion_example"; // string | Currency Code
+$end_date = new \DateTime("2013-10-20"); // \DateTime | end date
 $portfolio_goal = false; // bool | portfolio_goal
-$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | start_date
+$start_date = new \DateTime("2013-10-20"); // \DateTime | start date
 
 try {
-    $result = $apiInstance->getGoalHoldingAllUsingGet($client_id, $goal_id, $end_date, $portfolio_goal, $start_date);
+    $result = $apiInstance->getGoalHoldingAllUsingGet($client_id, $goal_id, $currency_conversion, $end_date, $portfolio_goal, $start_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GoalApi->getGoalHoldingAllUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -476,9 +498,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_id** | [**string**](../Model/.md)| client_id |
  **goal_id** | [**string**](../Model/.md)| UUID goal_id |
- **end_date** | **\DateTime**| end_date | [optional]
+ **currency_conversion** | **string**| Currency Code | [optional]
+ **end_date** | **\DateTime**| end date | [optional]
  **portfolio_goal** | **bool**| portfolio_goal | [optional] [default to false]
- **start_date** | **\DateTime**| start_date | [optional]
+ **start_date** | **\DateTime**| start date | [optional]
 
 ### Return type
 
@@ -518,6 +541,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -574,7 +600,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getGoalTrackUsingGet**
-> \com\hydrogen\nucleus\Model\GoalTrack getGoalTrackUsingGet($goal_track_id, $goal_track_id2)
+> \com\hydrogen\nucleus\Model\GoalTrack getGoalTrackUsingGet($goal_track_id)
 
 Retrieve a goal track record
 
@@ -596,6 +622,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -606,10 +635,9 @@ $apiInstance = new com\hydrogen\nucleus\Api\GoalApi(
     $config
 );
 $goal_track_id = "goal_track_id_example"; // string | UUID goal_track_id
-$goal_track_id2 = "goal_track_id_example"; // string | goal_track_id
 
 try {
-    $result = $apiInstance->getGoalTrackUsingGet($goal_track_id, $goal_track_id2);
+    $result = $apiInstance->getGoalTrackUsingGet($goal_track_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GoalApi->getGoalTrackUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -622,7 +650,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **goal_track_id** | [**string**](../Model/.md)| UUID goal_track_id |
- **goal_track_id2** | [**string**](../Model/.md)| goal_track_id |
 
 ### Return type
 
@@ -640,7 +667,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getGoalTransactionAllUsingGet**
-> \com\hydrogen\nucleus\Model\PagePortfolioTransaction_ getGoalTransactionAllUsingGet($client_id, $goal_id, $ascending, $end_date, $order_by, $page, $portfolio_goal, $size, $start_date)
+> \com\hydrogen\nucleus\Model\PagePortfolioTransaction_ getGoalTransactionAllUsingGet($client_id, $goal_id, $ascending, $currency_conversion, $end_date, $order_by, $page, $portfolio_goal, $size, $start_date)
 
 List goal transactions
 
@@ -662,6 +689,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -674,15 +704,16 @@ $apiInstance = new com\hydrogen\nucleus\Api\GoalApi(
 $client_id = "client_id_example"; // string | client_id
 $goal_id = "goal_id_example"; // string | UUID goal_id
 $ascending = false; // bool | ascending
-$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | end_date
+$currency_conversion = "currency_conversion_example"; // string | Currency Code
+$end_date = new \DateTime("2013-10-20"); // \DateTime | end date
 $order_by = "update_date"; // string | order_by
 $page = 0; // int | page
 $portfolio_goal = false; // bool | portfolio_goal
 $size = 25; // int | size
-$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | start_date
+$start_date = new \DateTime("2013-10-20"); // \DateTime | start date
 
 try {
-    $result = $apiInstance->getGoalTransactionAllUsingGet($client_id, $goal_id, $ascending, $end_date, $order_by, $page, $portfolio_goal, $size, $start_date);
+    $result = $apiInstance->getGoalTransactionAllUsingGet($client_id, $goal_id, $ascending, $currency_conversion, $end_date, $order_by, $page, $portfolio_goal, $size, $start_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GoalApi->getGoalTransactionAllUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -697,12 +728,13 @@ Name | Type | Description  | Notes
  **client_id** | [**string**](../Model/.md)| client_id |
  **goal_id** | [**string**](../Model/.md)| UUID goal_id |
  **ascending** | **bool**| ascending | [optional] [default to false]
- **end_date** | **\DateTime**| end_date | [optional]
+ **currency_conversion** | **string**| Currency Code | [optional]
+ **end_date** | **\DateTime**| end date | [optional]
  **order_by** | **string**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
  **portfolio_goal** | **bool**| portfolio_goal | [optional] [default to false]
  **size** | **int**| size | [optional] [default to 25]
- **start_date** | **\DateTime**| start_date | [optional]
+ **start_date** | **\DateTime**| start date | [optional]
 
 ### Return type
 
@@ -742,6 +774,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -806,6 +841,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -872,6 +910,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }

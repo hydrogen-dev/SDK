@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **credit_limit** | **double** | creditLimit | [optional] 
 **currency_code** | **string** | currencyCode | 
 **expiry_date** | [**\DateTime**](\DateTime.md) | expiryDate | [optional] 
+**fulfillment** | **string** | fulfillment | [optional] 
 **id** | **string** |  | [optional] 
 **institution_name** | **string** | institutionName | 
 **is_active** | **bool** | is_active | [optional] 

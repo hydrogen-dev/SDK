@@ -39,8 +39,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InsuranceApi.new
 
@@ -95,8 +96,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InsuranceApi.new
 
@@ -151,8 +153,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InsuranceApi.new
 
@@ -207,8 +210,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InsuranceApi.new
 
@@ -262,8 +266,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InsuranceApi.new
 
@@ -300,7 +305,7 @@ nil (empty response body)
 
 
 # **delete_insurance_quote_using_delete**
-> delete_insurance_quote_using_delete(insurance_quote, insurance_quote_id)
+> delete_insurance_quote_using_delete(insurance_quote_id)
 
 Delete a insuranceQuote request
 
@@ -317,19 +322,18 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InsuranceApi.new
 
-insurance_quote = 'insurance_quote_example' # String | UUID insurance_quote_id
-
-insurance_quote_id = 'insurance_quote_id_example' # String | insurance_quote_id
+insurance_quote_id = 'insurance_quote_id_example' # String | UUID insurance_quote_id
 
 
 begin
   #Delete a insuranceQuote request
-  api_instance.delete_insurance_quote_using_delete(insurance_quote, insurance_quote_id)
+  api_instance.delete_insurance_quote_using_delete(insurance_quote_id)
 rescue NucleusApi::ApiError => e
   puts "Exception when calling InsuranceApi->delete_insurance_quote_using_delete: #{e}"
 end
@@ -339,8 +343,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **insurance_quote** | [**String**](.md)| UUID insurance_quote_id | 
- **insurance_quote_id** | [**String**](.md)| insurance_quote_id | 
+ **insurance_quote_id** | [**String**](.md)| UUID insurance_quote_id | 
 
 ### Return type
 
@@ -375,13 +378,15 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InsuranceApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
+  currency_conversion: 'currency_conversion_example', # String | currency_conversion
   filter: 'filter_example', # String | filter
   order_by: 'update_date', # String | order_by
   page: 0, # Integer | page
@@ -402,6 +407,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **BOOLEAN**| ascending | [optional] [default to false]
+ **currency_conversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **order_by** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -423,7 +429,7 @@ Name | Type | Description  | Notes
 
 
 # **get_insurance_coverage_using_get**
-> InsuranceCoverage get_insurance_coverage_using_get(insurance_coverage_id)
+> InsuranceCoverage get_insurance_coverage_using_get(insurance_coverage_id, opts)
 
 Get a insurance coverage request
 
@@ -440,17 +446,21 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InsuranceApi.new
 
 insurance_coverage_id = 'insurance_coverage_id_example' # String | UUID insurance_coverage_id
 
+opts = { 
+  currency_conversion: 'currency_conversion_example' # String | USD
+}
 
 begin
   #Get a insurance coverage request
-  result = api_instance.get_insurance_coverage_using_get(insurance_coverage_id)
+  result = api_instance.get_insurance_coverage_using_get(insurance_coverage_id, opts)
   p result
 rescue NucleusApi::ApiError => e
   puts "Exception when calling InsuranceApi->get_insurance_coverage_using_get: #{e}"
@@ -462,6 +472,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **insurance_coverage_id** | [**String**](.md)| UUID insurance_coverage_id | 
+ **currency_conversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -496,13 +507,15 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InsuranceApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
+  currency_conversion: 'currency_conversion_example', # String | currency_conversion
   filter: 'filter_example', # String | filter
   order_by: 'update_date', # String | order_by
   page: 0, # Integer | page
@@ -523,6 +536,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **BOOLEAN**| ascending | [optional] [default to false]
+ **currency_conversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **order_by** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -544,7 +558,7 @@ Name | Type | Description  | Notes
 
 
 # **get_insurance_discount_using_get**
-> InsuranceDiscount get_insurance_discount_using_get(insurance_discount_id)
+> InsuranceDiscount get_insurance_discount_using_get(insurance_discount_id, opts)
 
 Get a insurance discount request
 
@@ -561,17 +575,21 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InsuranceApi.new
 
 insurance_discount_id = 'insurance_discount_id_example' # String |  UUID insurance_discount_id
 
+opts = { 
+  currency_conversion: 'currency_conversion_example' # String | USD
+}
 
 begin
   #Get a insurance discount request
-  result = api_instance.get_insurance_discount_using_get(insurance_discount_id)
+  result = api_instance.get_insurance_discount_using_get(insurance_discount_id, opts)
   p result
 rescue NucleusApi::ApiError => e
   puts "Exception when calling InsuranceApi->get_insurance_discount_using_get: #{e}"
@@ -583,6 +601,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **insurance_discount_id** | [**String**](.md)|  UUID insurance_discount_id | 
+ **currency_conversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -617,13 +636,15 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InsuranceApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
+  currency_conversion: 'currency_conversion_example', # String | currency_conversion
   filter: 'filter_example', # String | filter
   order_by: 'update_date', # String | order_by
   page: 0, # Integer | page
@@ -644,6 +665,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **BOOLEAN**| ascending | [optional] [default to false]
+ **currency_conversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **order_by** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -665,7 +687,7 @@ Name | Type | Description  | Notes
 
 
 # **get_insurance_quote_using_get**
-> InsuranceQuote get_insurance_quote_using_get(insurance_quote, insurance_quote_id)
+> InsuranceQuote get_insurance_quote_using_get(insurance_quote_id, opts)
 
 Retrieve a insuranceQuote request
 
@@ -682,19 +704,21 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InsuranceApi.new
 
-insurance_quote = 'insurance_quote_example' # String | UUID insurance_quote_id
+insurance_quote_id = 'insurance_quote_id_example' # String | UUID insurance_quote_id
 
-insurance_quote_id = 'insurance_quote_id_example' # String | insurance_quote_id
-
+opts = { 
+  currency_conversion: 'currency_conversion_example' # String | USD
+}
 
 begin
   #Retrieve a insuranceQuote request
-  result = api_instance.get_insurance_quote_using_get(insurance_quote, insurance_quote_id)
+  result = api_instance.get_insurance_quote_using_get(insurance_quote_id, opts)
   p result
 rescue NucleusApi::ApiError => e
   puts "Exception when calling InsuranceApi->get_insurance_quote_using_get: #{e}"
@@ -705,8 +729,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **insurance_quote** | [**String**](.md)| UUID insurance_quote_id | 
- **insurance_quote_id** | [**String**](.md)| insurance_quote_id | 
+ **insurance_quote_id** | [**String**](.md)| UUID insurance_quote_id | 
+ **currency_conversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -741,8 +765,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InsuranceApi.new
 
@@ -800,8 +825,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InsuranceApi.new
 
@@ -859,8 +885,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InsuranceApi.new
 

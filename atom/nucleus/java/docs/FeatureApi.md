@@ -26,8 +26,8 @@ Create a new feature track.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FeatureApi;
 
@@ -38,10 +38,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FeatureApi apiInstance = new FeatureApi();
 FeatureTrack featureTrack = new FeatureTrack(); // FeatureTrack | featureTrack
@@ -83,8 +87,8 @@ Create a new feature.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FeatureApi;
 
@@ -95,10 +99,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FeatureApi apiInstance = new FeatureApi();
 Feature feature = new Feature(); // Feature | feature
@@ -140,8 +148,8 @@ Permanently delete a feature track registered with your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FeatureApi;
 
@@ -152,10 +160,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FeatureApi apiInstance = new FeatureApi();
 UUID featureTrackId = new UUID(); // UUID | UUID feature_track_id
@@ -196,8 +208,8 @@ Permanently delete a  feature registered with your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FeatureApi;
 
@@ -208,10 +220,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FeatureApi apiInstance = new FeatureApi();
 UUID featureId = new UUID(); // UUID | UUID feature_id
@@ -252,8 +268,8 @@ Get details for all features.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FeatureApi;
 
@@ -264,10 +280,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FeatureApi apiInstance = new FeatureApi();
 Boolean ascending = false; // Boolean | ascending
@@ -317,8 +337,8 @@ Get details for all feature track.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FeatureApi;
 
@@ -329,10 +349,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FeatureApi apiInstance = new FeatureApi();
 Boolean ascending = false; // Boolean | ascending
@@ -382,8 +406,8 @@ Retrieve the information for a Feature track.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FeatureApi;
 
@@ -394,10 +418,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FeatureApi apiInstance = new FeatureApi();
 UUID featureTrackId = new UUID(); // UUID | UUID feature_track_id
@@ -439,8 +467,8 @@ Retrieve the information for a Feature.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FeatureApi;
 
@@ -451,10 +479,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FeatureApi apiInstance = new FeatureApi();
 UUID featureId = new UUID(); // UUID | UUID feature_id
@@ -496,8 +528,8 @@ Update the information for a Feature track registered with your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FeatureApi;
 
@@ -508,10 +540,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FeatureApi apiInstance = new FeatureApi();
 FeatureTrack featureTrack = new FeatureTrack(); // FeatureTrack | feature_track
@@ -555,8 +591,8 @@ Update the information for a Feature registered with your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FeatureApi;
 
@@ -567,10 +603,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FeatureApi apiInstance = new FeatureApi();
 Feature feature = new Feature(); // Feature | feature

@@ -8,8 +8,8 @@ Method | HTTP request | Description
 [**create_invoice_using_post**](InvoiceApi.md#create_invoice_using_post) | **POST** /invoice | Create a invoice
 [**delete_invoice_payment_using_delete**](InvoiceApi.md#delete_invoice_payment_using_delete) | **DELETE** /invoice_payment/{invoice_payment_id} | Delete a invoicePayment
 [**delete_invoice_using_delete**](InvoiceApi.md#delete_invoice_using_delete) | **DELETE** /invoice/{invoice_id} | Delete a invoice
-[**get_invoice_all_using_get**](InvoiceApi.md#get_invoice_all_using_get) | **GET** /invoice | List all invoice
-[**get_invoice_payment_all_using_get**](InvoiceApi.md#get_invoice_payment_all_using_get) | **GET** /invoice_payment | List all invoicePayment
+[**get_invoice_all_using_get**](InvoiceApi.md#get_invoice_all_using_get) | **GET** /invoice | List all invoices
+[**get_invoice_payment_all_using_get**](InvoiceApi.md#get_invoice_payment_all_using_get) | **GET** /invoice_payment | List all invoice payments
 [**get_invoice_payment_using_get**](InvoiceApi.md#get_invoice_payment_using_get) | **GET** /invoice_payment/{invoice_payment_id} | Retrieve a invoicePayment
 [**get_invoice_using_get**](InvoiceApi.md#get_invoice_using_get) | **GET** /invoice/{invoice_id} | Retrieve a invoice
 [**update_invoice_payment_using_put**](InvoiceApi.md#update_invoice_payment_using_put) | **PUT** /invoice_payment/{invoice_payment_id} | Update a invoicePayment
@@ -42,10 +42,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 invoice_payment = nucleus_api.InvoicePayment() # InvoicePayment | invoicePayment
@@ -105,10 +106,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 invoice = nucleus_api.Invoice() # Invoice | invoice
@@ -168,10 +170,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 invoice_payment_id = 'invoice_payment_id_example' # str | UUID invoice_payment_id
@@ -230,10 +233,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 invoice_id = 'invoice_id_example' # str | UUID invoice_id
@@ -267,9 +271,9 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_invoice_all_using_get**
-> PageInvoice get_invoice_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+> PageInvoice get_invoice_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
 
-List all invoice
+List all invoices
 
 List all invoice. 
 
@@ -292,21 +296,23 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
 size = 25 # int | size (optional) (default to 25)
 
 try:
-    # List all invoice
-    api_response = api_instance.get_invoice_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    # List all invoices
+    api_response = api_instance.get_invoice_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling InvoiceApi->get_invoice_all_using_get: %s\n" % e)
@@ -317,6 +323,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **str**| currency_conversion | [optional] 
  **filter** | **str**| filter | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -338,9 +345,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_invoice_payment_all_using_get**
-> PageInvoicePayment get_invoice_payment_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+> PageInvoicePayment get_invoice_payment_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
 
-List all invoicePayment
+List all invoice payments
 
 List all invoicePayment. 
 
@@ -363,21 +370,23 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
 size = 25 # int | size (optional) (default to 25)
 
 try:
-    # List all invoicePayment
-    api_response = api_instance.get_invoice_payment_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    # List all invoice payments
+    api_response = api_instance.get_invoice_payment_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling InvoiceApi->get_invoice_payment_all_using_get: %s\n" % e)
@@ -388,6 +397,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **str**| currency_conversion | [optional] 
  **filter** | **str**| filter | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -409,7 +419,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_invoice_payment_using_get**
-> InvoicePayment get_invoice_payment_using_get(invoice_payment_id)
+> InvoicePayment get_invoice_payment_using_get(invoice_payment_id, currency_conversion=currency_conversion)
 
 Retrieve a invoicePayment
 
@@ -434,17 +444,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 invoice_payment_id = 'invoice_payment_id_example' # str | UUID invoice_payment_id
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 
 try:
     # Retrieve a invoicePayment
-    api_response = api_instance.get_invoice_payment_using_get(invoice_payment_id)
+    api_response = api_instance.get_invoice_payment_using_get(invoice_payment_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling InvoiceApi->get_invoice_payment_using_get: %s\n" % e)
@@ -455,6 +467,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **invoice_payment_id** | [**str**](.md)| UUID invoice_payment_id | 
+ **currency_conversion** | **str**| USD | [optional] 
 
 ### Return type
 
@@ -472,7 +485,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_invoice_using_get**
-> Invoice get_invoice_using_get(invoice_id)
+> Invoice get_invoice_using_get(invoice_id, currency_conversion=currency_conversion)
 
 Retrieve a invoice
 
@@ -497,17 +510,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 invoice_id = 'invoice_id_example' # str | UUID invoice_idd
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 
 try:
     # Retrieve a invoice
-    api_response = api_instance.get_invoice_using_get(invoice_id)
+    api_response = api_instance.get_invoice_using_get(invoice_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling InvoiceApi->get_invoice_using_get: %s\n" % e)
@@ -518,6 +533,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **invoice_id** | [**str**](.md)| UUID invoice_idd | 
+ **currency_conversion** | **str**| USD | [optional] 
 
 ### Return type
 
@@ -560,10 +576,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 invoice_payment = nucleus_api.InvoicePayment() # InvoicePayment | invoice_payment
@@ -625,10 +642,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 invoice = nucleus_api.Invoice() # Invoice | invoice

@@ -5,10 +5,12 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_account_allocation_mapping_using_post**](AccountApi.md#create_account_allocation_mapping_using_post) | **POST** /account_allocation | Create an account allocation
+[**create_account_status_using_post**](AccountApi.md#create_account_status_using_post) | **POST** /account_status | Create an account status
 [**create_account_type_using_post**](AccountApi.md#create_account_type_using_post) | **POST** /account_type | Create an account type
 [**create_account_using_post**](AccountApi.md#create_account_using_post) | **POST** /account | Create an account
 [**delete_account_allocation_mapping_using_delete**](AccountApi.md#delete_account_allocation_mapping_using_delete) | **DELETE** /account_allocation/{account_allocation_id} | Delete an account allocation
 [**delete_account_permission_using_delete**](AccountApi.md#delete_account_permission_using_delete) | **DELETE** /account_permission/{account_id} | Delete an account permission
+[**delete_account_status_using_delete**](AccountApi.md#delete_account_status_using_delete) | **DELETE** /account_status/{account_status_id} | Delete an account status
 [**delete_account_type_using_delete**](AccountApi.md#delete_account_type_using_delete) | **DELETE** /account_type/{account_type_id} | Delete an account type
 [**delete_account_using_delete**](AccountApi.md#delete_account_using_delete) | **DELETE** /account/{account_id} | Delete an account
 [**get_account_all_using_get**](AccountApi.md#get_account_all_using_get) | **GET** /account | List all accounts
@@ -18,6 +20,8 @@ Method | HTTP request | Description
 [**get_account_asset_size_all_using_get**](AccountApi.md#get_account_asset_size_all_using_get) | **GET** /account_asset_size | List all account asset sizes
 [**get_account_overview_using_get**](AccountApi.md#get_account_overview_using_get) | **GET** /account/{account_id}/account_overview | List all Account overview
 [**get_account_permission_using_get**](AccountApi.md#get_account_permission_using_get) | **GET** /account_permission/{account_id} | Get an account permission
+[**get_account_status_all_using_get**](AccountApi.md#get_account_status_all_using_get) | **GET** /account_status | List all account statuses
+[**get_account_status_using_get**](AccountApi.md#get_account_status_using_get) | **GET** /account_status/{account_status_id} | Retrieve an account status
 [**get_account_type_all_using_get**](AccountApi.md#get_account_type_all_using_get) | **GET** /account_type | List all account types
 [**get_account_type_using_get**](AccountApi.md#get_account_type_using_get) | **GET** /account_type/{account_type_id} | Get an Account Type
 [**get_account_using_get**](AccountApi.md#get_account_using_get) | **GET** /account/{account_id} | Retrieve an account
@@ -27,6 +31,7 @@ Method | HTTP request | Description
 [**insert_account_and_related_permission_using_post**](AccountApi.md#insert_account_and_related_permission_using_post) | **POST** /account_permission | create an account permission
 [**subscribe_account_using_post**](AccountApi.md#subscribe_account_using_post) | **POST** /account/{account_id}/subscribe | Subscribe an account
 [**update_account_allocation_mapping_using_put**](AccountApi.md#update_account_allocation_mapping_using_put) | **PUT** /account_allocation/{account_allocation_id} | Update an account allocation
+[**update_account_status_using_put**](AccountApi.md#update_account_status_using_put) | **PUT** /account_status/{account_status_id} | Update an account status
 [**update_account_type_using_put**](AccountApi.md#update_account_type_using_put) | **PUT** /account_type/{account_type_id} | Update an account type
 [**update_account_using_put**](AccountApi.md#update_account_using_put) | **PUT** /account/{account_id} | Update an account
 [**update_client_account_permission_using_put**](AccountApi.md#update_client_account_permission_using_put) | **PUT** /account_permission/{account_id} | Update an account permission
@@ -58,9 +63,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
@@ -83,6 +90,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AccountAllocationMapping**](AccountAllocationMapping.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_account_status_using_post**
+> AccountStatus create_account_status_using_post(account_status_request)
+
+Create an account status
+
+Create an account status record for an account.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import nucleus_api
+from nucleus_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth2
+configuration = nucleus_api.Configuration()
+
+# create an instance of the API class
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
+
+#api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
+
+# OR
+
+#api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
+
+configuration.access_token = api_token_response.access_token
+# create an instance of the API class
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
+account_status_request = nucleus_api.AccountStatus() # AccountStatus | accountStatusRequest
+
+try:
+    # Create an account status
+    api_response = api_instance.create_account_status_using_post(account_status_request)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AccountApi->create_account_status_using_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_status_request** | [**AccountStatus**](AccountStatus.md)| accountStatusRequest | 
+
+### Return type
+
+[**AccountStatus**](AccountStatus.md)
 
 ### Authorization
 
@@ -121,10 +192,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_type_request = nucleus_api.AccountType() # AccountType | accountTypeRequest
@@ -184,10 +256,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 client_account_request = nucleus_api.Account() # Account | clientAccountRequest
@@ -247,10 +320,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_allocation_id = 'account_allocation_id_example' # str | UUID account_allocation_id
@@ -309,10 +383,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | account_id
@@ -346,8 +421,71 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **delete_account_status_using_delete**
+> delete_account_status_using_delete(account_status_id)
+
+Delete an account status
+
+Permanently delete an account status record from an account’s history.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import nucleus_api
+from nucleus_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth2
+configuration = nucleus_api.Configuration()
+
+# create an instance of the API class
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
+
+#api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
+
+# OR
+
+#api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
+
+configuration.access_token = api_token_response.access_token
+# create an instance of the API class
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
+account_status_id = 'account_status_id_example' # str | UUID account_status_id
+
+try:
+    # Delete an account status
+    api_instance.delete_account_status_using_delete(account_status_id)
+except ApiException as e:
+    print("Exception when calling AccountApi->delete_account_status_using_delete: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_status_id** | [**str**](.md)| UUID account_status_id | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete_account_type_using_delete**
-> delete_account_type_using_delete(account_type_id, account_type_id2)
+> delete_account_type_using_delete(account_type_id)
 
 Delete an account type
 
@@ -372,18 +510,18 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_type_id = 'account_type_id_example' # str | UUID account_type_id
-account_type_id2 = 'account_type_id_example' # str | account_type_id
 
 try:
     # Delete an account type
-    api_instance.delete_account_type_using_delete(account_type_id, account_type_id2)
+    api_instance.delete_account_type_using_delete(account_type_id)
 except ApiException as e:
     print("Exception when calling AccountApi->delete_account_type_using_delete: %s\n" % e)
 ```
@@ -393,7 +531,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_type_id** | [**str**](.md)| UUID account_type_id | 
- **account_type_id2** | [**str**](.md)| account_type_id | 
 
 ### Return type
 
@@ -436,10 +573,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | UUID account_id
@@ -498,10 +636,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -569,10 +708,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -640,10 +780,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_allocation_id = 'account_allocation_id_example' # str | UUID account_allocation_id
@@ -678,7 +819,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_account_asset_size_agg_all_using_get**
-> list[AvailableDateDoubleVO] get_account_asset_size_agg_all_using_get(account_id, end_date=end_date, exclude_subledger=exclude_subledger, get_latest=get_latest, sort_type=sort_type, start_date=start_date)
+> list[AvailableDateDoubleVO] get_account_asset_size_agg_all_using_get(account_id, currency_conversion=currency_conversion, end_date=end_date, exclude_subledger=exclude_subledger, get_latest=get_latest, sort_type=sort_type, start_date=start_date)
 
 List all account asset sizes
 
@@ -703,22 +844,24 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | Account Id
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 end_date = '2013-10-20' # date | end date (optional)
-exclude_subledger = false # bool | exclude_subledger (optional) (default to false)
+exclude_subledger = true # bool | true or false (optional)
 get_latest = true # bool | true or false (optional)
 sort_type = 'sort_type_example' # str |  Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () (optional)
 start_date = '2013-10-20' # date | start date (optional)
 
 try:
     # List all account asset sizes
-    api_response = api_instance.get_account_asset_size_agg_all_using_get(account_id, end_date=end_date, exclude_subledger=exclude_subledger, get_latest=get_latest, sort_type=sort_type, start_date=start_date)
+    api_response = api_instance.get_account_asset_size_agg_all_using_get(account_id, currency_conversion=currency_conversion, end_date=end_date, exclude_subledger=exclude_subledger, get_latest=get_latest, sort_type=sort_type, start_date=start_date)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountApi->get_account_asset_size_agg_all_using_get: %s\n" % e)
@@ -729,8 +872,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**str**](.md)| Account Id | 
+ **currency_conversion** | **str**| USD | [optional] 
  **end_date** | **date**| end date | [optional] 
- **exclude_subledger** | **bool**| exclude_subledger | [optional] [default to false]
+ **exclude_subledger** | **bool**| true or false | [optional] 
  **get_latest** | **bool**| true or false | [optional] 
  **sort_type** | **str**|  Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () | [optional] 
  **start_date** | **date**| start date | [optional] 
@@ -776,10 +920,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -822,7 +967,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_account_overview_using_get**
-> AccountOverviewVO get_account_overview_using_get(account_id, ascending=ascending, order_by=order_by)
+> object get_account_overview_using_get(account_id, ascending=ascending, order_by=order_by)
 
 List all Account overview
 
@@ -845,10 +990,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | UUID account_id
@@ -873,7 +1019,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountOverviewVO**](AccountOverviewVO.md)
+**object**
 
 ### Authorization
 
@@ -912,10 +1058,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | account_id
@@ -937,6 +1084,142 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AccountPermissionVO**](AccountPermissionVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_account_status_all_using_get**
+> PageAccountStatus get_account_status_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+
+List all account statuses
+
+Get the account status history information for all accounts.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import nucleus_api
+from nucleus_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth2
+configuration = nucleus_api.Configuration()
+
+# create an instance of the API class
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
+
+#api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
+
+# OR
+
+#api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
+
+configuration.access_token = api_token_response.access_token
+# create an instance of the API class
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
+ascending = false # bool | ascending (optional) (default to false)
+filter = 'filter_example' # str | filter (optional)
+order_by = 'update_date' # str | order_by (optional) (default to update_date)
+page = 0 # int | page (optional) (default to 0)
+size = 25 # int | size (optional) (default to 25)
+
+try:
+    # List all account statuses
+    api_response = api_instance.get_account_status_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AccountApi->get_account_status_all_using_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ascending** | **bool**| ascending | [optional] [default to false]
+ **filter** | **str**| filter | [optional] 
+ **order_by** | **str**| order_by | [optional] [default to update_date]
+ **page** | **int**| page | [optional] [default to 0]
+ **size** | **int**| size | [optional] [default to 25]
+
+### Return type
+
+[**PageAccountStatus**](PageAccountStatus.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_account_status_using_get**
+> AccountStatus get_account_status_using_get(account_status_id)
+
+Retrieve an account status
+
+Retrieve the information for a specific account status record for an account.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import nucleus_api
+from nucleus_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth2
+configuration = nucleus_api.Configuration()
+
+# create an instance of the API class
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
+
+#api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
+
+# OR
+
+#api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
+
+configuration.access_token = api_token_response.access_token
+# create an instance of the API class
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
+account_status_id = 'account_status_id_example' # str | UUID account_status_id
+
+try:
+    # Retrieve an account status
+    api_response = api_instance.get_account_status_using_get(account_status_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AccountApi->get_account_status_using_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_status_id** | [**str**](.md)| UUID account_status_id | 
+
+### Return type
+
+[**AccountStatus**](AccountStatus.md)
 
 ### Authorization
 
@@ -975,10 +1258,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -1021,7 +1305,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_account_type_using_get**
-> AccountType get_account_type_using_get(account_type_id, account_type_id2)
+> AccountType get_account_type_using_get(account_type_id)
 
 Get an Account Type
 
@@ -1046,18 +1330,18 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_type_id = 'account_type_id_example' # str | UUID account_type_id
-account_type_id2 = 'account_type_id_example' # str | account_type_id
 
 try:
     # Get an Account Type
-    api_response = api_instance.get_account_type_using_get(account_type_id, account_type_id2)
+    api_response = api_instance.get_account_type_using_get(account_type_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountApi->get_account_type_using_get: %s\n" % e)
@@ -1068,7 +1352,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_type_id** | [**str**](.md)| UUID account_type_id | 
- **account_type_id2** | [**str**](.md)| account_type_id | 
 
 ### Return type
 
@@ -1111,10 +1394,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | UUID account_id
@@ -1174,10 +1458,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -1220,7 +1505,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_portfolio_holding_agg_all_using_get**
-> list[PortfolioHoldingAgg] get_portfolio_holding_agg_all_using_get(account_id, end_date=end_date, get_latest=get_latest, start_date=start_date)
+> list[PortfolioHoldingAgg] get_portfolio_holding_agg_all_using_get(account_id, currency_conversion=currency_conversion, end_date=end_date, get_latest=get_latest, start_date=start_date)
 
 List all account holdings
 
@@ -1245,20 +1530,22 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | UUID account_id
-end_date = 'end_date_example' # str | end date  (optional)
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
+end_date = '2013-10-20' # date | end date  (optional)
 get_latest = true # bool | true or false (optional)
-start_date = 'start_date_example' # str | start date  (optional)
+start_date = '2013-10-20' # date | start date  (optional)
 
 try:
     # List all account holdings
-    api_response = api_instance.get_portfolio_holding_agg_all_using_get(account_id, end_date=end_date, get_latest=get_latest, start_date=start_date)
+    api_response = api_instance.get_portfolio_holding_agg_all_using_get(account_id, currency_conversion=currency_conversion, end_date=end_date, get_latest=get_latest, start_date=start_date)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountApi->get_portfolio_holding_agg_all_using_get: %s\n" % e)
@@ -1269,9 +1556,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**str**](.md)| UUID account_id | 
- **end_date** | **str**| end date  | [optional] 
+ **currency_conversion** | **str**| USD | [optional] 
+ **end_date** | **date**| end date  | [optional] 
  **get_latest** | **bool**| true or false | [optional] 
- **start_date** | **str**| start date  | [optional] 
+ **start_date** | **date**| start date  | [optional] 
 
 ### Return type
 
@@ -1289,7 +1577,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_portfolio_transaction_agg_all_using_get**
-> PagePortfolioTransaction get_portfolio_transaction_agg_all_using_get(account_id, ascending=ascending, end_date=end_date, order_by=order_by, page=page, size=size, start_date=start_date)
+> PagePortfolioTransaction get_portfolio_transaction_agg_all_using_get(account_id, ascending=ascending, currency_conversion=currency_conversion, end_date=end_date, order_by=order_by, page=page, size=size, start_date=start_date)
 
 List all account transactions
 
@@ -1314,23 +1602,25 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | UUID account_id
 ascending = false # bool | ascending (optional) (default to false)
-end_date = 'null' # datetime | end_date (optional) (default to null)
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
+end_date = '2013-10-20' # date | end date  (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
 size = 25 # int | size (optional) (default to 25)
-start_date = 'null' # datetime | start_date (optional) (default to null)
+start_date = '2013-10-20' # date | start date  (optional)
 
 try:
     # List all account transactions
-    api_response = api_instance.get_portfolio_transaction_agg_all_using_get(account_id, ascending=ascending, end_date=end_date, order_by=order_by, page=page, size=size, start_date=start_date)
+    api_response = api_instance.get_portfolio_transaction_agg_all_using_get(account_id, ascending=ascending, currency_conversion=currency_conversion, end_date=end_date, order_by=order_by, page=page, size=size, start_date=start_date)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountApi->get_portfolio_transaction_agg_all_using_get: %s\n" % e)
@@ -1342,11 +1632,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**str**](.md)| UUID account_id | 
  **ascending** | **bool**| ascending | [optional] [default to false]
- **end_date** | **datetime**| end_date | [optional] [default to null]
+ **currency_conversion** | **str**| USD | [optional] 
+ **end_date** | **date**| end date  | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
  **size** | **int**| size | [optional] [default to 25]
- **start_date** | **datetime**| start_date | [optional] [default to null]
+ **start_date** | **date**| start date  | [optional] 
 
 ### Return type
 
@@ -1389,10 +1680,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 acl_client_permission_vo = nucleus_api.AclClientPermissionVO() # AclClientPermissionVO | aclClientPermissionVO
@@ -1452,10 +1744,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | UUID account_id
@@ -1517,10 +1810,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_allocation_id = 'account_allocation_id_example' # str | UUID account_allocation_id
@@ -1544,6 +1838,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AccountAllocationMapping**](AccountAllocationMapping.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_account_status_using_put**
+> AccountStatus update_account_status_using_put(account_status, account_status_id)
+
+Update an account status
+
+Update an account status record for an account.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import nucleus_api
+from nucleus_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth2
+configuration = nucleus_api.Configuration()
+
+# create an instance of the API class
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
+
+#api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
+
+# OR
+
+#api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
+
+configuration.access_token = api_token_response.access_token
+# create an instance of the API class
+api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
+account_status = nucleus_api.AccountStatus() # AccountStatus | account_status
+account_status_id = 'account_status_id_example' # str | UUID account_status_id
+
+try:
+    # Update an account status
+    api_response = api_instance.update_account_status_using_put(account_status, account_status_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AccountApi->update_account_status_using_put: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_status** | [**AccountStatus**](AccountStatus.md)| account_status | 
+ **account_status_id** | [**str**](.md)| UUID account_status_id | 
+
+### Return type
+
+[**AccountStatus**](AccountStatus.md)
 
 ### Authorization
 
@@ -1582,10 +1942,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_type = nucleus_api.AccountType() # AccountType | account_type
@@ -1647,10 +2008,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account = nucleus_api.Account() # Account | account
@@ -1712,10 +2074,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | account_id

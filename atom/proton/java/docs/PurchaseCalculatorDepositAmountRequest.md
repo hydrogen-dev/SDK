@@ -4,16 +4,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**depositSchedule** | **Object** |  |  [optional]
-**portfolioReturn** | **Float** |  | 
 **inflationRate** | **Float** |  |  [optional]
-**investmentTax** | **Float** |  |  [optional]
 **purchaseHorizon** | **Integer** |  | 
-**purchaseAmount** | **Float** |  | 
+**investmentTax** | **Float** |  |  [optional]
+**depositSchedule** | [**CalculatorDepositSchedule**](CalculatorDepositSchedule.md) |  |  [optional]
+**portfolioReturn** | **Float** |  | 
 **aggregationAccountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
-**accountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
-**currentSavings** | **Float** |  |  [optional]
 **horizonFrequencyInterval** | [**HorizonFrequencyIntervalEnum**](#HorizonFrequencyIntervalEnum) |  |  [optional]
+**accountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
+**purchaseAmount** | **Float** |  | 
+**currentSavings** | **Float** |  |  [optional]
 
 
 <a name="HorizonFrequencyIntervalEnum"></a>

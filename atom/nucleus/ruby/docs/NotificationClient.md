@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **create_date** | **DateTime** |  | [optional] 
 **id** | **String** |  | [optional] 
 **is_read** | **BOOLEAN** |  | [optional] 
+**is_sent** | **BOOLEAN** |  | [optional] 
 **metadata** | **Hash&lt;String, String&gt;** | metadata | [optional] 
 **notification_content** | **String** | notification_content | 
 **notification_date** | **DateTime** | notification_date | 

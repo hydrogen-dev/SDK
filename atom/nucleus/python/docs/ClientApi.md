@@ -20,9 +20,8 @@ Method | HTTP request | Description
 [**get_client_hydro_using_get**](ClientApi.md#get_client_hydro_using_get) | **GET** /client_hydro/{client_hydro_id} | Retrieve a client-hydro relationship
 [**get_client_status_all_using_get**](ClientApi.md#get_client_status_all_using_get) | **GET** /client_status | List all client statuses
 [**get_client_status_using_get**](ClientApi.md#get_client_status_using_get) | **GET** /client_status/{client_status_id} | Retrieve an client status
-[**get_client_transaction_using_get**](ClientApi.md#get_client_transaction_using_get) | **GET** /client/{client_id}/transaction | List all client transactions
+[**get_client_transaction_all_using_get**](ClientApi.md#get_client_transaction_all_using_get) | **GET** /client/{client_id}/transaction | List all client transactions
 [**get_client_using_get**](ClientApi.md#get_client_using_get) | **GET** /client/{client_id} | Retrieve a client
-[**get_total_clients_using_get**](ClientApi.md#get_total_clients_using_get) | **GET** /client/total_clients | total clients
 [**update_client_hydro_using_put**](ClientApi.md#update_client_hydro_using_put) | **PUT** /client_hydro/{client_hydro_id} | Update a client-hydro relationship
 [**update_client_status_using_put**](ClientApi.md#update_client_status_using_put) | **PUT** /client_status/{client_status_id} | Update an client status
 [**update_client_using_put**](ClientApi.md#update_client_using_put) | **PUT** /client/{client_id} | Update a client
@@ -54,9 +53,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
@@ -117,9 +118,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
@@ -180,9 +183,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
@@ -243,9 +248,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
@@ -305,9 +312,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
@@ -367,9 +376,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
@@ -404,7 +415,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_client_account_overview_using_get**
-> ClientAccountVO get_client_account_overview_using_get(client_id, ascending=ascending, order_by=order_by)
+> object get_client_account_overview_using_get(client_id, ascending=ascending, order_by=order_by)
 
 List all client Account overview
 
@@ -427,9 +438,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
@@ -455,7 +468,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ClientAccountVO**](ClientAccountVO.md)
+**object**
 
 ### Authorization
 
@@ -469,7 +482,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_client_advisor_overview_using_get**
-> AdvisorOverviewVO get_client_advisor_overview_using_get(client_id, show_clients=show_clients)
+> object get_client_advisor_overview_using_get(client_id, show_clients=show_clients)
 
 Advisor overview
 
@@ -492,9 +505,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
@@ -518,7 +533,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AdvisorOverviewVO**](AdvisorOverviewVO.md)
+**object**
 
 ### Authorization
 
@@ -557,9 +572,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
@@ -603,7 +620,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_client_asset_size_using_get**
-> list[AvailableDateDoubleVO] get_client_asset_size_using_get(client_id, end_date=end_date, exclude_subledger=exclude_subledger, get_latest=get_latest, sort_type=sort_type, start_date=start_date)
+> list[AvailableDateDoubleVO] get_client_asset_size_using_get(client_id, currency_conversion=currency_conversion, end_date=end_date, exclude_subledger=exclude_subledger, get_latest=get_latest, sort_type=sort_type, start_date=start_date)
 
 List all client asset sizes
 
@@ -628,13 +645,16 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | UUID client_id
+currency_conversion = 'currency_conversion_example' # str | Currency Code (optional)
 end_date = 'null' # date | end date (optional) (default to null)
 exclude_subledger = false # bool | exclude_subledger (optional) (default to false)
 get_latest = true # bool | true or false (optional)
@@ -643,7 +663,7 @@ start_date = 'null' # date | start date (optional) (default to null)
 
 try:
     # List all client asset sizes
-    api_response = api_instance.get_client_asset_size_using_get(client_id, end_date=end_date, exclude_subledger=exclude_subledger, get_latest=get_latest, sort_type=sort_type, start_date=start_date)
+    api_response = api_instance.get_client_asset_size_using_get(client_id, currency_conversion=currency_conversion, end_date=end_date, exclude_subledger=exclude_subledger, get_latest=get_latest, sort_type=sort_type, start_date=start_date)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ClientApi->get_client_asset_size_using_get: %s\n" % e)
@@ -654,6 +674,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_id** | [**str**](.md)| UUID client_id | 
+ **currency_conversion** | **str**| Currency Code | [optional] 
  **end_date** | **date**| end date | [optional] [default to null]
  **exclude_subledger** | **bool**| exclude_subledger | [optional] [default to false]
  **get_latest** | **bool**| true or false | [optional] 
@@ -701,9 +722,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
@@ -741,7 +764,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_client_holding_using_get**
-> list[PortfolioHoldingAgg] get_client_holding_using_get(client_id, end_date=end_date, get_latest=get_latest, start_date=start_date)
+> list[PortfolioHoldingAgg] get_client_holding_using_get(client_id, currency_conversion=currency_conversion, end_date=end_date, get_latest=get_latest, start_date=start_date)
 
 List all client holdings
 
@@ -766,20 +789,23 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | UUID client_id
+currency_conversion = 'currency_conversion_example' # str | Currency Code (optional)
 end_date = 'end_date_example' # str | end date - yyyy-mm-dd (optional)
 get_latest = true # bool | true or false (optional)
 start_date = 'start_date_example' # str | start date - yyyy-mm-dd (optional)
 
 try:
     # List all client holdings
-    api_response = api_instance.get_client_holding_using_get(client_id, end_date=end_date, get_latest=get_latest, start_date=start_date)
+    api_response = api_instance.get_client_holding_using_get(client_id, currency_conversion=currency_conversion, end_date=end_date, get_latest=get_latest, start_date=start_date)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ClientApi->get_client_holding_using_get: %s\n" % e)
@@ -790,6 +816,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_id** | [**str**](.md)| UUID client_id | 
+ **currency_conversion** | **str**| Currency Code | [optional] 
  **end_date** | **str**| end date - yyyy-mm-dd | [optional] 
  **get_latest** | **bool**| true or false | [optional] 
  **start_date** | **str**| start date - yyyy-mm-dd | [optional] 
@@ -835,9 +862,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
@@ -906,9 +935,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
@@ -969,9 +1000,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
@@ -1040,9 +1073,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
@@ -1077,8 +1112,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_client_transaction_using_get**
-> PagePortfolioTransaction get_client_transaction_using_get(client_id, ascending=ascending, end_date=end_date, order_by=order_by, page=page, size=size, start_date=start_date)
+# **get_client_transaction_all_using_get**
+> PagePortfolioTransaction get_client_transaction_all_using_get(client_id, ascending=ascending, currency_conversion=currency_conversion, end_date=end_date, order_by=order_by, page=page, size=size, start_date=start_date)
 
 List all client transactions
 
@@ -1103,26 +1138,29 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | UUID client_id
 ascending = false # bool | ascending (optional) (default to false)
-end_date = 'null' # datetime | end_date (optional) (default to null)
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
+end_date = 'end_date_example' # str | end date - yyyy-mm-dd (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
 size = 25 # int | size (optional) (default to 25)
-start_date = 'null' # datetime | start_date (optional) (default to null)
+start_date = 'start_date_example' # str | start date - yyyy-mm-dd (optional)
 
 try:
     # List all client transactions
-    api_response = api_instance.get_client_transaction_using_get(client_id, ascending=ascending, end_date=end_date, order_by=order_by, page=page, size=size, start_date=start_date)
+    api_response = api_instance.get_client_transaction_all_using_get(client_id, ascending=ascending, currency_conversion=currency_conversion, end_date=end_date, order_by=order_by, page=page, size=size, start_date=start_date)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ClientApi->get_client_transaction_using_get: %s\n" % e)
+    print("Exception when calling ClientApi->get_client_transaction_all_using_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -1131,11 +1169,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_id** | [**str**](.md)| UUID client_id | 
  **ascending** | **bool**| ascending | [optional] [default to false]
- **end_date** | **datetime**| end_date | [optional] [default to null]
+ **currency_conversion** | **str**| currency_conversion | [optional] 
+ **end_date** | **str**| end date - yyyy-mm-dd | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
  **size** | **int**| size | [optional] [default to 25]
- **start_date** | **datetime**| start_date | [optional] [default to null]
+ **start_date** | **str**| start date - yyyy-mm-dd | [optional] 
 
 ### Return type
 
@@ -1178,9 +1217,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
@@ -1203,75 +1244,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Client**](Client.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_total_clients_using_get**
-> ClientAnalyticsResponse get_total_clients_using_get(as_of_date=as_of_date, client_id=client_id, end_date=end_date, show_history=show_history, start_date=start_date)
-
-total clients
-
-### Example
-```python
-from __future__ import print_function
-import time
-import nucleus_api
-from nucleus_api.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: oauth2
-configuration = nucleus_api.Configuration()
-
-# create an instance of the API class
-api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
-
-#api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
-
-# OR
-
-#api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
-
-configuration.access_token = api_token_response.access_token
-
-
-# create an instance of the API class
-api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
-as_of_date = '#{new java.util.Date()}' # datetime | as_of_date (optional) (default to #{new java.util.Date()})
-client_id = 'client_id_example' # str | client_id (optional)
-end_date = '2013-10-20T19:20:30+01:00' # datetime | end_date (optional)
-show_history = false # bool | show_history (optional) (default to false)
-start_date = '2013-10-20T19:20:30+01:00' # datetime | start_date (optional)
-
-try:
-    # total clients
-    api_response = api_instance.get_total_clients_using_get(as_of_date=as_of_date, client_id=client_id, end_date=end_date, show_history=show_history, start_date=start_date)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ClientApi->get_total_clients_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **as_of_date** | **datetime**| as_of_date | [optional] [default to #{new java.util.Date()}]
- **client_id** | **str**| client_id | [optional] 
- **end_date** | **datetime**| end_date | [optional] 
- **show_history** | **bool**| show_history | [optional] [default to false]
- **start_date** | **datetime**| start_date | [optional] 
-
-### Return type
-
-[**ClientAnalyticsResponse**](ClientAnalyticsResponse.md)
 
 ### Authorization
 
@@ -1310,9 +1282,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
@@ -1375,9 +1349,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))
@@ -1440,9 +1416,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = nucleus_api.ClientApi(nucleus_api.ApiClient(configuration))

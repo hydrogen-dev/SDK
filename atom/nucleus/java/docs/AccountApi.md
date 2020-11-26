@@ -5,10 +5,12 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createAccountAllocationMappingUsingPost**](AccountApi.md#createAccountAllocationMappingUsingPost) | **POST** /account_allocation | Create an account allocation
+[**createAccountStatusUsingPost**](AccountApi.md#createAccountStatusUsingPost) | **POST** /account_status | Create an account status
 [**createAccountTypeUsingPost**](AccountApi.md#createAccountTypeUsingPost) | **POST** /account_type | Create an account type
 [**createAccountUsingPost**](AccountApi.md#createAccountUsingPost) | **POST** /account | Create an account
 [**deleteAccountAllocationMappingUsingDelete**](AccountApi.md#deleteAccountAllocationMappingUsingDelete) | **DELETE** /account_allocation/{account_allocation_id} | Delete an account allocation
 [**deleteAccountPermissionUsingDELETE**](AccountApi.md#deleteAccountPermissionUsingDELETE) | **DELETE** /account_permission/{account_id} | Delete an account permission
+[**deleteAccountStatusUsingDelete**](AccountApi.md#deleteAccountStatusUsingDelete) | **DELETE** /account_status/{account_status_id} | Delete an account status
 [**deleteAccountTypeUsingDelete**](AccountApi.md#deleteAccountTypeUsingDelete) | **DELETE** /account_type/{account_type_id} | Delete an account type
 [**deleteAccountUsingDelete**](AccountApi.md#deleteAccountUsingDelete) | **DELETE** /account/{account_id} | Delete an account
 [**getAccountAllUsingGet**](AccountApi.md#getAccountAllUsingGet) | **GET** /account | List all accounts
@@ -18,6 +20,8 @@ Method | HTTP request | Description
 [**getAccountAssetSizeAllUsingGet**](AccountApi.md#getAccountAssetSizeAllUsingGet) | **GET** /account_asset_size | List all account asset sizes
 [**getAccountOverviewUsingGet**](AccountApi.md#getAccountOverviewUsingGet) | **GET** /account/{account_id}/account_overview | List all Account overview
 [**getAccountPermissionUsingGET**](AccountApi.md#getAccountPermissionUsingGET) | **GET** /account_permission/{account_id} | Get an account permission
+[**getAccountStatusAllUsingGet**](AccountApi.md#getAccountStatusAllUsingGet) | **GET** /account_status | List all account statuses
+[**getAccountStatusUsingGet**](AccountApi.md#getAccountStatusUsingGet) | **GET** /account_status/{account_status_id} | Retrieve an account status
 [**getAccountTypeAllUsingGet**](AccountApi.md#getAccountTypeAllUsingGet) | **GET** /account_type | List all account types
 [**getAccountTypeUsingGet**](AccountApi.md#getAccountTypeUsingGet) | **GET** /account_type/{account_type_id} | Get an Account Type
 [**getAccountUsingGet**](AccountApi.md#getAccountUsingGet) | **GET** /account/{account_id} | Retrieve an account
@@ -27,6 +31,7 @@ Method | HTTP request | Description
 [**insertAccountAndRelatedPermissionUsingPOST**](AccountApi.md#insertAccountAndRelatedPermissionUsingPOST) | **POST** /account_permission | create an account permission
 [**subscribeAccountUsingPost**](AccountApi.md#subscribeAccountUsingPost) | **POST** /account/{account_id}/subscribe | Subscribe an account
 [**updateAccountAllocationMappingUsingPut**](AccountApi.md#updateAccountAllocationMappingUsingPut) | **PUT** /account_allocation/{account_allocation_id} | Update an account allocation
+[**updateAccountStatusUsingPut**](AccountApi.md#updateAccountStatusUsingPut) | **PUT** /account_status/{account_status_id} | Update an account status
 [**updateAccountTypeUsingPut**](AccountApi.md#updateAccountTypeUsingPut) | **PUT** /account_type/{account_type_id} | Update an account type
 [**updateAccountUsingPut**](AccountApi.md#updateAccountUsingPut) | **PUT** /account/{account_id} | Update an account
 [**updateClientAccountPermissionUsingPUT**](AccountApi.md#updateClientAccountPermissionUsingPUT) | **PUT** /account_permission/{account_id} | Update an account permission
@@ -42,8 +47,8 @@ Create an account-allocation mapping for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -54,10 +59,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AccountApi apiInstance = new AccountApi();
 AccountAllocationMapping allocRequest = new AccountAllocationMapping(); // AccountAllocationMapping | allocRequest
@@ -89,18 +98,18 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: */*
 
-<a name="createAccountTypeUsingPost"></a>
-# **createAccountTypeUsingPost**
-> AccountType createAccountTypeUsingPost(accountTypeRequest)
+<a name="createAccountStatusUsingPost"></a>
+# **createAccountStatusUsingPost**
+> AccountStatus createAccountStatusUsingPost(accountStatusRequest)
 
-Create an account type
+Create an account status
 
-Create a new account type for your firm.
+Create an account status record for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -111,10 +120,75 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
+
+AccountApi apiInstance = new AccountApi();
+AccountStatus accountStatusRequest = new AccountStatus(); // AccountStatus | accountStatusRequest
+try {
+    AccountStatus result = apiInstance.createAccountStatusUsingPost(accountStatusRequest);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AccountApi#createAccountStatusUsingPost");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountStatusRequest** | [**AccountStatus**](AccountStatus.md)| accountStatusRequest |
+
+### Return type
+
+[**AccountStatus**](AccountStatus.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+<a name="createAccountTypeUsingPost"></a>
+# **createAccountTypeUsingPost**
+> AccountType createAccountTypeUsingPost(accountTypeRequest)
+
+Create an account type
+
+Create a new account type for your firm.
+
+### Example
+```java
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.auth.*;
+//import AccountApi;
+
+AuthApiClient authApiClient = new AuthApiClient();
+try {
+//          Use one of the below method to generate oauth token        
+//          Creating a token for grant_type=client_credentials            
+    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+//          Creating a token for grant_type=password
+    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
+} catch (ApiException e) {
+    e.printStackTrace();
+}
+
 
 AccountApi apiInstance = new AccountApi();
 AccountType accountTypeRequest = new AccountType(); // AccountType | accountTypeRequest
@@ -156,8 +230,8 @@ Create an account under a client.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -168,10 +242,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AccountApi apiInstance = new AccountApi();
 Account clientAccountRequest = new Account(); // Account | clientAccountRequest
@@ -213,8 +291,8 @@ Permanently delete an account-allocation mapping for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -225,10 +303,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AccountApi apiInstance = new AccountApi();
 UUID accountAllocationId = new UUID(); // UUID | UUID account_allocation_id
@@ -269,8 +351,8 @@ Delete an account permission
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -281,10 +363,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AccountApi apiInstance = new AccountApi();
 UUID accountId = new UUID(); // UUID | account_id
@@ -316,18 +402,18 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: */*
 
-<a name="deleteAccountTypeUsingDelete"></a>
-# **deleteAccountTypeUsingDelete**
-> deleteAccountTypeUsingDelete(accountTypeId, accountTypeId2)
+<a name="deleteAccountStatusUsingDelete"></a>
+# **deleteAccountStatusUsingDelete**
+> deleteAccountStatusUsingDelete(accountStatusId)
 
-Delete an account type
+Delete an account status
 
-Permanently delete a possible account type defined for your firm.
+Permanently delete an account status record from an account’s history.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -338,16 +424,79 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
+AccountApi apiInstance = new AccountApi();
+UUID accountStatusId = new UUID(); // UUID | UUID account_status_id
+try {
+    apiInstance.deleteAccountStatusUsingDelete(accountStatusId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AccountApi#deleteAccountStatusUsingDelete");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountStatusId** | [**UUID**](.md)| UUID account_status_id |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+<a name="deleteAccountTypeUsingDelete"></a>
+# **deleteAccountTypeUsingDelete**
+> deleteAccountTypeUsingDelete(accountTypeId)
+
+Delete an account type
+
+Permanently delete a possible account type defined for your firm.
+
+### Example
+```java
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.auth.*;
+//import AccountApi;
+
+AuthApiClient authApiClient = new AuthApiClient();
+try {
+//          Use one of the below method to generate oauth token        
+//          Creating a token for grant_type=client_credentials            
+    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+//          Creating a token for grant_type=password
+    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
+} catch (ApiException e) {
+    e.printStackTrace();
+}
+
+
 AccountApi apiInstance = new AccountApi();
 UUID accountTypeId = new UUID(); // UUID | UUID account_type_id
-UUID accountTypeId2 = new UUID(); // UUID | account_type_id
 try {
-    apiInstance.deleteAccountTypeUsingDelete(accountTypeId, accountTypeId2);
+    apiInstance.deleteAccountTypeUsingDelete(accountTypeId);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountApi#deleteAccountTypeUsingDelete");
     e.printStackTrace();
@@ -359,7 +508,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountTypeId** | [**UUID**](.md)| UUID account_type_id |
- **accountTypeId2** | [**UUID**](.md)| account_type_id |
 
 ### Return type
 
@@ -384,8 +532,8 @@ Permanently delete an account under a client.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -396,10 +544,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AccountApi apiInstance = new AccountApi();
 UUID accountId = new UUID(); // UUID | UUID account_id
@@ -440,8 +592,8 @@ Get information for all accounts for all clients defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -452,10 +604,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AccountApi apiInstance = new AccountApi();
 Boolean ascending = false; // Boolean | ascending
@@ -505,8 +661,8 @@ Get information for all account-allocation mappings for all accounts defined for
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -517,10 +673,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AccountApi apiInstance = new AccountApi();
 Boolean ascending = false; // Boolean | ascending
@@ -570,8 +730,8 @@ Retrieve the information for a specific account-allocation mapping for an accoun
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -582,10 +742,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AccountApi apiInstance = new AccountApi();
 UUID accountAllocationId = new UUID(); // UUID | UUID account_allocation_id
@@ -619,7 +783,7 @@ Name | Type | Description  | Notes
 
 <a name="getAccountAssetSizeAggAllUsingGet"></a>
 # **getAccountAssetSizeAggAllUsingGet**
-> List&lt;AvailableDateDoubleVO&gt; getAccountAssetSizeAggAllUsingGet(accountId, endDate, excludeSubledger, getLatest, sortType, startDate)
+> List&lt;AvailableDateDoubleVO&gt; getAccountAssetSizeAggAllUsingGet(accountId, currencyConversion, endDate, excludeSubledger, getLatest, sortType, startDate)
 
 List all account asset sizes
 
@@ -627,8 +791,8 @@ Get a list of asset sizes by date for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -639,20 +803,25 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 AccountApi apiInstance = new AccountApi();
 UUID accountId = new UUID(); // UUID | Account Id
+String currencyConversion = "currencyConversion_example"; // String | USD
 LocalDate endDate = LocalDate.now(); // LocalDate | end date
-Boolean excludeSubledger = false; // Boolean | exclude_subledger
+Boolean excludeSubledger = true; // Boolean | true or false
 Boolean getLatest = true; // Boolean | true or false
 String sortType = "sortType_example"; // String |  Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in ()
 LocalDate startDate = LocalDate.now(); // LocalDate | start date
 try {
-    List<AvailableDateDoubleVO> result = apiInstance.getAccountAssetSizeAggAllUsingGet(accountId, endDate, excludeSubledger, getLatest, sortType, startDate);
+    List<AvailableDateDoubleVO> result = apiInstance.getAccountAssetSizeAggAllUsingGet(accountId, currencyConversion, endDate, excludeSubledger, getLatest, sortType, startDate);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountApi#getAccountAssetSizeAggAllUsingGet");
@@ -665,8 +834,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | [**UUID**](.md)| Account Id |
+ **currencyConversion** | **String**| USD | [optional]
  **endDate** | **LocalDate**| end date | [optional]
- **excludeSubledger** | **Boolean**| exclude_subledger | [optional] [default to false]
+ **excludeSubledger** | **Boolean**| true or false | [optional]
  **getLatest** | **Boolean**| true or false | [optional]
  **sortType** | **String**|  Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () | [optional]
  **startDate** | **LocalDate**| start date | [optional]
@@ -694,8 +864,8 @@ Get information for all account asset sizes
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -706,10 +876,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AccountApi apiInstance = new AccountApi();
 Boolean ascending = false; // Boolean | ascending
@@ -751,14 +925,14 @@ Name | Type | Description  | Notes
 
 <a name="getAccountOverviewUsingGet"></a>
 # **getAccountOverviewUsingGet**
-> AccountOverviewVO getAccountOverviewUsingGet(accountId, ascending, orderBy)
+> Object getAccountOverviewUsingGet(accountId, ascending, orderBy)
 
 List all Account overview
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -769,17 +943,21 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AccountApi apiInstance = new AccountApi();
 UUID accountId = new UUID(); // UUID | UUID account_id
 Boolean ascending = false; // Boolean | ascending
 String orderBy = "update_date"; // String | order_by
 try {
-    AccountOverviewVO result = apiInstance.getAccountOverviewUsingGet(accountId, ascending, orderBy);
+    Object result = apiInstance.getAccountOverviewUsingGet(accountId, ascending, orderBy);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountApi#getAccountOverviewUsingGet");
@@ -797,7 +975,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountOverviewVO**](AccountOverviewVO.md)
+**Object**
 
 ### Authorization
 
@@ -818,8 +996,8 @@ Get an account permission
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -830,10 +1008,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AccountApi apiInstance = new AccountApi();
 UUID accountId = new UUID(); // UUID | account_id
@@ -865,18 +1047,18 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: */*
 
-<a name="getAccountTypeAllUsingGet"></a>
-# **getAccountTypeAllUsingGet**
-> PageAccountType getAccountTypeAllUsingGet(ascending, filter, orderBy, page, size)
+<a name="getAccountStatusAllUsingGet"></a>
+# **getAccountStatusAllUsingGet**
+> PageAccountStatus getAccountStatusAllUsingGet(ascending, filter, orderBy, page, size)
 
-List all account types
+List all account statuses
 
-List all account types defined for your firm.
+Get the account status history information for all accounts.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -887,10 +1069,144 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
+
+AccountApi apiInstance = new AccountApi();
+Boolean ascending = false; // Boolean | ascending
+String filter = "filter_example"; // String | filter
+String orderBy = "update_date"; // String | order_by
+Integer page = 0; // Integer | page
+Integer size = 25; // Integer | size
+try {
+    PageAccountStatus result = apiInstance.getAccountStatusAllUsingGet(ascending, filter, orderBy, page, size);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AccountApi#getAccountStatusAllUsingGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **filter** | **String**| filter | [optional]
+ **orderBy** | **String**| order_by | [optional] [default to update_date]
+ **page** | **Integer**| page | [optional] [default to 0]
+ **size** | **Integer**| size | [optional] [default to 25]
+
+### Return type
+
+[**PageAccountStatus**](PageAccountStatus.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+<a name="getAccountStatusUsingGet"></a>
+# **getAccountStatusUsingGet**
+> AccountStatus getAccountStatusUsingGet(accountStatusId)
+
+Retrieve an account status
+
+Retrieve the information for a specific account status record for an account.
+
+### Example
+```java
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.auth.*;
+//import AccountApi;
+
+AuthApiClient authApiClient = new AuthApiClient();
+try {
+//          Use one of the below method to generate oauth token        
+//          Creating a token for grant_type=client_credentials            
+    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+//          Creating a token for grant_type=password
+    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
+} catch (ApiException e) {
+    e.printStackTrace();
+}
+
+
+AccountApi apiInstance = new AccountApi();
+UUID accountStatusId = new UUID(); // UUID | UUID account_status_id
+try {
+    AccountStatus result = apiInstance.getAccountStatusUsingGet(accountStatusId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AccountApi#getAccountStatusUsingGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountStatusId** | [**UUID**](.md)| UUID account_status_id |
+
+### Return type
+
+[**AccountStatus**](AccountStatus.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+<a name="getAccountTypeAllUsingGet"></a>
+# **getAccountTypeAllUsingGet**
+> PageAccountType getAccountTypeAllUsingGet(ascending, filter, orderBy, page, size)
+
+List all account types
+
+List all account types defined for your firm.
+
+### Example
+```java
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.auth.*;
+//import AccountApi;
+
+AuthApiClient authApiClient = new AuthApiClient();
+try {
+//          Use one of the below method to generate oauth token        
+//          Creating a token for grant_type=client_credentials            
+    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+//          Creating a token for grant_type=password
+    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
+} catch (ApiException e) {
+    e.printStackTrace();
+}
+
 
 AccountApi apiInstance = new AccountApi();
 Boolean ascending = false; // Boolean | ascending
@@ -932,7 +1248,7 @@ Name | Type | Description  | Notes
 
 <a name="getAccountTypeUsingGet"></a>
 # **getAccountTypeUsingGet**
-> AccountType getAccountTypeUsingGet(accountTypeId, accountTypeId2)
+> AccountType getAccountTypeUsingGet(accountTypeId)
 
 Get an Account Type
 
@@ -940,8 +1256,8 @@ Get an account types defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -952,16 +1268,19 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 AccountApi apiInstance = new AccountApi();
 UUID accountTypeId = new UUID(); // UUID | UUID account_type_id
-UUID accountTypeId2 = new UUID(); // UUID | account_type_id
 try {
-    AccountType result = apiInstance.getAccountTypeUsingGet(accountTypeId, accountTypeId2);
+    AccountType result = apiInstance.getAccountTypeUsingGet(accountTypeId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountApi#getAccountTypeUsingGet");
@@ -974,7 +1293,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountTypeId** | [**UUID**](.md)| UUID account_type_id |
- **accountTypeId2** | [**UUID**](.md)| account_type_id |
 
 ### Return type
 
@@ -999,8 +1317,8 @@ Retrieve the information for a specific account associated with a client.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -1011,10 +1329,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AccountApi apiInstance = new AccountApi();
 UUID accountId = new UUID(); // UUID | UUID account_id
@@ -1056,8 +1378,8 @@ List all account permission
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -1068,10 +1390,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AccountApi apiInstance = new AccountApi();
 Boolean ascending = false; // Boolean | ascending
@@ -1113,7 +1439,7 @@ Name | Type | Description  | Notes
 
 <a name="getPortfolioHoldingAggAllUsingGet"></a>
 # **getPortfolioHoldingAggAllUsingGet**
-> List&lt;PortfolioHoldingAgg&gt; getPortfolioHoldingAggAllUsingGet(accountId, endDate, getLatest, startDate)
+> List&lt;PortfolioHoldingAgg&gt; getPortfolioHoldingAggAllUsingGet(accountId, currencyConversion, endDate, getLatest, startDate)
 
 List all account holdings
 
@@ -1121,8 +1447,8 @@ Get information for all the securities that are currently being held by an accou
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -1133,18 +1459,23 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 AccountApi apiInstance = new AccountApi();
 UUID accountId = new UUID(); // UUID | UUID account_id
-String endDate = "endDate_example"; // String | end date 
+String currencyConversion = "currencyConversion_example"; // String | USD
+LocalDate endDate = LocalDate.now(); // LocalDate | end date 
 Boolean getLatest = true; // Boolean | true or false
-String startDate = "startDate_example"; // String | start date 
+LocalDate startDate = LocalDate.now(); // LocalDate | start date 
 try {
-    List<PortfolioHoldingAgg> result = apiInstance.getPortfolioHoldingAggAllUsingGet(accountId, endDate, getLatest, startDate);
+    List<PortfolioHoldingAgg> result = apiInstance.getPortfolioHoldingAggAllUsingGet(accountId, currencyConversion, endDate, getLatest, startDate);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountApi#getPortfolioHoldingAggAllUsingGet");
@@ -1157,9 +1488,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | [**UUID**](.md)| UUID account_id |
- **endDate** | **String**| end date  | [optional]
+ **currencyConversion** | **String**| USD | [optional]
+ **endDate** | **LocalDate**| end date  | [optional]
  **getLatest** | **Boolean**| true or false | [optional]
- **startDate** | **String**| start date  | [optional]
+ **startDate** | **LocalDate**| start date  | [optional]
 
 ### Return type
 
@@ -1176,7 +1508,7 @@ Name | Type | Description  | Notes
 
 <a name="getPortfolioTransactionAggAllUsingGet"></a>
 # **getPortfolioTransactionAggAllUsingGet**
-> PagePortfolioTransaction getPortfolioTransactionAggAllUsingGet(accountId, ascending, endDate, orderBy, page, size, startDate)
+> PagePortfolioTransaction getPortfolioTransactionAggAllUsingGet(accountId, ascending, currencyConversion, endDate, orderBy, page, size, startDate)
 
 List all account transactions
 
@@ -1184,8 +1516,8 @@ Get the information for all transactions for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -1196,21 +1528,26 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 AccountApi apiInstance = new AccountApi();
 UUID accountId = new UUID(); // UUID | UUID account_id
 Boolean ascending = false; // Boolean | ascending
-OffsetDateTime endDate = OffsetDateTime.now(); // OffsetDateTime | end_date
+String currencyConversion = "currencyConversion_example"; // String | USD
+LocalDate endDate = LocalDate.now(); // LocalDate | end date 
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
-OffsetDateTime startDate = OffsetDateTime.now(); // OffsetDateTime | start_date
+LocalDate startDate = LocalDate.now(); // LocalDate | start date 
 try {
-    PagePortfolioTransaction result = apiInstance.getPortfolioTransactionAggAllUsingGet(accountId, ascending, endDate, orderBy, page, size, startDate);
+    PagePortfolioTransaction result = apiInstance.getPortfolioTransactionAggAllUsingGet(accountId, ascending, currencyConversion, endDate, orderBy, page, size, startDate);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountApi#getPortfolioTransactionAggAllUsingGet");
@@ -1224,11 +1561,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | [**UUID**](.md)| UUID account_id |
  **ascending** | **Boolean**| ascending | [optional] [default to false]
- **endDate** | **OffsetDateTime**| end_date | [optional] [default to null]
+ **currencyConversion** | **String**| USD | [optional]
+ **endDate** | **LocalDate**| end date  | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
  **size** | **Integer**| size | [optional] [default to 25]
- **startDate** | **OffsetDateTime**| start_date | [optional] [default to null]
+ **startDate** | **LocalDate**| start date  | [optional]
 
 ### Return type
 
@@ -1253,8 +1591,8 @@ create an account permission
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -1265,10 +1603,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AccountApi apiInstance = new AccountApi();
 AclClientPermissionVO aclClientPermissionVO = new AclClientPermissionVO(); // AclClientPermissionVO | aclClientPermissionVO
@@ -1310,8 +1652,8 @@ After creating an account, you may create portfolios for the account to track a 
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -1322,10 +1664,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AccountApi apiInstance = new AccountApi();
 UUID accountId = new UUID(); // UUID | UUID account_id
@@ -1369,8 +1715,8 @@ Update the information for an account-allocation mapping.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -1381,10 +1727,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AccountApi apiInstance = new AccountApi();
 UUID accountAllocationId = new UUID(); // UUID | UUID account_allocation_id
@@ -1418,18 +1768,18 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: */*
 
-<a name="updateAccountTypeUsingPut"></a>
-# **updateAccountTypeUsingPut**
-> AccountType updateAccountTypeUsingPut(accountType, accountTypeId)
+<a name="updateAccountStatusUsingPut"></a>
+# **updateAccountStatusUsingPut**
+> AccountStatus updateAccountStatusUsingPut(accountStatus, accountStatusId)
 
-Update an account type
+Update an account status
 
-Update the information for a possible account type defined for your firm.
+Update an account status record for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -1440,10 +1790,77 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
+
+AccountApi apiInstance = new AccountApi();
+AccountStatus accountStatus = new AccountStatus(); // AccountStatus | account_status
+UUID accountStatusId = new UUID(); // UUID | UUID account_status_id
+try {
+    AccountStatus result = apiInstance.updateAccountStatusUsingPut(accountStatus, accountStatusId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AccountApi#updateAccountStatusUsingPut");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountStatus** | [**AccountStatus**](AccountStatus.md)| account_status |
+ **accountStatusId** | [**UUID**](.md)| UUID account_status_id |
+
+### Return type
+
+[**AccountStatus**](AccountStatus.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+<a name="updateAccountTypeUsingPut"></a>
+# **updateAccountTypeUsingPut**
+> AccountType updateAccountTypeUsingPut(accountType, accountTypeId)
+
+Update an account type
+
+Update the information for a possible account type defined for your firm.
+
+### Example
+```java
+//import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
+//import com.hydrogen.nucleus.auth.*;
+//import AccountApi;
+
+AuthApiClient authApiClient = new AuthApiClient();
+try {
+//          Use one of the below method to generate oauth token        
+//          Creating a token for grant_type=client_credentials            
+    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+//          Creating a token for grant_type=password
+    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
+} catch (ApiException e) {
+    e.printStackTrace();
+}
+
 
 AccountApi apiInstance = new AccountApi();
 AccountType accountType = new AccountType(); // AccountType | account_type
@@ -1487,8 +1904,8 @@ Update the information for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -1499,10 +1916,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AccountApi apiInstance = new AccountApi();
 Account account = new Account(); // Account | account
@@ -1546,8 +1967,8 @@ Update an account permission
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
@@ -1558,10 +1979,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AccountApi apiInstance = new AccountApi();
 UUID accountId = new UUID(); // UUID | account_id

@@ -20,14 +20,49 @@ Calculate a dimensional risk score based on questionnaire responses
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.RiskScoringApi();
 
-var dimensionalRiskScoreRequest = new HydrogenProtonApi.DimensionalRiskScoreRequest(); // DimensionalRiskScoreRequest | Request payload for Dimensional Risk Score
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createDimensionalRiskScore();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -37,7 +72,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.dimensionalRiskScore(dimensionalRiskScoreRequest, callback);
+const createDimensionalRiskScore = () => {
+    var apiInstance = new HydrogenProtonApi.RiskScoringApi();
+    var dimensionalRiskScoreRequest = new HydrogenProtonApi.DimensionalRiskScoreRequest(); // DimensionalRiskScoreRequest | Request payload for Dimensional Risk Score
+    apiInstance.dimensionalRiskScore(dimensionalRiskScoreRequest, callback);
+}
 ```
 
 ### Parameters
@@ -70,14 +109,49 @@ Allocate based on a risk score
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.RiskScoringApi();
 
-var riskAllocationRequest = new HydrogenProtonApi.RiskAllocationRequest(); // RiskAllocationRequest | Request payload for Risk Allocation
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createRiskAllocation();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -87,7 +161,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.riskAllocation(riskAllocationRequest, callback);
+const createRiskAllocation = () => {
+    var apiInstance = new HydrogenProtonApi.RiskScoringApi();
+    var riskAllocationRequest = new HydrogenProtonApi.RiskAllocationRequest(); // RiskAllocationRequest | Request payload for Risk Allocation
+    apiInstance.riskAllocation(riskAllocationRequest, callback);
+}
 ```
 
 ### Parameters
@@ -120,14 +198,49 @@ Calculate a risk score based on questionnaire responses
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.RiskScoringApi();
 
-var riskScoreRequest = new HydrogenProtonApi.RiskScoreRequest(); // RiskScoreRequest | Request payload for Risk Score
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createRiskScore();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -137,7 +250,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.riskScore(riskScoreRequest, callback);
+const createRiskScore = () => {
+    var apiInstance = new HydrogenProtonApi.RiskScoringApi();
+    var riskScoreRequest = new HydrogenProtonApi.RiskScoreRequest(); // RiskScoreRequest | Request payload for Risk Score
+    apiInstance.riskScore(riskScoreRequest, callback);
+}
 ```
 
 ### Parameters

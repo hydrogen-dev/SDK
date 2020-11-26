@@ -28,10 +28,8 @@ Calculate the achievable education costs
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import FinancialPlanningApi;
 
@@ -39,14 +37,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 FinancialPlanningApi apiInstance = new FinancialPlanningApi();
 EducationCalculatorAnnualCostRequest educationCalculatorAnnualCostRequest = new EducationCalculatorAnnualCostRequest(); // EducationCalculatorAnnualCostRequest | Request payload for Education Calculator - Annual Cost
@@ -88,10 +88,8 @@ Calculate the necessary periodic deposit amount to achieve education costs
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import FinancialPlanningApi;
 
@@ -99,14 +97,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 FinancialPlanningApi apiInstance = new FinancialPlanningApi();
 EducationCalculatorDepositAmountRequest educationCalculatorDepositAmountRequest = new EducationCalculatorDepositAmountRequest(); // EducationCalculatorDepositAmountRequest | Request payload for Education Calculator - Deposit Amount
@@ -148,10 +148,8 @@ Calculate the achievable percentage of education costs that can be covered
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import FinancialPlanningApi;
 
@@ -159,14 +157,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 FinancialPlanningApi apiInstance = new FinancialPlanningApi();
 EducationCalculatorPercentCoveredRequest educationCalculatorPercentCoveredRequest = new EducationCalculatorPercentCoveredRequest(); // EducationCalculatorPercentCoveredRequest | Request payload for Education Calculator - Percent Covered
@@ -208,10 +208,8 @@ Calculate the necessary down payment for the mortgage
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import FinancialPlanningApi;
 
@@ -219,14 +217,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 FinancialPlanningApi apiInstance = new FinancialPlanningApi();
 MortgageCalculatorDownPaymentRequest mortgageCalculatorDownPaymentRequest = new MortgageCalculatorDownPaymentRequest(); // MortgageCalculatorDownPaymentRequest | Request payload for Mortgage Calculator - Down Payment
@@ -268,10 +268,8 @@ Calculate the achievable home price for the mortgage
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import FinancialPlanningApi;
 
@@ -279,14 +277,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 FinancialPlanningApi apiInstance = new FinancialPlanningApi();
 MortgageCalculatorHomePriceRequest mortgageCalculatorHomePriceRequest = new MortgageCalculatorHomePriceRequest(); // MortgageCalculatorHomePriceRequest | Request payload for Mortgage Calculator - Home Price
@@ -328,10 +328,8 @@ Calculate the periodic payment for the mortgage
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import FinancialPlanningApi;
 
@@ -339,14 +337,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 FinancialPlanningApi apiInstance = new FinancialPlanningApi();
 MortgageCalculatorPeriodicPaymentRequest mortgageCalculatorPeriodicPaymentRequest = new MortgageCalculatorPeriodicPaymentRequest(); // MortgageCalculatorPeriodicPaymentRequest | Request payload for Mortgage Calculator - Periodic Payment
@@ -388,10 +388,8 @@ Calculate the achievable purchase amount
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import FinancialPlanningApi;
 
@@ -399,14 +397,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 FinancialPlanningApi apiInstance = new FinancialPlanningApi();
 PurchaseCalculatorAmountRequest purchaseCalculatorAmountRequest = new PurchaseCalculatorAmountRequest(); // PurchaseCalculatorAmountRequest | Request payload for Purchase Calculator - Amount
@@ -448,10 +448,8 @@ Calculate the necessary periodic deposit amount to achieve the purchase amount
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import FinancialPlanningApi;
 
@@ -459,14 +457,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 FinancialPlanningApi apiInstance = new FinancialPlanningApi();
 PurchaseCalculatorDepositAmountRequest purchaseCalculatorDepositAmountRequest = new PurchaseCalculatorDepositAmountRequest(); // PurchaseCalculatorDepositAmountRequest | Request payload for Purchase Calculator - Deposit Amount
@@ -508,10 +508,8 @@ Calculate the necessary time horizon to achieve the purchase amount
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import FinancialPlanningApi;
 
@@ -519,14 +517,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 FinancialPlanningApi apiInstance = new FinancialPlanningApi();
 PurchaseCalculatorHorizonRequest purchaseCalculatorHorizonRequest = new PurchaseCalculatorHorizonRequest(); // PurchaseCalculatorHorizonRequest | Request payload for Purchase Calculator - Horizon
@@ -568,10 +568,8 @@ Calculate the necessary period deposit amount to achieve the retirement expenses
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import FinancialPlanningApi;
 
@@ -579,14 +577,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 FinancialPlanningApi apiInstance = new FinancialPlanningApi();
 RetirementCalculatorDepositAmountRequest retirementCalculatorDepositAmountRequest = new RetirementCalculatorDepositAmountRequest(); // RetirementCalculatorDepositAmountRequest | Request payload for Retirement Calculator - Deposit AMount
@@ -628,10 +628,8 @@ Calculate the achievable retirement expenses
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import FinancialPlanningApi;
 
@@ -639,14 +637,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 FinancialPlanningApi apiInstance = new FinancialPlanningApi();
 RetirementCalculatorExpensesRequest retirementCalculatorExpensesRequest = new RetirementCalculatorExpensesRequest(); // RetirementCalculatorExpensesRequest | Request payload for Retirement Calculator - Expenses
@@ -688,10 +688,8 @@ Calculate the achievable percentage of retirement expenses that can be covered
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import FinancialPlanningApi;
 
@@ -699,14 +697,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 FinancialPlanningApi apiInstance = new FinancialPlanningApi();
 RetirementCalculatorPercentCoveredRequest retirementCalculatorPercentCoveredRequest = new RetirementCalculatorPercentCoveredRequest(); // RetirementCalculatorPercentCoveredRequest | Request payload for Retirement Calculator - Percent Covered

@@ -60,10 +60,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_balance = [nucleus_api.AggregationAccountBalance()] # list[AggregationAccountBalance] | aggregationAccountBalance
@@ -123,10 +124,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_balance = nucleus_api.AggregationAccountBalance() # AggregationAccountBalance | aggregationAccountBalance
@@ -186,10 +188,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_list = [nucleus_api.AggregationAccount()] # list[AggregationAccount] | aggregationAccountList
@@ -249,10 +252,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_transaction = [nucleus_api.AggregationAccountHolding()] # list[AggregationAccountHolding] | aggregationTransaction
@@ -312,10 +316,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_holding = nucleus_api.AggregationAccountHolding() # AggregationAccountHolding | aggregationAccountHolding
@@ -375,10 +380,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_transactions = [nucleus_api.AggregationAccountTransaction()] # list[AggregationAccountTransaction] | aggregationAccountTransactions
@@ -438,10 +444,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_transaction = nucleus_api.AggregationAccountTransaction() # AggregationAccountTransaction | aggregationAccountTransaction
@@ -501,10 +508,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account = nucleus_api.AggregationAccount() # AggregationAccount | aggregationAccount
@@ -564,10 +572,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_balance_id = 'aggregation_account_balance_id_example' # str | UUID aggregation_account_balance_id
@@ -626,10 +635,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_holding_id = 'aggregation_account_holding_id_example' # str | UUID aggregation_account_holding_id
@@ -663,7 +673,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_aggregation_account_transaction_using_delete**
-> AggregationAccountTransaction delete_aggregation_account_transaction_using_delete(aggregation_account_transaction_id)
+> delete_aggregation_account_transaction_using_delete(aggregation_account_transaction_id)
 
 Delete an aggregation account transaction
 
@@ -688,18 +698,18 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_transaction_id = 'aggregation_account_transaction_id_example' # str | UUID aggregation_account_transaction_id
 
 try:
     # Delete an aggregation account transaction
-    api_response = api_instance.delete_aggregation_account_transaction_using_delete(aggregation_account_transaction_id)
-    pprint(api_response)
+    api_instance.delete_aggregation_account_transaction_using_delete(aggregation_account_transaction_id)
 except ApiException as e:
     print("Exception when calling AggregationAccountApi->delete_aggregation_account_transaction_using_delete: %s\n" % e)
 ```
@@ -712,7 +722,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AggregationAccountTransaction**](AggregationAccountTransaction.md)
+void (empty response body)
 
 ### Authorization
 
@@ -751,10 +761,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_id = 'aggregation_account_id_example' # str | UUID aggregation_account_id
@@ -788,7 +799,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_aggregation_account_aggregate_data_using_get**
-> AggregationAccountAggregateDataVO get_aggregation_account_aggregate_data_using_get(aggregation_account_id)
+> object get_aggregation_account_aggregate_data_using_get(aggregation_account_id, currency_conversion=currency_conversion)
 
 Retrieve an aggregation account aggregate data
 
@@ -813,17 +824,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_id = 'aggregation_account_id_example' # str | UUID aggregation_account_id
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 
 try:
     # Retrieve an aggregation account aggregate data
-    api_response = api_instance.get_aggregation_account_aggregate_data_using_get(aggregation_account_id)
+    api_response = api_instance.get_aggregation_account_aggregate_data_using_get(aggregation_account_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AggregationAccountApi->get_aggregation_account_aggregate_data_using_get: %s\n" % e)
@@ -834,10 +847,11 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aggregation_account_id** | [**str**](.md)| UUID aggregation_account_id | 
+ **currency_conversion** | **str**| USD | [optional] 
 
 ### Return type
 
-[**AggregationAccountAggregateDataVO**](AggregationAccountAggregateDataVO.md)
+**object**
 
 ### Authorization
 
@@ -876,10 +890,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -922,7 +937,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_aggregation_account_balance_all_using_get**
-> PageAggregationAccountBalance get_aggregation_account_balance_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+> PageAggregationAccountBalance get_aggregation_account_balance_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
 
 List all aggregation account balances
 
@@ -947,13 +962,15 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
@@ -961,7 +978,7 @@ size = 25 # int | size (optional) (default to 25)
 
 try:
     # List all aggregation account balances
-    api_response = api_instance.get_aggregation_account_balance_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    api_response = api_instance.get_aggregation_account_balance_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AggregationAccountApi->get_aggregation_account_balance_all_using_get: %s\n" % e)
@@ -972,6 +989,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **str**| currency_conversion | [optional] 
  **filter** | **str**| filter | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -993,7 +1011,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_aggregation_account_balance_using_get**
-> AggregationAccountBalance get_aggregation_account_balance_using_get(aggregation_account_balance_id)
+> AggregationAccountBalance get_aggregation_account_balance_using_get(aggregation_account_balance_id, currency_conversion=currency_conversion)
 
 Retrieve an aggregation account balance
 
@@ -1018,17 +1036,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_balance_id = 'aggregation_account_balance_id_example' # str | UUID aggregation_account_balance_id
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 
 try:
     # Retrieve an aggregation account balance
-    api_response = api_instance.get_aggregation_account_balance_using_get(aggregation_account_balance_id)
+    api_response = api_instance.get_aggregation_account_balance_using_get(aggregation_account_balance_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AggregationAccountApi->get_aggregation_account_balance_using_get: %s\n" % e)
@@ -1039,6 +1059,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aggregation_account_balance_id** | [**str**](.md)| UUID aggregation_account_balance_id | 
+ **currency_conversion** | **str**| USD | [optional] 
 
 ### Return type
 
@@ -1056,7 +1077,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_aggregation_account_holding_all_using_get**
-> PageAggregationAccountHolding get_aggregation_account_holding_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+> PageAggregationAccountHolding get_aggregation_account_holding_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
 
 List all aggregation account holdings
 
@@ -1081,13 +1102,15 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
@@ -1095,7 +1118,7 @@ size = 25 # int | size (optional) (default to 25)
 
 try:
     # List all aggregation account holdings
-    api_response = api_instance.get_aggregation_account_holding_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    api_response = api_instance.get_aggregation_account_holding_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AggregationAccountApi->get_aggregation_account_holding_all_using_get: %s\n" % e)
@@ -1106,6 +1129,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **str**| currency_conversion | [optional] 
  **filter** | **str**| filter | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -1127,7 +1151,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_aggregation_account_holding_using_get**
-> AggregationAccountHolding get_aggregation_account_holding_using_get(aggregation_account_holding_id)
+> AggregationAccountHolding get_aggregation_account_holding_using_get(aggregation_account_holding_id, currency_conversion=currency_conversion)
 
 Retrieve an aggregation account holding
 
@@ -1152,17 +1176,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_holding_id = 'aggregation_account_holding_id_example' # str | UUID aggregation_account_holding_id
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 
 try:
     # Retrieve an aggregation account holding
-    api_response = api_instance.get_aggregation_account_holding_using_get(aggregation_account_holding_id)
+    api_response = api_instance.get_aggregation_account_holding_using_get(aggregation_account_holding_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AggregationAccountApi->get_aggregation_account_holding_using_get: %s\n" % e)
@@ -1173,6 +1199,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aggregation_account_holding_id** | [**str**](.md)| UUID aggregation_account_holding_id | 
+ **currency_conversion** | **str**| USD | [optional] 
 
 ### Return type
 
@@ -1190,7 +1217,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_aggregation_account_overview_using_get**
-> AggregationDataForClientParentResponseVO get_aggregation_account_overview_using_get(client_id)
+> object get_aggregation_account_overview_using_get(client_id, currency_conversion=currency_conversion)
 
 Retrieve an aggregation account aggregate data
 
@@ -1215,17 +1242,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | UUID client_id
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 
 try:
     # Retrieve an aggregation account aggregate data
-    api_response = api_instance.get_aggregation_account_overview_using_get(client_id)
+    api_response = api_instance.get_aggregation_account_overview_using_get(client_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AggregationAccountApi->get_aggregation_account_overview_using_get: %s\n" % e)
@@ -1236,10 +1265,11 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_id** | [**str**](.md)| UUID client_id | 
+ **currency_conversion** | **str**| USD | [optional] 
 
 ### Return type
 
-[**AggregationDataForClientParentResponseVO**](AggregationDataForClientParentResponseVO.md)
+**object**
 
 ### Authorization
 
@@ -1253,7 +1283,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_aggregation_account_transaction_all_using_get**
-> PageAggregationAccountTransaction get_aggregation_account_transaction_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+> PageAggregationAccountTransaction get_aggregation_account_transaction_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
 
 List all aggregation account transactions
 
@@ -1278,13 +1308,15 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
@@ -1292,7 +1324,7 @@ size = 25 # int | size (optional) (default to 25)
 
 try:
     # List all aggregation account transactions
-    api_response = api_instance.get_aggregation_account_transaction_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    api_response = api_instance.get_aggregation_account_transaction_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AggregationAccountApi->get_aggregation_account_transaction_all_using_get: %s\n" % e)
@@ -1303,6 +1335,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **str**| currency_conversion | [optional] 
  **filter** | **str**| filter | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -1324,7 +1357,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_aggregation_account_transaction_using_get**
-> AggregationAccountTransaction get_aggregation_account_transaction_using_get(aggregation_account_transaction_id)
+> AggregationAccountTransaction get_aggregation_account_transaction_using_get(aggregation_account_transaction_id, currency_conversion=currency_conversion)
 
 Retrieve an aggregation account transaction
 
@@ -1349,17 +1382,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_transaction_id = 'aggregation_account_transaction_id_example' # str | UUID aggregation_account_transaction_id
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 
 try:
     # Retrieve an aggregation account transaction
-    api_response = api_instance.get_aggregation_account_transaction_using_get(aggregation_account_transaction_id)
+    api_response = api_instance.get_aggregation_account_transaction_using_get(aggregation_account_transaction_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AggregationAccountApi->get_aggregation_account_transaction_using_get: %s\n" % e)
@@ -1370,6 +1405,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aggregation_account_transaction_id** | [**str**](.md)| UUID aggregation_account_transaction_id | 
+ **currency_conversion** | **str**| USD | [optional] 
 
 ### Return type
 
@@ -1412,10 +1448,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_id = 'aggregation_account_id_example' # str | UUID aggregation_account_id
@@ -1475,10 +1512,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_balance = nucleus_api.AggregationAccountBalance() # AggregationAccountBalance | aggregation_account_balance
@@ -1515,7 +1553,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_aggregation_account_bulk_using_put**
-> AggregationAccount update_aggregation_account_bulk_using_put(aggregation_account_list)
+> list[AggregationAccount] update_aggregation_account_bulk_using_put(aggregation_account_list)
 
 Update a bulk aggregation account
 
@@ -1540,10 +1578,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_list = [nucleus_api.AggregationAccount()] # list[AggregationAccount] | aggregationAccountList
@@ -1564,7 +1603,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AggregationAccount**](AggregationAccount.md)
+[**list[AggregationAccount]**](AggregationAccount.md)
 
 ### Authorization
 
@@ -1603,10 +1642,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_holding = [nucleus_api.AggregationAccountHolding()] # list[AggregationAccountHolding] | aggregationAccountHolding
@@ -1666,10 +1706,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_holding = nucleus_api.AggregationAccountHolding() # AggregationAccountHolding | aggregation_account_holding
@@ -1731,10 +1772,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account_transaction = nucleus_api.AggregationAccountTransaction() # AggregationAccountTransaction | aggregation_account_transaction
@@ -1796,10 +1838,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AggregationAccountApi(nucleus_api.ApiClient(configuration))
 aggregation_account = nucleus_api.AggregationAccount() # AggregationAccount | aggregation_account

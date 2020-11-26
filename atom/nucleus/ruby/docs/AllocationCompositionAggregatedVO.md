@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allocation_composition_create_date** | **DateTime** |  | [optional] 
-**allocation_composition_date** | **DateTime** |  | [optional] 
+**allocation_composition_date** | **Date** |  | [optional] 
 **allocation_composition_id** | **String** |  | [optional] 
 **allocation_composition_update_date** | **DateTime** |  | [optional] 
 **model_category** | **String** |  | [optional] 

@@ -1,8 +1,8 @@
 # hydrogen-proton-api
 
 Hydrogen Proton API
-- API version: 1.7.18
-  - Build date: 2020-05-29T05:03:35.524Z
+- API version: 1.8.0
+  - Build date: 2020-10-08T03:59:30.964Z
 
 Financial engineering module of Hydrogen Atom
 
@@ -50,7 +50,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.hydrogen</groupId>
   <artifactId>hydrogen-proton-api</artifactId>
-  <version>1.7.18</version>
+  <version>1.8.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -60,7 +60,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.hydrogen:hydrogen-proton-api:1.7.18"
+compile "com.hydrogen:hydrogen-proton-api:1.8.0"
 ```
 
 ### Others
@@ -73,7 +73,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/hydrogen-proton-api-1.0.0.jar`
+* `target/hydrogen-proton-api-1.8.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -82,10 +82,11 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import com.hydrogen.proton.ApiException;
 import com.hydrogen.proton.AuthApiClient;
+import com.hydrogen.proton.ApiException;
 import com.hydrogen.proton.model.AnnuityCalculatorAccumulationHorizonRequest;
-import com.hydrogen.proton.api.AnnuitiesApi;
+import com.hydrogen.proton.*;
+import AnnuitiesApi;
 
 import java.util.*;
 
@@ -96,12 +97,15 @@ public class AnnuitiesApiExample {
         try {
         //          Use one of the below method to generate oauth token        
         //          Creating a token for grant_type=client_credentials            
-            authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+        authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
         //          Creating a token for grant_type=password
-            authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                                    "USERNAME", "PASSWORD");           
+        authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                                "USERNAME", "PASSWORD");     
+        //  Creating a token using client_token
+        authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+                "CLIENT_TOKEN");      
         } catch (ApiException e) {
-            e.printStackTrace();
+        e.printStackTrace();
         }
 
         AnnuitiesApi apiInstance = new AnnuitiesApi();
@@ -130,6 +134,11 @@ Class | Method | HTTP request | Description
 *AnnuitiesApi* | [**annuityCalculatorDepositAmount**](docs/AnnuitiesApi.md#annuityCalculatorDepositAmount) | **POST** /annuity_calculator/deposit_amount | Annuity Calculator - Deposit Amount
 *AnnuitiesApi* | [**annuityCalculatorInitialBalance**](docs/AnnuitiesApi.md#annuityCalculatorInitialBalance) | **POST** /annuity_calculator/initial_balance | Annuity Calculator - Initial Balance
 *AnnuitiesApi* | [**variableAnnuity**](docs/AnnuitiesApi.md#variableAnnuity) | **POST** /variable_annuity | Variable Annuity
+*BusinessFinancialManagementApi* | [**businessFinancialHealthCheck**](docs/BusinessFinancialManagementApi.md#businessFinancialHealthCheck) | **POST** /business/financial_health_check | Business Financial Health Check
+*BusinessFinancialManagementApi* | [**cashAnalysis**](docs/BusinessFinancialManagementApi.md#cashAnalysis) | **POST** /business/cash_analysis | Cash Analysis
+*BusinessFinancialManagementApi* | [**customerAnalysis**](docs/BusinessFinancialManagementApi.md#customerAnalysis) | **POST** /business/customer_analysis | Customer Analysis
+*BusinessFinancialManagementApi* | [**financialStatementAnalysis**](docs/BusinessFinancialManagementApi.md#financialStatementAnalysis) | **POST** /business/financial_statement_analysis | Financial Statement Analysis
+*BusinessFinancialManagementApi* | [**invoiceAnalysis**](docs/BusinessFinancialManagementApi.md#invoiceAnalysis) | **POST** /business/invoice_analysis | Invoice Analysis
 *FinancialHealthApi* | [**diversificationScore**](docs/FinancialHealthApi.md#diversificationScore) | **POST** /diversification_score | Diversification Score
 *FinancialHealthApi* | [**emergencyFundCalculator**](docs/FinancialHealthApi.md#emergencyFundCalculator) | **POST** /emergency_fund_calculator | Emergency Fund Calculator
 *FinancialHealthApi* | [**financialHealthCheck**](docs/FinancialHealthApi.md#financialHealthCheck) | **POST** /financial_health_check | Financial Health Check
@@ -155,7 +164,9 @@ Class | Method | HTTP request | Description
 *LifeInsuranceApi* | [**lifeInsuranceNeedsCalculator**](docs/LifeInsuranceApi.md#lifeInsuranceNeedsCalculator) | **POST** /life_insurance/needs_calculator | Life Insurance Needs Calculator
 *PersonalFinancialManagementApi* | [**budgetCalculator**](docs/PersonalFinancialManagementApi.md#budgetCalculator) | **POST** /budget_calculator | Budget Calculator
 *PersonalFinancialManagementApi* | [**cashFlowAnalysis**](docs/PersonalFinancialManagementApi.md#cashFlowAnalysis) | **POST** /cash_flow_analysis | Cash Flow Analysis
+*PersonalFinancialManagementApi* | [**feeAnalysis**](docs/PersonalFinancialManagementApi.md#feeAnalysis) | **POST** /fee_analysis | RFee Analysis
 *PersonalFinancialManagementApi* | [**financialPicture**](docs/PersonalFinancialManagementApi.md#financialPicture) | **POST** /financial_picture | Financial Picture
+*PersonalFinancialManagementApi* | [**recurringTransactionAnalysis**](docs/PersonalFinancialManagementApi.md#recurringTransactionAnalysis) | **POST** /recurring_transaction_analysis | Recurring Transaction Analysis
 *PortfolioConstructionApi* | [**mvo**](docs/PortfolioConstructionApi.md#mvo) | **POST** /mvo | MVO
 *PortfolioManagementApi* | [**rebalancingSignal**](docs/PortfolioManagementApi.md#rebalancingSignal) | **POST** /rebalancing_signal | Rebalancing Signal
 *RiskScoringApi* | [**dimensionalRiskScore**](docs/RiskScoringApi.md#dimensionalRiskScore) | **POST** /dimensional_risk_score | Dimensional Risk Score
@@ -181,11 +192,18 @@ Class | Method | HTTP request | Description
  - [AnnuityDepositSchedule](docs/AnnuityDepositSchedule.md)
  - [BacktestRequest](docs/BacktestRequest.md)
  - [BeneficiaryBequestConfig](docs/BeneficiaryBequestConfig.md)
+ - [BudgetAggregationAccount](docs/BudgetAggregationAccount.md)
  - [BudgetCalculatorRequest](docs/BudgetCalculatorRequest.md)
+ - [BudgetComponent](docs/BudgetComponent.md)
+ - [BudgetDetails](docs/BudgetDetails.md)
+ - [BusinessFinancialHealthCheckRequest](docs/BusinessFinancialHealthCheckRequest.md)
+ - [BusinessInvoiceAnalysisRequest](docs/BusinessInvoiceAnalysisRequest.md)
  - [CalculatorDepositSchedule](docs/CalculatorDepositSchedule.md)
  - [CalculatorDepositSchedule1](docs/CalculatorDepositSchedule1.md)
+ - [CashAnalysisRequest](docs/CashAnalysisRequest.md)
  - [CashFlowAnalysisRequest](docs/CashFlowAnalysisRequest.md)
  - [ChildrenEducationConfig](docs/ChildrenEducationConfig.md)
+ - [CustomerAnalysisRequest](docs/CustomerAnalysisRequest.md)
  - [DecumulationGoalDepositConfig](docs/DecumulationGoalDepositConfig.md)
  - [DimensionalRiskScoreRequest](docs/DimensionalRiskScoreRequest.md)
  - [DiversificationScoreRequest](docs/DiversificationScoreRequest.md)
@@ -195,8 +213,10 @@ Class | Method | HTTP request | Description
  - [EducationConfig](docs/EducationConfig.md)
  - [EmergencyFundCalculatorRequest](docs/EmergencyFundCalculatorRequest.md)
  - [EventStudyRequest](docs/EventStudyRequest.md)
+ - [FeeAnalysisRequest](docs/FeeAnalysisRequest.md)
  - [FinancialHealthCheckRequest](docs/FinancialHealthCheckRequest.md)
  - [FinancialPictureRequest](docs/FinancialPictureRequest.md)
+ - [FinancialStatementAnalysisRequest](docs/FinancialStatementAnalysisRequest.md)
  - [GoalAccumulationAllocationRequest](docs/GoalAccumulationAllocationRequest.md)
  - [GoalAccumulationRecommendationRequest](docs/GoalAccumulationRecommendationRequest.md)
  - [GoalAccumulationStatusRequest](docs/GoalAccumulationStatusRequest.md)
@@ -215,15 +235,18 @@ Class | Method | HTTP request | Description
  - [MvoRequest](docs/MvoRequest.md)
  - [OptConfig](docs/OptConfig.md)
  - [OptConfig1](docs/OptConfig1.md)
+ - [Periods](docs/Periods.md)
  - [PortfolioOptimizationScoreRequest](docs/PortfolioOptimizationScoreRequest.md)
  - [PortfolioWhatIfRequest](docs/PortfolioWhatIfRequest.md)
  - [PurchaseCalculatorAmountRequest](docs/PurchaseCalculatorAmountRequest.md)
  - [PurchaseCalculatorDepositAmountRequest](docs/PurchaseCalculatorDepositAmountRequest.md)
  - [PurchaseCalculatorHorizonRequest](docs/PurchaseCalculatorHorizonRequest.md)
  - [RatioTargets](docs/RatioTargets.md)
+ - [RatioTargets1](docs/RatioTargets1.md)
  - [RebalancingSignalRequest](docs/RebalancingSignalRequest.md)
  - [RecommendationConfig](docs/RecommendationConfig.md)
  - [RecommendationConfig1](docs/RecommendationConfig1.md)
+ - [RecurringTransactionAnalysisRequest](docs/RecurringTransactionAnalysisRequest.md)
  - [RetirementCalculatorDepositAmountRequest](docs/RetirementCalculatorDepositAmountRequest.md)
  - [RetirementCalculatorExpensesRequest](docs/RetirementCalculatorExpensesRequest.md)
  - [RetirementCalculatorPercentCoveredRequest](docs/RetirementCalculatorPercentCoveredRequest.md)

@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**create_order_bulk_using_post**](OrderApi.md#create_order_bulk_using_post) | **POST** /order_bulk | Bulk orders for your firm
 [**create_order_status_using_post**](OrderApi.md#create_order_status_using_post) | **POST** /order_status | Create an order status
 [**create_order_track_using_post**](OrderApi.md#create_order_track_using_post) | **POST** /order_track | Create an order tracking record
+[**create_order_using_post**](OrderApi.md#create_order_using_post) | **POST** /order | Create an order record
 [**create_portfolio_order_buy_only_using_post**](OrderApi.md#create_portfolio_order_buy_only_using_post) | **POST** /portfolio/{portfolio_id}/order_buy_only | Create buy-only portfolio rebalance orders
 [**create_portfolio_order_rebalance_using_post**](OrderApi.md#create_portfolio_order_rebalance_using_post) | **POST** /portfolio/{portfolio_id}/order_rebalance | Create portfolio rebalance orders
 [**create_portfolio_order_reconciliation**](OrderApi.md#create_portfolio_order_reconciliation) | **POST** /portfolio/{portfolio_id}/order_reconciliation | Create portfolio reconciliation order
@@ -22,8 +23,7 @@ Method | HTTP request | Description
 [**delete_order_status_using_delete**](OrderApi.md#delete_order_status_using_delete) | **DELETE** /order_status/{order_status_id} | Delete an order status
 [**delete_order_track_using_delete**](OrderApi.md#delete_order_track_using_delete) | **DELETE** /order_track/{order_track_id} | Delete an order tracking record
 [**delete_order_using_delete**](OrderApi.md#delete_order_using_delete) | **DELETE** /order/{order_id} | Delete an order record
-[**get_order_all_using_get**](OrderApi.md#get_order_all_using_get) | **POST** /order | Create an order record
-[**get_order_all_using_get1**](OrderApi.md#get_order_all_using_get1) | **GET** /order | List all order records
+[**get_order_all_using_get**](OrderApi.md#get_order_all_using_get) | **GET** /order | List all order records
 [**get_order_bulk_all_using_get**](OrderApi.md#get_order_bulk_all_using_get) | **GET** /order_bulk | List all bulk orders
 [**get_order_status_all_using_get**](OrderApi.md#get_order_status_all_using_get) | **GET** /order_status | List all order statuses
 [**get_order_status_using_get**](OrderApi.md#get_order_status_using_get) | **GET** /order_status/{order_status_id} | Retrieve an order status
@@ -53,8 +53,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -112,8 +113,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -171,8 +173,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -228,8 +231,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -287,8 +291,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -346,8 +351,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -405,8 +411,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -464,8 +471,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -520,8 +528,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -576,8 +585,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -614,6 +624,63 @@ Name | Type | Description  | Notes
 
 
 
+# **create_order_using_post**
+> Order create_order_using_post(order_info_request)
+
+Create an order record
+
+Create an order record defined for your firm.
+
+### Example
+```ruby
+# load the gem
+require 'nucleus_api'
+# Setup authorization
+NucleusApi.configure do |config|
+# Use one of the below method to generate oauth token        
+# Creating a token for grant_type=client_credentials
+ config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+# Creating a token for grant_type=password
+ config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
+end
+
+api_instance = NucleusApi::OrderApi.new
+
+order_info_request = NucleusApi::Order.new # Order | orderInfoRequest
+
+
+begin
+  #Create an order record
+  result = api_instance.create_order_using_post(order_info_request)
+  p result
+rescue NucleusApi::ApiError => e
+  puts "Exception when calling OrderApi->create_order_using_post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **order_info_request** | [**Order**](Order.md)| orderInfoRequest | 
+
+### Return type
+
+[**Order**](Order.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+
+
 # **create_portfolio_order_buy_only_using_post**
 > Array&lt;OrderVoClone&gt; create_portfolio_order_buy_only_using_post(portfolio_id, req)
 
@@ -632,8 +699,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -691,8 +759,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -748,8 +817,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -807,8 +877,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -866,8 +937,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -925,8 +997,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -980,8 +1053,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -1035,8 +1109,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -1073,63 +1148,7 @@ nil (empty response body)
 
 
 # **get_order_all_using_get**
-> Order get_order_all_using_get(order_info_request)
-
-Create an order record
-
-Create an order record defined for your firm.
-
-### Example
-```ruby
-# load the gem
-require 'nucleus_api'
-# Setup authorization
-NucleusApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
-end
-
-
-api_instance = NucleusApi::OrderApi.new
-
-order_info_request = NucleusApi::Order.new # Order | orderInfoRequest
-
-
-begin
-  #Create an order record
-  result = api_instance.get_order_all_using_get(order_info_request)
-  p result
-rescue NucleusApi::ApiError => e
-  puts "Exception when calling OrderApi->get_order_all_using_get: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **order_info_request** | [**Order**](Order.md)| orderInfoRequest | 
-
-### Return type
-
-[**Order**](Order.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: */*
-
-
-
-# **get_order_all_using_get1**
-> PageOrder get_order_all_using_get1(opts)
+> PageOrder get_order_all_using_get(opts)
 
 List all order records
 
@@ -1146,8 +1165,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -1161,10 +1181,10 @@ opts = {
 
 begin
   #List all order records
-  result = api_instance.get_order_all_using_get1(opts)
+  result = api_instance.get_order_all_using_get(opts)
   p result
 rescue NucleusApi::ApiError => e
-  puts "Exception when calling OrderApi->get_order_all_using_get1: #{e}"
+  puts "Exception when calling OrderApi->get_order_all_using_get: #{e}"
 end
 ```
 
@@ -1211,15 +1231,16 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
 opts = { 
-  ascending: false, # BOOLEAN | ascending
+  ascending: true, # BOOLEAN | ascending
   filter: 'filter_example', # String | filter
-  order_by: 'update_date', # String | order_by
+  order_by: 'order_bulk_id', # String | order_by
   page: 0, # Integer | page
   size: 25 # Integer | size
 }
@@ -1237,9 +1258,9 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ascending** | **BOOLEAN**| ascending | [optional] [default to false]
+ **ascending** | **BOOLEAN**| ascending | [optional] [default to true]
  **filter** | **String**| filter | [optional] 
- **order_by** | **String**| order_by | [optional] [default to update_date]
+ **order_by** | **String**| order_by | [optional] [default to order_bulk_id]
  **page** | **Integer**| page | [optional] [default to 0]
  **size** | **Integer**| size | [optional] [default to 25]
 
@@ -1276,8 +1297,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -1341,8 +1363,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -1397,8 +1420,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -1462,8 +1486,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -1518,8 +1543,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -1574,8 +1600,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -1633,8 +1660,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 
@@ -1692,8 +1720,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OrderApi.new
 

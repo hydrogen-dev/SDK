@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**modelHoldingDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**modelHoldingDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
 **modelHoldingId** | [**UUID**](UUID.md) |  |  [optional]
 **securityAssetClass** | **String** |  |  [optional]
 **securityCompositions** | [**List&lt;SecurityCompositionVO&gt;**](SecurityCompositionVO.md) |  |  [optional]

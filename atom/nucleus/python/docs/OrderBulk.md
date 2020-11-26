@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **str** | accountId | 
 **create_date** | **datetime** |  | [optional] 
-**_date** | **datetime** | date | 
+**_date** | **date** | date | 
 **id** | **str** |  | [optional] 
 **metadata** | **dict(str, str)** |  | [optional] 
 **model_id** | **str** | modelId | 

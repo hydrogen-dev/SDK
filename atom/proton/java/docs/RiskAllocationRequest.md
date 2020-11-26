@@ -4,21 +4,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**optConfig** | [**OptConfig**](OptConfig.md) |  |  [optional]
 **allocations** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
-**useProxyData** | **Boolean** |  |  [optional]
 **clientId** | [**UUID**](UUID.md) |  |  [optional]
-**riskScore** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**optConfig** | **Object** |  |  [optional]
-**marketDataSource** | [**MarketDataSourceEnum**](#MarketDataSourceEnum) |  |  [optional]
 **allocationMethod** | [**AllocationMethodEnum**](#AllocationMethodEnum) |  | 
-
-
-<a name="MarketDataSourceEnum"></a>
-## Enum: MarketDataSourceEnum
-Name | Value
----- | -----
-NUCLEUS | &quot;nucleus&quot;
-INTEGRATION | &quot;integration&quot;
+**riskScore** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**useProxyData** | **Boolean** |  |  [optional]
+**marketDataSource** | [**MarketDataSourceEnum**](#MarketDataSourceEnum) |  |  [optional]
 
 
 <a name="AllocationMethodEnum"></a>
@@ -27,6 +19,14 @@ Name | Value
 ---- | -----
 SELECT | &quot;select&quot;
 CREATE | &quot;create&quot;
+
+
+<a name="MarketDataSourceEnum"></a>
+## Enum: MarketDataSourceEnum
+Name | Value
+---- | -----
+NUCLEUS | &quot;nucleus&quot;
+INTEGRATION | &quot;integration&quot;
 
 
 

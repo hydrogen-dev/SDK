@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **create_date** | **DateTime** |  | [optional] 
-**date** | **DateTime** | Date | 
+**date** | **Date** | Date | 
 **id** | **String** |  | [optional] 
 **model_id** | **String** | modelId | 
 **price** | **Float** | price | 

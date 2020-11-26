@@ -4,27 +4,28 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sigma** | **List&lt;Float&gt;** |  |  [optional]
-**maxBal** | [**List&lt;BigDecimal&gt;**](BigDecimal.md) |  |  [optional]
-**allocationId** | [**UUID**](UUID.md) |  |  [optional]
-**accountId** | [**UUID**](UUID.md) |  |  [optional]
-**resultType** | [**ResultTypeEnum**](#ResultTypeEnum) |  |  [optional]
-**aggregationAccountId** | [**UUID**](UUID.md) |  |  [optional]
-**marketDataSource** | [**MarketDataSourceEnum**](#MarketDataSourceEnum) |  |  [optional]
 **maxSample** | **List&lt;Float&gt;** |  |  [optional]
-**portfolioId** | [**UUID**](UUID.md) |  |  [optional]
+**p** | [**List&lt;BigDecimal&gt;**](BigDecimal.md) |  |  [optional]
+**aggregationAccountId** | [**UUID**](UUID.md) |  |  [optional]
+**allocationId** | [**UUID**](UUID.md) |  |  [optional]
 **mu** | **List&lt;Float&gt;** |  |  [optional]
-**frequencyInterval** | [**FrequencyIntervalEnum**](#FrequencyIntervalEnum) |  |  [optional]
-**retMod** | **List&lt;Float&gt;** |  |  [optional]
-**minSample** | **List&lt;Float&gt;** |  |  [optional]
 **n** | **Integer** |  |  [optional]
-**cf** | [**List&lt;List&lt;BigDecimal&gt;&gt;**](List.md) |  | 
-**modelId** | [**UUID**](UUID.md) |  |  [optional]
-**useProxyData** | **Boolean** |  |  [optional]
+**sigma** | **List&lt;Float&gt;** |  |  [optional]
+**accountId** | [**UUID**](UUID.md) |  |  [optional]
 **initBal** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **removeOutliers** | **Boolean** |  |  [optional]
+**modelId** | [**UUID**](UUID.md) |  |  [optional]
+**maxBal** | [**List&lt;BigDecimal&gt;**](BigDecimal.md) |  |  [optional]
 **minBal** | [**List&lt;BigDecimal&gt;**](BigDecimal.md) |  |  [optional]
-**p** | [**List&lt;BigDecimal&gt;**](BigDecimal.md) |  |  [optional]
+**useProxyData** | **Boolean** |  |  [optional]
+**cf** | [**List&lt;List&lt;BigDecimal&gt;&gt;**](List.md) |  | 
+**resultType** | [**ResultTypeEnum**](#ResultTypeEnum) |  |  [optional]
+**retMod** | **List&lt;Float&gt;** |  |  [optional]
+**marketDataSource** | [**MarketDataSourceEnum**](#MarketDataSourceEnum) |  |  [optional]
+**portfolioId** | [**UUID**](UUID.md) |  |  [optional]
+**frequencyInterval** | [**FrequencyIntervalEnum**](#FrequencyIntervalEnum) |  |  [optional]
+**createLog** | **Boolean** |  |  [optional]
+**minSample** | **List&lt;Float&gt;** |  |  [optional]
 
 
 <a name="ResultTypeEnum"></a>

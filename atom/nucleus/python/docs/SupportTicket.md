@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 **account_id** | **str** | SupportTicket account Id   | [optional] 
 **assigned_to** | **str** | SupportTicket assignee id  | [optional] 
 **client_id** | **str** | SupportTicket Client Id   | [optional] 
-**close_time** | **datetime** | SupportTicket close time | [optional] 
+**close_time** | **date** | SupportTicket close time | [optional] 
 **create_date** | **datetime** |  | [optional] 
 **description** | **str** | SupportTicket description | 
 **id** | **str** |  | [optional] 
 **metadata** | **dict(str, str)** |  | [optional] 
-**open_time** | **datetime** | SupportTicket open time | 
+**open_time** | **date** | SupportTicket open time | 
 **secondary_id** | **str** |  | [optional] 
 **status** | **str** | SupportTicket status | [optional] 
 **subject** | **str** | SupportTicket subject | [optional] 

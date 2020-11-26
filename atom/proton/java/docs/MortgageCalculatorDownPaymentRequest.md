@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**mortgageTerm** | **Integer** |  |  [optional]
-**homePrice** | **Float** |  | 
 **periodicPayment** | **Float** |  | 
+**homePrice** | **Float** |  | 
+**mortgageTerm** | **Integer** |  |  [optional]
 **interestRate** | **Float** |  |  [optional]
 
 

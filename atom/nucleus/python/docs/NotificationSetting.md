@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **frequency_unit** | **str** | frequency_unit | [optional] 
 **id** | **str** |  | [optional] 
 **is_receive** | **bool** | is_receive | [optional] 
+**last_run_date** | **datetime** | last_run_date | [optional] 
 **metadata** | **dict(str, str)** | metadata | [optional] 
 **notification_id** | **str** | notification_id | 
 **secondary_id** | **str** |  | [optional] 

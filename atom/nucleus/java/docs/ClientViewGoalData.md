@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **decumulationHorizon** | **Double** |  |  [optional]
 **goalAmount** | **Double** |  |  [optional]
 **goalAssetSizeByGoal** | **Double** |  |  [optional]
-**goalAssetSizeByGoalDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**goalAssetSizeByGoalDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
 **goalCategory** | **String** |  |  [optional]
 **goalCreateDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **goalId** | [**UUID**](UUID.md) |  |  [optional]

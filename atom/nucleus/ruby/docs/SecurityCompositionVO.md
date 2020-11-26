@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**end_date** | **DateTime** |  | [optional] 
+**end_date** | **Date** |  | [optional] 
 **security_asset_class** | **String** |  | [optional] 
 **security_countries** | [**Array&lt;SecurityCountryVO&gt;**](SecurityCountryVO.md) |  | [optional] 
 **security_create_date** | **DateTime** |  | [optional] 
@@ -16,6 +16,6 @@ Name | Type | Description | Notes
 **security_ticker** | **String** |  | [optional] 
 **security_update_date** | **DateTime** |  | [optional] 
 **security_weight** | **Float** |  | [optional] 
-**start_date** | **DateTime** |  | [optional] 
+**start_date** | **Date** |  | [optional] 
 
 

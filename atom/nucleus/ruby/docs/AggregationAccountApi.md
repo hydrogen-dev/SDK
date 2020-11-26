@@ -52,8 +52,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
@@ -108,8 +109,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
@@ -164,8 +166,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
@@ -220,8 +223,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
@@ -276,8 +280,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
@@ -332,8 +337,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
@@ -388,8 +394,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
@@ -444,8 +451,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
@@ -500,8 +508,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
@@ -555,8 +564,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
@@ -593,7 +603,7 @@ nil (empty response body)
 
 
 # **delete_aggregation_account_transaction_using_delete**
-> AggregationAccountTransaction delete_aggregation_account_transaction_using_delete(aggregation_account_transaction_id)
+> delete_aggregation_account_transaction_using_delete(aggregation_account_transaction_id)
 
 Delete an aggregation account transaction
 
@@ -610,8 +620,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
@@ -620,8 +631,7 @@ aggregation_account_transaction_id = 'aggregation_account_transaction_id_example
 
 begin
   #Delete an aggregation account transaction
-  result = api_instance.delete_aggregation_account_transaction_using_delete(aggregation_account_transaction_id)
-  p result
+  api_instance.delete_aggregation_account_transaction_using_delete(aggregation_account_transaction_id)
 rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->delete_aggregation_account_transaction_using_delete: #{e}"
 end
@@ -635,7 +645,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AggregationAccountTransaction**](AggregationAccountTransaction.md)
+nil (empty response body)
 
 ### Authorization
 
@@ -666,8 +676,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
@@ -704,7 +715,7 @@ nil (empty response body)
 
 
 # **get_aggregation_account_aggregate_data_using_get**
-> AggregationAccountAggregateDataVO get_aggregation_account_aggregate_data_using_get(aggregation_account_id)
+> Object get_aggregation_account_aggregate_data_using_get(aggregation_account_id, opts)
 
 Retrieve an aggregation account aggregate data
 
@@ -721,17 +732,21 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
 aggregation_account_id = 'aggregation_account_id_example' # String | UUID aggregation_account_id
 
+opts = { 
+  currency_conversion: 'currency_conversion_example' # String | USD
+}
 
 begin
   #Retrieve an aggregation account aggregate data
-  result = api_instance.get_aggregation_account_aggregate_data_using_get(aggregation_account_id)
+  result = api_instance.get_aggregation_account_aggregate_data_using_get(aggregation_account_id, opts)
   p result
 rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->get_aggregation_account_aggregate_data_using_get: #{e}"
@@ -743,10 +758,11 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aggregation_account_id** | [**String**](.md)| UUID aggregation_account_id | 
+ **currency_conversion** | **String**| USD | [optional] 
 
 ### Return type
 
-[**AggregationAccountAggregateDataVO**](AggregationAccountAggregateDataVO.md)
+**Object**
 
 ### Authorization
 
@@ -777,8 +793,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
@@ -842,13 +859,15 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
+  currency_conversion: 'currency_conversion_example', # String | currency_conversion
   filter: 'filter_example', # String | filter
   order_by: 'update_date', # String | order_by
   page: 0, # Integer | page
@@ -869,6 +888,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **BOOLEAN**| ascending | [optional] [default to false]
+ **currency_conversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **order_by** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -890,7 +910,7 @@ Name | Type | Description  | Notes
 
 
 # **get_aggregation_account_balance_using_get**
-> AggregationAccountBalance get_aggregation_account_balance_using_get(aggregation_account_balance_id)
+> AggregationAccountBalance get_aggregation_account_balance_using_get(aggregation_account_balance_id, opts)
 
 Retrieve an aggregation account balance
 
@@ -907,17 +927,21 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
 aggregation_account_balance_id = 'aggregation_account_balance_id_example' # String | UUID aggregation_account_balance_id
 
+opts = { 
+  currency_conversion: 'currency_conversion_example' # String | USD
+}
 
 begin
   #Retrieve an aggregation account balance
-  result = api_instance.get_aggregation_account_balance_using_get(aggregation_account_balance_id)
+  result = api_instance.get_aggregation_account_balance_using_get(aggregation_account_balance_id, opts)
   p result
 rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->get_aggregation_account_balance_using_get: #{e}"
@@ -929,6 +953,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aggregation_account_balance_id** | [**String**](.md)| UUID aggregation_account_balance_id | 
+ **currency_conversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -963,13 +988,15 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
+  currency_conversion: 'currency_conversion_example', # String | currency_conversion
   filter: 'filter_example', # String | filter
   order_by: 'update_date', # String | order_by
   page: 0, # Integer | page
@@ -990,6 +1017,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **BOOLEAN**| ascending | [optional] [default to false]
+ **currency_conversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **order_by** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -1011,7 +1039,7 @@ Name | Type | Description  | Notes
 
 
 # **get_aggregation_account_holding_using_get**
-> AggregationAccountHolding get_aggregation_account_holding_using_get(aggregation_account_holding_id)
+> AggregationAccountHolding get_aggregation_account_holding_using_get(aggregation_account_holding_id, opts)
 
 Retrieve an aggregation account holding
 
@@ -1028,17 +1056,21 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
 aggregation_account_holding_id = 'aggregation_account_holding_id_example' # String | UUID aggregation_account_holding_id
 
+opts = { 
+  currency_conversion: 'currency_conversion_example' # String | USD
+}
 
 begin
   #Retrieve an aggregation account holding
-  result = api_instance.get_aggregation_account_holding_using_get(aggregation_account_holding_id)
+  result = api_instance.get_aggregation_account_holding_using_get(aggregation_account_holding_id, opts)
   p result
 rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->get_aggregation_account_holding_using_get: #{e}"
@@ -1050,6 +1082,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aggregation_account_holding_id** | [**String**](.md)| UUID aggregation_account_holding_id | 
+ **currency_conversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -1067,7 +1100,7 @@ Name | Type | Description  | Notes
 
 
 # **get_aggregation_account_overview_using_get**
-> AggregationDataForClientParentResponseVO get_aggregation_account_overview_using_get(client_id)
+> Object get_aggregation_account_overview_using_get(client_id, opts)
 
 Retrieve an aggregation account aggregate data
 
@@ -1084,17 +1117,21 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
 client_id = 'client_id_example' # String | UUID client_id
 
+opts = { 
+  currency_conversion: 'currency_conversion_example' # String | USD
+}
 
 begin
   #Retrieve an aggregation account aggregate data
-  result = api_instance.get_aggregation_account_overview_using_get(client_id)
+  result = api_instance.get_aggregation_account_overview_using_get(client_id, opts)
   p result
 rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->get_aggregation_account_overview_using_get: #{e}"
@@ -1106,10 +1143,11 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_id** | [**String**](.md)| UUID client_id | 
+ **currency_conversion** | **String**| USD | [optional] 
 
 ### Return type
 
-[**AggregationDataForClientParentResponseVO**](AggregationDataForClientParentResponseVO.md)
+**Object**
 
 ### Authorization
 
@@ -1140,13 +1178,15 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
+  currency_conversion: 'currency_conversion_example', # String | currency_conversion
   filter: 'filter_example', # String | filter
   order_by: 'update_date', # String | order_by
   page: 0, # Integer | page
@@ -1167,6 +1207,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **BOOLEAN**| ascending | [optional] [default to false]
+ **currency_conversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **order_by** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -1188,7 +1229,7 @@ Name | Type | Description  | Notes
 
 
 # **get_aggregation_account_transaction_using_get**
-> AggregationAccountTransaction get_aggregation_account_transaction_using_get(aggregation_account_transaction_id)
+> AggregationAccountTransaction get_aggregation_account_transaction_using_get(aggregation_account_transaction_id, opts)
 
 Retrieve an aggregation account transaction
 
@@ -1205,17 +1246,21 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
 aggregation_account_transaction_id = 'aggregation_account_transaction_id_example' # String | UUID aggregation_account_transaction_id
 
+opts = { 
+  currency_conversion: 'currency_conversion_example' # String | USD
+}
 
 begin
   #Retrieve an aggregation account transaction
-  result = api_instance.get_aggregation_account_transaction_using_get(aggregation_account_transaction_id)
+  result = api_instance.get_aggregation_account_transaction_using_get(aggregation_account_transaction_id, opts)
   p result
 rescue NucleusApi::ApiError => e
   puts "Exception when calling AggregationAccountApi->get_aggregation_account_transaction_using_get: #{e}"
@@ -1227,6 +1272,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aggregation_account_transaction_id** | [**String**](.md)| UUID aggregation_account_transaction_id | 
+ **currency_conversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -1261,8 +1307,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
@@ -1317,8 +1364,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
@@ -1359,7 +1407,7 @@ Name | Type | Description  | Notes
 
 
 # **update_aggregation_account_bulk_using_put**
-> AggregationAccount update_aggregation_account_bulk_using_put(aggregation_account_list)
+> Array&lt;AggregationAccount&gt; update_aggregation_account_bulk_using_put(aggregation_account_list)
 
 Update a bulk aggregation account
 
@@ -1376,8 +1424,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
@@ -1401,7 +1450,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AggregationAccount**](AggregationAccount.md)
+[**Array&lt;AggregationAccount&gt;**](AggregationAccount.md)
 
 ### Authorization
 
@@ -1432,8 +1481,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
@@ -1488,8 +1538,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
@@ -1547,8 +1598,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
@@ -1606,8 +1658,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AggregationAccountApi.new
 

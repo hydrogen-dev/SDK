@@ -28,6 +28,7 @@ var defaultClient = HydrogenProtonApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
+
 var apiInstance = new HydrogenProtonApi.GoalsApi();
 
 var goalAccumulationAllocationRequest = new HydrogenProtonApi.GoalAccumulationAllocationRequest(); // GoalAccumulationAllocationRequest | Request payload for Goal Accumulation Allocation
@@ -78,6 +79,7 @@ var defaultClient = HydrogenProtonApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
+
 var apiInstance = new HydrogenProtonApi.GoalsApi();
 
 var goalAccumulationRecommendationRequest = new HydrogenProtonApi.GoalAccumulationRecommendationRequest(); // GoalAccumulationRecommendationRequest | Request payload for Goal Accumulation Recommendation
@@ -128,6 +130,7 @@ var defaultClient = HydrogenProtonApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
+
 var apiInstance = new HydrogenProtonApi.GoalsApi();
 
 var goalAccumulationStatusRequest = new HydrogenProtonApi.GoalAccumulationStatusRequest(); // GoalAccumulationStatusRequest | Request payload for Goal Accumulation Status
@@ -178,6 +181,7 @@ var defaultClient = HydrogenProtonApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
+
 var apiInstance = new HydrogenProtonApi.GoalsApi();
 
 var goalDecumulationAllocationRequest = new HydrogenProtonApi.GoalDecumulationAllocationRequest(); // GoalDecumulationAllocationRequest | Request payload for Goal Decumulation Allocation
@@ -228,6 +232,7 @@ var defaultClient = HydrogenProtonApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
+
 var apiInstance = new HydrogenProtonApi.GoalsApi();
 
 var goalDecumulationRecommendationRequest = new HydrogenProtonApi.GoalDecumulationRecommendationRequest(); // GoalDecumulationRecommendationRequest | Request payload for Goal Decumulation Recommendation
@@ -278,6 +283,7 @@ var defaultClient = HydrogenProtonApi.ApiClient.instance;
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
+
 var apiInstance = new HydrogenProtonApi.GoalsApi();
 
 var goalDecumulationStatusRequest = new HydrogenProtonApi.GoalDecumulationStatusRequest(); // GoalDecumulationStatusRequest | Request payload for Goal Decumulation Status

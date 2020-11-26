@@ -3,24 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**optConfig** | [**OptConfig**](OptConfig.md) |  | [optional] 
 **allocations** | **[String]** |  | [optional] 
-**useProxyData** | **Boolean** |  | [optional] [default to false]
 **clientId** | **String** |  | [optional] 
-**riskScore** | **Number** |  | [optional] 
-**optConfig** | **Object** |  | [optional] 
-**marketDataSource** | **String** |  | [optional] [default to 'nucleus']
 **allocationMethod** | **String** |  | 
-
-
-<a name="MarketDataSourceEnum"></a>
-## Enum: MarketDataSourceEnum
-
-
-* `nucleus` (value: `"nucleus"`)
-
-* `integration` (value: `"integration"`)
-
-
+**riskScore** | **Number** |  | [optional] 
+**useProxyData** | **Boolean** |  | [optional] [default to false]
+**marketDataSource** | **String** |  | [optional] [default to 'nucleus']
 
 
 <a name="AllocationMethodEnum"></a>
@@ -30,6 +19,17 @@ Name | Type | Description | Notes
 * `select` (value: `"select"`)
 
 * `create` (value: `"create"`)
+
+
+
+
+<a name="MarketDataSourceEnum"></a>
+## Enum: MarketDataSourceEnum
+
+
+* `nucleus` (value: `"nucleus"`)
+
+* `integration` (value: `"integration"`)
 
 
 

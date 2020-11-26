@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **description** | **string** | description | [optional] 
 **id** | **string** |  | [optional] 
+**is_delegated_authority** | **bool** | is_delegated_authority | [optional] 
 **issuing_bank** | **string** | issuingBank | 
 **metadata** | **map[string,string]** |  | [optional] 
 **name** | **string** | name | 

@@ -10,6 +10,5 @@ Name | Type | Description | Notes
 **metadata** | **Hash&lt;String, String&gt;** | metadata | [optional] 
 **secondary_id** | **String** |  | [optional] 
 **update_date** | **DateTime** |  | [optional] 
-**visit_time_stamp** | **DateTime** | visit_time_stamp | [optional] 
 
 

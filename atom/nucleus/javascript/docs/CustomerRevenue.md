@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**accountingMethod** | **String** | accounting_method | 
 **createDate** | **Date** |  | [optional] 
 **currencyCode** | **String** | currency_code | 
 **customerId** | **String** | customerId | 

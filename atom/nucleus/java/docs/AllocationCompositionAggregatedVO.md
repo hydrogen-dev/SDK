@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **allocationCompositionCreateDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
-**allocationCompositionDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**allocationCompositionDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
 **allocationCompositionId** | [**UUID**](UUID.md) |  |  [optional]
 **allocationCompositionUpdateDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **modelCategory** | **String** |  |  [optional]

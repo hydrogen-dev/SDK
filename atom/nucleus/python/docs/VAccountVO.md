@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **account_type_id** | **str** |  | [optional] 
 **account_type_name** | **str** |  | [optional] 
 **goal_asset_size_by_account** | **float** |  | [optional] 
-**goal_asset_size_by_account_date** | **datetime** |  | [optional] 
+**goal_asset_size_by_account_date** | **date** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

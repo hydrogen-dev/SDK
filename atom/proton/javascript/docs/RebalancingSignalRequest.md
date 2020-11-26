@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**startDate** | **Date** |  | 
-**endDate** | **Date** |  | 
-**modelId** | **String** |  | [optional] 
-**initialWeights** | **Object** |  | [optional] 
-**settings** | **Object** |  | [optional] 
+**settings** | [**Settings**](Settings.md) |  | [optional] 
 **updateModel** | **Boolean** |  | [optional] [default to false]
+**modelId** | **String** |  | [optional] 
+**endDate** | **Date** |  | 
+**initialWeights** | **Object** |  | [optional] 
+**startDate** | **Date** |  | 
 
 

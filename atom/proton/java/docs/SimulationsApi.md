@@ -23,10 +23,8 @@ Run a historical analysis for a group of investments
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import SimulationsApi;
 
@@ -34,14 +32,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 SimulationsApi apiInstance = new SimulationsApi();
 BacktestRequest backtestRequest = new BacktestRequest(); // BacktestRequest | Request payload for Backtest
@@ -83,10 +83,8 @@ Analyze a group of investments against key historical events
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import SimulationsApi;
 
@@ -94,14 +92,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 SimulationsApi apiInstance = new SimulationsApi();
 EventStudyRequest eventStudyRequest = new EventStudyRequest(); // EventStudyRequest | Request payload for Event Study
@@ -143,10 +143,8 @@ Simulate the future growth of a group of investments
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import SimulationsApi;
 
@@ -154,14 +152,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 SimulationsApi apiInstance = new SimulationsApi();
 MonteCarloRequest monteCarloRequest = new MonteCarloRequest(); // MonteCarloRequest | Request payload for Monte Carlo
@@ -203,10 +203,8 @@ Simulate the impact of adding, removing, reducing, or increasing various positio
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import SimulationsApi;
 
@@ -214,14 +212,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 SimulationsApi apiInstance = new SimulationsApi();
 PortfolioWhatIfRequest portfolioWhatIfRequest = new PortfolioWhatIfRequest(); // PortfolioWhatIfRequest | Request payload for Portfolio What-If
@@ -263,10 +263,8 @@ Simulate the future growth of a simple savings account
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import SimulationsApi;
 
@@ -274,14 +272,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 SimulationsApi apiInstance = new SimulationsApi();
 SavingsCalculatorRequest savingsCalculatorRequest = new SavingsCalculatorRequest(); // SavingsCalculatorRequest | Request payload for Savings Calculator
@@ -323,10 +323,8 @@ Analyze a group of investments against a series of external economic factors
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import SimulationsApi;
 
@@ -334,14 +332,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 SimulationsApi apiInstance = new SimulationsApi();
 ScenarioAnalysisRequest scnearioAnalysisRequest = new ScenarioAnalysisRequest(); // ScenarioAnalysisRequest | Request payload for Scenario Analysis
@@ -383,10 +383,8 @@ Analyze a group of investments against an external economic factor
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import SimulationsApi;
 
@@ -394,14 +392,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 SimulationsApi apiInstance = new SimulationsApi();
 SensitivityAnalysisRequest sensitivityAnalysisRequest = new SensitivityAnalysisRequest(); // SensitivityAnalysisRequest | Request payload for Sensitivity Analysis

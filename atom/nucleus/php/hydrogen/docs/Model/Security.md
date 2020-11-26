@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **asset_class** | **string** | Security asset class | [optional] 
+**broker** | **string** | Security broker | [optional] 
 **category** | **string** | Security category | [optional] 
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **currency_code** | **string** | currency_code | [optional] 

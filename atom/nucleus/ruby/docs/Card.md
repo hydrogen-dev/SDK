@@ -16,7 +16,8 @@ Name | Type | Description | Notes
 **create_date** | **DateTime** |  | [optional] 
 **credit_limit** | **Float** | creditLimit | [optional] 
 **currency_code** | **String** | currencyCode | 
-**expiry_date** | **DateTime** | expiryDate | [optional] 
+**expiry_date** | **Date** | expiryDate | [optional] 
+**fulfillment** | **String** | fulfillment | [optional] 
 **id** | **String** |  | [optional] 
 **institution_name** | **String** | institutionName | 
 **is_active** | **BOOLEAN** | is_active | [optional] 

@@ -22,8 +22,8 @@ Create a new benchmark for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import BenchmarkApi;
 
@@ -34,10 +34,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 BenchmarkApi apiInstance = new BenchmarkApi();
 Benchmark benchmark = new Benchmark(); // Benchmark | benchmark
@@ -79,8 +83,8 @@ Permanently delete a benchmark.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import BenchmarkApi;
 
@@ -91,10 +95,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 BenchmarkApi apiInstance = new BenchmarkApi();
 UUID benchmarkId = new UUID(); // UUID | UUID benchmark_id
@@ -135,8 +143,8 @@ Get details for all benchmarks defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import BenchmarkApi;
 
@@ -147,10 +155,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 BenchmarkApi apiInstance = new BenchmarkApi();
 Boolean ascending = false; // Boolean | ascending
@@ -200,8 +212,8 @@ Get a list of asset sizes by date for a benchmark.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import BenchmarkApi;
 
@@ -212,16 +224,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 BenchmarkApi apiInstance = new BenchmarkApi();
-UUID benchmarkId = new UUID(); // UUID | benchmark_id
-OffsetDateTime endDate = OffsetDateTime.now(); // OffsetDateTime | end_date
+UUID benchmarkId = new UUID(); // UUID | UUID benchmark_id
+LocalDate endDate = LocalDate.now(); // LocalDate | end date
 String sortType = "sortType_example"; // String | sort_type
-OffsetDateTime startDate = OffsetDateTime.now(); // OffsetDateTime | start_date
+LocalDate startDate = LocalDate.now(); // LocalDate | start date
 try {
     List<DateDoubleVO> result = apiInstance.getBenchmarkAssetSizeAllUsingGet(benchmarkId, endDate, sortType, startDate);
     System.out.println(result);
@@ -235,10 +251,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **benchmarkId** | [**UUID**](.md)| benchmark_id |
- **endDate** | **OffsetDateTime**| end_date | [optional] [default to null]
+ **benchmarkId** | [**UUID**](.md)| UUID benchmark_id |
+ **endDate** | **LocalDate**| end date | [optional]
  **sortType** | **String**| sort_type | [optional]
- **startDate** | **OffsetDateTime**| start_date | [optional] [default to null]
+ **startDate** | **LocalDate**| start date | [optional]
 
 ### Return type
 
@@ -263,8 +279,8 @@ Retrieve the information for a benchmark.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import BenchmarkApi;
 
@@ -275,10 +291,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 BenchmarkApi apiInstance = new BenchmarkApi();
 UUID benchmarkId = new UUID(); // UUID | UUID benchmark_id
@@ -320,8 +340,8 @@ Updated the information for a benchmark.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import BenchmarkApi;
 
@@ -332,10 +352,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 BenchmarkApi apiInstance = new BenchmarkApi();
 Benchmark benchmark = new Benchmark(); // Benchmark | benchmark

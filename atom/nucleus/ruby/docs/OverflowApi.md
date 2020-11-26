@@ -32,8 +32,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OverflowApi.new
 
@@ -88,12 +89,13 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OverflowApi.new
 
-overflow_vo = NucleusApi::Overflow.new # Overflow | overflowVO
+overflow_vo = NucleusApi::OverflowVO.new # OverflowVO | overflowVO
 
 
 begin
@@ -109,7 +111,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **overflow_vo** | [**Overflow**](Overflow.md)| overflowVO | 
+ **overflow_vo** | [**OverflowVO**](OverflowVO.md)| overflowVO | 
 
 ### Return type
 
@@ -144,8 +146,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OverflowApi.new
 
@@ -199,8 +202,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OverflowApi.new
 
@@ -264,8 +268,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OverflowApi.new
 
@@ -329,8 +334,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OverflowApi.new
 
@@ -385,8 +391,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OverflowApi.new
 
@@ -441,8 +448,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::OverflowApi.new
 

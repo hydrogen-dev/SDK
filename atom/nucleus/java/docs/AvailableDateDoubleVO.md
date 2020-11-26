@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **date** | **String** | date |  [optional]
 **value** | **Double** | value |  [optional]
 **valueAvailable** | **Double** | valueAvailable |  [optional]
+**valuePending** | **Double** | valuePending |  [optional]
 
 
 

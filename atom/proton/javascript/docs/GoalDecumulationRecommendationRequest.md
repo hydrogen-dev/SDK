@@ -3,27 +3,28 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientId** | **String** |  | [optional] 
-**adjustForCompounding** | **Boolean** |  | [optional] [default to false]
-**compoundingRate** | **Number** |  | [optional] [default to 0.0]
-**horizonFrequency** | **String** |  | [optional] [default to 'year']
-**confTgt** | **Number** |  | [optional] [default to 0.9]
-**dHorizon** | **Number** |  | [optional] 
-**tradingDaysPerYear** | **Number** |  | [optional] [default to 252]
-**withdrawalTax** | **Number** |  | [optional] [default to 0.0]
-**threshType** | **String** |  | [optional] [default to 'perc']
-**recommendType** | **String** |  | [optional] [default to 'horizon']
 **goalId** | **String** |  | [optional] 
-**depositConfig** | **[Object]** |  | [optional] 
-**n** | **Number** |  | [optional] [default to 1000]
-**recommendationConfig** | **Object** |  | [optional] 
-**thresh** | **Number** |  | [optional] 
-**aHorizon** | **Number** |  | [optional] 
-**withdrawalConfig** | [**[GoalWithdrawalConfig]**](GoalWithdrawalConfig.md) |  | [optional] 
 **currInv** | **Number** |  | [optional] 
-**pRet** | **[Number]** |  | 
-**pRisk** | **[Number]** |  | 
+**dHorizon** | **Number** |  | [optional] 
+**n** | **Number** |  | [optional] [default to 1000]
+**horizonFrequency** | **String** |  | [optional] [default to 'year']
+**clientId** | **String** |  | [optional] 
 **removeOutliers** | **Boolean** |  | [optional] [default to true]
+**withdrawalConfig** | [**[GoalWithdrawalConfig]**](GoalWithdrawalConfig.md) |  | [optional] 
+**aHorizon** | **Number** |  | [optional] 
+**confTgt** | **Number** |  | [optional] [default to 0.9]
+**pRet** | **[Number]** |  | 
+**threshType** | **String** |  | [optional] [default to 'perc']
+**thresh** | **Number** |  | [optional] 
+**depositConfig** | [**[DecumulationGoalDepositConfig]**](DecumulationGoalDepositConfig.md) |  | [optional] 
+**recommendationConfig** | [**RecommendationConfig1**](RecommendationConfig1.md) |  | [optional] 
+**compoundingRate** | **Number** |  | [optional] [default to 0.0]
+**withdrawalTax** | **Number** |  | [optional] [default to 0.0]
+**tradingDaysPerYear** | **Number** |  | [optional] [default to 252]
+**adjustForCompounding** | **Boolean** |  | [optional] [default to false]
+**pRisk** | **[Number]** |  | 
+**createLog** | **Boolean** |  | [optional] [default to false]
+**recommendType** | **String** |  | [optional] [default to 'horizon']
 
 
 <a name="HorizonFrequencyEnum"></a>

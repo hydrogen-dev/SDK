@@ -58,10 +58,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 bank_link_info_request = nucleus_api.BankLink() # BankLink | bankLinkInfoRequest
@@ -121,10 +122,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 daily_deposit_request = nucleus_api.DailyDeposit() # DailyDeposit | dailyDepositRequest
@@ -184,10 +186,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 funding_request = nucleus_api.Funding() # Funding | fundingRequest
@@ -247,10 +250,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 external_account_transfer_request = nucleus_api.ExternalAccountTransfer() # ExternalAccountTransfer | externalAccountTransferRequest
@@ -310,10 +314,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 daily_withdrawal_request = nucleus_api.DailyWithdrawal() # DailyWithdrawal | dailyWithdrawalRequest
@@ -373,10 +378,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 bank_link_id = 'bank_link_id_example' # str | UUID bank_link_id
@@ -435,10 +441,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 deposit_id = 'deposit_id_example' # str | UUID deposit_id
@@ -497,10 +504,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 funding_id = 'funding_id_example' # str | UUID funding_id
@@ -534,7 +542,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_transfer_using_delete**
-> delete_transfer_using_delete(transfer, transfer_id)
+> delete_transfer_using_delete(transfer_id)
 
 Delete a transfer request
 
@@ -559,18 +567,18 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
-transfer = 'transfer_example' # str | UUID external_account_transfer_id
-transfer_id = 'transfer_id_example' # str | transfer_id
+transfer_id = 'transfer_id_example' # str | UUID external_account_transfer_id
 
 try:
     # Delete a transfer request
-    api_instance.delete_transfer_using_delete(transfer, transfer_id)
+    api_instance.delete_transfer_using_delete(transfer_id)
 except ApiException as e:
     print("Exception when calling FundingApi->delete_transfer_using_delete: %s\n" % e)
 ```
@@ -579,8 +587,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transfer** | [**str**](.md)| UUID external_account_transfer_id | 
- **transfer_id** | [**str**](.md)| transfer_id | 
+ **transfer_id** | [**str**](.md)| UUID external_account_transfer_id | 
 
 ### Return type
 
@@ -623,10 +630,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 withdrawal_id = 'withdrawal_id_example' # str | UUID withdrawal_id
@@ -660,7 +668,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_bank_link_all_using_get**
-> PageBankLink get_bank_link_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+> PageBankLink get_bank_link_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
 
 List all bank links
 
@@ -685,13 +693,15 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
@@ -699,7 +709,7 @@ size = 25 # int | size (optional) (default to 25)
 
 try:
     # List all bank links
-    api_response = api_instance.get_bank_link_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    api_response = api_instance.get_bank_link_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FundingApi->get_bank_link_all_using_get: %s\n" % e)
@@ -710,6 +720,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **str**| currency_conversion | [optional] 
  **filter** | **str**| filter | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -731,7 +742,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_bank_link_using_get**
-> BankLink get_bank_link_using_get(bank_link_id)
+> BankLink get_bank_link_using_get(bank_link_id, currency_conversion=currency_conversion)
 
 Retrieve a bank link
 
@@ -756,17 +767,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 bank_link_id = 'bank_link_id_example' # str | UUID bank_link_id
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 
 try:
     # Retrieve a bank link
-    api_response = api_instance.get_bank_link_using_get(bank_link_id)
+    api_response = api_instance.get_bank_link_using_get(bank_link_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FundingApi->get_bank_link_using_get: %s\n" % e)
@@ -777,6 +790,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bank_link_id** | [**str**](.md)| UUID bank_link_id | 
+ **currency_conversion** | **str**| USD | [optional] 
 
 ### Return type
 
@@ -794,7 +808,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_deposit_all_using_get**
-> PageDailyDeposit get_deposit_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+> PageDailyDeposit get_deposit_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
 
 List all deposit requests
 
@@ -819,13 +833,15 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
@@ -833,7 +849,7 @@ size = 25 # int | size (optional) (default to 25)
 
 try:
     # List all deposit requests
-    api_response = api_instance.get_deposit_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    api_response = api_instance.get_deposit_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FundingApi->get_deposit_all_using_get: %s\n" % e)
@@ -844,6 +860,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **str**| currency_conversion | [optional] 
  **filter** | **str**| filter | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -865,7 +882,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_deposit_using_get**
-> DailyDeposit get_deposit_using_get(deposit_id)
+> DailyDeposit get_deposit_using_get(deposit_id, currency_conversion=currency_conversion)
 
 Retrieve a deposit request
 
@@ -890,17 +907,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 deposit_id = 'deposit_id_example' # str | UUID deposit_id
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 
 try:
     # Retrieve a deposit request
-    api_response = api_instance.get_deposit_using_get(deposit_id)
+    api_response = api_instance.get_deposit_using_get(deposit_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FundingApi->get_deposit_using_get: %s\n" % e)
@@ -911,6 +930,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deposit_id** | [**str**](.md)| UUID deposit_id | 
+ **currency_conversion** | **str**| USD | [optional] 
 
 ### Return type
 
@@ -928,7 +948,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_funding_all_using_get**
-> PageFunding get_funding_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+> PageFunding get_funding_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
 
 List all funding requests 
 
@@ -953,13 +973,15 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
@@ -967,7 +989,7 @@ size = 25 # int | size (optional) (default to 25)
 
 try:
     # List all funding requests 
-    api_response = api_instance.get_funding_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    api_response = api_instance.get_funding_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FundingApi->get_funding_all_using_get: %s\n" % e)
@@ -978,6 +1000,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **str**| currency_conversion | [optional] 
  **filter** | **str**| filter | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -999,7 +1022,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_funding_using_get**
-> Funding get_funding_using_get(funding_id)
+> Funding get_funding_using_get(funding_id, currency_conversion=currency_conversion)
 
 Retrieve a funding request
 
@@ -1024,17 +1047,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 funding_id = 'funding_id_example' # str | UUID funding_id
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 
 try:
     # Retrieve a funding request
-    api_response = api_instance.get_funding_using_get(funding_id)
+    api_response = api_instance.get_funding_using_get(funding_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FundingApi->get_funding_using_get: %s\n" % e)
@@ -1045,6 +1070,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **funding_id** | [**str**](.md)| UUID funding_id | 
+ **currency_conversion** | **str**| USD | [optional] 
 
 ### Return type
 
@@ -1062,7 +1088,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_transfer_all_using_get**
-> PageExternalAccountTransfer get_transfer_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+> PageExternalAccountTransfer get_transfer_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
 
 List all transfer requests
 
@@ -1087,13 +1113,15 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
@@ -1101,7 +1129,7 @@ size = 25 # int | size (optional) (default to 25)
 
 try:
     # List all transfer requests
-    api_response = api_instance.get_transfer_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    api_response = api_instance.get_transfer_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FundingApi->get_transfer_all_using_get: %s\n" % e)
@@ -1112,6 +1140,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **str**| currency_conversion | [optional] 
  **filter** | **str**| filter | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -1133,7 +1162,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_transfer_using_get**
-> ExternalAccountTransfer get_transfer_using_get(external_account_transfer_id, transfer_id)
+> ExternalAccountTransfer get_transfer_using_get(transfer_id, currency_conversion=currency_conversion)
 
 Retrieve a transfer request
 
@@ -1158,18 +1187,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
-external_account_transfer_id = 'external_account_transfer_id_example' # str | UUID external_account_transfer_id
-transfer_id = 'transfer_id_example' # str | transfer_id
+transfer_id = 'transfer_id_example' # str | UUID external_account_transfer_id
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 
 try:
     # Retrieve a transfer request
-    api_response = api_instance.get_transfer_using_get(external_account_transfer_id, transfer_id)
+    api_response = api_instance.get_transfer_using_get(transfer_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FundingApi->get_transfer_using_get: %s\n" % e)
@@ -1179,8 +1209,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **external_account_transfer_id** | [**str**](.md)| UUID external_account_transfer_id | 
- **transfer_id** | [**str**](.md)| transfer_id | 
+ **transfer_id** | [**str**](.md)| UUID external_account_transfer_id | 
+ **currency_conversion** | **str**| USD | [optional] 
 
 ### Return type
 
@@ -1198,7 +1228,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_withdrawal_all_using_get**
-> PageDailyWithdrawal get_withdrawal_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+> PageDailyWithdrawal get_withdrawal_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
 
 List all withdrawal requests
 
@@ -1223,13 +1253,15 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
@@ -1237,7 +1269,7 @@ size = 25 # int | size (optional) (default to 25)
 
 try:
     # List all withdrawal requests
-    api_response = api_instance.get_withdrawal_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    api_response = api_instance.get_withdrawal_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FundingApi->get_withdrawal_all_using_get: %s\n" % e)
@@ -1248,6 +1280,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **str**| currency_conversion | [optional] 
  **filter** | **str**| filter | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -1269,7 +1302,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_withdrawal_using_get**
-> DailyWithdrawal get_withdrawal_using_get(withdrawal_id)
+> DailyWithdrawal get_withdrawal_using_get(withdrawal_id, currency_conversion=currency_conversion)
 
 Retrieve a withdrawal request
 
@@ -1294,17 +1327,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 withdrawal_id = 'withdrawal_id_example' # str | UUID withdrawal_id
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 
 try:
     # Retrieve a withdrawal request
-    api_response = api_instance.get_withdrawal_using_get(withdrawal_id)
+    api_response = api_instance.get_withdrawal_using_get(withdrawal_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FundingApi->get_withdrawal_using_get: %s\n" % e)
@@ -1315,6 +1350,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **withdrawal_id** | [**str**](.md)| UUID withdrawal_id | 
+ **currency_conversion** | **str**| USD | [optional] 
 
 ### Return type
 
@@ -1357,10 +1393,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 bank_link_list = [nucleus_api.BankLink()] # list[BankLink] | bankLinkList
@@ -1420,10 +1457,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 bank_link = nucleus_api.BankLink() # BankLink | bank_link
@@ -1485,10 +1523,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 deposit = nucleus_api.DailyDeposit() # DailyDeposit | deposit
@@ -1550,10 +1589,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 funding = nucleus_api.Funding() # Funding | funding
@@ -1615,10 +1655,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 transfer = nucleus_api.ExternalAccountTransfer() # ExternalAccountTransfer | transfer
@@ -1680,10 +1721,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 withdrawal = nucleus_api.DailyWithdrawal() # DailyWithdrawal | withdrawal

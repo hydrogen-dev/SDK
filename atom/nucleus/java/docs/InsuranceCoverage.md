@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **category** | **String** | category |  [optional]
-**coverageAmount** | **String** | coverageAmount | 
+**coverageAmount** | **Double** | coverageAmount | 
 **createDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **currencyCode** | **String** | currencyCode | 
-**deductible** | **String** | deductible |  [optional]
+**deductible** | **Double** | deductible |  [optional]
 **description** | **String** | description |  [optional]
 **id** | [**UUID**](UUID.md) |  |  [optional]
 **isActive** | **Boolean** | is_active |  [optional]

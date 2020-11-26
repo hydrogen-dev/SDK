@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **depositAmount** | **Float** |  |  [optional]
-**depositFrequencyInterval** | [**DepositFrequencyIntervalEnum**](#DepositFrequencyIntervalEnum) |  |  [optional]
 **adjustDepositForInflation** | **Boolean** |  |  [optional]
+**depositFrequencyInterval** | [**DepositFrequencyIntervalEnum**](#DepositFrequencyIntervalEnum) |  |  [optional]
 
 
 <a name="DepositFrequencyIntervalEnum"></a>

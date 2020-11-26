@@ -44,8 +44,8 @@ Create a balance records under an aggregation accounts.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -56,10 +56,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 List<AggregationAccountBalance> aggregationAccountBalance = Arrays.asList(new AggregationAccountBalance()); // List<AggregationAccountBalance> | aggregationAccountBalance
@@ -101,8 +105,8 @@ Create a balance record under an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -113,10 +117,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 AggregationAccountBalance aggregationAccountBalance = new AggregationAccountBalance(); // AggregationAccountBalance | aggregationAccountBalance
@@ -158,8 +166,8 @@ Create a bulk aggregation account under a client.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -170,10 +178,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 List<AggregationAccount> aggregationAccountList = Arrays.asList(new AggregationAccount()); // List<AggregationAccount> | aggregationAccountList
@@ -215,8 +227,8 @@ Create a bulk aggregation account holding.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -227,10 +239,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 List<AggregationAccountHolding> aggregationTransaction = Arrays.asList(new AggregationAccountHolding()); // List<AggregationAccountHolding> | aggregationTransaction
@@ -272,8 +288,8 @@ Create a holding record under an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -284,10 +300,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 AggregationAccountHolding aggregationAccountHolding = new AggregationAccountHolding(); // AggregationAccountHolding | aggregationAccountHolding
@@ -329,8 +349,8 @@ Create a bulk transaction record under an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -341,10 +361,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 List<AggregationAccountTransaction> aggregationAccountTransactions = Arrays.asList(new AggregationAccountTransaction()); // List<AggregationAccountTransaction> | aggregationAccountTransactions
@@ -386,8 +410,8 @@ Create a transaction record under an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -398,10 +422,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 AggregationAccountTransaction aggregationAccountTransaction = new AggregationAccountTransaction(); // AggregationAccountTransaction | aggregationAccountTransaction
@@ -443,8 +471,8 @@ Create an aggregation account under a client.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -455,10 +483,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 AggregationAccount aggregationAccount = new AggregationAccount(); // AggregationAccount | aggregationAccount
@@ -500,8 +532,8 @@ Permanently delete a balance record for an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -512,10 +544,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 UUID aggregationAccountBalanceId = new UUID(); // UUID | UUID aggregation_account_balance_id
@@ -556,8 +592,8 @@ Permanently delete a holding record for an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -568,10 +604,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 UUID aggregationAccountHoldingId = new UUID(); // UUID | UUID aggregation_account_holding_id
@@ -604,7 +644,7 @@ null (empty response body)
 
 <a name="deleteAggregationAccountTransactionUsingDelete"></a>
 # **deleteAggregationAccountTransactionUsingDelete**
-> AggregationAccountTransaction deleteAggregationAccountTransactionUsingDelete(aggregationAccountTransactionId)
+> deleteAggregationAccountTransactionUsingDelete(aggregationAccountTransactionId)
 
 Delete an aggregation account transaction
 
@@ -612,8 +652,8 @@ Permanently delete a transaction record for an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -624,16 +664,19 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 UUID aggregationAccountTransactionId = new UUID(); // UUID | UUID aggregation_account_transaction_id
 try {
-    AggregationAccountTransaction result = apiInstance.deleteAggregationAccountTransactionUsingDelete(aggregationAccountTransactionId);
-    System.out.println(result);
+    apiInstance.deleteAggregationAccountTransactionUsingDelete(aggregationAccountTransactionId);
 } catch (ApiException e) {
     System.err.println("Exception when calling AggregationAccountApi#deleteAggregationAccountTransactionUsingDelete");
     e.printStackTrace();
@@ -648,7 +691,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AggregationAccountTransaction**](AggregationAccountTransaction.md)
+null (empty response body)
 
 ### Authorization
 
@@ -669,8 +712,8 @@ Permanently delete an aggregation account under a client.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -681,10 +724,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 UUID aggregationAccountId = new UUID(); // UUID | UUID aggregation_account_id
@@ -717,7 +764,7 @@ null (empty response body)
 
 <a name="getAggregationAccountAggregateDataUsingGet"></a>
 # **getAggregationAccountAggregateDataUsingGet**
-> AggregationAccountAggregateDataVO getAggregationAccountAggregateDataUsingGet(aggregationAccountId)
+> Object getAggregationAccountAggregateDataUsingGet(aggregationAccountId, currencyConversion)
 
 Retrieve an aggregation account aggregate data
 
@@ -725,8 +772,8 @@ Retrieve the information for a specific aggregation account associated with a cl
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -737,15 +784,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 UUID aggregationAccountId = new UUID(); // UUID | UUID aggregation_account_id
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    AggregationAccountAggregateDataVO result = apiInstance.getAggregationAccountAggregateDataUsingGet(aggregationAccountId);
+    Object result = apiInstance.getAggregationAccountAggregateDataUsingGet(aggregationAccountId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AggregationAccountApi#getAggregationAccountAggregateDataUsingGet");
@@ -758,10 +810,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aggregationAccountId** | [**UUID**](.md)| UUID aggregation_account_id |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
-[**AggregationAccountAggregateDataVO**](AggregationAccountAggregateDataVO.md)
+**Object**
 
 ### Authorization
 
@@ -782,8 +835,8 @@ Get information for all aggregation accounts for all clients defined for your fi
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -794,10 +847,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 Boolean ascending = false; // Boolean | ascending
@@ -839,7 +896,7 @@ Name | Type | Description  | Notes
 
 <a name="getAggregationAccountBalanceAllUsingGet"></a>
 # **getAggregationAccountBalanceAllUsingGet**
-> PageAggregationAccountBalance getAggregationAccountBalanceAllUsingGet(ascending, filter, orderBy, page, size)
+> PageAggregationAccountBalance getAggregationAccountBalanceAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size)
 
 List all aggregation account balances
 
@@ -847,8 +904,8 @@ Get all of the balance records for all aggregation accounts defined for your fir
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -859,19 +916,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 Boolean ascending = false; // Boolean | ascending
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PageAggregationAccountBalance result = apiInstance.getAggregationAccountBalanceAllUsingGet(ascending, filter, orderBy, page, size);
+    PageAggregationAccountBalance result = apiInstance.getAggregationAccountBalanceAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AggregationAccountApi#getAggregationAccountBalanceAllUsingGet");
@@ -884,6 +946,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -904,7 +967,7 @@ Name | Type | Description  | Notes
 
 <a name="getAggregationAccountBalanceUsingGet"></a>
 # **getAggregationAccountBalanceUsingGet**
-> AggregationAccountBalance getAggregationAccountBalanceUsingGet(aggregationAccountBalanceId)
+> AggregationAccountBalance getAggregationAccountBalanceUsingGet(aggregationAccountBalanceId, currencyConversion)
 
 Retrieve an aggregation account balance
 
@@ -912,8 +975,8 @@ Retrieve the information for a specific balance record for an aggregation accoun
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -924,15 +987,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 UUID aggregationAccountBalanceId = new UUID(); // UUID | UUID aggregation_account_balance_id
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    AggregationAccountBalance result = apiInstance.getAggregationAccountBalanceUsingGet(aggregationAccountBalanceId);
+    AggregationAccountBalance result = apiInstance.getAggregationAccountBalanceUsingGet(aggregationAccountBalanceId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AggregationAccountApi#getAggregationAccountBalanceUsingGet");
@@ -945,6 +1013,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aggregationAccountBalanceId** | [**UUID**](.md)| UUID aggregation_account_balance_id |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
@@ -961,7 +1030,7 @@ Name | Type | Description  | Notes
 
 <a name="getAggregationAccountHoldingAllUsingGet"></a>
 # **getAggregationAccountHoldingAllUsingGet**
-> PageAggregationAccountHolding getAggregationAccountHoldingAllUsingGet(ascending, filter, orderBy, page, size)
+> PageAggregationAccountHolding getAggregationAccountHoldingAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size)
 
 List all aggregation account holdings
 
@@ -969,8 +1038,8 @@ Get all of the holding records for all aggregation accounts defined for your fir
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -981,19 +1050,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 Boolean ascending = false; // Boolean | ascending
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PageAggregationAccountHolding result = apiInstance.getAggregationAccountHoldingAllUsingGet(ascending, filter, orderBy, page, size);
+    PageAggregationAccountHolding result = apiInstance.getAggregationAccountHoldingAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AggregationAccountApi#getAggregationAccountHoldingAllUsingGet");
@@ -1006,6 +1080,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -1026,7 +1101,7 @@ Name | Type | Description  | Notes
 
 <a name="getAggregationAccountHoldingUsingGet"></a>
 # **getAggregationAccountHoldingUsingGet**
-> AggregationAccountHolding getAggregationAccountHoldingUsingGet(aggregationAccountHoldingId)
+> AggregationAccountHolding getAggregationAccountHoldingUsingGet(aggregationAccountHoldingId, currencyConversion)
 
 Retrieve an aggregation account holding
 
@@ -1034,8 +1109,8 @@ Retrieve the information for a specific holding record for an aggregation accoun
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -1046,15 +1121,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 UUID aggregationAccountHoldingId = new UUID(); // UUID | UUID aggregation_account_holding_id
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    AggregationAccountHolding result = apiInstance.getAggregationAccountHoldingUsingGet(aggregationAccountHoldingId);
+    AggregationAccountHolding result = apiInstance.getAggregationAccountHoldingUsingGet(aggregationAccountHoldingId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AggregationAccountApi#getAggregationAccountHoldingUsingGet");
@@ -1067,6 +1147,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aggregationAccountHoldingId** | [**UUID**](.md)| UUID aggregation_account_holding_id |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
@@ -1083,7 +1164,7 @@ Name | Type | Description  | Notes
 
 <a name="getAggregationAccountOverviewUsingGet"></a>
 # **getAggregationAccountOverviewUsingGet**
-> AggregationDataForClientParentResponseVO getAggregationAccountOverviewUsingGet(clientId)
+> Object getAggregationAccountOverviewUsingGet(clientId, currencyConversion)
 
 Retrieve an aggregation account aggregate data
 
@@ -1091,8 +1172,8 @@ Retrieve the information for a specific aggregation account with aggregate data 
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -1103,15 +1184,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 UUID clientId = new UUID(); // UUID | UUID client_id
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    AggregationDataForClientParentResponseVO result = apiInstance.getAggregationAccountOverviewUsingGet(clientId);
+    Object result = apiInstance.getAggregationAccountOverviewUsingGet(clientId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AggregationAccountApi#getAggregationAccountOverviewUsingGet");
@@ -1124,10 +1210,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientId** | [**UUID**](.md)| UUID client_id |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
-[**AggregationDataForClientParentResponseVO**](AggregationDataForClientParentResponseVO.md)
+**Object**
 
 ### Authorization
 
@@ -1140,7 +1227,7 @@ Name | Type | Description  | Notes
 
 <a name="getAggregationAccountTransactionAllUsingGet"></a>
 # **getAggregationAccountTransactionAllUsingGet**
-> PageAggregationAccountTransaction getAggregationAccountTransactionAllUsingGet(ascending, filter, orderBy, page, size)
+> PageAggregationAccountTransaction getAggregationAccountTransactionAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size)
 
 List all aggregation account transactions
 
@@ -1148,8 +1235,8 @@ Get all of the transaction records for all aggregation accounts defined for your
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -1160,19 +1247,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 Boolean ascending = false; // Boolean | ascending
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PageAggregationAccountTransaction result = apiInstance.getAggregationAccountTransactionAllUsingGet(ascending, filter, orderBy, page, size);
+    PageAggregationAccountTransaction result = apiInstance.getAggregationAccountTransactionAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AggregationAccountApi#getAggregationAccountTransactionAllUsingGet");
@@ -1185,6 +1277,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -1205,7 +1298,7 @@ Name | Type | Description  | Notes
 
 <a name="getAggregationAccountTransactionUsingGet"></a>
 # **getAggregationAccountTransactionUsingGet**
-> AggregationAccountTransaction getAggregationAccountTransactionUsingGet(aggregationAccountTransactionId)
+> AggregationAccountTransaction getAggregationAccountTransactionUsingGet(aggregationAccountTransactionId, currencyConversion)
 
 Retrieve an aggregation account transaction
 
@@ -1213,8 +1306,8 @@ Retrieve the information for a specific transaction record for an aggregation ac
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -1225,15 +1318,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 UUID aggregationAccountTransactionId = new UUID(); // UUID | UUID aggregation_account_transaction_id
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    AggregationAccountTransaction result = apiInstance.getAggregationAccountTransactionUsingGet(aggregationAccountTransactionId);
+    AggregationAccountTransaction result = apiInstance.getAggregationAccountTransactionUsingGet(aggregationAccountTransactionId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AggregationAccountApi#getAggregationAccountTransactionUsingGet");
@@ -1246,6 +1344,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aggregationAccountTransactionId** | [**UUID**](.md)| UUID aggregation_account_transaction_id |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
@@ -1270,8 +1369,8 @@ Retrieve the information for a specific aggregation account associated with a cl
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -1282,10 +1381,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 UUID aggregationAccountId = new UUID(); // UUID | UUID aggregation_account_id
@@ -1327,8 +1430,8 @@ Update a balance record for an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -1339,10 +1442,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 AggregationAccountBalance aggregationAccountBalance = new AggregationAccountBalance(); // AggregationAccountBalance | aggregation_account_balance
@@ -1378,7 +1485,7 @@ Name | Type | Description  | Notes
 
 <a name="updateAggregationAccountBulkUsingPut"></a>
 # **updateAggregationAccountBulkUsingPut**
-> AggregationAccount updateAggregationAccountBulkUsingPut(aggregationAccountList)
+> List&lt;AggregationAccount&gt; updateAggregationAccountBulkUsingPut(aggregationAccountList)
 
 Update a bulk aggregation account
 
@@ -1386,8 +1493,8 @@ Update a bulk aggregation account under a client.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -1398,15 +1505,19 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 List<AggregationAccount> aggregationAccountList = Arrays.asList(new AggregationAccount()); // List<AggregationAccount> | aggregationAccountList
 try {
-    AggregationAccount result = apiInstance.updateAggregationAccountBulkUsingPut(aggregationAccountList);
+    List<AggregationAccount> result = apiInstance.updateAggregationAccountBulkUsingPut(aggregationAccountList);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AggregationAccountApi#updateAggregationAccountBulkUsingPut");
@@ -1422,7 +1533,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AggregationAccount**](AggregationAccount.md)
+[**List&lt;AggregationAccount&gt;**](AggregationAccount.md)
 
 ### Authorization
 
@@ -1443,8 +1554,8 @@ Update a bulk holding record for an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -1455,10 +1566,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 List<AggregationAccountHolding> aggregationAccountHolding = Arrays.asList(new AggregationAccountHolding()); // List<AggregationAccountHolding> | aggregationAccountHolding
@@ -1500,8 +1615,8 @@ Update a holding record for an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -1512,10 +1627,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 AggregationAccountHolding aggregationAccountHolding = new AggregationAccountHolding(); // AggregationAccountHolding | aggregation_account_holding
@@ -1559,8 +1678,8 @@ Update a transaction record for an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -1571,10 +1690,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 AggregationAccountTransaction aggregationAccountTransaction = new AggregationAccountTransaction(); // AggregationAccountTransaction | aggregation_account_transaction
@@ -1618,8 +1741,8 @@ Update the information for an aggregation account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
@@ -1630,10 +1753,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 AggregationAccount aggregationAccount = new AggregationAccount(); // AggregationAccount | aggregation_account

@@ -3,26 +3,27 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**thresh** | **float** |  | [optional] 
-**n** | **int** |  | [optional] [default to 1000]
-**trading_days_per_year** | **int** |  | [optional] [default to 252]
-**conf_tgt** | **float** |  | [optional] [default to 0.9]
-**client_id** | **string** |  | [optional] 
-**curr_inv** | **float** |  | [optional] 
-**withdrawal_tax** | **float** |  | [optional] [default to 0.0]
-**p_ret** | **float[]** |  | 
-**thresh_type** | **string** |  | [optional] [default to 'perc']
-**p_risk** | **float[]** |  | 
-**adjust_for_compounding** | **bool** |  | [optional] [default to false]
-**remove_outliers** | **bool** |  | [optional] [default to true]
-**recommend_type** | **string** |  | [optional] [default to 'horizon']
-**recommendation_config** | **object** |  | [optional] 
 **goal_id** | **string** |  | [optional] 
+**curr_inv** | **float** |  | [optional] 
+**n** | **int** |  | [optional] [default to 1000]
 **horizon_frequency** | **string** |  | [optional] [default to 'year']
-**deposit_config** | **object[]** |  | [optional] 
-**compounding_rate** | **float** |  | [optional] [default to 0.0]
-**goal_config** | **object** |  | [optional] 
+**client_id** | **string** |  | [optional] 
+**remove_outliers** | **bool** |  | [optional] [default to true]
+**goal_config** | [**\com\hydrogen\proton\Model\GoalConfig**](GoalConfig.md) |  | [optional] 
+**conf_tgt** | **float** |  | [optional] [default to 0.9]
+**p_ret** | **float[]** |  | 
 **horizon** | **int** |  | [optional] 
+**thresh_type** | **string** |  | [optional] [default to 'perc']
+**thresh** | **float** |  | [optional] 
+**deposit_config** | [**\com\hydrogen\proton\Model\AccumulationGoalDepositConfig[]**](AccumulationGoalDepositConfig.md) |  | [optional] 
+**recommendation_config** | [**\com\hydrogen\proton\Model\RecommendationConfig1**](RecommendationConfig1.md) |  | [optional] 
+**compounding_rate** | **float** |  | [optional] [default to 0.0]
+**withdrawal_tax** | **float** |  | [optional] [default to 0.0]
+**trading_days_per_year** | **int** |  | [optional] [default to 252]
+**adjust_for_compounding** | **bool** |  | [optional] [default to false]
+**p_risk** | **float[]** |  | 
+**create_log** | **bool** |  | [optional] [default to false]
+**recommend_type** | **string** |  | [optional] [default to 'horizon']
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

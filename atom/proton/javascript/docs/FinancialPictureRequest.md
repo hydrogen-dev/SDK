@@ -4,11 +4,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **showCategoryBreakdown** | **Boolean** |  | [optional] [default to true]
-**showHistory** | **Boolean** |  | [optional] [default to false]
-**startDate** | **Date** |  | [optional] 
-**endDate** | **Date** |  | [optional] 
-**currencyCode** | **String** |  | [optional] [default to 'USD']
 **clientId** | **String** |  | 
+**currencyConversion** | **String** |  | [optional] 
+**createLog** | **Boolean** |  | [optional] [default to false]
 **showChange** | **Boolean** |  | [optional] [default to false]
+**endDate** | **Date** |  | [optional] 
+**currencyCode** | **String** |  | [optional] 
+**startDate** | **Date** |  | [optional] 
+**showHistory** | **Boolean** |  | [optional] [default to false]
 
 

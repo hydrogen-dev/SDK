@@ -45,14 +45,47 @@ Create a new bank link for an account.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.FundingApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var bankLinkInfoRequest = new HydrogenNucleusApi.BankLink(); // BankLink | bankLinkInfoRequest
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        updateFinancialOffer();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -61,7 +94,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createBankLinkUsingPost(bankLinkInfoRequest, callback);
+const createBankLink = () => {   
+    var apiInstance = new HydrogenNucleusApi.FundingApi();
+    var bankLinkInfoRequest = new HydrogenNucleusApi.BankLink(); // BankLink | bankLinkInfoRequest
+    apiInstance.createBankLinkUsingPost(bankLinkInfoRequest, callback);
+}   
 ```
 
 ### Parameters
@@ -96,14 +133,47 @@ Create a new deposit request for an account.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.FundingApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var dailyDepositRequest = new HydrogenNucleusApi.DailyDeposit(); // DailyDeposit | dailyDepositRequest
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createDeposit();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -112,7 +182,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createDepositUsingPost(dailyDepositRequest, callback);
+const createDeposit = () => {   
+    var apiInstance = new HydrogenNucleusApi.FundingApi();
+    var dailyDepositRequest = new HydrogenNucleusApi.DailyDeposit(); // DailyDeposit | dailyDepositRequest
+    apiInstance.createDepositUsingPost(dailyDepositRequest, callback);
+}   
 ```
 
 ### Parameters
@@ -145,8 +219,8 @@ Create a new funding request for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -196,8 +270,8 @@ Create a new external account transfer for a client account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -247,8 +321,8 @@ Create a new withdrawal request for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -298,8 +372,8 @@ Permanently delete a bank link defined for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -349,8 +423,8 @@ Permanently delete a deposit request for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -400,8 +474,8 @@ Permanently delete a funding request defined for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -442,7 +516,7 @@ null (empty response body)
 
 <a name="deleteTransferUsingDelete"></a>
 # **deleteTransferUsingDelete**
-> deleteTransferUsingDelete(transfer, transferId)
+> deleteTransferUsingDelete(transferId)
 
 Delete a transfer request
 
@@ -451,17 +525,15 @@ Permanently delete a external account transfer from a client account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FundingApi();
 
-var transfer = "8397d8fd-e80d-48ea-bf79-81f32b12606e"; // String | UUID external_account_transfer_id
-
-var transferId = "transferId_example"; // String | transfer_id
+var transferId = "8397d8fd-e80d-48ea-bf79-81f32b12606e"; // String | UUID external_account_transfer_id
 
 
 var callback = function(error, data, response) {
@@ -471,15 +543,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteTransferUsingDelete(transfer, transferId, callback);
+apiInstance.deleteTransferUsingDelete(transferId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transfer** | **String**| UUID external_account_transfer_id | 
- **transferId** | **String**| transfer_id | 
+ **transferId** | **String**| UUID external_account_transfer_id | 
 
 ### Return type
 
@@ -505,8 +576,8 @@ Permanently delete a withdrawal request from an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -556,8 +627,8 @@ Get all bank links defined for all clients defined for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -566,6 +637,7 @@ var apiInstance = new HydrogenNucleusApi.FundingApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
+  'currencyConversion': "currencyConversion_example", // String | currency_conversion
   'filter': "filter_example", // String | filter
   'orderBy': "update_date", // String | order_by
   'page': 0, // Number | page
@@ -587,6 +659,7 @@ apiInstance.getBankLinkAllUsingGet(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Number**| page | [optional] [default to 0]
@@ -607,7 +680,7 @@ Name | Type | Description  | Notes
 
 <a name="getBankLinkUsingGet"></a>
 # **getBankLinkUsingGet**
-> BankLink getBankLinkUsingGet(bankLinkId)
+> BankLink getBankLinkUsingGet(bankLinkId, opts)
 
 Retrieve a bank link
 
@@ -616,8 +689,8 @@ Retrieve the information for a bank link for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -626,6 +699,9 @@ var apiInstance = new HydrogenNucleusApi.FundingApi();
 
 var bankLinkId = "4ff21db3-97ab-4bbd-9885-be6aec522c44"; // String | UUID bank_link_id
 
+var opts = { 
+  'currencyConversion': "currencyConversion_example" // String | USD
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -634,7 +710,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getBankLinkUsingGet(bankLinkId, callback);
+apiInstance.getBankLinkUsingGet(bankLinkId, opts, callback);
 ```
 
 ### Parameters
@@ -642,6 +718,7 @@ apiInstance.getBankLinkUsingGet(bankLinkId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankLinkId** | **String**| UUID bank_link_id | 
+ **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -667,8 +744,8 @@ Get the information for all deposit requests for all clients.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -677,6 +754,7 @@ var apiInstance = new HydrogenNucleusApi.FundingApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
+  'currencyConversion': "currencyConversion_example", // String | currency_conversion
   'filter': "filter_example", // String | filter
   'orderBy': "update_date", // String | order_by
   'page': 0, // Number | page
@@ -698,6 +776,7 @@ apiInstance.getDepositAllUsingGet(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Number**| page | [optional] [default to 0]
@@ -718,7 +797,7 @@ Name | Type | Description  | Notes
 
 <a name="getDepositUsingGet"></a>
 # **getDepositUsingGet**
-> DailyDeposit getDepositUsingGet(depositId)
+> DailyDeposit getDepositUsingGet(depositId, opts)
 
 Retrieve a deposit request
 
@@ -727,8 +806,8 @@ Retrieve the information for a deposit request for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -737,6 +816,9 @@ var apiInstance = new HydrogenNucleusApi.FundingApi();
 
 var depositId = "1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c"; // String | UUID deposit_id
 
+var opts = { 
+  'currencyConversion': "currencyConversion_example" // String | USD
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -745,7 +827,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getDepositUsingGet(depositId, callback);
+apiInstance.getDepositUsingGet(depositId, opts, callback);
 ```
 
 ### Parameters
@@ -753,6 +835,7 @@ apiInstance.getDepositUsingGet(depositId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **depositId** | **String**| UUID deposit_id | 
+ **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -778,8 +861,8 @@ Get the information for all funding requests defined for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -788,6 +871,7 @@ var apiInstance = new HydrogenNucleusApi.FundingApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
+  'currencyConversion': "currencyConversion_example", // String | currency_conversion
   'filter': "filter_example", // String | filter
   'orderBy': "update_date", // String | order_by
   'page': 0, // Number | page
@@ -809,6 +893,7 @@ apiInstance.getFundingAllUsingGet(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Number**| page | [optional] [default to 0]
@@ -829,7 +914,7 @@ Name | Type | Description  | Notes
 
 <a name="getFundingUsingGet"></a>
 # **getFundingUsingGet**
-> Funding getFundingUsingGet(fundingId)
+> Funding getFundingUsingGet(fundingId, opts)
 
 Retrieve a funding request
 
@@ -838,8 +923,8 @@ Retrieve the information for a funding request for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -848,6 +933,9 @@ var apiInstance = new HydrogenNucleusApi.FundingApi();
 
 var fundingId = "708689ce-b0fd-4062-9954-6c8dd82707cf"; // String | UUID funding_id
 
+var opts = { 
+  'currencyConversion': "currencyConversion_example" // String | USD
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -856,7 +944,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getFundingUsingGet(fundingId, callback);
+apiInstance.getFundingUsingGet(fundingId, opts, callback);
 ```
 
 ### Parameters
@@ -864,6 +952,7 @@ apiInstance.getFundingUsingGet(fundingId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fundingId** | **String**| UUID funding_id | 
+ **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -889,8 +978,8 @@ Get the information for all external account transfers defined for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -899,6 +988,7 @@ var apiInstance = new HydrogenNucleusApi.FundingApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
+  'currencyConversion': "currencyConversion_example", // String | currency_conversion
   'filter': "filter_example", // String | filter
   'orderBy': "update_date", // String | order_by
   'page': 0, // Number | page
@@ -920,6 +1010,7 @@ apiInstance.getTransferAllUsingGet(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Number**| page | [optional] [default to 0]
@@ -940,7 +1031,7 @@ Name | Type | Description  | Notes
 
 <a name="getTransferUsingGet"></a>
 # **getTransferUsingGet**
-> ExternalAccountTransfer getTransferUsingGet(externalAccountTransferId, transferId)
+> ExternalAccountTransfer getTransferUsingGet(transferId, opts)
 
 Retrieve a transfer request
 
@@ -949,18 +1040,19 @@ Retrieve the information for a external account transfer for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FundingApi();
 
-var externalAccountTransferId = "8397d8fd-e80d-48ea-bf79-81f32b12606e"; // String | UUID external_account_transfer_id
+var transferId = "8397d8fd-e80d-48ea-bf79-81f32b12606e"; // String | UUID external_account_transfer_id
 
-var transferId = "transferId_example"; // String | transfer_id
-
+var opts = { 
+  'currencyConversion': "currencyConversion_example" // String | USD
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -969,15 +1061,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getTransferUsingGet(externalAccountTransferId, transferId, callback);
+apiInstance.getTransferUsingGet(transferId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **externalAccountTransferId** | **String**| UUID external_account_transfer_id | 
- **transferId** | **String**| transfer_id | 
+ **transferId** | **String**| UUID external_account_transfer_id | 
+ **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -1003,8 +1095,8 @@ Get the information for all withdrawal requests for all clients.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -1013,6 +1105,7 @@ var apiInstance = new HydrogenNucleusApi.FundingApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
+  'currencyConversion': "currencyConversion_example", // String | currency_conversion
   'filter': "filter_example", // String | filter
   'orderBy': "update_date", // String | order_by
   'page': 0, // Number | page
@@ -1034,6 +1127,7 @@ apiInstance.getWithdrawalAllUsingGet(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Number**| page | [optional] [default to 0]
@@ -1054,7 +1148,7 @@ Name | Type | Description  | Notes
 
 <a name="getWithdrawalUsingGet"></a>
 # **getWithdrawalUsingGet**
-> DailyWithdrawal getWithdrawalUsingGet(withdrawalId)
+> DailyWithdrawal getWithdrawalUsingGet(withdrawalId, opts)
 
 Retrieve a withdrawal request
 
@@ -1063,8 +1157,8 @@ Retrieve the information for a withdrawal request for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -1073,6 +1167,9 @@ var apiInstance = new HydrogenNucleusApi.FundingApi();
 
 var withdrawalId = "be07c93a-c0b0-4fb0-97e1-3a0f77b8c969"; // String | UUID withdrawal_id
 
+var opts = { 
+  'currencyConversion': "currencyConversion_example" // String | USD
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1081,7 +1178,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getWithdrawalUsingGet(withdrawalId, callback);
+apiInstance.getWithdrawalUsingGet(withdrawalId, opts, callback);
 ```
 
 ### Parameters
@@ -1089,6 +1186,7 @@ apiInstance.getWithdrawalUsingGet(withdrawalId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **withdrawalId** | **String**| UUID withdrawal_id | 
+ **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -1114,8 +1212,8 @@ Update bank link list for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -1165,8 +1263,8 @@ Update the information for a bank link for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -1219,8 +1317,8 @@ Update the information for a deposit request for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -1273,8 +1371,8 @@ Update the information for a funding request for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -1327,8 +1425,8 @@ Update the information for a external account transfer for a client account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -1381,8 +1479,8 @@ Update the information for a withdrawal request for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';

@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **depositAmount** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**depositFrequencyInterval** | [**DepositFrequencyIntervalEnum**](#DepositFrequencyIntervalEnum) |  |  [optional]
 **adjustDepositForInflation** | **Boolean** |  |  [optional]
 **depositDuration** | **Integer** |  |  [optional]
+**depositFrequencyInterval** | [**DepositFrequencyIntervalEnum**](#DepositFrequencyIntervalEnum) |  |  [optional]
 
 
 <a name="DepositFrequencyIntervalEnum"></a>

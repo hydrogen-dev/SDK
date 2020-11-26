@@ -4,19 +4,20 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**useProxyData** | **Boolean** |  |  [optional]
-**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**portfolioTickers** | **List&lt;String&gt;** |  |  [optional]
-**endDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**modelId** | [**UUID**](UUID.md) |  |  [optional]
-**allocationId** | [**UUID**](UUID.md) |  |  [optional]
-**accountId** | [**UUID**](UUID.md) |  |  [optional]
-**portfolioId** | [**UUID**](UUID.md) |  |  [optional]
-**portfolioWeights** | **List&lt;Float&gt;** |  |  [optional]
+**optConfig** | [**OptConfig1**](OptConfig1.md) |  |  [optional]
 **tgtType** | [**TgtTypeEnum**](#TgtTypeEnum) |  |  [optional]
+**portfolioTickers** | **List&lt;String&gt;** |  |  [optional]
+**createLog** | **Boolean** |  |  [optional]
 **aggregationAccountId** | [**UUID**](UUID.md) |  |  [optional]
-**optConfig** | **Object** |  |  [optional]
+**allocationId** | [**UUID**](UUID.md) |  |  [optional]
+**modelId** | [**UUID**](UUID.md) |  |  [optional]
+**portfolioWeights** | **List&lt;Float&gt;** |  |  [optional]
+**endDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**useProxyData** | **Boolean** |  |  [optional]
+**accountId** | [**UUID**](UUID.md) |  |  [optional]
 **marketDataSource** | [**MarketDataSourceEnum**](#MarketDataSourceEnum) |  |  [optional]
+**portfolioId** | [**UUID**](UUID.md) |  |  [optional]
 
 
 <a name="TgtTypeEnum"></a>

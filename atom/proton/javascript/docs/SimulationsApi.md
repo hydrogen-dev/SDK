@@ -24,14 +24,49 @@ Run a historical analysis for a group of investments
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.SimulationsApi();
 
-var backtestRequest = new HydrogenProtonApi.BacktestRequest(); // BacktestRequest | Request payload for Backtest
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createBacktest();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -41,7 +76,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.backtest(backtestRequest, callback);
+const createBacktest = () => {
+    var apiInstance = new HydrogenProtonApi.SimulationsApi();
+    var backtestRequest = new HydrogenProtonApi.BacktestRequest(); // BacktestRequest | Request payload for Backtest
+    apiInstance.backtest(backtestRequest, callback);
+}
 ```
 
 ### Parameters
@@ -74,14 +113,49 @@ Analyze a group of investments against key historical events
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.SimulationsApi();
 
-var eventStudyRequest = new HydrogenProtonApi.EventStudyRequest(); // EventStudyRequest | Request payload for Event Study
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createEventStudy();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -91,7 +165,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.eventStudy(eventStudyRequest, callback);
+const createEventStudy = () => {
+    var apiInstance = new HydrogenProtonApi.SimulationsApi();
+    var eventStudyRequest = new HydrogenProtonApi.EventStudyRequest(); // EventStudyRequest | Request payload for Event Study
+    apiInstance.eventStudy(eventStudyRequest, callback);
+}
 ```
 
 ### Parameters
@@ -124,14 +202,49 @@ Simulate the future growth of a group of investments
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.SimulationsApi();
 
-var monteCarloRequest = new HydrogenProtonApi.MonteCarloRequest(); // MonteCarloRequest | Request payload for Monte Carlo
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createMonteCarlo();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -141,7 +254,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.monteCarlo(monteCarloRequest, callback);
+const createMonteCarlo = () => {
+    var apiInstance = new HydrogenProtonApi.SimulationsApi();
+    var monteCarloRequest = new HydrogenProtonApi.MonteCarloRequest(); // MonteCarloRequest | Request payload for Monte Carlo
+    apiInstance.monteCarlo(monteCarloRequest, callback);
+}
 ```
 
 ### Parameters
@@ -174,14 +291,49 @@ Simulate the impact of adding, removing, reducing, or increasing various positio
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.SimulationsApi();
 
-var portfolioWhatIfRequest = new HydrogenProtonApi.PortfolioWhatIfRequest(); // PortfolioWhatIfRequest | Request payload for Portfolio What-If
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createPortfolioWhatIf();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -191,7 +343,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.portfolioWhatIf(portfolioWhatIfRequest, callback);
+const createPortfolioWhatIf = () => {
+    var apiInstance = new HydrogenProtonApi.SimulationsApi();
+    var portfolioWhatIfRequest = new HydrogenProtonApi.PortfolioWhatIfRequest(); // PortfolioWhatIfRequest | Request payload for Portfolio What-If
+    apiInstance.portfolioWhatIf(portfolioWhatIfRequest, callback);
+}
 ```
 
 ### Parameters
@@ -224,14 +380,49 @@ Simulate the future growth of a simple savings account
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.SimulationsApi();
 
-var savingsCalculatorRequest = new HydrogenProtonApi.SavingsCalculatorRequest(); // SavingsCalculatorRequest | Request payload for Savings Calculator
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createSavingsCalculator();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -241,7 +432,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.savingsCalculator(savingsCalculatorRequest, callback);
+const createSavingsCalculator = () => {
+    var apiInstance = new HydrogenProtonApi.SimulationsApi();
+    var savingsCalculatorRequest = new HydrogenProtonApi.SavingsCalculatorRequest(); // SavingsCalculatorRequest | Request payload for Savings Calculator
+    apiInstance.savingsCalculator(savingsCalculatorRequest, callback);
+}
 ```
 
 ### Parameters
@@ -274,14 +469,49 @@ Analyze a group of investments against a series of external economic factors
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.SimulationsApi();
 
-var scnearioAnalysisRequest = new HydrogenProtonApi.ScenarioAnalysisRequest(); // ScenarioAnalysisRequest | Request payload for Scenario Analysis
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createScenarioAnalysis();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -291,7 +521,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.scenarioAnalysis(scnearioAnalysisRequest, callback);
+const createScenarioAnalysis = () => {
+    var apiInstance = new HydrogenProtonApi.SimulationsApi();
+    var scnearioAnalysisRequest = new HydrogenProtonApi.ScenarioAnalysisRequest(); // ScenarioAnalysisRequest | Request payload for Scenario Analysis
+    apiInstance.scenarioAnalysis(scnearioAnalysisRequest, callback);
+}
 ```
 
 ### Parameters
@@ -324,14 +558,49 @@ Analyze a group of investments against an external economic factor
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.SimulationsApi();
 
-var sensitivityAnalysisRequest = new HydrogenProtonApi.SensitivityAnalysisRequest(); // SensitivityAnalysisRequest | Request payload for Sensitivity Analysis
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createSensitivityAnalysis();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -341,7 +610,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.sensitivityAnalysis(sensitivityAnalysisRequest, callback);
+const createSensitivityAnalysis = () => {
+    var apiInstance = new HydrogenProtonApi.SimulationsApi();
+    var sensitivityAnalysisRequest = new HydrogenProtonApi.SensitivityAnalysisRequest(); // SensitivityAnalysisRequest | Request payload for Sensitivity Analysis
+    apiInstance.sensitivityAnalysis(sensitivityAnalysisRequest, callback);
+}
 ```
 
 ### Parameters

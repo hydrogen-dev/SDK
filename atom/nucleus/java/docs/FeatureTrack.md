@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **metadata** | **Map&lt;String, String&gt;** | metadata |  [optional]
 **secondaryId** | **String** |  |  [optional]
 **updateDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
-**visitTimeStamp** | [**OffsetDateTime**](OffsetDateTime.md) | visit_time_stamp |  [optional]
 
 
 

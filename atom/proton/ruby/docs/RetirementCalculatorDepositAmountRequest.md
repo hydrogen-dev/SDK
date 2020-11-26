@@ -3,18 +3,18 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**retirement_income** | **Float** |  | [optional] [default to 0.0]
-**percent_of_expenses_covered** | **Float** |  | [optional] [default to 1.0]
-**deposit_schedule** | **Object** |  | [optional] 
-**retirement_age** | **Integer** |  | [optional] [default to 65]
-**portfolio_return** | **Float** |  | 
-**retirement_expenses** | **Float** |  | 
 **inflation_rate** | **Float** |  | [optional] [default to 0.0]
-**aggregation_account_ids** | **Array&lt;String&gt;** |  | [optional] 
 **current_age** | **Integer** |  | 
-**account_ids** | **Array&lt;String&gt;** |  | [optional] 
-**retirement_savings** | **Float** |  | [optional] [default to 0.0]
+**deposit_schedule** | [**CalculatorDepositSchedule**](CalculatorDepositSchedule.md) |  | [optional] 
+**portfolio_return** | **Float** |  | 
+**retirement_income** | **Float** |  | [optional] [default to 0.0]
+**aggregation_account_ids** | **Array&lt;String&gt;** |  | [optional] 
+**retirement_expenses** | **Float** |  | 
+**percent_of_expenses_covered** | **Float** |  | [optional] [default to 1.0]
 **retirement_tax** | **Float** |  | [optional] [default to 0.0]
+**account_ids** | **Array&lt;String&gt;** |  | [optional] 
+**retirement_age** | **Integer** |  | [optional] [default to 65]
 **death_age** | **Integer** |  | 
+**retirement_savings** | **Float** |  | [optional] [default to 0.0]
 
 

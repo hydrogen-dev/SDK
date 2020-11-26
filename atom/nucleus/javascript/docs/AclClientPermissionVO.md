@@ -12,13 +12,13 @@ Name | Type | Description | Notes
 ## Enum: PermissionTypeEnum
 
 
-* `[INQUIRY_ACCESS` (value: `"[INQUIRY_ACCESS"`)
+* `INQUIRY_ACCESS` (value: `"INQUIRY_ACCESS"`)
 
 * `LIMITED_AUTHORITY` (value: `"LIMITED_AUTHORITY"`)
 
 * `FULL_AUTHORITY` (value: `"FULL_AUTHORITY"`)
 
-* `POWER_OF_ATTORNEY]` (value: `"POWER_OF_ATTORNEY]"`)
+* `POWER_OF_ATTORNEY` (value: `"POWER_OF_ATTORNEY"`)
 
 
 

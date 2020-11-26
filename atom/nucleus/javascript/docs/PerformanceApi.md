@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**getBenchmarkPerformanceUsingGet**](PerformanceApi.md#getBenchmarkPerformanceUsingGet) | **GET** /benchmark/{benchmark_id}/performance | Benchmark Performance
 [**getClientPerformanceUsingGet**](PerformanceApi.md#getClientPerformanceUsingGet) | **GET** /client/{client_id}/performance | Client Performance
 [**getGoalPerformanceUsingGet**](PerformanceApi.md#getGoalPerformanceUsingGet) | **GET** /goal/{goal_id}/performance | Goal Performance
+[**getHouseholdClientPerformanceUsingGet**](PerformanceApi.md#getHouseholdClientPerformanceUsingGet) | **GET** /household/{household_id}/performance | Household Performance
 [**getModelPerformanceUsingGet**](PerformanceApi.md#getModelPerformanceUsingGet) | **GET** /model/{model_id}/performance | Model Performance
 [**getPortfolioPerformanceUsingGet**](PerformanceApi.md#getPortfolioPerformanceUsingGet) | **GET** /portfolio/{portfolio_id}/performance | Portfolio Performance
 [**getSecurityPerformanceUsingGet**](PerformanceApi.md#getSecurityPerformanceUsingGet) | **GET** /security/{security_id}/performance | Security Performance
@@ -25,8 +26,8 @@ Get information on the performance of an account using IRR (Internal Rate of Ret
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -124,8 +125,8 @@ Get information on the performance of an allocation using TWR (Time Weighted Ret
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -225,8 +226,8 @@ Get information on the performance of a benchmark using TWR (Time Weighted Retur
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -324,8 +325,8 @@ Get information on the performance of a client using IRR (Internal Rate of Retur
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -423,15 +424,15 @@ Get information on the performance of a goal using IRR (Internal Rate of Return)
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.PerformanceApi();
 
-var clientId = "clientId_example"; // String | Client associated with the account - /client
+var clientId = "clientId_example"; // String | client_id
 
 var goalId = "goalId_example"; // String | Goal Id - /account
 
@@ -476,7 +477,7 @@ apiInstance.getGoalPerformanceUsingGet(clientId, goalId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clientId** | **String**| Client associated with the account - /client | 
+ **clientId** | **String**| client_id | 
  **goalId** | **String**| Goal Id - /account | 
  **activePremiumPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
  **annualizedReturnPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
@@ -516,6 +517,105 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: */*
 
+<a name="getHouseholdClientPerformanceUsingGet"></a>
+# **getHouseholdClientPerformanceUsingGet**
+> Object getHouseholdClientPerformanceUsingGet(householdId, opts)
+
+Household Performance
+
+Get information on the performance of a Household using IRR (Internal Rate of Return). You must provide the unique household_id.
+
+### Example
+```javascript
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2
+var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new HydrogenNucleusApi.PerformanceApi();
+
+var householdId = "householdId_example"; // String | Household Id -/household
+
+var opts = { 
+  'activePremiumPeriod': "activePremiumPeriod_example", // String | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D')
+  'annualizedReturnPeriod': "annualizedReturnPeriod_example", // String | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D')
+  'benchmarkId': "benchmarkId_example", // String | Client Benchmark or Tenant Benchmark id -/benchmark
+  'endDate': new Date("2013-10-20"), // Date | end date
+  'histFactor': 1.2, // Number | Histogram factor- (statId: 39, default: 5)
+  'marDownSideDeviation': 1.2, // Number | minimum acceptable return for downside deviation - (statId: 58, default: 0) 
+  'maxPercentileMonteCarlo': 1.2, // Number | max percentile for monte carlo, i.entity. 80 - (statId: 62, default: 95)
+  'meanPercentileMonteCarlo': 1.2, // Number | mean percentile for monte carlo i.entity. 50- (statId: 62, default: 50)
+  'minPercentileMonteCarlo': 1.2, // Number | min percentile for monte carlo i.entity. 20 - (statId: 62, default: 5)
+  'movingAverageNDay': 56, // Number | number of days for moving average n-day - (statId: 18, default: 7)
+  'nDayReturns': 56, // Number | number of days for Rolling n-day returns - (statId: 2, default: 7)  
+  'nPathMonteCarlo': 56, // Number | number of points for a simulation- (statId: 62, default: 100)
+  'nRollingMaxDrawdown': 56, // Number | number of days for Rolling n-day max drawdown- (statId: 46, default: 7)
+  'nRollingVolatility': 56, // Number | number of days for Rolling n-day volatility- (statId: 34, default: 7)
+  'numSimMonteCarlo': 56, // Number | number of simulations - (statId: 62, default: 1000) 
+  'periodType': "periodType_example", // String |  Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () -Carries out stats on either daily, monthly, annually or quarterly dates (default: 'D')
+  'riskFreeAlpha': 1.2, // Number | risk free val alpha - (statId: 52, default: 0)
+  'riskFreeSharpe': 1.2, // Number | risk free val sharpe- (statId: 49, default: 0) 
+  'riskFreeSortino': 1.2, // Number | risk free val sortino - (statId: 56, default: 0)
+  'riskFreeTreynor': 1.2, // Number | risk free val treynor- (statId: 51, default: 0) 
+  'startDate': new Date("2013-10-20"), // Date | start date
+  'stat': "stat_example", // String | A stat type -- /statistics
+  'varConfInterval': 1.2 // Number | VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95)
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getHouseholdClientPerformanceUsingGet(householdId, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **householdId** | **String**| Household Id -/household | 
+ **activePremiumPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
+ **annualizedReturnPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
+ **benchmarkId** | **String**| Client Benchmark or Tenant Benchmark id -/benchmark | [optional] 
+ **endDate** | **Date**| end date | [optional] 
+ **histFactor** | **Number**| Histogram factor- (statId: 39, default: 5) | [optional] 
+ **marDownSideDeviation** | **Number**| minimum acceptable return for downside deviation - (statId: 58, default: 0)  | [optional] 
+ **maxPercentileMonteCarlo** | **Number**| max percentile for monte carlo, i.entity. 80 - (statId: 62, default: 95) | [optional] 
+ **meanPercentileMonteCarlo** | **Number**| mean percentile for monte carlo i.entity. 50- (statId: 62, default: 50) | [optional] 
+ **minPercentileMonteCarlo** | **Number**| min percentile for monte carlo i.entity. 20 - (statId: 62, default: 5) | [optional] 
+ **movingAverageNDay** | **Number**| number of days for moving average n-day - (statId: 18, default: 7) | [optional] 
+ **nDayReturns** | **Number**| number of days for Rolling n-day returns - (statId: 2, default: 7)   | [optional] 
+ **nPathMonteCarlo** | **Number**| number of points for a simulation- (statId: 62, default: 100) | [optional] 
+ **nRollingMaxDrawdown** | **Number**| number of days for Rolling n-day max drawdown- (statId: 46, default: 7) | [optional] 
+ **nRollingVolatility** | **Number**| number of days for Rolling n-day volatility- (statId: 34, default: 7) | [optional] 
+ **numSimMonteCarlo** | **Number**| number of simulations - (statId: 62, default: 1000)  | [optional] 
+ **periodType** | **String**|  Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () -Carries out stats on either daily, monthly, annually or quarterly dates (default: &#39;D&#39;) | [optional] 
+ **riskFreeAlpha** | **Number**| risk free val alpha - (statId: 52, default: 0) | [optional] 
+ **riskFreeSharpe** | **Number**| risk free val sharpe- (statId: 49, default: 0)  | [optional] 
+ **riskFreeSortino** | **Number**| risk free val sortino - (statId: 56, default: 0) | [optional] 
+ **riskFreeTreynor** | **Number**| risk free val treynor- (statId: 51, default: 0)  | [optional] 
+ **startDate** | **Date**| start date | [optional] 
+ **stat** | **String**| A stat type -- /statistics | [optional] 
+ **varConfInterval** | **Number**| VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95) | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
 <a name="getModelPerformanceUsingGet"></a>
 # **getModelPerformanceUsingGet**
 > Object getModelPerformanceUsingGet(modelId, opts)
@@ -527,8 +627,8 @@ Get information on the performance of a model using TWR (Time Weighted Return). 
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -617,7 +717,7 @@ Name | Type | Description  | Notes
 
 <a name="getPortfolioPerformanceUsingGet"></a>
 # **getPortfolioPerformanceUsingGet**
-> Object getPortfolioPerformanceUsingGet(accountId, clientId, portfolioId, portfolioid, opts)
+> Object getPortfolioPerformanceUsingGet(portfolioId, opts)
 
 Portfolio Performance
 
@@ -626,21 +726,15 @@ Get information on the performance of a portfolio using IRR (Internal Rate of Re
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.PerformanceApi();
 
-var accountId = "accountId_example"; // String | Account Id -/account
-
-var clientId = "clientId_example"; // String | Client Id -/client
-
-var portfolioId = "portfolioId_example"; // String | portfolio_id
-
-var portfolioid = "portfolioid_example"; // String | Portfolio Id -/portoflio
+var portfolioId = "portfolioId_example"; // String | Portfolio Id -/portoflio
 
 var opts = { 
   'activePremiumPeriod': "activePremiumPeriod_example", // String | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D')
@@ -675,17 +769,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getPortfolioPerformanceUsingGet(accountId, clientId, portfolioId, portfolioid, opts, callback);
+apiInstance.getPortfolioPerformanceUsingGet(portfolioId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| Account Id -/account | 
- **clientId** | **String**| Client Id -/client | 
- **portfolioId** | **String**| portfolio_id | 
- **portfolioid** | **String**| Portfolio Id -/portoflio | 
+ **portfolioId** | **String**| Portfolio Id -/portoflio | 
  **activePremiumPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
  **annualizedReturnPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
  **benchmarkId** | **String**| Benchmark Id - benchmarkId or clientBenchmarkId -/benchmark | [optional] 
@@ -734,8 +825,8 @@ Get performance statistics for a security using TWR (Time Weighted Return). You 
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';

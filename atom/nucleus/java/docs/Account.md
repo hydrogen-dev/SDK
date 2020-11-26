@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **metadata** | **Map&lt;String, String&gt;** |  |  [optional]
 **name** | **String** | name | 
 **secondaryId** | **String** |  |  [optional]
+**status** | **String** | status |  [optional]
 **updateDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 
 

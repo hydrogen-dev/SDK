@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accumulation_horizon** | **float** | accumulationHorizon | [optional] 
+**decumulation_horizon** | **float** | decumulationHorizon | [optional] 
 **goal_amount** | **float** | goalAmount | [optional] 
 **goal_id** | **str** | goalId | 
 

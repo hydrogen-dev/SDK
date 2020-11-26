@@ -29,8 +29,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::BudgetApi.new
 
@@ -85,8 +86,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::BudgetApi.new
 
@@ -140,13 +142,15 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::BudgetApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
+  currency_conversion: 'currency_conversion_example', # String | currency_conversion
   filter: 'filter_example', # String | filter
   order_by: 'update_date', # String | order_by
   page: 0, # Integer | page
@@ -167,6 +171,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **BOOLEAN**| ascending | [optional] [default to false]
+ **currency_conversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **order_by** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -188,7 +193,7 @@ Name | Type | Description  | Notes
 
 
 # **get_budget_using_get**
-> Budget get_budget_using_get(budget_id)
+> Budget get_budget_using_get(budget_id, opts)
 
 Retrieve a budget request
 
@@ -205,17 +210,21 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::BudgetApi.new
 
 budget_id = 'budget_id_example' # String | UUID budget_id
 
+opts = { 
+  currency_conversion: 'currency_conversion_example' # String | USD
+}
 
 begin
   #Retrieve a budget request
-  result = api_instance.get_budget_using_get(budget_id)
+  result = api_instance.get_budget_using_get(budget_id, opts)
   p result
 rescue NucleusApi::ApiError => e
   puts "Exception when calling BudgetApi->get_budget_using_get: #{e}"
@@ -227,6 +236,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **budget_id** | [**String**](.md)| UUID budget_id | 
+ **currency_conversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -261,8 +271,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::BudgetApi.new
 

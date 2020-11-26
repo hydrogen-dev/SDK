@@ -45,10 +45,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 goal_track = nucleus_api.GoalTrack() # GoalTrack | goalTrack
@@ -108,10 +109,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 goal_request = nucleus_api.Goal() # Goal | goalRequest
@@ -146,7 +148,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_goal_track_using_delete**
-> delete_goal_track_using_delete(goal_track_id, goal_track_id2)
+> delete_goal_track_using_delete(goal_track_id)
 
 Delete a goal track record
 
@@ -171,18 +173,18 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 goal_track_id = 'goal_track_id_example' # str | UUID goal_track_id
-goal_track_id2 = 'goal_track_id_example' # str | goal_track_id
 
 try:
     # Delete a goal track record
-    api_instance.delete_goal_track_using_delete(goal_track_id, goal_track_id2)
+    api_instance.delete_goal_track_using_delete(goal_track_id)
 except ApiException as e:
     print("Exception when calling GoalApi->delete_goal_track_using_delete: %s\n" % e)
 ```
@@ -192,7 +194,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **goal_track_id** | [**str**](.md)| UUID goal_track_id | 
- **goal_track_id2** | [**str**](.md)| goal_track_id | 
 
 ### Return type
 
@@ -235,10 +236,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 goal_id = 'goal_id_example' # str | UUID goal_id
@@ -297,10 +299,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -343,7 +346,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_goal_asset_size_all_using_get**
-> list[AvailableDateDoubleVO] get_goal_asset_size_all_using_get(client_id, goal_id, end_date=end_date, get_latest=get_latest, portfolio_goal=portfolio_goal, sort_type=sort_type, start_date=start_date)
+> list[AvailableDateDoubleVO] get_goal_asset_size_all_using_get(client_id, goal_id, currency_conversion=currency_conversion, end_date=end_date, get_latest=get_latest, portfolio_goal=portfolio_goal, sort_type=sort_type, start_date=start_date)
 
 List goal asset sizes
 
@@ -368,23 +371,25 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | client_id
 goal_id = 'goal_id_example' # str | UUID goal_id
-end_date = '2013-10-20T19:20:30+01:00' # datetime | end_date (optional)
+currency_conversion = 'currency_conversion_example' # str | Currency Code (optional)
+end_date = '2013-10-20' # date | end date (optional)
 get_latest = false # bool | get_latest (optional) (default to false)
 portfolio_goal = false # bool | portfolio_goal (optional) (default to false)
 sort_type = 'sort_type_example' # str | sort_type (optional)
-start_date = '2013-10-20T19:20:30+01:00' # datetime | start_date (optional)
+start_date = '2013-10-20' # date | start date (optional)
 
 try:
     # List goal asset sizes
-    api_response = api_instance.get_goal_asset_size_all_using_get(client_id, goal_id, end_date=end_date, get_latest=get_latest, portfolio_goal=portfolio_goal, sort_type=sort_type, start_date=start_date)
+    api_response = api_instance.get_goal_asset_size_all_using_get(client_id, goal_id, currency_conversion=currency_conversion, end_date=end_date, get_latest=get_latest, portfolio_goal=portfolio_goal, sort_type=sort_type, start_date=start_date)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GoalApi->get_goal_asset_size_all_using_get: %s\n" % e)
@@ -396,11 +401,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_id** | [**str**](.md)| client_id | 
  **goal_id** | [**str**](.md)| UUID goal_id | 
- **end_date** | **datetime**| end_date | [optional] 
+ **currency_conversion** | **str**| Currency Code | [optional] 
+ **end_date** | **date**| end date | [optional] 
  **get_latest** | **bool**| get_latest | [optional] [default to false]
  **portfolio_goal** | **bool**| portfolio_goal | [optional] [default to false]
  **sort_type** | **str**| sort_type | [optional] 
- **start_date** | **datetime**| start_date | [optional] 
+ **start_date** | **date**| start date | [optional] 
 
 ### Return type
 
@@ -418,7 +424,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_goal_holding_all_using_get**
-> list[PortfolioHoldingAgg] get_goal_holding_all_using_get(client_id, goal_id, end_date=end_date, portfolio_goal=portfolio_goal, start_date=start_date)
+> list[PortfolioHoldingAgg] get_goal_holding_all_using_get(client_id, goal_id, currency_conversion=currency_conversion, end_date=end_date, portfolio_goal=portfolio_goal, start_date=start_date)
 
 List goal holdings
 
@@ -443,21 +449,23 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | client_id
 goal_id = 'goal_id_example' # str | UUID goal_id
-end_date = '2013-10-20T19:20:30+01:00' # datetime | end_date (optional)
+currency_conversion = 'currency_conversion_example' # str | Currency Code (optional)
+end_date = '2013-10-20' # date | end date (optional)
 portfolio_goal = false # bool | portfolio_goal (optional) (default to false)
-start_date = '2013-10-20T19:20:30+01:00' # datetime | start_date (optional)
+start_date = '2013-10-20' # date | start date (optional)
 
 try:
     # List goal holdings
-    api_response = api_instance.get_goal_holding_all_using_get(client_id, goal_id, end_date=end_date, portfolio_goal=portfolio_goal, start_date=start_date)
+    api_response = api_instance.get_goal_holding_all_using_get(client_id, goal_id, currency_conversion=currency_conversion, end_date=end_date, portfolio_goal=portfolio_goal, start_date=start_date)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GoalApi->get_goal_holding_all_using_get: %s\n" % e)
@@ -469,9 +477,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_id** | [**str**](.md)| client_id | 
  **goal_id** | [**str**](.md)| UUID goal_id | 
- **end_date** | **datetime**| end_date | [optional] 
+ **currency_conversion** | **str**| Currency Code | [optional] 
+ **end_date** | **date**| end date | [optional] 
  **portfolio_goal** | **bool**| portfolio_goal | [optional] [default to false]
- **start_date** | **datetime**| start_date | [optional] 
+ **start_date** | **date**| start date | [optional] 
 
 ### Return type
 
@@ -514,10 +523,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -566,7 +576,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_goal_track_using_get**
-> GoalTrack get_goal_track_using_get(goal_track_id, goal_track_id2)
+> GoalTrack get_goal_track_using_get(goal_track_id)
 
 Retrieve a goal track record
 
@@ -591,18 +601,18 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 goal_track_id = 'goal_track_id_example' # str | UUID goal_track_id
-goal_track_id2 = 'goal_track_id_example' # str | goal_track_id
 
 try:
     # Retrieve a goal track record
-    api_response = api_instance.get_goal_track_using_get(goal_track_id, goal_track_id2)
+    api_response = api_instance.get_goal_track_using_get(goal_track_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GoalApi->get_goal_track_using_get: %s\n" % e)
@@ -613,7 +623,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **goal_track_id** | [**str**](.md)| UUID goal_track_id | 
- **goal_track_id2** | [**str**](.md)| goal_track_id | 
 
 ### Return type
 
@@ -631,7 +640,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_goal_transaction_all_using_get**
-> PagePortfolioTransaction get_goal_transaction_all_using_get(client_id, goal_id, ascending=ascending, end_date=end_date, order_by=order_by, page=page, portfolio_goal=portfolio_goal, size=size, start_date=start_date)
+> PagePortfolioTransaction get_goal_transaction_all_using_get(client_id, goal_id, ascending=ascending, currency_conversion=currency_conversion, end_date=end_date, order_by=order_by, page=page, portfolio_goal=portfolio_goal, size=size, start_date=start_date)
 
 List goal transactions
 
@@ -656,25 +665,27 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | client_id
 goal_id = 'goal_id_example' # str | UUID goal_id
 ascending = false # bool | ascending (optional) (default to false)
-end_date = '2013-10-20T19:20:30+01:00' # datetime | end_date (optional)
+currency_conversion = 'currency_conversion_example' # str | Currency Code (optional)
+end_date = '2013-10-20' # date | end date (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
 portfolio_goal = false # bool | portfolio_goal (optional) (default to false)
 size = 25 # int | size (optional) (default to 25)
-start_date = '2013-10-20T19:20:30+01:00' # datetime | start_date (optional)
+start_date = '2013-10-20' # date | start date (optional)
 
 try:
     # List goal transactions
-    api_response = api_instance.get_goal_transaction_all_using_get(client_id, goal_id, ascending=ascending, end_date=end_date, order_by=order_by, page=page, portfolio_goal=portfolio_goal, size=size, start_date=start_date)
+    api_response = api_instance.get_goal_transaction_all_using_get(client_id, goal_id, ascending=ascending, currency_conversion=currency_conversion, end_date=end_date, order_by=order_by, page=page, portfolio_goal=portfolio_goal, size=size, start_date=start_date)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GoalApi->get_goal_transaction_all_using_get: %s\n" % e)
@@ -687,12 +698,13 @@ Name | Type | Description  | Notes
  **client_id** | [**str**](.md)| client_id | 
  **goal_id** | [**str**](.md)| UUID goal_id | 
  **ascending** | **bool**| ascending | [optional] [default to false]
- **end_date** | **datetime**| end_date | [optional] 
+ **currency_conversion** | **str**| Currency Code | [optional] 
+ **end_date** | **date**| end date | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
  **portfolio_goal** | **bool**| portfolio_goal | [optional] [default to false]
  **size** | **int**| size | [optional] [default to 25]
- **start_date** | **datetime**| start_date | [optional] 
+ **start_date** | **date**| start date | [optional] 
 
 ### Return type
 
@@ -735,10 +747,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 goal_id = 'goal_id_example' # str | UUID goal_id
@@ -798,10 +811,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 goal_track = nucleus_api.GoalTrack() # GoalTrack | goal_track
@@ -863,10 +877,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 goal = nucleus_api.Goal() # Goal | goal

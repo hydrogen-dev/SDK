@@ -37,8 +37,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::GoalApi.new
 
@@ -93,8 +94,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::GoalApi.new
 
@@ -132,7 +134,7 @@ Name | Type | Description  | Notes
 
 
 # **delete_goal_track_using_delete**
-> delete_goal_track_using_delete(goal_track_id, goal_track_id2)
+> delete_goal_track_using_delete(goal_track_id)
 
 Delete a goal track record
 
@@ -149,19 +151,18 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::GoalApi.new
 
 goal_track_id = 'goal_track_id_example' # String | UUID goal_track_id
 
-goal_track_id2 = 'goal_track_id_example' # String | goal_track_id
-
 
 begin
   #Delete a goal track record
-  api_instance.delete_goal_track_using_delete(goal_track_id, goal_track_id2)
+  api_instance.delete_goal_track_using_delete(goal_track_id)
 rescue NucleusApi::ApiError => e
   puts "Exception when calling GoalApi->delete_goal_track_using_delete: #{e}"
 end
@@ -172,7 +173,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **goal_track_id** | [**String**](.md)| UUID goal_track_id | 
- **goal_track_id2** | [**String**](.md)| goal_track_id | 
 
 ### Return type
 
@@ -207,8 +207,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::GoalApi.new
 
@@ -262,8 +263,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::GoalApi.new
 
@@ -327,8 +329,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::GoalApi.new
 
@@ -337,11 +340,12 @@ client_id = 'client_id_example' # String | client_id
 goal_id = 'goal_id_example' # String | UUID goal_id
 
 opts = { 
-  end_date: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | end_date
+  currency_conversion: 'currency_conversion_example', # String | Currency Code
+  end_date: Date.parse('2013-10-20'), # Date | end date
   get_latest: false, # BOOLEAN | get_latest
   portfolio_goal: false, # BOOLEAN | portfolio_goal
   sort_type: 'sort_type_example', # String | sort_type
-  start_date: DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | start_date
+  start_date: Date.parse('2013-10-20') # Date | start date
 }
 
 begin
@@ -359,11 +363,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_id** | [**String**](.md)| client_id | 
  **goal_id** | [**String**](.md)| UUID goal_id | 
- **end_date** | **DateTime**| end_date | [optional] 
+ **currency_conversion** | **String**| Currency Code | [optional] 
+ **end_date** | **Date**| end date | [optional] 
  **get_latest** | **BOOLEAN**| get_latest | [optional] [default to false]
  **portfolio_goal** | **BOOLEAN**| portfolio_goal | [optional] [default to false]
  **sort_type** | **String**| sort_type | [optional] 
- **start_date** | **DateTime**| start_date | [optional] 
+ **start_date** | **Date**| start date | [optional] 
 
 ### Return type
 
@@ -398,8 +403,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::GoalApi.new
 
@@ -408,9 +414,10 @@ client_id = 'client_id_example' # String | client_id
 goal_id = 'goal_id_example' # String | UUID goal_id
 
 opts = { 
-  end_date: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | end_date
+  currency_conversion: 'currency_conversion_example', # String | Currency Code
+  end_date: Date.parse('2013-10-20'), # Date | end date
   portfolio_goal: false, # BOOLEAN | portfolio_goal
-  start_date: DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | start_date
+  start_date: Date.parse('2013-10-20') # Date | start date
 }
 
 begin
@@ -428,9 +435,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_id** | [**String**](.md)| client_id | 
  **goal_id** | [**String**](.md)| UUID goal_id | 
- **end_date** | **DateTime**| end_date | [optional] 
+ **currency_conversion** | **String**| Currency Code | [optional] 
+ **end_date** | **Date**| end date | [optional] 
  **portfolio_goal** | **BOOLEAN**| portfolio_goal | [optional] [default to false]
- **start_date** | **DateTime**| start_date | [optional] 
+ **start_date** | **Date**| start date | [optional] 
 
 ### Return type
 
@@ -465,8 +473,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::GoalApi.new
 
@@ -519,7 +528,7 @@ Name | Type | Description  | Notes
 
 
 # **get_goal_track_using_get**
-> GoalTrack get_goal_track_using_get(goal_track_id, goal_track_id2)
+> GoalTrack get_goal_track_using_get(goal_track_id)
 
 Retrieve a goal track record
 
@@ -536,19 +545,18 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::GoalApi.new
 
 goal_track_id = 'goal_track_id_example' # String | UUID goal_track_id
 
-goal_track_id2 = 'goal_track_id_example' # String | goal_track_id
-
 
 begin
   #Retrieve a goal track record
-  result = api_instance.get_goal_track_using_get(goal_track_id, goal_track_id2)
+  result = api_instance.get_goal_track_using_get(goal_track_id)
   p result
 rescue NucleusApi::ApiError => e
   puts "Exception when calling GoalApi->get_goal_track_using_get: #{e}"
@@ -560,7 +568,6 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **goal_track_id** | [**String**](.md)| UUID goal_track_id | 
- **goal_track_id2** | [**String**](.md)| goal_track_id | 
 
 ### Return type
 
@@ -595,8 +602,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::GoalApi.new
 
@@ -606,12 +614,13 @@ goal_id = 'goal_id_example' # String | UUID goal_id
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
-  end_date: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | end_date
+  currency_conversion: 'currency_conversion_example', # String | Currency Code
+  end_date: Date.parse('2013-10-20'), # Date | end date
   order_by: 'update_date', # String | order_by
   page: 0, # Integer | page
   portfolio_goal: false, # BOOLEAN | portfolio_goal
   size: 25, # Integer | size
-  start_date: DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | start_date
+  start_date: Date.parse('2013-10-20') # Date | start date
 }
 
 begin
@@ -630,12 +639,13 @@ Name | Type | Description  | Notes
  **client_id** | [**String**](.md)| client_id | 
  **goal_id** | [**String**](.md)| UUID goal_id | 
  **ascending** | **BOOLEAN**| ascending | [optional] [default to false]
- **end_date** | **DateTime**| end_date | [optional] 
+ **currency_conversion** | **String**| Currency Code | [optional] 
+ **end_date** | **Date**| end date | [optional] 
  **order_by** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
  **portfolio_goal** | **BOOLEAN**| portfolio_goal | [optional] [default to false]
  **size** | **Integer**| size | [optional] [default to 25]
- **start_date** | **DateTime**| start_date | [optional] 
+ **start_date** | **Date**| start date | [optional] 
 
 ### Return type
 
@@ -670,8 +680,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::GoalApi.new
 
@@ -726,8 +737,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::GoalApi.new
 
@@ -785,8 +797,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::GoalApi.new
 

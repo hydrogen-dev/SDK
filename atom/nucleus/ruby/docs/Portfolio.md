@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **name** | **String** | name | 
 **percentage** | **Float** | percentage | 
 **secondary_id** | **String** |  | [optional] 
+**status** | **String** | status | [optional] 
 **update_date** | **DateTime** |  | [optional] 
 
 

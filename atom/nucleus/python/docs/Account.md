@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **metadata** | **dict(str, str)** |  | [optional] 
 **name** | **str** | name | 
 **secondary_id** | **str** |  | [optional] 
+**status** | **str** | status | [optional] 
 **update_date** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

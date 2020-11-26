@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **core** | **BOOLEAN** | core | [optional] 
 **create_date** | **DateTime** |  | [optional] 
 **current_weight** | **Float** | currentWeight | 
-**date** | **DateTime** | date | 
+**date** | **Date** | date | 
 **id** | **String** |  | [optional] 
 **metadata** | **Hash&lt;String, String&gt;** |  | [optional] 
 **model_id** | **String** | modelId | 

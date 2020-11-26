@@ -17,8 +17,7 @@ Generate rebalancing signals for a group of investments
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -31,10 +30,12 @@ $config =
         \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}
-$apiInstance = new com\hydrogen\proton\Api\PortfolioManagementApi(
+}$apiInstance = new com\hydrogen\proton\Api\PortfolioManagementApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),

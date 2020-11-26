@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **core** | **bool** | core | [optional] 
 **create_date** | **datetime** |  | [optional] 
 **current_weight** | **float** | currentWeight | 
-**_date** | **datetime** | date | 
+**_date** | **date** | date | 
 **id** | **str** |  | [optional] 
 **metadata** | **dict(str, str)** |  | [optional] 
 **model_id** | **str** | modelId | 

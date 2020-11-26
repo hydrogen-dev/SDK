@@ -47,8 +47,8 @@ Create a new asset size record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -59,10 +59,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 PortfolioAssetSizeLog portfolioAssetSizeLogRequest = new PortfolioAssetSizeLog(); // PortfolioAssetSizeLog | portfolioAssetSizeLogRequest
@@ -104,8 +108,8 @@ Create a new comment for a portfolio defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -116,10 +120,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 PortfolioComment portfolioComment = new PortfolioComment(); // PortfolioComment | portfolioComment
@@ -161,8 +169,8 @@ Create an portfolio goal.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -173,10 +181,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 PortfolioGoal portfolioGoal = new PortfolioGoal(); // PortfolioGoal | portfolioGoal
@@ -218,8 +230,8 @@ Create a new holding record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -230,10 +242,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 PortfolioHoldingLog portfolioHoldinLogRequest = new PortfolioHoldingLog(); // PortfolioHoldingLog | portfolioHoldinLogRequest
@@ -275,8 +291,8 @@ Create a new transaction record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -287,10 +303,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 PortfolioTransaction portfolioTransactionRequest = new PortfolioTransaction(); // PortfolioTransaction | portfolioTransactionRequest
@@ -332,8 +352,8 @@ Create a new portfolio for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -344,10 +364,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 Portfolio portfolioRequest = new Portfolio(); // Portfolio | portfolioRequest
@@ -389,8 +413,8 @@ Permanently delete a portfolio asset size record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -401,10 +425,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioAssetSizeId = new UUID(); // UUID | UUID portfolio_asset_size_id
@@ -445,8 +473,8 @@ Permanently delete a portfolio comment for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -457,10 +485,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioCommentId = new UUID(); // UUID | UUID portfolio_comment_id
@@ -501,8 +533,8 @@ Permanently delete an portfolio-goal mapping.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -513,10 +545,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioGoalId = new UUID(); // UUID | UUID portfolio_goal_id
@@ -557,8 +593,8 @@ Permanently delete a portfolio holding record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -569,10 +605,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioHoldingId = new UUID(); // UUID | UUID portfolio_holding_id
@@ -613,8 +653,8 @@ Permanently delete a portfolio transaction record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -625,10 +665,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioTransactionId = new UUID(); // UUID | UUID portfolio_transaction_id
@@ -669,8 +713,8 @@ Permanently delete a portfolio for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -681,10 +725,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioId = new UUID(); // UUID | UUID portfolio_id
@@ -717,7 +765,7 @@ null (empty response body)
 
 <a name="getPortfolioAggregatedDataUsingGet"></a>
 # **getPortfolioAggregatedDataUsingGet**
-> PortfolioAggregatedVO getPortfolioAggregatedDataUsingGet(portfolioId, showAssetClass, showCategory, showIndustry, showSector, showSecurityClass)
+> Object getPortfolioAggregatedDataUsingGet(portfolioId, showAssetClass, showCategory, showIndustry, showSector, showSecurityClass)
 
 Retrieve an portfolio aggregate data
 
@@ -725,8 +773,8 @@ Retrieve the information for a securities associated with a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -737,10 +785,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioId = new UUID(); // UUID | Portfolio Id
@@ -750,7 +802,7 @@ Boolean showIndustry = true; // Boolean | true or false
 Boolean showSector = true; // Boolean | true or false
 Boolean showSecurityClass = true; // Boolean | true or false
 try {
-    PortfolioAggregatedVO result = apiInstance.getPortfolioAggregatedDataUsingGet(portfolioId, showAssetClass, showCategory, showIndustry, showSector, showSecurityClass);
+    Object result = apiInstance.getPortfolioAggregatedDataUsingGet(portfolioId, showAssetClass, showCategory, showIndustry, showSector, showSecurityClass);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PortfolioApi#getPortfolioAggregatedDataUsingGet");
@@ -771,7 +823,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PortfolioAggregatedVO**](PortfolioAggregatedVO.md)
+**Object**
 
 ### Authorization
 
@@ -792,8 +844,8 @@ Get the information for all portfolios assigned to all of your firm’s accounts
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -804,10 +856,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 Boolean ascending = false; // Boolean | ascending
@@ -849,7 +905,7 @@ Name | Type | Description  | Notes
 
 <a name="getPortfolioAssetSizeAllUsingGet"></a>
 # **getPortfolioAssetSizeAllUsingGet**
-> PagePortfolioAssetSizeLog getPortfolioAssetSizeAllUsingGet(ascending, filter, orderBy, page, size)
+> PagePortfolioAssetSizeLog getPortfolioAssetSizeAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size)
 
 Retrieve a portfolio asset size
 
@@ -857,8 +913,8 @@ Retrieve the information for a portfolio asset size record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -869,19 +925,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 PortfolioApi apiInstance = new PortfolioApi();
 Boolean ascending = false; // Boolean | ascending
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PagePortfolioAssetSizeLog result = apiInstance.getPortfolioAssetSizeAllUsingGet(ascending, filter, orderBy, page, size);
+    PagePortfolioAssetSizeLog result = apiInstance.getPortfolioAssetSizeAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PortfolioApi#getPortfolioAssetSizeAllUsingGet");
@@ -894,6 +955,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -914,7 +976,7 @@ Name | Type | Description  | Notes
 
 <a name="getPortfolioAssetSizeUsingGet"></a>
 # **getPortfolioAssetSizeUsingGet**
-> PortfolioAssetSize getPortfolioAssetSizeUsingGet(portfolioAssetSizeId)
+> PortfolioAssetSizeLog getPortfolioAssetSizeUsingGet(portfolioAssetSizeId, currencyConversion)
 
 Retrieve a portfolio asset size
 
@@ -922,8 +984,8 @@ Retrieve the information for a portfolio asset size record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -934,15 +996,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioAssetSizeId = new UUID(); // UUID | portfolio_asset_size_id
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 try {
-    PortfolioAssetSize result = apiInstance.getPortfolioAssetSizeUsingGet(portfolioAssetSizeId);
+    PortfolioAssetSizeLog result = apiInstance.getPortfolioAssetSizeUsingGet(portfolioAssetSizeId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PortfolioApi#getPortfolioAssetSizeUsingGet");
@@ -955,10 +1022,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolioAssetSizeId** | [**UUID**](.md)| portfolio_asset_size_id |
+ **currencyConversion** | **String**| currency_conversion | [optional]
 
 ### Return type
 
-[**PortfolioAssetSize**](PortfolioAssetSize.md)
+[**PortfolioAssetSizeLog**](PortfolioAssetSizeLog.md)
 
 ### Authorization
 
@@ -979,8 +1047,8 @@ List all comments for all portfolios defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -991,10 +1059,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 Boolean ascending = false; // Boolean | ascending
@@ -1044,8 +1116,8 @@ Retrieve the information for a portfolio comment for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -1056,10 +1128,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioCommentId = new UUID(); // UUID | UUID portfolio_comment_id
@@ -1101,8 +1177,8 @@ Get information for all portfolio-goal mappings defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -1113,10 +1189,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 Boolean ascending = false; // Boolean | ascending
@@ -1166,8 +1246,8 @@ Retrieve the information for a specific portfolio-goal mapping.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -1178,10 +1258,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioGoalId = new UUID(); // UUID | UUID portfolio_goal_id
@@ -1215,7 +1299,7 @@ Name | Type | Description  | Notes
 
 <a name="getPortfolioHoldingAllUsingGet"></a>
 # **getPortfolioHoldingAllUsingGet**
-> PortfolioHolding getPortfolioHoldingAllUsingGet(ascending, filter, orderBy, page, size)
+> PagePortfolioHoldingLog getPortfolioHoldingAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size)
 
 List all portfolio holdings
 
@@ -1223,8 +1307,8 @@ Get the information for all holding records for all portfolios defined for your 
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -1235,19 +1319,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 PortfolioApi apiInstance = new PortfolioApi();
 Boolean ascending = false; // Boolean | ascending
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PortfolioHolding result = apiInstance.getPortfolioHoldingAllUsingGet(ascending, filter, orderBy, page, size);
+    PagePortfolioHoldingLog result = apiInstance.getPortfolioHoldingAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PortfolioApi#getPortfolioHoldingAllUsingGet");
@@ -1260,6 +1349,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -1267,7 +1357,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PortfolioHolding**](PortfolioHolding.md)
+[**PagePortfolioHoldingLog**](PagePortfolioHoldingLog.md)
 
 ### Authorization
 
@@ -1280,7 +1370,7 @@ Name | Type | Description  | Notes
 
 <a name="getPortfolioHoldingUsingGet"></a>
 # **getPortfolioHoldingUsingGet**
-> PortfolioHolding getPortfolioHoldingUsingGet(portfolioHoldingId)
+> PortfolioHoldingLog getPortfolioHoldingUsingGet(portfolioHoldingId, currencyConversion)
 
 Retrieve a portfolio holding
 
@@ -1288,8 +1378,8 @@ Retrieve the information for a portfolio holding record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -1300,15 +1390,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioHoldingId = new UUID(); // UUID | UUID portfolio_holding_id
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    PortfolioHolding result = apiInstance.getPortfolioHoldingUsingGet(portfolioHoldingId);
+    PortfolioHoldingLog result = apiInstance.getPortfolioHoldingUsingGet(portfolioHoldingId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PortfolioApi#getPortfolioHoldingUsingGet");
@@ -1321,10 +1416,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolioHoldingId** | [**UUID**](.md)| UUID portfolio_holding_id |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
-[**PortfolioHolding**](PortfolioHolding.md)
+[**PortfolioHoldingLog**](PortfolioHoldingLog.md)
 
 ### Authorization
 
@@ -1337,7 +1433,7 @@ Name | Type | Description  | Notes
 
 <a name="getPortfolioTransactionAllUsingGet"></a>
 # **getPortfolioTransactionAllUsingGet**
-> PagePortfolioTransaction getPortfolioTransactionAllUsingGet(ascending, filter, orderBy, page, size)
+> PagePortfolioTransaction getPortfolioTransactionAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size)
 
 List all portfolio transactions
 
@@ -1345,8 +1441,8 @@ Get the information for all transaction records for all portfolios defined for y
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -1357,19 +1453,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 PortfolioApi apiInstance = new PortfolioApi();
 Boolean ascending = false; // Boolean | ascending
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PagePortfolioTransaction result = apiInstance.getPortfolioTransactionAllUsingGet(ascending, filter, orderBy, page, size);
+    PagePortfolioTransaction result = apiInstance.getPortfolioTransactionAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PortfolioApi#getPortfolioTransactionAllUsingGet");
@@ -1382,6 +1483,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -1402,7 +1504,7 @@ Name | Type | Description  | Notes
 
 <a name="getPortfolioTransactionUsingGet"></a>
 # **getPortfolioTransactionUsingGet**
-> PortfolioTransaction getPortfolioTransactionUsingGet(portfolioTransactionId)
+> PortfolioTransaction getPortfolioTransactionUsingGet(portfolioTransactionId, currencyConversion)
 
 Retrieve a portfolio transaction
 
@@ -1410,8 +1512,8 @@ Retrieve the information for a portfolio transaction record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -1422,15 +1524,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioTransactionId = new UUID(); // UUID | UUID portfolio_transaction_id
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    PortfolioTransaction result = apiInstance.getPortfolioTransactionUsingGet(portfolioTransactionId);
+    PortfolioTransaction result = apiInstance.getPortfolioTransactionUsingGet(portfolioTransactionId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PortfolioApi#getPortfolioTransactionUsingGet");
@@ -1443,6 +1550,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolioTransactionId** | [**UUID**](.md)| UUID portfolio_transaction_id |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
@@ -1467,8 +1575,8 @@ Retrieve a portfolio for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -1479,10 +1587,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioId = new UUID(); // UUID | UUID portfolio_id
@@ -1516,7 +1628,7 @@ Name | Type | Description  | Notes
 
 <a name="updatePortfolioAssetSizeUsingPut"></a>
 # **updatePortfolioAssetSizeUsingPut**
-> PortfolioAssetSize updatePortfolioAssetSizeUsingPut(portfolioAssetSize, portfolioAssetSizeId)
+> PortfolioAssetSizeLog updatePortfolioAssetSizeUsingPut(portfolioAssetSize, portfolioAssetSizeId)
 
 Update a portfolio asset size
 
@@ -1524,8 +1636,8 @@ Update the information for a portfolio asset size record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -1536,16 +1648,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 PortfolioAssetSizeLog portfolioAssetSize = new PortfolioAssetSizeLog(); // PortfolioAssetSizeLog | portfolio_asset_size
 UUID portfolioAssetSizeId = new UUID(); // UUID | UUID portfolio_asset_size_id
 try {
-    PortfolioAssetSize result = apiInstance.updatePortfolioAssetSizeUsingPut(portfolioAssetSize, portfolioAssetSizeId);
+    PortfolioAssetSizeLog result = apiInstance.updatePortfolioAssetSizeUsingPut(portfolioAssetSize, portfolioAssetSizeId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PortfolioApi#updatePortfolioAssetSizeUsingPut");
@@ -1562,7 +1678,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PortfolioAssetSize**](PortfolioAssetSize.md)
+[**PortfolioAssetSizeLog**](PortfolioAssetSizeLog.md)
 
 ### Authorization
 
@@ -1583,8 +1699,8 @@ Update the information for a portfolio comment for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -1595,10 +1711,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 PortfolioComment portfolioComment = new PortfolioComment(); // PortfolioComment | portfolio_comment
@@ -1642,8 +1762,8 @@ Update the information for an portfolio-goal mapping.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -1654,10 +1774,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 PortfolioGoal portfolioGoal = new PortfolioGoal(); // PortfolioGoal | portfolio_goal
@@ -1693,7 +1817,7 @@ Name | Type | Description  | Notes
 
 <a name="updatePortfolioHoldingUsingPut"></a>
 # **updatePortfolioHoldingUsingPut**
-> PortfolioHolding updatePortfolioHoldingUsingPut(portfolioHolding, portfolioHoldingId)
+> PortfolioHoldingLog updatePortfolioHoldingUsingPut(portfolioHolding, portfolioHoldingId)
 
 Update a portfolio holding
 
@@ -1701,8 +1825,8 @@ Update the information for a portfolio holding record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -1713,16 +1837,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 PortfolioHoldingLog portfolioHolding = new PortfolioHoldingLog(); // PortfolioHoldingLog | portfolio_holding
 UUID portfolioHoldingId = new UUID(); // UUID | UUID portfolio_holding_id
 try {
-    PortfolioHolding result = apiInstance.updatePortfolioHoldingUsingPut(portfolioHolding, portfolioHoldingId);
+    PortfolioHoldingLog result = apiInstance.updatePortfolioHoldingUsingPut(portfolioHolding, portfolioHoldingId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PortfolioApi#updatePortfolioHoldingUsingPut");
@@ -1739,7 +1867,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PortfolioHolding**](PortfolioHolding.md)
+[**PortfolioHoldingLog**](PortfolioHoldingLog.md)
 
 ### Authorization
 
@@ -1760,8 +1888,8 @@ Update the information for a portfolio transaction record for a portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -1772,10 +1900,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 PortfolioTransaction portfolioTransaction = new PortfolioTransaction(); // PortfolioTransaction | portfolio_transaction
@@ -1819,8 +1951,8 @@ Update a portfolio for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
@@ -1831,10 +1963,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 PortfolioApi apiInstance = new PortfolioApi();
 Portfolio portfolio = new Portfolio(); // Portfolio | portfolio

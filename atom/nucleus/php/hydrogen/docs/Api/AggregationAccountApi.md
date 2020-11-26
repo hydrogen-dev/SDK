@@ -57,6 +57,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -121,6 +124,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -185,6 +191,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -249,6 +258,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -313,6 +325,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -377,6 +392,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -441,6 +459,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -505,6 +526,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -569,6 +593,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -632,6 +659,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -673,7 +703,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteAggregationAccountTransactionUsingDelete**
-> \com\hydrogen\nucleus\Model\AggregationAccountTransaction deleteAggregationAccountTransactionUsingDelete($aggregation_account_transaction_id)
+> deleteAggregationAccountTransactionUsingDelete($aggregation_account_transaction_id)
 
 Delete an aggregation account transaction
 
@@ -695,6 +725,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -707,8 +740,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
 $aggregation_account_transaction_id = "aggregation_account_transaction_id_example"; // string | UUID aggregation_account_transaction_id
 
 try {
-    $result = $apiInstance->deleteAggregationAccountTransactionUsingDelete($aggregation_account_transaction_id);
-    print_r($result);
+    $apiInstance->deleteAggregationAccountTransactionUsingDelete($aggregation_account_transaction_id);
 } catch (Exception $e) {
     echo 'Exception when calling AggregationAccountApi->deleteAggregationAccountTransactionUsingDelete: ', $e->getMessage(), PHP_EOL;
 }
@@ -723,7 +755,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\AggregationAccountTransaction**](../Model/AggregationAccountTransaction.md)
+void (empty response body)
 
 ### Authorization
 
@@ -759,6 +791,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -800,7 +835,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAggregationAccountAggregateDataUsingGet**
-> \com\hydrogen\nucleus\Model\AggregationAccountAggregateDataVO getAggregationAccountAggregateDataUsingGet($aggregation_account_id)
+> object getAggregationAccountAggregateDataUsingGet($aggregation_account_id, $currency_conversion)
 
 Retrieve an aggregation account aggregate data
 
@@ -822,6 +857,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -832,9 +870,10 @@ $apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     $config
 );
 $aggregation_account_id = "aggregation_account_id_example"; // string | UUID aggregation_account_id
+$currency_conversion = "currency_conversion_example"; // string | USD
 
 try {
-    $result = $apiInstance->getAggregationAccountAggregateDataUsingGet($aggregation_account_id);
+    $result = $apiInstance->getAggregationAccountAggregateDataUsingGet($aggregation_account_id, $currency_conversion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AggregationAccountApi->getAggregationAccountAggregateDataUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -847,10 +886,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aggregation_account_id** | [**string**](../Model/.md)| UUID aggregation_account_id |
+ **currency_conversion** | **string**| USD | [optional]
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\AggregationAccountAggregateDataVO**](../Model/AggregationAccountAggregateDataVO.md)
+**object**
 
 ### Authorization
 
@@ -886,6 +926,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -936,7 +979,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAggregationAccountBalanceAllUsingGet**
-> \com\hydrogen\nucleus\Model\PageAggregationAccountBalance_ getAggregationAccountBalanceAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageAggregationAccountBalance_ getAggregationAccountBalanceAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size)
 
 List all aggregation account balances
 
@@ -958,6 +1001,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -968,13 +1014,14 @@ $apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     $config
 );
 $ascending = false; // bool | ascending
+$currency_conversion = "currency_conversion_example"; // string | currency_conversion
 $filter = "filter_example"; // string | filter
 $order_by = "update_date"; // string | order_by
 $page = 0; // int | page
 $size = 25; // int | size
 
 try {
-    $result = $apiInstance->getAggregationAccountBalanceAllUsingGet($ascending, $filter, $order_by, $page, $size);
+    $result = $apiInstance->getAggregationAccountBalanceAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AggregationAccountApi->getAggregationAccountBalanceAllUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -987,6 +1034,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **string**| currency_conversion | [optional]
  **filter** | **string**| filter | [optional]
  **order_by** | **string**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -1008,7 +1056,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAggregationAccountBalanceUsingGet**
-> \com\hydrogen\nucleus\Model\AggregationAccountBalance getAggregationAccountBalanceUsingGet($aggregation_account_balance_id)
+> \com\hydrogen\nucleus\Model\AggregationAccountBalance getAggregationAccountBalanceUsingGet($aggregation_account_balance_id, $currency_conversion)
 
 Retrieve an aggregation account balance
 
@@ -1030,6 +1078,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1040,9 +1091,10 @@ $apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     $config
 );
 $aggregation_account_balance_id = "aggregation_account_balance_id_example"; // string | UUID aggregation_account_balance_id
+$currency_conversion = "currency_conversion_example"; // string | USD
 
 try {
-    $result = $apiInstance->getAggregationAccountBalanceUsingGet($aggregation_account_balance_id);
+    $result = $apiInstance->getAggregationAccountBalanceUsingGet($aggregation_account_balance_id, $currency_conversion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AggregationAccountApi->getAggregationAccountBalanceUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -1055,6 +1107,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aggregation_account_balance_id** | [**string**](../Model/.md)| UUID aggregation_account_balance_id |
+ **currency_conversion** | **string**| USD | [optional]
 
 ### Return type
 
@@ -1072,7 +1125,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAggregationAccountHoldingAllUsingGet**
-> \com\hydrogen\nucleus\Model\PageAggregationAccountHolding_ getAggregationAccountHoldingAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageAggregationAccountHolding_ getAggregationAccountHoldingAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size)
 
 List all aggregation account holdings
 
@@ -1094,6 +1147,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1104,13 +1160,14 @@ $apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     $config
 );
 $ascending = false; // bool | ascending
+$currency_conversion = "currency_conversion_example"; // string | currency_conversion
 $filter = "filter_example"; // string | filter
 $order_by = "update_date"; // string | order_by
 $page = 0; // int | page
 $size = 25; // int | size
 
 try {
-    $result = $apiInstance->getAggregationAccountHoldingAllUsingGet($ascending, $filter, $order_by, $page, $size);
+    $result = $apiInstance->getAggregationAccountHoldingAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AggregationAccountApi->getAggregationAccountHoldingAllUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -1123,6 +1180,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **string**| currency_conversion | [optional]
  **filter** | **string**| filter | [optional]
  **order_by** | **string**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -1144,7 +1202,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAggregationAccountHoldingUsingGet**
-> \com\hydrogen\nucleus\Model\AggregationAccountHolding getAggregationAccountHoldingUsingGet($aggregation_account_holding_id)
+> \com\hydrogen\nucleus\Model\AggregationAccountHolding getAggregationAccountHoldingUsingGet($aggregation_account_holding_id, $currency_conversion)
 
 Retrieve an aggregation account holding
 
@@ -1166,6 +1224,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1176,9 +1237,10 @@ $apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     $config
 );
 $aggregation_account_holding_id = "aggregation_account_holding_id_example"; // string | UUID aggregation_account_holding_id
+$currency_conversion = "currency_conversion_example"; // string | USD
 
 try {
-    $result = $apiInstance->getAggregationAccountHoldingUsingGet($aggregation_account_holding_id);
+    $result = $apiInstance->getAggregationAccountHoldingUsingGet($aggregation_account_holding_id, $currency_conversion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AggregationAccountApi->getAggregationAccountHoldingUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -1191,6 +1253,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aggregation_account_holding_id** | [**string**](../Model/.md)| UUID aggregation_account_holding_id |
+ **currency_conversion** | **string**| USD | [optional]
 
 ### Return type
 
@@ -1208,7 +1271,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAggregationAccountOverviewUsingGet**
-> \com\hydrogen\nucleus\Model\AggregationDataForClientParentResponseVO getAggregationAccountOverviewUsingGet($client_id)
+> object getAggregationAccountOverviewUsingGet($client_id, $currency_conversion)
 
 Retrieve an aggregation account aggregate data
 
@@ -1230,6 +1293,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1240,9 +1306,10 @@ $apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     $config
 );
 $client_id = "client_id_example"; // string | UUID client_id
+$currency_conversion = "currency_conversion_example"; // string | USD
 
 try {
-    $result = $apiInstance->getAggregationAccountOverviewUsingGet($client_id);
+    $result = $apiInstance->getAggregationAccountOverviewUsingGet($client_id, $currency_conversion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AggregationAccountApi->getAggregationAccountOverviewUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -1255,10 +1322,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_id** | [**string**](../Model/.md)| UUID client_id |
+ **currency_conversion** | **string**| USD | [optional]
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\AggregationDataForClientParentResponseVO**](../Model/AggregationDataForClientParentResponseVO.md)
+**object**
 
 ### Authorization
 
@@ -1272,7 +1340,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAggregationAccountTransactionAllUsingGet**
-> \com\hydrogen\nucleus\Model\PageAggregationAccountTransaction_ getAggregationAccountTransactionAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageAggregationAccountTransaction_ getAggregationAccountTransactionAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size)
 
 List all aggregation account transactions
 
@@ -1294,6 +1362,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1304,13 +1375,14 @@ $apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     $config
 );
 $ascending = false; // bool | ascending
+$currency_conversion = "currency_conversion_example"; // string | currency_conversion
 $filter = "filter_example"; // string | filter
 $order_by = "update_date"; // string | order_by
 $page = 0; // int | page
 $size = 25; // int | size
 
 try {
-    $result = $apiInstance->getAggregationAccountTransactionAllUsingGet($ascending, $filter, $order_by, $page, $size);
+    $result = $apiInstance->getAggregationAccountTransactionAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AggregationAccountApi->getAggregationAccountTransactionAllUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -1323,6 +1395,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **string**| currency_conversion | [optional]
  **filter** | **string**| filter | [optional]
  **order_by** | **string**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -1344,7 +1417,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAggregationAccountTransactionUsingGet**
-> \com\hydrogen\nucleus\Model\AggregationAccountTransaction getAggregationAccountTransactionUsingGet($aggregation_account_transaction_id)
+> \com\hydrogen\nucleus\Model\AggregationAccountTransaction getAggregationAccountTransactionUsingGet($aggregation_account_transaction_id, $currency_conversion)
 
 Retrieve an aggregation account transaction
 
@@ -1366,6 +1439,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1376,9 +1452,10 @@ $apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     $config
 );
 $aggregation_account_transaction_id = "aggregation_account_transaction_id_example"; // string | UUID aggregation_account_transaction_id
+$currency_conversion = "currency_conversion_example"; // string | USD
 
 try {
-    $result = $apiInstance->getAggregationAccountTransactionUsingGet($aggregation_account_transaction_id);
+    $result = $apiInstance->getAggregationAccountTransactionUsingGet($aggregation_account_transaction_id, $currency_conversion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AggregationAccountApi->getAggregationAccountTransactionUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -1391,6 +1468,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aggregation_account_transaction_id** | [**string**](../Model/.md)| UUID aggregation_account_transaction_id |
+ **currency_conversion** | **string**| USD | [optional]
 
 ### Return type
 
@@ -1430,6 +1508,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1494,6 +1575,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1538,7 +1622,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAggregationAccountBulkUsingPut**
-> \com\hydrogen\nucleus\Model\AggregationAccount updateAggregationAccountBulkUsingPut($aggregation_account_list)
+> \com\hydrogen\nucleus\Model\AggregationAccount[] updateAggregationAccountBulkUsingPut($aggregation_account_list)
 
 Update a bulk aggregation account
 
@@ -1560,6 +1644,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1588,7 +1675,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\AggregationAccount**](../Model/AggregationAccount.md)
+[**\com\hydrogen\nucleus\Model\AggregationAccount[]**](../Model/AggregationAccount.md)
 
 ### Authorization
 
@@ -1624,6 +1711,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1688,6 +1778,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1754,6 +1847,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1820,6 +1916,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }

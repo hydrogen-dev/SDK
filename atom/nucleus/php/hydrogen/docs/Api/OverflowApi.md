@@ -37,6 +37,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -101,6 +104,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -110,7 +116,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\OverflowApi(
     new GuzzleHttp\Client(),
     $config
 );
-$overflow_vo = new \com\hydrogen\nucleus\Model\Overflow(); // \com\hydrogen\nucleus\Model\Overflow | overflowVO
+$overflow_vo = new \com\hydrogen\nucleus\Model\OverflowVO(); // \com\hydrogen\nucleus\Model\OverflowVO | overflowVO
 
 try {
     $result = $apiInstance->createOverflowUsingPost($overflow_vo);
@@ -125,7 +131,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **overflow_vo** | [**\com\hydrogen\nucleus\Model\Overflow**](../Model/Overflow.md)| overflowVO |
+ **overflow_vo** | [**\com\hydrogen\nucleus\Model\OverflowVO**](../Model/OverflowVO.md)| overflowVO |
 
 ### Return type
 
@@ -165,6 +171,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -228,6 +237,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -300,6 +312,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -372,6 +387,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -436,6 +454,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -500,6 +521,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }

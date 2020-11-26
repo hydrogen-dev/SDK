@@ -44,6 +44,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -108,6 +111,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -172,6 +178,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -236,6 +245,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -299,6 +311,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -340,7 +355,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteInsuranceQuoteUsingDelete**
-> deleteInsuranceQuoteUsingDelete($insurance_quote, $insurance_quote_id)
+> deleteInsuranceQuoteUsingDelete($insurance_quote_id)
 
 Delete a insuranceQuote request
 
@@ -362,6 +377,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -371,11 +389,10 @@ $apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$insurance_quote = "insurance_quote_example"; // string | UUID insurance_quote_id
-$insurance_quote_id = "insurance_quote_id_example"; // string | insurance_quote_id
+$insurance_quote_id = "insurance_quote_id_example"; // string | UUID insurance_quote_id
 
 try {
-    $apiInstance->deleteInsuranceQuoteUsingDelete($insurance_quote, $insurance_quote_id);
+    $apiInstance->deleteInsuranceQuoteUsingDelete($insurance_quote_id);
 } catch (Exception $e) {
     echo 'Exception when calling InsuranceApi->deleteInsuranceQuoteUsingDelete: ', $e->getMessage(), PHP_EOL;
 }
@@ -386,8 +403,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **insurance_quote** | [**string**](../Model/.md)| UUID insurance_quote_id |
- **insurance_quote_id** | [**string**](../Model/.md)| insurance_quote_id |
+ **insurance_quote_id** | [**string**](../Model/.md)| UUID insurance_quote_id |
 
 ### Return type
 
@@ -405,7 +421,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInsuranceCoverageAllUsingGet**
-> \com\hydrogen\nucleus\Model\PageInsuranceCoverage_ getInsuranceCoverageAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageInsuranceCoverage_ getInsuranceCoverageAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size)
 
 Get all insurance coverage request
 
@@ -427,6 +443,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -437,13 +456,14 @@ $apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     $config
 );
 $ascending = false; // bool | ascending
+$currency_conversion = "currency_conversion_example"; // string | currency_conversion
 $filter = "filter_example"; // string | filter
 $order_by = "update_date"; // string | order_by
 $page = 0; // int | page
 $size = 25; // int | size
 
 try {
-    $result = $apiInstance->getInsuranceCoverageAllUsingGet($ascending, $filter, $order_by, $page, $size);
+    $result = $apiInstance->getInsuranceCoverageAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InsuranceApi->getInsuranceCoverageAllUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -456,6 +476,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **string**| currency_conversion | [optional]
  **filter** | **string**| filter | [optional]
  **order_by** | **string**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -477,7 +498,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInsuranceCoverageUsingGet**
-> \com\hydrogen\nucleus\Model\InsuranceCoverage getInsuranceCoverageUsingGet($insurance_coverage_id)
+> \com\hydrogen\nucleus\Model\InsuranceCoverage getInsuranceCoverageUsingGet($insurance_coverage_id, $currency_conversion)
 
 Get a insurance coverage request
 
@@ -499,6 +520,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -509,9 +533,10 @@ $apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     $config
 );
 $insurance_coverage_id = "insurance_coverage_id_example"; // string | UUID insurance_coverage_id
+$currency_conversion = "currency_conversion_example"; // string | USD
 
 try {
-    $result = $apiInstance->getInsuranceCoverageUsingGet($insurance_coverage_id);
+    $result = $apiInstance->getInsuranceCoverageUsingGet($insurance_coverage_id, $currency_conversion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InsuranceApi->getInsuranceCoverageUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -524,6 +549,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **insurance_coverage_id** | [**string**](../Model/.md)| UUID insurance_coverage_id |
+ **currency_conversion** | **string**| USD | [optional]
 
 ### Return type
 
@@ -541,7 +567,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInsuranceDiscountAllUsingGet**
-> \com\hydrogen\nucleus\Model\PageInsuranceDiscount_ getInsuranceDiscountAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageInsuranceDiscount_ getInsuranceDiscountAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size)
 
 Get all insurance discount request
 
@@ -563,6 +589,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -573,13 +602,14 @@ $apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     $config
 );
 $ascending = false; // bool | ascending
+$currency_conversion = "currency_conversion_example"; // string | currency_conversion
 $filter = "filter_example"; // string | filter
 $order_by = "update_date"; // string | order_by
 $page = 0; // int | page
 $size = 25; // int | size
 
 try {
-    $result = $apiInstance->getInsuranceDiscountAllUsingGet($ascending, $filter, $order_by, $page, $size);
+    $result = $apiInstance->getInsuranceDiscountAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InsuranceApi->getInsuranceDiscountAllUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -592,6 +622,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **string**| currency_conversion | [optional]
  **filter** | **string**| filter | [optional]
  **order_by** | **string**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -613,7 +644,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInsuranceDiscountUsingGet**
-> \com\hydrogen\nucleus\Model\InsuranceDiscount getInsuranceDiscountUsingGet($insurance_discount_id)
+> \com\hydrogen\nucleus\Model\InsuranceDiscount getInsuranceDiscountUsingGet($insurance_discount_id, $currency_conversion)
 
 Get a insurance discount request
 
@@ -635,6 +666,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -645,9 +679,10 @@ $apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     $config
 );
 $insurance_discount_id = "insurance_discount_id_example"; // string | UUID insurance_discount_id
+$currency_conversion = "currency_conversion_example"; // string | USD
 
 try {
-    $result = $apiInstance->getInsuranceDiscountUsingGet($insurance_discount_id);
+    $result = $apiInstance->getInsuranceDiscountUsingGet($insurance_discount_id, $currency_conversion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InsuranceApi->getInsuranceDiscountUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -660,6 +695,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **insurance_discount_id** | [**string**](../Model/.md)| UUID insurance_discount_id |
+ **currency_conversion** | **string**| USD | [optional]
 
 ### Return type
 
@@ -677,7 +713,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInsuranceQuoteAllUsingGet**
-> \com\hydrogen\nucleus\Model\PageInsuranceQuote_ getInsuranceQuoteAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageInsuranceQuote_ getInsuranceQuoteAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size)
 
 List all insuranceQuote requests
 
@@ -699,6 +735,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -709,13 +748,14 @@ $apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     $config
 );
 $ascending = false; // bool | ascending
+$currency_conversion = "currency_conversion_example"; // string | currency_conversion
 $filter = "filter_example"; // string | filter
 $order_by = "update_date"; // string | order_by
 $page = 0; // int | page
 $size = 25; // int | size
 
 try {
-    $result = $apiInstance->getInsuranceQuoteAllUsingGet($ascending, $filter, $order_by, $page, $size);
+    $result = $apiInstance->getInsuranceQuoteAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InsuranceApi->getInsuranceQuoteAllUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -728,6 +768,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **string**| currency_conversion | [optional]
  **filter** | **string**| filter | [optional]
  **order_by** | **string**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -749,7 +790,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInsuranceQuoteUsingGet**
-> \com\hydrogen\nucleus\Model\InsuranceQuote getInsuranceQuoteUsingGet($insurance_quote, $insurance_quote_id)
+> \com\hydrogen\nucleus\Model\InsuranceQuote getInsuranceQuoteUsingGet($insurance_quote_id, $currency_conversion)
 
 Retrieve a insuranceQuote request
 
@@ -771,6 +812,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -780,11 +824,11 @@ $apiInstance = new com\hydrogen\nucleus\Api\InsuranceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$insurance_quote = "insurance_quote_example"; // string | UUID insurance_quote_id
-$insurance_quote_id = "insurance_quote_id_example"; // string | insurance_quote_id
+$insurance_quote_id = "insurance_quote_id_example"; // string | UUID insurance_quote_id
+$currency_conversion = "currency_conversion_example"; // string | USD
 
 try {
-    $result = $apiInstance->getInsuranceQuoteUsingGet($insurance_quote, $insurance_quote_id);
+    $result = $apiInstance->getInsuranceQuoteUsingGet($insurance_quote_id, $currency_conversion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InsuranceApi->getInsuranceQuoteUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -796,8 +840,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **insurance_quote** | [**string**](../Model/.md)| UUID insurance_quote_id |
- **insurance_quote_id** | [**string**](../Model/.md)| insurance_quote_id |
+ **insurance_quote_id** | [**string**](../Model/.md)| UUID insurance_quote_id |
+ **currency_conversion** | **string**| USD | [optional]
 
 ### Return type
 
@@ -837,6 +881,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -903,6 +950,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -969,6 +1019,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }

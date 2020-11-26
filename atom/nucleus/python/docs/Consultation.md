@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **calendar** | **bool** | calendar | [optional] 
 **category** | **str** | category | [optional] 
 **client_id** | **str** | clientId | [optional] 
-**close_time** | **datetime** | closeTime | [optional] 
+**close_time** | **date** | closeTime | [optional] 
 **closed_by** | **str** | closedBy | [optional] 
 **comments** | **str** | comments | [optional] 
 **completed** | **bool** | completed | [optional] 
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **reminded** | **bool** | reminded | [optional] 
 **secondary_id** | **str** |  | [optional] 
 **source** | **str** | source | [optional] 
-**time** | **datetime** | time | [optional] 
+**time** | **date** | time | [optional] 
 **update_date** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

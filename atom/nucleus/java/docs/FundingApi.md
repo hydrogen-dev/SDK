@@ -42,8 +42,8 @@ Create a new bank link for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -54,10 +54,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FundingApi apiInstance = new FundingApi();
 BankLink bankLinkInfoRequest = new BankLink(); // BankLink | bankLinkInfoRequest
@@ -99,8 +103,8 @@ Create a new deposit request for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -111,10 +115,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FundingApi apiInstance = new FundingApi();
 DailyDeposit dailyDepositRequest = new DailyDeposit(); // DailyDeposit | dailyDepositRequest
@@ -156,8 +164,8 @@ Create a new funding request for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -168,10 +176,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FundingApi apiInstance = new FundingApi();
 Funding fundingRequest = new Funding(); // Funding | fundingRequest
@@ -213,8 +225,8 @@ Create a new external account transfer for a client account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -225,10 +237,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FundingApi apiInstance = new FundingApi();
 ExternalAccountTransfer externalAccountTransferRequest = new ExternalAccountTransfer(); // ExternalAccountTransfer | externalAccountTransferRequest
@@ -270,8 +286,8 @@ Create a new withdrawal request for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -282,10 +298,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FundingApi apiInstance = new FundingApi();
 DailyWithdrawal dailyWithdrawalRequest = new DailyWithdrawal(); // DailyWithdrawal | dailyWithdrawalRequest
@@ -327,8 +347,8 @@ Permanently delete a bank link defined for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -339,10 +359,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FundingApi apiInstance = new FundingApi();
 UUID bankLinkId = new UUID(); // UUID | UUID bank_link_id
@@ -383,8 +407,8 @@ Permanently delete a deposit request for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -395,10 +419,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FundingApi apiInstance = new FundingApi();
 UUID depositId = new UUID(); // UUID | UUID deposit_id
@@ -439,8 +467,8 @@ Permanently delete a funding request defined for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -451,10 +479,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FundingApi apiInstance = new FundingApi();
 UUID fundingId = new UUID(); // UUID | UUID funding_id
@@ -487,7 +519,7 @@ null (empty response body)
 
 <a name="deleteTransferUsingDelete"></a>
 # **deleteTransferUsingDelete**
-> deleteTransferUsingDelete(transfer, transferId)
+> deleteTransferUsingDelete(transferId)
 
 Delete a transfer request
 
@@ -495,8 +527,8 @@ Permanently delete a external account transfer from a client account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -507,16 +539,19 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 FundingApi apiInstance = new FundingApi();
-UUID transfer = new UUID(); // UUID | UUID external_account_transfer_id
-UUID transferId = new UUID(); // UUID | transfer_id
+UUID transferId = new UUID(); // UUID | UUID external_account_transfer_id
 try {
-    apiInstance.deleteTransferUsingDelete(transfer, transferId);
+    apiInstance.deleteTransferUsingDelete(transferId);
 } catch (ApiException e) {
     System.err.println("Exception when calling FundingApi#deleteTransferUsingDelete");
     e.printStackTrace();
@@ -527,8 +562,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transfer** | [**UUID**](.md)| UUID external_account_transfer_id |
- **transferId** | [**UUID**](.md)| transfer_id |
+ **transferId** | [**UUID**](.md)| UUID external_account_transfer_id |
 
 ### Return type
 
@@ -553,8 +587,8 @@ Permanently delete a withdrawal request from an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -565,10 +599,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FundingApi apiInstance = new FundingApi();
 UUID withdrawalId = new UUID(); // UUID | UUID withdrawal_id
@@ -601,7 +639,7 @@ null (empty response body)
 
 <a name="getBankLinkAllUsingGet"></a>
 # **getBankLinkAllUsingGet**
-> PageBankLink getBankLinkAllUsingGet(ascending, filter, orderBy, page, size)
+> PageBankLink getBankLinkAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size)
 
 List all bank links
 
@@ -609,8 +647,8 @@ Get all bank links defined for all clients defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -621,19 +659,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 FundingApi apiInstance = new FundingApi();
 Boolean ascending = false; // Boolean | ascending
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PageBankLink result = apiInstance.getBankLinkAllUsingGet(ascending, filter, orderBy, page, size);
+    PageBankLink result = apiInstance.getBankLinkAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FundingApi#getBankLinkAllUsingGet");
@@ -646,6 +689,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -666,7 +710,7 @@ Name | Type | Description  | Notes
 
 <a name="getBankLinkUsingGet"></a>
 # **getBankLinkUsingGet**
-> BankLink getBankLinkUsingGet(bankLinkId)
+> BankLink getBankLinkUsingGet(bankLinkId, currencyConversion)
 
 Retrieve a bank link
 
@@ -674,8 +718,8 @@ Retrieve the information for a bank link for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -686,15 +730,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 FundingApi apiInstance = new FundingApi();
 UUID bankLinkId = new UUID(); // UUID | UUID bank_link_id
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    BankLink result = apiInstance.getBankLinkUsingGet(bankLinkId);
+    BankLink result = apiInstance.getBankLinkUsingGet(bankLinkId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FundingApi#getBankLinkUsingGet");
@@ -707,6 +756,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankLinkId** | [**UUID**](.md)| UUID bank_link_id |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
@@ -723,7 +773,7 @@ Name | Type | Description  | Notes
 
 <a name="getDepositAllUsingGet"></a>
 # **getDepositAllUsingGet**
-> PageDailyDeposit getDepositAllUsingGet(ascending, filter, orderBy, page, size)
+> PageDailyDeposit getDepositAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size)
 
 List all deposit requests
 
@@ -731,8 +781,8 @@ Get the information for all deposit requests for all clients.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -743,19 +793,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 FundingApi apiInstance = new FundingApi();
 Boolean ascending = false; // Boolean | ascending
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PageDailyDeposit result = apiInstance.getDepositAllUsingGet(ascending, filter, orderBy, page, size);
+    PageDailyDeposit result = apiInstance.getDepositAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FundingApi#getDepositAllUsingGet");
@@ -768,6 +823,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -788,7 +844,7 @@ Name | Type | Description  | Notes
 
 <a name="getDepositUsingGet"></a>
 # **getDepositUsingGet**
-> DailyDeposit getDepositUsingGet(depositId)
+> DailyDeposit getDepositUsingGet(depositId, currencyConversion)
 
 Retrieve a deposit request
 
@@ -796,8 +852,8 @@ Retrieve the information for a deposit request for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -808,15 +864,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 FundingApi apiInstance = new FundingApi();
 UUID depositId = new UUID(); // UUID | UUID deposit_id
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    DailyDeposit result = apiInstance.getDepositUsingGet(depositId);
+    DailyDeposit result = apiInstance.getDepositUsingGet(depositId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FundingApi#getDepositUsingGet");
@@ -829,6 +890,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **depositId** | [**UUID**](.md)| UUID deposit_id |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
@@ -845,7 +907,7 @@ Name | Type | Description  | Notes
 
 <a name="getFundingAllUsingGet"></a>
 # **getFundingAllUsingGet**
-> PageFunding getFundingAllUsingGet(ascending, filter, orderBy, page, size)
+> PageFunding getFundingAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size)
 
 List all funding requests 
 
@@ -853,8 +915,8 @@ Get the information for all funding requests defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -865,19 +927,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 FundingApi apiInstance = new FundingApi();
 Boolean ascending = false; // Boolean | ascending
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PageFunding result = apiInstance.getFundingAllUsingGet(ascending, filter, orderBy, page, size);
+    PageFunding result = apiInstance.getFundingAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FundingApi#getFundingAllUsingGet");
@@ -890,6 +957,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -910,7 +978,7 @@ Name | Type | Description  | Notes
 
 <a name="getFundingUsingGet"></a>
 # **getFundingUsingGet**
-> Funding getFundingUsingGet(fundingId)
+> Funding getFundingUsingGet(fundingId, currencyConversion)
 
 Retrieve a funding request
 
@@ -918,8 +986,8 @@ Retrieve the information for a funding request for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -930,15 +998,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 FundingApi apiInstance = new FundingApi();
 UUID fundingId = new UUID(); // UUID | UUID funding_id
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    Funding result = apiInstance.getFundingUsingGet(fundingId);
+    Funding result = apiInstance.getFundingUsingGet(fundingId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FundingApi#getFundingUsingGet");
@@ -951,6 +1024,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fundingId** | [**UUID**](.md)| UUID funding_id |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
@@ -967,7 +1041,7 @@ Name | Type | Description  | Notes
 
 <a name="getTransferAllUsingGet"></a>
 # **getTransferAllUsingGet**
-> PageExternalAccountTransfer getTransferAllUsingGet(ascending, filter, orderBy, page, size)
+> PageExternalAccountTransfer getTransferAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size)
 
 List all transfer requests
 
@@ -975,8 +1049,8 @@ Get the information for all external account transfers defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -987,19 +1061,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 FundingApi apiInstance = new FundingApi();
 Boolean ascending = false; // Boolean | ascending
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PageExternalAccountTransfer result = apiInstance.getTransferAllUsingGet(ascending, filter, orderBy, page, size);
+    PageExternalAccountTransfer result = apiInstance.getTransferAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FundingApi#getTransferAllUsingGet");
@@ -1012,6 +1091,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -1032,7 +1112,7 @@ Name | Type | Description  | Notes
 
 <a name="getTransferUsingGet"></a>
 # **getTransferUsingGet**
-> ExternalAccountTransfer getTransferUsingGet(externalAccountTransferId, transferId)
+> ExternalAccountTransfer getTransferUsingGet(transferId, currencyConversion)
 
 Retrieve a transfer request
 
@@ -1040,8 +1120,8 @@ Retrieve the information for a external account transfer for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -1052,16 +1132,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 FundingApi apiInstance = new FundingApi();
-UUID externalAccountTransferId = new UUID(); // UUID | UUID external_account_transfer_id
-UUID transferId = new UUID(); // UUID | transfer_id
+UUID transferId = new UUID(); // UUID | UUID external_account_transfer_id
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    ExternalAccountTransfer result = apiInstance.getTransferUsingGet(externalAccountTransferId, transferId);
+    ExternalAccountTransfer result = apiInstance.getTransferUsingGet(transferId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FundingApi#getTransferUsingGet");
@@ -1073,8 +1157,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **externalAccountTransferId** | [**UUID**](.md)| UUID external_account_transfer_id |
- **transferId** | [**UUID**](.md)| transfer_id |
+ **transferId** | [**UUID**](.md)| UUID external_account_transfer_id |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
@@ -1091,7 +1175,7 @@ Name | Type | Description  | Notes
 
 <a name="getWithdrawalAllUsingGet"></a>
 # **getWithdrawalAllUsingGet**
-> PageDailyWithdrawal getWithdrawalAllUsingGet(ascending, filter, orderBy, page, size)
+> PageDailyWithdrawal getWithdrawalAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size)
 
 List all withdrawal requests
 
@@ -1099,8 +1183,8 @@ Get the information for all withdrawal requests for all clients.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -1111,19 +1195,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 FundingApi apiInstance = new FundingApi();
 Boolean ascending = false; // Boolean | ascending
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PageDailyWithdrawal result = apiInstance.getWithdrawalAllUsingGet(ascending, filter, orderBy, page, size);
+    PageDailyWithdrawal result = apiInstance.getWithdrawalAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FundingApi#getWithdrawalAllUsingGet");
@@ -1136,6 +1225,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -1156,7 +1246,7 @@ Name | Type | Description  | Notes
 
 <a name="getWithdrawalUsingGet"></a>
 # **getWithdrawalUsingGet**
-> DailyWithdrawal getWithdrawalUsingGet(withdrawalId)
+> DailyWithdrawal getWithdrawalUsingGet(withdrawalId, currencyConversion)
 
 Retrieve a withdrawal request
 
@@ -1164,8 +1254,8 @@ Retrieve the information for a withdrawal request for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -1176,15 +1266,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 FundingApi apiInstance = new FundingApi();
 UUID withdrawalId = new UUID(); // UUID | UUID withdrawal_id
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    DailyWithdrawal result = apiInstance.getWithdrawalUsingGet(withdrawalId);
+    DailyWithdrawal result = apiInstance.getWithdrawalUsingGet(withdrawalId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FundingApi#getWithdrawalUsingGet");
@@ -1197,6 +1292,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **withdrawalId** | [**UUID**](.md)| UUID withdrawal_id |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
@@ -1221,8 +1317,8 @@ Update bank link list for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -1233,10 +1329,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FundingApi apiInstance = new FundingApi();
 List<BankLink> bankLinkList = Arrays.asList(new BankLink()); // List<BankLink> | bankLinkList
@@ -1278,8 +1378,8 @@ Update the information for a bank link for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -1290,10 +1390,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FundingApi apiInstance = new FundingApi();
 BankLink bankLink = new BankLink(); // BankLink | bank_link
@@ -1337,8 +1441,8 @@ Update the information for a deposit request for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -1349,10 +1453,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FundingApi apiInstance = new FundingApi();
 DailyDeposit deposit = new DailyDeposit(); // DailyDeposit | deposit
@@ -1396,8 +1504,8 @@ Update the information for a funding request for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -1408,10 +1516,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FundingApi apiInstance = new FundingApi();
 Funding funding = new Funding(); // Funding | funding
@@ -1455,8 +1567,8 @@ Update the information for a external account transfer for a client account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -1467,10 +1579,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FundingApi apiInstance = new FundingApi();
 ExternalAccountTransfer transfer = new ExternalAccountTransfer(); // ExternalAccountTransfer | transfer
@@ -1514,8 +1630,8 @@ Update the information for a withdrawal request for an account.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
@@ -1526,10 +1642,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FundingApi apiInstance = new FundingApi();
 DailyWithdrawal withdrawal = new DailyWithdrawal(); // DailyWithdrawal | withdrawal

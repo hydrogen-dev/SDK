@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **downPayment** | **Number** |  | 
-**mortgageTerm** | **Number** |  | [optional] [default to 360]
 **homePrice** | **Number** |  | 
+**mortgageTerm** | **Number** |  | [optional] [default to 360]
 **interestRate** | **Number** |  | [optional] [default to 0.04]
 
 

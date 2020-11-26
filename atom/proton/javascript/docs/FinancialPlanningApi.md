@@ -29,14 +29,49 @@ Calculate the achievable education costs
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
 
-var educationCalculatorAnnualCostRequest = new HydrogenProtonApi.EducationCalculatorAnnualCostRequest(); // EducationCalculatorAnnualCostRequest | Request payload for Education Calculator - Annual Cost
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createEducationCalculatorAnnualCost();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -46,7 +81,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.educationCalculatorAnnualCost(educationCalculatorAnnualCostRequest, callback);
+const createEducationCalculatorAnnualCost = () => {
+    var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
+    var educationCalculatorAnnualCostRequest = new HydrogenProtonApi.EducationCalculatorAnnualCostRequest(); // EducationCalculatorAnnualCostRequest | Request payload for Education Calculator - Annual Cost
+    apiInstance.educationCalculatorAnnualCost(educationCalculatorAnnualCostRequest, callback);
+}
 ```
 
 ### Parameters
@@ -79,14 +118,49 @@ Calculate the necessary periodic deposit amount to achieve education costs
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
 
-var educationCalculatorDepositAmountRequest = new HydrogenProtonApi.EducationCalculatorDepositAmountRequest(); // EducationCalculatorDepositAmountRequest | Request payload for Education Calculator - Deposit Amount
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createEducationCalculatorDepositAmount();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -96,7 +170,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.educationCalculatorDepositAmount(educationCalculatorDepositAmountRequest, callback);
+const createEducationCalculatorDepositAmount = () => {
+    var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
+    var educationCalculatorDepositAmountRequest = new HydrogenProtonApi.EducationCalculatorDepositAmountRequest(); // EducationCalculatorDepositAmountRequest | Request payload for Education Calculator - Deposit Amount
+    apiInstance.educationCalculatorDepositAmount(educationCalculatorDepositAmountRequest, callback);
+}
 ```
 
 ### Parameters
@@ -129,14 +207,49 @@ Calculate the achievable percentage of education costs that can be covered
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
 
-var educationCalculatorPercentCoveredRequest = new HydrogenProtonApi.EducationCalculatorPercentCoveredRequest(); // EducationCalculatorPercentCoveredRequest | Request payload for Education Calculator - Percent Covered
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createEducationCalculatorPercentCovered();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -146,7 +259,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.educationCalculatorPercentCovered(educationCalculatorPercentCoveredRequest, callback);
+const createEducationCalculatorPercentCovered = () => {
+    var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
+    var educationCalculatorPercentCoveredRequest = new HydrogenProtonApi.EducationCalculatorPercentCoveredRequest(); // EducationCalculatorPercentCoveredRequest | Request payload for Education Calculator - Percent Covered
+    apiInstance.educationCalculatorPercentCovered(educationCalculatorPercentCoveredRequest, callback);
+}
 ```
 
 ### Parameters
@@ -179,14 +296,49 @@ Calculate the necessary down payment for the mortgage
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
 
-var mortgageCalculatorDownPaymentRequest = new HydrogenProtonApi.MortgageCalculatorDownPaymentRequest(); // MortgageCalculatorDownPaymentRequest | Request payload for Mortgage Calculator - Down Payment
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createMortgageCalculatorDownPayment();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -196,7 +348,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.mortgageCalculatorDownPayment(mortgageCalculatorDownPaymentRequest, callback);
+const createMortgageCalculatorDownPayment = () => {
+    var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
+    var mortgageCalculatorDownPaymentRequest = new HydrogenProtonApi.MortgageCalculatorDownPaymentRequest(); // MortgageCalculatorDownPaymentRequest | Request payload for Mortgage Calculator - Down Payment
+    apiInstance.mortgageCalculatorDownPayment(mortgageCalculatorDownPaymentRequest, callback);
+}
 ```
 
 ### Parameters
@@ -229,14 +385,49 @@ Calculate the achievable home price for the mortgage
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
 
-var mortgageCalculatorHomePriceRequest = new HydrogenProtonApi.MortgageCalculatorHomePriceRequest(); // MortgageCalculatorHomePriceRequest | Request payload for Mortgage Calculator - Home Price
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createMortgageCalculatorHomePrice();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -246,7 +437,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.mortgageCalculatorHomePrice(mortgageCalculatorHomePriceRequest, callback);
+const createMortgageCalculatorHomePrice = () => {
+    var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
+    var mortgageCalculatorHomePriceRequest = new HydrogenProtonApi.MortgageCalculatorHomePriceRequest(); // MortgageCalculatorHomePriceRequest | Request payload for Mortgage Calculator - Home Price
+    apiInstance.mortgageCalculatorHomePrice(mortgageCalculatorHomePriceRequest, callback);
+}
 ```
 
 ### Parameters
@@ -279,14 +474,49 @@ Calculate the periodic payment for the mortgage
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
 
-var mortgageCalculatorPeriodicPaymentRequest = new HydrogenProtonApi.MortgageCalculatorPeriodicPaymentRequest(); // MortgageCalculatorPeriodicPaymentRequest | Request payload for Mortgage Calculator - Periodic Payment
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createMortgageCalculatorPeriodicPayment();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -296,7 +526,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.mortgageCalculatorPeriodicPayment(mortgageCalculatorPeriodicPaymentRequest, callback);
+const createMortgageCalculatorPeriodicPayment = () => {
+    var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
+    var mortgageCalculatorPeriodicPaymentRequest = new HydrogenProtonApi.MortgageCalculatorPeriodicPaymentRequest(); // MortgageCalculatorPeriodicPaymentRequest | Request payload for Mortgage Calculator - Periodic Payment
+    apiInstance.mortgageCalculatorPeriodicPayment(mortgageCalculatorPeriodicPaymentRequest, callback);
+}
 ```
 
 ### Parameters
@@ -329,14 +563,49 @@ Calculate the achievable purchase amount
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
 
-var purchaseCalculatorAmountRequest = new HydrogenProtonApi.PurchaseCalculatorAmountRequest(); // PurchaseCalculatorAmountRequest | Request payload for Purchase Calculator - Amount
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createPurchaseCalculatorAmount();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -346,7 +615,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.purchaseCalculatorAmount(purchaseCalculatorAmountRequest, callback);
+const createPurchaseCalculatorAmount = () => {
+    var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
+    var purchaseCalculatorAmountRequest = new HydrogenProtonApi.PurchaseCalculatorAmountRequest(); // PurchaseCalculatorAmountRequest | Request payload for Purchase Calculator - Amount
+    apiInstance.purchaseCalculatorAmount(purchaseCalculatorAmountRequest, callback);
+}
 ```
 
 ### Parameters
@@ -379,14 +652,49 @@ Calculate the necessary periodic deposit amount to achieve the purchase amount
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
 
-var purchaseCalculatorDepositAmountRequest = new HydrogenProtonApi.PurchaseCalculatorDepositAmountRequest(); // PurchaseCalculatorDepositAmountRequest | Request payload for Purchase Calculator - Deposit Amount
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createPurchaseCalculatorDepositAmount();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -396,7 +704,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.purchaseCalculatorDepositAmount(purchaseCalculatorDepositAmountRequest, callback);
+const createPurchaseCalculatorDepositAmount = () => {
+    var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
+    var purchaseCalculatorDepositAmountRequest = new HydrogenProtonApi.PurchaseCalculatorDepositAmountRequest(); // PurchaseCalculatorDepositAmountRequest | Request payload for Purchase Calculator - Deposit Amount
+    apiInstance.purchaseCalculatorDepositAmount(purchaseCalculatorDepositAmountRequest, callback);
+}
 ```
 
 ### Parameters
@@ -429,14 +741,49 @@ Calculate the necessary time horizon to achieve the purchase amount
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
 
-var purchaseCalculatorHorizonRequest = new HydrogenProtonApi.PurchaseCalculatorHorizonRequest(); // PurchaseCalculatorHorizonRequest | Request payload for Purchase Calculator - Horizon
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createPurchaseCalculatorHorizon();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -446,7 +793,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.purchaseCalculatorHorizon(purchaseCalculatorHorizonRequest, callback);
+const createPurchaseCalculatorHorizon = () => {
+    var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
+    var purchaseCalculatorHorizonRequest = new HydrogenProtonApi.PurchaseCalculatorHorizonRequest(); // PurchaseCalculatorHorizonRequest | Request payload for Purchase Calculator - Horizon
+    apiInstance.purchaseCalculatorHorizon(purchaseCalculatorHorizonRequest, callback);
+}
 ```
 
 ### Parameters
@@ -479,14 +830,49 @@ Calculate the necessary period deposit amount to achieve the retirement expenses
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
 
-var retirementCalculatorDepositAmountRequest = new HydrogenProtonApi.RetirementCalculatorDepositAmountRequest(); // RetirementCalculatorDepositAmountRequest | Request payload for Retirement Calculator - Deposit AMount
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createRetirementCalculatorDepositAmount();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -496,7 +882,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.retirementCalculatorDepositAmount(retirementCalculatorDepositAmountRequest, callback);
+const createRetirementCalculatorDepositAmount = () => {
+    var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
+    var retirementCalculatorDepositAmountRequest = new HydrogenProtonApi.RetirementCalculatorDepositAmountRequest(); // RetirementCalculatorDepositAmountRequest | Request payload for Retirement Calculator - Deposit AMount
+    apiInstance.retirementCalculatorDepositAmount(retirementCalculatorDepositAmountRequest, callback);
+}
 ```
 
 ### Parameters
@@ -529,14 +919,49 @@ Calculate the achievable retirement expenses
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
 
-var retirementCalculatorExpensesRequest = new HydrogenProtonApi.RetirementCalculatorExpensesRequest(); // RetirementCalculatorExpensesRequest | Request payload for Retirement Calculator - Expenses
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createRetirementCalculatorExpenses();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -546,7 +971,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.retirementCalculatorExpenses(retirementCalculatorExpensesRequest, callback);
+const createRetirementCalculatorExpenses = () => {
+    var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
+    var retirementCalculatorExpensesRequest = new HydrogenProtonApi.RetirementCalculatorExpensesRequest(); // RetirementCalculatorExpensesRequest | Request payload for Retirement Calculator - Expenses
+    apiInstance.retirementCalculatorExpenses(retirementCalculatorExpensesRequest, callback);
+}
 ```
 
 ### Parameters
@@ -579,14 +1008,49 @@ Calculate the achievable percentage of retirement expenses that can be covered
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
 
-var retirementCalculatorPercentCoveredRequest = new HydrogenProtonApi.RetirementCalculatorPercentCoveredRequest(); // RetirementCalculatorPercentCoveredRequest | Request payload for Retirement Calculator - Percent Covered
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createRetirementCalculatorPercentCovered();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -596,7 +1060,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.retirementCalculatorPercentCovered(retirementCalculatorPercentCoveredRequest, callback);
+const createRetirementCalculatorPercentCovered = () => {
+    var apiInstance = new HydrogenProtonApi.FinancialPlanningApi();
+    var retirementCalculatorPercentCoveredRequest = new HydrogenProtonApi.RetirementCalculatorPercentCoveredRequest(); // RetirementCalculatorPercentCoveredRequest | Request payload for Retirement Calculator - Percent Covered
+    apiInstance.retirementCalculatorPercentCovered(retirementCalculatorPercentCoveredRequest, callback);
+}
 ```
 
 ### Parameters

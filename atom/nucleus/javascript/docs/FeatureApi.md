@@ -29,14 +29,47 @@ Create a new feature track.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.FeatureApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var featureTrack = new HydrogenNucleusApi.FeatureTrack(); // FeatureTrack | featureTrack
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createFeatureTrack();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -45,7 +78,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createFeatureTrackUsingPost(featureTrack, callback);
+const createFeatureTrack = () => {  
+    var apiInstance = new HydrogenNucleusApi.FeatureApi();
+    var featureTrack = new HydrogenNucleusApi.FeatureTrack(); // FeatureTrack | featureTrack
+    apiInstance.createFeatureTrackUsingPost(featureTrack, callback);
+}   
 ```
 
 ### Parameters
@@ -80,14 +117,47 @@ Create a new feature.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.FeatureApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var feature = new HydrogenNucleusApi.Feature(); // Feature | feature
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createFeature();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -96,7 +166,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createFeatureUsingPost(feature, callback);
+const createFeature = () => {  
+    var apiInstance = new HydrogenNucleusApi.FeatureApi();
+    var feature = new HydrogenNucleusApi.Feature(); // Feature | feature
+    apiInstance.createFeatureUsingPost(feature, callback);
+}   
 ```
 
 ### Parameters
@@ -131,23 +205,60 @@ Permanently delete a feature track registered with your firm.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.FeatureApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var featureTrackId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID feature_track_id
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        deleteFeatureTrack();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteFeatureTrackUsingDelete(featureTrackId, callback);
+const deleteFeatureTrack = () => {  
+    var apiInstance = new HydrogenNucleusApi.FeatureApi();
+    var featureTrackId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID feature_track_id
+    apiInstance.deleteFeatureTrackUsingDelete(featureTrackId, callback);
+}   
 ```
 
 ### Parameters
@@ -182,23 +293,60 @@ Permanently delete a  feature registered with your firm.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.FeatureApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var featureId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID feature_id
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        deleteFeature();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteFeatureUsingDelete(featureId, callback);
+const deleteFeature = () => {  
+    var apiInstance = new HydrogenNucleusApi.FeatureApi();
+    var featureId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID feature_id
+    apiInstance.deleteFeatureUsingDelete(featureId, callback);
+}   
 ```
 
 ### Parameters
@@ -233,19 +381,47 @@ Get details for all features.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.FeatureApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var opts = { 
-  'ascending': false, // Boolean | ascending
-  'filter': "filter_example", // String | filter
-  'orderBy': "update_date", // String | order_by
-  'page': 0, // Number | page
-  'size': 25 // Number | size
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        getFeatureAll();
+    }
 };
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -254,7 +430,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getFeatureAllUsingGet(opts, callback);
+const getFeatureAll = () => {  
+    var apiInstance = new HydrogenNucleusApi.FeatureApi();
+    var opts = { 
+      'ascending': false, // Boolean | ascending
+      'filter': "filter_example", // String | filter
+      'orderBy': "update_date", // String | order_by
+      'page': 0, // Number | page
+      'size': 25 // Number | size
+    };
+    apiInstance.getFeatureAllUsingGet(opts, callback);
+}   
 ```
 
 ### Parameters
@@ -293,19 +479,47 @@ Get details for all feature track.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.FeatureApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var opts = { 
-  'ascending': false, // Boolean | ascending
-  'filter': "filter_example", // String | filter
-  'orderBy': "update_date", // String | order_by
-  'page': 0, // Number | page
-  'size': 25 // Number | size
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        getFeatureTrackAll();
+    }
 };
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -314,7 +528,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getFeatureTrackAllUsingGet(opts, callback);
+const getFeatureTrackAll = () => {  
+    var apiInstance = new HydrogenNucleusApi.FeatureApi();
+    var opts = { 
+      'ascending': false, // Boolean | ascending
+      'filter': "filter_example", // String | filter
+      'orderBy': "update_date", // String | order_by
+      'page': 0, // Number | page
+      'size': 25 // Number | size
+    };
+    apiInstance.getFeatureTrackAllUsingGet(opts, callback);
+}   
 ```
 
 ### Parameters
@@ -353,14 +577,47 @@ Retrieve the information for a Feature track.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.FeatureApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var featureTrackId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID feature_track_id
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        getFeatureTrack();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -369,7 +626,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getFeatureTrackUsingGet(featureTrackId, callback);
+const getFeatureTrack = () => {  
+    var apiInstance = new HydrogenNucleusApi.FeatureApi();
+    var featureTrackId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID feature_track_id
+    apiInstance.getFeatureTrackUsingGet(featureTrackId, callback);
+}   
 ```
 
 ### Parameters
@@ -404,14 +665,47 @@ Retrieve the information for a Feature.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.FeatureApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var featureId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID feature_id
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        getFeature();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -420,7 +714,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getFeatureUsingGet(featureId, callback);
+const getFeature = () => {  
+    var apiInstance = new HydrogenNucleusApi.FeatureApi();
+    var featureId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID feature_id
+    apiInstance.getFeatureUsingGet(featureId, callback);
+}   
 ```
 
 ### Parameters
@@ -455,16 +753,47 @@ Update the information for a Feature track registered with your firm.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.FeatureApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var featureTrack = new HydrogenNucleusApi.FeatureTrack(); // FeatureTrack | feature_track
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        updateFeatureTrack();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
-var featureTrackId = "d79bb3a3-f259-430c-8fa8-a93f87cc3bdf"; // String | UUID feature_track_id
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -473,7 +802,12 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateFeatureTrackUsingPut(featureTrack, featureTrackId, callback);
+const updateFeatureTrack = () => {  
+    var apiInstance = new HydrogenNucleusApi.FeatureApi();
+    var featureTrack = new HydrogenNucleusApi.FeatureTrack(); // FeatureTrack | feature_track
+    var featureTrackId = "d79bb3a3-f259-430c-8fa8-a93f87cc3bdf"; // String | UUID feature_track_id
+    apiInstance.updateFeatureTrackUsingPut(featureTrack, featureTrackId, callback);
+}   
 ```
 
 ### Parameters
@@ -509,16 +843,47 @@ Update the information for a Feature registered with your firm.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.FeatureApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var feature = new HydrogenNucleusApi.Feature(); // Feature | feature
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        updateFeature();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
-var featureId = "d79bb3a3-f259-430c-8fa8-a93f87cc3bdf"; // String | UUID feature_id
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -527,7 +892,12 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateFeatureUsingPut(feature, featureId, callback);
+const updateFeature = () => {  
+    var apiInstance = new HydrogenNucleusApi.FeatureApi();
+    var feature = new HydrogenNucleusApi.Feature(); // Feature | feature
+    var featureId = "d79bb3a3-f259-430c-8fa8-a93f87cc3bdf"; // String | UUID feature_id
+    apiInstance.updateFeatureUsingPut(feature, featureId, callback);
+}   
 ```
 
 ### Parameters

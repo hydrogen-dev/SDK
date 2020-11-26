@@ -1,4 +1,4 @@
-# com\hydrogen\nucleus\OrderApi
+# Swagger\Client\OrderApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**createOrderBulkUsingPost**](OrderApi.md#createOrderBulkUsingPost) | **POST** /order_bulk | Bulk orders for your firm
 [**createOrderStatusUsingPost**](OrderApi.md#createOrderStatusUsingPost) | **POST** /order_status | Create an order status
 [**createOrderTrackUsingPost**](OrderApi.md#createOrderTrackUsingPost) | **POST** /order_track | Create an order tracking record
+[**createOrderUsingPost**](OrderApi.md#createOrderUsingPost) | **POST** /order | Create an order record
 [**createPortfolioOrderBuyOnlyUsingPost**](OrderApi.md#createPortfolioOrderBuyOnlyUsingPost) | **POST** /portfolio/{portfolio_id}/order_buy_only | Create buy-only portfolio rebalance orders
 [**createPortfolioOrderRebalanceUsingPost**](OrderApi.md#createPortfolioOrderRebalanceUsingPost) | **POST** /portfolio/{portfolio_id}/order_rebalance | Create portfolio rebalance orders
 [**createPortfolioOrderReconciliation**](OrderApi.md#createPortfolioOrderReconciliation) | **POST** /portfolio/{portfolio_id}/order_reconciliation | Create portfolio reconciliation order
@@ -22,8 +23,7 @@ Method | HTTP request | Description
 [**deleteOrderStatusUsingDelete**](OrderApi.md#deleteOrderStatusUsingDelete) | **DELETE** /order_status/{order_status_id} | Delete an order status
 [**deleteOrderTrackUsingDelete**](OrderApi.md#deleteOrderTrackUsingDelete) | **DELETE** /order_track/{order_track_id} | Delete an order tracking record
 [**deleteOrderUsingDelete**](OrderApi.md#deleteOrderUsingDelete) | **DELETE** /order/{order_id} | Delete an order record
-[**getOrderAllUsingGet**](OrderApi.md#getOrderAllUsingGet) | **POST** /order | Create an order record
-[**getOrderAllUsingGet1**](OrderApi.md#getOrderAllUsingGet1) | **GET** /order | List all order records
+[**getOrderAllUsingGet**](OrderApi.md#getOrderAllUsingGet) | **GET** /order | List all order records
 [**getOrderBulkAllUsingGet**](OrderApi.md#getOrderBulkAllUsingGet) | **GET** /order_bulk | List all bulk orders
 [**getOrderStatusAllUsingGet**](OrderApi.md#getOrderStatusAllUsingGet) | **GET** /order_status | List all order statuses
 [**getOrderStatusUsingGet**](OrderApi.md#getOrderStatusUsingGet) | **GET** /order_status/{order_status_id} | Retrieve an order status
@@ -36,7 +36,7 @@ Method | HTTP request | Description
 
 
 # **createAccountOrderBulkUsingPost**
-> \com\hydrogen\nucleus\Model\Order[] createAccountOrderBulkUsingPost($account_id, $req)
+> \Swagger\Client\Model\Order[] createAccountOrderBulkUsingPost($account_id, $req)
 
 Bulk orders for an account
 
@@ -58,17 +58,22 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $account_id = "account_id_example"; // string | account_id
-$req = new \com\hydrogen\nucleus\Model\TokenDateRequest(); // \com\hydrogen\nucleus\Model\TokenDateRequest | req
+$req = new \Swagger\Client\Model\TokenDateRequest(); // \Swagger\Client\Model\TokenDateRequest | req
 
 try {
     $result = $apiInstance->createAccountOrderBulkUsingPost($account_id, $req);
@@ -84,11 +89,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**string**](../Model/.md)| account_id |
- **req** | [**\com\hydrogen\nucleus\Model\TokenDateRequest**](../Model/TokenDateRequest.md)| req |
+ **req** | [**\Swagger\Client\Model\TokenDateRequest**](../Model/TokenDateRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\Order[]**](../Model/Order.md)
+[**\Swagger\Client\Model\Order[]**](../Model/Order.md)
 
 ### Authorization
 
@@ -102,7 +107,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAccountOrderBuyOnlyUsingPost**
-> \com\hydrogen\nucleus\Model\OrderVoClone[] createAccountOrderBuyOnlyUsingPost($account_id, $req)
+> \Swagger\Client\Model\OrderVoClone[] createAccountOrderBuyOnlyUsingPost($account_id, $req)
 
 Create buy-only account rebalance orders
 
@@ -124,17 +129,22 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $account_id = "account_id_example"; // string | account_id
-$req = new \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest | req
+$req = new \Swagger\Client\Model\AccountPortfolioRebalanceRequest(); // \Swagger\Client\Model\AccountPortfolioRebalanceRequest | req
 
 try {
     $result = $apiInstance->createAccountOrderBuyOnlyUsingPost($account_id, $req);
@@ -150,11 +160,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**string**](../Model/.md)| account_id |
- **req** | [**\com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
+ **req** | [**\Swagger\Client\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
+[**\Swagger\Client\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
 
 ### Authorization
 
@@ -168,7 +178,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAccountOrderRebalanceUsingPost**
-> \com\hydrogen\nucleus\Model\OrderVoClone[] createAccountOrderRebalanceUsingPost($account_id, $req)
+> \Swagger\Client\Model\OrderVoClone[] createAccountOrderRebalanceUsingPost($account_id, $req)
 
 Create account rebalance orders
 
@@ -190,17 +200,22 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $account_id = "account_id_example"; // string | account_id
-$req = new \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest | req
+$req = new \Swagger\Client\Model\AccountPortfolioRebalanceRequest(); // \Swagger\Client\Model\AccountPortfolioRebalanceRequest | req
 
 try {
     $result = $apiInstance->createAccountOrderRebalanceUsingPost($account_id, $req);
@@ -216,11 +231,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**string**](../Model/.md)| account_id |
- **req** | [**\com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
+ **req** | [**\Swagger\Client\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
+[**\Swagger\Client\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
 
 ### Authorization
 
@@ -234,7 +249,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAccountOrderReconciliation**
-> \com\hydrogen\nucleus\Model\OrderReconcileReturnObject createAccountOrderReconciliation($account_id, $req)
+> \Swagger\Client\Model\OrderReconcileReturnObject createAccountOrderReconciliation($account_id, $req)
 
 Create account reconciliation order
 
@@ -254,17 +269,22 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $account_id = "account_id_example"; // string | account_id
-$req = new \com\hydrogen\nucleus\Model\OrderReconcileRequest(); // \com\hydrogen\nucleus\Model\OrderReconcileRequest | req
+$req = new \Swagger\Client\Model\OrderReconcileRequest(); // \Swagger\Client\Model\OrderReconcileRequest | req
 
 try {
     $result = $apiInstance->createAccountOrderReconciliation($account_id, $req);
@@ -280,11 +300,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**string**](../Model/.md)| account_id |
- **req** | [**\com\hydrogen\nucleus\Model\OrderReconcileRequest**](../Model/OrderReconcileRequest.md)| req |
+ **req** | [**\Swagger\Client\Model\OrderReconcileRequest**](../Model/OrderReconcileRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\OrderReconcileReturnObject**](../Model/OrderReconcileReturnObject.md)
+[**\Swagger\Client\Model\OrderReconcileReturnObject**](../Model/OrderReconcileReturnObject.md)
 
 ### Authorization
 
@@ -298,7 +318,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAccountOrderSellAllUsingPost**
-> \com\hydrogen\nucleus\Model\OrderVoClone[] createAccountOrderSellAllUsingPost($account_id, $req)
+> \Swagger\Client\Model\OrderVoClone[] createAccountOrderSellAllUsingPost($account_id, $req)
 
 Sell all account order
 
@@ -320,17 +340,22 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $account_id = "account_id_example"; // string | account_id
-$req = new \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest | req
+$req = new \Swagger\Client\Model\AccountPortfolioRebalanceRequest(); // \Swagger\Client\Model\AccountPortfolioRebalanceRequest | req
 
 try {
     $result = $apiInstance->createAccountOrderSellAllUsingPost($account_id, $req);
@@ -346,11 +371,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**string**](../Model/.md)| account_id |
- **req** | [**\com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
+ **req** | [**\Swagger\Client\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
+[**\Swagger\Client\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
 
 ### Authorization
 
@@ -364,7 +389,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAccountOrderSellOnlyUsingPost**
-> \com\hydrogen\nucleus\Model\OrderVoClone[] createAccountOrderSellOnlyUsingPost($account_id, $req)
+> \Swagger\Client\Model\OrderVoClone[] createAccountOrderSellOnlyUsingPost($account_id, $req)
 
 Create sell-only account rebalance orders
 
@@ -386,17 +411,22 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $account_id = "account_id_example"; // string | account_id
-$req = new \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest | req
+$req = new \Swagger\Client\Model\AccountPortfolioRebalanceRequest(); // \Swagger\Client\Model\AccountPortfolioRebalanceRequest | req
 
 try {
     $result = $apiInstance->createAccountOrderSellOnlyUsingPost($account_id, $req);
@@ -412,11 +442,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**string**](../Model/.md)| account_id |
- **req** | [**\com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
+ **req** | [**\Swagger\Client\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
+[**\Swagger\Client\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
 
 ### Authorization
 
@@ -430,7 +460,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createClientOrderBulkUsingPost**
-> \com\hydrogen\nucleus\Model\Order[] createClientOrderBulkUsingPost($client_id, $req)
+> \Swagger\Client\Model\Order[] createClientOrderBulkUsingPost($client_id, $req)
 
 Bulk orders for a client
 
@@ -452,17 +482,22 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $client_id = "client_id_example"; // string | client_id
-$req = new \com\hydrogen\nucleus\Model\TokenDateRequest(); // \com\hydrogen\nucleus\Model\TokenDateRequest | req
+$req = new \Swagger\Client\Model\TokenDateRequest(); // \Swagger\Client\Model\TokenDateRequest | req
 
 try {
     $result = $apiInstance->createClientOrderBulkUsingPost($client_id, $req);
@@ -478,11 +513,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_id** | [**string**](../Model/.md)| client_id |
- **req** | [**\com\hydrogen\nucleus\Model\TokenDateRequest**](../Model/TokenDateRequest.md)| req |
+ **req** | [**\Swagger\Client\Model\TokenDateRequest**](../Model/TokenDateRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\Order[]**](../Model/Order.md)
+[**\Swagger\Client\Model\Order[]**](../Model/Order.md)
 
 ### Authorization
 
@@ -496,7 +531,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createOrderBulkUsingPost**
-> \com\hydrogen\nucleus\Model\Order[] createOrderBulkUsingPost($req)
+> \Swagger\Client\Model\Order[] createOrderBulkUsingPost($req)
 
 Bulk orders for your firm
 
@@ -518,16 +553,21 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$req = new \com\hydrogen\nucleus\Model\TokenDateRequest(); // \com\hydrogen\nucleus\Model\TokenDateRequest | req
+$req = new \Swagger\Client\Model\TokenDateRequest(); // \Swagger\Client\Model\TokenDateRequest | req
 
 try {
     $result = $apiInstance->createOrderBulkUsingPost($req);
@@ -542,11 +582,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **req** | [**\com\hydrogen\nucleus\Model\TokenDateRequest**](../Model/TokenDateRequest.md)| req |
+ **req** | [**\Swagger\Client\Model\TokenDateRequest**](../Model/TokenDateRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\Order[]**](../Model/Order.md)
+[**\Swagger\Client\Model\Order[]**](../Model/Order.md)
 
 ### Authorization
 
@@ -560,7 +600,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createOrderStatusUsingPost**
-> \com\hydrogen\nucleus\Model\OrderStatus createOrderStatusUsingPost($order_status_request)
+> \Swagger\Client\Model\OrderStatus createOrderStatusUsingPost($order_status_request)
 
 Create an order status
 
@@ -582,16 +622,21 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$order_status_request = new \com\hydrogen\nucleus\Model\OrderStatus(); // \com\hydrogen\nucleus\Model\OrderStatus | orderStatusRequest
+$order_status_request = new \Swagger\Client\Model\OrderStatus(); // \Swagger\Client\Model\OrderStatus | orderStatusRequest
 
 try {
     $result = $apiInstance->createOrderStatusUsingPost($order_status_request);
@@ -606,11 +651,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_status_request** | [**\com\hydrogen\nucleus\Model\OrderStatus**](../Model/OrderStatus.md)| orderStatusRequest |
+ **order_status_request** | [**\Swagger\Client\Model\OrderStatus**](../Model/OrderStatus.md)| orderStatusRequest |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\OrderStatus**](../Model/OrderStatus.md)
+[**\Swagger\Client\Model\OrderStatus**](../Model/OrderStatus.md)
 
 ### Authorization
 
@@ -624,7 +669,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createOrderTrackUsingPost**
-> \com\hydrogen\nucleus\Model\OrderTrack createOrderTrackUsingPost($order_track_request)
+> \Swagger\Client\Model\OrderTrack createOrderTrackUsingPost($order_track_request)
 
 Create an order tracking record
 
@@ -646,16 +691,21 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$order_track_request = new \com\hydrogen\nucleus\Model\OrderTrack(); // \com\hydrogen\nucleus\Model\OrderTrack | orderTrackRequest
+$order_track_request = new \Swagger\Client\Model\OrderTrack(); // \Swagger\Client\Model\OrderTrack | orderTrackRequest
 
 try {
     $result = $apiInstance->createOrderTrackUsingPost($order_track_request);
@@ -670,11 +720,80 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_track_request** | [**\com\hydrogen\nucleus\Model\OrderTrack**](../Model/OrderTrack.md)| orderTrackRequest |
+ **order_track_request** | [**\Swagger\Client\Model\OrderTrack**](../Model/OrderTrack.md)| orderTrackRequest |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\OrderTrack**](../Model/OrderTrack.md)
+[**\Swagger\Client\Model\OrderTrack**](../Model/OrderTrack.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **createOrderUsingPost**
+> \Swagger\Client\Model\Order createOrderUsingPost($order_info_request)
+
+Create an order record
+
+Create an order record defined for your firm.
+
+### Example
+```php
+<?php
+require_once('../vendor/autoload.php');
+try {
+// Use one of the below method to generate oauth token
+// 1) Generate Token for client credentials
+$config =
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+            ->createClientCredential("MYCLIENTID",
+             "MYCLIENTSECRET");
+// 2) Generate Token for password credentials
+$config =
+        \com\hydrogen\nucleus\AuthApiClient::
+        getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
+                      ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
+} catch (\com\hydrogen\nucleus\ApiException $e) {
+    print_r($e);
+}
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$order_info_request = new \Swagger\Client\Model\Order(); // \Swagger\Client\Model\Order | orderInfoRequest
+
+try {
+    $result = $apiInstance->createOrderUsingPost($order_info_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->createOrderUsingPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **order_info_request** | [**\Swagger\Client\Model\Order**](../Model/Order.md)| orderInfoRequest |
+
+### Return type
+
+[**\Swagger\Client\Model\Order**](../Model/Order.md)
 
 ### Authorization
 
@@ -688,7 +807,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createPortfolioOrderBuyOnlyUsingPost**
-> \com\hydrogen\nucleus\Model\OrderVoClone[] createPortfolioOrderBuyOnlyUsingPost($portfolio_id, $req)
+> \Swagger\Client\Model\OrderVoClone[] createPortfolioOrderBuyOnlyUsingPost($portfolio_id, $req)
 
 Create buy-only portfolio rebalance orders
 
@@ -710,17 +829,22 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $portfolio_id = "portfolio_id_example"; // string | portfolio_id
-$req = new \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest | req
+$req = new \Swagger\Client\Model\AccountPortfolioRebalanceRequest(); // \Swagger\Client\Model\AccountPortfolioRebalanceRequest | req
 
 try {
     $result = $apiInstance->createPortfolioOrderBuyOnlyUsingPost($portfolio_id, $req);
@@ -736,11 +860,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolio_id** | [**string**](../Model/.md)| portfolio_id |
- **req** | [**\com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
+ **req** | [**\Swagger\Client\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
+[**\Swagger\Client\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
 
 ### Authorization
 
@@ -754,7 +878,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createPortfolioOrderRebalanceUsingPost**
-> \com\hydrogen\nucleus\Model\OrderVoClone[] createPortfolioOrderRebalanceUsingPost($portfolio_id, $req)
+> \Swagger\Client\Model\OrderVoClone[] createPortfolioOrderRebalanceUsingPost($portfolio_id, $req)
 
 Create portfolio rebalance orders
 
@@ -776,17 +900,22 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $portfolio_id = "portfolio_id_example"; // string | portfolio_id
-$req = new \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest | req
+$req = new \Swagger\Client\Model\AccountPortfolioRebalanceRequest(); // \Swagger\Client\Model\AccountPortfolioRebalanceRequest | req
 
 try {
     $result = $apiInstance->createPortfolioOrderRebalanceUsingPost($portfolio_id, $req);
@@ -802,11 +931,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolio_id** | [**string**](../Model/.md)| portfolio_id |
- **req** | [**\com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
+ **req** | [**\Swagger\Client\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
+[**\Swagger\Client\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
 
 ### Authorization
 
@@ -820,7 +949,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createPortfolioOrderReconciliation**
-> \com\hydrogen\nucleus\Model\OrderReconcileReturnObject createPortfolioOrderReconciliation($portfolio_id, $req)
+> \Swagger\Client\Model\OrderReconcileReturnObject createPortfolioOrderReconciliation($portfolio_id, $req)
 
 Create portfolio reconciliation order
 
@@ -840,17 +969,22 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $portfolio_id = "portfolio_id_example"; // string | portfolio_id
-$req = new \com\hydrogen\nucleus\Model\OrderReconcileRequest(); // \com\hydrogen\nucleus\Model\OrderReconcileRequest | req
+$req = new \Swagger\Client\Model\OrderReconcileRequest(); // \Swagger\Client\Model\OrderReconcileRequest | req
 
 try {
     $result = $apiInstance->createPortfolioOrderReconciliation($portfolio_id, $req);
@@ -866,11 +1000,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolio_id** | [**string**](../Model/.md)| portfolio_id |
- **req** | [**\com\hydrogen\nucleus\Model\OrderReconcileRequest**](../Model/OrderReconcileRequest.md)| req |
+ **req** | [**\Swagger\Client\Model\OrderReconcileRequest**](../Model/OrderReconcileRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\OrderReconcileReturnObject**](../Model/OrderReconcileReturnObject.md)
+[**\Swagger\Client\Model\OrderReconcileReturnObject**](../Model/OrderReconcileReturnObject.md)
 
 ### Authorization
 
@@ -884,7 +1018,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createPortfolioOrderSellAllUsingPost**
-> \com\hydrogen\nucleus\Model\OrderVoClone[] createPortfolioOrderSellAllUsingPost($portfolio_id, $req)
+> \Swagger\Client\Model\OrderVoClone[] createPortfolioOrderSellAllUsingPost($portfolio_id, $req)
 
 Sell all portfolio order
 
@@ -906,17 +1040,22 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $portfolio_id = "portfolio_id_example"; // string | portfolio_id
-$req = new \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest | req
+$req = new \Swagger\Client\Model\AccountPortfolioRebalanceRequest(); // \Swagger\Client\Model\AccountPortfolioRebalanceRequest | req
 
 try {
     $result = $apiInstance->createPortfolioOrderSellAllUsingPost($portfolio_id, $req);
@@ -932,11 +1071,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolio_id** | [**string**](../Model/.md)| portfolio_id |
- **req** | [**\com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
+ **req** | [**\Swagger\Client\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
+[**\Swagger\Client\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
 
 ### Authorization
 
@@ -950,7 +1089,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createPortfolioOrderSellOnlyUsingPost**
-> \com\hydrogen\nucleus\Model\OrderVoClone[] createPortfolioOrderSellOnlyUsingPost($portfolio_id, $req)
+> \Swagger\Client\Model\OrderVoClone[] createPortfolioOrderSellOnlyUsingPost($portfolio_id, $req)
 
 Create sell-only portfolio rebalance orders
 
@@ -972,17 +1111,22 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $portfolio_id = "portfolio_id_example"; // string | portfolio_id
-$req = new \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest(); // \com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest | req
+$req = new \Swagger\Client\Model\AccountPortfolioRebalanceRequest(); // \Swagger\Client\Model\AccountPortfolioRebalanceRequest | req
 
 try {
     $result = $apiInstance->createPortfolioOrderSellOnlyUsingPost($portfolio_id, $req);
@@ -998,11 +1142,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolio_id** | [**string**](../Model/.md)| portfolio_id |
- **req** | [**\com\hydrogen\nucleus\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
+ **req** | [**\Swagger\Client\Model\AccountPortfolioRebalanceRequest**](../Model/AccountPortfolioRebalanceRequest.md)| req |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
+[**\Swagger\Client\Model\OrderVoClone[]**](../Model/OrderVoClone.md)
 
 ### Authorization
 
@@ -1038,10 +1182,15 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1101,10 +1250,15 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1164,10 +1318,15 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1205,71 +1364,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderAllUsingGet**
-> \com\hydrogen\nucleus\Model\Order getOrderAllUsingGet($order_info_request)
-
-Create an order record
-
-Create an order record defined for your firm.
-
-### Example
-```php
-<?php
-require_once('../vendor/autoload.php');
-try {
-// Use one of the below method to generate oauth token
-// 1) Generate Token for client credentials
-$config =
-        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
-            ->createClientCredential("MYCLIENTID",
-             "MYCLIENTSECRET");
-// 2) Generate Token for password credentials
-$config =
-        \com\hydrogen\nucleus\AuthApiClient::
-        getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
-                      ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\nucleus\ApiException $e) {
-    print_r($e);
-}
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$order_info_request = new \com\hydrogen\nucleus\Model\Order(); // \com\hydrogen\nucleus\Model\Order | orderInfoRequest
-
-try {
-    $result = $apiInstance->getOrderAllUsingGet($order_info_request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OrderApi->getOrderAllUsingGet: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **order_info_request** | [**\com\hydrogen\nucleus\Model\Order**](../Model/Order.md)| orderInfoRequest |
-
-### Return type
-
-[**\com\hydrogen\nucleus\Model\Order**](../Model/Order.md)
-
-### Authorization
-
-[oauth2](../../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **getOrderAllUsingGet1**
-> \com\hydrogen\nucleus\Model\PageOrder_ getOrderAllUsingGet1($ascending, $filter, $order_by, $page, $size)
+> \Swagger\Client\Model\PageOrder_ getOrderAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all order records
 
@@ -1291,10 +1386,15 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1307,10 +1407,10 @@ $page = 0; // int | page
 $size = 25; // int | size
 
 try {
-    $result = $apiInstance->getOrderAllUsingGet1($ascending, $filter, $order_by, $page, $size);
+    $result = $apiInstance->getOrderAllUsingGet($ascending, $filter, $order_by, $page, $size);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->getOrderAllUsingGet1: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->getOrderAllUsingGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1327,7 +1427,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\PageOrder_**](../Model/PageOrder_.md)
+[**\Swagger\Client\Model\PageOrder_**](../Model/PageOrder_.md)
 
 ### Authorization
 
@@ -1341,7 +1441,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderBulkAllUsingGet**
-> \com\hydrogen\nucleus\Model\PageOrderBulk_ getOrderBulkAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \Swagger\Client\Model\PageOrderBulk_ getOrderBulkAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all bulk orders
 
@@ -1363,18 +1463,23 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$ascending = false; // bool | ascending
+$ascending = true; // bool | ascending
 $filter = "filter_example"; // string | filter
-$order_by = "update_date"; // string | order_by
+$order_by = "order_bulk_id"; // string | order_by
 $page = 0; // int | page
 $size = 25; // int | size
 
@@ -1391,15 +1496,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ascending** | **bool**| ascending | [optional] [default to false]
+ **ascending** | **bool**| ascending | [optional] [default to true]
  **filter** | **string**| filter | [optional]
- **order_by** | **string**| order_by | [optional] [default to update_date]
+ **order_by** | **string**| order_by | [optional] [default to order_bulk_id]
  **page** | **int**| page | [optional] [default to 0]
  **size** | **int**| size | [optional] [default to 25]
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\PageOrderBulk_**](../Model/PageOrderBulk_.md)
+[**\Swagger\Client\Model\PageOrderBulk_**](../Model/PageOrderBulk_.md)
 
 ### Authorization
 
@@ -1413,7 +1518,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderStatusAllUsingGet**
-> \com\hydrogen\nucleus\Model\PageOrderStatus_ getOrderStatusAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \Swagger\Client\Model\PageOrderStatus_ getOrderStatusAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all order statuses
 
@@ -1435,10 +1540,15 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1471,7 +1581,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\PageOrderStatus_**](../Model/PageOrderStatus_.md)
+[**\Swagger\Client\Model\PageOrderStatus_**](../Model/PageOrderStatus_.md)
 
 ### Authorization
 
@@ -1485,7 +1595,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderStatusUsingGet**
-> \com\hydrogen\nucleus\Model\OrderStatus getOrderStatusUsingGet($order_status_id)
+> \Swagger\Client\Model\OrderStatus getOrderStatusUsingGet($order_status_id)
 
 Retrieve an order status
 
@@ -1507,10 +1617,15 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1535,7 +1650,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\OrderStatus**](../Model/OrderStatus.md)
+[**\Swagger\Client\Model\OrderStatus**](../Model/OrderStatus.md)
 
 ### Authorization
 
@@ -1549,7 +1664,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderTrackAllUsingGet**
-> \com\hydrogen\nucleus\Model\PageOrderTrack_ getOrderTrackAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \Swagger\Client\Model\PageOrderTrack_ getOrderTrackAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all order tracking records
 
@@ -1571,10 +1686,15 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1607,7 +1727,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\PageOrderTrack_**](../Model/PageOrderTrack_.md)
+[**\Swagger\Client\Model\PageOrderTrack_**](../Model/PageOrderTrack_.md)
 
 ### Authorization
 
@@ -1621,7 +1741,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderTrackUsingGet**
-> \com\hydrogen\nucleus\Model\OrderTrack getOrderTrackUsingGet($order_track_id)
+> \Swagger\Client\Model\OrderTrack getOrderTrackUsingGet($order_track_id)
 
 Retrieve an order tracking record
 
@@ -1643,10 +1763,15 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1671,7 +1796,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\OrderTrack**](../Model/OrderTrack.md)
+[**\Swagger\Client\Model\OrderTrack**](../Model/OrderTrack.md)
 
 ### Authorization
 
@@ -1685,7 +1810,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getOrderUsingGet**
-> \com\hydrogen\nucleus\Model\Order getOrderUsingGet($order_id)
+> \Swagger\Client\Model\Order getOrderUsingGet($order_id)
 
 Retrieve an order record
 
@@ -1707,10 +1832,15 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1735,7 +1865,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\Order**](../Model/Order.md)
+[**\Swagger\Client\Model\Order**](../Model/Order.md)
 
 ### Authorization
 
@@ -1749,7 +1879,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateOrderStatusUsingPut**
-> \com\hydrogen\nucleus\Model\OrderStatus updateOrderStatusUsingPut($order_status, $order_status_id)
+> \Swagger\Client\Model\OrderStatus updateOrderStatusUsingPut($order_status, $order_status_id)
 
 Update an order status
 
@@ -1771,16 +1901,21 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$order_status = new \com\hydrogen\nucleus\Model\OrderStatus(); // \com\hydrogen\nucleus\Model\OrderStatus | order_status
+$order_status = new \Swagger\Client\Model\OrderStatus(); // \Swagger\Client\Model\OrderStatus | order_status
 $order_status_id = "order_status_id_example"; // string | UUID order_status_id
 
 try {
@@ -1796,12 +1931,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_status** | [**\com\hydrogen\nucleus\Model\OrderStatus**](../Model/OrderStatus.md)| order_status |
+ **order_status** | [**\Swagger\Client\Model\OrderStatus**](../Model/OrderStatus.md)| order_status |
  **order_status_id** | [**string**](../Model/.md)| UUID order_status_id |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\OrderStatus**](../Model/OrderStatus.md)
+[**\Swagger\Client\Model\OrderStatus**](../Model/OrderStatus.md)
 
 ### Authorization
 
@@ -1815,7 +1950,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateOrderTrackUsingPut**
-> \com\hydrogen\nucleus\Model\OrderTrack updateOrderTrackUsingPut($order_track, $order_track_id)
+> \Swagger\Client\Model\OrderTrack updateOrderTrackUsingPut($order_track, $order_track_id)
 
 Update an order tracking record
 
@@ -1837,16 +1972,21 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$order_track = new \com\hydrogen\nucleus\Model\OrderTrack(); // \com\hydrogen\nucleus\Model\OrderTrack | order_track
+$order_track = new \Swagger\Client\Model\OrderTrack(); // \Swagger\Client\Model\OrderTrack | order_track
 $order_track_id = "order_track_id_example"; // string | UUID order_track_id
 
 try {
@@ -1862,12 +2002,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_track** | [**\com\hydrogen\nucleus\Model\OrderTrack**](../Model/OrderTrack.md)| order_track |
+ **order_track** | [**\Swagger\Client\Model\OrderTrack**](../Model/OrderTrack.md)| order_track |
  **order_track_id** | [**string**](../Model/.md)| UUID order_track_id |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\OrderTrack**](../Model/OrderTrack.md)
+[**\Swagger\Client\Model\OrderTrack**](../Model/OrderTrack.md)
 
 ### Authorization
 
@@ -1881,7 +2021,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateOrderUsingPut**
-> \com\hydrogen\nucleus\Model\Order updateOrderUsingPut($order, $order_id)
+> \Swagger\Client\Model\Order updateOrderUsingPut($order, $order_id)
 
 Update an order record
 
@@ -1903,16 +2043,21 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
-$apiInstance = new com\hydrogen\nucleus\Api\OrderApi(
+
+
+$apiInstance = new Swagger\Client\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$order = new \com\hydrogen\nucleus\Model\Order(); // \com\hydrogen\nucleus\Model\Order | order
+$order = new \Swagger\Client\Model\Order(); // \Swagger\Client\Model\Order | order
 $order_id = "order_id_example"; // string | UUID order_id
 
 try {
@@ -1928,12 +2073,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order** | [**\com\hydrogen\nucleus\Model\Order**](../Model/Order.md)| order |
+ **order** | [**\Swagger\Client\Model\Order**](../Model/Order.md)| order |
  **order_id** | [**string**](../Model/.md)| UUID order_id |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\Order**](../Model/Order.md)
+[**\Swagger\Client\Model\Order**](../Model/Order.md)
 
 ### Authorization
 

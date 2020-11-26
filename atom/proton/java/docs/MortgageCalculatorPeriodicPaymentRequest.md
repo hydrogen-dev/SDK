@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **downPayment** | **Float** |  | 
-**mortgageTerm** | **Integer** |  |  [optional]
 **homePrice** | **Float** |  | 
+**mortgageTerm** | **Integer** |  |  [optional]
 **interestRate** | **Float** |  |  [optional]
 
 

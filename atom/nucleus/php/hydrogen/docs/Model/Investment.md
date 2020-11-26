@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fee** | **double** | fee | [optional] 
+**investment_type** | **string** | investmentType | [optional] 
 **price** | **double** | price | 
 **quantity** | **double** | quantity | 
 **settle_date** | [**\DateTime**](\DateTime.md) | settleDate | [optional] 

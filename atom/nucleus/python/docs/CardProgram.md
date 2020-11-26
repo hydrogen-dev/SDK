@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **create_date** | **datetime** |  | [optional] 
 **description** | **str** | description | [optional] 
 **id** | **str** |  | [optional] 
+**is_delegated_authority** | **bool** | is_delegated_authority | [optional] 
 **issuing_bank** | **str** | issuingBank | 
 **metadata** | **dict(str, str)** |  | [optional] 
 **name** | **str** | name | 

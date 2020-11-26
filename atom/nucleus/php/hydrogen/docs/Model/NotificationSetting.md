@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **frequency_unit** | **string** | frequency_unit | [optional] 
 **id** | **string** |  | [optional] 
 **is_receive** | **bool** | is_receive | [optional] 
+**last_run_date** | [**\DateTime**](\DateTime.md) | last_run_date | [optional] 
 **metadata** | **map[string,string]** | metadata | [optional] 
 **notification_id** | **string** | notification_id | 
 **secondary_id** | **string** |  | [optional] 

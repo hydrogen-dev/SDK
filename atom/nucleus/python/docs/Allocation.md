@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **create_date** | **datetime** |  | [optional] 
 **description** | **str** | description | [optional] 
 **id** | **str** |  | [optional] 
-**inception_date** | **datetime** | inceptionDate | [optional] 
+**inception_date** | **date** | inceptionDate | [optional] 
 **is_active** | **bool** | isActive | [optional] 
 **metadata** | **dict(str, str)** |  | [optional] 
 **name** | **str** | name | 

@@ -8,8 +8,8 @@ Method | HTTP request | Description
 [**create_invoice_using_post**](InvoiceApi.md#create_invoice_using_post) | **POST** /invoice | Create a invoice
 [**delete_invoice_payment_using_delete**](InvoiceApi.md#delete_invoice_payment_using_delete) | **DELETE** /invoice_payment/{invoice_payment_id} | Delete a invoicePayment
 [**delete_invoice_using_delete**](InvoiceApi.md#delete_invoice_using_delete) | **DELETE** /invoice/{invoice_id} | Delete a invoice
-[**get_invoice_all_using_get**](InvoiceApi.md#get_invoice_all_using_get) | **GET** /invoice | List all invoice
-[**get_invoice_payment_all_using_get**](InvoiceApi.md#get_invoice_payment_all_using_get) | **GET** /invoice_payment | List all invoicePayment
+[**get_invoice_all_using_get**](InvoiceApi.md#get_invoice_all_using_get) | **GET** /invoice | List all invoices
+[**get_invoice_payment_all_using_get**](InvoiceApi.md#get_invoice_payment_all_using_get) | **GET** /invoice_payment | List all invoice payments
 [**get_invoice_payment_using_get**](InvoiceApi.md#get_invoice_payment_using_get) | **GET** /invoice_payment/{invoice_payment_id} | Retrieve a invoicePayment
 [**get_invoice_using_get**](InvoiceApi.md#get_invoice_using_get) | **GET** /invoice/{invoice_id} | Retrieve a invoice
 [**update_invoice_payment_using_put**](InvoiceApi.md#update_invoice_payment_using_put) | **PUT** /invoice_payment/{invoice_payment_id} | Update a invoicePayment
@@ -34,8 +34,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InvoiceApi.new
 
@@ -90,8 +91,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InvoiceApi.new
 
@@ -146,8 +148,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InvoiceApi.new
 
@@ -201,8 +204,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InvoiceApi.new
 
@@ -241,7 +245,7 @@ nil (empty response body)
 # **get_invoice_all_using_get**
 > PageInvoice get_invoice_all_using_get(opts)
 
-List all invoice
+List all invoices
 
 List all invoice. 
 
@@ -256,13 +260,15 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InvoiceApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
+  currency_conversion: 'currency_conversion_example', # String | currency_conversion
   filter: 'filter_example', # String | filter
   order_by: 'update_date', # String | order_by
   page: 0, # Integer | page
@@ -270,7 +276,7 @@ opts = {
 }
 
 begin
-  #List all invoice
+  #List all invoices
   result = api_instance.get_invoice_all_using_get(opts)
   p result
 rescue NucleusApi::ApiError => e
@@ -283,6 +289,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **BOOLEAN**| ascending | [optional] [default to false]
+ **currency_conversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **order_by** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -306,7 +313,7 @@ Name | Type | Description  | Notes
 # **get_invoice_payment_all_using_get**
 > PageInvoicePayment get_invoice_payment_all_using_get(opts)
 
-List all invoicePayment
+List all invoice payments
 
 List all invoicePayment. 
 
@@ -321,13 +328,15 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InvoiceApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
+  currency_conversion: 'currency_conversion_example', # String | currency_conversion
   filter: 'filter_example', # String | filter
   order_by: 'update_date', # String | order_by
   page: 0, # Integer | page
@@ -335,7 +344,7 @@ opts = {
 }
 
 begin
-  #List all invoicePayment
+  #List all invoice payments
   result = api_instance.get_invoice_payment_all_using_get(opts)
   p result
 rescue NucleusApi::ApiError => e
@@ -348,6 +357,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **BOOLEAN**| ascending | [optional] [default to false]
+ **currency_conversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **order_by** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -369,7 +379,7 @@ Name | Type | Description  | Notes
 
 
 # **get_invoice_payment_using_get**
-> InvoicePayment get_invoice_payment_using_get(invoice_payment_id)
+> InvoicePayment get_invoice_payment_using_get(invoice_payment_id, opts)
 
 Retrieve a invoicePayment
 
@@ -386,17 +396,21 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InvoiceApi.new
 
 invoice_payment_id = 'invoice_payment_id_example' # String | UUID invoice_payment_id
 
+opts = { 
+  currency_conversion: 'currency_conversion_example' # String | USD
+}
 
 begin
   #Retrieve a invoicePayment
-  result = api_instance.get_invoice_payment_using_get(invoice_payment_id)
+  result = api_instance.get_invoice_payment_using_get(invoice_payment_id, opts)
   p result
 rescue NucleusApi::ApiError => e
   puts "Exception when calling InvoiceApi->get_invoice_payment_using_get: #{e}"
@@ -408,6 +422,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **invoice_payment_id** | [**String**](.md)| UUID invoice_payment_id | 
+ **currency_conversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -425,7 +440,7 @@ Name | Type | Description  | Notes
 
 
 # **get_invoice_using_get**
-> Invoice get_invoice_using_get(invoice_id)
+> Invoice get_invoice_using_get(invoice_id, opts)
 
 Retrieve a invoice
 
@@ -442,17 +457,21 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InvoiceApi.new
 
 invoice_id = 'invoice_id_example' # String | UUID invoice_idd
 
+opts = { 
+  currency_conversion: 'currency_conversion_example' # String | USD
+}
 
 begin
   #Retrieve a invoice
-  result = api_instance.get_invoice_using_get(invoice_id)
+  result = api_instance.get_invoice_using_get(invoice_id, opts)
   p result
 rescue NucleusApi::ApiError => e
   puts "Exception when calling InvoiceApi->get_invoice_using_get: #{e}"
@@ -464,6 +483,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **invoice_id** | [**String**](.md)| UUID invoice_idd | 
+ **currency_conversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -498,8 +518,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InvoiceApi.new
 
@@ -557,8 +578,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::InvoiceApi.new
 

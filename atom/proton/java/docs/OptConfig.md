@@ -4,12 +4,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**endDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**wConfig** | [**WConfig**](WConfig.md) |  | 
-**secTypes** | [**List&lt;SecTypesEnum&gt;**](#List&lt;SecTypesEnum&gt;) |  | 
-**minAssets** | **Integer** |  | 
 **wAssetConfig** | **Object** |  |  [optional]
+**minAssets** | **Integer** |  | 
+**secTypes** | [**List&lt;SecTypesEnum&gt;**](#List&lt;SecTypesEnum&gt;) |  | 
+**wConfig** | [**WConfig**](WConfig.md) |  | 
+**endDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
 **tickers** | **List&lt;String&gt;** |  | 
 
 

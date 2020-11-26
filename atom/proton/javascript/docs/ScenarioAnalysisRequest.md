@@ -3,20 +3,21 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**useProxyData** | **Boolean** |  | [optional] [default to false]
-**startDate** | **Date** |  | [optional] 
-**portfolioTickers** | **[String]** |  | [optional] 
 **tradingDaysPerYear** | **Number** |  | [optional] [default to 252]
-**endDate** | **Date** |  | [optional] 
-**modelId** | **String** |  | [optional] 
-**allocationId** | **String** |  | [optional] 
-**accountId** | **String** |  | [optional] 
-**portfolioId** | **String** |  | [optional] 
-**portfolioWeights** | **[Number]** |  | [optional] 
+**portfolioTickers** | **[String]** |  | [optional] 
 **frequencyInterval** | **String** |  | 
-**scenario** | [**[SensitivityFactor]**](SensitivityFactor.md) |  | 
+**createLog** | **Boolean** |  | [optional] [default to false]
 **aggregationAccountId** | **String** |  | [optional] 
+**allocationId** | **String** |  | [optional] 
+**modelId** | **String** |  | [optional] 
+**portfolioWeights** | **[Number]** |  | [optional] 
+**endDate** | **Date** |  | [optional] 
+**scenario** | [**[SensitivityFactor]**](SensitivityFactor.md) |  | 
+**startDate** | **Date** |  | [optional] 
+**useProxyData** | **Boolean** |  | [optional] [default to false]
+**accountId** | **String** |  | [optional] 
 **marketDataSource** | **String** |  | [optional] [default to 'nucleus']
+**portfolioId** | **String** |  | [optional] 
 
 
 <a name="FrequencyIntervalEnum"></a>

@@ -8,6 +8,10 @@ Name | Type | Description | Notes
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **is_active** | **bool** | isActive | [optional] 
+**is_asset** | **bool** | isAsset | [optional] 
+**is_business** | **bool** | isBusiness | [optional] 
+**is_cash** | **bool** | isCash | [optional] 
+**is_investment** | **bool** | isInvestment | [optional] 
 **is_taxable** | **bool** | isTaxable | [optional] 
 **metadata** | **map[string,string]** |  | [optional] 
 **name** | **string** | name | 

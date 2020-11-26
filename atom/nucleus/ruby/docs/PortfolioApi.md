@@ -55,8 +55,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -111,8 +112,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -167,8 +169,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -223,8 +226,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -279,8 +283,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -335,8 +340,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -391,8 +397,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -446,8 +453,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -501,8 +509,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -556,8 +565,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -611,8 +621,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -666,8 +677,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -704,7 +716,7 @@ nil (empty response body)
 
 
 # **get_portfolio_aggregated_data_using_get**
-> PortfolioAggregatedVO get_portfolio_aggregated_data_using_get(portfolio_id, opts)
+> Object get_portfolio_aggregated_data_using_get(portfolio_id, opts)
 
 Retrieve an portfolio aggregate data
 
@@ -721,8 +733,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -758,7 +771,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PortfolioAggregatedVO**](PortfolioAggregatedVO.md)
+**Object**
 
 ### Authorization
 
@@ -789,8 +802,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -854,13 +868,15 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
+  currency_conversion: 'currency_conversion_example', # String | currency_conversion
   filter: 'filter_example', # String | filter
   order_by: 'update_date', # String | order_by
   page: 0, # Integer | page
@@ -881,6 +897,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **BOOLEAN**| ascending | [optional] [default to false]
+ **currency_conversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **order_by** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -902,7 +919,7 @@ Name | Type | Description  | Notes
 
 
 # **get_portfolio_asset_size_using_get**
-> PortfolioAssetSize get_portfolio_asset_size_using_get(portfolio_asset_size_id)
+> PortfolioAssetSizeLog get_portfolio_asset_size_using_get(portfolio_asset_size_id, opts)
 
 Retrieve a portfolio asset size
 
@@ -919,17 +936,21 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
 portfolio_asset_size_id = 'portfolio_asset_size_id_example' # String | portfolio_asset_size_id
 
+opts = { 
+  currency_conversion: 'currency_conversion_example' # String | currency_conversion
+}
 
 begin
   #Retrieve a portfolio asset size
-  result = api_instance.get_portfolio_asset_size_using_get(portfolio_asset_size_id)
+  result = api_instance.get_portfolio_asset_size_using_get(portfolio_asset_size_id, opts)
   p result
 rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->get_portfolio_asset_size_using_get: #{e}"
@@ -941,10 +962,11 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolio_asset_size_id** | [**String**](.md)| portfolio_asset_size_id | 
+ **currency_conversion** | **String**| currency_conversion | [optional] 
 
 ### Return type
 
-[**PortfolioAssetSize**](PortfolioAssetSize.md)
+[**PortfolioAssetSizeLog**](PortfolioAssetSizeLog.md)
 
 ### Authorization
 
@@ -975,8 +997,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -1040,8 +1063,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -1096,8 +1120,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -1161,8 +1186,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -1200,7 +1226,7 @@ Name | Type | Description  | Notes
 
 
 # **get_portfolio_holding_all_using_get**
-> PortfolioHolding get_portfolio_holding_all_using_get(opts)
+> PagePortfolioHoldingLog get_portfolio_holding_all_using_get(opts)
 
 List all portfolio holdings
 
@@ -1217,13 +1243,15 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
+  currency_conversion: 'currency_conversion_example', # String | currency_conversion
   filter: 'filter_example', # String | filter
   order_by: 'update_date', # String | order_by
   page: 0, # Integer | page
@@ -1244,6 +1272,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **BOOLEAN**| ascending | [optional] [default to false]
+ **currency_conversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **order_by** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -1251,7 +1280,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PortfolioHolding**](PortfolioHolding.md)
+[**PagePortfolioHoldingLog**](PagePortfolioHoldingLog.md)
 
 ### Authorization
 
@@ -1265,7 +1294,7 @@ Name | Type | Description  | Notes
 
 
 # **get_portfolio_holding_using_get**
-> PortfolioHolding get_portfolio_holding_using_get(portfolio_holding_id)
+> PortfolioHoldingLog get_portfolio_holding_using_get(portfolio_holding_id, opts)
 
 Retrieve a portfolio holding
 
@@ -1282,17 +1311,21 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
 portfolio_holding_id = 'portfolio_holding_id_example' # String | UUID portfolio_holding_id
 
+opts = { 
+  currency_conversion: 'currency_conversion_example' # String | USD
+}
 
 begin
   #Retrieve a portfolio holding
-  result = api_instance.get_portfolio_holding_using_get(portfolio_holding_id)
+  result = api_instance.get_portfolio_holding_using_get(portfolio_holding_id, opts)
   p result
 rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->get_portfolio_holding_using_get: #{e}"
@@ -1304,10 +1337,11 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolio_holding_id** | [**String**](.md)| UUID portfolio_holding_id | 
+ **currency_conversion** | **String**| USD | [optional] 
 
 ### Return type
 
-[**PortfolioHolding**](PortfolioHolding.md)
+[**PortfolioHoldingLog**](PortfolioHoldingLog.md)
 
 ### Authorization
 
@@ -1338,13 +1372,15 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
+  currency_conversion: 'currency_conversion_example', # String | currency_conversion
   filter: 'filter_example', # String | filter
   order_by: 'update_date', # String | order_by
   page: 0, # Integer | page
@@ -1365,6 +1401,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **BOOLEAN**| ascending | [optional] [default to false]
+ **currency_conversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **order_by** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -1386,7 +1423,7 @@ Name | Type | Description  | Notes
 
 
 # **get_portfolio_transaction_using_get**
-> PortfolioTransaction get_portfolio_transaction_using_get(portfolio_transaction_id)
+> PortfolioTransaction get_portfolio_transaction_using_get(portfolio_transaction_id, opts)
 
 Retrieve a portfolio transaction
 
@@ -1403,17 +1440,21 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
 portfolio_transaction_id = 'portfolio_transaction_id_example' # String | UUID portfolio_transaction_id
 
+opts = { 
+  currency_conversion: 'currency_conversion_example' # String | USD
+}
 
 begin
   #Retrieve a portfolio transaction
-  result = api_instance.get_portfolio_transaction_using_get(portfolio_transaction_id)
+  result = api_instance.get_portfolio_transaction_using_get(portfolio_transaction_id, opts)
   p result
 rescue NucleusApi::ApiError => e
   puts "Exception when calling PortfolioApi->get_portfolio_transaction_using_get: #{e}"
@@ -1425,6 +1466,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolio_transaction_id** | [**String**](.md)| UUID portfolio_transaction_id | 
+ **currency_conversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -1459,8 +1501,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -1498,7 +1541,7 @@ Name | Type | Description  | Notes
 
 
 # **update_portfolio_asset_size_using_put**
-> PortfolioAssetSize update_portfolio_asset_size_using_put(portfolio_asset_size, portfolio_asset_size_id)
+> PortfolioAssetSizeLog update_portfolio_asset_size_using_put(portfolio_asset_size, portfolio_asset_size_id)
 
 Update a portfolio asset size
 
@@ -1515,8 +1558,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -1543,7 +1587,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PortfolioAssetSize**](PortfolioAssetSize.md)
+[**PortfolioAssetSizeLog**](PortfolioAssetSizeLog.md)
 
 ### Authorization
 
@@ -1574,8 +1618,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -1633,8 +1678,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -1675,7 +1721,7 @@ Name | Type | Description  | Notes
 
 
 # **update_portfolio_holding_using_put**
-> PortfolioHolding update_portfolio_holding_using_put(portfolio_holding, portfolio_holding_id)
+> PortfolioHoldingLog update_portfolio_holding_using_put(portfolio_holding, portfolio_holding_id)
 
 Update a portfolio holding
 
@@ -1692,8 +1738,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -1720,7 +1767,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PortfolioHolding**](PortfolioHolding.md)
+[**PortfolioHoldingLog**](PortfolioHoldingLog.md)
 
 ### Authorization
 
@@ -1751,8 +1798,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 
@@ -1810,8 +1858,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PortfolioApi.new
 

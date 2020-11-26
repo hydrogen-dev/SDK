@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 ## Enum: ScoreTypeEnum
 
 
-* `[goal_achievement_score` (value: `"[goal_achievement_score"`)
+* `goal_achievement_score` (value: `"goal_achievement_score"`)
 
 * `portfolio_optimization_score` (value: `"portfolio_optimization_score"`)
 
@@ -35,7 +35,9 @@ Name | Type | Description | Notes
 
 * `diversification_score` (value: `"diversification_score"`)
 
-* `risk_score]` (value: `"risk_score]"`)
+* `risk_score` (value: `"risk_score"`)
+
+* `risk_profile` (value: `"risk_profile"`)
 
 
 

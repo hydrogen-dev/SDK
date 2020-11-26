@@ -5,10 +5,12 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createAccountAllocationMappingUsingPost**](AccountApi.md#createAccountAllocationMappingUsingPost) | **POST** /account_allocation | Create an account allocation
+[**createAccountStatusUsingPost**](AccountApi.md#createAccountStatusUsingPost) | **POST** /account_status | Create an account status
 [**createAccountTypeUsingPost**](AccountApi.md#createAccountTypeUsingPost) | **POST** /account_type | Create an account type
 [**createAccountUsingPost**](AccountApi.md#createAccountUsingPost) | **POST** /account | Create an account
 [**deleteAccountAllocationMappingUsingDelete**](AccountApi.md#deleteAccountAllocationMappingUsingDelete) | **DELETE** /account_allocation/{account_allocation_id} | Delete an account allocation
 [**deleteAccountPermissionUsingDELETE**](AccountApi.md#deleteAccountPermissionUsingDELETE) | **DELETE** /account_permission/{account_id} | Delete an account permission
+[**deleteAccountStatusUsingDelete**](AccountApi.md#deleteAccountStatusUsingDelete) | **DELETE** /account_status/{account_status_id} | Delete an account status
 [**deleteAccountTypeUsingDelete**](AccountApi.md#deleteAccountTypeUsingDelete) | **DELETE** /account_type/{account_type_id} | Delete an account type
 [**deleteAccountUsingDelete**](AccountApi.md#deleteAccountUsingDelete) | **DELETE** /account/{account_id} | Delete an account
 [**getAccountAllUsingGet**](AccountApi.md#getAccountAllUsingGet) | **GET** /account | List all accounts
@@ -18,6 +20,8 @@ Method | HTTP request | Description
 [**getAccountAssetSizeAllUsingGet**](AccountApi.md#getAccountAssetSizeAllUsingGet) | **GET** /account_asset_size | List all account asset sizes
 [**getAccountOverviewUsingGet**](AccountApi.md#getAccountOverviewUsingGet) | **GET** /account/{account_id}/account_overview | List all Account overview
 [**getAccountPermissionUsingGET**](AccountApi.md#getAccountPermissionUsingGET) | **GET** /account_permission/{account_id} | Get an account permission
+[**getAccountStatusAllUsingGet**](AccountApi.md#getAccountStatusAllUsingGet) | **GET** /account_status | List all account statuses
+[**getAccountStatusUsingGet**](AccountApi.md#getAccountStatusUsingGet) | **GET** /account_status/{account_status_id} | Retrieve an account status
 [**getAccountTypeAllUsingGet**](AccountApi.md#getAccountTypeAllUsingGet) | **GET** /account_type | List all account types
 [**getAccountTypeUsingGet**](AccountApi.md#getAccountTypeUsingGet) | **GET** /account_type/{account_type_id} | Get an Account Type
 [**getAccountUsingGet**](AccountApi.md#getAccountUsingGet) | **GET** /account/{account_id} | Retrieve an account
@@ -27,6 +31,7 @@ Method | HTTP request | Description
 [**insertAccountAndRelatedPermissionUsingPOST**](AccountApi.md#insertAccountAndRelatedPermissionUsingPOST) | **POST** /account_permission | create an account permission
 [**subscribeAccountUsingPost**](AccountApi.md#subscribeAccountUsingPost) | **POST** /account/{account_id}/subscribe | Subscribe an account
 [**updateAccountAllocationMappingUsingPut**](AccountApi.md#updateAccountAllocationMappingUsingPut) | **PUT** /account_allocation/{account_allocation_id} | Update an account allocation
+[**updateAccountStatusUsingPut**](AccountApi.md#updateAccountStatusUsingPut) | **PUT** /account_status/{account_status_id} | Update an account status
 [**updateAccountTypeUsingPut**](AccountApi.md#updateAccountTypeUsingPut) | **PUT** /account_type/{account_type_id} | Update an account type
 [**updateAccountUsingPut**](AccountApi.md#updateAccountUsingPut) | **PUT** /account/{account_id} | Update an account
 [**updateClientAccountPermissionUsingPUT**](AccountApi.md#updateClientAccountPermissionUsingPUT) | **PUT** /account_permission/{account_id} | Update an account permission
@@ -55,6 +60,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -96,6 +104,73 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **createAccountStatusUsingPost**
+> \com\hydrogen\nucleus\Model\AccountStatus createAccountStatusUsingPost($account_status_request)
+
+Create an account status
+
+Create an account status record for an account.
+
+### Example
+```php
+<?php
+require_once('../vendor/autoload.php');
+try {
+// Use one of the below method to generate oauth token
+// 1) Generate Token for client credentials
+$config =
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+            ->createClientCredential("MYCLIENTID",
+             "MYCLIENTSECRET");
+// 2) Generate Token for password credentials
+$config =
+        \com\hydrogen\nucleus\AuthApiClient::
+        getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
+                      ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
+} catch (\com\hydrogen\nucleus\ApiException $e) {
+    print_r($e);
+}
+$apiInstance = new com\hydrogen\nucleus\Api\AccountApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$account_status_request = new \com\hydrogen\nucleus\Model\AccountStatus(); // \com\hydrogen\nucleus\Model\AccountStatus | accountStatusRequest
+
+try {
+    $result = $apiInstance->createAccountStatusUsingPost($account_status_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountApi->createAccountStatusUsingPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_status_request** | [**\com\hydrogen\nucleus\Model\AccountStatus**](../Model/AccountStatus.md)| accountStatusRequest |
+
+### Return type
+
+[**\com\hydrogen\nucleus\Model\AccountStatus**](../Model/AccountStatus.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **createAccountTypeUsingPost**
 > \com\hydrogen\nucleus\Model\AccountType createAccountTypeUsingPost($account_type_request)
 
@@ -119,6 +194,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -183,6 +261,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -247,6 +328,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -310,6 +394,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -351,8 +438,74 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **deleteAccountStatusUsingDelete**
+> deleteAccountStatusUsingDelete($account_status_id)
+
+Delete an account status
+
+Permanently delete an account status record from an account’s history.
+
+### Example
+```php
+<?php
+require_once('../vendor/autoload.php');
+try {
+// Use one of the below method to generate oauth token
+// 1) Generate Token for client credentials
+$config =
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+            ->createClientCredential("MYCLIENTID",
+             "MYCLIENTSECRET");
+// 2) Generate Token for password credentials
+$config =
+        \com\hydrogen\nucleus\AuthApiClient::
+        getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
+                      ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
+} catch (\com\hydrogen\nucleus\ApiException $e) {
+    print_r($e);
+}
+$apiInstance = new com\hydrogen\nucleus\Api\AccountApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$account_status_id = "account_status_id_example"; // string | UUID account_status_id
+
+try {
+    $apiInstance->deleteAccountStatusUsingDelete($account_status_id);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountApi->deleteAccountStatusUsingDelete: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_status_id** | [**string**](../Model/.md)| UUID account_status_id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **deleteAccountTypeUsingDelete**
-> deleteAccountTypeUsingDelete($account_type_id, $account_type_id2)
+> deleteAccountTypeUsingDelete($account_type_id)
 
 Delete an account type
 
@@ -374,6 +527,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -384,10 +540,9 @@ $apiInstance = new com\hydrogen\nucleus\Api\AccountApi(
     $config
 );
 $account_type_id = "account_type_id_example"; // string | UUID account_type_id
-$account_type_id2 = "account_type_id_example"; // string | account_type_id
 
 try {
-    $apiInstance->deleteAccountTypeUsingDelete($account_type_id, $account_type_id2);
+    $apiInstance->deleteAccountTypeUsingDelete($account_type_id);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->deleteAccountTypeUsingDelete: ', $e->getMessage(), PHP_EOL;
 }
@@ -399,7 +554,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_type_id** | [**string**](../Model/.md)| UUID account_type_id |
- **account_type_id2** | [**string**](../Model/.md)| account_type_id |
 
 ### Return type
 
@@ -439,6 +593,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -502,6 +659,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -574,6 +734,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -646,6 +809,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -688,7 +854,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAccountAssetSizeAggAllUsingGet**
-> \com\hydrogen\nucleus\Model\AvailableDateDoubleVO[] getAccountAssetSizeAggAllUsingGet($account_id, $end_date, $exclude_subledger, $get_latest, $sort_type, $start_date)
+> \com\hydrogen\nucleus\Model\AvailableDateDoubleVO[] getAccountAssetSizeAggAllUsingGet($account_id, $currency_conversion, $end_date, $exclude_subledger, $get_latest, $sort_type, $start_date)
 
 List all account asset sizes
 
@@ -710,6 +876,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -720,14 +889,15 @@ $apiInstance = new com\hydrogen\nucleus\Api\AccountApi(
     $config
 );
 $account_id = "account_id_example"; // string | Account Id
+$currency_conversion = "currency_conversion_example"; // string | USD
 $end_date = new \DateTime("2013-10-20"); // \DateTime | end date
-$exclude_subledger = false; // bool | exclude_subledger
+$exclude_subledger = true; // bool | true or false
 $get_latest = true; // bool | true or false
 $sort_type = "sort_type_example"; // string | Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in ()
 $start_date = new \DateTime("2013-10-20"); // \DateTime | start date
 
 try {
-    $result = $apiInstance->getAccountAssetSizeAggAllUsingGet($account_id, $end_date, $exclude_subledger, $get_latest, $sort_type, $start_date);
+    $result = $apiInstance->getAccountAssetSizeAggAllUsingGet($account_id, $currency_conversion, $end_date, $exclude_subledger, $get_latest, $sort_type, $start_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->getAccountAssetSizeAggAllUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -740,8 +910,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**string**](../Model/.md)| Account Id |
+ **currency_conversion** | **string**| USD | [optional]
  **end_date** | **\DateTime**| end date | [optional]
- **exclude_subledger** | **bool**| exclude_subledger | [optional] [default to false]
+ **exclude_subledger** | **bool**| true or false | [optional]
  **get_latest** | **bool**| true or false | [optional]
  **sort_type** | **string**| Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () | [optional]
  **start_date** | **\DateTime**| start date | [optional]
@@ -784,6 +955,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -834,7 +1008,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAccountOverviewUsingGet**
-> \com\hydrogen\nucleus\Model\AccountOverviewVO getAccountOverviewUsingGet($account_id, $ascending, $order_by)
+> object getAccountOverviewUsingGet($account_id, $ascending, $order_by)
 
 List all Account overview
 
@@ -854,6 +1028,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -886,7 +1063,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\AccountOverviewVO**](../Model/AccountOverviewVO.md)
+**object**
 
 ### Authorization
 
@@ -922,6 +1099,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -963,6 +1143,148 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **getAccountStatusAllUsingGet**
+> \com\hydrogen\nucleus\Model\PageAccountStatus_ getAccountStatusAllUsingGet($ascending, $filter, $order_by, $page, $size)
+
+List all account statuses
+
+Get the account status history information for all accounts.
+
+### Example
+```php
+<?php
+require_once('../vendor/autoload.php');
+try {
+// Use one of the below method to generate oauth token
+// 1) Generate Token for client credentials
+$config =
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+            ->createClientCredential("MYCLIENTID",
+             "MYCLIENTSECRET");
+// 2) Generate Token for password credentials
+$config =
+        \com\hydrogen\nucleus\AuthApiClient::
+        getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
+                      ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
+} catch (\com\hydrogen\nucleus\ApiException $e) {
+    print_r($e);
+}
+$apiInstance = new com\hydrogen\nucleus\Api\AccountApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$ascending = false; // bool | ascending
+$filter = "filter_example"; // string | filter
+$order_by = "update_date"; // string | order_by
+$page = 0; // int | page
+$size = 25; // int | size
+
+try {
+    $result = $apiInstance->getAccountStatusAllUsingGet($ascending, $filter, $order_by, $page, $size);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountApi->getAccountStatusAllUsingGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ascending** | **bool**| ascending | [optional] [default to false]
+ **filter** | **string**| filter | [optional]
+ **order_by** | **string**| order_by | [optional] [default to update_date]
+ **page** | **int**| page | [optional] [default to 0]
+ **size** | **int**| size | [optional] [default to 25]
+
+### Return type
+
+[**\com\hydrogen\nucleus\Model\PageAccountStatus_**](../Model/PageAccountStatus_.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getAccountStatusUsingGet**
+> \com\hydrogen\nucleus\Model\AccountStatus getAccountStatusUsingGet($account_status_id)
+
+Retrieve an account status
+
+Retrieve the information for a specific account status record for an account.
+
+### Example
+```php
+<?php
+require_once('../vendor/autoload.php');
+try {
+// Use one of the below method to generate oauth token
+// 1) Generate Token for client credentials
+$config =
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+            ->createClientCredential("MYCLIENTID",
+             "MYCLIENTSECRET");
+// 2) Generate Token for password credentials
+$config =
+        \com\hydrogen\nucleus\AuthApiClient::
+        getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
+                      ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
+} catch (\com\hydrogen\nucleus\ApiException $e) {
+    print_r($e);
+}
+$apiInstance = new com\hydrogen\nucleus\Api\AccountApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$account_status_id = "account_status_id_example"; // string | UUID account_status_id
+
+try {
+    $result = $apiInstance->getAccountStatusUsingGet($account_status_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountApi->getAccountStatusUsingGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_status_id** | [**string**](../Model/.md)| UUID account_status_id |
+
+### Return type
+
+[**\com\hydrogen\nucleus\Model\AccountStatus**](../Model/AccountStatus.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **getAccountTypeAllUsingGet**
 > \com\hydrogen\nucleus\Model\PageAccountType_ getAccountTypeAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
@@ -986,6 +1308,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1036,7 +1361,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAccountTypeUsingGet**
-> \com\hydrogen\nucleus\Model\AccountType getAccountTypeUsingGet($account_type_id, $account_type_id2)
+> \com\hydrogen\nucleus\Model\AccountType getAccountTypeUsingGet($account_type_id)
 
 Get an Account Type
 
@@ -1058,6 +1383,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1068,10 +1396,9 @@ $apiInstance = new com\hydrogen\nucleus\Api\AccountApi(
     $config
 );
 $account_type_id = "account_type_id_example"; // string | UUID account_type_id
-$account_type_id2 = "account_type_id_example"; // string | account_type_id
 
 try {
-    $result = $apiInstance->getAccountTypeUsingGet($account_type_id, $account_type_id2);
+    $result = $apiInstance->getAccountTypeUsingGet($account_type_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->getAccountTypeUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -1084,7 +1411,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_type_id** | [**string**](../Model/.md)| UUID account_type_id |
- **account_type_id2** | [**string**](../Model/.md)| account_type_id |
 
 ### Return type
 
@@ -1124,6 +1450,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1188,6 +1517,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1238,7 +1570,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPortfolioHoldingAggAllUsingGet**
-> \com\hydrogen\nucleus\Model\PortfolioHoldingAgg[] getPortfolioHoldingAggAllUsingGet($account_id, $end_date, $get_latest, $start_date)
+> \com\hydrogen\nucleus\Model\PortfolioHoldingAgg[] getPortfolioHoldingAggAllUsingGet($account_id, $currency_conversion, $end_date, $get_latest, $start_date)
 
 List all account holdings
 
@@ -1260,6 +1592,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1270,12 +1605,13 @@ $apiInstance = new com\hydrogen\nucleus\Api\AccountApi(
     $config
 );
 $account_id = "account_id_example"; // string | UUID account_id
-$end_date = "end_date_example"; // string | end date
+$currency_conversion = "currency_conversion_example"; // string | USD
+$end_date = new \DateTime("2013-10-20"); // \DateTime | end date
 $get_latest = true; // bool | true or false
-$start_date = "start_date_example"; // string | start date
+$start_date = new \DateTime("2013-10-20"); // \DateTime | start date
 
 try {
-    $result = $apiInstance->getPortfolioHoldingAggAllUsingGet($account_id, $end_date, $get_latest, $start_date);
+    $result = $apiInstance->getPortfolioHoldingAggAllUsingGet($account_id, $currency_conversion, $end_date, $get_latest, $start_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->getPortfolioHoldingAggAllUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -1288,9 +1624,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**string**](../Model/.md)| UUID account_id |
- **end_date** | **string**| end date | [optional]
+ **currency_conversion** | **string**| USD | [optional]
+ **end_date** | **\DateTime**| end date | [optional]
  **get_latest** | **bool**| true or false | [optional]
- **start_date** | **string**| start date | [optional]
+ **start_date** | **\DateTime**| start date | [optional]
 
 ### Return type
 
@@ -1308,7 +1645,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPortfolioTransactionAggAllUsingGet**
-> \com\hydrogen\nucleus\Model\PagePortfolioTransaction_ getPortfolioTransactionAggAllUsingGet($account_id, $ascending, $end_date, $order_by, $page, $size, $start_date)
+> \com\hydrogen\nucleus\Model\PagePortfolioTransaction_ getPortfolioTransactionAggAllUsingGet($account_id, $ascending, $currency_conversion, $end_date, $order_by, $page, $size, $start_date)
 
 List all account transactions
 
@@ -1330,6 +1667,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1341,14 +1681,15 @@ $apiInstance = new com\hydrogen\nucleus\Api\AccountApi(
 );
 $account_id = "account_id_example"; // string | UUID account_id
 $ascending = false; // bool | ascending
-$end_date = new \DateTime("null"); // \DateTime | end_date
+$currency_conversion = "currency_conversion_example"; // string | USD
+$end_date = new \DateTime("2013-10-20"); // \DateTime | end date
 $order_by = "update_date"; // string | order_by
 $page = 0; // int | page
 $size = 25; // int | size
-$start_date = new \DateTime("null"); // \DateTime | start_date
+$start_date = new \DateTime("2013-10-20"); // \DateTime | start date
 
 try {
-    $result = $apiInstance->getPortfolioTransactionAggAllUsingGet($account_id, $ascending, $end_date, $order_by, $page, $size, $start_date);
+    $result = $apiInstance->getPortfolioTransactionAggAllUsingGet($account_id, $ascending, $currency_conversion, $end_date, $order_by, $page, $size, $start_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->getPortfolioTransactionAggAllUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -1362,11 +1703,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**string**](../Model/.md)| UUID account_id |
  **ascending** | **bool**| ascending | [optional] [default to false]
- **end_date** | **\DateTime**| end_date | [optional] [default to null]
+ **currency_conversion** | **string**| USD | [optional]
+ **end_date** | **\DateTime**| end date | [optional]
  **order_by** | **string**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
  **size** | **int**| size | [optional] [default to 25]
- **start_date** | **\DateTime**| start_date | [optional] [default to null]
+ **start_date** | **\DateTime**| start date | [optional]
 
 ### Return type
 
@@ -1406,6 +1748,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1470,6 +1815,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1536,6 +1884,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1579,6 +1930,75 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **updateAccountStatusUsingPut**
+> \com\hydrogen\nucleus\Model\AccountStatus updateAccountStatusUsingPut($account_status, $account_status_id)
+
+Update an account status
+
+Update an account status record for an account.
+
+### Example
+```php
+<?php
+require_once('../vendor/autoload.php');
+try {
+// Use one of the below method to generate oauth token
+// 1) Generate Token for client credentials
+$config =
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+            ->createClientCredential("MYCLIENTID",
+             "MYCLIENTSECRET");
+// 2) Generate Token for password credentials
+$config =
+        \com\hydrogen\nucleus\AuthApiClient::
+        getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
+                      ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
+} catch (\com\hydrogen\nucleus\ApiException $e) {
+    print_r($e);
+}
+$apiInstance = new com\hydrogen\nucleus\Api\AccountApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$account_status = new \com\hydrogen\nucleus\Model\AccountStatus(); // \com\hydrogen\nucleus\Model\AccountStatus | account_status
+$account_status_id = "account_status_id_example"; // string | UUID account_status_id
+
+try {
+    $result = $apiInstance->updateAccountStatusUsingPut($account_status, $account_status_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountApi->updateAccountStatusUsingPut: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_status** | [**\com\hydrogen\nucleus\Model\AccountStatus**](../Model/AccountStatus.md)| account_status |
+ **account_status_id** | [**string**](../Model/.md)| UUID account_status_id |
+
+### Return type
+
+[**\com\hydrogen\nucleus\Model\AccountStatus**](../Model/AccountStatus.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **updateAccountTypeUsingPut**
 > \com\hydrogen\nucleus\Model\AccountType updateAccountTypeUsingPut($account_type, $account_type_id)
 
@@ -1602,6 +2022,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1668,6 +2091,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1734,6 +2160,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }

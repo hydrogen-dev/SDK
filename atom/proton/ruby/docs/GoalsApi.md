@@ -23,14 +23,15 @@ Allocate based on an accumulation goal
 ```ruby
 # load the gem
 require 'proton_api'
+# setup authorization
 ProtonApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = ProtonApi::GoalsApi.new
 
@@ -78,14 +79,15 @@ Generate recommendations to achieve an accumulation goal
 ```ruby
 # load the gem
 require 'proton_api'
+# setup authorization
 ProtonApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = ProtonApi::GoalsApi.new
 
@@ -133,14 +135,15 @@ Track the status of an accumulation goal
 ```ruby
 # load the gem
 require 'proton_api'
+# setup authorization
 ProtonApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = ProtonApi::GoalsApi.new
 
@@ -188,14 +191,15 @@ Allocate based on a decumulation goal
 ```ruby
 # load the gem
 require 'proton_api'
+# setup authorization
 ProtonApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = ProtonApi::GoalsApi.new
 
@@ -243,14 +247,15 @@ Generate recommendations to achieve a decumulation goal
 ```ruby
 # load the gem
 require 'proton_api'
+# setup authorization
 ProtonApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = ProtonApi::GoalsApi.new
 
@@ -298,14 +303,15 @@ Track the status of a decumulation goal
 ```ruby
 # load the gem
 require 'proton_api'
+# setup authorization
 ProtonApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = ProtonApi::GoalsApi.new
 

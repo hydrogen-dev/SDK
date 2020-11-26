@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **String** | accountId | [optional] 
 **create_date** | **DateTime** |  | [optional] 
-**date** | **DateTime** | date | 
+**date** | **Date** | date | 
 **id** | **String** |  | [optional] 
 **is_read** | **BOOLEAN** | isRead | [optional] 
 **metadata** | **Hash&lt;String, String&gt;** | metadata | [optional] 

@@ -4,10 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **category** | **str** | category | [optional] 
-**coverage_amount** | **str** | coverageAmount | 
+**coverage_amount** | **float** | coverageAmount | 
 **create_date** | **datetime** |  | [optional] 
 **currency_code** | **str** | currencyCode | 
-**deductible** | **str** | deductible | [optional] 
+**deductible** | **float** | deductible | [optional] 
 **description** | **str** | description | [optional] 
 **id** | **str** |  | [optional] 
 **is_active** | **bool** | is_active | [optional] 

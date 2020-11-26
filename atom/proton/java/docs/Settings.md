@@ -4,12 +4,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**defaultDriftFactor** | **Float** |  |  [optional]
-**downside** | **Boolean** |  |  [optional]
-**periodRebal** | **Boolean** |  |  [optional]
 **rebalancePeriod** | [**RebalancePeriodEnum**](#RebalancePeriodEnum) |  |  [optional]
 **taxEfficiencyId** | [**TaxEfficiencyIdEnum**](#TaxEfficiencyIdEnum) |  |  [optional]
+**downside** | **Boolean** |  |  [optional]
+**defaultDriftFactor** | **Float** |  |  [optional]
 **driftRebal** | **Boolean** |  |  [optional]
+**periodRebal** | **Boolean** |  |  [optional]
 
 
 <a name="RebalancePeriodEnum"></a>

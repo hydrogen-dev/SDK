@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **asset_size** | **float** | Model asset_size | 
 **create_date** | **datetime** |  | [optional] 
 **currency_code** | **str** | currency_code | [optional] 
-**_date** | **datetime** | Model asset_size date | 
+**_date** | **date** | Model asset_size date | 
 **id** | **str** |  | [optional] 
 **is_reconciled** | **bool** | Model asset_size is reconciled | [optional] 
 **model_id** | **str** | Model asset_size Model id | 

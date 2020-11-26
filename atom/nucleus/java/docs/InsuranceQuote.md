@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **currencyCode** | **String** | currencyCode | 
 **discounts** | [**List&lt;InsuranceDiscountMap&gt;**](InsuranceDiscountMap.md) |  |  [optional]
 **endDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**financialOfferId** | [**UUID**](UUID.md) | financial_offer_id |  [optional]
 **id** | [**UUID**](UUID.md) |  |  [optional]
 **isActive** | **Boolean** | is_active |  [optional]
 **metadata** | **Map&lt;String, String&gt;** |  |  [optional]

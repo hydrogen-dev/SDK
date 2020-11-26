@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **create_date** | **datetime** |  | [optional] 
 **id** | **str** |  | [optional] 
 **is_read** | **bool** |  | [optional] 
+**is_sent** | **bool** |  | [optional] 
 **metadata** | **dict(str, str)** | metadata | [optional] 
 **notification_content** | **str** | notification_content | 
 **notification_date** | **datetime** | notification_date | 

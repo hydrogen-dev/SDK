@@ -8,6 +8,10 @@ Name | Type | Description | Notes
 **createDate** | **Date** |  | [optional] 
 **id** | **String** |  | [optional] 
 **isActive** | **Boolean** | isActive | [optional] 
+**isAsset** | **Boolean** | isAsset | [optional] 
+**isBusiness** | **Boolean** | isBusiness | [optional] 
+**isCash** | **Boolean** | isCash | [optional] 
+**isInvestment** | **Boolean** | isInvestment | [optional] 
 **isTaxable** | **Boolean** | isTaxable | [optional] 
 **metadata** | **{String: String}** |  | [optional] 
 **name** | **String** | name | 

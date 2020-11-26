@@ -4,10 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **category** | **String** | category | [optional] 
-**coverage_amount** | **String** | coverageAmount | 
+**coverage_amount** | **Float** | coverageAmount | 
 **create_date** | **DateTime** |  | [optional] 
 **currency_code** | **String** | currencyCode | 
-**deductible** | **String** | deductible | [optional] 
+**deductible** | **Float** | deductible | [optional] 
 **description** | **String** | description | [optional] 
 **id** | **String** |  | [optional] 
 **is_active** | **BOOLEAN** | is_active | [optional] 

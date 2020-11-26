@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **description** | **String** | SupportTicket description | 
 **id** | [**UUID**](UUID.md) |  |  [optional]
 **metadata** | **Map&lt;String, String&gt;** |  |  [optional]
-**openTime** | [**LocalDate**](OffsetDateTime.md) | SupportTicket open time | 
+**openTime** | [**LocalDate**](LocalDate.md) | SupportTicket open time | 
 **secondaryId** | **String** |  |  [optional]
 **status** | **String** | SupportTicket status |  [optional]
 **subject** | **String** | SupportTicket subject |  [optional]

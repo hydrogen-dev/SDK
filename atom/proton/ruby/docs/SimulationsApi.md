@@ -24,14 +24,15 @@ Run a historical analysis for a group of investments
 ```ruby
 # load the gem
 require 'proton_api'
+# setup authorization
 ProtonApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = ProtonApi::SimulationsApi.new
 
@@ -79,14 +80,15 @@ Analyze a group of investments against key historical events
 ```ruby
 # load the gem
 require 'proton_api'
+# setup authorization
 ProtonApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = ProtonApi::SimulationsApi.new
 
@@ -134,14 +136,15 @@ Simulate the future growth of a group of investments
 ```ruby
 # load the gem
 require 'proton_api'
+# setup authorization
 ProtonApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = ProtonApi::SimulationsApi.new
 
@@ -189,14 +192,15 @@ Simulate the impact of adding, removing, reducing, or increasing various positio
 ```ruby
 # load the gem
 require 'proton_api'
+# setup authorization
 ProtonApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = ProtonApi::SimulationsApi.new
 
@@ -244,14 +248,15 @@ Simulate the future growth of a simple savings account
 ```ruby
 # load the gem
 require 'proton_api'
+# setup authorization
 ProtonApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = ProtonApi::SimulationsApi.new
 
@@ -299,14 +304,15 @@ Analyze a group of investments against a series of external economic factors
 ```ruby
 # load the gem
 require 'proton_api'
+# setup authorization
 ProtonApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = ProtonApi::SimulationsApi.new
 
@@ -354,14 +360,15 @@ Analyze a group of investments against an external economic factor
 ```ruby
 # load the gem
 require 'proton_api'
+# setup authorization
 ProtonApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token for grant_type=client_credentials
+   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+  # Creating a token for grant_type=password
+   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+  # Creating a token using client token
+   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = ProtonApi::SimulationsApi.new
 

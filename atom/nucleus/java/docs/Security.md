@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assetClass** | **String** | Security asset class |  [optional]
+**brokers** | [**List&lt;Brokers&gt;**](Brokers.md) | brokers |  [optional]
 **category** | **String** | Security category |  [optional]
 **createDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **currencyCode** | **String** | currency_code |  [optional]

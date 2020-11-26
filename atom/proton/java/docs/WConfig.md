@@ -4,11 +4,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**wMinMinor** | **Float** |  | 
+**wMaxMajor** | **Float** |  | 
+**wMinMajor** | **Float** |  | 
 **cashAmount** | **Float** |  | 
 **wMaxMinor** | **Float** |  | 
-**wMaxMajor** | **Float** |  | 
-**wMinMinor** | **Float** |  | 
-**wMinMajor** | **Float** |  | 
 
 
 

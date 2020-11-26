@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **create_date** | **DateTime** |  | [optional] 
 **id** | **String** |  | [optional] 
 **is_buy** | **BOOLEAN** | isBuy | [optional] 
+**is_fee** | **BOOLEAN** | isFee | [optional] 
+**is_transfer** | **String** |  | [optional] 
 **metadata** | **Hash&lt;String, String&gt;** |  | [optional] 
 **secondary_id** | **String** |  | [optional] 
 **subcategory** | **String** | subcategory | [optional] 

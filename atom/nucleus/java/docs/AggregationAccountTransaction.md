@@ -12,12 +12,32 @@ Name | Type | Description | Notes
 **id** | [**UUID**](UUID.md) |  |  [optional]
 **investment** | [**Investment**](Investment.md) |  |  [optional]
 **isExcludedAnalysis** | **Boolean** |  |  [optional]
+**isFee** | [**IsFeeEnum**](#IsFeeEnum) |  |  [optional]
 **isRecurring** | **Boolean** |  |  [optional]
+**isTransfer** | [**IsTransferEnum**](#IsTransferEnum) |  |  [optional]
 **metadata** | **Map&lt;String, String&gt;** |  |  [optional]
 **secondaryId** | **String** |  |  [optional]
 **status** | **String** | status |  [optional]
 **transactionDate** | [**OffsetDateTime**](OffsetDateTime.md) | transactionDate | 
 **updateDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+
+
+<a name="IsFeeEnum"></a>
+## Enum: IsFeeEnum
+Name | Value
+---- | -----
+FALSE | &quot;FALSE&quot;
+TRUE | &quot;TRUE&quot;
+NULL | &quot;NULL&quot;
+
+
+<a name="IsTransferEnum"></a>
+## Enum: IsTransferEnum
+Name | Value
+---- | -----
+FALSE | &quot;FALSE&quot;
+TRUE | &quot;TRUE&quot;
+NULL | &quot;NULL&quot;
 
 
 

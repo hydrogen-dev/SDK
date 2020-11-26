@@ -5,9 +5,9 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_score_using_post**](ScoreApi.md#create_score_using_post) | **POST** /score | Create a score
-[**create_score_using_post1**](ScoreApi.md#create_score_using_post1) | **GET** /score/{score_id} | Retrieve a score
 [**delete_score_using_delete**](ScoreApi.md#delete_score_using_delete) | **DELETE** /score/{score_id} | Delete a score
 [**get_score_all_using_get**](ScoreApi.md#get_score_all_using_get) | **GET** /score | List all scores
+[**get_score_using_get**](ScoreApi.md#get_score_using_get) | **GET** /score/{score_id} | Retrieve a score
 [**update_score_using_put**](ScoreApi.md#update_score_using_put) | **PUT** /score/{score_id} | Update a score
 
 
@@ -37,10 +37,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ScoreApi(nucleus_api.ApiClient(configuration))
 score = nucleus_api.Score() # Score | score
@@ -74,69 +75,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_score_using_post1**
-> Score create_score_using_post1(score_id)
-
-Retrieve a score
-
-Retrieve the information for a specific score associated with a client, account, goal, portfolio, allocation, model, benchmark or security.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import nucleus_api
-from nucleus_api.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: oauth2
-configuration = nucleus_api.Configuration()
-
-# create an instance of the API class
-api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
-
-#api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
-
-# OR
-
-#api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
-
-configuration.access_token = api_token_response.access_token
-
-
-# create an instance of the API class
-api_instance = nucleus_api.ScoreApi(nucleus_api.ApiClient(configuration))
-score_id = 'score_id_example' # str | UUID score_id
-
-try:
-    # Retrieve a score
-    api_response = api_instance.create_score_using_post1(score_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ScoreApi->create_score_using_post1: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **score_id** | [**str**](.md)| UUID score_id | 
-
-### Return type
-
-[**Score**](Score.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **delete_score_using_delete**
 > delete_score_using_delete(score_id)
 
@@ -163,10 +101,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ScoreApi(nucleus_api.ApiClient(configuration))
 score_id = 'score_id_example' # str | UUID score_id
@@ -225,10 +164,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ScoreApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -270,6 +210,70 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_score_using_get**
+> Score get_score_using_get(score_id)
+
+Retrieve a score
+
+Retrieve the information for a specific score associated with a client, account, goal, portfolio, allocation, model, benchmark or security.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import nucleus_api
+from nucleus_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth2
+configuration = nucleus_api.Configuration()
+
+# create an instance of the API class
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
+
+#api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
+
+# OR
+
+#api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
+
+configuration.access_token = api_token_response.access_token
+# create an instance of the API class
+api_instance = nucleus_api.ScoreApi(nucleus_api.ApiClient(configuration))
+score_id = 'score_id_example' # str | UUID score_id
+
+try:
+    # Retrieve a score
+    api_response = api_instance.get_score_using_get(score_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ScoreApi->get_score_using_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **score_id** | [**str**](.md)| UUID score_id | 
+
+### Return type
+
+[**Score**](Score.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **update_score_using_put**
 > Score update_score_using_put(score, score_id)
 
@@ -296,10 +300,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ScoreApi(nucleus_api.ApiClient(configuration))
 score = nucleus_api.Score() # Score | score

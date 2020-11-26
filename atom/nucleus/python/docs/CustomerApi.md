@@ -42,10 +42,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.CustomerApi(nucleus_api.ApiClient(configuration))
 customer_revenue = nucleus_api.CustomerRevenue() # CustomerRevenue | customerRevenue
@@ -105,10 +106,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.CustomerApi(nucleus_api.ApiClient(configuration))
 customer = nucleus_api.Customer() # Customer | customer
@@ -168,10 +170,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.CustomerApi(nucleus_api.ApiClient(configuration))
 customer_revenue_id = 'customer_revenue_id_example' # str | UUID customer_revenue_id
@@ -230,10 +233,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.CustomerApi(nucleus_api.ApiClient(configuration))
 customer_id = 'customer_id_example' # str | UUID customer_id
@@ -292,10 +296,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.CustomerApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -338,7 +343,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_customer_revenue_all_using_get**
-> PageCustomerRevenue get_customer_revenue_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+> PageCustomerRevenue get_customer_revenue_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
 
 List all customer revenue
 
@@ -363,13 +368,15 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.CustomerApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
@@ -377,7 +384,7 @@ size = 25 # int | size (optional) (default to 25)
 
 try:
     # List all customer revenue
-    api_response = api_instance.get_customer_revenue_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    api_response = api_instance.get_customer_revenue_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CustomerApi->get_customer_revenue_all_using_get: %s\n" % e)
@@ -388,6 +395,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **str**| currency_conversion | [optional] 
  **filter** | **str**| filter | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -409,7 +417,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_customer_revenue_using_get**
-> CustomerRevenue get_customer_revenue_using_get(customer_revenue_id)
+> CustomerRevenue get_customer_revenue_using_get(customer_revenue_id, currency_conversion=currency_conversion)
 
 Retrieve a customer revenue
 
@@ -434,17 +442,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.CustomerApi(nucleus_api.ApiClient(configuration))
 customer_revenue_id = 'customer_revenue_id_example' # str | UUID customer_revenue_id
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 
 try:
     # Retrieve a customer revenue
-    api_response = api_instance.get_customer_revenue_using_get(customer_revenue_id)
+    api_response = api_instance.get_customer_revenue_using_get(customer_revenue_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CustomerApi->get_customer_revenue_using_get: %s\n" % e)
@@ -455,6 +465,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_revenue_id** | [**str**](.md)| UUID customer_revenue_id | 
+ **currency_conversion** | **str**| USD | [optional] 
 
 ### Return type
 
@@ -497,10 +508,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.CustomerApi(nucleus_api.ApiClient(configuration))
 customer_id = 'customer_id_example' # str | UUID customer_id
@@ -560,10 +572,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.CustomerApi(nucleus_api.ApiClient(configuration))
 customer_revenue = nucleus_api.CustomerRevenue() # CustomerRevenue | customer_revenue
@@ -625,10 +638,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.CustomerApi(nucleus_api.ApiClient(configuration))
 customer = nucleus_api.Customer() # Customer | customer

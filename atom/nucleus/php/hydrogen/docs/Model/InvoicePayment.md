@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**currency_code** | **string** | currency_code | 
 **id** | **string** |  | [optional] 
 **invoice_id** | **string** | invoiceId | 
 **payment_amount** | **float** | paymentAmount | 

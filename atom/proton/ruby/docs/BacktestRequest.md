@@ -3,15 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**start_date** | **Date** |  | 
-**end_date** | **Date** |  | 
-**model_id** | **String** |  | [optional] 
-**asset_size** | **Float** |  | [optional] 
-**initial_weights** | **Object** |  | [optional] 
-**settings** | **Object** |  | [optional] 
-**trades** | **BOOLEAN** |  | [optional] [default to true]
-**stats** | **BOOLEAN** |  | [optional] [default to true]
-**holdings** | **BOOLEAN** |  | [optional] [default to true]
 **asset_sizes** | **BOOLEAN** |  | [optional] [default to true]
+**settings** | [**Settings**](Settings.md) |  | [optional] 
+**asset_size** | **Float** |  | [optional] 
+**trades** | **BOOLEAN** |  | [optional] [default to true]
+**holdings** | **BOOLEAN** |  | [optional] [default to true]
+**model_id** | **String** |  | [optional] 
+**end_date** | **Date** |  | 
+**initial_weights** | **Object** |  | [optional] 
+**stats** | **BOOLEAN** |  | [optional] [default to true]
+**start_date** | **Date** |  | 
 
 

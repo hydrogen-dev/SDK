@@ -8,14 +8,14 @@ Method | HTTP request | Description
 [**create_allocation_using_post**](AllocationApi.md#create_allocation_using_post) | **POST** /allocation | Create an allocation
 [**delete_allocation_composition_using_delete**](AllocationApi.md#delete_allocation_composition_using_delete) | **DELETE** /allocation_composition/{allocation_composition_id} | Delete an allocation composition
 [**delete_allocation_using_delete**](AllocationApi.md#delete_allocation_using_delete) | **DELETE** /allocation/{allocation_id} | Delete an allocation
-[**get_all_holdings_using_get**](AllocationApi.md#get_all_holdings_using_get) | **GET** /allocation/{allocation_id}/holding | List all allocation holdings
-[**get_all_transactions_using_get**](AllocationApi.md#get_all_transactions_using_get) | **GET** /allocation/{allocation_id}/transaction | List all allocation transactions
-[**get_allocation_aggregated_data_using_get**](AllocationApi.md#get_allocation_aggregated_data_using_get) | **GET** /allocation/{allocation_id}/aggregate_data | List all Allocation aggregated data overview
+[**get_allocation_all_aggregate_data_using_get**](AllocationApi.md#get_allocation_all_aggregate_data_using_get) | **GET** /allocation/{allocation_id}/aggregate_data | List all Allocation aggregated data overview
+[**get_allocation_all_asset_size_all_using_get**](AllocationApi.md#get_allocation_all_asset_size_all_using_get) | **GET** /allocation/{allocation_id}/asset_size | List all allocation asset sizes
+[**get_allocation_all_holding_all_using_get**](AllocationApi.md#get_allocation_all_holding_all_using_get) | **GET** /allocation/{allocation_id}/holding | List all allocation holdings
+[**get_allocation_all_transaction_all_using_get**](AllocationApi.md#get_allocation_all_transaction_all_using_get) | **GET** /allocation/{allocation_id}/transaction | List all allocation transactions
 [**get_allocation_all_using_get**](AllocationApi.md#get_allocation_all_using_get) | **GET** /allocation | List all allocations
 [**get_allocation_composition_all_using_get**](AllocationApi.md#get_allocation_composition_all_using_get) | **GET** /allocation_composition | List all allocations compositions
 [**get_allocation_composition_using_get**](AllocationApi.md#get_allocation_composition_using_get) | **GET** /allocation_composition/{allocation_composition_id} | Retrieve an allocation composition
 [**get_allocation_using_get**](AllocationApi.md#get_allocation_using_get) | **GET** /allocation/{allocation_id} | Retrieve an allocation
-[**get_assetsize_using_get**](AllocationApi.md#get_assetsize_using_get) | **GET** /allocation/{allocation_id}/asset_size | List all allocation asset sizes
 [**update_allocation_composition_using_put**](AllocationApi.md#update_allocation_composition_using_put) | **PUT** /allocation_composition/{allocation_composition_id} | Update an allocation composition
 [**update_allocation_using_put**](AllocationApi.md#update_allocation_using_put) | **PUT** /allocation/{allocation_id} | Update an allocation
 
@@ -46,10 +46,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 alloc_request = nucleus_api.AllocationComposition() # AllocationComposition | allocRequest
@@ -109,10 +110,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_request = nucleus_api.Allocation() # Allocation | allocationRequest
@@ -172,10 +174,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_composition_id = 'allocation_composition_id_example' # str | UUID allocation_composition_id
@@ -234,10 +237,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_id = 'allocation_id_example' # str | UUID allocation_id
@@ -270,8 +274,144 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_holdings_using_get**
-> list[ModelHoldingAgg] get_all_holdings_using_get(allocation_id, end_date=end_date, start_date=start_date)
+# **get_allocation_all_aggregate_data_using_get**
+> AllocationAggregatedVO get_allocation_all_aggregate_data_using_get(allocation_id)
+
+List all Allocation aggregated data overview
+
+### Example
+```python
+from __future__ import print_function
+import time
+import nucleus_api
+from nucleus_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth2
+configuration = nucleus_api.Configuration()
+
+# create an instance of the API class
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
+
+#api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
+
+# OR
+
+#api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
+
+configuration.access_token = api_token_response.access_token
+# create an instance of the API class
+api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
+allocation_id = 'allocation_id_example' # str | Allocation Id
+
+try:
+    # List all Allocation aggregated data overview
+    api_response = api_instance.get_allocation_all_aggregate_data_using_get(allocation_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AllocationApi->get_allocation_all_aggregate_data_using_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **allocation_id** | [**str**](.md)| Allocation Id | 
+
+### Return type
+
+[**AllocationAggregatedVO**](AllocationAggregatedVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_allocation_all_asset_size_all_using_get**
+> list[DateDoubleVO] get_allocation_all_asset_size_all_using_get(allocation_id, end_date=end_date, get_latest=get_latest, is_current_weight=is_current_weight, sort_type=sort_type, start_date=start_date)
+
+List all allocation asset sizes
+
+Get a list of asset sizes by date for a specific allocation.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import nucleus_api
+from nucleus_api.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth2
+configuration = nucleus_api.Configuration()
+
+# create an instance of the API class
+api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
+
+#api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
+
+# OR
+
+#api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
+
+configuration.access_token = api_token_response.access_token
+# create an instance of the API class
+api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
+allocation_id = 'allocation_id_example' # str | UUID allocation_id
+end_date = '2013-10-20' # date | end date (optional)
+get_latest = true # bool | get_latest (optional)
+is_current_weight = true # bool | is_current_weight (optional) (default to true)
+sort_type = 'sort_type_example' # str | D (Daily), Q (quarterly), M (Monthly), Y (Annually)  (optional)
+start_date = '2013-10-20' # date | start date (optional)
+
+try:
+    # List all allocation asset sizes
+    api_response = api_instance.get_allocation_all_asset_size_all_using_get(allocation_id, end_date=end_date, get_latest=get_latest, is_current_weight=is_current_weight, sort_type=sort_type, start_date=start_date)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AllocationApi->get_allocation_all_asset_size_all_using_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **allocation_id** | [**str**](.md)| UUID allocation_id | 
+ **end_date** | **date**| end date | [optional] 
+ **get_latest** | **bool**| get_latest | [optional] 
+ **is_current_weight** | **bool**| is_current_weight | [optional] [default to true]
+ **sort_type** | **str**| D (Daily), Q (quarterly), M (Monthly), Y (Annually)  | [optional] 
+ **start_date** | **date**| start date | [optional] 
+
+### Return type
+
+[**list[DateDoubleVO]**](DateDoubleVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_allocation_all_holding_all_using_get**
+> list[ModelHoldingVO] get_allocation_all_holding_all_using_get(allocation_id, end_date=end_date, start_date=start_date)
 
 List all allocation holdings
 
@@ -296,22 +436,23 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_id = 'allocation_id_example' # str | UUID allocation_id
-end_date = 'null' # datetime | end_date (optional) (default to null)
-start_date = 'null' # datetime | start_date (optional) (default to null)
+end_date = '2013-10-20' # date | end date (optional)
+start_date = '2013-10-20' # date | start date (optional)
 
 try:
     # List all allocation holdings
-    api_response = api_instance.get_all_holdings_using_get(allocation_id, end_date=end_date, start_date=start_date)
+    api_response = api_instance.get_allocation_all_holding_all_using_get(allocation_id, end_date=end_date, start_date=start_date)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AllocationApi->get_all_holdings_using_get: %s\n" % e)
+    print("Exception when calling AllocationApi->get_allocation_all_holding_all_using_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -319,12 +460,12 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **allocation_id** | [**str**](.md)| UUID allocation_id | 
- **end_date** | **datetime**| end_date | [optional] [default to null]
- **start_date** | **datetime**| start_date | [optional] [default to null]
+ **end_date** | **date**| end date | [optional] 
+ **start_date** | **date**| start date | [optional] 
 
 ### Return type
 
-[**list[ModelHoldingAgg]**](ModelHoldingAgg.md)
+[**list[ModelHoldingVO]**](ModelHoldingVO.md)
 
 ### Authorization
 
@@ -337,8 +478,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_transactions_using_get**
-> PageModelTransaction get_all_transactions_using_get(allocation_id, ascending=ascending, end_date=end_date, order_by=order_by, page=page, size=size, start_date=start_date)
+# **get_allocation_all_transaction_all_using_get**
+> PageModelTransaction get_allocation_all_transaction_all_using_get(allocation_id, ascending=ascending, end_date=end_date, order_by=order_by, page=page, size=size, start_date=start_date)
 
 List all allocation transactions
 
@@ -363,26 +504,27 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_id = 'allocation_id_example' # str | UUID allocation_id
 ascending = false # bool | ascending (optional) (default to false)
-end_date = 'null' # datetime | end_date (optional) (default to null)
+end_date = '2013-10-20' # date | end date (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
 size = 25 # int | size (optional) (default to 25)
-start_date = 'null' # datetime | start_date (optional) (default to null)
+start_date = '2013-10-20' # date | start date (optional)
 
 try:
     # List all allocation transactions
-    api_response = api_instance.get_all_transactions_using_get(allocation_id, ascending=ascending, end_date=end_date, order_by=order_by, page=page, size=size, start_date=start_date)
+    api_response = api_instance.get_allocation_all_transaction_all_using_get(allocation_id, ascending=ascending, end_date=end_date, order_by=order_by, page=page, size=size, start_date=start_date)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AllocationApi->get_all_transactions_using_get: %s\n" % e)
+    print("Exception when calling AllocationApi->get_allocation_all_transaction_all_using_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -391,76 +533,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **allocation_id** | [**str**](.md)| UUID allocation_id | 
  **ascending** | **bool**| ascending | [optional] [default to false]
- **end_date** | **datetime**| end_date | [optional] [default to null]
+ **end_date** | **date**| end date | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
  **size** | **int**| size | [optional] [default to 25]
- **start_date** | **datetime**| start_date | [optional] [default to null]
+ **start_date** | **date**| start date | [optional] 
 
 ### Return type
 
 [**PageModelTransaction**](PageModelTransaction.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_allocation_aggregated_data_using_get**
-> AllocationAggregatedVO get_allocation_aggregated_data_using_get(allocation_id)
-
-List all Allocation aggregated data overview
-
-### Example
-```python
-from __future__ import print_function
-import time
-import nucleus_api
-from nucleus_api.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: oauth2
-configuration = nucleus_api.Configuration()
-
-# create an instance of the API class
-api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
-
-#api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
-
-# OR
-
-#api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
-
-configuration.access_token = api_token_response.access_token
-
-
-# create an instance of the API class
-api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
-allocation_id = 'allocation_id_example' # str | Allocation Id
-
-try:
-    # List all Allocation aggregated data overview
-    api_response = api_instance.get_allocation_aggregated_data_using_get(allocation_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AllocationApi->get_allocation_aggregated_data_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **allocation_id** | [**str**](.md)| Allocation Id | 
-
-### Return type
-
-[**AllocationAggregatedVO**](AllocationAggregatedVO.md)
 
 ### Authorization
 
@@ -499,10 +580,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -570,10 +652,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -641,10 +724,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_composition_id = 'allocation_composition_id_example' # str | UUID allocation_composition_id
@@ -704,10 +788,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_id = 'allocation_id_example' # str | UUID allocation_id
@@ -729,79 +814,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Allocation**](Allocation.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_assetsize_using_get**
-> list[DateDoubleVO] get_assetsize_using_get(allocation_id, end_date=end_date, get_latest=get_latest, is_current_weight=is_current_weight, sort_type=sort_type, start_date=start_date)
-
-List all allocation asset sizes
-
-Get a list of asset sizes by date for a specific allocation.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import nucleus_api
-from nucleus_api.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: oauth2
-configuration = nucleus_api.Configuration()
-
-# create an instance of the API class
-api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
-
-#api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
-
-# OR
-
-#api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
-
-configuration.access_token = api_token_response.access_token
-
-
-# create an instance of the API class
-api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
-allocation_id = 'allocation_id_example' # str | UUID allocation_id
-end_date = '2013-10-20' # date | end date (optional)
-get_latest = true # bool | get_latest (optional)
-is_current_weight = true # bool | is_current_weight (optional) (default to true)
-sort_type = 'sort_type_example' # str | D (Daily), Q (quarterly), M (Monthly), Y (Annually)  (optional)
-start_date = '2013-10-20' # date | start date (optional)
-
-try:
-    # List all allocation asset sizes
-    api_response = api_instance.get_assetsize_using_get(allocation_id, end_date=end_date, get_latest=get_latest, is_current_weight=is_current_weight, sort_type=sort_type, start_date=start_date)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AllocationApi->get_assetsize_using_get: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **allocation_id** | [**str**](.md)| UUID allocation_id | 
- **end_date** | **date**| end date | [optional] 
- **get_latest** | **bool**| get_latest | [optional] 
- **is_current_weight** | **bool**| is_current_weight | [optional] [default to true]
- **sort_type** | **str**| D (Daily), Q (quarterly), M (Monthly), Y (Annually)  | [optional] 
- **start_date** | **date**| start date | [optional] 
-
-### Return type
-
-[**list[DateDoubleVO]**](DateDoubleVO.md)
 
 ### Authorization
 
@@ -840,13 +852,14 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
-allocation_composition = nucleus_api.AllocationComposition() # AllocationComposition | aggregation_composition
+allocation_composition = nucleus_api.AllocationComposition() # AllocationComposition | allocation_composition
 allocation_composition_id = 'allocation_composition_id_example' # str | UUID allocation_composition_id
 
 try:
@@ -861,7 +874,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocation_composition** | [**AllocationComposition**](AllocationComposition.md)| aggregation_composition | 
+ **allocation_composition** | [**AllocationComposition**](AllocationComposition.md)| allocation_composition | 
  **allocation_composition_id** | [**str**](.md)| UUID allocation_composition_id | 
 
 ### Return type
@@ -905,10 +918,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation = nucleus_api.Allocation() # Allocation | allocation

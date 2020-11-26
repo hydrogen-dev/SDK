@@ -21,8 +21,8 @@ Create a new comparison request.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FinancialOfferApi;
 
@@ -33,10 +33,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FinancialOfferApi apiInstance = new FinancialOfferApi();
 FinancialOffer financialOffer = new FinancialOffer(); // FinancialOffer | financialOffer
@@ -70,7 +74,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteFinancialOfferUsingDelete"></a>
 # **deleteFinancialOfferUsingDelete**
-> deleteFinancialOfferUsingDelete(financialOffer, financialOfferId)
+> deleteFinancialOfferUsingDelete(financialOfferId)
 
 Delete a comparison request
 
@@ -78,8 +82,8 @@ Permanently delete a comparison request.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FinancialOfferApi;
 
@@ -90,16 +94,19 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 FinancialOfferApi apiInstance = new FinancialOfferApi();
-UUID financialOffer = new UUID(); // UUID | UUID financial_offer_id
-UUID financialOfferId = new UUID(); // UUID | financial_offer_id
+UUID financialOfferId = new UUID(); // UUID | UUID financial_offer_id
 try {
-    apiInstance.deleteFinancialOfferUsingDelete(financialOffer, financialOfferId);
+    apiInstance.deleteFinancialOfferUsingDelete(financialOfferId);
 } catch (ApiException e) {
     System.err.println("Exception when calling FinancialOfferApi#deleteFinancialOfferUsingDelete");
     e.printStackTrace();
@@ -110,8 +117,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **financialOffer** | [**UUID**](.md)| UUID financial_offer_id |
- **financialOfferId** | [**UUID**](.md)| financial_offer_id |
+ **financialOfferId** | [**UUID**](.md)| UUID financial_offer_id |
 
 ### Return type
 
@@ -128,7 +134,7 @@ null (empty response body)
 
 <a name="getFinancialOfferAllUsingGet"></a>
 # **getFinancialOfferAllUsingGet**
-> PageFinancialOffer getFinancialOfferAllUsingGet(ascending, filter, orderBy, page, size)
+> PageFinancialOffer getFinancialOfferAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size)
 
 List all comparison requests
 
@@ -136,8 +142,8 @@ Get the information for all comparison requests.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FinancialOfferApi;
 
@@ -148,19 +154,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 FinancialOfferApi apiInstance = new FinancialOfferApi();
 Boolean ascending = false; // Boolean | ascending
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PageFinancialOffer result = apiInstance.getFinancialOfferAllUsingGet(ascending, filter, orderBy, page, size);
+    PageFinancialOffer result = apiInstance.getFinancialOfferAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FinancialOfferApi#getFinancialOfferAllUsingGet");
@@ -173,6 +184,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -193,7 +205,7 @@ Name | Type | Description  | Notes
 
 <a name="getFinancialOfferUsingGet"></a>
 # **getFinancialOfferUsingGet**
-> FinancialOffer getFinancialOfferUsingGet(financialOffer, financialOfferId)
+> FinancialOffer getFinancialOfferUsingGet(financialOfferId, currencyConversion)
 
 Retrieve a comparison request
 
@@ -201,8 +213,8 @@ Retrieve the information for a comparison request.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FinancialOfferApi;
 
@@ -213,16 +225,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 FinancialOfferApi apiInstance = new FinancialOfferApi();
-UUID financialOffer = new UUID(); // UUID | UUID financial_offer_id
-UUID financialOfferId = new UUID(); // UUID | financial_offer_id
+UUID financialOfferId = new UUID(); // UUID | UUID financial_offer_id
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    FinancialOffer result = apiInstance.getFinancialOfferUsingGet(financialOffer, financialOfferId);
+    FinancialOffer result = apiInstance.getFinancialOfferUsingGet(financialOfferId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FinancialOfferApi#getFinancialOfferUsingGet");
@@ -234,8 +250,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **financialOffer** | [**UUID**](.md)| UUID financial_offer_id |
- **financialOfferId** | [**UUID**](.md)| financial_offer_id |
+ **financialOfferId** | [**UUID**](.md)| UUID financial_offer_id |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
@@ -260,8 +276,8 @@ Update the information for a comparison request.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import FinancialOfferApi;
 
@@ -272,10 +288,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 FinancialOfferApi apiInstance = new FinancialOfferApi();
 FinancialOffer financialOffer = new FinancialOffer(); // FinancialOffer | financial_offer

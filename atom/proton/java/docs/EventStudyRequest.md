@@ -4,16 +4,17 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**events** | [**List&lt;EventsEnum&gt;**](#List&lt;EventsEnum&gt;) |  |  [optional]
-**useProxyData** | **Boolean** |  |  [optional]
 **portfolioTickers** | **List&lt;String&gt;** |  |  [optional]
-**modelId** | [**UUID**](UUID.md) |  |  [optional]
-**allocationId** | [**UUID**](UUID.md) |  |  [optional]
-**accountId** | [**UUID**](UUID.md) |  |  [optional]
-**portfolioId** | [**UUID**](UUID.md) |  |  [optional]
-**portfolioWeights** | **List&lt;Float&gt;** |  |  [optional]
+**events** | [**List&lt;EventsEnum&gt;**](#List&lt;EventsEnum&gt;) |  |  [optional]
+**createLog** | **Boolean** |  |  [optional]
 **aggregationAccountId** | [**UUID**](UUID.md) |  |  [optional]
+**allocationId** | [**UUID**](UUID.md) |  |  [optional]
+**modelId** | [**UUID**](UUID.md) |  |  [optional]
+**portfolioWeights** | **List&lt;Float&gt;** |  |  [optional]
+**useProxyData** | **Boolean** |  |  [optional]
+**accountId** | [**UUID**](UUID.md) |  |  [optional]
 **marketDataSource** | [**MarketDataSourceEnum**](#MarketDataSourceEnum) |  |  [optional]
+**portfolioId** | [**UUID**](UUID.md) |  |  [optional]
 
 
 <a name="List<EventsEnum>"></a>

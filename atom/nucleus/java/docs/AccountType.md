@@ -9,6 +9,10 @@ Name | Type | Description | Notes
 **createDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **id** | [**UUID**](UUID.md) |  |  [optional]
 **isActive** | **Boolean** | isActive |  [optional]
+**isAsset** | **Boolean** | isAsset |  [optional]
+**isBusiness** | **Boolean** | isBusiness |  [optional]
+**isCash** | **Boolean** | isCash |  [optional]
+**isInvestment** | **Boolean** | isInvestment |  [optional]
 **isTaxable** | **Boolean** | isTaxable |  [optional]
 **metadata** | **Map&lt;String, String&gt;** |  |  [optional]
 **name** | **String** | name | 

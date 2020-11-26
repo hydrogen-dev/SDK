@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
-**date** | [**LocalDate**](OffsetDateTime.md) | Date | 
+**date** | [**LocalDate**](LocalDate.md) | Date | 
 **id** | [**UUID**](UUID.md) |  |  [optional]
 **modelId** | [**UUID**](UUID.md) | modelId | 
 **price** | **Double** | price | 

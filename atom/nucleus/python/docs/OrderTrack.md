@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **commission** | **float** | commission | [optional] 
 **create_date** | **datetime** |  | [optional] 
-**_date** | **datetime** | date | 
+**_date** | **date** | date | 
 **external_track_id** | **str** | externalTrackId | [optional] 
 **fee** | **float** | fee | [optional] 
 **id** | **str** |  | [optional] 

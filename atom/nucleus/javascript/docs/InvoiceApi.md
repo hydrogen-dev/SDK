@@ -8,8 +8,8 @@ Method | HTTP request | Description
 [**createInvoiceUsingPost**](InvoiceApi.md#createInvoiceUsingPost) | **POST** /invoice | Create a invoice
 [**deleteInvoicePaymentUsingDelete**](InvoiceApi.md#deleteInvoicePaymentUsingDelete) | **DELETE** /invoice_payment/{invoice_payment_id} | Delete a invoicePayment
 [**deleteInvoiceUsingDelete**](InvoiceApi.md#deleteInvoiceUsingDelete) | **DELETE** /invoice/{invoice_id} | Delete a invoice
-[**getInvoiceAllUsingGet**](InvoiceApi.md#getInvoiceAllUsingGet) | **GET** /invoice | List all invoice
-[**getInvoicePaymentAllUsingGet**](InvoiceApi.md#getInvoicePaymentAllUsingGet) | **GET** /invoice_payment | List all invoicePayment
+[**getInvoiceAllUsingGet**](InvoiceApi.md#getInvoiceAllUsingGet) | **GET** /invoice | List all invoices
+[**getInvoicePaymentAllUsingGet**](InvoiceApi.md#getInvoicePaymentAllUsingGet) | **GET** /invoice_payment | List all invoice payments
 [**getInvoicePaymentUsingGet**](InvoiceApi.md#getInvoicePaymentUsingGet) | **GET** /invoice_payment/{invoice_payment_id} | Retrieve a invoicePayment
 [**getInvoiceUsingGet**](InvoiceApi.md#getInvoiceUsingGet) | **GET** /invoice/{invoice_id} | Retrieve a invoice
 [**updateInvoicePaymentUsingPut**](InvoiceApi.md#updateInvoicePaymentUsingPut) | **PUT** /invoice_payment/{invoice_payment_id} | Update a invoicePayment
@@ -27,8 +27,8 @@ Create a new invoicePayment, for tracking invoice status.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -78,8 +78,8 @@ Create a new invoice, with your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -129,8 +129,8 @@ Delete a invoicePayment.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -180,8 +180,8 @@ Delete a invoice.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -224,15 +224,15 @@ null (empty response body)
 # **getInvoiceAllUsingGet**
 > PageInvoice getInvoiceAllUsingGet(opts)
 
-List all invoice
+List all invoices
 
 List all invoice. 
 
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -241,6 +241,7 @@ var apiInstance = new HydrogenNucleusApi.InvoiceApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
+  'currencyConversion': "currencyConversion_example", // String | currency_conversion
   'filter': "filter_example", // String | filter
   'orderBy': "update_date", // String | order_by
   'page': 0, // Number | page
@@ -262,6 +263,7 @@ apiInstance.getInvoiceAllUsingGet(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Number**| page | [optional] [default to 0]
@@ -284,15 +286,15 @@ Name | Type | Description  | Notes
 # **getInvoicePaymentAllUsingGet**
 > PageInvoicePayment getInvoicePaymentAllUsingGet(opts)
 
-List all invoicePayment
+List all invoice payments
 
 List all invoicePayment. 
 
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -301,6 +303,7 @@ var apiInstance = new HydrogenNucleusApi.InvoiceApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
+  'currencyConversion': "currencyConversion_example", // String | currency_conversion
   'filter': "filter_example", // String | filter
   'orderBy': "update_date", // String | order_by
   'page': 0, // Number | page
@@ -322,6 +325,7 @@ apiInstance.getInvoicePaymentAllUsingGet(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Number**| page | [optional] [default to 0]
@@ -342,7 +346,7 @@ Name | Type | Description  | Notes
 
 <a name="getInvoicePaymentUsingGet"></a>
 # **getInvoicePaymentUsingGet**
-> InvoicePayment getInvoicePaymentUsingGet(invoicePaymentId)
+> InvoicePayment getInvoicePaymentUsingGet(invoicePaymentId, opts)
 
 Retrieve a invoicePayment
 
@@ -351,8 +355,8 @@ Retrieve a invoicePayment.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -361,6 +365,9 @@ var apiInstance = new HydrogenNucleusApi.InvoiceApi();
 
 var invoicePaymentId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID invoice_payment_id
 
+var opts = { 
+  'currencyConversion': "currencyConversion_example" // String | USD
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -369,7 +376,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getInvoicePaymentUsingGet(invoicePaymentId, callback);
+apiInstance.getInvoicePaymentUsingGet(invoicePaymentId, opts, callback);
 ```
 
 ### Parameters
@@ -377,6 +384,7 @@ apiInstance.getInvoicePaymentUsingGet(invoicePaymentId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **invoicePaymentId** | **String**| UUID invoice_payment_id | 
+ **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -393,7 +401,7 @@ Name | Type | Description  | Notes
 
 <a name="getInvoiceUsingGet"></a>
 # **getInvoiceUsingGet**
-> Invoice getInvoiceUsingGet(invoiceId)
+> Invoice getInvoiceUsingGet(invoiceId, opts)
 
 Retrieve a invoice
 
@@ -402,8 +410,8 @@ Retrieve a invoice.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -412,6 +420,9 @@ var apiInstance = new HydrogenNucleusApi.InvoiceApi();
 
 var invoiceId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID invoice_idd
 
+var opts = { 
+  'currencyConversion': "currencyConversion_example" // String | USD
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -420,7 +431,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getInvoiceUsingGet(invoiceId, callback);
+apiInstance.getInvoiceUsingGet(invoiceId, opts, callback);
 ```
 
 ### Parameters
@@ -428,6 +439,7 @@ apiInstance.getInvoiceUsingGet(invoiceId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **invoiceId** | **String**| UUID invoice_idd | 
+ **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -453,8 +465,8 @@ Update a invoicePayment.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -507,8 +519,8 @@ Update a invoice.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';

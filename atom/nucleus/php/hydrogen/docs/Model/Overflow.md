@@ -7,9 +7,8 @@ Name | Type | Description | Notes
 **client_id** | **string** | clientId | 
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **funding_requests** | [**\com\hydrogen\nucleus\Model\FundingRequestMap[]**](FundingRequestMap.md) |  | [optional] 
-**funding_start_date** | [**\DateTime**](\DateTime.md) | fundingStartDate | [optional] 
 **id** | **string** |  | [optional] 
-**overflow_setting_id** | **string** | overflowSettingId | [optional] 
+**overflow_setting_id** | **string** | overflowSettingId | 
 **total_overflow_amount** | **double** | totalOverflowAmount | 
 **update_balances** | **bool** | updateBalances | [optional] 
 **update_date** | [**\DateTime**](\DateTime.md) |  | [optional] 

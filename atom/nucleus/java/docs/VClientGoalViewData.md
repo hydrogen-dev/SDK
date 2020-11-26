@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **clientAssetSize** | **Double** |  |  [optional]
-**clientAssetSizeDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**clientAssetSizeDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
 **clientFirstName** | **String** |  |  [optional]
 **clientId** | [**UUID**](UUID.md) |  |  [optional]
 **clientLastName** | **String** |  |  [optional]

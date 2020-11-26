@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **metadata** | **map[string,string]** | metadata | [optional] 
 **secondary_id** | **string** |  | [optional] 
 **update_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**visit_time_stamp** | [**\DateTime**](\DateTime.md) | visit_time_stamp | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

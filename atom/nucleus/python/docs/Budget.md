@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **client_id** | **str** | clientId | 
 **create_date** | **datetime** |  | [optional] 
 **currency_code** | **str** | currencyCode | 
-**end_date** | **datetime** | endDate | [optional] 
+**end_date** | **date** | endDate | [optional] 
 **frequency** | **int** | frequency | [optional] 
 **frequency_unit** | **str** | frequencyUnit | 
 **goal_id** | **str** | goalId | [optional] 
@@ -18,7 +18,8 @@ Name | Type | Description | Notes
 **metadata** | **dict(str, str)** |  | [optional] 
 **name** | **str** | name | 
 **secondary_id** | **str** |  | [optional] 
-**start_date** | **datetime** | startDate | [optional] 
+**start_date** | **date** | startDate | [optional] 
+**total_value** | **float** | totalValue | [optional] 
 **update_date** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,20 +1,18 @@
 swagger: '2.0'
 info:
-  description: Data model of Hydrogen Atom
-  version: 1.7.0
+  description: The Hydrogen Nucleus API
+  version: 1.8.0
   title: Hydrogen Nucleus API
   termsOfService: 'https://www.hydrogenplatform.com/legal/terms'
   contact:
-    name: The Hydrogen Technology Corporation
+    name: Hydrogen Technology Corporation
     url: 'https://www.hydrogenplatform.com/contact'
     email: info@hydrogenplatform.com
-host: 'sandbox.hydrogenplatform.com'
-basePath: /
+host: sandbox.hydrogenplatform.com
+basePath: /nucleus/v1
 tags:
   - name: Account
     description: Account Controller
-  - name: Accounting
-    description: Accounting Controller
   - name: AggregationAccount
     description: AggregationAccount Controller
   - name: Allocation
@@ -45,10 +43,14 @@ tags:
     description: Feature Controller
   - name: FinancialOffer
     description: Financial Offer Controller
+  - name: FinancialStatement
+    description: Financial Statement Controller
   - name: Funding
     description: Funding Controller
   - name: Goal
     description: Goal Controller
+  - name: Household
+    description: Household Controller
   - name: Insurance
     description: Insurance Controller
   - name: Invoice
@@ -305,7 +307,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/AccountOverviewVO'
+            type: object
         '401':
           description: Unauthorized
         '403':
@@ -332,6 +334,11 @@ paths:
           type: string
           format: uuid
           x-example: 11c28dade-8679-4df5-9b9d-c508d04fcb0c
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
         - name: end_date
           in: query
           description: end date
@@ -340,10 +347,9 @@ paths:
           format: date
         - name: exclude_subledger
           in: query
-          description: exclude_subledger
+          description: true or false
           required: false
           type: boolean
-          default: false
         - name: get_latest
           in: query
           description: true or false
@@ -393,11 +399,17 @@ paths:
           type: string
           format: uuid
           x-example: 11c28dade-8679-4df5-9b9d-c508d04fcb0c
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
         - name: end_date
           in: query
           description: 'end date '
           required: false
           type: string
+          format: date
         - name: get_latest
           in: query
           description: true or false
@@ -408,6 +420,7 @@ paths:
           description: 'start date '
           required: false
           type: string
+          format: date
       responses:
         '200':
           description: OK
@@ -902,13 +915,17 @@ paths:
           required: false
           type: boolean
           default: false
-        - name: end_date
+        - name: currency_conversion
           in: query
-          description: end_date
+          description: USD
           required: false
           type: string
-          default: 'null'
-          format: date-time
+        - name: end_date
+          in: query
+          description: 'end date '
+          required: false
+          type: string
+          format: date
         - name: order_by
           in: query
           description: order_by
@@ -931,11 +948,10 @@ paths:
           format: int32
         - name: start_date
           in: query
-          description: start_date
+          description: 'start date '
           required: false
           type: string
-          default: 'null'
-          format: date-time
+          format: date
       responses:
         '200':
           description: OK
@@ -1381,7 +1397,7 @@ paths:
   /account_status:
     get:
       tags:
-        - Utils
+        - Account
       summary: List all account statuses
       description: Get the account status history information for all accounts.
       operationId: getAccountStatusAllUsingGet
@@ -1435,7 +1451,7 @@ paths:
       deprecated: false
     post:
       tags:
-        - Utils
+        - Account
       summary: Create an account status
       description: Create an account status record for an account.
       operationId: createAccountStatusUsingPost
@@ -1469,7 +1485,7 @@ paths:
   '/account_status/{account_status_id}':
     get:
       tags:
-        - Utils
+        - Account
       summary: Retrieve an account status
       description: Retrieve the information for a specific account status record for an account.
       operationId: getAccountStatusUsingGet
@@ -1499,7 +1515,7 @@ paths:
       deprecated: false
     put:
       tags:
-        - Utils
+        - Account
       summary: Update an account status
       description: Update an account status record for an account.
       operationId: updateAccountStatusUsingPut
@@ -1539,7 +1555,7 @@ paths:
       deprecated: false
     delete:
       tags:
-        - Utils
+        - Account
       summary: Delete an account status
       description: Permanently delete an account status record from an account’s history.
       operationId: deleteAccountStatusUsingDelete
@@ -1663,19 +1679,13 @@ paths:
       produces:
         - '*/*'
       parameters:
-        - name: accountTypeId
+        - name: account_type_id
           in: path
           description: UUID account_type_id
           required: true
           type: string
           format: uuid
           x-example: 50d76212-0fcd-4d36-8633-e4a52cbcb79f
-        - name: account_type_id
-          in: path
-          description: account_type_id
-          required: true
-          type: string
-          format: uuid
       responses:
         '200':
           description: OK
@@ -1739,206 +1749,13 @@ paths:
       produces:
         - '*/*'
       parameters:
-        - name: accountTypeId
+        - name: account_type_id
           in: path
           description: UUID account_type_id
           required: true
           type: string
           format: uuid
           x-example: 50d76212-0fcd-4d36-8633-e4a52cbcb79f
-        - name: account_type_id
-          in: path
-          description: account_type_id
-          required: true
-          type: string
-          format: uuid
-      responses:
-        '200':
-          description: OK
-        '204':
-          description: No Content
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-      security:
-        - oauth2: []
-      deprecated: false
-  /accounting:
-    get:
-      tags:
-        - Accounting
-      summary: List all accounting
-      description: Get information for all accounting for all clients defined for your firm.
-      operationId: getAccountingAllUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: ascending
-          in: query
-          description: ascending
-          required: false
-          type: boolean
-          default: false
-        - name: filter
-          in: query
-          description: filter
-          required: false
-          type: string
-        - name: order_by
-          in: query
-          description: order_by
-          required: false
-          type: string
-          default: update_date
-        - name: page
-          in: query
-          description: page
-          required: false
-          type: integer
-          default: 0
-          format: int32
-        - name: size
-          in: query
-          description: size
-          required: false
-          type: integer
-          default: 25
-          format: int32
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Page«Accounting»'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    post:
-      tags:
-        - Accounting
-      summary: Create an accounting
-      description: Store stats pulled from accounting vendors.
-      operationId: createAccountingUsingPost
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: accounting
-          description: accounting
-          required: true
-          schema:
-            $ref: '#/definitions/Accounting'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Accounting'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/accounting/{accounting_id}':
-    get:
-      tags:
-        - Accounting
-      summary: Retrieve an accounting
-      description: Retrieve the information for a specific accounting associated with a client.
-      operationId: getAccountingUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: accounting_id
-          in: path
-          description: UUID accounting_id
-          required: true
-          type: string
-          format: uuid
-          x-example: f96fad3e-a8cf-4915-bc0c-da4d9693ab83
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Accounting'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    put:
-      tags:
-        - Accounting
-      summary: Update an accounting
-      description: Update the information for an accounting.
-      operationId: updateAccountingUsingPut
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: accounting
-          description: accounting
-          required: true
-          schema:
-            $ref: '#/definitions/Accounting'
-        - name: accounting_id
-          in: path
-          description: UUID accounting_id
-          required: true
-          type: string
-          format: uuid
-          x-example: f96fad3e-a8cf-4915-bc0c-da4d9693ab83
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Accounting'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    delete:
-      tags:
-        - Accounting
-      summary: Delete an accounting
-      description: Permanently delete an accounting.
-      operationId: deleteAccountingUsingDelete
-      produces:
-        - '*/*'
-      parameters:
-        - name: accounting_id
-          in: path
-          description: UUID accounting_id
-          required: true
-          type: string
-          format: uuid
-          x-example: f96fad3e-a8cf-4915-bc0c-da4d9693ab83
       responses:
         '200':
           description: OK
@@ -2155,11 +1972,16 @@ paths:
           type: string
           format: uuid
           x-example: f96fad3e-a8cf-4915-bc0c-da4d9693ab83
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/AggregationAccountAggregateDataVO'
+            type: object
         '401':
           description: Unauthorized
         '403':
@@ -2185,6 +2007,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -2274,6 +2101,11 @@ paths:
           type: string
           format: uuid
           x-example: f96fad3e-a8cf-4915-bc0c-da4d9693ab83
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
       responses:
         '200':
           description: OK
@@ -2372,6 +2204,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -2461,6 +2298,11 @@ paths:
           type: string
           format: uuid
           x-example: f96fad3e-a8cf-4915-bc0c-da4d9693ab83
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
       responses:
         '200':
           description: OK
@@ -2559,6 +2401,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -2648,6 +2495,11 @@ paths:
           type: string
           format: uuid
           x-example: f96fad3e-a8cf-4915-bc0c-da4d9693ab83
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
       responses:
         '200':
           description: OK
@@ -2721,8 +2573,6 @@ paths:
       responses:
         '200':
           description: OK
-          schema:
-            $ref: '#/definitions/AggregationAccountTransaction'
         '204':
           description: No Content
         '401':
@@ -2924,7 +2774,7 @@ paths:
       tags:
         - Allocation
       summary: List all Allocation aggregated data overview
-      operationId: getAllocationAggregatedDataUsingGET
+      operationId: getAllocationAllAggregateDataUsingGet
       produces:
         - '*/*'
       parameters:
@@ -2955,7 +2805,7 @@ paths:
         - Allocation
       summary: List all allocation asset sizes
       description: Get a list of asset sizes by date for a specific allocation.
-      operationId: getAssetsizeUsingGET
+      operationId: getAllocationAllAssetSizeAllUsingGet
       produces:
         - '*/*'
       parameters:
@@ -3015,7 +2865,7 @@ paths:
         - Allocation
       summary: List all allocation holdings
       description: 'Get the information for all securities assigned to a specific allocation. '
-      operationId: getAllHoldingsUsingGET
+      operationId: getAllocationAllHoldingAllUsingGet
       produces:
         - '*/*'
       parameters:
@@ -3025,28 +2875,25 @@ paths:
           required: true
           type: string
           format: uuid
-          x-example: 04907eaa-3f33-49be-a35b-378cdf639fba
         - name: end_date
           in: query
-          description: end_date
+          description: end date
           required: false
           type: string
-          default: 'null'
-          format: date-time
+          format: date
         - name: start_date
           in: query
-          description: start_date
+          description: start date
           required: false
           type: string
-          default: 'null'
-          format: date-time
+          format: date
       responses:
         '200':
           description: OK
           schema:
             type: array
             items:
-              $ref: '#/definitions/ModelHoldingAgg'
+              $ref: '#/definitions/ModelHoldingVO'
         '401':
           description: Unauthorized
         '403':
@@ -3234,7 +3081,7 @@ paths:
         - Allocation
       summary: List all allocation transactions
       description: Get the information for all transactions made under an allocation to achieve the composition of the allocation.
-      operationId: getAllTransactionsUsingGET
+      operationId: getAllocationAllTransactionAllUsingGet
       produces:
         - '*/*'
       parameters:
@@ -3252,11 +3099,10 @@ paths:
           default: false
         - name: end_date
           in: query
-          description: end_date
+          description: end date
           required: false
           type: string
-          default: 'null'
-          format: date-time
+          format: date
         - name: order_by
           in: query
           description: order_by
@@ -3279,11 +3125,10 @@ paths:
           format: int32
         - name: start_date
           in: query
-          description: start_date
+          description: start date
           required: false
           type: string
-          default: 'null'
-          format: date-time
+          format: date
       responses:
         '200':
           description: OK
@@ -3430,7 +3275,7 @@ paths:
       parameters:
         - in: body
           name: allocation_composition
-          description: aggregation_composition
+          description: allocation_composition
           required: true
           schema:
             $ref: '#/definitions/AllocationComposition'
@@ -3994,6 +3839,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -4083,6 +3933,11 @@ paths:
           type: string
           format: uuid
           x-example: 4ff21db3-97ab-4bbd-9885-be6aec522c44
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
       responses:
         '200':
           description: OK
@@ -4364,17 +4219,17 @@ paths:
       parameters:
         - name: benchmark_id
           in: path
-          description: benchmark_id
+          description: UUID benchmark_id
           required: true
           type: string
           format: uuid
+          x-example: bab849d6-de96-4dc7-a5ea-19be45c52a4e
         - name: end_date
           in: query
-          description: end_date
+          description: end date
           required: false
           type: string
-          default: 'null'
-          format: date-time
+          format: date
         - name: sort_type
           in: query
           description: sort_type
@@ -4382,11 +4237,10 @@ paths:
           type: string
         - name: start_date
           in: query
-          description: start_date
+          description: start date
           required: false
           type: string
-          default: 'null'
-          format: date-time
+          format: date
       responses:
         '200':
           description: OK
@@ -4583,6 +4437,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -4672,6 +4531,11 @@ paths:
           type: string
           format: uuid
           x-example: 1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
       responses:
         '200':
           description: OK
@@ -4808,7 +4672,6 @@ paths:
           description: UUID entity_uri
           required: true
           type: string
-          format: uuid
           x-example: model
       responses:
         '200':
@@ -4848,7 +4711,6 @@ paths:
           description: UUID entity_uri
           required: true
           type: string
-          format: uuid
           x-example: model
       responses:
         '200':
@@ -4886,7 +4748,6 @@ paths:
           description: UUID entity_uri
           required: true
           type: string
-          format: uuid
           x-example: model
       responses:
         '200':
@@ -4963,7 +4824,9 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/AggregationAccount'
+            type: array
+            items:
+              $ref: '#/definitions/AggregationAccount'
         '201':
           description: Created
         '401':
@@ -5791,11 +5654,6 @@ paths:
       produces:
         - '*/*'
       parameters:
-        - name: Authorization
-          in: header
-          description: Authorization
-          required: false
-          type: string
         - in: body
           name: cardRequest
           description: cardRequest
@@ -5914,6 +5772,139 @@ paths:
           description: Unauthorized
         '403':
           description: Forbidden
+      security:
+        - oauth2: []
+      deprecated: false
+  '/card/{card_id}/asset_size':
+    get:
+      tags:
+        - Card
+      summary: List all card asset sizes
+      description: Get a list of asset sizes by date for an card.
+      operationId: getCardAssetSizeAggAllUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: card_id
+          in: path
+          description: Card Id
+          required: true
+          type: string
+          format: uuid
+          x-example: 11c28dade-8679-4df5-9b9d-c508d04fcb0c
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
+        - name: end_date
+          in: query
+          description: end date
+          required: false
+          type: string
+          format: date
+        - name: get_latest
+          in: query
+          description: true or false
+          required: false
+          type: boolean
+        - name: sort_type
+          in: query
+          description: ' Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in ()'
+          required: false
+          type: string
+        - name: start_date
+          in: query
+          description: start date
+          required: false
+          type: string
+          format: date
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/card/{card_id}/transaction':
+    get:
+      tags:
+        - Card
+      summary: List all card transactions
+      description: Get the information for all transactions for an card.
+      operationId: getCardTransactionAggAllUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: ascending
+          in: query
+          description: ascending
+          required: false
+          type: boolean
+          default: false
+        - name: card_id
+          in: path
+          description: UUID card_id
+          required: true
+          type: string
+          format: uuid
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
+        - name: end_date
+          in: query
+          description: end date
+          required: false
+          type: string
+          format: date
+        - name: order_by
+          in: query
+          description: order_by
+          required: false
+          type: string
+          default: update_date
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 25
+          format: int32
+        - name: start_date
+          in: query
+          description: start date
+          required: false
+          type: string
+          format: date
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Page«PortfolioTransaction»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
       security:
         - oauth2: []
       deprecated: false
@@ -6379,59 +6370,6 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /client/total_clients:
-    get:
-      tags:
-        - Client
-      summary: total clients
-      operationId: getTotalClientsUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: as_of_date
-          in: query
-          description: as_of_date
-          required: false
-          type: string
-          default: '#{new java.util.Date()}'
-          format: date-time
-        - name: client_id
-          in: query
-          description: client_id
-          required: false
-          type: string
-        - name: end_date
-          in: query
-          description: end_date
-          required: false
-          type: string
-          format: date-time
-        - name: show_history
-          in: query
-          description: show_history
-          required: false
-          type: boolean
-          default: false
-        - name: start_date
-          in: query
-          description: start_date
-          required: false
-          type: string
-          format: date-time
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/ClientAnalyticsResponse'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
   '/client/{client_id}':
     get:
       tags:
@@ -6563,7 +6501,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/ClientAccountVO'
+            type: object
         '401':
           description: Unauthorized
         '403':
@@ -6599,7 +6537,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/AdvisorOverviewVO'
+            type: object
         '401':
           description: Unauthorized
         '403':
@@ -6626,11 +6564,16 @@ paths:
           type: string
           format: uuid
           x-example: f96fad3e-a8cf-4915-bc0c-da4d9693ab83
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/AggregationDataForClientParentResponseVO'
+            type: object
         '401':
           description: Unauthorized
         '403':
@@ -6657,6 +6600,11 @@ paths:
           type: string
           format: uuid
           x-example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+        - name: currency_conversion
+          in: query
+          description: Currency Code
+          required: false
+          type: string
         - name: end_date
           in: query
           description: end date
@@ -6757,6 +6705,11 @@ paths:
           type: string
           format: uuid
           x-example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+        - name: currency_conversion
+          in: query
+          description: Currency Code
+          required: false
+          type: string
         - name: end_date
           in: query
           description: end date - yyyy-mm-dd
@@ -7000,7 +6953,7 @@ paths:
         - Client
       summary: List all client transactions
       description: Get the information for all transactions under a client registered with your firm.
-      operationId: getClientTransactionUsingGet
+      operationId: getClientTransactionAllUsingGet
       produces:
         - '*/*'
       parameters:
@@ -7017,13 +6970,16 @@ paths:
           type: string
           format: uuid
           x-example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
-        - name: end_date
+        - name: currency_conversion
           in: query
-          description: end_date
+          description: currency_conversion
           required: false
           type: string
-          default: 'null'
-          format: date-time
+        - name: end_date
+          in: query
+          description: end date - yyyy-mm-dd
+          required: false
+          type: string
         - name: order_by
           in: query
           description: order_by
@@ -7046,11 +7002,9 @@ paths:
           format: int32
         - name: start_date
           in: query
-          description: start_date
+          description: start date - yyyy-mm-dd
           required: false
           type: string
-          default: 'null'
-          format: date-time
       responses:
         '200':
           description: OK
@@ -8203,6 +8157,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -8285,6 +8244,11 @@ paths:
       produces:
         - application/json
       parameters:
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
         - name: customer_revenue_id
           in: path
           description: UUID customer_revenue_id
@@ -8611,6 +8575,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -8693,6 +8662,11 @@ paths:
       produces:
         - '*/*'
       parameters:
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
         - name: deposit_id
           in: path
           description: UUID deposit_id
@@ -9546,6 +9520,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -9628,19 +9607,18 @@ paths:
       produces:
         - '*/*'
       parameters:
-        - name: financial_offer
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
+        - name: financial_offer_id
           in: path
           description: UUID financial_offer_id
           required: true
           type: string
           format: uuid
           x-example: 1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c
-        - name: financial_offer_id
-          in: path
-          description: financial_offer_id
-          required: true
-          type: string
-          format: uuid
       responses:
         '200':
           description: OK
@@ -9704,19 +9682,210 @@ paths:
       produces:
         - '*/*'
       parameters:
-        - name: financial_offer
+        - name: financial_offer_id
           in: path
           description: UUID financial_offer_id
           required: true
           type: string
           format: uuid
           x-example: 1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c
-        - name: financial_offer_id
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+        - oauth2: []
+      deprecated: false
+  /financial_statement:
+    get:
+      tags:
+        - FinancialStatement
+      summary: List all financialStatement
+      description: Get information for all financialStatement for all clients defined for your firm.
+      operationId: getFinancialStatementAllUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: ascending
+          in: query
+          description: ascending
+          required: false
+          type: boolean
+          default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          description: order_by
+          required: false
+          type: string
+          default: update_date
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 25
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Page«FinancialStatement»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    post:
+      tags:
+        - FinancialStatement
+      summary: Create an financialStatement
+      description: Store stats pulled from financialStatement vendors.
+      operationId: createFinancialStatementUsingPost
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: financialStatement
+          description: financialStatement
+          required: true
+          schema:
+            $ref: '#/definitions/FinancialStatement'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/FinancialStatement'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/financial_statement/{financial_statement_id}':
+    get:
+      tags:
+        - FinancialStatement
+      summary: Retrieve an financialStatement
+      description: Retrieve the information for a specific financialStatement associated with a client.
+      operationId: getFinancialStatementUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
+        - name: financial_statement_id
           in: path
-          description: financial_offer_id
+          description: UUID financial_statement_id
           required: true
           type: string
           format: uuid
+          x-example: f96fad3e-a8cf-4915-bc0c-da4d9693ab83
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/FinancialStatement'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    put:
+      tags:
+        - FinancialStatement
+      summary: Update an financialStatement
+      description: Update the information for an financialStatement.
+      operationId: updateFinancialStatementUsingPut
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: financialStatement
+          description: financialStatement
+          required: true
+          schema:
+            $ref: '#/definitions/FinancialStatement'
+        - name: financial_statement_id
+          in: path
+          description: UUID financialStatement_id
+          required: true
+          type: string
+          format: uuid
+          x-example: f96fad3e-a8cf-4915-bc0c-da4d9693ab83
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/FinancialStatement'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    delete:
+      tags:
+        - FinancialStatement
+      summary: Delete an financialStatement
+      description: Permanently delete an financialStatement.
+      operationId: deleteFinancialStatementUsingDelete
+      produces:
+        - '*/*'
+      parameters:
+        - name: financial_statement_id
+          in: path
+          description: UUID financialStatement_id
+          required: true
+          type: string
+          format: uuid
+          x-example: f96fad3e-a8cf-4915-bc0c-da4d9693ab83
       responses:
         '200':
           description: OK
@@ -9745,6 +9914,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -9827,6 +10001,11 @@ paths:
       produces:
         - '*/*'
       parameters:
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
         - name: funding_id
           in: path
           description: UUID funding_id
@@ -10119,12 +10298,17 @@ paths:
           required: true
           type: string
           format: uuid
-        - name: end_date
+        - name: currency_conversion
           in: query
-          description: end_date
+          description: Currency Code
           required: false
           type: string
-          format: date-time
+        - name: end_date
+          in: query
+          description: end date
+          required: false
+          type: string
+          format: date
         - name: get_latest
           in: query
           description: get_latest
@@ -10151,10 +10335,10 @@ paths:
           type: string
         - name: start_date
           in: query
-          description: start_date
+          description: start date
           required: false
           type: string
-          format: date-time
+          format: date
       responses:
         '200':
           description: OK
@@ -10187,12 +10371,17 @@ paths:
           required: true
           type: string
           format: uuid
-        - name: end_date
+        - name: currency_conversion
           in: query
-          description: end_date
+          description: Currency Code
           required: false
           type: string
-          format: date-time
+        - name: end_date
+          in: query
+          description: end date
+          required: false
+          type: string
+          format: date
         - name: goal_id
           in: path
           description: UUID goal_id
@@ -10208,10 +10397,10 @@ paths:
           default: false
         - name: start_date
           in: query
-          description: start_date
+          description: start date
           required: false
           type: string
-          format: date-time
+          format: date
       responses:
         '200':
           description: OK
@@ -10255,8 +10444,8 @@ paths:
           type: string
           format: uuid
         - name: client_id
-          in: path
-          description: Client associated with the account - /client
+          in: query
+          description: client_id
           required: true
           type: string
           format: uuid
@@ -10428,12 +10617,17 @@ paths:
           required: true
           type: string
           format: uuid
-        - name: end_date
+        - name: currency_conversion
           in: query
-          description: end_date
+          description: Currency Code
           required: false
           type: string
-          format: date-time
+        - name: end_date
+          in: query
+          description: end date
+          required: false
+          type: string
+          format: date
         - name: goal_id
           in: path
           description: UUID goal_id
@@ -10469,10 +10663,10 @@ paths:
           format: int32
         - name: start_date
           in: query
-          description: start_date
+          description: start date
           required: false
           type: string
-          format: date-time
+          format: date
       responses:
         '200':
           description: OK
@@ -10600,19 +10794,13 @@ paths:
       produces:
         - '*/*'
       parameters:
-        - name: goalTrackId
+        - name: goal_track_id
           in: path
           description: UUID goal_track_id
           required: true
           type: string
           format: uuid
           x-example: 4e1c4f70-8611-44fa-bac5-f9f390c16852
-        - name: goal_track_id
-          in: path
-          description: goal_track_id
-          required: true
-          type: string
-          format: uuid
       responses:
         '200':
           description: OK
@@ -10676,19 +10864,13 @@ paths:
       produces:
         - '*/*'
       parameters:
-        - name: goalTrackId
+        - name: goal_track_id
           in: path
           description: UUID goal_track_id
           required: true
           type: string
           format: uuid
           x-example: 4e1c4f70-8611-44fa-bac5-f9f390c16852
-        - name: goal_track_id
-          in: path
-          description: goal_track_id
-          required: true
-          type: string
-          format: uuid
       responses:
         '200':
           description: OK
@@ -10698,6 +10880,553 @@ paths:
           description: Unauthorized
         '403':
           description: Forbidden
+      security:
+        - oauth2: []
+      deprecated: false
+  /household:
+    get:
+      tags:
+        - Household
+      summary: List all household
+      description: Get details for all Household.
+      operationId: getHouseholdAllUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: ascending
+          in: query
+          description: ascending
+          required: false
+          type: boolean
+          default: false
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          description: order_by
+          required: false
+          type: string
+          default: update_date
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 25
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Page«Household»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    post:
+      tags:
+        - Household
+      summary: Create a Household
+      description: 'Create a new household, with your firm.'
+      operationId: createHouseholdUsingPost
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: household
+          description: household
+          required: true
+          schema:
+            $ref: '#/definitions/Household'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Household'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/household/{household_id}':
+    get:
+      tags:
+        - Household
+      summary: Retrieve a Household
+      description: Retrieve the information for a Household.
+      operationId: getHouseholdUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: household_id
+          in: path
+          description: UUID household_id
+          required: true
+          type: string
+          format: uuid
+          x-example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Household'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    put:
+      tags:
+        - Household
+      summary: Update a Household
+      description: Update the information for a Household.
+      operationId: updateHouseholdUsingPut
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: household
+          description: household
+          required: true
+          schema:
+            $ref: '#/definitions/Household'
+        - name: household_id
+          in: path
+          description: UUID household_id
+          required: true
+          type: string
+          format: uuid
+          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Household'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    delete:
+      tags:
+        - Household
+      summary: Delete a Household
+      description: Permanently delete a household
+      operationId: deleteHouseholdUsingDelete
+      produces:
+        - '*/*'
+      parameters:
+        - name: household_id
+          in: path
+          description: UUID household_id
+          required: true
+          type: string
+          format: uuid
+          x-example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+        - oauth2: []
+      deprecated: false
+  '/household/{household_id}/asset_size':
+    get:
+      tags:
+        - Household
+      summary: List all household client asset sizes
+      description: Get a list of asset sizes per date for a client's household.
+      operationId: getHouseholdClientAssetSizeUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
+        - name: end_date
+          in: query
+          description: end date
+          required: false
+          type: string
+          default: 'null'
+          format: date
+        - name: exclude_subledger
+          in: query
+          description: true or false
+          required: false
+          type: boolean
+        - name: get_latest
+          in: query
+          description: true or false
+          required: false
+          type: boolean
+        - name: household_id
+          in: path
+          description: UUID household_id
+          required: true
+          type: string
+          format: uuid
+          x-example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+        - name: sort_type
+          in: query
+          description: ' Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in ()'
+          required: false
+          type: string
+        - name: start_date
+          in: query
+          description: start date
+          required: false
+          type: string
+          default: 'null'
+          format: date
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AvailableDateDoubleVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/household/{household_id}/holding':
+    get:
+      tags:
+        - Household
+      summary: List all household's clientIds holdings
+      description: Get the information for all the securities that are currently being held by a household's client ids registered with your firm.
+      operationId: getHouseholdClientHoldingUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
+        - name: end_date
+          in: query
+          description: end date - yyyy-mm-dd
+          required: false
+          type: string
+          format: date
+        - name: get_latest
+          in: query
+          description: true or false
+          required: false
+          type: boolean
+        - name: household_id
+          in: path
+          description: UUID household_id
+          required: true
+          type: string
+          format: uuid
+          x-example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+        - name: start_date
+          in: query
+          description: start date - yyyy-mm-dd
+          required: false
+          type: string
+          format: date
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/PortfolioHoldingAgg'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/household/{household_id}/performance':
+    get:
+      tags:
+        - Performance
+      summary: Household Performance
+      description: Get information on the performance of a Household using IRR (Internal Rate of Return). You must provide the unique household_id.
+      operationId: getHouseholdClientPerformanceUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: active_premium_period
+          in: query
+          description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
+          required: false
+          type: string
+        - name: annualized_return_period
+          in: query
+          description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
+          required: false
+          type: string
+        - name: benchmark_id
+          in: query
+          description: Client Benchmark or Tenant Benchmark id -/benchmark
+          required: false
+          type: string
+          format: uuid
+        - name: end_date
+          in: query
+          description: end date
+          required: false
+          type: string
+          format: date
+        - name: hist_factor
+          in: query
+          description: 'Histogram factor- (statId: 39, default: 5)'
+          required: false
+          type: number
+          format: double
+        - name: household_id
+          in: path
+          description: Household Id -/household
+          required: true
+          type: string
+          format: uuid
+        - name: mar_down_side_deviation
+          in: query
+          description: 'minimum acceptable return for downside deviation - (statId: 58, default: 0) '
+          required: false
+          type: number
+          format: double
+        - name: max_percentile_monte_carlo
+          in: query
+          description: 'max percentile for monte carlo, i.entity. 80 - (statId: 62, default: 95)'
+          required: false
+          type: number
+          format: double
+        - name: mean_percentile_monte_carlo
+          in: query
+          description: 'mean percentile for monte carlo i.entity. 50- (statId: 62, default: 50)'
+          required: false
+          type: number
+          format: double
+        - name: min_percentile_monte_carlo
+          in: query
+          description: 'min percentile for monte carlo i.entity. 20 - (statId: 62, default: 5)'
+          required: false
+          type: number
+          format: double
+        - name: moving_average_n_day
+          in: query
+          description: 'number of days for moving average n-day - (statId: 18, default: 7)'
+          required: false
+          type: integer
+          format: int32
+        - name: n_day_returns
+          in: query
+          description: 'number of days for Rolling n-day returns - (statId: 2, default: 7)  '
+          required: false
+          type: integer
+          format: int32
+        - name: n_path_monte_carlo
+          in: query
+          description: 'number of points for a simulation- (statId: 62, default: 100)'
+          required: false
+          type: integer
+          format: int32
+        - name: n_rolling_max_drawdown
+          in: query
+          description: 'number of days for Rolling n-day max drawdown- (statId: 46, default: 7)'
+          required: false
+          type: integer
+          format: int32
+        - name: n_rolling_volatility
+          in: query
+          description: 'number of days for Rolling n-day volatility- (statId: 34, default: 7)'
+          required: false
+          type: integer
+          format: int32
+        - name: num_sim_monte_carlo
+          in: query
+          description: 'number of simulations - (statId: 62, default: 1000) '
+          required: false
+          type: integer
+          format: int32
+        - name: period_type
+          in: query
+          description: ' Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () -Carries out stats on either daily, monthly, annually or quarterly dates (default: ''D'')'
+          required: false
+          type: string
+        - name: risk_free_alpha
+          in: query
+          description: 'risk free val alpha - (statId: 52, default: 0)'
+          required: false
+          type: number
+          format: double
+        - name: risk_free_sharpe
+          in: query
+          description: 'risk free val sharpe- (statId: 49, default: 0) '
+          required: false
+          type: number
+          format: double
+        - name: risk_free_sortino
+          in: query
+          description: 'risk free val sortino - (statId: 56, default: 0)'
+          required: false
+          type: number
+          format: double
+        - name: risk_free_treynor
+          in: query
+          description: 'risk free val treynor- (statId: 51, default: 0) '
+          required: false
+          type: number
+          format: double
+        - name: start_date
+          in: query
+          description: start date
+          required: false
+          type: string
+          format: date
+        - name: stat
+          in: query
+          description: A stat type -- /statistics
+          required: false
+          type: string
+        - name: var_conf_interval
+          in: query
+          description: 'VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95)'
+          required: false
+          type: number
+          format: double
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/household/{household_id}/transaction':
+    get:
+      tags:
+        - Household
+      summary: List all household's client ids transactions
+      description: Get the information for all transactions under a household client ids registered with your firm.
+      operationId: getHouseholdClientTransactionUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: ascending
+          in: query
+          description: ascending
+          required: false
+          type: boolean
+          default: false
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
+        - name: end_date
+          in: query
+          description: end date
+          required: false
+          type: string
+          format: date
+        - name: household_id
+          in: path
+          description: UUID household_id
+          required: true
+          type: string
+          format: uuid
+          x-example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+        - name: order_by
+          in: query
+          description: order_by
+          required: false
+          type: string
+          default: update_date
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 25
+          format: int32
+        - name: start_date
+          in: query
+          description: start date
+          required: false
+          type: string
+          format: date
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Page«PortfolioTransaction»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
       security:
         - oauth2: []
       deprecated: false
@@ -10717,6 +11446,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -10799,6 +11533,11 @@ paths:
       produces:
         - '*/*'
       parameters:
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
         - name: insurance_coverage_id
           in: path
           description: UUID insurance_coverage_id
@@ -10904,6 +11643,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -10986,6 +11730,11 @@ paths:
       produces:
         - '*/*'
       parameters:
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
         - name: insurance_discount_id
           in: path
           description: ' UUID insurance_discount_id'
@@ -11091,6 +11840,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -11173,19 +11927,18 @@ paths:
       produces:
         - '*/*'
       parameters:
-        - name: insurance_quote
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
+        - name: insurance_quote_id
           in: path
           description: UUID insurance_quote_id
           required: true
           type: string
           format: uuid
           x-example: 1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c
-        - name: insurance_quote_id
-          in: path
-          description: insurance_quote_id
-          required: true
-          type: string
-          format: uuid
       responses:
         '200':
           description: OK
@@ -11249,19 +12002,13 @@ paths:
       produces:
         - '*/*'
       parameters:
-        - name: insurance_quote
+        - name: insurance_quote_id
           in: path
           description: UUID insurance_quote_id
           required: true
           type: string
           format: uuid
           x-example: 1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c
-        - name: insurance_quote_id
-          in: path
-          description: insurance_quote_id
-          required: true
-          type: string
-          format: uuid
       responses:
         '200':
           description: OK
@@ -11278,7 +12025,7 @@ paths:
     get:
       tags:
         - Invoice
-      summary: List all invoice
+      summary: List all invoices
       description: 'List all invoice. '
       operationId: getInvoiceAllUsingGet
       produces:
@@ -11290,6 +12037,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -11372,6 +12124,11 @@ paths:
       produces:
         - '*/*'
       parameters:
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
         - name: invoice_id
           in: path
           description: UUID invoice_idd
@@ -11465,7 +12222,7 @@ paths:
     get:
       tags:
         - Invoice
-      summary: List all invoicePayment
+      summary: List all invoice payments
       description: 'List all invoicePayment. '
       operationId: getInvoicePaymentAllUsingGet
       produces:
@@ -11477,6 +12234,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -11559,6 +12321,11 @@ paths:
       produces:
         - '*/*'
       parameters:
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
         - name: invoice_payment_id
           in: path
           description: UUID invoice_payment_id
@@ -12058,6 +12825,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -12140,6 +12912,11 @@ paths:
       produces:
         - '*/*'
       parameters:
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
         - name: model_asset_size_id
           in: path
           description: UUID model_asset_size_id
@@ -12233,7 +13010,7 @@ paths:
     get:
       tags:
         - Model
-      summary: List all model commentary
+      summary: List all model commentaries
       description: List all comments for all models defined by your firm.
       operationId: getModelCommentAllUsingGet
       produces:
@@ -13173,7 +13950,7 @@ paths:
     get:
       tags:
         - Notification
-      summary: Get All Notification
+      summary: Get All Notifications
       description: 'Get All Notification. '
       operationId: getNotificationAllUsingGet
       produces:
@@ -13731,7 +14508,7 @@ paths:
         - Order
       summary: List all order records
       description: Get the information for all order records defined for your firm.
-      operationId: getOrderAllUsingGet_1
+      operationId: getOrderAllUsingGet
       produces:
         - '*/*'
       parameters:
@@ -13785,7 +14562,7 @@ paths:
         - Order
       summary: Create an order record
       description: Create an order record defined for your firm.
-      operationId: getOrderAllUsingGet
+      operationId: createOrderUsingPost
       consumes:
         - application/json
       produces:
@@ -13957,7 +14734,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/Page«Order»'
+            $ref: '#/definitions/Page«OrderBulk»'
         '401':
           description: Unauthorized
         '403':
@@ -14447,7 +15224,7 @@ paths:
           description: overflowVO
           required: true
           schema:
-            $ref: '#/definitions/Overflow'
+            $ref: '#/definitions/OverflowVO'
       responses:
         '200':
           description: OK
@@ -14920,7 +15697,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/PortfolioAggregatedVO'
+            type: object
         '401':
           description: Unauthorized
         '403':
@@ -15147,12 +15924,6 @@ paths:
       produces:
         - '*/*'
       parameters:
-        - name: account_id
-          in: path
-          description: Account Id -/account
-          required: true
-          type: string
-          format: uuid
         - name: active_premium_period
           in: query
           description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
@@ -15167,12 +15938,6 @@ paths:
           in: query
           description: Benchmark Id - benchmarkId or clientBenchmarkId -/benchmark
           required: false
-          type: string
-          format: uuid
-        - name: client_id
-          in: path
-          description: Client Id -/client
-          required: true
           type: string
           format: uuid
         - name: end_date
@@ -15254,12 +16019,6 @@ paths:
           type: string
         - name: portfolio_id
           in: path
-          description: portfolio_id
-          required: true
-          type: string
-          format: uuid
-        - name: portfolioid
-          in: path
           description: Portfolio Id -/portoflio
           required: true
           type: string
@@ -15335,6 +16094,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -15417,6 +16181,11 @@ paths:
       produces:
         - '*/*'
       parameters:
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: portfolio_asset_size_id
           in: path
           description: portfolio_asset_size_id
@@ -15427,7 +16196,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/PortfolioAssetSize'
+            $ref: '#/definitions/PortfolioAssetSizeLog'
         '401':
           description: Unauthorized
         '403':
@@ -15465,7 +16234,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/PortfolioAssetSize'
+            $ref: '#/definitions/PortfolioAssetSizeLog'
         '201':
           description: Created
         '401':
@@ -15895,6 +16664,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -15924,7 +16698,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/PortfolioHolding'
+            $ref: '#/definitions/Page«PortfolioHoldingLog»'
         '401':
           description: Unauthorized
         '403':
@@ -15977,6 +16751,11 @@ paths:
       produces:
         - '*/*'
       parameters:
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
         - name: portfolio_holding_id
           in: path
           description: UUID portfolio_holding_id
@@ -15988,7 +16767,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/PortfolioHolding'
+            $ref: '#/definitions/PortfolioHoldingLog'
         '401':
           description: Unauthorized
         '403':
@@ -16026,7 +16805,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/PortfolioHolding'
+            $ref: '#/definitions/PortfolioHoldingLog'
         '201':
           description: Created
         '401':
@@ -16082,6 +16861,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -16164,6 +16948,11 @@ paths:
       produces:
         - '*/*'
       parameters:
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
         - name: portfolio_transaction_id
           in: path
           description: UUID portfolio_transaction_id
@@ -16627,6 +17416,193 @@ paths:
       security:
         - oauth2: []
       deprecated: false
+  /reason_code:
+    get:
+      tags:
+        - Utils
+      summary: List all reason codes
+      description: Get the information for all reason codes defined by your firm.
+      operationId: getReasonCodeAllUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: ascending
+          in: query
+          description: ascending
+          required: false
+          type: boolean
+          default: false
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          description: order_by
+          required: false
+          type: string
+          default: update_date
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 25
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Page«ReasonCode»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    post:
+      tags:
+        - Utils
+      summary: Create a reason code
+      description: Create a new reason code for your firm.
+      operationId: createReasonCodeUsingPost
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: reasonCodeRequest
+          description: reasonCodeRequest
+          required: true
+          schema:
+            $ref: '#/definitions/ReasonCode'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ReasonCode'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/reason_code/{reason_code_id}':
+    get:
+      tags:
+        - Utils
+      summary: Retrieve a reason code
+      description: Retrieve the information for a reason code defined by your firm.
+      operationId: getReasonCodeUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: reason_code_id
+          in: path
+          description: UUID reason_code_id
+          required: true
+          type: string
+          format: uuid
+          x-example: 62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ReasonCode'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    put:
+      tags:
+        - Utils
+      summary: Update a reason code
+      description: Update a reason code for your firm.
+      operationId: updateReasonCodeUsingPut
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: reason_code
+          description: reason_code
+          required: true
+          schema:
+            $ref: '#/definitions/ReasonCode'
+        - name: reason_code_id
+          in: path
+          description: UUID reason_code_id
+          required: true
+          type: string
+          format: uuid
+          x-example: bab849d6-de96-4dc7-a5ea-19be45c52a4e
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/ReasonCode'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    delete:
+      tags:
+        - Utils
+      summary: Delete a reason code
+      description: Permanently delete a reason code for your firm.
+      operationId: deleteReasonCodeUsingDelete
+      produces:
+        - '*/*'
+      parameters:
+        - name: reason_code_id
+          in: path
+          description: UUID reason_code_id
+          required: true
+          type: string
+          format: uuid
+          x-example: 62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+        - oauth2: []
+      deprecated: false
   /resource/country:
     get:
       tags:
@@ -16668,6 +17644,99 @@ paths:
             type: array
             items:
               $ref: '#/definitions/Currency'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /resource/fx_rate:
+    get:
+      tags:
+        - Resource
+      summary: List all fxRates
+      description: Get information for all fxRates defined for your firm.
+      operationId: getCurrencyExchangeRateAllUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/FxRateView'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    post:
+      tags:
+        - Resource
+      summary: Create a bulk fxRate
+      description: Create a bulk fxRate.
+      operationId: createFxRateBulkUsingPost
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: fxRateList
+          description: fxRateList
+          required: true
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/FxRate'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/FxRate'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /resource/merchant_category_code:
+    get:
+      tags:
+        - Resource
+      summary: Get All Merchant Category Codes
+      description: Get All Merchant Category Codes.
+      operationId: getAllMerchantCategoryCodeUsingGet
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/MerchantCategoryCode'
         '401':
           description: Unauthorized
         '403':
@@ -17510,7 +18579,7 @@ paths:
         - Score
       summary: Retrieve a score
       description: 'Retrieve the information for a specific score associated with a client, account, goal, portfolio, allocation, model, benchmark or security.'
-      operationId: createScoreUsingPost_1
+      operationId: getScoreUsingGet
       produces:
         - '*/*'
       parameters:
@@ -17998,13 +19067,6 @@ paths:
           type: integer
           default: 0
           format: int32
-        - name: security_exclusion_id
-          in: path
-          description: UUID security_exclusion_id
-          required: true
-          type: string
-          format: uuid
-          x-example: 62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d
         - name: size
           in: query
           description: size
@@ -18071,7 +19133,7 @@ paths:
       parameters:
         - name: security_exclusion_id
           in: path
-          description: security exclusion id
+          description: UUID security_exclusion_id
           required: true
           type: string
           format: uuid
@@ -18174,6 +19236,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -18256,6 +19323,11 @@ paths:
       produces:
         - '*/*'
       parameters:
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
         - name: security_price_id
           in: path
           description: UUID security_price_id
@@ -19108,6 +20180,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -19190,19 +20267,18 @@ paths:
       produces:
         - '*/*'
       parameters:
-        - name: external_account_transfer_id
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
+        - name: transfer_id
           in: path
           description: UUID external_account_transfer_id
           required: true
           type: string
           format: uuid
           x-example: 8397d8fd-e80d-48ea-bf79-81f32b12606e
-        - name: transfer_id
-          in: path
-          description: transfer_id
-          required: true
-          type: string
-          format: uuid
       responses:
         '200':
           description: OK
@@ -19266,19 +20342,13 @@ paths:
       produces:
         - '*/*'
       parameters:
-        - name: transfer
+        - name: transfer_id
           in: path
           description: UUID external_account_transfer_id
           required: true
           type: string
           format: uuid
           x-example: 8397d8fd-e80d-48ea-bf79-81f32b12606e
-        - name: transfer_id
-          in: path
-          description: transfer_id
-          required: true
-          type: string
-          format: uuid
       responses:
         '200':
           description: OK
@@ -19494,6 +20564,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -19576,6 +20651,11 @@ paths:
       produces:
         - '*/*'
       parameters:
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
         - name: withdrawal_id
           in: path
           description: UUID withdrawal_id
@@ -19734,6 +20814,10 @@ definitions:
         type: string
         example: 7289243787238
         readOnly: true
+      status:
+        type: string
+        example: xyz
+        description: status
       update_date:
         type: string
         format: date-time
@@ -19741,21 +20825,6 @@ definitions:
         readOnly: true
     title: Account
     description: Account Object
-  AccountAdvisorVO:
-    type: object
-    properties:
-      account_type:
-        type: string
-      accounts_managed:
-        type: integer
-        format: int32
-      assets_managed:
-        type: number
-        format: double
-      clients_managed:
-        type: integer
-        format: int32
-    title: AccountAdvisorVO
   AccountAllocationMapping:
     type: object
     required:
@@ -19787,7 +20856,7 @@ definitions:
         description: currentWeight
       date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09'
         description: date
       goal_id:
@@ -19816,50 +20885,6 @@ definitions:
         readOnly: true
     title: AccountAllocationMapping
     description: AccountAllocationMapping Object
-  AccountClientsOverviewVO:
-    type: object
-    properties:
-      client_account_association:
-        type: string
-      client_first_name:
-        type: string
-      client_id:
-        type: string
-        format: uuid
-      client_last_name:
-        type: string
-    title: AccountClientsOverviewVO
-  AccountHoldingVO:
-    type: object
-    properties:
-      account_holding_date:
-        type: string
-        format: date-time
-      amount:
-        type: number
-        format: double
-      security_asset_class:
-        type: string
-      security_category:
-        type: string
-      security_id:
-        type: string
-        format: uuid
-      security_industry:
-        type: string
-      security_name:
-        type: string
-      security_sector:
-        type: string
-      security_ticker:
-        type: string
-      shares:
-        type: number
-        format: double
-      weight:
-        type: number
-        format: double
-    title: AccountHoldingVO
   AccountMap:
     type: object
     required:
@@ -19877,46 +20902,6 @@ definitions:
         example: 1
         description: amount
     title: AccountMap
-  AccountOverviewVO:
-    type: object
-    properties:
-      account_asset_size:
-        type: number
-        format: double
-      account_asset_size_date:
-        type: string
-        format: date-time
-      account_holdings:
-        type: array
-        items:
-          $ref: '#/definitions/AccountHoldingVO'
-      account_id:
-        type: string
-        format: uuid
-      account_name:
-        type: string
-      account_type_id:
-        type: string
-        format: uuid
-      account_type_name:
-        type: string
-      allocations:
-        type: array
-        items:
-          $ref: '#/definitions/AllocationVO'
-      clients:
-        type: array
-        items:
-          $ref: '#/definitions/AccountClientsOverviewVO'
-      deposits:
-        type: array
-        items:
-          $ref: '#/definitions/DepositVO'
-      withdrawals:
-        type: array
-        items:
-          $ref: '#/definitions/WithdrawalVO'
-    title: AccountOverviewVO
   AccountPermissionVO:
     type: object
     properties:
@@ -20079,6 +21064,22 @@ definitions:
         type: boolean
         example: true
         description: isActive
+      is_asset:
+        type: boolean
+        example: true
+        description: isAsset
+      is_business:
+        type: boolean
+        example: false
+        description: isBusiness
+      is_cash:
+        type: boolean
+        example: true
+        description: isCash
+      is_investment:
+        type: boolean
+        example: false
+        description: isInvestment
       is_taxable:
         type: boolean
         example: true
@@ -20110,98 +21111,6 @@ definitions:
         readOnly: true
     title: AccountType
     description: AccountType Object
-  AccountVO:
-    type: object
-    properties:
-      account_asset_size:
-        type: number
-        format: double
-      account_asset_size_date:
-        type: string
-        format: date-time
-      account_created_date:
-        type: string
-        format: date-time
-      account_id:
-        type: string
-        format: uuid
-      account_name:
-        type: string
-      account_secondary_id:
-        type: string
-      account_type:
-        type: string
-      account_updated_date:
-        type: string
-        format: date-time
-    title: AccountVO
-  Accounting:
-    type: object
-    required:
-      - currency_code
-      - stat_date
-      - stat_name
-      - stat_value
-    properties:
-      client_id:
-        type: string
-        format: uuid
-        example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
-        description: clientId
-      create_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      currency_code:
-        type: string
-        example: USD
-        description: currencyCode
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
-      metadata:
-        type: object
-        example: {}
-        readOnly: true
-        additionalProperties:
-          type: string
-      period_type:
-        type: string
-        example: annual
-        description: periodType
-      period_year:
-        type: integer
-        format: int32
-        example: 2020
-        description: periodYear
-      secondary_id:
-        type: string
-        example: 7289243787238
-        readOnly: true
-      stat_date:
-        type: string
-        format: date-time
-        example: '2018-01-09''T''12:00:00'
-        description: statDate
-      stat_name:
-        type: string
-        example: revenue
-        description: statName
-      stat_value:
-        type: number
-        format: double
-        example: 12
-        description: statValue
-      update_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-    title: Accounting
-    description: Accounting Object
   AclClientPermissionVO:
     type: object
     properties:
@@ -20220,81 +21129,11 @@ definitions:
         example: INQUIRY_ACCESS
         description: permissionType
         enum:
-          - '[INQUIRY_ACCESS'
+          - INQUIRY_ACCESS
           - LIMITED_AUTHORITY
           - FULL_AUTHORITY
-          - 'POWER_OF_ATTORNEY]'
+          - POWER_OF_ATTORNEY
     title: AclClientPermissionVO
-  AdvisorOverviewVO:
-    type: object
-    properties:
-      account_list:
-        type: array
-        items:
-          $ref: '#/definitions/AccountAdvisorVO'
-      client_list:
-        type: array
-        items:
-          $ref: '#/definitions/ClientAdvisorOverviewVO'
-      total_accounts_managed:
-        type: integer
-        format: int32
-      total_assets_managed:
-        type: number
-        format: double
-      total_clients_managed:
-        type: integer
-        format: int32
-    title: AdvisorOverviewVO
-  AggregateDataByCategoryForClientFromDbVO:
-    type: object
-    properties:
-      account_holder:
-        type: string
-      account_name:
-        type: string
-      account_number:
-        type: string
-      aggregation_account_balance_id:
-        type: string
-        format: uuid
-      aggregation_account_id:
-        type: string
-        format: uuid
-      available_balance:
-        type: string
-      available_credit:
-        type: string
-      balance:
-        type: string
-      balance_time_stamp:
-        type: string
-        format: date-time
-      category:
-        type: string
-      client_id:
-        type: string
-        format: uuid
-      currency_code:
-        type: string
-      financial_offer_id:
-        type: string
-        format: uuid
-      institution_name:
-        type: string
-      is_active:
-        type: boolean
-      is_asset:
-        type: boolean
-      mask:
-        type: string
-      metadata:
-        type: object
-        additionalProperties:
-          type: string
-      subcategory:
-        type: string
-    title: AggregateDataByCategoryForClientFromDbVO
   AggregationAccount:
     type: object
     required:
@@ -20363,6 +21202,10 @@ definitions:
         type: boolean
         example: false
         description: isBusiness
+      is_cash:
+        type: boolean
+        example: true
+        description: isCash
       is_investment:
         type: boolean
         example: false
@@ -20371,6 +21214,10 @@ definitions:
         type: boolean
         example: true
         description: isLinkVerified
+      is_manual:
+        type: boolean
+        example: false
+        description: isManual
       mask:
         type: string
         description: mask
@@ -20395,25 +21242,6 @@ definitions:
         readOnly: true
     title: AggregationAccount
     description: Aggregation Account Object
-  AggregationAccountAggregateDataVO:
-    type: object
-    properties:
-      aggregation_account_balances:
-        $ref: '#/definitions/AggregationAccountBalanceAggregateDataVO'
-      aggregation_account_details:
-        $ref: '#/definitions/AggregationAccountDetailsAggregateDataVO'
-      aggregation_account_holdings:
-        type: array
-        items:
-          $ref: '#/definitions/AggregationAccountHoldingAggregateDataVO'
-      aggregation_account_id:
-        type: string
-        format: uuid
-      aggregation_account_transactions:
-        type: array
-        items:
-          $ref: '#/definitions/AggregationAccountTransactionAggregateDataVO'
-    title: AggregationAccountAggregateDataVO
   AggregationAccountBalance:
     type: object
     required:
@@ -20425,15 +21253,18 @@ definitions:
         example: 2feae367-77be-4613-9cd0-f62fd5b3cff9
         description: aggregationAccountId
       available_balance:
-        type: string
+        type: number
+        format: double
         example: 10000
         description: availableBalance
       available_credit:
-        type: string
+        type: number
+        format: double
         example: 10000
         description: availableCredit
       balance:
-        type: string
+        type: number
+        format: double
         example: 9000
         description: balance
       balance_time_stamp:
@@ -20470,72 +21301,6 @@ definitions:
         readOnly: true
     title: AggregationAccountBalance
     description: Aggregation Account Balance Object
-  AggregationAccountBalanceAggregateDataVO:
-    type: object
-    properties:
-      aggregation_account_balance_id:
-        type: string
-        format: uuid
-      available_balance:
-        type: number
-        format: double
-      available_credit:
-        type: number
-        format: double
-      balance:
-        type: number
-        format: double
-      balance_time_stamp:
-        type: string
-        format: date-time
-      create_date:
-        type: string
-        format: date-time
-      currency_code:
-        type: string
-      secondary_id:
-        type: string
-      update_date:
-        type: string
-        format: date-time
-    title: AggregationAccountBalanceAggregateDataVO
-  AggregationAccountDetailsAggregateDataVO:
-    type: object
-    properties:
-      account_holder:
-        type: string
-      account_name:
-        type: string
-      account_number:
-        type: string
-      asset:
-        type: boolean
-      category:
-        type: string
-      create_date:
-        type: string
-        format: date-time
-      currency_code:
-        type: string
-      financial_offer_id:
-        type: string
-        format: uuid
-      institution_name:
-        type: string
-      mask:
-        type: string
-      metadata:
-        type: object
-        additionalProperties:
-          type: string
-      secondary_id:
-        type: string
-      subcategory:
-        type: string
-      update_date:
-        type: string
-        format: date-time
-    title: AggregationAccountDetailsAggregateDataVO
   AggregationAccountHolding:
     type: object
     required:
@@ -20610,52 +21375,6 @@ definitions:
         readOnly: true
     title: AggregationAccountHolding
     description: Aggregation Account Holding Object
-  AggregationAccountHoldingAggregateDataVO:
-    type: object
-    properties:
-      aggregation_account_holding_id:
-        type: string
-        format: uuid
-      amount:
-        type: number
-        format: double
-      asset_class:
-        type: string
-      cost_basis:
-        type: number
-        format: double
-      create_date:
-        type: string
-        format: date-time
-      currency_code:
-        type: string
-      cusip:
-        type: string
-      exchange:
-        type: string
-      holding_date:
-        type: string
-        format: date-time
-      holding_type:
-        type: string
-      metadata:
-        type: object
-        additionalProperties:
-          type: string
-      price:
-        type: number
-        format: double
-      shares:
-        type: number
-        format: double
-      ticker:
-        type: string
-      ticker_name:
-        type: string
-      update_date:
-        type: string
-        format: date-time
-    title: AggregationAccountHoldingAggregateDataVO
   AggregationAccountTransaction:
     type: object
     required:
@@ -20689,8 +21408,20 @@ definitions:
         $ref: '#/definitions/Investment'
       is_excluded_analysis:
         type: boolean
+      is_fee:
+        type: string
+        enum:
+          - 'FALSE'
+          - 'TRUE'
+          - 'NULL'
       is_recurring:
         type: boolean
+      is_transfer:
+        type: string
+        enum:
+          - 'FALSE'
+          - 'TRUE'
+          - 'NULL'
       metadata:
         type: object
         example: {}
@@ -20717,38 +21448,6 @@ definitions:
         readOnly: true
     title: AggregationAccountTransaction
     description: Aggregation Account Transaction Object
-  AggregationAccountTransactionAggregateDataVO:
-    type: object
-    properties:
-      aggregation_account_transaction_id:
-        type: string
-        format: uuid
-      bank_credit:
-        $ref: '#/definitions/BankCredit'
-      create_date:
-        type: string
-        format: date-time
-      currency_code:
-        type: string
-      investment:
-        $ref: '#/definitions/Investment'
-      is_excluded_analysis:
-        type: boolean
-      metadata:
-        type: object
-        additionalProperties:
-          type: string
-      secondary_id:
-        type: string
-      status:
-        type: string
-      transaction_date:
-        type: string
-        format: date-time
-      update_date:
-        type: string
-        format: date-time
-    title: AggregationAccountTransactionAggregateDataVO
   AggregationAccountsMap:
     type: object
     required:
@@ -20766,30 +21465,6 @@ definitions:
         example: 1
         description: amount
     title: AggregationAccountsMap
-  AggregationDataForClientByCategoryResponseVO:
-    type: object
-    properties:
-      aggregation_account_details:
-        type: array
-        items:
-          $ref: '#/definitions/AggregateDataByCategoryForClientFromDbVO'
-      category:
-        type: string
-      total_available_balance:
-        type: number
-        format: double
-      total_balance:
-        type: number
-        format: double
-    title: AggregationDataForClientByCategoryResponseVO
-  AggregationDataForClientParentResponseVO:
-    type: object
-    properties:
-      by_category:
-        type: array
-        items:
-          $ref: '#/definitions/AggregationDataForClientByCategoryResponseVO'
-    title: AggregationDataForClientParentResponseVO
   Allocation:
     type: object
     required:
@@ -20823,7 +21498,7 @@ definitions:
         readOnly: true
       inception_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09''T''12:00:00'
         description: inceptionDate
       is_active:
@@ -20916,7 +21591,7 @@ definitions:
         description: currentWeight
       date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09'
         description: date
       id:
@@ -20956,7 +21631,7 @@ definitions:
         format: date-time
       allocation_composition_date:
         type: string
-        format: date-time
+        format: date
       allocation_composition_id:
         type: string
         format: uuid
@@ -20990,7 +21665,7 @@ definitions:
     properties:
       model_holding_date:
         type: string
-        format: date-time
+        format: date
       model_holding_id:
         type: string
         format: uuid
@@ -21039,30 +21714,6 @@ definitions:
         example: 6e14259a-9a68-4593-9e6d-8fcd0d05cf44
         description: nodeId
     title: AllocationNodeMap
-  AllocationVO:
-    type: object
-    properties:
-      account_allocation_date:
-        type: string
-        format: date-time
-      account_allocation_id:
-        type: string
-        format: uuid
-      account_allocation_weight:
-        type: number
-        format: double
-      allocation_category:
-        type: string
-      allocation_description:
-        type: string
-      allocation_id:
-        type: string
-        format: uuid
-      allocation_name:
-        type: string
-      allocation_secondary_id:
-        type: string
-    title: AllocationVO
   Answer:
     type: object
     required:
@@ -21306,13 +21957,17 @@ definitions:
         format: double
         example: 20000
         description: valueAvailable
+      value_pending:
+        type: number
+        format: double
+        example: 20000
+        description: valuePending
     title: AvailableDateDoubleVO
     description: Available Date-Double Mapping Object
   BankCredit:
     type: object
     required:
       - amount
-      - merchant
       - transaction_type
     properties:
       amount:
@@ -21362,11 +22017,13 @@ definitions:
         example: 1c28dade-8679-4df5-9b9d-c508d04fcb0c
         description: accountId
       available_balance:
-        type: string
+        type: number
+        format: double
         example: available_balance
         description: availableBalance
       balance:
-        type: string
+        type: number
+        format: double
         example: 1000.12
         description: balance
       bank_account_holder:
@@ -21414,7 +22071,7 @@ definitions:
         description: isLinkVerified
       link_verified_date:
         type: string
-        format: date-time
+        format: date
         example: '2017-11-01'
         description: linkVerifiedDate
       mask:
@@ -21579,7 +22236,7 @@ definitions:
         description: currencyCode
       end_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-06-28'
         description: endDate
       frequency:
@@ -21621,9 +22278,14 @@ definitions:
         readOnly: true
       start_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-06-28'
         description: startDate
+      total_value:
+        type: number
+        format: double
+        example: 10000
+        description: totalValue
       update_date:
         type: string
         format: date-time
@@ -21735,7 +22397,7 @@ definitions:
         description: description
       end_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09'
         description: endDate
       id:
@@ -21770,7 +22432,7 @@ definitions:
         readOnly: true
       start_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09'
         description: startDate
       title:
@@ -21828,7 +22490,7 @@ definitions:
         readOnly: true
       end_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09'
         description: endDate
       id:
@@ -21854,7 +22516,7 @@ definitions:
         readOnly: true
       start_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09'
         description: startDate
       total_clicks:
@@ -22014,9 +22676,13 @@ definitions:
         description: currencyCode
       expiry_date:
         type: string
-        format: date-time
+        format: date
         example: 06/28/2018
         description: expiryDate
+      fulfillment:
+        type: string
+        example: secure mailing
+        description: fulfillment
       id:
         type: string
         format: uuid
@@ -22292,6 +22958,43 @@ definitions:
         readOnly: true
     title: ChatInfo
     description: ChatInfo Object
+  Check:
+    type: object
+    required:
+      - check_number
+    properties:
+      check_amount:
+        type: number
+        format: double
+        example: 20000
+        description: checkAmount
+      check_images:
+        type: array
+        example: []
+        description: checkImages
+        items:
+          $ref: '#/definitions/CheckImages'
+      check_number:
+        type: string
+        example: 123456
+        description: checkNumber
+    title: Check
+    description: Check Object
+  CheckImages:
+    type: object
+    required:
+      - image_url
+    properties:
+      image_type:
+        type: string
+        example: jpeg
+        description: imageType
+      image_url:
+        type: string
+        example: 'http://www.abc.com/test.jpeg'
+        description: imageUrl
+    title: CheckImages
+    description: CheckImages Object
   Client:
     type: object
     required:
@@ -22328,7 +23031,7 @@ definitions:
         readOnly: true
       date_of_birth:
         type: string
-        format: date-time
+        format: date
         example: '1900-01-01'
         description: dateOfBirth
       email:
@@ -22341,6 +23044,10 @@ definitions:
         type: string
         example: firm
         description: firmName
+      firm_type:
+        type: string
+        example: LLC
+        description: firmType
       first_name:
         type: string
         example: Joe
@@ -22411,6 +23118,10 @@ definitions:
         type: string
         example: 7289243787238
         readOnly: true
+      status:
+        type: string
+        example: xyz
+        description: status
       suffix:
         type: string
         example: xyz
@@ -22435,20 +23146,6 @@ definitions:
         description: username
     title: Client
     description: Client Object
-  ClientAccountAdvisorVO:
-    type: object
-    properties:
-      account_assets:
-        type: number
-        format: double
-      account_name:
-        type: string
-      account_type:
-        type: string
-      as_of_date:
-        type: string
-        format: date-time
-    title: ClientAccountAdvisorVO
   ClientAccountMapping:
     type: object
     required:
@@ -22470,35 +23167,6 @@ definitions:
         readOnly: true
     title: ClientAccountMapping
     description: ClientAccountMapping Object
-  ClientAccountVO:
-    type: object
-    properties:
-      accounts:
-        type: array
-        items:
-          $ref: '#/definitions/AccountVO'
-      client_asset_size:
-        type: number
-        format: double
-      client_asset_size_date:
-        type: string
-        format: date-time
-      client_first_name:
-        type: string
-      client_id:
-        type: string
-        format: uuid
-      client_last_name:
-        type: string
-      deposits:
-        type: array
-        items:
-          $ref: '#/definitions/DepositAccountVO'
-      withdrawals:
-        type: array
-        items:
-          $ref: '#/definitions/WithdrawalAccountVO'
-    title: ClientAccountVO
   ClientAddress:
     type: object
     required:
@@ -22542,102 +23210,6 @@ definitions:
         description: type
     title: ClientAddress
     description: ClientAddress Object
-  ClientAdvisorOverviewVO:
-    type: object
-    properties:
-      age:
-        type: integer
-        format: int32
-      client_account_list:
-        type: array
-        items:
-          $ref: '#/definitions/ClientAccountAdvisorVO'
-      client_assets:
-        $ref: '#/definitions/ClientAssetsAdvisorVO'
-      client_id:
-        type: string
-        format: uuid
-      date_of_birth:
-        type: string
-        format: date-time
-      first_name:
-        type: string
-      gender:
-        type: string
-      income:
-        type: integer
-        format: int32
-      last_name:
-        type: string
-    title: ClientAdvisorOverviewVO
-  ClientAnalyticsHistory:
-    type: object
-    properties:
-      date:
-        type: string
-        format: date-time
-      total_nucleus_clients:
-        type: integer
-        format: int64
-      total_nucleus_clients_active:
-        type: integer
-        format: int64
-      total_nucleus_clients_inactive:
-        type: integer
-        format: int64
-    title: ClientAnalyticsHistory
-  ClientAnalyticsResponse:
-    type: object
-    properties:
-      average_nucleus_clients_daily:
-        type: string
-      average_nucleus_clients_total:
-        type: string
-      client_id:
-        type: string
-      history:
-        type: array
-        items:
-          $ref: '#/definitions/ClientAnalyticsHistory'
-      tenants:
-        type: array
-        items:
-          $ref: '#/definitions/ClientAnalyticsTenants'
-      total_nucleus_clients:
-        type: integer
-        format: int64
-      total_nucleus_clients_active:
-        type: integer
-        format: int64
-      total_nucleus_clients_inactive:
-        type: integer
-        format: int64
-    title: ClientAnalyticsResponse
-  ClientAnalyticsTenants:
-    type: object
-    properties:
-      client_id:
-        type: string
-      total_nucleus_clients:
-        type: integer
-        format: int64
-      total_nucleus_clients_active:
-        type: integer
-        format: int64
-      total_nucleus_clients_inactive:
-        type: integer
-        format: int64
-    title: ClientAnalyticsTenants
-  ClientAssetsAdvisorVO:
-    type: object
-    properties:
-      as_of_date:
-        type: string
-        format: date-time
-      total_assets:
-        type: number
-        format: double
-    title: ClientAssetsAdvisorVO
   ClientCampaignMapping:
     type: object
     required:
@@ -22733,6 +23305,22 @@ definitions:
         readOnly: true
     title: ClientHydro
     description: ClientHydro Object
+  ClientRelationship:
+    type: object
+    required:
+      - client_id
+      - relationship
+    properties:
+      client_id:
+        type: string
+        format: uuid
+        example: 89df1f77-82b3-48ec-b6bc-710ceba322d9
+      member:
+        $ref: '#/definitions/Member'
+      relationship:
+        type: string
+        example: father
+    title: ClientRelationship
   ClientResponse:
     type: object
     required:
@@ -22858,7 +23446,7 @@ definitions:
         format: double
       goal_asset_size_by_goal_date:
         type: string
-        format: date-time
+        format: date
       goal_category:
         type: string
       goal_create_date:
@@ -22916,7 +23504,7 @@ definitions:
         description: clientId
       close_time:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09''T''12:00:00'
         description: closeTime
       closed_by:
@@ -22991,7 +23579,7 @@ definitions:
         description: source
       time:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09''T''12:00:00'
         description: time
       update_date:
@@ -23165,11 +23753,16 @@ definitions:
   CustomerRevenue:
     type: object
     required:
+      - accounting_method
       - currency_code
       - customer_id
       - date
       - revenue
     properties:
+      accounting_method:
+        type: string
+        example: cash
+        description: accounting_method
       create_date:
         type: string
         format: date-time
@@ -23186,7 +23779,7 @@ definitions:
         description: customerId
       date:
         type: string
-        format: date-time
+        format: date
         example: '2020-03-18'
         description: date
       id:
@@ -23260,12 +23853,12 @@ definitions:
         readOnly: true
       invested_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-29'
         description: investedDate
       last_request_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-29'
         description: last_request_date
       metadata:
@@ -23281,9 +23874,14 @@ definitions:
         format: uuid
         example: ea30e8b7-3946-46ed-975a-4870a57d119s
         description: portfolio_id
+      portfolio_transaction_id:
+        type: string
+        format: uuid
+        example: 29c3f995-bd45-4346-aea2-fd4476568d4c
+        description: portfolioTransactionId
       received_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-29'
         description: receivedDate
       secondary_id:
@@ -23364,7 +23962,7 @@ definitions:
         readOnly: true
       last_request_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-29'
         description: lastRequestDate
       metadata:
@@ -23380,9 +23978,14 @@ definitions:
         format: uuid
         example: ea30e8b7-3946-46ed-975a-4870a57d119s
         description: portfolio_id
+      portfolio_transaction_id:
+        type: string
+        format: uuid
+        example: 29c3f995-bd45-4346-aea2-fd4476568d4c
+        description: portfolioTransactionId
       received_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-29'
         description: received_date
       secondary_id:
@@ -23409,7 +24012,7 @@ definitions:
         readOnly: true
       withdrawal_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-29'
         description: withdrawalDate
     title: DailyWithdrawal
@@ -23505,41 +24108,6 @@ definitions:
       entity_type:
         type: string
     title: DecisionTreeResultVO
-  DepositAccountVO:
-    type: object
-    properties:
-      deposit_account_id:
-        type: string
-        format: uuid
-      deposit_account_name:
-        type: string
-      deposit_amount:
-        type: number
-        format: double
-      deposit_direction:
-        type: string
-      deposit_id:
-        type: string
-        format: uuid
-      deposit_received_date:
-        type: string
-        format: date-time
-    title: DepositAccountVO
-  DepositVO:
-    type: object
-    properties:
-      deposit_amount:
-        type: number
-        format: double
-      deposit_direction:
-        type: string
-      deposit_id:
-        type: string
-        format: uuid
-      deposit_received_date:
-        type: string
-        format: date-time
-    title: DepositVO
   Document:
     type: object
     required:
@@ -23595,7 +24163,7 @@ definitions:
         description: doc_type
       expiry_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09'
         description: expiry_date
       id:
@@ -23613,7 +24181,7 @@ definitions:
         description: is_verified
       issue_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09'
         description: issue_date
       metadata:
@@ -23756,7 +24324,7 @@ definitions:
         description: External Account Transfer transfer all cash
       transfer_date:
         type: string
-        format: date-time
+        format: date
         description: External Account Transfer account transfer date
       transfer_type:
         type: string
@@ -23952,11 +24520,6 @@ definitions:
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
         readOnly: true
-      visit_time_stamp:
-        type: string
-        format: date-time
-        example: '2018-11-29T14:48:38.000+0000'
-        description: visit_time_stamp
     title: FeatureTrack
     description: Feature Track Object
   FinancialOffer:
@@ -24112,6 +24675,92 @@ definitions:
         readOnly: true
     title: FinancialOffer
     description: Financial Offer Object
+  FinancialStatement:
+    type: object
+    required:
+      - accounting_method
+      - currency_code
+      - statement_date
+      - statement_type
+    properties:
+      accounting_method:
+        type: string
+        example: cash
+        description: accounting_method
+      client_id:
+        type: string
+        format: uuid
+        example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+        description: clientId
+      create_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        readOnly: true
+      currency_code:
+        type: string
+        example: USD
+        description: currencyCode
+      id:
+        type: string
+        format: uuid
+        example: 000183ac-2288-4564-a76b-119f4694be98
+        readOnly: true
+      metadata:
+        type: object
+        example: {}
+        readOnly: true
+        additionalProperties:
+          type: string
+      period_length:
+        type: string
+        example: annual
+        description: periodLength
+      period_month:
+        type: integer
+        format: int32
+        example: 3
+        description: periodMonth
+      period_quarter:
+        type: integer
+        format: int32
+        example: 1
+        description: periodQuarter
+      period_type:
+        type: string
+        example: calendar
+        description: periodType
+      period_year:
+        type: integer
+        format: int32
+        example: 2020
+        description: periodYear
+      secondary_id:
+        type: string
+        example: 7289243787238
+        readOnly: true
+      statement_date:
+        type: string
+        format: date
+        example: '2018-01-09''T''12:00:00'
+        description: statementDate
+      statement_type:
+        type: string
+        example: balance_sheet
+        description: statement_type
+      stats:
+        type: array
+        example: []
+        description: stats
+        items:
+          $ref: '#/definitions/Stat'
+      update_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        readOnly: true
+    title: FinancialStatement
+    description: FinancialStatement Object
   Funding:
     type: object
     required:
@@ -24157,7 +24806,7 @@ definitions:
         description: description
       end_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09'
         description: endDate
       frequency:
@@ -24192,7 +24841,7 @@ definitions:
         description: isDeposit
       last_request_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09''T''12:00:00'
         description: lastRequestDate
       metadata:
@@ -24204,7 +24853,7 @@ definitions:
           type: string
       next_request_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09''T''12:00:00'
         description: nextRequestDate
       portfolio_id:
@@ -24212,13 +24861,18 @@ definitions:
         format: uuid
         example: ea30e8b7-3946-46ed-975a-4870a57d119s
         description: portfolioId
+      receiving_bank_link_id:
+        type: string
+        format: uuid
+        example: 02ec7d90-02fc-46c7-b201-def9b16ef65a
+        description: receivingBankLinkId
       secondary_id:
         type: string
         example: 7289243787238
         readOnly: true
       start_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09'
         description: startDate
       support_ticket_id:
@@ -24226,11 +24880,20 @@ definitions:
         format: uuid
         example: 3551b26c-7080-4c4b-a8fc-9ce9360460ba
         description: supportTicketId
+      threshold_amount:
+        type: number
+        format: double
+        example: 100
+        description: thresholdAmount
       transfer_id:
         type: string
         format: uuid
         example: 8ac40bd2-84a7-4896-804d-b837ef1df5f5
         description: transferId
+      transfer_type:
+        type: string
+        example: push
+        description: transferType
       update_date:
         type: string
         format: date-time
@@ -24249,6 +24912,62 @@ definitions:
         example: 6e14259a-9a68-4593-9e6d-8fcd0d05cf44
         description: funding_id
     title: FundingRequestMap
+  FxRate:
+    type: object
+    required:
+      - currency_code_from
+      - currency_code_to
+      - date
+      - exchange_rate
+    properties:
+      currency_code_from:
+        type: string
+        example: USD
+        description: currency_code_from
+      currency_code_to:
+        type: string
+        example: USD
+        description: currency_code_to
+      date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        description: date
+      exchange_rate:
+        type: number
+        format: double
+        example: 12
+        description: exchangeRate
+    title: FxRate
+    description: FxRate Object
+  FxRateView:
+    type: object
+    required:
+      - currency_code_from
+      - currency_code_to
+      - date
+      - exchange_rate
+    properties:
+      currency_code_from:
+        type: string
+        example: USD
+        description: currency_code_from
+      currency_code_to:
+        type: string
+        example: USD
+        description: currency_code_to
+      date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        description: date
+      exchange_rate:
+        type: number
+        format: double
+        example: 12
+        description: exchangeRate
+    title: FxRateView
+    description: FxRate view object
   Goal:
     type: object
     required:
@@ -24334,6 +25053,11 @@ definitions:
         format: double
         example: 15
         description: accumulationHorizon
+      decumulation_horizon:
+        type: number
+        format: double
+        example: 15
+        description: decumulationHorizon
       goal_amount:
         type: number
         format: double
@@ -24429,7 +25153,7 @@ definitions:
         description: projectionBalance
       projection_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09'
         description: projectionDate
       secondary_id:
@@ -24459,6 +25183,62 @@ definitions:
         example: 1c28dade-8679-4df5-9b9d-c508d04fcb0c
         description: account_id
     title: GoalTrackAccounts
+  Household:
+    type: object
+    required:
+      - name
+    properties:
+      category:
+        type: string
+        example: category
+        description: category
+      create_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        readOnly: true
+      household_income:
+        type: number
+        format: double
+        example: 1
+        description: householdIncome
+      id:
+        type: string
+        format: uuid
+        example: 000183ac-2288-4564-a76b-119f4694be98
+        readOnly: true
+      is_active:
+        type: boolean
+        example: true
+        description: is_active
+      members:
+        type: array
+        items:
+          $ref: '#/definitions/Member'
+      metadata:
+        type: object
+        example: {}
+        readOnly: true
+        additionalProperties:
+          type: string
+      name:
+        type: string
+        example: household
+        description: name
+      secondary_id:
+        type: string
+        example: 7289243787238
+        readOnly: true
+      subcategory:
+        type: string
+        example: subcategory
+        description: subcategory
+      update_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        readOnly: true
+    title: Household
   InsuranceCoverage:
     type: object
     required:
@@ -24471,7 +25251,8 @@ definitions:
         example: Insurance Type
         description: category
       coverage_amount:
-        type: string
+        type: number
+        format: double
         example: 100
         description: coverageAmount
       create_date:
@@ -24484,7 +25265,8 @@ definitions:
         example: USD
         description: currencyCode
       deductible:
-        type: string
+        type: number
+        format: double
         example: deductible
         description: deductible
       description:
@@ -24658,6 +25440,11 @@ definitions:
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
         readOnly: true
+      financial_offer_id:
+        type: string
+        format: uuid
+        example: ffec4069-f3bd-46f0-bf62-c7c77b400e37
+        description: financial_offer_id
       id:
         type: string
         format: uuid
@@ -24727,6 +25514,10 @@ definitions:
         format: double
         example: 2345
         description: fee
+      investment_type:
+        type: string
+        example: investmentType
+        description: investmentType
       price:
         type: number
         format: double
@@ -24768,9 +25559,8 @@ definitions:
       - customer_id
       - due_date
       - invoice_date
-      - invoice_name
       - invoice_number
-      - payment_details
+      - total_amount
     properties:
       client_id:
         type: string
@@ -24791,14 +25581,14 @@ definitions:
         format: uuid
         example: 14566616-6846-4090-beae-5b1568b82370
         description: invoice_number
+      department:
+        type: string
+        example: invoice department
+        description: department
       description:
         type: string
         example: invoice description
         description: description
-      division:
-        type: string
-        example: division
-        description: division
       document_id:
         type: string
         format: uuid
@@ -24814,12 +25604,9 @@ definitions:
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
         readOnly: true
-      invoice_amount:
-        type: number
-        format: double
       invoice_date:
         type: string
-        format: date-time
+        format: date
         example: '2020-03-18'
         description: invoice_date
       invoice_name:
@@ -24834,16 +25621,26 @@ definitions:
         type: boolean
         example: true
         description: is_active
+      line_items:
+        type: array
+        example: []
+        description: lineItems
+        items:
+          $ref: '#/definitions/LineItems'
       metadata:
         type: object
         example: {}
         readOnly: true
         additionalProperties:
           type: string
-      payment_details:
+      payment_instructions:
         type: string
-        example: payment_details
-        description: payment_details
+        example: payment instructions
+        description: paymentInstructions
+      payment_terms:
+        type: string
+        example: payment terms
+        description: paymentTerms
       secondary_id:
         type: string
         example: 7289243787238
@@ -24852,6 +25649,31 @@ definitions:
         type: string
         example: '2020-03-18T18:17:23.579+0000'
         description: status
+      total_amount:
+        type: number
+        format: double
+        example: 12
+        description: totalAmount
+      total_discount:
+        type: number
+        format: double
+        example: 10000
+        description: totalDiscount
+      total_due:
+        type: number
+        format: double
+        example: 10000
+        description: totalDue
+      total_subtotal:
+        type: number
+        format: double
+        example: 10000
+        description: totalSubtotal
+      total_tax:
+        type: number
+        format: double
+        example: 10000
+        description: totalTax
       update_date:
         type: string
         format: date-time
@@ -24862,6 +25684,7 @@ definitions:
   InvoicePayment:
     type: object
     required:
+      - currency_code
       - invoice_id
       - payment_amount
       - payment_date
@@ -24871,6 +25694,10 @@ definitions:
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
         readOnly: true
+      currency_code:
+        type: string
+        example: USD
+        description: currency_code
       id:
         type: string
         format: uuid
@@ -24960,6 +25787,53 @@ definitions:
       value_node:
         type: boolean
     title: JsonNode
+  LineItems:
+    type: object
+    required:
+      - amount
+      - currency_code
+      - description
+      - quantity
+      - rate
+    properties:
+      amount:
+        type: number
+        format: double
+        example: 23.9
+        description: amount
+      currency_code:
+        type: string
+        example: USD
+        description: currency_code
+      description:
+        type: string
+        example: description
+        description: description
+      line_item_id:
+        type: string
+        description: lineItemId
+      quantity:
+        type: number
+        format: double
+        example: 23.9
+        description: quantity
+      rate:
+        type: number
+        format: double
+        example: 23.9
+        description: rate
+      subtotal:
+        type: number
+        format: double
+        example: 2345
+        description: subtotal
+      tax:
+        type: number
+        format: double
+        example: 2345
+        description: tax
+    title: LineItems
+    description: LineItems Object
   Location:
     type: object
     properties:
@@ -24999,6 +25873,41 @@ definitions:
         description: state
     title: Location
     description: Location Object
+  Member:
+    type: object
+    required:
+      - client_id
+    properties:
+      client_id:
+        type: string
+        format: uuid
+        example: 89df1f77-82b3-48ec-b6bc-710ceba322d9
+        description: clientId
+      client_relationships:
+        type: array
+        items:
+          $ref: '#/definitions/ClientRelationship'
+      household:
+        $ref: '#/definitions/Household'
+      is_primary:
+        type: boolean
+        example: false
+        description: isPrimary
+    title: Member
+  MerchantCategoryCode:
+    type: object
+    properties:
+      description:
+        type: string
+        example: Veterinary Services
+        description: description
+      mcc:
+        type: integer
+        format: int32
+        example: 722
+        description: mcc
+    title: MerchantCategoryCode
+    description: MerchantCategoryCode Object
   MerchantsMap:
     type: object
     required:
@@ -25141,7 +26050,7 @@ definitions:
         description: currency_code
       date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09''T''12:00:00'
         description: Model asset_size date
       id:
@@ -25187,7 +26096,7 @@ definitions:
         readOnly: true
       date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09''T''12:00:00'
         description: Model Comment date
       id:
@@ -25235,7 +26144,7 @@ definitions:
         description: Model Holding current weight
       date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09''T''12:00:00'
         description: Model Holding date
       drift_factor:
@@ -25301,24 +26210,6 @@ definitions:
         example: '2018-06-28T18:17:23.579+0000'
         readOnly: true
     title: ModelHolding
-  ModelHoldingAgg:
-    type: object
-    properties:
-      asset_class:
-        type: string
-      current_weight:
-        type: number
-        format: double
-      securities_id:
-        type: integer
-        format: int64
-      strategic_weight:
-        type: number
-        format: double
-      ticker:
-        type: string
-    title: ModelHoldingAgg
-    description: ModelHoldingAgg Object
   ModelHoldingVO:
     type: object
     properties:
@@ -25327,7 +26218,7 @@ definitions:
         format: double
       date:
         type: string
-        format: date-time
+        format: date
       security_id:
         type: string
         format: uuid
@@ -25352,7 +26243,7 @@ definitions:
         readOnly: true
       date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09''T''12:00:00'
         description: Date
       id:
@@ -25597,6 +26488,9 @@ definitions:
       is_read:
         type: boolean
         example: true
+      is_sent:
+        type: boolean
+        example: true
       metadata:
         type: object
         example: {}
@@ -25667,6 +26561,11 @@ definitions:
         type: boolean
         example: true
         description: is_receive
+      last_run_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        description: last_run_date
       metadata:
         type: object
         example: {}
@@ -25715,7 +26614,7 @@ definitions:
         readOnly: true
       date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09'
         description: date
       id:
@@ -25790,6 +26689,70 @@ definitions:
         readOnly: true
     title: Order
     description: Order Object
+  OrderBulk:
+    type: object
+    required:
+      - account_id
+      - date
+      - model_id
+      - order_bulk_id
+      - order_id
+      - portfolio_id
+    properties:
+      account_id:
+        type: string
+        format: uuid
+        example: 11c28dade-8679-4df5-9b9d-c508d04fcb0c
+        description: accountId
+      create_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        readOnly: true
+      date:
+        type: string
+        format: date
+        example: '2018-01-09'
+        description: date
+      id:
+        type: string
+        format: uuid
+        example: 000183ac-2288-4564-a76b-119f4694be98
+        readOnly: true
+      metadata:
+        type: object
+        additionalProperties:
+          type: string
+      model_id:
+        type: string
+        format: uuid
+        example: 62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d
+        description: modelId
+      order_bulk_id:
+        type: string
+        format: uuid
+        example: 114556fe-ee78-431d-be5e-60ae08ddf9a7
+        description: orderBulkId
+      order_id:
+        type: string
+        format: uuid
+        example: 72c0c834-03e1-49c3-bf13-eb5adcba6e9e
+        description: orderId
+      portfolio_id:
+        type: string
+        format: uuid
+        example: c34794e9-f927-468b-b47e-ea17c3d533c5
+        description: portfolioId
+      secondary_id:
+        type: string
+        example: 7289243787238
+        readOnly: true
+      update_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        readOnly: true
+    title: OrderBulk
   OrderReconcileRequest:
     type: object
     properties:
@@ -25898,7 +26861,7 @@ definitions:
         readOnly: true
       date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09''T''12:00:00'
         description: date
       external_track_id:
@@ -26026,6 +26989,7 @@ definitions:
     required:
       - account_id
       - client_id
+      - overflow_setting_id
       - total_overflow_amount
     properties:
       account_id:
@@ -26049,11 +27013,6 @@ definitions:
         readOnly: true
         items:
           $ref: '#/definitions/FundingRequestMap'
-      funding_start_date:
-        type: string
-        format: date-time
-        example: '2018-01-09'
-        description: fundingStartDate
       id:
         type: string
         format: uuid
@@ -26062,7 +27021,7 @@ definitions:
       overflow_setting_id:
         type: string
         format: uuid
-        example: f5af397b-7d22-433f-b01e-8202184a6386
+        example: 099961da-7f41-4309-950f-2b51689a0033
         description: overflowSettingId
       total_overflow_amount:
         type: number
@@ -26071,7 +27030,7 @@ definitions:
         description: totalOverflowAmount
       update_balances:
         type: boolean
-        example: false
+        example: true
         description: updateBalances
       update_date:
         type: string
@@ -26112,7 +27071,6 @@ definitions:
       bank_links:
         type: array
         example: []
-        readOnly: true
         items:
           $ref: '#/definitions/OverflowBankLinkMap'
       client_id:
@@ -26157,6 +27115,25 @@ definitions:
         readOnly: true
     title: OverflowSettings
     description: Overflow Settings Object
+  OverflowVO:
+    type: object
+    properties:
+      funding_start_date:
+        type: string
+        format: date
+        example: '2018-01-09'
+        description: fundingStartDate
+      overflow_setting_id:
+        type: string
+        format: uuid
+        example: f5af397b-7d22-433f-b01e-8202184a6386
+        description: overflowSettingId
+      update_balances:
+        type: boolean
+        example: false
+        description: updateBalances
+    title: OverflowVO
+    description: Overflow Object
   Page«AccountAllocationMapping»:
     type: object
     properties:
@@ -26284,38 +27261,6 @@ definitions:
         type: integer
         format: int32
     title: Page«AccountType»
-    description: Page Object
-  Page«Accounting»:
-    type: object
-    properties:
-      content:
-        type: array
-        items:
-          $ref: '#/definitions/Accounting'
-      first:
-        type: boolean
-      last:
-        type: boolean
-      number:
-        type: integer
-        format: int32
-      number_of_elements:
-        type: integer
-        format: int32
-      size:
-        type: integer
-        format: int32
-      sort:
-        type: array
-        items:
-          $ref: '#/definitions/Sort'
-      total_elements:
-        type: integer
-        format: int64
-      total_pages:
-        type: integer
-        format: int32
-    title: Page«Accounting»
     description: Page Object
   Page«Account»:
     type: object
@@ -27469,6 +28414,38 @@ definitions:
         format: int32
     title: Page«FinancialOffer»
     description: Page Object
+  Page«FinancialStatement»:
+    type: object
+    properties:
+      content:
+        type: array
+        items:
+          $ref: '#/definitions/FinancialStatement'
+      first:
+        type: boolean
+      last:
+        type: boolean
+      number:
+        type: integer
+        format: int32
+      number_of_elements:
+        type: integer
+        format: int32
+      size:
+        type: integer
+        format: int32
+      sort:
+        type: array
+        items:
+          $ref: '#/definitions/Sort'
+      total_elements:
+        type: integer
+        format: int64
+      total_pages:
+        type: integer
+        format: int32
+    title: Page«FinancialStatement»
+    description: Page Object
   Page«Funding»:
     type: object
     properties:
@@ -27564,6 +28541,38 @@ definitions:
         type: integer
         format: int32
     title: Page«Goal»
+    description: Page Object
+  Page«Household»:
+    type: object
+    properties:
+      content:
+        type: array
+        items:
+          $ref: '#/definitions/Household'
+      first:
+        type: boolean
+      last:
+        type: boolean
+      number:
+        type: integer
+        format: int32
+      number_of_elements:
+        type: integer
+        format: int32
+      size:
+        type: integer
+        format: int32
+      sort:
+        type: array
+        items:
+          $ref: '#/definitions/Sort'
+      total_elements:
+        type: integer
+        format: int64
+      total_pages:
+        type: integer
+        format: int32
+    title: Page«Household»
     description: Page Object
   Page«InsuranceCoverage»:
     type: object
@@ -28045,6 +29054,38 @@ definitions:
         format: int32
     title: Page«Notification»
     description: Page Object
+  Page«OrderBulk»:
+    type: object
+    properties:
+      content:
+        type: array
+        items:
+          $ref: '#/definitions/OrderBulk'
+      first:
+        type: boolean
+      last:
+        type: boolean
+      number:
+        type: integer
+        format: int32
+      number_of_elements:
+        type: integer
+        format: int32
+      size:
+        type: integer
+        format: int32
+      sort:
+        type: array
+        items:
+          $ref: '#/definitions/Sort'
+      total_elements:
+        type: integer
+        format: int64
+      total_pages:
+        type: integer
+        format: int32
+    title: Page«OrderBulk»
+    description: Page Object
   Page«OrderStatus»:
     type: object
     properties:
@@ -28460,6 +29501,38 @@ definitions:
         type: integer
         format: int32
     title: Page«Question»
+    description: Page Object
+  Page«ReasonCode»:
+    type: object
+    properties:
+      content:
+        type: array
+        items:
+          $ref: '#/definitions/ReasonCode'
+      first:
+        type: boolean
+      last:
+        type: boolean
+      number:
+        type: integer
+        format: int32
+      number_of_elements:
+        type: integer
+        format: int32
+      size:
+        type: integer
+        format: int32
+      sort:
+        type: array
+        items:
+          $ref: '#/definitions/Sort'
+      total_elements:
+        type: integer
+        format: int64
+      total_pages:
+        type: integer
+        format: int32
+    title: Page«ReasonCode»
     description: Page Object
   Page«RiskProfile»:
     type: object
@@ -28995,6 +30068,10 @@ definitions:
         type: string
         example: 7289243787238
         readOnly: true
+      status:
+        type: string
+        example: xyz
+        description: status
       update_date:
         type: string
         format: date-time
@@ -29002,122 +30079,6 @@ definitions:
         readOnly: true
     title: Portfolio
     description: Portfolio Object
-  PortfolioAggregatedVO:
-    type: object
-    properties:
-      asset_classes:
-        type: array
-        items:
-          $ref: '#/definitions/SecurityDetailVO'
-      categories:
-        type: array
-        items:
-          $ref: '#/definitions/SecurityDetailVO'
-      create_date:
-        type: string
-        format: date-time
-      description:
-        type: string
-      industries:
-        type: array
-        items:
-          $ref: '#/definitions/SecurityDetailVO'
-      name:
-        type: string
-      portfolio_id:
-        type: string
-        format: uuid
-      sectors:
-        type: array
-        items:
-          $ref: '#/definitions/SecurityDetailVO'
-      security_classes:
-        type: array
-        items:
-          $ref: '#/definitions/SecurityDetailVO'
-      update_date:
-        type: string
-        format: date-time
-      weight:
-        type: number
-        format: double
-    title: PortfolioAggregatedVO
-  PortfolioAssetSize:
-    type: object
-    required:
-      - account_id
-      - asset_size
-      - cash_flow
-      - date
-      - id
-      - model_id
-      - portfolio_id
-    properties:
-      account_id:
-        type: string
-        format: uuid
-        example: 11c28dade-8679-4df5-9b9d-c508d04fcb0c
-        description: accountId
-      asset_size:
-        type: number
-        format: double
-        example: 100
-        description: asset_size
-      asset_size_available:
-        type: number
-        format: double
-        example: 100
-        description: asset_size_available
-      asset_size_pending:
-        type: number
-        format: double
-        example: 100
-        description: asset_size_pending
-      cash_flow:
-        type: number
-        format: double
-        example: 100
-        description: cash_flow
-      create_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      currency_code:
-        type: string
-        example: USD
-        description: currency_code
-      date:
-        type: string
-        format: date-time
-        example: '2018-01-09''T''12:00:00'
-        description: date
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        description: logId
-      model_id:
-        type: string
-        format: uuid
-        example: 62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d
-        description: modelId
-      portfolio_id:
-        type: string
-        format: uuid
-        example: c34794e9-f927-468b-b47e-ea17c3d533c5
-        description: portfolioId
-      secondary_id:
-        type: string
-        example: 7289243787238
-        readOnly: true
-      update_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-    title: PortfolioAssetSize
-    description: PortfolioAssetSize Object
   PortfolioAssetSizeLog:
     type: object
     required:
@@ -29260,13 +30221,12 @@ definitions:
         readOnly: true
       date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09'
         description: date
       goals:
         type: array
         example: {}
-        readOnly: true
         items:
           $ref: '#/definitions/PortfolioGoalMap'
       id:
@@ -29307,86 +30267,6 @@ definitions:
         example: 0.88
         description: weight
     title: PortfolioGoalMap
-  PortfolioHolding:
-    type: object
-    required:
-      - account_id
-      - date
-      - id
-      - model_id
-      - portfolio_id
-      - security_id
-      - shares
-    properties:
-      account_id:
-        type: string
-        format: uuid
-        example: 1
-        description: accountId
-      amount:
-        type: number
-        format: double
-        example: 100
-        description: amount
-      cost_basis:
-        type: number
-        format: double
-        example: 100
-        description: cost_basis
-      create_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      currency_code:
-        type: string
-        description: currency_code
-      date:
-        type: string
-        format: date-time
-        example: '2018-01-09'
-        description: date
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        description: holdingLogId
-      model_id:
-        type: string
-        format: uuid
-        example: 1
-        description: modelId
-      portfolio_id:
-        type: string
-        format: uuid
-        example: 1
-        description: portfolioId
-      secondary_id:
-        type: string
-        example: 7289243787238
-        readOnly: true
-      security_id:
-        type: string
-        format: uuid
-        example: 1
-        description: securityId
-      shares:
-        type: number
-        format: double
-        example: 4
-        description: shares
-      update_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      weight:
-        type: number
-        format: double
-        example: 100
-        description: weight
-    title: PortfolioHolding
-    description: PortfolioHolding Object
   PortfolioHoldingAgg:
     type: object
     properties:
@@ -29406,7 +30286,7 @@ definitions:
         description: currencyCode
       date:
         type: string
-        format: date-time
+        format: date
         example: '2017-01-20'
         description: date
       security_id:
@@ -29533,6 +30413,8 @@ definitions:
         type: string
         example: category
         description: category
+      check:
+        $ref: '#/definitions/Check'
       create_date:
         type: string
         format: date-time
@@ -29561,10 +30443,18 @@ definitions:
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
         readOnly: true
+      is_cleansed:
+        type: boolean
+        example: false
+        description: is_cleansed
       is_read:
         type: boolean
         example: true
         description: isRead
+      is_recurring:
+        type: boolean
+        example: false
+        description: is_recurring
       location:
         example: {}
         description: location
@@ -29577,6 +30467,11 @@ definitions:
         type: string
         example: merchant
         description: merchant
+      merchant_category_code:
+        type: integer
+        format: int32
+        example: 3099
+        description: merchant_category_code
       model_id:
         type: string
         format: uuid
@@ -29750,6 +30645,55 @@ definitions:
         readOnly: true
     title: Questionnaire
     description: Questionnaire Object
+  ReasonCode:
+    type: object
+    required:
+      - reason_code
+    properties:
+      category:
+        type: string
+        example: Deposit
+        description: category
+      create_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        readOnly: true
+      id:
+        type: string
+        format: uuid
+        example: 000183ac-2288-4564-a76b-119f4694be98
+        readOnly: true
+      metadata:
+        type: object
+        additionalProperties:
+          type: string
+      reason_code:
+        type: string
+        example: codeSell1543998799676
+        description: reasonCode
+      reason_code_description:
+        type: string
+        example: Bank deposit ACH
+        description: reasonCodeDescription
+      reason_type:
+        type: string
+        example: ACH
+        description: reasonType
+      secondary_id:
+        type: string
+        example: 7289243787238
+        readOnly: true
+      subcategory:
+        type: string
+        example: Bank Deposit
+        description: subcategory
+      update_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        readOnly: true
+    title: ReasonCode
   RiskProfile:
     type: object
     required:
@@ -29869,7 +30813,7 @@ definitions:
     properties:
       funding_start_date:
         type: string
-        format: date-time
+        format: date
       roundup_setting_id:
         type: string
         format: uuid
@@ -29909,7 +30853,6 @@ definitions:
       bank_links:
         type: array
         example: {}
-        readOnly: true
         items:
           $ref: '#/definitions/BankLinkMap'
       categories:
@@ -29978,7 +30921,7 @@ definitions:
         description: assigned
       close_time:
         type: string
-        format: date-time
+        format: date
         example: '2017-01-03'
         description: closeTime
       closed_by:
@@ -30039,7 +30982,7 @@ definitions:
         type: boolean
       open_time:
         type: string
-        format: date-time
+        format: date
         example: '2017-08-01'
         description: openTime
       phone:
@@ -30141,12 +31084,13 @@ definitions:
         example: risk_score
         description: scoreType
         enum:
-          - '[goal_achievement_score'
+          - goal_achievement_score
           - portfolio_optimization_score
           - credit_score
           - dimensional_risk_score
           - diversification_score
-          - 'risk_score]'
+          - risk_score
+          - risk_profile
       score_value:
         type: string
         example: 0
@@ -30182,12 +31126,12 @@ definitions:
         description: Securities Composition component Id
       end_date:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09''T''12:00:00'
         description: Securities Composition End Date
       start_date:
         type: string
-        format: date-time
+        format: date
         example: '2017-01-09''T''12:00:00'
         description: Securities Composition Start Date
       weight:
@@ -30320,7 +31264,7 @@ definitions:
     properties:
       end_date:
         type: string
-        format: date-time
+        format: date
       security_asset_class:
         type: string
       security_countries:
@@ -30353,7 +31297,7 @@ definitions:
         format: double
       start_date:
         type: string
-        format: date-time
+        format: date
     title: SecurityCompositionVO
   SecurityCountryVO:
     type: object
@@ -30364,21 +31308,6 @@ definitions:
         type: number
         format: double
     title: SecurityCountryVO
-  SecurityDetailVO:
-    type: object
-    properties:
-      name:
-        type: string
-      security_price_date:
-        type: string
-        format: date-time
-      value:
-        type: number
-        format: double
-      weight:
-        type: number
-        format: double
-    title: SecurityDetailVO
   SecurityExclusion:
     type: object
     required:
@@ -30466,11 +31395,26 @@ definitions:
         format: date-time
         example: '2018-01-09''T''12:00:00'
         description: Security date
+      high:
+        type: number
+        format: double
+        example: 0.08
+        description: high
       id:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
         readOnly: true
+      low:
+        type: number
+        format: double
+        example: 0.08
+        description: low
+      open:
+        type: number
+        format: double
+        example: 0.08
+        description: open
       price:
         type: number
         format: double
@@ -30490,6 +31434,11 @@ definitions:
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
         readOnly: true
+      volume:
+        type: number
+        format: double
+        example: 0.08
+        description: volume
     title: SecurityPrice
   Sort:
     type: object
@@ -30555,6 +31504,14 @@ definitions:
         type: boolean
         example: false
         description: is_client
+      is_closed:
+        type: boolean
+        example: false
+        description: is_closed
+      is_converted:
+        type: boolean
+        example: false
+        description: is_converted
       metadata:
         type: object
         additionalProperties:
@@ -30579,6 +31536,23 @@ definitions:
         readOnly: true
     title: Stage
     description: Stage Object
+  Stat:
+    type: object
+    required:
+      - stat_name
+      - stat_value
+    properties:
+      stat_name:
+        type: string
+        example: total_expenses
+        description: statName
+      stat_value:
+        type: number
+        format: double
+        example: 23.9
+        description: statValue
+    title: Stat
+    description: Stat Object
   State:
     type: object
     properties:
@@ -30630,7 +31604,7 @@ definitions:
         description: 'SupportTicket Client Id  '
       close_time:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-09''T''12:00:00'
         description: SupportTicket close time
       create_date:
@@ -30653,7 +31627,7 @@ definitions:
           type: string
       open_time:
         type: string
-        format: date-time
+        format: date
         example: '2018-01-01''T''12:00:00'
         description: SupportTicket open time
       secondary_id:
@@ -30819,6 +31793,18 @@ definitions:
         type: boolean
         example: false
         description: isBuy
+      is_fee:
+        type: boolean
+        example: false
+        description: isFee
+      is_transfer:
+        type: string
+        example: 'False'
+        readOnly: true
+        enum:
+          - 'FALSE'
+          - 'TRUE'
+          - 'NULL'
       metadata:
         type: object
         additionalProperties:
@@ -30869,7 +31855,7 @@ definitions:
         description: cash_flow
       date:
         type: string
-        format: date-time
+        format: date
     title: VAccountAssetSize
     description: VAccountAssetSize Object
   VAccountVO:
@@ -30890,7 +31876,7 @@ definitions:
         format: double
       goal_asset_size_by_account_date:
         type: string
-        format: date-time
+        format: date
     title: VAccountVO
   VClientGoalViewData:
     type: object
@@ -30900,7 +31886,7 @@ definitions:
         format: double
       client_asset_size_date:
         type: string
-        format: date-time
+        format: date
       client_first_name:
         type: string
       client_id:
@@ -30921,7 +31907,7 @@ definitions:
         format: double
       goal_asset_size_by_portfolio_date:
         type: string
-        format: date-time
+        format: date
       portfolio_id:
         type: string
         format: uuid
@@ -30962,6 +31948,9 @@ definitions:
           - budget
           - document
           - client_response
+          - client_verified
+          - document_verified
+          - bank_link_verified
         description: atom_service
         items:
           type: string
@@ -30992,6 +31981,9 @@ definitions:
             - BUDGET
             - DOCUMENT
             - CLIENT_RESPONSE
+            - CLIENT_VERIFIED
+            - DOCUMENT_VERIFIED
+            - BANK_LINK_VERIFIED
       create_date:
         type: string
         format: date-time
@@ -31025,38 +32017,3 @@ definitions:
         description: url
     title: Webhook
     description: Webhook Object
-  WithdrawalAccountVO:
-    type: object
-    properties:
-      withdrawal_account_id:
-        type: string
-        format: uuid
-      withdrawal_account_name:
-        type: string
-      withdrawal_amount:
-        type: number
-        format: double
-      withdrawal_date:
-        type: string
-        format: date-time
-      withdrawal_direction:
-        type: string
-      withdrawal_id:
-        type: string
-        format: uuid
-    title: WithdrawalAccountVO
-  WithdrawalVO:
-    type: object
-    properties:
-      withdrawal_amount:
-        type: number
-        format: double
-      withdrawal_date:
-        type: string
-        format: date-time
-      withdrawal_direction:
-        type: string
-      withdrawal_id:
-        type: string
-        format: uuid
-    title: WithdrawalVO

@@ -24,14 +24,47 @@ Create a new Document for your firm.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.DocumentApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var documentRequest = new HydrogenNucleusApi.Document(); // Document | documentRequest
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createDocument();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -40,7 +73,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createDocumentUsingPost(documentRequest, callback);
+const createDocument = () => {
+    var apiInstance = new HydrogenNucleusApi.DocumentApi();
+    var documentRequest = new HydrogenNucleusApi.Document(); // Document | documentRequest
+    apiInstance.createDocumentUsingPost(documentRequest, callback);
+}   
 ```
 
 ### Parameters
@@ -75,23 +112,60 @@ Permanently delete a tenant document by Id
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.DocumentApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var documentId = "8397d8fd-e80d-48ea-bf79-81f32b12606e"; // String | UUID document_id
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        deleteDocument();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteDocumentUsingDelete(documentId, callback);
+const deleteDocument = () => {
+    var apiInstance = new HydrogenNucleusApi.DocumentApi();
+    var documentId = "8397d8fd-e80d-48ea-bf79-81f32b12606e"; // String | UUID document_id
+    apiInstance.deleteDocumentUsingDelete(documentId, callback);
+}   
 ```
 
 ### Parameters
@@ -126,19 +200,47 @@ Get the information for all Documents
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.DocumentApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var opts = { 
-  'ascending': false, // Boolean | ascending
-  'filter': "filter_example", // String | filter
-  'orderBy': "update_date", // String | order_by
-  'page': 0, // Number | page
-  'size': 25 // Number | size
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        getDocumentAll();
+    }
 };
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -147,7 +249,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getDocumentAllUsingGet(opts, callback);
+const getDocumentAll = () => {
+    var apiInstance = new HydrogenNucleusApi.DocumentApi();
+    var opts = { 
+      'ascending': false, // Boolean | ascending
+      'filter': "filter_example", // String | filter
+      'orderBy': "update_date", // String | order_by
+      'page': 0, // Number | page
+      'size': 25 // Number | size
+    };
+    apiInstance.getDocumentAllUsingGet(opts, callback);
+}   
 ```
 
 ### Parameters
@@ -186,14 +298,47 @@ Retrieve the information for a Tenant Document by Document Id
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.DocumentApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var documentId = "8397d8fd-e80d-48ea-bf79-81f32b12606e"; // String | UUID document_id
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        getDocument();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -202,7 +347,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getDocumentUsingGet(documentId, callback);
+const getDocument = () => {
+    var apiInstance = new HydrogenNucleusApi.DocumentApi();
+    var documentId = "8397d8fd-e80d-48ea-bf79-81f32b12606e"; // String | UUID document_id
+    apiInstance.getDocumentUsingGet(documentId, callback);
+}   
 ```
 
 ### Parameters
@@ -237,16 +386,47 @@ Updated the information for a Tenant Documents
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.DocumentApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var document = new HydrogenNucleusApi.Document(); // Document | document
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        updateDocument();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
-var documentId = "d79bb3a3-f259-430c-8fa8-a93f87cc3bdf"; // String | UUID document_id
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -255,7 +435,12 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateDocumentUsingPut(document, documentId, callback);
+const updateDocument = () => {
+    var apiInstance = new HydrogenNucleusApi.DocumentApi();
+    var document = new HydrogenNucleusApi.Document(); // Document | document
+    var documentId = "d79bb3a3-f259-430c-8fa8-a93f87cc3bdf"; // String | UUID document_id
+    apiInstance.updateDocumentUsingPut(document, documentId, callback);
+}   
 ```
 
 ### Parameters

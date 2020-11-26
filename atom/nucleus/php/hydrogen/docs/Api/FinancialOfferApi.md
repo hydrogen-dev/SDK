@@ -34,6 +34,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -76,7 +79,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteFinancialOfferUsingDelete**
-> deleteFinancialOfferUsingDelete($financial_offer, $financial_offer_id)
+> deleteFinancialOfferUsingDelete($financial_offer_id)
 
 Delete a comparison request
 
@@ -98,6 +101,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -107,11 +113,10 @@ $apiInstance = new com\hydrogen\nucleus\Api\FinancialOfferApi(
     new GuzzleHttp\Client(),
     $config
 );
-$financial_offer = "financial_offer_example"; // string | UUID financial_offer_id
-$financial_offer_id = "financial_offer_id_example"; // string | financial_offer_id
+$financial_offer_id = "financial_offer_id_example"; // string | UUID financial_offer_id
 
 try {
-    $apiInstance->deleteFinancialOfferUsingDelete($financial_offer, $financial_offer_id);
+    $apiInstance->deleteFinancialOfferUsingDelete($financial_offer_id);
 } catch (Exception $e) {
     echo 'Exception when calling FinancialOfferApi->deleteFinancialOfferUsingDelete: ', $e->getMessage(), PHP_EOL;
 }
@@ -122,8 +127,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **financial_offer** | [**string**](../Model/.md)| UUID financial_offer_id |
- **financial_offer_id** | [**string**](../Model/.md)| financial_offer_id |
+ **financial_offer_id** | [**string**](../Model/.md)| UUID financial_offer_id |
 
 ### Return type
 
@@ -141,7 +145,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFinancialOfferAllUsingGet**
-> \com\hydrogen\nucleus\Model\PageFinancialOffer_ getFinancialOfferAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageFinancialOffer_ getFinancialOfferAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size)
 
 List all comparison requests
 
@@ -163,6 +167,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -173,13 +180,14 @@ $apiInstance = new com\hydrogen\nucleus\Api\FinancialOfferApi(
     $config
 );
 $ascending = false; // bool | ascending
+$currency_conversion = "currency_conversion_example"; // string | currency_conversion
 $filter = "filter_example"; // string | filter
 $order_by = "update_date"; // string | order_by
 $page = 0; // int | page
 $size = 25; // int | size
 
 try {
-    $result = $apiInstance->getFinancialOfferAllUsingGet($ascending, $filter, $order_by, $page, $size);
+    $result = $apiInstance->getFinancialOfferAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinancialOfferApi->getFinancialOfferAllUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -192,6 +200,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **string**| currency_conversion | [optional]
  **filter** | **string**| filter | [optional]
  **order_by** | **string**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -213,7 +222,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFinancialOfferUsingGet**
-> \com\hydrogen\nucleus\Model\FinancialOffer getFinancialOfferUsingGet($financial_offer, $financial_offer_id)
+> \com\hydrogen\nucleus\Model\FinancialOffer getFinancialOfferUsingGet($financial_offer_id, $currency_conversion)
 
 Retrieve a comparison request
 
@@ -235,6 +244,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -244,11 +256,11 @@ $apiInstance = new com\hydrogen\nucleus\Api\FinancialOfferApi(
     new GuzzleHttp\Client(),
     $config
 );
-$financial_offer = "financial_offer_example"; // string | UUID financial_offer_id
-$financial_offer_id = "financial_offer_id_example"; // string | financial_offer_id
+$financial_offer_id = "financial_offer_id_example"; // string | UUID financial_offer_id
+$currency_conversion = "currency_conversion_example"; // string | USD
 
 try {
-    $result = $apiInstance->getFinancialOfferUsingGet($financial_offer, $financial_offer_id);
+    $result = $apiInstance->getFinancialOfferUsingGet($financial_offer_id, $currency_conversion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FinancialOfferApi->getFinancialOfferUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -260,8 +272,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **financial_offer** | [**string**](../Model/.md)| UUID financial_offer_id |
- **financial_offer_id** | [**string**](../Model/.md)| financial_offer_id |
+ **financial_offer_id** | [**string**](../Model/.md)| UUID financial_offer_id |
+ **currency_conversion** | **string**| USD | [optional]
 
 ### Return type
 
@@ -301,6 +313,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }

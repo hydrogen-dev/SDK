@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**endDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**endDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
 **securityAssetClass** | **String** |  |  [optional]
 **securityCountries** | [**List&lt;SecurityCountryVO&gt;**](SecurityCountryVO.md) |  |  [optional]
 **securityCreateDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **securityTicker** | **String** |  |  [optional]
 **securityUpdateDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **securityWeight** | **Double** |  |  [optional]
-**startDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
 
 
 

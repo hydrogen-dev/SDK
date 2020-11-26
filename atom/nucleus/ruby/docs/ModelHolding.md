@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **create_date** | **DateTime** |  | [optional] 
 **current_weight** | **Float** | Model Holding current weight | 
-**date** | **DateTime** | Model Holding date | 
+**date** | **Date** | Model Holding date | 
 **drift_factor** | **Float** | driftFactor | [optional] 
 **id** | **String** |  | [optional] 
 **is_cash** | **BOOLEAN** | isCash | [optional] 

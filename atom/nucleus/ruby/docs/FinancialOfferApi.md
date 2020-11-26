@@ -29,8 +29,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::FinancialOfferApi.new
 
@@ -68,7 +69,7 @@ Name | Type | Description  | Notes
 
 
 # **delete_financial_offer_using_delete**
-> delete_financial_offer_using_delete(financial_offer, financial_offer_id)
+> delete_financial_offer_using_delete(financial_offer_id)
 
 Delete a comparison request
 
@@ -85,19 +86,18 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::FinancialOfferApi.new
 
-financial_offer = 'financial_offer_example' # String | UUID financial_offer_id
-
-financial_offer_id = 'financial_offer_id_example' # String | financial_offer_id
+financial_offer_id = 'financial_offer_id_example' # String | UUID financial_offer_id
 
 
 begin
   #Delete a comparison request
-  api_instance.delete_financial_offer_using_delete(financial_offer, financial_offer_id)
+  api_instance.delete_financial_offer_using_delete(financial_offer_id)
 rescue NucleusApi::ApiError => e
   puts "Exception when calling FinancialOfferApi->delete_financial_offer_using_delete: #{e}"
 end
@@ -107,8 +107,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **financial_offer** | [**String**](.md)| UUID financial_offer_id | 
- **financial_offer_id** | [**String**](.md)| financial_offer_id | 
+ **financial_offer_id** | [**String**](.md)| UUID financial_offer_id | 
 
 ### Return type
 
@@ -143,13 +142,15 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::FinancialOfferApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
+  currency_conversion: 'currency_conversion_example', # String | currency_conversion
   filter: 'filter_example', # String | filter
   order_by: 'update_date', # String | order_by
   page: 0, # Integer | page
@@ -170,6 +171,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **BOOLEAN**| ascending | [optional] [default to false]
+ **currency_conversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **order_by** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -191,7 +193,7 @@ Name | Type | Description  | Notes
 
 
 # **get_financial_offer_using_get**
-> FinancialOffer get_financial_offer_using_get(financial_offer, financial_offer_id)
+> FinancialOffer get_financial_offer_using_get(financial_offer_id, opts)
 
 Retrieve a comparison request
 
@@ -208,19 +210,21 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::FinancialOfferApi.new
 
-financial_offer = 'financial_offer_example' # String | UUID financial_offer_id
+financial_offer_id = 'financial_offer_id_example' # String | UUID financial_offer_id
 
-financial_offer_id = 'financial_offer_id_example' # String | financial_offer_id
-
+opts = { 
+  currency_conversion: 'currency_conversion_example' # String | USD
+}
 
 begin
   #Retrieve a comparison request
-  result = api_instance.get_financial_offer_using_get(financial_offer, financial_offer_id)
+  result = api_instance.get_financial_offer_using_get(financial_offer_id, opts)
   p result
 rescue NucleusApi::ApiError => e
   puts "Exception when calling FinancialOfferApi->get_financial_offer_using_get: #{e}"
@@ -231,8 +235,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **financial_offer** | [**String**](.md)| UUID financial_offer_id | 
- **financial_offer_id** | [**String**](.md)| financial_offer_id | 
+ **financial_offer_id** | [**String**](.md)| UUID financial_offer_id | 
+ **currency_conversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -267,8 +271,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::FinancialOfferApi.new
 

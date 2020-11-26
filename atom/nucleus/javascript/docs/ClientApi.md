@@ -20,9 +20,8 @@ Method | HTTP request | Description
 [**getClientHydroUsingGet**](ClientApi.md#getClientHydroUsingGet) | **GET** /client_hydro/{client_hydro_id} | Retrieve a client-hydro relationship
 [**getClientStatusAllUsingGet**](ClientApi.md#getClientStatusAllUsingGet) | **GET** /client_status | List all client statuses
 [**getClientStatusUsingGet**](ClientApi.md#getClientStatusUsingGet) | **GET** /client_status/{client_status_id} | Retrieve an client status
-[**getClientTransactionUsingGet**](ClientApi.md#getClientTransactionUsingGet) | **GET** /client/{client_id}/transaction | List all client transactions
+[**getClientTransactionAllUsingGet**](ClientApi.md#getClientTransactionAllUsingGet) | **GET** /client/{client_id}/transaction | List all client transactions
 [**getClientUsingGet**](ClientApi.md#getClientUsingGet) | **GET** /client/{client_id} | Retrieve a client
-[**getTotalClientsUsingGet**](ClientApi.md#getTotalClientsUsingGet) | **GET** /client/total_clients | total clients
 [**updateClientHydroUsingPut**](ClientApi.md#updateClientHydroUsingPut) | **PUT** /client_hydro/{client_hydro_id} | Update a client-hydro relationship
 [**updateClientStatusUsingPut**](ClientApi.md#updateClientStatusUsingPut) | **PUT** /client_status/{client_status_id} | Update an client status
 [**updateClientUsingPut**](ClientApi.md#updateClientUsingPut) | **PUT** /client/{client_id} | Update a client
@@ -41,14 +40,47 @@ Create an client-hydro relationship under a client.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var clientHydro = new HydrogenNucleusApi.ClientHydro(); // ClientHydro | clientHydro
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createClientHydro();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -57,7 +89,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createClientHydroUsingPost(clientHydro, callback);
+const createClientHydro = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var clientHydro = new HydrogenNucleusApi.ClientHydro(); // ClientHydro | clientHydro
+    apiInstance.createClientHydroUsingPost(clientHydro, callback);
+}
 ```
 
 ### Parameters
@@ -92,14 +128,47 @@ Create an client status record for an client.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var clientStatusRequest = new HydrogenNucleusApi.ClientStatus(); // ClientStatus | clientStatusRequest
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createClientStatus();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -108,7 +177,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createClientStatusUsingPost(clientStatusRequest, callback);
+const createClientStatus = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var clientStatusRequest = new HydrogenNucleusApi.ClientStatus(); // ClientStatus | clientStatusRequest
+    apiInstance.createClientStatusUsingPost(clientStatusRequest, callback);
+}
 ```
 
 ### Parameters
@@ -143,14 +216,47 @@ Create a new client, or register a new user, with your firm.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var clientRequest = new HydrogenNucleusApi.Client(); // Client | clientRequest
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createClient();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -159,7 +265,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createClientUsingPost(clientRequest, callback);
+const createClient = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var clientRequest = new HydrogenNucleusApi.Client(); // Client | clientRequest
+    apiInstance.createClientUsingPost(clientRequest, callback);
+}
 ```
 
 ### Parameters
@@ -194,23 +304,60 @@ Permanently delete a client-hydro relationship for a Hydro ID and a client.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var clientHydroId = "d787cf19-d11c-49f2-abf3-f5fec1b101d4"; // String | UUID client_hydro_id
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        deleteClientHydro();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteClientHydroUsingDelete(clientHydroId, callback);
+const deleteClientHydro = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var clientHydroId = "d787cf19-d11c-49f2-abf3-f5fec1b101d4"; // String | UUID client_hydro_id
+    apiInstance.deleteClientHydroUsingDelete(clientHydroId, callback);
+}
 ```
 
 ### Parameters
@@ -245,23 +392,60 @@ Permanently delete an client status record from an client’s history.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var clientStatusId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID client_status_id
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        deleteClientStatus();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteClientStatusUsingDelete(clientStatusId, callback);
+const deleteClientStatus = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var clientStatusId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID client_status_id
+    apiInstance.deleteClientStatusUsingDelete(clientStatusId, callback);
+}
 ```
 
 ### Parameters
@@ -296,23 +480,60 @@ Permanently delete a client registered with your firm. Turns the client&#39;s is
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var clientId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID client_id
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        deleteClient();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteClientUsingDelete(clientId, callback);
+const deleteClient = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var clientId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID client_id
+    apiInstance.deleteClientUsingDelete(clientId, callback);
+}
 ```
 
 ### Parameters
@@ -336,7 +557,7 @@ null (empty response body)
 
 <a name="getClientAccountOverviewUsingGet"></a>
 # **getClientAccountOverviewUsingGet**
-> ClientAccountVO getClientAccountOverviewUsingGet(clientId, opts)
+> Object getClientAccountOverviewUsingGet(clientId, opts)
 
 List all client Account overview
 
@@ -345,18 +566,47 @@ List all client Account overview
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var clientId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID client_id
-
-var opts = { 
-  'ascending': false, // Boolean | ascending
-  'orderBy': "update_date" // String | order_by
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        getClientAccountOverview();
+    }
 };
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -365,7 +615,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getClientAccountOverviewUsingGet(clientId, opts, callback);
+const getClientAccountOverview = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var clientId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID client_id
+    var opts = { 
+      'ascending': false, // Boolean | ascending
+      'orderBy': "update_date" // String | order_by
+    };
+    apiInstance.getClientAccountOverviewUsingGet(clientId, opts, callback);
+}
 ```
 
 ### Parameters
@@ -378,7 +636,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ClientAccountVO**](ClientAccountVO.md)
+**Object**
 
 ### Authorization
 
@@ -391,7 +649,7 @@ Name | Type | Description  | Notes
 
 <a name="getClientAdvisorOverviewUsingGet"></a>
 # **getClientAdvisorOverviewUsingGet**
-> AdvisorOverviewVO getClientAdvisorOverviewUsingGet(clientId, opts)
+> Object getClientAdvisorOverviewUsingGet(clientId, opts)
 
 Advisor overview
 
@@ -400,17 +658,47 @@ Advisor overview
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var clientId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID client_id
-
-var opts = { 
-  'showClients': false // Boolean | show_clients
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        getClientAdvisorOverview();
+    }
 };
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -419,7 +707,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getClientAdvisorOverviewUsingGet(clientId, opts, callback);
+const getClientAdvisorOverview = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var clientId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID client_id
+    var opts = { 
+      'showClients': false // Boolean | show_clients
+    };
+    apiInstance.getClientAdvisorOverviewUsingGet(clientId, opts, callback);
+}   
 ```
 
 ### Parameters
@@ -431,7 +726,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AdvisorOverviewVO**](AdvisorOverviewVO.md)
+**Object**
 
 ### Authorization
 
@@ -455,19 +750,47 @@ Get details for all clients registered with your firm.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var opts = { 
-  'ascending': false, // Boolean | ascending
-  'filter': "filter_example", // String | filter
-  'orderBy': "update_date", // String | order_by
-  'page': 0, // Number | page
-  'size': 25 // Number | size
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        getClientAll();
+    }
 };
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -476,7 +799,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getClientAllUsingGet(opts, callback);
+const getClientAll = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var opts = { 
+      'ascending': false, // Boolean | ascending
+      'filter': "filter_example", // String | filter
+      'orderBy': "update_date", // String | order_by
+      'page': 0, // Number | page
+      'size': 25 // Number | size
+    };
+    apiInstance.getClientAllUsingGet(opts, callback);
+}   
 ```
 
 ### Parameters
@@ -515,21 +848,47 @@ Get a list of asset sizes per date for a client.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var clientId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID client_id
-
-var opts = { 
-  'endDate': new Date("null"), // Date | end date
-  'excludeSubledger': false, // Boolean | exclude_subledger
-  'getLatest': true, // Boolean | true or false
-  'sortType': "sortType_example", // String |  Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in ()
-  'startDate': new Date("null") // Date | start date
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        getClientAssetSize();
+    }
 };
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -538,7 +897,19 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getClientAssetSizeUsingGet(clientId, opts, callback);
+const getClientAssetSize = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var clientId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID client_id
+    var opts = { 
+      'currencyConversion': "currencyConversion_example", // String | Currency Code
+      'endDate': new Date("null"), // Date | end date
+      'excludeSubledger': false, // Boolean | exclude_subledger
+      'getLatest': true, // Boolean | true or false
+      'sortType': "sortType_example", // String |  Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in ()
+      'startDate': new Date("null") // Date | start date
+    };
+    apiInstance.getClientAssetSizeUsingGet(clientId, opts, callback);
+}   
 ```
 
 ### Parameters
@@ -546,6 +917,7 @@ apiInstance.getClientAssetSizeUsingGet(clientId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientId** | **String**| UUID client_id | 
+ **currencyConversion** | **String**| Currency Code | [optional] 
  **endDate** | **Date**| end date | [optional] [default to null]
  **excludeSubledger** | **Boolean**| exclude_subledger | [optional] [default to false]
  **getLatest** | **Boolean**| true or false | [optional] 
@@ -578,17 +950,47 @@ Retrieve client&#39;s goal details
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var clientId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID client_id
-
-var opts = { 
-  'portfolioGoal': false // Boolean | portfolio_goal
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        getClientGoalOverview();
+    }
 };
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -597,7 +999,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getClientGoalOverviewUsingGet(clientId, opts, callback);
+const getClientGoalOverview = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var clientId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID client_id
+    var opts = { 
+      'portfolioGoal': false // Boolean | portfolio_goal
+    };
+    apiInstance.getClientGoalOverviewUsingGet(clientId, opts, callback);
+}   
 ```
 
 ### Parameters
@@ -633,19 +1042,47 @@ Get the information for all the securities that are currently being held by a cl
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var clientId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID client_id
-
-var opts = { 
-  'endDate': "endDate_example", // String | end date - yyyy-mm-dd
-  'getLatest': true, // Boolean | true or false
-  'startDate': "startDate_example" // String | start date - yyyy-mm-dd
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        getClientHolding();
+    }
 };
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -654,7 +1091,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getClientHoldingUsingGet(clientId, opts, callback);
+const getClientHolding = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var clientId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID client_id
+    var opts = { 
+      'currencyConversion': "currencyConversion_example", // String | Currency Code
+      'endDate': "endDate_example", // String | end date - yyyy-mm-dd
+      'getLatest': true, // Boolean | true or false
+      'startDate': "startDate_example" // String | start date - yyyy-mm-dd
+    };
+    apiInstance.getClientHoldingUsingGet(clientId, opts, callback);
+}   
 ```
 
 ### Parameters
@@ -662,6 +1109,7 @@ apiInstance.getClientHoldingUsingGet(clientId, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientId** | **String**| UUID client_id | 
+ **currencyConversion** | **String**| Currency Code | [optional] 
  **endDate** | **String**| end date - yyyy-mm-dd | [optional] 
  **getLatest** | **Boolean**| true or false | [optional] 
  **startDate** | **String**| start date - yyyy-mm-dd | [optional] 
@@ -692,19 +1140,47 @@ Get information for all client-hydro relationships for all clients defined for y
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var opts = { 
-  'ascending': false, // Boolean | ascending
-  'filter': "filter_example", // String | filter
-  'orderBy': "update_date", // String | order_by
-  'page': 0, // Number | page
-  'size': 25 // Number | size
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        getClientHydroAll();
+    }
 };
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -713,7 +1189,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getClientHydroAllUsingGet(opts, callback);
+const getClientHydroAll = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var opts = { 
+      'ascending': false, // Boolean | ascending
+      'filter': "filter_example", // String | filter
+      'orderBy': "update_date", // String | order_by
+      'page': 0, // Number | page
+      'size': 25 // Number | size
+    };
+    apiInstance.getClientHydroAllUsingGet(opts, callback);
+}   
 ```
 
 ### Parameters
@@ -752,14 +1238,47 @@ Retrieve the information for a specific client-hydro relationship.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var clientHydroId = "d787cf19-d11c-49f2-abf3-f5fec1b101d4"; // String | UUID client_hydro_id
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        getClientHydro();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -768,7 +1287,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getClientHydroUsingGet(clientHydroId, callback);
+const getClientHydro = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var clientHydroId = "d787cf19-d11c-49f2-abf3-f5fec1b101d4"; // String | UUID client_hydro_id
+    apiInstance.getClientHydroUsingGet(clientHydroId, callback);
+}   
 ```
 
 ### Parameters
@@ -803,19 +1326,47 @@ Get the client status history information for all clients.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var opts = { 
-  'ascending': false, // Boolean | ascending
-  'filter': "filter_example", // String | filter
-  'orderBy': "update_date", // String | order_by
-  'page': 0, // Number | page
-  'size': 25 // Number | size
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        getClientStatusAll();
+    }
 };
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -824,7 +1375,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getClientStatusAllUsingGet(opts, callback);
+const getClientStatusAll = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var opts = { 
+      'ascending': false, // Boolean | ascending
+      'filter': "filter_example", // String | filter
+      'orderBy': "update_date", // String | order_by
+      'page': 0, // Number | page
+      'size': 25 // Number | size
+    };
+    apiInstance.getClientStatusAllUsingGet(opts, callback);
+}   
 ```
 
 ### Parameters
@@ -863,14 +1424,47 @@ Retrieve the information for a specific client status record for an client.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var clientStatusId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID client_status_id
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        getClientStatus();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -879,7 +1473,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getClientStatusUsingGet(clientStatusId, callback);
+const getClientStatus = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var clientStatusId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID client_status_id
+    apiInstance.getClientStatusUsingGet(clientStatusId, callback);
+}   
 ```
 
 ### Parameters
@@ -901,9 +1499,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: */*
 
-<a name="getClientTransactionUsingGet"></a>
-# **getClientTransactionUsingGet**
-> PagePortfolioTransaction getClientTransactionUsingGet(clientId, opts)
+<a name="getClientTransactionAllUsingGet"></a>
+# **getClientTransactionAllUsingGet**
+> PagePortfolioTransaction getClientTransactionAllUsingGet(clientId, opts)
 
 List all client transactions
 
@@ -914,22 +1512,47 @@ Get the information for all transactions under a client registered with your fir
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var clientId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID client_id
-
-var opts = { 
-  'ascending': false, // Boolean | ascending
-  'endDate': new Date("null"), // Date | end_date
-  'orderBy': "update_date", // String | order_by
-  'page': 0, // Number | page
-  'size': 25, // Number | size
-  'startDate': new Date("null") // Date | start_date
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        getClientTransactionAll();
+    }
 };
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -938,7 +1561,20 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getClientTransactionUsingGet(clientId, opts, callback);
+const getClientTransactionAll = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var clientId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID client_id
+    var opts = { 
+      'ascending': false, // Boolean | ascending
+      'currencyConversion': "currencyConversion_example", // String | currency_conversion
+      'endDate': "endDate_example", // String | end date - yyyy-mm-dd
+      'orderBy': "update_date", // String | order_by
+      'page': 0, // Number | page
+      'size': 25, // Number | size
+      'startDate': "startDate_example" // String | start date - yyyy-mm-dd
+    };
+    apiInstance.getClientTransactionAllUsingGet(clientId, opts, callback);
+}   
 ```
 
 ### Parameters
@@ -947,11 +1583,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientId** | **String**| UUID client_id | 
  **ascending** | **Boolean**| ascending | [optional] [default to false]
- **endDate** | **Date**| end_date | [optional] [default to null]
+ **currencyConversion** | **String**| currency_conversion | [optional] 
+ **endDate** | **String**| end date - yyyy-mm-dd | [optional] 
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Number**| page | [optional] [default to 0]
  **size** | **Number**| size | [optional] [default to 25]
- **startDate** | **Date**| start_date | [optional] [default to null]
+ **startDate** | **String**| start date - yyyy-mm-dd | [optional] 
 
 ### Return type
 
@@ -979,14 +1616,47 @@ Retrieve the information for a client registered with your firm.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var clientId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID client_id
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        getClient();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -995,7 +1665,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getClientUsingGet(clientId, callback);
+const getClient = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var clientId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID client_id
+    apiInstance.getClientUsingGet(clientId, callback);
+}   
 ```
 
 ### Parameters
@@ -1007,64 +1681,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Client**](Client.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-<a name="getTotalClientsUsingGet"></a>
-# **getTotalClientsUsingGet**
-> ClientAnalyticsResponse getTotalClientsUsingGet(opts)
-
-total clients
-
-### Example
-```javascript
-var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
-var defaultClient = HydrogenNucleusApi.ApiClient.instance;
-// Configure OAuth2 access token for authorization: oauth2
-var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new HydrogenNucleusApi.ClientApi();
-
-var opts = { 
-  'asOfDate': new Date("#{new java.util.Date()}"), // Date | as_of_date
-  'clientId': "clientId_example", // String | client_id
-  'endDate': new Date("2013-10-20T19:20:30+01:00"), // Date | end_date
-  'showHistory': false, // Boolean | show_history
-  'startDate': new Date("2013-10-20T19:20:30+01:00") // Date | start_date
-};
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getTotalClientsUsingGet(opts, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **asOfDate** | **Date**| as_of_date | [optional] [default to #{new java.util.Date()}]
- **clientId** | **String**| client_id | [optional] 
- **endDate** | **Date**| end_date | [optional] 
- **showHistory** | **Boolean**| show_history | [optional] [default to false]
- **startDate** | **Date**| start_date | [optional] 
-
-### Return type
-
-[**ClientAnalyticsResponse**](ClientAnalyticsResponse.md)
 
 ### Authorization
 
@@ -1088,16 +1704,47 @@ Update the information for a client-hydro relationship.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var clientHydro = new HydrogenNucleusApi.ClientHydro(); // ClientHydro | client_hydro
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        updateClientHydro();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
-var clientHydroId = "d79bb3a3-f259-430c-8fa8-a93f87cc3bdf"; // String | UUID client_hydro_id
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1106,7 +1753,12 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateClientHydroUsingPut(clientHydro, clientHydroId, callback);
+const updateClientHydro = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var clientHydro = new HydrogenNucleusApi.ClientHydro(); // ClientHydro | client_hydro
+    var clientHydroId = "d79bb3a3-f259-430c-8fa8-a93f87cc3bdf"; // String | UUID client_hydro_id
+    apiInstance.updateClientHydroUsingPut(clientHydro, clientHydroId, callback);
+}   
 ```
 
 ### Parameters
@@ -1142,16 +1794,47 @@ Update an client status record for an client.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var clientStatus = new HydrogenNucleusApi.ClientStatus(); // ClientStatus | client_status
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        updateClientStatus();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
-var clientStatusId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID client_status_id
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1160,7 +1843,12 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateClientStatusUsingPut(clientStatus, clientStatusId, callback);
+const updateClientStatus = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var clientStatus = new HydrogenNucleusApi.ClientStatus(); // ClientStatus | client_status
+    var clientStatusId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID client_status_id
+    apiInstance.updateClientStatusUsingPut(clientStatus, clientStatusId, callback);
+}   
 ```
 
 ### Parameters
@@ -1196,16 +1884,47 @@ Update the information for a client registered with your firm.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.ClientApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var client = new HydrogenNucleusApi.Client(); // Client | client
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        updateClient();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
-var clientId = "d79bb3a3-f259-430c-8fa8-a93f87cc3bdf"; // String | UUID client_id
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1214,7 +1933,12 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateClientUsingPut(client, clientId, callback);
+const updateClient = () => {
+    var apiInstance = new HydrogenNucleusApi.ClientApi();
+    var client = new HydrogenNucleusApi.Client(); // Client | client
+    var clientId = "d79bb3a3-f259-430c-8fa8-a93f87cc3bdf"; // String | UUID client_id
+    apiInstance.updateClientUsingPut(client, clientId, callback);
+}   
 ```
 
 ### Parameters

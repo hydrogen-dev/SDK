@@ -5,9 +5,9 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createScoreUsingPost**](ScoreApi.md#createScoreUsingPost) | **POST** /score | Create a score
-[**createScoreUsingPost1**](ScoreApi.md#createScoreUsingPost1) | **GET** /score/{score_id} | Retrieve a score
 [**deleteScoreUsingDelete**](ScoreApi.md#deleteScoreUsingDelete) | **DELETE** /score/{score_id} | Delete a score
 [**getScoreAllUsingGet**](ScoreApi.md#getScoreAllUsingGet) | **GET** /score | List all scores
+[**getScoreUsingGet**](ScoreApi.md#getScoreUsingGet) | **GET** /score/{score_id} | Retrieve a score
 [**updateScoreUsingPut**](ScoreApi.md#updateScoreUsingPut) | **PUT** /score/{score_id} | Update a score
 
 
@@ -22,8 +22,8 @@ Create a score for a client, account, goal, portfolio, allocation, model, benchm
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -62,57 +62,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: */*
 
-<a name="createScoreUsingPost1"></a>
-# **createScoreUsingPost1**
-> Score createScoreUsingPost1(scoreId)
-
-Retrieve a score
-
-Retrieve the information for a specific score associated with a client, account, goal, portfolio, allocation, model, benchmark or security.
-
-### Example
-```javascript
-var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
-var defaultClient = HydrogenNucleusApi.ApiClient.instance;
-// Configure OAuth2 access token for authorization: oauth2
-var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new HydrogenNucleusApi.ScoreApi();
-
-var scoreId = "739ecd39-e1ae-4a0b-b266-dd3ddc616163"; // String | UUID score_id
-
-
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createScoreUsingPost1(scoreId, callback);
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **scoreId** | **String**| UUID score_id | 
-
-### Return type
-
-[**Score**](Score.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
 <a name="deleteScoreUsingDelete"></a>
 # **deleteScoreUsingDelete**
 > deleteScoreUsingDelete(scoreId)
@@ -124,8 +73,8 @@ Permanently delete a score
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -175,8 +124,8 @@ Get information for all scores stored for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -224,6 +173,57 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: */*
 
+<a name="getScoreUsingGet"></a>
+# **getScoreUsingGet**
+> Score getScoreUsingGet(scoreId)
+
+Retrieve a score
+
+Retrieve the information for a specific score associated with a client, account, goal, portfolio, allocation, model, benchmark or security.
+
+### Example
+```javascript
+var HydrogenNucleusApi = require('hydrogen_nucleus_api');
+var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2
+var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new HydrogenNucleusApi.ScoreApi();
+
+var scoreId = "739ecd39-e1ae-4a0b-b266-dd3ddc616163"; // String | UUID score_id
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getScoreUsingGet(scoreId, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **scoreId** | **String**| UUID score_id | 
+
+### Return type
+
+[**Score**](Score.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
 <a name="updateScoreUsingPut"></a>
 # **updateScoreUsingPut**
 > Score updateScoreUsingPut(score, scoreId)
@@ -235,8 +235,8 @@ Update the information for a score.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';

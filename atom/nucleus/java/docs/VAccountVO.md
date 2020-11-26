@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **accountTypeId** | [**UUID**](UUID.md) |  |  [optional]
 **accountTypeName** | **String** |  |  [optional]
 **goalAssetSizeByAccount** | **Double** |  |  [optional]
-**goalAssetSizeByAccountDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
+**goalAssetSizeByAccountDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
 
 
 

@@ -5,9 +5,9 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_score_using_post**](ScoreApi.md#create_score_using_post) | **POST** /score | Create a score
-[**create_score_using_post1**](ScoreApi.md#create_score_using_post1) | **GET** /score/{score_id} | Retrieve a score
 [**delete_score_using_delete**](ScoreApi.md#delete_score_using_delete) | **DELETE** /score/{score_id} | Delete a score
 [**get_score_all_using_get**](ScoreApi.md#get_score_all_using_get) | **GET** /score | List all scores
+[**get_score_using_get**](ScoreApi.md#get_score_using_get) | **GET** /score/{score_id} | Retrieve a score
 [**update_score_using_put**](ScoreApi.md#update_score_using_put) | **PUT** /score/{score_id} | Update a score
 
 
@@ -29,8 +29,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ScoreApi.new
 
@@ -67,62 +68,6 @@ Name | Type | Description  | Notes
 
 
 
-# **create_score_using_post1**
-> Score create_score_using_post1(score_id)
-
-Retrieve a score
-
-Retrieve the information for a specific score associated with a client, account, goal, portfolio, allocation, model, benchmark or security.
-
-### Example
-```ruby
-# load the gem
-require 'nucleus_api'
-# Setup authorization
-NucleusApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
-end
-
-
-api_instance = NucleusApi::ScoreApi.new
-
-score_id = 'score_id_example' # String | UUID score_id
-
-
-begin
-  #Retrieve a score
-  result = api_instance.create_score_using_post1(score_id)
-  p result
-rescue NucleusApi::ApiError => e
-  puts "Exception when calling ScoreApi->create_score_using_post1: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **score_id** | [**String**](.md)| UUID score_id | 
-
-### Return type
-
-[**Score**](Score.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-
-
 # **delete_score_using_delete**
 > delete_score_using_delete(score_id)
 
@@ -141,8 +86,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ScoreApi.new
 
@@ -196,8 +142,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ScoreApi.new
 
@@ -243,6 +190,63 @@ Name | Type | Description  | Notes
 
 
 
+# **get_score_using_get**
+> Score get_score_using_get(score_id)
+
+Retrieve a score
+
+Retrieve the information for a specific score associated with a client, account, goal, portfolio, allocation, model, benchmark or security.
+
+### Example
+```ruby
+# load the gem
+require 'nucleus_api'
+# Setup authorization
+NucleusApi.configure do |config|
+# Use one of the below method to generate oauth token        
+# Creating a token for grant_type=client_credentials
+ config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+# Creating a token for grant_type=password
+ config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
+end
+
+api_instance = NucleusApi::ScoreApi.new
+
+score_id = 'score_id_example' # String | UUID score_id
+
+
+begin
+  #Retrieve a score
+  result = api_instance.get_score_using_get(score_id)
+  p result
+rescue NucleusApi::ApiError => e
+  puts "Exception when calling ScoreApi->get_score_using_get: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **score_id** | [**String**](.md)| UUID score_id | 
+
+### Return type
+
+[**Score**](Score.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+
+
 # **update_score_using_put**
 > Score update_score_using_put(score, score_id)
 
@@ -261,8 +265,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ScoreApi.new
 

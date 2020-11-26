@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **decumulation_horizon** | **float** |  | [optional] 
 **goal_amount** | **float** |  | [optional] 
 **goal_asset_size_by_goal** | **float** |  | [optional] 
-**goal_asset_size_by_goal_date** | **datetime** |  | [optional] 
+**goal_asset_size_by_goal_date** | **date** |  | [optional] 
 **goal_category** | **str** |  | [optional] 
 **goal_create_date** | **datetime** |  | [optional] 
 **goal_id** | **str** |  | [optional] 

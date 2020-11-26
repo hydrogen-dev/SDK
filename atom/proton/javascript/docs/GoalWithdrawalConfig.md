@@ -3,28 +3,17 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**withStartReference** | **String** |  | [optional] [default to 'a_end']
-**withEndReference** | **String** |  | [optional] [default to 'd_end']
-**withFrequency** | **String** |  | [optional] [default to 'year']
-**withInflation** | **Number** |  | [optional] [default to 0.0]
-**withEndPeriod** | **Number** |  | [optional] [default to 0]
 **withAmount** | **Number** |  | [optional] 
+**withStartReference** | **String** |  | [optional] [default to 'a_end']
+**withInflation** | **Number** |  | [optional] [default to 0.0]
+**withFrequency** | **String** |  | [optional] [default to 'year']
+**withEndReference** | **String** |  | [optional] [default to 'd_end']
+**withEndPeriod** | **Number** |  | [optional] [default to 0]
 **withStartPeriod** | **Number** |  | [optional] [default to 0]
 
 
 <a name="WithStartReferenceEnum"></a>
 ## Enum: WithStartReferenceEnum
-
-
-* `aEnd` (value: `"a_end"`)
-
-* `dEnd` (value: `"d_end"`)
-
-
-
-
-<a name="WithEndReferenceEnum"></a>
-## Enum: WithEndReferenceEnum
 
 
 * `aEnd` (value: `"a_end"`)
@@ -51,6 +40,17 @@ Name | Type | Description | Notes
 * `week` (value: `"week"`)
 
 * `day` (value: `"day"`)
+
+
+
+
+<a name="WithEndReferenceEnum"></a>
+## Enum: WithEndReferenceEnum
+
+
+* `aEnd` (value: `"a_end"`)
+
+* `dEnd` (value: `"d_end"`)
 
 
 

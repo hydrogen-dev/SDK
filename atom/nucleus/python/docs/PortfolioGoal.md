@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **create_date** | **datetime** |  | [optional] 
-**_date** | **datetime** | date | 
+**_date** | **date** | date | 
 **goals** | [**list[PortfolioGoalMap]**](PortfolioGoalMap.md) |  | 
 **id** | **str** |  | [optional] 
 **portfolio_id** | **str** | portfolioId | 

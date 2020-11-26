@@ -32,8 +32,8 @@ Create a new insurance coverage.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -83,8 +83,8 @@ Create a new insurance discount.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -134,8 +134,8 @@ Create a new insuranceQuote request.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -185,8 +185,8 @@ Delete an  insurance coverage.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -236,8 +236,8 @@ Delete an  insurance discount.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -278,7 +278,7 @@ null (empty response body)
 
 <a name="deleteInsuranceQuoteUsingDelete"></a>
 # **deleteInsuranceQuoteUsingDelete**
-> deleteInsuranceQuoteUsingDelete(insuranceQuote, insuranceQuoteId)
+> deleteInsuranceQuoteUsingDelete(insuranceQuoteId)
 
 Delete a insuranceQuote request
 
@@ -287,17 +287,15 @@ Permanently delete a insuranceQuote request.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.InsuranceApi();
 
-var insuranceQuote = "1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c"; // String | UUID insurance_quote_id
-
-var insuranceQuoteId = "insuranceQuoteId_example"; // String | insurance_quote_id
+var insuranceQuoteId = "1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c"; // String | UUID insurance_quote_id
 
 
 var callback = function(error, data, response) {
@@ -307,15 +305,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteInsuranceQuoteUsingDelete(insuranceQuote, insuranceQuoteId, callback);
+apiInstance.deleteInsuranceQuoteUsingDelete(insuranceQuoteId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **insuranceQuote** | **String**| UUID insurance_quote_id | 
- **insuranceQuoteId** | **String**| insurance_quote_id | 
+ **insuranceQuoteId** | **String**| UUID insurance_quote_id | 
 
 ### Return type
 
@@ -341,8 +338,8 @@ Get all new insurance coverage.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -351,6 +348,7 @@ var apiInstance = new HydrogenNucleusApi.InsuranceApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
+  'currencyConversion': "currencyConversion_example", // String | currency_conversion
   'filter': "filter_example", // String | filter
   'orderBy': "update_date", // String | order_by
   'page': 0, // Number | page
@@ -372,6 +370,7 @@ apiInstance.getInsuranceCoverageAllUsingGet(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Number**| page | [optional] [default to 0]
@@ -392,7 +391,7 @@ Name | Type | Description  | Notes
 
 <a name="getInsuranceCoverageUsingGet"></a>
 # **getInsuranceCoverageUsingGet**
-> InsuranceCoverage getInsuranceCoverageUsingGet(insuranceCoverageId)
+> InsuranceCoverage getInsuranceCoverageUsingGet(insuranceCoverageId, opts)
 
 Get a insurance coverage request
 
@@ -401,8 +400,8 @@ Get a new insurance coverage.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -411,6 +410,9 @@ var apiInstance = new HydrogenNucleusApi.InsuranceApi();
 
 var insuranceCoverageId = "1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c"; // String | UUID insurance_coverage_id
 
+var opts = { 
+  'currencyConversion': "currencyConversion_example" // String | USD
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -419,7 +421,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getInsuranceCoverageUsingGet(insuranceCoverageId, callback);
+apiInstance.getInsuranceCoverageUsingGet(insuranceCoverageId, opts, callback);
 ```
 
 ### Parameters
@@ -427,6 +429,7 @@ apiInstance.getInsuranceCoverageUsingGet(insuranceCoverageId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **insuranceCoverageId** | **String**| UUID insurance_coverage_id | 
+ **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -452,8 +455,8 @@ Get all new insurance discount.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -462,6 +465,7 @@ var apiInstance = new HydrogenNucleusApi.InsuranceApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
+  'currencyConversion': "currencyConversion_example", // String | currency_conversion
   'filter': "filter_example", // String | filter
   'orderBy': "update_date", // String | order_by
   'page': 0, // Number | page
@@ -483,6 +487,7 @@ apiInstance.getInsuranceDiscountAllUsingGet(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Number**| page | [optional] [default to 0]
@@ -503,7 +508,7 @@ Name | Type | Description  | Notes
 
 <a name="getInsuranceDiscountUsingGet"></a>
 # **getInsuranceDiscountUsingGet**
-> InsuranceDiscount getInsuranceDiscountUsingGet(insuranceDiscountId)
+> InsuranceDiscount getInsuranceDiscountUsingGet(insuranceDiscountId, opts)
 
 Get a insurance discount request
 
@@ -512,8 +517,8 @@ Get a new insurance discount.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -522,6 +527,9 @@ var apiInstance = new HydrogenNucleusApi.InsuranceApi();
 
 var insuranceDiscountId = "1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c"; // String |  UUID insurance_discount_id
 
+var opts = { 
+  'currencyConversion': "currencyConversion_example" // String | USD
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -530,7 +538,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getInsuranceDiscountUsingGet(insuranceDiscountId, callback);
+apiInstance.getInsuranceDiscountUsingGet(insuranceDiscountId, opts, callback);
 ```
 
 ### Parameters
@@ -538,6 +546,7 @@ apiInstance.getInsuranceDiscountUsingGet(insuranceDiscountId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **insuranceDiscountId** | **String**|  UUID insurance_discount_id | 
+ **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -563,8 +572,8 @@ Get the information for all insuranceQuote requests.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -573,6 +582,7 @@ var apiInstance = new HydrogenNucleusApi.InsuranceApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
+  'currencyConversion': "currencyConversion_example", // String | currency_conversion
   'filter': "filter_example", // String | filter
   'orderBy': "update_date", // String | order_by
   'page': 0, // Number | page
@@ -594,6 +604,7 @@ apiInstance.getInsuranceQuoteAllUsingGet(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Number**| page | [optional] [default to 0]
@@ -614,7 +625,7 @@ Name | Type | Description  | Notes
 
 <a name="getInsuranceQuoteUsingGet"></a>
 # **getInsuranceQuoteUsingGet**
-> InsuranceQuote getInsuranceQuoteUsingGet(insuranceQuote, insuranceQuoteId)
+> InsuranceQuote getInsuranceQuoteUsingGet(insuranceQuoteId, opts)
 
 Retrieve a insuranceQuote request
 
@@ -623,18 +634,19 @@ Retrieve the information for a insuranceQuote request.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.InsuranceApi();
 
-var insuranceQuote = "1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c"; // String | UUID insurance_quote_id
+var insuranceQuoteId = "1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c"; // String | UUID insurance_quote_id
 
-var insuranceQuoteId = "insuranceQuoteId_example"; // String | insurance_quote_id
-
+var opts = { 
+  'currencyConversion': "currencyConversion_example" // String | USD
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -643,15 +655,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getInsuranceQuoteUsingGet(insuranceQuote, insuranceQuoteId, callback);
+apiInstance.getInsuranceQuoteUsingGet(insuranceQuoteId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **insuranceQuote** | **String**| UUID insurance_quote_id | 
- **insuranceQuoteId** | **String**| insurance_quote_id | 
+ **insuranceQuoteId** | **String**| UUID insurance_quote_id | 
+ **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -677,8 +689,8 @@ Update a new insurance coverage.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -731,8 +743,8 @@ Update an new insurance .
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -785,8 +797,8 @@ Update the information for a insuranceQuote request.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';

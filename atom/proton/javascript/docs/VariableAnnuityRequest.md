@@ -3,32 +3,33 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**startDate** | **String** |  | [optional] 
-**initialBalance** | **Number** |  | [optional] [default to 0.0]
-**taxRate** | **Number** |  | [optional] [default to 0.0]
-**allocationId** | **String** |  | [optional] 
-**accountId** | **String** |  | [optional] 
-**resultType** | **String** |  | [optional] [default to 'median']
-**accumulationHorizon** | **Number** |  | 
-**aggregationAccountId** | **String** |  | [optional] 
-**marketDataSource** | **String** |  | [optional] [default to 'nucleus']
 **guaranteedAccumulationBenefit** | **Number** |  | [optional] [default to 0.0]
-**decumulationHorizon** | **Number** |  | 
-**depositSchedule** | **Object** |  | [optional] 
-**portfolioTickers** | **[String]** |  | [optional] 
-**tradingDaysPerYear** | **Number** |  | [optional] [default to 252]
-**portfolioId** | **String** |  | [optional] 
-**frequencyInterval** | **String** |  | [optional] [default to 'year']
-**guaranteedRateBenefit** | **[Object]** |  | [optional] 
-**n** | **Number** |  | [optional] [default to 1000]
-**inflationRate** | **Number** |  | [optional] [default to 0.0]
-**modelId** | **String** |  | [optional] 
-**portfolioWeights** | **[Number]** |  | [optional] 
-**useProxyData** | **Boolean** |  | [optional] [default to false]
-**endDate** | **String** |  | [optional] 
-**annuitizationRate** | **Number** |  | [optional] [default to 0.0]
-**removeOutliers** | **Boolean** |  | [optional] [default to false]
 **p** | **Number** |  | [optional] 
+**aggregationAccountId** | **String** |  | [optional] 
+**allocationId** | **String** |  | [optional] 
+**portfolioWeights** | **[Number]** |  | [optional] 
+**endDate** | **String** |  | [optional] 
+**n** | **Number** |  | [optional] [default to 1000]
+**accountId** | **String** |  | [optional] 
+**portfolioTickers** | **[String]** |  | [optional] 
+**initialBalance** | **Number** |  | [optional] [default to 0.0]
+**removeOutliers** | **Boolean** |  | [optional] [default to false]
+**modelId** | **String** |  | [optional] 
+**guaranteedRateBenefit** | [**[GuaranteedRateBenefit]**](GuaranteedRateBenefit.md) |  | [optional] 
+**depositSchedule** | [**AnnuityDepositSchedule**](AnnuityDepositSchedule.md) |  | [optional] 
+**useProxyData** | **Boolean** |  | [optional] [default to false]
+**accumulationHorizon** | **Number** |  | 
+**inflationRate** | **Number** |  | [optional] [default to 0.0]
+**annuitizationRate** | **Number** |  | [optional] [default to 0.0]
+**resultType** | **String** |  | [optional] [default to 'median']
+**startDate** | **String** |  | [optional] 
+**portfolioId** | **String** |  | [optional] 
+**marketDataSource** | **String** |  | [optional] [default to 'nucleus']
+**tradingDaysPerYear** | **Number** |  | [optional] [default to 252]
+**frequencyInterval** | **String** |  | [optional] [default to 'year']
+**createLog** | **Boolean** |  | [optional] [default to false]
+**decumulationHorizon** | **Number** |  | 
+**taxRate** | **Number** |  | [optional] [default to 0.0]
 
 
 <a name="ResultTypeEnum"></a>

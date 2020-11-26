@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**startDate** | **Date** |  | [optional] 
-**endDate** | **Date** |  | [optional] 
-**wConfig** | [**WConfig**](WConfig.md) |  | 
-**secTypes** | **[String]** |  | 
-**minAssets** | **Number** |  | 
 **wAssetConfig** | **Object** |  | [optional] 
+**minAssets** | **Number** |  | 
+**secTypes** | **[String]** |  | 
+**wConfig** | [**WConfig**](WConfig.md) |  | 
+**endDate** | **Date** |  | [optional] 
+**startDate** | **Date** |  | [optional] 
 **tickers** | **[String]** |  | 
 
 

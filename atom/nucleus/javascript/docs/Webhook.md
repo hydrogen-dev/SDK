@@ -69,6 +69,12 @@ Name | Type | Description | Notes
 
 * `CLIENT_RESPONSE` (value: `"CLIENT_RESPONSE"`)
 
+* `CLIENT_VERIFIED` (value: `"CLIENT_VERIFIED"`)
+
+* `DOCUMENT_VERIFIED` (value: `"DOCUMENT_VERIFIED"`)
+
+* `BANK_LINK_VERIFIED` (value: `"BANK_LINK_VERIFIED"`)
+
 
 
 

@@ -20,10 +20,8 @@ Assess how well a group of investments is diversified
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import FinancialHealthApi;
 
@@ -31,14 +29,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 FinancialHealthApi apiInstance = new FinancialHealthApi();
 DiversificationScoreRequest diversificationScoreRequest = new DiversificationScoreRequest(); // DiversificationScoreRequest | Request payload for Diversification Score
@@ -80,10 +80,8 @@ Calculate a target emergency fund amount and savings plan
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import FinancialHealthApi;
 
@@ -91,14 +89,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 FinancialHealthApi apiInstance = new FinancialHealthApi();
 EmergencyFundCalculatorRequest emergencyFundCalculatorRequest = new EmergencyFundCalculatorRequest(); // EmergencyFundCalculatorRequest | Request payload for Emergency Fund Calculator
@@ -140,10 +140,8 @@ Calculate a series of financial ratios to assess financial health
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import FinancialHealthApi;
 
@@ -151,14 +149,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 FinancialHealthApi apiInstance = new FinancialHealthApi();
 FinancialHealthCheckRequest financialHealthCheckRequest = new FinancialHealthCheckRequest(); // FinancialHealthCheckRequest | Request payload for Financial Health Check
@@ -200,10 +200,8 @@ Analyze a group of investments against the optimized result
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import FinancialHealthApi;
 
@@ -211,14 +209,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 FinancialHealthApi apiInstance = new FinancialHealthApi();
 PortfolioOptimizationScoreRequest portfolioOptimizationScoreRequest = new PortfolioOptimizationScoreRequest(); // PortfolioOptimizationScoreRequest | Request payload for Portfolio Optimization Score

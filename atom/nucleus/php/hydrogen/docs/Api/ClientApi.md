@@ -20,9 +20,8 @@ Method | HTTP request | Description
 [**getClientHydroUsingGet**](ClientApi.md#getClientHydroUsingGet) | **GET** /client_hydro/{client_hydro_id} | Retrieve a client-hydro relationship
 [**getClientStatusAllUsingGet**](ClientApi.md#getClientStatusAllUsingGet) | **GET** /client_status | List all client statuses
 [**getClientStatusUsingGet**](ClientApi.md#getClientStatusUsingGet) | **GET** /client_status/{client_status_id} | Retrieve an client status
-[**getClientTransactionUsingGet**](ClientApi.md#getClientTransactionUsingGet) | **GET** /client/{client_id}/transaction | List all client transactions
+[**getClientTransactionAllUsingGet**](ClientApi.md#getClientTransactionAllUsingGet) | **GET** /client/{client_id}/transaction | List all client transactions
 [**getClientUsingGet**](ClientApi.md#getClientUsingGet) | **GET** /client/{client_id} | Retrieve a client
-[**getTotalClientsUsingGet**](ClientApi.md#getTotalClientsUsingGet) | **GET** /client/total_clients | total clients
 [**updateClientHydroUsingPut**](ClientApi.md#updateClientHydroUsingPut) | **PUT** /client_hydro/{client_hydro_id} | Update a client-hydro relationship
 [**updateClientStatusUsingPut**](ClientApi.md#updateClientStatusUsingPut) | **PUT** /client_status/{client_status_id} | Update an client status
 [**updateClientUsingPut**](ClientApi.md#updateClientUsingPut) | **PUT** /client/{client_id} | Update a client
@@ -51,6 +50,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -115,6 +117,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -179,6 +184,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -243,6 +251,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -306,6 +317,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -369,6 +383,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -410,7 +427,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getClientAccountOverviewUsingGet**
-> \com\hydrogen\nucleus\Model\ClientAccountVO getClientAccountOverviewUsingGet($client_id, $ascending, $order_by)
+> object getClientAccountOverviewUsingGet($client_id, $ascending, $order_by)
 
 List all client Account overview
 
@@ -430,6 +447,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -462,7 +482,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\ClientAccountVO**](../Model/ClientAccountVO.md)
+**object**
 
 ### Authorization
 
@@ -476,7 +496,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getClientAdvisorOverviewUsingGet**
-> \com\hydrogen\nucleus\Model\AdvisorOverviewVO getClientAdvisorOverviewUsingGet($client_id, $show_clients)
+> object getClientAdvisorOverviewUsingGet($client_id, $show_clients)
 
 Advisor overview
 
@@ -496,6 +516,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -526,7 +549,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\AdvisorOverviewVO**](../Model/AdvisorOverviewVO.md)
+**object**
 
 ### Authorization
 
@@ -562,6 +585,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -612,7 +638,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getClientAssetSizeUsingGet**
-> \com\hydrogen\nucleus\Model\AvailableDateDoubleVO[] getClientAssetSizeUsingGet($client_id, $end_date, $exclude_subledger, $get_latest, $sort_type, $start_date)
+> \com\hydrogen\nucleus\Model\AvailableDateDoubleVO[] getClientAssetSizeUsingGet($client_id, $currency_conversion, $end_date, $exclude_subledger, $get_latest, $sort_type, $start_date)
 
 List all client asset sizes
 
@@ -634,6 +660,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -644,6 +673,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\ClientApi(
     $config
 );
 $client_id = "client_id_example"; // string | UUID client_id
+$currency_conversion = "currency_conversion_example"; // string | Currency Code
 $end_date = new \DateTime("null"); // \DateTime | end date
 $exclude_subledger = false; // bool | exclude_subledger
 $get_latest = true; // bool | true or false
@@ -651,7 +681,7 @@ $sort_type = "sort_type_example"; // string | Quarter (Q), Monthly (M) , Annuall
 $start_date = new \DateTime("null"); // \DateTime | start date
 
 try {
-    $result = $apiInstance->getClientAssetSizeUsingGet($client_id, $end_date, $exclude_subledger, $get_latest, $sort_type, $start_date);
+    $result = $apiInstance->getClientAssetSizeUsingGet($client_id, $currency_conversion, $end_date, $exclude_subledger, $get_latest, $sort_type, $start_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ClientApi->getClientAssetSizeUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -664,6 +694,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_id** | [**string**](../Model/.md)| UUID client_id |
+ **currency_conversion** | **string**| Currency Code | [optional]
  **end_date** | **\DateTime**| end date | [optional] [default to null]
  **exclude_subledger** | **bool**| exclude_subledger | [optional] [default to false]
  **get_latest** | **bool**| true or false | [optional]
@@ -708,6 +739,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -752,7 +786,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getClientHoldingUsingGet**
-> \com\hydrogen\nucleus\Model\PortfolioHoldingAgg[] getClientHoldingUsingGet($client_id, $end_date, $get_latest, $start_date)
+> \com\hydrogen\nucleus\Model\PortfolioHoldingAgg[] getClientHoldingUsingGet($client_id, $currency_conversion, $end_date, $get_latest, $start_date)
 
 List all client holdings
 
@@ -774,6 +808,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -784,12 +821,13 @@ $apiInstance = new com\hydrogen\nucleus\Api\ClientApi(
     $config
 );
 $client_id = "client_id_example"; // string | UUID client_id
+$currency_conversion = "currency_conversion_example"; // string | Currency Code
 $end_date = "end_date_example"; // string | end date - yyyy-mm-dd
 $get_latest = true; // bool | true or false
 $start_date = "start_date_example"; // string | start date - yyyy-mm-dd
 
 try {
-    $result = $apiInstance->getClientHoldingUsingGet($client_id, $end_date, $get_latest, $start_date);
+    $result = $apiInstance->getClientHoldingUsingGet($client_id, $currency_conversion, $end_date, $get_latest, $start_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ClientApi->getClientHoldingUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -802,6 +840,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_id** | [**string**](../Model/.md)| UUID client_id |
+ **currency_conversion** | **string**| Currency Code | [optional]
  **end_date** | **string**| end date - yyyy-mm-dd | [optional]
  **get_latest** | **bool**| true or false | [optional]
  **start_date** | **string**| start date - yyyy-mm-dd | [optional]
@@ -844,6 +883,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -916,6 +958,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -980,6 +1025,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1052,6 +1100,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1093,8 +1144,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getClientTransactionUsingGet**
-> \com\hydrogen\nucleus\Model\PagePortfolioTransaction_ getClientTransactionUsingGet($client_id, $ascending, $end_date, $order_by, $page, $size, $start_date)
+# **getClientTransactionAllUsingGet**
+> \com\hydrogen\nucleus\Model\PagePortfolioTransaction_ getClientTransactionAllUsingGet($client_id, $ascending, $currency_conversion, $end_date, $order_by, $page, $size, $start_date)
 
 List all client transactions
 
@@ -1116,6 +1167,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1127,17 +1181,18 @@ $apiInstance = new com\hydrogen\nucleus\Api\ClientApi(
 );
 $client_id = "client_id_example"; // string | UUID client_id
 $ascending = false; // bool | ascending
-$end_date = new \DateTime("null"); // \DateTime | end_date
+$currency_conversion = "currency_conversion_example"; // string | currency_conversion
+$end_date = "end_date_example"; // string | end date - yyyy-mm-dd
 $order_by = "update_date"; // string | order_by
 $page = 0; // int | page
 $size = 25; // int | size
-$start_date = new \DateTime("null"); // \DateTime | start_date
+$start_date = "start_date_example"; // string | start date - yyyy-mm-dd
 
 try {
-    $result = $apiInstance->getClientTransactionUsingGet($client_id, $ascending, $end_date, $order_by, $page, $size, $start_date);
+    $result = $apiInstance->getClientTransactionAllUsingGet($client_id, $ascending, $currency_conversion, $end_date, $order_by, $page, $size, $start_date);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ClientApi->getClientTransactionUsingGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ClientApi->getClientTransactionAllUsingGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1148,11 +1203,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_id** | [**string**](../Model/.md)| UUID client_id |
  **ascending** | **bool**| ascending | [optional] [default to false]
- **end_date** | **\DateTime**| end_date | [optional] [default to null]
+ **currency_conversion** | **string**| currency_conversion | [optional]
+ **end_date** | **string**| end date - yyyy-mm-dd | [optional]
  **order_by** | **string**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
  **size** | **int**| size | [optional] [default to 25]
- **start_date** | **\DateTime**| start_date | [optional] [default to null]
+ **start_date** | **string**| start date - yyyy-mm-dd | [optional]
 
 ### Return type
 
@@ -1192,6 +1248,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1233,76 +1292,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getTotalClientsUsingGet**
-> \com\hydrogen\nucleus\Model\ClientAnalyticsResponse getTotalClientsUsingGet($as_of_date, $client_id, $end_date, $show_history, $start_date)
-
-total clients
-
-### Example
-```php
-<?php
-require_once('../vendor/autoload.php');
-try {
-// Use one of the below method to generate oauth token
-// 1) Generate Token for client credentials
-$config =
-        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
-            ->createClientCredential("MYCLIENTID",
-             "MYCLIENTSECRET");
-// 2) Generate Token for password credentials
-$config =
-        \com\hydrogen\nucleus\AuthApiClient::
-        getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
-                      ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\nucleus\ApiException $e) {
-    print_r($e);
-}
-$apiInstance = new com\hydrogen\nucleus\Api\ClientApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$as_of_date = new \DateTime("#{new java.util.Date()}"); // \DateTime | as_of_date
-$client_id = "client_id_example"; // string | client_id
-$end_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | end_date
-$show_history = false; // bool | show_history
-$start_date = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | start_date
-
-try {
-    $result = $apiInstance->getTotalClientsUsingGet($as_of_date, $client_id, $end_date, $show_history, $start_date);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ClientApi->getTotalClientsUsingGet: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **as_of_date** | **\DateTime**| as_of_date | [optional] [default to #{new java.util.Date()}]
- **client_id** | **string**| client_id | [optional]
- **end_date** | **\DateTime**| end_date | [optional]
- **show_history** | **bool**| show_history | [optional] [default to false]
- **start_date** | **\DateTime**| start_date | [optional]
-
-### Return type
-
-[**\com\hydrogen\nucleus\Model\ClientAnalyticsResponse**](../Model/ClientAnalyticsResponse.md)
-
-### Authorization
-
-[oauth2](../../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **updateClientHydroUsingPut**
 > \com\hydrogen\nucleus\Model\ClientHydro updateClientHydroUsingPut($client_hydro, $client_hydro_id)
 
@@ -1326,6 +1315,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1392,6 +1384,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1458,6 +1453,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }

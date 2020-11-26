@@ -4,35 +4,35 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccountStatusUsingPost**](UtilsApi.md#createAccountStatusUsingPost) | **POST** /account_status | Create an account status
+[**createReasonCodeUsingPost**](UtilsApi.md#createReasonCodeUsingPost) | **POST** /reason_code | Create a reason code
 [**createStageUsingPost**](UtilsApi.md#createStageUsingPost) | **POST** /stage | Create an account stage
 [**createTransactionCodeUsingPost**](UtilsApi.md#createTransactionCodeUsingPost) | **POST** /transaction_code | Create a transaction code
-[**deleteAccountStatusUsingDelete**](UtilsApi.md#deleteAccountStatusUsingDelete) | **DELETE** /account_status/{account_status_id} | Delete an account status
+[**deleteReasonCodeUsingDelete**](UtilsApi.md#deleteReasonCodeUsingDelete) | **DELETE** /reason_code/{reason_code_id} | Delete a reason code
 [**deleteStageUsingDelete**](UtilsApi.md#deleteStageUsingDelete) | **DELETE** /stage/{stage_id} | Delete an account stage
 [**deleteTransactionCodeUsingDelete**](UtilsApi.md#deleteTransactionCodeUsingDelete) | **DELETE** /transaction_code/{transaction_code_id} | Delete a transaction code
-[**getAccountStatusAllUsingGet**](UtilsApi.md#getAccountStatusAllUsingGet) | **GET** /account_status | List all account statuses
-[**getAccountStatusUsingGet**](UtilsApi.md#getAccountStatusUsingGet) | **GET** /account_status/{account_status_id} | Retrieve an account status
+[**getReasonCodeAllUsingGet**](UtilsApi.md#getReasonCodeAllUsingGet) | **GET** /reason_code | List all reason codes
+[**getReasonCodeUsingGet**](UtilsApi.md#getReasonCodeUsingGet) | **GET** /reason_code/{reason_code_id} | Retrieve a reason code
 [**getStageAllUsingGet**](UtilsApi.md#getStageAllUsingGet) | **GET** /stage | List all account stages
 [**getStageUsingGet**](UtilsApi.md#getStageUsingGet) | **GET** /stage/{stage_id} | Retrieve an account stage
 [**getTransactionCodeAllUsingGet**](UtilsApi.md#getTransactionCodeAllUsingGet) | **GET** /transaction_code | List all transaction codes
 [**getTransactionCodeUsingGet**](UtilsApi.md#getTransactionCodeUsingGet) | **GET** /transaction_code/{transaction_code_id} | Retrieve a transaction code
-[**updateAccountStatusUsingPut**](UtilsApi.md#updateAccountStatusUsingPut) | **PUT** /account_status/{account_status_id} | Update an account status
+[**updateReasonCodeUsingPut**](UtilsApi.md#updateReasonCodeUsingPut) | **PUT** /reason_code/{reason_code_id} | Update a reason code
 [**updateStageUsingPut**](UtilsApi.md#updateStageUsingPut) | **PUT** /stage/{stage_id} | Update an account stage
 [**updateTransactionCodeUsingPut**](UtilsApi.md#updateTransactionCodeUsingPut) | **PUT** /transaction_code/{transaction_code_id} | Update a transaction code
 
 
-<a name="createAccountStatusUsingPost"></a>
-# **createAccountStatusUsingPost**
-> AccountStatus createAccountStatusUsingPost(accountStatusRequest)
+<a name="createReasonCodeUsingPost"></a>
+# **createReasonCodeUsingPost**
+> ReasonCode createReasonCodeUsingPost(reasonCodeRequest)
 
-Create an account status
+Create a reason code
 
-Create an account status record for an account.
+Create a new reason code for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
@@ -43,18 +43,22 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 UtilsApi apiInstance = new UtilsApi();
-AccountStatus accountStatusRequest = new AccountStatus(); // AccountStatus | accountStatusRequest
+ReasonCode reasonCodeRequest = new ReasonCode(); // ReasonCode | reasonCodeRequest
 try {
-    AccountStatus result = apiInstance.createAccountStatusUsingPost(accountStatusRequest);
+    ReasonCode result = apiInstance.createReasonCodeUsingPost(reasonCodeRequest);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UtilsApi#createAccountStatusUsingPost");
+    System.err.println("Exception when calling UtilsApi#createReasonCodeUsingPost");
     e.printStackTrace();
 }
 ```
@@ -63,11 +67,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountStatusRequest** | [**AccountStatus**](AccountStatus.md)| accountStatusRequest |
+ **reasonCodeRequest** | [**ReasonCode**](ReasonCode.md)| reasonCodeRequest |
 
 ### Return type
 
-[**AccountStatus**](AccountStatus.md)
+[**ReasonCode**](ReasonCode.md)
 
 ### Authorization
 
@@ -88,8 +92,8 @@ Create a new account stage
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
@@ -100,10 +104,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 UtilsApi apiInstance = new UtilsApi();
 Stage stageRequest = new Stage(); // Stage | stageRequest
@@ -145,8 +153,8 @@ Create a new transaction code for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
@@ -157,10 +165,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 UtilsApi apiInstance = new UtilsApi();
 TransactionCode transactionRequest = new TransactionCode(); // TransactionCode | transactionRequest
@@ -192,18 +204,18 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: */*
 
-<a name="deleteAccountStatusUsingDelete"></a>
-# **deleteAccountStatusUsingDelete**
-> deleteAccountStatusUsingDelete(accountStatusId)
+<a name="deleteReasonCodeUsingDelete"></a>
+# **deleteReasonCodeUsingDelete**
+> deleteReasonCodeUsingDelete(reasonCodeId)
 
-Delete an account status
+Delete a reason code
 
-Permanently delete an account status record from an account’s history.
+Permanently delete a reason code for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
@@ -214,17 +226,21 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 UtilsApi apiInstance = new UtilsApi();
-UUID accountStatusId = new UUID(); // UUID | UUID account_status_id
+UUID reasonCodeId = new UUID(); // UUID | UUID reason_code_id
 try {
-    apiInstance.deleteAccountStatusUsingDelete(accountStatusId);
+    apiInstance.deleteReasonCodeUsingDelete(reasonCodeId);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UtilsApi#deleteAccountStatusUsingDelete");
+    System.err.println("Exception when calling UtilsApi#deleteReasonCodeUsingDelete");
     e.printStackTrace();
 }
 ```
@@ -233,7 +249,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountStatusId** | [**UUID**](.md)| UUID account_status_id |
+ **reasonCodeId** | [**UUID**](.md)| UUID reason_code_id |
 
 ### Return type
 
@@ -258,8 +274,8 @@ Permanently delete an account stage.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
@@ -270,10 +286,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 UtilsApi apiInstance = new UtilsApi();
 UUID stageId = new UUID(); // UUID | UUID stage_id
@@ -314,8 +334,8 @@ Permanently delete a transaction code for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
@@ -326,10 +346,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 UtilsApi apiInstance = new UtilsApi();
 UUID transactionCodeId = new UUID(); // UUID | UUID transaction_code_id
@@ -360,18 +384,18 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: */*
 
-<a name="getAccountStatusAllUsingGet"></a>
-# **getAccountStatusAllUsingGet**
-> PageAccountStatus getAccountStatusAllUsingGet(ascending, filter, orderBy, page, size)
+<a name="getReasonCodeAllUsingGet"></a>
+# **getReasonCodeAllUsingGet**
+> PageReasonCode getReasonCodeAllUsingGet(ascending, filter, orderBy, page, size)
 
-List all account statuses
+List all reason codes
 
-Get the account status history information for all accounts.
+Get the information for all reason codes defined by your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
@@ -382,10 +406,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 UtilsApi apiInstance = new UtilsApi();
 Boolean ascending = false; // Boolean | ascending
@@ -394,10 +422,10 @@ String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PageAccountStatus result = apiInstance.getAccountStatusAllUsingGet(ascending, filter, orderBy, page, size);
+    PageReasonCode result = apiInstance.getReasonCodeAllUsingGet(ascending, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UtilsApi#getAccountStatusAllUsingGet");
+    System.err.println("Exception when calling UtilsApi#getReasonCodeAllUsingGet");
     e.printStackTrace();
 }
 ```
@@ -414,7 +442,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PageAccountStatus**](PageAccountStatus.md)
+[**PageReasonCode**](PageReasonCode.md)
 
 ### Authorization
 
@@ -425,18 +453,18 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: */*
 
-<a name="getAccountStatusUsingGet"></a>
-# **getAccountStatusUsingGet**
-> AccountStatus getAccountStatusUsingGet(accountStatusId)
+<a name="getReasonCodeUsingGet"></a>
+# **getReasonCodeUsingGet**
+> ReasonCode getReasonCodeUsingGet(reasonCodeId)
 
-Retrieve an account status
+Retrieve a reason code
 
-Retrieve the information for a specific account status record for an account.
+Retrieve the information for a reason code defined by your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
@@ -447,18 +475,22 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 UtilsApi apiInstance = new UtilsApi();
-UUID accountStatusId = new UUID(); // UUID | UUID account_status_id
+UUID reasonCodeId = new UUID(); // UUID | UUID reason_code_id
 try {
-    AccountStatus result = apiInstance.getAccountStatusUsingGet(accountStatusId);
+    ReasonCode result = apiInstance.getReasonCodeUsingGet(reasonCodeId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UtilsApi#getAccountStatusUsingGet");
+    System.err.println("Exception when calling UtilsApi#getReasonCodeUsingGet");
     e.printStackTrace();
 }
 ```
@@ -467,11 +499,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountStatusId** | [**UUID**](.md)| UUID account_status_id |
+ **reasonCodeId** | [**UUID**](.md)| UUID reason_code_id |
 
 ### Return type
 
-[**AccountStatus**](AccountStatus.md)
+[**ReasonCode**](ReasonCode.md)
 
 ### Authorization
 
@@ -492,8 +524,8 @@ Get the information for all possible account stages.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
@@ -504,10 +536,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 UtilsApi apiInstance = new UtilsApi();
 Boolean ascending = false; // Boolean | ascending
@@ -557,8 +593,8 @@ Retrieve the information for a specific account stage.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
@@ -569,10 +605,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 UtilsApi apiInstance = new UtilsApi();
 UUID stageId = new UUID(); // UUID | UUID stage_id
@@ -614,8 +654,8 @@ Get the information for all transaction codes defined by your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
@@ -626,10 +666,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 UtilsApi apiInstance = new UtilsApi();
 Boolean ascending = false; // Boolean | ascending
@@ -679,8 +723,8 @@ Retrieve the information for a transaction code defined by your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
@@ -691,10 +735,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 UtilsApi apiInstance = new UtilsApi();
 UUID transactionCodeId = new UUID(); // UUID | UUID transaction_code_id
@@ -726,18 +774,18 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: */*
 
-<a name="updateAccountStatusUsingPut"></a>
-# **updateAccountStatusUsingPut**
-> AccountStatus updateAccountStatusUsingPut(accountStatus, accountStatusId)
+<a name="updateReasonCodeUsingPut"></a>
+# **updateReasonCodeUsingPut**
+> ReasonCode updateReasonCodeUsingPut(reasonCode, reasonCodeId)
 
-Update an account status
+Update a reason code
 
-Update an account status record for an account.
+Update a reason code for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
@@ -748,19 +796,23 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 UtilsApi apiInstance = new UtilsApi();
-AccountStatus accountStatus = new AccountStatus(); // AccountStatus | account_status
-UUID accountStatusId = new UUID(); // UUID | UUID account_status_id
+ReasonCode reasonCode = new ReasonCode(); // ReasonCode | reason_code
+UUID reasonCodeId = new UUID(); // UUID | UUID reason_code_id
 try {
-    AccountStatus result = apiInstance.updateAccountStatusUsingPut(accountStatus, accountStatusId);
+    ReasonCode result = apiInstance.updateReasonCodeUsingPut(reasonCode, reasonCodeId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling UtilsApi#updateAccountStatusUsingPut");
+    System.err.println("Exception when calling UtilsApi#updateReasonCodeUsingPut");
     e.printStackTrace();
 }
 ```
@@ -769,12 +821,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountStatus** | [**AccountStatus**](AccountStatus.md)| account_status |
- **accountStatusId** | [**UUID**](.md)| UUID account_status_id |
+ **reasonCode** | [**ReasonCode**](ReasonCode.md)| reason_code |
+ **reasonCodeId** | [**UUID**](.md)| UUID reason_code_id |
 
 ### Return type
 
-[**AccountStatus**](AccountStatus.md)
+[**ReasonCode**](ReasonCode.md)
 
 ### Authorization
 
@@ -795,8 +847,8 @@ Update the information for an account stage.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
@@ -807,10 +859,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 UtilsApi apiInstance = new UtilsApi();
 Stage stage = new Stage(); // Stage | stage
@@ -854,8 +910,8 @@ Update a transaction code for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
@@ -866,10 +922,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 UtilsApi apiInstance = new UtilsApi();
 TransactionCode transactionCode = new TransactionCode(); // TransactionCode | transaction_code

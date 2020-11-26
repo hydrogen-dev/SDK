@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **current_weight** | **float** |  | [optional] 
-**_date** | **datetime** |  | [optional] 
+**_date** | **date** |  | [optional] 
 **security_id** | **str** |  | [optional] 
 **strategic_weight** | **float** |  | [optional] 
 

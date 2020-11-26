@@ -55,6 +55,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -119,6 +122,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -183,6 +189,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -247,6 +256,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -311,6 +323,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -375,6 +390,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -438,6 +456,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -501,6 +522,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -542,7 +566,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteTransferUsingDelete**
-> deleteTransferUsingDelete($transfer, $transfer_id)
+> deleteTransferUsingDelete($transfer_id)
 
 Delete a transfer request
 
@@ -564,6 +588,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -573,11 +600,10 @@ $apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     new GuzzleHttp\Client(),
     $config
 );
-$transfer = "transfer_example"; // string | UUID external_account_transfer_id
-$transfer_id = "transfer_id_example"; // string | transfer_id
+$transfer_id = "transfer_id_example"; // string | UUID external_account_transfer_id
 
 try {
-    $apiInstance->deleteTransferUsingDelete($transfer, $transfer_id);
+    $apiInstance->deleteTransferUsingDelete($transfer_id);
 } catch (Exception $e) {
     echo 'Exception when calling FundingApi->deleteTransferUsingDelete: ', $e->getMessage(), PHP_EOL;
 }
@@ -588,8 +614,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transfer** | [**string**](../Model/.md)| UUID external_account_transfer_id |
- **transfer_id** | [**string**](../Model/.md)| transfer_id |
+ **transfer_id** | [**string**](../Model/.md)| UUID external_account_transfer_id |
 
 ### Return type
 
@@ -629,6 +654,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -670,7 +698,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBankLinkAllUsingGet**
-> \com\hydrogen\nucleus\Model\PageBankLink_ getBankLinkAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageBankLink_ getBankLinkAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size)
 
 List all bank links
 
@@ -692,6 +720,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -702,13 +733,14 @@ $apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     $config
 );
 $ascending = false; // bool | ascending
+$currency_conversion = "currency_conversion_example"; // string | currency_conversion
 $filter = "filter_example"; // string | filter
 $order_by = "update_date"; // string | order_by
 $page = 0; // int | page
 $size = 25; // int | size
 
 try {
-    $result = $apiInstance->getBankLinkAllUsingGet($ascending, $filter, $order_by, $page, $size);
+    $result = $apiInstance->getBankLinkAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FundingApi->getBankLinkAllUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -721,6 +753,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **string**| currency_conversion | [optional]
  **filter** | **string**| filter | [optional]
  **order_by** | **string**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -742,7 +775,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getBankLinkUsingGet**
-> \com\hydrogen\nucleus\Model\BankLink getBankLinkUsingGet($bank_link_id)
+> \com\hydrogen\nucleus\Model\BankLink getBankLinkUsingGet($bank_link_id, $currency_conversion)
 
 Retrieve a bank link
 
@@ -764,6 +797,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -774,9 +810,10 @@ $apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     $config
 );
 $bank_link_id = "bank_link_id_example"; // string | UUID bank_link_id
+$currency_conversion = "currency_conversion_example"; // string | USD
 
 try {
-    $result = $apiInstance->getBankLinkUsingGet($bank_link_id);
+    $result = $apiInstance->getBankLinkUsingGet($bank_link_id, $currency_conversion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FundingApi->getBankLinkUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -789,6 +826,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bank_link_id** | [**string**](../Model/.md)| UUID bank_link_id |
+ **currency_conversion** | **string**| USD | [optional]
 
 ### Return type
 
@@ -806,7 +844,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDepositAllUsingGet**
-> \com\hydrogen\nucleus\Model\PageDailyDeposit_ getDepositAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageDailyDeposit_ getDepositAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size)
 
 List all deposit requests
 
@@ -828,6 +866,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -838,13 +879,14 @@ $apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     $config
 );
 $ascending = false; // bool | ascending
+$currency_conversion = "currency_conversion_example"; // string | currency_conversion
 $filter = "filter_example"; // string | filter
 $order_by = "update_date"; // string | order_by
 $page = 0; // int | page
 $size = 25; // int | size
 
 try {
-    $result = $apiInstance->getDepositAllUsingGet($ascending, $filter, $order_by, $page, $size);
+    $result = $apiInstance->getDepositAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FundingApi->getDepositAllUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -857,6 +899,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **string**| currency_conversion | [optional]
  **filter** | **string**| filter | [optional]
  **order_by** | **string**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -878,7 +921,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDepositUsingGet**
-> \com\hydrogen\nucleus\Model\DailyDeposit getDepositUsingGet($deposit_id)
+> \com\hydrogen\nucleus\Model\DailyDeposit getDepositUsingGet($deposit_id, $currency_conversion)
 
 Retrieve a deposit request
 
@@ -900,6 +943,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -910,9 +956,10 @@ $apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     $config
 );
 $deposit_id = "deposit_id_example"; // string | UUID deposit_id
+$currency_conversion = "currency_conversion_example"; // string | USD
 
 try {
-    $result = $apiInstance->getDepositUsingGet($deposit_id);
+    $result = $apiInstance->getDepositUsingGet($deposit_id, $currency_conversion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FundingApi->getDepositUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -925,6 +972,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deposit_id** | [**string**](../Model/.md)| UUID deposit_id |
+ **currency_conversion** | **string**| USD | [optional]
 
 ### Return type
 
@@ -942,7 +990,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFundingAllUsingGet**
-> \com\hydrogen\nucleus\Model\PageFunding_ getFundingAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageFunding_ getFundingAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size)
 
 List all funding requests
 
@@ -964,6 +1012,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -974,13 +1025,14 @@ $apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     $config
 );
 $ascending = false; // bool | ascending
+$currency_conversion = "currency_conversion_example"; // string | currency_conversion
 $filter = "filter_example"; // string | filter
 $order_by = "update_date"; // string | order_by
 $page = 0; // int | page
 $size = 25; // int | size
 
 try {
-    $result = $apiInstance->getFundingAllUsingGet($ascending, $filter, $order_by, $page, $size);
+    $result = $apiInstance->getFundingAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FundingApi->getFundingAllUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -993,6 +1045,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **string**| currency_conversion | [optional]
  **filter** | **string**| filter | [optional]
  **order_by** | **string**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -1014,7 +1067,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFundingUsingGet**
-> \com\hydrogen\nucleus\Model\Funding getFundingUsingGet($funding_id)
+> \com\hydrogen\nucleus\Model\Funding getFundingUsingGet($funding_id, $currency_conversion)
 
 Retrieve a funding request
 
@@ -1036,6 +1089,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1046,9 +1102,10 @@ $apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     $config
 );
 $funding_id = "funding_id_example"; // string | UUID funding_id
+$currency_conversion = "currency_conversion_example"; // string | USD
 
 try {
-    $result = $apiInstance->getFundingUsingGet($funding_id);
+    $result = $apiInstance->getFundingUsingGet($funding_id, $currency_conversion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FundingApi->getFundingUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -1061,6 +1118,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **funding_id** | [**string**](../Model/.md)| UUID funding_id |
+ **currency_conversion** | **string**| USD | [optional]
 
 ### Return type
 
@@ -1078,7 +1136,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTransferAllUsingGet**
-> \com\hydrogen\nucleus\Model\PageExternalAccountTransfer_ getTransferAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageExternalAccountTransfer_ getTransferAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size)
 
 List all transfer requests
 
@@ -1100,6 +1158,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1110,13 +1171,14 @@ $apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     $config
 );
 $ascending = false; // bool | ascending
+$currency_conversion = "currency_conversion_example"; // string | currency_conversion
 $filter = "filter_example"; // string | filter
 $order_by = "update_date"; // string | order_by
 $page = 0; // int | page
 $size = 25; // int | size
 
 try {
-    $result = $apiInstance->getTransferAllUsingGet($ascending, $filter, $order_by, $page, $size);
+    $result = $apiInstance->getTransferAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FundingApi->getTransferAllUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -1129,6 +1191,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **string**| currency_conversion | [optional]
  **filter** | **string**| filter | [optional]
  **order_by** | **string**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -1150,7 +1213,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTransferUsingGet**
-> \com\hydrogen\nucleus\Model\ExternalAccountTransfer getTransferUsingGet($external_account_transfer_id, $transfer_id)
+> \com\hydrogen\nucleus\Model\ExternalAccountTransfer getTransferUsingGet($transfer_id, $currency_conversion)
 
 Retrieve a transfer request
 
@@ -1172,6 +1235,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1181,11 +1247,11 @@ $apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     new GuzzleHttp\Client(),
     $config
 );
-$external_account_transfer_id = "external_account_transfer_id_example"; // string | UUID external_account_transfer_id
-$transfer_id = "transfer_id_example"; // string | transfer_id
+$transfer_id = "transfer_id_example"; // string | UUID external_account_transfer_id
+$currency_conversion = "currency_conversion_example"; // string | USD
 
 try {
-    $result = $apiInstance->getTransferUsingGet($external_account_transfer_id, $transfer_id);
+    $result = $apiInstance->getTransferUsingGet($transfer_id, $currency_conversion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FundingApi->getTransferUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -1197,8 +1263,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **external_account_transfer_id** | [**string**](../Model/.md)| UUID external_account_transfer_id |
- **transfer_id** | [**string**](../Model/.md)| transfer_id |
+ **transfer_id** | [**string**](../Model/.md)| UUID external_account_transfer_id |
+ **currency_conversion** | **string**| USD | [optional]
 
 ### Return type
 
@@ -1216,7 +1282,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWithdrawalAllUsingGet**
-> \com\hydrogen\nucleus\Model\PageDailyWithdrawal_ getWithdrawalAllUsingGet($ascending, $filter, $order_by, $page, $size)
+> \com\hydrogen\nucleus\Model\PageDailyWithdrawal_ getWithdrawalAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size)
 
 List all withdrawal requests
 
@@ -1238,6 +1304,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1248,13 +1317,14 @@ $apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     $config
 );
 $ascending = false; // bool | ascending
+$currency_conversion = "currency_conversion_example"; // string | currency_conversion
 $filter = "filter_example"; // string | filter
 $order_by = "update_date"; // string | order_by
 $page = 0; // int | page
 $size = 25; // int | size
 
 try {
-    $result = $apiInstance->getWithdrawalAllUsingGet($ascending, $filter, $order_by, $page, $size);
+    $result = $apiInstance->getWithdrawalAllUsingGet($ascending, $currency_conversion, $filter, $order_by, $page, $size);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FundingApi->getWithdrawalAllUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -1267,6 +1337,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **string**| currency_conversion | [optional]
  **filter** | **string**| filter | [optional]
  **order_by** | **string**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -1288,7 +1359,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWithdrawalUsingGet**
-> \com\hydrogen\nucleus\Model\DailyWithdrawal getWithdrawalUsingGet($withdrawal_id)
+> \com\hydrogen\nucleus\Model\DailyWithdrawal getWithdrawalUsingGet($withdrawal_id, $currency_conversion)
 
 Retrieve a withdrawal request
 
@@ -1310,6 +1381,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1320,9 +1394,10 @@ $apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     $config
 );
 $withdrawal_id = "withdrawal_id_example"; // string | UUID withdrawal_id
+$currency_conversion = "currency_conversion_example"; // string | USD
 
 try {
-    $result = $apiInstance->getWithdrawalUsingGet($withdrawal_id);
+    $result = $apiInstance->getWithdrawalUsingGet($withdrawal_id, $currency_conversion);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FundingApi->getWithdrawalUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -1335,6 +1410,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **withdrawal_id** | [**string**](../Model/.md)| UUID withdrawal_id |
+ **currency_conversion** | **string**| USD | [optional]
 
 ### Return type
 
@@ -1374,6 +1450,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1438,6 +1517,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1504,6 +1586,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1570,6 +1655,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1636,6 +1724,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -1702,6 +1793,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }

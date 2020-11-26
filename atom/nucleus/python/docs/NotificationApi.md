@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**delete_notification_client_using_delete**](NotificationApi.md#delete_notification_client_using_delete) | **DELETE** /notification_client/{notification_client_id} | Delete a Notification Client
 [**delete_notification_setting_using_delete**](NotificationApi.md#delete_notification_setting_using_delete) | **DELETE** /notification_setting/{notification_setting_id} | Delete a Notification Setting
 [**delete_notification_using_delete**](NotificationApi.md#delete_notification_using_delete) | **DELETE** /notification/{notification_id} | Delete a Notification
-[**get_notification_all_using_get**](NotificationApi.md#get_notification_all_using_get) | **GET** /notification | Get All Notification
+[**get_notification_all_using_get**](NotificationApi.md#get_notification_all_using_get) | **GET** /notification | Get All Notifications
 [**get_notification_client_all_using_get**](NotificationApi.md#get_notification_client_all_using_get) | **GET** /notification_client | List all Notification Client
 [**get_notification_client_using_get**](NotificationApi.md#get_notification_client_using_get) | **GET** /notification_client/{notification_client_id} | Retrieve a Notification Client
 [**get_notification_setting_all_using_get**](NotificationApi.md#get_notification_setting_all_using_get) | **GET** /notification_setting | List all Notification Setting
@@ -47,10 +47,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification_client = nucleus_api.NotificationClient() # NotificationClient | notificationClient
@@ -110,10 +111,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification_setting = nucleus_api.NotificationSetting() # NotificationSetting | notificationSetting
@@ -173,10 +175,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification = nucleus_api.Notification() # Notification | notification
@@ -236,10 +239,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification_client_id = 'notification_client_id_example' # str | notification_client_id
@@ -298,10 +302,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification_setting_id = 'notification_setting_id_example' # str | notification_setting_id
@@ -360,10 +365,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification_id = 'notification_id_example' # str | UUID notification_id
@@ -399,7 +405,7 @@ void (empty response body)
 # **get_notification_all_using_get**
 > PageNotification get_notification_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
 
-Get All Notification
+Get All Notifications
 
 Get All Notification. 
 
@@ -422,10 +428,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -435,7 +442,7 @@ page = 0 # int | page (optional) (default to 0)
 size = 25 # int | size (optional) (default to 25)
 
 try:
-    # Get All Notification
+    # Get All Notifications
     api_response = api_instance.get_notification_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
@@ -493,10 +500,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -564,10 +572,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification_client_id = 'notification_client_id_example' # str | notification_client_id
@@ -627,10 +636,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -698,10 +708,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification_setting_id = 'notification_setting_id_example' # str | notification_setting_id
@@ -761,10 +772,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification_id = 'notification_id_example' # str | notification_id
@@ -824,10 +836,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification_client = nucleus_api.NotificationClient() # NotificationClient | notification_client
@@ -889,10 +902,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification_setting = nucleus_api.NotificationSetting() # NotificationSetting | notification_setting
@@ -954,10 +968,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification = nucleus_api.Notification() # Notification | notification

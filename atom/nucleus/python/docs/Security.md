@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **asset_class** | **str** | Security asset class | [optional] 
+**broker** | **str** | Security broker | [optional] 
 **category** | **str** | Security category | [optional] 
 **create_date** | **datetime** |  | [optional] 
 **currency_code** | **str** | currency_code | [optional] 

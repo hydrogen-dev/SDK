@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **on_track** | **BOOLEAN** | onTrack | [optional] 
 **progress** | **Float** | progress | [optional] 
 **projection_balance** | **Float** | projectionBalance | [optional] 
-**projection_date** | **DateTime** | projectionDate | [optional] 
+**projection_date** | **Date** | projectionDate | [optional] 
 **secondary_id** | **String** |  | [optional] 
 **status_time_stamp** | **DateTime** | statusTimeStamp | 
 **update_date** | **DateTime** |  | [optional] 

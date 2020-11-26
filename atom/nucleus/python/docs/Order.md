@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **str** | accountId | [optional] 
 **create_date** | **datetime** |  | [optional] 
-**_date** | **datetime** | date | 
+**_date** | **date** | date | 
 **id** | **str** |  | [optional] 
 **is_read** | **bool** | isRead | [optional] 
 **metadata** | **dict(str, str)** | metadata | [optional] 

@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **creditLimit** | **Number** | creditLimit | [optional] 
 **currencyCode** | **String** | currencyCode | 
 **expiryDate** | **Date** | expiryDate | [optional] 
+**fulfillment** | **String** | fulfillment | [optional] 
 **id** | **String** |  | [optional] 
 **institutionName** | **String** | institutionName | 
 **isActive** | **Boolean** | is_active | [optional] 

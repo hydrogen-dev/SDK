@@ -7,16 +7,20 @@ Name | Type | Description | Notes
 **amount** | **Float** | amount | [optional] 
 **balance** | **Float** | balance | [optional] 
 **category** | **String** | category | [optional] 
+**check** | [**Check**](Check.md) |  | [optional] 
 **create_date** | **DateTime** |  | [optional] 
 **currency_code** | **String** | currency_code | [optional] 
 **date** | **DateTime** | date | 
 **date_available** | **DateTime** | dateAvailable | [optional] 
 **description** | **String** | description | [optional] 
 **id** | **String** |  | [optional] 
+**is_cleansed** | **BOOLEAN** | is_cleansed | [optional] 
 **is_read** | **BOOLEAN** | isRead | [optional] 
+**is_recurring** | **BOOLEAN** | is_recurring | [optional] 
 **location** | [**Location**](Location.md) | location | [optional] 
 **memo** | **String** | memo | [optional] 
 **merchant** | **String** | merchant | [optional] 
+**merchant_category_code** | **Integer** | merchant_category_code | [optional] 
 **model_id** | **String** | modelId | 
 **portfolio_id** | **String** | portfolioId | 
 **price** | **Float** | price | [optional] 

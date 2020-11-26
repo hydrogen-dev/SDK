@@ -5,22 +5,22 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **telecomPayments** | **Float** |  |  [optional]
-**frequencyUnit** | [**FrequencyUnitEnum**](#FrequencyUnitEnum) |  |  [optional]
-**debtPayments** | **Float** |  |  [optional]
-**lookbackPeriods** | **Integer** |  |  [optional]
-**emergencyFundDuration** | **Integer** |  | 
-**housingCost** | **Float** |  |  [optional]
+**savingsHorizon** | **List&lt;Integer&gt;** |  |  [optional]
 **insurancePayments** | **Float** |  |  [optional]
+**clientId** | [**UUID**](UUID.md) |  |  [optional]
+**aggregationAccountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
 **interestRate** | **Float** |  |  [optional]
 **otherExpenses** | **Object** |  |  [optional]
-**clientId** | [**UUID**](UUID.md) |  |  [optional]
-**currentEmergencyFundBalance** | **Float** |  |  [optional]
-**aggregationAccountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
-**accountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
-**utilityPayments** | **Float** |  |  [optional]
-**savingsHorizon** | **List&lt;Integer&gt;** |  |  [optional]
+**emergencyFundDuration** | **Integer** |  | 
+**debtPayments** | **Float** |  |  [optional]
+**housingCost** | **Float** |  |  [optional]
 **foodCosts** | **Float** |  |  [optional]
+**utilityPayments** | **Float** |  |  [optional]
+**accountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
 **transportationCosts** | **Float** |  |  [optional]
+**lookbackPeriods** | **Integer** |  |  [optional]
+**currentEmergencyFundBalance** | **Float** |  |  [optional]
+**frequencyUnit** | [**FrequencyUnitEnum**](#FrequencyUnitEnum) |  |  [optional]
 
 
 <a name="FrequencyUnitEnum"></a>

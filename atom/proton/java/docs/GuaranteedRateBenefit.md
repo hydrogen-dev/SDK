@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**minRate** | **Float** |  |  [optional]
 **maxRate** | **Float** |  |  [optional]
 **endPeriod** | **Integer** |  |  [optional]
+**minRate** | **Float** |  |  [optional]
 **startPeriod** | **Integer** |  |  [optional]
 
 

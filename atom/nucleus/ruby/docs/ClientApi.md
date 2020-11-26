@@ -20,9 +20,8 @@ Method | HTTP request | Description
 [**get_client_hydro_using_get**](ClientApi.md#get_client_hydro_using_get) | **GET** /client_hydro/{client_hydro_id} | Retrieve a client-hydro relationship
 [**get_client_status_all_using_get**](ClientApi.md#get_client_status_all_using_get) | **GET** /client_status | List all client statuses
 [**get_client_status_using_get**](ClientApi.md#get_client_status_using_get) | **GET** /client_status/{client_status_id} | Retrieve an client status
-[**get_client_transaction_using_get**](ClientApi.md#get_client_transaction_using_get) | **GET** /client/{client_id}/transaction | List all client transactions
+[**get_client_transaction_all_using_get**](ClientApi.md#get_client_transaction_all_using_get) | **GET** /client/{client_id}/transaction | List all client transactions
 [**get_client_using_get**](ClientApi.md#get_client_using_get) | **GET** /client/{client_id} | Retrieve a client
-[**get_total_clients_using_get**](ClientApi.md#get_total_clients_using_get) | **GET** /client/total_clients | total clients
 [**update_client_hydro_using_put**](ClientApi.md#update_client_hydro_using_put) | **PUT** /client_hydro/{client_hydro_id} | Update a client-hydro relationship
 [**update_client_status_using_put**](ClientApi.md#update_client_status_using_put) | **PUT** /client_status/{client_status_id} | Update an client status
 [**update_client_using_put**](ClientApi.md#update_client_using_put) | **PUT** /client/{client_id} | Update a client
@@ -46,8 +45,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 
@@ -102,8 +102,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 
@@ -158,8 +159,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 
@@ -214,8 +216,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 
@@ -269,8 +272,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 
@@ -324,8 +328,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 
@@ -362,7 +367,7 @@ nil (empty response body)
 
 
 # **get_client_account_overview_using_get**
-> ClientAccountVO get_client_account_overview_using_get(client_id, opts)
+> Object get_client_account_overview_using_get(client_id, opts)
 
 List all client Account overview
 
@@ -377,8 +382,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 
@@ -408,7 +414,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ClientAccountVO**](ClientAccountVO.md)
+**Object**
 
 ### Authorization
 
@@ -422,7 +428,7 @@ Name | Type | Description  | Notes
 
 
 # **get_client_advisor_overview_using_get**
-> AdvisorOverviewVO get_client_advisor_overview_using_get(client_id, opts)
+> Object get_client_advisor_overview_using_get(client_id, opts)
 
 Advisor overview
 
@@ -437,8 +443,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 
@@ -466,7 +473,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AdvisorOverviewVO**](AdvisorOverviewVO.md)
+**Object**
 
 ### Authorization
 
@@ -497,8 +504,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 
@@ -562,14 +570,16 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 
 client_id = 'client_id_example' # String | UUID client_id
 
 opts = { 
+  currency_conversion: 'currency_conversion_example', # String | Currency Code
   end_date: Date.parse('null'), # Date | end date
   exclude_subledger: false, # BOOLEAN | exclude_subledger
   get_latest: true, # BOOLEAN | true or false
@@ -591,6 +601,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_id** | [**String**](.md)| UUID client_id | 
+ **currency_conversion** | **String**| Currency Code | [optional] 
  **end_date** | **Date**| end date | [optional] [default to null]
  **exclude_subledger** | **BOOLEAN**| exclude_subledger | [optional] [default to false]
  **get_latest** | **BOOLEAN**| true or false | [optional] 
@@ -630,8 +641,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 
@@ -690,14 +702,16 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 
 client_id = 'client_id_example' # String | UUID client_id
 
 opts = { 
+  currency_conversion: 'currency_conversion_example', # String | Currency Code
   end_date: 'end_date_example', # String | end date - yyyy-mm-dd
   get_latest: true, # BOOLEAN | true or false
   start_date: 'start_date_example' # String | start date - yyyy-mm-dd
@@ -717,6 +731,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_id** | [**String**](.md)| UUID client_id | 
+ **currency_conversion** | **String**| Currency Code | [optional] 
  **end_date** | **String**| end date - yyyy-mm-dd | [optional] 
  **get_latest** | **BOOLEAN**| true or false | [optional] 
  **start_date** | **String**| start date - yyyy-mm-dd | [optional] 
@@ -754,8 +769,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 
@@ -819,8 +835,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 
@@ -875,8 +892,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 
@@ -940,8 +958,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 
@@ -978,8 +997,8 @@ Name | Type | Description  | Notes
 
 
 
-# **get_client_transaction_using_get**
-> PagePortfolioTransaction get_client_transaction_using_get(client_id, opts)
+# **get_client_transaction_all_using_get**
+> PagePortfolioTransaction get_client_transaction_all_using_get(client_id, opts)
 
 List all client transactions
 
@@ -996,8 +1015,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 
@@ -1005,19 +1025,20 @@ client_id = 'client_id_example' # String | UUID client_id
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
-  end_date: DateTime.parse('null'), # DateTime | end_date
+  currency_conversion: 'currency_conversion_example', # String | currency_conversion
+  end_date: 'end_date_example', # String | end date - yyyy-mm-dd
   order_by: 'update_date', # String | order_by
   page: 0, # Integer | page
   size: 25, # Integer | size
-  start_date: DateTime.parse('null') # DateTime | start_date
+  start_date: 'start_date_example' # String | start date - yyyy-mm-dd
 }
 
 begin
   #List all client transactions
-  result = api_instance.get_client_transaction_using_get(client_id, opts)
+  result = api_instance.get_client_transaction_all_using_get(client_id, opts)
   p result
 rescue NucleusApi::ApiError => e
-  puts "Exception when calling ClientApi->get_client_transaction_using_get: #{e}"
+  puts "Exception when calling ClientApi->get_client_transaction_all_using_get: #{e}"
 end
 ```
 
@@ -1027,11 +1048,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **client_id** | [**String**](.md)| UUID client_id | 
  **ascending** | **BOOLEAN**| ascending | [optional] [default to false]
- **end_date** | **DateTime**| end_date | [optional] [default to null]
+ **currency_conversion** | **String**| currency_conversion | [optional] 
+ **end_date** | **String**| end date - yyyy-mm-dd | [optional] 
  **order_by** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
  **size** | **Integer**| size | [optional] [default to 25]
- **start_date** | **DateTime**| start_date | [optional] [default to null]
+ **start_date** | **String**| start date - yyyy-mm-dd | [optional] 
 
 ### Return type
 
@@ -1066,8 +1088,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 
@@ -1104,69 +1127,6 @@ Name | Type | Description  | Notes
 
 
 
-# **get_total_clients_using_get**
-> ClientAnalyticsResponse get_total_clients_using_get(opts)
-
-total clients
-
-### Example
-```ruby
-# load the gem
-require 'nucleus_api'
-# Setup authorization
-NucleusApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
-end
-
-
-api_instance = NucleusApi::ClientApi.new
-
-opts = { 
-  as_of_date: DateTime.parse('#{new java.util.Date()}'), # DateTime | as_of_date
-  client_id: 'client_id_example', # String | client_id
-  end_date: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | end_date
-  show_history: false, # BOOLEAN | show_history
-  start_date: DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | start_date
-}
-
-begin
-  #total clients
-  result = api_instance.get_total_clients_using_get(opts)
-  p result
-rescue NucleusApi::ApiError => e
-  puts "Exception when calling ClientApi->get_total_clients_using_get: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **as_of_date** | **DateTime**| as_of_date | [optional] [default to #{new java.util.Date()}]
- **client_id** | **String**| client_id | [optional] 
- **end_date** | **DateTime**| end_date | [optional] 
- **show_history** | **BOOLEAN**| show_history | [optional] [default to false]
- **start_date** | **DateTime**| start_date | [optional] 
-
-### Return type
-
-[**ClientAnalyticsResponse**](ClientAnalyticsResponse.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-
-
 # **update_client_hydro_using_put**
 > ClientHydro update_client_hydro_using_put(client_hydro, client_hydro_id)
 
@@ -1185,8 +1145,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 
@@ -1244,8 +1205,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 
@@ -1303,8 +1265,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::ClientApi.new
 

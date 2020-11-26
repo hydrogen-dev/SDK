@@ -22,10 +22,14 @@ Name | Type | Description | Notes
 **metadata** | **map[string,string]** | metadata | [optional] 
 **next_request_date** | [**\DateTime**](\DateTime.md) | nextRequestDate | [optional] 
 **portfolio_id** | **string** | portfolioId | [optional] 
+**receiving_bank_link_id** | **string** | receivingBankLinkId | [optional] 
 **secondary_id** | **string** |  | [optional] 
 **start_date** | [**\DateTime**](\DateTime.md) | startDate | 
 **support_ticket_id** | **string** | supportTicketId | [optional] 
+**threshold_amount** | **double** | thresholdAmount | [optional] 
 **transfer_id** | **string** | transferId | [optional] 
+**transfer_speed** | **string** | transferSpeed | [optional] 
+**transfer_type** | **string** | transferType | [optional] 
 **update_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

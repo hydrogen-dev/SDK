@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **create_date** | **datetime** |  | [optional] 
 **id** | **str** |  | [optional] 
 **is_buy** | **bool** | isBuy | [optional] 
+**is_fee** | **bool** | isFee | [optional] 
+**is_transfer** | **str** |  | [optional] 
 **metadata** | **dict(str, str)** |  | [optional] 
 **secondary_id** | **str** |  | [optional] 
 **subcategory** | **str** | subcategory | [optional] 

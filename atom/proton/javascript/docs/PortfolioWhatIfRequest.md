@@ -3,19 +3,20 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**alteredPortfolioWeights** | **[Number]** |  | 
+**createLog** | **Boolean** |  | [optional] [default to false]
+**aggregationAccountId** | **String** |  | [optional] 
+**allocationId** | **String** |  | [optional] 
+**modelId** | **String** |  | [optional] 
+**endDate** | **String** |  | [optional] 
+**currentPortfolioTickers** | **[String]** |  | [optional] 
 **useProxyData** | **Boolean** |  | [optional] [default to false]
 **alteredPortfolioTickers** | **[String]** |  | [optional] 
-**currentPortfolioTickers** | **[String]** |  | [optional] 
 **startDate** | **String** |  | [optional] 
-**endDate** | **String** |  | [optional] 
-**modelId** | **String** |  | [optional] 
-**allocationId** | **String** |  | [optional] 
-**accountId** | **String** |  | [optional] 
-**portfolioId** | **String** |  | [optional] 
-**aggregationAccountId** | **String** |  | [optional] 
-**alteredPortfolioWeights** | **[Number]** |  | 
-**marketDataSource** | **String** |  | [optional] [default to 'nucleus']
 **currentPortfolioWeights** | **[Number]** |  | [optional] 
+**accountId** | **String** |  | [optional] 
+**marketDataSource** | **String** |  | [optional] [default to 'nucleus']
+**portfolioId** | **String** |  | [optional] 
 
 
 <a name="MarketDataSourceEnum"></a>

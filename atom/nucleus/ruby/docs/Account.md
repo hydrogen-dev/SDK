@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **metadata** | **Hash&lt;String, String&gt;** |  | [optional] 
 **name** | **String** | name | 
 **secondary_id** | **String** |  | [optional] 
+**status** | **String** | status | [optional] 
 **update_date** | **DateTime** |  | [optional] 
 
 

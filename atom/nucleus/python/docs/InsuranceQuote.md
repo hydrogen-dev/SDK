@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **currency_code** | **str** | currencyCode | 
 **discounts** | [**list[InsuranceDiscountMap]**](InsuranceDiscountMap.md) |  | [optional] 
 **end_date** | **datetime** |  | [optional] 
+**financial_offer_id** | **str** | financial_offer_id | [optional] 
 **id** | **str** |  | [optional] 
 **is_active** | **bool** | is_active | [optional] 
 **metadata** | **dict(str, str)** |  | [optional] 

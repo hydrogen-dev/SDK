@@ -4,10 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **category** | **String** | category | [optional] 
-**coverageAmount** | **String** | coverageAmount | 
+**coverageAmount** | **Number** | coverageAmount | 
 **createDate** | **Date** |  | [optional] 
 **currencyCode** | **String** | currencyCode | 
-**deductible** | **String** | deductible | [optional] 
+**deductible** | **Number** | deductible | [optional] 
 **description** | **String** | description | [optional] 
 **id** | **String** |  | [optional] 
 **isActive** | **Boolean** | is_active | [optional] 

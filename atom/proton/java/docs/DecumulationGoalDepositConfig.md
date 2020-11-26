@@ -4,13 +4,31 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**depEndReference** | [**DepEndReferenceEnum**](#DepEndReferenceEnum) |  |  [optional]
 **depInflation** | **Float** |  |  [optional]
 **depAmount** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**depFrequency** | [**DepFrequencyEnum**](#DepFrequencyEnum) |  |  [optional]
 **depStartReference** | [**DepStartReferenceEnum**](#DepStartReferenceEnum) |  |  [optional]
+**depFrequency** | [**DepFrequencyEnum**](#DepFrequencyEnum) |  |  [optional]
 **depEndPeriod** | **Integer** |  |  [optional]
 **depStartPeriod** | **Integer** |  |  [optional]
-**depEndReference** | [**DepEndReferenceEnum**](#DepEndReferenceEnum) |  |  [optional]
+
+
+<a name="DepEndReferenceEnum"></a>
+## Enum: DepEndReferenceEnum
+Name | Value
+---- | -----
+A_START | &quot;a_start&quot;
+A_END | &quot;a_end&quot;
+D_END | &quot;d_end&quot;
+
+
+<a name="DepStartReferenceEnum"></a>
+## Enum: DepStartReferenceEnum
+Name | Value
+---- | -----
+A_START | &quot;a_start&quot;
+A_END | &quot;a_end&quot;
+D_END | &quot;d_end&quot;
 
 
 <a name="DepFrequencyEnum"></a>
@@ -24,24 +42,6 @@ MONTH | &quot;month&quot;
 TWO_WEEKS | &quot;two_weeks&quot;
 WEEK | &quot;week&quot;
 DAY | &quot;day&quot;
-
-
-<a name="DepStartReferenceEnum"></a>
-## Enum: DepStartReferenceEnum
-Name | Value
----- | -----
-A_START | &quot;a_start&quot;
-A_END | &quot;a_end&quot;
-D_END | &quot;d_end&quot;
-
-
-<a name="DepEndReferenceEnum"></a>
-## Enum: DepEndReferenceEnum
-Name | Value
----- | -----
-A_START | &quot;a_start&quot;
-A_END | &quot;a_end&quot;
-D_END | &quot;d_end&quot;
 
 
 

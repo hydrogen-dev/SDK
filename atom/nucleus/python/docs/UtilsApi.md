@@ -4,29 +4,29 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_account_status_using_post**](UtilsApi.md#create_account_status_using_post) | **POST** /account_status | Create an account status
+[**create_reason_code_using_post**](UtilsApi.md#create_reason_code_using_post) | **POST** /reason_code | Create a reason code
 [**create_stage_using_post**](UtilsApi.md#create_stage_using_post) | **POST** /stage | Create an account stage
 [**create_transaction_code_using_post**](UtilsApi.md#create_transaction_code_using_post) | **POST** /transaction_code | Create a transaction code
-[**delete_account_status_using_delete**](UtilsApi.md#delete_account_status_using_delete) | **DELETE** /account_status/{account_status_id} | Delete an account status
+[**delete_reason_code_using_delete**](UtilsApi.md#delete_reason_code_using_delete) | **DELETE** /reason_code/{reason_code_id} | Delete a reason code
 [**delete_stage_using_delete**](UtilsApi.md#delete_stage_using_delete) | **DELETE** /stage/{stage_id} | Delete an account stage
 [**delete_transaction_code_using_delete**](UtilsApi.md#delete_transaction_code_using_delete) | **DELETE** /transaction_code/{transaction_code_id} | Delete a transaction code
-[**get_account_status_all_using_get**](UtilsApi.md#get_account_status_all_using_get) | **GET** /account_status | List all account statuses
-[**get_account_status_using_get**](UtilsApi.md#get_account_status_using_get) | **GET** /account_status/{account_status_id} | Retrieve an account status
+[**get_reason_code_all_using_get**](UtilsApi.md#get_reason_code_all_using_get) | **GET** /reason_code | List all reason codes
+[**get_reason_code_using_get**](UtilsApi.md#get_reason_code_using_get) | **GET** /reason_code/{reason_code_id} | Retrieve a reason code
 [**get_stage_all_using_get**](UtilsApi.md#get_stage_all_using_get) | **GET** /stage | List all account stages
 [**get_stage_using_get**](UtilsApi.md#get_stage_using_get) | **GET** /stage/{stage_id} | Retrieve an account stage
 [**get_transaction_code_all_using_get**](UtilsApi.md#get_transaction_code_all_using_get) | **GET** /transaction_code | List all transaction codes
 [**get_transaction_code_using_get**](UtilsApi.md#get_transaction_code_using_get) | **GET** /transaction_code/{transaction_code_id} | Retrieve a transaction code
-[**update_account_status_using_put**](UtilsApi.md#update_account_status_using_put) | **PUT** /account_status/{account_status_id} | Update an account status
+[**update_reason_code_using_put**](UtilsApi.md#update_reason_code_using_put) | **PUT** /reason_code/{reason_code_id} | Update a reason code
 [**update_stage_using_put**](UtilsApi.md#update_stage_using_put) | **PUT** /stage/{stage_id} | Update an account stage
 [**update_transaction_code_using_put**](UtilsApi.md#update_transaction_code_using_put) | **PUT** /transaction_code/{transaction_code_id} | Update a transaction code
 
 
-# **create_account_status_using_post**
-> AccountStatus create_account_status_using_post(account_status_request)
+# **create_reason_code_using_post**
+> ReasonCode create_reason_code_using_post(reason_code_request)
 
-Create an account status
+Create a reason code
 
-Create an account status record for an account.
+Create a new reason code for your firm.
 
 ### Example
 ```python
@@ -47,31 +47,32 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
-account_status_request = nucleus_api.AccountStatus() # AccountStatus | accountStatusRequest
+reason_code_request = nucleus_api.ReasonCode() # ReasonCode | reasonCodeRequest
 
 try:
-    # Create an account status
-    api_response = api_instance.create_account_status_using_post(account_status_request)
+    # Create a reason code
+    api_response = api_instance.create_reason_code_using_post(reason_code_request)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UtilsApi->create_account_status_using_post: %s\n" % e)
+    print("Exception when calling UtilsApi->create_reason_code_using_post: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_status_request** | [**AccountStatus**](AccountStatus.md)| accountStatusRequest | 
+ **reason_code_request** | [**ReasonCode**](ReasonCode.md)| reasonCodeRequest | 
 
 ### Return type
 
-[**AccountStatus**](AccountStatus.md)
+[**ReasonCode**](ReasonCode.md)
 
 ### Authorization
 
@@ -110,10 +111,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 stage_request = nucleus_api.Stage() # Stage | stageRequest
@@ -173,10 +175,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 transaction_request = nucleus_api.TransactionCode() # TransactionCode | transactionRequest
@@ -210,12 +213,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_account_status_using_delete**
-> delete_account_status_using_delete(account_status_id)
+# **delete_reason_code_using_delete**
+> delete_reason_code_using_delete(reason_code_id)
 
-Delete an account status
+Delete a reason code
 
-Permanently delete an account status record from an account’s history.
+Permanently delete a reason code for your firm.
 
 ### Example
 ```python
@@ -236,26 +239,27 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
-account_status_id = 'account_status_id_example' # str | UUID account_status_id
+reason_code_id = 'reason_code_id_example' # str | UUID reason_code_id
 
 try:
-    # Delete an account status
-    api_instance.delete_account_status_using_delete(account_status_id)
+    # Delete a reason code
+    api_instance.delete_reason_code_using_delete(reason_code_id)
 except ApiException as e:
-    print("Exception when calling UtilsApi->delete_account_status_using_delete: %s\n" % e)
+    print("Exception when calling UtilsApi->delete_reason_code_using_delete: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_status_id** | [**str**](.md)| UUID account_status_id | 
+ **reason_code_id** | [**str**](.md)| UUID reason_code_id | 
 
 ### Return type
 
@@ -298,10 +302,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 stage_id = 'stage_id_example' # str | UUID stage_id
@@ -360,10 +365,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 transaction_code_id = 'transaction_code_id_example' # str | UUID transaction_code_id
@@ -396,12 +402,12 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_account_status_all_using_get**
-> PageAccountStatus get_account_status_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+# **get_reason_code_all_using_get**
+> PageReasonCode get_reason_code_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
 
-List all account statuses
+List all reason codes
 
-Get the account status history information for all accounts.
+Get the information for all reason codes defined by your firm.
 
 ### Example
 ```python
@@ -422,10 +428,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -435,11 +442,11 @@ page = 0 # int | page (optional) (default to 0)
 size = 25 # int | size (optional) (default to 25)
 
 try:
-    # List all account statuses
-    api_response = api_instance.get_account_status_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    # List all reason codes
+    api_response = api_instance.get_reason_code_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UtilsApi->get_account_status_all_using_get: %s\n" % e)
+    print("Exception when calling UtilsApi->get_reason_code_all_using_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -454,7 +461,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PageAccountStatus**](PageAccountStatus.md)
+[**PageReasonCode**](PageReasonCode.md)
 
 ### Authorization
 
@@ -467,12 +474,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_account_status_using_get**
-> AccountStatus get_account_status_using_get(account_status_id)
+# **get_reason_code_using_get**
+> ReasonCode get_reason_code_using_get(reason_code_id)
 
-Retrieve an account status
+Retrieve a reason code
 
-Retrieve the information for a specific account status record for an account.
+Retrieve the information for a reason code defined by your firm.
 
 ### Example
 ```python
@@ -493,31 +500,32 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
-account_status_id = 'account_status_id_example' # str | UUID account_status_id
+reason_code_id = 'reason_code_id_example' # str | UUID reason_code_id
 
 try:
-    # Retrieve an account status
-    api_response = api_instance.get_account_status_using_get(account_status_id)
+    # Retrieve a reason code
+    api_response = api_instance.get_reason_code_using_get(reason_code_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UtilsApi->get_account_status_using_get: %s\n" % e)
+    print("Exception when calling UtilsApi->get_reason_code_using_get: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_status_id** | [**str**](.md)| UUID account_status_id | 
+ **reason_code_id** | [**str**](.md)| UUID reason_code_id | 
 
 ### Return type
 
-[**AccountStatus**](AccountStatus.md)
+[**ReasonCode**](ReasonCode.md)
 
 ### Authorization
 
@@ -556,10 +564,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -627,10 +636,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 stage_id = 'stage_id_example' # str | UUID stage_id
@@ -690,10 +700,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -761,10 +772,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 transaction_code_id = 'transaction_code_id_example' # str | UUID transaction_code_id
@@ -798,12 +810,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_account_status_using_put**
-> AccountStatus update_account_status_using_put(account_status, account_status_id)
+# **update_reason_code_using_put**
+> ReasonCode update_reason_code_using_put(reason_code, reason_code_id)
 
-Update an account status
+Update a reason code
 
-Update an account status record for an account.
+Update a reason code for your firm.
 
 ### Example
 ```python
@@ -824,33 +836,34 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
-account_status = nucleus_api.AccountStatus() # AccountStatus | account_status
-account_status_id = 'account_status_id_example' # str | UUID account_status_id
+reason_code = nucleus_api.ReasonCode() # ReasonCode | reason_code
+reason_code_id = 'reason_code_id_example' # str | UUID reason_code_id
 
 try:
-    # Update an account status
-    api_response = api_instance.update_account_status_using_put(account_status, account_status_id)
+    # Update a reason code
+    api_response = api_instance.update_reason_code_using_put(reason_code, reason_code_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UtilsApi->update_account_status_using_put: %s\n" % e)
+    print("Exception when calling UtilsApi->update_reason_code_using_put: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_status** | [**AccountStatus**](AccountStatus.md)| account_status | 
- **account_status_id** | [**str**](.md)| UUID account_status_id | 
+ **reason_code** | [**ReasonCode**](ReasonCode.md)| reason_code | 
+ **reason_code_id** | [**str**](.md)| UUID reason_code_id | 
 
 ### Return type
 
-[**AccountStatus**](AccountStatus.md)
+[**ReasonCode**](ReasonCode.md)
 
 ### Authorization
 
@@ -889,10 +902,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 stage = nucleus_api.Stage() # Stage | stage
@@ -954,10 +968,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 transaction_code = nucleus_api.TransactionCode() # TransactionCode | transaction_code

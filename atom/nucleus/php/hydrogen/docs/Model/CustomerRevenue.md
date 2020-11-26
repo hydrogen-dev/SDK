@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**accounting_method** | **string** | accounting_method | 
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **currency_code** | **string** | currency_code | 
 **customer_id** | **string** | customerId | 

@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **name** | **String** | name | 
 **percentage** | **Double** | percentage | 
 **secondaryId** | **String** |  |  [optional]
+**status** | **String** | status |  [optional]
 **updateDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 
 

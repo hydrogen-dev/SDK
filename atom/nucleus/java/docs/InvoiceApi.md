@@ -8,8 +8,8 @@ Method | HTTP request | Description
 [**createInvoiceUsingPost**](InvoiceApi.md#createInvoiceUsingPost) | **POST** /invoice | Create a invoice
 [**deleteInvoicePaymentUsingDelete**](InvoiceApi.md#deleteInvoicePaymentUsingDelete) | **DELETE** /invoice_payment/{invoice_payment_id} | Delete a invoicePayment
 [**deleteInvoiceUsingDelete**](InvoiceApi.md#deleteInvoiceUsingDelete) | **DELETE** /invoice/{invoice_id} | Delete a invoice
-[**getInvoiceAllUsingGet**](InvoiceApi.md#getInvoiceAllUsingGet) | **GET** /invoice | List all invoice
-[**getInvoicePaymentAllUsingGet**](InvoiceApi.md#getInvoicePaymentAllUsingGet) | **GET** /invoice_payment | List all invoicePayment
+[**getInvoiceAllUsingGet**](InvoiceApi.md#getInvoiceAllUsingGet) | **GET** /invoice | List all invoices
+[**getInvoicePaymentAllUsingGet**](InvoiceApi.md#getInvoicePaymentAllUsingGet) | **GET** /invoice_payment | List all invoice payments
 [**getInvoicePaymentUsingGet**](InvoiceApi.md#getInvoicePaymentUsingGet) | **GET** /invoice_payment/{invoice_payment_id} | Retrieve a invoicePayment
 [**getInvoiceUsingGet**](InvoiceApi.md#getInvoiceUsingGet) | **GET** /invoice/{invoice_id} | Retrieve a invoice
 [**updateInvoicePaymentUsingPut**](InvoiceApi.md#updateInvoicePaymentUsingPut) | **PUT** /invoice_payment/{invoice_payment_id} | Update a invoicePayment
@@ -26,8 +26,8 @@ Create a new invoicePayment, for tracking invoice status.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InvoiceApi;
 
@@ -38,10 +38,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 InvoiceApi apiInstance = new InvoiceApi();
 InvoicePayment invoicePayment = new InvoicePayment(); // InvoicePayment | invoicePayment
@@ -83,8 +87,8 @@ Create a new invoice, with your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InvoiceApi;
 
@@ -95,10 +99,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 InvoiceApi apiInstance = new InvoiceApi();
 Invoice invoice = new Invoice(); // Invoice | invoice
@@ -140,8 +148,8 @@ Delete a invoicePayment.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InvoiceApi;
 
@@ -152,10 +160,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 InvoiceApi apiInstance = new InvoiceApi();
 UUID invoicePaymentId = new UUID(); // UUID | UUID invoice_payment_id
@@ -196,8 +208,8 @@ Delete a invoice.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InvoiceApi;
 
@@ -208,10 +220,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 InvoiceApi apiInstance = new InvoiceApi();
 UUID invoiceId = new UUID(); // UUID | UUID invoice_id
@@ -244,16 +260,16 @@ null (empty response body)
 
 <a name="getInvoiceAllUsingGet"></a>
 # **getInvoiceAllUsingGet**
-> PageInvoice getInvoiceAllUsingGet(ascending, filter, orderBy, page, size)
+> PageInvoice getInvoiceAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size)
 
-List all invoice
+List all invoices
 
 List all invoice. 
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InvoiceApi;
 
@@ -264,19 +280,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 InvoiceApi apiInstance = new InvoiceApi();
 Boolean ascending = false; // Boolean | ascending
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PageInvoice result = apiInstance.getInvoiceAllUsingGet(ascending, filter, orderBy, page, size);
+    PageInvoice result = apiInstance.getInvoiceAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InvoiceApi#getInvoiceAllUsingGet");
@@ -289,6 +310,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -309,16 +331,16 @@ Name | Type | Description  | Notes
 
 <a name="getInvoicePaymentAllUsingGet"></a>
 # **getInvoicePaymentAllUsingGet**
-> PageInvoicePayment getInvoicePaymentAllUsingGet(ascending, filter, orderBy, page, size)
+> PageInvoicePayment getInvoicePaymentAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size)
 
-List all invoicePayment
+List all invoice payments
 
 List all invoicePayment. 
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InvoiceApi;
 
@@ -329,19 +351,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 InvoiceApi apiInstance = new InvoiceApi();
 Boolean ascending = false; // Boolean | ascending
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PageInvoicePayment result = apiInstance.getInvoicePaymentAllUsingGet(ascending, filter, orderBy, page, size);
+    PageInvoicePayment result = apiInstance.getInvoicePaymentAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InvoiceApi#getInvoicePaymentAllUsingGet");
@@ -354,6 +381,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -374,7 +402,7 @@ Name | Type | Description  | Notes
 
 <a name="getInvoicePaymentUsingGet"></a>
 # **getInvoicePaymentUsingGet**
-> InvoicePayment getInvoicePaymentUsingGet(invoicePaymentId)
+> InvoicePayment getInvoicePaymentUsingGet(invoicePaymentId, currencyConversion)
 
 Retrieve a invoicePayment
 
@@ -382,8 +410,8 @@ Retrieve a invoicePayment.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InvoiceApi;
 
@@ -394,15 +422,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 InvoiceApi apiInstance = new InvoiceApi();
 UUID invoicePaymentId = new UUID(); // UUID | UUID invoice_payment_id
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    InvoicePayment result = apiInstance.getInvoicePaymentUsingGet(invoicePaymentId);
+    InvoicePayment result = apiInstance.getInvoicePaymentUsingGet(invoicePaymentId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InvoiceApi#getInvoicePaymentUsingGet");
@@ -415,6 +448,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **invoicePaymentId** | [**UUID**](.md)| UUID invoice_payment_id |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
@@ -431,7 +465,7 @@ Name | Type | Description  | Notes
 
 <a name="getInvoiceUsingGet"></a>
 # **getInvoiceUsingGet**
-> Invoice getInvoiceUsingGet(invoiceId)
+> Invoice getInvoiceUsingGet(invoiceId, currencyConversion)
 
 Retrieve a invoice
 
@@ -439,8 +473,8 @@ Retrieve a invoice.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InvoiceApi;
 
@@ -451,15 +485,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 InvoiceApi apiInstance = new InvoiceApi();
 UUID invoiceId = new UUID(); // UUID | UUID invoice_idd
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    Invoice result = apiInstance.getInvoiceUsingGet(invoiceId);
+    Invoice result = apiInstance.getInvoiceUsingGet(invoiceId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InvoiceApi#getInvoiceUsingGet");
@@ -472,6 +511,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **invoiceId** | [**UUID**](.md)| UUID invoice_idd |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
@@ -496,8 +536,8 @@ Update a invoicePayment.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InvoiceApi;
 
@@ -508,10 +548,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 InvoiceApi apiInstance = new InvoiceApi();
 InvoicePayment invoicePayment = new InvoicePayment(); // InvoicePayment | invoice_payment
@@ -555,8 +599,8 @@ Update a invoice.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InvoiceApi;
 
@@ -567,10 +611,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 InvoiceApi apiInstance = new InvoiceApi();
 Invoice invoice = new Invoice(); // Invoice | invoice

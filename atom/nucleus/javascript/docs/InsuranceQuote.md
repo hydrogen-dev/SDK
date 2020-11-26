@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **currencyCode** | **String** | currencyCode | 
 **discounts** | [**[InsuranceDiscountMap]**](InsuranceDiscountMap.md) |  | [optional] 
 **endDate** | **Date** |  | [optional] 
+**financialOfferId** | **String** | financial_offer_id | [optional] 
 **id** | **String** |  | [optional] 
 **isActive** | **Boolean** | is_active | [optional] 
 **metadata** | **{String: String}** |  | [optional] 

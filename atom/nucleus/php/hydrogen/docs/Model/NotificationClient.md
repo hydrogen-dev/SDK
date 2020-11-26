@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **is_read** | **bool** |  | [optional] 
+**is_sent** | **bool** |  | [optional] 
 **metadata** | **map[string,string]** | metadata | [optional] 
 **notification_content** | **string** | notification_content | 
 **notification_date** | [**\DateTime**](\DateTime.md) | notification_date | 

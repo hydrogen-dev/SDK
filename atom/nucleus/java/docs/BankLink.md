@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accountId** | [**UUID**](UUID.md) | accountId |  [optional]
-**availableBalance** | **String** | availableBalance |  [optional]
-**balance** | **String** | balance |  [optional]
+**availableBalance** | **Double** | availableBalance |  [optional]
+**balance** | **Double** | balance |  [optional]
 **bankAccountHolder** | **String** | bankAccountHolder | 
 **bankAccountName** | **String** | bankAccountName |  [optional]
 **bankAccountNumber** | **String** | bankAccountNumber | 

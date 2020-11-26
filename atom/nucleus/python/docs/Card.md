@@ -16,7 +16,8 @@ Name | Type | Description | Notes
 **create_date** | **datetime** |  | [optional] 
 **credit_limit** | **float** | creditLimit | [optional] 
 **currency_code** | **str** | currencyCode | 
-**expiry_date** | **datetime** | expiryDate | [optional] 
+**expiry_date** | **date** | expiryDate | [optional] 
+**fulfillment** | **str** | fulfillment | [optional] 
 **id** | **str** |  | [optional] 
 **institution_name** | **str** | institutionName | 
 **is_active** | **bool** | is_active | [optional] 

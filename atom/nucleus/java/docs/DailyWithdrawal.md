@@ -18,13 +18,14 @@ Name | Type | Description | Notes
 **metadata** | **Map&lt;String, String&gt;** |  |  [optional]
 **notes** | **String** | notes |  [optional]
 **portfolioId** | [**UUID**](UUID.md) | portfolio_id |  [optional]
+**portfolioTransactionId** | [**UUID**](UUID.md) | portfolioTransactionId |  [optional]
 **receivedDate** | [**LocalDate**](LocalDate.md) | received_date |  [optional]
 **secondaryId** | **String** |  |  [optional]
 **status** | **String** | status |  [optional]
 **statusTimeStamp** | [**OffsetDateTime**](OffsetDateTime.md) | statusTimeStamp |  [optional]
 **type** | **String** | type |  [optional]
 **updateDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
-**withdrawalDate** | [**OffsetDateTime**](OffsetDateTime.md) | withdrawalDate | 
+**withdrawalDate** | [**LocalDate**](LocalDate.md) | withdrawalDate | 
 
 
 

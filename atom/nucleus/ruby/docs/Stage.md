@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **is_account** | **BOOLEAN** | is_account | [optional] 
 **is_active** | **BOOLEAN** | is_active | [optional] 
 **is_client** | **BOOLEAN** | is_client | [optional] 
+**is_closed** | **BOOLEAN** | is_closed | [optional] 
+**is_converted** | **BOOLEAN** | is_converted | [optional] 
 **metadata** | **Hash&lt;String, String&gt;** |  | [optional] 
 **name** | **String** | name | 
 **order_index** | **Integer** | orderIndex | [optional] 

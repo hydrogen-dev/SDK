@@ -46,9 +46,7 @@
      */
     var exports = function (apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
-
         this.tokenUrl = this.apiClient.basePath.replace(/.com.*/, '.com/authorization/v1');
-
 
         /**
          * Callback function to receive the result of the operation.
@@ -99,12 +97,58 @@
                             error = err;
                         }
                     }
+
                     callback(error, data, response);
                 }
             });
 
             return request;
         };
+
+        /**
+         * Create a authentication token using client-token
+         * @param opts
+         * @param callback
+         */
+        this.createUsingPostClientTokenCredentials = function (opts, callback) {
+            var clientTokenUrl = this.tokenUrl + '/client-token';
+            var defaultHeaders = {};
+            var _this = ApiClient.instance;
+            var tokenCallback = function (error, data, response) {
+                if (error) {
+                    callback(error, data, response);
+                }
+                var accessToken = data.access_token;
+                var clientToken = opts['client_token'];
+                var headers = {
+                    'Authorization' : 'Bearer '+ accessToken,
+                    'client_token' : 'Bearer ' + clientToken
+                }
+                var request = superagent('POST',clientTokenUrl);
+                request.set(defaultHeaders).set(_this.normalizeParams(headers));
+                request.end(function(error, response) {
+                    if (callback) {
+                        var data = null;
+                        if (!error) {
+                            try {
+                                var returnType = Object;
+                                data = _this.deserialize(response, returnType);
+                                if (_this.enableCookies && typeof window === 'undefined'){
+                                    _this.agent.saveCookies(response);
+                                }
+                            } catch (err) {
+                                error = err;
+                            }
+                        }
+                        callback(error, data, response);
+                    }
+                });
+                return request;
+            };
+            opts['grant_type'] = 'client_credentials';
+            console.log(opts);
+            this.createUsingPostClientCredentials(opts, tokenCallback);
+        }
 
         /**
          * Callback function to receive the result of the createUsingPostClientCredentials operation.

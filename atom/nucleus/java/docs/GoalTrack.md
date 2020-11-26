@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **onTrack** | **Boolean** | onTrack |  [optional]
 **progress** | **Double** | progress |  [optional]
 **projectionBalance** | **Double** | projectionBalance |  [optional]
-**projectionDate** | [**OffsetDateTime**](OffsetDateTime.md) | projectionDate |  [optional]
+**projectionDate** | [**LocalDate**](LocalDate.md) | projectionDate |  [optional]
 **secondaryId** | **String** |  |  [optional]
 **statusTimeStamp** | [**OffsetDateTime**](OffsetDateTime.md) | statusTimeStamp | 
 **updateDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]

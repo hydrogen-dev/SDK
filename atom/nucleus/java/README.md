@@ -1,10 +1,10 @@
-# swagger-java-client
+# hydrogen-nucleus-api
 
-Hydrogen Atom API
-- API version: 1.7.0
-  - Build date: 2020-06-04T05:11:20.520Z
+Hydrogen Nucleus API
+- API version: 1.8.0
+  - Build date: 2020-10-12T11:03:26.704Z
 
-The Hydrogen Atom API
+The Hydrogen Nucleus API
 
   For more information, please visit [https://www.hydrogenplatform.com/contact](https://www.hydrogenplatform.com/contact)
 
@@ -25,6 +25,7 @@ Follow steps to verify the base URL path:
 https://sandbox.hydrogenplatform.com/nucleus/v1
 **Production Base URL**
 https://api.hydrogenplatform.com/nucleus/v1
+
 
 ## Installation
 
@@ -48,7 +49,7 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-  <groupId>com.hydrogenplatform</groupId>
+  <groupId>com.hydrogen</groupId>
   <artifactId>hydrogen-nucleus-api</artifactId>
   <version>1.8.0</version>
   <scope>compile</scope>
@@ -60,7 +61,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.hydrogen:hydrogen-nucleus-api:1.7.0"
+compile "com.hydrogen:hydrogen-nucleus-api:1.8.0"
 ```
 
 ### Others
@@ -73,18 +74,18 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/hydrogen-nucleus-api-1.7.0.jar`
+* `target/hydrogen-nucleus-api-1.8.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
 
-Please follow the [installation](#installation) instructions and execute the following Java code:
+Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
 
-import ApiException;
-import AuthApiClient;
-import AccountAllocationMapping;
+import com.hydrogen.nucleus.AuthApiClient;
+import com.hydrogen.nucleus.ApiException;
+import com.hydrogen.nucleus.model.AccountAllocationMapping;
 import AccountApi;
 
 public class AccountApiExample {
@@ -97,10 +98,14 @@ public class AccountApiExample {
             authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
         //          Creating a token for grant_type=password
             authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                                    "USERNAME", "PASSWORD");           
+                                    "USERNAME", "PASSWORD");     
+        //  Creating a token using client_token
+            authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+                    "CLIENT_TOKEN");      
         } catch (ApiException e) {
             e.printStackTrace();
         }
+
         AccountApi apiInstance = new AccountApi();
         AccountAllocationMapping allocRequest = new AccountAllocationMapping(); // AccountAllocationMapping | allocRequest
         try {
@@ -122,10 +127,12 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccountApi* | [**createAccountAllocationMappingUsingPost**](docs/AccountApi.md#createAccountAllocationMappingUsingPost) | **POST** /account_allocation | Create an account allocation
+*AccountApi* | [**createAccountStatusUsingPost**](docs/AccountApi.md#createAccountStatusUsingPost) | **POST** /account_status | Create an account status
 *AccountApi* | [**createAccountTypeUsingPost**](docs/AccountApi.md#createAccountTypeUsingPost) | **POST** /account_type | Create an account type
 *AccountApi* | [**createAccountUsingPost**](docs/AccountApi.md#createAccountUsingPost) | **POST** /account | Create an account
 *AccountApi* | [**deleteAccountAllocationMappingUsingDelete**](docs/AccountApi.md#deleteAccountAllocationMappingUsingDelete) | **DELETE** /account_allocation/{account_allocation_id} | Delete an account allocation
 *AccountApi* | [**deleteAccountPermissionUsingDELETE**](docs/AccountApi.md#deleteAccountPermissionUsingDELETE) | **DELETE** /account_permission/{account_id} | Delete an account permission
+*AccountApi* | [**deleteAccountStatusUsingDelete**](docs/AccountApi.md#deleteAccountStatusUsingDelete) | **DELETE** /account_status/{account_status_id} | Delete an account status
 *AccountApi* | [**deleteAccountTypeUsingDelete**](docs/AccountApi.md#deleteAccountTypeUsingDelete) | **DELETE** /account_type/{account_type_id} | Delete an account type
 *AccountApi* | [**deleteAccountUsingDelete**](docs/AccountApi.md#deleteAccountUsingDelete) | **DELETE** /account/{account_id} | Delete an account
 *AccountApi* | [**getAccountAllUsingGet**](docs/AccountApi.md#getAccountAllUsingGet) | **GET** /account | List all accounts
@@ -135,6 +142,8 @@ Class | Method | HTTP request | Description
 *AccountApi* | [**getAccountAssetSizeAllUsingGet**](docs/AccountApi.md#getAccountAssetSizeAllUsingGet) | **GET** /account_asset_size | List all account asset sizes
 *AccountApi* | [**getAccountOverviewUsingGet**](docs/AccountApi.md#getAccountOverviewUsingGet) | **GET** /account/{account_id}/account_overview | List all Account overview
 *AccountApi* | [**getAccountPermissionUsingGET**](docs/AccountApi.md#getAccountPermissionUsingGET) | **GET** /account_permission/{account_id} | Get an account permission
+*AccountApi* | [**getAccountStatusAllUsingGet**](docs/AccountApi.md#getAccountStatusAllUsingGet) | **GET** /account_status | List all account statuses
+*AccountApi* | [**getAccountStatusUsingGet**](docs/AccountApi.md#getAccountStatusUsingGet) | **GET** /account_status/{account_status_id} | Retrieve an account status
 *AccountApi* | [**getAccountTypeAllUsingGet**](docs/AccountApi.md#getAccountTypeAllUsingGet) | **GET** /account_type | List all account types
 *AccountApi* | [**getAccountTypeUsingGet**](docs/AccountApi.md#getAccountTypeUsingGet) | **GET** /account_type/{account_type_id} | Get an Account Type
 *AccountApi* | [**getAccountUsingGet**](docs/AccountApi.md#getAccountUsingGet) | **GET** /account/{account_id} | Retrieve an account
@@ -144,14 +153,10 @@ Class | Method | HTTP request | Description
 *AccountApi* | [**insertAccountAndRelatedPermissionUsingPOST**](docs/AccountApi.md#insertAccountAndRelatedPermissionUsingPOST) | **POST** /account_permission | create an account permission
 *AccountApi* | [**subscribeAccountUsingPost**](docs/AccountApi.md#subscribeAccountUsingPost) | **POST** /account/{account_id}/subscribe | Subscribe an account
 *AccountApi* | [**updateAccountAllocationMappingUsingPut**](docs/AccountApi.md#updateAccountAllocationMappingUsingPut) | **PUT** /account_allocation/{account_allocation_id} | Update an account allocation
+*AccountApi* | [**updateAccountStatusUsingPut**](docs/AccountApi.md#updateAccountStatusUsingPut) | **PUT** /account_status/{account_status_id} | Update an account status
 *AccountApi* | [**updateAccountTypeUsingPut**](docs/AccountApi.md#updateAccountTypeUsingPut) | **PUT** /account_type/{account_type_id} | Update an account type
 *AccountApi* | [**updateAccountUsingPut**](docs/AccountApi.md#updateAccountUsingPut) | **PUT** /account/{account_id} | Update an account
 *AccountApi* | [**updateClientAccountPermissionUsingPUT**](docs/AccountApi.md#updateClientAccountPermissionUsingPUT) | **PUT** /account_permission/{account_id} | Update an account permission
-*AccountingApi* | [**createAccountingUsingPost**](docs/AccountingApi.md#createAccountingUsingPost) | **POST** /accounting | Create an accounting
-*AccountingApi* | [**deleteAccountingUsingDelete**](docs/AccountingApi.md#deleteAccountingUsingDelete) | **DELETE** /accounting/{accounting_id} | Delete an accounting
-*AccountingApi* | [**getAccountingAllUsingGet**](docs/AccountingApi.md#getAccountingAllUsingGet) | **GET** /accounting | List all accounting
-*AccountingApi* | [**getAccountingUsingGet**](docs/AccountingApi.md#getAccountingUsingGet) | **GET** /accounting/{accounting_id} | Retrieve an accounting
-*AccountingApi* | [**updateAccountingUsingPut**](docs/AccountingApi.md#updateAccountingUsingPut) | **PUT** /accounting/{accounting_id} | Update an accounting
 *AggregationAccountApi* | [**createAggregationAccountBalanceBulkUsingPost**](docs/AggregationAccountApi.md#createAggregationAccountBalanceBulkUsingPost) | **POST** /bulk_aggregation_account_balance | Create a bulk aggregation account balance
 *AggregationAccountApi* | [**createAggregationAccountBalanceUsingPost**](docs/AggregationAccountApi.md#createAggregationAccountBalanceUsingPost) | **POST** /aggregation_account_balance | Create an aggregation account balance
 *AggregationAccountApi* | [**createAggregationAccountBulkUsingPost**](docs/AggregationAccountApi.md#createAggregationAccountBulkUsingPost) | **POST** /bulk_aggregation_account | Create a bulk aggregation account
@@ -184,14 +189,14 @@ Class | Method | HTTP request | Description
 *AllocationApi* | [**createAllocationUsingPost**](docs/AllocationApi.md#createAllocationUsingPost) | **POST** /allocation | Create an allocation
 *AllocationApi* | [**deleteAllocationCompositionUsingDelete**](docs/AllocationApi.md#deleteAllocationCompositionUsingDelete) | **DELETE** /allocation_composition/{allocation_composition_id} | Delete an allocation composition
 *AllocationApi* | [**deleteAllocationUsingDelete**](docs/AllocationApi.md#deleteAllocationUsingDelete) | **DELETE** /allocation/{allocation_id} | Delete an allocation
-*AllocationApi* | [**getAllHoldingsUsingGET**](docs/AllocationApi.md#getAllHoldingsUsingGET) | **GET** /allocation/{allocation_id}/holding | List all allocation holdings
-*AllocationApi* | [**getAllTransactionsUsingGET**](docs/AllocationApi.md#getAllTransactionsUsingGET) | **GET** /allocation/{allocation_id}/transaction | List all allocation transactions
-*AllocationApi* | [**getAllocationAggregatedDataUsingGET**](docs/AllocationApi.md#getAllocationAggregatedDataUsingGET) | **GET** /allocation/{allocation_id}/aggregate_data | List all Allocation aggregated data overview
+*AllocationApi* | [**getAllocationAllAggregateDataUsingGet**](docs/AllocationApi.md#getAllocationAllAggregateDataUsingGet) | **GET** /allocation/{allocation_id}/aggregate_data | List all Allocation aggregated data overview
+*AllocationApi* | [**getAllocationAllAssetSizeAllUsingGet**](docs/AllocationApi.md#getAllocationAllAssetSizeAllUsingGet) | **GET** /allocation/{allocation_id}/asset_size | List all allocation asset sizes
+*AllocationApi* | [**getAllocationAllHoldingAllUsingGet**](docs/AllocationApi.md#getAllocationAllHoldingAllUsingGet) | **GET** /allocation/{allocation_id}/holding | List all allocation holdings
+*AllocationApi* | [**getAllocationAllTransactionAllUsingGet**](docs/AllocationApi.md#getAllocationAllTransactionAllUsingGet) | **GET** /allocation/{allocation_id}/transaction | List all allocation transactions
 *AllocationApi* | [**getAllocationAllUsingGet**](docs/AllocationApi.md#getAllocationAllUsingGet) | **GET** /allocation | List all allocations
 *AllocationApi* | [**getAllocationCompositionAllUsingGet**](docs/AllocationApi.md#getAllocationCompositionAllUsingGet) | **GET** /allocation_composition | List all allocations compositions
 *AllocationApi* | [**getAllocationCompositionUsingGet**](docs/AllocationApi.md#getAllocationCompositionUsingGet) | **GET** /allocation_composition/{allocation_composition_id} | Retrieve an allocation composition
 *AllocationApi* | [**getAllocationUsingGet**](docs/AllocationApi.md#getAllocationUsingGet) | **GET** /allocation/{allocation_id} | Retrieve an allocation
-*AllocationApi* | [**getAssetsizeUsingGET**](docs/AllocationApi.md#getAssetsizeUsingGET) | **GET** /allocation/{allocation_id}/asset_size | List all allocation asset sizes
 *AllocationApi* | [**updateAllocationCompositionUsingPut**](docs/AllocationApi.md#updateAllocationCompositionUsingPut) | **PUT** /allocation_composition/{allocation_composition_id} | Update an allocation composition
 *AllocationApi* | [**updateAllocationUsingPut**](docs/AllocationApi.md#updateAllocationUsingPut) | **PUT** /allocation/{allocation_id} | Update an allocation
 *ApplicationApi* | [**createApplicationUsingPost**](docs/ApplicationApi.md#createApplicationUsingPost) | **POST** /application | Create an application
@@ -202,6 +207,11 @@ Class | Method | HTTP request | Description
 *AuditLogApi* | [**createAuditLogUsingPost**](docs/AuditLogApi.md#createAuditLogUsingPost) | **POST** /audit_log | Create a audit log
 *AuditLogApi* | [**getAuditLogAllUsingGet**](docs/AuditLogApi.md#getAuditLogAllUsingGet) | **GET** /audit_log | List all audit log
 *AuditLogApi* | [**getAuditLogUsingGet**](docs/AuditLogApi.md#getAuditLogUsingGet) | **GET** /audit_log/{audit_log_id} | Retrieve a audit log
+*BatchControllerApi* | [**aggregationAccountBalanceEncryptionJobUsingGET**](docs/BatchControllerApi.md#aggregationAccountBalanceEncryptionJobUsingGET) | **GET** /aggregation_account_balance_encryption | aggregationAccountBalanceEncryptionJob
+*BatchControllerApi* | [**bankLinkEncryptionJobUsingGET**](docs/BatchControllerApi.md#bankLinkEncryptionJobUsingGET) | **GET** /bank_link_encryption | bankLinkEncryptionJob
+*BatchControllerApi* | [**clientAddressEncryptionJobUsingGET**](docs/BatchControllerApi.md#clientAddressEncryptionJobUsingGET) | **GET** /client_address_encryption | clientAddressEncryptionJob
+*BatchControllerApi* | [**clientCitizenshipEncryptionJobUsingGET**](docs/BatchControllerApi.md#clientCitizenshipEncryptionJobUsingGET) | **GET** /client_citizenship_encryption | clientCitizenshipEncryptionJob
+*BatchControllerApi* | [**clientEncryptionJobUsingGET**](docs/BatchControllerApi.md#clientEncryptionJobUsingGET) | **GET** /client_encryption | clientEncryptionJob
 *BenchmarkApi* | [**createBenchmarkUsingPost**](docs/BenchmarkApi.md#createBenchmarkUsingPost) | **POST** /benchmark | Create a benchmark
 *BenchmarkApi* | [**deleteBenchmarkUsingDelete**](docs/BenchmarkApi.md#deleteBenchmarkUsingDelete) | **DELETE** /benchmark/{benchmark_id} | Delete a benchmark
 *BenchmarkApi* | [**getBenchmarkAllUsingGet**](docs/BenchmarkApi.md#getBenchmarkAllUsingGet) | **GET** /benchmark | List all benchmarks
@@ -222,8 +232,10 @@ Class | Method | HTTP request | Description
 *CardApi* | [**deleteCardProgramUsingDelete**](docs/CardApi.md#deleteCardProgramUsingDelete) | **DELETE** /card_program/{card_program_id} | Delete an cardProgram
 *CardApi* | [**deleteCardUsingDelete**](docs/CardApi.md#deleteCardUsingDelete) | **DELETE** /card/{card_id} | Delete a card request
 *CardApi* | [**getCardAllUsingGet**](docs/CardApi.md#getCardAllUsingGet) | **GET** /card | List all card requests
+*CardApi* | [**getCardAssetSizeAggAllUsingGet**](docs/CardApi.md#getCardAssetSizeAggAllUsingGet) | **GET** /card/{card_id}/asset_size | List all card asset sizes
 *CardApi* | [**getCardProgramAllUsingGet**](docs/CardApi.md#getCardProgramAllUsingGet) | **GET** /card_program | List all cardProgram
 *CardApi* | [**getCardProgramUsingGet**](docs/CardApi.md#getCardProgramUsingGet) | **GET** /card_program/{card_program_id} | Retrieve an cardProgram
+*CardApi* | [**getCardTransactionAggAllUsingGet**](docs/CardApi.md#getCardTransactionAggAllUsingGet) | **GET** /card/{card_id}/transaction | List all card transactions
 *CardApi* | [**getCardUsingGet**](docs/CardApi.md#getCardUsingGet) | **GET** /card/{card_id} | Retrieve a card request
 *CardApi* | [**updateCardProgramUsingPut**](docs/CardApi.md#updateCardProgramUsingPut) | **PUT** /card_program/{card_program_id} | Update an cardProgram
 *CardApi* | [**updateCardUsingPut**](docs/CardApi.md#updateCardUsingPut) | **PUT** /card/{card_id} | Update a card request
@@ -243,9 +255,8 @@ Class | Method | HTTP request | Description
 *ClientApi* | [**getClientHydroUsingGet**](docs/ClientApi.md#getClientHydroUsingGet) | **GET** /client_hydro/{client_hydro_id} | Retrieve a client-hydro relationship
 *ClientApi* | [**getClientStatusAllUsingGet**](docs/ClientApi.md#getClientStatusAllUsingGet) | **GET** /client_status | List all client statuses
 *ClientApi* | [**getClientStatusUsingGet**](docs/ClientApi.md#getClientStatusUsingGet) | **GET** /client_status/{client_status_id} | Retrieve an client status
-*ClientApi* | [**getClientTransactionUsingGet**](docs/ClientApi.md#getClientTransactionUsingGet) | **GET** /client/{client_id}/transaction | List all client transactions
+*ClientApi* | [**getClientTransactionAllUsingGet**](docs/ClientApi.md#getClientTransactionAllUsingGet) | **GET** /client/{client_id}/transaction | List all client transactions
 *ClientApi* | [**getClientUsingGet**](docs/ClientApi.md#getClientUsingGet) | **GET** /client/{client_id} | Retrieve a client
-*ClientApi* | [**getTotalClientsUsingGet**](docs/ClientApi.md#getTotalClientsUsingGet) | **GET** /client/total_clients | total clients
 *ClientApi* | [**updateClientHydroUsingPut**](docs/ClientApi.md#updateClientHydroUsingPut) | **PUT** /client_hydro/{client_hydro_id} | Update a client-hydro relationship
 *ClientApi* | [**updateClientStatusUsingPut**](docs/ClientApi.md#updateClientStatusUsingPut) | **PUT** /client_status/{client_status_id} | Update an client status
 *ClientApi* | [**updateClientUsingPut**](docs/ClientApi.md#updateClientUsingPut) | **PUT** /client/{client_id} | Update a client
@@ -300,6 +311,11 @@ Class | Method | HTTP request | Description
 *FinancialOfferApi* | [**getFinancialOfferAllUsingGet**](docs/FinancialOfferApi.md#getFinancialOfferAllUsingGet) | **GET** /financial_offer | List all comparison requests
 *FinancialOfferApi* | [**getFinancialOfferUsingGet**](docs/FinancialOfferApi.md#getFinancialOfferUsingGet) | **GET** /financial_offer/{financial_offer_id} | Retrieve a comparison request
 *FinancialOfferApi* | [**updateFinancialOfferUsingPut**](docs/FinancialOfferApi.md#updateFinancialOfferUsingPut) | **PUT** /financial_offer/{financial_offer_id} | Update a comparison request
+*FinancialStatementApi* | [**createFinancialStatementUsingPost**](docs/FinancialStatementApi.md#createFinancialStatementUsingPost) | **POST** /financial_statement | Create an financialStatement
+*FinancialStatementApi* | [**deleteFinancialStatementUsingDelete**](docs/FinancialStatementApi.md#deleteFinancialStatementUsingDelete) | **DELETE** /financial_statement/{financial_statement_id} | Delete an financialStatement
+*FinancialStatementApi* | [**getFinancialStatementAllUsingGet**](docs/FinancialStatementApi.md#getFinancialStatementAllUsingGet) | **GET** /financial_statement | List all financialStatement
+*FinancialStatementApi* | [**getFinancialStatementUsingGet**](docs/FinancialStatementApi.md#getFinancialStatementUsingGet) | **GET** /financial_statement/{financial_statement_id} | Retrieve an financialStatement
+*FinancialStatementApi* | [**updateFinancialStatementUsingPut**](docs/FinancialStatementApi.md#updateFinancialStatementUsingPut) | **PUT** /financial_statement/{financial_statement_id} | Update an financialStatement
 *FundingApi* | [**createBankLinkUsingPost**](docs/FundingApi.md#createBankLinkUsingPost) | **POST** /bank_link | Create a bank link
 *FundingApi* | [**createDepositUsingPost**](docs/FundingApi.md#createDepositUsingPost) | **POST** /deposit | Create a deposit request
 *FundingApi* | [**createFundingUsingPost**](docs/FundingApi.md#createFundingUsingPost) | **POST** /funding | Create a funding request
@@ -339,6 +355,14 @@ Class | Method | HTTP request | Description
 *GoalApi* | [**getGoalUsingGet**](docs/GoalApi.md#getGoalUsingGet) | **GET** /goal/{goal_id} | Retrieve a goal
 *GoalApi* | [**updateGoalTrackUsingPut**](docs/GoalApi.md#updateGoalTrackUsingPut) | **PUT** /goal_track/{goal_track_id} | Update a goal track record
 *GoalApi* | [**updateGoalUsingPut**](docs/GoalApi.md#updateGoalUsingPut) | **PUT** /goal/{goal_id} | Update a goal
+*HouseholdApi* | [**createHouseholdUsingPost**](docs/HouseholdApi.md#createHouseholdUsingPost) | **POST** /household | Create a Household
+*HouseholdApi* | [**deleteHouseholdUsingDelete**](docs/HouseholdApi.md#deleteHouseholdUsingDelete) | **DELETE** /household/{household_id} | Delete a Household
+*HouseholdApi* | [**getHouseholdAllUsingGet**](docs/HouseholdApi.md#getHouseholdAllUsingGet) | **GET** /household | List all household
+*HouseholdApi* | [**getHouseholdClientAssetSizeUsingGet**](docs/HouseholdApi.md#getHouseholdClientAssetSizeUsingGet) | **GET** /household/{household_id}/asset_size | List all household client asset sizes
+*HouseholdApi* | [**getHouseholdClientHoldingUsingGet**](docs/HouseholdApi.md#getHouseholdClientHoldingUsingGet) | **GET** /household/{household_id}/holding | List all household&#39;s clientIds holdings
+*HouseholdApi* | [**getHouseholdClientTransactionUsingGet**](docs/HouseholdApi.md#getHouseholdClientTransactionUsingGet) | **GET** /household/{household_id}/transaction | List all household&#39;s client ids transactions
+*HouseholdApi* | [**getHouseholdUsingGet**](docs/HouseholdApi.md#getHouseholdUsingGet) | **GET** /household/{household_id} | Retrieve a Household
+*HouseholdApi* | [**updateHouseholdUsingPut**](docs/HouseholdApi.md#updateHouseholdUsingPut) | **PUT** /household/{household_id} | Update a Household
 *InsuranceApi* | [**createInsuranceCoverageUsingPost**](docs/InsuranceApi.md#createInsuranceCoverageUsingPost) | **POST** /insurance_coverage | Create a insurance coverage request
 *InsuranceApi* | [**createInsuranceDiscountUsingPost**](docs/InsuranceApi.md#createInsuranceDiscountUsingPost) | **POST** /insurance_discount | Create a insurance discount request
 *InsuranceApi* | [**createInsuranceQuoteUsingPost**](docs/InsuranceApi.md#createInsuranceQuoteUsingPost) | **POST** /insurance_quote | Create a insuranceQuote request
@@ -358,8 +382,8 @@ Class | Method | HTTP request | Description
 *InvoiceApi* | [**createInvoiceUsingPost**](docs/InvoiceApi.md#createInvoiceUsingPost) | **POST** /invoice | Create a invoice
 *InvoiceApi* | [**deleteInvoicePaymentUsingDelete**](docs/InvoiceApi.md#deleteInvoicePaymentUsingDelete) | **DELETE** /invoice_payment/{invoice_payment_id} | Delete a invoicePayment
 *InvoiceApi* | [**deleteInvoiceUsingDelete**](docs/InvoiceApi.md#deleteInvoiceUsingDelete) | **DELETE** /invoice/{invoice_id} | Delete a invoice
-*InvoiceApi* | [**getInvoiceAllUsingGet**](docs/InvoiceApi.md#getInvoiceAllUsingGet) | **GET** /invoice | List all invoice
-*InvoiceApi* | [**getInvoicePaymentAllUsingGet**](docs/InvoiceApi.md#getInvoicePaymentAllUsingGet) | **GET** /invoice_payment | List all invoicePayment
+*InvoiceApi* | [**getInvoiceAllUsingGet**](docs/InvoiceApi.md#getInvoiceAllUsingGet) | **GET** /invoice | List all invoices
+*InvoiceApi* | [**getInvoicePaymentAllUsingGet**](docs/InvoiceApi.md#getInvoicePaymentAllUsingGet) | **GET** /invoice_payment | List all invoice payments
 *InvoiceApi* | [**getInvoicePaymentUsingGet**](docs/InvoiceApi.md#getInvoicePaymentUsingGet) | **GET** /invoice_payment/{invoice_payment_id} | Retrieve a invoicePayment
 *InvoiceApi* | [**getInvoiceUsingGet**](docs/InvoiceApi.md#getInvoiceUsingGet) | **GET** /invoice/{invoice_id} | Retrieve a invoice
 *InvoiceApi* | [**updateInvoicePaymentUsingPut**](docs/InvoiceApi.md#updateInvoicePaymentUsingPut) | **PUT** /invoice_payment/{invoice_payment_id} | Update a invoicePayment
@@ -398,7 +422,7 @@ Class | Method | HTTP request | Description
 *ModelApi* | [**getModelAllUsingGet**](docs/ModelApi.md#getModelAllUsingGet) | **GET** /model | List all models
 *ModelApi* | [**getModelAssetSizeAllUsingGet**](docs/ModelApi.md#getModelAssetSizeAllUsingGet) | **GET** /model_asset_size | List all model asset sizes
 *ModelApi* | [**getModelAssetSizeUsingGet**](docs/ModelApi.md#getModelAssetSizeUsingGet) | **GET** /model_asset_size/{model_asset_size_id} | Retrieve a model asset size
-*ModelApi* | [**getModelCommentAllUsingGet**](docs/ModelApi.md#getModelCommentAllUsingGet) | **GET** /model_comment | List all model commentary
+*ModelApi* | [**getModelCommentAllUsingGet**](docs/ModelApi.md#getModelCommentAllUsingGet) | **GET** /model_comment | List all model commentaries
 *ModelApi* | [**getModelCommentUsingGet**](docs/ModelApi.md#getModelCommentUsingGet) | **GET** /model_comment/{model_comment_id} | Retrieve a model commentary
 *ModelApi* | [**getModelHoldingAllUsingGet**](docs/ModelApi.md#getModelHoldingAllUsingGet) | **GET** /model_holding | List all model holdings
 *ModelApi* | [**getModelHoldingUsingGet**](docs/ModelApi.md#getModelHoldingUsingGet) | **GET** /model_holding/{model_holding_id} | Retrieve a model holding
@@ -416,7 +440,7 @@ Class | Method | HTTP request | Description
 *NotificationApi* | [**deleteNotificationClientUsingDelete**](docs/NotificationApi.md#deleteNotificationClientUsingDelete) | **DELETE** /notification_client/{notification_client_id} | Delete a Notification Client
 *NotificationApi* | [**deleteNotificationSettingUsingDelete**](docs/NotificationApi.md#deleteNotificationSettingUsingDelete) | **DELETE** /notification_setting/{notification_setting_id} | Delete a Notification Setting
 *NotificationApi* | [**deleteNotificationUsingDelete**](docs/NotificationApi.md#deleteNotificationUsingDelete) | **DELETE** /notification/{notification_id} | Delete a Notification
-*NotificationApi* | [**getNotificationAllUsingGet**](docs/NotificationApi.md#getNotificationAllUsingGet) | **GET** /notification | Get All Notification
+*NotificationApi* | [**getNotificationAllUsingGet**](docs/NotificationApi.md#getNotificationAllUsingGet) | **GET** /notification | Get All Notifications
 *NotificationApi* | [**getNotificationClientAllUsingGet**](docs/NotificationApi.md#getNotificationClientAllUsingGet) | **GET** /notification_client | List all Notification Client
 *NotificationApi* | [**getNotificationClientUsingGet**](docs/NotificationApi.md#getNotificationClientUsingGet) | **GET** /notification_client/{notification_client_id} | Retrieve a Notification Client
 *NotificationApi* | [**getNotificationSettingAllUsingGet**](docs/NotificationApi.md#getNotificationSettingAllUsingGet) | **GET** /notification_setting | List all Notification Setting
@@ -435,6 +459,7 @@ Class | Method | HTTP request | Description
 *OrderApi* | [**createOrderBulkUsingPost**](docs/OrderApi.md#createOrderBulkUsingPost) | **POST** /order_bulk | Bulk orders for your firm
 *OrderApi* | [**createOrderStatusUsingPost**](docs/OrderApi.md#createOrderStatusUsingPost) | **POST** /order_status | Create an order status
 *OrderApi* | [**createOrderTrackUsingPost**](docs/OrderApi.md#createOrderTrackUsingPost) | **POST** /order_track | Create an order tracking record
+*OrderApi* | [**createOrderUsingPost**](docs/OrderApi.md#createOrderUsingPost) | **POST** /order | Create an order record
 *OrderApi* | [**createPortfolioOrderBuyOnlyUsingPost**](docs/OrderApi.md#createPortfolioOrderBuyOnlyUsingPost) | **POST** /portfolio/{portfolio_id}/order_buy_only | Create buy-only portfolio rebalance orders
 *OrderApi* | [**createPortfolioOrderRebalanceUsingPost**](docs/OrderApi.md#createPortfolioOrderRebalanceUsingPost) | **POST** /portfolio/{portfolio_id}/order_rebalance | Create portfolio rebalance orders
 *OrderApi* | [**createPortfolioOrderReconciliation**](docs/OrderApi.md#createPortfolioOrderReconciliation) | **POST** /portfolio/{portfolio_id}/order_reconciliation | Create portfolio reconciliation order
@@ -443,8 +468,7 @@ Class | Method | HTTP request | Description
 *OrderApi* | [**deleteOrderStatusUsingDelete**](docs/OrderApi.md#deleteOrderStatusUsingDelete) | **DELETE** /order_status/{order_status_id} | Delete an order status
 *OrderApi* | [**deleteOrderTrackUsingDelete**](docs/OrderApi.md#deleteOrderTrackUsingDelete) | **DELETE** /order_track/{order_track_id} | Delete an order tracking record
 *OrderApi* | [**deleteOrderUsingDelete**](docs/OrderApi.md#deleteOrderUsingDelete) | **DELETE** /order/{order_id} | Delete an order record
-*OrderApi* | [**getOrderAllUsingGet**](docs/OrderApi.md#getOrderAllUsingGet) | **POST** /order | Create an order record
-*OrderApi* | [**getOrderAllUsingGet1**](docs/OrderApi.md#getOrderAllUsingGet1) | **GET** /order | List all order records
+*OrderApi* | [**getOrderAllUsingGet**](docs/OrderApi.md#getOrderAllUsingGet) | **GET** /order | List all order records
 *OrderApi* | [**getOrderBulkAllUsingGet**](docs/OrderApi.md#getOrderBulkAllUsingGet) | **GET** /order_bulk | List all bulk orders
 *OrderApi* | [**getOrderStatusAllUsingGet**](docs/OrderApi.md#getOrderStatusAllUsingGet) | **GET** /order_status | List all order statuses
 *OrderApi* | [**getOrderStatusUsingGet**](docs/OrderApi.md#getOrderStatusUsingGet) | **GET** /order_status/{order_status_id} | Retrieve an order status
@@ -467,6 +491,7 @@ Class | Method | HTTP request | Description
 *PerformanceApi* | [**getBenchmarkPerformanceUsingGet**](docs/PerformanceApi.md#getBenchmarkPerformanceUsingGet) | **GET** /benchmark/{benchmark_id}/performance | Benchmark Performance
 *PerformanceApi* | [**getClientPerformanceUsingGet**](docs/PerformanceApi.md#getClientPerformanceUsingGet) | **GET** /client/{client_id}/performance | Client Performance
 *PerformanceApi* | [**getGoalPerformanceUsingGet**](docs/PerformanceApi.md#getGoalPerformanceUsingGet) | **GET** /goal/{goal_id}/performance | Goal Performance
+*PerformanceApi* | [**getHouseholdClientPerformanceUsingGet**](docs/PerformanceApi.md#getHouseholdClientPerformanceUsingGet) | **GET** /household/{household_id}/performance | Household Performance
 *PerformanceApi* | [**getModelPerformanceUsingGet**](docs/PerformanceApi.md#getModelPerformanceUsingGet) | **GET** /model/{model_id}/performance | Model Performance
 *PerformanceApi* | [**getPortfolioPerformanceUsingGet**](docs/PerformanceApi.md#getPortfolioPerformanceUsingGet) | **GET** /portfolio/{portfolio_id}/performance | Portfolio Performance
 *PerformanceApi* | [**getSecurityPerformanceUsingGet**](docs/PerformanceApi.md#getSecurityPerformanceUsingGet) | **GET** /security/{security_id}/performance | Security Performance
@@ -521,10 +546,15 @@ Class | Method | HTTP request | Description
 *QuestionnaireApi* | [**updateClientResponseUsingPut**](docs/QuestionnaireApi.md#updateClientResponseUsingPut) | **PUT** /client_response/{client_response_id} | Update a client response
 *QuestionnaireApi* | [**updateQuestionUsingPut**](docs/QuestionnaireApi.md#updateQuestionUsingPut) | **PUT** /question/{question_id} | Update a question.
 *QuestionnaireApi* | [**updateQuestionnaireUsingPut**](docs/QuestionnaireApi.md#updateQuestionnaireUsingPut) | **PUT** /questionnaire/{questionnaire_id} | Update a questionnaire
+*ResourceApi* | [**createFxRateBulkUsingPost**](docs/ResourceApi.md#createFxRateBulkUsingPost) | **POST** /resource/fx_rate | Create a bulk fxRate
 *ResourceApi* | [**getAllCountryUsingGet**](docs/ResourceApi.md#getAllCountryUsingGet) | **GET** /resource/country | Get All Countries
 *ResourceApi* | [**getAllCurrencyUsingGet**](docs/ResourceApi.md#getAllCurrencyUsingGet) | **GET** /resource/currency | Get All Currencies
+*ResourceApi* | [**getAllMerchantCategoryCodeUsingGet**](docs/ResourceApi.md#getAllMerchantCategoryCodeUsingGet) | **GET** /resource/merchant_category_code | Get All Merchant Category Codes
 *ResourceApi* | [**getAllStatesUsingGet**](docs/ResourceApi.md#getAllStatesUsingGet) | **GET** /resource/state | List all state resource
 *ResourceApi* | [**getAllStatisticsUsingGet**](docs/ResourceApi.md#getAllStatisticsUsingGet) | **GET** /resource/statistic | List all statistic resource
+*ResourceApi* | [**getCurrencyExchangeRateAllUsingGet**](docs/ResourceApi.md#getCurrencyExchangeRateAllUsingGet) | **GET** /resource/fx_rate | List all fxRates
+*ResourceMerchantControllerApi* | [**getAllMerchantsUsingGET**](docs/ResourceMerchantControllerApi.md#getAllMerchantsUsingGET) | **GET** /resource/merchant | getAllMerchants
+*ResourceMerchantControllerApi* | [**saveMerchantsUsingPOST**](docs/ResourceMerchantControllerApi.md#saveMerchantsUsingPOST) | **POST** /resource/merchant | saveMerchants
 *RiskProfileApi* | [**createRiskProfileUsingPost**](docs/RiskProfileApi.md#createRiskProfileUsingPost) | **POST** /risk_profile | Create a Risk Profile
 *RiskProfileApi* | [**deleteRiskProfileUsingDelete**](docs/RiskProfileApi.md#deleteRiskProfileUsingDelete) | **DELETE** /risk_profile/{risk_profile_id} | Delete a Risk Profile
 *RiskProfileApi* | [**getRiskProfileAllUsingGet**](docs/RiskProfileApi.md#getRiskProfileAllUsingGet) | **GET** /risk_profile | Get All Risk Profile
@@ -539,9 +569,9 @@ Class | Method | HTTP request | Description
 *RoundupApi* | [**getRoundupUsingGet**](docs/RoundupApi.md#getRoundupUsingGet) | **GET** /roundup/{roundup_id} | Retrieve a Roundup
 *RoundupApi* | [**updateRoundupSettingsUsingPut**](docs/RoundupApi.md#updateRoundupSettingsUsingPut) | **PUT** /roundup_setting/{roundup_setting_id} | Update a roundup settings
 *ScoreApi* | [**createScoreUsingPost**](docs/ScoreApi.md#createScoreUsingPost) | **POST** /score | Create a score
-*ScoreApi* | [**createScoreUsingPost1**](docs/ScoreApi.md#createScoreUsingPost1) | **GET** /score/{score_id} | Retrieve a score
 *ScoreApi* | [**deleteScoreUsingDelete**](docs/ScoreApi.md#deleteScoreUsingDelete) | **DELETE** /score/{score_id} | Delete a score
 *ScoreApi* | [**getScoreAllUsingGet**](docs/ScoreApi.md#getScoreAllUsingGet) | **GET** /score | List all scores
+*ScoreApi* | [**getScoreUsingGet**](docs/ScoreApi.md#getScoreUsingGet) | **GET** /score/{score_id} | Retrieve a score
 *ScoreApi* | [**updateScoreUsingPut**](docs/ScoreApi.md#updateScoreUsingPut) | **PUT** /score/{score_id} | Update a score
 *SecuritiesApi* | [**createSecurityExclusionUsingPost**](docs/SecuritiesApi.md#createSecurityExclusionUsingPost) | **POST** /security_exclusion | Create a security exclusion
 *SecuritiesApi* | [**createSecurityPriceUsingPost**](docs/SecuritiesApi.md#createSecurityPriceUsingPost) | **POST** /security_price | Create a security price
@@ -583,19 +613,19 @@ Class | Method | HTTP request | Description
 *SupportApi* | [**updateSaleUsingPut**](docs/SupportApi.md#updateSaleUsingPut) | **PUT** /sales/{sales_id} | Update a sales inquiry
 *SupportApi* | [**updateSupportTicketCommentUsingPut**](docs/SupportApi.md#updateSupportTicketCommentUsingPut) | **PUT** /support_ticket_comment/{support_ticket_comment_id} | Update a support ticket comment
 *SupportApi* | [**updateSupportTicketUsingPut**](docs/SupportApi.md#updateSupportTicketUsingPut) | **PUT** /support_ticket/{support_ticket_id} | Update a support ticket
-*UtilsApi* | [**createAccountStatusUsingPost**](docs/UtilsApi.md#createAccountStatusUsingPost) | **POST** /account_status | Create an account status
+*UtilsApi* | [**createReasonCodeUsingPost**](docs/UtilsApi.md#createReasonCodeUsingPost) | **POST** /reason_code | Create a reason code
 *UtilsApi* | [**createStageUsingPost**](docs/UtilsApi.md#createStageUsingPost) | **POST** /stage | Create an account stage
 *UtilsApi* | [**createTransactionCodeUsingPost**](docs/UtilsApi.md#createTransactionCodeUsingPost) | **POST** /transaction_code | Create a transaction code
-*UtilsApi* | [**deleteAccountStatusUsingDelete**](docs/UtilsApi.md#deleteAccountStatusUsingDelete) | **DELETE** /account_status/{account_status_id} | Delete an account status
+*UtilsApi* | [**deleteReasonCodeUsingDelete**](docs/UtilsApi.md#deleteReasonCodeUsingDelete) | **DELETE** /reason_code/{reason_code_id} | Delete a reason code
 *UtilsApi* | [**deleteStageUsingDelete**](docs/UtilsApi.md#deleteStageUsingDelete) | **DELETE** /stage/{stage_id} | Delete an account stage
 *UtilsApi* | [**deleteTransactionCodeUsingDelete**](docs/UtilsApi.md#deleteTransactionCodeUsingDelete) | **DELETE** /transaction_code/{transaction_code_id} | Delete a transaction code
-*UtilsApi* | [**getAccountStatusAllUsingGet**](docs/UtilsApi.md#getAccountStatusAllUsingGet) | **GET** /account_status | List all account statuses
-*UtilsApi* | [**getAccountStatusUsingGet**](docs/UtilsApi.md#getAccountStatusUsingGet) | **GET** /account_status/{account_status_id} | Retrieve an account status
+*UtilsApi* | [**getReasonCodeAllUsingGet**](docs/UtilsApi.md#getReasonCodeAllUsingGet) | **GET** /reason_code | List all reason codes
+*UtilsApi* | [**getReasonCodeUsingGet**](docs/UtilsApi.md#getReasonCodeUsingGet) | **GET** /reason_code/{reason_code_id} | Retrieve a reason code
 *UtilsApi* | [**getStageAllUsingGet**](docs/UtilsApi.md#getStageAllUsingGet) | **GET** /stage | List all account stages
 *UtilsApi* | [**getStageUsingGet**](docs/UtilsApi.md#getStageUsingGet) | **GET** /stage/{stage_id} | Retrieve an account stage
 *UtilsApi* | [**getTransactionCodeAllUsingGet**](docs/UtilsApi.md#getTransactionCodeAllUsingGet) | **GET** /transaction_code | List all transaction codes
 *UtilsApi* | [**getTransactionCodeUsingGet**](docs/UtilsApi.md#getTransactionCodeUsingGet) | **GET** /transaction_code/{transaction_code_id} | Retrieve a transaction code
-*UtilsApi* | [**updateAccountStatusUsingPut**](docs/UtilsApi.md#updateAccountStatusUsingPut) | **PUT** /account_status/{account_status_id} | Update an account status
+*UtilsApi* | [**updateReasonCodeUsingPut**](docs/UtilsApi.md#updateReasonCodeUsingPut) | **PUT** /reason_code/{reason_code_id} | Update a reason code
 *UtilsApi* | [**updateStageUsingPut**](docs/UtilsApi.md#updateStageUsingPut) | **PUT** /stage/{stage_id} | Update an account stage
 *UtilsApi* | [**updateTransactionCodeUsingPut**](docs/UtilsApi.md#updateTransactionCodeUsingPut) | **PUT** /transaction_code/{transaction_code_id} | Update a transaction code
 *WebhookApi* | [**createWebhookUsingPost**](docs/WebhookApi.md#createWebhookUsingPost) | **POST** /webhook | Create a webhook
@@ -608,40 +638,24 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [Account](docs/Account.md)
- - [AccountAdvisorVO](docs/AccountAdvisorVO.md)
  - [AccountAllocationMapping](docs/AccountAllocationMapping.md)
- - [AccountClientsOverviewVO](docs/AccountClientsOverviewVO.md)
- - [AccountHoldingVO](docs/AccountHoldingVO.md)
  - [AccountMap](docs/AccountMap.md)
- - [AccountOverviewVO](docs/AccountOverviewVO.md)
  - [AccountPermissionVO](docs/AccountPermissionVO.md)
  - [AccountPortfolioRebalanceRequest](docs/AccountPortfolioRebalanceRequest.md)
  - [AccountStatus](docs/AccountStatus.md)
  - [AccountType](docs/AccountType.md)
- - [AccountVO](docs/AccountVO.md)
- - [Accounting](docs/Accounting.md)
  - [AclClientPermissionVO](docs/AclClientPermissionVO.md)
- - [AdvisorOverviewVO](docs/AdvisorOverviewVO.md)
- - [AggregateDataByCategoryForClientFromDbVO](docs/AggregateDataByCategoryForClientFromDbVO.md)
  - [AggregationAccount](docs/AggregationAccount.md)
- - [AggregationAccountAggregateDataVO](docs/AggregationAccountAggregateDataVO.md)
  - [AggregationAccountBalance](docs/AggregationAccountBalance.md)
- - [AggregationAccountBalanceAggregateDataVO](docs/AggregationAccountBalanceAggregateDataVO.md)
- - [AggregationAccountDetailsAggregateDataVO](docs/AggregationAccountDetailsAggregateDataVO.md)
  - [AggregationAccountHolding](docs/AggregationAccountHolding.md)
- - [AggregationAccountHoldingAggregateDataVO](docs/AggregationAccountHoldingAggregateDataVO.md)
  - [AggregationAccountTransaction](docs/AggregationAccountTransaction.md)
- - [AggregationAccountTransactionAggregateDataVO](docs/AggregationAccountTransactionAggregateDataVO.md)
  - [AggregationAccountsMap](docs/AggregationAccountsMap.md)
- - [AggregationDataForClientByCategoryResponseVO](docs/AggregationDataForClientByCategoryResponseVO.md)
- - [AggregationDataForClientParentResponseVO](docs/AggregationDataForClientParentResponseVO.md)
  - [Allocation](docs/Allocation.md)
  - [AllocationAggregatedVO](docs/AllocationAggregatedVO.md)
  - [AllocationComposition](docs/AllocationComposition.md)
  - [AllocationCompositionAggregatedVO](docs/AllocationCompositionAggregatedVO.md)
  - [AllocationCompositionModelHoldingsVO](docs/AllocationCompositionModelHoldingsVO.md)
  - [AllocationNodeMap](docs/AllocationNodeMap.md)
- - [AllocationVO](docs/AllocationVO.md)
  - [Answer](docs/Answer.md)
  - [AnswerMap](docs/AnswerMap.md)
  - [Application](docs/Application.md)
@@ -652,6 +666,7 @@ Class | Method | HTTP request | Description
  - [BankLinkMap](docs/BankLinkMap.md)
  - [Benchmark](docs/Benchmark.md)
  - [BenchmarkComposition](docs/BenchmarkComposition.md)
+ - [Brokers](docs/Brokers.md)
  - [Budget](docs/Budget.md)
  - [BudgetAggregationAccount](docs/BudgetAggregationAccount.md)
  - [BudgetObject](docs/BudgetObject.md)
@@ -667,18 +682,14 @@ Class | Method | HTTP request | Description
  - [Cash](docs/Cash.md)
  - [CategoriesMap](docs/CategoriesMap.md)
  - [ChatInfo](docs/ChatInfo.md)
+ - [Check](docs/Check.md)
+ - [CheckImages](docs/CheckImages.md)
  - [Client](docs/Client.md)
- - [ClientAccountAdvisorVO](docs/ClientAccountAdvisorVO.md)
  - [ClientAccountMapping](docs/ClientAccountMapping.md)
- - [ClientAccountVO](docs/ClientAccountVO.md)
  - [ClientAddress](docs/ClientAddress.md)
- - [ClientAdvisorOverviewVO](docs/ClientAdvisorOverviewVO.md)
- - [ClientAnalyticsHistory](docs/ClientAnalyticsHistory.md)
- - [ClientAnalyticsResponse](docs/ClientAnalyticsResponse.md)
- - [ClientAnalyticsTenants](docs/ClientAnalyticsTenants.md)
- - [ClientAssetsAdvisorVO](docs/ClientAssetsAdvisorVO.md)
  - [ClientCampaignMapping](docs/ClientCampaignMapping.md)
  - [ClientHydro](docs/ClientHydro.md)
+ - [ClientRelationship](docs/ClientRelationship.md)
  - [ClientResponse](docs/ClientResponse.md)
  - [ClientStatus](docs/ClientStatus.md)
  - [ClientViewGoalData](docs/ClientViewGoalData.md)
@@ -694,8 +705,6 @@ Class | Method | HTTP request | Description
  - [DecisionTree](docs/DecisionTree.md)
  - [DecisionTreeCO](docs/DecisionTreeCO.md)
  - [DecisionTreeResultVO](docs/DecisionTreeResultVO.md)
- - [DepositAccountVO](docs/DepositAccountVO.md)
- - [DepositVO](docs/DepositVO.md)
  - [Document](docs/Document.md)
  - [Employment](docs/Employment.md)
  - [ExternalAccountTransfer](docs/ExternalAccountTransfer.md)
@@ -704,12 +713,16 @@ Class | Method | HTTP request | Description
  - [Feature](docs/Feature.md)
  - [FeatureTrack](docs/FeatureTrack.md)
  - [FinancialOffer](docs/FinancialOffer.md)
+ - [FinancialStatement](docs/FinancialStatement.md)
  - [Funding](docs/Funding.md)
  - [FundingRequestMap](docs/FundingRequestMap.md)
+ - [FxRate](docs/FxRate.md)
+ - [FxRateView](docs/FxRateView.md)
  - [Goal](docs/Goal.md)
  - [GoalAccountMapping](docs/GoalAccountMapping.md)
  - [GoalTrack](docs/GoalTrack.md)
  - [GoalTrackAccounts](docs/GoalTrackAccounts.md)
+ - [Household](docs/Household.md)
  - [InsuranceCoverage](docs/InsuranceCoverage.md)
  - [InsuranceCoverageMap](docs/InsuranceCoverageMap.md)
  - [InsuranceDiscount](docs/InsuranceDiscount.md)
@@ -719,13 +732,16 @@ Class | Method | HTTP request | Description
  - [Invoice](docs/Invoice.md)
  - [InvoicePayment](docs/InvoicePayment.md)
  - [JsonNode](docs/JsonNode.md)
+ - [LineItems](docs/LineItems.md)
  - [Location](docs/Location.md)
+ - [MXMerchantRes](docs/MXMerchantRes.md)
+ - [Member](docs/Member.md)
+ - [MerchantCategoryCode](docs/MerchantCategoryCode.md)
  - [MerchantsMap](docs/MerchantsMap.md)
  - [Model](docs/Model.md)
  - [ModelAssetSize](docs/ModelAssetSize.md)
  - [ModelComment](docs/ModelComment.md)
  - [ModelHolding](docs/ModelHolding.md)
- - [ModelHoldingAgg](docs/ModelHoldingAgg.md)
  - [ModelHoldingVO](docs/ModelHoldingVO.md)
  - [ModelTransaction](docs/ModelTransaction.md)
  - [Node](docs/Node.md)
@@ -743,12 +759,12 @@ Class | Method | HTTP request | Description
  - [Overflow](docs/Overflow.md)
  - [OverflowBankLinkMap](docs/OverflowBankLinkMap.md)
  - [OverflowSettings](docs/OverflowSettings.md)
+ - [OverflowVO](docs/OverflowVO.md)
  - [PageAccount](docs/PageAccount.md)
  - [PageAccountAllocationMapping](docs/PageAccountAllocationMapping.md)
  - [PageAccountPermissionVO](docs/PageAccountPermissionVO.md)
  - [PageAccountStatus](docs/PageAccountStatus.md)
  - [PageAccountType](docs/PageAccountType.md)
- - [PageAccounting](docs/PageAccounting.md)
  - [PageAggregationAccount](docs/PageAggregationAccount.md)
  - [PageAggregationAccountBalance](docs/PageAggregationAccountBalance.md)
  - [PageAggregationAccountHolding](docs/PageAggregationAccountHolding.md)
@@ -784,14 +800,17 @@ Class | Method | HTTP request | Description
  - [PageFeature](docs/PageFeature.md)
  - [PageFeatureTrack](docs/PageFeatureTrack.md)
  - [PageFinancialOffer](docs/PageFinancialOffer.md)
+ - [PageFinancialStatement](docs/PageFinancialStatement.md)
  - [PageFunding](docs/PageFunding.md)
  - [PageGoal](docs/PageGoal.md)
  - [PageGoalTrack](docs/PageGoalTrack.md)
+ - [PageHousehold](docs/PageHousehold.md)
  - [PageInsuranceCoverage](docs/PageInsuranceCoverage.md)
  - [PageInsuranceDiscount](docs/PageInsuranceDiscount.md)
  - [PageInsuranceQuote](docs/PageInsuranceQuote.md)
  - [PageInvoice](docs/PageInvoice.md)
  - [PageInvoicePayment](docs/PageInvoicePayment.md)
+ - [PageMXMerchantRes](docs/PageMXMerchantRes.md)
  - [PageModel](docs/PageModel.md)
  - [PageModelAssetSize](docs/PageModelAssetSize.md)
  - [PageModelComment](docs/PageModelComment.md)
@@ -816,6 +835,7 @@ Class | Method | HTTP request | Description
  - [PagePortfolioTransaction](docs/PagePortfolioTransaction.md)
  - [PageQuestion](docs/PageQuestion.md)
  - [PageQuestionnaire](docs/PageQuestionnaire.md)
+ - [PageReasonCode](docs/PageReasonCode.md)
  - [PageRiskProfile](docs/PageRiskProfile.md)
  - [PageRoundup](docs/PageRoundup.md)
  - [PageRoundupSettings](docs/PageRoundupSettings.md)
@@ -832,18 +852,16 @@ Class | Method | HTTP request | Description
  - [PageWebhook](docs/PageWebhook.md)
  - [PermissionVO](docs/PermissionVO.md)
  - [Portfolio](docs/Portfolio.md)
- - [PortfolioAggregatedVO](docs/PortfolioAggregatedVO.md)
- - [PortfolioAssetSize](docs/PortfolioAssetSize.md)
  - [PortfolioAssetSizeLog](docs/PortfolioAssetSizeLog.md)
  - [PortfolioComment](docs/PortfolioComment.md)
  - [PortfolioGoal](docs/PortfolioGoal.md)
  - [PortfolioGoalMap](docs/PortfolioGoalMap.md)
- - [PortfolioHolding](docs/PortfolioHolding.md)
  - [PortfolioHoldingAgg](docs/PortfolioHoldingAgg.md)
  - [PortfolioHoldingLog](docs/PortfolioHoldingLog.md)
  - [PortfolioTransaction](docs/PortfolioTransaction.md)
  - [Question](docs/Question.md)
  - [Questionnaire](docs/Questionnaire.md)
+ - [ReasonCode](docs/ReasonCode.md)
  - [RiskProfile](docs/RiskProfile.md)
  - [Roundup](docs/Roundup.md)
  - [RoundupCO](docs/RoundupCO.md)
@@ -855,11 +873,11 @@ Class | Method | HTTP request | Description
  - [Security](docs/Security.md)
  - [SecurityCompositionVO](docs/SecurityCompositionVO.md)
  - [SecurityCountryVO](docs/SecurityCountryVO.md)
- - [SecurityDetailVO](docs/SecurityDetailVO.md)
  - [SecurityExclusion](docs/SecurityExclusion.md)
  - [SecurityPrice](docs/SecurityPrice.md)
  - [Sort](docs/Sort.md)
  - [Stage](docs/Stage.md)
+ - [Stat](docs/Stat.md)
  - [State](docs/State.md)
  - [StatisticResourceVO](docs/StatisticResourceVO.md)
  - [SupportTicket](docs/SupportTicket.md)
@@ -872,8 +890,6 @@ Class | Method | HTTP request | Description
  - [VClientGoalViewData](docs/VClientGoalViewData.md)
  - [VPortfolioVO](docs/VPortfolioVO.md)
  - [Webhook](docs/Webhook.md)
- - [WithdrawalAccountVO](docs/WithdrawalAccountVO.md)
- - [WithdrawalVO](docs/WithdrawalVO.md)
 
 
 ## Documentation for Authorization

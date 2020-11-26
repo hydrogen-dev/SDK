@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **frequencyUnit** | **String** | frequency_unit |  [optional]
 **id** | [**UUID**](UUID.md) |  |  [optional]
 **isReceive** | **Boolean** | is_receive |  [optional]
+**lastRunDate** | [**OffsetDateTime**](OffsetDateTime.md) | last_run_date |  [optional]
 **metadata** | **Map&lt;String, String&gt;** | metadata |  [optional]
 **notificationId** | [**UUID**](UUID.md) | notification_id | 
 **secondaryId** | **String** |  |  [optional]

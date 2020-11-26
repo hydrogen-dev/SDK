@@ -31,8 +31,8 @@ Create a new insurance coverage.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
@@ -43,10 +43,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 InsuranceApi apiInstance = new InsuranceApi();
 InsuranceCoverage insuranceCoverage = new InsuranceCoverage(); // InsuranceCoverage | insuranceCoverage
@@ -88,8 +92,8 @@ Create a new insurance discount.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
@@ -100,10 +104,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 InsuranceApi apiInstance = new InsuranceApi();
 InsuranceDiscount insuranceDiscount = new InsuranceDiscount(); // InsuranceDiscount | insuranceDiscount
@@ -145,8 +153,8 @@ Create a new insuranceQuote request.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
@@ -157,10 +165,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 InsuranceApi apiInstance = new InsuranceApi();
 InsuranceQuote insuranceQuote = new InsuranceQuote(); // InsuranceQuote | insuranceQuote
@@ -202,8 +214,8 @@ Delete an  insurance coverage.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
@@ -214,10 +226,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 InsuranceApi apiInstance = new InsuranceApi();
 UUID insuranceCoverageId = new UUID(); // UUID | UUID insurance_coverage_id
@@ -258,8 +274,8 @@ Delete an  insurance discount.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
@@ -270,10 +286,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 InsuranceApi apiInstance = new InsuranceApi();
 UUID insuranceDiscountId = new UUID(); // UUID | UUID insurance_discount_id
@@ -306,7 +326,7 @@ null (empty response body)
 
 <a name="deleteInsuranceQuoteUsingDelete"></a>
 # **deleteInsuranceQuoteUsingDelete**
-> deleteInsuranceQuoteUsingDelete(insuranceQuote, insuranceQuoteId)
+> deleteInsuranceQuoteUsingDelete(insuranceQuoteId)
 
 Delete a insuranceQuote request
 
@@ -314,8 +334,8 @@ Permanently delete a insuranceQuote request.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
@@ -326,16 +346,19 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 InsuranceApi apiInstance = new InsuranceApi();
-UUID insuranceQuote = new UUID(); // UUID | UUID insurance_quote_id
-UUID insuranceQuoteId = new UUID(); // UUID | insurance_quote_id
+UUID insuranceQuoteId = new UUID(); // UUID | UUID insurance_quote_id
 try {
-    apiInstance.deleteInsuranceQuoteUsingDelete(insuranceQuote, insuranceQuoteId);
+    apiInstance.deleteInsuranceQuoteUsingDelete(insuranceQuoteId);
 } catch (ApiException e) {
     System.err.println("Exception when calling InsuranceApi#deleteInsuranceQuoteUsingDelete");
     e.printStackTrace();
@@ -346,8 +369,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **insuranceQuote** | [**UUID**](.md)| UUID insurance_quote_id |
- **insuranceQuoteId** | [**UUID**](.md)| insurance_quote_id |
+ **insuranceQuoteId** | [**UUID**](.md)| UUID insurance_quote_id |
 
 ### Return type
 
@@ -364,7 +386,7 @@ null (empty response body)
 
 <a name="getInsuranceCoverageAllUsingGet"></a>
 # **getInsuranceCoverageAllUsingGet**
-> PageInsuranceCoverage getInsuranceCoverageAllUsingGet(ascending, filter, orderBy, page, size)
+> PageInsuranceCoverage getInsuranceCoverageAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size)
 
 Get all insurance coverage request
 
@@ -372,8 +394,8 @@ Get all new insurance coverage.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
@@ -384,19 +406,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 InsuranceApi apiInstance = new InsuranceApi();
 Boolean ascending = false; // Boolean | ascending
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PageInsuranceCoverage result = apiInstance.getInsuranceCoverageAllUsingGet(ascending, filter, orderBy, page, size);
+    PageInsuranceCoverage result = apiInstance.getInsuranceCoverageAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InsuranceApi#getInsuranceCoverageAllUsingGet");
@@ -409,6 +436,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -429,7 +457,7 @@ Name | Type | Description  | Notes
 
 <a name="getInsuranceCoverageUsingGet"></a>
 # **getInsuranceCoverageUsingGet**
-> InsuranceCoverage getInsuranceCoverageUsingGet(insuranceCoverageId)
+> InsuranceCoverage getInsuranceCoverageUsingGet(insuranceCoverageId, currencyConversion)
 
 Get a insurance coverage request
 
@@ -437,8 +465,8 @@ Get a new insurance coverage.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
@@ -449,15 +477,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 InsuranceApi apiInstance = new InsuranceApi();
 UUID insuranceCoverageId = new UUID(); // UUID | UUID insurance_coverage_id
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    InsuranceCoverage result = apiInstance.getInsuranceCoverageUsingGet(insuranceCoverageId);
+    InsuranceCoverage result = apiInstance.getInsuranceCoverageUsingGet(insuranceCoverageId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InsuranceApi#getInsuranceCoverageUsingGet");
@@ -470,6 +503,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **insuranceCoverageId** | [**UUID**](.md)| UUID insurance_coverage_id |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
@@ -486,7 +520,7 @@ Name | Type | Description  | Notes
 
 <a name="getInsuranceDiscountAllUsingGet"></a>
 # **getInsuranceDiscountAllUsingGet**
-> PageInsuranceDiscount getInsuranceDiscountAllUsingGet(ascending, filter, orderBy, page, size)
+> PageInsuranceDiscount getInsuranceDiscountAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size)
 
 Get all insurance discount request
 
@@ -494,8 +528,8 @@ Get all new insurance discount.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
@@ -506,19 +540,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 InsuranceApi apiInstance = new InsuranceApi();
 Boolean ascending = false; // Boolean | ascending
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PageInsuranceDiscount result = apiInstance.getInsuranceDiscountAllUsingGet(ascending, filter, orderBy, page, size);
+    PageInsuranceDiscount result = apiInstance.getInsuranceDiscountAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InsuranceApi#getInsuranceDiscountAllUsingGet");
@@ -531,6 +570,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -551,7 +591,7 @@ Name | Type | Description  | Notes
 
 <a name="getInsuranceDiscountUsingGet"></a>
 # **getInsuranceDiscountUsingGet**
-> InsuranceDiscount getInsuranceDiscountUsingGet(insuranceDiscountId)
+> InsuranceDiscount getInsuranceDiscountUsingGet(insuranceDiscountId, currencyConversion)
 
 Get a insurance discount request
 
@@ -559,8 +599,8 @@ Get a new insurance discount.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
@@ -571,15 +611,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 InsuranceApi apiInstance = new InsuranceApi();
 UUID insuranceDiscountId = new UUID(); // UUID |  UUID insurance_discount_id
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    InsuranceDiscount result = apiInstance.getInsuranceDiscountUsingGet(insuranceDiscountId);
+    InsuranceDiscount result = apiInstance.getInsuranceDiscountUsingGet(insuranceDiscountId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InsuranceApi#getInsuranceDiscountUsingGet");
@@ -592,6 +637,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **insuranceDiscountId** | [**UUID**](.md)|  UUID insurance_discount_id |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
@@ -608,7 +654,7 @@ Name | Type | Description  | Notes
 
 <a name="getInsuranceQuoteAllUsingGet"></a>
 # **getInsuranceQuoteAllUsingGet**
-> PageInsuranceQuote getInsuranceQuoteAllUsingGet(ascending, filter, orderBy, page, size)
+> PageInsuranceQuote getInsuranceQuoteAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size)
 
 List all insuranceQuote requests
 
@@ -616,8 +662,8 @@ Get the information for all insuranceQuote requests.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
@@ -628,19 +674,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 InsuranceApi apiInstance = new InsuranceApi();
 Boolean ascending = false; // Boolean | ascending
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PageInsuranceQuote result = apiInstance.getInsuranceQuoteAllUsingGet(ascending, filter, orderBy, page, size);
+    PageInsuranceQuote result = apiInstance.getInsuranceQuoteAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InsuranceApi#getInsuranceQuoteAllUsingGet");
@@ -653,6 +704,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -673,7 +725,7 @@ Name | Type | Description  | Notes
 
 <a name="getInsuranceQuoteUsingGet"></a>
 # **getInsuranceQuoteUsingGet**
-> InsuranceQuote getInsuranceQuoteUsingGet(insuranceQuote, insuranceQuoteId)
+> InsuranceQuote getInsuranceQuoteUsingGet(insuranceQuoteId, currencyConversion)
 
 Retrieve a insuranceQuote request
 
@@ -681,8 +733,8 @@ Retrieve the information for a insuranceQuote request.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
@@ -693,16 +745,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 InsuranceApi apiInstance = new InsuranceApi();
-UUID insuranceQuote = new UUID(); // UUID | UUID insurance_quote_id
-UUID insuranceQuoteId = new UUID(); // UUID | insurance_quote_id
+UUID insuranceQuoteId = new UUID(); // UUID | UUID insurance_quote_id
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    InsuranceQuote result = apiInstance.getInsuranceQuoteUsingGet(insuranceQuote, insuranceQuoteId);
+    InsuranceQuote result = apiInstance.getInsuranceQuoteUsingGet(insuranceQuoteId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling InsuranceApi#getInsuranceQuoteUsingGet");
@@ -714,8 +770,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **insuranceQuote** | [**UUID**](.md)| UUID insurance_quote_id |
- **insuranceQuoteId** | [**UUID**](.md)| insurance_quote_id |
+ **insuranceQuoteId** | [**UUID**](.md)| UUID insurance_quote_id |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
@@ -740,8 +796,8 @@ Update a new insurance coverage.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
@@ -752,10 +808,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 InsuranceApi apiInstance = new InsuranceApi();
 InsuranceCoverage insuranceCoverage = new InsuranceCoverage(); // InsuranceCoverage | insurance_coverage
@@ -799,8 +859,8 @@ Update an new insurance .
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
@@ -811,10 +871,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 InsuranceApi apiInstance = new InsuranceApi();
 InsuranceDiscount insuranceDiscount = new InsuranceDiscount(); // InsuranceDiscount | insurance_discount
@@ -858,8 +922,8 @@ Update the information for a insuranceQuote request.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import InsuranceApi;
 
@@ -870,10 +934,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 InsuranceApi apiInstance = new InsuranceApi();
 InsuranceQuote insuranceQuote = new InsuranceQuote(); // InsuranceQuote | insurance_quote

@@ -22,8 +22,7 @@ Allocate based on an accumulation goal
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -36,10 +35,12 @@ $config =
         \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}
-$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
+}$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -87,8 +88,7 @@ Generate recommendations to achieve an accumulation goal
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -101,10 +101,12 @@ $config =
         \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}
-$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
+}$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -152,8 +154,7 @@ Track the status of an accumulation goal
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -166,10 +167,12 @@ $config =
         \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}
-$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
+}$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -217,8 +220,7 @@ Allocate based on a decumulation goal
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -231,10 +233,12 @@ $config =
         \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}
-$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
+}$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -282,8 +286,7 @@ Generate recommendations to achieve a decumulation goal
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -296,10 +299,12 @@ $config =
         \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}
-$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
+}$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -347,8 +352,7 @@ Track the status of a decumulation goal
 ### Example
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
+require_once('../vendor/autoload.php');
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -361,10 +365,12 @@ $config =
         \com\hydrogen\proton\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}
-$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
+}$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),

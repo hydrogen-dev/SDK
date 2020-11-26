@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **aggregationAccountId** | [**UUID**](UUID.md) | aggregationAccountId |  [optional]
-**availableBalance** | **String** | availableBalance |  [optional]
-**availableCredit** | **String** | availableCredit |  [optional]
-**balance** | **String** | balance |  [optional]
+**availableBalance** | **Double** | availableBalance |  [optional]
+**availableCredit** | **Double** | availableCredit |  [optional]
+**balance** | **Double** | balance |  [optional]
 **balanceTimeStamp** | [**OffsetDateTime**](OffsetDateTime.md) | balanceTimeStamp |  [optional]
 **createDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **currencyCode** | **String** | currencyCode | 

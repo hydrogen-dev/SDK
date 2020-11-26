@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **metadata** | **{String: String}** |  | [optional] 
 **name** | **String** | name | 
 **secondaryId** | **String** |  | [optional] 
+**status** | **String** | status | [optional] 
 **updateDate** | **Date** |  | [optional] 
 
 

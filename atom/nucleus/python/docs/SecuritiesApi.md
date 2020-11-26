@@ -47,10 +47,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_exclusion_request = nucleus_api.SecurityExclusion() # SecurityExclusion | securityExclusionRequest
@@ -110,10 +111,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_price_request = nucleus_api.SecurityPrice() # SecurityPrice | securityPriceRequest
@@ -173,10 +175,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 securities_info_request = nucleus_api.Security() # Security | securitiesInfoRequest
@@ -236,10 +239,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_exclusion_id = 'security_exclusion_id_example' # str | UUID security_exclusion_id
@@ -298,10 +302,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_price_id = 'security_price_id_example' # str | UUID security_price_id
@@ -360,10 +365,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_id = 'security_id_example' # str | UUID security_id
@@ -422,10 +428,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -468,7 +475,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_security_exclusion_all_using_get**
-> PageSecurityExclusion get_security_exclusion_all_using_get(security_exclusion_id, ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+> PageSecurityExclusion get_security_exclusion_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
 
 List all security exclusions
 
@@ -493,13 +500,13 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
-security_exclusion_id = 'security_exclusion_id_example' # str | UUID security_exclusion_id
 ascending = false # bool | ascending (optional) (default to false)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
@@ -508,7 +515,7 @@ size = 25 # int | size (optional) (default to 25)
 
 try:
     # List all security exclusions
-    api_response = api_instance.get_security_exclusion_all_using_get(security_exclusion_id, ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    api_response = api_instance.get_security_exclusion_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecuritiesApi->get_security_exclusion_all_using_get: %s\n" % e)
@@ -518,7 +525,6 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **security_exclusion_id** | [**str**](.md)| UUID security_exclusion_id | 
  **ascending** | **bool**| ascending | [optional] [default to false]
  **filter** | **str**| filter | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
@@ -566,13 +572,14 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
-security_exclusion_id = 'security_exclusion_id_example' # str | security exclusion id
+security_exclusion_id = 'security_exclusion_id_example' # str | UUID security_exclusion_id
 
 try:
     # Retrieve a security exclusion
@@ -586,7 +593,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **security_exclusion_id** | [**str**](.md)| security exclusion id | 
+ **security_exclusion_id** | [**str**](.md)| UUID security_exclusion_id | 
 
 ### Return type
 
@@ -604,7 +611,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_security_price_all_using_get**
-> PageSecurityPrice get_security_price_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+> PageSecurityPrice get_security_price_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
 
 List all security prices
 
@@ -629,13 +636,15 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
@@ -643,7 +652,7 @@ size = 25 # int | size (optional) (default to 25)
 
 try:
     # List all security prices
-    api_response = api_instance.get_security_price_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    api_response = api_instance.get_security_price_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecuritiesApi->get_security_price_all_using_get: %s\n" % e)
@@ -654,6 +663,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **str**| currency_conversion | [optional] 
  **filter** | **str**| filter | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -675,7 +685,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_security_price_using_get**
-> SecurityPrice get_security_price_using_get(security_price_id)
+> SecurityPrice get_security_price_using_get(security_price_id, currency_conversion=currency_conversion)
 
 Retrieve a security price
 
@@ -700,17 +710,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_price_id = 'security_price_id_example' # str | UUID security_price_id
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 
 try:
     # Retrieve a security price
-    api_response = api_instance.get_security_price_using_get(security_price_id)
+    api_response = api_instance.get_security_price_using_get(security_price_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecuritiesApi->get_security_price_using_get: %s\n" % e)
@@ -721,6 +733,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **security_price_id** | [**str**](.md)| UUID security_price_id | 
+ **currency_conversion** | **str**| USD | [optional] 
 
 ### Return type
 
@@ -763,10 +776,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_id = 'security_id_example' # str | UUID security_id
@@ -826,10 +840,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_exclusion = nucleus_api.SecurityExclusion() # SecurityExclusion | security_exclusion
@@ -891,10 +906,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_price = nucleus_api.SecurityPrice() # SecurityPrice | security_price
@@ -956,10 +972,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security = nucleus_api.Security() # Security | security

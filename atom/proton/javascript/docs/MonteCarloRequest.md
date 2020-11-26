@@ -3,27 +3,28 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sigma** | **[Number]** |  | [optional] 
-**maxBal** | **[Number]** |  | [optional] 
-**allocationId** | **String** |  | [optional] 
-**accountId** | **String** |  | [optional] 
-**resultType** | **String** |  | [optional] [default to 'raw']
-**aggregationAccountId** | **String** |  | [optional] 
-**marketDataSource** | **String** |  | [optional] [default to 'nucleus']
 **maxSample** | **[Number]** |  | [optional] 
-**portfolioId** | **String** |  | [optional] 
+**p** | **[Number]** |  | [optional] 
+**aggregationAccountId** | **String** |  | [optional] 
+**allocationId** | **String** |  | [optional] 
 **mu** | **[Number]** |  | [optional] 
-**frequencyInterval** | **String** |  | [optional] [default to 'year']
-**retMod** | **[Number]** |  | [optional] 
-**minSample** | **[Number]** |  | [optional] 
 **n** | **Number** |  | [optional] [default to 1000]
-**cf** | **[[Number]]** |  | 
-**modelId** | **String** |  | [optional] 
-**useProxyData** | **Boolean** |  | [optional] [default to false]
+**sigma** | **[Number]** |  | [optional] 
+**accountId** | **String** |  | [optional] 
 **initBal** | **Number** |  | [optional] 
 **removeOutliers** | **Boolean** |  | [optional] [default to false]
+**modelId** | **String** |  | [optional] 
+**maxBal** | **[Number]** |  | [optional] 
 **minBal** | **[Number]** |  | [optional] 
-**p** | **[Number]** |  | [optional] 
+**useProxyData** | **Boolean** |  | [optional] [default to false]
+**cf** | **[[Number]]** |  | 
+**resultType** | **String** |  | [optional] [default to 'raw']
+**retMod** | **[Number]** |  | [optional] 
+**marketDataSource** | **String** |  | [optional] [default to 'nucleus']
+**portfolioId** | **String** |  | [optional] 
+**frequencyInterval** | **String** |  | [optional] [default to 'year']
+**createLog** | **Boolean** |  | [optional] [default to false]
+**minSample** | **[Number]** |  | [optional] 
 
 
 <a name="ResultTypeEnum"></a>

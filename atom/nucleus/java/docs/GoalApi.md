@@ -29,8 +29,8 @@ Create a goal track record for a goal under a client.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
@@ -41,10 +41,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 GoalApi apiInstance = new GoalApi();
 GoalTrack goalTrack = new GoalTrack(); // GoalTrack | goalTrack
@@ -86,8 +90,8 @@ Create a new goal for your firm that clients can customize for themselves.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
@@ -98,10 +102,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 GoalApi apiInstance = new GoalApi();
 Goal goalRequest = new Goal(); // Goal | goalRequest
@@ -135,7 +143,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteGoalTrackUsingDelete"></a>
 # **deleteGoalTrackUsingDelete**
-> deleteGoalTrackUsingDelete(goalTrackId, goalTrackId2)
+> deleteGoalTrackUsingDelete(goalTrackId)
 
 Delete a goal track record
 
@@ -143,8 +151,8 @@ Permanently delete an goal track record for a goal under a client.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
@@ -155,16 +163,19 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 GoalApi apiInstance = new GoalApi();
 UUID goalTrackId = new UUID(); // UUID | UUID goal_track_id
-UUID goalTrackId2 = new UUID(); // UUID | goal_track_id
 try {
-    apiInstance.deleteGoalTrackUsingDelete(goalTrackId, goalTrackId2);
+    apiInstance.deleteGoalTrackUsingDelete(goalTrackId);
 } catch (ApiException e) {
     System.err.println("Exception when calling GoalApi#deleteGoalTrackUsingDelete");
     e.printStackTrace();
@@ -176,7 +187,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **goalTrackId** | [**UUID**](.md)| UUID goal_track_id |
- **goalTrackId2** | [**UUID**](.md)| goal_track_id |
 
 ### Return type
 
@@ -201,8 +211,8 @@ Permanently delete a goal for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
@@ -213,10 +223,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 GoalApi apiInstance = new GoalApi();
 UUID goalId = new UUID(); // UUID | UUID goal_id
@@ -257,8 +271,8 @@ Get the details for all goals defined by your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
@@ -269,10 +283,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 GoalApi apiInstance = new GoalApi();
 Boolean ascending = false; // Boolean | ascending
@@ -314,7 +332,7 @@ Name | Type | Description  | Notes
 
 <a name="getGoalAssetSizeAllUsingGet"></a>
 # **getGoalAssetSizeAllUsingGet**
-> List&lt;AvailableDateDoubleVO&gt; getGoalAssetSizeAllUsingGet(clientId, goalId, endDate, getLatest, portfolioGoal, sortType, startDate)
+> List&lt;AvailableDateDoubleVO&gt; getGoalAssetSizeAllUsingGet(clientId, goalId, currencyConversion, endDate, getLatest, portfolioGoal, sortType, startDate)
 
 List goal asset sizes
 
@@ -322,8 +340,8 @@ Get a list of asset sizes per date for a goal for a specified client.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
@@ -334,21 +352,26 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 GoalApi apiInstance = new GoalApi();
 UUID clientId = new UUID(); // UUID | client_id
 UUID goalId = new UUID(); // UUID | UUID goal_id
-OffsetDateTime endDate = OffsetDateTime.now(); // OffsetDateTime | end_date
+String currencyConversion = "currencyConversion_example"; // String | Currency Code
+LocalDate endDate = LocalDate.now(); // LocalDate | end date
 Boolean getLatest = false; // Boolean | get_latest
 Boolean portfolioGoal = false; // Boolean | portfolio_goal
 String sortType = "sortType_example"; // String | sort_type
-OffsetDateTime startDate = OffsetDateTime.now(); // OffsetDateTime | start_date
+LocalDate startDate = LocalDate.now(); // LocalDate | start date
 try {
-    List<AvailableDateDoubleVO> result = apiInstance.getGoalAssetSizeAllUsingGet(clientId, goalId, endDate, getLatest, portfolioGoal, sortType, startDate);
+    List<AvailableDateDoubleVO> result = apiInstance.getGoalAssetSizeAllUsingGet(clientId, goalId, currencyConversion, endDate, getLatest, portfolioGoal, sortType, startDate);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GoalApi#getGoalAssetSizeAllUsingGet");
@@ -362,11 +385,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientId** | [**UUID**](.md)| client_id |
  **goalId** | [**UUID**](.md)| UUID goal_id |
- **endDate** | **OffsetDateTime**| end_date | [optional]
+ **currencyConversion** | **String**| Currency Code | [optional]
+ **endDate** | **LocalDate**| end date | [optional]
  **getLatest** | **Boolean**| get_latest | [optional] [default to false]
  **portfolioGoal** | **Boolean**| portfolio_goal | [optional] [default to false]
  **sortType** | **String**| sort_type | [optional]
- **startDate** | **OffsetDateTime**| start_date | [optional]
+ **startDate** | **LocalDate**| start date | [optional]
 
 ### Return type
 
@@ -383,7 +407,7 @@ Name | Type | Description  | Notes
 
 <a name="getGoalHoldingAllUsingGet"></a>
 # **getGoalHoldingAllUsingGet**
-> List&lt;PortfolioHoldingAgg&gt; getGoalHoldingAllUsingGet(clientId, goalId, endDate, portfolioGoal, startDate)
+> List&lt;PortfolioHoldingAgg&gt; getGoalHoldingAllUsingGet(clientId, goalId, currencyConversion, endDate, portfolioGoal, startDate)
 
 List goal holdings
 
@@ -391,8 +415,8 @@ Get the information for all the securities that are currently being held in port
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
@@ -403,19 +427,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 GoalApi apiInstance = new GoalApi();
 UUID clientId = new UUID(); // UUID | client_id
 UUID goalId = new UUID(); // UUID | UUID goal_id
-OffsetDateTime endDate = OffsetDateTime.now(); // OffsetDateTime | end_date
+String currencyConversion = "currencyConversion_example"; // String | Currency Code
+LocalDate endDate = LocalDate.now(); // LocalDate | end date
 Boolean portfolioGoal = false; // Boolean | portfolio_goal
-OffsetDateTime startDate = OffsetDateTime.now(); // OffsetDateTime | start_date
+LocalDate startDate = LocalDate.now(); // LocalDate | start date
 try {
-    List<PortfolioHoldingAgg> result = apiInstance.getGoalHoldingAllUsingGet(clientId, goalId, endDate, portfolioGoal, startDate);
+    List<PortfolioHoldingAgg> result = apiInstance.getGoalHoldingAllUsingGet(clientId, goalId, currencyConversion, endDate, portfolioGoal, startDate);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GoalApi#getGoalHoldingAllUsingGet");
@@ -429,9 +458,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientId** | [**UUID**](.md)| client_id |
  **goalId** | [**UUID**](.md)| UUID goal_id |
- **endDate** | **OffsetDateTime**| end_date | [optional]
+ **currencyConversion** | **String**| Currency Code | [optional]
+ **endDate** | **LocalDate**| end date | [optional]
  **portfolioGoal** | **Boolean**| portfolio_goal | [optional] [default to false]
- **startDate** | **OffsetDateTime**| start_date | [optional]
+ **startDate** | **LocalDate**| start date | [optional]
 
 ### Return type
 
@@ -456,8 +486,8 @@ Get information for all goal track records stored for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
@@ -468,10 +498,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 GoalApi apiInstance = new GoalApi();
 Boolean ascending = false; // Boolean | ascending
@@ -519,7 +553,7 @@ Name | Type | Description  | Notes
 
 <a name="getGoalTrackUsingGet"></a>
 # **getGoalTrackUsingGet**
-> GoalTrack getGoalTrackUsingGet(goalTrackId, goalTrackId2)
+> GoalTrack getGoalTrackUsingGet(goalTrackId)
 
 Retrieve a goal track record
 
@@ -527,8 +561,8 @@ Retrieve the information for a specific goal track record for a goal under a cli
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
@@ -539,16 +573,19 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 GoalApi apiInstance = new GoalApi();
 UUID goalTrackId = new UUID(); // UUID | UUID goal_track_id
-UUID goalTrackId2 = new UUID(); // UUID | goal_track_id
 try {
-    GoalTrack result = apiInstance.getGoalTrackUsingGet(goalTrackId, goalTrackId2);
+    GoalTrack result = apiInstance.getGoalTrackUsingGet(goalTrackId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GoalApi#getGoalTrackUsingGet");
@@ -561,7 +598,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **goalTrackId** | [**UUID**](.md)| UUID goal_track_id |
- **goalTrackId2** | [**UUID**](.md)| goal_track_id |
 
 ### Return type
 
@@ -578,7 +614,7 @@ Name | Type | Description  | Notes
 
 <a name="getGoalTransactionAllUsingGet"></a>
 # **getGoalTransactionAllUsingGet**
-> PagePortfolioTransaction getGoalTransactionAllUsingGet(clientId, goalId, ascending, endDate, orderBy, page, portfolioGoal, size, startDate)
+> PagePortfolioTransaction getGoalTransactionAllUsingGet(clientId, goalId, ascending, currencyConversion, endDate, orderBy, page, portfolioGoal, size, startDate)
 
 List goal transactions
 
@@ -586,8 +622,8 @@ Get the information for all transactions under portfolios associated with a part
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
@@ -598,23 +634,28 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 GoalApi apiInstance = new GoalApi();
 UUID clientId = new UUID(); // UUID | client_id
 UUID goalId = new UUID(); // UUID | UUID goal_id
 Boolean ascending = false; // Boolean | ascending
-OffsetDateTime endDate = OffsetDateTime.now(); // OffsetDateTime | end_date
+String currencyConversion = "currencyConversion_example"; // String | Currency Code
+LocalDate endDate = LocalDate.now(); // LocalDate | end date
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Boolean portfolioGoal = false; // Boolean | portfolio_goal
 Integer size = 25; // Integer | size
-OffsetDateTime startDate = OffsetDateTime.now(); // OffsetDateTime | start_date
+LocalDate startDate = LocalDate.now(); // LocalDate | start date
 try {
-    PagePortfolioTransaction result = apiInstance.getGoalTransactionAllUsingGet(clientId, goalId, ascending, endDate, orderBy, page, portfolioGoal, size, startDate);
+    PagePortfolioTransaction result = apiInstance.getGoalTransactionAllUsingGet(clientId, goalId, ascending, currencyConversion, endDate, orderBy, page, portfolioGoal, size, startDate);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GoalApi#getGoalTransactionAllUsingGet");
@@ -629,12 +670,13 @@ Name | Type | Description  | Notes
  **clientId** | [**UUID**](.md)| client_id |
  **goalId** | [**UUID**](.md)| UUID goal_id |
  **ascending** | **Boolean**| ascending | [optional] [default to false]
- **endDate** | **OffsetDateTime**| end_date | [optional]
+ **currencyConversion** | **String**| Currency Code | [optional]
+ **endDate** | **LocalDate**| end date | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
  **portfolioGoal** | **Boolean**| portfolio_goal | [optional] [default to false]
  **size** | **Integer**| size | [optional] [default to 25]
- **startDate** | **OffsetDateTime**| start_date | [optional]
+ **startDate** | **LocalDate**| start date | [optional]
 
 ### Return type
 
@@ -659,8 +701,8 @@ Retrieve the information for a goal defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
@@ -671,10 +713,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 GoalApi apiInstance = new GoalApi();
 UUID goalId = new UUID(); // UUID | UUID goal_id
@@ -716,8 +762,8 @@ Update the information for a goal track record.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
@@ -728,10 +774,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 GoalApi apiInstance = new GoalApi();
 GoalTrack goalTrack = new GoalTrack(); // GoalTrack | goal_track
@@ -775,8 +825,8 @@ Update a goal defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
@@ -787,10 +837,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 GoalApi apiInstance = new GoalApi();
 Goal goal = new Goal(); // Goal | goal

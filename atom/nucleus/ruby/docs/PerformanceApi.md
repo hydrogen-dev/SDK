@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_benchmark_performance_using_get**](PerformanceApi.md#get_benchmark_performance_using_get) | **GET** /benchmark/{benchmark_id}/performance | Benchmark Performance
 [**get_client_performance_using_get**](PerformanceApi.md#get_client_performance_using_get) | **GET** /client/{client_id}/performance | Client Performance
 [**get_goal_performance_using_get**](PerformanceApi.md#get_goal_performance_using_get) | **GET** /goal/{goal_id}/performance | Goal Performance
+[**get_household_client_performance_using_get**](PerformanceApi.md#get_household_client_performance_using_get) | **GET** /household/{household_id}/performance | Household Performance
 [**get_model_performance_using_get**](PerformanceApi.md#get_model_performance_using_get) | **GET** /model/{model_id}/performance | Model Performance
 [**get_portfolio_performance_using_get**](PerformanceApi.md#get_portfolio_performance_using_get) | **GET** /portfolio/{portfolio_id}/performance | Portfolio Performance
 [**get_security_performance_using_get**](PerformanceApi.md#get_security_performance_using_get) | **GET** /security/{security_id}/performance | Security Performance
@@ -32,8 +33,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PerformanceApi.new
 
@@ -136,8 +138,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PerformanceApi.new
 
@@ -242,8 +245,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PerformanceApi.new
 
@@ -346,8 +350,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PerformanceApi.new
 
@@ -450,12 +455,13 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PerformanceApi.new
 
-client_id = 'client_id_example' # String | Client associated with the account - /client
+client_id = 'client_id_example' # String | client_id
 
 goal_id = 'goal_id_example' # String | Goal Id - /account
 
@@ -499,7 +505,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client_id** | [**String**](.md)| Client associated with the account - /client | 
+ **client_id** | [**String**](.md)| client_id | 
  **goal_id** | [**String**](.md)| Goal Id - /account | 
  **active_premium_period** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
  **annualized_return_period** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
@@ -541,6 +547,111 @@ Name | Type | Description  | Notes
 
 
 
+# **get_household_client_performance_using_get**
+> Object get_household_client_performance_using_get(household_id, opts)
+
+Household Performance
+
+Get information on the performance of a Household using IRR (Internal Rate of Return). You must provide the unique household_id.
+
+### Example
+```ruby
+# load the gem
+require 'nucleus_api'
+# Setup authorization
+NucleusApi.configure do |config|
+# Use one of the below method to generate oauth token        
+# Creating a token for grant_type=client_credentials
+ config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+# Creating a token for grant_type=password
+ config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
+end
+
+api_instance = NucleusApi::PerformanceApi.new
+
+household_id = 'household_id_example' # String | Household Id -/household
+
+opts = { 
+  active_premium_period: 'active_premium_period_example', # String | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D')
+  annualized_return_period: 'annualized_return_period_example', # String | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D')
+  benchmark_id: 'benchmark_id_example', # String | Client Benchmark or Tenant Benchmark id -/benchmark
+  end_date: Date.parse('2013-10-20'), # Date | end date
+  hist_factor: 1.2, # Float | Histogram factor- (statId: 39, default: 5)
+  mar_down_side_deviation: 1.2, # Float | minimum acceptable return for downside deviation - (statId: 58, default: 0) 
+  max_percentile_monte_carlo: 1.2, # Float | max percentile for monte carlo, i.entity. 80 - (statId: 62, default: 95)
+  mean_percentile_monte_carlo: 1.2, # Float | mean percentile for monte carlo i.entity. 50- (statId: 62, default: 50)
+  min_percentile_monte_carlo: 1.2, # Float | min percentile for monte carlo i.entity. 20 - (statId: 62, default: 5)
+  moving_average_n_day: 56, # Integer | number of days for moving average n-day - (statId: 18, default: 7)
+  n_day_returns: 56, # Integer | number of days for Rolling n-day returns - (statId: 2, default: 7)  
+  n_path_monte_carlo: 56, # Integer | number of points for a simulation- (statId: 62, default: 100)
+  n_rolling_max_drawdown: 56, # Integer | number of days for Rolling n-day max drawdown- (statId: 46, default: 7)
+  n_rolling_volatility: 56, # Integer | number of days for Rolling n-day volatility- (statId: 34, default: 7)
+  num_sim_monte_carlo: 56, # Integer | number of simulations - (statId: 62, default: 1000) 
+  period_type: 'period_type_example', # String |  Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () -Carries out stats on either daily, monthly, annually or quarterly dates (default: 'D')
+  risk_free_alpha: 1.2, # Float | risk free val alpha - (statId: 52, default: 0)
+  risk_free_sharpe: 1.2, # Float | risk free val sharpe- (statId: 49, default: 0) 
+  risk_free_sortino: 1.2, # Float | risk free val sortino - (statId: 56, default: 0)
+  risk_free_treynor: 1.2, # Float | risk free val treynor- (statId: 51, default: 0) 
+  start_date: Date.parse('2013-10-20'), # Date | start date
+  stat: 'stat_example', # String | A stat type -- /statistics
+  var_conf_interval: 1.2 # Float | VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95)
+}
+
+begin
+  #Household Performance
+  result = api_instance.get_household_client_performance_using_get(household_id, opts)
+  p result
+rescue NucleusApi::ApiError => e
+  puts "Exception when calling PerformanceApi->get_household_client_performance_using_get: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **household_id** | [**String**](.md)| Household Id -/household | 
+ **active_premium_period** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
+ **annualized_return_period** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
+ **benchmark_id** | [**String**](.md)| Client Benchmark or Tenant Benchmark id -/benchmark | [optional] 
+ **end_date** | **Date**| end date | [optional] 
+ **hist_factor** | **Float**| Histogram factor- (statId: 39, default: 5) | [optional] 
+ **mar_down_side_deviation** | **Float**| minimum acceptable return for downside deviation - (statId: 58, default: 0)  | [optional] 
+ **max_percentile_monte_carlo** | **Float**| max percentile for monte carlo, i.entity. 80 - (statId: 62, default: 95) | [optional] 
+ **mean_percentile_monte_carlo** | **Float**| mean percentile for monte carlo i.entity. 50- (statId: 62, default: 50) | [optional] 
+ **min_percentile_monte_carlo** | **Float**| min percentile for monte carlo i.entity. 20 - (statId: 62, default: 5) | [optional] 
+ **moving_average_n_day** | **Integer**| number of days for moving average n-day - (statId: 18, default: 7) | [optional] 
+ **n_day_returns** | **Integer**| number of days for Rolling n-day returns - (statId: 2, default: 7)   | [optional] 
+ **n_path_monte_carlo** | **Integer**| number of points for a simulation- (statId: 62, default: 100) | [optional] 
+ **n_rolling_max_drawdown** | **Integer**| number of days for Rolling n-day max drawdown- (statId: 46, default: 7) | [optional] 
+ **n_rolling_volatility** | **Integer**| number of days for Rolling n-day volatility- (statId: 34, default: 7) | [optional] 
+ **num_sim_monte_carlo** | **Integer**| number of simulations - (statId: 62, default: 1000)  | [optional] 
+ **period_type** | **String**|  Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () -Carries out stats on either daily, monthly, annually or quarterly dates (default: &#39;D&#39;) | [optional] 
+ **risk_free_alpha** | **Float**| risk free val alpha - (statId: 52, default: 0) | [optional] 
+ **risk_free_sharpe** | **Float**| risk free val sharpe- (statId: 49, default: 0)  | [optional] 
+ **risk_free_sortino** | **Float**| risk free val sortino - (statId: 56, default: 0) | [optional] 
+ **risk_free_treynor** | **Float**| risk free val treynor- (statId: 51, default: 0)  | [optional] 
+ **start_date** | **Date**| start date | [optional] 
+ **stat** | **String**| A stat type -- /statistics | [optional] 
+ **var_conf_interval** | **Float**| VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95) | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+
+
 # **get_model_performance_using_get**
 > Object get_model_performance_using_get(model_id, opts)
 
@@ -559,8 +670,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PerformanceApi.new
 
@@ -646,7 +758,7 @@ Name | Type | Description  | Notes
 
 
 # **get_portfolio_performance_using_get**
-> Object get_portfolio_performance_using_get(account_id, client_id, portfolio_id, portfolioid, opts)
+> Object get_portfolio_performance_using_get(portfolio_id, opts)
 
 Portfolio Performance
 
@@ -663,18 +775,13 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PerformanceApi.new
 
-account_id = 'account_id_example' # String | Account Id -/account
-
-client_id = 'client_id_example' # String | Client Id -/client
-
-portfolio_id = 'portfolio_id_example' # String | portfolio_id
-
-portfolioid = 'portfolioid_example' # String | Portfolio Id -/portoflio
+portfolio_id = 'portfolio_id_example' # String | Portfolio Id -/portoflio
 
 opts = { 
   active_premium_period: 'active_premium_period_example', # String | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D')
@@ -704,7 +811,7 @@ opts = {
 
 begin
   #Portfolio Performance
-  result = api_instance.get_portfolio_performance_using_get(account_id, client_id, portfolio_id, portfolioid, opts)
+  result = api_instance.get_portfolio_performance_using_get(portfolio_id, opts)
   p result
 rescue NucleusApi::ApiError => e
   puts "Exception when calling PerformanceApi->get_portfolio_performance_using_get: #{e}"
@@ -715,10 +822,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | [**String**](.md)| Account Id -/account | 
- **client_id** | [**String**](.md)| Client Id -/client | 
- **portfolio_id** | [**String**](.md)| portfolio_id | 
- **portfolioid** | [**String**](.md)| Portfolio Id -/portoflio | 
+ **portfolio_id** | [**String**](.md)| Portfolio Id -/portoflio | 
  **active_premium_period** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
  **annualized_return_period** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
  **benchmark_id** | [**String**](.md)| Benchmark Id - benchmarkId or clientBenchmarkId -/benchmark | [optional] 
@@ -776,8 +880,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::PerformanceApi.new
 

@@ -4,7 +4,6 @@ from __future__ import absolute_import
 
 # import apis into api package
 from nucleus_api.api.account_api import AccountApi
-from nucleus_api.api.accounting_api import AccountingApi
 from nucleus_api.api.aggregation_account_api import AggregationAccountApi
 from nucleus_api.api.allocation_api import AllocationApi
 from nucleus_api.api.application_api import ApplicationApi
@@ -20,8 +19,10 @@ from nucleus_api.api.document_api import DocumentApi
 from nucleus_api.api.faq_api import FAQApi
 from nucleus_api.api.feature_api import FeatureApi
 from nucleus_api.api.financial_offer_api import FinancialOfferApi
+from nucleus_api.api.financial_statement_api import FinancialStatementApi
 from nucleus_api.api.funding_api import FundingApi
 from nucleus_api.api.goal_api import GoalApi
+from nucleus_api.api.household_api import HouseholdApi
 from nucleus_api.api.insurance_api import InsuranceApi
 from nucleus_api.api.invoice_api import InvoiceApi
 from nucleus_api.api.marketing_api import MarketingApi

@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**defaultDriftFactor** | **Number** |  | [optional] 
-**downside** | **Boolean** |  | [optional] 
-**periodRebal** | **Boolean** |  | [optional] 
 **rebalancePeriod** | **Number** |  | [optional] 
 **taxEfficiencyId** | **Number** |  | [optional] 
+**downside** | **Boolean** |  | [optional] 
+**defaultDriftFactor** | **Number** |  | [optional] 
 **driftRebal** | **Boolean** |  | [optional] 
+**periodRebal** | **Boolean** |  | [optional] 
 
 
 <a name="RebalancePeriodEnum"></a>

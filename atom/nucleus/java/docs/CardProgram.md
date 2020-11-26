@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **createDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **description** | **String** | description |  [optional]
 **id** | [**UUID**](UUID.md) |  |  [optional]
+**isActive** | **Boolean** | is_active |  [optional]
+**isDelegatedAuthority** | **Boolean** | is_delegated_authority |  [optional]
 **issuingBank** | **String** | issuingBank | 
 **metadata** | **Map&lt;String, String&gt;** |  |  [optional]
 **name** | **String** | name | 

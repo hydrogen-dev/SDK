@@ -47,10 +47,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 insurance_coverage = nucleus_api.InsuranceCoverage() # InsuranceCoverage | insuranceCoverage
@@ -110,10 +111,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 insurance_discount = nucleus_api.InsuranceDiscount() # InsuranceDiscount | insuranceDiscount
@@ -173,10 +175,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 insurance_quote = nucleus_api.InsuranceQuote() # InsuranceQuote | insuranceQuote
@@ -236,10 +239,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 insurance_coverage_id = 'insurance_coverage_id_example' # str | UUID insurance_coverage_id
@@ -298,10 +302,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 insurance_discount_id = 'insurance_discount_id_example' # str | UUID insurance_discount_id
@@ -335,7 +340,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_insurance_quote_using_delete**
-> delete_insurance_quote_using_delete(insurance_quote, insurance_quote_id)
+> delete_insurance_quote_using_delete(insurance_quote_id)
 
 Delete a insuranceQuote request
 
@@ -360,18 +365,18 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
-insurance_quote = 'insurance_quote_example' # str | UUID insurance_quote_id
-insurance_quote_id = 'insurance_quote_id_example' # str | insurance_quote_id
+insurance_quote_id = 'insurance_quote_id_example' # str | UUID insurance_quote_id
 
 try:
     # Delete a insuranceQuote request
-    api_instance.delete_insurance_quote_using_delete(insurance_quote, insurance_quote_id)
+    api_instance.delete_insurance_quote_using_delete(insurance_quote_id)
 except ApiException as e:
     print("Exception when calling InsuranceApi->delete_insurance_quote_using_delete: %s\n" % e)
 ```
@@ -380,8 +385,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **insurance_quote** | [**str**](.md)| UUID insurance_quote_id | 
- **insurance_quote_id** | [**str**](.md)| insurance_quote_id | 
+ **insurance_quote_id** | [**str**](.md)| UUID insurance_quote_id | 
 
 ### Return type
 
@@ -399,7 +403,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_insurance_coverage_all_using_get**
-> PageInsuranceCoverage get_insurance_coverage_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+> PageInsuranceCoverage get_insurance_coverage_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
 
 Get all insurance coverage request
 
@@ -424,13 +428,15 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
@@ -438,7 +444,7 @@ size = 25 # int | size (optional) (default to 25)
 
 try:
     # Get all insurance coverage request
-    api_response = api_instance.get_insurance_coverage_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    api_response = api_instance.get_insurance_coverage_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling InsuranceApi->get_insurance_coverage_all_using_get: %s\n" % e)
@@ -449,6 +455,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **str**| currency_conversion | [optional] 
  **filter** | **str**| filter | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -470,7 +477,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_insurance_coverage_using_get**
-> InsuranceCoverage get_insurance_coverage_using_get(insurance_coverage_id)
+> InsuranceCoverage get_insurance_coverage_using_get(insurance_coverage_id, currency_conversion=currency_conversion)
 
 Get a insurance coverage request
 
@@ -495,17 +502,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 insurance_coverage_id = 'insurance_coverage_id_example' # str | UUID insurance_coverage_id
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 
 try:
     # Get a insurance coverage request
-    api_response = api_instance.get_insurance_coverage_using_get(insurance_coverage_id)
+    api_response = api_instance.get_insurance_coverage_using_get(insurance_coverage_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling InsuranceApi->get_insurance_coverage_using_get: %s\n" % e)
@@ -516,6 +525,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **insurance_coverage_id** | [**str**](.md)| UUID insurance_coverage_id | 
+ **currency_conversion** | **str**| USD | [optional] 
 
 ### Return type
 
@@ -533,7 +543,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_insurance_discount_all_using_get**
-> PageInsuranceDiscount get_insurance_discount_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+> PageInsuranceDiscount get_insurance_discount_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
 
 Get all insurance discount request
 
@@ -558,13 +568,15 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
@@ -572,7 +584,7 @@ size = 25 # int | size (optional) (default to 25)
 
 try:
     # Get all insurance discount request
-    api_response = api_instance.get_insurance_discount_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    api_response = api_instance.get_insurance_discount_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling InsuranceApi->get_insurance_discount_all_using_get: %s\n" % e)
@@ -583,6 +595,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **str**| currency_conversion | [optional] 
  **filter** | **str**| filter | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -604,7 +617,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_insurance_discount_using_get**
-> InsuranceDiscount get_insurance_discount_using_get(insurance_discount_id)
+> InsuranceDiscount get_insurance_discount_using_get(insurance_discount_id, currency_conversion=currency_conversion)
 
 Get a insurance discount request
 
@@ -629,17 +642,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 insurance_discount_id = 'insurance_discount_id_example' # str |  UUID insurance_discount_id
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 
 try:
     # Get a insurance discount request
-    api_response = api_instance.get_insurance_discount_using_get(insurance_discount_id)
+    api_response = api_instance.get_insurance_discount_using_get(insurance_discount_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling InsuranceApi->get_insurance_discount_using_get: %s\n" % e)
@@ -650,6 +665,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **insurance_discount_id** | [**str**](.md)|  UUID insurance_discount_id | 
+ **currency_conversion** | **str**| USD | [optional] 
 
 ### Return type
 
@@ -667,7 +683,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_insurance_quote_all_using_get**
-> PageInsuranceQuote get_insurance_quote_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+> PageInsuranceQuote get_insurance_quote_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
 
 List all insuranceQuote requests
 
@@ -692,13 +708,15 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
@@ -706,7 +724,7 @@ size = 25 # int | size (optional) (default to 25)
 
 try:
     # List all insuranceQuote requests
-    api_response = api_instance.get_insurance_quote_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    api_response = api_instance.get_insurance_quote_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling InsuranceApi->get_insurance_quote_all_using_get: %s\n" % e)
@@ -717,6 +735,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **str**| currency_conversion | [optional] 
  **filter** | **str**| filter | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -738,7 +757,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_insurance_quote_using_get**
-> InsuranceQuote get_insurance_quote_using_get(insurance_quote, insurance_quote_id)
+> InsuranceQuote get_insurance_quote_using_get(insurance_quote_id, currency_conversion=currency_conversion)
 
 Retrieve a insuranceQuote request
 
@@ -763,18 +782,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
-insurance_quote = 'insurance_quote_example' # str | UUID insurance_quote_id
-insurance_quote_id = 'insurance_quote_id_example' # str | insurance_quote_id
+insurance_quote_id = 'insurance_quote_id_example' # str | UUID insurance_quote_id
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 
 try:
     # Retrieve a insuranceQuote request
-    api_response = api_instance.get_insurance_quote_using_get(insurance_quote, insurance_quote_id)
+    api_response = api_instance.get_insurance_quote_using_get(insurance_quote_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling InsuranceApi->get_insurance_quote_using_get: %s\n" % e)
@@ -784,8 +804,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **insurance_quote** | [**str**](.md)| UUID insurance_quote_id | 
- **insurance_quote_id** | [**str**](.md)| insurance_quote_id | 
+ **insurance_quote_id** | [**str**](.md)| UUID insurance_quote_id | 
+ **currency_conversion** | **str**| USD | [optional] 
 
 ### Return type
 
@@ -828,10 +848,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 insurance_coverage = nucleus_api.InsuranceCoverage() # InsuranceCoverage | insurance_coverage
@@ -893,10 +914,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 insurance_discount = nucleus_api.InsuranceDiscount() # InsuranceDiscount | insurance_discount
@@ -958,10 +980,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.InsuranceApi(nucleus_api.ApiClient(configuration))
 insurance_quote = nucleus_api.InsuranceQuote() # InsuranceQuote | insurance_quote

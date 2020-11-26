@@ -4,29 +4,29 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_account_status_using_post**](UtilsApi.md#create_account_status_using_post) | **POST** /account_status | Create an account status
+[**create_reason_code_using_post**](UtilsApi.md#create_reason_code_using_post) | **POST** /reason_code | Create a reason code
 [**create_stage_using_post**](UtilsApi.md#create_stage_using_post) | **POST** /stage | Create an account stage
 [**create_transaction_code_using_post**](UtilsApi.md#create_transaction_code_using_post) | **POST** /transaction_code | Create a transaction code
-[**delete_account_status_using_delete**](UtilsApi.md#delete_account_status_using_delete) | **DELETE** /account_status/{account_status_id} | Delete an account status
+[**delete_reason_code_using_delete**](UtilsApi.md#delete_reason_code_using_delete) | **DELETE** /reason_code/{reason_code_id} | Delete a reason code
 [**delete_stage_using_delete**](UtilsApi.md#delete_stage_using_delete) | **DELETE** /stage/{stage_id} | Delete an account stage
 [**delete_transaction_code_using_delete**](UtilsApi.md#delete_transaction_code_using_delete) | **DELETE** /transaction_code/{transaction_code_id} | Delete a transaction code
-[**get_account_status_all_using_get**](UtilsApi.md#get_account_status_all_using_get) | **GET** /account_status | List all account statuses
-[**get_account_status_using_get**](UtilsApi.md#get_account_status_using_get) | **GET** /account_status/{account_status_id} | Retrieve an account status
+[**get_reason_code_all_using_get**](UtilsApi.md#get_reason_code_all_using_get) | **GET** /reason_code | List all reason codes
+[**get_reason_code_using_get**](UtilsApi.md#get_reason_code_using_get) | **GET** /reason_code/{reason_code_id} | Retrieve a reason code
 [**get_stage_all_using_get**](UtilsApi.md#get_stage_all_using_get) | **GET** /stage | List all account stages
 [**get_stage_using_get**](UtilsApi.md#get_stage_using_get) | **GET** /stage/{stage_id} | Retrieve an account stage
 [**get_transaction_code_all_using_get**](UtilsApi.md#get_transaction_code_all_using_get) | **GET** /transaction_code | List all transaction codes
 [**get_transaction_code_using_get**](UtilsApi.md#get_transaction_code_using_get) | **GET** /transaction_code/{transaction_code_id} | Retrieve a transaction code
-[**update_account_status_using_put**](UtilsApi.md#update_account_status_using_put) | **PUT** /account_status/{account_status_id} | Update an account status
+[**update_reason_code_using_put**](UtilsApi.md#update_reason_code_using_put) | **PUT** /reason_code/{reason_code_id} | Update a reason code
 [**update_stage_using_put**](UtilsApi.md#update_stage_using_put) | **PUT** /stage/{stage_id} | Update an account stage
 [**update_transaction_code_using_put**](UtilsApi.md#update_transaction_code_using_put) | **PUT** /transaction_code/{transaction_code_id} | Update a transaction code
 
 
-# **create_account_status_using_post**
-> AccountStatus create_account_status_using_post(account_status_request)
+# **create_reason_code_using_post**
+> ReasonCode create_reason_code_using_post(reason_code_request)
 
-Create an account status
+Create a reason code
 
-Create an account status record for an account.
+Create a new reason code for your firm.
 
 ### Example
 ```ruby
@@ -39,20 +39,21 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::UtilsApi.new
 
-account_status_request = NucleusApi::AccountStatus.new # AccountStatus | accountStatusRequest
+reason_code_request = NucleusApi::ReasonCode.new # ReasonCode | reasonCodeRequest
 
 
 begin
-  #Create an account status
-  result = api_instance.create_account_status_using_post(account_status_request)
+  #Create a reason code
+  result = api_instance.create_reason_code_using_post(reason_code_request)
   p result
 rescue NucleusApi::ApiError => e
-  puts "Exception when calling UtilsApi->create_account_status_using_post: #{e}"
+  puts "Exception when calling UtilsApi->create_reason_code_using_post: #{e}"
 end
 ```
 
@@ -60,11 +61,11 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_status_request** | [**AccountStatus**](AccountStatus.md)| accountStatusRequest | 
+ **reason_code_request** | [**ReasonCode**](ReasonCode.md)| reasonCodeRequest | 
 
 ### Return type
 
-[**AccountStatus**](AccountStatus.md)
+[**ReasonCode**](ReasonCode.md)
 
 ### Authorization
 
@@ -95,8 +96,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::UtilsApi.new
 
@@ -151,8 +153,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::UtilsApi.new
 
@@ -189,12 +192,12 @@ Name | Type | Description  | Notes
 
 
 
-# **delete_account_status_using_delete**
-> delete_account_status_using_delete(account_status_id)
+# **delete_reason_code_using_delete**
+> delete_reason_code_using_delete(reason_code_id)
 
-Delete an account status
+Delete a reason code
 
-Permanently delete an account status record from an account’s history.
+Permanently delete a reason code for your firm.
 
 ### Example
 ```ruby
@@ -207,19 +210,20 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::UtilsApi.new
 
-account_status_id = 'account_status_id_example' # String | UUID account_status_id
+reason_code_id = 'reason_code_id_example' # String | UUID reason_code_id
 
 
 begin
-  #Delete an account status
-  api_instance.delete_account_status_using_delete(account_status_id)
+  #Delete a reason code
+  api_instance.delete_reason_code_using_delete(reason_code_id)
 rescue NucleusApi::ApiError => e
-  puts "Exception when calling UtilsApi->delete_account_status_using_delete: #{e}"
+  puts "Exception when calling UtilsApi->delete_reason_code_using_delete: #{e}"
 end
 ```
 
@@ -227,7 +231,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_status_id** | [**String**](.md)| UUID account_status_id | 
+ **reason_code_id** | [**String**](.md)| UUID reason_code_id | 
 
 ### Return type
 
@@ -262,8 +266,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::UtilsApi.new
 
@@ -317,8 +322,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::UtilsApi.new
 
@@ -354,12 +360,12 @@ nil (empty response body)
 
 
 
-# **get_account_status_all_using_get**
-> PageAccountStatus get_account_status_all_using_get(opts)
+# **get_reason_code_all_using_get**
+> PageReasonCode get_reason_code_all_using_get(opts)
 
-List all account statuses
+List all reason codes
 
-Get the account status history information for all accounts.
+Get the information for all reason codes defined by your firm.
 
 ### Example
 ```ruby
@@ -372,8 +378,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::UtilsApi.new
 
@@ -386,11 +393,11 @@ opts = {
 }
 
 begin
-  #List all account statuses
-  result = api_instance.get_account_status_all_using_get(opts)
+  #List all reason codes
+  result = api_instance.get_reason_code_all_using_get(opts)
   p result
 rescue NucleusApi::ApiError => e
-  puts "Exception when calling UtilsApi->get_account_status_all_using_get: #{e}"
+  puts "Exception when calling UtilsApi->get_reason_code_all_using_get: #{e}"
 end
 ```
 
@@ -406,7 +413,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PageAccountStatus**](PageAccountStatus.md)
+[**PageReasonCode**](PageReasonCode.md)
 
 ### Authorization
 
@@ -419,12 +426,12 @@ Name | Type | Description  | Notes
 
 
 
-# **get_account_status_using_get**
-> AccountStatus get_account_status_using_get(account_status_id)
+# **get_reason_code_using_get**
+> ReasonCode get_reason_code_using_get(reason_code_id)
 
-Retrieve an account status
+Retrieve a reason code
 
-Retrieve the information for a specific account status record for an account.
+Retrieve the information for a reason code defined by your firm.
 
 ### Example
 ```ruby
@@ -437,20 +444,21 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::UtilsApi.new
 
-account_status_id = 'account_status_id_example' # String | UUID account_status_id
+reason_code_id = 'reason_code_id_example' # String | UUID reason_code_id
 
 
 begin
-  #Retrieve an account status
-  result = api_instance.get_account_status_using_get(account_status_id)
+  #Retrieve a reason code
+  result = api_instance.get_reason_code_using_get(reason_code_id)
   p result
 rescue NucleusApi::ApiError => e
-  puts "Exception when calling UtilsApi->get_account_status_using_get: #{e}"
+  puts "Exception when calling UtilsApi->get_reason_code_using_get: #{e}"
 end
 ```
 
@@ -458,11 +466,11 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_status_id** | [**String**](.md)| UUID account_status_id | 
+ **reason_code_id** | [**String**](.md)| UUID reason_code_id | 
 
 ### Return type
 
-[**AccountStatus**](AccountStatus.md)
+[**ReasonCode**](ReasonCode.md)
 
 ### Authorization
 
@@ -493,8 +501,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::UtilsApi.new
 
@@ -558,8 +567,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::UtilsApi.new
 
@@ -614,8 +624,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::UtilsApi.new
 
@@ -679,8 +690,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::UtilsApi.new
 
@@ -717,12 +729,12 @@ Name | Type | Description  | Notes
 
 
 
-# **update_account_status_using_put**
-> AccountStatus update_account_status_using_put(account_status, account_status_id)
+# **update_reason_code_using_put**
+> ReasonCode update_reason_code_using_put(reason_code, reason_code_id)
 
-Update an account status
+Update a reason code
 
-Update an account status record for an account.
+Update a reason code for your firm.
 
 ### Example
 ```ruby
@@ -735,22 +747,23 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::UtilsApi.new
 
-account_status = NucleusApi::AccountStatus.new # AccountStatus | account_status
+reason_code = NucleusApi::ReasonCode.new # ReasonCode | reason_code
 
-account_status_id = 'account_status_id_example' # String | UUID account_status_id
+reason_code_id = 'reason_code_id_example' # String | UUID reason_code_id
 
 
 begin
-  #Update an account status
-  result = api_instance.update_account_status_using_put(account_status, account_status_id)
+  #Update a reason code
+  result = api_instance.update_reason_code_using_put(reason_code, reason_code_id)
   p result
 rescue NucleusApi::ApiError => e
-  puts "Exception when calling UtilsApi->update_account_status_using_put: #{e}"
+  puts "Exception when calling UtilsApi->update_reason_code_using_put: #{e}"
 end
 ```
 
@@ -758,12 +771,12 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_status** | [**AccountStatus**](AccountStatus.md)| account_status | 
- **account_status_id** | [**String**](.md)| UUID account_status_id | 
+ **reason_code** | [**ReasonCode**](ReasonCode.md)| reason_code | 
+ **reason_code_id** | [**String**](.md)| UUID reason_code_id | 
 
 ### Return type
 
-[**AccountStatus**](AccountStatus.md)
+[**ReasonCode**](ReasonCode.md)
 
 ### Authorization
 
@@ -794,8 +807,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::UtilsApi.new
 
@@ -853,8 +867,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::UtilsApi.new
 

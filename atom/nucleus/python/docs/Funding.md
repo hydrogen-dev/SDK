@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **create_date** | **datetime** |  | [optional] 
 **currency_code** | **str** | currencyCode | [optional] 
 **description** | **str** | description | [optional] 
-**end_date** | **datetime** | endDate | [optional] 
+**end_date** | **date** | endDate | [optional] 
 **frequency** | **int** | frequency | [optional] 
 **frequency_unit** | **str** | frequencyUnit | 
 **funding_status** | **str** | fundingStatus | 
@@ -18,14 +18,18 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **is_active** | **bool** | isActive | [optional] 
 **is_deposit** | **bool** | isDeposit | 
-**last_request_date** | **datetime** | lastRequestDate | [optional] 
+**last_request_date** | **date** | lastRequestDate | [optional] 
 **metadata** | **dict(str, str)** | metadata | [optional] 
-**next_request_date** | **datetime** | nextRequestDate | [optional] 
+**next_request_date** | **date** | nextRequestDate | [optional] 
 **portfolio_id** | **str** | portfolioId | [optional] 
+**receiving_bank_link_id** | **str** | receivingBankLinkId | [optional] 
 **secondary_id** | **str** |  | [optional] 
-**start_date** | **datetime** | startDate | 
+**start_date** | **date** | startDate | 
 **support_ticket_id** | **str** | supportTicketId | [optional] 
+**threshold_amount** | **float** | thresholdAmount | [optional] 
 **transfer_id** | **str** | transferId | [optional] 
+**transfer_speed** | **str** | transferSpeed | [optional] 
+**transfer_type** | **str** | transferType | [optional] 
 **update_date** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

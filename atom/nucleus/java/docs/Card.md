@@ -17,7 +17,8 @@ Name | Type | Description | Notes
 **createDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **creditLimit** | **Double** | creditLimit |  [optional]
 **currencyCode** | **String** | currencyCode | 
-**expiryDate** | [**OffsetDateTime**](OffsetDateTime.md) | expiryDate |  [optional]
+**expiryDate** | [**LocalDate**](LocalDate.md) | expiryDate |  [optional]
+**fulfillment** | **String** | fulfillment |  [optional]
 **id** | [**UUID**](UUID.md) |  |  [optional]
 **institutionName** | **String** | institutionName | 
 **isActive** | **Boolean** | is_active |  [optional]

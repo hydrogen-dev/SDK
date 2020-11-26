@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **client_asset_size** | **float** |  | [optional] 
-**client_asset_size_date** | **datetime** |  | [optional] 
+**client_asset_size_date** | **date** |  | [optional] 
 **client_first_name** | **str** |  | [optional] 
 **client_id** | **str** |  | [optional] 
 **client_last_name** | **str** |  | [optional] 

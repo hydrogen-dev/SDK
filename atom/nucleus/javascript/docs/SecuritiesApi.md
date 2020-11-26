@@ -32,8 +32,8 @@ Create a new security exclusion for a specific account or portfolio.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -83,8 +83,8 @@ Create a new price for a security defined for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -134,8 +134,8 @@ Create a new security for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -185,8 +185,8 @@ Permanently delete a security exclusion
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -236,8 +236,8 @@ Permanently delete a security price from a security.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -287,8 +287,8 @@ Permanently delete a security for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -338,8 +338,8 @@ Get details for all securities defined for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 
 <a name="getSecurityExclusionAllUsingGet"></a>
 # **getSecurityExclusionAllUsingGet**
-> PageSecurityExclusion getSecurityExclusionAllUsingGet(securityExclusionId, opts)
+> PageSecurityExclusion getSecurityExclusionAllUsingGet(opts)
 
 List all security exclusions
 
@@ -398,15 +398,13 @@ Get details for all security exclusions defined for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.SecuritiesApi();
-
-var securityExclusionId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID security_exclusion_id
 
 var opts = { 
   'ascending': false, // Boolean | ascending
@@ -423,14 +421,13 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getSecurityExclusionAllUsingGet(securityExclusionId, opts, callback);
+apiInstance.getSecurityExclusionAllUsingGet(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **securityExclusionId** | **String**| UUID security_exclusion_id | 
  **ascending** | **Boolean**| ascending | [optional] [default to false]
  **filter** | **String**| filter | [optional] 
  **orderBy** | **String**| order_by | [optional] [default to update_date]
@@ -461,15 +458,15 @@ Retrieve the information for a security exclusion.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.SecuritiesApi();
 
-var securityExclusionId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | security exclusion id
+var securityExclusionId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID security_exclusion_id
 
 
 var callback = function(error, data, response) {
@@ -486,7 +483,7 @@ apiInstance.getSecurityExclusionUsingGet(securityExclusionId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **securityExclusionId** | **String**| security exclusion id | 
+ **securityExclusionId** | **String**| UUID security_exclusion_id | 
 
 ### Return type
 
@@ -512,8 +509,8 @@ Get prices for all securities defined for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -522,6 +519,7 @@ var apiInstance = new HydrogenNucleusApi.SecuritiesApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
+  'currencyConversion': "currencyConversion_example", // String | currency_conversion
   'filter': "filter_example", // String | filter
   'orderBy': "update_date", // String | order_by
   'page': 0, // Number | page
@@ -543,6 +541,7 @@ apiInstance.getSecurityPriceAllUsingGet(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Number**| page | [optional] [default to 0]
@@ -563,7 +562,7 @@ Name | Type | Description  | Notes
 
 <a name="getSecurityPriceUsingGet"></a>
 # **getSecurityPriceUsingGet**
-> SecurityPrice getSecurityPriceUsingGet(securityPriceId)
+> SecurityPrice getSecurityPriceUsingGet(securityPriceId, opts)
 
 Retrieve a security price
 
@@ -572,8 +571,8 @@ Retrieve the information for a security price for a security.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -582,6 +581,9 @@ var apiInstance = new HydrogenNucleusApi.SecuritiesApi();
 
 var securityPriceId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID security_price_id
 
+var opts = { 
+  'currencyConversion': "currencyConversion_example" // String | USD
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -590,7 +592,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getSecurityPriceUsingGet(securityPriceId, callback);
+apiInstance.getSecurityPriceUsingGet(securityPriceId, opts, callback);
 ```
 
 ### Parameters
@@ -598,6 +600,7 @@ apiInstance.getSecurityPriceUsingGet(securityPriceId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **securityPriceId** | **String**| UUID security_price_id | 
+ **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -623,8 +626,8 @@ Retrieve the information for a security defined for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -674,8 +677,8 @@ Update the information for a security exclusion.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -728,8 +731,8 @@ Update a security price for a security.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -782,8 +785,8 @@ Update a security for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';

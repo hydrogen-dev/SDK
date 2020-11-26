@@ -31,8 +31,8 @@ Create a new security exclusion for a specific account or portfolio.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
@@ -43,10 +43,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 SecuritiesApi apiInstance = new SecuritiesApi();
 SecurityExclusion securityExclusionRequest = new SecurityExclusion(); // SecurityExclusion | securityExclusionRequest
@@ -88,8 +92,8 @@ Create a new price for a security defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
@@ -100,10 +104,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 SecuritiesApi apiInstance = new SecuritiesApi();
 SecurityPrice securityPriceRequest = new SecurityPrice(); // SecurityPrice | securityPriceRequest
@@ -145,8 +153,8 @@ Create a new security for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
@@ -157,10 +165,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 SecuritiesApi apiInstance = new SecuritiesApi();
 Security securitiesInfoRequest = new Security(); // Security | securitiesInfoRequest
@@ -202,8 +214,8 @@ Permanently delete a security exclusion
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
@@ -214,10 +226,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 SecuritiesApi apiInstance = new SecuritiesApi();
 UUID securityExclusionId = new UUID(); // UUID | UUID security_exclusion_id
@@ -258,8 +274,8 @@ Permanently delete a security price from a security.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
@@ -270,10 +286,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 SecuritiesApi apiInstance = new SecuritiesApi();
 UUID securityPriceId = new UUID(); // UUID | UUID security_price_id
@@ -314,8 +334,8 @@ Permanently delete a security for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
@@ -326,10 +346,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 SecuritiesApi apiInstance = new SecuritiesApi();
 UUID securityId = new UUID(); // UUID | UUID security_id
@@ -370,8 +394,8 @@ Get details for all securities defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
@@ -382,10 +406,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 SecuritiesApi apiInstance = new SecuritiesApi();
 Boolean ascending = false; // Boolean | ascending
@@ -427,7 +455,7 @@ Name | Type | Description  | Notes
 
 <a name="getSecurityExclusionAllUsingGet"></a>
 # **getSecurityExclusionAllUsingGet**
-> PageSecurityExclusion getSecurityExclusionAllUsingGet(securityExclusionId, ascending, filter, orderBy, page, size)
+> PageSecurityExclusion getSecurityExclusionAllUsingGet(ascending, filter, orderBy, page, size)
 
 List all security exclusions
 
@@ -435,8 +463,8 @@ Get details for all security exclusions defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
@@ -447,20 +475,23 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 SecuritiesApi apiInstance = new SecuritiesApi();
-UUID securityExclusionId = new UUID(); // UUID | UUID security_exclusion_id
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PageSecurityExclusion result = apiInstance.getSecurityExclusionAllUsingGet(securityExclusionId, ascending, filter, orderBy, page, size);
+    PageSecurityExclusion result = apiInstance.getSecurityExclusionAllUsingGet(ascending, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SecuritiesApi#getSecurityExclusionAllUsingGet");
@@ -472,7 +503,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **securityExclusionId** | [**UUID**](.md)| UUID security_exclusion_id |
  **ascending** | **Boolean**| ascending | [optional] [default to false]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
@@ -502,8 +532,8 @@ Retrieve the information for a security exclusion.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
@@ -514,13 +544,17 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 SecuritiesApi apiInstance = new SecuritiesApi();
-UUID securityExclusionId = new UUID(); // UUID | security exclusion id
+UUID securityExclusionId = new UUID(); // UUID | UUID security_exclusion_id
 try {
     SecurityExclusion result = apiInstance.getSecurityExclusionUsingGet(securityExclusionId);
     System.out.println(result);
@@ -534,7 +568,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **securityExclusionId** | [**UUID**](.md)| security exclusion id |
+ **securityExclusionId** | [**UUID**](.md)| UUID security_exclusion_id |
 
 ### Return type
 
@@ -551,7 +585,7 @@ Name | Type | Description  | Notes
 
 <a name="getSecurityPriceAllUsingGet"></a>
 # **getSecurityPriceAllUsingGet**
-> PageSecurityPrice getSecurityPriceAllUsingGet(ascending, filter, orderBy, page, size)
+> PageSecurityPrice getSecurityPriceAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size)
 
 List all security prices
 
@@ -559,8 +593,8 @@ Get prices for all securities defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
@@ -571,19 +605,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 SecuritiesApi apiInstance = new SecuritiesApi();
 Boolean ascending = false; // Boolean | ascending
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PageSecurityPrice result = apiInstance.getSecurityPriceAllUsingGet(ascending, filter, orderBy, page, size);
+    PageSecurityPrice result = apiInstance.getSecurityPriceAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SecuritiesApi#getSecurityPriceAllUsingGet");
@@ -596,6 +635,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -616,7 +656,7 @@ Name | Type | Description  | Notes
 
 <a name="getSecurityPriceUsingGet"></a>
 # **getSecurityPriceUsingGet**
-> SecurityPrice getSecurityPriceUsingGet(securityPriceId)
+> SecurityPrice getSecurityPriceUsingGet(securityPriceId, currencyConversion)
 
 Retrieve a security price
 
@@ -624,8 +664,8 @@ Retrieve the information for a security price for a security.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
@@ -636,15 +676,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 SecuritiesApi apiInstance = new SecuritiesApi();
 UUID securityPriceId = new UUID(); // UUID | UUID security_price_id
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    SecurityPrice result = apiInstance.getSecurityPriceUsingGet(securityPriceId);
+    SecurityPrice result = apiInstance.getSecurityPriceUsingGet(securityPriceId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SecuritiesApi#getSecurityPriceUsingGet");
@@ -657,6 +702,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **securityPriceId** | [**UUID**](.md)| UUID security_price_id |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
@@ -681,8 +727,8 @@ Retrieve the information for a security defined for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
@@ -693,10 +739,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 SecuritiesApi apiInstance = new SecuritiesApi();
 UUID securityId = new UUID(); // UUID | UUID security_id
@@ -738,8 +788,8 @@ Update the information for a security exclusion.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
@@ -750,10 +800,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 SecuritiesApi apiInstance = new SecuritiesApi();
 SecurityExclusion securityExclusion = new SecurityExclusion(); // SecurityExclusion | security_exclusion
@@ -797,8 +851,8 @@ Update a security price for a security.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
@@ -809,10 +863,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 SecuritiesApi apiInstance = new SecuritiesApi();
 SecurityPrice securityPrice = new SecurityPrice(); // SecurityPrice | security_price
@@ -856,8 +914,8 @@ Update a security for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
@@ -868,10 +926,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 SecuritiesApi apiInstance = new SecuritiesApi();
 Security security = new Security(); // Security | security

@@ -3,32 +3,55 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**goalId** | **String** |  | [optional] 
+**allocationMethod** | **String** |  | 
+**currInv** | **Number** |  | [optional] 
+**riskScore** | **Number** |  | [optional] 
+**dHorizon** | **Number** |  | [optional] 
+**n** | **Number** |  | [optional] [default to 1000]
+**allocationPriority** | **String** |  | 
+**horizonFrequency** | **String** |  | [optional] [default to 'year']
 **allocations** | **[String]** |  | [optional] 
 **clientId** | **String** |  | [optional] 
-**adjustForCompounding** | **Boolean** |  | [optional] [default to false]
-**compoundingRate** | **Number** |  | [optional] [default to 0.0]
-**horizonFrequency** | **String** |  | [optional] [default to 'year']
-**confTgt** | **Number** |  | [optional] [default to 0.9]
-**riskScore** | **Number** |  | [optional] 
-**marketDataSource** | **String** |  | [optional] [default to 'nucleus']
-**dHorizon** | **Number** |  | [optional] 
-**tradingDaysPerYear** | **Number** |  | [optional] [default to 252]
-**withdrawalTax** | **Number** |  | [optional] [default to 0.0]
-**threshType** | **String** |  | [optional] [default to 'perc']
-**recommendType** | **String** |  | [optional] [default to 'horizon']
-**goalId** | **String** |  | [optional] 
-**depositConfig** | **[Object]** |  | [optional] 
-**optConfig** | **Object** |  | [optional] 
-**n** | **Number** |  | [optional] [default to 1000]
-**recommendationConfig** | **Object** |  | [optional] 
-**useProxyData** | **Boolean** |  | [optional] [default to false]
-**thresh** | **Number** |  | [optional] 
-**aHorizon** | **Number** |  | [optional] 
-**withdrawalConfig** | [**[GoalWithdrawalConfig]**](GoalWithdrawalConfig.md) |  | [optional] 
-**currInv** | **Number** |  | [optional] 
 **removeOutliers** | **Boolean** |  | [optional] [default to true]
-**allocationPriority** | **String** |  | 
-**allocationMethod** | **String** |  | 
+**withdrawalConfig** | [**[GoalWithdrawalConfig]**](GoalWithdrawalConfig.md) |  | [optional] 
+**aHorizon** | **Number** |  | [optional] 
+**useProxyData** | **Boolean** |  | [optional] [default to false]
+**confTgt** | **Number** |  | [optional] [default to 0.9]
+**threshType** | **String** |  | [optional] [default to 'perc']
+**thresh** | **Number** |  | [optional] 
+**depositConfig** | [**[DecumulationGoalDepositConfig]**](DecumulationGoalDepositConfig.md) |  | [optional] 
+**marketDataSource** | **String** |  | [optional] [default to 'nucleus']
+**recommendationConfig** | [**RecommendationConfig**](RecommendationConfig.md) |  | [optional] 
+**optConfig** | [**OptConfig**](OptConfig.md) |  | [optional] 
+**withdrawalTax** | **Number** |  | [optional] [default to 0.0]
+**tradingDaysPerYear** | **Number** |  | [optional] [default to 252]
+**compoundingRate** | **Number** |  | [optional] [default to 0.0]
+**adjustForCompounding** | **Boolean** |  | [optional] [default to false]
+**createLog** | **Boolean** |  | [optional] [default to false]
+**recommendType** | **String** |  | [optional] [default to 'horizon']
+
+
+<a name="AllocationMethodEnum"></a>
+## Enum: AllocationMethodEnum
+
+
+* `select` (value: `"select"`)
+
+* `create` (value: `"create"`)
+
+
+
+
+<a name="AllocationPriorityEnum"></a>
+## Enum: AllocationPriorityEnum
+
+
+* `goal` (value: `"goal"`)
+
+* `risk` (value: `"risk"`)
+
+
 
 
 <a name="HorizonFrequencyEnum"></a>
@@ -52,17 +75,6 @@ Name | Type | Description | Notes
 
 
 
-<a name="MarketDataSourceEnum"></a>
-## Enum: MarketDataSourceEnum
-
-
-* `nucleus` (value: `"nucleus"`)
-
-* `integration` (value: `"integration"`)
-
-
-
-
 <a name="ThreshTypeEnum"></a>
 ## Enum: ThreshTypeEnum
 
@@ -70,6 +82,17 @@ Name | Type | Description | Notes
 * `amnt` (value: `"amnt"`)
 
 * `perc` (value: `"perc"`)
+
+
+
+
+<a name="MarketDataSourceEnum"></a>
+## Enum: MarketDataSourceEnum
+
+
+* `nucleus` (value: `"nucleus"`)
+
+* `integration` (value: `"integration"`)
 
 
 
@@ -85,28 +108,6 @@ Name | Type | Description | Notes
 * `combo` (value: `"combo"`)
 
 * `horizon` (value: `"horizon"`)
-
-
-
-
-<a name="AllocationPriorityEnum"></a>
-## Enum: AllocationPriorityEnum
-
-
-* `goal` (value: `"goal"`)
-
-* `risk` (value: `"risk"`)
-
-
-
-
-<a name="AllocationMethodEnum"></a>
-## Enum: AllocationMethodEnum
-
-
-* `select` (value: `"select"`)
-
-* `create` (value: `"create"`)
 
 
 

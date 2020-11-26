@@ -19,10 +19,8 @@ Calculate a dimensional risk score based on questionnaire responses
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import RiskScoringApi;
 
@@ -30,14 +28,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 RiskScoringApi apiInstance = new RiskScoringApi();
 DimensionalRiskScoreRequest dimensionalRiskScoreRequest = new DimensionalRiskScoreRequest(); // DimensionalRiskScoreRequest | Request payload for Dimensional Risk Score
@@ -79,10 +79,8 @@ Allocate based on a risk score
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import RiskScoringApi;
 
@@ -90,14 +88,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 RiskScoringApi apiInstance = new RiskScoringApi();
 RiskAllocationRequest riskAllocationRequest = new RiskAllocationRequest(); // RiskAllocationRequest | Request payload for Risk Allocation
@@ -139,10 +139,8 @@ Calculate a risk score based on questionnaire responses
 
 ### Example
 ```java
-// Import classes:
-//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.AuthApiClient;
-
+//import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
 //import RiskScoringApi;
 
@@ -150,14 +148,16 @@ AuthApiClient authApiClient = new AuthApiClient();
 try {
 //          Use one of the below method to generate oauth token        
 //          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
 } catch (ApiException e) {
-    e.printStackTrace();
+e.printStackTrace();
 }
-
 
 RiskScoringApi apiInstance = new RiskScoringApi();
 RiskScoreRequest riskScoreRequest = new RiskScoreRequest(); // RiskScoreRequest | Request payload for Risk Score

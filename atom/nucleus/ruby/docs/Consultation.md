@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **calendar** | **BOOLEAN** | calendar | [optional] 
 **category** | **String** | category | [optional] 
 **client_id** | **String** | clientId | [optional] 
-**close_time** | **DateTime** | closeTime | [optional] 
+**close_time** | **Date** | closeTime | [optional] 
 **closed_by** | **String** | closedBy | [optional] 
 **comments** | **String** | comments | [optional] 
 **completed** | **BOOLEAN** | completed | [optional] 
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **reminded** | **BOOLEAN** | reminded | [optional] 
 **secondary_id** | **String** |  | [optional] 
 **source** | **String** | source | [optional] 
-**time** | **DateTime** | time | [optional] 
+**time** | **Date** | time | [optional] 
 **update_date** | **DateTime** |  | [optional] 
 
 

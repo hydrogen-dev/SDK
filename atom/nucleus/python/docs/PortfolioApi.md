@@ -63,10 +63,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_asset_size_log_request = nucleus_api.PortfolioAssetSizeLog() # PortfolioAssetSizeLog | portfolioAssetSizeLogRequest
@@ -126,10 +127,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_comment = nucleus_api.PortfolioComment() # PortfolioComment | portfolioComment
@@ -189,10 +191,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_goal = nucleus_api.PortfolioGoal() # PortfolioGoal | portfolioGoal
@@ -252,10 +255,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_holdin_log_request = nucleus_api.PortfolioHoldingLog() # PortfolioHoldingLog | portfolioHoldinLogRequest
@@ -315,10 +319,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_transaction_request = nucleus_api.PortfolioTransaction() # PortfolioTransaction | portfolioTransactionRequest
@@ -378,10 +383,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_request = nucleus_api.Portfolio() # Portfolio | portfolioRequest
@@ -441,10 +447,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_asset_size_id = 'portfolio_asset_size_id_example' # str | UUID portfolio_asset_size_id
@@ -503,10 +510,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_comment_id = 'portfolio_comment_id_example' # str | UUID portfolio_comment_id
@@ -565,10 +573,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_goal_id = 'portfolio_goal_id_example' # str | UUID portfolio_goal_id
@@ -627,10 +636,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_holding_id = 'portfolio_holding_id_example' # str | UUID portfolio_holding_id
@@ -689,10 +699,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_transaction_id = 'portfolio_transaction_id_example' # str | UUID portfolio_transaction_id
@@ -751,10 +762,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_id = 'portfolio_id_example' # str | UUID portfolio_id
@@ -788,7 +800,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_portfolio_aggregated_data_using_get**
-> PortfolioAggregatedVO get_portfolio_aggregated_data_using_get(portfolio_id, show_asset_class=show_asset_class, show_category=show_category, show_industry=show_industry, show_sector=show_sector, show_security_class=show_security_class)
+> object get_portfolio_aggregated_data_using_get(portfolio_id, show_asset_class=show_asset_class, show_category=show_category, show_industry=show_industry, show_sector=show_sector, show_security_class=show_security_class)
 
 Retrieve an portfolio aggregate data
 
@@ -813,10 +825,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_id = 'portfolio_id_example' # str | Portfolio Id
@@ -847,7 +860,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PortfolioAggregatedVO**](PortfolioAggregatedVO.md)
+**object**
 
 ### Authorization
 
@@ -886,10 +899,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -932,7 +946,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_portfolio_asset_size_all_using_get**
-> PagePortfolioAssetSizeLog get_portfolio_asset_size_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+> PagePortfolioAssetSizeLog get_portfolio_asset_size_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
 
 Retrieve a portfolio asset size
 
@@ -957,13 +971,15 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
@@ -971,7 +987,7 @@ size = 25 # int | size (optional) (default to 25)
 
 try:
     # Retrieve a portfolio asset size
-    api_response = api_instance.get_portfolio_asset_size_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    api_response = api_instance.get_portfolio_asset_size_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PortfolioApi->get_portfolio_asset_size_all_using_get: %s\n" % e)
@@ -982,6 +998,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **str**| currency_conversion | [optional] 
  **filter** | **str**| filter | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -1003,7 +1020,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_portfolio_asset_size_using_get**
-> PortfolioAssetSize get_portfolio_asset_size_using_get(portfolio_asset_size_id)
+> PortfolioAssetSizeLog get_portfolio_asset_size_using_get(portfolio_asset_size_id, currency_conversion=currency_conversion)
 
 Retrieve a portfolio asset size
 
@@ -1028,17 +1045,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_asset_size_id = 'portfolio_asset_size_id_example' # str | portfolio_asset_size_id
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
 
 try:
     # Retrieve a portfolio asset size
-    api_response = api_instance.get_portfolio_asset_size_using_get(portfolio_asset_size_id)
+    api_response = api_instance.get_portfolio_asset_size_using_get(portfolio_asset_size_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PortfolioApi->get_portfolio_asset_size_using_get: %s\n" % e)
@@ -1049,10 +1068,11 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolio_asset_size_id** | [**str**](.md)| portfolio_asset_size_id | 
+ **currency_conversion** | **str**| currency_conversion | [optional] 
 
 ### Return type
 
-[**PortfolioAssetSize**](PortfolioAssetSize.md)
+[**PortfolioAssetSizeLog**](PortfolioAssetSizeLog.md)
 
 ### Authorization
 
@@ -1091,10 +1111,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -1162,10 +1183,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_comment_id = 'portfolio_comment_id_example' # str | UUID portfolio_comment_id
@@ -1225,10 +1247,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -1296,10 +1319,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_goal_id = 'portfolio_goal_id_example' # str | UUID portfolio_goal_id
@@ -1334,7 +1358,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_portfolio_holding_all_using_get**
-> PortfolioHolding get_portfolio_holding_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+> PagePortfolioHoldingLog get_portfolio_holding_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
 
 List all portfolio holdings
 
@@ -1359,13 +1383,15 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
@@ -1373,7 +1399,7 @@ size = 25 # int | size (optional) (default to 25)
 
 try:
     # List all portfolio holdings
-    api_response = api_instance.get_portfolio_holding_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    api_response = api_instance.get_portfolio_holding_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PortfolioApi->get_portfolio_holding_all_using_get: %s\n" % e)
@@ -1384,6 +1410,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **str**| currency_conversion | [optional] 
  **filter** | **str**| filter | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -1391,7 +1418,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PortfolioHolding**](PortfolioHolding.md)
+[**PagePortfolioHoldingLog**](PagePortfolioHoldingLog.md)
 
 ### Authorization
 
@@ -1405,7 +1432,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_portfolio_holding_using_get**
-> PortfolioHolding get_portfolio_holding_using_get(portfolio_holding_id)
+> PortfolioHoldingLog get_portfolio_holding_using_get(portfolio_holding_id, currency_conversion=currency_conversion)
 
 Retrieve a portfolio holding
 
@@ -1430,17 +1457,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_holding_id = 'portfolio_holding_id_example' # str | UUID portfolio_holding_id
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 
 try:
     # Retrieve a portfolio holding
-    api_response = api_instance.get_portfolio_holding_using_get(portfolio_holding_id)
+    api_response = api_instance.get_portfolio_holding_using_get(portfolio_holding_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PortfolioApi->get_portfolio_holding_using_get: %s\n" % e)
@@ -1451,10 +1480,11 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolio_holding_id** | [**str**](.md)| UUID portfolio_holding_id | 
+ **currency_conversion** | **str**| USD | [optional] 
 
 ### Return type
 
-[**PortfolioHolding**](PortfolioHolding.md)
+[**PortfolioHoldingLog**](PortfolioHoldingLog.md)
 
 ### Authorization
 
@@ -1468,7 +1498,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_portfolio_transaction_all_using_get**
-> PagePortfolioTransaction get_portfolio_transaction_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+> PagePortfolioTransaction get_portfolio_transaction_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
 
 List all portfolio transactions
 
@@ -1493,13 +1523,15 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
@@ -1507,7 +1539,7 @@ size = 25 # int | size (optional) (default to 25)
 
 try:
     # List all portfolio transactions
-    api_response = api_instance.get_portfolio_transaction_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    api_response = api_instance.get_portfolio_transaction_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PortfolioApi->get_portfolio_transaction_all_using_get: %s\n" % e)
@@ -1518,6 +1550,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **str**| currency_conversion | [optional] 
  **filter** | **str**| filter | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -1539,7 +1572,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_portfolio_transaction_using_get**
-> PortfolioTransaction get_portfolio_transaction_using_get(portfolio_transaction_id)
+> PortfolioTransaction get_portfolio_transaction_using_get(portfolio_transaction_id, currency_conversion=currency_conversion)
 
 Retrieve a portfolio transaction
 
@@ -1564,17 +1597,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_transaction_id = 'portfolio_transaction_id_example' # str | UUID portfolio_transaction_id
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 
 try:
     # Retrieve a portfolio transaction
-    api_response = api_instance.get_portfolio_transaction_using_get(portfolio_transaction_id)
+    api_response = api_instance.get_portfolio_transaction_using_get(portfolio_transaction_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PortfolioApi->get_portfolio_transaction_using_get: %s\n" % e)
@@ -1585,6 +1620,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolio_transaction_id** | [**str**](.md)| UUID portfolio_transaction_id | 
+ **currency_conversion** | **str**| USD | [optional] 
 
 ### Return type
 
@@ -1627,10 +1663,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_id = 'portfolio_id_example' # str | UUID portfolio_id
@@ -1665,7 +1702,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_portfolio_asset_size_using_put**
-> PortfolioAssetSize update_portfolio_asset_size_using_put(portfolio_asset_size, portfolio_asset_size_id)
+> PortfolioAssetSizeLog update_portfolio_asset_size_using_put(portfolio_asset_size, portfolio_asset_size_id)
 
 Update a portfolio asset size
 
@@ -1690,10 +1727,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_asset_size = nucleus_api.PortfolioAssetSizeLog() # PortfolioAssetSizeLog | portfolio_asset_size
@@ -1716,7 +1754,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PortfolioAssetSize**](PortfolioAssetSize.md)
+[**PortfolioAssetSizeLog**](PortfolioAssetSizeLog.md)
 
 ### Authorization
 
@@ -1755,10 +1793,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_comment = nucleus_api.PortfolioComment() # PortfolioComment | portfolio_comment
@@ -1820,10 +1859,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_goal = nucleus_api.PortfolioGoal() # PortfolioGoal | portfolio_goal
@@ -1860,7 +1900,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_portfolio_holding_using_put**
-> PortfolioHolding update_portfolio_holding_using_put(portfolio_holding, portfolio_holding_id)
+> PortfolioHoldingLog update_portfolio_holding_using_put(portfolio_holding, portfolio_holding_id)
 
 Update a portfolio holding
 
@@ -1885,10 +1925,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_holding = nucleus_api.PortfolioHoldingLog() # PortfolioHoldingLog | portfolio_holding
@@ -1911,7 +1952,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PortfolioHolding**](PortfolioHolding.md)
+[**PortfolioHoldingLog**](PortfolioHoldingLog.md)
 
 ### Authorization
 
@@ -1950,10 +1991,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_transaction = nucleus_api.PortfolioTransaction() # PortfolioTransaction | portfolio_transaction
@@ -2015,10 +2057,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio = nucleus_api.Portfolio() # Portfolio | portfolio

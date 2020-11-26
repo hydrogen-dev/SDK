@@ -8,9 +8,8 @@ Name | Type | Description | Notes
 **clientId** | [**UUID**](UUID.md) | clientId | 
 **createDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **fundingRequests** | [**List&lt;FundingRequestMap&gt;**](FundingRequestMap.md) |  |  [optional]
-**fundingStartDate** | [**OffsetDateTime**](OffsetDateTime.md) | fundingStartDate |  [optional]
 **id** | [**UUID**](UUID.md) |  |  [optional]
-**overflowSettingId** | [**UUID**](UUID.md) | overflowSettingId |  [optional]
+**overflowSettingId** | [**UUID**](UUID.md) | overflowSettingId | 
 **totalOverflowAmount** | **Double** | totalOverflowAmount | 
 **updateBalances** | **Boolean** | updateBalances |  [optional]
 **updateDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]

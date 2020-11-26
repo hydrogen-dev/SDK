@@ -4,29 +4,29 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAccountStatusUsingPost**](UtilsApi.md#createAccountStatusUsingPost) | **POST** /account_status | Create an account status
+[**createReasonCodeUsingPost**](UtilsApi.md#createReasonCodeUsingPost) | **POST** /reason_code | Create a reason code
 [**createStageUsingPost**](UtilsApi.md#createStageUsingPost) | **POST** /stage | Create an account stage
 [**createTransactionCodeUsingPost**](UtilsApi.md#createTransactionCodeUsingPost) | **POST** /transaction_code | Create a transaction code
-[**deleteAccountStatusUsingDelete**](UtilsApi.md#deleteAccountStatusUsingDelete) | **DELETE** /account_status/{account_status_id} | Delete an account status
+[**deleteReasonCodeUsingDelete**](UtilsApi.md#deleteReasonCodeUsingDelete) | **DELETE** /reason_code/{reason_code_id} | Delete a reason code
 [**deleteStageUsingDelete**](UtilsApi.md#deleteStageUsingDelete) | **DELETE** /stage/{stage_id} | Delete an account stage
 [**deleteTransactionCodeUsingDelete**](UtilsApi.md#deleteTransactionCodeUsingDelete) | **DELETE** /transaction_code/{transaction_code_id} | Delete a transaction code
-[**getAccountStatusAllUsingGet**](UtilsApi.md#getAccountStatusAllUsingGet) | **GET** /account_status | List all account statuses
-[**getAccountStatusUsingGet**](UtilsApi.md#getAccountStatusUsingGet) | **GET** /account_status/{account_status_id} | Retrieve an account status
+[**getReasonCodeAllUsingGet**](UtilsApi.md#getReasonCodeAllUsingGet) | **GET** /reason_code | List all reason codes
+[**getReasonCodeUsingGet**](UtilsApi.md#getReasonCodeUsingGet) | **GET** /reason_code/{reason_code_id} | Retrieve a reason code
 [**getStageAllUsingGet**](UtilsApi.md#getStageAllUsingGet) | **GET** /stage | List all account stages
 [**getStageUsingGet**](UtilsApi.md#getStageUsingGet) | **GET** /stage/{stage_id} | Retrieve an account stage
 [**getTransactionCodeAllUsingGet**](UtilsApi.md#getTransactionCodeAllUsingGet) | **GET** /transaction_code | List all transaction codes
 [**getTransactionCodeUsingGet**](UtilsApi.md#getTransactionCodeUsingGet) | **GET** /transaction_code/{transaction_code_id} | Retrieve a transaction code
-[**updateAccountStatusUsingPut**](UtilsApi.md#updateAccountStatusUsingPut) | **PUT** /account_status/{account_status_id} | Update an account status
+[**updateReasonCodeUsingPut**](UtilsApi.md#updateReasonCodeUsingPut) | **PUT** /reason_code/{reason_code_id} | Update a reason code
 [**updateStageUsingPut**](UtilsApi.md#updateStageUsingPut) | **PUT** /stage/{stage_id} | Update an account stage
 [**updateTransactionCodeUsingPut**](UtilsApi.md#updateTransactionCodeUsingPut) | **PUT** /transaction_code/{transaction_code_id} | Update a transaction code
 
 
-# **createAccountStatusUsingPost**
-> \com\hydrogen\nucleus\Model\AccountStatus createAccountStatusUsingPost($account_status_request)
+# **createReasonCodeUsingPost**
+> \com\hydrogen\nucleus\Model\ReasonCode createReasonCodeUsingPost($reason_code_request)
 
-Create an account status
+Create a reason code
 
-Create an account status record for an account.
+Create a new reason code for your firm.
 
 ### Example
 ```php
@@ -44,6 +44,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -53,13 +56,13 @@ $apiInstance = new com\hydrogen\nucleus\Api\UtilsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_status_request = new \com\hydrogen\nucleus\Model\AccountStatus(); // \com\hydrogen\nucleus\Model\AccountStatus | accountStatusRequest
+$reason_code_request = new \com\hydrogen\nucleus\Model\ReasonCode(); // \com\hydrogen\nucleus\Model\ReasonCode | reasonCodeRequest
 
 try {
-    $result = $apiInstance->createAccountStatusUsingPost($account_status_request);
+    $result = $apiInstance->createReasonCodeUsingPost($reason_code_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UtilsApi->createAccountStatusUsingPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UtilsApi->createReasonCodeUsingPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -68,11 +71,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_status_request** | [**\com\hydrogen\nucleus\Model\AccountStatus**](../Model/AccountStatus.md)| accountStatusRequest |
+ **reason_code_request** | [**\com\hydrogen\nucleus\Model\ReasonCode**](../Model/ReasonCode.md)| reasonCodeRequest |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\AccountStatus**](../Model/AccountStatus.md)
+[**\com\hydrogen\nucleus\Model\ReasonCode**](../Model/ReasonCode.md)
 
 ### Authorization
 
@@ -108,6 +111,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -172,6 +178,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -213,12 +222,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **deleteAccountStatusUsingDelete**
-> deleteAccountStatusUsingDelete($account_status_id)
+# **deleteReasonCodeUsingDelete**
+> deleteReasonCodeUsingDelete($reason_code_id)
 
-Delete an account status
+Delete a reason code
 
-Permanently delete an account status record from an account’s history.
+Permanently delete a reason code for your firm.
 
 ### Example
 ```php
@@ -236,6 +245,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -245,12 +257,12 @@ $apiInstance = new com\hydrogen\nucleus\Api\UtilsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_status_id = "account_status_id_example"; // string | UUID account_status_id
+$reason_code_id = "reason_code_id_example"; // string | UUID reason_code_id
 
 try {
-    $apiInstance->deleteAccountStatusUsingDelete($account_status_id);
+    $apiInstance->deleteReasonCodeUsingDelete($reason_code_id);
 } catch (Exception $e) {
-    echo 'Exception when calling UtilsApi->deleteAccountStatusUsingDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UtilsApi->deleteReasonCodeUsingDelete: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -259,7 +271,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_status_id** | [**string**](../Model/.md)| UUID account_status_id |
+ **reason_code_id** | [**string**](../Model/.md)| UUID reason_code_id |
 
 ### Return type
 
@@ -299,6 +311,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -362,6 +377,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -402,12 +420,12 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getAccountStatusAllUsingGet**
-> \com\hydrogen\nucleus\Model\PageAccountStatus_ getAccountStatusAllUsingGet($ascending, $filter, $order_by, $page, $size)
+# **getReasonCodeAllUsingGet**
+> \com\hydrogen\nucleus\Model\PageReasonCode_ getReasonCodeAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
-List all account statuses
+List all reason codes
 
-Get the account status history information for all accounts.
+Get the information for all reason codes defined by your firm.
 
 ### Example
 ```php
@@ -425,6 +443,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -441,10 +462,10 @@ $page = 0; // int | page
 $size = 25; // int | size
 
 try {
-    $result = $apiInstance->getAccountStatusAllUsingGet($ascending, $filter, $order_by, $page, $size);
+    $result = $apiInstance->getReasonCodeAllUsingGet($ascending, $filter, $order_by, $page, $size);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UtilsApi->getAccountStatusAllUsingGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UtilsApi->getReasonCodeAllUsingGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -461,7 +482,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\PageAccountStatus_**](../Model/PageAccountStatus_.md)
+[**\com\hydrogen\nucleus\Model\PageReasonCode_**](../Model/PageReasonCode_.md)
 
 ### Authorization
 
@@ -474,12 +495,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getAccountStatusUsingGet**
-> \com\hydrogen\nucleus\Model\AccountStatus getAccountStatusUsingGet($account_status_id)
+# **getReasonCodeUsingGet**
+> \com\hydrogen\nucleus\Model\ReasonCode getReasonCodeUsingGet($reason_code_id)
 
-Retrieve an account status
+Retrieve a reason code
 
-Retrieve the information for a specific account status record for an account.
+Retrieve the information for a reason code defined by your firm.
 
 ### Example
 ```php
@@ -497,6 +518,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -506,13 +530,13 @@ $apiInstance = new com\hydrogen\nucleus\Api\UtilsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_status_id = "account_status_id_example"; // string | UUID account_status_id
+$reason_code_id = "reason_code_id_example"; // string | UUID reason_code_id
 
 try {
-    $result = $apiInstance->getAccountStatusUsingGet($account_status_id);
+    $result = $apiInstance->getReasonCodeUsingGet($reason_code_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UtilsApi->getAccountStatusUsingGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UtilsApi->getReasonCodeUsingGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -521,11 +545,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_status_id** | [**string**](../Model/.md)| UUID account_status_id |
+ **reason_code_id** | [**string**](../Model/.md)| UUID reason_code_id |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\AccountStatus**](../Model/AccountStatus.md)
+[**\com\hydrogen\nucleus\Model\ReasonCode**](../Model/ReasonCode.md)
 
 ### Authorization
 
@@ -561,6 +585,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -633,6 +660,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -697,6 +727,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -769,6 +802,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -810,12 +846,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **updateAccountStatusUsingPut**
-> \com\hydrogen\nucleus\Model\AccountStatus updateAccountStatusUsingPut($account_status, $account_status_id)
+# **updateReasonCodeUsingPut**
+> \com\hydrogen\nucleus\Model\ReasonCode updateReasonCodeUsingPut($reason_code, $reason_code_id)
 
-Update an account status
+Update a reason code
 
-Update an account status record for an account.
+Update a reason code for your firm.
 
 ### Example
 ```php
@@ -833,6 +869,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -842,14 +881,14 @@ $apiInstance = new com\hydrogen\nucleus\Api\UtilsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_status = new \com\hydrogen\nucleus\Model\AccountStatus(); // \com\hydrogen\nucleus\Model\AccountStatus | account_status
-$account_status_id = "account_status_id_example"; // string | UUID account_status_id
+$reason_code = new \com\hydrogen\nucleus\Model\ReasonCode(); // \com\hydrogen\nucleus\Model\ReasonCode | reason_code
+$reason_code_id = "reason_code_id_example"; // string | UUID reason_code_id
 
 try {
-    $result = $apiInstance->updateAccountStatusUsingPut($account_status, $account_status_id);
+    $result = $apiInstance->updateReasonCodeUsingPut($reason_code, $reason_code_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UtilsApi->updateAccountStatusUsingPut: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UtilsApi->updateReasonCodeUsingPut: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -858,12 +897,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_status** | [**\com\hydrogen\nucleus\Model\AccountStatus**](../Model/AccountStatus.md)| account_status |
- **account_status_id** | [**string**](../Model/.md)| UUID account_status_id |
+ **reason_code** | [**\com\hydrogen\nucleus\Model\ReasonCode**](../Model/ReasonCode.md)| reason_code |
+ **reason_code_id** | [**string**](../Model/.md)| UUID reason_code_id |
 
 ### Return type
 
-[**\com\hydrogen\nucleus\Model\AccountStatus**](../Model/AccountStatus.md)
+[**\com\hydrogen\nucleus\Model\ReasonCode**](../Model/ReasonCode.md)
 
 ### Authorization
 
@@ -899,6 +938,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -965,6 +1007,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }

@@ -48,8 +48,8 @@ Create a new asset size record for a portfolio.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -99,8 +99,8 @@ Create a new comment for a portfolio defined for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -150,8 +150,8 @@ Create an portfolio goal.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -201,8 +201,8 @@ Create a new holding record for a portfolio.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -252,8 +252,8 @@ Create a new transaction record for a portfolio.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -303,8 +303,8 @@ Create a new portfolio for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -354,8 +354,8 @@ Permanently delete a portfolio asset size record for a portfolio.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -405,8 +405,8 @@ Permanently delete a portfolio comment for a portfolio.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -456,8 +456,8 @@ Permanently delete an portfolio-goal mapping.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -507,8 +507,8 @@ Permanently delete a portfolio holding record for a portfolio.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -558,8 +558,8 @@ Permanently delete a portfolio transaction record for a portfolio.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -609,8 +609,8 @@ Permanently delete a portfolio for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -651,7 +651,7 @@ null (empty response body)
 
 <a name="getPortfolioAggregatedDataUsingGet"></a>
 # **getPortfolioAggregatedDataUsingGet**
-> PortfolioAggregatedVO getPortfolioAggregatedDataUsingGet(portfolioId, opts)
+> Object getPortfolioAggregatedDataUsingGet(portfolioId, opts)
 
 Retrieve an portfolio aggregate data
 
@@ -660,8 +660,8 @@ Retrieve the information for a securities associated with a portfolio.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -701,7 +701,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PortfolioAggregatedVO**](PortfolioAggregatedVO.md)
+**Object**
 
 ### Authorization
 
@@ -723,8 +723,8 @@ Get the information for all portfolios assigned to all of your firm’s accounts
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -783,8 +783,8 @@ Retrieve the information for a portfolio asset size record for a portfolio.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -793,6 +793,7 @@ var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
+  'currencyConversion': "currencyConversion_example", // String | currency_conversion
   'filter': "filter_example", // String | filter
   'orderBy': "update_date", // String | order_by
   'page': 0, // Number | page
@@ -814,6 +815,7 @@ apiInstance.getPortfolioAssetSizeAllUsingGet(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Number**| page | [optional] [default to 0]
@@ -834,7 +836,7 @@ Name | Type | Description  | Notes
 
 <a name="getPortfolioAssetSizeUsingGet"></a>
 # **getPortfolioAssetSizeUsingGet**
-> PortfolioAssetSize getPortfolioAssetSizeUsingGet(portfolioAssetSizeId)
+> PortfolioAssetSizeLog getPortfolioAssetSizeUsingGet(portfolioAssetSizeId, opts)
 
 Retrieve a portfolio asset size
 
@@ -843,8 +845,8 @@ Retrieve the information for a portfolio asset size record for a portfolio.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -853,6 +855,9 @@ var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var portfolioAssetSizeId = "portfolioAssetSizeId_example"; // String | portfolio_asset_size_id
 
+var opts = { 
+  'currencyConversion': "currencyConversion_example" // String | currency_conversion
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -861,7 +866,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getPortfolioAssetSizeUsingGet(portfolioAssetSizeId, callback);
+apiInstance.getPortfolioAssetSizeUsingGet(portfolioAssetSizeId, opts, callback);
 ```
 
 ### Parameters
@@ -869,10 +874,11 @@ apiInstance.getPortfolioAssetSizeUsingGet(portfolioAssetSizeId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolioAssetSizeId** | **String**| portfolio_asset_size_id | 
+ **currencyConversion** | **String**| currency_conversion | [optional] 
 
 ### Return type
 
-[**PortfolioAssetSize**](PortfolioAssetSize.md)
+[**PortfolioAssetSizeLog**](PortfolioAssetSizeLog.md)
 
 ### Authorization
 
@@ -894,8 +900,8 @@ List all comments for all portfolios defined for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -954,8 +960,8 @@ Retrieve the information for a portfolio comment for a portfolio.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -1005,8 +1011,8 @@ Get information for all portfolio-goal mappings defined for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -1065,8 +1071,8 @@ Retrieve the information for a specific portfolio-goal mapping.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -1107,7 +1113,7 @@ Name | Type | Description  | Notes
 
 <a name="getPortfolioHoldingAllUsingGet"></a>
 # **getPortfolioHoldingAllUsingGet**
-> PortfolioHolding getPortfolioHoldingAllUsingGet(opts)
+> PagePortfolioHoldingLog getPortfolioHoldingAllUsingGet(opts)
 
 List all portfolio holdings
 
@@ -1116,8 +1122,8 @@ Get the information for all holding records for all portfolios defined for your 
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -1126,6 +1132,7 @@ var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
+  'currencyConversion': "currencyConversion_example", // String | currency_conversion
   'filter': "filter_example", // String | filter
   'orderBy': "update_date", // String | order_by
   'page': 0, // Number | page
@@ -1147,6 +1154,7 @@ apiInstance.getPortfolioHoldingAllUsingGet(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Number**| page | [optional] [default to 0]
@@ -1154,7 +1162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PortfolioHolding**](PortfolioHolding.md)
+[**PagePortfolioHoldingLog**](PagePortfolioHoldingLog.md)
 
 ### Authorization
 
@@ -1167,7 +1175,7 @@ Name | Type | Description  | Notes
 
 <a name="getPortfolioHoldingUsingGet"></a>
 # **getPortfolioHoldingUsingGet**
-> PortfolioHolding getPortfolioHoldingUsingGet(portfolioHoldingId)
+> PortfolioHoldingLog getPortfolioHoldingUsingGet(portfolioHoldingId, opts)
 
 Retrieve a portfolio holding
 
@@ -1176,8 +1184,8 @@ Retrieve the information for a portfolio holding record for a portfolio.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -1186,6 +1194,9 @@ var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var portfolioHoldingId = "099961da-7f41-4309-950f-2b51689a0033"; // String | UUID portfolio_holding_id
 
+var opts = { 
+  'currencyConversion': "currencyConversion_example" // String | USD
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1194,7 +1205,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getPortfolioHoldingUsingGet(portfolioHoldingId, callback);
+apiInstance.getPortfolioHoldingUsingGet(portfolioHoldingId, opts, callback);
 ```
 
 ### Parameters
@@ -1202,10 +1213,11 @@ apiInstance.getPortfolioHoldingUsingGet(portfolioHoldingId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolioHoldingId** | **String**| UUID portfolio_holding_id | 
+ **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
 
-[**PortfolioHolding**](PortfolioHolding.md)
+[**PortfolioHoldingLog**](PortfolioHoldingLog.md)
 
 ### Authorization
 
@@ -1227,8 +1239,8 @@ Get the information for all transaction records for all portfolios defined for y
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -1237,6 +1249,7 @@ var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
+  'currencyConversion': "currencyConversion_example", // String | currency_conversion
   'filter': "filter_example", // String | filter
   'orderBy': "update_date", // String | order_by
   'page': 0, // Number | page
@@ -1258,6 +1271,7 @@ apiInstance.getPortfolioTransactionAllUsingGet(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Number**| page | [optional] [default to 0]
@@ -1278,7 +1292,7 @@ Name | Type | Description  | Notes
 
 <a name="getPortfolioTransactionUsingGet"></a>
 # **getPortfolioTransactionUsingGet**
-> PortfolioTransaction getPortfolioTransactionUsingGet(portfolioTransactionId)
+> PortfolioTransaction getPortfolioTransactionUsingGet(portfolioTransactionId, opts)
 
 Retrieve a portfolio transaction
 
@@ -1287,8 +1301,8 @@ Retrieve the information for a portfolio transaction record for a portfolio.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -1297,6 +1311,9 @@ var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
 var portfolioTransactionId = "099961da-7f41-4309-950f-2b51689a0033"; // String | UUID portfolio_transaction_id
 
+var opts = { 
+  'currencyConversion': "currencyConversion_example" // String | USD
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1305,7 +1322,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getPortfolioTransactionUsingGet(portfolioTransactionId, callback);
+apiInstance.getPortfolioTransactionUsingGet(portfolioTransactionId, opts, callback);
 ```
 
 ### Parameters
@@ -1313,6 +1330,7 @@ apiInstance.getPortfolioTransactionUsingGet(portfolioTransactionId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **portfolioTransactionId** | **String**| UUID portfolio_transaction_id | 
+ **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -1338,8 +1356,8 @@ Retrieve a portfolio for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -1380,7 +1398,7 @@ Name | Type | Description  | Notes
 
 <a name="updatePortfolioAssetSizeUsingPut"></a>
 # **updatePortfolioAssetSizeUsingPut**
-> PortfolioAssetSize updatePortfolioAssetSizeUsingPut(portfolioAssetSize, portfolioAssetSizeId)
+> PortfolioAssetSizeLog updatePortfolioAssetSizeUsingPut(portfolioAssetSize, portfolioAssetSizeId)
 
 Update a portfolio asset size
 
@@ -1389,8 +1407,8 @@ Update the information for a portfolio asset size record for a portfolio.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -1421,7 +1439,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PortfolioAssetSize**](PortfolioAssetSize.md)
+[**PortfolioAssetSizeLog**](PortfolioAssetSizeLog.md)
 
 ### Authorization
 
@@ -1443,8 +1461,8 @@ Update the information for a portfolio comment for a portfolio.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -1497,8 +1515,8 @@ Update the information for an portfolio-goal mapping.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -1542,7 +1560,7 @@ Name | Type | Description  | Notes
 
 <a name="updatePortfolioHoldingUsingPut"></a>
 # **updatePortfolioHoldingUsingPut**
-> PortfolioHolding updatePortfolioHoldingUsingPut(portfolioHolding, portfolioHoldingId)
+> PortfolioHoldingLog updatePortfolioHoldingUsingPut(portfolioHolding, portfolioHoldingId)
 
 Update a portfolio holding
 
@@ -1551,8 +1569,8 @@ Update the information for a portfolio holding record for a portfolio.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -1583,7 +1601,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PortfolioHolding**](PortfolioHolding.md)
+[**PortfolioHoldingLog**](PortfolioHoldingLog.md)
 
 ### Authorization
 
@@ -1605,8 +1623,8 @@ Update the information for a portfolio transaction record for a portfolio.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -1659,8 +1677,8 @@ Update a portfolio for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';

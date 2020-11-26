@@ -3,17 +3,28 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**wAssetConfig** | **Object** |  | [optional] 
+**tgtType** | **String** |  | [optional] 
+**tgtVal** | **Number** |  | [optional] [default to 0.0]
+**minAssets** | **Number** |  | 
+**secTypes** | **[String]** |  | 
+**wConfig** | [**WConfig**](WConfig.md) |  | 
+**endDate** | **Date** |  | [optional] 
 **useProxyData** | **Boolean** |  | [optional] [default to false]
 **startDate** | **Date** |  | [optional] 
-**tgtVal** | **Number** |  | [optional] [default to 0.0]
-**endDate** | **Date** |  | [optional] 
-**wConfig** | [**WConfig**](WConfig.md) |  | 
-**secTypes** | **[String]** |  | 
-**tgtType** | **String** |  | [optional] [default to 'null']
-**minAssets** | **Number** |  | 
-**marketDataSource** | **String** |  | [optional] [default to 'nucleus']
-**wAssetConfig** | **Object** |  | [optional] 
 **tickers** | **[String]** |  | 
+**marketDataSource** | **String** |  | [optional] [default to 'nucleus']
+
+
+<a name="TgtTypeEnum"></a>
+## Enum: TgtTypeEnum
+
+
+* `risk` (value: `"risk"`)
+
+* `_return` (value: `"return"`)
+
+
 
 
 <a name="[SecTypesEnum]"></a>
@@ -25,17 +36,6 @@ Name | Type | Description | Notes
 * `minor` (value: `"minor"`)
 
 * `cash` (value: `"cash"`)
-
-
-
-
-<a name="TgtTypeEnum"></a>
-## Enum: TgtTypeEnum
-
-
-* `risk` (value: `"risk"`)
-
-* `_return` (value: `"return"`)
 
 
 

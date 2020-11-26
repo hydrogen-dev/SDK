@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
-**date** | [**OffsetDateTime**](OffsetDateTime.md) | date | 
+**date** | [**LocalDate**](LocalDate.md) | date | 
 **goals** | [**List&lt;PortfolioGoalMap&gt;**](PortfolioGoalMap.md) |  | 
 **id** | [**UUID**](UUID.md) |  |  [optional]
 **portfolioId** | [**UUID**](UUID.md) | portfolioId | 

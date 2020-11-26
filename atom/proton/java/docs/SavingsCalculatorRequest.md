@@ -4,15 +4,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**depositSchedule** | [**List&lt;SavingsDepositSchedule&gt;**](SavingsDepositSchedule.md) |  |  [optional]
-**horizonFrequencyInterval** | [**HorizonFrequencyIntervalEnum**](#HorizonFrequencyIntervalEnum) |  |  [optional]
-**initialBalance** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**returnSchedule** | **List&lt;Float&gt;** |  | 
-**taxRate** | **Float** |  |  [optional]
 **inflationRate** | **Float** |  |  [optional]
+**depositSchedule** | [**List&lt;SavingsDepositSchedule&gt;**](SavingsDepositSchedule.md) |  |  [optional]
+**createLog** | **Boolean** |  |  [optional]
 **aggregationAccountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
-**accountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
+**initialBalance** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **horizon** | **Integer** |  | 
+**horizonFrequencyInterval** | [**HorizonFrequencyIntervalEnum**](#HorizonFrequencyIntervalEnum) |  |  [optional]
+**taxRate** | **Float** |  |  [optional]
+**accountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
+**returnSchedule** | **List&lt;Float&gt;** |  | 
 
 
 <a name="HorizonFrequencyIntervalEnum"></a>

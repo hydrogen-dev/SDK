@@ -4,10 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **category** | **string** | category | [optional] 
-**coverage_amount** | **string** | coverageAmount | 
+**coverage_amount** | **double** | coverageAmount | 
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **currency_code** | **string** | currencyCode | 
-**deductible** | **string** | deductible | [optional] 
+**deductible** | **double** | deductible | [optional] 
 **description** | **string** | description | [optional] 
 **id** | **string** |  | [optional] 
 **is_active** | **bool** | is_active | [optional] 

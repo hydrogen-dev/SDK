@@ -4,26 +4,40 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**thresh** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**n** | **Integer** |  |  [optional]
-**tradingDaysPerYear** | **Integer** |  |  [optional]
-**confTgt** | **Float** |  |  [optional]
-**clientId** | [**UUID**](UUID.md) |  |  [optional]
-**currInv** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**withdrawalTax** | **Float** |  |  [optional]
-**pRet** | **List&lt;Float&gt;** |  | 
-**threshType** | [**ThreshTypeEnum**](#ThreshTypeEnum) |  |  [optional]
-**pRisk** | **List&lt;Float&gt;** |  | 
-**adjustForCompounding** | **Boolean** |  |  [optional]
-**removeOutliers** | **Boolean** |  |  [optional]
-**recommendType** | [**RecommendTypeEnum**](#RecommendTypeEnum) |  |  [optional]
-**recommendationConfig** | **Object** |  |  [optional]
 **goalId** | [**UUID**](UUID.md) |  |  [optional]
+**currInv** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**n** | **Integer** |  |  [optional]
 **horizonFrequency** | [**HorizonFrequencyEnum**](#HorizonFrequencyEnum) |  |  [optional]
-**depositConfig** | **List&lt;Object&gt;** |  |  [optional]
-**compoundingRate** | **Float** |  |  [optional]
-**goalConfig** | **Object** |  |  [optional]
+**clientId** | [**UUID**](UUID.md) |  |  [optional]
+**removeOutliers** | **Boolean** |  |  [optional]
+**goalConfig** | [**GoalConfig**](GoalConfig.md) |  |  [optional]
+**confTgt** | **Float** |  |  [optional]
+**pRet** | **List&lt;Float&gt;** |  | 
 **horizon** | **Integer** |  |  [optional]
+**threshType** | [**ThreshTypeEnum**](#ThreshTypeEnum) |  |  [optional]
+**thresh** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**depositConfig** | [**List&lt;AccumulationGoalDepositConfig&gt;**](AccumulationGoalDepositConfig.md) |  |  [optional]
+**recommendationConfig** | [**RecommendationConfig1**](RecommendationConfig1.md) |  |  [optional]
+**compoundingRate** | **Float** |  |  [optional]
+**withdrawalTax** | **Float** |  |  [optional]
+**tradingDaysPerYear** | **Integer** |  |  [optional]
+**adjustForCompounding** | **Boolean** |  |  [optional]
+**pRisk** | **List&lt;Float&gt;** |  | 
+**createLog** | **Boolean** |  |  [optional]
+**recommendType** | [**RecommendTypeEnum**](#RecommendTypeEnum) |  |  [optional]
+
+
+<a name="HorizonFrequencyEnum"></a>
+## Enum: HorizonFrequencyEnum
+Name | Value
+---- | -----
+YEAR | &quot;year&quot;
+SIX_MONTHS | &quot;six_months&quot;
+QUARTER | &quot;quarter&quot;
+MONTH | &quot;month&quot;
+TWO_WEEKS | &quot;two_weeks&quot;
+WEEK | &quot;week&quot;
+DAY | &quot;day&quot;
 
 
 <a name="ThreshTypeEnum"></a>
@@ -42,19 +56,6 @@ RECURRING | &quot;recurring&quot;
 ONE_TIME | &quot;one-time&quot;
 COMBO | &quot;combo&quot;
 HORIZON | &quot;horizon&quot;
-
-
-<a name="HorizonFrequencyEnum"></a>
-## Enum: HorizonFrequencyEnum
-Name | Value
----- | -----
-YEAR | &quot;year&quot;
-SIX_MONTHS | &quot;six_months&quot;
-QUARTER | &quot;quarter&quot;
-MONTH | &quot;month&quot;
-TWO_WEEKS | &quot;two_weeks&quot;
-WEEK | &quot;week&quot;
-DAY | &quot;day&quot;
 
 
 

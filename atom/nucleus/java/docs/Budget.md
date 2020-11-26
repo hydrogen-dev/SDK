@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **name** | **String** | name | 
 **secondaryId** | **String** |  |  [optional]
 **startDate** | [**LocalDate**](LocalDate.md) | startDate |  [optional]
+**totalValue** | **Double** | totalValue |  [optional]
 **updateDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 
 

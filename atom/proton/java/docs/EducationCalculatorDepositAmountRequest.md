@@ -4,18 +4,18 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**decumulationHorizon** | **Integer** |  | 
-**depositSchedule** | **Object** |  |  [optional]
-**initialBalance** | **Float** |  |  [optional]
-**portfolioReturn** | **Float** |  | 
-**educationInflationRate** | **Float** |  |  [optional]
-**taxRate** | **Float** |  |  [optional]
-**percentOfCostsCovered** | **Float** |  |  [optional]
-**aggregationAccountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
 **totalAnnualCost** | **Float** |  | 
-**accountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
-**accumulationHorizon** | **Integer** |  | 
 **generalInflationRate** | **Float** |  |  [optional]
+**educationInflationRate** | **Float** |  |  [optional]
+**depositSchedule** | [**CalculatorDepositSchedule**](CalculatorDepositSchedule.md) |  |  [optional]
+**portfolioReturn** | **Float** |  | 
+**aggregationAccountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
+**initialBalance** | **Float** |  |  [optional]
+**decumulationHorizon** | **Integer** |  | 
+**taxRate** | **Float** |  |  [optional]
+**accountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
+**percentOfCostsCovered** | **Float** |  |  [optional]
+**accumulationHorizon** | **Integer** |  | 
 
 
 

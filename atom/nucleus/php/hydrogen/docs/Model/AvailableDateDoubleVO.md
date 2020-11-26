@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **date** | **string** | date | [optional] 
 **value** | **double** | value | [optional] 
 **value_available** | **double** | valueAvailable | [optional] 
+**value_pending** | **double** | valuePending | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

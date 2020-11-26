@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **create_date** | **DateTime** |  | [optional] 
 **description** | **String** | description | [optional] 
 **id** | **String** |  | [optional] 
-**inception_date** | **DateTime** | inceptionDate | [optional] 
+**inception_date** | **Date** | inceptionDate | [optional] 
 **is_active** | **BOOLEAN** | isActive | [optional] 
 **metadata** | **Hash&lt;String, String&gt;** |  | [optional] 
 **name** | **String** | name | 

@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **name** | **String** | name | 
 **secondaryId** | **String** |  | [optional] 
 **startDate** | **Date** | startDate | [optional] 
+**totalValue** | **Number** | totalValue | [optional] 
 **updateDate** | **Date** |  | [optional] 
 
 

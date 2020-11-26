@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **metadata** | **map[string,string]** |  | [optional] 
 **notes** | **string** | notes | [optional] 
 **portfolio_id** | **string** | portfolio_id | [optional] 
+**portfolio_transaction_id** | **string** | portfolioTransactionId | [optional] 
 **received_date** | [**\DateTime**](\DateTime.md) | received_date | [optional] 
 **secondary_id** | **string** |  | [optional] 
 **status** | **string** | status | [optional] 

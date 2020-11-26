@@ -4,12 +4,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**startDate** | [**LocalDate**](LocalDate.md) |  | 
-**endDate** | [**LocalDate**](LocalDate.md) |  | 
-**modelId** | [**UUID**](UUID.md) |  |  [optional]
-**initialWeights** | **Object** |  |  [optional]
-**settings** | **Object** |  |  [optional]
+**settings** | [**Settings**](Settings.md) |  |  [optional]
 **updateModel** | **Boolean** |  |  [optional]
+**modelId** | [**UUID**](UUID.md) |  |  [optional]
+**endDate** | [**LocalDate**](LocalDate.md) |  | 
+**initialWeights** | **Object** |  |  [optional]
+**startDate** | [**LocalDate**](LocalDate.md) |  | 
 
 
 

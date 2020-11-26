@@ -24,14 +24,47 @@ Create a new comparison request.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.FinancialOfferApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var financialOffer = new HydrogenNucleusApi.FinancialOffer(); // FinancialOffer | financialOffer
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createFinancialOffer();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -40,7 +73,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createFinancialOfferUsingPost(financialOffer, callback);
+const createFinancialOffer = () => {  
+    var apiInstance = new HydrogenNucleusApi.FinancialOfferApi();
+    var financialOffer = new HydrogenNucleusApi.FinancialOffer(); // FinancialOffer | financialOffer
+    apiInstance.createFinancialOfferUsingPost(financialOffer, callback);
+}   
 ```
 
 ### Parameters
@@ -64,7 +101,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteFinancialOfferUsingDelete"></a>
 # **deleteFinancialOfferUsingDelete**
-> deleteFinancialOfferUsingDelete(financialOffer, financialOfferId)
+> deleteFinancialOfferUsingDelete(financialOfferId)
 
 Delete a comparison request
 
@@ -75,33 +112,67 @@ Permanently delete a comparison request.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.FinancialOfferApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var financialOffer = "1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c"; // String | UUID financial_offer_id
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        deleteFinancialOffer();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
-var financialOfferId = "financialOfferId_example"; // String | financial_offer_id
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.deleteFinancialOfferUsingDelete(financialOffer, financialOfferId, callback);
+const deleteFinancialOffer = () => {  
+    var apiInstance = new HydrogenNucleusApi.FinancialOfferApi();
+    var financialOfferId = "1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c"; // String | UUID financial_offer_id
+    apiInstance.deleteFinancialOfferUsingDelete(financialOfferId, callback);
+}   
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **financialOffer** | **String**| UUID financial_offer_id | 
- **financialOfferId** | **String**| financial_offer_id | 
+ **financialOfferId** | **String**| UUID financial_offer_id | 
 
 ### Return type
 
@@ -129,19 +200,47 @@ Get the information for all comparison requests.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.FinancialOfferApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var opts = { 
-  'ascending': false, // Boolean | ascending
-  'filter': "filter_example", // String | filter
-  'orderBy': "update_date", // String | order_by
-  'page': 0, // Number | page
-  'size': 25 // Number | size
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        getFinancialOfferAll();
+    }
 };
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -150,7 +249,18 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getFinancialOfferAllUsingGet(opts, callback);
+const getFinancialOfferAll = () => {  
+    var apiInstance = new HydrogenNucleusApi.FinancialOfferApi();
+    var opts = { 
+      'ascending': false, // Boolean | ascending
+      'currencyConversion': "currencyConversion_example", // String | currency_conversion
+      'filter': "filter_example", // String | filter
+      'orderBy': "update_date", // String | order_by
+      'page': 0, // Number | page
+      'size': 25 // Number | size
+    };
+    apiInstance.getFinancialOfferAllUsingGet(opts, callback);
+}   
 ```
 
 ### Parameters
@@ -158,6 +268,7 @@ apiInstance.getFinancialOfferAllUsingGet(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional] 
  **filter** | **String**| filter | [optional] 
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Number**| page | [optional] [default to 0]
@@ -178,7 +289,7 @@ Name | Type | Description  | Notes
 
 <a name="getFinancialOfferUsingGet"></a>
 # **getFinancialOfferUsingGet**
-> FinancialOffer getFinancialOfferUsingGet(financialOffer, financialOfferId)
+> FinancialOffer getFinancialOfferUsingGet(financialOfferId, opts)
 
 Retrieve a comparison request
 
@@ -189,16 +300,47 @@ Retrieve the information for a comparison request.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.FinancialOfferApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var financialOffer = "1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c"; // String | UUID financial_offer_id
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        getFinancialOffer();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
-var financialOfferId = "financialOfferId_example"; // String | financial_offer_id
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -207,15 +349,22 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getFinancialOfferUsingGet(financialOffer, financialOfferId, callback);
+const getFinancialOffer = () => {  
+    var apiInstance = new HydrogenNucleusApi.FinancialOfferApi();
+    var financialOfferId = "1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c"; // String | UUID financial_offer_id
+    var opts = { 
+      'currencyConversion': "currencyConversion_example" // String | USD
+    };
+    apiInstance.getFinancialOfferUsingGet(financialOfferId, opts, callback);
+}   
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **financialOffer** | **String**| UUID financial_offer_id | 
- **financialOfferId** | **String**| financial_offer_id | 
+ **financialOfferId** | **String**| UUID financial_offer_id | 
+ **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
 
@@ -243,16 +392,47 @@ Update the information for a comparison request.
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenNucleusApi.FinancialOfferApi();
+// Create an instance of the Auth API class
+var api = new HydrogenNucleusApi.AuthApi();
 
-var financialOffer = new HydrogenNucleusApi.FinancialOffer(); // FinancialOffer | financial_offer
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        updateFinancialOffer();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
-var financialOfferId = "d79bb3a3-f259-430c-8fa8-a93f87cc3bdf"; // String | UUID financial_offer_id
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
 
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -261,7 +441,12 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateFinancialOfferUsingPut(financialOffer, financialOfferId, callback);
+const updateFinancialOffer = () => {  
+    var apiInstance = new HydrogenNucleusApi.FinancialOfferApi();
+    var financialOffer = new HydrogenNucleusApi.FinancialOffer(); // FinancialOffer | financial_offer
+    var financialOfferId = "d79bb3a3-f259-430c-8fa8-a93f87cc3bdf"; // String | UUID financial_offer_id
+    apiInstance.updateFinancialOfferUsingPut(financialOffer, financialOfferId, callback);
+}   
 ```
 
 ### Parameters

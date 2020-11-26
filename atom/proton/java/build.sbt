@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "com.hydrogen",
     name := "hydrogen-proton-api",
-    version := "1.7.18",
+    version := "1.8.0",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     javacOptions in compile ++= Seq("-Xlint:deprecation"),

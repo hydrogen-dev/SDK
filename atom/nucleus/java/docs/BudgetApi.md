@@ -21,8 +21,8 @@ Create a new budget request.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import BudgetApi;
 
@@ -33,10 +33,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 BudgetApi apiInstance = new BudgetApi();
 Budget budgetRequest = new Budget(); // Budget | budgetRequest
@@ -78,8 +82,8 @@ Permanently delete a budget request.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import BudgetApi;
 
@@ -90,10 +94,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 BudgetApi apiInstance = new BudgetApi();
 UUID budgetId = new UUID(); // UUID | UUID budget_id
@@ -126,7 +134,7 @@ null (empty response body)
 
 <a name="getBudgetAllUsingGet"></a>
 # **getBudgetAllUsingGet**
-> PageBudget getBudgetAllUsingGet(ascending, filter, orderBy, page, size)
+> PageBudget getBudgetAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size)
 
 List all budget requests
 
@@ -134,8 +142,8 @@ Get the information for all budget requests.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import BudgetApi;
 
@@ -146,19 +154,24 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 BudgetApi apiInstance = new BudgetApi();
 Boolean ascending = false; // Boolean | ascending
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
 String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PageBudget result = apiInstance.getBudgetAllUsingGet(ascending, filter, orderBy, page, size);
+    PageBudget result = apiInstance.getBudgetAllUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BudgetApi#getBudgetAllUsingGet");
@@ -171,6 +184,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **currencyConversion** | **String**| currency_conversion | [optional]
  **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
@@ -191,7 +205,7 @@ Name | Type | Description  | Notes
 
 <a name="getBudgetUsingGet"></a>
 # **getBudgetUsingGet**
-> Budget getBudgetUsingGet(budgetId)
+> Budget getBudgetUsingGet(budgetId, currencyConversion)
 
 Retrieve a budget request
 
@@ -199,8 +213,8 @@ Retrieve the information for a budget request.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import BudgetApi;
 
@@ -211,15 +225,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 BudgetApi apiInstance = new BudgetApi();
 UUID budgetId = new UUID(); // UUID | UUID budget_id
+String currencyConversion = "currencyConversion_example"; // String | USD
 try {
-    Budget result = apiInstance.getBudgetUsingGet(budgetId);
+    Budget result = apiInstance.getBudgetUsingGet(budgetId, currencyConversion);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BudgetApi#getBudgetUsingGet");
@@ -232,6 +251,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **budgetId** | [**UUID**](.md)| UUID budget_id |
+ **currencyConversion** | **String**| USD | [optional]
 
 ### Return type
 
@@ -256,8 +276,8 @@ Update the information for a budget request.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import BudgetApi;
 
@@ -268,10 +288,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 BudgetApi apiInstance = new BudgetApi();
 Budget budget = new Budget(); // Budget | budget

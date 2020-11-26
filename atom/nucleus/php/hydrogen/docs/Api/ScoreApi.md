@@ -5,9 +5,9 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createScoreUsingPost**](ScoreApi.md#createScoreUsingPost) | **POST** /score | Create a score
-[**createScoreUsingPost1**](ScoreApi.md#createScoreUsingPost1) | **GET** /score/{score_id} | Retrieve a score
 [**deleteScoreUsingDelete**](ScoreApi.md#deleteScoreUsingDelete) | **DELETE** /score/{score_id} | Delete a score
 [**getScoreAllUsingGet**](ScoreApi.md#getScoreAllUsingGet) | **GET** /score | List all scores
+[**getScoreUsingGet**](ScoreApi.md#getScoreUsingGet) | **GET** /score/{score_id} | Retrieve a score
 [**updateScoreUsingPut**](ScoreApi.md#updateScoreUsingPut) | **PUT** /score/{score_id} | Update a score
 
 
@@ -34,6 +34,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -75,70 +78,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **createScoreUsingPost1**
-> \com\hydrogen\nucleus\Model\Score createScoreUsingPost1($score_id)
-
-Retrieve a score
-
-Retrieve the information for a specific score associated with a client, account, goal, portfolio, allocation, model, benchmark or security.
-
-### Example
-```php
-<?php
-require_once('../vendor/autoload.php');
-try {
-// Use one of the below method to generate oauth token
-// 1) Generate Token for client credentials
-$config =
-        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
-            ->createClientCredential("MYCLIENTID",
-             "MYCLIENTSECRET");
-// 2) Generate Token for password credentials
-$config =
-        \com\hydrogen\nucleus\AuthApiClient::
-        getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
-                      ,"MYUSERNAME", "MYPASSWORD");
-} catch (\com\hydrogen\nucleus\ApiException $e) {
-    print_r($e);
-}
-$apiInstance = new com\hydrogen\nucleus\Api\ScoreApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$score_id = "score_id_example"; // string | UUID score_id
-
-try {
-    $result = $apiInstance->createScoreUsingPost1($score_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ScoreApi->createScoreUsingPost1: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **score_id** | [**string**](../Model/.md)| UUID score_id |
-
-### Return type
-
-[**\com\hydrogen\nucleus\Model\Score**](../Model/Score.md)
-
-### Authorization
-
-[oauth2](../../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **deleteScoreUsingDelete**
 > deleteScoreUsingDelete($score_id)
 
@@ -162,6 +101,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -225,6 +167,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }
@@ -274,6 +219,73 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **getScoreUsingGet**
+> \com\hydrogen\nucleus\Model\Score getScoreUsingGet($score_id)
+
+Retrieve a score
+
+Retrieve the information for a specific score associated with a client, account, goal, portfolio, allocation, model, benchmark or security.
+
+### Example
+```php
+<?php
+require_once('../vendor/autoload.php');
+try {
+// Use one of the below method to generate oauth token
+// 1) Generate Token for client credentials
+$config =
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+            ->createClientCredential("MYCLIENTID",
+             "MYCLIENTSECRET");
+// 2) Generate Token for password credentials
+$config =
+        \com\hydrogen\nucleus\AuthApiClient::
+        getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
+                      ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
+} catch (\com\hydrogen\nucleus\ApiException $e) {
+    print_r($e);
+}
+$apiInstance = new com\hydrogen\nucleus\Api\ScoreApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$score_id = "score_id_example"; // string | UUID score_id
+
+try {
+    $result = $apiInstance->getScoreUsingGet($score_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ScoreApi->getScoreUsingGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **score_id** | [**string**](../Model/.md)| UUID score_id |
+
+### Return type
+
+[**\com\hydrogen\nucleus\Model\Score**](../Model/Score.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **updateScoreUsingPut**
 > \com\hydrogen\nucleus\Model\Score updateScoreUsingPut($score, $score_id)
 
@@ -297,6 +309,9 @@ $config =
         \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);
 }

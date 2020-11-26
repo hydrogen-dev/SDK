@@ -18,7 +18,7 @@ Method | HTTP request | Description
 [**get_model_all_using_get**](ModelApi.md#get_model_all_using_get) | **GET** /model | List all models
 [**get_model_asset_size_all_using_get**](ModelApi.md#get_model_asset_size_all_using_get) | **GET** /model_asset_size | List all model asset sizes
 [**get_model_asset_size_using_get**](ModelApi.md#get_model_asset_size_using_get) | **GET** /model_asset_size/{model_asset_size_id} | Retrieve a model asset size
-[**get_model_comment_all_using_get**](ModelApi.md#get_model_comment_all_using_get) | **GET** /model_comment | List all model commentary
+[**get_model_comment_all_using_get**](ModelApi.md#get_model_comment_all_using_get) | **GET** /model_comment | List all model commentaries
 [**get_model_comment_using_get**](ModelApi.md#get_model_comment_using_get) | **GET** /model_comment/{model_comment_id} | Retrieve a model commentary
 [**get_model_holding_all_using_get**](ModelApi.md#get_model_holding_all_using_get) | **GET** /model_holding | List all model holdings
 [**get_model_holding_using_get**](ModelApi.md#get_model_holding_using_get) | **GET** /model_holding/{model_holding_id} | Retrieve a model holding
@@ -58,10 +58,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 req = nucleus_api.ModelAssetSize() # ModelAssetSize | req
@@ -121,10 +122,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 change_request = nucleus_api.OrderReconcileRequest() # OrderReconcileRequest | changeRequest
@@ -186,10 +188,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_comment_request = nucleus_api.ModelComment() # ModelComment | modelCommentRequest
@@ -249,10 +252,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_holding_request = nucleus_api.ModelHolding() # ModelHolding | modelHoldingRequest
@@ -312,10 +316,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_transaction_request = nucleus_api.ModelTransaction() # ModelTransaction | modelTransactionRequest
@@ -375,10 +380,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_info_request = nucleus_api.Model() # Model | modelInfoRequest
@@ -438,10 +444,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_asset_size_id = 'model_asset_size_id_example' # str | UUID model_asset_size_id
@@ -500,10 +507,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_comment_id = 'model_comment_id_example' # str | UUID model_comment_id
@@ -562,10 +570,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_holding_id = 'model_holding_id_example' # str | UUID model_holding_id
@@ -624,10 +633,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_transaction_id = 'model_transaction_id_example' # str | UUID model_transaction_id
@@ -686,10 +696,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_id = 'model_id_example' # str | UUID model_id
@@ -748,10 +759,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -794,7 +806,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_model_asset_size_all_using_get**
-> PageModelAssetSize get_model_asset_size_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+> PageModelAssetSize get_model_asset_size_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
 
 List all model asset sizes
 
@@ -819,13 +831,15 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
+currency_conversion = 'currency_conversion_example' # str | currency_conversion (optional)
 filter = 'filter_example' # str | filter (optional)
 order_by = 'update_date' # str | order_by (optional) (default to update_date)
 page = 0 # int | page (optional) (default to 0)
@@ -833,7 +847,7 @@ size = 25 # int | size (optional) (default to 25)
 
 try:
     # List all model asset sizes
-    api_response = api_instance.get_model_asset_size_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
+    api_response = api_instance.get_model_asset_size_all_using_get(ascending=ascending, currency_conversion=currency_conversion, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ModelApi->get_model_asset_size_all_using_get: %s\n" % e)
@@ -844,6 +858,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **currency_conversion** | **str**| currency_conversion | [optional] 
  **filter** | **str**| filter | [optional] 
  **order_by** | **str**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
@@ -865,7 +880,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_model_asset_size_using_get**
-> ModelAssetSize get_model_asset_size_using_get(model_asset_size_id)
+> ModelAssetSize get_model_asset_size_using_get(model_asset_size_id, currency_conversion=currency_conversion)
 
 Retrieve a model asset size
 
@@ -890,17 +905,19 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_asset_size_id = 'model_asset_size_id_example' # str | UUID model_asset_size_id
+currency_conversion = 'currency_conversion_example' # str | USD (optional)
 
 try:
     # Retrieve a model asset size
-    api_response = api_instance.get_model_asset_size_using_get(model_asset_size_id)
+    api_response = api_instance.get_model_asset_size_using_get(model_asset_size_id, currency_conversion=currency_conversion)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ModelApi->get_model_asset_size_using_get: %s\n" % e)
@@ -911,6 +928,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **model_asset_size_id** | [**str**](.md)| UUID model_asset_size_id | 
+ **currency_conversion** | **str**| USD | [optional] 
 
 ### Return type
 
@@ -930,7 +948,7 @@ Name | Type | Description  | Notes
 # **get_model_comment_all_using_get**
 > PageModelComment get_model_comment_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
 
-List all model commentary
+List all model commentaries
 
 List all comments for all models defined by your firm.
 
@@ -953,10 +971,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -966,7 +985,7 @@ page = 0 # int | page (optional) (default to 0)
 size = 25 # int | size (optional) (default to 25)
 
 try:
-    # List all model commentary
+    # List all model commentaries
     api_response = api_instance.get_model_comment_all_using_get(ascending=ascending, filter=filter, order_by=order_by, page=page, size=size)
     pprint(api_response)
 except ApiException as e:
@@ -1024,10 +1043,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_comment_id = 'model_comment_id_example' # str | UUID model_comment_id
@@ -1087,10 +1107,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -1158,10 +1179,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_holding_id = 'model_holding_id_example' # str | UUID model_holding_id
@@ -1221,10 +1243,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -1292,10 +1315,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_transaction_id = 'model_transaction_id_example' # str | UUID model_transaction_id
@@ -1355,10 +1379,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_id = 'model_id_example' # str | UUID model_id
@@ -1418,10 +1443,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_asset_size = nucleus_api.ModelAssetSize() # ModelAssetSize | model_asset_size
@@ -1483,10 +1509,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_comment = nucleus_api.ModelComment() # ModelComment | model_comment
@@ -1548,10 +1575,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_holding = nucleus_api.ModelHolding() # ModelHolding | model_holding
@@ -1613,10 +1641,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model_transaction = nucleus_api.ModelTransaction() # ModelTransaction | model_transaction
@@ -1678,10 +1707,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.ModelApi(nucleus_api.ApiClient(configuration))
 model = nucleus_api.Model() # Model | model

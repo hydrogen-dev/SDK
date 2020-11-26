@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **String** | accountId | 
 **create_date** | **DateTime** |  | [optional] 
-**date** | **DateTime** | date | 
+**date** | **Date** | date | 
 **id** | **String** |  | [optional] 
 **metadata** | **Hash&lt;String, String&gt;** |  | [optional] 
 **model_id** | **String** | modelId | 

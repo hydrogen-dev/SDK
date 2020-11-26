@@ -38,10 +38,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.BenchmarkApi(nucleus_api.ApiClient(configuration))
 benchmark = nucleus_api.Benchmark() # Benchmark | benchmark
@@ -101,10 +102,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.BenchmarkApi(nucleus_api.ApiClient(configuration))
 benchmark_id = 'benchmark_id_example' # str | UUID benchmark_id
@@ -163,10 +165,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.BenchmarkApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -234,16 +237,17 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.BenchmarkApi(nucleus_api.ApiClient(configuration))
-benchmark_id = 'benchmark_id_example' # str | benchmark_id
-end_date = 'null' # datetime | end_date (optional) (default to null)
+benchmark_id = 'benchmark_id_example' # str | UUID benchmark_id
+end_date = '2013-10-20' # date | end date (optional)
 sort_type = 'sort_type_example' # str | sort_type (optional)
-start_date = 'null' # datetime | start_date (optional) (default to null)
+start_date = '2013-10-20' # date | start date (optional)
 
 try:
     # List all benchmark asset sizes
@@ -257,10 +261,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **benchmark_id** | [**str**](.md)| benchmark_id | 
- **end_date** | **datetime**| end_date | [optional] [default to null]
+ **benchmark_id** | [**str**](.md)| UUID benchmark_id | 
+ **end_date** | **date**| end date | [optional] 
  **sort_type** | **str**| sort_type | [optional] 
- **start_date** | **datetime**| start_date | [optional] [default to null]
+ **start_date** | **date**| start date | [optional] 
 
 ### Return type
 
@@ -303,10 +307,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.BenchmarkApi(nucleus_api.ApiClient(configuration))
 benchmark_id = 'benchmark_id_example' # str | UUID benchmark_id
@@ -366,10 +371,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
-
 # create an instance of the API class
 api_instance = nucleus_api.BenchmarkApi(nucleus_api.ApiClient(configuration))
 benchmark = nucleus_api.Benchmark() # Benchmark | benchmark

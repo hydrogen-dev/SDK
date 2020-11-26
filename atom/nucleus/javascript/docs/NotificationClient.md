@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **createDate** | **Date** |  | [optional] 
 **id** | **String** |  | [optional] 
 **isRead** | **Boolean** |  | [optional] 
+**isSent** | **Boolean** |  | [optional] 
 **metadata** | **{String: String}** | metadata | [optional] 
 **notificationContent** | **String** | notification_content | 
 **notificationDate** | **Date** | notification_date | 

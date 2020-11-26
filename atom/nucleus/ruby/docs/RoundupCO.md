@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**funding_start_date** | **DateTime** |  | 
+**funding_start_date** | **Date** |  | 
 **roundup_setting_id** | **String** |  | 
 **transaction_end_date** | **DateTime** |  | [optional] 
 **transaction_start_date** | **DateTime** |  | 

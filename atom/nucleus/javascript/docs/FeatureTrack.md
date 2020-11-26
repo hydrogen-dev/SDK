@@ -10,6 +10,5 @@ Name | Type | Description | Notes
 **metadata** | **{String: String}** | metadata | [optional] 
 **secondaryId** | **String** |  | [optional] 
 **updateDate** | **Date** |  | [optional] 
-**visitTimeStamp** | **Date** | visit_time_stamp | [optional] 
 
 

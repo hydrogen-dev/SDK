@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assigned** | **str** | assigned | [optional] 
-**close_time** | **datetime** | closeTime | [optional] 
+**close_time** | **date** | closeTime | [optional] 
 **closed_by** | **str** | closedBy | [optional] 
 **comments** | **str** | comments | [optional] 
 **contacted** | **bool** | contacted | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **metadata** | **dict(str, str)** | metadata | [optional] 
 **method** | **str** | method | [optional] 
 **notification** | **bool** |  | [optional] 
-**open_time** | **datetime** | openTime | [optional] 
+**open_time** | **date** | openTime | [optional] 
 **phone** | **str** | phone | [optional] 
 **questions** | **str** | questions | 
 **referral_source** | **str** | referralSource | [optional] 

@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **is_buy** | **bool** | isBuy | [optional] 
+**is_fee** | **bool** | isFee | [optional] 
+**is_transfer** | **bool** |  | [optional] 
 **metadata** | **map[string,string]** |  | [optional] 
 **secondary_id** | **string** |  | [optional] 
 **subcategory** | **string** | subcategory | [optional] 

@@ -26,12 +26,13 @@ Name | Type | Description | Notes
 ## Enum: ScoreTypeEnum
 Name | Value
 ---- | -----
-_GOAL_ACHIEVEMENT_SCORE | &quot;[goal_achievement_score&quot;
+GOAL_ACHIEVEMENT_SCORE | &quot;goal_achievement_score&quot;
 PORTFOLIO_OPTIMIZATION_SCORE | &quot;portfolio_optimization_score&quot;
 CREDIT_SCORE | &quot;credit_score&quot;
 DIMENSIONAL_RISK_SCORE | &quot;dimensional_risk_score&quot;
 DIVERSIFICATION_SCORE | &quot;diversification_score&quot;
-RISK_SCORE_ | &quot;risk_score]&quot;
+RISK_SCORE | &quot;risk_score&quot;
+RISK_PROFILE | &quot;risk_profile&quot;
 
 
 

@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **status** | **String** | External Account Transfer status | [optional] 
 **status_time_stamp** | **DateTime** |  | [optional] 
 **transfer_all_cash** | **BOOLEAN** | External Account Transfer transfer all cash | 
-**transfer_date** | **DateTime** | External Account Transfer account transfer date | 
+**transfer_date** | **Date** | External Account Transfer account transfer date | 
 **transfer_type** | **String** | External Account Transfer transfer type | [optional] 
 **update_date** | **DateTime** |  | [optional] 
 

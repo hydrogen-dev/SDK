@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **description** | **String** | description | [optional] 
 **location** | [**Location**](Location.md) |  | [optional] 
 **memo** | **String** | memo | [optional] 
-**merchant** | **String** | merchant | 
+**merchant** | **String** | merchant | [optional] 
 **subcategory** | **String** | subcategory | [optional] 
 **transactionType** | **String** | transactionType | 
 

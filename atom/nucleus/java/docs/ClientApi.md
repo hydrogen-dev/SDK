@@ -20,9 +20,8 @@ Method | HTTP request | Description
 [**getClientHydroUsingGet**](ClientApi.md#getClientHydroUsingGet) | **GET** /client_hydro/{client_hydro_id} | Retrieve a client-hydro relationship
 [**getClientStatusAllUsingGet**](ClientApi.md#getClientStatusAllUsingGet) | **GET** /client_status | List all client statuses
 [**getClientStatusUsingGet**](ClientApi.md#getClientStatusUsingGet) | **GET** /client_status/{client_status_id} | Retrieve an client status
-[**getClientTransactionUsingGet**](ClientApi.md#getClientTransactionUsingGet) | **GET** /client/{client_id}/transaction | List all client transactions
+[**getClientTransactionAllUsingGet**](ClientApi.md#getClientTransactionAllUsingGet) | **GET** /client/{client_id}/transaction | List all client transactions
 [**getClientUsingGet**](ClientApi.md#getClientUsingGet) | **GET** /client/{client_id} | Retrieve a client
-[**getTotalClientsUsingGet**](ClientApi.md#getTotalClientsUsingGet) | **GET** /client/total_clients | total clients
 [**updateClientHydroUsingPut**](ClientApi.md#updateClientHydroUsingPut) | **PUT** /client_hydro/{client_hydro_id} | Update a client-hydro relationship
 [**updateClientStatusUsingPut**](ClientApi.md#updateClientStatusUsingPut) | **PUT** /client_status/{client_status_id} | Update an client status
 [**updateClientUsingPut**](ClientApi.md#updateClientUsingPut) | **PUT** /client/{client_id} | Update a client
@@ -38,8 +37,8 @@ Create an client-hydro relationship under a client.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -50,10 +49,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ClientApi apiInstance = new ClientApi();
 ClientHydro clientHydro = new ClientHydro(); // ClientHydro | clientHydro
@@ -95,8 +98,8 @@ Create an client status record for an client.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -107,10 +110,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ClientApi apiInstance = new ClientApi();
 ClientStatus clientStatusRequest = new ClientStatus(); // ClientStatus | clientStatusRequest
@@ -152,8 +159,8 @@ Create a new client, or register a new user, with your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -164,10 +171,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ClientApi apiInstance = new ClientApi();
 Client clientRequest = new Client(); // Client | clientRequest
@@ -209,8 +220,8 @@ Permanently delete a client-hydro relationship for a Hydro ID and a client.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -221,10 +232,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ClientApi apiInstance = new ClientApi();
 UUID clientHydroId = new UUID(); // UUID | UUID client_hydro_id
@@ -265,8 +280,8 @@ Permanently delete an client status record from an client’s history.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -277,10 +292,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ClientApi apiInstance = new ClientApi();
 UUID clientStatusId = new UUID(); // UUID | UUID client_status_id
@@ -321,8 +340,8 @@ Permanently delete a client registered with your firm. Turns the client&#39;s is
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -333,10 +352,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ClientApi apiInstance = new ClientApi();
 UUID clientId = new UUID(); // UUID | UUID client_id
@@ -369,14 +392,14 @@ null (empty response body)
 
 <a name="getClientAccountOverviewUsingGet"></a>
 # **getClientAccountOverviewUsingGet**
-> ClientAccountVO getClientAccountOverviewUsingGet(clientId, ascending, orderBy)
+> Object getClientAccountOverviewUsingGet(clientId, ascending, orderBy)
 
 List all client Account overview
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -387,17 +410,21 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ClientApi apiInstance = new ClientApi();
 UUID clientId = new UUID(); // UUID | UUID client_id
 Boolean ascending = false; // Boolean | ascending
 String orderBy = "update_date"; // String | order_by
 try {
-    ClientAccountVO result = apiInstance.getClientAccountOverviewUsingGet(clientId, ascending, orderBy);
+    Object result = apiInstance.getClientAccountOverviewUsingGet(clientId, ascending, orderBy);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ClientApi#getClientAccountOverviewUsingGet");
@@ -415,7 +442,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ClientAccountVO**](ClientAccountVO.md)
+**Object**
 
 ### Authorization
 
@@ -428,14 +455,14 @@ Name | Type | Description  | Notes
 
 <a name="getClientAdvisorOverviewUsingGet"></a>
 # **getClientAdvisorOverviewUsingGet**
-> AdvisorOverviewVO getClientAdvisorOverviewUsingGet(clientId, showClients)
+> Object getClientAdvisorOverviewUsingGet(clientId, showClients)
 
 Advisor overview
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -446,16 +473,20 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ClientApi apiInstance = new ClientApi();
 UUID clientId = new UUID(); // UUID | UUID client_id
 Boolean showClients = false; // Boolean | show_clients
 try {
-    AdvisorOverviewVO result = apiInstance.getClientAdvisorOverviewUsingGet(clientId, showClients);
+    Object result = apiInstance.getClientAdvisorOverviewUsingGet(clientId, showClients);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ClientApi#getClientAdvisorOverviewUsingGet");
@@ -472,7 +503,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AdvisorOverviewVO**](AdvisorOverviewVO.md)
+**Object**
 
 ### Authorization
 
@@ -493,8 +524,8 @@ Get details for all clients registered with your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -505,10 +536,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ClientApi apiInstance = new ClientApi();
 Boolean ascending = false; // Boolean | ascending
@@ -550,7 +585,7 @@ Name | Type | Description  | Notes
 
 <a name="getClientAssetSizeUsingGet"></a>
 # **getClientAssetSizeUsingGet**
-> List&lt;AvailableDateDoubleVO&gt; getClientAssetSizeUsingGet(clientId, endDate, excludeSubledger, getLatest, sortType, startDate)
+> List&lt;AvailableDateDoubleVO&gt; getClientAssetSizeUsingGet(clientId, currencyConversion, endDate, excludeSubledger, getLatest, sortType, startDate)
 
 List all client asset sizes
 
@@ -558,8 +593,8 @@ Get a list of asset sizes per date for a client.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -570,20 +605,25 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 ClientApi apiInstance = new ClientApi();
 UUID clientId = new UUID(); // UUID | UUID client_id
+String currencyConversion = "currencyConversion_example"; // String | Currency Code
 LocalDate endDate = LocalDate.now(); // LocalDate | end date
 Boolean excludeSubledger = false; // Boolean | exclude_subledger
 Boolean getLatest = true; // Boolean | true or false
 String sortType = "sortType_example"; // String |  Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in ()
 LocalDate startDate = LocalDate.now(); // LocalDate | start date
 try {
-    List<AvailableDateDoubleVO> result = apiInstance.getClientAssetSizeUsingGet(clientId, endDate, excludeSubledger, getLatest, sortType, startDate);
+    List<AvailableDateDoubleVO> result = apiInstance.getClientAssetSizeUsingGet(clientId, currencyConversion, endDate, excludeSubledger, getLatest, sortType, startDate);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ClientApi#getClientAssetSizeUsingGet");
@@ -596,6 +636,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientId** | [**UUID**](.md)| UUID client_id |
+ **currencyConversion** | **String**| Currency Code | [optional]
  **endDate** | **LocalDate**| end date | [optional] [default to null]
  **excludeSubledger** | **Boolean**| exclude_subledger | [optional] [default to false]
  **getLatest** | **Boolean**| true or false | [optional]
@@ -625,8 +666,8 @@ Retrieve client&#39;s goal details
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -637,10 +678,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ClientApi apiInstance = new ClientApi();
 UUID clientId = new UUID(); // UUID | UUID client_id
@@ -676,7 +721,7 @@ Name | Type | Description  | Notes
 
 <a name="getClientHoldingUsingGet"></a>
 # **getClientHoldingUsingGet**
-> List&lt;PortfolioHoldingAgg&gt; getClientHoldingUsingGet(clientId, endDate, getLatest, startDate)
+> List&lt;PortfolioHoldingAgg&gt; getClientHoldingUsingGet(clientId, currencyConversion, endDate, getLatest, startDate)
 
 List all client holdings
 
@@ -684,8 +729,8 @@ Get the information for all the securities that are currently being held by a cl
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -696,18 +741,23 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 ClientApi apiInstance = new ClientApi();
 UUID clientId = new UUID(); // UUID | UUID client_id
+String currencyConversion = "currencyConversion_example"; // String | Currency Code
 String endDate = "endDate_example"; // String | end date - yyyy-mm-dd
 Boolean getLatest = true; // Boolean | true or false
 String startDate = "startDate_example"; // String | start date - yyyy-mm-dd
 try {
-    List<PortfolioHoldingAgg> result = apiInstance.getClientHoldingUsingGet(clientId, endDate, getLatest, startDate);
+    List<PortfolioHoldingAgg> result = apiInstance.getClientHoldingUsingGet(clientId, currencyConversion, endDate, getLatest, startDate);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ClientApi#getClientHoldingUsingGet");
@@ -720,6 +770,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientId** | [**UUID**](.md)| UUID client_id |
+ **currencyConversion** | **String**| Currency Code | [optional]
  **endDate** | **String**| end date - yyyy-mm-dd | [optional]
  **getLatest** | **Boolean**| true or false | [optional]
  **startDate** | **String**| start date - yyyy-mm-dd | [optional]
@@ -747,8 +798,8 @@ Get information for all client-hydro relationships for all clients defined for y
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -759,10 +810,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ClientApi apiInstance = new ClientApi();
 Boolean ascending = false; // Boolean | ascending
@@ -812,8 +867,8 @@ Retrieve the information for a specific client-hydro relationship.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -824,10 +879,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ClientApi apiInstance = new ClientApi();
 UUID clientHydroId = new UUID(); // UUID | UUID client_hydro_id
@@ -869,8 +928,8 @@ Get the client status history information for all clients.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -881,10 +940,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ClientApi apiInstance = new ClientApi();
 Boolean ascending = false; // Boolean | ascending
@@ -934,8 +997,8 @@ Retrieve the information for a specific client status record for an client.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -946,10 +1009,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ClientApi apiInstance = new ClientApi();
 UUID clientStatusId = new UUID(); // UUID | UUID client_status_id
@@ -981,9 +1048,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: */*
 
-<a name="getClientTransactionUsingGet"></a>
-# **getClientTransactionUsingGet**
-> PagePortfolioTransaction getClientTransactionUsingGet(clientId, ascending, endDate, orderBy, page, size, startDate)
+<a name="getClientTransactionAllUsingGet"></a>
+# **getClientTransactionAllUsingGet**
+> PagePortfolioTransaction getClientTransactionAllUsingGet(clientId, ascending, currencyConversion, endDate, orderBy, page, size, startDate)
 
 List all client transactions
 
@@ -991,8 +1058,8 @@ Get the information for all transactions under a client registered with your fir
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -1003,24 +1070,29 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 ClientApi apiInstance = new ClientApi();
 UUID clientId = new UUID(); // UUID | UUID client_id
 Boolean ascending = false; // Boolean | ascending
-OffsetDateTime endDate = OffsetDateTime.now(); // OffsetDateTime | end_date
+String currencyConversion = "currencyConversion_example"; // String | currency_conversion
+String endDate = "endDate_example"; // String | end date - yyyy-mm-dd
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
-OffsetDateTime startDate = OffsetDateTime.now(); // OffsetDateTime | start_date
+String startDate = "startDate_example"; // String | start date - yyyy-mm-dd
 try {
-    PagePortfolioTransaction result = apiInstance.getClientTransactionUsingGet(clientId, ascending, endDate, orderBy, page, size, startDate);
+    PagePortfolioTransaction result = apiInstance.getClientTransactionAllUsingGet(clientId, ascending, currencyConversion, endDate, orderBy, page, size, startDate);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling ClientApi#getClientTransactionUsingGet");
+    System.err.println("Exception when calling ClientApi#getClientTransactionAllUsingGet");
     e.printStackTrace();
 }
 ```
@@ -1031,11 +1103,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientId** | [**UUID**](.md)| UUID client_id |
  **ascending** | **Boolean**| ascending | [optional] [default to false]
- **endDate** | **OffsetDateTime**| end_date | [optional] [default to null]
+ **currencyConversion** | **String**| currency_conversion | [optional]
+ **endDate** | **String**| end date - yyyy-mm-dd | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
  **size** | **Integer**| size | [optional] [default to 25]
- **startDate** | **OffsetDateTime**| start_date | [optional] [default to null]
+ **startDate** | **String**| start date - yyyy-mm-dd | [optional]
 
 ### Return type
 
@@ -1060,8 +1133,8 @@ Retrieve the information for a client registered with your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -1072,10 +1145,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ClientApi apiInstance = new ClientApi();
 UUID clientId = new UUID(); // UUID | UUID client_id
@@ -1107,69 +1184,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: */*
 
-<a name="getTotalClientsUsingGet"></a>
-# **getTotalClientsUsingGet**
-> ClientAnalyticsResponse getTotalClientsUsingGet(asOfDate, clientId, endDate, showHistory, startDate)
-
-total clients
-
-### Example
-```java
-//import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.AuthApiClient;
-//import com.hydrogen.nucleus.auth.*;
-//import ClientApi;
-
-AuthApiClient authApiClient = new AuthApiClient();
-try {
-//          Use one of the below method to generate oauth token        
-//          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
-//          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
-} catch (ApiException e) {
-    e.printStackTrace();
-}
-
-ClientApi apiInstance = new ClientApi();
-OffsetDateTime asOfDate = OffsetDateTime.now(); // OffsetDateTime | as_of_date
-String clientId = "clientId_example"; // String | client_id
-OffsetDateTime endDate = OffsetDateTime.now(); // OffsetDateTime | end_date
-Boolean showHistory = false; // Boolean | show_history
-OffsetDateTime startDate = OffsetDateTime.now(); // OffsetDateTime | start_date
-try {
-    ClientAnalyticsResponse result = apiInstance.getTotalClientsUsingGet(asOfDate, clientId, endDate, showHistory, startDate);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientApi#getTotalClientsUsingGet");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **asOfDate** | **OffsetDateTime**| as_of_date | [optional] [default to #{new java.util.Date()}]
- **clientId** | **String**| client_id | [optional]
- **endDate** | **OffsetDateTime**| end_date | [optional]
- **showHistory** | **Boolean**| show_history | [optional] [default to false]
- **startDate** | **OffsetDateTime**| start_date | [optional]
-
-### Return type
-
-[**ClientAnalyticsResponse**](ClientAnalyticsResponse.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
 <a name="updateClientHydroUsingPut"></a>
 # **updateClientHydroUsingPut**
 > ClientHydro updateClientHydroUsingPut(clientHydro, clientHydroId)
@@ -1180,8 +1194,8 @@ Update the information for a client-hydro relationship.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -1192,10 +1206,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ClientApi apiInstance = new ClientApi();
 ClientHydro clientHydro = new ClientHydro(); // ClientHydro | client_hydro
@@ -1239,8 +1257,8 @@ Update an client status record for an client.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -1251,10 +1269,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ClientApi apiInstance = new ClientApi();
 ClientStatus clientStatus = new ClientStatus(); // ClientStatus | client_status
@@ -1298,8 +1320,8 @@ Update the information for a client registered with your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
@@ -1310,10 +1332,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 ClientApi apiInstance = new ClientApi();
 Client client = new Client(); // Client | client

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **metadata** | **map[string,string]** |  | [optional] 
 **name** | **string** | name | 
 **secondary_id** | **string** |  | [optional] 
+**status** | **string** | status | [optional] 
 **update_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

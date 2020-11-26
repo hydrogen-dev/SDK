@@ -3,16 +3,17 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**events** | **[String]** |  | [optional] 
-**useProxyData** | **Boolean** |  | [optional] [default to false]
 **portfolioTickers** | **[String]** |  | [optional] 
-**modelId** | **String** |  | [optional] 
-**allocationId** | **String** |  | [optional] 
-**accountId** | **String** |  | [optional] 
-**portfolioId** | **String** |  | [optional] 
-**portfolioWeights** | **[Number]** |  | [optional] 
+**events** | **[String]** |  | [optional] 
+**createLog** | **Boolean** |  | [optional] [default to false]
 **aggregationAccountId** | **String** |  | [optional] 
+**allocationId** | **String** |  | [optional] 
+**modelId** | **String** |  | [optional] 
+**portfolioWeights** | **[Number]** |  | [optional] 
+**useProxyData** | **Boolean** |  | [optional] [default to false]
+**accountId** | **String** |  | [optional] 
 **marketDataSource** | **String** |  | [optional] [default to 'nucleus']
+**portfolioId** | **String** |  | [optional] 
 
 
 <a name="[EventsEnum]"></a>

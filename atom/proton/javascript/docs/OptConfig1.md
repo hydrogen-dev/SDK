@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**wConfig** | **Object** |  | [optional] 
-**secTypes** | **[String]** |  | [optional] 
-**minAssets** | **Number** |  | [optional] [default to 1]
 **wAssetConfig** | **Object** |  | [optional] 
+**minAssets** | **Number** |  | [optional] [default to 1]
+**secTypes** | **[String]** |  | [optional] 
+**wConfig** | [**WConfig1**](WConfig1.md) |  | [optional] 
 **tickers** | **[String]** |  | [optional] 
 
 

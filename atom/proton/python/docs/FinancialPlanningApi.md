@@ -1,4 +1,4 @@
-# proton_api.FinancialPlanningApi
+# swagger_client.FinancialPlanningApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/proton/v1*
 
@@ -31,7 +31,9 @@ from __future__ import print_function
 import time
 import proton_api
 from proton_api.rest import ApiException
-from pprint import pprint# Configure OAuth2 access token for authorization: oauth2
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth2
 configuration = proton_api.Configuration()
 
 # create an instance of the API class
@@ -42,6 +44,9 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
 
@@ -92,7 +97,9 @@ from __future__ import print_function
 import time
 import proton_api
 from proton_api.rest import ApiException
-from pprint import pprint# Configure OAuth2 access token for authorization: oauth2
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth2
 configuration = proton_api.Configuration()
 
 # create an instance of the API class
@@ -103,6 +110,9 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
 
@@ -153,7 +163,9 @@ from __future__ import print_function
 import time
 import proton_api
 from proton_api.rest import ApiException
-from pprint import pprint# Configure OAuth2 access token for authorization: oauth2
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth2
 configuration = proton_api.Configuration()
 
 # create an instance of the API class
@@ -164,6 +176,9 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
 
@@ -214,7 +229,9 @@ from __future__ import print_function
 import time
 import proton_api
 from proton_api.rest import ApiException
-from pprint import pprint# Configure OAuth2 access token for authorization: oauth2
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth2
 configuration = proton_api.Configuration()
 
 # create an instance of the API class
@@ -225,6 +242,9 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
 
@@ -275,7 +295,9 @@ from __future__ import print_function
 import time
 import proton_api
 from proton_api.rest import ApiException
-from pprint import pprint# Configure OAuth2 access token for authorization: oauth2
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth2
 configuration = proton_api.Configuration()
 
 # create an instance of the API class
@@ -286,6 +308,9 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
 
@@ -336,7 +361,9 @@ from __future__ import print_function
 import time
 import proton_api
 from proton_api.rest import ApiException
-from pprint import pprint# Configure OAuth2 access token for authorization: oauth2
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth2
 configuration = proton_api.Configuration()
 
 # create an instance of the API class
@@ -347,6 +374,9 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
 
@@ -397,7 +427,9 @@ from __future__ import print_function
 import time
 import proton_api
 from proton_api.rest import ApiException
-from pprint import pprint# Configure OAuth2 access token for authorization: oauth2
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth2
 configuration = proton_api.Configuration()
 
 # create an instance of the API class
@@ -408,6 +440,9 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
 
@@ -458,7 +493,9 @@ from __future__ import print_function
 import time
 import proton_api
 from proton_api.rest import ApiException
-from pprint import pprint# Configure OAuth2 access token for authorization: oauth2
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth2
 configuration = proton_api.Configuration()
 
 # create an instance of the API class
@@ -469,6 +506,9 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
 
@@ -519,7 +559,9 @@ from __future__ import print_function
 import time
 import proton_api
 from proton_api.rest import ApiException
-from pprint import pprint# Configure OAuth2 access token for authorization: oauth2
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth2
 configuration = proton_api.Configuration()
 
 # create an instance of the API class
@@ -530,6 +572,9 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
 
@@ -580,7 +625,9 @@ from __future__ import print_function
 import time
 import proton_api
 from proton_api.rest import ApiException
-from pprint import pprint# Configure OAuth2 access token for authorization: oauth2
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth2
 configuration = proton_api.Configuration()
 
 # create an instance of the API class
@@ -591,6 +638,9 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
 
@@ -641,7 +691,9 @@ from __future__ import print_function
 import time
 import proton_api
 from proton_api.rest import ApiException
-from pprint import pprint# Configure OAuth2 access token for authorization: oauth2
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth2
 configuration = proton_api.Configuration()
 
 # create an instance of the API class
@@ -652,6 +704,9 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
 
@@ -702,7 +757,9 @@ from __future__ import print_function
 import time
 import proton_api
 from proton_api.rest import ApiException
-from pprint import pprint# Configure OAuth2 access token for authorization: oauth2
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: oauth2
 configuration = proton_api.Configuration()
 
 # create an instance of the API class
@@ -713,6 +770,9 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # OR
 
 #api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
 

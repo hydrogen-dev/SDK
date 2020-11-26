@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assigned** | **String** | assigned | [optional] 
-**close_time** | **DateTime** | closeTime | [optional] 
+**close_time** | **Date** | closeTime | [optional] 
 **closed_by** | **String** | closedBy | [optional] 
 **comments** | **String** | comments | [optional] 
 **contacted** | **BOOLEAN** | contacted | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **metadata** | **Hash&lt;String, String&gt;** | metadata | [optional] 
 **method** | **String** | method | [optional] 
 **notification** | **BOOLEAN** |  | [optional] 
-**open_time** | **DateTime** | openTime | [optional] 
+**open_time** | **Date** | openTime | [optional] 
 **phone** | **String** | phone | [optional] 
 **questions** | **String** | questions | 
 **referral_source** | **String** | referralSource | [optional] 

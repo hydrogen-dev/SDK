@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **cookie_code** | **str** | cookieCode | [optional] 
 **create_date** | **datetime** |  | [optional] 
 **description** | **str** | description | 
-**end_date** | **datetime** | endDate | 
+**end_date** | **date** | endDate | 
 **id** | **str** |  | [optional] 
 **is_acquisition** | **bool** | isAcquisition | [optional] 
 **is_active** | **bool** | isActive | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **metadata** | **dict(str, str)** |  | [optional] 
 **rate** | **float** | rate | [optional] 
 **secondary_id** | **str** |  | [optional] 
-**start_date** | **datetime** | startDate | 
+**start_date** | **date** | startDate | 
 **title** | **str** | title | 
 **update_date** | **datetime** |  | [optional] 
 **utm_campaign** | **str** | utmCampaign | [optional] 

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**model_holding_date** | **DateTime** |  | [optional] 
+**model_holding_date** | **Date** |  | [optional] 
 **model_holding_id** | **String** |  | [optional] 
 **security_asset_class** | **String** |  | [optional] 
 **security_compositions** | [**Array&lt;SecurityCompositionVO&gt;**](SecurityCompositionVO.md) |  | [optional] 

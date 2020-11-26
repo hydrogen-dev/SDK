@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **allocation_id** | **str** | allocationId | 
 **create_date** | **datetime** |  | [optional] 
 **current_weight** | **float** | currentWeight | 
-**_date** | **datetime** | date | 
+**_date** | **date** | date | 
 **goal_id** | **str** | goalId | [optional] 
 **id** | **str** |  | [optional] 
 **secondary_id** | **str** |  | [optional] 

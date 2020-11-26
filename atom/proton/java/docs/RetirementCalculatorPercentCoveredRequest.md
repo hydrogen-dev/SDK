@@ -4,18 +4,18 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**retirementIncome** | **Float** |  |  [optional]
-**depositSchedule** | **Object** |  |  [optional]
-**retirementAge** | **Integer** |  |  [optional]
-**portfolioReturn** | **Float** |  | 
-**retirementExpenses** | **Float** |  | 
 **inflationRate** | **Float** |  |  [optional]
-**aggregationAccountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
 **currentAge** | **Integer** |  | 
-**accountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
-**retirementSavings** | **Float** |  |  [optional]
+**depositSchedule** | [**CalculatorDepositSchedule1**](CalculatorDepositSchedule1.md) |  |  [optional]
+**portfolioReturn** | **Float** |  | 
+**retirementIncome** | **Float** |  |  [optional]
+**aggregationAccountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
+**retirementExpenses** | **Float** |  | 
 **retirementTax** | **Float** |  |  [optional]
+**accountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
+**retirementAge** | **Integer** |  |  [optional]
 **deathAge** | **Integer** |  | 
+**retirementSavings** | **Float** |  |  [optional]
 
 
 

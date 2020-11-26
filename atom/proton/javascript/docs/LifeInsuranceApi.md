@@ -18,14 +18,49 @@ Calculate life insurance needs based on existing asset and liability data
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
-var apiInstance = new HydrogenProtonApi.LifeInsuranceApi();
 
-var lifeInsuranceNeedsCalculatorRequest = new HydrogenProtonApi.LifeInsuranceNeedsCalculatorRequest(); // LifeInsuranceNeedsCalculatorRequest | Request payload for Life Insurance Needs Calculator
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
+
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createLifeInsuranceNeedsCalculator();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -35,7 +70,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.lifeInsuranceNeedsCalculator(lifeInsuranceNeedsCalculatorRequest, callback);
+const createLifeInsuranceNeedsCalculator = () => {
+    var apiInstance = new HydrogenProtonApi.LifeInsuranceApi();
+    var lifeInsuranceNeedsCalculatorRequest = new HydrogenProtonApi.LifeInsuranceNeedsCalculatorRequest(); // LifeInsuranceNeedsCalculatorRequest | Request payload for Life Insurance Needs Calculator
+    apiInstance.lifeInsuranceNeedsCalculator(lifeInsuranceNeedsCalculatorRequest, callback);
+}
 ```
 
 ### Parameters

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **currency_code** | **string** | currencyCode | 
 **discounts** | [**\com\hydrogen\nucleus\Model\InsuranceDiscountMap[]**](InsuranceDiscountMap.md) |  | [optional] 
 **end_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**financial_offer_id** | **string** | financial_offer_id | [optional] 
 **id** | **string** |  | [optional] 
 **is_active** | **bool** | is_active | [optional] 
 **metadata** | **map[string,string]** |  | [optional] 

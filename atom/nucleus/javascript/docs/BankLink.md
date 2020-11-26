@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accountId** | **String** | accountId | [optional] 
-**availableBalance** | **String** | availableBalance | [optional] 
-**balance** | **String** | balance | [optional] 
+**availableBalance** | **Number** | availableBalance | [optional] 
+**balance** | **Number** | balance | [optional] 
 **bankAccountHolder** | **String** | bankAccountHolder | 
 **bankAccountName** | **String** | bankAccountName | [optional] 
 **bankAccountNumber** | **String** | bankAccountNumber | 

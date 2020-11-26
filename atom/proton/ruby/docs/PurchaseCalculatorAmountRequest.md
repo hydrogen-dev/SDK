@@ -3,14 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**deposit_schedule** | **Object** |  | [optional] 
-**portfolio_return** | **Float** |  | 
 **inflation_rate** | **Float** |  | [optional] [default to 0.0]
-**investment_tax** | **Float** |  | [optional] [default to 0.0]
 **purchase_horizon** | **Integer** |  | 
+**investment_tax** | **Float** |  | [optional] [default to 0.0]
+**deposit_schedule** | [**CalculatorDepositSchedule1**](CalculatorDepositSchedule1.md) |  | [optional] 
+**portfolio_return** | **Float** |  | 
 **aggregation_account_ids** | **Array&lt;String&gt;** |  | [optional] 
+**horizon_frequency_interval** | **String** |  | [optional] [default to &#39;year&#39;]
 **account_ids** | **Array&lt;String&gt;** |  | [optional] 
 **current_savings** | **Float** |  | [optional] [default to 0.0]
-**horizon_frequency_interval** | **String** |  | [optional] [default to &#39;year&#39;]
 
 

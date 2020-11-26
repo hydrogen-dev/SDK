@@ -30,8 +30,8 @@ Create a goal track record for a goal under a client.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -81,8 +81,8 @@ Create a new goal for your firm that clients can customize for themselves.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteGoalTrackUsingDelete"></a>
 # **deleteGoalTrackUsingDelete**
-> deleteGoalTrackUsingDelete(goalTrackId, goalTrackId2)
+> deleteGoalTrackUsingDelete(goalTrackId)
 
 Delete a goal track record
 
@@ -132,8 +132,8 @@ Permanently delete an goal track record for a goal under a client.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -141,8 +141,6 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new HydrogenNucleusApi.GoalApi();
 
 var goalTrackId = "4e1c4f70-8611-44fa-bac5-f9f390c16852"; // String | UUID goal_track_id
-
-var goalTrackId2 = "goalTrackId_example"; // String | goal_track_id
 
 
 var callback = function(error, data, response) {
@@ -152,7 +150,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-apiInstance.deleteGoalTrackUsingDelete(goalTrackId, goalTrackId2, callback);
+apiInstance.deleteGoalTrackUsingDelete(goalTrackId, callback);
 ```
 
 ### Parameters
@@ -160,7 +158,6 @@ apiInstance.deleteGoalTrackUsingDelete(goalTrackId, goalTrackId2, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **goalTrackId** | **String**| UUID goal_track_id | 
- **goalTrackId2** | **String**| goal_track_id | 
 
 ### Return type
 
@@ -186,8 +183,8 @@ Permanently delete a goal for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -237,8 +234,8 @@ Get the details for all goals defined by your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -297,8 +294,8 @@ Get a list of asset sizes per date for a goal for a specified client.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -310,11 +307,12 @@ var clientId = "clientId_example"; // String | client_id
 var goalId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID goal_id
 
 var opts = { 
-  'endDate': new Date("2013-10-20T19:20:30+01:00"), // Date | end_date
+  'currencyConversion': "currencyConversion_example", // String | Currency Code
+  'endDate': new Date("2013-10-20"), // Date | end date
   'getLatest': false, // Boolean | get_latest
   'portfolioGoal': false, // Boolean | portfolio_goal
   'sortType': "sortType_example", // String | sort_type
-  'startDate': new Date("2013-10-20T19:20:30+01:00") // Date | start_date
+  'startDate': new Date("2013-10-20") // Date | start date
 };
 
 var callback = function(error, data, response) {
@@ -333,11 +331,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientId** | **String**| client_id | 
  **goalId** | **String**| UUID goal_id | 
- **endDate** | **Date**| end_date | [optional] 
+ **currencyConversion** | **String**| Currency Code | [optional] 
+ **endDate** | **Date**| end date | [optional] 
  **getLatest** | **Boolean**| get_latest | [optional] [default to false]
  **portfolioGoal** | **Boolean**| portfolio_goal | [optional] [default to false]
  **sortType** | **String**| sort_type | [optional] 
- **startDate** | **Date**| start_date | [optional] 
+ **startDate** | **Date**| start date | [optional] 
 
 ### Return type
 
@@ -363,8 +362,8 @@ Get the information for all the securities that are currently being held in port
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -376,9 +375,10 @@ var clientId = "clientId_example"; // String | client_id
 var goalId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID goal_id
 
 var opts = { 
-  'endDate': new Date("2013-10-20T19:20:30+01:00"), // Date | end_date
+  'currencyConversion': "currencyConversion_example", // String | Currency Code
+  'endDate': new Date("2013-10-20"), // Date | end date
   'portfolioGoal': false, // Boolean | portfolio_goal
-  'startDate': new Date("2013-10-20T19:20:30+01:00") // Date | start_date
+  'startDate': new Date("2013-10-20") // Date | start date
 };
 
 var callback = function(error, data, response) {
@@ -397,9 +397,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientId** | **String**| client_id | 
  **goalId** | **String**| UUID goal_id | 
- **endDate** | **Date**| end_date | [optional] 
+ **currencyConversion** | **String**| Currency Code | [optional] 
+ **endDate** | **Date**| end date | [optional] 
  **portfolioGoal** | **Boolean**| portfolio_goal | [optional] [default to false]
- **startDate** | **Date**| start_date | [optional] 
+ **startDate** | **Date**| start date | [optional] 
 
 ### Return type
 
@@ -425,8 +426,8 @@ Get information for all goal track records stored for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -482,7 +483,7 @@ Name | Type | Description  | Notes
 
 <a name="getGoalTrackUsingGet"></a>
 # **getGoalTrackUsingGet**
-> GoalTrack getGoalTrackUsingGet(goalTrackId, goalTrackId2)
+> GoalTrack getGoalTrackUsingGet(goalTrackId)
 
 Retrieve a goal track record
 
@@ -491,8 +492,8 @@ Retrieve the information for a specific goal track record for a goal under a cli
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -500,8 +501,6 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new HydrogenNucleusApi.GoalApi();
 
 var goalTrackId = "4e1c4f70-8611-44fa-bac5-f9f390c16852"; // String | UUID goal_track_id
-
-var goalTrackId2 = "goalTrackId_example"; // String | goal_track_id
 
 
 var callback = function(error, data, response) {
@@ -511,7 +510,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getGoalTrackUsingGet(goalTrackId, goalTrackId2, callback);
+apiInstance.getGoalTrackUsingGet(goalTrackId, callback);
 ```
 
 ### Parameters
@@ -519,7 +518,6 @@ apiInstance.getGoalTrackUsingGet(goalTrackId, goalTrackId2, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **goalTrackId** | **String**| UUID goal_track_id | 
- **goalTrackId2** | **String**| goal_track_id | 
 
 ### Return type
 
@@ -545,8 +543,8 @@ Get the information for all transactions under portfolios associated with a part
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -559,12 +557,13 @@ var goalId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID goal_id
 
 var opts = { 
   'ascending': false, // Boolean | ascending
-  'endDate': new Date("2013-10-20T19:20:30+01:00"), // Date | end_date
+  'currencyConversion': "currencyConversion_example", // String | Currency Code
+  'endDate': new Date("2013-10-20"), // Date | end date
   'orderBy': "update_date", // String | order_by
   'page': 0, // Number | page
   'portfolioGoal': false, // Boolean | portfolio_goal
   'size': 25, // Number | size
-  'startDate': new Date("2013-10-20T19:20:30+01:00") // Date | start_date
+  'startDate': new Date("2013-10-20") // Date | start date
 };
 
 var callback = function(error, data, response) {
@@ -584,12 +583,13 @@ Name | Type | Description  | Notes
  **clientId** | **String**| client_id | 
  **goalId** | **String**| UUID goal_id | 
  **ascending** | **Boolean**| ascending | [optional] [default to false]
- **endDate** | **Date**| end_date | [optional] 
+ **currencyConversion** | **String**| Currency Code | [optional] 
+ **endDate** | **Date**| end date | [optional] 
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Number**| page | [optional] [default to 0]
  **portfolioGoal** | **Boolean**| portfolio_goal | [optional] [default to false]
  **size** | **Number**| size | [optional] [default to 25]
- **startDate** | **Date**| start_date | [optional] 
+ **startDate** | **Date**| start date | [optional] 
 
 ### Return type
 
@@ -615,8 +615,8 @@ Retrieve the information for a goal defined for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -666,8 +666,8 @@ Update the information for a goal track record.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
@@ -720,8 +720,8 @@ Update a goal defined for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
+
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';

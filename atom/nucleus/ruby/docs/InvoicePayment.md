@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **create_date** | **DateTime** |  | [optional] 
+**currency_code** | **String** | currency_code | 
 **id** | **String** |  | [optional] 
 **invoice_id** | **String** | invoiceId | 
 **payment_amount** | **Float** | paymentAmount | 

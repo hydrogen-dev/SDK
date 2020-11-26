@@ -20,8 +20,8 @@ Create a new bulk data for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import BulkApi;
 
@@ -32,14 +32,18 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 BulkApi apiInstance = new BulkApi();
 JsonNode data = new JsonNode(); // JsonNode | data
-UUID entityUri = new UUID(); // UUID | UUID entity_uri
+String entityUri = "entityUri_example"; // String | UUID entity_uri
 try {
     BulkTransaction result = apiInstance.createBulkUsingPost(data, entityUri);
     System.out.println(result);
@@ -54,7 +58,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **data** | [**JsonNode**](JsonNode.md)| data |
- **entityUri** | [**UUID**](.md)| UUID entity_uri |
+ **entityUri** | **String**| UUID entity_uri |
 
 ### Return type
 
@@ -79,8 +83,8 @@ Delete a bulk data for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import BulkApi;
 
@@ -91,14 +95,18 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 BulkApi apiInstance = new BulkApi();
 JsonNode data = new JsonNode(); // JsonNode | data
-UUID entityUri = new UUID(); // UUID | UUID entity_uri
+String entityUri = "entityUri_example"; // String | UUID entity_uri
 try {
     BulkTransaction result = apiInstance.deleteBulkUsingDelete(data, entityUri);
     System.out.println(result);
@@ -113,7 +121,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **data** | [**JsonNode**](JsonNode.md)| data |
- **entityUri** | [**UUID**](.md)| UUID entity_uri |
+ **entityUri** | **String**| UUID entity_uri |
 
 ### Return type
 
@@ -138,8 +146,8 @@ Get the status of bulk transaction.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import BulkApi;
 
@@ -150,10 +158,14 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
+
 
 BulkApi apiInstance = new BulkApi();
 UUID id = new UUID(); // UUID | UUID Bulk Transaction Id
@@ -195,8 +207,8 @@ Update a bulk data for your firm.
 
 ### Example
 ```java
-//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.AuthApiClient;
+//import com.hydrogen.nucleus.ApiException;
 //import com.hydrogen.nucleus.auth.*;
 //import BulkApi;
 
@@ -207,14 +219,18 @@ try {
     authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 //          Creating a token for grant_type=password
     authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");           
+                            "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+            "CLIENT_TOKEN");      
 } catch (ApiException e) {
     e.printStackTrace();
 }
 
+
 BulkApi apiInstance = new BulkApi();
 JsonNode data = new JsonNode(); // JsonNode | data
-UUID entityUri = new UUID(); // UUID | UUID entity_uri
+String entityUri = "entityUri_example"; // String | UUID entity_uri
 try {
     BulkTransaction result = apiInstance.updateBulkUsingPut(data, entityUri);
     System.out.println(result);
@@ -229,7 +245,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **data** | [**JsonNode**](JsonNode.md)| data |
- **entityUri** | [**UUID**](.md)| UUID entity_uri |
+ **entityUri** | **String**| UUID entity_uri |
 
 ### Return type
 

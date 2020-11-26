@@ -10,6 +10,9 @@ Name | Type | Description | Notes
 **is_account** | **bool** | is_account | [optional] 
 **is_active** | **bool** | is_active | [optional] 
 **is_client** | **bool** | is_client | [optional] 
+**is_closed** | **bool** | is_closed | [optional] 
+**is_converted** | **bool** | is_converted | [optional] 
+**is_verified** | **bool** | is_verified | [optional] 
 **metadata** | **dict(str, str)** |  | [optional] 
 **name** | **str** | name | 
 **order_index** | **int** | orderIndex | [optional] 

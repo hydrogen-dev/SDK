@@ -4,32 +4,33 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**startDate** | **String** |  |  [optional]
-**initialBalance** | **Float** |  |  [optional]
-**taxRate** | **Float** |  |  [optional]
-**allocationId** | [**UUID**](UUID.md) |  |  [optional]
-**accountId** | [**UUID**](UUID.md) |  |  [optional]
-**resultType** | [**ResultTypeEnum**](#ResultTypeEnum) |  |  [optional]
-**accumulationHorizon** | **Integer** |  | 
-**aggregationAccountId** | [**UUID**](UUID.md) |  |  [optional]
-**marketDataSource** | [**MarketDataSourceEnum**](#MarketDataSourceEnum) |  |  [optional]
 **guaranteedAccumulationBenefit** | **Float** |  |  [optional]
-**decumulationHorizon** | **Integer** |  | 
-**depositSchedule** | **Object** |  |  [optional]
-**portfolioTickers** | **List&lt;String&gt;** |  |  [optional]
-**tradingDaysPerYear** | **Integer** |  |  [optional]
-**portfolioId** | [**UUID**](UUID.md) |  |  [optional]
-**frequencyInterval** | [**FrequencyIntervalEnum**](#FrequencyIntervalEnum) |  |  [optional]
-**guaranteedRateBenefit** | **List&lt;Object&gt;** |  |  [optional]
-**n** | **Integer** |  |  [optional]
-**inflationRate** | **Float** |  |  [optional]
-**modelId** | [**UUID**](UUID.md) |  |  [optional]
-**portfolioWeights** | **List&lt;Float&gt;** |  |  [optional]
-**useProxyData** | **Boolean** |  |  [optional]
-**endDate** | **String** |  |  [optional]
-**annuitizationRate** | **Float** |  |  [optional]
-**removeOutliers** | **Boolean** |  |  [optional]
 **p** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**aggregationAccountId** | [**UUID**](UUID.md) |  |  [optional]
+**allocationId** | [**UUID**](UUID.md) |  |  [optional]
+**portfolioWeights** | **List&lt;Float&gt;** |  |  [optional]
+**endDate** | **String** |  |  [optional]
+**n** | **Integer** |  |  [optional]
+**accountId** | [**UUID**](UUID.md) |  |  [optional]
+**portfolioTickers** | **List&lt;String&gt;** |  |  [optional]
+**initialBalance** | **Float** |  |  [optional]
+**removeOutliers** | **Boolean** |  |  [optional]
+**modelId** | [**UUID**](UUID.md) |  |  [optional]
+**guaranteedRateBenefit** | [**List&lt;GuaranteedRateBenefit&gt;**](GuaranteedRateBenefit.md) |  |  [optional]
+**depositSchedule** | [**AnnuityDepositSchedule**](AnnuityDepositSchedule.md) |  |  [optional]
+**useProxyData** | **Boolean** |  |  [optional]
+**accumulationHorizon** | **Integer** |  | 
+**inflationRate** | **Float** |  |  [optional]
+**annuitizationRate** | **Float** |  |  [optional]
+**resultType** | [**ResultTypeEnum**](#ResultTypeEnum) |  |  [optional]
+**startDate** | **String** |  |  [optional]
+**portfolioId** | [**UUID**](UUID.md) |  |  [optional]
+**marketDataSource** | [**MarketDataSourceEnum**](#MarketDataSourceEnum) |  |  [optional]
+**tradingDaysPerYear** | **Integer** |  |  [optional]
+**frequencyInterval** | [**FrequencyIntervalEnum**](#FrequencyIntervalEnum) |  |  [optional]
+**createLog** | **Boolean** |  |  [optional]
+**decumulationHorizon** | **Integer** |  | 
+**taxRate** | **Float** |  |  [optional]
 
 
 <a name="ResultTypeEnum"></a>

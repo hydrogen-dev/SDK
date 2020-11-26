@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **on_track** | **bool** | onTrack | [optional] 
 **progress** | **float** | progress | [optional] 
 **projection_balance** | **float** | projectionBalance | [optional] 
-**projection_date** | **datetime** | projectionDate | [optional] 
+**projection_date** | **date** | projectionDate | [optional] 
 **secondary_id** | **str** |  | [optional] 
 **status_time_stamp** | **datetime** | statusTimeStamp | 
 **update_date** | **datetime** |  | [optional] 

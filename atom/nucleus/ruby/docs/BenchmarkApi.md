@@ -30,8 +30,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::BenchmarkApi.new
 
@@ -86,8 +87,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::BenchmarkApi.new
 
@@ -141,8 +143,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::BenchmarkApi.new
 
@@ -206,17 +209,18 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::BenchmarkApi.new
 
-benchmark_id = 'benchmark_id_example' # String | benchmark_id
+benchmark_id = 'benchmark_id_example' # String | UUID benchmark_id
 
 opts = { 
-  end_date: DateTime.parse('null'), # DateTime | end_date
+  end_date: Date.parse('2013-10-20'), # Date | end date
   sort_type: 'sort_type_example', # String | sort_type
-  start_date: DateTime.parse('null') # DateTime | start_date
+  start_date: Date.parse('2013-10-20') # Date | start date
 }
 
 begin
@@ -232,10 +236,10 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **benchmark_id** | [**String**](.md)| benchmark_id | 
- **end_date** | **DateTime**| end_date | [optional] [default to null]
+ **benchmark_id** | [**String**](.md)| UUID benchmark_id | 
+ **end_date** | **Date**| end date | [optional] 
  **sort_type** | **String**| sort_type | [optional] 
- **start_date** | **DateTime**| start_date | [optional] [default to null]
+ **start_date** | **Date**| start date | [optional] 
 
 ### Return type
 
@@ -270,8 +274,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::BenchmarkApi.new
 
@@ -326,8 +331,9 @@ NucleusApi.configure do |config|
  config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
 # Creating a token for grant_type=password
  config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::BenchmarkApi.new
 

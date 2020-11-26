@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **cookieCode** | **String** | cookieCode |  [optional]
 **createDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **description** | **String** | description | 
-**endDate** | [**LocalDate**](OffsetDateTime.md) | endDate | 
+**endDate** | [**LocalDate**](LocalDate.md) | endDate | 
 **id** | [**UUID**](UUID.md) |  |  [optional]
 **isAcquisition** | **Boolean** | isAcquisition |  [optional]
 **isActive** | **Boolean** | isActive |  [optional]
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **metadata** | **Map&lt;String, String&gt;** |  |  [optional]
 **rate** | **Double** | rate |  [optional]
 **secondaryId** | **String** |  |  [optional]
-**startDate** | [**LocalDate**](OffsetDateTime.md) | startDate | 
+**startDate** | [**LocalDate**](LocalDate.md) | startDate | 
 **title** | **String** | title | 
 **updateDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **utmCampaign** | **String** | utmCampaign |  [optional]

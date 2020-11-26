@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **frequencyUnit** | **String** | frequency_unit | [optional] 
 **id** | **String** |  | [optional] 
 **isReceive** | **Boolean** | is_receive | [optional] 
+**lastRunDate** | **Date** | last_run_date | [optional] 
 **metadata** | **{String: String}** | metadata | [optional] 
 **notificationId** | **String** | notification_id | 
 **secondaryId** | **String** |  | [optional] 

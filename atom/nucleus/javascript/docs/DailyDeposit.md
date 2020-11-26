@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **metadata** | **{String: String}** |  | [optional] 
 **notes** | **String** | notes | [optional] 
 **portfolioId** | **String** | portfolio_id | [optional] 
+**portfolioTransactionId** | **String** | portfolioTransactionId | [optional] 
 **receivedDate** | **Date** | receivedDate | [optional] 
 **secondaryId** | **String** |  | [optional] 
 **status** | **String** | status | [optional] 

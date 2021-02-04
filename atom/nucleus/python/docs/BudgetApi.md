@@ -41,7 +41,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.BudgetApi(nucleus_api.ApiClient(configuration))
 budget_request = nucleus_api.Budget() # Budget | budgetRequest
@@ -105,7 +105,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.BudgetApi(nucleus_api.ApiClient(configuration))
 budget_id = 'budget_id_example' # str | UUID budget_id
@@ -168,7 +168,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.BudgetApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -242,7 +242,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.BudgetApi(nucleus_api.ApiClient(configuration))
 budget_id = 'budget_id_example' # str | UUID budget_id
@@ -308,10 +308,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.BudgetApi(nucleus_api.ApiClient(configuration))
-budget = nucleus_api.Budget() # Budget | budget
+budget = NULL # object | budget
 budget_id = 'budget_id_example' # str | UUID budget_id
 
 try:
@@ -326,7 +326,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget** | [**Budget**](Budget.md)| budget | 
+ **budget** | **object**| budget | 
  **budget_id** | [**str**](.md)| UUID budget_id | 
 
 ### Return type

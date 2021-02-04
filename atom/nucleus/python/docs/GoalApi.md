@@ -49,7 +49,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 goal_track = nucleus_api.GoalTrack() # GoalTrack | goalTrack
@@ -113,7 +113,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 goal_request = nucleus_api.Goal() # Goal | goalRequest
@@ -177,7 +177,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 goal_track_id = 'goal_track_id_example' # str | UUID goal_track_id
@@ -240,7 +240,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 goal_id = 'goal_id_example' # str | UUID goal_id
@@ -303,7 +303,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -375,7 +375,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | client_id
@@ -453,7 +453,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | client_id
@@ -527,7 +527,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -605,7 +605,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 goal_track_id = 'goal_track_id_example' # str | UUID goal_track_id
@@ -669,7 +669,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | client_id
@@ -751,7 +751,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
 goal_id = 'goal_id_example' # str | UUID goal_id
@@ -815,10 +815,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
-goal_track = nucleus_api.GoalTrack() # GoalTrack | goal_track
+goal_track = NULL # object | goal_track
 goal_track_id = 'goal_track_id_example' # str | UUID goal_track_id
 
 try:
@@ -833,7 +833,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goal_track** | [**GoalTrack**](GoalTrack.md)| goal_track | 
+ **goal_track** | **object**| goal_track | 
  **goal_track_id** | [**str**](.md)| UUID goal_track_id | 
 
 ### Return type
@@ -881,10 +881,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.GoalApi(nucleus_api.ApiClient(configuration))
-goal = nucleus_api.Goal() # Goal | goal
+goal = NULL # object | goal
 goal_id = 'goal_id_example' # str | UUID goal_id
 
 try:
@@ -899,7 +899,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goal** | [**Goal**](Goal.md)| goal | 
+ **goal** | **object**| goal | 
  **goal_id** | [**str**](.md)| UUID goal_id | 
 
 ### Return type

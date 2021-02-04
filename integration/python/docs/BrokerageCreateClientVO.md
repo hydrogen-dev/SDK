@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **nucleus_client_id** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
 **vendor_name** | **str** |  | [optional] 
-**vendor_response** | [**CreateClientResponse**](CreateClientResponse.md) |  | [optional] 
+**vendor_response** | **object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

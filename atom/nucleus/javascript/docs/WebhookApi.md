@@ -81,7 +81,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.WebhookApi();
 
-var webhookId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID webhook_id
+var webhookId = "\"2035f52d-2c5b-4e07-8904-cb037bad7aff\""; // String | UUID webhook_id
 
 
 var callback = function(error, data, response) {
@@ -98,7 +98,7 @@ apiInstance.deleteWebhookUsingDelete(webhookId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookId** | **String**| UUID webhook_id | 
+ **webhookId** | [**String**](.md)| UUID webhook_id | 
 
 ### Return type
 
@@ -192,7 +192,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.WebhookApi();
 
-var webhookId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID webhook_id
+var webhookId = "\"2035f52d-2c5b-4e07-8904-cb037bad7aff\""; // String | UUID webhook_id
 
 
 var callback = function(error, data, response) {
@@ -209,7 +209,7 @@ apiInstance.getWebhookUsingGet(webhookId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookId** | **String**| UUID webhook_id | 
+ **webhookId** | [**String**](.md)| UUID webhook_id | 
 
 ### Return type
 
@@ -243,9 +243,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.WebhookApi();
 
-var webhook = new HydrogenNucleusApi.Webhook(); // Webhook | webhook
+var webhook = null; // Object | webhook
 
-var webhookId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID webhook_id
+var webhookId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID webhook_id
 
 
 var callback = function(error, data, response) {
@@ -262,8 +262,8 @@ apiInstance.updateWebhookUsingPut(webhook, webhookId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook** | [**Webhook**](Webhook.md)| webhook | 
- **webhookId** | **String**| UUID webhook_id | 
+ **webhook** | **Object**| webhook | 
+ **webhookId** | [**String**](.md)| UUID webhook_id | 
 
 ### Return type
 

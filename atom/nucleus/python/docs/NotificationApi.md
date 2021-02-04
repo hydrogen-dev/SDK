@@ -51,7 +51,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification_client = nucleus_api.NotificationClient() # NotificationClient | notificationClient
@@ -115,7 +115,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification_setting = nucleus_api.NotificationSetting() # NotificationSetting | notificationSetting
@@ -179,7 +179,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification = nucleus_api.Notification() # Notification | notification
@@ -243,7 +243,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification_client_id = 'notification_client_id_example' # str | notification_client_id
@@ -306,7 +306,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification_setting_id = 'notification_setting_id_example' # str | notification_setting_id
@@ -369,7 +369,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification_id = 'notification_id_example' # str | UUID notification_id
@@ -432,7 +432,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -504,7 +504,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -576,7 +576,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification_client_id = 'notification_client_id_example' # str | notification_client_id
@@ -640,7 +640,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -712,7 +712,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification_setting_id = 'notification_setting_id_example' # str | notification_setting_id
@@ -776,7 +776,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
 notification_id = 'notification_id_example' # str | notification_id
@@ -840,10 +840,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
-notification_client = nucleus_api.NotificationClient() # NotificationClient | notification_client
+notification_client = NULL # object | notification_client
 notification_client_id = 'notification_client_id_example' # str | UUID notification_client_id
 
 try:
@@ -858,7 +858,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification_client** | [**NotificationClient**](NotificationClient.md)| notification_client | 
+ **notification_client** | **object**| notification_client | 
  **notification_client_id** | [**str**](.md)| UUID notification_client_id | 
 
 ### Return type
@@ -906,10 +906,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
-notification_setting = nucleus_api.NotificationSetting() # NotificationSetting | notification_setting
+notification_setting = NULL # object | notification_setting
 notification_setting_id = 'notification_setting_id_example' # str | UUID notification_setting_id
 
 try:
@@ -924,7 +924,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification_setting** | [**NotificationSetting**](NotificationSetting.md)| notification_setting | 
+ **notification_setting** | **object**| notification_setting | 
  **notification_setting_id** | [**str**](.md)| UUID notification_setting_id | 
 
 ### Return type
@@ -972,10 +972,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.NotificationApi(nucleus_api.ApiClient(configuration))
-notification = nucleus_api.Notification() # Notification | notification
+notification = NULL # object | notification
 notification_id = 'notification_id_example' # str | UUID notification_id
 
 try:
@@ -990,7 +990,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification** | [**Notification**](Notification.md)| notification | 
+ **notification** | **object**| notification | 
  **notification_id** | [**str**](.md)| UUID notification_id | 
 
 ### Return type

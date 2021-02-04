@@ -439,7 +439,7 @@ class ScoreApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Score score: score (required)
+        :param object score: score (required)
         :param str score_id: UUID score_id (required)
         :return: Score
                  If the method is called asynchronously,
@@ -462,7 +462,7 @@ class ScoreApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Score score: score (required)
+        :param object score: score (required)
         :param str score_id: UUID score_id (required)
         :return: Score
                  If the method is called asynchronously,

@@ -3,6 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**zp_id** | **String** |  | [optional] 
+**currency** | **String** |  | [optional] 
+**link** | **String** |  | [optional] 
+**text** | **String** |  | [optional] 
+**zestimate** | **String** |  | [optional] 
+**zpid** | **String** |  | [optional] 
 
 

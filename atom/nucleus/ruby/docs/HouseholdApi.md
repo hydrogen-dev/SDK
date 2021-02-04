@@ -485,7 +485,7 @@ end
 
 api_instance = NucleusApi::HouseholdApi.new
 
-household = NucleusApi::Household.new # Household | household
+household = nil # Object | household
 
 household_id = 'household_id_example' # String | UUID household_id
 
@@ -503,7 +503,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **household** | [**Household**](Household.md)| household | 
+ **household** | **Object**| household | 
  **household_id** | [**String**](.md)| UUID household_id | 
 
 ### Return type

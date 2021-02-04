@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -28,11 +27,17 @@ import java.math.BigDecimal;
 /**
  * DecumulationGoalDepositConfig
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class DecumulationGoalDepositConfig {
+  @SerializedName("dep_amount")
+  private BigDecimal depAmount = null;
+
+  @SerializedName("dep_end_period")
+  private Integer depEndPeriod = 0;
+
   /**
    * Gets or Sets depEndReference
    */
@@ -84,64 +89,6 @@ public class DecumulationGoalDepositConfig {
 
   @SerializedName("dep_end_reference")
   private DepEndReferenceEnum depEndReference = DepEndReferenceEnum.A_END;
-
-  @SerializedName("dep_inflation")
-  private Float depInflation = 0.0f;
-
-  @SerializedName("dep_amount")
-  private BigDecimal depAmount = null;
-
-  /**
-   * Gets or Sets depStartReference
-   */
-  @JsonAdapter(DepStartReferenceEnum.Adapter.class)
-  public enum DepStartReferenceEnum {
-    A_START("a_start"),
-    
-    A_END("a_end"),
-    
-    D_END("d_end");
-
-    private String value;
-
-    DepStartReferenceEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static DepStartReferenceEnum fromValue(String text) {
-      for (DepStartReferenceEnum b : DepStartReferenceEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<DepStartReferenceEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final DepStartReferenceEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public DepStartReferenceEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return DepStartReferenceEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
-  @SerializedName("dep_start_reference")
-  private DepStartReferenceEnum depStartReference = DepStartReferenceEnum.A_START;
 
   /**
    * Gets or Sets depFrequency
@@ -203,11 +150,100 @@ public class DecumulationGoalDepositConfig {
   @SerializedName("dep_frequency")
   private DepFrequencyEnum depFrequency = DepFrequencyEnum.YEAR;
 
-  @SerializedName("dep_end_period")
-  private Integer depEndPeriod = 0;
-
   @SerializedName("dep_start_period")
   private Integer depStartPeriod = 0;
+
+  @SerializedName("dep_inflation")
+  private Float depInflation = 0.0f;
+
+  /**
+   * Gets or Sets depStartReference
+   */
+  @JsonAdapter(DepStartReferenceEnum.Adapter.class)
+  public enum DepStartReferenceEnum {
+    A_START("a_start"),
+    
+    A_END("a_end"),
+    
+    D_END("d_end");
+
+    private String value;
+
+    DepStartReferenceEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static DepStartReferenceEnum fromValue(String text) {
+      for (DepStartReferenceEnum b : DepStartReferenceEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<DepStartReferenceEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final DepStartReferenceEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public DepStartReferenceEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return DepStartReferenceEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
+  @SerializedName("dep_start_reference")
+  private DepStartReferenceEnum depStartReference = DepStartReferenceEnum.A_START;
+
+  public DecumulationGoalDepositConfig depAmount(BigDecimal depAmount) {
+    this.depAmount = depAmount;
+    return this;
+  }
+
+   /**
+   * Get depAmount
+   * minimum: 0
+   * @return depAmount
+  **/
+  @ApiModelProperty(value = "")
+  public BigDecimal getDepAmount() {
+    return depAmount;
+  }
+
+  public void setDepAmount(BigDecimal depAmount) {
+    this.depAmount = depAmount;
+  }
+
+  public DecumulationGoalDepositConfig depEndPeriod(Integer depEndPeriod) {
+    this.depEndPeriod = depEndPeriod;
+    return this;
+  }
+
+   /**
+   * Get depEndPeriod
+   * @return depEndPeriod
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getDepEndPeriod() {
+    return depEndPeriod;
+  }
+
+  public void setDepEndPeriod(Integer depEndPeriod) {
+    this.depEndPeriod = depEndPeriod;
+  }
 
   public DecumulationGoalDepositConfig depEndReference(DepEndReferenceEnum depEndReference) {
     this.depEndReference = depEndReference;
@@ -225,6 +261,42 @@ public class DecumulationGoalDepositConfig {
 
   public void setDepEndReference(DepEndReferenceEnum depEndReference) {
     this.depEndReference = depEndReference;
+  }
+
+  public DecumulationGoalDepositConfig depFrequency(DepFrequencyEnum depFrequency) {
+    this.depFrequency = depFrequency;
+    return this;
+  }
+
+   /**
+   * Get depFrequency
+   * @return depFrequency
+  **/
+  @ApiModelProperty(value = "")
+  public DepFrequencyEnum getDepFrequency() {
+    return depFrequency;
+  }
+
+  public void setDepFrequency(DepFrequencyEnum depFrequency) {
+    this.depFrequency = depFrequency;
+  }
+
+  public DecumulationGoalDepositConfig depStartPeriod(Integer depStartPeriod) {
+    this.depStartPeriod = depStartPeriod;
+    return this;
+  }
+
+   /**
+   * Get depStartPeriod
+   * @return depStartPeriod
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getDepStartPeriod() {
+    return depStartPeriod;
+  }
+
+  public void setDepStartPeriod(Integer depStartPeriod) {
+    this.depStartPeriod = depStartPeriod;
   }
 
   public DecumulationGoalDepositConfig depInflation(Float depInflation) {
@@ -246,25 +318,6 @@ public class DecumulationGoalDepositConfig {
     this.depInflation = depInflation;
   }
 
-  public DecumulationGoalDepositConfig depAmount(BigDecimal depAmount) {
-    this.depAmount = depAmount;
-    return this;
-  }
-
-   /**
-   * Get depAmount
-   * minimum: 0
-   * @return depAmount
-  **/
-  @ApiModelProperty(value = "")
-  public BigDecimal getDepAmount() {
-    return depAmount;
-  }
-
-  public void setDepAmount(BigDecimal depAmount) {
-    this.depAmount = depAmount;
-  }
-
   public DecumulationGoalDepositConfig depStartReference(DepStartReferenceEnum depStartReference) {
     this.depStartReference = depStartReference;
     return this;
@@ -283,60 +336,6 @@ public class DecumulationGoalDepositConfig {
     this.depStartReference = depStartReference;
   }
 
-  public DecumulationGoalDepositConfig depFrequency(DepFrequencyEnum depFrequency) {
-    this.depFrequency = depFrequency;
-    return this;
-  }
-
-   /**
-   * Get depFrequency
-   * @return depFrequency
-  **/
-  @ApiModelProperty(value = "")
-  public DepFrequencyEnum getDepFrequency() {
-    return depFrequency;
-  }
-
-  public void setDepFrequency(DepFrequencyEnum depFrequency) {
-    this.depFrequency = depFrequency;
-  }
-
-  public DecumulationGoalDepositConfig depEndPeriod(Integer depEndPeriod) {
-    this.depEndPeriod = depEndPeriod;
-    return this;
-  }
-
-   /**
-   * Get depEndPeriod
-   * @return depEndPeriod
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getDepEndPeriod() {
-    return depEndPeriod;
-  }
-
-  public void setDepEndPeriod(Integer depEndPeriod) {
-    this.depEndPeriod = depEndPeriod;
-  }
-
-  public DecumulationGoalDepositConfig depStartPeriod(Integer depStartPeriod) {
-    this.depStartPeriod = depStartPeriod;
-    return this;
-  }
-
-   /**
-   * Get depStartPeriod
-   * @return depStartPeriod
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getDepStartPeriod() {
-    return depStartPeriod;
-  }
-
-  public void setDepStartPeriod(Integer depStartPeriod) {
-    this.depStartPeriod = depStartPeriod;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -347,18 +346,18 @@ public class DecumulationGoalDepositConfig {
       return false;
     }
     DecumulationGoalDepositConfig decumulationGoalDepositConfig = (DecumulationGoalDepositConfig) o;
-    return Objects.equals(this.depEndReference, decumulationGoalDepositConfig.depEndReference) &&
-        Objects.equals(this.depInflation, decumulationGoalDepositConfig.depInflation) &&
-        Objects.equals(this.depAmount, decumulationGoalDepositConfig.depAmount) &&
-        Objects.equals(this.depStartReference, decumulationGoalDepositConfig.depStartReference) &&
-        Objects.equals(this.depFrequency, decumulationGoalDepositConfig.depFrequency) &&
+    return Objects.equals(this.depAmount, decumulationGoalDepositConfig.depAmount) &&
         Objects.equals(this.depEndPeriod, decumulationGoalDepositConfig.depEndPeriod) &&
-        Objects.equals(this.depStartPeriod, decumulationGoalDepositConfig.depStartPeriod);
+        Objects.equals(this.depEndReference, decumulationGoalDepositConfig.depEndReference) &&
+        Objects.equals(this.depFrequency, decumulationGoalDepositConfig.depFrequency) &&
+        Objects.equals(this.depStartPeriod, decumulationGoalDepositConfig.depStartPeriod) &&
+        Objects.equals(this.depInflation, decumulationGoalDepositConfig.depInflation) &&
+        Objects.equals(this.depStartReference, decumulationGoalDepositConfig.depStartReference);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(depEndReference, depInflation, depAmount, depStartReference, depFrequency, depEndPeriod, depStartPeriod);
+    return Objects.hash(depAmount, depEndPeriod, depEndReference, depFrequency, depStartPeriod, depInflation, depStartReference);
   }
 
 
@@ -367,13 +366,13 @@ public class DecumulationGoalDepositConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class DecumulationGoalDepositConfig {\n");
     
-    sb.append("    depEndReference: ").append(toIndentedString(depEndReference)).append("\n");
-    sb.append("    depInflation: ").append(toIndentedString(depInflation)).append("\n");
     sb.append("    depAmount: ").append(toIndentedString(depAmount)).append("\n");
-    sb.append("    depStartReference: ").append(toIndentedString(depStartReference)).append("\n");
-    sb.append("    depFrequency: ").append(toIndentedString(depFrequency)).append("\n");
     sb.append("    depEndPeriod: ").append(toIndentedString(depEndPeriod)).append("\n");
+    sb.append("    depEndReference: ").append(toIndentedString(depEndReference)).append("\n");
+    sb.append("    depFrequency: ").append(toIndentedString(depFrequency)).append("\n");
     sb.append("    depStartPeriod: ").append(toIndentedString(depStartPeriod)).append("\n");
+    sb.append("    depInflation: ").append(toIndentedString(depInflation)).append("\n");
+    sb.append("    depStartReference: ").append(toIndentedString(depStartReference)).append("\n");
     sb.append("}");
     return sb.toString();
   }

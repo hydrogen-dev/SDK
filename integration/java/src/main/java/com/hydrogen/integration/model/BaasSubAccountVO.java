@@ -23,7 +23,7 @@ import java.util.UUID;
 /**
  * BaasSubAccountVO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class BaasSubAccountVO {
   @SerializedName("account_number")
   private String accountNumber = null;
@@ -34,6 +34,9 @@ public class BaasSubAccountVO {
   @SerializedName("message")
   private String message = null;
 
+  @SerializedName("nucleus_client_id")
+  private UUID nucleusClientId = null;
+
   @SerializedName("nucleus_portfolio_id")
   private UUID nucleusPortfolioId = null;
 
@@ -41,7 +44,7 @@ public class BaasSubAccountVO {
   private String status = null;
 
   @SerializedName("vendor_name")
-  private Object vendorName = null;
+  private String vendorName = null;
 
   @SerializedName("vendor_response")
   private Object vendorResponse = null;
@@ -100,6 +103,24 @@ public class BaasSubAccountVO {
     this.message = message;
   }
 
+  public BaasSubAccountVO nucleusClientId(UUID nucleusClientId) {
+    this.nucleusClientId = nucleusClientId;
+    return this;
+  }
+
+   /**
+   * Get nucleusClientId
+   * @return nucleusClientId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getNucleusClientId() {
+    return nucleusClientId;
+  }
+
+  public void setNucleusClientId(UUID nucleusClientId) {
+    this.nucleusClientId = nucleusClientId;
+  }
+
   public BaasSubAccountVO nucleusPortfolioId(UUID nucleusPortfolioId) {
     this.nucleusPortfolioId = nucleusPortfolioId;
     return this;
@@ -136,7 +157,7 @@ public class BaasSubAccountVO {
     this.status = status;
   }
 
-  public BaasSubAccountVO vendorName(Object vendorName) {
+  public BaasSubAccountVO vendorName(String vendorName) {
     this.vendorName = vendorName;
     return this;
   }
@@ -146,11 +167,11 @@ public class BaasSubAccountVO {
    * @return vendorName
   **/
   @ApiModelProperty(value = "")
-  public Object getVendorName() {
+  public String getVendorName() {
     return vendorName;
   }
 
-  public void setVendorName(Object vendorName) {
+  public void setVendorName(String vendorName) {
     this.vendorName = vendorName;
   }
 
@@ -185,6 +206,7 @@ public class BaasSubAccountVO {
     return Objects.equals(this.accountNumber, baasSubAccountVO.accountNumber) &&
         Objects.equals(this.accountStatus, baasSubAccountVO.accountStatus) &&
         Objects.equals(this.message, baasSubAccountVO.message) &&
+        Objects.equals(this.nucleusClientId, baasSubAccountVO.nucleusClientId) &&
         Objects.equals(this.nucleusPortfolioId, baasSubAccountVO.nucleusPortfolioId) &&
         Objects.equals(this.status, baasSubAccountVO.status) &&
         Objects.equals(this.vendorName, baasSubAccountVO.vendorName) &&
@@ -193,7 +215,7 @@ public class BaasSubAccountVO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountNumber, accountStatus, message, nucleusPortfolioId, status, vendorName, vendorResponse);
+    return Objects.hash(accountNumber, accountStatus, message, nucleusClientId, nucleusPortfolioId, status, vendorName, vendorResponse);
   }
 
 
@@ -205,6 +227,7 @@ public class BaasSubAccountVO {
     sb.append("    accountNumber: ").append(toIndentedString(accountNumber)).append("\n");
     sb.append("    accountStatus: ").append(toIndentedString(accountStatus)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    nucleusClientId: ").append(toIndentedString(nucleusClientId)).append("\n");
     sb.append("    nucleusPortfolioId: ").append(toIndentedString(nucleusPortfolioId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    vendorName: ").append(toIndentedString(vendorName)).append("\n");

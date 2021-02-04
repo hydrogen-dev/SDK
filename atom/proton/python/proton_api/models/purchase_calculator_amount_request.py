@@ -31,107 +31,124 @@ class PurchaseCalculatorAmountRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'inflation_rate': 'float',
-        'purchase_horizon': 'int',
-        'investment_tax': 'float',
-        'deposit_schedule': 'CalculatorDepositSchedule1',
-        'portfolio_return': 'float',
         'aggregation_account_ids': 'list[str]',
-        'horizon_frequency_interval': 'str',
+        'current_savings': 'float',
         'account_ids': 'list[str]',
-        'current_savings': 'float'
+        'investment_tax': 'float',
+        'purchase_horizon': 'int',
+        'inflation_rate': 'float',
+        'horizon_frequency_interval': 'str',
+        'portfolio_return': 'float',
+        'deposit_schedule': 'CalculatorDepositSchedule1'
     }
 
     attribute_map = {
-        'inflation_rate': 'inflation_rate',
-        'purchase_horizon': 'purchase_horizon',
-        'investment_tax': 'investment_tax',
-        'deposit_schedule': 'deposit_schedule',
-        'portfolio_return': 'portfolio_return',
         'aggregation_account_ids': 'aggregation_account_ids',
-        'horizon_frequency_interval': 'horizon_frequency_interval',
+        'current_savings': 'current_savings',
         'account_ids': 'account_ids',
-        'current_savings': 'current_savings'
+        'investment_tax': 'investment_tax',
+        'purchase_horizon': 'purchase_horizon',
+        'inflation_rate': 'inflation_rate',
+        'horizon_frequency_interval': 'horizon_frequency_interval',
+        'portfolio_return': 'portfolio_return',
+        'deposit_schedule': 'deposit_schedule'
     }
 
-    def __init__(self, inflation_rate=0.0, purchase_horizon=None, investment_tax=0.0, deposit_schedule=None, portfolio_return=None, aggregation_account_ids=None, horizon_frequency_interval='year', account_ids=None, current_savings=0.0):  # noqa: E501
+    def __init__(self, aggregation_account_ids=None, current_savings=0.0, account_ids=None, investment_tax=0.0, purchase_horizon=None, inflation_rate=0.0, horizon_frequency_interval='year', portfolio_return=None, deposit_schedule=None):  # noqa: E501
         """PurchaseCalculatorAmountRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._inflation_rate = None
-        self._purchase_horizon = None
-        self._investment_tax = None
-        self._deposit_schedule = None
-        self._portfolio_return = None
         self._aggregation_account_ids = None
-        self._horizon_frequency_interval = None
-        self._account_ids = None
         self._current_savings = None
+        self._account_ids = None
+        self._investment_tax = None
+        self._purchase_horizon = None
+        self._inflation_rate = None
+        self._horizon_frequency_interval = None
+        self._portfolio_return = None
+        self._deposit_schedule = None
         self.discriminator = None
 
-        if inflation_rate is not None:
-            self.inflation_rate = inflation_rate
-        self.purchase_horizon = purchase_horizon
-        if investment_tax is not None:
-            self.investment_tax = investment_tax
-        if deposit_schedule is not None:
-            self.deposit_schedule = deposit_schedule
-        self.portfolio_return = portfolio_return
         if aggregation_account_ids is not None:
             self.aggregation_account_ids = aggregation_account_ids
-        if horizon_frequency_interval is not None:
-            self.horizon_frequency_interval = horizon_frequency_interval
-        if account_ids is not None:
-            self.account_ids = account_ids
         if current_savings is not None:
             self.current_savings = current_savings
+        if account_ids is not None:
+            self.account_ids = account_ids
+        if investment_tax is not None:
+            self.investment_tax = investment_tax
+        self.purchase_horizon = purchase_horizon
+        if inflation_rate is not None:
+            self.inflation_rate = inflation_rate
+        if horizon_frequency_interval is not None:
+            self.horizon_frequency_interval = horizon_frequency_interval
+        self.portfolio_return = portfolio_return
+        if deposit_schedule is not None:
+            self.deposit_schedule = deposit_schedule
 
     @property
-    def inflation_rate(self):
-        """Gets the inflation_rate of this PurchaseCalculatorAmountRequest.  # noqa: E501
+    def aggregation_account_ids(self):
+        """Gets the aggregation_account_ids of this PurchaseCalculatorAmountRequest.  # noqa: E501
 
 
-        :return: The inflation_rate of this PurchaseCalculatorAmountRequest.  # noqa: E501
+        :return: The aggregation_account_ids of this PurchaseCalculatorAmountRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._aggregation_account_ids
+
+    @aggregation_account_ids.setter
+    def aggregation_account_ids(self, aggregation_account_ids):
+        """Sets the aggregation_account_ids of this PurchaseCalculatorAmountRequest.
+
+
+        :param aggregation_account_ids: The aggregation_account_ids of this PurchaseCalculatorAmountRequest.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._aggregation_account_ids = aggregation_account_ids
+
+    @property
+    def current_savings(self):
+        """Gets the current_savings of this PurchaseCalculatorAmountRequest.  # noqa: E501
+
+
+        :return: The current_savings of this PurchaseCalculatorAmountRequest.  # noqa: E501
         :rtype: float
         """
-        return self._inflation_rate
+        return self._current_savings
 
-    @inflation_rate.setter
-    def inflation_rate(self, inflation_rate):
-        """Sets the inflation_rate of this PurchaseCalculatorAmountRequest.
+    @current_savings.setter
+    def current_savings(self, current_savings):
+        """Sets the current_savings of this PurchaseCalculatorAmountRequest.
 
 
-        :param inflation_rate: The inflation_rate of this PurchaseCalculatorAmountRequest.  # noqa: E501
+        :param current_savings: The current_savings of this PurchaseCalculatorAmountRequest.  # noqa: E501
         :type: float
         """
-        if inflation_rate is not None and inflation_rate < -1:  # noqa: E501
-            raise ValueError("Invalid value for `inflation_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
+        if current_savings is not None and current_savings < 0:  # noqa: E501
+            raise ValueError("Invalid value for `current_savings`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._inflation_rate = inflation_rate
+        self._current_savings = current_savings
 
     @property
-    def purchase_horizon(self):
-        """Gets the purchase_horizon of this PurchaseCalculatorAmountRequest.  # noqa: E501
+    def account_ids(self):
+        """Gets the account_ids of this PurchaseCalculatorAmountRequest.  # noqa: E501
 
 
-        :return: The purchase_horizon of this PurchaseCalculatorAmountRequest.  # noqa: E501
-        :rtype: int
+        :return: The account_ids of this PurchaseCalculatorAmountRequest.  # noqa: E501
+        :rtype: list[str]
         """
-        return self._purchase_horizon
+        return self._account_ids
 
-    @purchase_horizon.setter
-    def purchase_horizon(self, purchase_horizon):
-        """Sets the purchase_horizon of this PurchaseCalculatorAmountRequest.
+    @account_ids.setter
+    def account_ids(self, account_ids):
+        """Sets the account_ids of this PurchaseCalculatorAmountRequest.
 
 
-        :param purchase_horizon: The purchase_horizon of this PurchaseCalculatorAmountRequest.  # noqa: E501
-        :type: int
+        :param account_ids: The account_ids of this PurchaseCalculatorAmountRequest.  # noqa: E501
+        :type: list[str]
         """
-        if purchase_horizon is None:
-            raise ValueError("Invalid value for `purchase_horizon`, must not be `None`")  # noqa: E501
-        if purchase_horizon is not None and purchase_horizon < 0:  # noqa: E501
-            raise ValueError("Invalid value for `purchase_horizon`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._purchase_horizon = purchase_horizon
+        self._account_ids = account_ids
 
     @property
     def investment_tax(self):
@@ -159,71 +176,52 @@ class PurchaseCalculatorAmountRequest(object):
         self._investment_tax = investment_tax
 
     @property
-    def deposit_schedule(self):
-        """Gets the deposit_schedule of this PurchaseCalculatorAmountRequest.  # noqa: E501
+    def purchase_horizon(self):
+        """Gets the purchase_horizon of this PurchaseCalculatorAmountRequest.  # noqa: E501
 
 
-        :return: The deposit_schedule of this PurchaseCalculatorAmountRequest.  # noqa: E501
-        :rtype: CalculatorDepositSchedule1
+        :return: The purchase_horizon of this PurchaseCalculatorAmountRequest.  # noqa: E501
+        :rtype: int
         """
-        return self._deposit_schedule
+        return self._purchase_horizon
 
-    @deposit_schedule.setter
-    def deposit_schedule(self, deposit_schedule):
-        """Sets the deposit_schedule of this PurchaseCalculatorAmountRequest.
+    @purchase_horizon.setter
+    def purchase_horizon(self, purchase_horizon):
+        """Sets the purchase_horizon of this PurchaseCalculatorAmountRequest.
 
 
-        :param deposit_schedule: The deposit_schedule of this PurchaseCalculatorAmountRequest.  # noqa: E501
-        :type: CalculatorDepositSchedule1
+        :param purchase_horizon: The purchase_horizon of this PurchaseCalculatorAmountRequest.  # noqa: E501
+        :type: int
         """
+        if purchase_horizon is None:
+            raise ValueError("Invalid value for `purchase_horizon`, must not be `None`")  # noqa: E501
+        if purchase_horizon is not None and purchase_horizon < 0:  # noqa: E501
+            raise ValueError("Invalid value for `purchase_horizon`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._deposit_schedule = deposit_schedule
+        self._purchase_horizon = purchase_horizon
 
     @property
-    def portfolio_return(self):
-        """Gets the portfolio_return of this PurchaseCalculatorAmountRequest.  # noqa: E501
+    def inflation_rate(self):
+        """Gets the inflation_rate of this PurchaseCalculatorAmountRequest.  # noqa: E501
 
 
-        :return: The portfolio_return of this PurchaseCalculatorAmountRequest.  # noqa: E501
+        :return: The inflation_rate of this PurchaseCalculatorAmountRequest.  # noqa: E501
         :rtype: float
         """
-        return self._portfolio_return
+        return self._inflation_rate
 
-    @portfolio_return.setter
-    def portfolio_return(self, portfolio_return):
-        """Sets the portfolio_return of this PurchaseCalculatorAmountRequest.
+    @inflation_rate.setter
+    def inflation_rate(self, inflation_rate):
+        """Sets the inflation_rate of this PurchaseCalculatorAmountRequest.
 
 
-        :param portfolio_return: The portfolio_return of this PurchaseCalculatorAmountRequest.  # noqa: E501
+        :param inflation_rate: The inflation_rate of this PurchaseCalculatorAmountRequest.  # noqa: E501
         :type: float
         """
-        if portfolio_return is None:
-            raise ValueError("Invalid value for `portfolio_return`, must not be `None`")  # noqa: E501
-        if portfolio_return is not None and portfolio_return < -1:  # noqa: E501
-            raise ValueError("Invalid value for `portfolio_return`, must be a value greater than or equal to `-1`")  # noqa: E501
+        if inflation_rate is not None and inflation_rate < -1:  # noqa: E501
+            raise ValueError("Invalid value for `inflation_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
 
-        self._portfolio_return = portfolio_return
-
-    @property
-    def aggregation_account_ids(self):
-        """Gets the aggregation_account_ids of this PurchaseCalculatorAmountRequest.  # noqa: E501
-
-
-        :return: The aggregation_account_ids of this PurchaseCalculatorAmountRequest.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._aggregation_account_ids
-
-    @aggregation_account_ids.setter
-    def aggregation_account_ids(self, aggregation_account_ids):
-        """Sets the aggregation_account_ids of this PurchaseCalculatorAmountRequest.
-
-
-        :param aggregation_account_ids: The aggregation_account_ids of this PurchaseCalculatorAmountRequest.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._aggregation_account_ids = aggregation_account_ids
+        self._inflation_rate = inflation_rate
 
     @property
     def horizon_frequency_interval(self):
@@ -253,48 +251,50 @@ class PurchaseCalculatorAmountRequest(object):
         self._horizon_frequency_interval = horizon_frequency_interval
 
     @property
-    def account_ids(self):
-        """Gets the account_ids of this PurchaseCalculatorAmountRequest.  # noqa: E501
+    def portfolio_return(self):
+        """Gets the portfolio_return of this PurchaseCalculatorAmountRequest.  # noqa: E501
 
 
-        :return: The account_ids of this PurchaseCalculatorAmountRequest.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._account_ids
-
-    @account_ids.setter
-    def account_ids(self, account_ids):
-        """Sets the account_ids of this PurchaseCalculatorAmountRequest.
-
-
-        :param account_ids: The account_ids of this PurchaseCalculatorAmountRequest.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._account_ids = account_ids
-
-    @property
-    def current_savings(self):
-        """Gets the current_savings of this PurchaseCalculatorAmountRequest.  # noqa: E501
-
-
-        :return: The current_savings of this PurchaseCalculatorAmountRequest.  # noqa: E501
+        :return: The portfolio_return of this PurchaseCalculatorAmountRequest.  # noqa: E501
         :rtype: float
         """
-        return self._current_savings
+        return self._portfolio_return
 
-    @current_savings.setter
-    def current_savings(self, current_savings):
-        """Sets the current_savings of this PurchaseCalculatorAmountRequest.
+    @portfolio_return.setter
+    def portfolio_return(self, portfolio_return):
+        """Sets the portfolio_return of this PurchaseCalculatorAmountRequest.
 
 
-        :param current_savings: The current_savings of this PurchaseCalculatorAmountRequest.  # noqa: E501
+        :param portfolio_return: The portfolio_return of this PurchaseCalculatorAmountRequest.  # noqa: E501
         :type: float
         """
-        if current_savings is not None and current_savings < 0:  # noqa: E501
-            raise ValueError("Invalid value for `current_savings`, must be a value greater than or equal to `0`")  # noqa: E501
+        if portfolio_return is None:
+            raise ValueError("Invalid value for `portfolio_return`, must not be `None`")  # noqa: E501
+        if portfolio_return is not None and portfolio_return < -1:  # noqa: E501
+            raise ValueError("Invalid value for `portfolio_return`, must be a value greater than or equal to `-1`")  # noqa: E501
 
-        self._current_savings = current_savings
+        self._portfolio_return = portfolio_return
+
+    @property
+    def deposit_schedule(self):
+        """Gets the deposit_schedule of this PurchaseCalculatorAmountRequest.  # noqa: E501
+
+
+        :return: The deposit_schedule of this PurchaseCalculatorAmountRequest.  # noqa: E501
+        :rtype: CalculatorDepositSchedule1
+        """
+        return self._deposit_schedule
+
+    @deposit_schedule.setter
+    def deposit_schedule(self, deposit_schedule):
+        """Sets the deposit_schedule of this PurchaseCalculatorAmountRequest.
+
+
+        :param deposit_schedule: The deposit_schedule of this PurchaseCalculatorAmountRequest.  # noqa: E501
+        :type: CalculatorDepositSchedule1
+        """
+
+        self._deposit_schedule = deposit_schedule
 
     def to_dict(self):
         """Returns the model properties as a dict"""

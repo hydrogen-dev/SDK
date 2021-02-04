@@ -2,7 +2,7 @@
 
 Hydrogen Nucleus API
 - API version: 1.8.0
-  - Build date: 2020-10-12T11:03:26.704Z
+  - Build date: 2020-12-28T16:21:02.928Z
 
 The Hydrogen Nucleus API
 
@@ -20,12 +20,16 @@ Building the API client library requires:
 ### Update Base Path 
 Follow steps to verify the base URL path:
 1. Go to ApiClient file located under src folder.
-2.  Search for basePath and change/verify the URL according to the environment.
+2.  Search for basePath, adminPath and change/verify the URL according to the environment.
 **Sandbox Base URL**
 https://sandbox.hydrogenplatform.com/nucleus/v1
 **Production Base URL**
 https://api.hydrogenplatform.com/nucleus/v1
-
+3.  Search for adminPath and change/verify the URL according to the environment.
+**Sandbox Base URL**
+https://sandbox.hydrogenplatform.com/admin/v1
+**Production Base URL**
+https://api.hydrogenplatform.com/admin/v1
 
 ## Installation
 
@@ -86,7 +90,6 @@ Please follow the [installation](#installation) instruction and execute the foll
 import com.hydrogen.nucleus.AuthApiClient;
 import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.AccountAllocationMapping;
-import AccountApi;
 
 public class AccountApiExample {
 
@@ -95,15 +98,15 @@ public class AccountApiExample {
         try {
         //          Use one of the below method to generate oauth token        
         //          Creating a token for grant_type=client_credentials            
-            authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+        authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
         //          Creating a token for grant_type=password
-            authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                                    "USERNAME", "PASSWORD");     
+        authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                                "USERNAME", "PASSWORD");     
         //  Creating a token using client_token
-            authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
-                    "CLIENT_TOKEN");      
+        authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+                "CLIENT_TOKEN");      
         } catch (ApiException e) {
-            e.printStackTrace();
+        e.printStackTrace();
         }
 
         AccountApi apiInstance = new AccountApi();
@@ -157,6 +160,11 @@ Class | Method | HTTP request | Description
 *AccountApi* | [**updateAccountTypeUsingPut**](docs/AccountApi.md#updateAccountTypeUsingPut) | **PUT** /account_type/{account_type_id} | Update an account type
 *AccountApi* | [**updateAccountUsingPut**](docs/AccountApi.md#updateAccountUsingPut) | **PUT** /account/{account_id} | Update an account
 *AccountApi* | [**updateClientAccountPermissionUsingPUT**](docs/AccountApi.md#updateClientAccountPermissionUsingPUT) | **PUT** /account_permission/{account_id} | Update an account permission
+*AdminClientApi* | [**createAdminClientUsingPost**](docs/AdminClientApi.md#createAdminClientUsingPost) | **POST** /client | Create an admin client
+*AdminClientApi* | [**deleteAdminClientUsingGet**](docs/AdminClientApi.md#deleteAdminClientUsingGet) | **DELETE** /client/{client_id} | Delete an admin client
+*AdminClientApi* | [**getAdminClientUsingGet**](docs/AdminClientApi.md#getAdminClientUsingGet) | **GET** /client/{client_id} | Get an admin client
+*AdminClientApi* | [**getAllAdminClientUsingGet**](docs/AdminClientApi.md#getAllAdminClientUsingGet) | **GET** /client | List all admin clients
+*AdminClientApi* | [**updateAdminClientUsingPut**](docs/AdminClientApi.md#updateAdminClientUsingPut) | **PUT** /client/{client_id} | Update an admin client
 *AggregationAccountApi* | [**createAggregationAccountBalanceBulkUsingPost**](docs/AggregationAccountApi.md#createAggregationAccountBalanceBulkUsingPost) | **POST** /bulk_aggregation_account_balance | Create a bulk aggregation account balance
 *AggregationAccountApi* | [**createAggregationAccountBalanceUsingPost**](docs/AggregationAccountApi.md#createAggregationAccountBalanceUsingPost) | **POST** /aggregation_account_balance | Create an aggregation account balance
 *AggregationAccountApi* | [**createAggregationAccountBulkUsingPost**](docs/AggregationAccountApi.md#createAggregationAccountBulkUsingPost) | **POST** /bulk_aggregation_account | Create a bulk aggregation account
@@ -207,11 +215,6 @@ Class | Method | HTTP request | Description
 *AuditLogApi* | [**createAuditLogUsingPost**](docs/AuditLogApi.md#createAuditLogUsingPost) | **POST** /audit_log | Create a audit log
 *AuditLogApi* | [**getAuditLogAllUsingGet**](docs/AuditLogApi.md#getAuditLogAllUsingGet) | **GET** /audit_log | List all audit log
 *AuditLogApi* | [**getAuditLogUsingGet**](docs/AuditLogApi.md#getAuditLogUsingGet) | **GET** /audit_log/{audit_log_id} | Retrieve a audit log
-*BatchControllerApi* | [**aggregationAccountBalanceEncryptionJobUsingGET**](docs/BatchControllerApi.md#aggregationAccountBalanceEncryptionJobUsingGET) | **GET** /aggregation_account_balance_encryption | aggregationAccountBalanceEncryptionJob
-*BatchControllerApi* | [**bankLinkEncryptionJobUsingGET**](docs/BatchControllerApi.md#bankLinkEncryptionJobUsingGET) | **GET** /bank_link_encryption | bankLinkEncryptionJob
-*BatchControllerApi* | [**clientAddressEncryptionJobUsingGET**](docs/BatchControllerApi.md#clientAddressEncryptionJobUsingGET) | **GET** /client_address_encryption | clientAddressEncryptionJob
-*BatchControllerApi* | [**clientCitizenshipEncryptionJobUsingGET**](docs/BatchControllerApi.md#clientCitizenshipEncryptionJobUsingGET) | **GET** /client_citizenship_encryption | clientCitizenshipEncryptionJob
-*BatchControllerApi* | [**clientEncryptionJobUsingGET**](docs/BatchControllerApi.md#clientEncryptionJobUsingGET) | **GET** /client_encryption | clientEncryptionJob
 *BenchmarkApi* | [**createBenchmarkUsingPost**](docs/BenchmarkApi.md#createBenchmarkUsingPost) | **POST** /benchmark | Create a benchmark
 *BenchmarkApi* | [**deleteBenchmarkUsingDelete**](docs/BenchmarkApi.md#deleteBenchmarkUsingDelete) | **DELETE** /benchmark/{benchmark_id} | Delete a benchmark
 *BenchmarkApi* | [**getBenchmarkAllUsingGet**](docs/BenchmarkApi.md#getBenchmarkAllUsingGet) | **GET** /benchmark | List all benchmarks
@@ -227,6 +230,14 @@ Class | Method | HTTP request | Description
 *BulkApi* | [**deleteBulkUsingDelete**](docs/BulkApi.md#deleteBulkUsingDelete) | **DELETE** /bulk/{entity_uri} | Delete a bulk data
 *BulkApi* | [**getBulkStatusUsingGet**](docs/BulkApi.md#getBulkStatusUsingGet) | **GET** /bulk/status/{id} | Status of bulk transaction
 *BulkApi* | [**updateBulkUsingPut**](docs/BulkApi.md#updateBulkUsingPut) | **PUT** /bulk/{entity_uri} | Update a bulk data
+*BusinessApi* | [**createBusinessUsingPost**](docs/BusinessApi.md#createBusinessUsingPost) | **POST** /business | Create a business
+*BusinessApi* | [**deleteBusinessUsingDelete**](docs/BusinessApi.md#deleteBusinessUsingDelete) | **DELETE** /business/{business_id} | Delete a business
+*BusinessApi* | [**getBusinessAllUsingGet**](docs/BusinessApi.md#getBusinessAllUsingGet) | **GET** /business | List all business
+*BusinessApi* | [**getBusinessAssetSizeUsingGet**](docs/BusinessApi.md#getBusinessAssetSizeUsingGet) | **GET** /business/{business_id}/asset_size | List all business asset sizes
+*BusinessApi* | [**getBusinessClientTransactionAllUsingGet**](docs/BusinessApi.md#getBusinessClientTransactionAllUsingGet) | **GET** /business/{business_id}/transaction | List all business transactions
+*BusinessApi* | [**getBusinessHoldingUsingGet**](docs/BusinessApi.md#getBusinessHoldingUsingGet) | **GET** /business/{business_id}/holding | List all business holdings
+*BusinessApi* | [**getBusinessUsingGet**](docs/BusinessApi.md#getBusinessUsingGet) | **GET** /business/{business_id} | Retrieve a business
+*BusinessApi* | [**updateBusinessUsingPut**](docs/BusinessApi.md#updateBusinessUsingPut) | **PUT** /business/{business_id} | Update a business
 *CardApi* | [**createCardProgramUsingPost**](docs/CardApi.md#createCardProgramUsingPost) | **POST** /card_program | Create a cardProgram request
 *CardApi* | [**createCardUsingPost**](docs/CardApi.md#createCardUsingPost) | **POST** /card | Create a card request
 *CardApi* | [**deleteCardProgramUsingDelete**](docs/CardApi.md#deleteCardProgramUsingDelete) | **DELETE** /card_program/{card_program_id} | Delete an cardProgram
@@ -239,10 +250,8 @@ Class | Method | HTTP request | Description
 *CardApi* | [**getCardUsingGet**](docs/CardApi.md#getCardUsingGet) | **GET** /card/{card_id} | Retrieve a card request
 *CardApi* | [**updateCardProgramUsingPut**](docs/CardApi.md#updateCardProgramUsingPut) | **PUT** /card_program/{card_program_id} | Update an cardProgram
 *CardApi* | [**updateCardUsingPut**](docs/CardApi.md#updateCardUsingPut) | **PUT** /card/{card_id} | Update a card request
-*ClientApi* | [**createClientHydroUsingPost**](docs/ClientApi.md#createClientHydroUsingPost) | **POST** /client_hydro | Create a client-hydro relationship
 *ClientApi* | [**createClientStatusUsingPost**](docs/ClientApi.md#createClientStatusUsingPost) | **POST** /client_status | Create an client status
 *ClientApi* | [**createClientUsingPost**](docs/ClientApi.md#createClientUsingPost) | **POST** /client | Create a client
-*ClientApi* | [**deleteClientHydroUsingDelete**](docs/ClientApi.md#deleteClientHydroUsingDelete) | **DELETE** /client_hydro/{client_hydro_id} | Delete a client-hydro relationship
 *ClientApi* | [**deleteClientStatusUsingDelete**](docs/ClientApi.md#deleteClientStatusUsingDelete) | **DELETE** /client_status/{client_status_id} | Delete an client status
 *ClientApi* | [**deleteClientUsingDelete**](docs/ClientApi.md#deleteClientUsingDelete) | **DELETE** /client/{client_id} | Delete a client
 *ClientApi* | [**getClientAccountOverviewUsingGet**](docs/ClientApi.md#getClientAccountOverviewUsingGet) | **GET** /client/{client_id}/account_overview | List all client Account overview
@@ -251,13 +260,10 @@ Class | Method | HTTP request | Description
 *ClientApi* | [**getClientAssetSizeUsingGet**](docs/ClientApi.md#getClientAssetSizeUsingGet) | **GET** /client/{client_id}/asset_size | List all client asset sizes
 *ClientApi* | [**getClientGoalOverviewUsingGet**](docs/ClientApi.md#getClientGoalOverviewUsingGet) | **GET** /client/{client_id}/goal_overview | Retrieve client&#39;s goal details 
 *ClientApi* | [**getClientHoldingUsingGet**](docs/ClientApi.md#getClientHoldingUsingGet) | **GET** /client/{client_id}/holding | List all client holdings
-*ClientApi* | [**getClientHydroAllUsingGet**](docs/ClientApi.md#getClientHydroAllUsingGet) | **GET** /client_hydro | List all client-hydro relationship
-*ClientApi* | [**getClientHydroUsingGet**](docs/ClientApi.md#getClientHydroUsingGet) | **GET** /client_hydro/{client_hydro_id} | Retrieve a client-hydro relationship
 *ClientApi* | [**getClientStatusAllUsingGet**](docs/ClientApi.md#getClientStatusAllUsingGet) | **GET** /client_status | List all client statuses
 *ClientApi* | [**getClientStatusUsingGet**](docs/ClientApi.md#getClientStatusUsingGet) | **GET** /client_status/{client_status_id} | Retrieve an client status
 *ClientApi* | [**getClientTransactionAllUsingGet**](docs/ClientApi.md#getClientTransactionAllUsingGet) | **GET** /client/{client_id}/transaction | List all client transactions
 *ClientApi* | [**getClientUsingGet**](docs/ClientApi.md#getClientUsingGet) | **GET** /client/{client_id} | Retrieve a client
-*ClientApi* | [**updateClientHydroUsingPut**](docs/ClientApi.md#updateClientHydroUsingPut) | **PUT** /client_hydro/{client_hydro_id} | Update a client-hydro relationship
 *ClientApi* | [**updateClientStatusUsingPut**](docs/ClientApi.md#updateClientStatusUsingPut) | **PUT** /client_status/{client_status_id} | Update an client status
 *ClientApi* | [**updateClientUsingPut**](docs/ClientApi.md#updateClientUsingPut) | **PUT** /client/{client_id} | Update a client
 *CustomerApi* | [**createCustomerRevenueUsingPost**](docs/CustomerApi.md#createCustomerRevenueUsingPost) | **POST** /customer_revenue | Create a customer revenue
@@ -291,11 +297,6 @@ Class | Method | HTTP request | Description
 *DocumentApi* | [**getDocumentAllUsingGet**](docs/DocumentApi.md#getDocumentAllUsingGet) | **GET** /document | List all Documents
 *DocumentApi* | [**getDocumentUsingGet**](docs/DocumentApi.md#getDocumentUsingGet) | **GET** /document/{document_id} | Retrieve a Tenant Document by Document Id
 *DocumentApi* | [**updateDocumentUsingPut**](docs/DocumentApi.md#updateDocumentUsingPut) | **PUT** /document/{document_id} | Update a Tenant Document
-*FaqApi* | [**createFaqUsingPost**](docs/FaqApi.md#createFaqUsingPost) | **POST** /faq | Create a FAQ
-*FaqApi* | [**deleteFaqUsingDelete**](docs/FaqApi.md#deleteFaqUsingDelete) | **DELETE** /faq/{faq_id} | Delete a FAQ
-*FaqApi* | [**getFaqAllUsingGet**](docs/FaqApi.md#getFaqAllUsingGet) | **GET** /faq | List all FAQ
-*FaqApi* | [**getFaqUsingGet**](docs/FaqApi.md#getFaqUsingGet) | **GET** /faq/{faq_id} | Retrieve a FAQ
-*FaqApi* | [**updateFaqUsingPut**](docs/FaqApi.md#updateFaqUsingPut) | **PUT** /faq/{faq_id} | Update a FAQ
 *FeatureApi* | [**createFeatureTrackUsingPost**](docs/FeatureApi.md#createFeatureTrackUsingPost) | **POST** /feature_track | Create a Feature Track
 *FeatureApi* | [**createFeatureUsingPost**](docs/FeatureApi.md#createFeatureUsingPost) | **POST** /feature | Create a  Feature
 *FeatureApi* | [**deleteFeatureTrackUsingDelete**](docs/FeatureApi.md#deleteFeatureTrackUsingDelete) | **DELETE** /feature_track/{feature_track_id} | Delete a Feature Track
@@ -306,11 +307,6 @@ Class | Method | HTTP request | Description
 *FeatureApi* | [**getFeatureUsingGet**](docs/FeatureApi.md#getFeatureUsingGet) | **GET** /feature/{feature_id} | Retrieve a Feature
 *FeatureApi* | [**updateFeatureTrackUsingPut**](docs/FeatureApi.md#updateFeatureTrackUsingPut) | **PUT** /feature_track/{feature_track_id} | Update a Feature Track
 *FeatureApi* | [**updateFeatureUsingPut**](docs/FeatureApi.md#updateFeatureUsingPut) | **PUT** /feature/{feature_id} | Update a Feature
-*FinancialOfferApi* | [**createFinancialOfferUsingPost**](docs/FinancialOfferApi.md#createFinancialOfferUsingPost) | **POST** /financial_offer | Create a comparison request
-*FinancialOfferApi* | [**deleteFinancialOfferUsingDelete**](docs/FinancialOfferApi.md#deleteFinancialOfferUsingDelete) | **DELETE** /financial_offer/{financial_offer_id} | Delete a comparison request
-*FinancialOfferApi* | [**getFinancialOfferAllUsingGet**](docs/FinancialOfferApi.md#getFinancialOfferAllUsingGet) | **GET** /financial_offer | List all comparison requests
-*FinancialOfferApi* | [**getFinancialOfferUsingGet**](docs/FinancialOfferApi.md#getFinancialOfferUsingGet) | **GET** /financial_offer/{financial_offer_id} | Retrieve a comparison request
-*FinancialOfferApi* | [**updateFinancialOfferUsingPut**](docs/FinancialOfferApi.md#updateFinancialOfferUsingPut) | **PUT** /financial_offer/{financial_offer_id} | Update a comparison request
 *FinancialStatementApi* | [**createFinancialStatementUsingPost**](docs/FinancialStatementApi.md#createFinancialStatementUsingPost) | **POST** /financial_statement | Create an financialStatement
 *FinancialStatementApi* | [**deleteFinancialStatementUsingDelete**](docs/FinancialStatementApi.md#deleteFinancialStatementUsingDelete) | **DELETE** /financial_statement/{financial_statement_id} | Delete an financialStatement
 *FinancialStatementApi* | [**getFinancialStatementAllUsingGet**](docs/FinancialStatementApi.md#getFinancialStatementAllUsingGet) | **GET** /financial_statement | List all financialStatement
@@ -363,21 +359,6 @@ Class | Method | HTTP request | Description
 *HouseholdApi* | [**getHouseholdClientTransactionUsingGet**](docs/HouseholdApi.md#getHouseholdClientTransactionUsingGet) | **GET** /household/{household_id}/transaction | List all household&#39;s client ids transactions
 *HouseholdApi* | [**getHouseholdUsingGet**](docs/HouseholdApi.md#getHouseholdUsingGet) | **GET** /household/{household_id} | Retrieve a Household
 *HouseholdApi* | [**updateHouseholdUsingPut**](docs/HouseholdApi.md#updateHouseholdUsingPut) | **PUT** /household/{household_id} | Update a Household
-*InsuranceApi* | [**createInsuranceCoverageUsingPost**](docs/InsuranceApi.md#createInsuranceCoverageUsingPost) | **POST** /insurance_coverage | Create a insurance coverage request
-*InsuranceApi* | [**createInsuranceDiscountUsingPost**](docs/InsuranceApi.md#createInsuranceDiscountUsingPost) | **POST** /insurance_discount | Create a insurance discount request
-*InsuranceApi* | [**createInsuranceQuoteUsingPost**](docs/InsuranceApi.md#createInsuranceQuoteUsingPost) | **POST** /insurance_quote | Create a insuranceQuote request
-*InsuranceApi* | [**deleteInsuranceCoverageUsingDelete**](docs/InsuranceApi.md#deleteInsuranceCoverageUsingDelete) | **DELETE** /insurance_coverage/{insurance_coverage_id} | Delete an insurance coverage request
-*InsuranceApi* | [**deleteInsuranceDiscountUsingDelete**](docs/InsuranceApi.md#deleteInsuranceDiscountUsingDelete) | **DELETE** /insurance_discount/{insurance_discount_id} | Delete an insurance discount request
-*InsuranceApi* | [**deleteInsuranceQuoteUsingDelete**](docs/InsuranceApi.md#deleteInsuranceQuoteUsingDelete) | **DELETE** /insurance_quote/{insurance_quote_id} | Delete a insuranceQuote request
-*InsuranceApi* | [**getInsuranceCoverageAllUsingGet**](docs/InsuranceApi.md#getInsuranceCoverageAllUsingGet) | **GET** /insurance_coverage | Get all insurance coverage request
-*InsuranceApi* | [**getInsuranceCoverageUsingGet**](docs/InsuranceApi.md#getInsuranceCoverageUsingGet) | **GET** /insurance_coverage/{insurance_coverage_id} | Get a insurance coverage request
-*InsuranceApi* | [**getInsuranceDiscountAllUsingGet**](docs/InsuranceApi.md#getInsuranceDiscountAllUsingGet) | **GET** /insurance_discount | Get all insurance discount request
-*InsuranceApi* | [**getInsuranceDiscountUsingGet**](docs/InsuranceApi.md#getInsuranceDiscountUsingGet) | **GET** /insurance_discount/{insurance_discount_id} | Get a insurance discount request
-*InsuranceApi* | [**getInsuranceQuoteAllUsingGet**](docs/InsuranceApi.md#getInsuranceQuoteAllUsingGet) | **GET** /insurance_quote | List all insuranceQuote requests
-*InsuranceApi* | [**getInsuranceQuoteUsingGet**](docs/InsuranceApi.md#getInsuranceQuoteUsingGet) | **GET** /insurance_quote/{insurance_quote_id} | Retrieve a insuranceQuote request
-*InsuranceApi* | [**updateInsuranceCoverageUsingPut**](docs/InsuranceApi.md#updateInsuranceCoverageUsingPut) | **PUT** /insurance_coverage/{insurance_coverage_id} | Update a insurance coverage request
-*InsuranceApi* | [**updateInsuranceDiscountUsingPut**](docs/InsuranceApi.md#updateInsuranceDiscountUsingPut) | **PUT** /insurance_discount/{insurance_discount_id} | Update an insurance discount 
-*InsuranceApi* | [**updateInsuranceQuoteUsingPut**](docs/InsuranceApi.md#updateInsuranceQuoteUsingPut) | **PUT** /insurance_quote/{insurance_quote_id} | Update a insuranceQuote request
 *InvoiceApi* | [**createInvoicePaymentUsingPost**](docs/InvoiceApi.md#createInvoicePaymentUsingPost) | **POST** /invoice_payment | Create a invoicePayment
 *InvoiceApi* | [**createInvoiceUsingPost**](docs/InvoiceApi.md#createInvoiceUsingPost) | **POST** /invoice | Create a invoice
 *InvoiceApi* | [**deleteInvoicePaymentUsingDelete**](docs/InvoiceApi.md#deleteInvoicePaymentUsingDelete) | **DELETE** /invoice_payment/{invoice_payment_id} | Delete a invoicePayment
@@ -388,26 +369,6 @@ Class | Method | HTTP request | Description
 *InvoiceApi* | [**getInvoiceUsingGet**](docs/InvoiceApi.md#getInvoiceUsingGet) | **GET** /invoice/{invoice_id} | Retrieve a invoice
 *InvoiceApi* | [**updateInvoicePaymentUsingPut**](docs/InvoiceApi.md#updateInvoicePaymentUsingPut) | **PUT** /invoice_payment/{invoice_payment_id} | Update a invoicePayment
 *InvoiceApi* | [**updateInvoiceUsingPut**](docs/InvoiceApi.md#updateInvoiceUsingPut) | **PUT** /invoice/{invoice_id} | Update a invoice
-*MarketingApi* | [**createCampaignDataUsingPost**](docs/MarketingApi.md#createCampaignDataUsingPost) | **POST** /campaign_data | Create a campaign data record
-*MarketingApi* | [**createCampaignPlanUsingPost**](docs/MarketingApi.md#createCampaignPlanUsingPost) | **POST** /campaign_plan | Create a campaign plan
-*MarketingApi* | [**createCampaignUsingPost**](docs/MarketingApi.md#createCampaignUsingPost) | **POST** /campaign | Create a campaign
-*MarketingApi* | [**createClientCampaignUsingPost**](docs/MarketingApi.md#createClientCampaignUsingPost) | **POST** /client_campaign | Mark a client signing up through a campaign
-*MarketingApi* | [**deleteCampaignDataUsingDelete**](docs/MarketingApi.md#deleteCampaignDataUsingDelete) | **DELETE** /campaign_data/{campaign_data_id} | Delete a campaign data record
-*MarketingApi* | [**deleteCampaignPlanUsingDelete**](docs/MarketingApi.md#deleteCampaignPlanUsingDelete) | **DELETE** /campaign_plan/{campaign_plan_id} | Delete a campaign plan
-*MarketingApi* | [**deleteCampaignUsingDelete**](docs/MarketingApi.md#deleteCampaignUsingDelete) | **DELETE** /campaign/{campaign_id} | Delete a campaign
-*MarketingApi* | [**deleteClientCampaignUsingDelete**](docs/MarketingApi.md#deleteClientCampaignUsingDelete) | **DELETE** /client_campaign/{client_campaign_id} | Delete a clients/ips pair under a campaign
-*MarketingApi* | [**getCampaignAllUsingGet**](docs/MarketingApi.md#getCampaignAllUsingGet) | **GET** /campaign | List all campaigns
-*MarketingApi* | [**getCampaignDataAllUsingGet**](docs/MarketingApi.md#getCampaignDataAllUsingGet) | **GET** /campaign_data | List all campaign data
-*MarketingApi* | [**getCampaignDataUsingGet**](docs/MarketingApi.md#getCampaignDataUsingGet) | **GET** /campaign_data/{campaign_data_id} | Retrieve a campaign data record
-*MarketingApi* | [**getCampaignPlanAllUsingGet**](docs/MarketingApi.md#getCampaignPlanAllUsingGet) | **GET** /campaign_plan | List all campaign plans
-*MarketingApi* | [**getCampaignPlanUsingGet**](docs/MarketingApi.md#getCampaignPlanUsingGet) | **GET** /campaign_plan/{campaign_plan_id} | Retrieve a campaign plan
-*MarketingApi* | [**getCampaignUsingGet**](docs/MarketingApi.md#getCampaignUsingGet) | **GET** /campaign/{campaign_id} | Retrieve a campaign
-*MarketingApi* | [**getClientCampaignAllUsingGet**](docs/MarketingApi.md#getClientCampaignAllUsingGet) | **GET** /client_campaign | List all clients/ips under a campaign
-*MarketingApi* | [**getClientCampaignUsingGet**](docs/MarketingApi.md#getClientCampaignUsingGet) | **GET** /client_campaign/{client_campaign_id} | Retrieve a clients/ips pair under a campaign
-*MarketingApi* | [**updateCampaignDataUsingPut**](docs/MarketingApi.md#updateCampaignDataUsingPut) | **PUT** /campaign_data/{campaign_data_id} | Update a campaign data record
-*MarketingApi* | [**updateCampaignPlanUsingPut**](docs/MarketingApi.md#updateCampaignPlanUsingPut) | **PUT** /campaign_plan/{campaign_plan_id} | Update a campaign plan
-*MarketingApi* | [**updateCampaignUsingPut**](docs/MarketingApi.md#updateCampaignUsingPut) | **PUT** /campaign/{campaign_id} | Update a campaign
-*MarketingApi* | [**updateClientCampaignUsingPut**](docs/MarketingApi.md#updateClientCampaignUsingPut) | **PUT** /client_campaign/{client_campaign_id} | Update a clients/ips pair under a campaign
 *ModelApi* | [**createModelAssetSizeUsingPost**](docs/ModelApi.md#createModelAssetSizeUsingPost) | **POST** /model_asset_size | Create a model asset size
 *ModelApi* | [**createModelChangeUsingPost**](docs/ModelApi.md#createModelChangeUsingPost) | **POST** /model/{model_id}/model_change | Change a model composition
 *ModelApi* | [**createModelCommentUsingPost**](docs/ModelApi.md#createModelCommentUsingPost) | **POST** /model_comment | Create a model commentary
@@ -546,15 +507,15 @@ Class | Method | HTTP request | Description
 *QuestionnaireApi* | [**updateClientResponseUsingPut**](docs/QuestionnaireApi.md#updateClientResponseUsingPut) | **PUT** /client_response/{client_response_id} | Update a client response
 *QuestionnaireApi* | [**updateQuestionUsingPut**](docs/QuestionnaireApi.md#updateQuestionUsingPut) | **PUT** /question/{question_id} | Update a question.
 *QuestionnaireApi* | [**updateQuestionnaireUsingPut**](docs/QuestionnaireApi.md#updateQuestionnaireUsingPut) | **PUT** /questionnaire/{questionnaire_id} | Update a questionnaire
-*ResourceApi* | [**createFxRateBulkUsingPost**](docs/ResourceApi.md#createFxRateBulkUsingPost) | **POST** /resource/fx_rate | Create a bulk fxRate
+*ResourceApi* | [**getAggregationAccountCategoryMappingUsingGet**](docs/ResourceApi.md#getAggregationAccountCategoryMappingUsingGet) | **GET** /resource/account_category | Get All Aggregation Account Category mapping
+*ResourceApi* | [**getAggregationAccountTransactionCategoryMappingUsingGet**](docs/ResourceApi.md#getAggregationAccountTransactionCategoryMappingUsingGet) | **GET** /resource/merchant_category | Get All Aggregation Account Transaction Category mapping
 *ResourceApi* | [**getAllCountryUsingGet**](docs/ResourceApi.md#getAllCountryUsingGet) | **GET** /resource/country | Get All Countries
 *ResourceApi* | [**getAllCurrencyUsingGet**](docs/ResourceApi.md#getAllCurrencyUsingGet) | **GET** /resource/currency | Get All Currencies
 *ResourceApi* | [**getAllMerchantCategoryCodeUsingGet**](docs/ResourceApi.md#getAllMerchantCategoryCodeUsingGet) | **GET** /resource/merchant_category_code | Get All Merchant Category Codes
 *ResourceApi* | [**getAllStatesUsingGet**](docs/ResourceApi.md#getAllStatesUsingGet) | **GET** /resource/state | List all state resource
 *ResourceApi* | [**getAllStatisticsUsingGet**](docs/ResourceApi.md#getAllStatisticsUsingGet) | **GET** /resource/statistic | List all statistic resource
 *ResourceApi* | [**getCurrencyExchangeRateAllUsingGet**](docs/ResourceApi.md#getCurrencyExchangeRateAllUsingGet) | **GET** /resource/fx_rate | List all fxRates
-*ResourceMerchantControllerApi* | [**getAllMerchantsUsingGET**](docs/ResourceMerchantControllerApi.md#getAllMerchantsUsingGET) | **GET** /resource/merchant | getAllMerchants
-*ResourceMerchantControllerApi* | [**saveMerchantsUsingPOST**](docs/ResourceMerchantControllerApi.md#saveMerchantsUsingPOST) | **POST** /resource/merchant | saveMerchants
+*ResourceApi* | [**getMerchantsAllUsingGet**](docs/ResourceApi.md#getMerchantsAllUsingGet) | **GET** /resource/merchant | Get all merchants
 *RiskProfileApi* | [**createRiskProfileUsingPost**](docs/RiskProfileApi.md#createRiskProfileUsingPost) | **POST** /risk_profile | Create a Risk Profile
 *RiskProfileApi* | [**deleteRiskProfileUsingDelete**](docs/RiskProfileApi.md#deleteRiskProfileUsingDelete) | **DELETE** /risk_profile/{risk_profile_id} | Delete a Risk Profile
 *RiskProfileApi* | [**getRiskProfileAllUsingGet**](docs/RiskProfileApi.md#getRiskProfileAllUsingGet) | **GET** /risk_profile | Get All Risk Profile
@@ -588,31 +549,11 @@ Class | Method | HTTP request | Description
 *SecuritiesApi* | [**updateSecurityExclusionUsingPut**](docs/SecuritiesApi.md#updateSecurityExclusionUsingPut) | **PUT** /security_exclusion/{security_exclusion_id} | Update a security exclusion
 *SecuritiesApi* | [**updateSecurityPriceUsingPut**](docs/SecuritiesApi.md#updateSecurityPriceUsingPut) | **PUT** /security_price/{security_price_id} | Update a security price
 *SecuritiesApi* | [**updateSecurityUsingPut**](docs/SecuritiesApi.md#updateSecurityUsingPut) | **PUT** /security/{security_id} | Update a security
-*SupportApi* | [**createChatUsingPost**](docs/SupportApi.md#createChatUsingPost) | **POST** /chat | Create a Chat
-*SupportApi* | [**createConsultationUsingPost**](docs/SupportApi.md#createConsultationUsingPost) | **POST** /consultation | Create a CIO Consultation
-*SupportApi* | [**createSaleUsingPost**](docs/SupportApi.md#createSaleUsingPost) | **POST** /sales | Create a sales inquiry
-*SupportApi* | [**createSupportTicketCommentUsingPost**](docs/SupportApi.md#createSupportTicketCommentUsingPost) | **POST** /support_ticket_comment | Create a support ticket comment
-*SupportApi* | [**createSupportTicketUsingPost**](docs/SupportApi.md#createSupportTicketUsingPost) | **POST** /support_ticket | Create a support ticket
-*SupportApi* | [**deleteChatUsingDelete**](docs/SupportApi.md#deleteChatUsingDelete) | **DELETE** /chat/{chat_id} | Delete a Chat
-*SupportApi* | [**deleteConsultationUsingDelete**](docs/SupportApi.md#deleteConsultationUsingDelete) | **DELETE** /consultation/{consultation_id} | Delete a CIO Consultation
-*SupportApi* | [**deleteSaleUsingDelete**](docs/SupportApi.md#deleteSaleUsingDelete) | **DELETE** /sales/{sales_id} | Delete a sales inquiry
-*SupportApi* | [**deleteSupportTicketCommentUsingDelete**](docs/SupportApi.md#deleteSupportTicketCommentUsingDelete) | **DELETE** /support_ticket_comment/{support_ticket_comment_id} | Delete a support ticket comment
-*SupportApi* | [**deleteSupportTicketUsingDelete**](docs/SupportApi.md#deleteSupportTicketUsingDelete) | **DELETE** /support_ticket/{support_ticket_id} | Delete a support ticket
-*SupportApi* | [**getChatAllUsingGet**](docs/SupportApi.md#getChatAllUsingGet) | **GET** /chat | List all open chats
-*SupportApi* | [**getChatUsingGet**](docs/SupportApi.md#getChatUsingGet) | **GET** /chat/{chat_id} | Retrieve a Chat
-*SupportApi* | [**getConsultationAllUsingGet**](docs/SupportApi.md#getConsultationAllUsingGet) | **GET** /consultation | List all CIO Consultation
-*SupportApi* | [**getConsultationUsingGet**](docs/SupportApi.md#getConsultationUsingGet) | **GET** /consultation/{consultation_id} | Retrieve a CIO Consultation
-*SupportApi* | [**getSaleAllUsingGet**](docs/SupportApi.md#getSaleAllUsingGet) | **GET** /sales | List all sales inquiries
-*SupportApi* | [**getSaleUsingGet**](docs/SupportApi.md#getSaleUsingGet) | **GET** /sales/{sales_id} | Retrieve a sales record
-*SupportApi* | [**getSupportTicketAllUsingGet**](docs/SupportApi.md#getSupportTicketAllUsingGet) | **GET** /support_ticket | List all support tickets
-*SupportApi* | [**getSupportTicketCommentAllUsingGet**](docs/SupportApi.md#getSupportTicketCommentAllUsingGet) | **GET** /support_ticket_comment | List all support ticket comments
-*SupportApi* | [**getSupportTicketCommentUsingGet**](docs/SupportApi.md#getSupportTicketCommentUsingGet) | **GET** /support_ticket_comment/{support_ticket_comment_id} | Retrieve a support ticket comment
-*SupportApi* | [**getSupportTicketUsingGet**](docs/SupportApi.md#getSupportTicketUsingGet) | **GET** /support_ticket/{support_ticket_id} | Retrieve a support ticket
-*SupportApi* | [**updateChatUsingPut**](docs/SupportApi.md#updateChatUsingPut) | **PUT** /chat/{chat_id} | Update a Chat
-*SupportApi* | [**updateConsultationUsingPut**](docs/SupportApi.md#updateConsultationUsingPut) | **PUT** /consultation/{consultation_id} | Update a CIO Consultation
-*SupportApi* | [**updateSaleUsingPut**](docs/SupportApi.md#updateSaleUsingPut) | **PUT** /sales/{sales_id} | Update a sales inquiry
-*SupportApi* | [**updateSupportTicketCommentUsingPut**](docs/SupportApi.md#updateSupportTicketCommentUsingPut) | **PUT** /support_ticket_comment/{support_ticket_comment_id} | Update a support ticket comment
-*SupportApi* | [**updateSupportTicketUsingPut**](docs/SupportApi.md#updateSupportTicketUsingPut) | **PUT** /support_ticket/{support_ticket_id} | Update a support ticket
+*SpendingControlApi* | [**createSpendingControlUsingPost**](docs/SpendingControlApi.md#createSpendingControlUsingPost) | **POST** /spending_control | Create a Spending Control
+*SpendingControlApi* | [**deleteSpendingControlUsingDelete**](docs/SpendingControlApi.md#deleteSpendingControlUsingDelete) | **DELETE** /spending_control/{spending_control_id} | Delete a Spending Control
+*SpendingControlApi* | [**getSpendingControlAllUsingGet**](docs/SpendingControlApi.md#getSpendingControlAllUsingGet) | **GET** /spending_control | List all Spending Control
+*SpendingControlApi* | [**getSpendingControlUsingGet**](docs/SpendingControlApi.md#getSpendingControlUsingGet) | **GET** /spending_control/{spending_control_id} | Retrieve a Spending Control
+*SpendingControlApi* | [**updateSpendingControlUsingPut**](docs/SpendingControlApi.md#updateSpendingControlUsingPut) | **PUT** /spending_control/{spending_control_id} | Update a Spending Control
 *UtilsApi* | [**createReasonCodeUsingPost**](docs/UtilsApi.md#createReasonCodeUsingPost) | **POST** /reason_code | Create a reason code
 *UtilsApi* | [**createStageUsingPost**](docs/UtilsApi.md#createStageUsingPost) | **POST** /stage | Create an account stage
 *UtilsApi* | [**createTransactionCodeUsingPost**](docs/UtilsApi.md#createTransactionCodeUsingPost) | **POST** /transaction_code | Create a transaction code
@@ -645,6 +586,7 @@ Class | Method | HTTP request | Description
  - [AccountStatus](docs/AccountStatus.md)
  - [AccountType](docs/AccountType.md)
  - [AclClientPermissionVO](docs/AclClientPermissionVO.md)
+ - [AdminClient](docs/AdminClient.md)
  - [AggregationAccount](docs/AggregationAccount.md)
  - [AggregationAccountBalance](docs/AggregationAccountBalance.md)
  - [AggregationAccountHolding](docs/AggregationAccountHolding.md)
@@ -669,31 +611,27 @@ Class | Method | HTTP request | Description
  - [Brokers](docs/Brokers.md)
  - [Budget](docs/Budget.md)
  - [BudgetAggregationAccount](docs/BudgetAggregationAccount.md)
+ - [Business](docs/Business.md)
+ - [BusinessAddress](docs/BusinessAddress.md)
  - [BudgetObject](docs/BudgetObject.md)
  - [BulkTransaction](docs/BulkTransaction.md)
  - [BulkTransactionVO](docs/BulkTransactionVO.md)
- - [Campaign](docs/Campaign.md)
- - [CampaignData](docs/CampaignData.md)
- - [CampaignPlan](docs/CampaignPlan.md)
- - [CampaignPlanRate](docs/CampaignPlanRate.md)
  - [Card](docs/Card.md)
  - [CardAddress](docs/CardAddress.md)
  - [CardProgram](docs/CardProgram.md)
  - [Cash](docs/Cash.md)
  - [CategoriesMap](docs/CategoriesMap.md)
- - [ChatInfo](docs/ChatInfo.md)
+ - [CategoryInternalResponseVO](docs/CategoryInternalResponseVO.md)
+ - [CategoryResponseVO](docs/CategoryResponseVO.md)
  - [Check](docs/Check.md)
  - [CheckImages](docs/CheckImages.md)
  - [Client](docs/Client.md)
  - [ClientAccountMapping](docs/ClientAccountMapping.md)
  - [ClientAddress](docs/ClientAddress.md)
- - [ClientCampaignMapping](docs/ClientCampaignMapping.md)
- - [ClientHydro](docs/ClientHydro.md)
  - [ClientRelationship](docs/ClientRelationship.md)
  - [ClientResponse](docs/ClientResponse.md)
  - [ClientStatus](docs/ClientStatus.md)
  - [ClientViewGoalData](docs/ClientViewGoalData.md)
- - [Consultation](docs/Consultation.md)
  - [Country](docs/Country.md)
  - [Currency](docs/Currency.md)
  - [Customer](docs/Customer.md)
@@ -708,26 +646,17 @@ Class | Method | HTTP request | Description
  - [Document](docs/Document.md)
  - [Employment](docs/Employment.md)
  - [ExternalAccountTransfer](docs/ExternalAccountTransfer.md)
- - [FAQKeyword](docs/FAQKeyword.md)
- - [Faq](docs/Faq.md)
  - [Feature](docs/Feature.md)
  - [FeatureTrack](docs/FeatureTrack.md)
- - [FinancialOffer](docs/FinancialOffer.md)
  - [FinancialStatement](docs/FinancialStatement.md)
  - [Funding](docs/Funding.md)
  - [FundingRequestMap](docs/FundingRequestMap.md)
- - [FxRate](docs/FxRate.md)
  - [FxRateView](docs/FxRateView.md)
  - [Goal](docs/Goal.md)
  - [GoalAccountMapping](docs/GoalAccountMapping.md)
  - [GoalTrack](docs/GoalTrack.md)
  - [GoalTrackAccounts](docs/GoalTrackAccounts.md)
  - [Household](docs/Household.md)
- - [InsuranceCoverage](docs/InsuranceCoverage.md)
- - [InsuranceCoverageMap](docs/InsuranceCoverageMap.md)
- - [InsuranceDiscount](docs/InsuranceDiscount.md)
- - [InsuranceDiscountMap](docs/InsuranceDiscountMap.md)
- - [InsuranceQuote](docs/InsuranceQuote.md)
  - [Investment](docs/Investment.md)
  - [Invoice](docs/Invoice.md)
  - [InvoicePayment](docs/InvoicePayment.md)
@@ -760,11 +689,13 @@ Class | Method | HTTP request | Description
  - [OverflowBankLinkMap](docs/OverflowBankLinkMap.md)
  - [OverflowSettings](docs/OverflowSettings.md)
  - [OverflowVO](docs/OverflowVO.md)
+ - [Ownership](docs/Ownership.md)
  - [PageAccount](docs/PageAccount.md)
  - [PageAccountAllocationMapping](docs/PageAccountAllocationMapping.md)
  - [PageAccountPermissionVO](docs/PageAccountPermissionVO.md)
  - [PageAccountStatus](docs/PageAccountStatus.md)
  - [PageAccountType](docs/PageAccountType.md)
+ - [PageAdminClient](docs/PageAdminClient.md)
  - [PageAggregationAccount](docs/PageAggregationAccount.md)
  - [PageAggregationAccountBalance](docs/PageAggregationAccountBalance.md)
  - [PageAggregationAccountHolding](docs/PageAggregationAccountHolding.md)
@@ -777,18 +708,12 @@ Class | Method | HTTP request | Description
  - [PageBankLink](docs/PageBankLink.md)
  - [PageBenchmark](docs/PageBenchmark.md)
  - [PageBudget](docs/PageBudget.md)
- - [PageCampaign](docs/PageCampaign.md)
- - [PageCampaignData](docs/PageCampaignData.md)
- - [PageCampaignPlan](docs/PageCampaignPlan.md)
+ - [PageBusiness](docs/PageBusiness.md)
  - [PageCard](docs/PageCard.md)
  - [PageCardProgram](docs/PageCardProgram.md)
- - [PageChatInfo](docs/PageChatInfo.md)
  - [PageClient](docs/PageClient.md)
- - [PageClientCampaignMapping](docs/PageClientCampaignMapping.md)
- - [PageClientHydro](docs/PageClientHydro.md)
  - [PageClientResponse](docs/PageClientResponse.md)
  - [PageClientStatus](docs/PageClientStatus.md)
- - [PageConsultation](docs/PageConsultation.md)
  - [PageCustomer](docs/PageCustomer.md)
  - [PageCustomerRevenue](docs/PageCustomerRevenue.md)
  - [PageDailyDeposit](docs/PageDailyDeposit.md)
@@ -796,18 +721,13 @@ Class | Method | HTTP request | Description
  - [PageDecisionTree](docs/PageDecisionTree.md)
  - [PageDocument](docs/PageDocument.md)
  - [PageExternalAccountTransfer](docs/PageExternalAccountTransfer.md)
- - [PageFaq](docs/PageFaq.md)
  - [PageFeature](docs/PageFeature.md)
  - [PageFeatureTrack](docs/PageFeatureTrack.md)
- - [PageFinancialOffer](docs/PageFinancialOffer.md)
  - [PageFinancialStatement](docs/PageFinancialStatement.md)
  - [PageFunding](docs/PageFunding.md)
  - [PageGoal](docs/PageGoal.md)
  - [PageGoalTrack](docs/PageGoalTrack.md)
  - [PageHousehold](docs/PageHousehold.md)
- - [PageInsuranceCoverage](docs/PageInsuranceCoverage.md)
- - [PageInsuranceDiscount](docs/PageInsuranceDiscount.md)
- - [PageInsuranceQuote](docs/PageInsuranceQuote.md)
  - [PageInvoice](docs/PageInvoice.md)
  - [PageInvoicePayment](docs/PageInvoicePayment.md)
  - [PageMXMerchantRes](docs/PageMXMerchantRes.md)
@@ -839,14 +759,12 @@ Class | Method | HTTP request | Description
  - [PageRiskProfile](docs/PageRiskProfile.md)
  - [PageRoundup](docs/PageRoundup.md)
  - [PageRoundupSettings](docs/PageRoundupSettings.md)
- - [PageSale](docs/PageSale.md)
  - [PageScore](docs/PageScore.md)
  - [PageSecurity](docs/PageSecurity.md)
  - [PageSecurityExclusion](docs/PageSecurityExclusion.md)
  - [PageSecurityPrice](docs/PageSecurityPrice.md)
+ - [PageSpendingControl](docs/PageSpendingControl.md)
  - [PageStage](docs/PageStage.md)
- - [PageSupportTicket](docs/PageSupportTicket.md)
- - [PageSupportTicketComment](docs/PageSupportTicketComment.md)
  - [PageTransactionCode](docs/PageTransactionCode.md)
  - [PageVAccountAssetSize](docs/PageVAccountAssetSize.md)
  - [PageWebhook](docs/PageWebhook.md)
@@ -866,7 +784,6 @@ Class | Method | HTTP request | Description
  - [Roundup](docs/Roundup.md)
  - [RoundupCO](docs/RoundupCO.md)
  - [RoundupSettings](docs/RoundupSettings.md)
- - [Sale](docs/Sale.md)
  - [Score](docs/Score.md)
  - [SecuritiesComposition](docs/SecuritiesComposition.md)
  - [SecuritiesCountry](docs/SecuritiesCountry.md)
@@ -876,13 +793,11 @@ Class | Method | HTTP request | Description
  - [SecurityExclusion](docs/SecurityExclusion.md)
  - [SecurityPrice](docs/SecurityPrice.md)
  - [Sort](docs/Sort.md)
+ - [SpendingControl](docs/SpendingControl.md)
  - [Stage](docs/Stage.md)
  - [Stat](docs/Stat.md)
  - [State](docs/State.md)
  - [StatisticResourceVO](docs/StatisticResourceVO.md)
- - [SupportTicket](docs/SupportTicket.md)
- - [SupportTicketComment](docs/SupportTicketComment.md)
- - [SupportTicketDocument](docs/SupportTicketDocument.md)
  - [TokenDateRequest](docs/TokenDateRequest.md)
  - [TransactionCode](docs/TransactionCode.md)
  - [VAccountAssetSize](docs/VAccountAssetSize.md)

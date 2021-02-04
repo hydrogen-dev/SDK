@@ -33,7 +33,6 @@ Create a new security exclusion for a specific account or portfolio.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -50,8 +49,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 SecuritiesApi apiInstance = new SecuritiesApi();
 SecurityExclusion securityExclusionRequest = new SecurityExclusion(); // SecurityExclusion | securityExclusionRequest
 try {
@@ -94,7 +91,6 @@ Create a new price for a security defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -111,8 +107,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 SecuritiesApi apiInstance = new SecuritiesApi();
 SecurityPrice securityPriceRequest = new SecurityPrice(); // SecurityPrice | securityPriceRequest
 try {
@@ -155,7 +149,6 @@ Create a new security for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -172,8 +165,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 SecuritiesApi apiInstance = new SecuritiesApi();
 Security securitiesInfoRequest = new Security(); // Security | securitiesInfoRequest
 try {
@@ -216,7 +207,6 @@ Permanently delete a security exclusion
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -233,8 +223,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 SecuritiesApi apiInstance = new SecuritiesApi();
 UUID securityExclusionId = new UUID(); // UUID | UUID security_exclusion_id
 try {
@@ -276,7 +264,6 @@ Permanently delete a security price from a security.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -293,8 +280,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 SecuritiesApi apiInstance = new SecuritiesApi();
 UUID securityPriceId = new UUID(); // UUID | UUID security_price_id
 try {
@@ -336,7 +321,6 @@ Permanently delete a security for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -353,8 +337,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 SecuritiesApi apiInstance = new SecuritiesApi();
 UUID securityId = new UUID(); // UUID | UUID security_id
 try {
@@ -396,7 +378,6 @@ Get details for all securities defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -413,8 +394,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 SecuritiesApi apiInstance = new SecuritiesApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -465,7 +444,6 @@ Get details for all security exclusions defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -482,8 +460,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 SecuritiesApi apiInstance = new SecuritiesApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -534,7 +510,6 @@ Retrieve the information for a security exclusion.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -551,8 +526,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 SecuritiesApi apiInstance = new SecuritiesApi();
 UUID securityExclusionId = new UUID(); // UUID | UUID security_exclusion_id
 try {
@@ -595,7 +568,6 @@ Get prices for all securities defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -612,8 +584,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 SecuritiesApi apiInstance = new SecuritiesApi();
 Boolean ascending = false; // Boolean | ascending
 String currencyConversion = "currencyConversion_example"; // String | currency_conversion
@@ -666,7 +636,6 @@ Retrieve the information for a security price for a security.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -683,8 +652,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 SecuritiesApi apiInstance = new SecuritiesApi();
 UUID securityPriceId = new UUID(); // UUID | UUID security_price_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -729,7 +696,6 @@ Retrieve the information for a security defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -746,8 +712,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 SecuritiesApi apiInstance = new SecuritiesApi();
 UUID securityId = new UUID(); // UUID | UUID security_id
 try {
@@ -790,7 +754,6 @@ Update the information for a security exclusion.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -807,10 +770,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 SecuritiesApi apiInstance = new SecuritiesApi();
-SecurityExclusion securityExclusion = new SecurityExclusion(); // SecurityExclusion | security_exclusion
+Object securityExclusion = null; // Object | security_exclusion
 UUID securityExclusionId = new UUID(); // UUID | UUID security_exclusion_id
 try {
     SecurityExclusion result = apiInstance.updateSecurityExclusionUsingPut(securityExclusion, securityExclusionId);
@@ -825,7 +786,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **securityExclusion** | [**SecurityExclusion**](SecurityExclusion.md)| security_exclusion |
+ **securityExclusion** | **Object**| security_exclusion |
  **securityExclusionId** | [**UUID**](.md)| UUID security_exclusion_id |
 
 ### Return type
@@ -853,7 +814,6 @@ Update a security price for a security.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -870,10 +830,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 SecuritiesApi apiInstance = new SecuritiesApi();
-SecurityPrice securityPrice = new SecurityPrice(); // SecurityPrice | security_price
+Object securityPrice = null; // Object | security_price
 UUID securityPriceId = new UUID(); // UUID | UUID security_price_id
 try {
     SecurityPrice result = apiInstance.updateSecurityPriceUsingPut(securityPrice, securityPriceId);
@@ -888,7 +846,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **securityPrice** | [**SecurityPrice**](SecurityPrice.md)| security_price |
+ **securityPrice** | **Object**| security_price |
  **securityPriceId** | [**UUID**](.md)| UUID security_price_id |
 
 ### Return type
@@ -916,7 +874,6 @@ Update a security for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import SecuritiesApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -933,10 +890,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 SecuritiesApi apiInstance = new SecuritiesApi();
-Security security = new Security(); // Security | security
+Object security = null; // Object | security
 UUID securityId = new UUID(); // UUID | UUID security_id
 try {
     Security result = apiInstance.updateSecurityUsingPut(security, securityId);
@@ -951,7 +906,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **security** | [**Security**](Security.md)| security |
+ **security** | **Object**| security |
  **securityId** | [**UUID**](.md)| UUID security_id |
 
 ### Return type

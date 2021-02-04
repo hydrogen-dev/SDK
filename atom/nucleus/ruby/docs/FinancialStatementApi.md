@@ -277,7 +277,7 @@ end
 
 api_instance = NucleusApi::FinancialStatementApi.new
 
-financial_statement = NucleusApi::FinancialStatement.new # FinancialStatement | financialStatement
+financial_statement = nil # Object | financialStatement
 
 financial_statement_id = 'financial_statement_id_example' # String | UUID financialStatement_id
 
@@ -295,7 +295,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **financial_statement** | [**FinancialStatement**](FinancialStatement.md)| financialStatement | 
+ **financial_statement** | **Object**| financialStatement | 
  **financial_statement_id** | [**String**](.md)| UUID financialStatement_id | 
 
 ### Return type

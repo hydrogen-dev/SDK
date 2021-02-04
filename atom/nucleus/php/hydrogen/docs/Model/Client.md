@@ -4,12 +4,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | [**\com\hydrogen\nucleus\Model\ClientAddress[]**](ClientAddress.md) |  | [optional] 
+**business_id** | **string** | business_id | [optional] 
 **citizenship_status** | **string** | citizenshipStatus | [optional] 
 **client_type** | **string** | clientTypeId | 
 **country_of_citizenship** | **string[]** | countryOfCitizenship | [optional] 
 **country_of_residence** | **string** | countryOfResidence | [optional] 
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
-**date_of_birth** | [**\DateTime**](\DateTime.md) | dateOfBirth | [optional] 
+**date_of_birth** | **string** | dateOfBirth | [optional] 
 **email** | **string** | email | [optional] 
 **employment** | [**\com\hydrogen\nucleus\Model\Employment**](Employment.md) |  | [optional] 
 **firm_name** | **string** | firmName | [optional] 
@@ -38,5 +39,3 @@ Name | Type | Description | Notes
 **username** | **string** | username | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

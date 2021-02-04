@@ -32,6 +32,7 @@ class Document(object):
     """
     swagger_types = {
         'account_id': 'str',
+        'business_id': 'str',
         'client_id': 'str',
         'country_of_issue': 'str',
         'create_date': 'datetime',
@@ -45,6 +46,7 @@ class Document(object):
         'expiry_date': 'date',
         'id': 'str',
         'is_active': 'bool',
+        'is_sensitive': 'bool',
         'is_verified': 'bool',
         'issue_date': 'date',
         'metadata': 'dict(str, str)',
@@ -56,6 +58,7 @@ class Document(object):
 
     attribute_map = {
         'account_id': 'account_id',
+        'business_id': 'business_id',
         'client_id': 'client_id',
         'country_of_issue': 'country_of_issue',
         'create_date': 'create_date',
@@ -69,6 +72,7 @@ class Document(object):
         'expiry_date': 'expiry_date',
         'id': 'id',
         'is_active': 'is_active',
+        'is_sensitive': 'is_sensitive',
         'is_verified': 'is_verified',
         'issue_date': 'issue_date',
         'metadata': 'metadata',
@@ -78,10 +82,11 @@ class Document(object):
         'url_path': 'url_path'
     }
 
-    def __init__(self, account_id=None, client_id=None, country_of_issue=None, create_date=None, doc_file=None, doc_image_back=None, doc_image_front=None, doc_name=None, doc_number=None, doc_size=None, doc_type=None, expiry_date=None, id=None, is_active=None, is_verified=None, issue_date=None, metadata=None, secondary_id=None, state_of_issue=None, update_date=None, url_path=None):  # noqa: E501
+    def __init__(self, account_id=None, business_id=None, client_id=None, country_of_issue=None, create_date=None, doc_file=None, doc_image_back=None, doc_image_front=None, doc_name=None, doc_number=None, doc_size=None, doc_type=None, expiry_date=None, id=None, is_active=None, is_sensitive=None, is_verified=None, issue_date=None, metadata=None, secondary_id=None, state_of_issue=None, update_date=None, url_path=None):  # noqa: E501
         """Document - a model defined in Swagger"""  # noqa: E501
 
         self._account_id = None
+        self._business_id = None
         self._client_id = None
         self._country_of_issue = None
         self._create_date = None
@@ -95,6 +100,7 @@ class Document(object):
         self._expiry_date = None
         self._id = None
         self._is_active = None
+        self._is_sensitive = None
         self._is_verified = None
         self._issue_date = None
         self._metadata = None
@@ -106,6 +112,8 @@ class Document(object):
 
         if account_id is not None:
             self.account_id = account_id
+        if business_id is not None:
+            self.business_id = business_id
         if client_id is not None:
             self.client_id = client_id
         if country_of_issue is not None:
@@ -131,6 +139,8 @@ class Document(object):
             self.id = id
         if is_active is not None:
             self.is_active = is_active
+        if is_sensitive is not None:
+            self.is_sensitive = is_sensitive
         if is_verified is not None:
             self.is_verified = is_verified
         if issue_date is not None:
@@ -168,6 +178,29 @@ class Document(object):
         """
 
         self._account_id = account_id
+
+    @property
+    def business_id(self):
+        """Gets the business_id of this Document.  # noqa: E501
+
+        businessId  # noqa: E501
+
+        :return: The business_id of this Document.  # noqa: E501
+        :rtype: str
+        """
+        return self._business_id
+
+    @business_id.setter
+    def business_id(self, business_id):
+        """Sets the business_id of this Document.
+
+        businessId  # noqa: E501
+
+        :param business_id: The business_id of this Document.  # noqa: E501
+        :type: str
+        """
+
+        self._business_id = business_id
 
     @property
     def client_id(self):
@@ -465,6 +498,29 @@ class Document(object):
         """
 
         self._is_active = is_active
+
+    @property
+    def is_sensitive(self):
+        """Gets the is_sensitive of this Document.  # noqa: E501
+
+        is_sensitive  # noqa: E501
+
+        :return: The is_sensitive of this Document.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_sensitive
+
+    @is_sensitive.setter
+    def is_sensitive(self, is_sensitive):
+        """Sets the is_sensitive of this Document.
+
+        is_sensitive  # noqa: E501
+
+        :param is_sensitive: The is_sensitive of this Document.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_sensitive = is_sensitive
 
     @property
     def is_verified(self):

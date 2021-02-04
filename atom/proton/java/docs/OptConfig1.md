@@ -4,11 +4,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**wAssetConfig** | **Object** |  |  [optional]
-**minAssets** | **Integer** |  |  [optional]
 **secTypes** | [**List&lt;SecTypesEnum&gt;**](#List&lt;SecTypesEnum&gt;) |  |  [optional]
 **wConfig** | [**WConfig1**](WConfig1.md) |  |  [optional]
 **tickers** | **List&lt;String&gt;** |  |  [optional]
+**minAssets** | **Integer** |  |  [optional]
+**wAssetConfig** | **Object** |  |  [optional]
 
 
 <a name="List<SecTypesEnum>"></a>

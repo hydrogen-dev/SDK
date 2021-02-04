@@ -25,11 +25,8 @@ import java.util.UUID;
 /**
  * CardBalanceResponseVO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class CardBalanceResponseVO {
-  @SerializedName("card_status")
-  private String cardStatus = null;
-
   @SerializedName("message")
   private String message = null;
 
@@ -47,24 +44,6 @@ public class CardBalanceResponseVO {
 
   @SerializedName("vendor_response")
   private Object vendorResponse = null;
-
-  public CardBalanceResponseVO cardStatus(String cardStatus) {
-    this.cardStatus = cardStatus;
-    return this;
-  }
-
-   /**
-   * Get cardStatus
-   * @return cardStatus
-  **/
-  @ApiModelProperty(value = "")
-  public String getCardStatus() {
-    return cardStatus;
-  }
-
-  public void setCardStatus(String cardStatus) {
-    this.cardStatus = cardStatus;
-  }
 
   public CardBalanceResponseVO message(String message) {
     this.message = message;
@@ -200,8 +179,7 @@ public class CardBalanceResponseVO {
       return false;
     }
     CardBalanceResponseVO cardBalanceResponseVO = (CardBalanceResponseVO) o;
-    return Objects.equals(this.cardStatus, cardBalanceResponseVO.cardStatus) &&
-        Objects.equals(this.message, cardBalanceResponseVO.message) &&
+    return Objects.equals(this.message, cardBalanceResponseVO.message) &&
         Objects.equals(this.nucleusAssetSizesPosted, cardBalanceResponseVO.nucleusAssetSizesPosted) &&
         Objects.equals(this.nucleusAssetSizesUpdated, cardBalanceResponseVO.nucleusAssetSizesUpdated) &&
         Objects.equals(this.nucleusCardId, cardBalanceResponseVO.nucleusCardId) &&
@@ -211,7 +189,7 @@ public class CardBalanceResponseVO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardStatus, message, nucleusAssetSizesPosted, nucleusAssetSizesUpdated, nucleusCardId, vendorName, vendorResponse);
+    return Objects.hash(message, nucleusAssetSizesPosted, nucleusAssetSizesUpdated, nucleusCardId, vendorName, vendorResponse);
   }
 
 
@@ -220,7 +198,6 @@ public class CardBalanceResponseVO {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardBalanceResponseVO {\n");
     
-    sb.append("    cardStatus: ").append(toIndentedString(cardStatus)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    nucleusAssetSizesPosted: ").append(toIndentedString(nucleusAssetSizesPosted)).append("\n");
     sb.append("    nucleusAssetSizesUpdated: ").append(toIndentedString(nucleusAssetSizesUpdated)).append("\n");

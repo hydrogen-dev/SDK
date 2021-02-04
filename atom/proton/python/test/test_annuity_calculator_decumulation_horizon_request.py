@@ -32,7 +32,7 @@ class TestAnnuityCalculatorDecumulationHorizonRequest(unittest.TestCase):
     def testAnnuityCalculatorDecumulationHorizonRequest(self):
         """Test AnnuityCalculatorDecumulationHorizonRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.annuity_calculator_decumulation_horizon_request.AnnuityCalculatorDecumulationHorizonRequest()  # noqa: E501
+        # model = proton_api.models.annuity_calculator_decumulation_horizon_request.AnnuityCalculatorDecumulationHorizonRequest()  # noqa: E501
         pass
 
 

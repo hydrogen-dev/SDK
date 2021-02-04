@@ -4,25 +4,17 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**wAssetConfig** | **Object** |  |  [optional]
-**tgtType** | [**TgtTypeEnum**](#TgtTypeEnum) |  |  [optional]
-**tgtVal** | **Float** |  |  [optional]
-**minAssets** | **Integer** |  | 
 **secTypes** | [**List&lt;SecTypesEnum&gt;**](#List&lt;SecTypesEnum&gt;) |  | 
-**wConfig** | [**WConfig**](WConfig.md) |  | 
 **endDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**marketDataSource** | [**MarketDataSourceEnum**](#MarketDataSourceEnum) |  |  [optional]
+**tgtVal** | **Float** |  |  [optional]
+**tgtType** | [**TgtTypeEnum**](#TgtTypeEnum) |  |  [optional]
 **useProxyData** | **Boolean** |  |  [optional]
+**wConfig** | [**WConfig**](WConfig.md) |  | 
 **startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
 **tickers** | **List&lt;String&gt;** |  | 
-**marketDataSource** | [**MarketDataSourceEnum**](#MarketDataSourceEnum) |  |  [optional]
-
-
-<a name="TgtTypeEnum"></a>
-## Enum: TgtTypeEnum
-Name | Value
----- | -----
-RISK | &quot;risk&quot;
-RETURN | &quot;return&quot;
+**minAssets** | **Integer** |  | 
+**wAssetConfig** | **Object** |  |  [optional]
 
 
 <a name="List<SecTypesEnum>"></a>
@@ -40,6 +32,14 @@ Name | Value
 ---- | -----
 NUCLEUS | &quot;nucleus&quot;
 INTEGRATION | &quot;integration&quot;
+
+
+<a name="TgtTypeEnum"></a>
+## Enum: TgtTypeEnum
+Name | Value
+---- | -----
+RISK | &quot;risk&quot;
+RETURN | &quot;return&quot;
 
 
 

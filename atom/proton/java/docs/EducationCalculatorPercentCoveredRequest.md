@@ -4,17 +4,17 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalAnnualCost** | **Float** |  | 
-**generalInflationRate** | **Float** |  |  [optional]
-**educationInflationRate** | **Float** |  |  [optional]
-**depositSchedule** | [**CalculatorDepositSchedule1**](CalculatorDepositSchedule1.md) |  |  [optional]
-**portfolioReturn** | **Float** |  | 
 **aggregationAccountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
-**initialBalance** | **Float** |  |  [optional]
-**decumulationHorizon** | **Integer** |  | 
+**totalAnnualCost** | **Float** |  | 
 **taxRate** | **Float** |  |  [optional]
 **accountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
+**initialBalance** | **Float** |  |  [optional]
+**decumulationHorizon** | **Integer** |  | 
 **accumulationHorizon** | **Integer** |  | 
+**educationInflationRate** | **Float** |  |  [optional]
+**portfolioReturn** | **Float** |  | 
+**depositSchedule** | [**CalculatorDepositSchedule1**](CalculatorDepositSchedule1.md) |  |  [optional]
+**generalInflationRate** | **Float** |  |  [optional]
 
 
 

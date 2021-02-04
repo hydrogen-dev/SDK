@@ -32,7 +32,7 @@ class TestMortgageCalculatorDownPaymentRequest(unittest.TestCase):
     def testMortgageCalculatorDownPaymentRequest(self):
         """Test MortgageCalculatorDownPaymentRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.mortgage_calculator_down_payment_request.MortgageCalculatorDownPaymentRequest()  # noqa: E501
+        # model = proton_api.models.mortgage_calculator_down_payment_request.MortgageCalculatorDownPaymentRequest()  # noqa: E501
         pass
 
 

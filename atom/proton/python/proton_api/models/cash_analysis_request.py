@@ -31,135 +31,87 @@ class CashAnalysisRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'scope': 'str',
-        'show_outflow_details': 'bool',
-        'show_history': 'bool',
+        'end_date': 'date',
         'client_id': 'str',
         'show_inflow_details': 'bool',
         'currency_conversion': 'str',
-        'end_date': 'date',
-        'currency_code': 'str',
+        'history_frequency_interval': 'str',
         'start_date': 'date',
-        'history_frequency_interval': 'str'
+        'show_history': 'bool',
+        'currency_code': 'str',
+        'show_outflow_details': 'bool',
+        'scope': 'str'
     }
 
     attribute_map = {
-        'scope': 'scope',
-        'show_outflow_details': 'show_outflow_details',
-        'show_history': 'show_history',
+        'end_date': 'end_date',
         'client_id': 'client_id',
         'show_inflow_details': 'show_inflow_details',
         'currency_conversion': 'currency_conversion',
-        'end_date': 'end_date',
-        'currency_code': 'currency_code',
+        'history_frequency_interval': 'history_frequency_interval',
         'start_date': 'start_date',
-        'history_frequency_interval': 'history_frequency_interval'
+        'show_history': 'show_history',
+        'currency_code': 'currency_code',
+        'show_outflow_details': 'show_outflow_details',
+        'scope': 'scope'
     }
 
-    def __init__(self, scope='all', show_outflow_details=False, show_history=False, client_id=None, show_inflow_details=False, currency_conversion=None, end_date=None, currency_code=None, start_date=None, history_frequency_interval='month'):  # noqa: E501
+    def __init__(self, end_date=None, client_id=None, show_inflow_details=False, currency_conversion=None, history_frequency_interval='month', start_date=None, show_history=False, currency_code=None, show_outflow_details=False, scope='all'):  # noqa: E501
         """CashAnalysisRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._scope = None
-        self._show_outflow_details = None
-        self._show_history = None
+        self._end_date = None
         self._client_id = None
         self._show_inflow_details = None
         self._currency_conversion = None
-        self._end_date = None
-        self._currency_code = None
-        self._start_date = None
         self._history_frequency_interval = None
+        self._start_date = None
+        self._show_history = None
+        self._currency_code = None
+        self._show_outflow_details = None
+        self._scope = None
         self.discriminator = None
 
-        if scope is not None:
-            self.scope = scope
-        if show_outflow_details is not None:
-            self.show_outflow_details = show_outflow_details
-        if show_history is not None:
-            self.show_history = show_history
+        if end_date is not None:
+            self.end_date = end_date
         if client_id is not None:
             self.client_id = client_id
         if show_inflow_details is not None:
             self.show_inflow_details = show_inflow_details
         if currency_conversion is not None:
             self.currency_conversion = currency_conversion
-        if end_date is not None:
-            self.end_date = end_date
-        if currency_code is not None:
-            self.currency_code = currency_code
-        if start_date is not None:
-            self.start_date = start_date
         if history_frequency_interval is not None:
             self.history_frequency_interval = history_frequency_interval
+        if start_date is not None:
+            self.start_date = start_date
+        if show_history is not None:
+            self.show_history = show_history
+        if currency_code is not None:
+            self.currency_code = currency_code
+        if show_outflow_details is not None:
+            self.show_outflow_details = show_outflow_details
+        if scope is not None:
+            self.scope = scope
 
     @property
-    def scope(self):
-        """Gets the scope of this CashAnalysisRequest.  # noqa: E501
+    def end_date(self):
+        """Gets the end_date of this CashAnalysisRequest.  # noqa: E501
 
 
-        :return: The scope of this CashAnalysisRequest.  # noqa: E501
-        :rtype: str
+        :return: The end_date of this CashAnalysisRequest.  # noqa: E501
+        :rtype: date
         """
-        return self._scope
+        return self._end_date
 
-    @scope.setter
-    def scope(self, scope):
-        """Sets the scope of this CashAnalysisRequest.
-
-
-        :param scope: The scope of this CashAnalysisRequest.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["all", "external", "internal"]  # noqa: E501
-        if scope not in allowed_values:
-            raise ValueError(
-                "Invalid value for `scope` ({0}), must be one of {1}"  # noqa: E501
-                .format(scope, allowed_values)
-            )
-
-        self._scope = scope
-
-    @property
-    def show_outflow_details(self):
-        """Gets the show_outflow_details of this CashAnalysisRequest.  # noqa: E501
+    @end_date.setter
+    def end_date(self, end_date):
+        """Sets the end_date of this CashAnalysisRequest.
 
 
-        :return: The show_outflow_details of this CashAnalysisRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._show_outflow_details
-
-    @show_outflow_details.setter
-    def show_outflow_details(self, show_outflow_details):
-        """Sets the show_outflow_details of this CashAnalysisRequest.
-
-
-        :param show_outflow_details: The show_outflow_details of this CashAnalysisRequest.  # noqa: E501
-        :type: bool
+        :param end_date: The end_date of this CashAnalysisRequest.  # noqa: E501
+        :type: date
         """
 
-        self._show_outflow_details = show_outflow_details
-
-    @property
-    def show_history(self):
-        """Gets the show_history of this CashAnalysisRequest.  # noqa: E501
-
-
-        :return: The show_history of this CashAnalysisRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._show_history
-
-    @show_history.setter
-    def show_history(self, show_history):
-        """Sets the show_history of this CashAnalysisRequest.
-
-
-        :param show_history: The show_history of this CashAnalysisRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._show_history = show_history
+        self._end_date = end_date
 
     @property
     def client_id(self):
@@ -225,69 +177,6 @@ class CashAnalysisRequest(object):
         self._currency_conversion = currency_conversion
 
     @property
-    def end_date(self):
-        """Gets the end_date of this CashAnalysisRequest.  # noqa: E501
-
-
-        :return: The end_date of this CashAnalysisRequest.  # noqa: E501
-        :rtype: date
-        """
-        return self._end_date
-
-    @end_date.setter
-    def end_date(self, end_date):
-        """Sets the end_date of this CashAnalysisRequest.
-
-
-        :param end_date: The end_date of this CashAnalysisRequest.  # noqa: E501
-        :type: date
-        """
-
-        self._end_date = end_date
-
-    @property
-    def currency_code(self):
-        """Gets the currency_code of this CashAnalysisRequest.  # noqa: E501
-
-
-        :return: The currency_code of this CashAnalysisRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._currency_code
-
-    @currency_code.setter
-    def currency_code(self, currency_code):
-        """Sets the currency_code of this CashAnalysisRequest.
-
-
-        :param currency_code: The currency_code of this CashAnalysisRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._currency_code = currency_code
-
-    @property
-    def start_date(self):
-        """Gets the start_date of this CashAnalysisRequest.  # noqa: E501
-
-
-        :return: The start_date of this CashAnalysisRequest.  # noqa: E501
-        :rtype: date
-        """
-        return self._start_date
-
-    @start_date.setter
-    def start_date(self, start_date):
-        """Sets the start_date of this CashAnalysisRequest.
-
-
-        :param start_date: The start_date of this CashAnalysisRequest.  # noqa: E501
-        :type: date
-        """
-
-        self._start_date = start_date
-
-    @property
     def history_frequency_interval(self):
         """Gets the history_frequency_interval of this CashAnalysisRequest.  # noqa: E501
 
@@ -313,6 +202,117 @@ class CashAnalysisRequest(object):
             )
 
         self._history_frequency_interval = history_frequency_interval
+
+    @property
+    def start_date(self):
+        """Gets the start_date of this CashAnalysisRequest.  # noqa: E501
+
+
+        :return: The start_date of this CashAnalysisRequest.  # noqa: E501
+        :rtype: date
+        """
+        return self._start_date
+
+    @start_date.setter
+    def start_date(self, start_date):
+        """Sets the start_date of this CashAnalysisRequest.
+
+
+        :param start_date: The start_date of this CashAnalysisRequest.  # noqa: E501
+        :type: date
+        """
+
+        self._start_date = start_date
+
+    @property
+    def show_history(self):
+        """Gets the show_history of this CashAnalysisRequest.  # noqa: E501
+
+
+        :return: The show_history of this CashAnalysisRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._show_history
+
+    @show_history.setter
+    def show_history(self, show_history):
+        """Sets the show_history of this CashAnalysisRequest.
+
+
+        :param show_history: The show_history of this CashAnalysisRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._show_history = show_history
+
+    @property
+    def currency_code(self):
+        """Gets the currency_code of this CashAnalysisRequest.  # noqa: E501
+
+
+        :return: The currency_code of this CashAnalysisRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_code
+
+    @currency_code.setter
+    def currency_code(self, currency_code):
+        """Sets the currency_code of this CashAnalysisRequest.
+
+
+        :param currency_code: The currency_code of this CashAnalysisRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_code = currency_code
+
+    @property
+    def show_outflow_details(self):
+        """Gets the show_outflow_details of this CashAnalysisRequest.  # noqa: E501
+
+
+        :return: The show_outflow_details of this CashAnalysisRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._show_outflow_details
+
+    @show_outflow_details.setter
+    def show_outflow_details(self, show_outflow_details):
+        """Sets the show_outflow_details of this CashAnalysisRequest.
+
+
+        :param show_outflow_details: The show_outflow_details of this CashAnalysisRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._show_outflow_details = show_outflow_details
+
+    @property
+    def scope(self):
+        """Gets the scope of this CashAnalysisRequest.  # noqa: E501
+
+
+        :return: The scope of this CashAnalysisRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._scope
+
+    @scope.setter
+    def scope(self, scope):
+        """Sets the scope of this CashAnalysisRequest.
+
+
+        :param scope: The scope of this CashAnalysisRequest.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["all", "external", "internal"]  # noqa: E501
+        if scope not in allowed_values:
+            raise ValueError(
+                "Invalid value for `scope` ({0}), must be one of {1}"  # noqa: E501
+                .format(scope, allowed_values)
+            )
+
+        self._scope = scope
 
     def to_dict(self):
         """Returns the model properties as a dict"""

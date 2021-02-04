@@ -5,7 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_holder** | **string** | account_holder | [optional] 
 **account_name** | **string** | accountName | 
-**account_number** | **string** | accountNumber | [optional] 
 **bank_link_id** | **string** | bankLinkId | [optional] 
 **category** | **string** | category | 
 **client_id** | **string** | clientId | 
@@ -17,8 +16,10 @@ Name | Type | Description | Notes
 **is_active** | **bool** | isActive | [optional] 
 **is_asset** | **bool** | is_asset | [optional] 
 **is_business** | **bool** | isBusiness | [optional] 
+**is_cash** | **bool** | isCash | [optional] 
 **is_investment** | **bool** | isInvestment | [optional] 
 **is_link_verified** | **bool** | isLinkVerified | [optional] 
+**is_manual** | **bool** | isManual | [optional] 
 **mask** | **string** | mask | [optional] 
 **metadata** | **map[string,string]** |  | [optional] 
 **secondary_id** | **string** |  | [optional] 

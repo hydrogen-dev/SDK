@@ -1,4 +1,4 @@
-# swagger_client.GoalsApi
+# proton_api.GoalsApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/proton/v1*
 
@@ -43,7 +43,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.GoalsApi(proton_api.ApiClient(configuration))
@@ -110,7 +109,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 
-
 # create an instance of the API class
 api_instance = proton_api.GoalsApi(proton_api.ApiClient(configuration))
 goal_accumulation_recommendation_request = proton_api.GoalAccumulationRecommendationRequest() # GoalAccumulationRecommendationRequest | Request payload for Goal Accumulation Recommendation
@@ -175,7 +173,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.GoalsApi(proton_api.ApiClient(configuration))
@@ -242,7 +239,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 
-
 # create an instance of the API class
 api_instance = proton_api.GoalsApi(proton_api.ApiClient(configuration))
 goal_decumulation_allocation_request = proton_api.GoalDecumulationAllocationRequest() # GoalDecumulationAllocationRequest | Request payload for Goal Decumulation Allocation
@@ -308,7 +304,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 
-
 # create an instance of the API class
 api_instance = proton_api.GoalsApi(proton_api.ApiClient(configuration))
 goal_decumulation_recommendation_request = proton_api.GoalDecumulationRecommendationRequest() # GoalDecumulationRecommendationRequest | Request payload for Goal Decumulation Recommendation
@@ -373,7 +368,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.GoalsApi(proton_api.ApiClient(configuration))

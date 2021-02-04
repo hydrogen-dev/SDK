@@ -140,7 +140,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.GoalApi();
 
-var goalTrackId = "4e1c4f70-8611-44fa-bac5-f9f390c16852"; // String | UUID goal_track_id
+var goalTrackId = "\"4e1c4f70-8611-44fa-bac5-f9f390c16852\""; // String | UUID goal_track_id
 
 
 var callback = function(error, data, response) {
@@ -157,7 +157,7 @@ apiInstance.deleteGoalTrackUsingDelete(goalTrackId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goalTrackId** | **String**| UUID goal_track_id | 
+ **goalTrackId** | [**String**](.md)| UUID goal_track_id | 
 
 ### Return type
 
@@ -191,7 +191,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.GoalApi();
 
-var goalId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID goal_id
+var goalId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID goal_id
 
 
 var callback = function(error, data, response) {
@@ -208,7 +208,7 @@ apiInstance.deleteGoalUsingDelete(goalId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goalId** | **String**| UUID goal_id | 
+ **goalId** | [**String**](.md)| UUID goal_id | 
 
 ### Return type
 
@@ -304,7 +304,7 @@ var apiInstance = new HydrogenNucleusApi.GoalApi();
 
 var clientId = "clientId_example"; // String | client_id
 
-var goalId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID goal_id
+var goalId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID goal_id
 
 var opts = { 
   'currencyConversion': "currencyConversion_example", // String | Currency Code
@@ -329,8 +329,8 @@ apiInstance.getGoalAssetSizeAllUsingGet(clientId, goalId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clientId** | **String**| client_id | 
- **goalId** | **String**| UUID goal_id | 
+ **clientId** | [**String**](.md)| client_id | 
+ **goalId** | [**String**](.md)| UUID goal_id | 
  **currencyConversion** | **String**| Currency Code | [optional] 
  **endDate** | **Date**| end date | [optional] 
  **getLatest** | **Boolean**| get_latest | [optional] [default to false]
@@ -372,7 +372,7 @@ var apiInstance = new HydrogenNucleusApi.GoalApi();
 
 var clientId = "clientId_example"; // String | client_id
 
-var goalId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID goal_id
+var goalId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID goal_id
 
 var opts = { 
   'currencyConversion': "currencyConversion_example", // String | Currency Code
@@ -395,8 +395,8 @@ apiInstance.getGoalHoldingAllUsingGet(clientId, goalId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clientId** | **String**| client_id | 
- **goalId** | **String**| UUID goal_id | 
+ **clientId** | [**String**](.md)| client_id | 
+ **goalId** | [**String**](.md)| UUID goal_id | 
  **currencyConversion** | **String**| Currency Code | [optional] 
  **endDate** | **Date**| end date | [optional] 
  **portfolioGoal** | **Boolean**| portfolio_goal | [optional] [default to false]
@@ -500,7 +500,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.GoalApi();
 
-var goalTrackId = "4e1c4f70-8611-44fa-bac5-f9f390c16852"; // String | UUID goal_track_id
+var goalTrackId = "\"4e1c4f70-8611-44fa-bac5-f9f390c16852\""; // String | UUID goal_track_id
 
 
 var callback = function(error, data, response) {
@@ -517,7 +517,7 @@ apiInstance.getGoalTrackUsingGet(goalTrackId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goalTrackId** | **String**| UUID goal_track_id | 
+ **goalTrackId** | [**String**](.md)| UUID goal_track_id | 
 
 ### Return type
 
@@ -553,7 +553,7 @@ var apiInstance = new HydrogenNucleusApi.GoalApi();
 
 var clientId = "clientId_example"; // String | client_id
 
-var goalId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID goal_id
+var goalId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID goal_id
 
 var opts = { 
   'ascending': false, // Boolean | ascending
@@ -580,8 +580,8 @@ apiInstance.getGoalTransactionAllUsingGet(clientId, goalId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clientId** | **String**| client_id | 
- **goalId** | **String**| UUID goal_id | 
+ **clientId** | [**String**](.md)| client_id | 
+ **goalId** | [**String**](.md)| UUID goal_id | 
  **ascending** | **Boolean**| ascending | [optional] [default to false]
  **currencyConversion** | **String**| Currency Code | [optional] 
  **endDate** | **Date**| end date | [optional] 
@@ -623,7 +623,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.GoalApi();
 
-var goalId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID goal_id
+var goalId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID goal_id
 
 
 var callback = function(error, data, response) {
@@ -640,7 +640,7 @@ apiInstance.getGoalUsingGet(goalId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goalId** | **String**| UUID goal_id | 
+ **goalId** | [**String**](.md)| UUID goal_id | 
 
 ### Return type
 
@@ -674,9 +674,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.GoalApi();
 
-var goalTrack = new HydrogenNucleusApi.GoalTrack(); // GoalTrack | goal_track
+var goalTrack = null; // Object | goal_track
 
-var goalTrackId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID goal_track_id
+var goalTrackId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID goal_track_id
 
 
 var callback = function(error, data, response) {
@@ -693,8 +693,8 @@ apiInstance.updateGoalTrackUsingPut(goalTrack, goalTrackId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goalTrack** | [**GoalTrack**](GoalTrack.md)| goal_track | 
- **goalTrackId** | **String**| UUID goal_track_id | 
+ **goalTrack** | **Object**| goal_track | 
+ **goalTrackId** | [**String**](.md)| UUID goal_track_id | 
 
 ### Return type
 
@@ -728,9 +728,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.GoalApi();
 
-var goal = new HydrogenNucleusApi.Goal(); // Goal | goal
+var goal = null; // Object | goal
 
-var goalId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID goal_id
+var goalId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID goal_id
 
 
 var callback = function(error, data, response) {
@@ -747,8 +747,8 @@ apiInstance.updateGoalUsingPut(goal, goalId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goal** | [**Goal**](Goal.md)| goal | 
- **goalId** | **String**| UUID goal_id | 
+ **goal** | **Object**| goal | 
+ **goalId** | [**String**](.md)| UUID goal_id | 
 
 ### Return type
 

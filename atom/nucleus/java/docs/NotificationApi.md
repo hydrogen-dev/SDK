@@ -33,7 +33,6 @@ Create a new Notification Client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -50,8 +49,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 NotificationApi apiInstance = new NotificationApi();
 NotificationClient notificationClient = new NotificationClient(); // NotificationClient | notificationClient
 try {
@@ -94,7 +91,6 @@ Create a new Notification Setting.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -111,8 +107,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 NotificationApi apiInstance = new NotificationApi();
 NotificationSetting notificationSetting = new NotificationSetting(); // NotificationSetting | notificationSetting
 try {
@@ -155,7 +149,6 @@ Create a new Notification.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -172,8 +165,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 NotificationApi apiInstance = new NotificationApi();
 Notification notification = new Notification(); // Notification | notification
 try {
@@ -216,7 +207,6 @@ Permanently Delete Notification Client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -233,8 +223,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 NotificationApi apiInstance = new NotificationApi();
 UUID notificationClientId = new UUID(); // UUID | notification_client_id
 try {
@@ -276,7 +264,6 @@ Permanently Delete Notification Setting.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -293,8 +280,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 NotificationApi apiInstance = new NotificationApi();
 UUID notificationSettingId = new UUID(); // UUID | notification_setting_id
 try {
@@ -336,7 +321,6 @@ Permanently Delete a Notification.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -353,8 +337,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 NotificationApi apiInstance = new NotificationApi();
 UUID notificationId = new UUID(); // UUID | UUID notification_id
 try {
@@ -396,7 +378,6 @@ Get All Notification.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -413,8 +394,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 NotificationApi apiInstance = new NotificationApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -465,7 +444,6 @@ List all Notification Client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -482,8 +460,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 NotificationApi apiInstance = new NotificationApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -534,7 +510,6 @@ Retrieve a  Notification Client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -551,8 +526,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 NotificationApi apiInstance = new NotificationApi();
 UUID notificationClientId = new UUID(); // UUID | notification_client_id
 try {
@@ -595,7 +568,6 @@ List all Notification Setting.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -612,8 +584,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 NotificationApi apiInstance = new NotificationApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -664,7 +634,6 @@ Retrieve a  Notification Setting.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -681,8 +650,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 NotificationApi apiInstance = new NotificationApi();
 UUID notificationSettingId = new UUID(); // UUID | notification_setting_id
 try {
@@ -725,7 +692,6 @@ Get a Notification.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -742,8 +708,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 NotificationApi apiInstance = new NotificationApi();
 UUID notificationId = new UUID(); // UUID | notification_id
 try {
@@ -786,7 +750,6 @@ Update a  Notification Client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -803,10 +766,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 NotificationApi apiInstance = new NotificationApi();
-NotificationClient notificationClient = new NotificationClient(); // NotificationClient | notification_client
+Object notificationClient = null; // Object | notification_client
 UUID notificationClientId = new UUID(); // UUID | UUID notification_client_id
 try {
     NotificationClient result = apiInstance.updateNotificationClientUsingPut(notificationClient, notificationClientId);
@@ -821,7 +782,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notificationClient** | [**NotificationClient**](NotificationClient.md)| notification_client |
+ **notificationClient** | **Object**| notification_client |
  **notificationClientId** | [**UUID**](.md)| UUID notification_client_id |
 
 ### Return type
@@ -849,7 +810,6 @@ Update a  Notification Setting.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -866,10 +826,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 NotificationApi apiInstance = new NotificationApi();
-NotificationSetting notificationSetting = new NotificationSetting(); // NotificationSetting | notification_setting
+Object notificationSetting = null; // Object | notification_setting
 UUID notificationSettingId = new UUID(); // UUID | UUID notification_setting_id
 try {
     NotificationSetting result = apiInstance.updateNotificationSettingUsingPut(notificationSetting, notificationSettingId);
@@ -884,7 +842,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notificationSetting** | [**NotificationSetting**](NotificationSetting.md)| notification_setting |
+ **notificationSetting** | **Object**| notification_setting |
  **notificationSettingId** | [**UUID**](.md)| UUID notification_setting_id |
 
 ### Return type
@@ -912,7 +870,6 @@ Update a Notification.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import NotificationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -929,10 +886,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 NotificationApi apiInstance = new NotificationApi();
-Notification notification = new Notification(); // Notification | notification
+Object notification = null; // Object | notification
 UUID notificationId = new UUID(); // UUID | UUID notification_id
 try {
     Notification result = apiInstance.updateNotificationUsingPut(notification, notificationId);
@@ -947,7 +902,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification** | [**Notification**](Notification.md)| notification |
+ **notification** | **Object**| notification |
  **notificationId** | [**UUID**](.md)| UUID notification_id |
 
 ### Return type

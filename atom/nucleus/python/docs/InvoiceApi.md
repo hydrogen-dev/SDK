@@ -46,7 +46,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 invoice_payment = nucleus_api.InvoicePayment() # InvoicePayment | invoicePayment
@@ -110,7 +110,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 invoice = nucleus_api.Invoice() # Invoice | invoice
@@ -174,7 +174,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 invoice_payment_id = 'invoice_payment_id_example' # str | UUID invoice_payment_id
@@ -237,7 +237,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 invoice_id = 'invoice_id_example' # str | UUID invoice_id
@@ -300,7 +300,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -374,7 +374,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -448,7 +448,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 invoice_payment_id = 'invoice_payment_id_example' # str | UUID invoice_payment_id
@@ -514,7 +514,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
 invoice_id = 'invoice_id_example' # str | UUID invoice_idd
@@ -580,10 +580,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
-invoice_payment = nucleus_api.InvoicePayment() # InvoicePayment | invoice_payment
+invoice_payment = NULL # object | invoice_payment
 invoice_payment_id = 'invoice_payment_id_example' # str | UUID invoice_payment_id
 
 try:
@@ -598,7 +598,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoice_payment** | [**InvoicePayment**](InvoicePayment.md)| invoice_payment | 
+ **invoice_payment** | **object**| invoice_payment | 
  **invoice_payment_id** | [**str**](.md)| UUID invoice_payment_id | 
 
 ### Return type
@@ -646,10 +646,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.InvoiceApi(nucleus_api.ApiClient(configuration))
-invoice = nucleus_api.Invoice() # Invoice | invoice
+invoice = NULL # object | invoice
 invoice_id = 'invoice_id_example' # str | UUID invoice_id
 
 try:
@@ -664,7 +664,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoice** | [**Invoice**](Invoice.md)| invoice | 
+ **invoice** | **object**| invoice | 
  **invoice_id** | [**str**](.md)| UUID invoice_id | 
 
 ### Return type

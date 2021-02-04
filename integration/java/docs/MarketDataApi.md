@@ -1,6 +1,6 @@
 # MarketDataApi
 
-All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1/*
+All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -35,7 +35,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 MarketDataApi apiInstance = new MarketDataApi();
 MdHistoryRequestCO historyRequest = new MdHistoryRequestCO(); // MdHistoryRequestCO | historyRequest
 try {
@@ -93,7 +92,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 MarketDataApi apiInstance = new MarketDataApi();
 MdQuoteRequestCO quoteRequest = new MdQuoteRequestCO(); // MdQuoteRequestCO | quoteRequest
 try {

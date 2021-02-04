@@ -1,11 +1,11 @@
 # com\hydrogen\integration\KYCApi
 
-All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1/*
+All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createKYCUsingPost**](KYCApi.md#createKYCUsingPost) | **POST** /kyc | Do kyc for the client.
-[**getKYCStatusUsingGet**](KYCApi.md#getKYCStatusUsingGet) | **GET** /kyc_status/{nucleus_client_id} | Fetch kyc_status for the given nucleus_client_id
+[**getKYCStatusUsingGet**](KYCApi.md#getKYCStatusUsingGet) | **GET** /kyc_status | Fetch kyc_status for the given nucleus_client_id
 
 
 # **createKYCUsingPost**
@@ -19,7 +19,6 @@ Do kyc for the client.
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -77,7 +76,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getKYCStatusUsingGet**
-> \com\hydrogen\integration\Model\KycResponseVo[] getKYCStatusUsingGet($nucleus_client_id, $get_latest, $kyc_type, $product)
+> \com\hydrogen\integration\Model\KycResponseVo[] getKYCStatusUsingGet($get_latest, $kyc_type, $nucleus_business_id, $nucleus_client_id, $product)
 
 Fetch kyc_status for the given nucleus_client_id
 
@@ -87,7 +86,6 @@ Fetch kyc_status for the given nucleus_client_id
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -112,13 +110,14 @@ $apiInstance = new com\hydrogen\integration\Api\KYCApi(
     new GuzzleHttp\Client(),
     $config
 );
-$nucleus_client_id = "nucleus_client_id_example"; // string | nucleus_client_id
 $get_latest = false; // bool | get_latest
 $kyc_type = "all"; // string | kyc_type
+$nucleus_business_id = "nucleus_business_id_example"; // string | nucleus_business_id
+$nucleus_client_id = "nucleus_client_id_example"; // string | nucleus_client_id
 $product = "atom"; // string | product
 
 try {
-    $result = $apiInstance->getKYCStatusUsingGet($nucleus_client_id, $get_latest, $kyc_type, $product);
+    $result = $apiInstance->getKYCStatusUsingGet($get_latest, $kyc_type, $nucleus_business_id, $nucleus_client_id, $product);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling KYCApi->getKYCStatusUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -130,9 +129,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **nucleus_client_id** | [**string**](../Model/.md)| nucleus_client_id |
  **get_latest** | **bool**| get_latest | [optional] [default to false]
  **kyc_type** | **string**| kyc_type | [optional] [default to all]
+ **nucleus_business_id** | [**string**](../Model/.md)| nucleus_business_id | [optional]
+ **nucleus_client_id** | [**string**](../Model/.md)| nucleus_client_id | [optional]
  **product** | **string**| product | [optional] [default to atom]
 
 ### Return type

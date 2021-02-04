@@ -31,69 +31,46 @@ class RatioTargets1(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'asset_turnover': 'float',
         'profit_margin': 'float',
         'return_on_assets': 'float',
-        'return_on_equity': 'float',
         'debt_to_equity': 'float',
-        'debt_ratio': 'float'
+        'return_on_equity': 'float',
+        'debt_ratio': 'float',
+        'asset_turnover': 'float'
     }
 
     attribute_map = {
-        'asset_turnover': 'asset_turnover',
         'profit_margin': 'profit_margin',
         'return_on_assets': 'return_on_assets',
-        'return_on_equity': 'return_on_equity',
         'debt_to_equity': 'debt_to_equity',
-        'debt_ratio': 'debt_ratio'
+        'return_on_equity': 'return_on_equity',
+        'debt_ratio': 'debt_ratio',
+        'asset_turnover': 'asset_turnover'
     }
 
-    def __init__(self, asset_turnover=1.0, profit_margin=0.1, return_on_assets=0.05, return_on_equity=0.15, debt_to_equity=1.5, debt_ratio=0.5):  # noqa: E501
+    def __init__(self, profit_margin=0.1, return_on_assets=0.05, debt_to_equity=1.5, return_on_equity=0.15, debt_ratio=0.5, asset_turnover=1.0):  # noqa: E501
         """RatioTargets1 - a model defined in Swagger"""  # noqa: E501
 
-        self._asset_turnover = None
         self._profit_margin = None
         self._return_on_assets = None
-        self._return_on_equity = None
         self._debt_to_equity = None
+        self._return_on_equity = None
         self._debt_ratio = None
+        self._asset_turnover = None
         self.discriminator = None
 
-        if asset_turnover is not None:
-            self.asset_turnover = asset_turnover
         if profit_margin is not None:
             self.profit_margin = profit_margin
         if return_on_assets is not None:
             self.return_on_assets = return_on_assets
-        if return_on_equity is not None:
-            self.return_on_equity = return_on_equity
         if debt_to_equity is not None:
             self.debt_to_equity = debt_to_equity
+        if return_on_equity is not None:
+            self.return_on_equity = return_on_equity
         if debt_ratio is not None:
             self.debt_ratio = debt_ratio
-
-    @property
-    def asset_turnover(self):
-        """Gets the asset_turnover of this RatioTargets1.  # noqa: E501
-
-
-        :return: The asset_turnover of this RatioTargets1.  # noqa: E501
-        :rtype: float
-        """
-        return self._asset_turnover
-
-    @asset_turnover.setter
-    def asset_turnover(self, asset_turnover):
-        """Sets the asset_turnover of this RatioTargets1.
-
-
-        :param asset_turnover: The asset_turnover of this RatioTargets1.  # noqa: E501
-        :type: float
-        """
-        if asset_turnover is not None and asset_turnover < 0:  # noqa: E501
-            raise ValueError("Invalid value for `asset_turnover`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._asset_turnover = asset_turnover
+        if asset_turnover is not None:
+            self.asset_turnover = asset_turnover
 
     @property
     def profit_margin(self):
@@ -142,29 +119,6 @@ class RatioTargets1(object):
         self._return_on_assets = return_on_assets
 
     @property
-    def return_on_equity(self):
-        """Gets the return_on_equity of this RatioTargets1.  # noqa: E501
-
-
-        :return: The return_on_equity of this RatioTargets1.  # noqa: E501
-        :rtype: float
-        """
-        return self._return_on_equity
-
-    @return_on_equity.setter
-    def return_on_equity(self, return_on_equity):
-        """Sets the return_on_equity of this RatioTargets1.
-
-
-        :param return_on_equity: The return_on_equity of this RatioTargets1.  # noqa: E501
-        :type: float
-        """
-        if return_on_equity is not None and return_on_equity < 0:  # noqa: E501
-            raise ValueError("Invalid value for `return_on_equity`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._return_on_equity = return_on_equity
-
-    @property
     def debt_to_equity(self):
         """Gets the debt_to_equity of this RatioTargets1.  # noqa: E501
 
@@ -188,6 +142,29 @@ class RatioTargets1(object):
         self._debt_to_equity = debt_to_equity
 
     @property
+    def return_on_equity(self):
+        """Gets the return_on_equity of this RatioTargets1.  # noqa: E501
+
+
+        :return: The return_on_equity of this RatioTargets1.  # noqa: E501
+        :rtype: float
+        """
+        return self._return_on_equity
+
+    @return_on_equity.setter
+    def return_on_equity(self, return_on_equity):
+        """Sets the return_on_equity of this RatioTargets1.
+
+
+        :param return_on_equity: The return_on_equity of this RatioTargets1.  # noqa: E501
+        :type: float
+        """
+        if return_on_equity is not None and return_on_equity < 0:  # noqa: E501
+            raise ValueError("Invalid value for `return_on_equity`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._return_on_equity = return_on_equity
+
+    @property
     def debt_ratio(self):
         """Gets the debt_ratio of this RatioTargets1.  # noqa: E501
 
@@ -209,6 +186,29 @@ class RatioTargets1(object):
             raise ValueError("Invalid value for `debt_ratio`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._debt_ratio = debt_ratio
+
+    @property
+    def asset_turnover(self):
+        """Gets the asset_turnover of this RatioTargets1.  # noqa: E501
+
+
+        :return: The asset_turnover of this RatioTargets1.  # noqa: E501
+        :rtype: float
+        """
+        return self._asset_turnover
+
+    @asset_turnover.setter
+    def asset_turnover(self, asset_turnover):
+        """Sets the asset_turnover of this RatioTargets1.
+
+
+        :param asset_turnover: The asset_turnover of this RatioTargets1.  # noqa: E501
+        :type: float
+        """
+        if asset_turnover is not None and asset_turnover < 0:  # noqa: E501
+            raise ValueError("Invalid value for `asset_turnover`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._asset_turnover = asset_turnover
 
     def to_dict(self):
         """Returns the model properties as a dict"""

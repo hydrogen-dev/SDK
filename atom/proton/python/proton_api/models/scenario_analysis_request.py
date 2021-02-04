@@ -31,114 +31,89 @@ class ScenarioAnalysisRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'trading_days_per_year': 'int',
         'portfolio_tickers': 'list[str]',
-        'frequency_interval': 'str',
-        'create_log': 'bool',
-        'aggregation_account_id': 'str',
-        'allocation_id': 'str',
-        'model_id': 'str',
-        'portfolio_weights': 'list[float]',
         'end_date': 'date',
-        'scenario': 'list[SensitivityFactor]',
-        'start_date': 'date',
-        'use_proxy_data': 'bool',
-        'account_id': 'str',
+        'portfolio_id': 'str',
         'market_data_source': 'str',
-        'portfolio_id': 'str'
+        'model_id': 'str',
+        'create_log': 'bool',
+        'allocation_id': 'str',
+        'scenario': 'list[SensitivityFactor]',
+        'use_proxy_data': 'bool',
+        'start_date': 'date',
+        'account_id': 'str',
+        'frequency_interval': 'str',
+        'aggregation_account_id': 'str',
+        'trading_days_per_year': 'int',
+        'portfolio_weights': 'list[float]'
     }
 
     attribute_map = {
-        'trading_days_per_year': 'trading_days_per_year',
         'portfolio_tickers': 'portfolio_tickers',
-        'frequency_interval': 'frequency_interval',
-        'create_log': 'create_log',
-        'aggregation_account_id': 'aggregation_account_id',
-        'allocation_id': 'allocation_id',
-        'model_id': 'model_id',
-        'portfolio_weights': 'portfolio_weights',
         'end_date': 'end_date',
-        'scenario': 'scenario',
-        'start_date': 'start_date',
-        'use_proxy_data': 'use_proxy_data',
-        'account_id': 'account_id',
+        'portfolio_id': 'portfolio_id',
         'market_data_source': 'market_data_source',
-        'portfolio_id': 'portfolio_id'
+        'model_id': 'model_id',
+        'create_log': 'create_log',
+        'allocation_id': 'allocation_id',
+        'scenario': 'scenario',
+        'use_proxy_data': 'use_proxy_data',
+        'start_date': 'start_date',
+        'account_id': 'account_id',
+        'frequency_interval': 'frequency_interval',
+        'aggregation_account_id': 'aggregation_account_id',
+        'trading_days_per_year': 'trading_days_per_year',
+        'portfolio_weights': 'portfolio_weights'
     }
 
-    def __init__(self, trading_days_per_year=252, portfolio_tickers=None, frequency_interval=None, create_log=False, aggregation_account_id=None, allocation_id=None, model_id=None, portfolio_weights=None, end_date=None, scenario=None, start_date=None, use_proxy_data=False, account_id=None, market_data_source='nucleus', portfolio_id=None):  # noqa: E501
+    def __init__(self, portfolio_tickers=None, end_date=None, portfolio_id=None, market_data_source='nucleus', model_id=None, create_log=False, allocation_id=None, scenario=None, use_proxy_data=False, start_date=None, account_id=None, frequency_interval=None, aggregation_account_id=None, trading_days_per_year=252, portfolio_weights=None):  # noqa: E501
         """ScenarioAnalysisRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._trading_days_per_year = None
         self._portfolio_tickers = None
-        self._frequency_interval = None
-        self._create_log = None
-        self._aggregation_account_id = None
-        self._allocation_id = None
-        self._model_id = None
-        self._portfolio_weights = None
         self._end_date = None
-        self._scenario = None
-        self._start_date = None
-        self._use_proxy_data = None
-        self._account_id = None
-        self._market_data_source = None
         self._portfolio_id = None
+        self._market_data_source = None
+        self._model_id = None
+        self._create_log = None
+        self._allocation_id = None
+        self._scenario = None
+        self._use_proxy_data = None
+        self._start_date = None
+        self._account_id = None
+        self._frequency_interval = None
+        self._aggregation_account_id = None
+        self._trading_days_per_year = None
+        self._portfolio_weights = None
         self.discriminator = None
 
-        if trading_days_per_year is not None:
-            self.trading_days_per_year = trading_days_per_year
         if portfolio_tickers is not None:
             self.portfolio_tickers = portfolio_tickers
-        self.frequency_interval = frequency_interval
-        if create_log is not None:
-            self.create_log = create_log
-        if aggregation_account_id is not None:
-            self.aggregation_account_id = aggregation_account_id
-        if allocation_id is not None:
-            self.allocation_id = allocation_id
-        if model_id is not None:
-            self.model_id = model_id
-        if portfolio_weights is not None:
-            self.portfolio_weights = portfolio_weights
         if end_date is not None:
             self.end_date = end_date
-        self.scenario = scenario
-        if start_date is not None:
-            self.start_date = start_date
-        if use_proxy_data is not None:
-            self.use_proxy_data = use_proxy_data
-        if account_id is not None:
-            self.account_id = account_id
-        if market_data_source is not None:
-            self.market_data_source = market_data_source
         if portfolio_id is not None:
             self.portfolio_id = portfolio_id
-
-    @property
-    def trading_days_per_year(self):
-        """Gets the trading_days_per_year of this ScenarioAnalysisRequest.  # noqa: E501
-
-
-        :return: The trading_days_per_year of this ScenarioAnalysisRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._trading_days_per_year
-
-    @trading_days_per_year.setter
-    def trading_days_per_year(self, trading_days_per_year):
-        """Sets the trading_days_per_year of this ScenarioAnalysisRequest.
-
-
-        :param trading_days_per_year: The trading_days_per_year of this ScenarioAnalysisRequest.  # noqa: E501
-        :type: int
-        """
-        if trading_days_per_year is not None and trading_days_per_year > 365:  # noqa: E501
-            raise ValueError("Invalid value for `trading_days_per_year`, must be a value less than or equal to `365`")  # noqa: E501
-        if trading_days_per_year is not None and trading_days_per_year < 1:  # noqa: E501
-            raise ValueError("Invalid value for `trading_days_per_year`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._trading_days_per_year = trading_days_per_year
+        if market_data_source is not None:
+            self.market_data_source = market_data_source
+        if model_id is not None:
+            self.model_id = model_id
+        if create_log is not None:
+            self.create_log = create_log
+        if allocation_id is not None:
+            self.allocation_id = allocation_id
+        self.scenario = scenario
+        if use_proxy_data is not None:
+            self.use_proxy_data = use_proxy_data
+        if start_date is not None:
+            self.start_date = start_date
+        if account_id is not None:
+            self.account_id = account_id
+        self.frequency_interval = frequency_interval
+        if aggregation_account_id is not None:
+            self.aggregation_account_id = aggregation_account_id
+        if trading_days_per_year is not None:
+            self.trading_days_per_year = trading_days_per_year
+        if portfolio_weights is not None:
+            self.portfolio_weights = portfolio_weights
 
     @property
     def portfolio_tickers(self):
@@ -160,6 +135,224 @@ class ScenarioAnalysisRequest(object):
         """
 
         self._portfolio_tickers = portfolio_tickers
+
+    @property
+    def end_date(self):
+        """Gets the end_date of this ScenarioAnalysisRequest.  # noqa: E501
+
+
+        :return: The end_date of this ScenarioAnalysisRequest.  # noqa: E501
+        :rtype: date
+        """
+        return self._end_date
+
+    @end_date.setter
+    def end_date(self, end_date):
+        """Sets the end_date of this ScenarioAnalysisRequest.
+
+
+        :param end_date: The end_date of this ScenarioAnalysisRequest.  # noqa: E501
+        :type: date
+        """
+
+        self._end_date = end_date
+
+    @property
+    def portfolio_id(self):
+        """Gets the portfolio_id of this ScenarioAnalysisRequest.  # noqa: E501
+
+
+        :return: The portfolio_id of this ScenarioAnalysisRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._portfolio_id
+
+    @portfolio_id.setter
+    def portfolio_id(self, portfolio_id):
+        """Sets the portfolio_id of this ScenarioAnalysisRequest.
+
+
+        :param portfolio_id: The portfolio_id of this ScenarioAnalysisRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._portfolio_id = portfolio_id
+
+    @property
+    def market_data_source(self):
+        """Gets the market_data_source of this ScenarioAnalysisRequest.  # noqa: E501
+
+
+        :return: The market_data_source of this ScenarioAnalysisRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._market_data_source
+
+    @market_data_source.setter
+    def market_data_source(self, market_data_source):
+        """Sets the market_data_source of this ScenarioAnalysisRequest.
+
+
+        :param market_data_source: The market_data_source of this ScenarioAnalysisRequest.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["nucleus", "integration"]  # noqa: E501
+        if market_data_source not in allowed_values:
+            raise ValueError(
+                "Invalid value for `market_data_source` ({0}), must be one of {1}"  # noqa: E501
+                .format(market_data_source, allowed_values)
+            )
+
+        self._market_data_source = market_data_source
+
+    @property
+    def model_id(self):
+        """Gets the model_id of this ScenarioAnalysisRequest.  # noqa: E501
+
+
+        :return: The model_id of this ScenarioAnalysisRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._model_id
+
+    @model_id.setter
+    def model_id(self, model_id):
+        """Sets the model_id of this ScenarioAnalysisRequest.
+
+
+        :param model_id: The model_id of this ScenarioAnalysisRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._model_id = model_id
+
+    @property
+    def create_log(self):
+        """Gets the create_log of this ScenarioAnalysisRequest.  # noqa: E501
+
+
+        :return: The create_log of this ScenarioAnalysisRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._create_log
+
+    @create_log.setter
+    def create_log(self, create_log):
+        """Sets the create_log of this ScenarioAnalysisRequest.
+
+
+        :param create_log: The create_log of this ScenarioAnalysisRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._create_log = create_log
+
+    @property
+    def allocation_id(self):
+        """Gets the allocation_id of this ScenarioAnalysisRequest.  # noqa: E501
+
+
+        :return: The allocation_id of this ScenarioAnalysisRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._allocation_id
+
+    @allocation_id.setter
+    def allocation_id(self, allocation_id):
+        """Sets the allocation_id of this ScenarioAnalysisRequest.
+
+
+        :param allocation_id: The allocation_id of this ScenarioAnalysisRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._allocation_id = allocation_id
+
+    @property
+    def scenario(self):
+        """Gets the scenario of this ScenarioAnalysisRequest.  # noqa: E501
+
+
+        :return: The scenario of this ScenarioAnalysisRequest.  # noqa: E501
+        :rtype: list[SensitivityFactor]
+        """
+        return self._scenario
+
+    @scenario.setter
+    def scenario(self, scenario):
+        """Sets the scenario of this ScenarioAnalysisRequest.
+
+
+        :param scenario: The scenario of this ScenarioAnalysisRequest.  # noqa: E501
+        :type: list[SensitivityFactor]
+        """
+        if scenario is None:
+            raise ValueError("Invalid value for `scenario`, must not be `None`")  # noqa: E501
+
+        self._scenario = scenario
+
+    @property
+    def use_proxy_data(self):
+        """Gets the use_proxy_data of this ScenarioAnalysisRequest.  # noqa: E501
+
+
+        :return: The use_proxy_data of this ScenarioAnalysisRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_proxy_data
+
+    @use_proxy_data.setter
+    def use_proxy_data(self, use_proxy_data):
+        """Sets the use_proxy_data of this ScenarioAnalysisRequest.
+
+
+        :param use_proxy_data: The use_proxy_data of this ScenarioAnalysisRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_proxy_data = use_proxy_data
+
+    @property
+    def start_date(self):
+        """Gets the start_date of this ScenarioAnalysisRequest.  # noqa: E501
+
+
+        :return: The start_date of this ScenarioAnalysisRequest.  # noqa: E501
+        :rtype: date
+        """
+        return self._start_date
+
+    @start_date.setter
+    def start_date(self, start_date):
+        """Sets the start_date of this ScenarioAnalysisRequest.
+
+
+        :param start_date: The start_date of this ScenarioAnalysisRequest.  # noqa: E501
+        :type: date
+        """
+
+        self._start_date = start_date
+
+    @property
+    def account_id(self):
+        """Gets the account_id of this ScenarioAnalysisRequest.  # noqa: E501
+
+
+        :return: The account_id of this ScenarioAnalysisRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._account_id
+
+    @account_id.setter
+    def account_id(self, account_id):
+        """Sets the account_id of this ScenarioAnalysisRequest.
+
+
+        :param account_id: The account_id of this ScenarioAnalysisRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._account_id = account_id
 
     @property
     def frequency_interval(self):
@@ -191,27 +384,6 @@ class ScenarioAnalysisRequest(object):
         self._frequency_interval = frequency_interval
 
     @property
-    def create_log(self):
-        """Gets the create_log of this ScenarioAnalysisRequest.  # noqa: E501
-
-
-        :return: The create_log of this ScenarioAnalysisRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._create_log
-
-    @create_log.setter
-    def create_log(self, create_log):
-        """Sets the create_log of this ScenarioAnalysisRequest.
-
-
-        :param create_log: The create_log of this ScenarioAnalysisRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._create_log = create_log
-
-    @property
     def aggregation_account_id(self):
         """Gets the aggregation_account_id of this ScenarioAnalysisRequest.  # noqa: E501
 
@@ -233,46 +405,29 @@ class ScenarioAnalysisRequest(object):
         self._aggregation_account_id = aggregation_account_id
 
     @property
-    def allocation_id(self):
-        """Gets the allocation_id of this ScenarioAnalysisRequest.  # noqa: E501
+    def trading_days_per_year(self):
+        """Gets the trading_days_per_year of this ScenarioAnalysisRequest.  # noqa: E501
 
 
-        :return: The allocation_id of this ScenarioAnalysisRequest.  # noqa: E501
-        :rtype: str
+        :return: The trading_days_per_year of this ScenarioAnalysisRequest.  # noqa: E501
+        :rtype: int
         """
-        return self._allocation_id
+        return self._trading_days_per_year
 
-    @allocation_id.setter
-    def allocation_id(self, allocation_id):
-        """Sets the allocation_id of this ScenarioAnalysisRequest.
+    @trading_days_per_year.setter
+    def trading_days_per_year(self, trading_days_per_year):
+        """Sets the trading_days_per_year of this ScenarioAnalysisRequest.
 
 
-        :param allocation_id: The allocation_id of this ScenarioAnalysisRequest.  # noqa: E501
-        :type: str
+        :param trading_days_per_year: The trading_days_per_year of this ScenarioAnalysisRequest.  # noqa: E501
+        :type: int
         """
+        if trading_days_per_year is not None and trading_days_per_year > 365:  # noqa: E501
+            raise ValueError("Invalid value for `trading_days_per_year`, must be a value less than or equal to `365`")  # noqa: E501
+        if trading_days_per_year is not None and trading_days_per_year < 1:  # noqa: E501
+            raise ValueError("Invalid value for `trading_days_per_year`, must be a value greater than or equal to `1`")  # noqa: E501
 
-        self._allocation_id = allocation_id
-
-    @property
-    def model_id(self):
-        """Gets the model_id of this ScenarioAnalysisRequest.  # noqa: E501
-
-
-        :return: The model_id of this ScenarioAnalysisRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._model_id
-
-    @model_id.setter
-    def model_id(self, model_id):
-        """Sets the model_id of this ScenarioAnalysisRequest.
-
-
-        :param model_id: The model_id of this ScenarioAnalysisRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._model_id = model_id
+        self._trading_days_per_year = trading_days_per_year
 
     @property
     def portfolio_weights(self):
@@ -294,161 +449,6 @@ class ScenarioAnalysisRequest(object):
         """
 
         self._portfolio_weights = portfolio_weights
-
-    @property
-    def end_date(self):
-        """Gets the end_date of this ScenarioAnalysisRequest.  # noqa: E501
-
-
-        :return: The end_date of this ScenarioAnalysisRequest.  # noqa: E501
-        :rtype: date
-        """
-        return self._end_date
-
-    @end_date.setter
-    def end_date(self, end_date):
-        """Sets the end_date of this ScenarioAnalysisRequest.
-
-
-        :param end_date: The end_date of this ScenarioAnalysisRequest.  # noqa: E501
-        :type: date
-        """
-
-        self._end_date = end_date
-
-    @property
-    def scenario(self):
-        """Gets the scenario of this ScenarioAnalysisRequest.  # noqa: E501
-
-
-        :return: The scenario of this ScenarioAnalysisRequest.  # noqa: E501
-        :rtype: list[SensitivityFactor]
-        """
-        return self._scenario
-
-    @scenario.setter
-    def scenario(self, scenario):
-        """Sets the scenario of this ScenarioAnalysisRequest.
-
-
-        :param scenario: The scenario of this ScenarioAnalysisRequest.  # noqa: E501
-        :type: list[SensitivityFactor]
-        """
-        if scenario is None:
-            raise ValueError("Invalid value for `scenario`, must not be `None`")  # noqa: E501
-
-        self._scenario = scenario
-
-    @property
-    def start_date(self):
-        """Gets the start_date of this ScenarioAnalysisRequest.  # noqa: E501
-
-
-        :return: The start_date of this ScenarioAnalysisRequest.  # noqa: E501
-        :rtype: date
-        """
-        return self._start_date
-
-    @start_date.setter
-    def start_date(self, start_date):
-        """Sets the start_date of this ScenarioAnalysisRequest.
-
-
-        :param start_date: The start_date of this ScenarioAnalysisRequest.  # noqa: E501
-        :type: date
-        """
-
-        self._start_date = start_date
-
-    @property
-    def use_proxy_data(self):
-        """Gets the use_proxy_data of this ScenarioAnalysisRequest.  # noqa: E501
-
-
-        :return: The use_proxy_data of this ScenarioAnalysisRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._use_proxy_data
-
-    @use_proxy_data.setter
-    def use_proxy_data(self, use_proxy_data):
-        """Sets the use_proxy_data of this ScenarioAnalysisRequest.
-
-
-        :param use_proxy_data: The use_proxy_data of this ScenarioAnalysisRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._use_proxy_data = use_proxy_data
-
-    @property
-    def account_id(self):
-        """Gets the account_id of this ScenarioAnalysisRequest.  # noqa: E501
-
-
-        :return: The account_id of this ScenarioAnalysisRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._account_id
-
-    @account_id.setter
-    def account_id(self, account_id):
-        """Sets the account_id of this ScenarioAnalysisRequest.
-
-
-        :param account_id: The account_id of this ScenarioAnalysisRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._account_id = account_id
-
-    @property
-    def market_data_source(self):
-        """Gets the market_data_source of this ScenarioAnalysisRequest.  # noqa: E501
-
-
-        :return: The market_data_source of this ScenarioAnalysisRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._market_data_source
-
-    @market_data_source.setter
-    def market_data_source(self, market_data_source):
-        """Sets the market_data_source of this ScenarioAnalysisRequest.
-
-
-        :param market_data_source: The market_data_source of this ScenarioAnalysisRequest.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["nucleus", "integration"]  # noqa: E501
-        if market_data_source not in allowed_values:
-            raise ValueError(
-                "Invalid value for `market_data_source` ({0}), must be one of {1}"  # noqa: E501
-                .format(market_data_source, allowed_values)
-            )
-
-        self._market_data_source = market_data_source
-
-    @property
-    def portfolio_id(self):
-        """Gets the portfolio_id of this ScenarioAnalysisRequest.  # noqa: E501
-
-
-        :return: The portfolio_id of this ScenarioAnalysisRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._portfolio_id
-
-    @portfolio_id.setter
-    def portfolio_id(self, portfolio_id):
-        """Sets the portfolio_id of this ScenarioAnalysisRequest.
-
-
-        :param portfolio_id: The portfolio_id of this ScenarioAnalysisRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._portfolio_id = portfolio_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

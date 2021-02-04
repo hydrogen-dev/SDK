@@ -1,16 +1,18 @@
 # BaasApi
 
-All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1/*
+All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createBaasAccountUsingPost**](BaasApi.md#createBaasAccountUsingPost) | **POST** /baas/account | create a Baas account
+[**createBaasBusinessUsingPost**](BaasApi.md#createBaasBusinessUsingPost) | **POST** /baas/business | Create a Baas Business
 [**createBaasClientUsingPost**](BaasApi.md#createBaasClientUsingPost) | **POST** /baas/client | Create a Baas Client
 [**createBaasSubAccountUsingPost**](BaasApi.md#createBaasSubAccountUsingPost) | **POST** /baas/subaccount | create a Baas subaccount
 [**getBaasAccountStatementUsingGet**](BaasApi.md#getBaasAccountStatementUsingGet) | **GET** /baas/statement/{nucleus_account_id} | Get a Baas account statement
 [**getBaasPortfolioBalanceUsingGet**](BaasApi.md#getBaasPortfolioBalanceUsingGet) | **GET** /baas/balance/{nucleus_portfolio_id} | Get a Baas portfolio balance
 [**getBaasPortfolioTransactionUsingGet**](BaasApi.md#getBaasPortfolioTransactionUsingGet) | **GET** /baas/transaction/{nucleus_portfolio_id} | Get a Baas portfolio transaction
-[**updateBaasClientUsingPut**](BaasApi.md#updateBaasClientUsingPut) | **PUT** /baas/client | Update a Baas client
+[**updateBaasBusinessUsingPut**](BaasApi.md#updateBaasBusinessUsingPut) | **PUT** /baas/business/{nucleus_business_id} | Update a Baas business
+[**updateBaasClientUsingPut**](BaasApi.md#updateBaasClientUsingPut) | **PUT** /baas/client/{nucleus_client_id} | Update a Baas client
 
 
 <a name="createBaasAccountUsingPost"></a>
@@ -40,7 +42,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 BaasApi apiInstance = new BaasApi();
 BaasAccountCO baasAccountCO = new BaasAccountCO(); // BaasAccountCO | baasAccountCO
 try {
@@ -61,6 +62,63 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BaasAccountVO**](BaasAccountVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+<a name="createBaasBusinessUsingPost"></a>
+# **createBaasBusinessUsingPost**
+> BaasBusinessVO createBaasBusinessUsingPost(baasBusinessCO)
+
+Create a Baas Business
+
+### Example
+```java
+// Import classes:
+//import com.hydrogen.integration.ApiException;
+//import com.hydrogen.integration.AuthApiClient;
+//import BaasApi;
+
+AuthApiClient authApiClient = new AuthApiClient();
+try {
+//          Use one of the below method to generate oauth token        
+//          Creating a token for grant_type=client_credentials            
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+//          Creating a token for grant_type=password
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
+} catch (ApiException e) {
+e.printStackTrace();
+}
+BaasApi apiInstance = new BaasApi();
+CreateBaasBusinessCO baasBusinessCO = new CreateBaasBusinessCO(); // CreateBaasBusinessCO | baasBusinessCO
+try {
+    BaasBusinessVO result = apiInstance.createBaasBusinessUsingPost(baasBusinessCO);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BaasApi#createBaasBusinessUsingPost");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **baasBusinessCO** | [**CreateBaasBusinessCO**](CreateBaasBusinessCO.md)| baasBusinessCO |
+
+### Return type
+
+[**BaasBusinessVO**](BaasBusinessVO.md)
 
 ### Authorization
 
@@ -98,9 +156,8 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 BaasApi apiInstance = new BaasApi();
-BaasClientCO baasClientCO = new BaasClientCO(); // BaasClientCO | baasClientCO
+CreateBaasClientCO baasClientCO = new CreateBaasClientCO(); // CreateBaasClientCO | baasClientCO
 try {
     BaasClientVO result = apiInstance.createBaasClientUsingPost(baasClientCO);
     System.out.println(result);
@@ -114,7 +171,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **baasClientCO** | [**BaasClientCO**](BaasClientCO.md)| baasClientCO |
+ **baasClientCO** | [**CreateBaasClientCO**](CreateBaasClientCO.md)| baasClientCO |
 
 ### Return type
 
@@ -156,7 +213,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 BaasApi apiInstance = new BaasApi();
 BaasSubAccountCO baasSubAccountCO = new BaasSubAccountCO(); // BaasSubAccountCO | baasSubAccountCO
 try {
@@ -214,7 +270,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 BaasApi apiInstance = new BaasApi();
 LocalDate endDate = LocalDate.now(); // LocalDate | end_date
 UUID nucleusAccountId = new UUID(); // UUID | nucleus_account_id
@@ -278,7 +333,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 BaasApi apiInstance = new BaasApi();
 UUID nucleusPortfolioId = new UUID(); // UUID | nucleus_portfolio_id
 LocalDate endDate = LocalDate.now(); // LocalDate | end_date
@@ -340,7 +394,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 BaasApi apiInstance = new BaasApi();
 UUID nucleusPortfolioId = new UUID(); // UUID | nucleus_portfolio_id
 LocalDate endDate = LocalDate.now(); // LocalDate | end_date
@@ -375,9 +428,68 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: */*
 
+<a name="updateBaasBusinessUsingPut"></a>
+# **updateBaasBusinessUsingPut**
+> BaasBusinessVO updateBaasBusinessUsingPut(nucleusBusinessId, baasBusinessCO)
+
+Update a Baas business
+
+### Example
+```java
+// Import classes:
+//import com.hydrogen.integration.ApiException;
+//import com.hydrogen.integration.AuthApiClient;
+//import BaasApi;
+
+AuthApiClient authApiClient = new AuthApiClient();
+try {
+//          Use one of the below method to generate oauth token        
+//          Creating a token for grant_type=client_credentials            
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+//          Creating a token for grant_type=password
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
+} catch (ApiException e) {
+e.printStackTrace();
+}
+BaasApi apiInstance = new BaasApi();
+UUID nucleusBusinessId = new UUID(); // UUID | nucleus_business_id
+UpdateBaasBusinessCO baasBusinessCO = new UpdateBaasBusinessCO(); // UpdateBaasBusinessCO | baasBusinessCO
+try {
+    BaasBusinessVO result = apiInstance.updateBaasBusinessUsingPut(nucleusBusinessId, baasBusinessCO);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BaasApi#updateBaasBusinessUsingPut");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nucleusBusinessId** | [**UUID**](.md)| nucleus_business_id |
+ **baasBusinessCO** | [**UpdateBaasBusinessCO**](UpdateBaasBusinessCO.md)| baasBusinessCO | [optional]
+
+### Return type
+
+[**BaasBusinessVO**](BaasBusinessVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
 <a name="updateBaasClientUsingPut"></a>
 # **updateBaasClientUsingPut**
-> BaasClientVO updateBaasClientUsingPut(baasClientCO)
+> BaasClientVO updateBaasClientUsingPut(nucleusClientId, baasClientCO)
 
 Update a Baas client
 
@@ -402,11 +514,11 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 BaasApi apiInstance = new BaasApi();
-BaasClientCO baasClientCO = new BaasClientCO(); // BaasClientCO | baasClientCO
+UUID nucleusClientId = new UUID(); // UUID | nucleus_client_id
+UpdateBaasClientCO baasClientCO = new UpdateBaasClientCO(); // UpdateBaasClientCO | baasClientCO
 try {
-    BaasClientVO result = apiInstance.updateBaasClientUsingPut(baasClientCO);
+    BaasClientVO result = apiInstance.updateBaasClientUsingPut(nucleusClientId, baasClientCO);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BaasApi#updateBaasClientUsingPut");
@@ -418,7 +530,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **baasClientCO** | [**BaasClientCO**](BaasClientCO.md)| baasClientCO |
+ **nucleusClientId** | [**UUID**](.md)| nucleus_client_id |
+ **baasClientCO** | [**UpdateBaasClientCO**](UpdateBaasClientCO.md)| baasClientCO | [optional]
 
 ### Return type
 

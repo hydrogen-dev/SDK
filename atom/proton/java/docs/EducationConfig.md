@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**startAge** | **Integer** |  | 
-**totalAnnualCost** | [**BigDecimal**](BigDecimal.md) |  | 
 **endAge** | **Integer** |  | 
+**totalAnnualCost** | [**BigDecimal**](BigDecimal.md) |  | 
+**startAge** | **Integer** |  | 
 
 
 

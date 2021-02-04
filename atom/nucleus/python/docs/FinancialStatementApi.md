@@ -41,7 +41,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FinancialStatementApi(nucleus_api.ApiClient(configuration))
 financial_statement = nucleus_api.FinancialStatement() # FinancialStatement | financialStatement
@@ -105,7 +105,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FinancialStatementApi(nucleus_api.ApiClient(configuration))
 financial_statement_id = 'financial_statement_id_example' # str | UUID financialStatement_id
@@ -168,7 +168,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FinancialStatementApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -242,7 +242,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FinancialStatementApi(nucleus_api.ApiClient(configuration))
 financial_statement_id = 'financial_statement_id_example' # str | UUID financial_statement_id
@@ -308,10 +308,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FinancialStatementApi(nucleus_api.ApiClient(configuration))
-financial_statement = nucleus_api.FinancialStatement() # FinancialStatement | financialStatement
+financial_statement = NULL # object | financialStatement
 financial_statement_id = 'financial_statement_id_example' # str | UUID financialStatement_id
 
 try:
@@ -326,7 +326,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **financial_statement** | [**FinancialStatement**](FinancialStatement.md)| financialStatement | 
+ **financial_statement** | **object**| financialStatement | 
  **financial_statement_id** | [**str**](.md)| UUID financialStatement_id | 
 
 ### Return type

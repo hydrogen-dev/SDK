@@ -39,8 +39,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.IAVApi(integration_api.ApiClient(configuration))
 iav_request_co = integration_api.IavRequestCO() # IavRequestCO | iavRequestCO
@@ -105,8 +106,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.IAVApi(integration_api.ApiClient(configuration))
 nucleus_bank_link_id = 'nucleus_bank_link_id_example' # str | nucleus_bank_link_id

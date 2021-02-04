@@ -3,16 +3,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**aggregationAccounts** | [**[BudgetAggregationAccount]**](BudgetAggregationAccount.md) |  | [optional] 
-**totalValue** | **Number** |  | [optional] 
-**clientId** | **String** |  | [optional] 
-**startDate** | **Date** |  | [optional] 
-**budget** | [**[BudgetComponent]**](BudgetComponent.md) |  | [optional] 
+**frequencyUnit** | **String** |  | 
 **endDate** | **Date** |  | [optional] 
+**clientId** | **String** |  | [optional] 
+**budget** | [**[BudgetComponent]**](BudgetComponent.md) |  | [optional] 
+**totalValue** | **Number** |  | [optional] 
+**accountId** | **String** |  | [optional] 
+**aggregationAccounts** | [**[BudgetAggregationAccount]**](BudgetAggregationAccount.md) |  | [optional] 
 **currencyCode** | **String** |  | [optional] 
 **frequency** | **Number** |  | [optional] [default to 1]
-**accountId** | **String** |  | [optional] 
-**frequencyUnit** | **String** |  | 
+**startDate** | **Date** |  | [optional] 
 
 
 <a name="FrequencyUnitEnum"></a>

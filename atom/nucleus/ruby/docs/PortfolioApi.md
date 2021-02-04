@@ -1564,7 +1564,7 @@ end
 
 api_instance = NucleusApi::PortfolioApi.new
 
-portfolio_asset_size = NucleusApi::PortfolioAssetSizeLog.new # PortfolioAssetSizeLog | portfolio_asset_size
+portfolio_asset_size = nil # Object | portfolio_asset_size
 
 portfolio_asset_size_id = 'portfolio_asset_size_id_example' # String | UUID portfolio_asset_size_id
 
@@ -1582,7 +1582,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_asset_size** | [**PortfolioAssetSizeLog**](PortfolioAssetSizeLog.md)| portfolio_asset_size | 
+ **portfolio_asset_size** | **Object**| portfolio_asset_size | 
  **portfolio_asset_size_id** | [**String**](.md)| UUID portfolio_asset_size_id | 
 
 ### Return type
@@ -1624,7 +1624,7 @@ end
 
 api_instance = NucleusApi::PortfolioApi.new
 
-portfolio_comment = NucleusApi::PortfolioComment.new # PortfolioComment | portfolio_comment
+portfolio_comment = nil # Object | portfolio_comment
 
 portfolio_comment_id = 'portfolio_comment_id_example' # String | UUID portfolio_comment_id
 
@@ -1642,7 +1642,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_comment** | [**PortfolioComment**](PortfolioComment.md)| portfolio_comment | 
+ **portfolio_comment** | **Object**| portfolio_comment | 
  **portfolio_comment_id** | [**String**](.md)| UUID portfolio_comment_id | 
 
 ### Return type
@@ -1684,7 +1684,7 @@ end
 
 api_instance = NucleusApi::PortfolioApi.new
 
-portfolio_goal = NucleusApi::PortfolioGoal.new # PortfolioGoal | portfolio_goal
+portfolio_goal = nil # Object | portfolio_goal
 
 portfolio_goal_id = 'portfolio_goal_id_example' # String | UUID portfolio_goal_id
 
@@ -1702,7 +1702,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_goal** | [**PortfolioGoal**](PortfolioGoal.md)| portfolio_goal | 
+ **portfolio_goal** | **Object**| portfolio_goal | 
  **portfolio_goal_id** | [**String**](.md)| UUID portfolio_goal_id | 
 
 ### Return type
@@ -1744,7 +1744,7 @@ end
 
 api_instance = NucleusApi::PortfolioApi.new
 
-portfolio_holding = NucleusApi::PortfolioHoldingLog.new # PortfolioHoldingLog | portfolio_holding
+portfolio_holding = nil # Object | portfolio_holding
 
 portfolio_holding_id = 'portfolio_holding_id_example' # String | UUID portfolio_holding_id
 
@@ -1762,7 +1762,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_holding** | [**PortfolioHoldingLog**](PortfolioHoldingLog.md)| portfolio_holding | 
+ **portfolio_holding** | **Object**| portfolio_holding | 
  **portfolio_holding_id** | [**String**](.md)| UUID portfolio_holding_id | 
 
 ### Return type
@@ -1804,7 +1804,7 @@ end
 
 api_instance = NucleusApi::PortfolioApi.new
 
-portfolio_transaction = NucleusApi::PortfolioTransaction.new # PortfolioTransaction | portfolio_transaction
+portfolio_transaction = nil # Object | portfolio_transaction
 
 portfolio_transaction_id = 'portfolio_transaction_id_example' # String | UUID portfolio_transaction_id
 
@@ -1822,7 +1822,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_transaction** | [**PortfolioTransaction**](PortfolioTransaction.md)| portfolio_transaction | 
+ **portfolio_transaction** | **Object**| portfolio_transaction | 
  **portfolio_transaction_id** | [**String**](.md)| UUID portfolio_transaction_id | 
 
 ### Return type
@@ -1864,7 +1864,7 @@ end
 
 api_instance = NucleusApi::PortfolioApi.new
 
-portfolio = NucleusApi::Portfolio.new # Portfolio | portfolio
+portfolio = nil # Object | portfolio
 
 portfolio_id = 'portfolio_id_example' # String | UUID portfolio_id
 
@@ -1882,7 +1882,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio** | [**Portfolio**](Portfolio.md)| portfolio | 
+ **portfolio** | **Object**| portfolio | 
  **portfolio_id** | [**String**](.md)| UUID portfolio_id | 
 
 ### Return type

@@ -73,7 +73,25 @@ $apiInstance = new com\hydrogen\nucleus\Api\AccountApi(
     $config
 );
 $alloc_request = new \com\hydrogen\nucleus\Model\AccountAllocationMapping(); // \com\hydrogen\nucleus\Model\AccountAllocationMapping | allocRequest
-
+require_once('../vendor/autoload.php');
+try {
+// Use one of the below method to generate oauth token
+// 1) Generate Token for client credentials
+$config =
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+            ->createClientCredential("MYCLIENTID",
+             "MYCLIENTSECRET");
+// 2) Generate Token for password credentials
+$config =
+        \com\hydrogen\nucleus\AuthApiClient::
+        getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
+                      ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
+} catch (\com\hydrogen\nucleus\ApiException $e) {
+    print_r($e);
+}
 try {
     $result = $apiInstance->createAccountAllocationMappingUsingPost($alloc_request);
     print_r($result);
@@ -1897,7 +1915,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\AccountApi(
     $config
 );
 $account_allocation_id = "account_allocation_id_example"; // string | UUID account_allocation_id
-$account_allocation_mapping = new \com\hydrogen\nucleus\Model\AccountAllocationMapping(); // \com\hydrogen\nucleus\Model\AccountAllocationMapping | account_allocation_mapping
+$account_allocation_mapping = new \stdClass; // object | account_allocation_mapping
 
 try {
     $result = $apiInstance->updateAccountAllocationMappingUsingPut($account_allocation_id, $account_allocation_mapping);
@@ -1913,7 +1931,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_allocation_id** | [**string**](../Model/.md)| UUID account_allocation_id |
- **account_allocation_mapping** | [**\com\hydrogen\nucleus\Model\AccountAllocationMapping**](../Model/AccountAllocationMapping.md)| account_allocation_mapping | [optional]
+ **account_allocation_mapping** | **object**| account_allocation_mapping | [optional]
 
 ### Return type
 
@@ -1965,7 +1983,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\AccountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_status = new \com\hydrogen\nucleus\Model\AccountStatus(); // \com\hydrogen\nucleus\Model\AccountStatus | account_status
+$account_status = new \stdClass; // object | account_status
 $account_status_id = "account_status_id_example"; // string | UUID account_status_id
 
 try {
@@ -1981,7 +1999,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_status** | [**\com\hydrogen\nucleus\Model\AccountStatus**](../Model/AccountStatus.md)| account_status |
+ **account_status** | **object**| account_status |
  **account_status_id** | [**string**](../Model/.md)| UUID account_status_id |
 
 ### Return type
@@ -2034,7 +2052,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\AccountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account_type = new \com\hydrogen\nucleus\Model\AccountType(); // \com\hydrogen\nucleus\Model\AccountType | account_type
+$account_type = new \stdClass; // object | account_type
 $account_type_id = "account_type_id_example"; // string | UUID account_type_id
 
 try {
@@ -2050,7 +2068,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_type** | [**\com\hydrogen\nucleus\Model\AccountType**](../Model/AccountType.md)| account_type |
+ **account_type** | **object**| account_type |
  **account_type_id** | [**string**](../Model/.md)| UUID account_type_id |
 
 ### Return type
@@ -2103,7 +2121,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\AccountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$account = new \com\hydrogen\nucleus\Model\Account(); // \com\hydrogen\nucleus\Model\Account | account
+$account = new \stdClass; // object | account
 $account_id = "account_id_example"; // string | UUID account_id
 
 try {
@@ -2119,7 +2137,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account** | [**\com\hydrogen\nucleus\Model\Account**](../Model/Account.md)| account |
+ **account** | **object**| account |
  **account_id** | [**string**](../Model/.md)| UUID account_id |
 
 ### Return type
@@ -2173,7 +2191,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\AccountApi(
     $config
 );
 $account_id = "account_id_example"; // string | account_id
-$acl_client_permission_vo = new \com\hydrogen\nucleus\Model\AclClientPermissionVO(); // \com\hydrogen\nucleus\Model\AclClientPermissionVO | aclClientPermissionVO
+$acl_client_permission_vo = new \stdClass; // object | aclClientPermissionVO
 
 try {
     $result = $apiInstance->updateClientAccountPermissionUsingPUT($account_id, $acl_client_permission_vo);
@@ -2189,7 +2207,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**string**](../Model/.md)| account_id |
- **acl_client_permission_vo** | [**\com\hydrogen\nucleus\Model\AclClientPermissionVO**](../Model/AclClientPermissionVO.md)| aclClientPermissionVO |
+ **acl_client_permission_vo** | **object**| aclClientPermissionVO |
 
 ### Return type
 

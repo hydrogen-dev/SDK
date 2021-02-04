@@ -32,7 +32,7 @@ class BrokerageStatementVO(object):
     """
     swagger_types = {
         'nucleus_account_id': 'str',
-        'statements': 'list[StatementModel]',
+        'statements': 'object',
         'vendor_name': 'str'
     }
 
@@ -84,7 +84,7 @@ class BrokerageStatementVO(object):
 
 
         :return: The statements of this BrokerageStatementVO.  # noqa: E501
-        :rtype: list[StatementModel]
+        :rtype: object
         """
         return self._statements
 
@@ -94,7 +94,7 @@ class BrokerageStatementVO(object):
 
 
         :param statements: The statements of this BrokerageStatementVO.  # noqa: E501
-        :type: list[StatementModel]
+        :type: object
         """
 
         self._statements = statements

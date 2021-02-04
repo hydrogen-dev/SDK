@@ -32,28 +32,28 @@ class BudgetComponent(object):
     """
     swagger_types = {
         'subcategory': 'str',
-        'value': 'float',
-        'category': 'str'
+        'category': 'str',
+        'value': 'float'
     }
 
     attribute_map = {
         'subcategory': 'subcategory',
-        'value': 'value',
-        'category': 'category'
+        'category': 'category',
+        'value': 'value'
     }
 
-    def __init__(self, subcategory=None, value=None, category=None):  # noqa: E501
+    def __init__(self, subcategory=None, category=None, value=None):  # noqa: E501
         """BudgetComponent - a model defined in Swagger"""  # noqa: E501
 
         self._subcategory = None
-        self._value = None
         self._category = None
+        self._value = None
         self.discriminator = None
 
         if subcategory is not None:
             self.subcategory = subcategory
-        self.value = value
         self.category = category
+        self.value = value
 
     @property
     def subcategory(self):
@@ -75,6 +75,29 @@ class BudgetComponent(object):
         """
 
         self._subcategory = subcategory
+
+    @property
+    def category(self):
+        """Gets the category of this BudgetComponent.  # noqa: E501
+
+
+        :return: The category of this BudgetComponent.  # noqa: E501
+        :rtype: str
+        """
+        return self._category
+
+    @category.setter
+    def category(self, category):
+        """Sets the category of this BudgetComponent.
+
+
+        :param category: The category of this BudgetComponent.  # noqa: E501
+        :type: str
+        """
+        if category is None:
+            raise ValueError("Invalid value for `category`, must not be `None`")  # noqa: E501
+
+        self._category = category
 
     @property
     def value(self):
@@ -100,29 +123,6 @@ class BudgetComponent(object):
             raise ValueError("Invalid value for `value`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._value = value
-
-    @property
-    def category(self):
-        """Gets the category of this BudgetComponent.  # noqa: E501
-
-
-        :return: The category of this BudgetComponent.  # noqa: E501
-        :rtype: str
-        """
-        return self._category
-
-    @category.setter
-    def category(self, category):
-        """Sets the category of this BudgetComponent.
-
-
-        :param category: The category of this BudgetComponent.  # noqa: E501
-        :type: str
-        """
-        if category is None:
-            raise ValueError("Invalid value for `category`, must not be `None`")  # noqa: E501
-
-        self._category = category
 
     def to_dict(self):
         """Returns the model properties as a dict"""

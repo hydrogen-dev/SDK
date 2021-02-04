@@ -32,7 +32,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::GoalsApi.new
 
 goal_accumulation_allocation_request = ProtonApi::GoalAccumulationAllocationRequest.new # GoalAccumulationAllocationRequest | Request payload for Goal Accumulation Allocation
@@ -88,7 +87,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::GoalsApi.new
 
 goal_accumulation_recommendation_request = ProtonApi::GoalAccumulationRecommendationRequest.new # GoalAccumulationRecommendationRequest | Request payload for Goal Accumulation Recommendation
@@ -144,7 +142,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::GoalsApi.new
 
 goal_accumulation_status_request = ProtonApi::GoalAccumulationStatusRequest.new # GoalAccumulationStatusRequest | Request payload for Goal Accumulation Status
@@ -200,7 +197,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::GoalsApi.new
 
 goal_decumulation_allocation_request = ProtonApi::GoalDecumulationAllocationRequest.new # GoalDecumulationAllocationRequest | Request payload for Goal Decumulation Allocation
@@ -256,7 +252,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::GoalsApi.new
 
 goal_decumulation_recommendation_request = ProtonApi::GoalDecumulationRecommendationRequest.new # GoalDecumulationRecommendationRequest | Request payload for Goal Decumulation Recommendation
@@ -312,7 +307,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::GoalsApi.new
 
 goal_decumulation_status_request = ProtonApi::GoalDecumulationStatusRequest.new # GoalDecumulationStatusRequest | Request payload for Goal Decumulation Status

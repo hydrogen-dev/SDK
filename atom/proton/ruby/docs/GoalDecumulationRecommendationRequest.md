@@ -3,27 +3,27 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**goal_id** | **String** |  | [optional] 
-**curr_inv** | **Float** |  | [optional] 
-**d_horizon** | **Integer** |  | [optional] 
-**n** | **Integer** |  | [optional] [default to 1000]
-**horizon_frequency** | **String** |  | [optional] [default to &#39;year&#39;]
-**client_id** | **String** |  | [optional] 
-**remove_outliers** | **BOOLEAN** |  | [optional] [default to true]
-**withdrawal_config** | [**Array&lt;GoalWithdrawalConfig&gt;**](GoalWithdrawalConfig.md) |  | [optional] 
-**a_horizon** | **Integer** |  | [optional] 
-**conf_tgt** | **Float** |  | [optional] [default to 0.9]
-**p_ret** | **Array&lt;Float&gt;** |  | 
 **thresh_type** | **String** |  | [optional] [default to &#39;perc&#39;]
-**thresh** | **Float** |  | [optional] 
-**deposit_config** | [**Array&lt;DecumulationGoalDepositConfig&gt;**](DecumulationGoalDepositConfig.md) |  | [optional] 
-**recommendation_config** | [**RecommendationConfig1**](RecommendationConfig1.md) |  | [optional] 
+**goal_id** | **String** |  | [optional] 
+**client_id** | **String** |  | [optional] 
+**conf_tgt** | **Float** |  | [optional] [default to 0.9]
+**remove_outliers** | **BOOLEAN** |  | [optional] [default to true]
+**a_horizon** | **Integer** |  | [optional] 
+**withdrawal_config** | [**Array&lt;GoalWithdrawalConfig&gt;**](GoalWithdrawalConfig.md) |  | [optional] 
+**p_ret** | **Array&lt;Float&gt;** |  | 
 **compounding_rate** | **Float** |  | [optional] [default to 0.0]
+**adjust_for_compounding** | **BOOLEAN** |  | [optional] [default to false]
+**deposit_config** | [**Array&lt;DecumulationGoalDepositConfig&gt;**](DecumulationGoalDepositConfig.md) |  | [optional] 
+**thresh** | **Float** |  | [optional] 
+**horizon_frequency** | **String** |  | [optional] [default to &#39;year&#39;]
+**recommendation_config** | [**RecommendationConfig1**](RecommendationConfig1.md) |  | [optional] 
+**create_log** | **BOOLEAN** |  | [optional] [default to false]
 **withdrawal_tax** | **Float** |  | [optional] [default to 0.0]
 **trading_days_per_year** | **Integer** |  | [optional] [default to 252]
-**adjust_for_compounding** | **BOOLEAN** |  | [optional] [default to false]
+**n** | **Integer** |  | [optional] [default to 1000]
+**d_horizon** | **Integer** |  | [optional] 
 **p_risk** | **Array&lt;Float&gt;** |  | 
-**create_log** | **BOOLEAN** |  | [optional] [default to false]
+**curr_inv** | **Float** |  | [optional] 
 **recommend_type** | **String** |  | [optional] [default to &#39;horizon&#39;]
 
 

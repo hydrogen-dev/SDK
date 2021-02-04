@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_id** | **String** | accountId | 
+**account_id** | **String** | accountId | [optional] 
 **amount** | **Float** | amount | [optional] 
 **bank_link_id** | **String** | bankLinkId | [optional] 
 **card_id** | **String** | cardId | [optional] 
@@ -22,12 +22,15 @@ Name | Type | Description | Notes
 **metadata** | **Hash&lt;String, String&gt;** | metadata | [optional] 
 **next_request_date** | **Date** | nextRequestDate | [optional] 
 **portfolio_id** | **String** | portfolioId | [optional] 
+**receiving_account_id** | **String** | receivingAccountId | [optional] 
 **receiving_bank_link_id** | **String** | receivingBankLinkId | [optional] 
+**receiving_portfolio_id** | **String** | receivingPortfolioId | [optional] 
 **secondary_id** | **String** |  | [optional] 
 **start_date** | **Date** | startDate | 
 **support_ticket_id** | **String** | supportTicketId | [optional] 
 **threshold_amount** | **Float** | thresholdAmount | [optional] 
 **transfer_id** | **String** | transferId | [optional] 
+**transfer_speed** | **String** | transferSpeed | [optional] 
 **transfer_type** | **String** | transferType | [optional] 
 **update_date** | **DateTime** |  | [optional] 
 

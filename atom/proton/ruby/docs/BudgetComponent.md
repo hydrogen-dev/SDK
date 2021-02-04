@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **subcategory** | **String** |  | [optional] 
-**value** | **Float** |  | 
 **category** | **String** |  | 
+**value** | **Float** |  | 
 
 

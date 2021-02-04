@@ -3,16 +3,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**client_id** | **string** |  | [optional] 
-**total_liabilities** | **float** |  | [optional] 
+**gross_annual_income** | **float** |  | [optional] 
 **liquid_assets** | **float** |  | [optional] 
+**net_monthly_income** | **float** |  | [optional] 
+**client_id** | **string** |  | [optional] 
+**short_term_liabilities** | **float** |  | [optional] 
 **monthly_expenses** | **float** |  | [optional] 
+**total_liabilities** | **float** |  | [optional] 
+**lookback_periods** | **int** |  | [optional] [default to 3]
 **ratio_targets** | [**\com\hydrogen\proton\Model\RatioTargets**](RatioTargets.md) |  | [optional] 
 **non_liquid_assets** | **float** |  | [optional] 
-**gross_annual_income** | **float** |  | [optional] 
-**lookback_periods** | **int** |  | [optional] [default to 3]
-**net_monthly_income** | **float** |  | [optional] 
-**short_term_liabilities** | **float** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

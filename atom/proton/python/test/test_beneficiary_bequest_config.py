@@ -32,7 +32,7 @@ class TestBeneficiaryBequestConfig(unittest.TestCase):
     def testBeneficiaryBequestConfig(self):
         """Test BeneficiaryBequestConfig"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.beneficiary_bequest_config.BeneficiaryBequestConfig()  # noqa: E501
+        # model = proton_api.models.beneficiary_bequest_config.BeneficiaryBequestConfig()  # noqa: E501
         pass
 
 

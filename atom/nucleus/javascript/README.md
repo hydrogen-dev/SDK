@@ -19,6 +19,12 @@ Follow steps to verify the base URL path:
 https://sandbox.hydrogenplatform.com/nucleus/v1
 **Production Base URL**
 https://api.hydrogenplatform.com/nucleus/v1
+3.  Search for **this.adminPath** and change/verify the URL according to the environment.
+**Sandbox Base URL**
+https://sandbox.hydrogenplatform.com/admin/v1
+**Production Base URL**
+https://api.hydrogenplatform.com/admin/v1
+
 
 ### For [Node.js](https://nodejs.org/)
 
@@ -145,7 +151,7 @@ api.createUsingPostPassword({
 api.createUsingPostClientTokenCredentials({
     'client_id': 'MYCLIENTID',
     'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
+    'Client-Token' : 'Client-Token'
 }, tokenGenerationCallback);
 
 
@@ -200,6 +206,11 @@ Class | Method | HTTP request | Description
 *HydrogenNucleusApi.AccountApi* | [**updateAccountTypeUsingPut**](docs/AccountApi.md#updateAccountTypeUsingPut) | **PUT** /account_type/{account_type_id} | Update an account type
 *HydrogenNucleusApi.AccountApi* | [**updateAccountUsingPut**](docs/AccountApi.md#updateAccountUsingPut) | **PUT** /account/{account_id} | Update an account
 *HydrogenNucleusApi.AccountApi* | [**updateClientAccountPermissionUsingPUT**](docs/AccountApi.md#updateClientAccountPermissionUsingPUT) | **PUT** /account_permission/{account_id} | Update an account permission
+*HydrogenNucleusApi.AdminClientApi* | [**createAdminClientUsingPost**](docs/AdminClientApi.md#createAdminClientUsingPost) | **POST** /client | Create an admin client
+*HydrogenNucleusApi.AdminClientApi* | [**deleteAdminClientUsingGet**](docs/AdminClientApi.md#deleteAdminClientUsingGet) | **DELETE** /client/{client_id} | Delete an admin client
+*HydrogenNucleusApi.AdminClientApi* | [**getAdminClientUsingGet**](docs/AdminClientApi.md#getAdminClientUsingGet) | **GET** /client/{client_id} | Get an admin client
+*HydrogenNucleusApi.AdminClientApi* | [**getAllAdminClientUsingGet**](docs/AdminClientApi.md#getAllAdminClientUsingGet) | **GET** /client | List all admin clients
+*HydrogenNucleusApi.AdminClientApi* | [**updateAdminClientUsingPut**](docs/AdminClientApi.md#updateAdminClientUsingPut) | **PUT** /client/{client_id} | Update an admin client
 *HydrogenNucleusApi.AggregationAccountApi* | [**createAggregationAccountBalanceBulkUsingPost**](docs/AggregationAccountApi.md#createAggregationAccountBalanceBulkUsingPost) | **POST** /bulk_aggregation_account_balance | Create a bulk aggregation account balance
 *HydrogenNucleusApi.AggregationAccountApi* | [**createAggregationAccountBalanceUsingPost**](docs/AggregationAccountApi.md#createAggregationAccountBalanceUsingPost) | **POST** /aggregation_account_balance | Create an aggregation account balance
 *HydrogenNucleusApi.AggregationAccountApi* | [**createAggregationAccountBulkUsingPost**](docs/AggregationAccountApi.md#createAggregationAccountBulkUsingPost) | **POST** /bulk_aggregation_account | Create a bulk aggregation account
@@ -265,6 +276,14 @@ Class | Method | HTTP request | Description
 *HydrogenNucleusApi.BulkApi* | [**deleteBulkUsingDelete**](docs/BulkApi.md#deleteBulkUsingDelete) | **DELETE** /bulk/{entity_uri} | Delete a bulk data
 *HydrogenNucleusApi.BulkApi* | [**getBulkStatusUsingGet**](docs/BulkApi.md#getBulkStatusUsingGet) | **GET** /bulk/status/{id} | Status of bulk transaction
 *HydrogenNucleusApi.BulkApi* | [**updateBulkUsingPut**](docs/BulkApi.md#updateBulkUsingPut) | **PUT** /bulk/{entity_uri} | Update a bulk data
+*HydrogenNucleusApi.BusinessApi* | [**createBusinessUsingPost**](docs/BusinessApi.md#createBusinessUsingPost) | **POST** /business | Create a business
+*HydrogenNucleusApi.BusinessApi* | [**deleteBusinessUsingDelete**](docs/BusinessApi.md#deleteBusinessUsingDelete) | **DELETE** /business/{business_id} | Delete a business
+*HydrogenNucleusApi.BusinessApi* | [**getBusinessAllUsingGet**](docs/BusinessApi.md#getBusinessAllUsingGet) | **GET** /business | List all business
+*HydrogenNucleusApi.BusinessApi* | [**getBusinessAssetSizeUsingGet**](docs/BusinessApi.md#getBusinessAssetSizeUsingGet) | **GET** /business/{business_id}/asset_size | List all business asset sizes
+*HydrogenNucleusApi.BusinessApi* | [**getBusinessClientTransactionAllUsingGet**](docs/BusinessApi.md#getBusinessClientTransactionAllUsingGet) | **GET** /business/{business_id}/transaction | List all business transactions
+*HydrogenNucleusApi.BusinessApi* | [**getBusinessHoldingUsingGet**](docs/BusinessApi.md#getBusinessHoldingUsingGet) | **GET** /business/{business_id}/holding | List all business holdings
+*HydrogenNucleusApi.BusinessApi* | [**getBusinessUsingGet**](docs/BusinessApi.md#getBusinessUsingGet) | **GET** /business/{business_id} | Retrieve a business
+*HydrogenNucleusApi.BusinessApi* | [**updateBusinessUsingPut**](docs/BusinessApi.md#updateBusinessUsingPut) | **PUT** /business/{business_id} | Update a business
 *HydrogenNucleusApi.CardApi* | [**createCardProgramUsingPost**](docs/CardApi.md#createCardProgramUsingPost) | **POST** /card_program | Create a cardProgram request
 *HydrogenNucleusApi.CardApi* | [**createCardUsingPost**](docs/CardApi.md#createCardUsingPost) | **POST** /card | Create a card request
 *HydrogenNucleusApi.CardApi* | [**deleteCardProgramUsingDelete**](docs/CardApi.md#deleteCardProgramUsingDelete) | **DELETE** /card_program/{card_program_id} | Delete an cardProgram
@@ -277,10 +296,8 @@ Class | Method | HTTP request | Description
 *HydrogenNucleusApi.CardApi* | [**getCardUsingGet**](docs/CardApi.md#getCardUsingGet) | **GET** /card/{card_id} | Retrieve a card request
 *HydrogenNucleusApi.CardApi* | [**updateCardProgramUsingPut**](docs/CardApi.md#updateCardProgramUsingPut) | **PUT** /card_program/{card_program_id} | Update an cardProgram
 *HydrogenNucleusApi.CardApi* | [**updateCardUsingPut**](docs/CardApi.md#updateCardUsingPut) | **PUT** /card/{card_id} | Update a card request
-*HydrogenNucleusApi.ClientApi* | [**createClientHydroUsingPost**](docs/ClientApi.md#createClientHydroUsingPost) | **POST** /client_hydro | Create a client-hydro relationship
 *HydrogenNucleusApi.ClientApi* | [**createClientStatusUsingPost**](docs/ClientApi.md#createClientStatusUsingPost) | **POST** /client_status | Create an client status
 *HydrogenNucleusApi.ClientApi* | [**createClientUsingPost**](docs/ClientApi.md#createClientUsingPost) | **POST** /client | Create a client
-*HydrogenNucleusApi.ClientApi* | [**deleteClientHydroUsingDelete**](docs/ClientApi.md#deleteClientHydroUsingDelete) | **DELETE** /client_hydro/{client_hydro_id} | Delete a client-hydro relationship
 *HydrogenNucleusApi.ClientApi* | [**deleteClientStatusUsingDelete**](docs/ClientApi.md#deleteClientStatusUsingDelete) | **DELETE** /client_status/{client_status_id} | Delete an client status
 *HydrogenNucleusApi.ClientApi* | [**deleteClientUsingDelete**](docs/ClientApi.md#deleteClientUsingDelete) | **DELETE** /client/{client_id} | Delete a client
 *HydrogenNucleusApi.ClientApi* | [**getClientAccountOverviewUsingGet**](docs/ClientApi.md#getClientAccountOverviewUsingGet) | **GET** /client/{client_id}/account_overview | List all client Account overview
@@ -289,13 +306,10 @@ Class | Method | HTTP request | Description
 *HydrogenNucleusApi.ClientApi* | [**getClientAssetSizeUsingGet**](docs/ClientApi.md#getClientAssetSizeUsingGet) | **GET** /client/{client_id}/asset_size | List all client asset sizes
 *HydrogenNucleusApi.ClientApi* | [**getClientGoalOverviewUsingGet**](docs/ClientApi.md#getClientGoalOverviewUsingGet) | **GET** /client/{client_id}/goal_overview | Retrieve client&#39;s goal details 
 *HydrogenNucleusApi.ClientApi* | [**getClientHoldingUsingGet**](docs/ClientApi.md#getClientHoldingUsingGet) | **GET** /client/{client_id}/holding | List all client holdings
-*HydrogenNucleusApi.ClientApi* | [**getClientHydroAllUsingGet**](docs/ClientApi.md#getClientHydroAllUsingGet) | **GET** /client_hydro | List all client-hydro relationship
-*HydrogenNucleusApi.ClientApi* | [**getClientHydroUsingGet**](docs/ClientApi.md#getClientHydroUsingGet) | **GET** /client_hydro/{client_hydro_id} | Retrieve a client-hydro relationship
 *HydrogenNucleusApi.ClientApi* | [**getClientStatusAllUsingGet**](docs/ClientApi.md#getClientStatusAllUsingGet) | **GET** /client_status | List all client statuses
 *HydrogenNucleusApi.ClientApi* | [**getClientStatusUsingGet**](docs/ClientApi.md#getClientStatusUsingGet) | **GET** /client_status/{client_status_id} | Retrieve an client status
 *HydrogenNucleusApi.ClientApi* | [**getClientTransactionAllUsingGet**](docs/ClientApi.md#getClientTransactionAllUsingGet) | **GET** /client/{client_id}/transaction | List all client transactions
 *HydrogenNucleusApi.ClientApi* | [**getClientUsingGet**](docs/ClientApi.md#getClientUsingGet) | **GET** /client/{client_id} | Retrieve a client
-*HydrogenNucleusApi.ClientApi* | [**updateClientHydroUsingPut**](docs/ClientApi.md#updateClientHydroUsingPut) | **PUT** /client_hydro/{client_hydro_id} | Update a client-hydro relationship
 *HydrogenNucleusApi.ClientApi* | [**updateClientStatusUsingPut**](docs/ClientApi.md#updateClientStatusUsingPut) | **PUT** /client_status/{client_status_id} | Update an client status
 *HydrogenNucleusApi.ClientApi* | [**updateClientUsingPut**](docs/ClientApi.md#updateClientUsingPut) | **PUT** /client/{client_id} | Update a client
 *HydrogenNucleusApi.CustomerApi* | [**createCustomerRevenueUsingPost**](docs/CustomerApi.md#createCustomerRevenueUsingPost) | **POST** /customer_revenue | Create a customer revenue
@@ -329,11 +343,6 @@ Class | Method | HTTP request | Description
 *HydrogenNucleusApi.DocumentApi* | [**getDocumentAllUsingGet**](docs/DocumentApi.md#getDocumentAllUsingGet) | **GET** /document | List all Documents
 *HydrogenNucleusApi.DocumentApi* | [**getDocumentUsingGet**](docs/DocumentApi.md#getDocumentUsingGet) | **GET** /document/{document_id} | Retrieve a Tenant Document by Document Id
 *HydrogenNucleusApi.DocumentApi* | [**updateDocumentUsingPut**](docs/DocumentApi.md#updateDocumentUsingPut) | **PUT** /document/{document_id} | Update a Tenant Document
-*HydrogenNucleusApi.FAQApi* | [**createFaqUsingPost**](docs/FAQApi.md#createFaqUsingPost) | **POST** /faq | Create a FAQ
-*HydrogenNucleusApi.FAQApi* | [**deleteFaqUsingDelete**](docs/FAQApi.md#deleteFaqUsingDelete) | **DELETE** /faq/{faq_id} | Delete a FAQ
-*HydrogenNucleusApi.FAQApi* | [**getFaqAllUsingGet**](docs/FAQApi.md#getFaqAllUsingGet) | **GET** /faq | List all FAQ
-*HydrogenNucleusApi.FAQApi* | [**getFaqUsingGet**](docs/FAQApi.md#getFaqUsingGet) | **GET** /faq/{faq_id} | Retrieve a FAQ
-*HydrogenNucleusApi.FAQApi* | [**updateFaqUsingPut**](docs/FAQApi.md#updateFaqUsingPut) | **PUT** /faq/{faq_id} | Update a FAQ
 *HydrogenNucleusApi.FeatureApi* | [**createFeatureTrackUsingPost**](docs/FeatureApi.md#createFeatureTrackUsingPost) | **POST** /feature_track | Create a Feature Track
 *HydrogenNucleusApi.FeatureApi* | [**createFeatureUsingPost**](docs/FeatureApi.md#createFeatureUsingPost) | **POST** /feature | Create a  Feature
 *HydrogenNucleusApi.FeatureApi* | [**deleteFeatureTrackUsingDelete**](docs/FeatureApi.md#deleteFeatureTrackUsingDelete) | **DELETE** /feature_track/{feature_track_id} | Delete a Feature Track
@@ -344,11 +353,6 @@ Class | Method | HTTP request | Description
 *HydrogenNucleusApi.FeatureApi* | [**getFeatureUsingGet**](docs/FeatureApi.md#getFeatureUsingGet) | **GET** /feature/{feature_id} | Retrieve a Feature
 *HydrogenNucleusApi.FeatureApi* | [**updateFeatureTrackUsingPut**](docs/FeatureApi.md#updateFeatureTrackUsingPut) | **PUT** /feature_track/{feature_track_id} | Update a Feature Track
 *HydrogenNucleusApi.FeatureApi* | [**updateFeatureUsingPut**](docs/FeatureApi.md#updateFeatureUsingPut) | **PUT** /feature/{feature_id} | Update a Feature
-*HydrogenNucleusApi.FinancialOfferApi* | [**createFinancialOfferUsingPost**](docs/FinancialOfferApi.md#createFinancialOfferUsingPost) | **POST** /financial_offer | Create a comparison request
-*HydrogenNucleusApi.FinancialOfferApi* | [**deleteFinancialOfferUsingDelete**](docs/FinancialOfferApi.md#deleteFinancialOfferUsingDelete) | **DELETE** /financial_offer/{financial_offer_id} | Delete a comparison request
-*HydrogenNucleusApi.FinancialOfferApi* | [**getFinancialOfferAllUsingGet**](docs/FinancialOfferApi.md#getFinancialOfferAllUsingGet) | **GET** /financial_offer | List all comparison requests
-*HydrogenNucleusApi.FinancialOfferApi* | [**getFinancialOfferUsingGet**](docs/FinancialOfferApi.md#getFinancialOfferUsingGet) | **GET** /financial_offer/{financial_offer_id} | Retrieve a comparison request
-*HydrogenNucleusApi.FinancialOfferApi* | [**updateFinancialOfferUsingPut**](docs/FinancialOfferApi.md#updateFinancialOfferUsingPut) | **PUT** /financial_offer/{financial_offer_id} | Update a comparison request
 *HydrogenNucleusApi.FinancialStatementApi* | [**createFinancialStatementUsingPost**](docs/FinancialStatementApi.md#createFinancialStatementUsingPost) | **POST** /financial_statement | Create an financialStatement
 *HydrogenNucleusApi.FinancialStatementApi* | [**deleteFinancialStatementUsingDelete**](docs/FinancialStatementApi.md#deleteFinancialStatementUsingDelete) | **DELETE** /financial_statement/{financial_statement_id} | Delete an financialStatement
 *HydrogenNucleusApi.FinancialStatementApi* | [**getFinancialStatementAllUsingGet**](docs/FinancialStatementApi.md#getFinancialStatementAllUsingGet) | **GET** /financial_statement | List all financialStatement
@@ -401,21 +405,6 @@ Class | Method | HTTP request | Description
 *HydrogenNucleusApi.HouseholdApi* | [**getHouseholdClientTransactionUsingGet**](docs/HouseholdApi.md#getHouseholdClientTransactionUsingGet) | **GET** /household/{household_id}/transaction | List all household&#39;s client ids transactions
 *HydrogenNucleusApi.HouseholdApi* | [**getHouseholdUsingGet**](docs/HouseholdApi.md#getHouseholdUsingGet) | **GET** /household/{household_id} | Retrieve a Household
 *HydrogenNucleusApi.HouseholdApi* | [**updateHouseholdUsingPut**](docs/HouseholdApi.md#updateHouseholdUsingPut) | **PUT** /household/{household_id} | Update a Household
-*HydrogenNucleusApi.InsuranceApi* | [**createInsuranceCoverageUsingPost**](docs/InsuranceApi.md#createInsuranceCoverageUsingPost) | **POST** /insurance_coverage | Create a insurance coverage request
-*HydrogenNucleusApi.InsuranceApi* | [**createInsuranceDiscountUsingPost**](docs/InsuranceApi.md#createInsuranceDiscountUsingPost) | **POST** /insurance_discount | Create a insurance discount request
-*HydrogenNucleusApi.InsuranceApi* | [**createInsuranceQuoteUsingPost**](docs/InsuranceApi.md#createInsuranceQuoteUsingPost) | **POST** /insurance_quote | Create a insuranceQuote request
-*HydrogenNucleusApi.InsuranceApi* | [**deleteInsuranceCoverageUsingDelete**](docs/InsuranceApi.md#deleteInsuranceCoverageUsingDelete) | **DELETE** /insurance_coverage/{insurance_coverage_id} | Delete an insurance coverage request
-*HydrogenNucleusApi.InsuranceApi* | [**deleteInsuranceDiscountUsingDelete**](docs/InsuranceApi.md#deleteInsuranceDiscountUsingDelete) | **DELETE** /insurance_discount/{insurance_discount_id} | Delete an insurance discount request
-*HydrogenNucleusApi.InsuranceApi* | [**deleteInsuranceQuoteUsingDelete**](docs/InsuranceApi.md#deleteInsuranceQuoteUsingDelete) | **DELETE** /insurance_quote/{insurance_quote_id} | Delete a insuranceQuote request
-*HydrogenNucleusApi.InsuranceApi* | [**getInsuranceCoverageAllUsingGet**](docs/InsuranceApi.md#getInsuranceCoverageAllUsingGet) | **GET** /insurance_coverage | Get all insurance coverage request
-*HydrogenNucleusApi.InsuranceApi* | [**getInsuranceCoverageUsingGet**](docs/InsuranceApi.md#getInsuranceCoverageUsingGet) | **GET** /insurance_coverage/{insurance_coverage_id} | Get a insurance coverage request
-*HydrogenNucleusApi.InsuranceApi* | [**getInsuranceDiscountAllUsingGet**](docs/InsuranceApi.md#getInsuranceDiscountAllUsingGet) | **GET** /insurance_discount | Get all insurance discount request
-*HydrogenNucleusApi.InsuranceApi* | [**getInsuranceDiscountUsingGet**](docs/InsuranceApi.md#getInsuranceDiscountUsingGet) | **GET** /insurance_discount/{insurance_discount_id} | Get a insurance discount request
-*HydrogenNucleusApi.InsuranceApi* | [**getInsuranceQuoteAllUsingGet**](docs/InsuranceApi.md#getInsuranceQuoteAllUsingGet) | **GET** /insurance_quote | List all insuranceQuote requests
-*HydrogenNucleusApi.InsuranceApi* | [**getInsuranceQuoteUsingGet**](docs/InsuranceApi.md#getInsuranceQuoteUsingGet) | **GET** /insurance_quote/{insurance_quote_id} | Retrieve a insuranceQuote request
-*HydrogenNucleusApi.InsuranceApi* | [**updateInsuranceCoverageUsingPut**](docs/InsuranceApi.md#updateInsuranceCoverageUsingPut) | **PUT** /insurance_coverage/{insurance_coverage_id} | Update a insurance coverage request
-*HydrogenNucleusApi.InsuranceApi* | [**updateInsuranceDiscountUsingPut**](docs/InsuranceApi.md#updateInsuranceDiscountUsingPut) | **PUT** /insurance_discount/{insurance_discount_id} | Update an insurance discount 
-*HydrogenNucleusApi.InsuranceApi* | [**updateInsuranceQuoteUsingPut**](docs/InsuranceApi.md#updateInsuranceQuoteUsingPut) | **PUT** /insurance_quote/{insurance_quote_id} | Update a insuranceQuote request
 *HydrogenNucleusApi.InvoiceApi* | [**createInvoicePaymentUsingPost**](docs/InvoiceApi.md#createInvoicePaymentUsingPost) | **POST** /invoice_payment | Create a invoicePayment
 *HydrogenNucleusApi.InvoiceApi* | [**createInvoiceUsingPost**](docs/InvoiceApi.md#createInvoiceUsingPost) | **POST** /invoice | Create a invoice
 *HydrogenNucleusApi.InvoiceApi* | [**deleteInvoicePaymentUsingDelete**](docs/InvoiceApi.md#deleteInvoicePaymentUsingDelete) | **DELETE** /invoice_payment/{invoice_payment_id} | Delete a invoicePayment
@@ -426,26 +415,6 @@ Class | Method | HTTP request | Description
 *HydrogenNucleusApi.InvoiceApi* | [**getInvoiceUsingGet**](docs/InvoiceApi.md#getInvoiceUsingGet) | **GET** /invoice/{invoice_id} | Retrieve a invoice
 *HydrogenNucleusApi.InvoiceApi* | [**updateInvoicePaymentUsingPut**](docs/InvoiceApi.md#updateInvoicePaymentUsingPut) | **PUT** /invoice_payment/{invoice_payment_id} | Update a invoicePayment
 *HydrogenNucleusApi.InvoiceApi* | [**updateInvoiceUsingPut**](docs/InvoiceApi.md#updateInvoiceUsingPut) | **PUT** /invoice/{invoice_id} | Update a invoice
-*HydrogenNucleusApi.MarketingApi* | [**createCampaignDataUsingPost**](docs/MarketingApi.md#createCampaignDataUsingPost) | **POST** /campaign_data | Create a campaign data record
-*HydrogenNucleusApi.MarketingApi* | [**createCampaignPlanUsingPost**](docs/MarketingApi.md#createCampaignPlanUsingPost) | **POST** /campaign_plan | Create a campaign plan
-*HydrogenNucleusApi.MarketingApi* | [**createCampaignUsingPost**](docs/MarketingApi.md#createCampaignUsingPost) | **POST** /campaign | Create a campaign
-*HydrogenNucleusApi.MarketingApi* | [**createClientCampaignUsingPost**](docs/MarketingApi.md#createClientCampaignUsingPost) | **POST** /client_campaign | Mark a client signing up through a campaign
-*HydrogenNucleusApi.MarketingApi* | [**deleteCampaignDataUsingDelete**](docs/MarketingApi.md#deleteCampaignDataUsingDelete) | **DELETE** /campaign_data/{campaign_data_id} | Delete a campaign data record
-*HydrogenNucleusApi.MarketingApi* | [**deleteCampaignPlanUsingDelete**](docs/MarketingApi.md#deleteCampaignPlanUsingDelete) | **DELETE** /campaign_plan/{campaign_plan_id} | Delete a campaign plan
-*HydrogenNucleusApi.MarketingApi* | [**deleteCampaignUsingDelete**](docs/MarketingApi.md#deleteCampaignUsingDelete) | **DELETE** /campaign/{campaign_id} | Delete a campaign
-*HydrogenNucleusApi.MarketingApi* | [**deleteClientCampaignUsingDelete**](docs/MarketingApi.md#deleteClientCampaignUsingDelete) | **DELETE** /client_campaign/{client_campaign_id} | Delete a clients/ips pair under a campaign
-*HydrogenNucleusApi.MarketingApi* | [**getCampaignAllUsingGet**](docs/MarketingApi.md#getCampaignAllUsingGet) | **GET** /campaign | List all campaigns
-*HydrogenNucleusApi.MarketingApi* | [**getCampaignDataAllUsingGet**](docs/MarketingApi.md#getCampaignDataAllUsingGet) | **GET** /campaign_data | List all campaign data
-*HydrogenNucleusApi.MarketingApi* | [**getCampaignDataUsingGet**](docs/MarketingApi.md#getCampaignDataUsingGet) | **GET** /campaign_data/{campaign_data_id} | Retrieve a campaign data record
-*HydrogenNucleusApi.MarketingApi* | [**getCampaignPlanAllUsingGet**](docs/MarketingApi.md#getCampaignPlanAllUsingGet) | **GET** /campaign_plan | List all campaign plans
-*HydrogenNucleusApi.MarketingApi* | [**getCampaignPlanUsingGet**](docs/MarketingApi.md#getCampaignPlanUsingGet) | **GET** /campaign_plan/{campaign_plan_id} | Retrieve a campaign plan
-*HydrogenNucleusApi.MarketingApi* | [**getCampaignUsingGet**](docs/MarketingApi.md#getCampaignUsingGet) | **GET** /campaign/{campaign_id} | Retrieve a campaign
-*HydrogenNucleusApi.MarketingApi* | [**getClientCampaignAllUsingGet**](docs/MarketingApi.md#getClientCampaignAllUsingGet) | **GET** /client_campaign | List all clients/ips under a campaign
-*HydrogenNucleusApi.MarketingApi* | [**getClientCampaignUsingGet**](docs/MarketingApi.md#getClientCampaignUsingGet) | **GET** /client_campaign/{client_campaign_id} | Retrieve a clients/ips pair under a campaign
-*HydrogenNucleusApi.MarketingApi* | [**updateCampaignDataUsingPut**](docs/MarketingApi.md#updateCampaignDataUsingPut) | **PUT** /campaign_data/{campaign_data_id} | Update a campaign data record
-*HydrogenNucleusApi.MarketingApi* | [**updateCampaignPlanUsingPut**](docs/MarketingApi.md#updateCampaignPlanUsingPut) | **PUT** /campaign_plan/{campaign_plan_id} | Update a campaign plan
-*HydrogenNucleusApi.MarketingApi* | [**updateCampaignUsingPut**](docs/MarketingApi.md#updateCampaignUsingPut) | **PUT** /campaign/{campaign_id} | Update a campaign
-*HydrogenNucleusApi.MarketingApi* | [**updateClientCampaignUsingPut**](docs/MarketingApi.md#updateClientCampaignUsingPut) | **PUT** /client_campaign/{client_campaign_id} | Update a clients/ips pair under a campaign
 *HydrogenNucleusApi.ModelApi* | [**createModelAssetSizeUsingPost**](docs/ModelApi.md#createModelAssetSizeUsingPost) | **POST** /model_asset_size | Create a model asset size
 *HydrogenNucleusApi.ModelApi* | [**createModelChangeUsingPost**](docs/ModelApi.md#createModelChangeUsingPost) | **POST** /model/{model_id}/model_change | Change a model composition
 *HydrogenNucleusApi.ModelApi* | [**createModelCommentUsingPost**](docs/ModelApi.md#createModelCommentUsingPost) | **POST** /model_comment | Create a model commentary
@@ -584,13 +553,15 @@ Class | Method | HTTP request | Description
 *HydrogenNucleusApi.QuestionnaireApi* | [**updateClientResponseUsingPut**](docs/QuestionnaireApi.md#updateClientResponseUsingPut) | **PUT** /client_response/{client_response_id} | Update a client response
 *HydrogenNucleusApi.QuestionnaireApi* | [**updateQuestionUsingPut**](docs/QuestionnaireApi.md#updateQuestionUsingPut) | **PUT** /question/{question_id} | Update a question.
 *HydrogenNucleusApi.QuestionnaireApi* | [**updateQuestionnaireUsingPut**](docs/QuestionnaireApi.md#updateQuestionnaireUsingPut) | **PUT** /questionnaire/{questionnaire_id} | Update a questionnaire
-*HydrogenNucleusApi.ResourceApi* | [**createFxRateBulkUsingPost**](docs/ResourceApi.md#createFxRateBulkUsingPost) | **POST** /resource/fx_rate | Create a bulk fxRate
+*HydrogenNucleusApi.ResourceApi* | [**getAggregationAccountCategoryMappingUsingGet**](docs/ResourceApi.md#getAggregationAccountCategoryMappingUsingGet) | **GET** /resource/account_category | Get All Aggregation Account Category mapping
+*HydrogenNucleusApi.ResourceApi* | [**getAggregationAccountTransactionCategoryMappingUsingGet**](docs/ResourceApi.md#getAggregationAccountTransactionCategoryMappingUsingGet) | **GET** /resource/merchant_category | Get All Aggregation Account Transaction Category mapping
 *HydrogenNucleusApi.ResourceApi* | [**getAllCountryUsingGet**](docs/ResourceApi.md#getAllCountryUsingGet) | **GET** /resource/country | Get All Countries
 *HydrogenNucleusApi.ResourceApi* | [**getAllCurrencyUsingGet**](docs/ResourceApi.md#getAllCurrencyUsingGet) | **GET** /resource/currency | Get All Currencies
 *HydrogenNucleusApi.ResourceApi* | [**getAllMerchantCategoryCodeUsingGet**](docs/ResourceApi.md#getAllMerchantCategoryCodeUsingGet) | **GET** /resource/merchant_category_code | Get All Merchant Category Codes
 *HydrogenNucleusApi.ResourceApi* | [**getAllStatesUsingGet**](docs/ResourceApi.md#getAllStatesUsingGet) | **GET** /resource/state | List all state resource
 *HydrogenNucleusApi.ResourceApi* | [**getAllStatisticsUsingGet**](docs/ResourceApi.md#getAllStatisticsUsingGet) | **GET** /resource/statistic | List all statistic resource
 *HydrogenNucleusApi.ResourceApi* | [**getCurrencyExchangeRateAllUsingGet**](docs/ResourceApi.md#getCurrencyExchangeRateAllUsingGet) | **GET** /resource/fx_rate | List all fxRates
+*HydrogenNucleusApi.ResourceApi* | [**getMerchantsAllUsingGet**](docs/ResourceApi.md#getMerchantsAllUsingGet) | **GET** /resource/merchant | Get all merchants
 *HydrogenNucleusApi.RiskProfileApi* | [**createRiskProfileUsingPost**](docs/RiskProfileApi.md#createRiskProfileUsingPost) | **POST** /risk_profile | Create a Risk Profile
 *HydrogenNucleusApi.RiskProfileApi* | [**deleteRiskProfileUsingDelete**](docs/RiskProfileApi.md#deleteRiskProfileUsingDelete) | **DELETE** /risk_profile/{risk_profile_id} | Delete a Risk Profile
 *HydrogenNucleusApi.RiskProfileApi* | [**getRiskProfileAllUsingGet**](docs/RiskProfileApi.md#getRiskProfileAllUsingGet) | **GET** /risk_profile | Get All Risk Profile
@@ -624,31 +595,11 @@ Class | Method | HTTP request | Description
 *HydrogenNucleusApi.SecuritiesApi* | [**updateSecurityExclusionUsingPut**](docs/SecuritiesApi.md#updateSecurityExclusionUsingPut) | **PUT** /security_exclusion/{security_exclusion_id} | Update a security exclusion
 *HydrogenNucleusApi.SecuritiesApi* | [**updateSecurityPriceUsingPut**](docs/SecuritiesApi.md#updateSecurityPriceUsingPut) | **PUT** /security_price/{security_price_id} | Update a security price
 *HydrogenNucleusApi.SecuritiesApi* | [**updateSecurityUsingPut**](docs/SecuritiesApi.md#updateSecurityUsingPut) | **PUT** /security/{security_id} | Update a security
-*HydrogenNucleusApi.SupportApi* | [**createChatUsingPost**](docs/SupportApi.md#createChatUsingPost) | **POST** /chat | Create a Chat
-*HydrogenNucleusApi.SupportApi* | [**createConsultationUsingPost**](docs/SupportApi.md#createConsultationUsingPost) | **POST** /consultation | Create a CIO Consultation
-*HydrogenNucleusApi.SupportApi* | [**createSaleUsingPost**](docs/SupportApi.md#createSaleUsingPost) | **POST** /sales | Create a sales inquiry
-*HydrogenNucleusApi.SupportApi* | [**createSupportTicketCommentUsingPost**](docs/SupportApi.md#createSupportTicketCommentUsingPost) | **POST** /support_ticket_comment | Create a support ticket comment
-*HydrogenNucleusApi.SupportApi* | [**createSupportTicketUsingPost**](docs/SupportApi.md#createSupportTicketUsingPost) | **POST** /support_ticket | Create a support ticket
-*HydrogenNucleusApi.SupportApi* | [**deleteChatUsingDelete**](docs/SupportApi.md#deleteChatUsingDelete) | **DELETE** /chat/{chat_id} | Delete a Chat
-*HydrogenNucleusApi.SupportApi* | [**deleteConsultationUsingDelete**](docs/SupportApi.md#deleteConsultationUsingDelete) | **DELETE** /consultation/{consultation_id} | Delete a CIO Consultation
-*HydrogenNucleusApi.SupportApi* | [**deleteSaleUsingDelete**](docs/SupportApi.md#deleteSaleUsingDelete) | **DELETE** /sales/{sales_id} | Delete a sales inquiry
-*HydrogenNucleusApi.SupportApi* | [**deleteSupportTicketCommentUsingDelete**](docs/SupportApi.md#deleteSupportTicketCommentUsingDelete) | **DELETE** /support_ticket_comment/{support_ticket_comment_id} | Delete a support ticket comment
-*HydrogenNucleusApi.SupportApi* | [**deleteSupportTicketUsingDelete**](docs/SupportApi.md#deleteSupportTicketUsingDelete) | **DELETE** /support_ticket/{support_ticket_id} | Delete a support ticket
-*HydrogenNucleusApi.SupportApi* | [**getChatAllUsingGet**](docs/SupportApi.md#getChatAllUsingGet) | **GET** /chat | List all open chats
-*HydrogenNucleusApi.SupportApi* | [**getChatUsingGet**](docs/SupportApi.md#getChatUsingGet) | **GET** /chat/{chat_id} | Retrieve a Chat
-*HydrogenNucleusApi.SupportApi* | [**getConsultationAllUsingGet**](docs/SupportApi.md#getConsultationAllUsingGet) | **GET** /consultation | List all CIO Consultation
-*HydrogenNucleusApi.SupportApi* | [**getConsultationUsingGet**](docs/SupportApi.md#getConsultationUsingGet) | **GET** /consultation/{consultation_id} | Retrieve a CIO Consultation
-*HydrogenNucleusApi.SupportApi* | [**getSaleAllUsingGet**](docs/SupportApi.md#getSaleAllUsingGet) | **GET** /sales | List all sales inquiries
-*HydrogenNucleusApi.SupportApi* | [**getSaleUsingGet**](docs/SupportApi.md#getSaleUsingGet) | **GET** /sales/{sales_id} | Retrieve a sales record
-*HydrogenNucleusApi.SupportApi* | [**getSupportTicketAllUsingGet**](docs/SupportApi.md#getSupportTicketAllUsingGet) | **GET** /support_ticket | List all support tickets
-*HydrogenNucleusApi.SupportApi* | [**getSupportTicketCommentAllUsingGet**](docs/SupportApi.md#getSupportTicketCommentAllUsingGet) | **GET** /support_ticket_comment | List all support ticket comments
-*HydrogenNucleusApi.SupportApi* | [**getSupportTicketCommentUsingGet**](docs/SupportApi.md#getSupportTicketCommentUsingGet) | **GET** /support_ticket_comment/{support_ticket_comment_id} | Retrieve a support ticket comment
-*HydrogenNucleusApi.SupportApi* | [**getSupportTicketUsingGet**](docs/SupportApi.md#getSupportTicketUsingGet) | **GET** /support_ticket/{support_ticket_id} | Retrieve a support ticket
-*HydrogenNucleusApi.SupportApi* | [**updateChatUsingPut**](docs/SupportApi.md#updateChatUsingPut) | **PUT** /chat/{chat_id} | Update a Chat
-*HydrogenNucleusApi.SupportApi* | [**updateConsultationUsingPut**](docs/SupportApi.md#updateConsultationUsingPut) | **PUT** /consultation/{consultation_id} | Update a CIO Consultation
-*HydrogenNucleusApi.SupportApi* | [**updateSaleUsingPut**](docs/SupportApi.md#updateSaleUsingPut) | **PUT** /sales/{sales_id} | Update a sales inquiry
-*HydrogenNucleusApi.SupportApi* | [**updateSupportTicketCommentUsingPut**](docs/SupportApi.md#updateSupportTicketCommentUsingPut) | **PUT** /support_ticket_comment/{support_ticket_comment_id} | Update a support ticket comment
-*HydrogenNucleusApi.SupportApi* | [**updateSupportTicketUsingPut**](docs/SupportApi.md#updateSupportTicketUsingPut) | **PUT** /support_ticket/{support_ticket_id} | Update a support ticket
+*HydrogenNucleusApi.SpendingControlApi* | [**createSpendingControlUsingPost**](docs/SpendingControlApi.md#createSpendingControlUsingPost) | **POST** /spending_control | Create a Spending Control
+*HydrogenNucleusApi.SpendingControlApi* | [**deleteSpendingControlUsingDelete**](docs/SpendingControlApi.md#deleteSpendingControlUsingDelete) | **DELETE** /spending_control/{spending_control_id} | Delete a Spending Control
+*HydrogenNucleusApi.SpendingControlApi* | [**getSpendingControlAllUsingGet**](docs/SpendingControlApi.md#getSpendingControlAllUsingGet) | **GET** /spending_control | List all Spending Control
+*HydrogenNucleusApi.SpendingControlApi* | [**getSpendingControlUsingGet**](docs/SpendingControlApi.md#getSpendingControlUsingGet) | **GET** /spending_control/{spending_control_id} | Retrieve a Spending Control
+*HydrogenNucleusApi.SpendingControlApi* | [**updateSpendingControlUsingPut**](docs/SpendingControlApi.md#updateSpendingControlUsingPut) | **PUT** /spending_control/{spending_control_id} | Update a Spending Control
 *HydrogenNucleusApi.UtilsApi* | [**createReasonCodeUsingPost**](docs/UtilsApi.md#createReasonCodeUsingPost) | **POST** /reason_code | Create a reason code
 *HydrogenNucleusApi.UtilsApi* | [**createStageUsingPost**](docs/UtilsApi.md#createStageUsingPost) | **POST** /stage | Create an account stage
 *HydrogenNucleusApi.UtilsApi* | [**createTransactionCodeUsingPost**](docs/UtilsApi.md#createTransactionCodeUsingPost) | **POST** /transaction_code | Create a transaction code
@@ -702,33 +653,30 @@ Class | Method | HTTP request | Description
  - [HydrogenNucleusApi.BankLinkMap](docs/BankLinkMap.md)
  - [HydrogenNucleusApi.Benchmark](docs/Benchmark.md)
  - [HydrogenNucleusApi.BenchmarkComposition](docs/BenchmarkComposition.md)
+ - [HydrogenNucleusApi.Brokers](docs/Brokers.md)
  - [HydrogenNucleusApi.Budget](docs/Budget.md)
  - [HydrogenNucleusApi.BudgetAggregationAccount](docs/BudgetAggregationAccount.md)
  - [HydrogenNucleusApi.BudgetObject](docs/BudgetObject.md)
  - [HydrogenNucleusApi.BulkTransaction](docs/BulkTransaction.md)
  - [HydrogenNucleusApi.BulkTransactionVO](docs/BulkTransactionVO.md)
- - [HydrogenNucleusApi.Campaign](docs/Campaign.md)
- - [HydrogenNucleusApi.CampaignData](docs/CampaignData.md)
- - [HydrogenNucleusApi.CampaignPlan](docs/CampaignPlan.md)
- - [HydrogenNucleusApi.CampaignPlanRate](docs/CampaignPlanRate.md)
+ - [HydrogenNucleusApi.Business](docs/Business.md)
+ - [HydrogenNucleusApi.BusinessAddress](docs/BusinessAddress.md)
  - [HydrogenNucleusApi.Card](docs/Card.md)
  - [HydrogenNucleusApi.CardAddress](docs/CardAddress.md)
  - [HydrogenNucleusApi.CardProgram](docs/CardProgram.md)
  - [HydrogenNucleusApi.Cash](docs/Cash.md)
  - [HydrogenNucleusApi.CategoriesMap](docs/CategoriesMap.md)
- - [HydrogenNucleusApi.ChatInfo](docs/ChatInfo.md)
+ - [HydrogenNucleusApi.CategoryInternalResponseVO](docs/CategoryInternalResponseVO.md)
+ - [HydrogenNucleusApi.CategoryResponseVO](docs/CategoryResponseVO.md)
  - [HydrogenNucleusApi.Check](docs/Check.md)
  - [HydrogenNucleusApi.CheckImages](docs/CheckImages.md)
  - [HydrogenNucleusApi.Client](docs/Client.md)
  - [HydrogenNucleusApi.ClientAccountMapping](docs/ClientAccountMapping.md)
  - [HydrogenNucleusApi.ClientAddress](docs/ClientAddress.md)
- - [HydrogenNucleusApi.ClientCampaignMapping](docs/ClientCampaignMapping.md)
- - [HydrogenNucleusApi.ClientHydro](docs/ClientHydro.md)
  - [HydrogenNucleusApi.ClientRelationship](docs/ClientRelationship.md)
  - [HydrogenNucleusApi.ClientResponse](docs/ClientResponse.md)
  - [HydrogenNucleusApi.ClientStatus](docs/ClientStatus.md)
  - [HydrogenNucleusApi.ClientViewGoalData](docs/ClientViewGoalData.md)
- - [HydrogenNucleusApi.Consultation](docs/Consultation.md)
  - [HydrogenNucleusApi.Country](docs/Country.md)
  - [HydrogenNucleusApi.Currency](docs/Currency.md)
  - [HydrogenNucleusApi.Customer](docs/Customer.md)
@@ -743,32 +691,24 @@ Class | Method | HTTP request | Description
  - [HydrogenNucleusApi.Document](docs/Document.md)
  - [HydrogenNucleusApi.Employment](docs/Employment.md)
  - [HydrogenNucleusApi.ExternalAccountTransfer](docs/ExternalAccountTransfer.md)
- - [HydrogenNucleusApi.FAQKeyword](docs/FAQKeyword.md)
- - [HydrogenNucleusApi.Faq](docs/Faq.md)
  - [HydrogenNucleusApi.Feature](docs/Feature.md)
  - [HydrogenNucleusApi.FeatureTrack](docs/FeatureTrack.md)
- - [HydrogenNucleusApi.FinancialOffer](docs/FinancialOffer.md)
  - [HydrogenNucleusApi.FinancialStatement](docs/FinancialStatement.md)
  - [HydrogenNucleusApi.Funding](docs/Funding.md)
  - [HydrogenNucleusApi.FundingRequestMap](docs/FundingRequestMap.md)
- - [HydrogenNucleusApi.FxRate](docs/FxRate.md)
  - [HydrogenNucleusApi.FxRateView](docs/FxRateView.md)
  - [HydrogenNucleusApi.Goal](docs/Goal.md)
  - [HydrogenNucleusApi.GoalAccountMapping](docs/GoalAccountMapping.md)
  - [HydrogenNucleusApi.GoalTrack](docs/GoalTrack.md)
  - [HydrogenNucleusApi.GoalTrackAccounts](docs/GoalTrackAccounts.md)
  - [HydrogenNucleusApi.Household](docs/Household.md)
- - [HydrogenNucleusApi.InsuranceCoverage](docs/InsuranceCoverage.md)
- - [HydrogenNucleusApi.InsuranceCoverageMap](docs/InsuranceCoverageMap.md)
- - [HydrogenNucleusApi.InsuranceDiscount](docs/InsuranceDiscount.md)
- - [HydrogenNucleusApi.InsuranceDiscountMap](docs/InsuranceDiscountMap.md)
- - [HydrogenNucleusApi.InsuranceQuote](docs/InsuranceQuote.md)
  - [HydrogenNucleusApi.Investment](docs/Investment.md)
  - [HydrogenNucleusApi.Invoice](docs/Invoice.md)
  - [HydrogenNucleusApi.InvoicePayment](docs/InvoicePayment.md)
  - [HydrogenNucleusApi.JsonNode](docs/JsonNode.md)
  - [HydrogenNucleusApi.LineItems](docs/LineItems.md)
  - [HydrogenNucleusApi.Location](docs/Location.md)
+ - [HydrogenNucleusApi.MXMerchantRes](docs/MXMerchantRes.md)
  - [HydrogenNucleusApi.Member](docs/Member.md)
  - [HydrogenNucleusApi.MerchantCategoryCode](docs/MerchantCategoryCode.md)
  - [HydrogenNucleusApi.MerchantsMap](docs/MerchantsMap.md)
@@ -794,6 +734,7 @@ Class | Method | HTTP request | Description
  - [HydrogenNucleusApi.OverflowBankLinkMap](docs/OverflowBankLinkMap.md)
  - [HydrogenNucleusApi.OverflowSettings](docs/OverflowSettings.md)
  - [HydrogenNucleusApi.OverflowVO](docs/OverflowVO.md)
+ - [HydrogenNucleusApi.Ownership](docs/Ownership.md)
  - [HydrogenNucleusApi.PageAccount](docs/PageAccount.md)
  - [HydrogenNucleusApi.PageAccountAllocationMapping](docs/PageAccountAllocationMapping.md)
  - [HydrogenNucleusApi.PageAccountPermissionVO](docs/PageAccountPermissionVO.md)
@@ -811,18 +752,12 @@ Class | Method | HTTP request | Description
  - [HydrogenNucleusApi.PageBankLink](docs/PageBankLink.md)
  - [HydrogenNucleusApi.PageBenchmark](docs/PageBenchmark.md)
  - [HydrogenNucleusApi.PageBudget](docs/PageBudget.md)
- - [HydrogenNucleusApi.PageCampaign](docs/PageCampaign.md)
- - [HydrogenNucleusApi.PageCampaignData](docs/PageCampaignData.md)
- - [HydrogenNucleusApi.PageCampaignPlan](docs/PageCampaignPlan.md)
+ - [HydrogenNucleusApi.PageBusiness](docs/PageBusiness.md)
  - [HydrogenNucleusApi.PageCard](docs/PageCard.md)
  - [HydrogenNucleusApi.PageCardProgram](docs/PageCardProgram.md)
- - [HydrogenNucleusApi.PageChatInfo](docs/PageChatInfo.md)
  - [HydrogenNucleusApi.PageClient](docs/PageClient.md)
- - [HydrogenNucleusApi.PageClientCampaignMapping](docs/PageClientCampaignMapping.md)
- - [HydrogenNucleusApi.PageClientHydro](docs/PageClientHydro.md)
  - [HydrogenNucleusApi.PageClientResponse](docs/PageClientResponse.md)
  - [HydrogenNucleusApi.PageClientStatus](docs/PageClientStatus.md)
- - [HydrogenNucleusApi.PageConsultation](docs/PageConsultation.md)
  - [HydrogenNucleusApi.PageCustomer](docs/PageCustomer.md)
  - [HydrogenNucleusApi.PageCustomerRevenue](docs/PageCustomerRevenue.md)
  - [HydrogenNucleusApi.PageDailyDeposit](docs/PageDailyDeposit.md)
@@ -830,20 +765,16 @@ Class | Method | HTTP request | Description
  - [HydrogenNucleusApi.PageDecisionTree](docs/PageDecisionTree.md)
  - [HydrogenNucleusApi.PageDocument](docs/PageDocument.md)
  - [HydrogenNucleusApi.PageExternalAccountTransfer](docs/PageExternalAccountTransfer.md)
- - [HydrogenNucleusApi.PageFaq](docs/PageFaq.md)
  - [HydrogenNucleusApi.PageFeature](docs/PageFeature.md)
  - [HydrogenNucleusApi.PageFeatureTrack](docs/PageFeatureTrack.md)
- - [HydrogenNucleusApi.PageFinancialOffer](docs/PageFinancialOffer.md)
  - [HydrogenNucleusApi.PageFinancialStatement](docs/PageFinancialStatement.md)
  - [HydrogenNucleusApi.PageFunding](docs/PageFunding.md)
  - [HydrogenNucleusApi.PageGoal](docs/PageGoal.md)
  - [HydrogenNucleusApi.PageGoalTrack](docs/PageGoalTrack.md)
  - [HydrogenNucleusApi.PageHousehold](docs/PageHousehold.md)
- - [HydrogenNucleusApi.PageInsuranceCoverage](docs/PageInsuranceCoverage.md)
- - [HydrogenNucleusApi.PageInsuranceDiscount](docs/PageInsuranceDiscount.md)
- - [HydrogenNucleusApi.PageInsuranceQuote](docs/PageInsuranceQuote.md)
  - [HydrogenNucleusApi.PageInvoice](docs/PageInvoice.md)
  - [HydrogenNucleusApi.PageInvoicePayment](docs/PageInvoicePayment.md)
+ - [HydrogenNucleusApi.PageMXMerchantRes](docs/PageMXMerchantRes.md)
  - [HydrogenNucleusApi.PageModel](docs/PageModel.md)
  - [HydrogenNucleusApi.PageModelAssetSize](docs/PageModelAssetSize.md)
  - [HydrogenNucleusApi.PageModelComment](docs/PageModelComment.md)
@@ -872,14 +803,12 @@ Class | Method | HTTP request | Description
  - [HydrogenNucleusApi.PageRiskProfile](docs/PageRiskProfile.md)
  - [HydrogenNucleusApi.PageRoundup](docs/PageRoundup.md)
  - [HydrogenNucleusApi.PageRoundupSettings](docs/PageRoundupSettings.md)
- - [HydrogenNucleusApi.PageSale](docs/PageSale.md)
  - [HydrogenNucleusApi.PageScore](docs/PageScore.md)
  - [HydrogenNucleusApi.PageSecurity](docs/PageSecurity.md)
  - [HydrogenNucleusApi.PageSecurityExclusion](docs/PageSecurityExclusion.md)
  - [HydrogenNucleusApi.PageSecurityPrice](docs/PageSecurityPrice.md)
+ - [HydrogenNucleusApi.PageSpendingControl](docs/PageSpendingControl.md)
  - [HydrogenNucleusApi.PageStage](docs/PageStage.md)
- - [HydrogenNucleusApi.PageSupportTicket](docs/PageSupportTicket.md)
- - [HydrogenNucleusApi.PageSupportTicketComment](docs/PageSupportTicketComment.md)
  - [HydrogenNucleusApi.PageTransactionCode](docs/PageTransactionCode.md)
  - [HydrogenNucleusApi.PageVAccountAssetSize](docs/PageVAccountAssetSize.md)
  - [HydrogenNucleusApi.PageWebhook](docs/PageWebhook.md)
@@ -899,7 +828,6 @@ Class | Method | HTTP request | Description
  - [HydrogenNucleusApi.Roundup](docs/Roundup.md)
  - [HydrogenNucleusApi.RoundupCO](docs/RoundupCO.md)
  - [HydrogenNucleusApi.RoundupSettings](docs/RoundupSettings.md)
- - [HydrogenNucleusApi.Sale](docs/Sale.md)
  - [HydrogenNucleusApi.Score](docs/Score.md)
  - [HydrogenNucleusApi.SecuritiesComposition](docs/SecuritiesComposition.md)
  - [HydrogenNucleusApi.SecuritiesCountry](docs/SecuritiesCountry.md)
@@ -909,13 +837,11 @@ Class | Method | HTTP request | Description
  - [HydrogenNucleusApi.SecurityExclusion](docs/SecurityExclusion.md)
  - [HydrogenNucleusApi.SecurityPrice](docs/SecurityPrice.md)
  - [HydrogenNucleusApi.Sort](docs/Sort.md)
+ - [HydrogenNucleusApi.SpendingControl](docs/SpendingControl.md)
  - [HydrogenNucleusApi.Stage](docs/Stage.md)
  - [HydrogenNucleusApi.Stat](docs/Stat.md)
  - [HydrogenNucleusApi.State](docs/State.md)
  - [HydrogenNucleusApi.StatisticResourceVO](docs/StatisticResourceVO.md)
- - [HydrogenNucleusApi.SupportTicket](docs/SupportTicket.md)
- - [HydrogenNucleusApi.SupportTicketComment](docs/SupportTicketComment.md)
- - [HydrogenNucleusApi.SupportTicketDocument](docs/SupportTicketDocument.md)
  - [HydrogenNucleusApi.TokenDateRequest](docs/TokenDateRequest.md)
  - [HydrogenNucleusApi.TransactionCode](docs/TransactionCode.md)
  - [HydrogenNucleusApi.VAccountAssetSize](docs/VAccountAssetSize.md)

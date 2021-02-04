@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**depositAmount** | **Number** |  | [optional] 
 **adjustDepositForInflation** | **Boolean** |  | [optional] [default to true]
-**depositDuration** | **Number** |  | [optional] 
 **depositFrequencyInterval** | **String** |  | [optional] [default to 'year']
+**depositAmount** | **Number** |  | [optional] 
+**depositDuration** | **Number** |  | [optional] 
 
 
 <a name="DepositFrequencyIntervalEnum"></a>

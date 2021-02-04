@@ -13,17 +13,15 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.DecisionTree;
 import com.hydrogen.nucleus.model.DecisionTreeCO;
 import com.hydrogen.nucleus.model.DecisionTreeResultVO;
-import com.hydrogen.nucleus.model.JsonNode;
 import com.hydrogen.nucleus.model.Node;
 import com.hydrogen.nucleus.model.NodeRelationship;
 import com.hydrogen.nucleus.model.PageDecisionTree;
 import com.hydrogen.nucleus.model.PageNode;
 import com.hydrogen.nucleus.model.PageNodeRelationship;
-import com.hydrogen.nucleus.ApiException;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -267,7 +265,7 @@ public class DecisionTreeApiTest {
      */
     @Test
     public void updateDecisionTreeUsingPutTest() throws ApiException {
-        DecisionTree decisionTree = null;
+        Object decisionTree = null;
         UUID decisionTreeId = null;
         DecisionTree response = api.updateDecisionTreeUsingPut(decisionTree, decisionTreeId);
 
@@ -284,7 +282,7 @@ public class DecisionTreeApiTest {
      */
     @Test
     public void updateNodeRelationshipUsingPutTest() throws ApiException {
-        JsonNode jsonNode = null;
+        Object jsonNode = null;
         UUID nodeRelationshipId = null;
         NodeRelationship response = api.updateNodeRelationshipUsingPut(jsonNode, nodeRelationshipId);
 
@@ -301,7 +299,7 @@ public class DecisionTreeApiTest {
      */
     @Test
     public void updateNodeUsingPutTest() throws ApiException {
-        JsonNode jsonNode = null;
+        Object jsonNode = null;
         UUID nodeId = null;
         Node response = api.updateNodeUsingPut(jsonNode, nodeId);
 

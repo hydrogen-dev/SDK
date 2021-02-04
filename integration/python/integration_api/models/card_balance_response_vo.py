@@ -31,7 +31,6 @@ class CardBalanceResponseVO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'card_status': 'str',
         'message': 'str',
         'nucleus_asset_sizes_posted': 'list[object]',
         'nucleus_asset_sizes_updated': 'list[object]',
@@ -41,7 +40,6 @@ class CardBalanceResponseVO(object):
     }
 
     attribute_map = {
-        'card_status': 'card_status',
         'message': 'message',
         'nucleus_asset_sizes_posted': 'nucleus_asset_sizes_posted',
         'nucleus_asset_sizes_updated': 'nucleus_asset_sizes_updated',
@@ -50,10 +48,9 @@ class CardBalanceResponseVO(object):
         'vendor_response': 'vendor_response'
     }
 
-    def __init__(self, card_status=None, message=None, nucleus_asset_sizes_posted=None, nucleus_asset_sizes_updated=None, nucleus_card_id=None, vendor_name=None, vendor_response=None):  # noqa: E501
+    def __init__(self, message=None, nucleus_asset_sizes_posted=None, nucleus_asset_sizes_updated=None, nucleus_card_id=None, vendor_name=None, vendor_response=None):  # noqa: E501
         """CardBalanceResponseVO - a model defined in Swagger"""  # noqa: E501
 
-        self._card_status = None
         self._message = None
         self._nucleus_asset_sizes_posted = None
         self._nucleus_asset_sizes_updated = None
@@ -62,8 +59,6 @@ class CardBalanceResponseVO(object):
         self._vendor_response = None
         self.discriminator = None
 
-        if card_status is not None:
-            self.card_status = card_status
         if message is not None:
             self.message = message
         if nucleus_asset_sizes_posted is not None:
@@ -76,27 +71,6 @@ class CardBalanceResponseVO(object):
             self.vendor_name = vendor_name
         if vendor_response is not None:
             self.vendor_response = vendor_response
-
-    @property
-    def card_status(self):
-        """Gets the card_status of this CardBalanceResponseVO.  # noqa: E501
-
-
-        :return: The card_status of this CardBalanceResponseVO.  # noqa: E501
-        :rtype: str
-        """
-        return self._card_status
-
-    @card_status.setter
-    def card_status(self, card_status):
-        """Sets the card_status of this CardBalanceResponseVO.
-
-
-        :param card_status: The card_status of this CardBalanceResponseVO.  # noqa: E501
-        :type: str
-        """
-
-        self._card_status = card_status
 
     @property
     def message(self):

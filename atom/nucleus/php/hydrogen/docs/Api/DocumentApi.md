@@ -321,7 +321,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\DocumentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$document = new \com\hydrogen\nucleus\Model\Document(); // \com\hydrogen\nucleus\Model\Document | document
+$document = new \stdClass; // object | document
 $document_id = "document_id_example"; // string | UUID document_id
 
 try {
@@ -337,7 +337,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **document** | [**\com\hydrogen\nucleus\Model\Document**](../Model/Document.md)| document |
+ **document** | **object**| document |
  **document_id** | [**string**](../Model/.md)| UUID document_id |
 
 ### Return type

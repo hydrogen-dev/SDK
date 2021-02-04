@@ -33,24 +33,27 @@ class BrokerageUpdateClientVO(object):
     swagger_types = {
         'message': 'str',
         'nucleus_client_id': 'str',
+        'status': 'str',
         'vendor_name': 'str',
-        'vendor_request_data': 'list[BaseDocument]',
-        'vendor_response': 'UpdateClientResponse'
+        'vendor_request_data': 'object',
+        'vendor_response': 'object'
     }
 
     attribute_map = {
         'message': 'message',
         'nucleus_client_id': 'nucleus_client_id',
+        'status': 'status',
         'vendor_name': 'vendor_name',
         'vendor_request_data': 'vendor_request_data',
         'vendor_response': 'vendor_response'
     }
 
-    def __init__(self, message=None, nucleus_client_id=None, vendor_name=None, vendor_request_data=None, vendor_response=None):  # noqa: E501
+    def __init__(self, message=None, nucleus_client_id=None, status=None, vendor_name=None, vendor_request_data=None, vendor_response=None):  # noqa: E501
         """BrokerageUpdateClientVO - a model defined in Swagger"""  # noqa: E501
 
         self._message = None
         self._nucleus_client_id = None
+        self._status = None
         self._vendor_name = None
         self._vendor_request_data = None
         self._vendor_response = None
@@ -60,6 +63,8 @@ class BrokerageUpdateClientVO(object):
             self.message = message
         if nucleus_client_id is not None:
             self.nucleus_client_id = nucleus_client_id
+        if status is not None:
+            self.status = status
         if vendor_name is not None:
             self.vendor_name = vendor_name
         if vendor_request_data is not None:
@@ -110,6 +115,27 @@ class BrokerageUpdateClientVO(object):
         self._nucleus_client_id = nucleus_client_id
 
     @property
+    def status(self):
+        """Gets the status of this BrokerageUpdateClientVO.  # noqa: E501
+
+
+        :return: The status of this BrokerageUpdateClientVO.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this BrokerageUpdateClientVO.
+
+
+        :param status: The status of this BrokerageUpdateClientVO.  # noqa: E501
+        :type: str
+        """
+
+        self._status = status
+
+    @property
     def vendor_name(self):
         """Gets the vendor_name of this BrokerageUpdateClientVO.  # noqa: E501
 
@@ -136,7 +162,7 @@ class BrokerageUpdateClientVO(object):
 
 
         :return: The vendor_request_data of this BrokerageUpdateClientVO.  # noqa: E501
-        :rtype: list[BaseDocument]
+        :rtype: object
         """
         return self._vendor_request_data
 
@@ -146,7 +172,7 @@ class BrokerageUpdateClientVO(object):
 
 
         :param vendor_request_data: The vendor_request_data of this BrokerageUpdateClientVO.  # noqa: E501
-        :type: list[BaseDocument]
+        :type: object
         """
 
         self._vendor_request_data = vendor_request_data
@@ -157,7 +183,7 @@ class BrokerageUpdateClientVO(object):
 
 
         :return: The vendor_response of this BrokerageUpdateClientVO.  # noqa: E501
-        :rtype: UpdateClientResponse
+        :rtype: object
         """
         return self._vendor_response
 
@@ -167,7 +193,7 @@ class BrokerageUpdateClientVO(object):
 
 
         :param vendor_response: The vendor_response of this BrokerageUpdateClientVO.  # noqa: E501
-        :type: UpdateClientResponse
+        :type: object
         """
 
         self._vendor_response = vendor_response

@@ -17,6 +17,7 @@ Calculate life insurance needs based on existing asset and liability data
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;

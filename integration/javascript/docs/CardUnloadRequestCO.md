@@ -3,9 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **Number** |  | [optional] 
-**nucleusCardId** | **String** |  | [optional] 
+**nucleusFundingId** | **String** |  | [optional] 
 **reason** | **String** |  | [optional] 
-**vendorRequest** | **{String: String}** |  | [optional] 
 
 

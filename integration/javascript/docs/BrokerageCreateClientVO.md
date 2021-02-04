@@ -7,6 +7,6 @@ Name | Type | Description | Notes
 **nucleusClientId** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
 **vendorName** | **String** |  | [optional] 
-**vendorResponse** | [**CreateClientResponse**](CreateClientResponse.md) |  | [optional] 
+**vendorResponse** | **Object** |  | [optional] 
 
 

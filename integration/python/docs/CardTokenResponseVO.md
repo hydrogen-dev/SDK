@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **apple_payload** | [**ApplePayload**](ApplePayload.md) |  | [optional] 
-**card_status** | **str** |  | [optional] 
 **google_payload** | [**GooglePayload**](GooglePayload.md) |  | [optional] 
 **message** | **str** |  | [optional] 
 **nucleus_card_id** | **str** |  | [optional] 

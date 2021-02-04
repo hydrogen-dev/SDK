@@ -23,7 +23,6 @@ Store stats pulled from financialStatement vendors.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FinancialStatementApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -40,8 +39,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FinancialStatementApi apiInstance = new FinancialStatementApi();
 FinancialStatement financialStatement = new FinancialStatement(); // FinancialStatement | financialStatement
 try {
@@ -84,7 +81,6 @@ Permanently delete an financialStatement.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FinancialStatementApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -101,8 +97,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FinancialStatementApi apiInstance = new FinancialStatementApi();
 UUID financialStatementId = new UUID(); // UUID | UUID financialStatement_id
 try {
@@ -144,7 +138,6 @@ Get information for all financialStatement for all clients defined for your firm
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FinancialStatementApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -161,8 +154,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FinancialStatementApi apiInstance = new FinancialStatementApi();
 Boolean ascending = false; // Boolean | ascending
 String currencyConversion = "currencyConversion_example"; // String | currency_conversion
@@ -215,7 +206,6 @@ Retrieve the information for a specific financialStatement associated with a cli
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FinancialStatementApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -232,8 +222,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FinancialStatementApi apiInstance = new FinancialStatementApi();
 UUID financialStatementId = new UUID(); // UUID | UUID financial_statement_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -278,7 +266,6 @@ Update the information for an financialStatement.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FinancialStatementApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -295,10 +282,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FinancialStatementApi apiInstance = new FinancialStatementApi();
-FinancialStatement financialStatement = new FinancialStatement(); // FinancialStatement | financialStatement
+Object financialStatement = null; // Object | financialStatement
 UUID financialStatementId = new UUID(); // UUID | UUID financialStatement_id
 try {
     FinancialStatement result = apiInstance.updateFinancialStatementUsingPut(financialStatement, financialStatementId);
@@ -313,7 +298,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **financialStatement** | [**FinancialStatement**](FinancialStatement.md)| financialStatement |
+ **financialStatement** | **Object**| financialStatement |
  **financialStatementId** | [**UUID**](.md)| UUID financialStatement_id |
 
 ### Return type

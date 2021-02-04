@@ -1231,7 +1231,7 @@ class NotificationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param NotificationClient notification_client: notification_client (required)
+        :param object notification_client: notification_client (required)
         :param str notification_client_id: UUID notification_client_id (required)
         :return: NotificationClient
                  If the method is called asynchronously,
@@ -1254,7 +1254,7 @@ class NotificationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param NotificationClient notification_client: notification_client (required)
+        :param object notification_client: notification_client (required)
         :param str notification_client_id: UUID notification_client_id (required)
         :return: NotificationClient
                  If the method is called asynchronously,
@@ -1338,7 +1338,7 @@ class NotificationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param NotificationSetting notification_setting: notification_setting (required)
+        :param object notification_setting: notification_setting (required)
         :param str notification_setting_id: UUID notification_setting_id (required)
         :return: NotificationSetting
                  If the method is called asynchronously,
@@ -1361,7 +1361,7 @@ class NotificationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param NotificationSetting notification_setting: notification_setting (required)
+        :param object notification_setting: notification_setting (required)
         :param str notification_setting_id: UUID notification_setting_id (required)
         :return: NotificationSetting
                  If the method is called asynchronously,
@@ -1445,7 +1445,7 @@ class NotificationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Notification notification: notification (required)
+        :param object notification: notification (required)
         :param str notification_id: UUID notification_id (required)
         :return: Notification
                  If the method is called asynchronously,
@@ -1468,7 +1468,7 @@ class NotificationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Notification notification: notification (required)
+        :param object notification: notification (required)
         :param str notification_id: UUID notification_id (required)
         :return: Notification
                  If the method is called asynchronously,

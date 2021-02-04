@@ -524,7 +524,7 @@ end
 
 api_instance = NucleusApi::InvoiceApi.new
 
-invoice_payment = NucleusApi::InvoicePayment.new # InvoicePayment | invoice_payment
+invoice_payment = nil # Object | invoice_payment
 
 invoice_payment_id = 'invoice_payment_id_example' # String | UUID invoice_payment_id
 
@@ -542,7 +542,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoice_payment** | [**InvoicePayment**](InvoicePayment.md)| invoice_payment | 
+ **invoice_payment** | **Object**| invoice_payment | 
  **invoice_payment_id** | [**String**](.md)| UUID invoice_payment_id | 
 
 ### Return type
@@ -584,7 +584,7 @@ end
 
 api_instance = NucleusApi::InvoiceApi.new
 
-invoice = NucleusApi::Invoice.new # Invoice | invoice
+invoice = nil # Object | invoice
 
 invoice_id = 'invoice_id_example' # String | UUID invoice_id
 
@@ -602,7 +602,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoice** | [**Invoice**](Invoice.md)| invoice | 
+ **invoice** | **Object**| invoice | 
  **invoice_id** | [**String**](.md)| UUID invoice_id | 
 
 ### Return type

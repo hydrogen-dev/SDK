@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.IOException;
@@ -32,25 +31,25 @@ import org.threeten.bp.LocalDate;
 /**
  * BusinessInvoiceAnalysisRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class BusinessInvoiceAnalysisRequest {
+  @SerializedName("customer_id")
+  private UUID customerId = null;
+
+  @SerializedName("end_date")
+  private LocalDate endDate = null;
+
   @SerializedName("overdue_periods")
   private List<Periods> overduePeriods = null;
-
-  @SerializedName("show_outstanding_invoices")
-  private Boolean showOutstandingInvoices = false;
-
-  @SerializedName("show_history")
-  private Boolean showHistory = false;
 
   @SerializedName("client_id")
   private UUID clientId = null;
 
-  @SerializedName("future_due_periods")
-  private List<Periods> futureDuePeriods = null;
+  @SerializedName("response_limit")
+  private Integer responseLimit = 10;
 
   @SerializedName("currency_conversion")
   private String currencyConversion = null;
@@ -111,23 +110,59 @@ public class BusinessInvoiceAnalysisRequest {
   @SerializedName("history_frequency_interval")
   private HistoryFrequencyIntervalEnum historyFrequencyInterval = HistoryFrequencyIntervalEnum.MONTH;
 
-  @SerializedName("end_date")
-  private LocalDate endDate = null;
+  @SerializedName("start_date")
+  private LocalDate startDate = null;
+
+  @SerializedName("show_history")
+  private Boolean showHistory = false;
 
   @SerializedName("currency_code")
   private String currencyCode = null;
 
-  @SerializedName("start_date")
-  private LocalDate startDate = null;
-
-  @SerializedName("response_limit")
-  private Integer responseLimit = 10;
-
   @SerializedName("invoice_ids")
   private List<UUID> invoiceIds = null;
 
-  @SerializedName("customer_id")
-  private UUID customerId = null;
+  @SerializedName("show_outstanding_invoices")
+  private Boolean showOutstandingInvoices = false;
+
+  @SerializedName("future_due_periods")
+  private List<Periods> futureDuePeriods = null;
+
+  public BusinessInvoiceAnalysisRequest customerId(UUID customerId) {
+    this.customerId = customerId;
+    return this;
+  }
+
+   /**
+   * Get customerId
+   * @return customerId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getCustomerId() {
+    return customerId;
+  }
+
+  public void setCustomerId(UUID customerId) {
+    this.customerId = customerId;
+  }
+
+  public BusinessInvoiceAnalysisRequest endDate(LocalDate endDate) {
+    this.endDate = endDate;
+    return this;
+  }
+
+   /**
+   * Get endDate
+   * @return endDate
+  **/
+  @ApiModelProperty(value = "")
+  public LocalDate getEndDate() {
+    return endDate;
+  }
+
+  public void setEndDate(LocalDate endDate) {
+    this.endDate = endDate;
+  }
 
   public BusinessInvoiceAnalysisRequest overduePeriods(List<Periods> overduePeriods) {
     this.overduePeriods = overduePeriods;
@@ -155,42 +190,6 @@ public class BusinessInvoiceAnalysisRequest {
     this.overduePeriods = overduePeriods;
   }
 
-  public BusinessInvoiceAnalysisRequest showOutstandingInvoices(Boolean showOutstandingInvoices) {
-    this.showOutstandingInvoices = showOutstandingInvoices;
-    return this;
-  }
-
-   /**
-   * Get showOutstandingInvoices
-   * @return showOutstandingInvoices
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isShowOutstandingInvoices() {
-    return showOutstandingInvoices;
-  }
-
-  public void setShowOutstandingInvoices(Boolean showOutstandingInvoices) {
-    this.showOutstandingInvoices = showOutstandingInvoices;
-  }
-
-  public BusinessInvoiceAnalysisRequest showHistory(Boolean showHistory) {
-    this.showHistory = showHistory;
-    return this;
-  }
-
-   /**
-   * Get showHistory
-   * @return showHistory
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isShowHistory() {
-    return showHistory;
-  }
-
-  public void setShowHistory(Boolean showHistory) {
-    this.showHistory = showHistory;
-  }
-
   public BusinessInvoiceAnalysisRequest clientId(UUID clientId) {
     this.clientId = clientId;
     return this;
@@ -209,30 +208,23 @@ public class BusinessInvoiceAnalysisRequest {
     this.clientId = clientId;
   }
 
-  public BusinessInvoiceAnalysisRequest futureDuePeriods(List<Periods> futureDuePeriods) {
-    this.futureDuePeriods = futureDuePeriods;
-    return this;
-  }
-
-  public BusinessInvoiceAnalysisRequest addFutureDuePeriodsItem(Periods futureDuePeriodsItem) {
-    if (this.futureDuePeriods == null) {
-      this.futureDuePeriods = new ArrayList<Periods>();
-    }
-    this.futureDuePeriods.add(futureDuePeriodsItem);
+  public BusinessInvoiceAnalysisRequest responseLimit(Integer responseLimit) {
+    this.responseLimit = responseLimit;
     return this;
   }
 
    /**
-   * Get futureDuePeriods
-   * @return futureDuePeriods
+   * Get responseLimit
+   * minimum: 1
+   * @return responseLimit
   **/
   @ApiModelProperty(value = "")
-  public List<Periods> getFutureDuePeriods() {
-    return futureDuePeriods;
+  public Integer getResponseLimit() {
+    return responseLimit;
   }
 
-  public void setFutureDuePeriods(List<Periods> futureDuePeriods) {
-    this.futureDuePeriods = futureDuePeriods;
+  public void setResponseLimit(Integer responseLimit) {
+    this.responseLimit = responseLimit;
   }
 
   public BusinessInvoiceAnalysisRequest currencyConversion(String currencyConversion) {
@@ -271,42 +263,6 @@ public class BusinessInvoiceAnalysisRequest {
     this.historyFrequencyInterval = historyFrequencyInterval;
   }
 
-  public BusinessInvoiceAnalysisRequest endDate(LocalDate endDate) {
-    this.endDate = endDate;
-    return this;
-  }
-
-   /**
-   * Get endDate
-   * @return endDate
-  **/
-  @ApiModelProperty(value = "")
-  public LocalDate getEndDate() {
-    return endDate;
-  }
-
-  public void setEndDate(LocalDate endDate) {
-    this.endDate = endDate;
-  }
-
-  public BusinessInvoiceAnalysisRequest currencyCode(String currencyCode) {
-    this.currencyCode = currencyCode;
-    return this;
-  }
-
-   /**
-   * Get currencyCode
-   * @return currencyCode
-  **/
-  @ApiModelProperty(value = "")
-  public String getCurrencyCode() {
-    return currencyCode;
-  }
-
-  public void setCurrencyCode(String currencyCode) {
-    this.currencyCode = currencyCode;
-  }
-
   public BusinessInvoiceAnalysisRequest startDate(LocalDate startDate) {
     this.startDate = startDate;
     return this;
@@ -325,23 +281,40 @@ public class BusinessInvoiceAnalysisRequest {
     this.startDate = startDate;
   }
 
-  public BusinessInvoiceAnalysisRequest responseLimit(Integer responseLimit) {
-    this.responseLimit = responseLimit;
+  public BusinessInvoiceAnalysisRequest showHistory(Boolean showHistory) {
+    this.showHistory = showHistory;
     return this;
   }
 
    /**
-   * Get responseLimit
-   * minimum: 1
-   * @return responseLimit
+   * Get showHistory
+   * @return showHistory
   **/
   @ApiModelProperty(value = "")
-  public Integer getResponseLimit() {
-    return responseLimit;
+  public Boolean isShowHistory() {
+    return showHistory;
   }
 
-  public void setResponseLimit(Integer responseLimit) {
-    this.responseLimit = responseLimit;
+  public void setShowHistory(Boolean showHistory) {
+    this.showHistory = showHistory;
+  }
+
+  public BusinessInvoiceAnalysisRequest currencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+    return this;
+  }
+
+   /**
+   * Get currencyCode
+   * @return currencyCode
+  **/
+  @ApiModelProperty(value = "")
+  public String getCurrencyCode() {
+    return currencyCode;
+  }
+
+  public void setCurrencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
   }
 
   public BusinessInvoiceAnalysisRequest invoiceIds(List<UUID> invoiceIds) {
@@ -370,22 +343,48 @@ public class BusinessInvoiceAnalysisRequest {
     this.invoiceIds = invoiceIds;
   }
 
-  public BusinessInvoiceAnalysisRequest customerId(UUID customerId) {
-    this.customerId = customerId;
+  public BusinessInvoiceAnalysisRequest showOutstandingInvoices(Boolean showOutstandingInvoices) {
+    this.showOutstandingInvoices = showOutstandingInvoices;
     return this;
   }
 
    /**
-   * Get customerId
-   * @return customerId
+   * Get showOutstandingInvoices
+   * @return showOutstandingInvoices
   **/
   @ApiModelProperty(value = "")
-  public UUID getCustomerId() {
-    return customerId;
+  public Boolean isShowOutstandingInvoices() {
+    return showOutstandingInvoices;
   }
 
-  public void setCustomerId(UUID customerId) {
-    this.customerId = customerId;
+  public void setShowOutstandingInvoices(Boolean showOutstandingInvoices) {
+    this.showOutstandingInvoices = showOutstandingInvoices;
+  }
+
+  public BusinessInvoiceAnalysisRequest futureDuePeriods(List<Periods> futureDuePeriods) {
+    this.futureDuePeriods = futureDuePeriods;
+    return this;
+  }
+
+  public BusinessInvoiceAnalysisRequest addFutureDuePeriodsItem(Periods futureDuePeriodsItem) {
+    if (this.futureDuePeriods == null) {
+      this.futureDuePeriods = new ArrayList<Periods>();
+    }
+    this.futureDuePeriods.add(futureDuePeriodsItem);
+    return this;
+  }
+
+   /**
+   * Get futureDuePeriods
+   * @return futureDuePeriods
+  **/
+  @ApiModelProperty(value = "")
+  public List<Periods> getFutureDuePeriods() {
+    return futureDuePeriods;
+  }
+
+  public void setFutureDuePeriods(List<Periods> futureDuePeriods) {
+    this.futureDuePeriods = futureDuePeriods;
   }
 
 
@@ -398,24 +397,24 @@ public class BusinessInvoiceAnalysisRequest {
       return false;
     }
     BusinessInvoiceAnalysisRequest businessInvoiceAnalysisRequest = (BusinessInvoiceAnalysisRequest) o;
-    return Objects.equals(this.overduePeriods, businessInvoiceAnalysisRequest.overduePeriods) &&
-        Objects.equals(this.showOutstandingInvoices, businessInvoiceAnalysisRequest.showOutstandingInvoices) &&
-        Objects.equals(this.showHistory, businessInvoiceAnalysisRequest.showHistory) &&
+    return Objects.equals(this.customerId, businessInvoiceAnalysisRequest.customerId) &&
+        Objects.equals(this.endDate, businessInvoiceAnalysisRequest.endDate) &&
+        Objects.equals(this.overduePeriods, businessInvoiceAnalysisRequest.overduePeriods) &&
         Objects.equals(this.clientId, businessInvoiceAnalysisRequest.clientId) &&
-        Objects.equals(this.futureDuePeriods, businessInvoiceAnalysisRequest.futureDuePeriods) &&
+        Objects.equals(this.responseLimit, businessInvoiceAnalysisRequest.responseLimit) &&
         Objects.equals(this.currencyConversion, businessInvoiceAnalysisRequest.currencyConversion) &&
         Objects.equals(this.historyFrequencyInterval, businessInvoiceAnalysisRequest.historyFrequencyInterval) &&
-        Objects.equals(this.endDate, businessInvoiceAnalysisRequest.endDate) &&
-        Objects.equals(this.currencyCode, businessInvoiceAnalysisRequest.currencyCode) &&
         Objects.equals(this.startDate, businessInvoiceAnalysisRequest.startDate) &&
-        Objects.equals(this.responseLimit, businessInvoiceAnalysisRequest.responseLimit) &&
+        Objects.equals(this.showHistory, businessInvoiceAnalysisRequest.showHistory) &&
+        Objects.equals(this.currencyCode, businessInvoiceAnalysisRequest.currencyCode) &&
         Objects.equals(this.invoiceIds, businessInvoiceAnalysisRequest.invoiceIds) &&
-        Objects.equals(this.customerId, businessInvoiceAnalysisRequest.customerId);
+        Objects.equals(this.showOutstandingInvoices, businessInvoiceAnalysisRequest.showOutstandingInvoices) &&
+        Objects.equals(this.futureDuePeriods, businessInvoiceAnalysisRequest.futureDuePeriods);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(overduePeriods, showOutstandingInvoices, showHistory, clientId, futureDuePeriods, currencyConversion, historyFrequencyInterval, endDate, currencyCode, startDate, responseLimit, invoiceIds, customerId);
+    return Objects.hash(customerId, endDate, overduePeriods, clientId, responseLimit, currencyConversion, historyFrequencyInterval, startDate, showHistory, currencyCode, invoiceIds, showOutstandingInvoices, futureDuePeriods);
   }
 
 
@@ -424,19 +423,19 @@ public class BusinessInvoiceAnalysisRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class BusinessInvoiceAnalysisRequest {\n");
     
+    sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+    sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("    overduePeriods: ").append(toIndentedString(overduePeriods)).append("\n");
-    sb.append("    showOutstandingInvoices: ").append(toIndentedString(showOutstandingInvoices)).append("\n");
-    sb.append("    showHistory: ").append(toIndentedString(showHistory)).append("\n");
     sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
-    sb.append("    futureDuePeriods: ").append(toIndentedString(futureDuePeriods)).append("\n");
+    sb.append("    responseLimit: ").append(toIndentedString(responseLimit)).append("\n");
     sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
     sb.append("    historyFrequencyInterval: ").append(toIndentedString(historyFrequencyInterval)).append("\n");
-    sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
-    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
-    sb.append("    responseLimit: ").append(toIndentedString(responseLimit)).append("\n");
+    sb.append("    showHistory: ").append(toIndentedString(showHistory)).append("\n");
+    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
     sb.append("    invoiceIds: ").append(toIndentedString(invoiceIds)).append("\n");
-    sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
+    sb.append("    showOutstandingInvoices: ").append(toIndentedString(showOutstandingInvoices)).append("\n");
+    sb.append("    futureDuePeriods: ").append(toIndentedString(futureDuePeriods)).append("\n");
     sb.append("}");
     return sb.toString();
   }

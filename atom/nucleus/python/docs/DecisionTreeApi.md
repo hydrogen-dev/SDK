@@ -52,7 +52,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 decision_tree_co = nucleus_api.DecisionTreeCO() # DecisionTreeCO | decisionTreeCO
@@ -116,7 +116,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 decision_tree = nucleus_api.DecisionTree() # DecisionTree | decisionTree
@@ -180,7 +180,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 node = nucleus_api.NodeRelationship() # NodeRelationship | node
@@ -244,7 +244,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 node = nucleus_api.Node() # Node | node
@@ -308,7 +308,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 decision_tree_id = 'decision_tree_id_example' # str | UUID decision_tree_id
@@ -371,7 +371,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 node_relationship_id = 'node_relationship_id_example' # str | UUID node_relationship_id
@@ -435,7 +435,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 node_id = 'node_id_example' # str | UUID node_id
@@ -499,7 +499,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -571,7 +571,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 decision_tree_id = 'decision_tree_id_example' # str | UUID decision_tree_id
@@ -635,7 +635,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -707,7 +707,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -779,7 +779,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 node_relationship_id = 'node_relationship_id_example' # str | UUID node_relationship_id
@@ -843,7 +843,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
 node_id = 'node_id_example' # str | UUID node_id
@@ -907,10 +907,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
-decision_tree = nucleus_api.DecisionTree() # DecisionTree | decision_tree
+decision_tree = NULL # object | decision_tree
 decision_tree_id = 'decision_tree_id_example' # str | UUID decision_tree_id
 
 try:
@@ -925,7 +925,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **decision_tree** | [**DecisionTree**](DecisionTree.md)| decision_tree | 
+ **decision_tree** | **object**| decision_tree | 
  **decision_tree_id** | [**str**](.md)| UUID decision_tree_id | 
 
 ### Return type
@@ -973,10 +973,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
-json_node = nucleus_api.JsonNode() # JsonNode | jsonNode
+json_node = NULL # object | jsonNode
 node_relationship_id = 'node_relationship_id_example' # str | UUID node_relationship_id
 
 try:
@@ -991,7 +991,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **json_node** | [**JsonNode**](JsonNode.md)| jsonNode | 
+ **json_node** | **object**| jsonNode | 
  **node_relationship_id** | [**str**](.md)| UUID node_relationship_id | 
 
 ### Return type
@@ -1039,10 +1039,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.DecisionTreeApi(nucleus_api.ApiClient(configuration))
-json_node = nucleus_api.JsonNode() # JsonNode | jsonNode
+json_node = NULL # object | jsonNode
 node_id = 'node_id_example' # str | UUID node_id
 
 try:
@@ -1057,7 +1057,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **json_node** | [**JsonNode**](JsonNode.md)| jsonNode | 
+ **json_node** | **object**| jsonNode | 
  **node_id** | [**str**](.md)| UUID node_id | 
 
 ### Return type

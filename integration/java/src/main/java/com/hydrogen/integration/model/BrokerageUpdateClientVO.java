@@ -18,14 +18,12 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModelProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 /**
  * BrokerageUpdateClientVO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class BrokerageUpdateClientVO {
   @SerializedName("message")
   private String message = null;
@@ -33,14 +31,17 @@ public class BrokerageUpdateClientVO {
   @SerializedName("nucleus_client_id")
   private UUID nucleusClientId = null;
 
+  @SerializedName("status")
+  private String status = null;
+
   @SerializedName("vendor_name")
   private String vendorName = null;
 
   @SerializedName("vendor_request_data")
-  private List<BaseDocument> vendorRequestData = null;
+  private Object vendorRequestData = null;
 
   @SerializedName("vendor_response")
-  private UpdateClientResponse vendorResponse = null;
+  private Object vendorResponse = null;
 
   public BrokerageUpdateClientVO message(String message) {
     this.message = message;
@@ -78,6 +79,24 @@ public class BrokerageUpdateClientVO {
     this.nucleusClientId = nucleusClientId;
   }
 
+  public BrokerageUpdateClientVO status(String status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * Get status
+   * @return status
+  **/
+  @ApiModelProperty(value = "")
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
   public BrokerageUpdateClientVO vendorName(String vendorName) {
     this.vendorName = vendorName;
     return this;
@@ -96,16 +115,8 @@ public class BrokerageUpdateClientVO {
     this.vendorName = vendorName;
   }
 
-  public BrokerageUpdateClientVO vendorRequestData(List<BaseDocument> vendorRequestData) {
+  public BrokerageUpdateClientVO vendorRequestData(Object vendorRequestData) {
     this.vendorRequestData = vendorRequestData;
-    return this;
-  }
-
-  public BrokerageUpdateClientVO addVendorRequestDataItem(BaseDocument vendorRequestDataItem) {
-    if (this.vendorRequestData == null) {
-      this.vendorRequestData = new ArrayList<BaseDocument>();
-    }
-    this.vendorRequestData.add(vendorRequestDataItem);
     return this;
   }
 
@@ -114,15 +125,15 @@ public class BrokerageUpdateClientVO {
    * @return vendorRequestData
   **/
   @ApiModelProperty(value = "")
-  public List<BaseDocument> getVendorRequestData() {
+  public Object getVendorRequestData() {
     return vendorRequestData;
   }
 
-  public void setVendorRequestData(List<BaseDocument> vendorRequestData) {
+  public void setVendorRequestData(Object vendorRequestData) {
     this.vendorRequestData = vendorRequestData;
   }
 
-  public BrokerageUpdateClientVO vendorResponse(UpdateClientResponse vendorResponse) {
+  public BrokerageUpdateClientVO vendorResponse(Object vendorResponse) {
     this.vendorResponse = vendorResponse;
     return this;
   }
@@ -132,11 +143,11 @@ public class BrokerageUpdateClientVO {
    * @return vendorResponse
   **/
   @ApiModelProperty(value = "")
-  public UpdateClientResponse getVendorResponse() {
+  public Object getVendorResponse() {
     return vendorResponse;
   }
 
-  public void setVendorResponse(UpdateClientResponse vendorResponse) {
+  public void setVendorResponse(Object vendorResponse) {
     this.vendorResponse = vendorResponse;
   }
 
@@ -152,6 +163,7 @@ public class BrokerageUpdateClientVO {
     BrokerageUpdateClientVO brokerageUpdateClientVO = (BrokerageUpdateClientVO) o;
     return Objects.equals(this.message, brokerageUpdateClientVO.message) &&
         Objects.equals(this.nucleusClientId, brokerageUpdateClientVO.nucleusClientId) &&
+        Objects.equals(this.status, brokerageUpdateClientVO.status) &&
         Objects.equals(this.vendorName, brokerageUpdateClientVO.vendorName) &&
         Objects.equals(this.vendorRequestData, brokerageUpdateClientVO.vendorRequestData) &&
         Objects.equals(this.vendorResponse, brokerageUpdateClientVO.vendorResponse);
@@ -159,7 +171,7 @@ public class BrokerageUpdateClientVO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(message, nucleusClientId, vendorName, vendorRequestData, vendorResponse);
+    return Objects.hash(message, nucleusClientId, status, vendorName, vendorRequestData, vendorResponse);
   }
 
 
@@ -170,6 +182,7 @@ public class BrokerageUpdateClientVO {
     
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    nucleusClientId: ").append(toIndentedString(nucleusClientId)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    vendorName: ").append(toIndentedString(vendorName)).append("\n");
     sb.append("    vendorRequestData: ").append(toIndentedString(vendorRequestData)).append("\n");
     sb.append("    vendorResponse: ").append(toIndentedString(vendorResponse)).append("\n");

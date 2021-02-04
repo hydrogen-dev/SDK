@@ -13,14 +13,13 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
+import com.hydrogen.nucleus.model.Card;
 import com.hydrogen.nucleus.model.CardProgram;
+import org.threeten.bp.LocalDate;
 import com.hydrogen.nucleus.model.PageCard;
 import com.hydrogen.nucleus.model.PageCardProgram;
 import com.hydrogen.nucleus.model.PagePortfolioTransaction;
-import com.hydrogen.nucleus.ApiException;
-import com.hydrogen.nucleus.model.Card;
-import org.threeten.bp.LocalDate;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -226,7 +225,7 @@ public class CardApiTest {
      */
     @Test
     public void updateCardProgramUsingPutTest() throws ApiException {
-        CardProgram cardProgram = null;
+        Object cardProgram = null;
         UUID cardProgramId = null;
         CardProgram response = api.updateCardProgramUsingPut(cardProgram, cardProgramId);
 
@@ -243,7 +242,7 @@ public class CardApiTest {
      */
     @Test
     public void updateCardUsingPutTest() throws ApiException {
-        Card card = null;
+        Object card = null;
         UUID cardId = null;
         Card response = api.updateCardUsingPut(card, cardId);
 

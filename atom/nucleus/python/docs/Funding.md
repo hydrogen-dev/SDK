@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_id** | **str** | accountId | 
+**account_id** | **str** | accountId | [optional] 
 **amount** | **float** | amount | [optional] 
 **bank_link_id** | **str** | bankLinkId | [optional] 
 **card_id** | **str** | cardId | [optional] 
@@ -22,7 +22,9 @@ Name | Type | Description | Notes
 **metadata** | **dict(str, str)** | metadata | [optional] 
 **next_request_date** | **date** | nextRequestDate | [optional] 
 **portfolio_id** | **str** | portfolioId | [optional] 
+**receiving_account_id** | **str** | receivingAccountId | [optional] 
 **receiving_bank_link_id** | **str** | receivingBankLinkId | [optional] 
+**receiving_portfolio_id** | **str** | receivingPortfolioId | [optional] 
 **secondary_id** | **str** |  | [optional] 
 **start_date** | **date** | startDate | 
 **support_ticket_id** | **str** | supportTicketId | [optional] 

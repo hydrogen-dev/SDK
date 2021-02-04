@@ -5,7 +5,7 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createKYCUsingPost**](KYCApi.md#createKYCUsingPost) | **POST** /kyc | Do kyc for the client.
-[**getKYCStatusUsingGet**](KYCApi.md#getKYCStatusUsingGet) | **GET** /kyc_status/{nucleus_client_id} | Fetch kyc_status for the given nucleus_client_id
+[**getKYCStatusUsingGet**](KYCApi.md#getKYCStatusUsingGet) | **GET** /kyc_status | Fetch kyc_status for the given nucleus_client_id
 
 
 <a name="createKYCUsingPost"></a>
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 <a name="getKYCStatusUsingGet"></a>
 # **getKYCStatusUsingGet**
-> [KycResponseVo] getKYCStatusUsingGet(nucleusClientId, opts)
+> [KycResponseVo] getKYCStatusUsingGet(opts)
 
 Fetch kyc_status for the given nucleus_client_id
 
@@ -78,11 +78,11 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenIntegrationApi.KYCApi();
 
-var nucleusClientId = "nucleusClientId_example"; // String | nucleus_client_id
-
 var opts = { 
   'getLatest': false, // Boolean | get_latest
   'kycType': "all", // String | kyc_type
+  'nucleusBusinessId': "nucleusBusinessId_example", // String | nucleus_business_id
+  'nucleusClientId': "nucleusClientId_example", // String | nucleus_client_id
   'product': "atom" // String | product
 };
 
@@ -93,16 +93,17 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getKYCStatusUsingGet(nucleusClientId, opts, callback);
+apiInstance.getKYCStatusUsingGet(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **nucleusClientId** | [**String**](.md)| nucleus_client_id | 
  **getLatest** | **Boolean**| get_latest | [optional] [default to false]
  **kycType** | **String**| kyc_type | [optional] [default to all]
+ **nucleusBusinessId** | [**String**](.md)| nucleus_business_id | [optional] 
+ **nucleusClientId** | [**String**](.md)| nucleus_client_id | [optional] 
  **product** | **String**| product | [optional] [default to atom]
 
 ### Return type

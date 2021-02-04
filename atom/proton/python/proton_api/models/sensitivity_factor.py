@@ -33,31 +33,31 @@ class SensitivityFactor(object):
     swagger_types = {
         'change_duration': 'int',
         'lag': 'int',
-        'ticker': 'str',
-        'change_amount': 'float'
+        'change_amount': 'float',
+        'ticker': 'str'
     }
 
     attribute_map = {
         'change_duration': 'change_duration',
         'lag': 'lag',
-        'ticker': 'ticker',
-        'change_amount': 'change_amount'
+        'change_amount': 'change_amount',
+        'ticker': 'ticker'
     }
 
-    def __init__(self, change_duration=None, lag=0, ticker=None, change_amount=None):  # noqa: E501
+    def __init__(self, change_duration=None, lag=0, change_amount=None, ticker=None):  # noqa: E501
         """SensitivityFactor - a model defined in Swagger"""  # noqa: E501
 
         self._change_duration = None
         self._lag = None
-        self._ticker = None
         self._change_amount = None
+        self._ticker = None
         self.discriminator = None
 
         self.change_duration = change_duration
         if lag is not None:
             self.lag = lag
-        self.ticker = ticker
         self.change_amount = change_amount
+        self.ticker = ticker
 
     @property
     def change_duration(self):
@@ -108,29 +108,6 @@ class SensitivityFactor(object):
         self._lag = lag
 
     @property
-    def ticker(self):
-        """Gets the ticker of this SensitivityFactor.  # noqa: E501
-
-
-        :return: The ticker of this SensitivityFactor.  # noqa: E501
-        :rtype: str
-        """
-        return self._ticker
-
-    @ticker.setter
-    def ticker(self, ticker):
-        """Sets the ticker of this SensitivityFactor.
-
-
-        :param ticker: The ticker of this SensitivityFactor.  # noqa: E501
-        :type: str
-        """
-        if ticker is None:
-            raise ValueError("Invalid value for `ticker`, must not be `None`")  # noqa: E501
-
-        self._ticker = ticker
-
-    @property
     def change_amount(self):
         """Gets the change_amount of this SensitivityFactor.  # noqa: E501
 
@@ -154,6 +131,29 @@ class SensitivityFactor(object):
             raise ValueError("Invalid value for `change_amount`, must be a value greater than or equal to `-1`")  # noqa: E501
 
         self._change_amount = change_amount
+
+    @property
+    def ticker(self):
+        """Gets the ticker of this SensitivityFactor.  # noqa: E501
+
+
+        :return: The ticker of this SensitivityFactor.  # noqa: E501
+        :rtype: str
+        """
+        return self._ticker
+
+    @ticker.setter
+    def ticker(self, ticker):
+        """Sets the ticker of this SensitivityFactor.
+
+
+        :param ticker: The ticker of this SensitivityFactor.  # noqa: E501
+        :type: str
+        """
+        if ticker is None:
+            raise ValueError("Invalid value for `ticker`, must not be `None`")  # noqa: E501
+
+        self._ticker = ticker
 
     def to_dict(self):
         """Returns the model properties as a dict"""

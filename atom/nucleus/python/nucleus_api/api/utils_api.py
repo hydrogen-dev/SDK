@@ -1231,7 +1231,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ReasonCode reason_code: reason_code (required)
+        :param object reason_code: reason_code (required)
         :param str reason_code_id: UUID reason_code_id (required)
         :return: ReasonCode
                  If the method is called asynchronously,
@@ -1254,7 +1254,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ReasonCode reason_code: reason_code (required)
+        :param object reason_code: reason_code (required)
         :param str reason_code_id: UUID reason_code_id (required)
         :return: ReasonCode
                  If the method is called asynchronously,
@@ -1338,7 +1338,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Stage stage: stage (required)
+        :param object stage: stage (required)
         :param str stage_id: UUID stage_id (required)
         :return: Stage
                  If the method is called asynchronously,
@@ -1361,7 +1361,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Stage stage: stage (required)
+        :param object stage: stage (required)
         :param str stage_id: UUID stage_id (required)
         :return: Stage
                  If the method is called asynchronously,
@@ -1445,7 +1445,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param TransactionCode transaction_code: transaction_code (required)
+        :param object transaction_code: transaction_code (required)
         :param str transaction_code_id: UUID transaction_code_id (required)
         :return: TransactionCode
                  If the method is called asynchronously,
@@ -1468,7 +1468,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param TransactionCode transaction_code: transaction_code (required)
+        :param object transaction_code: transaction_code (required)
         :param str transaction_code_id: UUID transaction_code_id (required)
         :return: TransactionCode
                  If the method is called asynchronously,

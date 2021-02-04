@@ -15,12 +15,7 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.math.BigDecimal;
@@ -28,107 +23,31 @@ import java.math.BigDecimal;
 /**
  * RecommendationConfig1
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class RecommendationConfig1 {
-  @SerializedName("horizon_min")
-  private Integer horizonMin = 1;
-
-  @SerializedName("dep_min")
-  private BigDecimal depMin = null;
-
-  @SerializedName("dep_max")
-  private BigDecimal depMax = null;
-
-  @SerializedName("horizon_max")
-  private Integer horizonMax = 64;
-
   @SerializedName("recommended_inflation")
   private Float recommendedInflation = 0.0f;
 
   @SerializedName("inv_max")
   private BigDecimal invMax = null;
 
+  @SerializedName("horizon_min")
+  private Integer horizonMin = 1;
+
+  @SerializedName("horizon_max")
+  private Integer horizonMax = 64;
+
+  @SerializedName("dep_max")
+  private BigDecimal depMax = null;
+
   @SerializedName("inv_min")
   private BigDecimal invMin = null;
 
-  public RecommendationConfig1 horizonMin(Integer horizonMin) {
-    this.horizonMin = horizonMin;
-    return this;
-  }
-
-   /**
-   * Get horizonMin
-   * minimum: 0
-   * @return horizonMin
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getHorizonMin() {
-    return horizonMin;
-  }
-
-  public void setHorizonMin(Integer horizonMin) {
-    this.horizonMin = horizonMin;
-  }
-
-  public RecommendationConfig1 depMin(BigDecimal depMin) {
-    this.depMin = depMin;
-    return this;
-  }
-
-   /**
-   * Get depMin
-   * minimum: 0
-   * @return depMin
-  **/
-  @ApiModelProperty(value = "")
-  public BigDecimal getDepMin() {
-    return depMin;
-  }
-
-  public void setDepMin(BigDecimal depMin) {
-    this.depMin = depMin;
-  }
-
-  public RecommendationConfig1 depMax(BigDecimal depMax) {
-    this.depMax = depMax;
-    return this;
-  }
-
-   /**
-   * Get depMax
-   * minimum: 0
-   * @return depMax
-  **/
-  @ApiModelProperty(value = "")
-  public BigDecimal getDepMax() {
-    return depMax;
-  }
-
-  public void setDepMax(BigDecimal depMax) {
-    this.depMax = depMax;
-  }
-
-  public RecommendationConfig1 horizonMax(Integer horizonMax) {
-    this.horizonMax = horizonMax;
-    return this;
-  }
-
-   /**
-   * Get horizonMax
-   * minimum: 0
-   * @return horizonMax
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getHorizonMax() {
-    return horizonMax;
-  }
-
-  public void setHorizonMax(Integer horizonMax) {
-    this.horizonMax = horizonMax;
-  }
+  @SerializedName("dep_min")
+  private BigDecimal depMin = null;
 
   public RecommendationConfig1 recommendedInflation(Float recommendedInflation) {
     this.recommendedInflation = recommendedInflation;
@@ -168,6 +87,63 @@ public class RecommendationConfig1 {
     this.invMax = invMax;
   }
 
+  public RecommendationConfig1 horizonMin(Integer horizonMin) {
+    this.horizonMin = horizonMin;
+    return this;
+  }
+
+   /**
+   * Get horizonMin
+   * minimum: 0
+   * @return horizonMin
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getHorizonMin() {
+    return horizonMin;
+  }
+
+  public void setHorizonMin(Integer horizonMin) {
+    this.horizonMin = horizonMin;
+  }
+
+  public RecommendationConfig1 horizonMax(Integer horizonMax) {
+    this.horizonMax = horizonMax;
+    return this;
+  }
+
+   /**
+   * Get horizonMax
+   * minimum: 0
+   * @return horizonMax
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getHorizonMax() {
+    return horizonMax;
+  }
+
+  public void setHorizonMax(Integer horizonMax) {
+    this.horizonMax = horizonMax;
+  }
+
+  public RecommendationConfig1 depMax(BigDecimal depMax) {
+    this.depMax = depMax;
+    return this;
+  }
+
+   /**
+   * Get depMax
+   * minimum: 0
+   * @return depMax
+  **/
+  @ApiModelProperty(value = "")
+  public BigDecimal getDepMax() {
+    return depMax;
+  }
+
+  public void setDepMax(BigDecimal depMax) {
+    this.depMax = depMax;
+  }
+
   public RecommendationConfig1 invMin(BigDecimal invMin) {
     this.invMin = invMin;
     return this;
@@ -187,6 +163,25 @@ public class RecommendationConfig1 {
     this.invMin = invMin;
   }
 
+  public RecommendationConfig1 depMin(BigDecimal depMin) {
+    this.depMin = depMin;
+    return this;
+  }
+
+   /**
+   * Get depMin
+   * minimum: 0
+   * @return depMin
+  **/
+  @ApiModelProperty(value = "")
+  public BigDecimal getDepMin() {
+    return depMin;
+  }
+
+  public void setDepMin(BigDecimal depMin) {
+    this.depMin = depMin;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -197,18 +192,18 @@ public class RecommendationConfig1 {
       return false;
     }
     RecommendationConfig1 recommendationConfig1 = (RecommendationConfig1) o;
-    return Objects.equals(this.horizonMin, recommendationConfig1.horizonMin) &&
-        Objects.equals(this.depMin, recommendationConfig1.depMin) &&
-        Objects.equals(this.depMax, recommendationConfig1.depMax) &&
-        Objects.equals(this.horizonMax, recommendationConfig1.horizonMax) &&
-        Objects.equals(this.recommendedInflation, recommendationConfig1.recommendedInflation) &&
+    return Objects.equals(this.recommendedInflation, recommendationConfig1.recommendedInflation) &&
         Objects.equals(this.invMax, recommendationConfig1.invMax) &&
-        Objects.equals(this.invMin, recommendationConfig1.invMin);
+        Objects.equals(this.horizonMin, recommendationConfig1.horizonMin) &&
+        Objects.equals(this.horizonMax, recommendationConfig1.horizonMax) &&
+        Objects.equals(this.depMax, recommendationConfig1.depMax) &&
+        Objects.equals(this.invMin, recommendationConfig1.invMin) &&
+        Objects.equals(this.depMin, recommendationConfig1.depMin);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(horizonMin, depMin, depMax, horizonMax, recommendedInflation, invMax, invMin);
+    return Objects.hash(recommendedInflation, invMax, horizonMin, horizonMax, depMax, invMin, depMin);
   }
 
 
@@ -217,13 +212,13 @@ public class RecommendationConfig1 {
     StringBuilder sb = new StringBuilder();
     sb.append("class RecommendationConfig1 {\n");
     
-    sb.append("    horizonMin: ").append(toIndentedString(horizonMin)).append("\n");
-    sb.append("    depMin: ").append(toIndentedString(depMin)).append("\n");
-    sb.append("    depMax: ").append(toIndentedString(depMax)).append("\n");
-    sb.append("    horizonMax: ").append(toIndentedString(horizonMax)).append("\n");
     sb.append("    recommendedInflation: ").append(toIndentedString(recommendedInflation)).append("\n");
     sb.append("    invMax: ").append(toIndentedString(invMax)).append("\n");
+    sb.append("    horizonMin: ").append(toIndentedString(horizonMin)).append("\n");
+    sb.append("    horizonMax: ").append(toIndentedString(horizonMax)).append("\n");
+    sb.append("    depMax: ").append(toIndentedString(depMax)).append("\n");
     sb.append("    invMin: ").append(toIndentedString(invMin)).append("\n");
+    sb.append("    depMin: ").append(toIndentedString(depMin)).append("\n");
     sb.append("}");
     return sb.toString();
   }

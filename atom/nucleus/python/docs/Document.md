@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **str** | accountId | [optional] 
+**business_id** | **str** | businessId | [optional] 
 **client_id** | **str** | clientId | [optional] 
 **country_of_issue** | **str** | country_of_issue | [optional] 
 **create_date** | **datetime** |  | [optional] 
@@ -17,6 +18,7 @@ Name | Type | Description | Notes
 **expiry_date** | **date** | expiry_date | [optional] 
 **id** | **str** |  | [optional] 
 **is_active** | **bool** | is_active | [optional] 
+**is_sensitive** | **bool** | is_sensitive | [optional] 
 **is_verified** | **bool** | is_verified | [optional] 
 **issue_date** | **date** | issue_date | [optional] 
 **metadata** | **dict(str, str)** | metadata | [optional] 

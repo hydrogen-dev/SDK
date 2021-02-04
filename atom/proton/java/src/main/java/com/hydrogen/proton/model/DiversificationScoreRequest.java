@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,7 +30,7 @@ import org.threeten.bp.LocalDate;
 /**
  * DiversificationScoreRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
@@ -39,32 +38,11 @@ public class DiversificationScoreRequest {
   @SerializedName("portfolio_tickers")
   private List<String> portfolioTickers = null;
 
-  @SerializedName("create_log")
-  private Boolean createLog = false;
-
-  @SerializedName("aggregation_account_id")
-  private UUID aggregationAccountId = null;
-
-  @SerializedName("allocation_id")
-  private UUID allocationId = null;
-
-  @SerializedName("model_id")
-  private UUID modelId = null;
-
-  @SerializedName("portfolio_weights")
-  private List<Float> portfolioWeights = null;
-
   @SerializedName("end_date")
   private LocalDate endDate = null;
 
-  @SerializedName("start_date")
-  private LocalDate startDate = null;
-
-  @SerializedName("use_proxy_data")
-  private Boolean useProxyData = false;
-
-  @SerializedName("account_id")
-  private UUID accountId = null;
+  @SerializedName("portfolio_id")
+  private UUID portfolioId = null;
 
   /**
    * Gets or Sets marketDataSource
@@ -116,8 +94,29 @@ public class DiversificationScoreRequest {
   @SerializedName("market_data_source")
   private MarketDataSourceEnum marketDataSource = MarketDataSourceEnum.NUCLEUS;
 
-  @SerializedName("portfolio_id")
-  private UUID portfolioId = null;
+  @SerializedName("model_id")
+  private UUID modelId = null;
+
+  @SerializedName("create_log")
+  private Boolean createLog = false;
+
+  @SerializedName("allocation_id")
+  private UUID allocationId = null;
+
+  @SerializedName("use_proxy_data")
+  private Boolean useProxyData = false;
+
+  @SerializedName("start_date")
+  private LocalDate startDate = null;
+
+  @SerializedName("account_id")
+  private UUID accountId = null;
+
+  @SerializedName("aggregation_account_id")
+  private UUID aggregationAccountId = null;
+
+  @SerializedName("portfolio_weights")
+  private List<Float> portfolioWeights = null;
 
   public DiversificationScoreRequest portfolioTickers(List<String> portfolioTickers) {
     this.portfolioTickers = portfolioTickers;
@@ -145,6 +144,78 @@ public class DiversificationScoreRequest {
     this.portfolioTickers = portfolioTickers;
   }
 
+  public DiversificationScoreRequest endDate(LocalDate endDate) {
+    this.endDate = endDate;
+    return this;
+  }
+
+   /**
+   * Get endDate
+   * @return endDate
+  **/
+  @ApiModelProperty(value = "")
+  public LocalDate getEndDate() {
+    return endDate;
+  }
+
+  public void setEndDate(LocalDate endDate) {
+    this.endDate = endDate;
+  }
+
+  public DiversificationScoreRequest portfolioId(UUID portfolioId) {
+    this.portfolioId = portfolioId;
+    return this;
+  }
+
+   /**
+   * Get portfolioId
+   * @return portfolioId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getPortfolioId() {
+    return portfolioId;
+  }
+
+  public void setPortfolioId(UUID portfolioId) {
+    this.portfolioId = portfolioId;
+  }
+
+  public DiversificationScoreRequest marketDataSource(MarketDataSourceEnum marketDataSource) {
+    this.marketDataSource = marketDataSource;
+    return this;
+  }
+
+   /**
+   * Get marketDataSource
+   * @return marketDataSource
+  **/
+  @ApiModelProperty(value = "")
+  public MarketDataSourceEnum getMarketDataSource() {
+    return marketDataSource;
+  }
+
+  public void setMarketDataSource(MarketDataSourceEnum marketDataSource) {
+    this.marketDataSource = marketDataSource;
+  }
+
+  public DiversificationScoreRequest modelId(UUID modelId) {
+    this.modelId = modelId;
+    return this;
+  }
+
+   /**
+   * Get modelId
+   * @return modelId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getModelId() {
+    return modelId;
+  }
+
+  public void setModelId(UUID modelId) {
+    this.modelId = modelId;
+  }
+
   public DiversificationScoreRequest createLog(Boolean createLog) {
     this.createLog = createLog;
     return this;
@@ -161,24 +232,6 @@ public class DiversificationScoreRequest {
 
   public void setCreateLog(Boolean createLog) {
     this.createLog = createLog;
-  }
-
-  public DiversificationScoreRequest aggregationAccountId(UUID aggregationAccountId) {
-    this.aggregationAccountId = aggregationAccountId;
-    return this;
-  }
-
-   /**
-   * Get aggregationAccountId
-   * @return aggregationAccountId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getAggregationAccountId() {
-    return aggregationAccountId;
-  }
-
-  public void setAggregationAccountId(UUID aggregationAccountId) {
-    this.aggregationAccountId = aggregationAccountId;
   }
 
   public DiversificationScoreRequest allocationId(UUID allocationId) {
@@ -199,22 +252,76 @@ public class DiversificationScoreRequest {
     this.allocationId = allocationId;
   }
 
-  public DiversificationScoreRequest modelId(UUID modelId) {
-    this.modelId = modelId;
+  public DiversificationScoreRequest useProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
     return this;
   }
 
    /**
-   * Get modelId
-   * @return modelId
+   * Get useProxyData
+   * @return useProxyData
   **/
   @ApiModelProperty(value = "")
-  public UUID getModelId() {
-    return modelId;
+  public Boolean isUseProxyData() {
+    return useProxyData;
   }
 
-  public void setModelId(UUID modelId) {
-    this.modelId = modelId;
+  public void setUseProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+  }
+
+  public DiversificationScoreRequest startDate(LocalDate startDate) {
+    this.startDate = startDate;
+    return this;
+  }
+
+   /**
+   * Get startDate
+   * @return startDate
+  **/
+  @ApiModelProperty(value = "")
+  public LocalDate getStartDate() {
+    return startDate;
+  }
+
+  public void setStartDate(LocalDate startDate) {
+    this.startDate = startDate;
+  }
+
+  public DiversificationScoreRequest accountId(UUID accountId) {
+    this.accountId = accountId;
+    return this;
+  }
+
+   /**
+   * Get accountId
+   * @return accountId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getAccountId() {
+    return accountId;
+  }
+
+  public void setAccountId(UUID accountId) {
+    this.accountId = accountId;
+  }
+
+  public DiversificationScoreRequest aggregationAccountId(UUID aggregationAccountId) {
+    this.aggregationAccountId = aggregationAccountId;
+    return this;
+  }
+
+   /**
+   * Get aggregationAccountId
+   * @return aggregationAccountId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getAggregationAccountId() {
+    return aggregationAccountId;
+  }
+
+  public void setAggregationAccountId(UUID aggregationAccountId) {
+    this.aggregationAccountId = aggregationAccountId;
   }
 
   public DiversificationScoreRequest portfolioWeights(List<Float> portfolioWeights) {
@@ -243,114 +350,6 @@ public class DiversificationScoreRequest {
     this.portfolioWeights = portfolioWeights;
   }
 
-  public DiversificationScoreRequest endDate(LocalDate endDate) {
-    this.endDate = endDate;
-    return this;
-  }
-
-   /**
-   * Get endDate
-   * @return endDate
-  **/
-  @ApiModelProperty(value = "")
-  public LocalDate getEndDate() {
-    return endDate;
-  }
-
-  public void setEndDate(LocalDate endDate) {
-    this.endDate = endDate;
-  }
-
-  public DiversificationScoreRequest startDate(LocalDate startDate) {
-    this.startDate = startDate;
-    return this;
-  }
-
-   /**
-   * Get startDate
-   * @return startDate
-  **/
-  @ApiModelProperty(value = "")
-  public LocalDate getStartDate() {
-    return startDate;
-  }
-
-  public void setStartDate(LocalDate startDate) {
-    this.startDate = startDate;
-  }
-
-  public DiversificationScoreRequest useProxyData(Boolean useProxyData) {
-    this.useProxyData = useProxyData;
-    return this;
-  }
-
-   /**
-   * Get useProxyData
-   * @return useProxyData
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isUseProxyData() {
-    return useProxyData;
-  }
-
-  public void setUseProxyData(Boolean useProxyData) {
-    this.useProxyData = useProxyData;
-  }
-
-  public DiversificationScoreRequest accountId(UUID accountId) {
-    this.accountId = accountId;
-    return this;
-  }
-
-   /**
-   * Get accountId
-   * @return accountId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getAccountId() {
-    return accountId;
-  }
-
-  public void setAccountId(UUID accountId) {
-    this.accountId = accountId;
-  }
-
-  public DiversificationScoreRequest marketDataSource(MarketDataSourceEnum marketDataSource) {
-    this.marketDataSource = marketDataSource;
-    return this;
-  }
-
-   /**
-   * Get marketDataSource
-   * @return marketDataSource
-  **/
-  @ApiModelProperty(value = "")
-  public MarketDataSourceEnum getMarketDataSource() {
-    return marketDataSource;
-  }
-
-  public void setMarketDataSource(MarketDataSourceEnum marketDataSource) {
-    this.marketDataSource = marketDataSource;
-  }
-
-  public DiversificationScoreRequest portfolioId(UUID portfolioId) {
-    this.portfolioId = portfolioId;
-    return this;
-  }
-
-   /**
-   * Get portfolioId
-   * @return portfolioId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getPortfolioId() {
-    return portfolioId;
-  }
-
-  public void setPortfolioId(UUID portfolioId) {
-    this.portfolioId = portfolioId;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -362,22 +361,22 @@ public class DiversificationScoreRequest {
     }
     DiversificationScoreRequest diversificationScoreRequest = (DiversificationScoreRequest) o;
     return Objects.equals(this.portfolioTickers, diversificationScoreRequest.portfolioTickers) &&
-        Objects.equals(this.createLog, diversificationScoreRequest.createLog) &&
-        Objects.equals(this.aggregationAccountId, diversificationScoreRequest.aggregationAccountId) &&
-        Objects.equals(this.allocationId, diversificationScoreRequest.allocationId) &&
-        Objects.equals(this.modelId, diversificationScoreRequest.modelId) &&
-        Objects.equals(this.portfolioWeights, diversificationScoreRequest.portfolioWeights) &&
         Objects.equals(this.endDate, diversificationScoreRequest.endDate) &&
-        Objects.equals(this.startDate, diversificationScoreRequest.startDate) &&
-        Objects.equals(this.useProxyData, diversificationScoreRequest.useProxyData) &&
-        Objects.equals(this.accountId, diversificationScoreRequest.accountId) &&
+        Objects.equals(this.portfolioId, diversificationScoreRequest.portfolioId) &&
         Objects.equals(this.marketDataSource, diversificationScoreRequest.marketDataSource) &&
-        Objects.equals(this.portfolioId, diversificationScoreRequest.portfolioId);
+        Objects.equals(this.modelId, diversificationScoreRequest.modelId) &&
+        Objects.equals(this.createLog, diversificationScoreRequest.createLog) &&
+        Objects.equals(this.allocationId, diversificationScoreRequest.allocationId) &&
+        Objects.equals(this.useProxyData, diversificationScoreRequest.useProxyData) &&
+        Objects.equals(this.startDate, diversificationScoreRequest.startDate) &&
+        Objects.equals(this.accountId, diversificationScoreRequest.accountId) &&
+        Objects.equals(this.aggregationAccountId, diversificationScoreRequest.aggregationAccountId) &&
+        Objects.equals(this.portfolioWeights, diversificationScoreRequest.portfolioWeights);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(portfolioTickers, createLog, aggregationAccountId, allocationId, modelId, portfolioWeights, endDate, startDate, useProxyData, accountId, marketDataSource, portfolioId);
+    return Objects.hash(portfolioTickers, endDate, portfolioId, marketDataSource, modelId, createLog, allocationId, useProxyData, startDate, accountId, aggregationAccountId, portfolioWeights);
   }
 
 
@@ -387,17 +386,17 @@ public class DiversificationScoreRequest {
     sb.append("class DiversificationScoreRequest {\n");
     
     sb.append("    portfolioTickers: ").append(toIndentedString(portfolioTickers)).append("\n");
-    sb.append("    createLog: ").append(toIndentedString(createLog)).append("\n");
-    sb.append("    aggregationAccountId: ").append(toIndentedString(aggregationAccountId)).append("\n");
-    sb.append("    allocationId: ").append(toIndentedString(allocationId)).append("\n");
-    sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
-    sb.append("    portfolioWeights: ").append(toIndentedString(portfolioWeights)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
-    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
-    sb.append("    useProxyData: ").append(toIndentedString(useProxyData)).append("\n");
-    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-    sb.append("    marketDataSource: ").append(toIndentedString(marketDataSource)).append("\n");
     sb.append("    portfolioId: ").append(toIndentedString(portfolioId)).append("\n");
+    sb.append("    marketDataSource: ").append(toIndentedString(marketDataSource)).append("\n");
+    sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
+    sb.append("    createLog: ").append(toIndentedString(createLog)).append("\n");
+    sb.append("    allocationId: ").append(toIndentedString(allocationId)).append("\n");
+    sb.append("    useProxyData: ").append(toIndentedString(useProxyData)).append("\n");
+    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    sb.append("    aggregationAccountId: ").append(toIndentedString(aggregationAccountId)).append("\n");
+    sb.append("    portfolioWeights: ").append(toIndentedString(portfolioWeights)).append("\n");
     sb.append("}");
     return sb.toString();
   }

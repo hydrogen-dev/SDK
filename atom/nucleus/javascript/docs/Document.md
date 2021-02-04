@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accountId** | **String** | accountId | [optional] 
+**businessId** | **String** | businessId | [optional] 
 **clientId** | **String** | clientId | [optional] 
 **countryOfIssue** | **String** | country_of_issue | [optional] 
 **createDate** | **Date** |  | [optional] 
@@ -17,6 +18,7 @@ Name | Type | Description | Notes
 **expiryDate** | **Date** | expiry_date | [optional] 
 **id** | **String** |  | [optional] 
 **isActive** | **Boolean** | is_active | [optional] 
+**isSensitive** | **Boolean** | is_sensitive | [optional] 
 **isVerified** | **Boolean** | is_verified | [optional] 
 **issueDate** | **Date** | issue_date | [optional] 
 **metadata** | **{String: String}** | metadata | [optional] 

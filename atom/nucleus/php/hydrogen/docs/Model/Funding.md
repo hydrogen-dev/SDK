@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_id** | **string** | accountId | 
+**account_id** | **string** | accountId | [optional] 
 **amount** | **double** | amount | [optional] 
 **bank_link_id** | **string** | bankLinkId | [optional] 
 **card_id** | **string** | cardId | [optional] 
@@ -22,7 +22,9 @@ Name | Type | Description | Notes
 **metadata** | **map[string,string]** | metadata | [optional] 
 **next_request_date** | [**\DateTime**](\DateTime.md) | nextRequestDate | [optional] 
 **portfolio_id** | **string** | portfolioId | [optional] 
+**receiving_account_id** | **string** | receivingAccountId | [optional] 
 **receiving_bank_link_id** | **string** | receivingBankLinkId | [optional] 
+**receiving_portfolio_id** | **string** | receivingPortfolioId | [optional] 
 **secondary_id** | **string** |  | [optional] 
 **start_date** | [**\DateTime**](\DateTime.md) | startDate | 
 **support_ticket_id** | **string** | supportTicketId | [optional] 

@@ -1643,7 +1643,7 @@ api_instance = NucleusApi::AccountApi.new
 account_allocation_id = 'account_allocation_id_example' # String | UUID account_allocation_id
 
 opts = { 
-  account_allocation_mapping: NucleusApi::AccountAllocationMapping.new # AccountAllocationMapping | account_allocation_mapping
+  account_allocation_mapping: nil # Object | account_allocation_mapping
 }
 
 begin
@@ -1660,7 +1660,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_allocation_id** | [**String**](.md)| UUID account_allocation_id | 
- **account_allocation_mapping** | [**AccountAllocationMapping**](AccountAllocationMapping.md)| account_allocation_mapping | [optional] 
+ **account_allocation_mapping** | **Object**| account_allocation_mapping | [optional] 
 
 ### Return type
 
@@ -1701,7 +1701,7 @@ end
 
 api_instance = NucleusApi::AccountApi.new
 
-account_status = NucleusApi::AccountStatus.new # AccountStatus | account_status
+account_status = nil # Object | account_status
 
 account_status_id = 'account_status_id_example' # String | UUID account_status_id
 
@@ -1719,7 +1719,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_status** | [**AccountStatus**](AccountStatus.md)| account_status | 
+ **account_status** | **Object**| account_status | 
  **account_status_id** | [**String**](.md)| UUID account_status_id | 
 
 ### Return type
@@ -1761,7 +1761,7 @@ end
 
 api_instance = NucleusApi::AccountApi.new
 
-account_type = NucleusApi::AccountType.new # AccountType | account_type
+account_type = nil # Object | account_type
 
 account_type_id = 'account_type_id_example' # String | UUID account_type_id
 
@@ -1779,7 +1779,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_type** | [**AccountType**](AccountType.md)| account_type | 
+ **account_type** | **Object**| account_type | 
  **account_type_id** | [**String**](.md)| UUID account_type_id | 
 
 ### Return type
@@ -1821,7 +1821,7 @@ end
 
 api_instance = NucleusApi::AccountApi.new
 
-account = NucleusApi::Account.new # Account | account
+account = nil # Object | account
 
 account_id = 'account_id_example' # String | UUID account_id
 
@@ -1839,7 +1839,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account** | [**Account**](Account.md)| account | 
+ **account** | **Object**| account | 
  **account_id** | [**String**](.md)| UUID account_id | 
 
 ### Return type
@@ -1883,7 +1883,7 @@ api_instance = NucleusApi::AccountApi.new
 
 account_id = 'account_id_example' # String | account_id
 
-acl_client_permission_vo = NucleusApi::AclClientPermissionVO.new # AclClientPermissionVO | aclClientPermissionVO
+acl_client_permission_vo = nil # Object | aclClientPermissionVO
 
 
 begin
@@ -1900,7 +1900,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**String**](.md)| account_id | 
- **acl_client_permission_vo** | [**AclClientPermissionVO**](AclClientPermissionVO.md)| aclClientPermissionVO | 
+ **acl_client_permission_vo** | **Object**| aclClientPermissionVO | 
 
 ### Return type
 

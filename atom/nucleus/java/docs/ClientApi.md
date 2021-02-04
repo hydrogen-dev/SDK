@@ -4,10 +4,8 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createClientHydroUsingPost**](ClientApi.md#createClientHydroUsingPost) | **POST** /client_hydro | Create a client-hydro relationship
 [**createClientStatusUsingPost**](ClientApi.md#createClientStatusUsingPost) | **POST** /client_status | Create an client status
 [**createClientUsingPost**](ClientApi.md#createClientUsingPost) | **POST** /client | Create a client
-[**deleteClientHydroUsingDelete**](ClientApi.md#deleteClientHydroUsingDelete) | **DELETE** /client_hydro/{client_hydro_id} | Delete a client-hydro relationship
 [**deleteClientStatusUsingDelete**](ClientApi.md#deleteClientStatusUsingDelete) | **DELETE** /client_status/{client_status_id} | Delete an client status
 [**deleteClientUsingDelete**](ClientApi.md#deleteClientUsingDelete) | **DELETE** /client/{client_id} | Delete a client
 [**getClientAccountOverviewUsingGet**](ClientApi.md#getClientAccountOverviewUsingGet) | **GET** /client/{client_id}/account_overview | List all client Account overview
@@ -16,77 +14,13 @@ Method | HTTP request | Description
 [**getClientAssetSizeUsingGet**](ClientApi.md#getClientAssetSizeUsingGet) | **GET** /client/{client_id}/asset_size | List all client asset sizes
 [**getClientGoalOverviewUsingGet**](ClientApi.md#getClientGoalOverviewUsingGet) | **GET** /client/{client_id}/goal_overview | Retrieve client&#39;s goal details 
 [**getClientHoldingUsingGet**](ClientApi.md#getClientHoldingUsingGet) | **GET** /client/{client_id}/holding | List all client holdings
-[**getClientHydroAllUsingGet**](ClientApi.md#getClientHydroAllUsingGet) | **GET** /client_hydro | List all client-hydro relationship
-[**getClientHydroUsingGet**](ClientApi.md#getClientHydroUsingGet) | **GET** /client_hydro/{client_hydro_id} | Retrieve a client-hydro relationship
 [**getClientStatusAllUsingGet**](ClientApi.md#getClientStatusAllUsingGet) | **GET** /client_status | List all client statuses
 [**getClientStatusUsingGet**](ClientApi.md#getClientStatusUsingGet) | **GET** /client_status/{client_status_id} | Retrieve an client status
 [**getClientTransactionAllUsingGet**](ClientApi.md#getClientTransactionAllUsingGet) | **GET** /client/{client_id}/transaction | List all client transactions
 [**getClientUsingGet**](ClientApi.md#getClientUsingGet) | **GET** /client/{client_id} | Retrieve a client
-[**updateClientHydroUsingPut**](ClientApi.md#updateClientHydroUsingPut) | **PUT** /client_hydro/{client_hydro_id} | Update a client-hydro relationship
 [**updateClientStatusUsingPut**](ClientApi.md#updateClientStatusUsingPut) | **PUT** /client_status/{client_status_id} | Update an client status
 [**updateClientUsingPut**](ClientApi.md#updateClientUsingPut) | **PUT** /client/{client_id} | Update a client
 
-
-<a name="createClientHydroUsingPost"></a>
-# **createClientHydroUsingPost**
-> ClientHydro createClientHydroUsingPost(clientHydro)
-
-Create a client-hydro relationship
-
-Create an client-hydro relationship under a client.
-
-### Example
-```java
-//import com.hydrogen.nucleus.AuthApiClient;
-//import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
-//import ClientApi;
-
-AuthApiClient authApiClient = new AuthApiClient();
-try {
-//          Use one of the below method to generate oauth token        
-//          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
-//          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");     
-//  Creating a token using client_token
-    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
-            "CLIENT_TOKEN");      
-} catch (ApiException e) {
-    e.printStackTrace();
-}
-
-
-ClientApi apiInstance = new ClientApi();
-ClientHydro clientHydro = new ClientHydro(); // ClientHydro | clientHydro
-try {
-    ClientHydro result = apiInstance.createClientHydroUsingPost(clientHydro);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientApi#createClientHydroUsingPost");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **clientHydro** | [**ClientHydro**](ClientHydro.md)| clientHydro |
-
-### Return type
-
-[**ClientHydro**](ClientHydro.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: */*
 
 <a name="createClientStatusUsingPost"></a>
 # **createClientStatusUsingPost**
@@ -100,7 +34,6 @@ Create an client status record for an client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -117,8 +50,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ClientApi apiInstance = new ClientApi();
 ClientStatus clientStatusRequest = new ClientStatus(); // ClientStatus | clientStatusRequest
 try {
@@ -161,7 +92,6 @@ Create a new client, or register a new user, with your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -178,8 +108,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ClientApi apiInstance = new ClientApi();
 Client clientRequest = new Client(); // Client | clientRequest
 try {
@@ -210,66 +138,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: */*
 
-<a name="deleteClientHydroUsingDelete"></a>
-# **deleteClientHydroUsingDelete**
-> deleteClientHydroUsingDelete(clientHydroId)
-
-Delete a client-hydro relationship
-
-Permanently delete a client-hydro relationship for a Hydro ID and a client.
-
-### Example
-```java
-//import com.hydrogen.nucleus.AuthApiClient;
-//import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
-//import ClientApi;
-
-AuthApiClient authApiClient = new AuthApiClient();
-try {
-//          Use one of the below method to generate oauth token        
-//          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
-//          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");     
-//  Creating a token using client_token
-    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
-            "CLIENT_TOKEN");      
-} catch (ApiException e) {
-    e.printStackTrace();
-}
-
-
-ClientApi apiInstance = new ClientApi();
-UUID clientHydroId = new UUID(); // UUID | UUID client_hydro_id
-try {
-    apiInstance.deleteClientHydroUsingDelete(clientHydroId);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientApi#deleteClientHydroUsingDelete");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **clientHydroId** | [**UUID**](.md)| UUID client_hydro_id |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
 <a name="deleteClientStatusUsingDelete"></a>
 # **deleteClientStatusUsingDelete**
 > deleteClientStatusUsingDelete(clientStatusId)
@@ -282,7 +150,6 @@ Permanently delete an client status record from an client’s history.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -299,8 +166,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ClientApi apiInstance = new ClientApi();
 UUID clientStatusId = new UUID(); // UUID | UUID client_status_id
 try {
@@ -342,7 +207,6 @@ Permanently delete a client registered with your firm. Turns the client&#39;s is
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -359,8 +223,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ClientApi apiInstance = new ClientApi();
 UUID clientId = new UUID(); // UUID | UUID client_id
 try {
@@ -400,7 +262,6 @@ List all client Account overview
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -417,8 +278,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ClientApi apiInstance = new ClientApi();
 UUID clientId = new UUID(); // UUID | UUID client_id
 Boolean ascending = false; // Boolean | ascending
@@ -463,7 +322,6 @@ Advisor overview
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -480,8 +338,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ClientApi apiInstance = new ClientApi();
 UUID clientId = new UUID(); // UUID | UUID client_id
 Boolean showClients = false; // Boolean | show_clients
@@ -526,7 +382,6 @@ Get details for all clients registered with your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -543,8 +398,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ClientApi apiInstance = new ClientApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -595,7 +448,6 @@ Get a list of asset sizes per date for a client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -612,8 +464,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ClientApi apiInstance = new ClientApi();
 UUID clientId = new UUID(); // UUID | UUID client_id
 String currencyConversion = "currencyConversion_example"; // String | Currency Code
@@ -668,7 +518,6 @@ Retrieve client&#39;s goal details
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -685,8 +534,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ClientApi apiInstance = new ClientApi();
 UUID clientId = new UUID(); // UUID | UUID client_id
 Boolean portfolioGoal = false; // Boolean | portfolio_goal
@@ -731,7 +578,6 @@ Get the information for all the securities that are currently being held by a cl
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -748,8 +594,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ClientApi apiInstance = new ClientApi();
 UUID clientId = new UUID(); // UUID | UUID client_id
 String currencyConversion = "currencyConversion_example"; // String | Currency Code
@@ -788,136 +632,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: */*
 
-<a name="getClientHydroAllUsingGet"></a>
-# **getClientHydroAllUsingGet**
-> PageClientHydro getClientHydroAllUsingGet(ascending, filter, orderBy, page, size)
-
-List all client-hydro relationship
-
-Get information for all client-hydro relationships for all clients defined for your firm.
-
-### Example
-```java
-//import com.hydrogen.nucleus.AuthApiClient;
-//import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
-//import ClientApi;
-
-AuthApiClient authApiClient = new AuthApiClient();
-try {
-//          Use one of the below method to generate oauth token        
-//          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
-//          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");     
-//  Creating a token using client_token
-    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
-            "CLIENT_TOKEN");      
-} catch (ApiException e) {
-    e.printStackTrace();
-}
-
-
-ClientApi apiInstance = new ClientApi();
-Boolean ascending = false; // Boolean | ascending
-String filter = "filter_example"; // String | filter
-String orderBy = "update_date"; // String | order_by
-Integer page = 0; // Integer | page
-Integer size = 25; // Integer | size
-try {
-    PageClientHydro result = apiInstance.getClientHydroAllUsingGet(ascending, filter, orderBy, page, size);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientApi#getClientHydroAllUsingGet");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ascending** | **Boolean**| ascending | [optional] [default to false]
- **filter** | **String**| filter | [optional]
- **orderBy** | **String**| order_by | [optional] [default to update_date]
- **page** | **Integer**| page | [optional] [default to 0]
- **size** | **Integer**| size | [optional] [default to 25]
-
-### Return type
-
-[**PageClientHydro**](PageClientHydro.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-<a name="getClientHydroUsingGet"></a>
-# **getClientHydroUsingGet**
-> ClientHydro getClientHydroUsingGet(clientHydroId)
-
-Retrieve a client-hydro relationship
-
-Retrieve the information for a specific client-hydro relationship.
-
-### Example
-```java
-//import com.hydrogen.nucleus.AuthApiClient;
-//import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
-//import ClientApi;
-
-AuthApiClient authApiClient = new AuthApiClient();
-try {
-//          Use one of the below method to generate oauth token        
-//          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
-//          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");     
-//  Creating a token using client_token
-    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
-            "CLIENT_TOKEN");      
-} catch (ApiException e) {
-    e.printStackTrace();
-}
-
-
-ClientApi apiInstance = new ClientApi();
-UUID clientHydroId = new UUID(); // UUID | UUID client_hydro_id
-try {
-    ClientHydro result = apiInstance.getClientHydroUsingGet(clientHydroId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientApi#getClientHydroUsingGet");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **clientHydroId** | [**UUID**](.md)| UUID client_hydro_id |
-
-### Return type
-
-[**ClientHydro**](ClientHydro.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
 <a name="getClientStatusAllUsingGet"></a>
 # **getClientStatusAllUsingGet**
 > PageClientStatus getClientStatusAllUsingGet(ascending, filter, orderBy, page, size)
@@ -930,7 +644,6 @@ Get the client status history information for all clients.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -947,8 +660,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ClientApi apiInstance = new ClientApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -999,7 +710,6 @@ Retrieve the information for a specific client status record for an client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1016,8 +726,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ClientApi apiInstance = new ClientApi();
 UUID clientStatusId = new UUID(); // UUID | UUID client_status_id
 try {
@@ -1060,7 +768,6 @@ Get the information for all transactions under a client registered with your fir
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1077,8 +784,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ClientApi apiInstance = new ClientApi();
 UUID clientId = new UUID(); // UUID | UUID client_id
 Boolean ascending = false; // Boolean | ascending
@@ -1135,7 +840,6 @@ Retrieve the information for a client registered with your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1152,8 +856,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ClientApi apiInstance = new ClientApi();
 UUID clientId = new UUID(); // UUID | UUID client_id
 try {
@@ -1184,69 +886,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: */*
 
-<a name="updateClientHydroUsingPut"></a>
-# **updateClientHydroUsingPut**
-> ClientHydro updateClientHydroUsingPut(clientHydro, clientHydroId)
-
-Update a client-hydro relationship
-
-Update the information for a client-hydro relationship.
-
-### Example
-```java
-//import com.hydrogen.nucleus.AuthApiClient;
-//import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
-//import ClientApi;
-
-AuthApiClient authApiClient = new AuthApiClient();
-try {
-//          Use one of the below method to generate oauth token        
-//          Creating a token for grant_type=client_credentials            
-    authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
-//          Creating a token for grant_type=password
-    authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
-                            "USERNAME", "PASSWORD");     
-//  Creating a token using client_token
-    authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
-            "CLIENT_TOKEN");      
-} catch (ApiException e) {
-    e.printStackTrace();
-}
-
-
-ClientApi apiInstance = new ClientApi();
-ClientHydro clientHydro = new ClientHydro(); // ClientHydro | client_hydro
-UUID clientHydroId = new UUID(); // UUID | UUID client_hydro_id
-try {
-    ClientHydro result = apiInstance.updateClientHydroUsingPut(clientHydro, clientHydroId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ClientApi#updateClientHydroUsingPut");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **clientHydro** | [**ClientHydro**](ClientHydro.md)| client_hydro |
- **clientHydroId** | [**UUID**](.md)| UUID client_hydro_id |
-
-### Return type
-
-[**ClientHydro**](ClientHydro.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: */*
-
 <a name="updateClientStatusUsingPut"></a>
 # **updateClientStatusUsingPut**
 > ClientStatus updateClientStatusUsingPut(clientStatus, clientStatusId)
@@ -1259,7 +898,6 @@ Update an client status record for an client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1276,10 +914,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ClientApi apiInstance = new ClientApi();
-ClientStatus clientStatus = new ClientStatus(); // ClientStatus | client_status
+Object clientStatus = null; // Object | client_status
 UUID clientStatusId = new UUID(); // UUID | UUID client_status_id
 try {
     ClientStatus result = apiInstance.updateClientStatusUsingPut(clientStatus, clientStatusId);
@@ -1294,7 +930,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clientStatus** | [**ClientStatus**](ClientStatus.md)| client_status |
+ **clientStatus** | **Object**| client_status |
  **clientStatusId** | [**UUID**](.md)| UUID client_status_id |
 
 ### Return type
@@ -1322,7 +958,6 @@ Update the information for a client registered with your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ClientApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1339,10 +974,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ClientApi apiInstance = new ClientApi();
-Client client = new Client(); // Client | client
+Object client = null; // Object | client
 UUID clientId = new UUID(); // UUID | UUID client_id
 try {
     Client result = apiInstance.updateClientUsingPut(client, clientId);
@@ -1357,7 +990,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | [**Client**](Client.md)| client |
+ **client** | **Object**| client |
  **clientId** | [**UUID**](.md)| UUID client_id |
 
 ### Return type

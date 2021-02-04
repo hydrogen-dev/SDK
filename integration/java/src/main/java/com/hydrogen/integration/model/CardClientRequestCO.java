@@ -25,34 +25,13 @@ import java.util.UUID;
 /**
  * CardClientRequestCO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class CardClientRequestCO {
-  @SerializedName("nucleus_card_id")
-  private UUID nucleusCardId = null;
-
   @SerializedName("nucleus_client_id")
   private UUID nucleusClientId = null;
 
   @SerializedName("vendor_request")
   private Map<String, String> vendorRequest = null;
-
-  public CardClientRequestCO nucleusCardId(UUID nucleusCardId) {
-    this.nucleusCardId = nucleusCardId;
-    return this;
-  }
-
-   /**
-   * Get nucleusCardId
-   * @return nucleusCardId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getNucleusCardId() {
-    return nucleusCardId;
-  }
-
-  public void setNucleusCardId(UUID nucleusCardId) {
-    this.nucleusCardId = nucleusCardId;
-  }
 
   public CardClientRequestCO nucleusClientId(UUID nucleusClientId) {
     this.nucleusClientId = nucleusClientId;
@@ -108,14 +87,13 @@ public class CardClientRequestCO {
       return false;
     }
     CardClientRequestCO cardClientRequestCO = (CardClientRequestCO) o;
-    return Objects.equals(this.nucleusCardId, cardClientRequestCO.nucleusCardId) &&
-        Objects.equals(this.nucleusClientId, cardClientRequestCO.nucleusClientId) &&
+    return Objects.equals(this.nucleusClientId, cardClientRequestCO.nucleusClientId) &&
         Objects.equals(this.vendorRequest, cardClientRequestCO.vendorRequest);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nucleusCardId, nucleusClientId, vendorRequest);
+    return Objects.hash(nucleusClientId, vendorRequest);
   }
 
 
@@ -124,7 +102,6 @@ public class CardClientRequestCO {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardClientRequestCO {\n");
     
-    sb.append("    nucleusCardId: ").append(toIndentedString(nucleusCardId)).append("\n");
     sb.append("    nucleusClientId: ").append(toIndentedString(nucleusClientId)).append("\n");
     sb.append("    vendorRequest: ").append(toIndentedString(vendorRequest)).append("\n");
     sb.append("}");

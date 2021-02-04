@@ -31,53 +31,53 @@ class BeneficiaryBequestConfig(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'years_until_bequest': 'int',
+        'bequest_duration': 'int',
         'bequest_amount': 'float',
-        'bequest_duration': 'int'
+        'years_until_bequest': 'int'
     }
 
     attribute_map = {
-        'years_until_bequest': 'years_until_bequest',
+        'bequest_duration': 'bequest_duration',
         'bequest_amount': 'bequest_amount',
-        'bequest_duration': 'bequest_duration'
+        'years_until_bequest': 'years_until_bequest'
     }
 
-    def __init__(self, years_until_bequest=0, bequest_amount=None, bequest_duration=10):  # noqa: E501
+    def __init__(self, bequest_duration=10, bequest_amount=None, years_until_bequest=0):  # noqa: E501
         """BeneficiaryBequestConfig - a model defined in Swagger"""  # noqa: E501
 
-        self._years_until_bequest = None
-        self._bequest_amount = None
         self._bequest_duration = None
+        self._bequest_amount = None
+        self._years_until_bequest = None
         self.discriminator = None
 
-        if years_until_bequest is not None:
-            self.years_until_bequest = years_until_bequest
-        self.bequest_amount = bequest_amount
         if bequest_duration is not None:
             self.bequest_duration = bequest_duration
+        self.bequest_amount = bequest_amount
+        if years_until_bequest is not None:
+            self.years_until_bequest = years_until_bequest
 
     @property
-    def years_until_bequest(self):
-        """Gets the years_until_bequest of this BeneficiaryBequestConfig.  # noqa: E501
+    def bequest_duration(self):
+        """Gets the bequest_duration of this BeneficiaryBequestConfig.  # noqa: E501
 
 
-        :return: The years_until_bequest of this BeneficiaryBequestConfig.  # noqa: E501
+        :return: The bequest_duration of this BeneficiaryBequestConfig.  # noqa: E501
         :rtype: int
         """
-        return self._years_until_bequest
+        return self._bequest_duration
 
-    @years_until_bequest.setter
-    def years_until_bequest(self, years_until_bequest):
-        """Sets the years_until_bequest of this BeneficiaryBequestConfig.
+    @bequest_duration.setter
+    def bequest_duration(self, bequest_duration):
+        """Sets the bequest_duration of this BeneficiaryBequestConfig.
 
 
-        :param years_until_bequest: The years_until_bequest of this BeneficiaryBequestConfig.  # noqa: E501
+        :param bequest_duration: The bequest_duration of this BeneficiaryBequestConfig.  # noqa: E501
         :type: int
         """
-        if years_until_bequest is not None and years_until_bequest < 0:  # noqa: E501
-            raise ValueError("Invalid value for `years_until_bequest`, must be a value greater than or equal to `0`")  # noqa: E501
+        if bequest_duration is not None and bequest_duration < 1:  # noqa: E501
+            raise ValueError("Invalid value for `bequest_duration`, must be a value greater than or equal to `1`")  # noqa: E501
 
-        self._years_until_bequest = years_until_bequest
+        self._bequest_duration = bequest_duration
 
     @property
     def bequest_amount(self):
@@ -105,27 +105,27 @@ class BeneficiaryBequestConfig(object):
         self._bequest_amount = bequest_amount
 
     @property
-    def bequest_duration(self):
-        """Gets the bequest_duration of this BeneficiaryBequestConfig.  # noqa: E501
+    def years_until_bequest(self):
+        """Gets the years_until_bequest of this BeneficiaryBequestConfig.  # noqa: E501
 
 
-        :return: The bequest_duration of this BeneficiaryBequestConfig.  # noqa: E501
+        :return: The years_until_bequest of this BeneficiaryBequestConfig.  # noqa: E501
         :rtype: int
         """
-        return self._bequest_duration
+        return self._years_until_bequest
 
-    @bequest_duration.setter
-    def bequest_duration(self, bequest_duration):
-        """Sets the bequest_duration of this BeneficiaryBequestConfig.
+    @years_until_bequest.setter
+    def years_until_bequest(self, years_until_bequest):
+        """Sets the years_until_bequest of this BeneficiaryBequestConfig.
 
 
-        :param bequest_duration: The bequest_duration of this BeneficiaryBequestConfig.  # noqa: E501
+        :param years_until_bequest: The years_until_bequest of this BeneficiaryBequestConfig.  # noqa: E501
         :type: int
         """
-        if bequest_duration is not None and bequest_duration < 1:  # noqa: E501
-            raise ValueError("Invalid value for `bequest_duration`, must be a value greater than or equal to `1`")  # noqa: E501
+        if years_until_bequest is not None and years_until_bequest < 0:  # noqa: E501
+            raise ValueError("Invalid value for `years_until_bequest`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._bequest_duration = bequest_duration
+        self._years_until_bequest = years_until_bequest
 
     def to_dict(self):
         """Returns the model properties as a dict"""

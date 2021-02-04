@@ -853,7 +853,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\GoalApi(
     new GuzzleHttp\Client(),
     $config
 );
-$goal_track = new \com\hydrogen\nucleus\Model\GoalTrack(); // \com\hydrogen\nucleus\Model\GoalTrack | goal_track
+$goal_track = new \stdClass; // object | goal_track
 $goal_track_id = "goal_track_id_example"; // string | UUID goal_track_id
 
 try {
@@ -869,7 +869,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goal_track** | [**\com\hydrogen\nucleus\Model\GoalTrack**](../Model/GoalTrack.md)| goal_track |
+ **goal_track** | **object**| goal_track |
  **goal_track_id** | [**string**](../Model/.md)| UUID goal_track_id |
 
 ### Return type
@@ -922,7 +922,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\GoalApi(
     new GuzzleHttp\Client(),
     $config
 );
-$goal = new \com\hydrogen\nucleus\Model\Goal(); // \com\hydrogen\nucleus\Model\Goal | goal
+$goal = new \stdClass; // object | goal
 $goal_id = "goal_id_example"; // string | UUID goal_id
 
 try {
@@ -938,7 +938,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goal** | [**\com\hydrogen\nucleus\Model\Goal**](../Model/Goal.md)| goal |
+ **goal** | **object**| goal |
  **goal_id** | [**string**](../Model/.md)| UUID goal_id |
 
 ### Return type

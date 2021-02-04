@@ -13,19 +13,11 @@
 
 package com.hydrogen.integration.api;
 
-import com.hydrogen.integration.ApiClient;
-import com.hydrogen.integration.model.BrokerageAccountCO;
 import com.hydrogen.integration.model.BrokerageAccountVO;
-import com.hydrogen.integration.model.BrokerageBankLinkCO;
-import com.hydrogen.integration.model.BrokerageBankLinkVO;
-import com.hydrogen.integration.model.BrokerageClientCO;
 import com.hydrogen.integration.model.BrokerageCreateClientVO;
-import com.hydrogen.integration.model.BrokerageStatementVO;
-import com.hydrogen.integration.model.BrokerageUpdateClientVO;
-import com.hydrogen.integration.model.CreateOrderResponse;
-import com.hydrogen.integration.model.GetOrderResponse;
-import com.hydrogen.integration.model.ResponseEntity;
+import com.hydrogen.integration.model.BrokerageDepositVO;
 import com.hydrogen.integration.ApiCallback;
+import com.hydrogen.integration.ApiClient;
 import com.hydrogen.integration.ApiException;
 import com.hydrogen.integration.ApiResponse;
 import com.hydrogen.integration.Configuration;
@@ -38,8 +30,27 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.hydrogen.integration.model.BrokerageAccountCO;
+import com.hydrogen.integration.model.BrokerageBalanceVO;
+import com.hydrogen.integration.model.BrokerageBankLinkCO;
+import com.hydrogen.integration.model.BrokerageBankLinkVO;
+import com.hydrogen.integration.model.BrokerageClientCO;
+import com.hydrogen.integration.model.BrokerageDepositCO;
+import com.hydrogen.integration.model.BrokerageDocumentCO;
+import com.hydrogen.integration.model.BrokerageDocumentVO;
+import com.hydrogen.integration.model.BrokerageHoldingVO;
+import com.hydrogen.integration.model.BrokerageOrderCO;
+import com.hydrogen.integration.model.BrokerageOrderVO;
+import com.hydrogen.integration.model.BrokeragePerformanceVO;
+import com.hydrogen.integration.model.BrokerageSecuritiesVO;
+import com.hydrogen.integration.model.BrokerageStatementVO;
+import com.hydrogen.integration.model.BrokerageTransactionVO;
+import com.hydrogen.integration.model.BrokerageUpdateClientVO;
+import com.hydrogen.integration.model.BrokerageWithdrawalCO;
+import com.hydrogen.integration.model.BrokerageWithdrawalVO;
+import com.hydrogen.integration.model.GetTransactionsResponse;
+import org.threeten.bp.LocalDate;
 import org.threeten.bp.OffsetDateTime;
-
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -68,14 +79,133 @@ public class BrokerageApi {
     }
 
     /**
-     * Build call for createBankLinkUsingPost
+     * Build call for cancelOrderUsingPut
+     * @param nucleusOrderId nucleus_order_id (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call cancelOrderUsingPutCall(UUID nucleusOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/brokerage/order/{nucleus_order_id}"
+            .replaceAll("\\{" + "nucleus_order_id" + "\\}", apiClient.escapeString(nucleusOrderId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call cancelOrderUsingPutValidateBeforeCall(UUID nucleusOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'nucleusOrderId' is set
+        if (nucleusOrderId == null) {
+            throw new ApiException("Missing the required parameter 'nucleusOrderId' when calling cancelOrderUsingPut(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = cancelOrderUsingPutCall(nucleusOrderId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Cancel an Order
+     * 
+     * @param nucleusOrderId nucleus_order_id (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public void cancelOrderUsingPut(UUID nucleusOrderId) throws ApiException {
+        cancelOrderUsingPutWithHttpInfo(nucleusOrderId);
+    }
+
+    /**
+     * Cancel an Order
+     * 
+     * @param nucleusOrderId nucleus_order_id (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Void> cancelOrderUsingPutWithHttpInfo(UUID nucleusOrderId) throws ApiException {
+        com.squareup.okhttp.Call call = cancelOrderUsingPutValidateBeforeCall(nucleusOrderId, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Cancel an Order (asynchronously)
+     * 
+     * @param nucleusOrderId nucleus_order_id (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call cancelOrderUsingPutAsync(UUID nucleusOrderId, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = cancelOrderUsingPutValidateBeforeCall(nucleusOrderId, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /**
+     * Build call for createBankLinkUsingPost1
      * @param brokerageBankLinkCO brokerageBankLinkCO (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createBankLinkUsingPostCall(BrokerageBankLinkCO brokerageBankLinkCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createBankLinkUsingPost1Call(BrokerageBankLinkCO brokerageBankLinkCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = brokerageBankLinkCO;
 
         // create path and map variables
@@ -117,15 +247,15 @@ public class BrokerageApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createBankLinkUsingPostValidateBeforeCall(BrokerageBankLinkCO brokerageBankLinkCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createBankLinkUsingPost1ValidateBeforeCall(BrokerageBankLinkCO brokerageBankLinkCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'brokerageBankLinkCO' is set
         if (brokerageBankLinkCO == null) {
-            throw new ApiException("Missing the required parameter 'brokerageBankLinkCO' when calling createBankLinkUsingPost(Async)");
+            throw new ApiException("Missing the required parameter 'brokerageBankLinkCO' when calling createBankLinkUsingPost1(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = createBankLinkUsingPostCall(brokerageBankLinkCO, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createBankLinkUsingPost1Call(brokerageBankLinkCO, progressListener, progressRequestListener);
         return call;
 
     }
@@ -137,8 +267,8 @@ public class BrokerageApi {
      * @return BrokerageBankLinkVO
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public BrokerageBankLinkVO createBankLinkUsingPost(BrokerageBankLinkCO brokerageBankLinkCO) throws ApiException {
-        ApiResponse<BrokerageBankLinkVO> resp = createBankLinkUsingPostWithHttpInfo(brokerageBankLinkCO);
+    public BrokerageBankLinkVO createBankLinkUsingPost1(BrokerageBankLinkCO brokerageBankLinkCO) throws ApiException {
+        ApiResponse<BrokerageBankLinkVO> resp = createBankLinkUsingPost1WithHttpInfo(brokerageBankLinkCO);
         return resp.getData();
     }
 
@@ -149,8 +279,8 @@ public class BrokerageApi {
      * @return ApiResponse&lt;BrokerageBankLinkVO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<BrokerageBankLinkVO> createBankLinkUsingPostWithHttpInfo(BrokerageBankLinkCO brokerageBankLinkCO) throws ApiException {
-        com.squareup.okhttp.Call call = createBankLinkUsingPostValidateBeforeCall(brokerageBankLinkCO, null, null);
+    public ApiResponse<BrokerageBankLinkVO> createBankLinkUsingPost1WithHttpInfo(BrokerageBankLinkCO brokerageBankLinkCO) throws ApiException {
+        com.squareup.okhttp.Call call = createBankLinkUsingPost1ValidateBeforeCall(brokerageBankLinkCO, null, null);
         Type localVarReturnType = new TypeToken<BrokerageBankLinkVO>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -163,7 +293,7 @@ public class BrokerageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createBankLinkUsingPostAsync(BrokerageBankLinkCO brokerageBankLinkCO, final ApiCallback<BrokerageBankLinkVO> callback) throws ApiException {
+    public com.squareup.okhttp.Call createBankLinkUsingPost1Async(BrokerageBankLinkCO brokerageBankLinkCO, final ApiCallback<BrokerageBankLinkVO> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -184,7 +314,7 @@ public class BrokerageApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createBankLinkUsingPostValidateBeforeCall(brokerageBankLinkCO, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createBankLinkUsingPost1ValidateBeforeCall(brokerageBankLinkCO, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<BrokerageBankLinkVO>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -434,23 +564,21 @@ public class BrokerageApi {
         return call;
     }
     /**
-     * Build call for createOrderUsingPost
-     * @param nucleusOrderId nucleus_order_id (required)
+     * Build call for createDepositUsingPost
+     * @param brokerageDepositCO brokerageDepositCO (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createOrderUsingPostCall(UUID nucleusOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
+    public com.squareup.okhttp.Call createDepositUsingPostCall(BrokerageDepositCO brokerageDepositCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = brokerageDepositCO;
 
         // create path and map variables
-        String localVarPath = "/brokerage/order";
+        String localVarPath = "/brokerage/deposit";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (nucleusOrderId != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("nucleus_order_id", nucleusOrderId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -485,53 +613,53 @@ public class BrokerageApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createOrderUsingPostValidateBeforeCall(UUID nucleusOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createDepositUsingPostValidateBeforeCall(BrokerageDepositCO brokerageDepositCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'nucleusOrderId' is set
-        if (nucleusOrderId == null) {
-            throw new ApiException("Missing the required parameter 'nucleusOrderId' when calling createOrderUsingPost(Async)");
+        // verify the required parameter 'brokerageDepositCO' is set
+        if (brokerageDepositCO == null) {
+            throw new ApiException("Missing the required parameter 'brokerageDepositCO' when calling createDepositUsingPost(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = createOrderUsingPostCall(nucleusOrderId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createDepositUsingPostCall(brokerageDepositCO, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
-     * Create an Order
+     * Create a deposit
      * 
-     * @param nucleusOrderId nucleus_order_id (required)
-     * @return CreateOrderResponse
+     * @param brokerageDepositCO brokerageDepositCO (required)
+     * @return BrokerageDepositVO
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CreateOrderResponse createOrderUsingPost(UUID nucleusOrderId) throws ApiException {
-        ApiResponse<CreateOrderResponse> resp = createOrderUsingPostWithHttpInfo(nucleusOrderId);
+    public BrokerageDepositVO createDepositUsingPost(BrokerageDepositCO brokerageDepositCO) throws ApiException {
+        ApiResponse<BrokerageDepositVO> resp = createDepositUsingPostWithHttpInfo(brokerageDepositCO);
         return resp.getData();
     }
 
     /**
-     * Create an Order
+     * Create a deposit
      * 
-     * @param nucleusOrderId nucleus_order_id (required)
-     * @return ApiResponse&lt;CreateOrderResponse&gt;
+     * @param brokerageDepositCO brokerageDepositCO (required)
+     * @return ApiResponse&lt;BrokerageDepositVO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CreateOrderResponse> createOrderUsingPostWithHttpInfo(UUID nucleusOrderId) throws ApiException {
-        com.squareup.okhttp.Call call = createOrderUsingPostValidateBeforeCall(nucleusOrderId, null, null);
-        Type localVarReturnType = new TypeToken<CreateOrderResponse>(){}.getType();
+    public ApiResponse<BrokerageDepositVO> createDepositUsingPostWithHttpInfo(BrokerageDepositCO brokerageDepositCO) throws ApiException {
+        com.squareup.okhttp.Call call = createDepositUsingPostValidateBeforeCall(brokerageDepositCO, null, null);
+        Type localVarReturnType = new TypeToken<BrokerageDepositVO>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Create an Order (asynchronously)
+     * Create a deposit (asynchronously)
      * 
-     * @param nucleusOrderId nucleus_order_id (required)
+     * @param brokerageDepositCO brokerageDepositCO (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createOrderUsingPostAsync(UUID nucleusOrderId, final ApiCallback<CreateOrderResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createDepositUsingPostAsync(BrokerageDepositCO brokerageDepositCO, final ApiCallback<BrokerageDepositVO> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -552,20 +680,386 @@ public class BrokerageApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createOrderUsingPostValidateBeforeCall(nucleusOrderId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<CreateOrderResponse>(){}.getType();
+        com.squareup.okhttp.Call call = createDepositUsingPostValidateBeforeCall(brokerageDepositCO, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BrokerageDepositVO>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for deleteBankLinkUsingDelete
+     * Build call for createDocumentUsingPost
+     * @param documentCO documentCO (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call createDocumentUsingPostCall(BrokerageDocumentCO documentCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = documentCO;
+
+        // create path and map variables
+        String localVarPath = "/brokerage/document";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call createDocumentUsingPostValidateBeforeCall(BrokerageDocumentCO documentCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'documentCO' is set
+        if (documentCO == null) {
+            throw new ApiException("Missing the required parameter 'documentCO' when calling createDocumentUsingPost(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = createDocumentUsingPostCall(documentCO, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Create a Brokerage document
+     * 
+     * @param documentCO documentCO (required)
+     * @return BrokerageDocumentVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public BrokerageDocumentVO createDocumentUsingPost(BrokerageDocumentCO documentCO) throws ApiException {
+        ApiResponse<BrokerageDocumentVO> resp = createDocumentUsingPostWithHttpInfo(documentCO);
+        return resp.getData();
+    }
+
+    /**
+     * Create a Brokerage document
+     * 
+     * @param documentCO documentCO (required)
+     * @return ApiResponse&lt;BrokerageDocumentVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<BrokerageDocumentVO> createDocumentUsingPostWithHttpInfo(BrokerageDocumentCO documentCO) throws ApiException {
+        com.squareup.okhttp.Call call = createDocumentUsingPostValidateBeforeCall(documentCO, null, null);
+        Type localVarReturnType = new TypeToken<BrokerageDocumentVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create a Brokerage document (asynchronously)
+     * 
+     * @param documentCO documentCO (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call createDocumentUsingPostAsync(BrokerageDocumentCO documentCO, final ApiCallback<BrokerageDocumentVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = createDocumentUsingPostValidateBeforeCall(documentCO, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BrokerageDocumentVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for createOrderUsingPost
+     * @param brokerageOrderCO brokerageOrderCO (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call createOrderUsingPostCall(BrokerageOrderCO brokerageOrderCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = brokerageOrderCO;
+
+        // create path and map variables
+        String localVarPath = "/brokerage/order";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call createOrderUsingPostValidateBeforeCall(BrokerageOrderCO brokerageOrderCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'brokerageOrderCO' is set
+        if (brokerageOrderCO == null) {
+            throw new ApiException("Missing the required parameter 'brokerageOrderCO' when calling createOrderUsingPost(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = createOrderUsingPostCall(brokerageOrderCO, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Create an Order
+     * 
+     * @param brokerageOrderCO brokerageOrderCO (required)
+     * @return BrokerageOrderVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public BrokerageOrderVO createOrderUsingPost(BrokerageOrderCO brokerageOrderCO) throws ApiException {
+        ApiResponse<BrokerageOrderVO> resp = createOrderUsingPostWithHttpInfo(brokerageOrderCO);
+        return resp.getData();
+    }
+
+    /**
+     * Create an Order
+     * 
+     * @param brokerageOrderCO brokerageOrderCO (required)
+     * @return ApiResponse&lt;BrokerageOrderVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<BrokerageOrderVO> createOrderUsingPostWithHttpInfo(BrokerageOrderCO brokerageOrderCO) throws ApiException {
+        com.squareup.okhttp.Call call = createOrderUsingPostValidateBeforeCall(brokerageOrderCO, null, null);
+        Type localVarReturnType = new TypeToken<BrokerageOrderVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create an Order (asynchronously)
+     * 
+     * @param brokerageOrderCO brokerageOrderCO (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call createOrderUsingPostAsync(BrokerageOrderCO brokerageOrderCO, final ApiCallback<BrokerageOrderVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = createOrderUsingPostValidateBeforeCall(brokerageOrderCO, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BrokerageOrderVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for createWithdrawalUsingPost
+     * @param brokerageWithdrawalCO brokerageWithdrawalCO (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call createWithdrawalUsingPostCall(BrokerageWithdrawalCO brokerageWithdrawalCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = brokerageWithdrawalCO;
+
+        // create path and map variables
+        String localVarPath = "/brokerage/withdrawal";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call createWithdrawalUsingPostValidateBeforeCall(BrokerageWithdrawalCO brokerageWithdrawalCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'brokerageWithdrawalCO' is set
+        if (brokerageWithdrawalCO == null) {
+            throw new ApiException("Missing the required parameter 'brokerageWithdrawalCO' when calling createWithdrawalUsingPost(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = createWithdrawalUsingPostCall(brokerageWithdrawalCO, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Create a withdrawal
+     * 
+     * @param brokerageWithdrawalCO brokerageWithdrawalCO (required)
+     * @return BrokerageWithdrawalVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public BrokerageWithdrawalVO createWithdrawalUsingPost(BrokerageWithdrawalCO brokerageWithdrawalCO) throws ApiException {
+        ApiResponse<BrokerageWithdrawalVO> resp = createWithdrawalUsingPostWithHttpInfo(brokerageWithdrawalCO);
+        return resp.getData();
+    }
+
+    /**
+     * Create a withdrawal
+     * 
+     * @param brokerageWithdrawalCO brokerageWithdrawalCO (required)
+     * @return ApiResponse&lt;BrokerageWithdrawalVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<BrokerageWithdrawalVO> createWithdrawalUsingPostWithHttpInfo(BrokerageWithdrawalCO brokerageWithdrawalCO) throws ApiException {
+        com.squareup.okhttp.Call call = createWithdrawalUsingPostValidateBeforeCall(brokerageWithdrawalCO, null, null);
+        Type localVarReturnType = new TypeToken<BrokerageWithdrawalVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create a withdrawal (asynchronously)
+     * 
+     * @param brokerageWithdrawalCO brokerageWithdrawalCO (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call createWithdrawalUsingPostAsync(BrokerageWithdrawalCO brokerageWithdrawalCO, final ApiCallback<BrokerageWithdrawalVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = createWithdrawalUsingPostValidateBeforeCall(brokerageWithdrawalCO, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BrokerageWithdrawalVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for deleteBankLinkUsingDelete1
      * @param nucleusBankLinkId nucleus_bank_link_id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteBankLinkUsingDeleteCall(UUID nucleusBankLinkId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call deleteBankLinkUsingDelete1Call(UUID nucleusBankLinkId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -608,15 +1102,15 @@ public class BrokerageApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteBankLinkUsingDeleteValidateBeforeCall(UUID nucleusBankLinkId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteBankLinkUsingDelete1ValidateBeforeCall(UUID nucleusBankLinkId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'nucleusBankLinkId' is set
         if (nucleusBankLinkId == null) {
-            throw new ApiException("Missing the required parameter 'nucleusBankLinkId' when calling deleteBankLinkUsingDelete(Async)");
+            throw new ApiException("Missing the required parameter 'nucleusBankLinkId' when calling deleteBankLinkUsingDelete1(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = deleteBankLinkUsingDeleteCall(nucleusBankLinkId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteBankLinkUsingDelete1Call(nucleusBankLinkId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -625,25 +1119,22 @@ public class BrokerageApi {
      * Delete a Bank Link
      * 
      * @param nucleusBankLinkId nucleus_bank_link_id (required)
-     * @return ResponseEntity
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseEntity deleteBankLinkUsingDelete(UUID nucleusBankLinkId) throws ApiException {
-        ApiResponse<ResponseEntity> resp = deleteBankLinkUsingDeleteWithHttpInfo(nucleusBankLinkId);
-        return resp.getData();
+    public void deleteBankLinkUsingDelete1(UUID nucleusBankLinkId) throws ApiException {
+        deleteBankLinkUsingDelete1WithHttpInfo(nucleusBankLinkId);
     }
 
     /**
      * Delete a Bank Link
      * 
      * @param nucleusBankLinkId nucleus_bank_link_id (required)
-     * @return ApiResponse&lt;ResponseEntity&gt;
+     * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseEntity> deleteBankLinkUsingDeleteWithHttpInfo(UUID nucleusBankLinkId) throws ApiException {
-        com.squareup.okhttp.Call call = deleteBankLinkUsingDeleteValidateBeforeCall(nucleusBankLinkId, null, null);
-        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+    public ApiResponse<Void> deleteBankLinkUsingDelete1WithHttpInfo(UUID nucleusBankLinkId) throws ApiException {
+        com.squareup.okhttp.Call call = deleteBankLinkUsingDelete1ValidateBeforeCall(nucleusBankLinkId, null, null);
+        return apiClient.execute(call);
     }
 
     /**
@@ -654,7 +1145,7 @@ public class BrokerageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteBankLinkUsingDeleteAsync(UUID nucleusBankLinkId, final ApiCallback<ResponseEntity> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteBankLinkUsingDelete1Async(UUID nucleusBankLinkId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -675,29 +1166,27 @@ public class BrokerageApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteBankLinkUsingDeleteValidateBeforeCall(nucleusBankLinkId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
+        com.squareup.okhttp.Call call = deleteBankLinkUsingDelete1ValidateBeforeCall(nucleusBankLinkId, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
         return call;
     }
     /**
-     * Build call for deleteOrderUsingDelete
-     * @param nucleusOrderId nucleus_order_id (required)
+     * Build call for getBalanceUsingGet1
+     * @param nucleusPortfolioId nucleus_portfolio_id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteOrderUsingDeleteCall(UUID nucleusOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getBalanceUsingGet1Call(UUID nucleusPortfolioId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/brokerage/order";
+        String localVarPath = "/brokerage/balance/{nucleus_portfolio_id}"
+            .replaceAll("\\{" + "nucleus_portfolio_id" + "\\}", apiClient.escapeString(nucleusPortfolioId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (nucleusOrderId != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("nucleus_order_id", nucleusOrderId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -728,54 +1217,57 @@ public class BrokerageApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteOrderUsingDeleteValidateBeforeCall(UUID nucleusOrderId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getBalanceUsingGet1ValidateBeforeCall(UUID nucleusPortfolioId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'nucleusOrderId' is set
-        if (nucleusOrderId == null) {
-            throw new ApiException("Missing the required parameter 'nucleusOrderId' when calling deleteOrderUsingDelete(Async)");
+        // verify the required parameter 'nucleusPortfolioId' is set
+        if (nucleusPortfolioId == null) {
+            throw new ApiException("Missing the required parameter 'nucleusPortfolioId' when calling getBalanceUsingGet1(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = deleteOrderUsingDeleteCall(nucleusOrderId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getBalanceUsingGet1Call(nucleusPortfolioId, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
-     * Delete an Order
+     * Get account balance
      * 
-     * @param nucleusOrderId nucleus_order_id (required)
+     * @param nucleusPortfolioId nucleus_portfolio_id (required)
+     * @return BrokerageBalanceVO
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteOrderUsingDelete(UUID nucleusOrderId) throws ApiException {
-        deleteOrderUsingDeleteWithHttpInfo(nucleusOrderId);
+    public BrokerageBalanceVO getBalanceUsingGet1(UUID nucleusPortfolioId) throws ApiException {
+        ApiResponse<BrokerageBalanceVO> resp = getBalanceUsingGet1WithHttpInfo(nucleusPortfolioId);
+        return resp.getData();
     }
 
     /**
-     * Delete an Order
+     * Get account balance
      * 
-     * @param nucleusOrderId nucleus_order_id (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @param nucleusPortfolioId nucleus_portfolio_id (required)
+     * @return ApiResponse&lt;BrokerageBalanceVO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteOrderUsingDeleteWithHttpInfo(UUID nucleusOrderId) throws ApiException {
-        com.squareup.okhttp.Call call = deleteOrderUsingDeleteValidateBeforeCall(nucleusOrderId, null, null);
-        return apiClient.execute(call);
+    public ApiResponse<BrokerageBalanceVO> getBalanceUsingGet1WithHttpInfo(UUID nucleusPortfolioId) throws ApiException {
+        com.squareup.okhttp.Call call = getBalanceUsingGet1ValidateBeforeCall(nucleusPortfolioId, null, null);
+        Type localVarReturnType = new TypeToken<BrokerageBalanceVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Delete an Order (asynchronously)
+     * Get account balance (asynchronously)
      * 
-     * @param nucleusOrderId nucleus_order_id (required)
+     * @param nucleusPortfolioId nucleus_portfolio_id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteOrderUsingDeleteAsync(UUID nucleusOrderId, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call getBalanceUsingGet1Async(UUID nucleusPortfolioId, final ApiCallback<BrokerageBalanceVO> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -796,19 +1288,20 @@ public class BrokerageApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteOrderUsingDeleteValidateBeforeCall(nucleusOrderId, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
+        com.squareup.okhttp.Call call = getBalanceUsingGet1ValidateBeforeCall(nucleusPortfolioId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BrokerageBalanceVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for getBankLinkUsingGet
+     * Build call for getBankLinkUsingGet1
      * @param nucleusBankLinkId nucleus_bank_link_id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getBankLinkUsingGetCall(UUID nucleusBankLinkId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getBankLinkUsingGet1Call(UUID nucleusBankLinkId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -851,15 +1344,15 @@ public class BrokerageApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getBankLinkUsingGetValidateBeforeCall(UUID nucleusBankLinkId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getBankLinkUsingGet1ValidateBeforeCall(UUID nucleusBankLinkId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'nucleusBankLinkId' is set
         if (nucleusBankLinkId == null) {
-            throw new ApiException("Missing the required parameter 'nucleusBankLinkId' when calling getBankLinkUsingGet(Async)");
+            throw new ApiException("Missing the required parameter 'nucleusBankLinkId' when calling getBankLinkUsingGet1(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = getBankLinkUsingGetCall(nucleusBankLinkId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getBankLinkUsingGet1Call(nucleusBankLinkId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -871,8 +1364,8 @@ public class BrokerageApi {
      * @return BrokerageBankLinkVO
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public BrokerageBankLinkVO getBankLinkUsingGet(UUID nucleusBankLinkId) throws ApiException {
-        ApiResponse<BrokerageBankLinkVO> resp = getBankLinkUsingGetWithHttpInfo(nucleusBankLinkId);
+    public BrokerageBankLinkVO getBankLinkUsingGet1(UUID nucleusBankLinkId) throws ApiException {
+        ApiResponse<BrokerageBankLinkVO> resp = getBankLinkUsingGet1WithHttpInfo(nucleusBankLinkId);
         return resp.getData();
     }
 
@@ -883,8 +1376,8 @@ public class BrokerageApi {
      * @return ApiResponse&lt;BrokerageBankLinkVO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<BrokerageBankLinkVO> getBankLinkUsingGetWithHttpInfo(UUID nucleusBankLinkId) throws ApiException {
-        com.squareup.okhttp.Call call = getBankLinkUsingGetValidateBeforeCall(nucleusBankLinkId, null, null);
+    public ApiResponse<BrokerageBankLinkVO> getBankLinkUsingGet1WithHttpInfo(UUID nucleusBankLinkId) throws ApiException {
+        com.squareup.okhttp.Call call = getBankLinkUsingGet1ValidateBeforeCall(nucleusBankLinkId, null, null);
         Type localVarReturnType = new TypeToken<BrokerageBankLinkVO>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -897,7 +1390,7 @@ public class BrokerageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getBankLinkUsingGetAsync(UUID nucleusBankLinkId, final ApiCallback<BrokerageBankLinkVO> callback) throws ApiException {
+    public com.squareup.okhttp.Call getBankLinkUsingGet1Async(UUID nucleusBankLinkId, final ApiCallback<BrokerageBankLinkVO> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -918,7 +1411,7 @@ public class BrokerageApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getBankLinkUsingGetValidateBeforeCall(nucleusBankLinkId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getBankLinkUsingGet1ValidateBeforeCall(nucleusBankLinkId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<BrokerageBankLinkVO>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -938,7 +1431,7 @@ public class BrokerageApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/brokerage/{nucleus_account_id}/statement"
+        String localVarPath = "/brokerage/statement/{nucleus_account_id}"
             .replaceAll("\\{" + "nucleus_account_id" + "\\}", apiClient.escapeString(nucleusAccountId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -1080,6 +1573,375 @@ public class BrokerageApi {
         return call;
     }
     /**
+     * Build call for getDocumentUsingGet
+     * @param nucleusDocumentId nucleus_document_id (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getDocumentUsingGetCall(UUID nucleusDocumentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/brokerage/document/{nucleus_document_id}"
+            .replaceAll("\\{" + "nucleus_document_id" + "\\}", apiClient.escapeString(nucleusDocumentId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getDocumentUsingGetValidateBeforeCall(UUID nucleusDocumentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'nucleusDocumentId' is set
+        if (nucleusDocumentId == null) {
+            throw new ApiException("Missing the required parameter 'nucleusDocumentId' when calling getDocumentUsingGet(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getDocumentUsingGetCall(nucleusDocumentId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get a Brokerage document
+     * 
+     * @param nucleusDocumentId nucleus_document_id (required)
+     * @return BrokerageDocumentVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public BrokerageDocumentVO getDocumentUsingGet(UUID nucleusDocumentId) throws ApiException {
+        ApiResponse<BrokerageDocumentVO> resp = getDocumentUsingGetWithHttpInfo(nucleusDocumentId);
+        return resp.getData();
+    }
+
+    /**
+     * Get a Brokerage document
+     * 
+     * @param nucleusDocumentId nucleus_document_id (required)
+     * @return ApiResponse&lt;BrokerageDocumentVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<BrokerageDocumentVO> getDocumentUsingGetWithHttpInfo(UUID nucleusDocumentId) throws ApiException {
+        com.squareup.okhttp.Call call = getDocumentUsingGetValidateBeforeCall(nucleusDocumentId, null, null);
+        Type localVarReturnType = new TypeToken<BrokerageDocumentVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get a Brokerage document (asynchronously)
+     * 
+     * @param nucleusDocumentId nucleus_document_id (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getDocumentUsingGetAsync(UUID nucleusDocumentId, final ApiCallback<BrokerageDocumentVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getDocumentUsingGetValidateBeforeCall(nucleusDocumentId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BrokerageDocumentVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getHoldingPerformanceUsingGet
+     * @param nucleusPortfolioId nucleus_portfolio_id (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getHoldingPerformanceUsingGetCall(UUID nucleusPortfolioId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/brokerage/holding/performance/{nucleus_portfolio_id}"
+            .replaceAll("\\{" + "nucleus_portfolio_id" + "\\}", apiClient.escapeString(nucleusPortfolioId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getHoldingPerformanceUsingGetValidateBeforeCall(UUID nucleusPortfolioId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'nucleusPortfolioId' is set
+        if (nucleusPortfolioId == null) {
+            throw new ApiException("Missing the required parameter 'nucleusPortfolioId' when calling getHoldingPerformanceUsingGet(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getHoldingPerformanceUsingGetCall(nucleusPortfolioId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get portfolio holding performance
+     * 
+     * @param nucleusPortfolioId nucleus_portfolio_id (required)
+     * @return BrokeragePerformanceVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public BrokeragePerformanceVO getHoldingPerformanceUsingGet(UUID nucleusPortfolioId) throws ApiException {
+        ApiResponse<BrokeragePerformanceVO> resp = getHoldingPerformanceUsingGetWithHttpInfo(nucleusPortfolioId);
+        return resp.getData();
+    }
+
+    /**
+     * Get portfolio holding performance
+     * 
+     * @param nucleusPortfolioId nucleus_portfolio_id (required)
+     * @return ApiResponse&lt;BrokeragePerformanceVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<BrokeragePerformanceVO> getHoldingPerformanceUsingGetWithHttpInfo(UUID nucleusPortfolioId) throws ApiException {
+        com.squareup.okhttp.Call call = getHoldingPerformanceUsingGetValidateBeforeCall(nucleusPortfolioId, null, null);
+        Type localVarReturnType = new TypeToken<BrokeragePerformanceVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get portfolio holding performance (asynchronously)
+     * 
+     * @param nucleusPortfolioId nucleus_portfolio_id (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getHoldingPerformanceUsingGetAsync(UUID nucleusPortfolioId, final ApiCallback<BrokeragePerformanceVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getHoldingPerformanceUsingGetValidateBeforeCall(nucleusPortfolioId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BrokeragePerformanceVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getHoldingUsingGet
+     * @param nucleusPortfolioId nucleus_portfolio_id (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getHoldingUsingGetCall(UUID nucleusPortfolioId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/brokerage/holding/{nucleus_portfolio_id}"
+            .replaceAll("\\{" + "nucleus_portfolio_id" + "\\}", apiClient.escapeString(nucleusPortfolioId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getHoldingUsingGetValidateBeforeCall(UUID nucleusPortfolioId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'nucleusPortfolioId' is set
+        if (nucleusPortfolioId == null) {
+            throw new ApiException("Missing the required parameter 'nucleusPortfolioId' when calling getHoldingUsingGet(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getHoldingUsingGetCall(nucleusPortfolioId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get portfolio holdings
+     * 
+     * @param nucleusPortfolioId nucleus_portfolio_id (required)
+     * @return BrokerageHoldingVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public BrokerageHoldingVO getHoldingUsingGet(UUID nucleusPortfolioId) throws ApiException {
+        ApiResponse<BrokerageHoldingVO> resp = getHoldingUsingGetWithHttpInfo(nucleusPortfolioId);
+        return resp.getData();
+    }
+
+    /**
+     * Get portfolio holdings
+     * 
+     * @param nucleusPortfolioId nucleus_portfolio_id (required)
+     * @return ApiResponse&lt;BrokerageHoldingVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<BrokerageHoldingVO> getHoldingUsingGetWithHttpInfo(UUID nucleusPortfolioId) throws ApiException {
+        com.squareup.okhttp.Call call = getHoldingUsingGetValidateBeforeCall(nucleusPortfolioId, null, null);
+        Type localVarReturnType = new TypeToken<BrokerageHoldingVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get portfolio holdings (asynchronously)
+     * 
+     * @param nucleusPortfolioId nucleus_portfolio_id (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getHoldingUsingGetAsync(UUID nucleusPortfolioId, final ApiCallback<BrokerageHoldingVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getHoldingUsingGetValidateBeforeCall(nucleusPortfolioId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BrokerageHoldingVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for getOrderUsingGet
      * @param nucleusOrderId nucleus_order_id (required)
      * @param progressListener Progress listener
@@ -1091,12 +1953,11 @@ public class BrokerageApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/brokerage/order";
+        String localVarPath = "/brokerage/order/{nucleus_order_id}"
+            .replaceAll("\\{" + "nucleus_order_id" + "\\}", apiClient.escapeString(nucleusOrderId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (nucleusOrderId != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("nucleus_order_id", nucleusOrderId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1148,11 +2009,11 @@ public class BrokerageApi {
      * Get an Order
      * 
      * @param nucleusOrderId nucleus_order_id (required)
-     * @return GetOrderResponse
+     * @return BrokerageOrderVO
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetOrderResponse getOrderUsingGet(UUID nucleusOrderId) throws ApiException {
-        ApiResponse<GetOrderResponse> resp = getOrderUsingGetWithHttpInfo(nucleusOrderId);
+    public BrokerageOrderVO getOrderUsingGet(UUID nucleusOrderId) throws ApiException {
+        ApiResponse<BrokerageOrderVO> resp = getOrderUsingGetWithHttpInfo(nucleusOrderId);
         return resp.getData();
     }
 
@@ -1160,12 +2021,12 @@ public class BrokerageApi {
      * Get an Order
      * 
      * @param nucleusOrderId nucleus_order_id (required)
-     * @return ApiResponse&lt;GetOrderResponse&gt;
+     * @return ApiResponse&lt;BrokerageOrderVO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetOrderResponse> getOrderUsingGetWithHttpInfo(UUID nucleusOrderId) throws ApiException {
+    public ApiResponse<BrokerageOrderVO> getOrderUsingGetWithHttpInfo(UUID nucleusOrderId) throws ApiException {
         com.squareup.okhttp.Call call = getOrderUsingGetValidateBeforeCall(nucleusOrderId, null, null);
-        Type localVarReturnType = new TypeToken<GetOrderResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BrokerageOrderVO>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1177,7 +2038,7 @@ public class BrokerageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getOrderUsingGetAsync(UUID nucleusOrderId, final ApiCallback<GetOrderResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getOrderUsingGetAsync(UUID nucleusOrderId, final ApiCallback<BrokerageOrderVO> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1199,19 +2060,309 @@ public class BrokerageApi {
         }
 
         com.squareup.okhttp.Call call = getOrderUsingGetValidateBeforeCall(nucleusOrderId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetOrderResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<BrokerageOrderVO>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for updateBankLinkUsingPut
+     * Build call for getSecuritiesUsingGet
+     * @param vendorName vendor_name (required)
+     * @param getFundamentals get_fundamentals (optional, default to false)
+     * @param nucleusSecurityId nucleus_security_id (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getSecuritiesUsingGetCall(String vendorName, Boolean getFundamentals, UUID nucleusSecurityId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/brokerage/securities";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (getFundamentals != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("get_fundamentals", getFundamentals));
+        if (nucleusSecurityId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("nucleus_security_id", nucleusSecurityId));
+        if (vendorName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("vendor_name", vendorName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getSecuritiesUsingGetValidateBeforeCall(String vendorName, Boolean getFundamentals, UUID nucleusSecurityId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'vendorName' is set
+        if (vendorName == null) {
+            throw new ApiException("Missing the required parameter 'vendorName' when calling getSecuritiesUsingGet(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getSecuritiesUsingGetCall(vendorName, getFundamentals, nucleusSecurityId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get securities information
+     * 
+     * @param vendorName vendor_name (required)
+     * @param getFundamentals get_fundamentals (optional, default to false)
+     * @param nucleusSecurityId nucleus_security_id (optional)
+     * @return BrokerageSecuritiesVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public BrokerageSecuritiesVO getSecuritiesUsingGet(String vendorName, Boolean getFundamentals, UUID nucleusSecurityId) throws ApiException {
+        ApiResponse<BrokerageSecuritiesVO> resp = getSecuritiesUsingGetWithHttpInfo(vendorName, getFundamentals, nucleusSecurityId);
+        return resp.getData();
+    }
+
+    /**
+     * Get securities information
+     * 
+     * @param vendorName vendor_name (required)
+     * @param getFundamentals get_fundamentals (optional, default to false)
+     * @param nucleusSecurityId nucleus_security_id (optional)
+     * @return ApiResponse&lt;BrokerageSecuritiesVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<BrokerageSecuritiesVO> getSecuritiesUsingGetWithHttpInfo(String vendorName, Boolean getFundamentals, UUID nucleusSecurityId) throws ApiException {
+        com.squareup.okhttp.Call call = getSecuritiesUsingGetValidateBeforeCall(vendorName, getFundamentals, nucleusSecurityId, null, null);
+        Type localVarReturnType = new TypeToken<BrokerageSecuritiesVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get securities information (asynchronously)
+     * 
+     * @param vendorName vendor_name (required)
+     * @param getFundamentals get_fundamentals (optional, default to false)
+     * @param nucleusSecurityId nucleus_security_id (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getSecuritiesUsingGetAsync(String vendorName, Boolean getFundamentals, UUID nucleusSecurityId, final ApiCallback<BrokerageSecuritiesVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getSecuritiesUsingGetValidateBeforeCall(vendorName, getFundamentals, nucleusSecurityId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BrokerageSecuritiesVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getTransactionsUsingGet
+     * @param drivewealthResponse drivewealthResponse (required)
+     * @param endDate end_date (required)
+     * @param nucleusPortfolioId nucleus_portfolio_id (required)
+     * @param startDate start_date (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getTransactionsUsingGetCall(GetTransactionsResponse drivewealthResponse, LocalDate endDate, UUID nucleusPortfolioId, LocalDate startDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = drivewealthResponse;
+
+        // create path and map variables
+        String localVarPath = "/brokerage/transaction/{nucleus_portfolio_id}"
+            .replaceAll("\\{" + "nucleus_portfolio_id" + "\\}", apiClient.escapeString(nucleusPortfolioId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (endDate != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("end_date", endDate));
+        if (startDate != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("start_date", startDate));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getTransactionsUsingGetValidateBeforeCall(GetTransactionsResponse drivewealthResponse, LocalDate endDate, UUID nucleusPortfolioId, LocalDate startDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'drivewealthResponse' is set
+        if (drivewealthResponse == null) {
+            throw new ApiException("Missing the required parameter 'drivewealthResponse' when calling getTransactionsUsingGet(Async)");
+        }
+        
+        // verify the required parameter 'endDate' is set
+        if (endDate == null) {
+            throw new ApiException("Missing the required parameter 'endDate' when calling getTransactionsUsingGet(Async)");
+        }
+        
+        // verify the required parameter 'nucleusPortfolioId' is set
+        if (nucleusPortfolioId == null) {
+            throw new ApiException("Missing the required parameter 'nucleusPortfolioId' when calling getTransactionsUsingGet(Async)");
+        }
+        
+        // verify the required parameter 'startDate' is set
+        if (startDate == null) {
+            throw new ApiException("Missing the required parameter 'startDate' when calling getTransactionsUsingGet(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getTransactionsUsingGetCall(drivewealthResponse, endDate, nucleusPortfolioId, startDate, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get account transactions
+     * 
+     * @param drivewealthResponse drivewealthResponse (required)
+     * @param endDate end_date (required)
+     * @param nucleusPortfolioId nucleus_portfolio_id (required)
+     * @param startDate start_date (required)
+     * @return BrokerageTransactionVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public BrokerageTransactionVO getTransactionsUsingGet(GetTransactionsResponse drivewealthResponse, LocalDate endDate, UUID nucleusPortfolioId, LocalDate startDate) throws ApiException {
+        ApiResponse<BrokerageTransactionVO> resp = getTransactionsUsingGetWithHttpInfo(drivewealthResponse, endDate, nucleusPortfolioId, startDate);
+        return resp.getData();
+    }
+
+    /**
+     * Get account transactions
+     * 
+     * @param drivewealthResponse drivewealthResponse (required)
+     * @param endDate end_date (required)
+     * @param nucleusPortfolioId nucleus_portfolio_id (required)
+     * @param startDate start_date (required)
+     * @return ApiResponse&lt;BrokerageTransactionVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<BrokerageTransactionVO> getTransactionsUsingGetWithHttpInfo(GetTransactionsResponse drivewealthResponse, LocalDate endDate, UUID nucleusPortfolioId, LocalDate startDate) throws ApiException {
+        com.squareup.okhttp.Call call = getTransactionsUsingGetValidateBeforeCall(drivewealthResponse, endDate, nucleusPortfolioId, startDate, null, null);
+        Type localVarReturnType = new TypeToken<BrokerageTransactionVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get account transactions (asynchronously)
+     * 
+     * @param drivewealthResponse drivewealthResponse (required)
+     * @param endDate end_date (required)
+     * @param nucleusPortfolioId nucleus_portfolio_id (required)
+     * @param startDate start_date (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getTransactionsUsingGetAsync(GetTransactionsResponse drivewealthResponse, LocalDate endDate, UUID nucleusPortfolioId, LocalDate startDate, final ApiCallback<BrokerageTransactionVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getTransactionsUsingGetValidateBeforeCall(drivewealthResponse, endDate, nucleusPortfolioId, startDate, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BrokerageTransactionVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for updateBankLinkUsingPut1
      * @param nucleusBankLinkId nucleus_bank_link_id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateBankLinkUsingPutCall(UUID nucleusBankLinkId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateBankLinkUsingPut1Call(UUID nucleusBankLinkId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1254,15 +2405,15 @@ public class BrokerageApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateBankLinkUsingPutValidateBeforeCall(UUID nucleusBankLinkId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateBankLinkUsingPut1ValidateBeforeCall(UUID nucleusBankLinkId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'nucleusBankLinkId' is set
         if (nucleusBankLinkId == null) {
-            throw new ApiException("Missing the required parameter 'nucleusBankLinkId' when calling updateBankLinkUsingPut(Async)");
+            throw new ApiException("Missing the required parameter 'nucleusBankLinkId' when calling updateBankLinkUsingPut1(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = updateBankLinkUsingPutCall(nucleusBankLinkId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateBankLinkUsingPut1Call(nucleusBankLinkId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1274,8 +2425,8 @@ public class BrokerageApi {
      * @return BrokerageBankLinkVO
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public BrokerageBankLinkVO updateBankLinkUsingPut(UUID nucleusBankLinkId) throws ApiException {
-        ApiResponse<BrokerageBankLinkVO> resp = updateBankLinkUsingPutWithHttpInfo(nucleusBankLinkId);
+    public BrokerageBankLinkVO updateBankLinkUsingPut1(UUID nucleusBankLinkId) throws ApiException {
+        ApiResponse<BrokerageBankLinkVO> resp = updateBankLinkUsingPut1WithHttpInfo(nucleusBankLinkId);
         return resp.getData();
     }
 
@@ -1286,8 +2437,8 @@ public class BrokerageApi {
      * @return ApiResponse&lt;BrokerageBankLinkVO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<BrokerageBankLinkVO> updateBankLinkUsingPutWithHttpInfo(UUID nucleusBankLinkId) throws ApiException {
-        com.squareup.okhttp.Call call = updateBankLinkUsingPutValidateBeforeCall(nucleusBankLinkId, null, null);
+    public ApiResponse<BrokerageBankLinkVO> updateBankLinkUsingPut1WithHttpInfo(UUID nucleusBankLinkId) throws ApiException {
+        com.squareup.okhttp.Call call = updateBankLinkUsingPut1ValidateBeforeCall(nucleusBankLinkId, null, null);
         Type localVarReturnType = new TypeToken<BrokerageBankLinkVO>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1300,7 +2451,7 @@ public class BrokerageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateBankLinkUsingPutAsync(UUID nucleusBankLinkId, final ApiCallback<BrokerageBankLinkVO> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateBankLinkUsingPut1Async(UUID nucleusBankLinkId, final ApiCallback<BrokerageBankLinkVO> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1321,7 +2472,7 @@ public class BrokerageApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateBankLinkUsingPutValidateBeforeCall(nucleusBankLinkId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateBankLinkUsingPut1ValidateBeforeCall(nucleusBankLinkId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<BrokerageBankLinkVO>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

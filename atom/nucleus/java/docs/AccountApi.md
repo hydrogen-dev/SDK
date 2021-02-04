@@ -49,7 +49,6 @@ Create an account-allocation mapping for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -66,7 +65,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
 
 AccountApi apiInstance = new AccountApi();
 AccountAllocationMapping allocRequest = new AccountAllocationMapping(); // AccountAllocationMapping | allocRequest
@@ -110,7 +108,6 @@ Create an account status record for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -127,8 +124,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 AccountStatus accountStatusRequest = new AccountStatus(); // AccountStatus | accountStatusRequest
 try {
@@ -171,7 +166,6 @@ Create a new account type for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -188,8 +182,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 AccountType accountTypeRequest = new AccountType(); // AccountType | accountTypeRequest
 try {
@@ -232,7 +224,6 @@ Create an account under a client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -249,8 +240,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 Account clientAccountRequest = new Account(); // Account | clientAccountRequest
 try {
@@ -293,7 +282,6 @@ Permanently delete an account-allocation mapping for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -310,8 +298,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 UUID accountAllocationId = new UUID(); // UUID | UUID account_allocation_id
 try {
@@ -353,7 +339,6 @@ Delete an account permission
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -370,8 +355,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 UUID accountId = new UUID(); // UUID | account_id
 try {
@@ -414,7 +397,6 @@ Permanently delete an account status record from an account’s history.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -431,8 +413,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 UUID accountStatusId = new UUID(); // UUID | UUID account_status_id
 try {
@@ -474,7 +454,6 @@ Permanently delete a possible account type defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -491,8 +470,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 UUID accountTypeId = new UUID(); // UUID | UUID account_type_id
 try {
@@ -534,7 +511,6 @@ Permanently delete an account under a client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -551,8 +527,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 UUID accountId = new UUID(); // UUID | UUID account_id
 try {
@@ -594,7 +568,6 @@ Get information for all accounts for all clients defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -611,8 +584,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -663,7 +634,6 @@ Get information for all account-allocation mappings for all accounts defined for
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -680,8 +650,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -732,7 +700,6 @@ Retrieve the information for a specific account-allocation mapping for an accoun
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -749,8 +716,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 UUID accountAllocationId = new UUID(); // UUID | UUID account_allocation_id
 try {
@@ -793,7 +758,6 @@ Get a list of asset sizes by date for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -810,8 +774,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 UUID accountId = new UUID(); // UUID | Account Id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -866,7 +828,6 @@ Get information for all account asset sizes
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -883,8 +844,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -933,7 +892,6 @@ List all Account overview
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -950,8 +908,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 UUID accountId = new UUID(); // UUID | UUID account_id
 Boolean ascending = false; // Boolean | ascending
@@ -998,7 +954,6 @@ Get an account permission
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1015,8 +970,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 UUID accountId = new UUID(); // UUID | account_id
 try {
@@ -1059,7 +1012,6 @@ Get the account status history information for all accounts.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1076,8 +1028,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -1128,7 +1078,6 @@ Retrieve the information for a specific account status record for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1145,8 +1094,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 UUID accountStatusId = new UUID(); // UUID | UUID account_status_id
 try {
@@ -1189,7 +1136,6 @@ List all account types defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1206,8 +1152,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -1258,7 +1202,6 @@ Get an account types defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1275,8 +1218,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 UUID accountTypeId = new UUID(); // UUID | UUID account_type_id
 try {
@@ -1319,7 +1260,6 @@ Retrieve the information for a specific account associated with a client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1336,8 +1276,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 UUID accountId = new UUID(); // UUID | UUID account_id
 try {
@@ -1380,7 +1318,6 @@ List all account permission
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1397,8 +1334,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -1449,7 +1384,6 @@ Get information for all the securities that are currently being held by an accou
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1466,8 +1400,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 UUID accountId = new UUID(); // UUID | UUID account_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -1518,7 +1450,6 @@ Get the information for all transactions for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1535,8 +1466,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 UUID accountId = new UUID(); // UUID | UUID account_id
 Boolean ascending = false; // Boolean | ascending
@@ -1593,7 +1522,6 @@ create an account permission
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1610,8 +1538,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 AclClientPermissionVO aclClientPermissionVO = new AclClientPermissionVO(); // AclClientPermissionVO | aclClientPermissionVO
 try {
@@ -1654,7 +1580,6 @@ After creating an account, you may create portfolios for the account to track a 
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1671,8 +1596,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 UUID accountId = new UUID(); // UUID | UUID account_id
 AccountAllocationMapping allocRequest = new AccountAllocationMapping(); // AccountAllocationMapping | allocRequest
@@ -1717,7 +1640,6 @@ Update the information for an account-allocation mapping.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1734,11 +1656,9 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 UUID accountAllocationId = new UUID(); // UUID | UUID account_allocation_id
-AccountAllocationMapping accountAllocationMapping = new AccountAllocationMapping(); // AccountAllocationMapping | account_allocation_mapping
+Object accountAllocationMapping = null; // Object | account_allocation_mapping
 try {
     AccountAllocationMapping result = apiInstance.updateAccountAllocationMappingUsingPut(accountAllocationId, accountAllocationMapping);
     System.out.println(result);
@@ -1753,7 +1673,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountAllocationId** | [**UUID**](.md)| UUID account_allocation_id |
- **accountAllocationMapping** | [**AccountAllocationMapping**](AccountAllocationMapping.md)| account_allocation_mapping | [optional]
+ **accountAllocationMapping** | **Object**| account_allocation_mapping | [optional]
 
 ### Return type
 
@@ -1780,7 +1700,6 @@ Update an account status record for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1797,10 +1716,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
-AccountStatus accountStatus = new AccountStatus(); // AccountStatus | account_status
+Object accountStatus = null; // Object | account_status
 UUID accountStatusId = new UUID(); // UUID | UUID account_status_id
 try {
     AccountStatus result = apiInstance.updateAccountStatusUsingPut(accountStatus, accountStatusId);
@@ -1815,7 +1732,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountStatus** | [**AccountStatus**](AccountStatus.md)| account_status |
+ **accountStatus** | **Object**| account_status |
  **accountStatusId** | [**UUID**](.md)| UUID account_status_id |
 
 ### Return type
@@ -1843,7 +1760,6 @@ Update the information for a possible account type defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1860,10 +1776,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
-AccountType accountType = new AccountType(); // AccountType | account_type
+Object accountType = null; // Object | account_type
 UUID accountTypeId = new UUID(); // UUID | UUID account_type_id
 try {
     AccountType result = apiInstance.updateAccountTypeUsingPut(accountType, accountTypeId);
@@ -1878,7 +1792,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountType** | [**AccountType**](AccountType.md)| account_type |
+ **accountType** | **Object**| account_type |
  **accountTypeId** | [**UUID**](.md)| UUID account_type_id |
 
 ### Return type
@@ -1906,7 +1820,6 @@ Update the information for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1923,10 +1836,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
-Account account = new Account(); // Account | account
+Object account = null; // Object | account
 UUID accountId = new UUID(); // UUID | UUID account_id
 try {
     Account result = apiInstance.updateAccountUsingPut(account, accountId);
@@ -1941,7 +1852,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account** | [**Account**](Account.md)| account |
+ **account** | **Object**| account |
  **accountId** | [**UUID**](.md)| UUID account_id |
 
 ### Return type
@@ -1969,7 +1880,6 @@ Update an account permission
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1986,11 +1896,9 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AccountApi apiInstance = new AccountApi();
 UUID accountId = new UUID(); // UUID | account_id
-AclClientPermissionVO aclClientPermissionVO = new AclClientPermissionVO(); // AclClientPermissionVO | aclClientPermissionVO
+Object aclClientPermissionVO = null; // Object | aclClientPermissionVO
 try {
     AccountPermissionVO result = apiInstance.updateClientAccountPermissionUsingPUT(accountId, aclClientPermissionVO);
     System.out.println(result);
@@ -2005,7 +1913,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accountId** | [**UUID**](.md)| account_id |
- **aclClientPermissionVO** | [**AclClientPermissionVO**](AclClientPermissionVO.md)| aclClientPermissionVO |
+ **aclClientPermissionVO** | **Object**| aclClientPermissionVO |
 
 ### Return type
 

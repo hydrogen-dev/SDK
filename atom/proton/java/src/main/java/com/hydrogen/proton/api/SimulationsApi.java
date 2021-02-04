@@ -13,16 +13,14 @@
 
 package com.hydrogen.proton.api;
 
-import com.hydrogen.proton.ApiCallback;
 import com.hydrogen.proton.ApiClient;
 import com.hydrogen.proton.ApiException;
+import com.hydrogen.proton.ProgressResponseBody;
+import com.hydrogen.proton.ApiCallback;
 import com.hydrogen.proton.ApiResponse;
 import com.hydrogen.proton.Configuration;
 import com.hydrogen.proton.Pair;
 import com.hydrogen.proton.ProgressRequestBody;
-import com.hydrogen.proton.ProgressResponseBody;
-import com.hydrogen.proton.model.PortfolioWhatIfRequest;
-import com.hydrogen.proton.model.SavingsCalculatorRequest;
 
 import com.google.gson.reflect.TypeToken;
 
@@ -32,6 +30,8 @@ import java.io.IOException;
 import com.hydrogen.proton.model.BacktestRequest;
 import com.hydrogen.proton.model.EventStudyRequest;
 import com.hydrogen.proton.model.MonteCarloRequest;
+import com.hydrogen.proton.model.PortfolioWhatIfRequest;
+import com.hydrogen.proton.model.SavingsCalculatorRequest;
 import com.hydrogen.proton.model.ScenarioAnalysisRequest;
 import com.hydrogen.proton.model.SensitivityAnalysisRequest;
 

@@ -31,256 +31,91 @@ class BusinessFinancialHealthCheckRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'period_month': 'int',
-        'period_quarter': 'int',
-        'client_id': 'str',
-        'total_liabilities': 'float',
-        'total_revenue': 'float',
-        'accounting_method': 'str',
-        'ratio_targets': 'RatioTargets1',
         'period_length': 'str',
-        'currency_conversion': 'str',
-        'period_type': 'str',
-        'period_year': 'int',
-        'total_assets': 'float',
-        'currency_code': 'str',
         'net_income': 'float',
-        'total_equity': 'float'
+        'period_month': 'int',
+        'total_revenue': 'float',
+        'total_assets': 'float',
+        'client_id': 'str',
+        'accounting_method': 'str',
+        'period_year': 'int',
+        'currency_conversion': 'str',
+        'total_liabilities': 'float',
+        'period_type': 'str',
+        'currency_code': 'str',
+        'ratio_targets': 'RatioTargets1',
+        'total_equity': 'float',
+        'period_quarter': 'int'
     }
 
     attribute_map = {
-        'period_month': 'period_month',
-        'period_quarter': 'period_quarter',
-        'client_id': 'client_id',
-        'total_liabilities': 'total_liabilities',
-        'total_revenue': 'total_revenue',
-        'accounting_method': 'accounting_method',
-        'ratio_targets': 'ratio_targets',
         'period_length': 'period_length',
-        'currency_conversion': 'currency_conversion',
-        'period_type': 'period_type',
-        'period_year': 'period_year',
-        'total_assets': 'total_assets',
-        'currency_code': 'currency_code',
         'net_income': 'net_income',
-        'total_equity': 'total_equity'
+        'period_month': 'period_month',
+        'total_revenue': 'total_revenue',
+        'total_assets': 'total_assets',
+        'client_id': 'client_id',
+        'accounting_method': 'accounting_method',
+        'period_year': 'period_year',
+        'currency_conversion': 'currency_conversion',
+        'total_liabilities': 'total_liabilities',
+        'period_type': 'period_type',
+        'currency_code': 'currency_code',
+        'ratio_targets': 'ratio_targets',
+        'total_equity': 'total_equity',
+        'period_quarter': 'period_quarter'
     }
 
-    def __init__(self, period_month=None, period_quarter=None, client_id=None, total_liabilities=None, total_revenue=None, accounting_method=None, ratio_targets=None, period_length='quarterly', currency_conversion=None, period_type=None, period_year=None, total_assets=None, currency_code=None, net_income=None, total_equity=None):  # noqa: E501
+    def __init__(self, period_length='quarterly', net_income=None, period_month=None, total_revenue=None, total_assets=None, client_id=None, accounting_method=None, period_year=None, currency_conversion=None, total_liabilities=None, period_type=None, currency_code=None, ratio_targets=None, total_equity=None, period_quarter=None):  # noqa: E501
         """BusinessFinancialHealthCheckRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._period_month = None
-        self._period_quarter = None
-        self._client_id = None
-        self._total_liabilities = None
-        self._total_revenue = None
-        self._accounting_method = None
-        self._ratio_targets = None
         self._period_length = None
-        self._currency_conversion = None
-        self._period_type = None
-        self._period_year = None
-        self._total_assets = None
-        self._currency_code = None
         self._net_income = None
+        self._period_month = None
+        self._total_revenue = None
+        self._total_assets = None
+        self._client_id = None
+        self._accounting_method = None
+        self._period_year = None
+        self._currency_conversion = None
+        self._total_liabilities = None
+        self._period_type = None
+        self._currency_code = None
+        self._ratio_targets = None
         self._total_equity = None
+        self._period_quarter = None
         self.discriminator = None
 
-        if period_month is not None:
-            self.period_month = period_month
-        if period_quarter is not None:
-            self.period_quarter = period_quarter
-        if client_id is not None:
-            self.client_id = client_id
-        if total_liabilities is not None:
-            self.total_liabilities = total_liabilities
-        if total_revenue is not None:
-            self.total_revenue = total_revenue
-        if accounting_method is not None:
-            self.accounting_method = accounting_method
-        if ratio_targets is not None:
-            self.ratio_targets = ratio_targets
         if period_length is not None:
             self.period_length = period_length
-        if currency_conversion is not None:
-            self.currency_conversion = currency_conversion
-        if period_type is not None:
-            self.period_type = period_type
-        if period_year is not None:
-            self.period_year = period_year
-        if total_assets is not None:
-            self.total_assets = total_assets
-        if currency_code is not None:
-            self.currency_code = currency_code
         if net_income is not None:
             self.net_income = net_income
+        if period_month is not None:
+            self.period_month = period_month
+        if total_revenue is not None:
+            self.total_revenue = total_revenue
+        if total_assets is not None:
+            self.total_assets = total_assets
+        if client_id is not None:
+            self.client_id = client_id
+        if accounting_method is not None:
+            self.accounting_method = accounting_method
+        if period_year is not None:
+            self.period_year = period_year
+        if currency_conversion is not None:
+            self.currency_conversion = currency_conversion
+        if total_liabilities is not None:
+            self.total_liabilities = total_liabilities
+        if period_type is not None:
+            self.period_type = period_type
+        if currency_code is not None:
+            self.currency_code = currency_code
+        if ratio_targets is not None:
+            self.ratio_targets = ratio_targets
         if total_equity is not None:
             self.total_equity = total_equity
-
-    @property
-    def period_month(self):
-        """Gets the period_month of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-
-
-        :return: The period_month of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._period_month
-
-    @period_month.setter
-    def period_month(self, period_month):
-        """Sets the period_month of this BusinessFinancialHealthCheckRequest.
-
-
-        :param period_month: The period_month of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-        :type: int
-        """
-        if period_month is not None and period_month > 12:  # noqa: E501
-            raise ValueError("Invalid value for `period_month`, must be a value less than or equal to `12`")  # noqa: E501
-        if period_month is not None and period_month < 1:  # noqa: E501
-            raise ValueError("Invalid value for `period_month`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._period_month = period_month
-
-    @property
-    def period_quarter(self):
-        """Gets the period_quarter of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-
-
-        :return: The period_quarter of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._period_quarter
-
-    @period_quarter.setter
-    def period_quarter(self, period_quarter):
-        """Sets the period_quarter of this BusinessFinancialHealthCheckRequest.
-
-
-        :param period_quarter: The period_quarter of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-        :type: int
-        """
-        if period_quarter is not None and period_quarter > 4:  # noqa: E501
-            raise ValueError("Invalid value for `period_quarter`, must be a value less than or equal to `4`")  # noqa: E501
-        if period_quarter is not None and period_quarter < 1:  # noqa: E501
-            raise ValueError("Invalid value for `period_quarter`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._period_quarter = period_quarter
-
-    @property
-    def client_id(self):
-        """Gets the client_id of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-
-
-        :return: The client_id of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._client_id
-
-    @client_id.setter
-    def client_id(self, client_id):
-        """Sets the client_id of this BusinessFinancialHealthCheckRequest.
-
-
-        :param client_id: The client_id of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._client_id = client_id
-
-    @property
-    def total_liabilities(self):
-        """Gets the total_liabilities of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-
-
-        :return: The total_liabilities of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._total_liabilities
-
-    @total_liabilities.setter
-    def total_liabilities(self, total_liabilities):
-        """Sets the total_liabilities of this BusinessFinancialHealthCheckRequest.
-
-
-        :param total_liabilities: The total_liabilities of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-        :type: float
-        """
-        if total_liabilities is not None and total_liabilities < 0:  # noqa: E501
-            raise ValueError("Invalid value for `total_liabilities`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._total_liabilities = total_liabilities
-
-    @property
-    def total_revenue(self):
-        """Gets the total_revenue of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-
-
-        :return: The total_revenue of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._total_revenue
-
-    @total_revenue.setter
-    def total_revenue(self, total_revenue):
-        """Sets the total_revenue of this BusinessFinancialHealthCheckRequest.
-
-
-        :param total_revenue: The total_revenue of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-        :type: float
-        """
-        if total_revenue is not None and total_revenue < 0:  # noqa: E501
-            raise ValueError("Invalid value for `total_revenue`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._total_revenue = total_revenue
-
-    @property
-    def accounting_method(self):
-        """Gets the accounting_method of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-
-
-        :return: The accounting_method of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._accounting_method
-
-    @accounting_method.setter
-    def accounting_method(self, accounting_method):
-        """Sets the accounting_method of this BusinessFinancialHealthCheckRequest.
-
-
-        :param accounting_method: The accounting_method of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["accrual", "cash"]  # noqa: E501
-        if accounting_method not in allowed_values:
-            raise ValueError(
-                "Invalid value for `accounting_method` ({0}), must be one of {1}"  # noqa: E501
-                .format(accounting_method, allowed_values)
-            )
-
-        self._accounting_method = accounting_method
-
-    @property
-    def ratio_targets(self):
-        """Gets the ratio_targets of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-
-
-        :return: The ratio_targets of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-        :rtype: RatioTargets1
-        """
-        return self._ratio_targets
-
-    @ratio_targets.setter
-    def ratio_targets(self, ratio_targets):
-        """Sets the ratio_targets of this BusinessFinancialHealthCheckRequest.
-
-
-        :param ratio_targets: The ratio_targets of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-        :type: RatioTargets1
-        """
-
-        self._ratio_targets = ratio_targets
+        if period_quarter is not None:
+            self.period_quarter = period_quarter
 
     @property
     def period_length(self):
@@ -310,6 +145,167 @@ class BusinessFinancialHealthCheckRequest(object):
         self._period_length = period_length
 
     @property
+    def net_income(self):
+        """Gets the net_income of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+
+
+        :return: The net_income of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._net_income
+
+    @net_income.setter
+    def net_income(self, net_income):
+        """Sets the net_income of this BusinessFinancialHealthCheckRequest.
+
+
+        :param net_income: The net_income of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+        :type: float
+        """
+
+        self._net_income = net_income
+
+    @property
+    def period_month(self):
+        """Gets the period_month of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+
+
+        :return: The period_month of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._period_month
+
+    @period_month.setter
+    def period_month(self, period_month):
+        """Sets the period_month of this BusinessFinancialHealthCheckRequest.
+
+
+        :param period_month: The period_month of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+        :type: int
+        """
+        if period_month is not None and period_month > 12:  # noqa: E501
+            raise ValueError("Invalid value for `period_month`, must be a value less than or equal to `12`")  # noqa: E501
+        if period_month is not None and period_month < 1:  # noqa: E501
+            raise ValueError("Invalid value for `period_month`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._period_month = period_month
+
+    @property
+    def total_revenue(self):
+        """Gets the total_revenue of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+
+
+        :return: The total_revenue of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._total_revenue
+
+    @total_revenue.setter
+    def total_revenue(self, total_revenue):
+        """Sets the total_revenue of this BusinessFinancialHealthCheckRequest.
+
+
+        :param total_revenue: The total_revenue of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+        :type: float
+        """
+        if total_revenue is not None and total_revenue < 0:  # noqa: E501
+            raise ValueError("Invalid value for `total_revenue`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._total_revenue = total_revenue
+
+    @property
+    def total_assets(self):
+        """Gets the total_assets of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+
+
+        :return: The total_assets of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._total_assets
+
+    @total_assets.setter
+    def total_assets(self, total_assets):
+        """Sets the total_assets of this BusinessFinancialHealthCheckRequest.
+
+
+        :param total_assets: The total_assets of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+        :type: float
+        """
+        if total_assets is not None and total_assets < 0:  # noqa: E501
+            raise ValueError("Invalid value for `total_assets`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._total_assets = total_assets
+
+    @property
+    def client_id(self):
+        """Gets the client_id of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+
+
+        :return: The client_id of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_id
+
+    @client_id.setter
+    def client_id(self, client_id):
+        """Sets the client_id of this BusinessFinancialHealthCheckRequest.
+
+
+        :param client_id: The client_id of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._client_id = client_id
+
+    @property
+    def accounting_method(self):
+        """Gets the accounting_method of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+
+
+        :return: The accounting_method of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._accounting_method
+
+    @accounting_method.setter
+    def accounting_method(self, accounting_method):
+        """Sets the accounting_method of this BusinessFinancialHealthCheckRequest.
+
+
+        :param accounting_method: The accounting_method of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["accrual", "cash"]  # noqa: E501
+        if accounting_method not in allowed_values:
+            raise ValueError(
+                "Invalid value for `accounting_method` ({0}), must be one of {1}"  # noqa: E501
+                .format(accounting_method, allowed_values)
+            )
+
+        self._accounting_method = accounting_method
+
+    @property
+    def period_year(self):
+        """Gets the period_year of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+
+
+        :return: The period_year of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._period_year
+
+    @period_year.setter
+    def period_year(self, period_year):
+        """Sets the period_year of this BusinessFinancialHealthCheckRequest.
+
+
+        :param period_year: The period_year of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+        :type: int
+        """
+
+        self._period_year = period_year
+
+    @property
     def currency_conversion(self):
         """Gets the currency_conversion of this BusinessFinancialHealthCheckRequest.  # noqa: E501
 
@@ -329,6 +325,29 @@ class BusinessFinancialHealthCheckRequest(object):
         """
 
         self._currency_conversion = currency_conversion
+
+    @property
+    def total_liabilities(self):
+        """Gets the total_liabilities of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+
+
+        :return: The total_liabilities of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._total_liabilities
+
+    @total_liabilities.setter
+    def total_liabilities(self, total_liabilities):
+        """Sets the total_liabilities of this BusinessFinancialHealthCheckRequest.
+
+
+        :param total_liabilities: The total_liabilities of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+        :type: float
+        """
+        if total_liabilities is not None and total_liabilities < 0:  # noqa: E501
+            raise ValueError("Invalid value for `total_liabilities`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._total_liabilities = total_liabilities
 
     @property
     def period_type(self):
@@ -358,50 +377,6 @@ class BusinessFinancialHealthCheckRequest(object):
         self._period_type = period_type
 
     @property
-    def period_year(self):
-        """Gets the period_year of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-
-
-        :return: The period_year of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._period_year
-
-    @period_year.setter
-    def period_year(self, period_year):
-        """Sets the period_year of this BusinessFinancialHealthCheckRequest.
-
-
-        :param period_year: The period_year of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-        :type: int
-        """
-
-        self._period_year = period_year
-
-    @property
-    def total_assets(self):
-        """Gets the total_assets of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-
-
-        :return: The total_assets of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._total_assets
-
-    @total_assets.setter
-    def total_assets(self, total_assets):
-        """Sets the total_assets of this BusinessFinancialHealthCheckRequest.
-
-
-        :param total_assets: The total_assets of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-        :type: float
-        """
-        if total_assets is not None and total_assets < 0:  # noqa: E501
-            raise ValueError("Invalid value for `total_assets`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._total_assets = total_assets
-
-    @property
     def currency_code(self):
         """Gets the currency_code of this BusinessFinancialHealthCheckRequest.  # noqa: E501
 
@@ -423,25 +398,25 @@ class BusinessFinancialHealthCheckRequest(object):
         self._currency_code = currency_code
 
     @property
-    def net_income(self):
-        """Gets the net_income of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+    def ratio_targets(self):
+        """Gets the ratio_targets of this BusinessFinancialHealthCheckRequest.  # noqa: E501
 
 
-        :return: The net_income of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-        :rtype: float
+        :return: The ratio_targets of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+        :rtype: RatioTargets1
         """
-        return self._net_income
+        return self._ratio_targets
 
-    @net_income.setter
-    def net_income(self, net_income):
-        """Sets the net_income of this BusinessFinancialHealthCheckRequest.
+    @ratio_targets.setter
+    def ratio_targets(self, ratio_targets):
+        """Sets the ratio_targets of this BusinessFinancialHealthCheckRequest.
 
 
-        :param net_income: The net_income of this BusinessFinancialHealthCheckRequest.  # noqa: E501
-        :type: float
+        :param ratio_targets: The ratio_targets of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+        :type: RatioTargets1
         """
 
-        self._net_income = net_income
+        self._ratio_targets = ratio_targets
 
     @property
     def total_equity(self):
@@ -465,6 +440,31 @@ class BusinessFinancialHealthCheckRequest(object):
             raise ValueError("Invalid value for `total_equity`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._total_equity = total_equity
+
+    @property
+    def period_quarter(self):
+        """Gets the period_quarter of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+
+
+        :return: The period_quarter of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._period_quarter
+
+    @period_quarter.setter
+    def period_quarter(self, period_quarter):
+        """Sets the period_quarter of this BusinessFinancialHealthCheckRequest.
+
+
+        :param period_quarter: The period_quarter of this BusinessFinancialHealthCheckRequest.  # noqa: E501
+        :type: int
+        """
+        if period_quarter is not None and period_quarter > 4:  # noqa: E501
+            raise ValueError("Invalid value for `period_quarter`, must be a value less than or equal to `4`")  # noqa: E501
+        if period_quarter is not None and period_quarter < 1:  # noqa: E501
+            raise ValueError("Invalid value for `period_quarter`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._period_quarter = period_quarter
 
     def to_dict(self):
         """Returns the model properties as a dict"""

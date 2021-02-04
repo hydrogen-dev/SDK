@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fee** | **Number** | fee | [optional] 
+**investmentType** | **String** | investmentType | [optional] 
 **price** | **Number** | price | 
 **quantity** | **Number** | quantity | 
 **settleDate** | **Date** | settleDate | [optional] 

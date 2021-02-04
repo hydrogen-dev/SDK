@@ -31,129 +31,64 @@ class SavingsCalculatorRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'inflation_rate': 'float',
-        'deposit_schedule': 'list[SavingsDepositSchedule]',
-        'create_log': 'bool',
         'aggregation_account_ids': 'list[str]',
-        'initial_balance': 'float',
-        'horizon': 'int',
-        'horizon_frequency_interval': 'str',
         'tax_rate': 'float',
         'account_ids': 'list[str]',
+        'initial_balance': 'float',
+        'create_log': 'bool',
+        'inflation_rate': 'float',
+        'horizon': 'int',
+        'horizon_frequency_interval': 'str',
+        'deposit_schedule': 'list[SavingsDepositSchedule]',
         'return_schedule': 'list[float]'
     }
 
     attribute_map = {
-        'inflation_rate': 'inflation_rate',
-        'deposit_schedule': 'deposit_schedule',
-        'create_log': 'create_log',
         'aggregation_account_ids': 'aggregation_account_ids',
-        'initial_balance': 'initial_balance',
-        'horizon': 'horizon',
-        'horizon_frequency_interval': 'horizon_frequency_interval',
         'tax_rate': 'tax_rate',
         'account_ids': 'account_ids',
+        'initial_balance': 'initial_balance',
+        'create_log': 'create_log',
+        'inflation_rate': 'inflation_rate',
+        'horizon': 'horizon',
+        'horizon_frequency_interval': 'horizon_frequency_interval',
+        'deposit_schedule': 'deposit_schedule',
         'return_schedule': 'return_schedule'
     }
 
-    def __init__(self, inflation_rate=0.0, deposit_schedule=None, create_log=False, aggregation_account_ids=None, initial_balance=None, horizon=None, horizon_frequency_interval='year', tax_rate=0.0, account_ids=None, return_schedule=None):  # noqa: E501
+    def __init__(self, aggregation_account_ids=None, tax_rate=0.0, account_ids=None, initial_balance=None, create_log=False, inflation_rate=0.0, horizon=None, horizon_frequency_interval='year', deposit_schedule=None, return_schedule=None):  # noqa: E501
         """SavingsCalculatorRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._inflation_rate = None
-        self._deposit_schedule = None
-        self._create_log = None
         self._aggregation_account_ids = None
-        self._initial_balance = None
-        self._horizon = None
-        self._horizon_frequency_interval = None
         self._tax_rate = None
         self._account_ids = None
+        self._initial_balance = None
+        self._create_log = None
+        self._inflation_rate = None
+        self._horizon = None
+        self._horizon_frequency_interval = None
+        self._deposit_schedule = None
         self._return_schedule = None
         self.discriminator = None
 
-        if inflation_rate is not None:
-            self.inflation_rate = inflation_rate
-        if deposit_schedule is not None:
-            self.deposit_schedule = deposit_schedule
-        if create_log is not None:
-            self.create_log = create_log
         if aggregation_account_ids is not None:
             self.aggregation_account_ids = aggregation_account_ids
-        if initial_balance is not None:
-            self.initial_balance = initial_balance
-        self.horizon = horizon
-        if horizon_frequency_interval is not None:
-            self.horizon_frequency_interval = horizon_frequency_interval
         if tax_rate is not None:
             self.tax_rate = tax_rate
         if account_ids is not None:
             self.account_ids = account_ids
+        if initial_balance is not None:
+            self.initial_balance = initial_balance
+        if create_log is not None:
+            self.create_log = create_log
+        if inflation_rate is not None:
+            self.inflation_rate = inflation_rate
+        self.horizon = horizon
+        if horizon_frequency_interval is not None:
+            self.horizon_frequency_interval = horizon_frequency_interval
+        if deposit_schedule is not None:
+            self.deposit_schedule = deposit_schedule
         self.return_schedule = return_schedule
-
-    @property
-    def inflation_rate(self):
-        """Gets the inflation_rate of this SavingsCalculatorRequest.  # noqa: E501
-
-
-        :return: The inflation_rate of this SavingsCalculatorRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._inflation_rate
-
-    @inflation_rate.setter
-    def inflation_rate(self, inflation_rate):
-        """Sets the inflation_rate of this SavingsCalculatorRequest.
-
-
-        :param inflation_rate: The inflation_rate of this SavingsCalculatorRequest.  # noqa: E501
-        :type: float
-        """
-        if inflation_rate is not None and inflation_rate < -1:  # noqa: E501
-            raise ValueError("Invalid value for `inflation_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
-
-        self._inflation_rate = inflation_rate
-
-    @property
-    def deposit_schedule(self):
-        """Gets the deposit_schedule of this SavingsCalculatorRequest.  # noqa: E501
-
-
-        :return: The deposit_schedule of this SavingsCalculatorRequest.  # noqa: E501
-        :rtype: list[SavingsDepositSchedule]
-        """
-        return self._deposit_schedule
-
-    @deposit_schedule.setter
-    def deposit_schedule(self, deposit_schedule):
-        """Sets the deposit_schedule of this SavingsCalculatorRequest.
-
-
-        :param deposit_schedule: The deposit_schedule of this SavingsCalculatorRequest.  # noqa: E501
-        :type: list[SavingsDepositSchedule]
-        """
-
-        self._deposit_schedule = deposit_schedule
-
-    @property
-    def create_log(self):
-        """Gets the create_log of this SavingsCalculatorRequest.  # noqa: E501
-
-
-        :return: The create_log of this SavingsCalculatorRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._create_log
-
-    @create_log.setter
-    def create_log(self, create_log):
-        """Sets the create_log of this SavingsCalculatorRequest.
-
-
-        :param create_log: The create_log of this SavingsCalculatorRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._create_log = create_log
 
     @property
     def aggregation_account_ids(self):
@@ -177,6 +112,52 @@ class SavingsCalculatorRequest(object):
         self._aggregation_account_ids = aggregation_account_ids
 
     @property
+    def tax_rate(self):
+        """Gets the tax_rate of this SavingsCalculatorRequest.  # noqa: E501
+
+
+        :return: The tax_rate of this SavingsCalculatorRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._tax_rate
+
+    @tax_rate.setter
+    def tax_rate(self, tax_rate):
+        """Sets the tax_rate of this SavingsCalculatorRequest.
+
+
+        :param tax_rate: The tax_rate of this SavingsCalculatorRequest.  # noqa: E501
+        :type: float
+        """
+        if tax_rate is not None and tax_rate > 1:  # noqa: E501
+            raise ValueError("Invalid value for `tax_rate`, must be a value less than or equal to `1`")  # noqa: E501
+        if tax_rate is not None and tax_rate < 0:  # noqa: E501
+            raise ValueError("Invalid value for `tax_rate`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._tax_rate = tax_rate
+
+    @property
+    def account_ids(self):
+        """Gets the account_ids of this SavingsCalculatorRequest.  # noqa: E501
+
+
+        :return: The account_ids of this SavingsCalculatorRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._account_ids
+
+    @account_ids.setter
+    def account_ids(self, account_ids):
+        """Sets the account_ids of this SavingsCalculatorRequest.
+
+
+        :param account_ids: The account_ids of this SavingsCalculatorRequest.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._account_ids = account_ids
+
+    @property
     def initial_balance(self):
         """Gets the initial_balance of this SavingsCalculatorRequest.  # noqa: E501
 
@@ -198,6 +179,50 @@ class SavingsCalculatorRequest(object):
             raise ValueError("Invalid value for `initial_balance`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._initial_balance = initial_balance
+
+    @property
+    def create_log(self):
+        """Gets the create_log of this SavingsCalculatorRequest.  # noqa: E501
+
+
+        :return: The create_log of this SavingsCalculatorRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._create_log
+
+    @create_log.setter
+    def create_log(self, create_log):
+        """Sets the create_log of this SavingsCalculatorRequest.
+
+
+        :param create_log: The create_log of this SavingsCalculatorRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._create_log = create_log
+
+    @property
+    def inflation_rate(self):
+        """Gets the inflation_rate of this SavingsCalculatorRequest.  # noqa: E501
+
+
+        :return: The inflation_rate of this SavingsCalculatorRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._inflation_rate
+
+    @inflation_rate.setter
+    def inflation_rate(self, inflation_rate):
+        """Sets the inflation_rate of this SavingsCalculatorRequest.
+
+
+        :param inflation_rate: The inflation_rate of this SavingsCalculatorRequest.  # noqa: E501
+        :type: float
+        """
+        if inflation_rate is not None and inflation_rate < -1:  # noqa: E501
+            raise ValueError("Invalid value for `inflation_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
+
+        self._inflation_rate = inflation_rate
 
     @property
     def horizon(self):
@@ -252,50 +277,25 @@ class SavingsCalculatorRequest(object):
         self._horizon_frequency_interval = horizon_frequency_interval
 
     @property
-    def tax_rate(self):
-        """Gets the tax_rate of this SavingsCalculatorRequest.  # noqa: E501
+    def deposit_schedule(self):
+        """Gets the deposit_schedule of this SavingsCalculatorRequest.  # noqa: E501
 
 
-        :return: The tax_rate of this SavingsCalculatorRequest.  # noqa: E501
-        :rtype: float
+        :return: The deposit_schedule of this SavingsCalculatorRequest.  # noqa: E501
+        :rtype: list[SavingsDepositSchedule]
         """
-        return self._tax_rate
+        return self._deposit_schedule
 
-    @tax_rate.setter
-    def tax_rate(self, tax_rate):
-        """Sets the tax_rate of this SavingsCalculatorRequest.
-
-
-        :param tax_rate: The tax_rate of this SavingsCalculatorRequest.  # noqa: E501
-        :type: float
-        """
-        if tax_rate is not None and tax_rate > 1:  # noqa: E501
-            raise ValueError("Invalid value for `tax_rate`, must be a value less than or equal to `1`")  # noqa: E501
-        if tax_rate is not None and tax_rate < 0:  # noqa: E501
-            raise ValueError("Invalid value for `tax_rate`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._tax_rate = tax_rate
-
-    @property
-    def account_ids(self):
-        """Gets the account_ids of this SavingsCalculatorRequest.  # noqa: E501
+    @deposit_schedule.setter
+    def deposit_schedule(self, deposit_schedule):
+        """Sets the deposit_schedule of this SavingsCalculatorRequest.
 
 
-        :return: The account_ids of this SavingsCalculatorRequest.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._account_ids
-
-    @account_ids.setter
-    def account_ids(self, account_ids):
-        """Sets the account_ids of this SavingsCalculatorRequest.
-
-
-        :param account_ids: The account_ids of this SavingsCalculatorRequest.  # noqa: E501
-        :type: list[str]
+        :param deposit_schedule: The deposit_schedule of this SavingsCalculatorRequest.  # noqa: E501
+        :type: list[SavingsDepositSchedule]
         """
 
-        self._account_ids = account_ids
+        self._deposit_schedule = deposit_schedule
 
     @property
     def return_schedule(self):

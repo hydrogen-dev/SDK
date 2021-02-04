@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_id** | **string** | accountId | [optional] 
 **address** | [**\com\hydrogen\nucleus\Model\CardAddress[]**](CardAddress.md) |  | [optional] 
 **card_holder_name** | **string** | cardHolderName | 
 **card_image** | **string** | card_image | [optional] 
@@ -21,18 +20,16 @@ Name | Type | Description | Notes
 **id** | **string** |  | [optional] 
 **institution_name** | **string** | institutionName | 
 **is_active** | **bool** | is_active | [optional] 
+**is_pin_set** | **bool** | is_pin_set | [optional] 
 **is_primary** | **bool** | is_primary | [optional] 
 **is_reloadable** | **bool** | is_reloadable | [optional] 
 **mask** | **string** | mask | [optional] 
 **metadata** | **map[string,string]** |  | [optional] 
 **phone_number** | **string** | phoneNumber | [optional] 
-**portfolio_id** | **string** | portfolioId | [optional] 
+**portfolio_id** | **string** | portfolioId | 
 **prepaid_amount** | **float** | prepaidAmount | [optional] 
 **secondary_id** | **string** |  | [optional] 
-**spending_limit_atm** | **double** | spendingLimitAtm | [optional] 
-**spending_limit_purchase** | **double** | spendingLimitPurchase | [optional] 
 **status** | **string** | status | [optional] 
-**transaction_limit** | **int** | transactionLimit | [optional] 
 **update_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

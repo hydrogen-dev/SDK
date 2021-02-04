@@ -13,6 +13,7 @@
 
 package com.hydrogen.integration.api;
 
+import com.hydrogen.integration.model.KycRequestCO;
 import com.hydrogen.integration.ApiCallback;
 import com.hydrogen.integration.ApiClient;
 import com.hydrogen.integration.ApiException;
@@ -28,8 +29,6 @@ import java.io.IOException;
 
 
 import com.hydrogen.integration.model.KycResponseVo;
-import com.hydrogen.integration.model.KycRequestCO;
-
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -181,21 +180,21 @@ public class KycApi {
     }
     /**
      * Build call for getKYCStatusUsingGet
-     * @param nucleusClientId nucleus_client_id (required)
      * @param getLatest get_latest (optional, default to false)
      * @param kycType kyc_type (optional, default to all)
+     * @param nucleusBusinessId nucleus_business_id (optional)
+     * @param nucleusClientId nucleus_client_id (optional)
      * @param product product (optional, default to atom)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getKYCStatusUsingGetCall(UUID nucleusClientId, Boolean getLatest, String kycType, String product, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getKYCStatusUsingGetCall(Boolean getLatest, String kycType, UUID nucleusBusinessId, UUID nucleusClientId, String product, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/kyc_status/{nucleus_client_id}"
-            .replaceAll("\\{" + "nucleus_client_id" + "\\}", apiClient.escapeString(nucleusClientId.toString()));
+        String localVarPath = "/kyc_status";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -203,6 +202,10 @@ public class KycApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("get_latest", getLatest));
         if (kycType != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("kyc_type", kycType));
+        if (nucleusBusinessId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("nucleus_business_id", nucleusBusinessId));
+        if (nucleusClientId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("nucleus_client_id", nucleusClientId));
         if (product != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("product", product));
 
@@ -239,15 +242,10 @@ public class KycApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getKYCStatusUsingGetValidateBeforeCall(UUID nucleusClientId, Boolean getLatest, String kycType, String product, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'nucleusClientId' is set
-        if (nucleusClientId == null) {
-            throw new ApiException("Missing the required parameter 'nucleusClientId' when calling getKYCStatusUsingGet(Async)");
-        }
+    private com.squareup.okhttp.Call getKYCStatusUsingGetValidateBeforeCall(Boolean getLatest, String kycType, UUID nucleusBusinessId, UUID nucleusClientId, String product, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getKYCStatusUsingGetCall(nucleusClientId, getLatest, kycType, product, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getKYCStatusUsingGetCall(getLatest, kycType, nucleusBusinessId, nucleusClientId, product, progressListener, progressRequestListener);
         return call;
 
     }
@@ -255,30 +253,32 @@ public class KycApi {
     /**
      * Fetch kyc_status for the given nucleus_client_id
      * Fetch kyc_status for the given nucleus_client_id
-     * @param nucleusClientId nucleus_client_id (required)
      * @param getLatest get_latest (optional, default to false)
      * @param kycType kyc_type (optional, default to all)
+     * @param nucleusBusinessId nucleus_business_id (optional)
+     * @param nucleusClientId nucleus_client_id (optional)
      * @param product product (optional, default to atom)
      * @return List&lt;KycResponseVo&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<KycResponseVo> getKYCStatusUsingGet(UUID nucleusClientId, Boolean getLatest, String kycType, String product) throws ApiException {
-        ApiResponse<List<KycResponseVo>> resp = getKYCStatusUsingGetWithHttpInfo(nucleusClientId, getLatest, kycType, product);
+    public List<KycResponseVo> getKYCStatusUsingGet(Boolean getLatest, String kycType, UUID nucleusBusinessId, UUID nucleusClientId, String product) throws ApiException {
+        ApiResponse<List<KycResponseVo>> resp = getKYCStatusUsingGetWithHttpInfo(getLatest, kycType, nucleusBusinessId, nucleusClientId, product);
         return resp.getData();
     }
 
     /**
      * Fetch kyc_status for the given nucleus_client_id
      * Fetch kyc_status for the given nucleus_client_id
-     * @param nucleusClientId nucleus_client_id (required)
      * @param getLatest get_latest (optional, default to false)
      * @param kycType kyc_type (optional, default to all)
+     * @param nucleusBusinessId nucleus_business_id (optional)
+     * @param nucleusClientId nucleus_client_id (optional)
      * @param product product (optional, default to atom)
      * @return ApiResponse&lt;List&lt;KycResponseVo&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<KycResponseVo>> getKYCStatusUsingGetWithHttpInfo(UUID nucleusClientId, Boolean getLatest, String kycType, String product) throws ApiException {
-        com.squareup.okhttp.Call call = getKYCStatusUsingGetValidateBeforeCall(nucleusClientId, getLatest, kycType, product, null, null);
+    public ApiResponse<List<KycResponseVo>> getKYCStatusUsingGetWithHttpInfo(Boolean getLatest, String kycType, UUID nucleusBusinessId, UUID nucleusClientId, String product) throws ApiException {
+        com.squareup.okhttp.Call call = getKYCStatusUsingGetValidateBeforeCall(getLatest, kycType, nucleusBusinessId, nucleusClientId, product, null, null);
         Type localVarReturnType = new TypeToken<List<KycResponseVo>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -286,15 +286,16 @@ public class KycApi {
     /**
      * Fetch kyc_status for the given nucleus_client_id (asynchronously)
      * Fetch kyc_status for the given nucleus_client_id
-     * @param nucleusClientId nucleus_client_id (required)
      * @param getLatest get_latest (optional, default to false)
      * @param kycType kyc_type (optional, default to all)
+     * @param nucleusBusinessId nucleus_business_id (optional)
+     * @param nucleusClientId nucleus_client_id (optional)
      * @param product product (optional, default to atom)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getKYCStatusUsingGetAsync(UUID nucleusClientId, Boolean getLatest, String kycType, String product, final ApiCallback<List<KycResponseVo>> callback) throws ApiException {
+    public com.squareup.okhttp.Call getKYCStatusUsingGetAsync(Boolean getLatest, String kycType, UUID nucleusBusinessId, UUID nucleusClientId, String product, final ApiCallback<List<KycResponseVo>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -315,7 +316,7 @@ public class KycApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getKYCStatusUsingGetValidateBeforeCall(nucleusClientId, getLatest, kycType, product, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getKYCStatusUsingGetValidateBeforeCall(getLatest, kycType, nucleusBusinessId, nucleusClientId, product, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<KycResponseVo>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

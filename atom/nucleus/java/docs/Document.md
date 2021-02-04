@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accountId** | [**UUID**](UUID.md) | accountId |  [optional]
+**businessId** | [**UUID**](UUID.md) | businessId |  [optional]
 **clientId** | [**UUID**](UUID.md) | clientId |  [optional]
 **countryOfIssue** | **String** | country_of_issue |  [optional]
 **createDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
@@ -18,6 +19,7 @@ Name | Type | Description | Notes
 **expiryDate** | [**LocalDate**](LocalDate.md) | expiry_date |  [optional]
 **id** | [**UUID**](UUID.md) |  |  [optional]
 **isActive** | **Boolean** | is_active |  [optional]
+**isSensitive** | **Boolean** | is_sensitive |  [optional]
 **isVerified** | **Boolean** | is_verified |  [optional]
 **issueDate** | [**LocalDate**](LocalDate.md) | issue_date |  [optional]
 **metadata** | **Map&lt;String, String&gt;** | metadata |  [optional]
@@ -25,6 +27,3 @@ Name | Type | Description | Notes
 **stateOfIssue** | **String** | state_of_issue |  [optional]
 **updateDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **urlPath** | **String** | url_path |  [optional]
-
-
-

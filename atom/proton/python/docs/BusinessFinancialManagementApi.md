@@ -1,4 +1,4 @@
-# swagger_client.BusinessFinancialManagementApi
+# proton_api.BusinessFinancialManagementApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/proton/v1*
 
@@ -42,7 +42,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.BusinessFinancialManagementApi(proton_api.ApiClient(configuration))
@@ -109,7 +108,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 
-
 # create an instance of the API class
 api_instance = proton_api.BusinessFinancialManagementApi(proton_api.ApiClient(configuration))
 cash_analysis_request = proton_api.CashAnalysisRequest() # CashAnalysisRequest | Request payload for Cash Analysis
@@ -174,7 +172,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.BusinessFinancialManagementApi(proton_api.ApiClient(configuration))
@@ -241,7 +238,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 
-
 # create an instance of the API class
 api_instance = proton_api.BusinessFinancialManagementApi(proton_api.ApiClient(configuration))
 financial_statement_analysis_request = proton_api.FinancialStatementAnalysisRequest() # FinancialStatementAnalysisRequest | Request payload for Financial Statement Analysis
@@ -306,7 +302,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.BusinessFinancialManagementApi(proton_api.ApiClient(configuration))

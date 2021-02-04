@@ -23,7 +23,6 @@ Create a score for a client, account, goal, portfolio, allocation, model, benchm
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ScoreApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -40,8 +39,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ScoreApi apiInstance = new ScoreApi();
 Score score = new Score(); // Score | score
 try {
@@ -84,7 +81,6 @@ Permanently delete a score
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ScoreApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -101,8 +97,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ScoreApi apiInstance = new ScoreApi();
 UUID scoreId = new UUID(); // UUID | UUID score_id
 try {
@@ -144,7 +138,6 @@ Get information for all scores stored for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ScoreApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -161,8 +154,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ScoreApi apiInstance = new ScoreApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -213,7 +204,6 @@ Retrieve the information for a specific score associated with a client, account,
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ScoreApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -230,8 +220,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ScoreApi apiInstance = new ScoreApi();
 UUID scoreId = new UUID(); // UUID | UUID score_id
 try {
@@ -274,7 +262,6 @@ Update the information for a score.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ScoreApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -291,10 +278,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ScoreApi apiInstance = new ScoreApi();
-Score score = new Score(); // Score | score
+Object score = null; // Object | score
 UUID scoreId = new UUID(); // UUID | UUID score_id
 try {
     Score result = apiInstance.updateScoreUsingPut(score, scoreId);
@@ -309,7 +294,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **score** | [**Score**](Score.md)| score |
+ **score** | **Object**| score |
  **scoreId** | [**UUID**](.md)| UUID score_id |
 
 ### Return type

@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,11 +30,41 @@ import org.threeten.bp.LocalDate;
 /**
  * RecurringTransactionAnalysisRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class RecurringTransactionAnalysisRequest {
+  @SerializedName("aggregation_account_ids")
+  private List<UUID> aggregationAccountIds = null;
+
+  @SerializedName("end_date")
+  private LocalDate endDate = null;
+
+  @SerializedName("client_id")
+  private UUID clientId = null;
+
+  @SerializedName("account_ids")
+  private List<UUID> accountIds = null;
+
+  @SerializedName("interval_deviation_threshold")
+  private Integer intervalDeviationThreshold = 3;
+
+  @SerializedName("analyze_transactions")
+  private Boolean analyzeTransactions = true;
+
+  @SerializedName("currency_conversion")
+  private String currencyConversion = null;
+
+  @SerializedName("start_date")
+  private LocalDate startDate = null;
+
+  @SerializedName("currency_code")
+  private String currencyCode = null;
+
+  @SerializedName("show_recurring_details")
+  private Boolean showRecurringDetails = false;
+
   /**
    * Gets or Sets scope
    */
@@ -91,165 +120,6 @@ public class RecurringTransactionAnalysisRequest {
   @SerializedName("amount_deviation_threshold")
   private Float amountDeviationThreshold = 0.05f;
 
-  @SerializedName("analyze_transactions")
-  private Boolean analyzeTransactions = true;
-
-  @SerializedName("interval_deviation_threshold")
-  private Integer intervalDeviationThreshold = 3;
-
-  @SerializedName("client_id")
-  private UUID clientId = null;
-
-  @SerializedName("currency_conversion")
-  private String currencyConversion = null;
-
-  @SerializedName("start_date")
-  private LocalDate startDate = null;
-
-  @SerializedName("aggregation_account_ids")
-  private List<UUID> aggregationAccountIds = null;
-
-  @SerializedName("end_date")
-  private LocalDate endDate = null;
-
-  @SerializedName("show_recurring_details")
-  private Boolean showRecurringDetails = false;
-
-  @SerializedName("currency_code")
-  private String currencyCode = null;
-
-  @SerializedName("account_ids")
-  private List<UUID> accountIds = null;
-
-  public RecurringTransactionAnalysisRequest scope(ScopeEnum scope) {
-    this.scope = scope;
-    return this;
-  }
-
-   /**
-   * Get scope
-   * @return scope
-  **/
-  @ApiModelProperty(value = "")
-  public ScopeEnum getScope() {
-    return scope;
-  }
-
-  public void setScope(ScopeEnum scope) {
-    this.scope = scope;
-  }
-
-  public RecurringTransactionAnalysisRequest amountDeviationThreshold(Float amountDeviationThreshold) {
-    this.amountDeviationThreshold = amountDeviationThreshold;
-    return this;
-  }
-
-   /**
-   * Get amountDeviationThreshold
-   * minimum: 0
-   * maximum: 1
-   * @return amountDeviationThreshold
-  **/
-  @ApiModelProperty(value = "")
-  public Float getAmountDeviationThreshold() {
-    return amountDeviationThreshold;
-  }
-
-  public void setAmountDeviationThreshold(Float amountDeviationThreshold) {
-    this.amountDeviationThreshold = amountDeviationThreshold;
-  }
-
-  public RecurringTransactionAnalysisRequest analyzeTransactions(Boolean analyzeTransactions) {
-    this.analyzeTransactions = analyzeTransactions;
-    return this;
-  }
-
-   /**
-   * Get analyzeTransactions
-   * @return analyzeTransactions
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isAnalyzeTransactions() {
-    return analyzeTransactions;
-  }
-
-  public void setAnalyzeTransactions(Boolean analyzeTransactions) {
-    this.analyzeTransactions = analyzeTransactions;
-  }
-
-  public RecurringTransactionAnalysisRequest intervalDeviationThreshold(Integer intervalDeviationThreshold) {
-    this.intervalDeviationThreshold = intervalDeviationThreshold;
-    return this;
-  }
-
-   /**
-   * Get intervalDeviationThreshold
-   * minimum: 0
-   * @return intervalDeviationThreshold
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getIntervalDeviationThreshold() {
-    return intervalDeviationThreshold;
-  }
-
-  public void setIntervalDeviationThreshold(Integer intervalDeviationThreshold) {
-    this.intervalDeviationThreshold = intervalDeviationThreshold;
-  }
-
-  public RecurringTransactionAnalysisRequest clientId(UUID clientId) {
-    this.clientId = clientId;
-    return this;
-  }
-
-   /**
-   * Get clientId
-   * @return clientId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getClientId() {
-    return clientId;
-  }
-
-  public void setClientId(UUID clientId) {
-    this.clientId = clientId;
-  }
-
-  public RecurringTransactionAnalysisRequest currencyConversion(String currencyConversion) {
-    this.currencyConversion = currencyConversion;
-    return this;
-  }
-
-   /**
-   * Get currencyConversion
-   * @return currencyConversion
-  **/
-  @ApiModelProperty(value = "")
-  public String getCurrencyConversion() {
-    return currencyConversion;
-  }
-
-  public void setCurrencyConversion(String currencyConversion) {
-    this.currencyConversion = currencyConversion;
-  }
-
-  public RecurringTransactionAnalysisRequest startDate(LocalDate startDate) {
-    this.startDate = startDate;
-    return this;
-  }
-
-   /**
-   * Get startDate
-   * @return startDate
-  **/
-  @ApiModelProperty(value = "")
-  public LocalDate getStartDate() {
-    return startDate;
-  }
-
-  public void setStartDate(LocalDate startDate) {
-    this.startDate = startDate;
-  }
-
   public RecurringTransactionAnalysisRequest aggregationAccountIds(List<UUID> aggregationAccountIds) {
     this.aggregationAccountIds = aggregationAccountIds;
     return this;
@@ -294,40 +164,22 @@ public class RecurringTransactionAnalysisRequest {
     this.endDate = endDate;
   }
 
-  public RecurringTransactionAnalysisRequest showRecurringDetails(Boolean showRecurringDetails) {
-    this.showRecurringDetails = showRecurringDetails;
+  public RecurringTransactionAnalysisRequest clientId(UUID clientId) {
+    this.clientId = clientId;
     return this;
   }
 
    /**
-   * Get showRecurringDetails
-   * @return showRecurringDetails
+   * Get clientId
+   * @return clientId
   **/
   @ApiModelProperty(value = "")
-  public Boolean isShowRecurringDetails() {
-    return showRecurringDetails;
+  public UUID getClientId() {
+    return clientId;
   }
 
-  public void setShowRecurringDetails(Boolean showRecurringDetails) {
-    this.showRecurringDetails = showRecurringDetails;
-  }
-
-  public RecurringTransactionAnalysisRequest currencyCode(String currencyCode) {
-    this.currencyCode = currencyCode;
-    return this;
-  }
-
-   /**
-   * Get currencyCode
-   * @return currencyCode
-  **/
-  @ApiModelProperty(value = "")
-  public String getCurrencyCode() {
-    return currencyCode;
-  }
-
-  public void setCurrencyCode(String currencyCode) {
-    this.currencyCode = currencyCode;
+  public void setClientId(UUID clientId) {
+    this.clientId = clientId;
   }
 
   public RecurringTransactionAnalysisRequest accountIds(List<UUID> accountIds) {
@@ -356,6 +208,153 @@ public class RecurringTransactionAnalysisRequest {
     this.accountIds = accountIds;
   }
 
+  public RecurringTransactionAnalysisRequest intervalDeviationThreshold(Integer intervalDeviationThreshold) {
+    this.intervalDeviationThreshold = intervalDeviationThreshold;
+    return this;
+  }
+
+   /**
+   * Get intervalDeviationThreshold
+   * minimum: 0
+   * @return intervalDeviationThreshold
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getIntervalDeviationThreshold() {
+    return intervalDeviationThreshold;
+  }
+
+  public void setIntervalDeviationThreshold(Integer intervalDeviationThreshold) {
+    this.intervalDeviationThreshold = intervalDeviationThreshold;
+  }
+
+  public RecurringTransactionAnalysisRequest analyzeTransactions(Boolean analyzeTransactions) {
+    this.analyzeTransactions = analyzeTransactions;
+    return this;
+  }
+
+   /**
+   * Get analyzeTransactions
+   * @return analyzeTransactions
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isAnalyzeTransactions() {
+    return analyzeTransactions;
+  }
+
+  public void setAnalyzeTransactions(Boolean analyzeTransactions) {
+    this.analyzeTransactions = analyzeTransactions;
+  }
+
+  public RecurringTransactionAnalysisRequest currencyConversion(String currencyConversion) {
+    this.currencyConversion = currencyConversion;
+    return this;
+  }
+
+   /**
+   * Get currencyConversion
+   * @return currencyConversion
+  **/
+  @ApiModelProperty(value = "")
+  public String getCurrencyConversion() {
+    return currencyConversion;
+  }
+
+  public void setCurrencyConversion(String currencyConversion) {
+    this.currencyConversion = currencyConversion;
+  }
+
+  public RecurringTransactionAnalysisRequest startDate(LocalDate startDate) {
+    this.startDate = startDate;
+    return this;
+  }
+
+   /**
+   * Get startDate
+   * @return startDate
+  **/
+  @ApiModelProperty(value = "")
+  public LocalDate getStartDate() {
+    return startDate;
+  }
+
+  public void setStartDate(LocalDate startDate) {
+    this.startDate = startDate;
+  }
+
+  public RecurringTransactionAnalysisRequest currencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+    return this;
+  }
+
+   /**
+   * Get currencyCode
+   * @return currencyCode
+  **/
+  @ApiModelProperty(value = "")
+  public String getCurrencyCode() {
+    return currencyCode;
+  }
+
+  public void setCurrencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+  }
+
+  public RecurringTransactionAnalysisRequest showRecurringDetails(Boolean showRecurringDetails) {
+    this.showRecurringDetails = showRecurringDetails;
+    return this;
+  }
+
+   /**
+   * Get showRecurringDetails
+   * @return showRecurringDetails
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isShowRecurringDetails() {
+    return showRecurringDetails;
+  }
+
+  public void setShowRecurringDetails(Boolean showRecurringDetails) {
+    this.showRecurringDetails = showRecurringDetails;
+  }
+
+  public RecurringTransactionAnalysisRequest scope(ScopeEnum scope) {
+    this.scope = scope;
+    return this;
+  }
+
+   /**
+   * Get scope
+   * @return scope
+  **/
+  @ApiModelProperty(value = "")
+  public ScopeEnum getScope() {
+    return scope;
+  }
+
+  public void setScope(ScopeEnum scope) {
+    this.scope = scope;
+  }
+
+  public RecurringTransactionAnalysisRequest amountDeviationThreshold(Float amountDeviationThreshold) {
+    this.amountDeviationThreshold = amountDeviationThreshold;
+    return this;
+  }
+
+   /**
+   * Get amountDeviationThreshold
+   * minimum: 0
+   * maximum: 1
+   * @return amountDeviationThreshold
+  **/
+  @ApiModelProperty(value = "")
+  public Float getAmountDeviationThreshold() {
+    return amountDeviationThreshold;
+  }
+
+  public void setAmountDeviationThreshold(Float amountDeviationThreshold) {
+    this.amountDeviationThreshold = amountDeviationThreshold;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -366,23 +365,23 @@ public class RecurringTransactionAnalysisRequest {
       return false;
     }
     RecurringTransactionAnalysisRequest recurringTransactionAnalysisRequest = (RecurringTransactionAnalysisRequest) o;
-    return Objects.equals(this.scope, recurringTransactionAnalysisRequest.scope) &&
-        Objects.equals(this.amountDeviationThreshold, recurringTransactionAnalysisRequest.amountDeviationThreshold) &&
-        Objects.equals(this.analyzeTransactions, recurringTransactionAnalysisRequest.analyzeTransactions) &&
-        Objects.equals(this.intervalDeviationThreshold, recurringTransactionAnalysisRequest.intervalDeviationThreshold) &&
+    return Objects.equals(this.aggregationAccountIds, recurringTransactionAnalysisRequest.aggregationAccountIds) &&
+        Objects.equals(this.endDate, recurringTransactionAnalysisRequest.endDate) &&
         Objects.equals(this.clientId, recurringTransactionAnalysisRequest.clientId) &&
+        Objects.equals(this.accountIds, recurringTransactionAnalysisRequest.accountIds) &&
+        Objects.equals(this.intervalDeviationThreshold, recurringTransactionAnalysisRequest.intervalDeviationThreshold) &&
+        Objects.equals(this.analyzeTransactions, recurringTransactionAnalysisRequest.analyzeTransactions) &&
         Objects.equals(this.currencyConversion, recurringTransactionAnalysisRequest.currencyConversion) &&
         Objects.equals(this.startDate, recurringTransactionAnalysisRequest.startDate) &&
-        Objects.equals(this.aggregationAccountIds, recurringTransactionAnalysisRequest.aggregationAccountIds) &&
-        Objects.equals(this.endDate, recurringTransactionAnalysisRequest.endDate) &&
-        Objects.equals(this.showRecurringDetails, recurringTransactionAnalysisRequest.showRecurringDetails) &&
         Objects.equals(this.currencyCode, recurringTransactionAnalysisRequest.currencyCode) &&
-        Objects.equals(this.accountIds, recurringTransactionAnalysisRequest.accountIds);
+        Objects.equals(this.showRecurringDetails, recurringTransactionAnalysisRequest.showRecurringDetails) &&
+        Objects.equals(this.scope, recurringTransactionAnalysisRequest.scope) &&
+        Objects.equals(this.amountDeviationThreshold, recurringTransactionAnalysisRequest.amountDeviationThreshold);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(scope, amountDeviationThreshold, analyzeTransactions, intervalDeviationThreshold, clientId, currencyConversion, startDate, aggregationAccountIds, endDate, showRecurringDetails, currencyCode, accountIds);
+    return Objects.hash(aggregationAccountIds, endDate, clientId, accountIds, intervalDeviationThreshold, analyzeTransactions, currencyConversion, startDate, currencyCode, showRecurringDetails, scope, amountDeviationThreshold);
   }
 
 
@@ -391,18 +390,18 @@ public class RecurringTransactionAnalysisRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class RecurringTransactionAnalysisRequest {\n");
     
-    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
-    sb.append("    amountDeviationThreshold: ").append(toIndentedString(amountDeviationThreshold)).append("\n");
-    sb.append("    analyzeTransactions: ").append(toIndentedString(analyzeTransactions)).append("\n");
-    sb.append("    intervalDeviationThreshold: ").append(toIndentedString(intervalDeviationThreshold)).append("\n");
-    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
-    sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
-    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    aggregationAccountIds: ").append(toIndentedString(aggregationAccountIds)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
-    sb.append("    showRecurringDetails: ").append(toIndentedString(showRecurringDetails)).append("\n");
-    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
+    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
     sb.append("    accountIds: ").append(toIndentedString(accountIds)).append("\n");
+    sb.append("    intervalDeviationThreshold: ").append(toIndentedString(intervalDeviationThreshold)).append("\n");
+    sb.append("    analyzeTransactions: ").append(toIndentedString(analyzeTransactions)).append("\n");
+    sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
+    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
+    sb.append("    showRecurringDetails: ").append(toIndentedString(showRecurringDetails)).append("\n");
+    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
+    sb.append("    amountDeviationThreshold: ").append(toIndentedString(amountDeviationThreshold)).append("\n");
     sb.append("}");
     return sb.toString();
   }

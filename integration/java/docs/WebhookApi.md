@@ -1,6 +1,6 @@
 # WebhookApi
 
-All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1/*
+All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -40,7 +40,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 WebhookApi apiInstance = new WebhookApi();
 Webhook webhookRequest = new Webhook(); // Webhook | webhookRequest
 try {
@@ -77,7 +76,7 @@ Name | Type | Description  | Notes
 
 Delete a webhook
 
-Permanently delete a webhook for your firm. The webhook_id must be provided.
+Permanently delete a webhook for your business. The webhook_id must be provided.
 
 ### Example
 ```java
@@ -100,7 +99,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 WebhookApi apiInstance = new WebhookApi();
 UUID webhookId = new UUID(); // UUID | UUID webhook_id
 try {
@@ -136,7 +134,7 @@ null (empty response body)
 
 List all webhooks
 
-Get information for all webhooks defined for your firm.
+Get information for all webhooks defined for your business.
 
 ### Example
 ```java
@@ -159,7 +157,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 WebhookApi apiInstance = new WebhookApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -227,7 +224,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 WebhookApi apiInstance = new WebhookApi();
 UUID webhookId = new UUID(); // UUID | UUID webhook_id
 try {
@@ -264,7 +260,7 @@ Name | Type | Description  | Notes
 
 Update a webhook
 
-Update a webhook for your firm. The webhook_id must be provided
+Update a webhook for your business. The webhook_id must be provided
 
 ### Example
 ```java
@@ -287,9 +283,8 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 WebhookApi apiInstance = new WebhookApi();
-Webhook webhook = new Webhook(); // Webhook | webhook
+Object webhook = null; // Object | webhook
 UUID webhookId = new UUID(); // UUID | UUID webhook_id
 try {
     Webhook result = apiInstance.updateWebhookUsingPut(webhook, webhookId);
@@ -304,7 +299,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook** | [**Webhook**](Webhook.md)| webhook |
+ **webhook** | **Object**| webhook |
  **webhookId** | [**UUID**](.md)| UUID webhook_id |
 
 ### Return type

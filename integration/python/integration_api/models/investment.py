@@ -32,6 +32,7 @@ class Investment(object):
     """
     swagger_types = {
         'fee': 'float',
+        'investment_type': 'str',
         'price': 'float',
         'quantity': 'float',
         'settle_date': 'datetime',
@@ -43,6 +44,7 @@ class Investment(object):
 
     attribute_map = {
         'fee': 'fee',
+        'investment_type': 'investment_type',
         'price': 'price',
         'quantity': 'quantity',
         'settle_date': 'settle_date',
@@ -52,10 +54,11 @@ class Investment(object):
         'value': 'value'
     }
 
-    def __init__(self, fee=None, price=None, quantity=None, settle_date=None, ticker=None, ticker_name=None, trade_signal=None, value=None):  # noqa: E501
+    def __init__(self, fee=None, investment_type=None, price=None, quantity=None, settle_date=None, ticker=None, ticker_name=None, trade_signal=None, value=None):  # noqa: E501
         """Investment - a model defined in Swagger"""  # noqa: E501
 
         self._fee = None
+        self._investment_type = None
         self._price = None
         self._quantity = None
         self._settle_date = None
@@ -67,6 +70,8 @@ class Investment(object):
 
         if fee is not None:
             self.fee = fee
+        if investment_type is not None:
+            self.investment_type = investment_type
         self.price = price
         self.quantity = quantity
         if settle_date is not None:
@@ -100,6 +105,29 @@ class Investment(object):
         """
 
         self._fee = fee
+
+    @property
+    def investment_type(self):
+        """Gets the investment_type of this Investment.  # noqa: E501
+
+        investmentType  # noqa: E501
+
+        :return: The investment_type of this Investment.  # noqa: E501
+        :rtype: str
+        """
+        return self._investment_type
+
+    @investment_type.setter
+    def investment_type(self, investment_type):
+        """Sets the investment_type of this Investment.
+
+        investmentType  # noqa: E501
+
+        :param investment_type: The investment_type of this Investment.  # noqa: E501
+        :type: str
+        """
+
+        self._investment_type = investment_type
 
     @property
     def price(self):

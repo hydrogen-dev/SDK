@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.IOException;
@@ -32,38 +31,11 @@ import org.threeten.bp.LocalDate;
 /**
  * BudgetDetails
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class BudgetDetails {
-  @SerializedName("aggregation_accounts")
-  private List<BudgetAggregationAccount> aggregationAccounts = null;
-
-  @SerializedName("total_value")
-  private Float totalValue = null;
-
-  @SerializedName("client_id")
-  private UUID clientId = null;
-
-  @SerializedName("start_date")
-  private LocalDate startDate = null;
-
-  @SerializedName("budget")
-  private List<BudgetComponent> budget = null;
-
-  @SerializedName("end_date")
-  private LocalDate endDate = null;
-
-  @SerializedName("currency_code")
-  private String currencyCode = null;
-
-  @SerializedName("frequency")
-  private Integer frequency = 1;
-
-  @SerializedName("account_id")
-  private UUID accountId = null;
-
   /**
    * Gets or Sets frequencyUnit
    */
@@ -122,49 +94,67 @@ public class BudgetDetails {
   @SerializedName("frequency_unit")
   private FrequencyUnitEnum frequencyUnit = null;
 
-  public BudgetDetails aggregationAccounts(List<BudgetAggregationAccount> aggregationAccounts) {
-    this.aggregationAccounts = aggregationAccounts;
-    return this;
-  }
+  @SerializedName("end_date")
+  private LocalDate endDate = null;
 
-  public BudgetDetails addAggregationAccountsItem(BudgetAggregationAccount aggregationAccountsItem) {
-    if (this.aggregationAccounts == null) {
-      this.aggregationAccounts = new ArrayList<BudgetAggregationAccount>();
-    }
-    this.aggregationAccounts.add(aggregationAccountsItem);
+  @SerializedName("client_id")
+  private UUID clientId = null;
+
+  @SerializedName("budget")
+  private List<BudgetComponent> budget = null;
+
+  @SerializedName("total_value")
+  private Float totalValue = null;
+
+  @SerializedName("account_id")
+  private UUID accountId = null;
+
+  @SerializedName("aggregation_accounts")
+  private List<BudgetAggregationAccount> aggregationAccounts = null;
+
+  @SerializedName("currency_code")
+  private String currencyCode = null;
+
+  @SerializedName("frequency")
+  private Integer frequency = 1;
+
+  @SerializedName("start_date")
+  private LocalDate startDate = null;
+
+  public BudgetDetails frequencyUnit(FrequencyUnitEnum frequencyUnit) {
+    this.frequencyUnit = frequencyUnit;
     return this;
   }
 
    /**
-   * Get aggregationAccounts
-   * @return aggregationAccounts
+   * Get frequencyUnit
+   * @return frequencyUnit
   **/
-  @ApiModelProperty(value = "")
-  public List<BudgetAggregationAccount> getAggregationAccounts() {
-    return aggregationAccounts;
+  @ApiModelProperty(required = true, value = "")
+  public FrequencyUnitEnum getFrequencyUnit() {
+    return frequencyUnit;
   }
 
-  public void setAggregationAccounts(List<BudgetAggregationAccount> aggregationAccounts) {
-    this.aggregationAccounts = aggregationAccounts;
+  public void setFrequencyUnit(FrequencyUnitEnum frequencyUnit) {
+    this.frequencyUnit = frequencyUnit;
   }
 
-  public BudgetDetails totalValue(Float totalValue) {
-    this.totalValue = totalValue;
+  public BudgetDetails endDate(LocalDate endDate) {
+    this.endDate = endDate;
     return this;
   }
 
    /**
-   * Get totalValue
-   * minimum: 0
-   * @return totalValue
+   * Get endDate
+   * @return endDate
   **/
   @ApiModelProperty(value = "")
-  public Float getTotalValue() {
-    return totalValue;
+  public LocalDate getEndDate() {
+    return endDate;
   }
 
-  public void setTotalValue(Float totalValue) {
-    this.totalValue = totalValue;
+  public void setEndDate(LocalDate endDate) {
+    this.endDate = endDate;
   }
 
   public BudgetDetails clientId(UUID clientId) {
@@ -183,24 +173,6 @@ public class BudgetDetails {
 
   public void setClientId(UUID clientId) {
     this.clientId = clientId;
-  }
-
-  public BudgetDetails startDate(LocalDate startDate) {
-    this.startDate = startDate;
-    return this;
-  }
-
-   /**
-   * Get startDate
-   * @return startDate
-  **/
-  @ApiModelProperty(value = "")
-  public LocalDate getStartDate() {
-    return startDate;
-  }
-
-  public void setStartDate(LocalDate startDate) {
-    this.startDate = startDate;
   }
 
   public BudgetDetails budget(List<BudgetComponent> budget) {
@@ -229,22 +201,67 @@ public class BudgetDetails {
     this.budget = budget;
   }
 
-  public BudgetDetails endDate(LocalDate endDate) {
-    this.endDate = endDate;
+  public BudgetDetails totalValue(Float totalValue) {
+    this.totalValue = totalValue;
     return this;
   }
 
    /**
-   * Get endDate
-   * @return endDate
+   * Get totalValue
+   * minimum: 0
+   * @return totalValue
   **/
   @ApiModelProperty(value = "")
-  public LocalDate getEndDate() {
-    return endDate;
+  public Float getTotalValue() {
+    return totalValue;
   }
 
-  public void setEndDate(LocalDate endDate) {
-    this.endDate = endDate;
+  public void setTotalValue(Float totalValue) {
+    this.totalValue = totalValue;
+  }
+
+  public BudgetDetails accountId(UUID accountId) {
+    this.accountId = accountId;
+    return this;
+  }
+
+   /**
+   * Get accountId
+   * @return accountId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getAccountId() {
+    return accountId;
+  }
+
+  public void setAccountId(UUID accountId) {
+    this.accountId = accountId;
+  }
+
+  public BudgetDetails aggregationAccounts(List<BudgetAggregationAccount> aggregationAccounts) {
+    this.aggregationAccounts = aggregationAccounts;
+    return this;
+  }
+
+  public BudgetDetails addAggregationAccountsItem(BudgetAggregationAccount aggregationAccountsItem) {
+    if (this.aggregationAccounts == null) {
+      this.aggregationAccounts = new ArrayList<BudgetAggregationAccount>();
+    }
+    this.aggregationAccounts.add(aggregationAccountsItem);
+    return this;
+  }
+
+   /**
+   * Get aggregationAccounts
+   * @return aggregationAccounts
+  **/
+  @ApiModelProperty(value = "")
+  public List<BudgetAggregationAccount> getAggregationAccounts() {
+    return aggregationAccounts;
+  }
+
+  public void setAggregationAccounts(List<BudgetAggregationAccount> aggregationAccounts) {
+    this.aggregationAccounts = aggregationAccounts;
   }
 
   public BudgetDetails currencyCode(String currencyCode) {
@@ -284,40 +301,22 @@ public class BudgetDetails {
     this.frequency = frequency;
   }
 
-  public BudgetDetails accountId(UUID accountId) {
-    this.accountId = accountId;
+  public BudgetDetails startDate(LocalDate startDate) {
+    this.startDate = startDate;
     return this;
   }
 
    /**
-   * Get accountId
-   * @return accountId
+   * Get startDate
+   * @return startDate
   **/
   @ApiModelProperty(value = "")
-  public UUID getAccountId() {
-    return accountId;
+  public LocalDate getStartDate() {
+    return startDate;
   }
 
-  public void setAccountId(UUID accountId) {
-    this.accountId = accountId;
-  }
-
-  public BudgetDetails frequencyUnit(FrequencyUnitEnum frequencyUnit) {
-    this.frequencyUnit = frequencyUnit;
-    return this;
-  }
-
-   /**
-   * Get frequencyUnit
-   * @return frequencyUnit
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public FrequencyUnitEnum getFrequencyUnit() {
-    return frequencyUnit;
-  }
-
-  public void setFrequencyUnit(FrequencyUnitEnum frequencyUnit) {
-    this.frequencyUnit = frequencyUnit;
+  public void setStartDate(LocalDate startDate) {
+    this.startDate = startDate;
   }
 
 
@@ -330,21 +329,21 @@ public class BudgetDetails {
       return false;
     }
     BudgetDetails budgetDetails = (BudgetDetails) o;
-    return Objects.equals(this.aggregationAccounts, budgetDetails.aggregationAccounts) &&
-        Objects.equals(this.totalValue, budgetDetails.totalValue) &&
-        Objects.equals(this.clientId, budgetDetails.clientId) &&
-        Objects.equals(this.startDate, budgetDetails.startDate) &&
-        Objects.equals(this.budget, budgetDetails.budget) &&
+    return Objects.equals(this.frequencyUnit, budgetDetails.frequencyUnit) &&
         Objects.equals(this.endDate, budgetDetails.endDate) &&
+        Objects.equals(this.clientId, budgetDetails.clientId) &&
+        Objects.equals(this.budget, budgetDetails.budget) &&
+        Objects.equals(this.totalValue, budgetDetails.totalValue) &&
+        Objects.equals(this.accountId, budgetDetails.accountId) &&
+        Objects.equals(this.aggregationAccounts, budgetDetails.aggregationAccounts) &&
         Objects.equals(this.currencyCode, budgetDetails.currencyCode) &&
         Objects.equals(this.frequency, budgetDetails.frequency) &&
-        Objects.equals(this.accountId, budgetDetails.accountId) &&
-        Objects.equals(this.frequencyUnit, budgetDetails.frequencyUnit);
+        Objects.equals(this.startDate, budgetDetails.startDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(aggregationAccounts, totalValue, clientId, startDate, budget, endDate, currencyCode, frequency, accountId, frequencyUnit);
+    return Objects.hash(frequencyUnit, endDate, clientId, budget, totalValue, accountId, aggregationAccounts, currencyCode, frequency, startDate);
   }
 
 
@@ -353,16 +352,16 @@ public class BudgetDetails {
     StringBuilder sb = new StringBuilder();
     sb.append("class BudgetDetails {\n");
     
-    sb.append("    aggregationAccounts: ").append(toIndentedString(aggregationAccounts)).append("\n");
-    sb.append("    totalValue: ").append(toIndentedString(totalValue)).append("\n");
-    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
-    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
-    sb.append("    budget: ").append(toIndentedString(budget)).append("\n");
+    sb.append("    frequencyUnit: ").append(toIndentedString(frequencyUnit)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
+    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
+    sb.append("    budget: ").append(toIndentedString(budget)).append("\n");
+    sb.append("    totalValue: ").append(toIndentedString(totalValue)).append("\n");
+    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    sb.append("    aggregationAccounts: ").append(toIndentedString(aggregationAccounts)).append("\n");
     sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
     sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
-    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-    sb.append("    frequencyUnit: ").append(toIndentedString(frequencyUnit)).append("\n");
+    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

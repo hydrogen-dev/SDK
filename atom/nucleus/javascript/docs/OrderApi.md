@@ -73,7 +73,7 @@ apiInstance.createAccountOrderBulkUsingPost(accountId, req, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| account_id | 
+ **accountId** | [**String**](.md)| account_id | 
  **req** | [**TokenDateRequest**](TokenDateRequest.md)| req | 
 
 ### Return type
@@ -127,7 +127,7 @@ apiInstance.createAccountOrderBuyOnlyUsingPost(accountId, req, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| account_id | 
+ **accountId** | [**String**](.md)| account_id | 
  **req** | [**AccountPortfolioRebalanceRequest**](AccountPortfolioRebalanceRequest.md)| req | 
 
 ### Return type
@@ -181,7 +181,7 @@ apiInstance.createAccountOrderRebalanceUsingPost(accountId, req, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| account_id | 
+ **accountId** | [**String**](.md)| account_id | 
  **req** | [**AccountPortfolioRebalanceRequest**](AccountPortfolioRebalanceRequest.md)| req | 
 
 ### Return type
@@ -233,7 +233,7 @@ apiInstance.createAccountOrderReconciliation(accountId, req, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| account_id | 
+ **accountId** | [**String**](.md)| account_id | 
  **req** | [**OrderReconcileRequest**](OrderReconcileRequest.md)| req | 
 
 ### Return type
@@ -287,7 +287,7 @@ apiInstance.createAccountOrderSellAllUsingPost(accountId, req, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| account_id | 
+ **accountId** | [**String**](.md)| account_id | 
  **req** | [**AccountPortfolioRebalanceRequest**](AccountPortfolioRebalanceRequest.md)| req | 
 
 ### Return type
@@ -341,7 +341,7 @@ apiInstance.createAccountOrderSellOnlyUsingPost(accountId, req, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| account_id | 
+ **accountId** | [**String**](.md)| account_id | 
  **req** | [**AccountPortfolioRebalanceRequest**](AccountPortfolioRebalanceRequest.md)| req | 
 
 ### Return type
@@ -395,7 +395,7 @@ apiInstance.createClientOrderBulkUsingPost(clientId, req, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clientId** | **String**| client_id | 
+ **clientId** | [**String**](.md)| client_id | 
  **req** | [**TokenDateRequest**](TokenDateRequest.md)| req | 
 
 ### Return type
@@ -653,7 +653,7 @@ apiInstance.createPortfolioOrderBuyOnlyUsingPost(portfolioId, req, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioId** | **String**| portfolio_id | 
+ **portfolioId** | [**String**](.md)| portfolio_id | 
  **req** | [**AccountPortfolioRebalanceRequest**](AccountPortfolioRebalanceRequest.md)| req | 
 
 ### Return type
@@ -707,7 +707,7 @@ apiInstance.createPortfolioOrderRebalanceUsingPost(portfolioId, req, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioId** | **String**| portfolio_id | 
+ **portfolioId** | [**String**](.md)| portfolio_id | 
  **req** | [**AccountPortfolioRebalanceRequest**](AccountPortfolioRebalanceRequest.md)| req | 
 
 ### Return type
@@ -759,7 +759,7 @@ apiInstance.createPortfolioOrderReconciliation(portfolioId, req, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioId** | **String**| portfolio_id | 
+ **portfolioId** | [**String**](.md)| portfolio_id | 
  **req** | [**OrderReconcileRequest**](OrderReconcileRequest.md)| req | 
 
 ### Return type
@@ -813,7 +813,7 @@ apiInstance.createPortfolioOrderSellAllUsingPost(portfolioId, req, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioId** | **String**| portfolio_id | 
+ **portfolioId** | [**String**](.md)| portfolio_id | 
  **req** | [**AccountPortfolioRebalanceRequest**](AccountPortfolioRebalanceRequest.md)| req | 
 
 ### Return type
@@ -867,7 +867,7 @@ apiInstance.createPortfolioOrderSellOnlyUsingPost(portfolioId, req, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioId** | **String**| portfolio_id | 
+ **portfolioId** | [**String**](.md)| portfolio_id | 
  **req** | [**AccountPortfolioRebalanceRequest**](AccountPortfolioRebalanceRequest.md)| req | 
 
 ### Return type
@@ -902,7 +902,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.OrderApi();
 
-var orderStatusId = "9b515c67-3791-400f-9da4-9dc69eb992ac"; // String | UUID order_status_id
+var orderStatusId = "\"9b515c67-3791-400f-9da4-9dc69eb992ac\""; // String | UUID order_status_id
 
 
 var callback = function(error, data, response) {
@@ -919,7 +919,7 @@ apiInstance.deleteOrderStatusUsingDelete(orderStatusId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderStatusId** | **String**| UUID order_status_id | 
+ **orderStatusId** | [**String**](.md)| UUID order_status_id | 
 
 ### Return type
 
@@ -953,7 +953,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.OrderApi();
 
-var orderTrackId = "ef93ce1c-b50e-4856-803a-db5332be93b0"; // String | UUID order_track_id
+var orderTrackId = "\"ef93ce1c-b50e-4856-803a-db5332be93b0\""; // String | UUID order_track_id
 
 
 var callback = function(error, data, response) {
@@ -970,7 +970,7 @@ apiInstance.deleteOrderTrackUsingDelete(orderTrackId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderTrackId** | **String**| UUID order_track_id | 
+ **orderTrackId** | [**String**](.md)| UUID order_track_id | 
 
 ### Return type
 
@@ -1004,7 +1004,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.OrderApi();
 
-var orderId = "67190064-0731-4b29-b2a7-4a35eb8e7afe"; // String | UUID order_id
+var orderId = "\"67190064-0731-4b29-b2a7-4a35eb8e7afe\""; // String | UUID order_id
 
 
 var callback = function(error, data, response) {
@@ -1021,7 +1021,7 @@ apiInstance.deleteOrderUsingDelete(orderId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderId** | **String**| UUID order_id | 
+ **orderId** | [**String**](.md)| UUID order_id | 
 
 ### Return type
 
@@ -1235,7 +1235,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.OrderApi();
 
-var orderStatusId = "9b515c67-3791-400f-9da4-9dc69eb992ac"; // String | UUID order_status_id
+var orderStatusId = "\"9b515c67-3791-400f-9da4-9dc69eb992ac\""; // String | UUID order_status_id
 
 
 var callback = function(error, data, response) {
@@ -1252,7 +1252,7 @@ apiInstance.getOrderStatusUsingGet(orderStatusId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderStatusId** | **String**| UUID order_status_id | 
+ **orderStatusId** | [**String**](.md)| UUID order_status_id | 
 
 ### Return type
 
@@ -1346,7 +1346,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.OrderApi();
 
-var orderTrackId = "ef93ce1c-b50e-4856-803a-db5332be93b0"; // String | UUID order_track_id
+var orderTrackId = "\"ef93ce1c-b50e-4856-803a-db5332be93b0\""; // String | UUID order_track_id
 
 
 var callback = function(error, data, response) {
@@ -1363,7 +1363,7 @@ apiInstance.getOrderTrackUsingGet(orderTrackId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderTrackId** | **String**| UUID order_track_id | 
+ **orderTrackId** | [**String**](.md)| UUID order_track_id | 
 
 ### Return type
 
@@ -1397,7 +1397,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.OrderApi();
 
-var orderId = "67190064-0731-4b29-b2a7-4a35eb8e7afe"; // String | UUID order_id
+var orderId = "\"67190064-0731-4b29-b2a7-4a35eb8e7afe\""; // String | UUID order_id
 
 
 var callback = function(error, data, response) {
@@ -1414,7 +1414,7 @@ apiInstance.getOrderUsingGet(orderId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderId** | **String**| UUID order_id | 
+ **orderId** | [**String**](.md)| UUID order_id | 
 
 ### Return type
 
@@ -1448,9 +1448,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.OrderApi();
 
-var orderStatus = new HydrogenNucleusApi.OrderStatus(); // OrderStatus | order_status
+var orderStatus = null; // Object | order_status
 
-var orderStatusId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID order_status_id
+var orderStatusId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID order_status_id
 
 
 var callback = function(error, data, response) {
@@ -1467,8 +1467,8 @@ apiInstance.updateOrderStatusUsingPut(orderStatus, orderStatusId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderStatus** | [**OrderStatus**](OrderStatus.md)| order_status | 
- **orderStatusId** | **String**| UUID order_status_id | 
+ **orderStatus** | **Object**| order_status | 
+ **orderStatusId** | [**String**](.md)| UUID order_status_id | 
 
 ### Return type
 
@@ -1502,9 +1502,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.OrderApi();
 
-var orderTrack = new HydrogenNucleusApi.OrderTrack(); // OrderTrack | order_track
+var orderTrack = null; // Object | order_track
 
-var orderTrackId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID order_track_id
+var orderTrackId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID order_track_id
 
 
 var callback = function(error, data, response) {
@@ -1521,8 +1521,8 @@ apiInstance.updateOrderTrackUsingPut(orderTrack, orderTrackId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderTrack** | [**OrderTrack**](OrderTrack.md)| order_track | 
- **orderTrackId** | **String**| UUID order_track_id | 
+ **orderTrack** | **Object**| order_track | 
+ **orderTrackId** | [**String**](.md)| UUID order_track_id | 
 
 ### Return type
 
@@ -1556,9 +1556,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.OrderApi();
 
-var order = new HydrogenNucleusApi.Order(); // Order | order
+var order = null; // Object | order
 
-var orderId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID order_id
+var orderId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID order_id
 
 
 var callback = function(error, data, response) {
@@ -1575,8 +1575,8 @@ apiInstance.updateOrderUsingPut(order, orderId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order** | [**Order**](Order.md)| order | 
- **orderId** | **String**| UUID order_id | 
+ **order** | **Object**| order | 
+ **orderId** | [**String**](.md)| UUID order_id | 
 
 ### Return type
 

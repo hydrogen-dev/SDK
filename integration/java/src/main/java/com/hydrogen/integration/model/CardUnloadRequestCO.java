@@ -18,61 +18,35 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModelProperty;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 /**
  * CardUnloadRequestCO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class CardUnloadRequestCO {
-  @SerializedName("amount")
-  private Double amount = null;
-
-  @SerializedName("nucleus_card_id")
-  private UUID nucleusCardId = null;
+  @SerializedName("nucleus_funding_id")
+  private UUID nucleusFundingId = null;
 
   @SerializedName("reason")
   private String reason = null;
 
-  @SerializedName("vendor_request")
-  private Map<String, String> vendorRequest = null;
-
-  public CardUnloadRequestCO amount(Double amount) {
-    this.amount = amount;
+  public CardUnloadRequestCO nucleusFundingId(UUID nucleusFundingId) {
+    this.nucleusFundingId = nucleusFundingId;
     return this;
   }
 
    /**
-   * Get amount
-   * @return amount
+   * Get nucleusFundingId
+   * @return nucleusFundingId
   **/
   @ApiModelProperty(value = "")
-  public Double getAmount() {
-    return amount;
+  public UUID getNucleusFundingId() {
+    return nucleusFundingId;
   }
 
-  public void setAmount(Double amount) {
-    this.amount = amount;
-  }
-
-  public CardUnloadRequestCO nucleusCardId(UUID nucleusCardId) {
-    this.nucleusCardId = nucleusCardId;
-    return this;
-  }
-
-   /**
-   * Get nucleusCardId
-   * @return nucleusCardId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getNucleusCardId() {
-    return nucleusCardId;
-  }
-
-  public void setNucleusCardId(UUID nucleusCardId) {
-    this.nucleusCardId = nucleusCardId;
+  public void setNucleusFundingId(UUID nucleusFundingId) {
+    this.nucleusFundingId = nucleusFundingId;
   }
 
   public CardUnloadRequestCO reason(String reason) {
@@ -93,32 +67,6 @@ public class CardUnloadRequestCO {
     this.reason = reason;
   }
 
-  public CardUnloadRequestCO vendorRequest(Map<String, String> vendorRequest) {
-    this.vendorRequest = vendorRequest;
-    return this;
-  }
-
-  public CardUnloadRequestCO putVendorRequestItem(String key, String vendorRequestItem) {
-    if (this.vendorRequest == null) {
-      this.vendorRequest = new HashMap<String, String>();
-    }
-    this.vendorRequest.put(key, vendorRequestItem);
-    return this;
-  }
-
-   /**
-   * Get vendorRequest
-   * @return vendorRequest
-  **/
-  @ApiModelProperty(value = "")
-  public Map<String, String> getVendorRequest() {
-    return vendorRequest;
-  }
-
-  public void setVendorRequest(Map<String, String> vendorRequest) {
-    this.vendorRequest = vendorRequest;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -129,15 +77,13 @@ public class CardUnloadRequestCO {
       return false;
     }
     CardUnloadRequestCO cardUnloadRequestCO = (CardUnloadRequestCO) o;
-    return Objects.equals(this.amount, cardUnloadRequestCO.amount) &&
-        Objects.equals(this.nucleusCardId, cardUnloadRequestCO.nucleusCardId) &&
-        Objects.equals(this.reason, cardUnloadRequestCO.reason) &&
-        Objects.equals(this.vendorRequest, cardUnloadRequestCO.vendorRequest);
+    return Objects.equals(this.nucleusFundingId, cardUnloadRequestCO.nucleusFundingId) &&
+        Objects.equals(this.reason, cardUnloadRequestCO.reason);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, nucleusCardId, reason, vendorRequest);
+    return Objects.hash(nucleusFundingId, reason);
   }
 
 
@@ -146,10 +92,8 @@ public class CardUnloadRequestCO {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardUnloadRequestCO {\n");
     
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    nucleusCardId: ").append(toIndentedString(nucleusCardId)).append("\n");
+    sb.append("    nucleusFundingId: ").append(toIndentedString(nucleusFundingId)).append("\n");
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-    sb.append("    vendorRequest: ").append(toIndentedString(vendorRequest)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -759,7 +759,7 @@ end
 
 api_instance = NucleusApi::SecuritiesApi.new
 
-security_exclusion = NucleusApi::SecurityExclusion.new # SecurityExclusion | security_exclusion
+security_exclusion = nil # Object | security_exclusion
 
 security_exclusion_id = 'security_exclusion_id_example' # String | UUID security_exclusion_id
 
@@ -777,7 +777,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **security_exclusion** | [**SecurityExclusion**](SecurityExclusion.md)| security_exclusion | 
+ **security_exclusion** | **Object**| security_exclusion | 
  **security_exclusion_id** | [**String**](.md)| UUID security_exclusion_id | 
 
 ### Return type
@@ -819,7 +819,7 @@ end
 
 api_instance = NucleusApi::SecuritiesApi.new
 
-security_price = NucleusApi::SecurityPrice.new # SecurityPrice | security_price
+security_price = nil # Object | security_price
 
 security_price_id = 'security_price_id_example' # String | UUID security_price_id
 
@@ -837,7 +837,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **security_price** | [**SecurityPrice**](SecurityPrice.md)| security_price | 
+ **security_price** | **Object**| security_price | 
  **security_price_id** | [**String**](.md)| UUID security_price_id | 
 
 ### Return type
@@ -879,7 +879,7 @@ end
 
 api_instance = NucleusApi::SecuritiesApi.new
 
-security = NucleusApi::Security.new # Security | security
+security = nil # Object | security
 
 security_id = 'security_id_example' # String | UUID security_id
 
@@ -897,7 +897,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **security** | [**Security**](Security.md)| security | 
+ **security** | **Object**| security | 
  **security_id** | [**String**](.md)| UUID security_id | 
 
 ### Return type

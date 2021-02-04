@@ -21,6 +21,12 @@ import com.hydrogen.nucleus.Configuration;
 import com.hydrogen.nucleus.Pair;
 import com.hydrogen.nucleus.ProgressRequestBody;
 import com.hydrogen.nucleus.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
 import com.hydrogen.nucleus.model.BankLink;
 import com.hydrogen.nucleus.model.DailyDeposit;
 import com.hydrogen.nucleus.model.DailyWithdrawal;
@@ -31,12 +37,6 @@ import com.hydrogen.nucleus.model.PageDailyDeposit;
 import com.hydrogen.nucleus.model.PageDailyWithdrawal;
 import com.hydrogen.nucleus.model.PageExternalAccountTransfer;
 import com.hydrogen.nucleus.model.PageFunding;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -2667,7 +2667,7 @@ public class FundingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateBankLinkBulkUsingPutCall(List<BankLink> bankLinkList, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateBankLinkBulkUsingPutCall(List<Object> bankLinkList, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = bankLinkList;
 
         // create path and map variables
@@ -2709,7 +2709,7 @@ public class FundingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateBankLinkBulkUsingPutValidateBeforeCall(List<BankLink> bankLinkList, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateBankLinkBulkUsingPutValidateBeforeCall(List<Object> bankLinkList, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'bankLinkList' is set
         if (bankLinkList == null) {
@@ -2729,7 +2729,7 @@ public class FundingApi {
      * @return List&lt;BankLink&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<BankLink> updateBankLinkBulkUsingPut(List<BankLink> bankLinkList) throws ApiException {
+    public List<BankLink> updateBankLinkBulkUsingPut(List<Object> bankLinkList) throws ApiException {
         ApiResponse<List<BankLink>> resp = updateBankLinkBulkUsingPutWithHttpInfo(bankLinkList);
         return resp.getData();
     }
@@ -2741,7 +2741,7 @@ public class FundingApi {
      * @return ApiResponse&lt;List&lt;BankLink&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<BankLink>> updateBankLinkBulkUsingPutWithHttpInfo(List<BankLink> bankLinkList) throws ApiException {
+    public ApiResponse<List<BankLink>> updateBankLinkBulkUsingPutWithHttpInfo(List<Object> bankLinkList) throws ApiException {
         com.squareup.okhttp.Call call = updateBankLinkBulkUsingPutValidateBeforeCall(bankLinkList, null, null);
         Type localVarReturnType = new TypeToken<List<BankLink>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -2755,7 +2755,7 @@ public class FundingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateBankLinkBulkUsingPutAsync(List<BankLink> bankLinkList, final ApiCallback<List<BankLink>> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateBankLinkBulkUsingPutAsync(List<Object> bankLinkList, final ApiCallback<List<BankLink>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2790,7 +2790,7 @@ public class FundingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateBankLinkUsingPutCall(BankLink bankLink, UUID bankLinkId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateBankLinkUsingPutCall(Object bankLink, UUID bankLinkId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = bankLink;
 
         // create path and map variables
@@ -2833,7 +2833,7 @@ public class FundingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateBankLinkUsingPutValidateBeforeCall(BankLink bankLink, UUID bankLinkId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateBankLinkUsingPutValidateBeforeCall(Object bankLink, UUID bankLinkId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'bankLink' is set
         if (bankLink == null) {
@@ -2859,7 +2859,7 @@ public class FundingApi {
      * @return BankLink
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public BankLink updateBankLinkUsingPut(BankLink bankLink, UUID bankLinkId) throws ApiException {
+    public BankLink updateBankLinkUsingPut(Object bankLink, UUID bankLinkId) throws ApiException {
         ApiResponse<BankLink> resp = updateBankLinkUsingPutWithHttpInfo(bankLink, bankLinkId);
         return resp.getData();
     }
@@ -2872,7 +2872,7 @@ public class FundingApi {
      * @return ApiResponse&lt;BankLink&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<BankLink> updateBankLinkUsingPutWithHttpInfo(BankLink bankLink, UUID bankLinkId) throws ApiException {
+    public ApiResponse<BankLink> updateBankLinkUsingPutWithHttpInfo(Object bankLink, UUID bankLinkId) throws ApiException {
         com.squareup.okhttp.Call call = updateBankLinkUsingPutValidateBeforeCall(bankLink, bankLinkId, null, null);
         Type localVarReturnType = new TypeToken<BankLink>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -2887,7 +2887,7 @@ public class FundingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateBankLinkUsingPutAsync(BankLink bankLink, UUID bankLinkId, final ApiCallback<BankLink> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateBankLinkUsingPutAsync(Object bankLink, UUID bankLinkId, final ApiCallback<BankLink> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2922,7 +2922,7 @@ public class FundingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateDepositUsingPutCall(DailyDeposit deposit, UUID depositId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateDepositUsingPutCall(Object deposit, UUID depositId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = deposit;
 
         // create path and map variables
@@ -2965,7 +2965,7 @@ public class FundingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateDepositUsingPutValidateBeforeCall(DailyDeposit deposit, UUID depositId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateDepositUsingPutValidateBeforeCall(Object deposit, UUID depositId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'deposit' is set
         if (deposit == null) {
@@ -2991,7 +2991,7 @@ public class FundingApi {
      * @return DailyDeposit
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public DailyDeposit updateDepositUsingPut(DailyDeposit deposit, UUID depositId) throws ApiException {
+    public DailyDeposit updateDepositUsingPut(Object deposit, UUID depositId) throws ApiException {
         ApiResponse<DailyDeposit> resp = updateDepositUsingPutWithHttpInfo(deposit, depositId);
         return resp.getData();
     }
@@ -3004,7 +3004,7 @@ public class FundingApi {
      * @return ApiResponse&lt;DailyDeposit&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<DailyDeposit> updateDepositUsingPutWithHttpInfo(DailyDeposit deposit, UUID depositId) throws ApiException {
+    public ApiResponse<DailyDeposit> updateDepositUsingPutWithHttpInfo(Object deposit, UUID depositId) throws ApiException {
         com.squareup.okhttp.Call call = updateDepositUsingPutValidateBeforeCall(deposit, depositId, null, null);
         Type localVarReturnType = new TypeToken<DailyDeposit>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -3019,7 +3019,7 @@ public class FundingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateDepositUsingPutAsync(DailyDeposit deposit, UUID depositId, final ApiCallback<DailyDeposit> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateDepositUsingPutAsync(Object deposit, UUID depositId, final ApiCallback<DailyDeposit> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3054,7 +3054,7 @@ public class FundingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateFundingUsingPutCall(Funding funding, UUID fundingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateFundingUsingPutCall(Object funding, UUID fundingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = funding;
 
         // create path and map variables
@@ -3097,7 +3097,7 @@ public class FundingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateFundingUsingPutValidateBeforeCall(Funding funding, UUID fundingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateFundingUsingPutValidateBeforeCall(Object funding, UUID fundingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'funding' is set
         if (funding == null) {
@@ -3123,7 +3123,7 @@ public class FundingApi {
      * @return Funding
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Funding updateFundingUsingPut(Funding funding, UUID fundingId) throws ApiException {
+    public Funding updateFundingUsingPut(Object funding, UUID fundingId) throws ApiException {
         ApiResponse<Funding> resp = updateFundingUsingPutWithHttpInfo(funding, fundingId);
         return resp.getData();
     }
@@ -3136,7 +3136,7 @@ public class FundingApi {
      * @return ApiResponse&lt;Funding&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Funding> updateFundingUsingPutWithHttpInfo(Funding funding, UUID fundingId) throws ApiException {
+    public ApiResponse<Funding> updateFundingUsingPutWithHttpInfo(Object funding, UUID fundingId) throws ApiException {
         com.squareup.okhttp.Call call = updateFundingUsingPutValidateBeforeCall(funding, fundingId, null, null);
         Type localVarReturnType = new TypeToken<Funding>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -3151,7 +3151,7 @@ public class FundingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateFundingUsingPutAsync(Funding funding, UUID fundingId, final ApiCallback<Funding> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateFundingUsingPutAsync(Object funding, UUID fundingId, final ApiCallback<Funding> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3186,7 +3186,7 @@ public class FundingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateTransferUsingPutCall(ExternalAccountTransfer transfer, UUID transferId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateTransferUsingPutCall(Object transfer, UUID transferId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = transfer;
 
         // create path and map variables
@@ -3229,7 +3229,7 @@ public class FundingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateTransferUsingPutValidateBeforeCall(ExternalAccountTransfer transfer, UUID transferId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateTransferUsingPutValidateBeforeCall(Object transfer, UUID transferId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'transfer' is set
         if (transfer == null) {
@@ -3255,7 +3255,7 @@ public class FundingApi {
      * @return ExternalAccountTransfer
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ExternalAccountTransfer updateTransferUsingPut(ExternalAccountTransfer transfer, UUID transferId) throws ApiException {
+    public ExternalAccountTransfer updateTransferUsingPut(Object transfer, UUID transferId) throws ApiException {
         ApiResponse<ExternalAccountTransfer> resp = updateTransferUsingPutWithHttpInfo(transfer, transferId);
         return resp.getData();
     }
@@ -3268,7 +3268,7 @@ public class FundingApi {
      * @return ApiResponse&lt;ExternalAccountTransfer&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ExternalAccountTransfer> updateTransferUsingPutWithHttpInfo(ExternalAccountTransfer transfer, UUID transferId) throws ApiException {
+    public ApiResponse<ExternalAccountTransfer> updateTransferUsingPutWithHttpInfo(Object transfer, UUID transferId) throws ApiException {
         com.squareup.okhttp.Call call = updateTransferUsingPutValidateBeforeCall(transfer, transferId, null, null);
         Type localVarReturnType = new TypeToken<ExternalAccountTransfer>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -3283,7 +3283,7 @@ public class FundingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateTransferUsingPutAsync(ExternalAccountTransfer transfer, UUID transferId, final ApiCallback<ExternalAccountTransfer> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateTransferUsingPutAsync(Object transfer, UUID transferId, final ApiCallback<ExternalAccountTransfer> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3318,7 +3318,7 @@ public class FundingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateWithdrawalUsingPutCall(DailyWithdrawal withdrawal, UUID withdrawalId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateWithdrawalUsingPutCall(Object withdrawal, UUID withdrawalId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = withdrawal;
 
         // create path and map variables
@@ -3361,7 +3361,7 @@ public class FundingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateWithdrawalUsingPutValidateBeforeCall(DailyWithdrawal withdrawal, UUID withdrawalId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateWithdrawalUsingPutValidateBeforeCall(Object withdrawal, UUID withdrawalId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'withdrawal' is set
         if (withdrawal == null) {
@@ -3387,7 +3387,7 @@ public class FundingApi {
      * @return DailyWithdrawal
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public DailyWithdrawal updateWithdrawalUsingPut(DailyWithdrawal withdrawal, UUID withdrawalId) throws ApiException {
+    public DailyWithdrawal updateWithdrawalUsingPut(Object withdrawal, UUID withdrawalId) throws ApiException {
         ApiResponse<DailyWithdrawal> resp = updateWithdrawalUsingPutWithHttpInfo(withdrawal, withdrawalId);
         return resp.getData();
     }
@@ -3400,7 +3400,7 @@ public class FundingApi {
      * @return ApiResponse&lt;DailyWithdrawal&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<DailyWithdrawal> updateWithdrawalUsingPutWithHttpInfo(DailyWithdrawal withdrawal, UUID withdrawalId) throws ApiException {
+    public ApiResponse<DailyWithdrawal> updateWithdrawalUsingPutWithHttpInfo(Object withdrawal, UUID withdrawalId) throws ApiException {
         com.squareup.okhttp.Call call = updateWithdrawalUsingPutValidateBeforeCall(withdrawal, withdrawalId, null, null);
         Type localVarReturnType = new TypeToken<DailyWithdrawal>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -3415,7 +3415,7 @@ public class FundingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateWithdrawalUsingPutAsync(DailyWithdrawal withdrawal, UUID withdrawalId, final ApiCallback<DailyWithdrawal> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateWithdrawalUsingPutAsync(Object withdrawal, UUID withdrawalId, final ApiCallback<DailyWithdrawal> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

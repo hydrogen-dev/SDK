@@ -605,7 +605,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customer_revenue = new \com\hydrogen\nucleus\Model\CustomerRevenue(); // \com\hydrogen\nucleus\Model\CustomerRevenue | customer_revenue
+$customer_revenue = new \stdClass; // object | customer_revenue
 $customer_revenue_id = "customer_revenue_id_example"; // string | UUID customer_revenue_id
 
 try {
@@ -621,7 +621,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_revenue** | [**\com\hydrogen\nucleus\Model\CustomerRevenue**](../Model/CustomerRevenue.md)| customer_revenue |
+ **customer_revenue** | **object**| customer_revenue |
  **customer_revenue_id** | [**string**](../Model/.md)| UUID customer_revenue_id |
 
 ### Return type
@@ -674,7 +674,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customer = new \com\hydrogen\nucleus\Model\Customer(); // \com\hydrogen\nucleus\Model\Customer | customer
+$customer = new \stdClass; // object | customer
 $customer_id = "customer_id_example"; // string | UUID customer_id
 
 try {
@@ -690,7 +690,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer** | [**\com\hydrogen\nucleus\Model\Customer**](../Model/Customer.md)| customer |
+ **customer** | **object**| customer |
  **customer_id** | [**string**](../Model/.md)| UUID customer_id |
 
 ### Return type

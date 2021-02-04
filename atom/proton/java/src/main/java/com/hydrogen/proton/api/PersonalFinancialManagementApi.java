@@ -13,14 +13,14 @@
 
 package com.hydrogen.proton.api;
 
-import com.hydrogen.proton.ApiCallback;
 import com.hydrogen.proton.ApiClient;
 import com.hydrogen.proton.ApiException;
+import com.hydrogen.proton.ProgressResponseBody;
+import com.hydrogen.proton.ApiCallback;
 import com.hydrogen.proton.ApiResponse;
 import com.hydrogen.proton.Configuration;
 import com.hydrogen.proton.Pair;
 import com.hydrogen.proton.ProgressRequestBody;
-import com.hydrogen.proton.ProgressResponseBody;
 
 import com.google.gson.reflect.TypeToken;
 

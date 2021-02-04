@@ -24,7 +24,6 @@ Create a new benchmark for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import BenchmarkApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -41,8 +40,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 BenchmarkApi apiInstance = new BenchmarkApi();
 Benchmark benchmark = new Benchmark(); // Benchmark | benchmark
 try {
@@ -85,7 +82,6 @@ Permanently delete a benchmark.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import BenchmarkApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -102,8 +98,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 BenchmarkApi apiInstance = new BenchmarkApi();
 UUID benchmarkId = new UUID(); // UUID | UUID benchmark_id
 try {
@@ -145,7 +139,6 @@ Get details for all benchmarks defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import BenchmarkApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -162,8 +155,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 BenchmarkApi apiInstance = new BenchmarkApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -214,7 +205,6 @@ Get a list of asset sizes by date for a benchmark.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import BenchmarkApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -231,8 +221,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 BenchmarkApi apiInstance = new BenchmarkApi();
 UUID benchmarkId = new UUID(); // UUID | UUID benchmark_id
 LocalDate endDate = LocalDate.now(); // LocalDate | end date
@@ -281,7 +269,6 @@ Retrieve the information for a benchmark.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import BenchmarkApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -298,8 +285,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 BenchmarkApi apiInstance = new BenchmarkApi();
 UUID benchmarkId = new UUID(); // UUID | UUID benchmark_id
 try {
@@ -342,7 +327,6 @@ Updated the information for a benchmark.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import BenchmarkApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -359,10 +343,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 BenchmarkApi apiInstance = new BenchmarkApi();
-Benchmark benchmark = new Benchmark(); // Benchmark | benchmark
+Object benchmark = null; // Object | benchmark
 UUID benchmarkId = new UUID(); // UUID | UUID benchmark_id
 try {
     Benchmark result = apiInstance.updateBenchmarkUsingPut(benchmark, benchmarkId);
@@ -377,7 +359,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **benchmark** | [**Benchmark**](Benchmark.md)| benchmark |
+ **benchmark** | **Object**| benchmark |
  **benchmarkId** | [**UUID**](.md)| UUID benchmark_id |
 
 ### Return type

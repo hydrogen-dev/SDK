@@ -13,7 +13,7 @@
 
 package com.hydrogen.proton;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 public class StringUtil {
   /**
    * Check if the given array contains the given value (with case-insensitive comparison).

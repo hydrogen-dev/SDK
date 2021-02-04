@@ -12,9 +12,12 @@ Name | Type | Description | Notes
 **investment** | [**Investment**](Investment.md) |  | [optional] 
 **is_active** | **bool** | isActive | [optional] 
 **is_excluded_analysis** | **bool** | is_excluded_analysis | [optional] 
+**is_fee** | **bool** |  | [optional] 
 **is_recurring** | **bool** |  | [optional] 
+**is_transfer** | **bool** |  | [optional] 
 **metadata** | **dict(str, str)** |  | [optional] 
 **secondary_id** | **str** |  | [optional] 
+**status** | **str** | status | [optional] 
 **transaction_date** | **datetime** | transactionDate | 
 **update_date** | **datetime** | updateDate | [optional] 
 

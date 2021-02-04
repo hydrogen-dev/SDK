@@ -31,381 +31,124 @@ class GoalDecumulationStatusRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'goal_id': 'str',
-        'curr_inv': 'float',
-        'd_horizon': 'int',
-        'n': 'int',
-        'horizon_frequency': 'str',
-        'client_id': 'str',
-        'remove_outliers': 'bool',
-        'withdrawal_config': 'list[GoalWithdrawalConfig]',
-        'a_horizon': 'int',
-        'conf_tgt': 'float',
-        'p_ret': 'list[float]',
         'thresh_type': 'str',
-        'thresh': 'float',
-        'deposit_config': 'list[DecumulationGoalDepositConfig]',
-        'recommendation_config': 'RecommendationConfig',
+        'goal_id': 'str',
+        'client_id': 'str',
+        'conf_tgt': 'float',
+        'remove_outliers': 'bool',
+        'a_horizon': 'int',
+        'withdrawal_config': 'list[GoalWithdrawalConfig]',
+        'p_ret': 'list[float]',
         'compounding_rate': 'float',
+        'adjust_for_compounding': 'bool',
+        'deposit_config': 'list[DecumulationGoalDepositConfig]',
+        'thresh': 'float',
+        'horizon_frequency': 'str',
+        'recommendation_config': 'RecommendationConfig',
+        'create_log': 'bool',
         'withdrawal_tax': 'float',
         'trading_days_per_year': 'int',
-        'adjust_for_compounding': 'bool',
+        'n': 'int',
+        'd_horizon': 'int',
         'p_risk': 'list[float]',
-        'create_log': 'bool',
+        'curr_inv': 'float',
         'recommend_type': 'str'
     }
 
     attribute_map = {
-        'goal_id': 'goal_id',
-        'curr_inv': 'curr_inv',
-        'd_horizon': 'd_horizon',
-        'n': 'n',
-        'horizon_frequency': 'horizon_frequency',
-        'client_id': 'client_id',
-        'remove_outliers': 'remove_outliers',
-        'withdrawal_config': 'withdrawal_config',
-        'a_horizon': 'a_horizon',
-        'conf_tgt': 'conf_tgt',
-        'p_ret': 'p_ret',
         'thresh_type': 'thresh_type',
-        'thresh': 'thresh',
-        'deposit_config': 'deposit_config',
-        'recommendation_config': 'recommendation_config',
+        'goal_id': 'goal_id',
+        'client_id': 'client_id',
+        'conf_tgt': 'conf_tgt',
+        'remove_outliers': 'remove_outliers',
+        'a_horizon': 'a_horizon',
+        'withdrawal_config': 'withdrawal_config',
+        'p_ret': 'p_ret',
         'compounding_rate': 'compounding_rate',
+        'adjust_for_compounding': 'adjust_for_compounding',
+        'deposit_config': 'deposit_config',
+        'thresh': 'thresh',
+        'horizon_frequency': 'horizon_frequency',
+        'recommendation_config': 'recommendation_config',
+        'create_log': 'create_log',
         'withdrawal_tax': 'withdrawal_tax',
         'trading_days_per_year': 'trading_days_per_year',
-        'adjust_for_compounding': 'adjust_for_compounding',
+        'n': 'n',
+        'd_horizon': 'd_horizon',
         'p_risk': 'p_risk',
-        'create_log': 'create_log',
+        'curr_inv': 'curr_inv',
         'recommend_type': 'recommend_type'
     }
 
-    def __init__(self, goal_id=None, curr_inv=None, d_horizon=None, n=1000, horizon_frequency='year', client_id=None, remove_outliers=True, withdrawal_config=None, a_horizon=None, conf_tgt=0.9, p_ret=None, thresh_type='perc', thresh=None, deposit_config=None, recommendation_config=None, compounding_rate=0.0, withdrawal_tax=0.0, trading_days_per_year=252, adjust_for_compounding=False, p_risk=None, create_log=False, recommend_type='horizon'):  # noqa: E501
+    def __init__(self, thresh_type='perc', goal_id=None, client_id=None, conf_tgt=0.9, remove_outliers=True, a_horizon=None, withdrawal_config=None, p_ret=None, compounding_rate=0.0, adjust_for_compounding=False, deposit_config=None, thresh=None, horizon_frequency='year', recommendation_config=None, create_log=False, withdrawal_tax=0.0, trading_days_per_year=252, n=1000, d_horizon=None, p_risk=None, curr_inv=None, recommend_type='horizon'):  # noqa: E501
         """GoalDecumulationStatusRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._goal_id = None
-        self._curr_inv = None
-        self._d_horizon = None
-        self._n = None
-        self._horizon_frequency = None
-        self._client_id = None
-        self._remove_outliers = None
-        self._withdrawal_config = None
-        self._a_horizon = None
-        self._conf_tgt = None
-        self._p_ret = None
         self._thresh_type = None
-        self._thresh = None
-        self._deposit_config = None
-        self._recommendation_config = None
+        self._goal_id = None
+        self._client_id = None
+        self._conf_tgt = None
+        self._remove_outliers = None
+        self._a_horizon = None
+        self._withdrawal_config = None
+        self._p_ret = None
         self._compounding_rate = None
+        self._adjust_for_compounding = None
+        self._deposit_config = None
+        self._thresh = None
+        self._horizon_frequency = None
+        self._recommendation_config = None
+        self._create_log = None
         self._withdrawal_tax = None
         self._trading_days_per_year = None
-        self._adjust_for_compounding = None
+        self._n = None
+        self._d_horizon = None
         self._p_risk = None
-        self._create_log = None
+        self._curr_inv = None
         self._recommend_type = None
         self.discriminator = None
 
-        if goal_id is not None:
-            self.goal_id = goal_id
-        if curr_inv is not None:
-            self.curr_inv = curr_inv
-        if d_horizon is not None:
-            self.d_horizon = d_horizon
-        if n is not None:
-            self.n = n
-        if horizon_frequency is not None:
-            self.horizon_frequency = horizon_frequency
-        if client_id is not None:
-            self.client_id = client_id
-        if remove_outliers is not None:
-            self.remove_outliers = remove_outliers
-        if withdrawal_config is not None:
-            self.withdrawal_config = withdrawal_config
-        if a_horizon is not None:
-            self.a_horizon = a_horizon
-        if conf_tgt is not None:
-            self.conf_tgt = conf_tgt
-        self.p_ret = p_ret
         if thresh_type is not None:
             self.thresh_type = thresh_type
-        if thresh is not None:
-            self.thresh = thresh
-        if deposit_config is not None:
-            self.deposit_config = deposit_config
-        if recommendation_config is not None:
-            self.recommendation_config = recommendation_config
+        if goal_id is not None:
+            self.goal_id = goal_id
+        if client_id is not None:
+            self.client_id = client_id
+        if conf_tgt is not None:
+            self.conf_tgt = conf_tgt
+        if remove_outliers is not None:
+            self.remove_outliers = remove_outliers
+        if a_horizon is not None:
+            self.a_horizon = a_horizon
+        if withdrawal_config is not None:
+            self.withdrawal_config = withdrawal_config
+        self.p_ret = p_ret
         if compounding_rate is not None:
             self.compounding_rate = compounding_rate
+        if adjust_for_compounding is not None:
+            self.adjust_for_compounding = adjust_for_compounding
+        if deposit_config is not None:
+            self.deposit_config = deposit_config
+        if thresh is not None:
+            self.thresh = thresh
+        if horizon_frequency is not None:
+            self.horizon_frequency = horizon_frequency
+        if recommendation_config is not None:
+            self.recommendation_config = recommendation_config
+        if create_log is not None:
+            self.create_log = create_log
         if withdrawal_tax is not None:
             self.withdrawal_tax = withdrawal_tax
         if trading_days_per_year is not None:
             self.trading_days_per_year = trading_days_per_year
-        if adjust_for_compounding is not None:
-            self.adjust_for_compounding = adjust_for_compounding
+        if n is not None:
+            self.n = n
+        if d_horizon is not None:
+            self.d_horizon = d_horizon
         self.p_risk = p_risk
-        if create_log is not None:
-            self.create_log = create_log
+        if curr_inv is not None:
+            self.curr_inv = curr_inv
         if recommend_type is not None:
             self.recommend_type = recommend_type
-
-    @property
-    def goal_id(self):
-        """Gets the goal_id of this GoalDecumulationStatusRequest.  # noqa: E501
-
-
-        :return: The goal_id of this GoalDecumulationStatusRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._goal_id
-
-    @goal_id.setter
-    def goal_id(self, goal_id):
-        """Sets the goal_id of this GoalDecumulationStatusRequest.
-
-
-        :param goal_id: The goal_id of this GoalDecumulationStatusRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._goal_id = goal_id
-
-    @property
-    def curr_inv(self):
-        """Gets the curr_inv of this GoalDecumulationStatusRequest.  # noqa: E501
-
-
-        :return: The curr_inv of this GoalDecumulationStatusRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._curr_inv
-
-    @curr_inv.setter
-    def curr_inv(self, curr_inv):
-        """Sets the curr_inv of this GoalDecumulationStatusRequest.
-
-
-        :param curr_inv: The curr_inv of this GoalDecumulationStatusRequest.  # noqa: E501
-        :type: float
-        """
-        if curr_inv is not None and curr_inv < 0:  # noqa: E501
-            raise ValueError("Invalid value for `curr_inv`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._curr_inv = curr_inv
-
-    @property
-    def d_horizon(self):
-        """Gets the d_horizon of this GoalDecumulationStatusRequest.  # noqa: E501
-
-
-        :return: The d_horizon of this GoalDecumulationStatusRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._d_horizon
-
-    @d_horizon.setter
-    def d_horizon(self, d_horizon):
-        """Sets the d_horizon of this GoalDecumulationStatusRequest.
-
-
-        :param d_horizon: The d_horizon of this GoalDecumulationStatusRequest.  # noqa: E501
-        :type: int
-        """
-        if d_horizon is not None and d_horizon > 350:  # noqa: E501
-            raise ValueError("Invalid value for `d_horizon`, must be a value less than or equal to `350`")  # noqa: E501
-        if d_horizon is not None and d_horizon < 0:  # noqa: E501
-            raise ValueError("Invalid value for `d_horizon`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._d_horizon = d_horizon
-
-    @property
-    def n(self):
-        """Gets the n of this GoalDecumulationStatusRequest.  # noqa: E501
-
-
-        :return: The n of this GoalDecumulationStatusRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._n
-
-    @n.setter
-    def n(self, n):
-        """Sets the n of this GoalDecumulationStatusRequest.
-
-
-        :param n: The n of this GoalDecumulationStatusRequest.  # noqa: E501
-        :type: int
-        """
-        if n is not None and n > 10000:  # noqa: E501
-            raise ValueError("Invalid value for `n`, must be a value less than or equal to `10000`")  # noqa: E501
-        if n is not None and n < 1:  # noqa: E501
-            raise ValueError("Invalid value for `n`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._n = n
-
-    @property
-    def horizon_frequency(self):
-        """Gets the horizon_frequency of this GoalDecumulationStatusRequest.  # noqa: E501
-
-
-        :return: The horizon_frequency of this GoalDecumulationStatusRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._horizon_frequency
-
-    @horizon_frequency.setter
-    def horizon_frequency(self, horizon_frequency):
-        """Sets the horizon_frequency of this GoalDecumulationStatusRequest.
-
-
-        :param horizon_frequency: The horizon_frequency of this GoalDecumulationStatusRequest.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["year", "six_months", "quarter", "month", "two_weeks", "week", "day"]  # noqa: E501
-        if horizon_frequency not in allowed_values:
-            raise ValueError(
-                "Invalid value for `horizon_frequency` ({0}), must be one of {1}"  # noqa: E501
-                .format(horizon_frequency, allowed_values)
-            )
-
-        self._horizon_frequency = horizon_frequency
-
-    @property
-    def client_id(self):
-        """Gets the client_id of this GoalDecumulationStatusRequest.  # noqa: E501
-
-
-        :return: The client_id of this GoalDecumulationStatusRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._client_id
-
-    @client_id.setter
-    def client_id(self, client_id):
-        """Sets the client_id of this GoalDecumulationStatusRequest.
-
-
-        :param client_id: The client_id of this GoalDecumulationStatusRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._client_id = client_id
-
-    @property
-    def remove_outliers(self):
-        """Gets the remove_outliers of this GoalDecumulationStatusRequest.  # noqa: E501
-
-
-        :return: The remove_outliers of this GoalDecumulationStatusRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._remove_outliers
-
-    @remove_outliers.setter
-    def remove_outliers(self, remove_outliers):
-        """Sets the remove_outliers of this GoalDecumulationStatusRequest.
-
-
-        :param remove_outliers: The remove_outliers of this GoalDecumulationStatusRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._remove_outliers = remove_outliers
-
-    @property
-    def withdrawal_config(self):
-        """Gets the withdrawal_config of this GoalDecumulationStatusRequest.  # noqa: E501
-
-
-        :return: The withdrawal_config of this GoalDecumulationStatusRequest.  # noqa: E501
-        :rtype: list[GoalWithdrawalConfig]
-        """
-        return self._withdrawal_config
-
-    @withdrawal_config.setter
-    def withdrawal_config(self, withdrawal_config):
-        """Sets the withdrawal_config of this GoalDecumulationStatusRequest.
-
-
-        :param withdrawal_config: The withdrawal_config of this GoalDecumulationStatusRequest.  # noqa: E501
-        :type: list[GoalWithdrawalConfig]
-        """
-
-        self._withdrawal_config = withdrawal_config
-
-    @property
-    def a_horizon(self):
-        """Gets the a_horizon of this GoalDecumulationStatusRequest.  # noqa: E501
-
-
-        :return: The a_horizon of this GoalDecumulationStatusRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._a_horizon
-
-    @a_horizon.setter
-    def a_horizon(self, a_horizon):
-        """Sets the a_horizon of this GoalDecumulationStatusRequest.
-
-
-        :param a_horizon: The a_horizon of this GoalDecumulationStatusRequest.  # noqa: E501
-        :type: int
-        """
-        if a_horizon is not None and a_horizon > 350:  # noqa: E501
-            raise ValueError("Invalid value for `a_horizon`, must be a value less than or equal to `350`")  # noqa: E501
-        if a_horizon is not None and a_horizon < 0:  # noqa: E501
-            raise ValueError("Invalid value for `a_horizon`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._a_horizon = a_horizon
-
-    @property
-    def conf_tgt(self):
-        """Gets the conf_tgt of this GoalDecumulationStatusRequest.  # noqa: E501
-
-
-        :return: The conf_tgt of this GoalDecumulationStatusRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._conf_tgt
-
-    @conf_tgt.setter
-    def conf_tgt(self, conf_tgt):
-        """Sets the conf_tgt of this GoalDecumulationStatusRequest.
-
-
-        :param conf_tgt: The conf_tgt of this GoalDecumulationStatusRequest.  # noqa: E501
-        :type: float
-        """
-        if conf_tgt is not None and conf_tgt > 1:  # noqa: E501
-            raise ValueError("Invalid value for `conf_tgt`, must be a value less than or equal to `1`")  # noqa: E501
-        if conf_tgt is not None and conf_tgt < 0:  # noqa: E501
-            raise ValueError("Invalid value for `conf_tgt`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._conf_tgt = conf_tgt
-
-    @property
-    def p_ret(self):
-        """Gets the p_ret of this GoalDecumulationStatusRequest.  # noqa: E501
-
-
-        :return: The p_ret of this GoalDecumulationStatusRequest.  # noqa: E501
-        :rtype: list[float]
-        """
-        return self._p_ret
-
-    @p_ret.setter
-    def p_ret(self, p_ret):
-        """Sets the p_ret of this GoalDecumulationStatusRequest.
-
-
-        :param p_ret: The p_ret of this GoalDecumulationStatusRequest.  # noqa: E501
-        :type: list[float]
-        """
-        if p_ret is None:
-            raise ValueError("Invalid value for `p_ret`, must not be `None`")  # noqa: E501
-
-        self._p_ret = p_ret
 
     @property
     def thresh_type(self):
@@ -435,69 +178,161 @@ class GoalDecumulationStatusRequest(object):
         self._thresh_type = thresh_type
 
     @property
-    def thresh(self):
-        """Gets the thresh of this GoalDecumulationStatusRequest.  # noqa: E501
+    def goal_id(self):
+        """Gets the goal_id of this GoalDecumulationStatusRequest.  # noqa: E501
 
 
-        :return: The thresh of this GoalDecumulationStatusRequest.  # noqa: E501
+        :return: The goal_id of this GoalDecumulationStatusRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._goal_id
+
+    @goal_id.setter
+    def goal_id(self, goal_id):
+        """Sets the goal_id of this GoalDecumulationStatusRequest.
+
+
+        :param goal_id: The goal_id of this GoalDecumulationStatusRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._goal_id = goal_id
+
+    @property
+    def client_id(self):
+        """Gets the client_id of this GoalDecumulationStatusRequest.  # noqa: E501
+
+
+        :return: The client_id of this GoalDecumulationStatusRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_id
+
+    @client_id.setter
+    def client_id(self, client_id):
+        """Sets the client_id of this GoalDecumulationStatusRequest.
+
+
+        :param client_id: The client_id of this GoalDecumulationStatusRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._client_id = client_id
+
+    @property
+    def conf_tgt(self):
+        """Gets the conf_tgt of this GoalDecumulationStatusRequest.  # noqa: E501
+
+
+        :return: The conf_tgt of this GoalDecumulationStatusRequest.  # noqa: E501
         :rtype: float
         """
-        return self._thresh
+        return self._conf_tgt
 
-    @thresh.setter
-    def thresh(self, thresh):
-        """Sets the thresh of this GoalDecumulationStatusRequest.
+    @conf_tgt.setter
+    def conf_tgt(self, conf_tgt):
+        """Sets the conf_tgt of this GoalDecumulationStatusRequest.
 
 
-        :param thresh: The thresh of this GoalDecumulationStatusRequest.  # noqa: E501
+        :param conf_tgt: The conf_tgt of this GoalDecumulationStatusRequest.  # noqa: E501
         :type: float
         """
-        if thresh is not None and thresh < 0:  # noqa: E501
-            raise ValueError("Invalid value for `thresh`, must be a value greater than or equal to `0`")  # noqa: E501
+        if conf_tgt is not None and conf_tgt > 1:  # noqa: E501
+            raise ValueError("Invalid value for `conf_tgt`, must be a value less than or equal to `1`")  # noqa: E501
+        if conf_tgt is not None and conf_tgt < 0:  # noqa: E501
+            raise ValueError("Invalid value for `conf_tgt`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._thresh = thresh
-
-    @property
-    def deposit_config(self):
-        """Gets the deposit_config of this GoalDecumulationStatusRequest.  # noqa: E501
-
-
-        :return: The deposit_config of this GoalDecumulationStatusRequest.  # noqa: E501
-        :rtype: list[DecumulationGoalDepositConfig]
-        """
-        return self._deposit_config
-
-    @deposit_config.setter
-    def deposit_config(self, deposit_config):
-        """Sets the deposit_config of this GoalDecumulationStatusRequest.
-
-
-        :param deposit_config: The deposit_config of this GoalDecumulationStatusRequest.  # noqa: E501
-        :type: list[DecumulationGoalDepositConfig]
-        """
-
-        self._deposit_config = deposit_config
+        self._conf_tgt = conf_tgt
 
     @property
-    def recommendation_config(self):
-        """Gets the recommendation_config of this GoalDecumulationStatusRequest.  # noqa: E501
+    def remove_outliers(self):
+        """Gets the remove_outliers of this GoalDecumulationStatusRequest.  # noqa: E501
 
 
-        :return: The recommendation_config of this GoalDecumulationStatusRequest.  # noqa: E501
-        :rtype: RecommendationConfig
+        :return: The remove_outliers of this GoalDecumulationStatusRequest.  # noqa: E501
+        :rtype: bool
         """
-        return self._recommendation_config
+        return self._remove_outliers
 
-    @recommendation_config.setter
-    def recommendation_config(self, recommendation_config):
-        """Sets the recommendation_config of this GoalDecumulationStatusRequest.
+    @remove_outliers.setter
+    def remove_outliers(self, remove_outliers):
+        """Sets the remove_outliers of this GoalDecumulationStatusRequest.
 
 
-        :param recommendation_config: The recommendation_config of this GoalDecumulationStatusRequest.  # noqa: E501
-        :type: RecommendationConfig
+        :param remove_outliers: The remove_outliers of this GoalDecumulationStatusRequest.  # noqa: E501
+        :type: bool
         """
 
-        self._recommendation_config = recommendation_config
+        self._remove_outliers = remove_outliers
+
+    @property
+    def a_horizon(self):
+        """Gets the a_horizon of this GoalDecumulationStatusRequest.  # noqa: E501
+
+
+        :return: The a_horizon of this GoalDecumulationStatusRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._a_horizon
+
+    @a_horizon.setter
+    def a_horizon(self, a_horizon):
+        """Sets the a_horizon of this GoalDecumulationStatusRequest.
+
+
+        :param a_horizon: The a_horizon of this GoalDecumulationStatusRequest.  # noqa: E501
+        :type: int
+        """
+        if a_horizon is not None and a_horizon > 350:  # noqa: E501
+            raise ValueError("Invalid value for `a_horizon`, must be a value less than or equal to `350`")  # noqa: E501
+        if a_horizon is not None and a_horizon < 0:  # noqa: E501
+            raise ValueError("Invalid value for `a_horizon`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._a_horizon = a_horizon
+
+    @property
+    def withdrawal_config(self):
+        """Gets the withdrawal_config of this GoalDecumulationStatusRequest.  # noqa: E501
+
+
+        :return: The withdrawal_config of this GoalDecumulationStatusRequest.  # noqa: E501
+        :rtype: list[GoalWithdrawalConfig]
+        """
+        return self._withdrawal_config
+
+    @withdrawal_config.setter
+    def withdrawal_config(self, withdrawal_config):
+        """Sets the withdrawal_config of this GoalDecumulationStatusRequest.
+
+
+        :param withdrawal_config: The withdrawal_config of this GoalDecumulationStatusRequest.  # noqa: E501
+        :type: list[GoalWithdrawalConfig]
+        """
+
+        self._withdrawal_config = withdrawal_config
+
+    @property
+    def p_ret(self):
+        """Gets the p_ret of this GoalDecumulationStatusRequest.  # noqa: E501
+
+
+        :return: The p_ret of this GoalDecumulationStatusRequest.  # noqa: E501
+        :rtype: list[float]
+        """
+        return self._p_ret
+
+    @p_ret.setter
+    def p_ret(self, p_ret):
+        """Sets the p_ret of this GoalDecumulationStatusRequest.
+
+
+        :param p_ret: The p_ret of this GoalDecumulationStatusRequest.  # noqa: E501
+        :type: list[float]
+        """
+        if p_ret is None:
+            raise ValueError("Invalid value for `p_ret`, must not be `None`")  # noqa: E501
+
+        self._p_ret = p_ret
 
     @property
     def compounding_rate(self):
@@ -521,6 +356,140 @@ class GoalDecumulationStatusRequest(object):
             raise ValueError("Invalid value for `compounding_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
 
         self._compounding_rate = compounding_rate
+
+    @property
+    def adjust_for_compounding(self):
+        """Gets the adjust_for_compounding of this GoalDecumulationStatusRequest.  # noqa: E501
+
+
+        :return: The adjust_for_compounding of this GoalDecumulationStatusRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._adjust_for_compounding
+
+    @adjust_for_compounding.setter
+    def adjust_for_compounding(self, adjust_for_compounding):
+        """Sets the adjust_for_compounding of this GoalDecumulationStatusRequest.
+
+
+        :param adjust_for_compounding: The adjust_for_compounding of this GoalDecumulationStatusRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._adjust_for_compounding = adjust_for_compounding
+
+    @property
+    def deposit_config(self):
+        """Gets the deposit_config of this GoalDecumulationStatusRequest.  # noqa: E501
+
+
+        :return: The deposit_config of this GoalDecumulationStatusRequest.  # noqa: E501
+        :rtype: list[DecumulationGoalDepositConfig]
+        """
+        return self._deposit_config
+
+    @deposit_config.setter
+    def deposit_config(self, deposit_config):
+        """Sets the deposit_config of this GoalDecumulationStatusRequest.
+
+
+        :param deposit_config: The deposit_config of this GoalDecumulationStatusRequest.  # noqa: E501
+        :type: list[DecumulationGoalDepositConfig]
+        """
+
+        self._deposit_config = deposit_config
+
+    @property
+    def thresh(self):
+        """Gets the thresh of this GoalDecumulationStatusRequest.  # noqa: E501
+
+
+        :return: The thresh of this GoalDecumulationStatusRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._thresh
+
+    @thresh.setter
+    def thresh(self, thresh):
+        """Sets the thresh of this GoalDecumulationStatusRequest.
+
+
+        :param thresh: The thresh of this GoalDecumulationStatusRequest.  # noqa: E501
+        :type: float
+        """
+        if thresh is not None and thresh < 0:  # noqa: E501
+            raise ValueError("Invalid value for `thresh`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._thresh = thresh
+
+    @property
+    def horizon_frequency(self):
+        """Gets the horizon_frequency of this GoalDecumulationStatusRequest.  # noqa: E501
+
+
+        :return: The horizon_frequency of this GoalDecumulationStatusRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._horizon_frequency
+
+    @horizon_frequency.setter
+    def horizon_frequency(self, horizon_frequency):
+        """Sets the horizon_frequency of this GoalDecumulationStatusRequest.
+
+
+        :param horizon_frequency: The horizon_frequency of this GoalDecumulationStatusRequest.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["year", "six_months", "quarter", "month", "two_weeks", "week", "day"]  # noqa: E501
+        if horizon_frequency not in allowed_values:
+            raise ValueError(
+                "Invalid value for `horizon_frequency` ({0}), must be one of {1}"  # noqa: E501
+                .format(horizon_frequency, allowed_values)
+            )
+
+        self._horizon_frequency = horizon_frequency
+
+    @property
+    def recommendation_config(self):
+        """Gets the recommendation_config of this GoalDecumulationStatusRequest.  # noqa: E501
+
+
+        :return: The recommendation_config of this GoalDecumulationStatusRequest.  # noqa: E501
+        :rtype: RecommendationConfig
+        """
+        return self._recommendation_config
+
+    @recommendation_config.setter
+    def recommendation_config(self, recommendation_config):
+        """Sets the recommendation_config of this GoalDecumulationStatusRequest.
+
+
+        :param recommendation_config: The recommendation_config of this GoalDecumulationStatusRequest.  # noqa: E501
+        :type: RecommendationConfig
+        """
+
+        self._recommendation_config = recommendation_config
+
+    @property
+    def create_log(self):
+        """Gets the create_log of this GoalDecumulationStatusRequest.  # noqa: E501
+
+
+        :return: The create_log of this GoalDecumulationStatusRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._create_log
+
+    @create_log.setter
+    def create_log(self, create_log):
+        """Sets the create_log of this GoalDecumulationStatusRequest.
+
+
+        :param create_log: The create_log of this GoalDecumulationStatusRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._create_log = create_log
 
     @property
     def withdrawal_tax(self):
@@ -573,25 +542,54 @@ class GoalDecumulationStatusRequest(object):
         self._trading_days_per_year = trading_days_per_year
 
     @property
-    def adjust_for_compounding(self):
-        """Gets the adjust_for_compounding of this GoalDecumulationStatusRequest.  # noqa: E501
+    def n(self):
+        """Gets the n of this GoalDecumulationStatusRequest.  # noqa: E501
 
 
-        :return: The adjust_for_compounding of this GoalDecumulationStatusRequest.  # noqa: E501
-        :rtype: bool
+        :return: The n of this GoalDecumulationStatusRequest.  # noqa: E501
+        :rtype: int
         """
-        return self._adjust_for_compounding
+        return self._n
 
-    @adjust_for_compounding.setter
-    def adjust_for_compounding(self, adjust_for_compounding):
-        """Sets the adjust_for_compounding of this GoalDecumulationStatusRequest.
+    @n.setter
+    def n(self, n):
+        """Sets the n of this GoalDecumulationStatusRequest.
 
 
-        :param adjust_for_compounding: The adjust_for_compounding of this GoalDecumulationStatusRequest.  # noqa: E501
-        :type: bool
+        :param n: The n of this GoalDecumulationStatusRequest.  # noqa: E501
+        :type: int
         """
+        if n is not None and n > 10000:  # noqa: E501
+            raise ValueError("Invalid value for `n`, must be a value less than or equal to `10000`")  # noqa: E501
+        if n is not None and n < 1:  # noqa: E501
+            raise ValueError("Invalid value for `n`, must be a value greater than or equal to `1`")  # noqa: E501
 
-        self._adjust_for_compounding = adjust_for_compounding
+        self._n = n
+
+    @property
+    def d_horizon(self):
+        """Gets the d_horizon of this GoalDecumulationStatusRequest.  # noqa: E501
+
+
+        :return: The d_horizon of this GoalDecumulationStatusRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._d_horizon
+
+    @d_horizon.setter
+    def d_horizon(self, d_horizon):
+        """Sets the d_horizon of this GoalDecumulationStatusRequest.
+
+
+        :param d_horizon: The d_horizon of this GoalDecumulationStatusRequest.  # noqa: E501
+        :type: int
+        """
+        if d_horizon is not None and d_horizon > 350:  # noqa: E501
+            raise ValueError("Invalid value for `d_horizon`, must be a value less than or equal to `350`")  # noqa: E501
+        if d_horizon is not None and d_horizon < 0:  # noqa: E501
+            raise ValueError("Invalid value for `d_horizon`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._d_horizon = d_horizon
 
     @property
     def p_risk(self):
@@ -617,25 +615,27 @@ class GoalDecumulationStatusRequest(object):
         self._p_risk = p_risk
 
     @property
-    def create_log(self):
-        """Gets the create_log of this GoalDecumulationStatusRequest.  # noqa: E501
+    def curr_inv(self):
+        """Gets the curr_inv of this GoalDecumulationStatusRequest.  # noqa: E501
 
 
-        :return: The create_log of this GoalDecumulationStatusRequest.  # noqa: E501
-        :rtype: bool
+        :return: The curr_inv of this GoalDecumulationStatusRequest.  # noqa: E501
+        :rtype: float
         """
-        return self._create_log
+        return self._curr_inv
 
-    @create_log.setter
-    def create_log(self, create_log):
-        """Sets the create_log of this GoalDecumulationStatusRequest.
+    @curr_inv.setter
+    def curr_inv(self, curr_inv):
+        """Sets the curr_inv of this GoalDecumulationStatusRequest.
 
 
-        :param create_log: The create_log of this GoalDecumulationStatusRequest.  # noqa: E501
-        :type: bool
+        :param curr_inv: The curr_inv of this GoalDecumulationStatusRequest.  # noqa: E501
+        :type: float
         """
+        if curr_inv is not None and curr_inv < 0:  # noqa: E501
+            raise ValueError("Invalid value for `curr_inv`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._create_log = create_log
+        self._curr_inv = curr_inv
 
     @property
     def recommend_type(self):

@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**startAge** | **Number** |  | 
-**totalAnnualCost** | **Number** |  | 
 **endAge** | **Number** |  | 
+**totalAnnualCost** | **Number** |  | 
+**startAge** | **Number** |  | 
 
 

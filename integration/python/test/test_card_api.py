@@ -29,10 +29,24 @@ class TestCardApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_create_auto_reload_using_post(self):
+        """Test case for create_auto_reload_using_post
+
+        Card auto reload  # noqa: E501
+        """
+        pass
+
     def test_create_card_activate_using_post(self):
         """Test case for create_card_activate_using_post
 
         Activate card  # noqa: E501
+        """
+        pass
+
+    def test_create_card_business_using_post(self):
+        """Test case for create_card_business_using_post
+
+        Create a card business  # noqa: E501
         """
         pass
 
@@ -47,6 +61,13 @@ class TestCardApi(unittest.TestCase):
         """Test case for create_card_issue_using_post
 
         issue a card  # noqa: E501
+        """
+        pass
+
+    def test_create_card_load_using_post(self):
+        """Test case for create_card_load_using_post
+
+        Create a card load  # noqa: E501
         """
         pass
 
@@ -71,10 +92,17 @@ class TestCardApi(unittest.TestCase):
         """
         pass
 
-    def test_create_card_reload_using_post(self):
-        """Test case for create_card_reload_using_post
+    def test_create_card_replace_using_post(self):
+        """Test case for create_card_replace_using_post
 
-        Create a card reload  # noqa: E501
+        Create card replace  # noqa: E501
+        """
+        pass
+
+    def test_create_card_spending_control_using_post(self):
+        """Test case for create_card_spending_control_using_post
+
+        Create card spending control  # noqa: E501
         """
         pass
 
@@ -89,13 +117,6 @@ class TestCardApi(unittest.TestCase):
         """Test case for create_card_token_using_post
 
         token card  # noqa: E501
-        """
-        pass
-
-    def test_create_card_transfer_using_post(self):
-        """Test case for create_card_transfer_using_post
-
-        Create Card transfer  # noqa: E501
         """
         pass
 
@@ -120,6 +141,34 @@ class TestCardApi(unittest.TestCase):
         """
         pass
 
+    def test_get_card_image(self):
+        """Test case for get_card_image
+
+        Get card image  # noqa: E501
+        """
+        pass
+
+    def test_get_card_pci_details(self):
+        """Test case for get_card_pci_details
+
+        Get card pci details  # noqa: E501
+        """
+        pass
+
+    def test_get_card_reserve_account_details_using_get(self):
+        """Test case for get_card_reserve_account_details_using_get
+
+        Card reserve account  # noqa: E501
+        """
+        pass
+
+    def test_get_card_statement_using_get(self):
+        """Test case for get_card_statement_using_get
+
+        Get card statement  # noqa: E501
+        """
+        pass
+
     def test_get_card_token_using_token(self):
         """Test case for get_card_token_using_token
 
@@ -141,6 +190,13 @@ class TestCardApi(unittest.TestCase):
         """
         pass
 
+    def test_update_card_business_using_put(self):
+        """Test case for update_card_business_using_put
+
+        Update a card business  # noqa: E501
+        """
+        pass
+
     def test_update_card_pin_using_post(self):
         """Test case for update_card_pin_using_post
 
@@ -148,10 +204,31 @@ class TestCardApi(unittest.TestCase):
         """
         pass
 
+    def test_update_card_spending_control_using_put(self):
+        """Test case for update_card_spending_control_using_put
+
+        Update a card spending control  # noqa: E501
+        """
+        pass
+
     def test_update_card_using_put(self):
         """Test case for update_card_using_put
 
         Update a card information  # noqa: E501
+        """
+        pass
+
+    def test_update_client_card_using_put(self):
+        """Test case for update_client_card_using_put
+
+        Update a card client  # noqa: E501
+        """
+        pass
+
+    def test_verify_card_pin_using_post(self):
+        """Test case for verify_card_pin_using_post
+
+        verify card pin  # noqa: E501
         """
         pass
 

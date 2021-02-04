@@ -36,6 +36,13 @@ class TestBaasApi(unittest.TestCase):
         """
         pass
 
+    def test_create_baas_business_using_post(self):
+        """Test case for create_baas_business_using_post
+
+        Create a Baas Business  # noqa: E501
+        """
+        pass
+
     def test_create_baas_client_using_post(self):
         """Test case for create_baas_client_using_post
 
@@ -68,6 +75,13 @@ class TestBaasApi(unittest.TestCase):
         """Test case for get_baas_portfolio_transaction_using_get
 
         Get a Baas portfolio transaction  # noqa: E501
+        """
+        pass
+
+    def test_update_baas_business_using_put(self):
+        """Test case for update_baas_business_using_put
+
+        Update a Baas business  # noqa: E501
         """
         pass
 

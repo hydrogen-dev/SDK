@@ -26,13 +26,10 @@ import java.io.IOException;
 /**
  * ResponseEntity
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class ResponseEntity {
   @SerializedName("body")
   private Object body = null;
-
-  @SerializedName("status")
-  private Object status = null;
 
   /**
    * Gets or Sets statusCode
@@ -205,7 +202,7 @@ public class ResponseEntity {
 
       @Override
       public StatusCodeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        Object value = jsonReader.nextString();
         return StatusCodeEnum.fromValue(String.valueOf(value));
       }
     }
@@ -233,24 +230,6 @@ public class ResponseEntity {
 
   public void setBody(Object body) {
     this.body = body;
-  }
-
-  public ResponseEntity status(Object status) {
-    this.status = status;
-    return this;
-  }
-
-   /**
-   * Get status
-   * @return status
-  **/
-  @ApiModelProperty(value = "")
-  public Object getStatus() {
-    return status;
-  }
-
-  public void setStatus(Object status) {
-    this.status = status;
   }
 
   public ResponseEntity statusCode(StatusCodeEnum statusCode) {
@@ -300,14 +279,13 @@ public class ResponseEntity {
     }
     ResponseEntity responseEntity = (ResponseEntity) o;
     return Objects.equals(this.body, responseEntity.body) &&
-        Objects.equals(this.status, responseEntity.status) &&
         Objects.equals(this.statusCode, responseEntity.statusCode) &&
         Objects.equals(this.statusCodeValue, responseEntity.statusCodeValue);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(body, status, statusCode, statusCodeValue);
+    return Objects.hash(body, statusCode, statusCodeValue);
   }
 
 
@@ -317,7 +295,6 @@ public class ResponseEntity {
     sb.append("class ResponseEntity {\n");
     
     sb.append("    body: ").append(toIndentedString(body)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    statusCode: ").append(toIndentedString(statusCode)).append("\n");
     sb.append("    statusCodeValue: ").append(toIndentedString(statusCodeValue)).append("\n");
     sb.append("}");

@@ -321,7 +321,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\WebhookApi(
     new GuzzleHttp\Client(),
     $config
 );
-$webhook = new \com\hydrogen\nucleus\Model\Webhook(); // \com\hydrogen\nucleus\Model\Webhook | webhook
+$webhook = new \stdClass; // object | webhook
 $webhook_id = "webhook_id_example"; // string | UUID webhook_id
 
 try {
@@ -337,7 +337,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook** | [**\com\hydrogen\nucleus\Model\Webhook**](../Model/Webhook.md)| webhook |
+ **webhook** | **object**| webhook |
  **webhook_id** | [**string**](../Model/.md)| UUID webhook_id |
 
 ### Return type

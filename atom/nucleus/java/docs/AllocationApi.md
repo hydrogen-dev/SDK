@@ -32,7 +32,6 @@ Create a new allocation composition record for an allocation.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AllocationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -49,8 +48,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AllocationApi apiInstance = new AllocationApi();
 AllocationComposition allocRequest = new AllocationComposition(); // AllocationComposition | allocRequest
 try {
@@ -93,7 +90,6 @@ Create a new allocation for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AllocationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -110,8 +106,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AllocationApi apiInstance = new AllocationApi();
 Allocation allocationRequest = new Allocation(); // Allocation | allocationRequest
 try {
@@ -154,7 +148,6 @@ Permanently delete an allocation composition record for an allocation.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AllocationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -171,8 +164,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AllocationApi apiInstance = new AllocationApi();
 UUID allocationCompositionId = new UUID(); // UUID | UUID allocation_composition_id
 try {
@@ -214,7 +205,6 @@ Permanently delete an allocation defined by your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AllocationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -231,8 +221,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AllocationApi apiInstance = new AllocationApi();
 UUID allocationId = new UUID(); // UUID | UUID allocation_id
 try {
@@ -272,7 +260,6 @@ List all Allocation aggregated data overview
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AllocationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -289,8 +276,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AllocationApi apiInstance = new AllocationApi();
 UUID allocationId = new UUID(); // UUID | Allocation Id
 try {
@@ -333,7 +318,6 @@ Get a list of asset sizes by date for a specific allocation.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AllocationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -350,8 +334,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AllocationApi apiInstance = new AllocationApi();
 UUID allocationId = new UUID(); // UUID | UUID allocation_id
 LocalDate endDate = LocalDate.now(); // LocalDate | end date
@@ -404,7 +386,6 @@ Get the information for all securities assigned to a specific allocation.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AllocationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -421,8 +402,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AllocationApi apiInstance = new AllocationApi();
 UUID allocationId = new UUID(); // UUID | UUID allocation_id
 LocalDate endDate = LocalDate.now(); // LocalDate | end date
@@ -469,7 +448,6 @@ Get the information for all transactions made under an allocation to achieve the
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AllocationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -486,8 +464,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AllocationApi apiInstance = new AllocationApi();
 UUID allocationId = new UUID(); // UUID | UUID allocation_id
 Boolean ascending = false; // Boolean | ascending
@@ -542,7 +518,6 @@ Get details for all allocations defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AllocationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -559,8 +534,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AllocationApi apiInstance = new AllocationApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -611,7 +584,6 @@ Get the allocation composition for all allocations.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AllocationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -628,8 +600,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AllocationApi apiInstance = new AllocationApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -680,7 +650,6 @@ Retrieve the information of an allocation composition record for an allocation.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AllocationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -697,8 +666,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AllocationApi apiInstance = new AllocationApi();
 UUID allocationCompositionId = new UUID(); // UUID | UUID allocation_composition_id
 try {
@@ -741,7 +708,6 @@ Retrieve the information for an allocation defined by your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AllocationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -758,8 +724,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AllocationApi apiInstance = new AllocationApi();
 UUID allocationId = new UUID(); // UUID | UUID allocation_id
 try {
@@ -802,7 +766,6 @@ Update the information of an allocation composition record for an allocation.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AllocationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -819,10 +782,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AllocationApi apiInstance = new AllocationApi();
-AllocationComposition allocationComposition = new AllocationComposition(); // AllocationComposition | allocation_composition
+Object allocationComposition = null; // Object | allocation_composition
 UUID allocationCompositionId = new UUID(); // UUID | UUID allocation_composition_id
 try {
     AllocationComposition result = apiInstance.updateAllocationCompositionUsingPut(allocationComposition, allocationCompositionId);
@@ -837,7 +798,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocationComposition** | [**AllocationComposition**](AllocationComposition.md)| allocation_composition |
+ **allocationComposition** | **Object**| allocation_composition |
  **allocationCompositionId** | [**UUID**](.md)| UUID allocation_composition_id |
 
 ### Return type
@@ -865,7 +826,6 @@ Update an allocation defined by your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AllocationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -882,10 +842,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AllocationApi apiInstance = new AllocationApi();
-Allocation allocation = new Allocation(); // Allocation | allocation
+Object allocation = null; // Object | allocation
 UUID allocationId = new UUID(); // UUID | UUID allocation_id
 try {
     Allocation result = apiInstance.updateAllocationUsingPut(allocation, allocationId);
@@ -900,7 +858,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocation** | [**Allocation**](Allocation.md)| allocation |
+ **allocation** | **Object**| allocation |
  **allocationId** | [**UUID**](.md)| UUID allocation_id |
 
 ### Return type

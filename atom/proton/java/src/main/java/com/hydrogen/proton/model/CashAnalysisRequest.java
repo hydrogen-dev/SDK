@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.UUID;
@@ -29,68 +28,13 @@ import org.threeten.bp.LocalDate;
 /**
  * CashAnalysisRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class CashAnalysisRequest {
-  /**
-   * Gets or Sets scope
-   */
-  @JsonAdapter(ScopeEnum.Adapter.class)
-  public enum ScopeEnum {
-    ALL("all"),
-    
-    EXTERNAL("external"),
-    
-    INTERNAL("internal");
-
-    private String value;
-
-    ScopeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ScopeEnum fromValue(String text) {
-      for (ScopeEnum b : ScopeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<ScopeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ScopeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ScopeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ScopeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
-  @SerializedName("scope")
-  private ScopeEnum scope = ScopeEnum.ALL;
-
-  @SerializedName("show_outflow_details")
-  private Boolean showOutflowDetails = false;
-
-  @SerializedName("show_history")
-  private Boolean showHistory = false;
+  @SerializedName("end_date")
+  private LocalDate endDate = null;
 
   @SerializedName("client_id")
   private UUID clientId = null;
@@ -100,15 +44,6 @@ public class CashAnalysisRequest {
 
   @SerializedName("currency_conversion")
   private String currencyConversion = null;
-
-  @SerializedName("end_date")
-  private LocalDate endDate = null;
-
-  @SerializedName("currency_code")
-  private String currencyCode = null;
-
-  @SerializedName("start_date")
-  private LocalDate startDate = null;
 
   /**
    * Gets or Sets historyFrequencyInterval
@@ -166,58 +101,86 @@ public class CashAnalysisRequest {
   @SerializedName("history_frequency_interval")
   private HistoryFrequencyIntervalEnum historyFrequencyInterval = HistoryFrequencyIntervalEnum.MONTH;
 
-  public CashAnalysisRequest scope(ScopeEnum scope) {
-    this.scope = scope;
+  @SerializedName("start_date")
+  private LocalDate startDate = null;
+
+  @SerializedName("show_history")
+  private Boolean showHistory = false;
+
+  @SerializedName("currency_code")
+  private String currencyCode = null;
+
+  @SerializedName("show_outflow_details")
+  private Boolean showOutflowDetails = false;
+
+  /**
+   * Gets or Sets scope
+   */
+  @JsonAdapter(ScopeEnum.Adapter.class)
+  public enum ScopeEnum {
+    ALL("all"),
+    
+    EXTERNAL("external"),
+    
+    INTERNAL("internal");
+
+    private String value;
+
+    ScopeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static ScopeEnum fromValue(String text) {
+      for (ScopeEnum b : ScopeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<ScopeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final ScopeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public ScopeEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return ScopeEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
+  @SerializedName("scope")
+  private ScopeEnum scope = ScopeEnum.ALL;
+
+  public CashAnalysisRequest endDate(LocalDate endDate) {
+    this.endDate = endDate;
     return this;
   }
 
    /**
-   * Get scope
-   * @return scope
+   * Get endDate
+   * @return endDate
   **/
   @ApiModelProperty(value = "")
-  public ScopeEnum getScope() {
-    return scope;
+  public LocalDate getEndDate() {
+    return endDate;
   }
 
-  public void setScope(ScopeEnum scope) {
-    this.scope = scope;
-  }
-
-  public CashAnalysisRequest showOutflowDetails(Boolean showOutflowDetails) {
-    this.showOutflowDetails = showOutflowDetails;
-    return this;
-  }
-
-   /**
-   * Get showOutflowDetails
-   * @return showOutflowDetails
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isShowOutflowDetails() {
-    return showOutflowDetails;
-  }
-
-  public void setShowOutflowDetails(Boolean showOutflowDetails) {
-    this.showOutflowDetails = showOutflowDetails;
-  }
-
-  public CashAnalysisRequest showHistory(Boolean showHistory) {
-    this.showHistory = showHistory;
-    return this;
-  }
-
-   /**
-   * Get showHistory
-   * @return showHistory
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isShowHistory() {
-    return showHistory;
-  }
-
-  public void setShowHistory(Boolean showHistory) {
-    this.showHistory = showHistory;
+  public void setEndDate(LocalDate endDate) {
+    this.endDate = endDate;
   }
 
   public CashAnalysisRequest clientId(UUID clientId) {
@@ -274,40 +237,22 @@ public class CashAnalysisRequest {
     this.currencyConversion = currencyConversion;
   }
 
-  public CashAnalysisRequest endDate(LocalDate endDate) {
-    this.endDate = endDate;
+  public CashAnalysisRequest historyFrequencyInterval(HistoryFrequencyIntervalEnum historyFrequencyInterval) {
+    this.historyFrequencyInterval = historyFrequencyInterval;
     return this;
   }
 
    /**
-   * Get endDate
-   * @return endDate
+   * Get historyFrequencyInterval
+   * @return historyFrequencyInterval
   **/
   @ApiModelProperty(value = "")
-  public LocalDate getEndDate() {
-    return endDate;
+  public HistoryFrequencyIntervalEnum getHistoryFrequencyInterval() {
+    return historyFrequencyInterval;
   }
 
-  public void setEndDate(LocalDate endDate) {
-    this.endDate = endDate;
-  }
-
-  public CashAnalysisRequest currencyCode(String currencyCode) {
-    this.currencyCode = currencyCode;
-    return this;
-  }
-
-   /**
-   * Get currencyCode
-   * @return currencyCode
-  **/
-  @ApiModelProperty(value = "")
-  public String getCurrencyCode() {
-    return currencyCode;
-  }
-
-  public void setCurrencyCode(String currencyCode) {
-    this.currencyCode = currencyCode;
+  public void setHistoryFrequencyInterval(HistoryFrequencyIntervalEnum historyFrequencyInterval) {
+    this.historyFrequencyInterval = historyFrequencyInterval;
   }
 
   public CashAnalysisRequest startDate(LocalDate startDate) {
@@ -328,22 +273,76 @@ public class CashAnalysisRequest {
     this.startDate = startDate;
   }
 
-  public CashAnalysisRequest historyFrequencyInterval(HistoryFrequencyIntervalEnum historyFrequencyInterval) {
-    this.historyFrequencyInterval = historyFrequencyInterval;
+  public CashAnalysisRequest showHistory(Boolean showHistory) {
+    this.showHistory = showHistory;
     return this;
   }
 
    /**
-   * Get historyFrequencyInterval
-   * @return historyFrequencyInterval
+   * Get showHistory
+   * @return showHistory
   **/
   @ApiModelProperty(value = "")
-  public HistoryFrequencyIntervalEnum getHistoryFrequencyInterval() {
-    return historyFrequencyInterval;
+  public Boolean isShowHistory() {
+    return showHistory;
   }
 
-  public void setHistoryFrequencyInterval(HistoryFrequencyIntervalEnum historyFrequencyInterval) {
-    this.historyFrequencyInterval = historyFrequencyInterval;
+  public void setShowHistory(Boolean showHistory) {
+    this.showHistory = showHistory;
+  }
+
+  public CashAnalysisRequest currencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+    return this;
+  }
+
+   /**
+   * Get currencyCode
+   * @return currencyCode
+  **/
+  @ApiModelProperty(value = "")
+  public String getCurrencyCode() {
+    return currencyCode;
+  }
+
+  public void setCurrencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+  }
+
+  public CashAnalysisRequest showOutflowDetails(Boolean showOutflowDetails) {
+    this.showOutflowDetails = showOutflowDetails;
+    return this;
+  }
+
+   /**
+   * Get showOutflowDetails
+   * @return showOutflowDetails
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isShowOutflowDetails() {
+    return showOutflowDetails;
+  }
+
+  public void setShowOutflowDetails(Boolean showOutflowDetails) {
+    this.showOutflowDetails = showOutflowDetails;
+  }
+
+  public CashAnalysisRequest scope(ScopeEnum scope) {
+    this.scope = scope;
+    return this;
+  }
+
+   /**
+   * Get scope
+   * @return scope
+  **/
+  @ApiModelProperty(value = "")
+  public ScopeEnum getScope() {
+    return scope;
+  }
+
+  public void setScope(ScopeEnum scope) {
+    this.scope = scope;
   }
 
 
@@ -356,21 +355,21 @@ public class CashAnalysisRequest {
       return false;
     }
     CashAnalysisRequest cashAnalysisRequest = (CashAnalysisRequest) o;
-    return Objects.equals(this.scope, cashAnalysisRequest.scope) &&
-        Objects.equals(this.showOutflowDetails, cashAnalysisRequest.showOutflowDetails) &&
-        Objects.equals(this.showHistory, cashAnalysisRequest.showHistory) &&
+    return Objects.equals(this.endDate, cashAnalysisRequest.endDate) &&
         Objects.equals(this.clientId, cashAnalysisRequest.clientId) &&
         Objects.equals(this.showInflowDetails, cashAnalysisRequest.showInflowDetails) &&
         Objects.equals(this.currencyConversion, cashAnalysisRequest.currencyConversion) &&
-        Objects.equals(this.endDate, cashAnalysisRequest.endDate) &&
-        Objects.equals(this.currencyCode, cashAnalysisRequest.currencyCode) &&
+        Objects.equals(this.historyFrequencyInterval, cashAnalysisRequest.historyFrequencyInterval) &&
         Objects.equals(this.startDate, cashAnalysisRequest.startDate) &&
-        Objects.equals(this.historyFrequencyInterval, cashAnalysisRequest.historyFrequencyInterval);
+        Objects.equals(this.showHistory, cashAnalysisRequest.showHistory) &&
+        Objects.equals(this.currencyCode, cashAnalysisRequest.currencyCode) &&
+        Objects.equals(this.showOutflowDetails, cashAnalysisRequest.showOutflowDetails) &&
+        Objects.equals(this.scope, cashAnalysisRequest.scope);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(scope, showOutflowDetails, showHistory, clientId, showInflowDetails, currencyConversion, endDate, currencyCode, startDate, historyFrequencyInterval);
+    return Objects.hash(endDate, clientId, showInflowDetails, currencyConversion, historyFrequencyInterval, startDate, showHistory, currencyCode, showOutflowDetails, scope);
   }
 
 
@@ -379,16 +378,16 @@ public class CashAnalysisRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class CashAnalysisRequest {\n");
     
-    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
-    sb.append("    showOutflowDetails: ").append(toIndentedString(showOutflowDetails)).append("\n");
-    sb.append("    showHistory: ").append(toIndentedString(showHistory)).append("\n");
+    sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
     sb.append("    showInflowDetails: ").append(toIndentedString(showInflowDetails)).append("\n");
     sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
-    sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
-    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
-    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    historyFrequencyInterval: ").append(toIndentedString(historyFrequencyInterval)).append("\n");
+    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    sb.append("    showHistory: ").append(toIndentedString(showHistory)).append("\n");
+    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
+    sb.append("    showOutflowDetails: ").append(toIndentedString(showOutflowDetails)).append("\n");
+    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
     sb.append("}");
     return sb.toString();
   }

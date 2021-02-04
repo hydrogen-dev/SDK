@@ -37,7 +37,7 @@ var tokenGenerationCallback = function (error, data, response) {
         console.error(error);
         process.exit(1);
     } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        console.log(response.request.recurringTransactionAnalysismethod + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
         oauth2.accessToken = data.access_token;
         createBudgetCalculator();
     }

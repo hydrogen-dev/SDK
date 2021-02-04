@@ -1073,7 +1073,7 @@ class CardApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param CardProgram card_program: card_program (required)
+        :param object card_program: card_program (required)
         :param str card_program_id: UUID card_program_id (required)
         :return: CardProgram
                  If the method is called asynchronously,
@@ -1096,7 +1096,7 @@ class CardApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param CardProgram card_program: card_program (required)
+        :param object card_program: card_program (required)
         :param str card_program_id: UUID card_program_id (required)
         :return: CardProgram
                  If the method is called asynchronously,
@@ -1180,7 +1180,7 @@ class CardApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Card card: card (required)
+        :param object card: card (required)
         :param str card_id: UUID card_id (required)
         :return: Card
                  If the method is called asynchronously,
@@ -1203,7 +1203,7 @@ class CardApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Card card: card (required)
+        :param object card: card (required)
         :param str card_id: UUID card_id (required)
         :return: Card
                  If the method is called asynchronously,

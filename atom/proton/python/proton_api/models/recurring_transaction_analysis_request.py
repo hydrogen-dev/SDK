@@ -31,76 +31,288 @@ class RecurringTransactionAnalysisRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'scope': 'str',
-        'amount_deviation_threshold': 'float',
-        'analyze_transactions': 'bool',
-        'interval_deviation_threshold': 'int',
-        'client_id': 'str',
-        'currency_conversion': 'str',
-        'start_date': 'date',
         'aggregation_account_ids': 'list[str]',
         'end_date': 'date',
-        'show_recurring_details': 'bool',
+        'client_id': 'str',
+        'account_ids': 'list[str]',
+        'interval_deviation_threshold': 'int',
+        'analyze_transactions': 'bool',
+        'currency_conversion': 'str',
+        'start_date': 'date',
         'currency_code': 'str',
-        'account_ids': 'list[str]'
+        'show_recurring_details': 'bool',
+        'scope': 'str',
+        'amount_deviation_threshold': 'float'
     }
 
     attribute_map = {
-        'scope': 'scope',
-        'amount_deviation_threshold': 'amount_deviation_threshold',
-        'analyze_transactions': 'analyze_transactions',
-        'interval_deviation_threshold': 'interval_deviation_threshold',
-        'client_id': 'client_id',
-        'currency_conversion': 'currency_conversion',
-        'start_date': 'start_date',
         'aggregation_account_ids': 'aggregation_account_ids',
         'end_date': 'end_date',
-        'show_recurring_details': 'show_recurring_details',
+        'client_id': 'client_id',
+        'account_ids': 'account_ids',
+        'interval_deviation_threshold': 'interval_deviation_threshold',
+        'analyze_transactions': 'analyze_transactions',
+        'currency_conversion': 'currency_conversion',
+        'start_date': 'start_date',
         'currency_code': 'currency_code',
-        'account_ids': 'account_ids'
+        'show_recurring_details': 'show_recurring_details',
+        'scope': 'scope',
+        'amount_deviation_threshold': 'amount_deviation_threshold'
     }
 
-    def __init__(self, scope='all', amount_deviation_threshold=0.05, analyze_transactions=True, interval_deviation_threshold=3, client_id=None, currency_conversion=None, start_date=None, aggregation_account_ids=None, end_date=None, show_recurring_details=False, currency_code=None, account_ids=None):  # noqa: E501
+    def __init__(self, aggregation_account_ids=None, end_date=None, client_id=None, account_ids=None, interval_deviation_threshold=3, analyze_transactions=True, currency_conversion=None, start_date=None, currency_code=None, show_recurring_details=False, scope='all', amount_deviation_threshold=0.05):  # noqa: E501
         """RecurringTransactionAnalysisRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._scope = None
-        self._amount_deviation_threshold = None
-        self._analyze_transactions = None
-        self._interval_deviation_threshold = None
-        self._client_id = None
-        self._currency_conversion = None
-        self._start_date = None
         self._aggregation_account_ids = None
         self._end_date = None
-        self._show_recurring_details = None
-        self._currency_code = None
+        self._client_id = None
         self._account_ids = None
+        self._interval_deviation_threshold = None
+        self._analyze_transactions = None
+        self._currency_conversion = None
+        self._start_date = None
+        self._currency_code = None
+        self._show_recurring_details = None
+        self._scope = None
+        self._amount_deviation_threshold = None
         self.discriminator = None
 
-        if scope is not None:
-            self.scope = scope
-        if amount_deviation_threshold is not None:
-            self.amount_deviation_threshold = amount_deviation_threshold
-        if analyze_transactions is not None:
-            self.analyze_transactions = analyze_transactions
-        if interval_deviation_threshold is not None:
-            self.interval_deviation_threshold = interval_deviation_threshold
-        if client_id is not None:
-            self.client_id = client_id
-        if currency_conversion is not None:
-            self.currency_conversion = currency_conversion
-        if start_date is not None:
-            self.start_date = start_date
         if aggregation_account_ids is not None:
             self.aggregation_account_ids = aggregation_account_ids
         if end_date is not None:
             self.end_date = end_date
-        if show_recurring_details is not None:
-            self.show_recurring_details = show_recurring_details
-        if currency_code is not None:
-            self.currency_code = currency_code
+        if client_id is not None:
+            self.client_id = client_id
         if account_ids is not None:
             self.account_ids = account_ids
+        if interval_deviation_threshold is not None:
+            self.interval_deviation_threshold = interval_deviation_threshold
+        if analyze_transactions is not None:
+            self.analyze_transactions = analyze_transactions
+        if currency_conversion is not None:
+            self.currency_conversion = currency_conversion
+        if start_date is not None:
+            self.start_date = start_date
+        if currency_code is not None:
+            self.currency_code = currency_code
+        if show_recurring_details is not None:
+            self.show_recurring_details = show_recurring_details
+        if scope is not None:
+            self.scope = scope
+        if amount_deviation_threshold is not None:
+            self.amount_deviation_threshold = amount_deviation_threshold
+
+    @property
+    def aggregation_account_ids(self):
+        """Gets the aggregation_account_ids of this RecurringTransactionAnalysisRequest.  # noqa: E501
+
+
+        :return: The aggregation_account_ids of this RecurringTransactionAnalysisRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._aggregation_account_ids
+
+    @aggregation_account_ids.setter
+    def aggregation_account_ids(self, aggregation_account_ids):
+        """Sets the aggregation_account_ids of this RecurringTransactionAnalysisRequest.
+
+
+        :param aggregation_account_ids: The aggregation_account_ids of this RecurringTransactionAnalysisRequest.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._aggregation_account_ids = aggregation_account_ids
+
+    @property
+    def end_date(self):
+        """Gets the end_date of this RecurringTransactionAnalysisRequest.  # noqa: E501
+
+
+        :return: The end_date of this RecurringTransactionAnalysisRequest.  # noqa: E501
+        :rtype: date
+        """
+        return self._end_date
+
+    @end_date.setter
+    def end_date(self, end_date):
+        """Sets the end_date of this RecurringTransactionAnalysisRequest.
+
+
+        :param end_date: The end_date of this RecurringTransactionAnalysisRequest.  # noqa: E501
+        :type: date
+        """
+
+        self._end_date = end_date
+
+    @property
+    def client_id(self):
+        """Gets the client_id of this RecurringTransactionAnalysisRequest.  # noqa: E501
+
+
+        :return: The client_id of this RecurringTransactionAnalysisRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_id
+
+    @client_id.setter
+    def client_id(self, client_id):
+        """Sets the client_id of this RecurringTransactionAnalysisRequest.
+
+
+        :param client_id: The client_id of this RecurringTransactionAnalysisRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._client_id = client_id
+
+    @property
+    def account_ids(self):
+        """Gets the account_ids of this RecurringTransactionAnalysisRequest.  # noqa: E501
+
+
+        :return: The account_ids of this RecurringTransactionAnalysisRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._account_ids
+
+    @account_ids.setter
+    def account_ids(self, account_ids):
+        """Sets the account_ids of this RecurringTransactionAnalysisRequest.
+
+
+        :param account_ids: The account_ids of this RecurringTransactionAnalysisRequest.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._account_ids = account_ids
+
+    @property
+    def interval_deviation_threshold(self):
+        """Gets the interval_deviation_threshold of this RecurringTransactionAnalysisRequest.  # noqa: E501
+
+
+        :return: The interval_deviation_threshold of this RecurringTransactionAnalysisRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._interval_deviation_threshold
+
+    @interval_deviation_threshold.setter
+    def interval_deviation_threshold(self, interval_deviation_threshold):
+        """Sets the interval_deviation_threshold of this RecurringTransactionAnalysisRequest.
+
+
+        :param interval_deviation_threshold: The interval_deviation_threshold of this RecurringTransactionAnalysisRequest.  # noqa: E501
+        :type: int
+        """
+        if interval_deviation_threshold is not None and interval_deviation_threshold < 0:  # noqa: E501
+            raise ValueError("Invalid value for `interval_deviation_threshold`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._interval_deviation_threshold = interval_deviation_threshold
+
+    @property
+    def analyze_transactions(self):
+        """Gets the analyze_transactions of this RecurringTransactionAnalysisRequest.  # noqa: E501
+
+
+        :return: The analyze_transactions of this RecurringTransactionAnalysisRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._analyze_transactions
+
+    @analyze_transactions.setter
+    def analyze_transactions(self, analyze_transactions):
+        """Sets the analyze_transactions of this RecurringTransactionAnalysisRequest.
+
+
+        :param analyze_transactions: The analyze_transactions of this RecurringTransactionAnalysisRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._analyze_transactions = analyze_transactions
+
+    @property
+    def currency_conversion(self):
+        """Gets the currency_conversion of this RecurringTransactionAnalysisRequest.  # noqa: E501
+
+
+        :return: The currency_conversion of this RecurringTransactionAnalysisRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_conversion
+
+    @currency_conversion.setter
+    def currency_conversion(self, currency_conversion):
+        """Sets the currency_conversion of this RecurringTransactionAnalysisRequest.
+
+
+        :param currency_conversion: The currency_conversion of this RecurringTransactionAnalysisRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_conversion = currency_conversion
+
+    @property
+    def start_date(self):
+        """Gets the start_date of this RecurringTransactionAnalysisRequest.  # noqa: E501
+
+
+        :return: The start_date of this RecurringTransactionAnalysisRequest.  # noqa: E501
+        :rtype: date
+        """
+        return self._start_date
+
+    @start_date.setter
+    def start_date(self, start_date):
+        """Sets the start_date of this RecurringTransactionAnalysisRequest.
+
+
+        :param start_date: The start_date of this RecurringTransactionAnalysisRequest.  # noqa: E501
+        :type: date
+        """
+
+        self._start_date = start_date
+
+    @property
+    def currency_code(self):
+        """Gets the currency_code of this RecurringTransactionAnalysisRequest.  # noqa: E501
+
+
+        :return: The currency_code of this RecurringTransactionAnalysisRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_code
+
+    @currency_code.setter
+    def currency_code(self, currency_code):
+        """Sets the currency_code of this RecurringTransactionAnalysisRequest.
+
+
+        :param currency_code: The currency_code of this RecurringTransactionAnalysisRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_code = currency_code
+
+    @property
+    def show_recurring_details(self):
+        """Gets the show_recurring_details of this RecurringTransactionAnalysisRequest.  # noqa: E501
+
+
+        :return: The show_recurring_details of this RecurringTransactionAnalysisRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._show_recurring_details
+
+    @show_recurring_details.setter
+    def show_recurring_details(self, show_recurring_details):
+        """Sets the show_recurring_details of this RecurringTransactionAnalysisRequest.
+
+
+        :param show_recurring_details: The show_recurring_details of this RecurringTransactionAnalysisRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._show_recurring_details = show_recurring_details
 
     @property
     def scope(self):
@@ -153,218 +365,6 @@ class RecurringTransactionAnalysisRequest(object):
             raise ValueError("Invalid value for `amount_deviation_threshold`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._amount_deviation_threshold = amount_deviation_threshold
-
-    @property
-    def analyze_transactions(self):
-        """Gets the analyze_transactions of this RecurringTransactionAnalysisRequest.  # noqa: E501
-
-
-        :return: The analyze_transactions of this RecurringTransactionAnalysisRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._analyze_transactions
-
-    @analyze_transactions.setter
-    def analyze_transactions(self, analyze_transactions):
-        """Sets the analyze_transactions of this RecurringTransactionAnalysisRequest.
-
-
-        :param analyze_transactions: The analyze_transactions of this RecurringTransactionAnalysisRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._analyze_transactions = analyze_transactions
-
-    @property
-    def interval_deviation_threshold(self):
-        """Gets the interval_deviation_threshold of this RecurringTransactionAnalysisRequest.  # noqa: E501
-
-
-        :return: The interval_deviation_threshold of this RecurringTransactionAnalysisRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._interval_deviation_threshold
-
-    @interval_deviation_threshold.setter
-    def interval_deviation_threshold(self, interval_deviation_threshold):
-        """Sets the interval_deviation_threshold of this RecurringTransactionAnalysisRequest.
-
-
-        :param interval_deviation_threshold: The interval_deviation_threshold of this RecurringTransactionAnalysisRequest.  # noqa: E501
-        :type: int
-        """
-        if interval_deviation_threshold is not None and interval_deviation_threshold < 0:  # noqa: E501
-            raise ValueError("Invalid value for `interval_deviation_threshold`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._interval_deviation_threshold = interval_deviation_threshold
-
-    @property
-    def client_id(self):
-        """Gets the client_id of this RecurringTransactionAnalysisRequest.  # noqa: E501
-
-
-        :return: The client_id of this RecurringTransactionAnalysisRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._client_id
-
-    @client_id.setter
-    def client_id(self, client_id):
-        """Sets the client_id of this RecurringTransactionAnalysisRequest.
-
-
-        :param client_id: The client_id of this RecurringTransactionAnalysisRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._client_id = client_id
-
-    @property
-    def currency_conversion(self):
-        """Gets the currency_conversion of this RecurringTransactionAnalysisRequest.  # noqa: E501
-
-
-        :return: The currency_conversion of this RecurringTransactionAnalysisRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._currency_conversion
-
-    @currency_conversion.setter
-    def currency_conversion(self, currency_conversion):
-        """Sets the currency_conversion of this RecurringTransactionAnalysisRequest.
-
-
-        :param currency_conversion: The currency_conversion of this RecurringTransactionAnalysisRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._currency_conversion = currency_conversion
-
-    @property
-    def start_date(self):
-        """Gets the start_date of this RecurringTransactionAnalysisRequest.  # noqa: E501
-
-
-        :return: The start_date of this RecurringTransactionAnalysisRequest.  # noqa: E501
-        :rtype: date
-        """
-        return self._start_date
-
-    @start_date.setter
-    def start_date(self, start_date):
-        """Sets the start_date of this RecurringTransactionAnalysisRequest.
-
-
-        :param start_date: The start_date of this RecurringTransactionAnalysisRequest.  # noqa: E501
-        :type: date
-        """
-
-        self._start_date = start_date
-
-    @property
-    def aggregation_account_ids(self):
-        """Gets the aggregation_account_ids of this RecurringTransactionAnalysisRequest.  # noqa: E501
-
-
-        :return: The aggregation_account_ids of this RecurringTransactionAnalysisRequest.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._aggregation_account_ids
-
-    @aggregation_account_ids.setter
-    def aggregation_account_ids(self, aggregation_account_ids):
-        """Sets the aggregation_account_ids of this RecurringTransactionAnalysisRequest.
-
-
-        :param aggregation_account_ids: The aggregation_account_ids of this RecurringTransactionAnalysisRequest.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._aggregation_account_ids = aggregation_account_ids
-
-    @property
-    def end_date(self):
-        """Gets the end_date of this RecurringTransactionAnalysisRequest.  # noqa: E501
-
-
-        :return: The end_date of this RecurringTransactionAnalysisRequest.  # noqa: E501
-        :rtype: date
-        """
-        return self._end_date
-
-    @end_date.setter
-    def end_date(self, end_date):
-        """Sets the end_date of this RecurringTransactionAnalysisRequest.
-
-
-        :param end_date: The end_date of this RecurringTransactionAnalysisRequest.  # noqa: E501
-        :type: date
-        """
-
-        self._end_date = end_date
-
-    @property
-    def show_recurring_details(self):
-        """Gets the show_recurring_details of this RecurringTransactionAnalysisRequest.  # noqa: E501
-
-
-        :return: The show_recurring_details of this RecurringTransactionAnalysisRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._show_recurring_details
-
-    @show_recurring_details.setter
-    def show_recurring_details(self, show_recurring_details):
-        """Sets the show_recurring_details of this RecurringTransactionAnalysisRequest.
-
-
-        :param show_recurring_details: The show_recurring_details of this RecurringTransactionAnalysisRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._show_recurring_details = show_recurring_details
-
-    @property
-    def currency_code(self):
-        """Gets the currency_code of this RecurringTransactionAnalysisRequest.  # noqa: E501
-
-
-        :return: The currency_code of this RecurringTransactionAnalysisRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._currency_code
-
-    @currency_code.setter
-    def currency_code(self, currency_code):
-        """Sets the currency_code of this RecurringTransactionAnalysisRequest.
-
-
-        :param currency_code: The currency_code of this RecurringTransactionAnalysisRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._currency_code = currency_code
-
-    @property
-    def account_ids(self):
-        """Gets the account_ids of this RecurringTransactionAnalysisRequest.  # noqa: E501
-
-
-        :return: The account_ids of this RecurringTransactionAnalysisRequest.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._account_ids
-
-    @account_ids.setter
-    def account_ids(self, account_ids):
-        """Sets the account_ids of this RecurringTransactionAnalysisRequest.
-
-
-        :param account_ids: The account_ids of this RecurringTransactionAnalysisRequest.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._account_ids = account_ids
 
     def to_dict(self):
         """Returns the model properties as a dict"""

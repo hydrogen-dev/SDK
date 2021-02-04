@@ -32,7 +32,6 @@ class CardTokenResponseVO(object):
     """
     swagger_types = {
         'apple_payload': 'ApplePayload',
-        'card_status': 'str',
         'google_payload': 'GooglePayload',
         'message': 'str',
         'nucleus_card_id': 'str',
@@ -44,7 +43,6 @@ class CardTokenResponseVO(object):
 
     attribute_map = {
         'apple_payload': 'apple_payload',
-        'card_status': 'card_status',
         'google_payload': 'google_payload',
         'message': 'message',
         'nucleus_card_id': 'nucleus_card_id',
@@ -54,11 +52,10 @@ class CardTokenResponseVO(object):
         'wallet': 'wallet'
     }
 
-    def __init__(self, apple_payload=None, card_status=None, google_payload=None, message=None, nucleus_card_id=None, samsung_payload=None, vendor_name=None, vendor_response=None, wallet=None):  # noqa: E501
+    def __init__(self, apple_payload=None, google_payload=None, message=None, nucleus_card_id=None, samsung_payload=None, vendor_name=None, vendor_response=None, wallet=None):  # noqa: E501
         """CardTokenResponseVO - a model defined in Swagger"""  # noqa: E501
 
         self._apple_payload = None
-        self._card_status = None
         self._google_payload = None
         self._message = None
         self._nucleus_card_id = None
@@ -70,8 +67,6 @@ class CardTokenResponseVO(object):
 
         if apple_payload is not None:
             self.apple_payload = apple_payload
-        if card_status is not None:
-            self.card_status = card_status
         if google_payload is not None:
             self.google_payload = google_payload
         if message is not None:
@@ -107,27 +102,6 @@ class CardTokenResponseVO(object):
         """
 
         self._apple_payload = apple_payload
-
-    @property
-    def card_status(self):
-        """Gets the card_status of this CardTokenResponseVO.  # noqa: E501
-
-
-        :return: The card_status of this CardTokenResponseVO.  # noqa: E501
-        :rtype: str
-        """
-        return self._card_status
-
-    @card_status.setter
-    def card_status(self, card_status):
-        """Sets the card_status of this CardTokenResponseVO.
-
-
-        :param card_status: The card_status of this CardTokenResponseVO.  # noqa: E501
-        :type: str
-        """
-
-        self._card_status = card_status
 
     @property
     def google_payload(self):
@@ -273,7 +247,7 @@ class CardTokenResponseVO(object):
         :param wallet: The wallet of this CardTokenResponseVO.  # noqa: E501
         :type: str
         """
-        allowed_values = ["apple", "google", "samsung"]  # noqa: E501
+        allowed_values = ["google", "apple", "samsung"]  # noqa: E501
         if wallet is not None and wallet.lower() not in allowed_values:
             raise ValueError(
                 "Invalid value for `wallet` ({0}), must be one of {1}"  # noqa: E501

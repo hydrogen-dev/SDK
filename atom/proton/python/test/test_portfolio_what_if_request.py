@@ -32,7 +32,7 @@ class TestPortfolioWhatIfRequest(unittest.TestCase):
     def testPortfolioWhatIfRequest(self):
         """Test PortfolioWhatIfRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.portfolio_what_if_request.PortfolioWhatIfRequest()  # noqa: E501
+        # model = proton_api.models.portfolio_what_if_request.PortfolioWhatIfRequest()  # noqa: E501
         pass
 
 

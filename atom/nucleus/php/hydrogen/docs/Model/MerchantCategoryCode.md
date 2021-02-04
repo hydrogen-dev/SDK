@@ -3,8 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**category** | **string** | category | [optional] 
 **description** | **string** | description | [optional] 
 **mcc** | **int** | mcc | [optional] 
+**subcategory** | **string** | subcategory | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

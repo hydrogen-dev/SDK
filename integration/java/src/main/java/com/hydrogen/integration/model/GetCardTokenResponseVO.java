@@ -15,27 +15,34 @@ package com.hydrogen.integration.model;
 
 import java.util.Objects;
 
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModelProperty;
-
+import java.io.IOException;
 import java.util.UUID;
 
 /**
  * GetCardTokenResponseVO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class GetCardTokenResponseVO {
-  @SerializedName("card_status")
-  private String cardStatus = null;
-
   @SerializedName("message")
   private String message = null;
 
   @SerializedName("nucleus_card_id")
   private UUID nucleusCardId = null;
 
-  @SerializedName("token")
-  private String token = null;
+  @SerializedName("pan_reference")
+  private String panReference = null;
+
+  @SerializedName("status")
+  private String status = null;
+
+  @SerializedName("token_reference")
+  private String tokenReference = null;
 
   @SerializedName("vendor_name")
   private String vendorName = null;
@@ -43,26 +50,57 @@ public class GetCardTokenResponseVO {
   @SerializedName("vendor_response")
   private Object vendorResponse = null;
 
+  /**
+   * Gets or Sets wallet
+   */
+  @JsonAdapter(WalletEnum.Adapter.class)
+  public enum WalletEnum {
+    GOOGLE("google"),
+    
+    APPLE("apple"),
+    
+    SAMSUNG("samsung");
+
+    private String value;
+
+    WalletEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static WalletEnum fromValue(String text) {
+      for (WalletEnum b : WalletEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<WalletEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final WalletEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public WalletEnum read(final JsonReader jsonReader) throws IOException {
+        Object value = jsonReader.nextString();
+        return WalletEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   @SerializedName("wallet")
-  private String wallet = null;
-
-  public GetCardTokenResponseVO cardStatus(String cardStatus) {
-    this.cardStatus = cardStatus;
-    return this;
-  }
-
-   /**
-   * Get cardStatus
-   * @return cardStatus
-  **/
-  @ApiModelProperty(value = "")
-  public String getCardStatus() {
-    return cardStatus;
-  }
-
-  public void setCardStatus(String cardStatus) {
-    this.cardStatus = cardStatus;
-  }
+  private WalletEnum wallet = null;
 
   public GetCardTokenResponseVO message(String message) {
     this.message = message;
@@ -100,22 +138,58 @@ public class GetCardTokenResponseVO {
     this.nucleusCardId = nucleusCardId;
   }
 
-  public GetCardTokenResponseVO token(String token) {
-    this.token = token;
+  public GetCardTokenResponseVO panReference(String panReference) {
+    this.panReference = panReference;
     return this;
   }
 
    /**
-   * Get token
-   * @return token
+   * Get panReference
+   * @return panReference
   **/
   @ApiModelProperty(value = "")
-  public String getToken() {
-    return token;
+  public String getPanReference() {
+    return panReference;
   }
 
-  public void setToken(String token) {
-    this.token = token;
+  public void setPanReference(String panReference) {
+    this.panReference = panReference;
+  }
+
+  public GetCardTokenResponseVO status(String status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * Get status
+   * @return status
+  **/
+  @ApiModelProperty(value = "")
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+  public GetCardTokenResponseVO tokenReference(String tokenReference) {
+    this.tokenReference = tokenReference;
+    return this;
+  }
+
+   /**
+   * Get tokenReference
+   * @return tokenReference
+  **/
+  @ApiModelProperty(value = "")
+  public String getTokenReference() {
+    return tokenReference;
+  }
+
+  public void setTokenReference(String tokenReference) {
+    this.tokenReference = tokenReference;
   }
 
   public GetCardTokenResponseVO vendorName(String vendorName) {
@@ -154,7 +228,7 @@ public class GetCardTokenResponseVO {
     this.vendorResponse = vendorResponse;
   }
 
-  public GetCardTokenResponseVO wallet(String wallet) {
+  public GetCardTokenResponseVO wallet(WalletEnum wallet) {
     this.wallet = wallet;
     return this;
   }
@@ -164,11 +238,11 @@ public class GetCardTokenResponseVO {
    * @return wallet
   **/
   @ApiModelProperty(value = "")
-  public String getWallet() {
+  public WalletEnum getWallet() {
     return wallet;
   }
 
-  public void setWallet(String wallet) {
+  public void setWallet(WalletEnum wallet) {
     this.wallet = wallet;
   }
 
@@ -182,10 +256,11 @@ public class GetCardTokenResponseVO {
       return false;
     }
     GetCardTokenResponseVO getCardTokenResponseVO = (GetCardTokenResponseVO) o;
-    return Objects.equals(this.cardStatus, getCardTokenResponseVO.cardStatus) &&
-        Objects.equals(this.message, getCardTokenResponseVO.message) &&
+    return Objects.equals(this.message, getCardTokenResponseVO.message) &&
         Objects.equals(this.nucleusCardId, getCardTokenResponseVO.nucleusCardId) &&
-        Objects.equals(this.token, getCardTokenResponseVO.token) &&
+        Objects.equals(this.panReference, getCardTokenResponseVO.panReference) &&
+        Objects.equals(this.status, getCardTokenResponseVO.status) &&
+        Objects.equals(this.tokenReference, getCardTokenResponseVO.tokenReference) &&
         Objects.equals(this.vendorName, getCardTokenResponseVO.vendorName) &&
         Objects.equals(this.vendorResponse, getCardTokenResponseVO.vendorResponse) &&
         Objects.equals(this.wallet, getCardTokenResponseVO.wallet);
@@ -193,7 +268,7 @@ public class GetCardTokenResponseVO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardStatus, message, nucleusCardId, token, vendorName, vendorResponse, wallet);
+    return Objects.hash(message, nucleusCardId, panReference, status, tokenReference, vendorName, vendorResponse, wallet);
   }
 
 
@@ -202,10 +277,11 @@ public class GetCardTokenResponseVO {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetCardTokenResponseVO {\n");
     
-    sb.append("    cardStatus: ").append(toIndentedString(cardStatus)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    nucleusCardId: ").append(toIndentedString(nucleusCardId)).append("\n");
-    sb.append("    token: ").append(toIndentedString(token)).append("\n");
+    sb.append("    panReference: ").append(toIndentedString(panReference)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    tokenReference: ").append(toIndentedString(tokenReference)).append("\n");
     sb.append("    vendorName: ").append(toIndentedString(vendorName)).append("\n");
     sb.append("    vendorResponse: ").append(toIndentedString(vendorResponse)).append("\n");
     sb.append("    wallet: ").append(toIndentedString(wallet)).append("\n");

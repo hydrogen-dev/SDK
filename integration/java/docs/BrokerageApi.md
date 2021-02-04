@@ -1,25 +1,90 @@
 # BrokerageApi
 
-All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1/*
+All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createBankLinkUsingPost**](BrokerageApi.md#createBankLinkUsingPost) | **POST** /brokerage/bank_link | create a Bank Link
+[**cancelOrderUsingPut**](BrokerageApi.md#cancelOrderUsingPut) | **PUT** /brokerage/order/{nucleus_order_id} | Cancel an Order
+[**createBankLinkUsingPost1**](BrokerageApi.md#createBankLinkUsingPost1) | **POST** /brokerage/bank_link | create a Bank Link
 [**createBrokerageAccountUsingPost**](BrokerageApi.md#createBrokerageAccountUsingPost) | **POST** /brokerage/account | create a Brokerage account
 [**createBrokerageClientUsingPost**](BrokerageApi.md#createBrokerageClientUsingPost) | **POST** /brokerage/client | Create a Brokerage Client
+[**createDepositUsingPost**](BrokerageApi.md#createDepositUsingPost) | **POST** /brokerage/deposit | Create a deposit
+[**createDocumentUsingPost**](BrokerageApi.md#createDocumentUsingPost) | **POST** /brokerage/document | Create a Brokerage document
 [**createOrderUsingPost**](BrokerageApi.md#createOrderUsingPost) | **POST** /brokerage/order | Create an Order
-[**deleteBankLinkUsingDelete**](BrokerageApi.md#deleteBankLinkUsingDelete) | **DELETE** /brokerage/bank_link/{nucleus_bank_link_id} | Delete a Bank Link
-[**deleteOrderUsingDelete**](BrokerageApi.md#deleteOrderUsingDelete) | **DELETE** /brokerage/order | Delete an Order
-[**getBankLinkUsingGet**](BrokerageApi.md#getBankLinkUsingGet) | **GET** /brokerage/bank_link/{nucleus_bank_link_id} | Get a Bank Link
-[**getBrokerageAccountStatementUsingGet**](BrokerageApi.md#getBrokerageAccountStatementUsingGet) | **GET** /brokerage/{nucleus_account_id}/statement | Get a Brokerage account statement
-[**getOrderUsingGet**](BrokerageApi.md#getOrderUsingGet) | **GET** /brokerage/order | Get an Order
-[**updateBankLinkUsingPut**](BrokerageApi.md#updateBankLinkUsingPut) | **PUT** /brokerage/bank_link/{nucleus_bank_link_id} | Update a Bank Link
+[**createWithdrawalUsingPost**](BrokerageApi.md#createWithdrawalUsingPost) | **POST** /brokerage/withdrawal | Create a withdrawal
+[**deleteBankLinkUsingDelete1**](BrokerageApi.md#deleteBankLinkUsingDelete1) | **DELETE** /brokerage/bank_link/{nucleus_bank_link_id} | Delete a Bank Link
+[**getBalanceUsingGet1**](BrokerageApi.md#getBalanceUsingGet1) | **GET** /brokerage/balance/{nucleus_portfolio_id} | Get account balance
+[**getBankLinkUsingGet1**](BrokerageApi.md#getBankLinkUsingGet1) | **GET** /brokerage/bank_link/{nucleus_bank_link_id} | Get a Bank Link
+[**getBrokerageAccountStatementUsingGet**](BrokerageApi.md#getBrokerageAccountStatementUsingGet) | **GET** /brokerage/statement/{nucleus_account_id} | Get a Brokerage account statement
+[**getDocumentUsingGet**](BrokerageApi.md#getDocumentUsingGet) | **GET** /brokerage/document/{nucleus_document_id} | Get a Brokerage document
+[**getHoldingPerformanceUsingGet**](BrokerageApi.md#getHoldingPerformanceUsingGet) | **GET** /brokerage/holding/performance/{nucleus_portfolio_id} | Get portfolio holding performance
+[**getHoldingUsingGet**](BrokerageApi.md#getHoldingUsingGet) | **GET** /brokerage/holding/{nucleus_portfolio_id} | Get portfolio holdings
+[**getOrderUsingGet**](BrokerageApi.md#getOrderUsingGet) | **GET** /brokerage/order/{nucleus_order_id} | Get an Order
+[**getSecuritiesUsingGet**](BrokerageApi.md#getSecuritiesUsingGet) | **GET** /brokerage/securities | Get securities information
+[**getTransactionsUsingGet**](BrokerageApi.md#getTransactionsUsingGet) | **GET** /brokerage/transaction/{nucleus_portfolio_id} | Get account transactions
+[**updateBankLinkUsingPut1**](BrokerageApi.md#updateBankLinkUsingPut1) | **PUT** /brokerage/bank_link/{nucleus_bank_link_id} | Update a Bank Link
 [**updateBrokerageClientUsingPut**](BrokerageApi.md#updateBrokerageClientUsingPut) | **PUT** /brokerage/client | Update a Brokerage client
 
 
-<a name="createBankLinkUsingPost"></a>
-# **createBankLinkUsingPost**
-> BrokerageBankLinkVO createBankLinkUsingPost(brokerageBankLinkCO)
+<a name="cancelOrderUsingPut"></a>
+# **cancelOrderUsingPut**
+> cancelOrderUsingPut(nucleusOrderId)
+
+Cancel an Order
+
+### Example
+```java
+// Import classes:
+//import com.hydrogen.integration.ApiException;
+//import com.hydrogen.integration.AuthApiClient;
+//import BrokerageApi;
+
+AuthApiClient authApiClient = new AuthApiClient();
+try {
+//          Use one of the below method to generate oauth token        
+//          Creating a token for grant_type=client_credentials            
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+//          Creating a token for grant_type=password
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
+} catch (ApiException e) {
+e.printStackTrace();
+}
+BrokerageApi apiInstance = new BrokerageApi();
+UUID nucleusOrderId = new UUID(); // UUID | nucleus_order_id
+try {
+    apiInstance.cancelOrderUsingPut(nucleusOrderId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BrokerageApi#cancelOrderUsingPut");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nucleusOrderId** | [**UUID**](.md)| nucleus_order_id |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+<a name="createBankLinkUsingPost1"></a>
+# **createBankLinkUsingPost1**
+> BrokerageBankLinkVO createBankLinkUsingPost1(brokerageBankLinkCO)
 
 create a Bank Link
 
@@ -44,14 +109,13 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 BrokerageApi apiInstance = new BrokerageApi();
 BrokerageBankLinkCO brokerageBankLinkCO = new BrokerageBankLinkCO(); // BrokerageBankLinkCO | brokerageBankLinkCO
 try {
-    BrokerageBankLinkVO result = apiInstance.createBankLinkUsingPost(brokerageBankLinkCO);
+    BrokerageBankLinkVO result = apiInstance.createBankLinkUsingPost1(brokerageBankLinkCO);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling BrokerageApi#createBankLinkUsingPost");
+    System.err.println("Exception when calling BrokerageApi#createBankLinkUsingPost1");
     e.printStackTrace();
 }
 ```
@@ -102,7 +166,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 BrokerageApi apiInstance = new BrokerageApi();
 BrokerageAccountCO brokerageAccountCO = new BrokerageAccountCO(); // BrokerageAccountCO | brokerageAccountCO
 try {
@@ -160,7 +223,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 BrokerageApi apiInstance = new BrokerageApi();
 BrokerageClientCO clientCO = new BrokerageClientCO(); // BrokerageClientCO | clientCO
 try {
@@ -191,9 +253,123 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: */*
 
+<a name="createDepositUsingPost"></a>
+# **createDepositUsingPost**
+> BrokerageDepositVO createDepositUsingPost(brokerageDepositCO)
+
+Create a deposit
+
+### Example
+```java
+// Import classes:
+//import com.hydrogen.integration.ApiException;
+//import com.hydrogen.integration.AuthApiClient;
+//import BrokerageApi;
+
+AuthApiClient authApiClient = new AuthApiClient();
+try {
+//          Use one of the below method to generate oauth token        
+//          Creating a token for grant_type=client_credentials            
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+//          Creating a token for grant_type=password
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
+} catch (ApiException e) {
+e.printStackTrace();
+}
+BrokerageApi apiInstance = new BrokerageApi();
+BrokerageDepositCO brokerageDepositCO = new BrokerageDepositCO(); // BrokerageDepositCO | brokerageDepositCO
+try {
+    BrokerageDepositVO result = apiInstance.createDepositUsingPost(brokerageDepositCO);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BrokerageApi#createDepositUsingPost");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **brokerageDepositCO** | [**BrokerageDepositCO**](BrokerageDepositCO.md)| brokerageDepositCO |
+
+### Return type
+
+[**BrokerageDepositVO**](BrokerageDepositVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+<a name="createDocumentUsingPost"></a>
+# **createDocumentUsingPost**
+> BrokerageDocumentVO createDocumentUsingPost(documentCO)
+
+Create a Brokerage document
+
+### Example
+```java
+// Import classes:
+//import com.hydrogen.integration.ApiException;
+//import com.hydrogen.integration.AuthApiClient;
+//import BrokerageApi;
+
+AuthApiClient authApiClient = new AuthApiClient();
+try {
+//          Use one of the below method to generate oauth token        
+//          Creating a token for grant_type=client_credentials            
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+//          Creating a token for grant_type=password
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
+} catch (ApiException e) {
+e.printStackTrace();
+}
+BrokerageApi apiInstance = new BrokerageApi();
+BrokerageDocumentCO documentCO = new BrokerageDocumentCO(); // BrokerageDocumentCO | documentCO
+try {
+    BrokerageDocumentVO result = apiInstance.createDocumentUsingPost(documentCO);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BrokerageApi#createDocumentUsingPost");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **documentCO** | [**BrokerageDocumentCO**](BrokerageDocumentCO.md)| documentCO |
+
+### Return type
+
+[**BrokerageDocumentVO**](BrokerageDocumentVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
 <a name="createOrderUsingPost"></a>
 # **createOrderUsingPost**
-> CreateOrderResponse createOrderUsingPost(nucleusOrderId)
+> BrokerageOrderVO createOrderUsingPost(brokerageOrderCO)
 
 Create an Order
 
@@ -218,11 +394,10 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 BrokerageApi apiInstance = new BrokerageApi();
-UUID nucleusOrderId = new UUID(); // UUID | nucleus_order_id
+BrokerageOrderCO brokerageOrderCO = new BrokerageOrderCO(); // BrokerageOrderCO | brokerageOrderCO
 try {
-    CreateOrderResponse result = apiInstance.createOrderUsingPost(nucleusOrderId);
+    BrokerageOrderVO result = apiInstance.createOrderUsingPost(brokerageOrderCO);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BrokerageApi#createOrderUsingPost");
@@ -234,11 +409,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **nucleusOrderId** | [**UUID**](.md)| nucleus_order_id |
+ **brokerageOrderCO** | [**BrokerageOrderCO**](BrokerageOrderCO.md)| brokerageOrderCO |
 
 ### Return type
 
-[**CreateOrderResponse**](CreateOrderResponse.md)
+[**BrokerageOrderVO**](BrokerageOrderVO.md)
 
 ### Authorization
 
@@ -249,9 +424,66 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: */*
 
-<a name="deleteBankLinkUsingDelete"></a>
-# **deleteBankLinkUsingDelete**
-> ResponseEntity deleteBankLinkUsingDelete(nucleusBankLinkId)
+<a name="createWithdrawalUsingPost"></a>
+# **createWithdrawalUsingPost**
+> BrokerageWithdrawalVO createWithdrawalUsingPost(brokerageWithdrawalCO)
+
+Create a withdrawal
+
+### Example
+```java
+// Import classes:
+//import com.hydrogen.integration.ApiException;
+//import com.hydrogen.integration.AuthApiClient;
+//import BrokerageApi;
+
+AuthApiClient authApiClient = new AuthApiClient();
+try {
+//          Use one of the below method to generate oauth token        
+//          Creating a token for grant_type=client_credentials            
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+//          Creating a token for grant_type=password
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
+} catch (ApiException e) {
+e.printStackTrace();
+}
+BrokerageApi apiInstance = new BrokerageApi();
+BrokerageWithdrawalCO brokerageWithdrawalCO = new BrokerageWithdrawalCO(); // BrokerageWithdrawalCO | brokerageWithdrawalCO
+try {
+    BrokerageWithdrawalVO result = apiInstance.createWithdrawalUsingPost(brokerageWithdrawalCO);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BrokerageApi#createWithdrawalUsingPost");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **brokerageWithdrawalCO** | [**BrokerageWithdrawalCO**](BrokerageWithdrawalCO.md)| brokerageWithdrawalCO |
+
+### Return type
+
+[**BrokerageWithdrawalVO**](BrokerageWithdrawalVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+<a name="deleteBankLinkUsingDelete1"></a>
+# **deleteBankLinkUsingDelete1**
+> deleteBankLinkUsingDelete1(nucleusBankLinkId)
 
 Delete a Bank Link
 
@@ -276,14 +508,12 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 BrokerageApi apiInstance = new BrokerageApi();
 UUID nucleusBankLinkId = new UUID(); // UUID | nucleus_bank_link_id
 try {
-    ResponseEntity result = apiInstance.deleteBankLinkUsingDelete(nucleusBankLinkId);
-    System.out.println(result);
+    apiInstance.deleteBankLinkUsingDelete1(nucleusBankLinkId);
 } catch (ApiException e) {
-    System.err.println("Exception when calling BrokerageApi#deleteBankLinkUsingDelete");
+    System.err.println("Exception when calling BrokerageApi#deleteBankLinkUsingDelete1");
     e.printStackTrace();
 }
 ```
@@ -296,7 +526,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+null (empty response body)
 
 ### Authorization
 
@@ -307,11 +537,11 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: */*
 
-<a name="deleteOrderUsingDelete"></a>
-# **deleteOrderUsingDelete**
-> deleteOrderUsingDelete(nucleusOrderId)
+<a name="getBalanceUsingGet1"></a>
+# **getBalanceUsingGet1**
+> BrokerageBalanceVO getBalanceUsingGet1(nucleusPortfolioId)
 
-Delete an Order
+Get account balance
 
 ### Example
 ```java
@@ -334,13 +564,13 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 BrokerageApi apiInstance = new BrokerageApi();
-UUID nucleusOrderId = new UUID(); // UUID | nucleus_order_id
+UUID nucleusPortfolioId = new UUID(); // UUID | nucleus_portfolio_id
 try {
-    apiInstance.deleteOrderUsingDelete(nucleusOrderId);
+    BrokerageBalanceVO result = apiInstance.getBalanceUsingGet1(nucleusPortfolioId);
+    System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling BrokerageApi#deleteOrderUsingDelete");
+    System.err.println("Exception when calling BrokerageApi#getBalanceUsingGet1");
     e.printStackTrace();
 }
 ```
@@ -349,11 +579,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **nucleusOrderId** | [**UUID**](.md)| nucleus_order_id |
+ **nucleusPortfolioId** | [**UUID**](.md)| nucleus_portfolio_id |
 
 ### Return type
 
-null (empty response body)
+[**BrokerageBalanceVO**](BrokerageBalanceVO.md)
 
 ### Authorization
 
@@ -364,9 +594,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: */*
 
-<a name="getBankLinkUsingGet"></a>
-# **getBankLinkUsingGet**
-> BrokerageBankLinkVO getBankLinkUsingGet(nucleusBankLinkId)
+<a name="getBankLinkUsingGet1"></a>
+# **getBankLinkUsingGet1**
+> BrokerageBankLinkVO getBankLinkUsingGet1(nucleusBankLinkId)
 
 Get a Bank Link
 
@@ -391,14 +621,13 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 BrokerageApi apiInstance = new BrokerageApi();
 UUID nucleusBankLinkId = new UUID(); // UUID | nucleus_bank_link_id
 try {
-    BrokerageBankLinkVO result = apiInstance.getBankLinkUsingGet(nucleusBankLinkId);
+    BrokerageBankLinkVO result = apiInstance.getBankLinkUsingGet1(nucleusBankLinkId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling BrokerageApi#getBankLinkUsingGet");
+    System.err.println("Exception when calling BrokerageApi#getBankLinkUsingGet1");
     e.printStackTrace();
 }
 ```
@@ -449,7 +678,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 BrokerageApi apiInstance = new BrokerageApi();
 OffsetDateTime endDate = OffsetDateTime.now(); // OffsetDateTime | end_date
 UUID nucleusAccountId = new UUID(); // UUID | nucleus_account_id
@@ -486,9 +714,180 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: */*
 
+<a name="getDocumentUsingGet"></a>
+# **getDocumentUsingGet**
+> BrokerageDocumentVO getDocumentUsingGet(nucleusDocumentId)
+
+Get a Brokerage document
+
+### Example
+```java
+// Import classes:
+//import com.hydrogen.integration.ApiException;
+//import com.hydrogen.integration.AuthApiClient;
+//import BrokerageApi;
+
+AuthApiClient authApiClient = new AuthApiClient();
+try {
+//          Use one of the below method to generate oauth token        
+//          Creating a token for grant_type=client_credentials            
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+//          Creating a token for grant_type=password
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
+} catch (ApiException e) {
+e.printStackTrace();
+}
+BrokerageApi apiInstance = new BrokerageApi();
+UUID nucleusDocumentId = new UUID(); // UUID | nucleus_document_id
+try {
+    BrokerageDocumentVO result = apiInstance.getDocumentUsingGet(nucleusDocumentId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BrokerageApi#getDocumentUsingGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nucleusDocumentId** | [**UUID**](.md)| nucleus_document_id |
+
+### Return type
+
+[**BrokerageDocumentVO**](BrokerageDocumentVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+<a name="getHoldingPerformanceUsingGet"></a>
+# **getHoldingPerformanceUsingGet**
+> BrokeragePerformanceVO getHoldingPerformanceUsingGet(nucleusPortfolioId)
+
+Get portfolio holding performance
+
+### Example
+```java
+// Import classes:
+//import com.hydrogen.integration.ApiException;
+//import com.hydrogen.integration.AuthApiClient;
+//import BrokerageApi;
+
+AuthApiClient authApiClient = new AuthApiClient();
+try {
+//          Use one of the below method to generate oauth token        
+//          Creating a token for grant_type=client_credentials            
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+//          Creating a token for grant_type=password
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
+} catch (ApiException e) {
+e.printStackTrace();
+}
+BrokerageApi apiInstance = new BrokerageApi();
+UUID nucleusPortfolioId = new UUID(); // UUID | nucleus_portfolio_id
+try {
+    BrokeragePerformanceVO result = apiInstance.getHoldingPerformanceUsingGet(nucleusPortfolioId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BrokerageApi#getHoldingPerformanceUsingGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nucleusPortfolioId** | [**UUID**](.md)| nucleus_portfolio_id |
+
+### Return type
+
+[**BrokeragePerformanceVO**](BrokeragePerformanceVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+<a name="getHoldingUsingGet"></a>
+# **getHoldingUsingGet**
+> BrokerageHoldingVO getHoldingUsingGet(nucleusPortfolioId)
+
+Get portfolio holdings
+
+### Example
+```java
+// Import classes:
+//import com.hydrogen.integration.ApiException;
+//import com.hydrogen.integration.AuthApiClient;
+//import BrokerageApi;
+
+AuthApiClient authApiClient = new AuthApiClient();
+try {
+//          Use one of the below method to generate oauth token        
+//          Creating a token for grant_type=client_credentials            
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+//          Creating a token for grant_type=password
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
+} catch (ApiException e) {
+e.printStackTrace();
+}
+BrokerageApi apiInstance = new BrokerageApi();
+UUID nucleusPortfolioId = new UUID(); // UUID | nucleus_portfolio_id
+try {
+    BrokerageHoldingVO result = apiInstance.getHoldingUsingGet(nucleusPortfolioId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BrokerageApi#getHoldingUsingGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nucleusPortfolioId** | [**UUID**](.md)| nucleus_portfolio_id |
+
+### Return type
+
+[**BrokerageHoldingVO**](BrokerageHoldingVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
 <a name="getOrderUsingGet"></a>
 # **getOrderUsingGet**
-> GetOrderResponse getOrderUsingGet(nucleusOrderId)
+> BrokerageOrderVO getOrderUsingGet(nucleusOrderId)
 
 Get an Order
 
@@ -513,11 +912,10 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 BrokerageApi apiInstance = new BrokerageApi();
 UUID nucleusOrderId = new UUID(); // UUID | nucleus_order_id
 try {
-    GetOrderResponse result = apiInstance.getOrderUsingGet(nucleusOrderId);
+    BrokerageOrderVO result = apiInstance.getOrderUsingGet(nucleusOrderId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BrokerageApi#getOrderUsingGet");
@@ -533,7 +931,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetOrderResponse**](GetOrderResponse.md)
+[**BrokerageOrderVO**](BrokerageOrderVO.md)
 
 ### Authorization
 
@@ -544,9 +942,133 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: */*
 
-<a name="updateBankLinkUsingPut"></a>
-# **updateBankLinkUsingPut**
-> BrokerageBankLinkVO updateBankLinkUsingPut(nucleusBankLinkId)
+<a name="getSecuritiesUsingGet"></a>
+# **getSecuritiesUsingGet**
+> BrokerageSecuritiesVO getSecuritiesUsingGet(vendorName, getFundamentals, nucleusSecurityId)
+
+Get securities information
+
+### Example
+```java
+// Import classes:
+//import com.hydrogen.integration.ApiException;
+//import com.hydrogen.integration.AuthApiClient;
+//import BrokerageApi;
+
+AuthApiClient authApiClient = new AuthApiClient();
+try {
+//          Use one of the below method to generate oauth token        
+//          Creating a token for grant_type=client_credentials            
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+//          Creating a token for grant_type=password
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
+} catch (ApiException e) {
+e.printStackTrace();
+}
+BrokerageApi apiInstance = new BrokerageApi();
+String vendorName = "vendorName_example"; // String | vendor_name
+Boolean getFundamentals = false; // Boolean | get_fundamentals
+UUID nucleusSecurityId = new UUID(); // UUID | nucleus_security_id
+try {
+    BrokerageSecuritiesVO result = apiInstance.getSecuritiesUsingGet(vendorName, getFundamentals, nucleusSecurityId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BrokerageApi#getSecuritiesUsingGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vendorName** | **String**| vendor_name |
+ **getFundamentals** | **Boolean**| get_fundamentals | [optional] [default to false]
+ **nucleusSecurityId** | [**UUID**](.md)| nucleus_security_id | [optional]
+
+### Return type
+
+[**BrokerageSecuritiesVO**](BrokerageSecuritiesVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+<a name="getTransactionsUsingGet"></a>
+# **getTransactionsUsingGet**
+> BrokerageTransactionVO getTransactionsUsingGet(drivewealthResponse, endDate, nucleusPortfolioId, startDate)
+
+Get account transactions
+
+### Example
+```java
+// Import classes:
+//import com.hydrogen.integration.ApiException;
+//import com.hydrogen.integration.AuthApiClient;
+//import BrokerageApi;
+
+AuthApiClient authApiClient = new AuthApiClient();
+try {
+//          Use one of the below method to generate oauth token        
+//          Creating a token for grant_type=client_credentials            
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+//          Creating a token for grant_type=password
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
+} catch (ApiException e) {
+e.printStackTrace();
+}
+BrokerageApi apiInstance = new BrokerageApi();
+GetTransactionsResponse drivewealthResponse = new GetTransactionsResponse(); // GetTransactionsResponse | drivewealthResponse
+LocalDate endDate = LocalDate.now(); // LocalDate | end_date
+UUID nucleusPortfolioId = new UUID(); // UUID | nucleus_portfolio_id
+LocalDate startDate = LocalDate.now(); // LocalDate | start_date
+try {
+    BrokerageTransactionVO result = apiInstance.getTransactionsUsingGet(drivewealthResponse, endDate, nucleusPortfolioId, startDate);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BrokerageApi#getTransactionsUsingGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **drivewealthResponse** | [**GetTransactionsResponse**](GetTransactionsResponse.md)| drivewealthResponse |
+ **endDate** | **LocalDate**| end_date |
+ **nucleusPortfolioId** | [**UUID**](.md)| nucleus_portfolio_id |
+ **startDate** | **LocalDate**| start_date |
+
+### Return type
+
+[**BrokerageTransactionVO**](BrokerageTransactionVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+<a name="updateBankLinkUsingPut1"></a>
+# **updateBankLinkUsingPut1**
+> BrokerageBankLinkVO updateBankLinkUsingPut1(nucleusBankLinkId)
 
 Update a Bank Link
 
@@ -571,14 +1093,13 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 BrokerageApi apiInstance = new BrokerageApi();
 UUID nucleusBankLinkId = new UUID(); // UUID | nucleus_bank_link_id
 try {
-    BrokerageBankLinkVO result = apiInstance.updateBankLinkUsingPut(nucleusBankLinkId);
+    BrokerageBankLinkVO result = apiInstance.updateBankLinkUsingPut1(nucleusBankLinkId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling BrokerageApi#updateBankLinkUsingPut");
+    System.err.println("Exception when calling BrokerageApi#updateBankLinkUsingPut1");
     e.printStackTrace();
 }
 ```
@@ -629,7 +1150,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 BrokerageApi apiInstance = new BrokerageApi();
 BrokerageClientCO clientCO = new BrokerageClientCO(); // BrokerageClientCO | clientCO
 try {

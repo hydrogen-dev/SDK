@@ -28,16 +28,13 @@ import org.threeten.bp.OffsetDateTime;
  * Aggregation Account Object
  */
 @ApiModel(description = "Aggregation Account Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class AggregationAccount {
   @SerializedName("account_holder")
   private String accountHolder = null;
 
   @SerializedName("account_name")
   private String accountName = null;
-
-  @SerializedName("account_number")
-  private String accountNumber = null;
 
   @SerializedName("bank_link_id")
   private UUID bankLinkId = null;
@@ -72,11 +69,17 @@ public class AggregationAccount {
   @SerializedName("is_business")
   private Boolean isBusiness = null;
 
+  @SerializedName("is_cash")
+  private Boolean isCash = null;
+
   @SerializedName("is_investment")
   private Boolean isInvestment = null;
 
   @SerializedName("is_link_verified")
   private Boolean isLinkVerified = null;
+
+  @SerializedName("is_manual")
+  private Boolean isManual = null;
 
   @SerializedName("mask")
   private String mask = null;
@@ -127,24 +130,6 @@ public class AggregationAccount {
 
   public void setAccountName(String accountName) {
     this.accountName = accountName;
-  }
-
-  public AggregationAccount accountNumber(String accountNumber) {
-    this.accountNumber = accountNumber;
-    return this;
-  }
-
-   /**
-   * accountNumber
-   * @return accountNumber
-  **/
-  @ApiModelProperty(example = "566788991", value = "accountNumber")
-  public String getAccountNumber() {
-    return accountNumber;
-  }
-
-  public void setAccountNumber(String accountNumber) {
-    this.accountNumber = accountNumber;
   }
 
   public AggregationAccount bankLinkId(UUID bankLinkId) {
@@ -345,6 +330,24 @@ public class AggregationAccount {
     this.isBusiness = isBusiness;
   }
 
+  public AggregationAccount isCash(Boolean isCash) {
+    this.isCash = isCash;
+    return this;
+  }
+
+   /**
+   * isCash
+   * @return isCash
+  **/
+  @ApiModelProperty(example = "true", value = "isCash")
+  public Boolean isIsCash() {
+    return isCash;
+  }
+
+  public void setIsCash(Boolean isCash) {
+    this.isCash = isCash;
+  }
+
   public AggregationAccount isInvestment(Boolean isInvestment) {
     this.isInvestment = isInvestment;
     return this;
@@ -379,6 +382,24 @@ public class AggregationAccount {
 
   public void setIsLinkVerified(Boolean isLinkVerified) {
     this.isLinkVerified = isLinkVerified;
+  }
+
+  public AggregationAccount isManual(Boolean isManual) {
+    this.isManual = isManual;
+    return this;
+  }
+
+   /**
+   * isManual
+   * @return isManual
+  **/
+  @ApiModelProperty(example = "false", value = "isManual")
+  public Boolean isIsManual() {
+    return isManual;
+  }
+
+  public void setIsManual(Boolean isManual) {
+    this.isManual = isManual;
   }
 
   public AggregationAccount mask(String mask) {
@@ -491,7 +512,6 @@ public class AggregationAccount {
     AggregationAccount aggregationAccount = (AggregationAccount) o;
     return Objects.equals(this.accountHolder, aggregationAccount.accountHolder) &&
         Objects.equals(this.accountName, aggregationAccount.accountName) &&
-        Objects.equals(this.accountNumber, aggregationAccount.accountNumber) &&
         Objects.equals(this.bankLinkId, aggregationAccount.bankLinkId) &&
         Objects.equals(this.category, aggregationAccount.category) &&
         Objects.equals(this.clientId, aggregationAccount.clientId) &&
@@ -503,8 +523,10 @@ public class AggregationAccount {
         Objects.equals(this.isActive, aggregationAccount.isActive) &&
         Objects.equals(this.isAsset, aggregationAccount.isAsset) &&
         Objects.equals(this.isBusiness, aggregationAccount.isBusiness) &&
+        Objects.equals(this.isCash, aggregationAccount.isCash) &&
         Objects.equals(this.isInvestment, aggregationAccount.isInvestment) &&
         Objects.equals(this.isLinkVerified, aggregationAccount.isLinkVerified) &&
+        Objects.equals(this.isManual, aggregationAccount.isManual) &&
         Objects.equals(this.mask, aggregationAccount.mask) &&
         Objects.equals(this.metadata, aggregationAccount.metadata) &&
         Objects.equals(this.secondaryId, aggregationAccount.secondaryId) &&
@@ -514,7 +536,7 @@ public class AggregationAccount {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountHolder, accountName, accountNumber, bankLinkId, category, clientId, createDate, currencyCode, financialOfferId, id, institutionName, isActive, isAsset, isBusiness, isInvestment, isLinkVerified, mask, metadata, secondaryId, subcategory, updateDate);
+    return Objects.hash(accountHolder, accountName, bankLinkId, category, clientId, createDate, currencyCode, financialOfferId, id, institutionName, isActive, isAsset, isBusiness, isCash, isInvestment, isLinkVerified, isManual, mask, metadata, secondaryId, subcategory, updateDate);
   }
 
 
@@ -525,7 +547,6 @@ public class AggregationAccount {
     
     sb.append("    accountHolder: ").append(toIndentedString(accountHolder)).append("\n");
     sb.append("    accountName: ").append(toIndentedString(accountName)).append("\n");
-    sb.append("    accountNumber: ").append(toIndentedString(accountNumber)).append("\n");
     sb.append("    bankLinkId: ").append(toIndentedString(bankLinkId)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
@@ -537,8 +558,10 @@ public class AggregationAccount {
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    isAsset: ").append(toIndentedString(isAsset)).append("\n");
     sb.append("    isBusiness: ").append(toIndentedString(isBusiness)).append("\n");
+    sb.append("    isCash: ").append(toIndentedString(isCash)).append("\n");
     sb.append("    isInvestment: ").append(toIndentedString(isInvestment)).append("\n");
     sb.append("    isLinkVerified: ").append(toIndentedString(isLinkVerified)).append("\n");
+    sb.append("    isManual: ").append(toIndentedString(isManual)).append("\n");
     sb.append("    mask: ").append(toIndentedString(mask)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");

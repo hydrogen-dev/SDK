@@ -337,7 +337,7 @@ end
 
 api_instance = NucleusApi::BenchmarkApi.new
 
-benchmark = NucleusApi::Benchmark.new # Benchmark | benchmark
+benchmark = nil # Object | benchmark
 
 benchmark_id = 'benchmark_id_example' # String | UUID benchmark_id
 
@@ -355,7 +355,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **benchmark** | [**Benchmark**](Benchmark.md)| benchmark | 
+ **benchmark** | **Object**| benchmark | 
  **benchmark_id** | [**String**](.md)| UUID benchmark_id | 
 
 ### Return type

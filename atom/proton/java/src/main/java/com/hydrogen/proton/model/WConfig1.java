@@ -15,18 +15,13 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * WConfig1
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
@@ -34,17 +29,17 @@ public class WConfig1 {
   @SerializedName("w_min_minor")
   private Float wMinMinor = 0.05f;
 
-  @SerializedName("w_max_major")
-  private Float wMaxMajor = 1.0f;
+  @SerializedName("cash_amount")
+  private Float cashAmount = 0.0f;
 
   @SerializedName("w_min_major")
   private Float wMinMajor = 0.05f;
 
-  @SerializedName("cash_amount")
-  private Float cashAmount = 0.0f;
-
   @SerializedName("w_max_minor")
   private Float wMaxMinor = 1.0f;
+
+  @SerializedName("w_max_major")
+  private Float wMaxMajor = 1.0f;
 
   public WConfig1 wMinMinor(Float wMinMinor) {
     this.wMinMinor = wMinMinor;
@@ -64,46 +59,6 @@ public class WConfig1 {
 
   public void setWMinMinor(Float wMinMinor) {
     this.wMinMinor = wMinMinor;
-  }
-
-  public WConfig1 wMaxMajor(Float wMaxMajor) {
-    this.wMaxMajor = wMaxMajor;
-    return this;
-  }
-
-   /**
-   * Get wMaxMajor
-   * minimum: 0
-   * maximum: 1
-   * @return wMaxMajor
-  **/
-  @ApiModelProperty(value = "")
-  public Float getWMaxMajor() {
-    return wMaxMajor;
-  }
-
-  public void setWMaxMajor(Float wMaxMajor) {
-    this.wMaxMajor = wMaxMajor;
-  }
-
-  public WConfig1 wMinMajor(Float wMinMajor) {
-    this.wMinMajor = wMinMajor;
-    return this;
-  }
-
-   /**
-   * Get wMinMajor
-   * minimum: 0
-   * maximum: 1
-   * @return wMinMajor
-  **/
-  @ApiModelProperty(value = "")
-  public Float getWMinMajor() {
-    return wMinMajor;
-  }
-
-  public void setWMinMajor(Float wMinMajor) {
-    this.wMinMajor = wMinMajor;
   }
 
   public WConfig1 cashAmount(Float cashAmount) {
@@ -126,6 +81,26 @@ public class WConfig1 {
     this.cashAmount = cashAmount;
   }
 
+  public WConfig1 wMinMajor(Float wMinMajor) {
+    this.wMinMajor = wMinMajor;
+    return this;
+  }
+
+   /**
+   * Get wMinMajor
+   * minimum: 0
+   * maximum: 1
+   * @return wMinMajor
+  **/
+  @ApiModelProperty(value = "")
+  public Float getWMinMajor() {
+    return wMinMajor;
+  }
+
+  public void setWMinMajor(Float wMinMajor) {
+    this.wMinMajor = wMinMajor;
+  }
+
   public WConfig1 wMaxMinor(Float wMaxMinor) {
     this.wMaxMinor = wMaxMinor;
     return this;
@@ -146,6 +121,26 @@ public class WConfig1 {
     this.wMaxMinor = wMaxMinor;
   }
 
+  public WConfig1 wMaxMajor(Float wMaxMajor) {
+    this.wMaxMajor = wMaxMajor;
+    return this;
+  }
+
+   /**
+   * Get wMaxMajor
+   * minimum: 0
+   * maximum: 1
+   * @return wMaxMajor
+  **/
+  @ApiModelProperty(value = "")
+  public Float getWMaxMajor() {
+    return wMaxMajor;
+  }
+
+  public void setWMaxMajor(Float wMaxMajor) {
+    this.wMaxMajor = wMaxMajor;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -157,15 +152,15 @@ public class WConfig1 {
     }
     WConfig1 wconfig1 = (WConfig1) o;
     return Objects.equals(this.wMinMinor, wconfig1.wMinMinor) &&
-        Objects.equals(this.wMaxMajor, wconfig1.wMaxMajor) &&
-        Objects.equals(this.wMinMajor, wconfig1.wMinMajor) &&
         Objects.equals(this.cashAmount, wconfig1.cashAmount) &&
-        Objects.equals(this.wMaxMinor, wconfig1.wMaxMinor);
+        Objects.equals(this.wMinMajor, wconfig1.wMinMajor) &&
+        Objects.equals(this.wMaxMinor, wconfig1.wMaxMinor) &&
+        Objects.equals(this.wMaxMajor, wconfig1.wMaxMajor);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(wMinMinor, wMaxMajor, wMinMajor, cashAmount, wMaxMinor);
+    return Objects.hash(wMinMinor, cashAmount, wMinMajor, wMaxMinor, wMaxMajor);
   }
 
 
@@ -175,10 +170,10 @@ public class WConfig1 {
     sb.append("class WConfig1 {\n");
     
     sb.append("    wMinMinor: ").append(toIndentedString(wMinMinor)).append("\n");
-    sb.append("    wMaxMajor: ").append(toIndentedString(wMaxMajor)).append("\n");
-    sb.append("    wMinMajor: ").append(toIndentedString(wMinMajor)).append("\n");
     sb.append("    cashAmount: ").append(toIndentedString(cashAmount)).append("\n");
+    sb.append("    wMinMajor: ").append(toIndentedString(wMinMajor)).append("\n");
     sb.append("    wMaxMinor: ").append(toIndentedString(wMaxMinor)).append("\n");
+    sb.append("    wMaxMajor: ").append(toIndentedString(wMaxMajor)).append("\n");
     sb.append("}");
     return sb.toString();
   }

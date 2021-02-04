@@ -774,7 +774,7 @@ end
 
 api_instance = NucleusApi::AllocationApi.new
 
-allocation_composition = NucleusApi::AllocationComposition.new # AllocationComposition | allocation_composition
+allocation_composition = nil # Object | allocation_composition
 
 allocation_composition_id = 'allocation_composition_id_example' # String | UUID allocation_composition_id
 
@@ -792,7 +792,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocation_composition** | [**AllocationComposition**](AllocationComposition.md)| allocation_composition | 
+ **allocation_composition** | **Object**| allocation_composition | 
  **allocation_composition_id** | [**String**](.md)| UUID allocation_composition_id | 
 
 ### Return type
@@ -834,7 +834,7 @@ end
 
 api_instance = NucleusApi::AllocationApi.new
 
-allocation = NucleusApi::Allocation.new # Allocation | allocation
+allocation = nil # Object | allocation
 
 allocation_id = 'allocation_id_example' # String | UUID allocation_id
 
@@ -852,7 +852,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocation** | [**Allocation**](Allocation.md)| allocation | 
+ **allocation** | **Object**| allocation | 
  **allocation_id** | [**String**](.md)| UUID allocation_id | 
 
 ### Return type

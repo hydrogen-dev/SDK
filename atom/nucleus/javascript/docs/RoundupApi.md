@@ -135,7 +135,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.RoundupApi();
 
-var roundupSettingId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID roundup_setting_id
+var roundupSettingId = "\"2035f52d-2c5b-4e07-8904-cb037bad7aff\""; // String | UUID roundup_setting_id
 
 
 var callback = function(error, data, response) {
@@ -152,7 +152,7 @@ apiInstance.deleteRoundupSettingsUsingDelete(roundupSettingId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roundupSettingId** | **String**| UUID roundup_setting_id | 
+ **roundupSettingId** | [**String**](.md)| UUID roundup_setting_id | 
 
 ### Return type
 
@@ -306,7 +306,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.RoundupApi();
 
-var roundupSettingId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID roundup_setting_id
+var roundupSettingId = "\"2035f52d-2c5b-4e07-8904-cb037bad7aff\""; // String | UUID roundup_setting_id
 
 
 var callback = function(error, data, response) {
@@ -323,7 +323,7 @@ apiInstance.getRoundupSettingsUsingGet(roundupSettingId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roundupSettingId** | **String**| UUID roundup_setting_id | 
+ **roundupSettingId** | [**String**](.md)| UUID roundup_setting_id | 
 
 ### Return type
 
@@ -357,7 +357,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.RoundupApi();
 
-var roundupId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID roundup_id
+var roundupId = "\"2035f52d-2c5b-4e07-8904-cb037bad7aff\""; // String | UUID roundup_id
 
 
 var callback = function(error, data, response) {
@@ -374,7 +374,7 @@ apiInstance.getRoundupUsingGet(roundupId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roundupId** | **String**| UUID roundup_id | 
+ **roundupId** | [**String**](.md)| UUID roundup_id | 
 
 ### Return type
 
@@ -408,9 +408,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.RoundupApi();
 
-var roundupSetting = new HydrogenNucleusApi.RoundupSettings(); // RoundupSettings | roundup_setting
+var roundupSetting = null; // Object | roundup_setting
 
-var roundupSettingId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID roundup_setting_id
+var roundupSettingId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID roundup_setting_id
 
 
 var callback = function(error, data, response) {
@@ -427,8 +427,8 @@ apiInstance.updateRoundupSettingsUsingPut(roundupSetting, roundupSettingId, call
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roundupSetting** | [**RoundupSettings**](RoundupSettings.md)| roundup_setting | 
- **roundupSettingId** | **String**| UUID roundup_setting_id | 
+ **roundupSetting** | **Object**| roundup_setting | 
+ **roundupSettingId** | [**String**](.md)| UUID roundup_setting_id | 
 
 ### Return type
 

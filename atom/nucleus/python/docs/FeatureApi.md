@@ -46,7 +46,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FeatureApi(nucleus_api.ApiClient(configuration))
 feature_track = nucleus_api.FeatureTrack() # FeatureTrack | featureTrack
@@ -110,7 +110,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FeatureApi(nucleus_api.ApiClient(configuration))
 feature = nucleus_api.Feature() # Feature | feature
@@ -174,7 +174,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FeatureApi(nucleus_api.ApiClient(configuration))
 feature_track_id = 'feature_track_id_example' # str | UUID feature_track_id
@@ -237,7 +237,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FeatureApi(nucleus_api.ApiClient(configuration))
 feature_id = 'feature_id_example' # str | UUID feature_id
@@ -300,7 +300,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FeatureApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -372,7 +372,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FeatureApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -444,7 +444,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FeatureApi(nucleus_api.ApiClient(configuration))
 feature_track_id = 'feature_track_id_example' # str | UUID feature_track_id
@@ -508,7 +508,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FeatureApi(nucleus_api.ApiClient(configuration))
 feature_id = 'feature_id_example' # str | UUID feature_id
@@ -572,10 +572,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FeatureApi(nucleus_api.ApiClient(configuration))
-feature_track = nucleus_api.FeatureTrack() # FeatureTrack | feature_track
+feature_track = NULL # object | feature_track
 feature_track_id = 'feature_track_id_example' # str | UUID feature_track_id
 
 try:
@@ -590,7 +590,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **feature_track** | [**FeatureTrack**](FeatureTrack.md)| feature_track | 
+ **feature_track** | **object**| feature_track | 
  **feature_track_id** | [**str**](.md)| UUID feature_track_id | 
 
 ### Return type
@@ -638,10 +638,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FeatureApi(nucleus_api.ApiClient(configuration))
-feature = nucleus_api.Feature() # Feature | feature
+feature = NULL # object | feature
 feature_id = 'feature_id_example' # str | UUID feature_id
 
 try:
@@ -656,7 +656,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **feature** | [**Feature**](Feature.md)| feature | 
+ **feature** | **object**| feature | 
  **feature_id** | [**str**](.md)| UUID feature_id | 
 
 ### Return type

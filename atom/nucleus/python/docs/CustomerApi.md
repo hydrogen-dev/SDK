@@ -46,7 +46,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CustomerApi(nucleus_api.ApiClient(configuration))
 customer_revenue = nucleus_api.CustomerRevenue() # CustomerRevenue | customerRevenue
@@ -110,7 +110,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CustomerApi(nucleus_api.ApiClient(configuration))
 customer = nucleus_api.Customer() # Customer | customer
@@ -174,7 +174,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CustomerApi(nucleus_api.ApiClient(configuration))
 customer_revenue_id = 'customer_revenue_id_example' # str | UUID customer_revenue_id
@@ -237,7 +237,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CustomerApi(nucleus_api.ApiClient(configuration))
 customer_id = 'customer_id_example' # str | UUID customer_id
@@ -300,7 +300,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CustomerApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -372,7 +372,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CustomerApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -446,7 +446,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CustomerApi(nucleus_api.ApiClient(configuration))
 customer_revenue_id = 'customer_revenue_id_example' # str | UUID customer_revenue_id
@@ -512,7 +512,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CustomerApi(nucleus_api.ApiClient(configuration))
 customer_id = 'customer_id_example' # str | UUID customer_id
@@ -576,10 +576,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CustomerApi(nucleus_api.ApiClient(configuration))
-customer_revenue = nucleus_api.CustomerRevenue() # CustomerRevenue | customer_revenue
+customer_revenue = NULL # object | customer_revenue
 customer_revenue_id = 'customer_revenue_id_example' # str | UUID customer_revenue_id
 
 try:
@@ -594,7 +594,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_revenue** | [**CustomerRevenue**](CustomerRevenue.md)| customer_revenue | 
+ **customer_revenue** | **object**| customer_revenue | 
  **customer_revenue_id** | [**str**](.md)| UUID customer_revenue_id | 
 
 ### Return type
@@ -642,10 +642,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CustomerApi(nucleus_api.ApiClient(configuration))
-customer = nucleus_api.Customer() # Customer | customer
+customer = NULL # object | customer
 customer_id = 'customer_id_example' # str | UUID customer_id
 
 try:
@@ -660,7 +660,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer** | [**Customer**](Customer.md)| customer | 
+ **customer** | **object**| customer | 
  **customer_id** | [**str**](.md)| UUID customer_id | 
 
 ### Return type

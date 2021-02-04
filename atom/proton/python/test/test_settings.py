@@ -32,7 +32,7 @@ class TestSettings(unittest.TestCase):
     def testSettings(self):
         """Test Settings"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.settings.Settings()  # noqa: E501
+        # model = proton_api.models.settings.Settings()  # noqa: E501
         pass
 
 

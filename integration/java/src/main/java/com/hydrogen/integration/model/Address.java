@@ -13,20 +13,20 @@
 
 package com.hydrogen.integration.model;
 
-import java.util.Objects;
-
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModelProperty;
+
 import java.io.IOException;
+import java.util.Objects;
 
 /**
  * Address
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-29T15:43:35.245Z")
 public class Address {
   @SerializedName("address_line1")
   private String addressLine1 = null;
@@ -54,19 +54,19 @@ public class Address {
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    HOME("HOME"),
+    HOME("home"),
     
-    WORK("WORK"),
+    WORK("work"),
     
-    BILLING("BILLING"),
+    BILLING("billing"),
     
-    MAILING("MAILING"),
+    MAILING("mailing"),
     
-    LEGAL("LEGAL"),
+    LEGAL("legal"),
     
-    RESIDENCE("RESIDENCE"),
+    RESIDENCE("residence"),
     
-    UNKNOWN("UNKNOWN");
+    NULL("null");
 
     private String value;
 
@@ -100,14 +100,14 @@ public class Address {
 
       @Override
       public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        Object value = jsonReader.nextString();
         return TypeEnum.fromValue(String.valueOf(value));
       }
     }
   }
 
   @SerializedName("type")
-  private TypeEnum type = null;
+  private TypeEnum type = TypeEnum.NULL;
 
   public Address addressLine1(String addressLine1) {
     this.addressLine1 = addressLine1;
@@ -255,7 +255,7 @@ public class Address {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -283,7 +283,7 @@ public class Address {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Address {\n");
-    
+
     sb.append("    addressLine1: ").append(toIndentedString(addressLine1)).append("\n");
     sb.append("    addressLine2: ").append(toIndentedString(addressLine2)).append("\n");
     sb.append("    city: ").append(toIndentedString(city)).append("\n");
@@ -300,7 +300,7 @@ public class Address {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

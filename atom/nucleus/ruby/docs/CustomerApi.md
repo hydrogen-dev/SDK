@@ -518,7 +518,7 @@ end
 
 api_instance = NucleusApi::CustomerApi.new
 
-customer_revenue = NucleusApi::CustomerRevenue.new # CustomerRevenue | customer_revenue
+customer_revenue = nil # Object | customer_revenue
 
 customer_revenue_id = 'customer_revenue_id_example' # String | UUID customer_revenue_id
 
@@ -536,7 +536,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_revenue** | [**CustomerRevenue**](CustomerRevenue.md)| customer_revenue | 
+ **customer_revenue** | **Object**| customer_revenue | 
  **customer_revenue_id** | [**String**](.md)| UUID customer_revenue_id | 
 
 ### Return type
@@ -578,7 +578,7 @@ end
 
 api_instance = NucleusApi::CustomerApi.new
 
-customer = NucleusApi::Customer.new # Customer | customer
+customer = nil # Object | customer
 
 customer_id = 'customer_id_example' # String | UUID customer_id
 
@@ -596,7 +596,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer** | [**Customer**](Customer.md)| customer | 
+ **customer** | **Object**| customer | 
  **customer_id** | [**String**](.md)| UUID customer_id | 
 
 ### Return type

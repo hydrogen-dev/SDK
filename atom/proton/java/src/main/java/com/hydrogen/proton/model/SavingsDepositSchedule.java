@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -28,19 +27,13 @@ import java.math.BigDecimal;
 /**
  * SavingsDepositSchedule
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class SavingsDepositSchedule {
-  @SerializedName("deposit_amount")
-  private BigDecimal depositAmount = null;
-
   @SerializedName("adjust_deposit_for_inflation")
   private Boolean adjustDepositForInflation = true;
-
-  @SerializedName("deposit_duration")
-  private Integer depositDuration = null;
 
   /**
    * Gets or Sets depositFrequencyInterval
@@ -98,24 +91,11 @@ public class SavingsDepositSchedule {
   @SerializedName("deposit_frequency_interval")
   private DepositFrequencyIntervalEnum depositFrequencyInterval = DepositFrequencyIntervalEnum.YEAR;
 
-  public SavingsDepositSchedule depositAmount(BigDecimal depositAmount) {
-    this.depositAmount = depositAmount;
-    return this;
-  }
+  @SerializedName("deposit_amount")
+  private BigDecimal depositAmount = null;
 
-   /**
-   * Get depositAmount
-   * minimum: 0
-   * @return depositAmount
-  **/
-  @ApiModelProperty(value = "")
-  public BigDecimal getDepositAmount() {
-    return depositAmount;
-  }
-
-  public void setDepositAmount(BigDecimal depositAmount) {
-    this.depositAmount = depositAmount;
-  }
+  @SerializedName("deposit_duration")
+  private Integer depositDuration = null;
 
   public SavingsDepositSchedule adjustDepositForInflation(Boolean adjustDepositForInflation) {
     this.adjustDepositForInflation = adjustDepositForInflation;
@@ -133,6 +113,43 @@ public class SavingsDepositSchedule {
 
   public void setAdjustDepositForInflation(Boolean adjustDepositForInflation) {
     this.adjustDepositForInflation = adjustDepositForInflation;
+  }
+
+  public SavingsDepositSchedule depositFrequencyInterval(DepositFrequencyIntervalEnum depositFrequencyInterval) {
+    this.depositFrequencyInterval = depositFrequencyInterval;
+    return this;
+  }
+
+   /**
+   * Get depositFrequencyInterval
+   * @return depositFrequencyInterval
+  **/
+  @ApiModelProperty(value = "")
+  public DepositFrequencyIntervalEnum getDepositFrequencyInterval() {
+    return depositFrequencyInterval;
+  }
+
+  public void setDepositFrequencyInterval(DepositFrequencyIntervalEnum depositFrequencyInterval) {
+    this.depositFrequencyInterval = depositFrequencyInterval;
+  }
+
+  public SavingsDepositSchedule depositAmount(BigDecimal depositAmount) {
+    this.depositAmount = depositAmount;
+    return this;
+  }
+
+   /**
+   * Get depositAmount
+   * minimum: 0
+   * @return depositAmount
+  **/
+  @ApiModelProperty(value = "")
+  public BigDecimal getDepositAmount() {
+    return depositAmount;
+  }
+
+  public void setDepositAmount(BigDecimal depositAmount) {
+    this.depositAmount = depositAmount;
   }
 
   public SavingsDepositSchedule depositDuration(Integer depositDuration) {
@@ -154,24 +171,6 @@ public class SavingsDepositSchedule {
     this.depositDuration = depositDuration;
   }
 
-  public SavingsDepositSchedule depositFrequencyInterval(DepositFrequencyIntervalEnum depositFrequencyInterval) {
-    this.depositFrequencyInterval = depositFrequencyInterval;
-    return this;
-  }
-
-   /**
-   * Get depositFrequencyInterval
-   * @return depositFrequencyInterval
-  **/
-  @ApiModelProperty(value = "")
-  public DepositFrequencyIntervalEnum getDepositFrequencyInterval() {
-    return depositFrequencyInterval;
-  }
-
-  public void setDepositFrequencyInterval(DepositFrequencyIntervalEnum depositFrequencyInterval) {
-    this.depositFrequencyInterval = depositFrequencyInterval;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -182,15 +181,15 @@ public class SavingsDepositSchedule {
       return false;
     }
     SavingsDepositSchedule savingsDepositSchedule = (SavingsDepositSchedule) o;
-    return Objects.equals(this.depositAmount, savingsDepositSchedule.depositAmount) &&
-        Objects.equals(this.adjustDepositForInflation, savingsDepositSchedule.adjustDepositForInflation) &&
-        Objects.equals(this.depositDuration, savingsDepositSchedule.depositDuration) &&
-        Objects.equals(this.depositFrequencyInterval, savingsDepositSchedule.depositFrequencyInterval);
+    return Objects.equals(this.adjustDepositForInflation, savingsDepositSchedule.adjustDepositForInflation) &&
+        Objects.equals(this.depositFrequencyInterval, savingsDepositSchedule.depositFrequencyInterval) &&
+        Objects.equals(this.depositAmount, savingsDepositSchedule.depositAmount) &&
+        Objects.equals(this.depositDuration, savingsDepositSchedule.depositDuration);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(depositAmount, adjustDepositForInflation, depositDuration, depositFrequencyInterval);
+    return Objects.hash(adjustDepositForInflation, depositFrequencyInterval, depositAmount, depositDuration);
   }
 
 
@@ -199,10 +198,10 @@ public class SavingsDepositSchedule {
     StringBuilder sb = new StringBuilder();
     sb.append("class SavingsDepositSchedule {\n");
     
-    sb.append("    depositAmount: ").append(toIndentedString(depositAmount)).append("\n");
     sb.append("    adjustDepositForInflation: ").append(toIndentedString(adjustDepositForInflation)).append("\n");
-    sb.append("    depositDuration: ").append(toIndentedString(depositDuration)).append("\n");
     sb.append("    depositFrequencyInterval: ").append(toIndentedString(depositFrequencyInterval)).append("\n");
+    sb.append("    depositAmount: ").append(toIndentedString(depositAmount)).append("\n");
+    sb.append("    depositDuration: ").append(toIndentedString(depositDuration)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -13,15 +13,14 @@
 
 package com.hydrogen.proton.api;
 
-import com.hydrogen.proton.ApiCallback;
 import com.hydrogen.proton.ApiClient;
 import com.hydrogen.proton.ApiException;
+import com.hydrogen.proton.ProgressResponseBody;
+import com.hydrogen.proton.ApiCallback;
 import com.hydrogen.proton.ApiResponse;
 import com.hydrogen.proton.Configuration;
 import com.hydrogen.proton.Pair;
 import com.hydrogen.proton.ProgressRequestBody;
-import com.hydrogen.proton.ProgressResponseBody;
-import com.hydrogen.proton.model.FinancialStatementAnalysisRequest;
 
 import com.google.gson.reflect.TypeToken;
 
@@ -32,6 +31,7 @@ import com.hydrogen.proton.model.BusinessFinancialHealthCheckRequest;
 import com.hydrogen.proton.model.BusinessInvoiceAnalysisRequest;
 import com.hydrogen.proton.model.CashAnalysisRequest;
 import com.hydrogen.proton.model.CustomerAnalysisRequest;
+import com.hydrogen.proton.model.FinancialStatementAnalysisRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

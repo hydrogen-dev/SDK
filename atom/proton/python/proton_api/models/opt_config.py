@@ -31,93 +31,47 @@ class OptConfig(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'w_asset_config': 'object',
-        'min_assets': 'int',
         'sec_types': 'list[str]',
-        'w_config': 'WConfig',
         'end_date': 'date',
+        'w_config': 'WConfig',
         'start_date': 'date',
-        'tickers': 'list[str]'
+        'tickers': 'list[str]',
+        'min_assets': 'int',
+        'w_asset_config': 'object'
     }
 
     attribute_map = {
-        'w_asset_config': 'w_asset_config',
-        'min_assets': 'min_assets',
         'sec_types': 'sec_types',
-        'w_config': 'w_config',
         'end_date': 'end_date',
+        'w_config': 'w_config',
         'start_date': 'start_date',
-        'tickers': 'tickers'
+        'tickers': 'tickers',
+        'min_assets': 'min_assets',
+        'w_asset_config': 'w_asset_config'
     }
 
-    def __init__(self, w_asset_config=None, min_assets=None, sec_types=None, w_config=None, end_date=None, start_date=None, tickers=None):  # noqa: E501
+    def __init__(self, sec_types=None, end_date=None, w_config=None, start_date=None, tickers=None, min_assets=None, w_asset_config=None):  # noqa: E501
         """OptConfig - a model defined in Swagger"""  # noqa: E501
 
-        self._w_asset_config = None
-        self._min_assets = None
         self._sec_types = None
-        self._w_config = None
         self._end_date = None
+        self._w_config = None
         self._start_date = None
         self._tickers = None
+        self._min_assets = None
+        self._w_asset_config = None
         self.discriminator = None
 
-        if w_asset_config is not None:
-            self.w_asset_config = w_asset_config
-        self.min_assets = min_assets
         self.sec_types = sec_types
-        self.w_config = w_config
         if end_date is not None:
             self.end_date = end_date
+        self.w_config = w_config
         if start_date is not None:
             self.start_date = start_date
         self.tickers = tickers
-
-    @property
-    def w_asset_config(self):
-        """Gets the w_asset_config of this OptConfig.  # noqa: E501
-
-
-        :return: The w_asset_config of this OptConfig.  # noqa: E501
-        :rtype: object
-        """
-        return self._w_asset_config
-
-    @w_asset_config.setter
-    def w_asset_config(self, w_asset_config):
-        """Sets the w_asset_config of this OptConfig.
-
-
-        :param w_asset_config: The w_asset_config of this OptConfig.  # noqa: E501
-        :type: object
-        """
-
-        self._w_asset_config = w_asset_config
-
-    @property
-    def min_assets(self):
-        """Gets the min_assets of this OptConfig.  # noqa: E501
-
-
-        :return: The min_assets of this OptConfig.  # noqa: E501
-        :rtype: int
-        """
-        return self._min_assets
-
-    @min_assets.setter
-    def min_assets(self, min_assets):
-        """Sets the min_assets of this OptConfig.
-
-
-        :param min_assets: The min_assets of this OptConfig.  # noqa: E501
-        :type: int
-        """
-        if min_assets is None:
-            raise ValueError("Invalid value for `min_assets`, must not be `None`")  # noqa: E501
-        if min_assets is not None and min_assets < 1:  # noqa: E501
-            raise ValueError("Invalid value for `min_assets`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._min_assets = min_assets
+        self.min_assets = min_assets
+        if w_asset_config is not None:
+            self.w_asset_config = w_asset_config
 
     @property
     def sec_types(self):
@@ -150,6 +104,27 @@ class OptConfig(object):
         self._sec_types = sec_types
 
     @property
+    def end_date(self):
+        """Gets the end_date of this OptConfig.  # noqa: E501
+
+
+        :return: The end_date of this OptConfig.  # noqa: E501
+        :rtype: date
+        """
+        return self._end_date
+
+    @end_date.setter
+    def end_date(self, end_date):
+        """Sets the end_date of this OptConfig.
+
+
+        :param end_date: The end_date of this OptConfig.  # noqa: E501
+        :type: date
+        """
+
+        self._end_date = end_date
+
+    @property
     def w_config(self):
         """Gets the w_config of this OptConfig.  # noqa: E501
 
@@ -171,27 +146,6 @@ class OptConfig(object):
             raise ValueError("Invalid value for `w_config`, must not be `None`")  # noqa: E501
 
         self._w_config = w_config
-
-    @property
-    def end_date(self):
-        """Gets the end_date of this OptConfig.  # noqa: E501
-
-
-        :return: The end_date of this OptConfig.  # noqa: E501
-        :rtype: date
-        """
-        return self._end_date
-
-    @end_date.setter
-    def end_date(self, end_date):
-        """Sets the end_date of this OptConfig.
-
-
-        :param end_date: The end_date of this OptConfig.  # noqa: E501
-        :type: date
-        """
-
-        self._end_date = end_date
 
     @property
     def start_date(self):
@@ -236,6 +190,52 @@ class OptConfig(object):
             raise ValueError("Invalid value for `tickers`, must not be `None`")  # noqa: E501
 
         self._tickers = tickers
+
+    @property
+    def min_assets(self):
+        """Gets the min_assets of this OptConfig.  # noqa: E501
+
+
+        :return: The min_assets of this OptConfig.  # noqa: E501
+        :rtype: int
+        """
+        return self._min_assets
+
+    @min_assets.setter
+    def min_assets(self, min_assets):
+        """Sets the min_assets of this OptConfig.
+
+
+        :param min_assets: The min_assets of this OptConfig.  # noqa: E501
+        :type: int
+        """
+        if min_assets is None:
+            raise ValueError("Invalid value for `min_assets`, must not be `None`")  # noqa: E501
+        if min_assets is not None and min_assets < 1:  # noqa: E501
+            raise ValueError("Invalid value for `min_assets`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._min_assets = min_assets
+
+    @property
+    def w_asset_config(self):
+        """Gets the w_asset_config of this OptConfig.  # noqa: E501
+
+
+        :return: The w_asset_config of this OptConfig.  # noqa: E501
+        :rtype: object
+        """
+        return self._w_asset_config
+
+    @w_asset_config.setter
+    def w_asset_config(self, w_asset_config):
+        """Sets the w_asset_config of this OptConfig.
+
+
+        :param w_asset_config: The w_asset_config of this OptConfig.  # noqa: E501
+        :type: object
+        """
+
+        self._w_asset_config = w_asset_config
 
     def to_dict(self):
         """Returns the model properties as a dict"""

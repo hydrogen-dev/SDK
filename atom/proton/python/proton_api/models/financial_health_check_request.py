@@ -31,110 +31,89 @@ class FinancialHealthCheckRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'client_id': 'str',
-        'total_liabilities': 'float',
-        'liquid_assets': 'float',
-        'monthly_expenses': 'float',
-        'ratio_targets': 'RatioTargets',
-        'non_liquid_assets': 'float',
         'gross_annual_income': 'float',
-        'lookback_periods': 'int',
+        'liquid_assets': 'float',
         'net_monthly_income': 'float',
-        'short_term_liabilities': 'float'
+        'client_id': 'str',
+        'short_term_liabilities': 'float',
+        'monthly_expenses': 'float',
+        'total_liabilities': 'float',
+        'lookback_periods': 'int',
+        'ratio_targets': 'RatioTargets',
+        'non_liquid_assets': 'float'
     }
 
     attribute_map = {
-        'client_id': 'client_id',
-        'total_liabilities': 'total_liabilities',
-        'liquid_assets': 'liquid_assets',
-        'monthly_expenses': 'monthly_expenses',
-        'ratio_targets': 'ratio_targets',
-        'non_liquid_assets': 'non_liquid_assets',
         'gross_annual_income': 'gross_annual_income',
-        'lookback_periods': 'lookback_periods',
+        'liquid_assets': 'liquid_assets',
         'net_monthly_income': 'net_monthly_income',
-        'short_term_liabilities': 'short_term_liabilities'
+        'client_id': 'client_id',
+        'short_term_liabilities': 'short_term_liabilities',
+        'monthly_expenses': 'monthly_expenses',
+        'total_liabilities': 'total_liabilities',
+        'lookback_periods': 'lookback_periods',
+        'ratio_targets': 'ratio_targets',
+        'non_liquid_assets': 'non_liquid_assets'
     }
 
-    def __init__(self, client_id=None, total_liabilities=None, liquid_assets=None, monthly_expenses=None, ratio_targets=None, non_liquid_assets=None, gross_annual_income=None, lookback_periods=3, net_monthly_income=None, short_term_liabilities=None):  # noqa: E501
+    def __init__(self, gross_annual_income=None, liquid_assets=None, net_monthly_income=None, client_id=None, short_term_liabilities=None, monthly_expenses=None, total_liabilities=None, lookback_periods=3, ratio_targets=None, non_liquid_assets=None):  # noqa: E501
         """FinancialHealthCheckRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._client_id = None
-        self._total_liabilities = None
+        self._gross_annual_income = None
         self._liquid_assets = None
+        self._net_monthly_income = None
+        self._client_id = None
+        self._short_term_liabilities = None
         self._monthly_expenses = None
+        self._total_liabilities = None
+        self._lookback_periods = None
         self._ratio_targets = None
         self._non_liquid_assets = None
-        self._gross_annual_income = None
-        self._lookback_periods = None
-        self._net_monthly_income = None
-        self._short_term_liabilities = None
         self.discriminator = None
 
-        if client_id is not None:
-            self.client_id = client_id
-        if total_liabilities is not None:
-            self.total_liabilities = total_liabilities
+        if gross_annual_income is not None:
+            self.gross_annual_income = gross_annual_income
         if liquid_assets is not None:
             self.liquid_assets = liquid_assets
+        if net_monthly_income is not None:
+            self.net_monthly_income = net_monthly_income
+        if client_id is not None:
+            self.client_id = client_id
+        if short_term_liabilities is not None:
+            self.short_term_liabilities = short_term_liabilities
         if monthly_expenses is not None:
             self.monthly_expenses = monthly_expenses
+        if total_liabilities is not None:
+            self.total_liabilities = total_liabilities
+        if lookback_periods is not None:
+            self.lookback_periods = lookback_periods
         if ratio_targets is not None:
             self.ratio_targets = ratio_targets
         if non_liquid_assets is not None:
             self.non_liquid_assets = non_liquid_assets
-        if gross_annual_income is not None:
-            self.gross_annual_income = gross_annual_income
-        if lookback_periods is not None:
-            self.lookback_periods = lookback_periods
-        if net_monthly_income is not None:
-            self.net_monthly_income = net_monthly_income
-        if short_term_liabilities is not None:
-            self.short_term_liabilities = short_term_liabilities
 
     @property
-    def client_id(self):
-        """Gets the client_id of this FinancialHealthCheckRequest.  # noqa: E501
+    def gross_annual_income(self):
+        """Gets the gross_annual_income of this FinancialHealthCheckRequest.  # noqa: E501
 
 
-        :return: The client_id of this FinancialHealthCheckRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._client_id
-
-    @client_id.setter
-    def client_id(self, client_id):
-        """Sets the client_id of this FinancialHealthCheckRequest.
-
-
-        :param client_id: The client_id of this FinancialHealthCheckRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._client_id = client_id
-
-    @property
-    def total_liabilities(self):
-        """Gets the total_liabilities of this FinancialHealthCheckRequest.  # noqa: E501
-
-
-        :return: The total_liabilities of this FinancialHealthCheckRequest.  # noqa: E501
+        :return: The gross_annual_income of this FinancialHealthCheckRequest.  # noqa: E501
         :rtype: float
         """
-        return self._total_liabilities
+        return self._gross_annual_income
 
-    @total_liabilities.setter
-    def total_liabilities(self, total_liabilities):
-        """Sets the total_liabilities of this FinancialHealthCheckRequest.
+    @gross_annual_income.setter
+    def gross_annual_income(self, gross_annual_income):
+        """Sets the gross_annual_income of this FinancialHealthCheckRequest.
 
 
-        :param total_liabilities: The total_liabilities of this FinancialHealthCheckRequest.  # noqa: E501
+        :param gross_annual_income: The gross_annual_income of this FinancialHealthCheckRequest.  # noqa: E501
         :type: float
         """
-        if total_liabilities is not None and total_liabilities < 0:  # noqa: E501
-            raise ValueError("Invalid value for `total_liabilities`, must be a value greater than or equal to `0`")  # noqa: E501
+        if gross_annual_income is not None and gross_annual_income < 0:  # noqa: E501
+            raise ValueError("Invalid value for `gross_annual_income`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._total_liabilities = total_liabilities
+        self._gross_annual_income = gross_annual_income
 
     @property
     def liquid_assets(self):
@@ -160,6 +139,73 @@ class FinancialHealthCheckRequest(object):
         self._liquid_assets = liquid_assets
 
     @property
+    def net_monthly_income(self):
+        """Gets the net_monthly_income of this FinancialHealthCheckRequest.  # noqa: E501
+
+
+        :return: The net_monthly_income of this FinancialHealthCheckRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._net_monthly_income
+
+    @net_monthly_income.setter
+    def net_monthly_income(self, net_monthly_income):
+        """Sets the net_monthly_income of this FinancialHealthCheckRequest.
+
+
+        :param net_monthly_income: The net_monthly_income of this FinancialHealthCheckRequest.  # noqa: E501
+        :type: float
+        """
+        if net_monthly_income is not None and net_monthly_income < 0:  # noqa: E501
+            raise ValueError("Invalid value for `net_monthly_income`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._net_monthly_income = net_monthly_income
+
+    @property
+    def client_id(self):
+        """Gets the client_id of this FinancialHealthCheckRequest.  # noqa: E501
+
+
+        :return: The client_id of this FinancialHealthCheckRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_id
+
+    @client_id.setter
+    def client_id(self, client_id):
+        """Sets the client_id of this FinancialHealthCheckRequest.
+
+
+        :param client_id: The client_id of this FinancialHealthCheckRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._client_id = client_id
+
+    @property
+    def short_term_liabilities(self):
+        """Gets the short_term_liabilities of this FinancialHealthCheckRequest.  # noqa: E501
+
+
+        :return: The short_term_liabilities of this FinancialHealthCheckRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._short_term_liabilities
+
+    @short_term_liabilities.setter
+    def short_term_liabilities(self, short_term_liabilities):
+        """Sets the short_term_liabilities of this FinancialHealthCheckRequest.
+
+
+        :param short_term_liabilities: The short_term_liabilities of this FinancialHealthCheckRequest.  # noqa: E501
+        :type: float
+        """
+        if short_term_liabilities is not None and short_term_liabilities < 0:  # noqa: E501
+            raise ValueError("Invalid value for `short_term_liabilities`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._short_term_liabilities = short_term_liabilities
+
+    @property
     def monthly_expenses(self):
         """Gets the monthly_expenses of this FinancialHealthCheckRequest.  # noqa: E501
 
@@ -181,6 +227,52 @@ class FinancialHealthCheckRequest(object):
             raise ValueError("Invalid value for `monthly_expenses`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._monthly_expenses = monthly_expenses
+
+    @property
+    def total_liabilities(self):
+        """Gets the total_liabilities of this FinancialHealthCheckRequest.  # noqa: E501
+
+
+        :return: The total_liabilities of this FinancialHealthCheckRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._total_liabilities
+
+    @total_liabilities.setter
+    def total_liabilities(self, total_liabilities):
+        """Sets the total_liabilities of this FinancialHealthCheckRequest.
+
+
+        :param total_liabilities: The total_liabilities of this FinancialHealthCheckRequest.  # noqa: E501
+        :type: float
+        """
+        if total_liabilities is not None and total_liabilities < 0:  # noqa: E501
+            raise ValueError("Invalid value for `total_liabilities`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._total_liabilities = total_liabilities
+
+    @property
+    def lookback_periods(self):
+        """Gets the lookback_periods of this FinancialHealthCheckRequest.  # noqa: E501
+
+
+        :return: The lookback_periods of this FinancialHealthCheckRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._lookback_periods
+
+    @lookback_periods.setter
+    def lookback_periods(self, lookback_periods):
+        """Sets the lookback_periods of this FinancialHealthCheckRequest.
+
+
+        :param lookback_periods: The lookback_periods of this FinancialHealthCheckRequest.  # noqa: E501
+        :type: int
+        """
+        if lookback_periods is not None and lookback_periods < 1:  # noqa: E501
+            raise ValueError("Invalid value for `lookback_periods`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._lookback_periods = lookback_periods
 
     @property
     def ratio_targets(self):
@@ -225,98 +317,6 @@ class FinancialHealthCheckRequest(object):
             raise ValueError("Invalid value for `non_liquid_assets`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._non_liquid_assets = non_liquid_assets
-
-    @property
-    def gross_annual_income(self):
-        """Gets the gross_annual_income of this FinancialHealthCheckRequest.  # noqa: E501
-
-
-        :return: The gross_annual_income of this FinancialHealthCheckRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._gross_annual_income
-
-    @gross_annual_income.setter
-    def gross_annual_income(self, gross_annual_income):
-        """Sets the gross_annual_income of this FinancialHealthCheckRequest.
-
-
-        :param gross_annual_income: The gross_annual_income of this FinancialHealthCheckRequest.  # noqa: E501
-        :type: float
-        """
-        if gross_annual_income is not None and gross_annual_income < 0:  # noqa: E501
-            raise ValueError("Invalid value for `gross_annual_income`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._gross_annual_income = gross_annual_income
-
-    @property
-    def lookback_periods(self):
-        """Gets the lookback_periods of this FinancialHealthCheckRequest.  # noqa: E501
-
-
-        :return: The lookback_periods of this FinancialHealthCheckRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._lookback_periods
-
-    @lookback_periods.setter
-    def lookback_periods(self, lookback_periods):
-        """Sets the lookback_periods of this FinancialHealthCheckRequest.
-
-
-        :param lookback_periods: The lookback_periods of this FinancialHealthCheckRequest.  # noqa: E501
-        :type: int
-        """
-        if lookback_periods is not None and lookback_periods < 1:  # noqa: E501
-            raise ValueError("Invalid value for `lookback_periods`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._lookback_periods = lookback_periods
-
-    @property
-    def net_monthly_income(self):
-        """Gets the net_monthly_income of this FinancialHealthCheckRequest.  # noqa: E501
-
-
-        :return: The net_monthly_income of this FinancialHealthCheckRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._net_monthly_income
-
-    @net_monthly_income.setter
-    def net_monthly_income(self, net_monthly_income):
-        """Sets the net_monthly_income of this FinancialHealthCheckRequest.
-
-
-        :param net_monthly_income: The net_monthly_income of this FinancialHealthCheckRequest.  # noqa: E501
-        :type: float
-        """
-        if net_monthly_income is not None and net_monthly_income < 0:  # noqa: E501
-            raise ValueError("Invalid value for `net_monthly_income`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._net_monthly_income = net_monthly_income
-
-    @property
-    def short_term_liabilities(self):
-        """Gets the short_term_liabilities of this FinancialHealthCheckRequest.  # noqa: E501
-
-
-        :return: The short_term_liabilities of this FinancialHealthCheckRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._short_term_liabilities
-
-    @short_term_liabilities.setter
-    def short_term_liabilities(self, short_term_liabilities):
-        """Sets the short_term_liabilities of this FinancialHealthCheckRequest.
-
-
-        :param short_term_liabilities: The short_term_liabilities of this FinancialHealthCheckRequest.  # noqa: E501
-        :type: float
-        """
-        if short_term_liabilities is not None and short_term_liabilities < 0:  # noqa: E501
-            raise ValueError("Invalid value for `short_term_liabilities`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._short_term_liabilities = short_term_liabilities
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -13,9 +13,9 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.AuditLog;
 import com.hydrogen.nucleus.model.PageAuditLog;
-import com.hydrogen.nucleus.ApiException;
 
 import java.util.UUID;
 import org.junit.Test;

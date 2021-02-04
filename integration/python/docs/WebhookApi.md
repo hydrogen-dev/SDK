@@ -42,8 +42,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.WebhookApi(integration_api.ApiClient(configuration))
 webhook_request = integration_api.Webhook() # Webhook | webhookRequest
@@ -82,7 +83,7 @@ Name | Type | Description  | Notes
 
 Delete a webhook
 
-Permanently delete a webhook for your firm. The webhook_id must be provided.
+Permanently delete a webhook for your business. The webhook_id must be provided.
 
 ### Example
 ```python
@@ -108,8 +109,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.WebhookApi(integration_api.ApiClient(configuration))
 webhook_id = 'webhook_id_example' # str | UUID webhook_id
@@ -147,7 +149,7 @@ void (empty response body)
 
 List all webhooks
 
-Get information for all webhooks defined for your firm.
+Get information for all webhooks defined for your business.
 
 ### Example
 ```python
@@ -173,8 +175,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.WebhookApi(integration_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -247,8 +250,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.WebhookApi(integration_api.ApiClient(configuration))
 webhook_id = 'webhook_id_example' # str | UUID webhook_id
@@ -287,7 +291,7 @@ Name | Type | Description  | Notes
 
 Update a webhook
 
-Update a webhook for your firm. The webhook_id must be provided
+Update a webhook for your business. The webhook_id must be provided
 
 ### Example
 ```python
@@ -313,11 +317,12 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.WebhookApi(integration_api.ApiClient(configuration))
-webhook = integration_api.Webhook() # Webhook | webhook
+webhook = NULL # object | webhook
 webhook_id = 'webhook_id_example' # str | UUID webhook_id
 
 try:
@@ -332,7 +337,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook** | [**Webhook**](Webhook.md)| webhook | 
+ **webhook** | **object**| webhook | 
  **webhook_id** | [**str**](.md)| UUID webhook_id | 
 
 ### Return type

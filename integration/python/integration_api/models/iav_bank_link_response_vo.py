@@ -31,52 +31,26 @@ class IavBankLinkResponseVo(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'is_error_occurred': 'bool',
         'message': 'str',
         'response': 'list[BankLinkResponseInternalObjectVO]'
     }
 
     attribute_map = {
-        'is_error_occurred': 'is_error_occurred',
         'message': 'message',
         'response': 'response'
     }
 
-    def __init__(self, is_error_occurred=None, message=None, response=None):  # noqa: E501
+    def __init__(self, message=None, response=None):  # noqa: E501
         """IavBankLinkResponseVo - a model defined in Swagger"""  # noqa: E501
 
-        self._is_error_occurred = None
         self._message = None
         self._response = None
         self.discriminator = None
 
-        if is_error_occurred is not None:
-            self.is_error_occurred = is_error_occurred
         if message is not None:
             self.message = message
         if response is not None:
             self.response = response
-
-    @property
-    def is_error_occurred(self):
-        """Gets the is_error_occurred of this IavBankLinkResponseVo.  # noqa: E501
-
-
-        :return: The is_error_occurred of this IavBankLinkResponseVo.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_error_occurred
-
-    @is_error_occurred.setter
-    def is_error_occurred(self, is_error_occurred):
-        """Sets the is_error_occurred of this IavBankLinkResponseVo.
-
-
-        :param is_error_occurred: The is_error_occurred of this IavBankLinkResponseVo.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_error_occurred = is_error_occurred
 
     @property
     def message(self):

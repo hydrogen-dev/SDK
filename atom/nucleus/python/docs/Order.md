@@ -4,6 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **str** | accountId | [optional] 
+**amount** | **float** | amount | [optional] 
+**commission** | **float** | commission | [optional] 
 **create_date** | **datetime** |  | [optional] 
 **_date** | **date** | date | 
 **id** | **str** |  | [optional] 
@@ -14,8 +16,8 @@ Name | Type | Description | Notes
 **order_ticket_id** | **str** | orderTicketId | 
 **order_type** | **str** | orderType | [optional] 
 **portfolio_id** | **str** | portfolioId | [optional] 
-**price** | **float** |  | [optional] 
-**quantity** | **float** | quantity | 
+**price** | **float** | price | [optional] 
+**quantity** | **float** | quantity | [optional] 
 **secondary_id** | **str** |  | [optional] 
 **security_id** | **str** | securityId | 
 **tmp_tracker_id** | **str** |  | [optional] 

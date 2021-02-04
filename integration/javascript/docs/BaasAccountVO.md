@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **nucleusAccountId** | **String** |  | [optional] 
 **nucleusClientId** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
-**vendorName** | **Object** |  | [optional] 
+**vendorName** | **String** |  | [optional] 
 **vendorResponse** | **Object** |  | [optional] 
 
 

@@ -5,8 +5,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message** | **String** |  | [optional] 
 **nucleusClientId** | **String** |  | [optional] 
+**status** | **String** |  | [optional] 
 **vendorName** | **String** |  | [optional] 
-**vendorRequestData** | [**[BaseDocument]**](BaseDocument.md) |  | [optional] 
-**vendorResponse** | [**UpdateClientResponse**](UpdateClientResponse.md) |  | [optional] 
+**vendorRequestData** | **Object** |  | [optional] 
+**vendorResponse** | **Object** |  | [optional] 
 
 

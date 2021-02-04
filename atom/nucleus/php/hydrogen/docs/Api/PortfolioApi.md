@@ -1811,7 +1811,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     new GuzzleHttp\Client(),
     $config
 );
-$portfolio_asset_size = new \com\hydrogen\nucleus\Model\PortfolioAssetSizeLog(); // \com\hydrogen\nucleus\Model\PortfolioAssetSizeLog | portfolio_asset_size
+$portfolio_asset_size = new \stdClass; // object | portfolio_asset_size
 $portfolio_asset_size_id = "portfolio_asset_size_id_example"; // string | UUID portfolio_asset_size_id
 
 try {
@@ -1827,7 +1827,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_asset_size** | [**\com\hydrogen\nucleus\Model\PortfolioAssetSizeLog**](../Model/PortfolioAssetSizeLog.md)| portfolio_asset_size |
+ **portfolio_asset_size** | **object**| portfolio_asset_size |
  **portfolio_asset_size_id** | [**string**](../Model/.md)| UUID portfolio_asset_size_id |
 
 ### Return type
@@ -1880,7 +1880,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     new GuzzleHttp\Client(),
     $config
 );
-$portfolio_comment = new \com\hydrogen\nucleus\Model\PortfolioComment(); // \com\hydrogen\nucleus\Model\PortfolioComment | portfolio_comment
+$portfolio_comment = new \stdClass; // object | portfolio_comment
 $portfolio_comment_id = "portfolio_comment_id_example"; // string | UUID portfolio_comment_id
 
 try {
@@ -1896,7 +1896,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_comment** | [**\com\hydrogen\nucleus\Model\PortfolioComment**](../Model/PortfolioComment.md)| portfolio_comment |
+ **portfolio_comment** | **object**| portfolio_comment |
  **portfolio_comment_id** | [**string**](../Model/.md)| UUID portfolio_comment_id |
 
 ### Return type
@@ -1949,7 +1949,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     new GuzzleHttp\Client(),
     $config
 );
-$portfolio_goal = new \com\hydrogen\nucleus\Model\PortfolioGoal(); // \com\hydrogen\nucleus\Model\PortfolioGoal | portfolio_goal
+$portfolio_goal = new \stdClass; // object | portfolio_goal
 $portfolio_goal_id = "portfolio_goal_id_example"; // string | UUID portfolio_goal_id
 
 try {
@@ -1965,7 +1965,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_goal** | [**\com\hydrogen\nucleus\Model\PortfolioGoal**](../Model/PortfolioGoal.md)| portfolio_goal |
+ **portfolio_goal** | **object**| portfolio_goal |
  **portfolio_goal_id** | [**string**](../Model/.md)| UUID portfolio_goal_id |
 
 ### Return type
@@ -2018,7 +2018,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     new GuzzleHttp\Client(),
     $config
 );
-$portfolio_holding = new \com\hydrogen\nucleus\Model\PortfolioHoldingLog(); // \com\hydrogen\nucleus\Model\PortfolioHoldingLog | portfolio_holding
+$portfolio_holding = new \stdClass; // object | portfolio_holding
 $portfolio_holding_id = "portfolio_holding_id_example"; // string | UUID portfolio_holding_id
 
 try {
@@ -2034,7 +2034,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_holding** | [**\com\hydrogen\nucleus\Model\PortfolioHoldingLog**](../Model/PortfolioHoldingLog.md)| portfolio_holding |
+ **portfolio_holding** | **object**| portfolio_holding |
  **portfolio_holding_id** | [**string**](../Model/.md)| UUID portfolio_holding_id |
 
 ### Return type
@@ -2087,7 +2087,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     new GuzzleHttp\Client(),
     $config
 );
-$portfolio_transaction = new \com\hydrogen\nucleus\Model\PortfolioTransaction(); // \com\hydrogen\nucleus\Model\PortfolioTransaction | portfolio_transaction
+$portfolio_transaction = new \stdClass; // object | portfolio_transaction
 $portfolio_transaction_id = "portfolio_transaction_id_example"; // string | UUID portfolio_transaction_id
 
 try {
@@ -2103,7 +2103,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_transaction** | [**\com\hydrogen\nucleus\Model\PortfolioTransaction**](../Model/PortfolioTransaction.md)| portfolio_transaction |
+ **portfolio_transaction** | **object**| portfolio_transaction |
  **portfolio_transaction_id** | [**string**](../Model/.md)| UUID portfolio_transaction_id |
 
 ### Return type
@@ -2156,7 +2156,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\PortfolioApi(
     new GuzzleHttp\Client(),
     $config
 );
-$portfolio = new \com\hydrogen\nucleus\Model\Portfolio(); // \com\hydrogen\nucleus\Model\Portfolio | portfolio
+$portfolio = new \stdClass; // object | portfolio
 $portfolio_id = "portfolio_id_example"; // string | UUID portfolio_id
 
 try {
@@ -2172,7 +2172,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio** | [**\com\hydrogen\nucleus\Model\Portfolio**](../Model/Portfolio.md)| portfolio |
+ **portfolio** | **object**| portfolio |
  **portfolio_id** | [**string**](../Model/.md)| UUID portfolio_id |
 
 ### Return type

@@ -1,6 +1,6 @@
 # com\hydrogen\integration\WebhookApi
 
-All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1/*
+All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,7 +22,6 @@ One active webhook service is allowed at all times.
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -84,13 +83,12 @@ Name | Type | Description  | Notes
 
 Delete a webhook
 
-Permanently delete a webhook for your firm. The webhook_id must be provided.
+Permanently delete a webhook for your business. The webhook_id must be provided.
 
 ### Example
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -151,13 +149,12 @@ void (empty response body)
 
 List all webhooks
 
-Get information for all webhooks defined for your firm.
+Get information for all webhooks defined for your business.
 
 ### Example
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -233,7 +230,6 @@ Retrieve the information for a specific webhook. The webhook_id must be provided
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -295,13 +291,12 @@ Name | Type | Description  | Notes
 
 Update a webhook
 
-Update a webhook for your firm. The webhook_id must be provided
+Update a webhook for your business. The webhook_id must be provided
 
 ### Example
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -326,7 +321,7 @@ $apiInstance = new com\hydrogen\integration\Api\WebhookApi(
     new GuzzleHttp\Client(),
     $config
 );
-$webhook = new \com\hydrogen\integration\Model\Webhook(); // \com\hydrogen\integration\Model\Webhook | webhook
+$webhook = new \stdClass; // object | webhook
 $webhook_id = "webhook_id_example"; // string | UUID webhook_id
 
 try {
@@ -342,7 +337,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook** | [**\com\hydrogen\integration\Model\Webhook**](../Model/Webhook.md)| webhook |
+ **webhook** | **object**| webhook |
  **webhook_id** | [**string**](../Model/.md)| UUID webhook_id |
 
 ### Return type

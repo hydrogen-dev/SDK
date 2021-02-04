@@ -31,53 +31,30 @@ class IncomeConfig(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'income_benefit_duration': 'int',
         'annual_net_take_home_pay': 'float',
-        'percentage_of_income_covered': 'float'
+        'percentage_of_income_covered': 'float',
+        'income_benefit_duration': 'int'
     }
 
     attribute_map = {
-        'income_benefit_duration': 'income_benefit_duration',
         'annual_net_take_home_pay': 'annual_net_take_home_pay',
-        'percentage_of_income_covered': 'percentage_of_income_covered'
+        'percentage_of_income_covered': 'percentage_of_income_covered',
+        'income_benefit_duration': 'income_benefit_duration'
     }
 
-    def __init__(self, income_benefit_duration=10, annual_net_take_home_pay=None, percentage_of_income_covered=1.0):  # noqa: E501
+    def __init__(self, annual_net_take_home_pay=None, percentage_of_income_covered=1.0, income_benefit_duration=10):  # noqa: E501
         """IncomeConfig - a model defined in Swagger"""  # noqa: E501
 
-        self._income_benefit_duration = None
         self._annual_net_take_home_pay = None
         self._percentage_of_income_covered = None
+        self._income_benefit_duration = None
         self.discriminator = None
 
-        if income_benefit_duration is not None:
-            self.income_benefit_duration = income_benefit_duration
         self.annual_net_take_home_pay = annual_net_take_home_pay
         if percentage_of_income_covered is not None:
             self.percentage_of_income_covered = percentage_of_income_covered
-
-    @property
-    def income_benefit_duration(self):
-        """Gets the income_benefit_duration of this IncomeConfig.  # noqa: E501
-
-
-        :return: The income_benefit_duration of this IncomeConfig.  # noqa: E501
-        :rtype: int
-        """
-        return self._income_benefit_duration
-
-    @income_benefit_duration.setter
-    def income_benefit_duration(self, income_benefit_duration):
-        """Sets the income_benefit_duration of this IncomeConfig.
-
-
-        :param income_benefit_duration: The income_benefit_duration of this IncomeConfig.  # noqa: E501
-        :type: int
-        """
-        if income_benefit_duration is not None and income_benefit_duration < 1:  # noqa: E501
-            raise ValueError("Invalid value for `income_benefit_duration`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._income_benefit_duration = income_benefit_duration
+        if income_benefit_duration is not None:
+            self.income_benefit_duration = income_benefit_duration
 
     @property
     def annual_net_take_home_pay(self):
@@ -128,6 +105,29 @@ class IncomeConfig(object):
             raise ValueError("Invalid value for `percentage_of_income_covered`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._percentage_of_income_covered = percentage_of_income_covered
+
+    @property
+    def income_benefit_duration(self):
+        """Gets the income_benefit_duration of this IncomeConfig.  # noqa: E501
+
+
+        :return: The income_benefit_duration of this IncomeConfig.  # noqa: E501
+        :rtype: int
+        """
+        return self._income_benefit_duration
+
+    @income_benefit_duration.setter
+    def income_benefit_duration(self, income_benefit_duration):
+        """Sets the income_benefit_duration of this IncomeConfig.
+
+
+        :param income_benefit_duration: The income_benefit_duration of this IncomeConfig.  # noqa: E501
+        :type: int
+        """
+        if income_benefit_duration is not None and income_benefit_duration < 1:  # noqa: E501
+            raise ValueError("Invalid value for `income_benefit_duration`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._income_benefit_duration = income_benefit_duration
 
     def to_dict(self):
         """Returns the model properties as a dict"""

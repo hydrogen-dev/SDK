@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.IOException;
@@ -32,19 +31,75 @@ import java.util.UUID;
 /**
  * RiskAllocationRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class RiskAllocationRequest {
-  @SerializedName("opt_config")
-  private OptConfig optConfig = null;
+  /**
+   * Gets or Sets marketDataSource
+   */
+  @JsonAdapter(MarketDataSourceEnum.Adapter.class)
+  public enum MarketDataSourceEnum {
+    NUCLEUS("nucleus"),
+    
+    INTEGRATION("integration");
+
+    private String value;
+
+    MarketDataSourceEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static MarketDataSourceEnum fromValue(String text) {
+      for (MarketDataSourceEnum b : MarketDataSourceEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<MarketDataSourceEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final MarketDataSourceEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public MarketDataSourceEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return MarketDataSourceEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
+  @SerializedName("market_data_source")
+  private MarketDataSourceEnum marketDataSource = MarketDataSourceEnum.NUCLEUS;
 
   @SerializedName("allocations")
   private List<UUID> allocations = null;
 
   @SerializedName("client_id")
   private UUID clientId = null;
+
+  @SerializedName("opt_config")
+  private OptConfig optConfig = null;
+
+  @SerializedName("risk_score")
+  private BigDecimal riskScore = null;
+
+  @SerializedName("use_proxy_data")
+  private Boolean useProxyData = false;
 
   /**
    * Gets or Sets allocationMethod
@@ -96,78 +151,22 @@ public class RiskAllocationRequest {
   @SerializedName("allocation_method")
   private AllocationMethodEnum allocationMethod = null;
 
-  @SerializedName("risk_score")
-  private BigDecimal riskScore = null;
-
-  @SerializedName("use_proxy_data")
-  private Boolean useProxyData = false;
-
-  /**
-   * Gets or Sets marketDataSource
-   */
-  @JsonAdapter(MarketDataSourceEnum.Adapter.class)
-  public enum MarketDataSourceEnum {
-    NUCLEUS("nucleus"),
-    
-    INTEGRATION("integration");
-
-    private String value;
-
-    MarketDataSourceEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static MarketDataSourceEnum fromValue(String text) {
-      for (MarketDataSourceEnum b : MarketDataSourceEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<MarketDataSourceEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final MarketDataSourceEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public MarketDataSourceEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return MarketDataSourceEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
-  @SerializedName("market_data_source")
-  private MarketDataSourceEnum marketDataSource = MarketDataSourceEnum.NUCLEUS;
-
-  public RiskAllocationRequest optConfig(OptConfig optConfig) {
-    this.optConfig = optConfig;
+  public RiskAllocationRequest marketDataSource(MarketDataSourceEnum marketDataSource) {
+    this.marketDataSource = marketDataSource;
     return this;
   }
 
    /**
-   * Get optConfig
-   * @return optConfig
+   * Get marketDataSource
+   * @return marketDataSource
   **/
   @ApiModelProperty(value = "")
-  public OptConfig getOptConfig() {
-    return optConfig;
+  public MarketDataSourceEnum getMarketDataSource() {
+    return marketDataSource;
   }
 
-  public void setOptConfig(OptConfig optConfig) {
-    this.optConfig = optConfig;
+  public void setMarketDataSource(MarketDataSourceEnum marketDataSource) {
+    this.marketDataSource = marketDataSource;
   }
 
   public RiskAllocationRequest allocations(List<UUID> allocations) {
@@ -214,22 +213,22 @@ public class RiskAllocationRequest {
     this.clientId = clientId;
   }
 
-  public RiskAllocationRequest allocationMethod(AllocationMethodEnum allocationMethod) {
-    this.allocationMethod = allocationMethod;
+  public RiskAllocationRequest optConfig(OptConfig optConfig) {
+    this.optConfig = optConfig;
     return this;
   }
 
    /**
-   * Get allocationMethod
-   * @return allocationMethod
+   * Get optConfig
+   * @return optConfig
   **/
-  @ApiModelProperty(required = true, value = "")
-  public AllocationMethodEnum getAllocationMethod() {
-    return allocationMethod;
+  @ApiModelProperty(value = "")
+  public OptConfig getOptConfig() {
+    return optConfig;
   }
 
-  public void setAllocationMethod(AllocationMethodEnum allocationMethod) {
-    this.allocationMethod = allocationMethod;
+  public void setOptConfig(OptConfig optConfig) {
+    this.optConfig = optConfig;
   }
 
   public RiskAllocationRequest riskScore(BigDecimal riskScore) {
@@ -270,22 +269,22 @@ public class RiskAllocationRequest {
     this.useProxyData = useProxyData;
   }
 
-  public RiskAllocationRequest marketDataSource(MarketDataSourceEnum marketDataSource) {
-    this.marketDataSource = marketDataSource;
+  public RiskAllocationRequest allocationMethod(AllocationMethodEnum allocationMethod) {
+    this.allocationMethod = allocationMethod;
     return this;
   }
 
    /**
-   * Get marketDataSource
-   * @return marketDataSource
+   * Get allocationMethod
+   * @return allocationMethod
   **/
-  @ApiModelProperty(value = "")
-  public MarketDataSourceEnum getMarketDataSource() {
-    return marketDataSource;
+  @ApiModelProperty(required = true, value = "")
+  public AllocationMethodEnum getAllocationMethod() {
+    return allocationMethod;
   }
 
-  public void setMarketDataSource(MarketDataSourceEnum marketDataSource) {
-    this.marketDataSource = marketDataSource;
+  public void setAllocationMethod(AllocationMethodEnum allocationMethod) {
+    this.allocationMethod = allocationMethod;
   }
 
 
@@ -298,18 +297,18 @@ public class RiskAllocationRequest {
       return false;
     }
     RiskAllocationRequest riskAllocationRequest = (RiskAllocationRequest) o;
-    return Objects.equals(this.optConfig, riskAllocationRequest.optConfig) &&
+    return Objects.equals(this.marketDataSource, riskAllocationRequest.marketDataSource) &&
         Objects.equals(this.allocations, riskAllocationRequest.allocations) &&
         Objects.equals(this.clientId, riskAllocationRequest.clientId) &&
-        Objects.equals(this.allocationMethod, riskAllocationRequest.allocationMethod) &&
+        Objects.equals(this.optConfig, riskAllocationRequest.optConfig) &&
         Objects.equals(this.riskScore, riskAllocationRequest.riskScore) &&
         Objects.equals(this.useProxyData, riskAllocationRequest.useProxyData) &&
-        Objects.equals(this.marketDataSource, riskAllocationRequest.marketDataSource);
+        Objects.equals(this.allocationMethod, riskAllocationRequest.allocationMethod);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(optConfig, allocations, clientId, allocationMethod, riskScore, useProxyData, marketDataSource);
+    return Objects.hash(marketDataSource, allocations, clientId, optConfig, riskScore, useProxyData, allocationMethod);
   }
 
 
@@ -318,13 +317,13 @@ public class RiskAllocationRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class RiskAllocationRequest {\n");
     
-    sb.append("    optConfig: ").append(toIndentedString(optConfig)).append("\n");
+    sb.append("    marketDataSource: ").append(toIndentedString(marketDataSource)).append("\n");
     sb.append("    allocations: ").append(toIndentedString(allocations)).append("\n");
     sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
-    sb.append("    allocationMethod: ").append(toIndentedString(allocationMethod)).append("\n");
+    sb.append("    optConfig: ").append(toIndentedString(optConfig)).append("\n");
     sb.append("    riskScore: ").append(toIndentedString(riskScore)).append("\n");
     sb.append("    useProxyData: ").append(toIndentedString(useProxyData)).append("\n");
-    sb.append("    marketDataSource: ").append(toIndentedString(marketDataSource)).append("\n");
+    sb.append("    allocationMethod: ").append(toIndentedString(allocationMethod)).append("\n");
     sb.append("}");
     return sb.toString();
   }

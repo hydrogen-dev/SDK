@@ -656,7 +656,7 @@ end
 
 api_instance = NucleusApi::CardApi.new
 
-card_program = NucleusApi::CardProgram.new # CardProgram | card_program
+card_program = nil # Object | card_program
 
 card_program_id = 'card_program_id_example' # String | UUID card_program_id
 
@@ -674,7 +674,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **card_program** | [**CardProgram**](CardProgram.md)| card_program | 
+ **card_program** | **Object**| card_program | 
  **card_program_id** | [**String**](.md)| UUID card_program_id | 
 
 ### Return type
@@ -716,7 +716,7 @@ end
 
 api_instance = NucleusApi::CardApi.new
 
-card = NucleusApi::Card.new # Card | card
+card = nil # Object | card
 
 card_id = 'card_id_example' # String | UUID card_id
 
@@ -734,7 +734,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **card** | [**Card**](Card.md)| card | 
+ **card** | **Object**| card | 
  **card_id** | [**String**](.md)| UUID card_id | 
 
 ### Return type

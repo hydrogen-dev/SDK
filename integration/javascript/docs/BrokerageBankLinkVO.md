@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **nucleusBankLinkId** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
 **vendorName** | **String** |  | [optional] 
+**vendorRequestData** | **Object** |  | [optional] 
 **vendorResponse** | **Object** |  | [optional] 
 
 

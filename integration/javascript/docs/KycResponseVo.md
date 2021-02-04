@@ -4,10 +4,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createDate** | **Date** |  | [optional] 
-**electronDocumentId** | **String** |  | [optional] 
 **kycStatus** | **String** |  | [optional] 
 **kycType** | **String** |  | [optional] 
+**nucleusBusinessId** | **String** |  | [optional] 
 **nucleusClientId** | **String** |  | [optional] 
+**nucleusDocumentId** | **String** |  | [optional] 
 **product** | **String** |  | [optional] 
 **updateDate** | **Date** |  | [optional] 
 **vendorName** | **String** |  | [optional] 

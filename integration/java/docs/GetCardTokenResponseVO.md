@@ -4,13 +4,23 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cardStatus** | **String** |  |  [optional]
 **message** | **String** |  |  [optional]
 **nucleusCardId** | [**UUID**](UUID.md) |  |  [optional]
-**token** | **String** |  |  [optional]
+**panReference** | **String** |  |  [optional]
+**status** | **String** |  |  [optional]
+**tokenReference** | **String** |  |  [optional]
 **vendorName** | **String** |  |  [optional]
 **vendorResponse** | **Object** |  |  [optional]
-**wallet** | **String** |  |  [optional]
+**wallet** | [**WalletEnum**](#WalletEnum) |  |  [optional]
+
+
+<a name="WalletEnum"></a>
+## Enum: WalletEnum
+Name | Value
+---- | -----
+GOOGLE | &quot;google&quot;
+APPLE | &quot;apple&quot;
+SAMSUNG | &quot;samsung&quot;
 
 
 

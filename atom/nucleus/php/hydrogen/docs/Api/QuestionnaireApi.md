@@ -1161,7 +1161,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     new GuzzleHttp\Client(),
     $config
 );
-$answer = new \com\hydrogen\nucleus\Model\Answer(); // \com\hydrogen\nucleus\Model\Answer | answer
+$answer = new \stdClass; // object | answer
 $answer_id = "answer_id_example"; // string | UUID answer_id
 
 try {
@@ -1177,7 +1177,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **answer** | [**\com\hydrogen\nucleus\Model\Answer**](../Model/Answer.md)| answer |
+ **answer** | **object**| answer |
  **answer_id** | [**string**](../Model/.md)| UUID answer_id |
 
 ### Return type
@@ -1230,7 +1230,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     new GuzzleHttp\Client(),
     $config
 );
-$client_response = new \com\hydrogen\nucleus\Model\ClientResponse(); // \com\hydrogen\nucleus\Model\ClientResponse | client_response
+$client_response = new \stdClass; // object | client_response
 $client_response_id = "client_response_id_example"; // string | UUID client_response_id
 
 try {
@@ -1246,7 +1246,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client_response** | [**\com\hydrogen\nucleus\Model\ClientResponse**](../Model/ClientResponse.md)| client_response |
+ **client_response** | **object**| client_response |
  **client_response_id** | [**string**](../Model/.md)| UUID client_response_id |
 
 ### Return type
@@ -1299,7 +1299,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     new GuzzleHttp\Client(),
     $config
 );
-$question = new \com\hydrogen\nucleus\Model\Question(); // \com\hydrogen\nucleus\Model\Question | question
+$question = new \stdClass; // object | question
 $question_id = "question_id_example"; // string | UUID question_id
 
 try {
@@ -1315,7 +1315,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **question** | [**\com\hydrogen\nucleus\Model\Question**](../Model/Question.md)| question |
+ **question** | **object**| question |
  **question_id** | [**string**](../Model/.md)| UUID question_id |
 
 ### Return type
@@ -1368,7 +1368,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\QuestionnaireApi(
     new GuzzleHttp\Client(),
     $config
 );
-$questionnaire = new \com\hydrogen\nucleus\Model\Questionnaire(); // \com\hydrogen\nucleus\Model\Questionnaire | questionnaire
+$questionnaire = new \stdClass; // object | questionnaire
 $questionnaire_id = "questionnaire_id_example"; // string | UUID questionnaire_id
 
 try {
@@ -1384,7 +1384,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **questionnaire** | [**\com\hydrogen\nucleus\Model\Questionnaire**](../Model/Questionnaire.md)| questionnaire |
+ **questionnaire** | **object**| questionnaire |
  **questionnaire_id** | [**string**](../Model/.md)| UUID questionnaire_id |
 
 ### Return type

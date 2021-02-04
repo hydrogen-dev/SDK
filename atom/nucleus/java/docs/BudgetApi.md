@@ -23,7 +23,6 @@ Create a new budget request.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import BudgetApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -40,8 +39,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 BudgetApi apiInstance = new BudgetApi();
 Budget budgetRequest = new Budget(); // Budget | budgetRequest
 try {
@@ -84,7 +81,6 @@ Permanently delete a budget request.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import BudgetApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -101,8 +97,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 BudgetApi apiInstance = new BudgetApi();
 UUID budgetId = new UUID(); // UUID | UUID budget_id
 try {
@@ -144,7 +138,6 @@ Get the information for all budget requests.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import BudgetApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -161,8 +154,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 BudgetApi apiInstance = new BudgetApi();
 Boolean ascending = false; // Boolean | ascending
 String currencyConversion = "currencyConversion_example"; // String | currency_conversion
@@ -215,7 +206,6 @@ Retrieve the information for a budget request.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import BudgetApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -232,8 +222,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 BudgetApi apiInstance = new BudgetApi();
 UUID budgetId = new UUID(); // UUID | UUID budget_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -278,7 +266,6 @@ Update the information for a budget request.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import BudgetApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -295,10 +282,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 BudgetApi apiInstance = new BudgetApi();
-Budget budget = new Budget(); // Budget | budget
+Object budget = null; // Object | budget
 UUID budgetId = new UUID(); // UUID | UUID budget_id
 try {
     Budget result = apiInstance.updateBudgetUsingPut(budget, budgetId);
@@ -313,7 +298,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget** | [**Budget**](Budget.md)| budget |
+ **budget** | **Object**| budget |
  **budgetId** | [**UUID**](.md)| UUID budget_id |
 
 ### Return type

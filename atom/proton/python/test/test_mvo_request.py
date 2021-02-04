@@ -32,7 +32,7 @@ class TestMvoRequest(unittest.TestCase):
     def testMvoRequest(self):
         """Test MvoRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.mvo_request.MvoRequest()  # noqa: E501
+        # model = proton_api.models.mvo_request.MvoRequest()  # noqa: E501
         pass
 
 

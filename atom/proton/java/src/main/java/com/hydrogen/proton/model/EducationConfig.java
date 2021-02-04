@@ -15,12 +15,7 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.math.BigDecimal;
@@ -28,37 +23,37 @@ import java.math.BigDecimal;
 /**
  * EducationConfig
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class EducationConfig {
-  @SerializedName("start_age")
-  private Integer startAge = null;
+  @SerializedName("end_age")
+  private Integer endAge = null;
 
   @SerializedName("total_annual_cost")
   private BigDecimal totalAnnualCost = null;
 
-  @SerializedName("end_age")
-  private Integer endAge = null;
+  @SerializedName("start_age")
+  private Integer startAge = null;
 
-  public EducationConfig startAge(Integer startAge) {
-    this.startAge = startAge;
+  public EducationConfig endAge(Integer endAge) {
+    this.endAge = endAge;
     return this;
   }
 
    /**
-   * Get startAge
+   * Get endAge
    * minimum: 0
-   * @return startAge
+   * @return endAge
   **/
   @ApiModelProperty(required = true, value = "")
-  public Integer getStartAge() {
-    return startAge;
+  public Integer getEndAge() {
+    return endAge;
   }
 
-  public void setStartAge(Integer startAge) {
-    this.startAge = startAge;
+  public void setEndAge(Integer endAge) {
+    this.endAge = endAge;
   }
 
   public EducationConfig totalAnnualCost(BigDecimal totalAnnualCost) {
@@ -80,23 +75,23 @@ public class EducationConfig {
     this.totalAnnualCost = totalAnnualCost;
   }
 
-  public EducationConfig endAge(Integer endAge) {
-    this.endAge = endAge;
+  public EducationConfig startAge(Integer startAge) {
+    this.startAge = startAge;
     return this;
   }
 
    /**
-   * Get endAge
+   * Get startAge
    * minimum: 0
-   * @return endAge
+   * @return startAge
   **/
   @ApiModelProperty(required = true, value = "")
-  public Integer getEndAge() {
-    return endAge;
+  public Integer getStartAge() {
+    return startAge;
   }
 
-  public void setEndAge(Integer endAge) {
-    this.endAge = endAge;
+  public void setStartAge(Integer startAge) {
+    this.startAge = startAge;
   }
 
 
@@ -109,14 +104,14 @@ public class EducationConfig {
       return false;
     }
     EducationConfig educationConfig = (EducationConfig) o;
-    return Objects.equals(this.startAge, educationConfig.startAge) &&
+    return Objects.equals(this.endAge, educationConfig.endAge) &&
         Objects.equals(this.totalAnnualCost, educationConfig.totalAnnualCost) &&
-        Objects.equals(this.endAge, educationConfig.endAge);
+        Objects.equals(this.startAge, educationConfig.startAge);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startAge, totalAnnualCost, endAge);
+    return Objects.hash(endAge, totalAnnualCost, startAge);
   }
 
 
@@ -125,9 +120,9 @@ public class EducationConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class EducationConfig {\n");
     
-    sb.append("    startAge: ").append(toIndentedString(startAge)).append("\n");
-    sb.append("    totalAnnualCost: ").append(toIndentedString(totalAnnualCost)).append("\n");
     sb.append("    endAge: ").append(toIndentedString(endAge)).append("\n");
+    sb.append("    totalAnnualCost: ").append(toIndentedString(totalAnnualCost)).append("\n");
+    sb.append("    startAge: ").append(toIndentedString(startAge)).append("\n");
     sb.append("}");
     return sb.toString();
   }

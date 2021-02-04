@@ -23,7 +23,7 @@ import java.util.UUID;
 /**
  * BrokerageBankLinkVO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class BrokerageBankLinkVO {
   @SerializedName("message")
   private String message = null;
@@ -36,6 +36,9 @@ public class BrokerageBankLinkVO {
 
   @SerializedName("vendor_name")
   private String vendorName = null;
+
+  @SerializedName("vendor_request_data")
+  private Object vendorRequestData = null;
 
   @SerializedName("vendor_response")
   private Object vendorResponse = null;
@@ -112,6 +115,24 @@ public class BrokerageBankLinkVO {
     this.vendorName = vendorName;
   }
 
+  public BrokerageBankLinkVO vendorRequestData(Object vendorRequestData) {
+    this.vendorRequestData = vendorRequestData;
+    return this;
+  }
+
+   /**
+   * Get vendorRequestData
+   * @return vendorRequestData
+  **/
+  @ApiModelProperty(value = "")
+  public Object getVendorRequestData() {
+    return vendorRequestData;
+  }
+
+  public void setVendorRequestData(Object vendorRequestData) {
+    this.vendorRequestData = vendorRequestData;
+  }
+
   public BrokerageBankLinkVO vendorResponse(Object vendorResponse) {
     this.vendorResponse = vendorResponse;
     return this;
@@ -144,12 +165,13 @@ public class BrokerageBankLinkVO {
         Objects.equals(this.nucleusBankLinkId, brokerageBankLinkVO.nucleusBankLinkId) &&
         Objects.equals(this.status, brokerageBankLinkVO.status) &&
         Objects.equals(this.vendorName, brokerageBankLinkVO.vendorName) &&
+        Objects.equals(this.vendorRequestData, brokerageBankLinkVO.vendorRequestData) &&
         Objects.equals(this.vendorResponse, brokerageBankLinkVO.vendorResponse);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message, nucleusBankLinkId, status, vendorName, vendorResponse);
+    return Objects.hash(message, nucleusBankLinkId, status, vendorName, vendorRequestData, vendorResponse);
   }
 
 
@@ -162,6 +184,7 @@ public class BrokerageBankLinkVO {
     sb.append("    nucleusBankLinkId: ").append(toIndentedString(nucleusBankLinkId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    vendorName: ").append(toIndentedString(vendorName)).append("\n");
+    sb.append("    vendorRequestData: ").append(toIndentedString(vendorRequestData)).append("\n");
     sb.append("    vendorResponse: ").append(toIndentedString(vendorResponse)).append("\n");
     sb.append("}");
     return sb.toString();

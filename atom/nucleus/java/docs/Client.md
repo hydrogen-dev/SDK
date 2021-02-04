@@ -5,12 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | [**List&lt;ClientAddress&gt;**](ClientAddress.md) |  |  [optional]
+**businessId** | [**UUID**](UUID.md) | business_id |  [optional]
 **citizenshipStatus** | **String** | citizenshipStatus |  [optional]
 **clientType** | **String** | clientTypeId | 
 **countryOfCitizenship** | **List&lt;String&gt;** | countryOfCitizenship |  [optional]
 **countryOfResidence** | **String** | countryOfResidence |  [optional]
 **createDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
-**dateOfBirth** | [**LocalDate**](LocalDate.md) | dateOfBirth |  [optional]
+**dateOfBirth** | **String** | dateOfBirth |  [optional]
 **email** | **String** | email |  [optional]
 **employment** | [**Employment**](Employment.md) |  |  [optional]
 **firmName** | **String** | firmName |  [optional]

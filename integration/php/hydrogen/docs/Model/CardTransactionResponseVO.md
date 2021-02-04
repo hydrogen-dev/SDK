@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**card_status** | **string** |  | [optional] 
 **message** | **string** |  | [optional] 
 **nucleus_card_id** | **string** |  | [optional] 
 **nucleus_transactions_posted** | **object[]** |  | [optional] 

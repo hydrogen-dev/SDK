@@ -31,49 +31,26 @@ class GoalConfig(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'goal_amount': 'float',
-        'goal_inflation': 'float'
+        'goal_inflation': 'float',
+        'goal_amount': 'float'
     }
 
     attribute_map = {
-        'goal_amount': 'goal_amount',
-        'goal_inflation': 'goal_inflation'
+        'goal_inflation': 'goal_inflation',
+        'goal_amount': 'goal_amount'
     }
 
-    def __init__(self, goal_amount=None, goal_inflation=0.0):  # noqa: E501
+    def __init__(self, goal_inflation=0.0, goal_amount=None):  # noqa: E501
         """GoalConfig - a model defined in Swagger"""  # noqa: E501
 
-        self._goal_amount = None
         self._goal_inflation = None
+        self._goal_amount = None
         self.discriminator = None
 
-        if goal_amount is not None:
-            self.goal_amount = goal_amount
         if goal_inflation is not None:
             self.goal_inflation = goal_inflation
-
-    @property
-    def goal_amount(self):
-        """Gets the goal_amount of this GoalConfig.  # noqa: E501
-
-
-        :return: The goal_amount of this GoalConfig.  # noqa: E501
-        :rtype: float
-        """
-        return self._goal_amount
-
-    @goal_amount.setter
-    def goal_amount(self, goal_amount):
-        """Sets the goal_amount of this GoalConfig.
-
-
-        :param goal_amount: The goal_amount of this GoalConfig.  # noqa: E501
-        :type: float
-        """
-        if goal_amount is not None and goal_amount < 0:  # noqa: E501
-            raise ValueError("Invalid value for `goal_amount`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._goal_amount = goal_amount
+        if goal_amount is not None:
+            self.goal_amount = goal_amount
 
     @property
     def goal_inflation(self):
@@ -97,6 +74,29 @@ class GoalConfig(object):
             raise ValueError("Invalid value for `goal_inflation`, must be a value greater than or equal to `-1`")  # noqa: E501
 
         self._goal_inflation = goal_inflation
+
+    @property
+    def goal_amount(self):
+        """Gets the goal_amount of this GoalConfig.  # noqa: E501
+
+
+        :return: The goal_amount of this GoalConfig.  # noqa: E501
+        :rtype: float
+        """
+        return self._goal_amount
+
+    @goal_amount.setter
+    def goal_amount(self, goal_amount):
+        """Sets the goal_amount of this GoalConfig.
+
+
+        :param goal_amount: The goal_amount of this GoalConfig.  # noqa: E501
+        :type: float
+        """
+        if goal_amount is not None and goal_amount < 0:  # noqa: E501
+            raise ValueError("Invalid value for `goal_amount`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._goal_amount = goal_amount
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -41,7 +41,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.RiskProfileApi(nucleus_api.ApiClient(configuration))
 risk_profile = nucleus_api.RiskProfile() # RiskProfile | riskProfile
@@ -105,7 +105,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.RiskProfileApi(nucleus_api.ApiClient(configuration))
 risk_profile_id = 'risk_profile_id_example' # str | UUID risk_profile_id
@@ -168,7 +168,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.RiskProfileApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -240,7 +240,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.RiskProfileApi(nucleus_api.ApiClient(configuration))
 risk_profile_id = 'risk_profile_id_example' # str | UUID risk_profile_id
@@ -304,10 +304,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.RiskProfileApi(nucleus_api.ApiClient(configuration))
-risk_profile = nucleus_api.RiskProfile() # RiskProfile | risk_profile
+risk_profile = NULL # object | risk_profile
 risk_profile_id = 'risk_profile_id_example' # str | UUID risk_profile_id
 
 try:
@@ -322,7 +322,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **risk_profile** | [**RiskProfile**](RiskProfile.md)| risk_profile | 
+ **risk_profile** | **object**| risk_profile | 
  **risk_profile_id** | [**str**](.md)| UUID risk_profile_id | 
 
 ### Return type

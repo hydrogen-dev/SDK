@@ -104,7 +104,7 @@ var apiInstance = new HydrogenNucleusApi.ModelApi();
 
 var changeRequest = new HydrogenNucleusApi.OrderReconcileRequest(); // OrderReconcileRequest | changeRequest
 
-var modelId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID model_id
+var modelId = "\"62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d\""; // String | UUID model_id
 
 
 var callback = function(error, data, response) {
@@ -122,7 +122,7 @@ apiInstance.createModelChangeUsingPost(changeRequest, modelId, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **changeRequest** | [**OrderReconcileRequest**](OrderReconcileRequest.md)| changeRequest | 
- **modelId** | **String**| UUID model_id | 
+ **modelId** | [**String**](.md)| UUID model_id | 
 
 ### Return type
 
@@ -360,7 +360,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.ModelApi();
 
-var modelAssetSizeId = "b4c033db-9d05-4a33-8e28-40650d454487"; // String | UUID model_asset_size_id
+var modelAssetSizeId = "\"b4c033db-9d05-4a33-8e28-40650d454487\""; // String | UUID model_asset_size_id
 
 
 var callback = function(error, data, response) {
@@ -377,7 +377,7 @@ apiInstance.deleteModelAssetSizeUsingDelete(modelAssetSizeId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelAssetSizeId** | **String**| UUID model_asset_size_id | 
+ **modelAssetSizeId** | [**String**](.md)| UUID model_asset_size_id | 
 
 ### Return type
 
@@ -411,7 +411,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.ModelApi();
 
-var modelCommentId = "8d97c85c-8cbf-4ac1-a5df-f9d2bb6a77e0"; // String | UUID model_comment_id
+var modelCommentId = "\"8d97c85c-8cbf-4ac1-a5df-f9d2bb6a77e0\""; // String | UUID model_comment_id
 
 
 var callback = function(error, data, response) {
@@ -428,7 +428,7 @@ apiInstance.deleteModelCommentUsingDelete(modelCommentId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelCommentId** | **String**| UUID model_comment_id | 
+ **modelCommentId** | [**String**](.md)| UUID model_comment_id | 
 
 ### Return type
 
@@ -462,7 +462,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.ModelApi();
 
-var modelHoldingId = "b4c033db-9d05-4a33-8e28-40650d454487"; // String | UUID model_holding_id
+var modelHoldingId = "\"b4c033db-9d05-4a33-8e28-40650d454487\""; // String | UUID model_holding_id
 
 
 var callback = function(error, data, response) {
@@ -479,7 +479,7 @@ apiInstance.deleteModelHoldingUsingDelete(modelHoldingId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelHoldingId** | **String**| UUID model_holding_id | 
+ **modelHoldingId** | [**String**](.md)| UUID model_holding_id | 
 
 ### Return type
 
@@ -513,7 +513,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.ModelApi();
 
-var modelTransactionId = "e7cf805b-4307-41e9-8b58-90b6359fa900"; // String | UUID model_transaction_id
+var modelTransactionId = "\"e7cf805b-4307-41e9-8b58-90b6359fa900\""; // String | UUID model_transaction_id
 
 
 var callback = function(error, data, response) {
@@ -530,7 +530,7 @@ apiInstance.deleteModelTransactionUsingDelete(modelTransactionId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelTransactionId** | **String**| UUID model_transaction_id | 
+ **modelTransactionId** | [**String**](.md)| UUID model_transaction_id | 
 
 ### Return type
 
@@ -564,7 +564,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.ModelApi();
 
-var modelId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID model_id
+var modelId = "\"62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d\""; // String | UUID model_id
 
 
 var callback = function(error, data, response) {
@@ -581,7 +581,7 @@ apiInstance.deleteModelUsingDelete(modelId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelId** | **String**| UUID model_id | 
+ **modelId** | [**String**](.md)| UUID model_id | 
 
 ### Return type
 
@@ -737,7 +737,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.ModelApi();
 
-var modelAssetSizeId = "b4c033db-9d05-4a33-8e28-40650d454487"; // String | UUID model_asset_size_id
+var modelAssetSizeId = "\"b4c033db-9d05-4a33-8e28-40650d454487\""; // String | UUID model_asset_size_id
 
 var opts = { 
   'currencyConversion': "currencyConversion_example" // String | USD
@@ -757,7 +757,7 @@ apiInstance.getModelAssetSizeUsingGet(modelAssetSizeId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelAssetSizeId** | **String**| UUID model_asset_size_id | 
+ **modelAssetSizeId** | [**String**](.md)| UUID model_asset_size_id | 
  **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
@@ -852,7 +852,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.ModelApi();
 
-var modelCommentId = "8d97c85c-8cbf-4ac1-a5df-f9d2bb6a77e0"; // String | UUID model_comment_id
+var modelCommentId = "\"8d97c85c-8cbf-4ac1-a5df-f9d2bb6a77e0\""; // String | UUID model_comment_id
 
 
 var callback = function(error, data, response) {
@@ -869,7 +869,7 @@ apiInstance.getModelCommentUsingGet(modelCommentId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelCommentId** | **String**| UUID model_comment_id | 
+ **modelCommentId** | [**String**](.md)| UUID model_comment_id | 
 
 ### Return type
 
@@ -963,7 +963,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.ModelApi();
 
-var modelHoldingId = "b4c033db-9d05-4a33-8e28-40650d454487"; // String | UUID model_holding_id
+var modelHoldingId = "\"b4c033db-9d05-4a33-8e28-40650d454487\""; // String | UUID model_holding_id
 
 
 var callback = function(error, data, response) {
@@ -980,7 +980,7 @@ apiInstance.getModelHoldingUsingGet(modelHoldingId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelHoldingId** | **String**| UUID model_holding_id | 
+ **modelHoldingId** | [**String**](.md)| UUID model_holding_id | 
 
 ### Return type
 
@@ -1074,7 +1074,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.ModelApi();
 
-var modelTransactionId = "e7cf805b-4307-41e9-8b58-90b6359fa900"; // String | UUID model_transaction_id
+var modelTransactionId = "\"e7cf805b-4307-41e9-8b58-90b6359fa900\""; // String | UUID model_transaction_id
 
 
 var callback = function(error, data, response) {
@@ -1091,7 +1091,7 @@ apiInstance.getModelTransactionUsingGet(modelTransactionId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelTransactionId** | **String**| UUID model_transaction_id | 
+ **modelTransactionId** | [**String**](.md)| UUID model_transaction_id | 
 
 ### Return type
 
@@ -1125,7 +1125,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.ModelApi();
 
-var modelId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID model_id
+var modelId = "\"62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d\""; // String | UUID model_id
 
 
 var callback = function(error, data, response) {
@@ -1142,7 +1142,7 @@ apiInstance.getModelUsingGet(modelId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelId** | **String**| UUID model_id | 
+ **modelId** | [**String**](.md)| UUID model_id | 
 
 ### Return type
 
@@ -1176,9 +1176,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.ModelApi();
 
-var modelAssetSize = new HydrogenNucleusApi.ModelAssetSize(); // ModelAssetSize | model_asset_size
+var modelAssetSize = null; // Object | model_asset_size
 
-var modelAssetSizeId = "b4c033db-9d05-4a33-8e28-40650d454487"; // String | UUID model_asset_size_id
+var modelAssetSizeId = "\"b4c033db-9d05-4a33-8e28-40650d454487\""; // String | UUID model_asset_size_id
 
 
 var callback = function(error, data, response) {
@@ -1195,8 +1195,8 @@ apiInstance.updateModelAssetSizeUsingPut(modelAssetSize, modelAssetSizeId, callb
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelAssetSize** | [**ModelAssetSize**](ModelAssetSize.md)| model_asset_size | 
- **modelAssetSizeId** | **String**| UUID model_asset_size_id | 
+ **modelAssetSize** | **Object**| model_asset_size | 
+ **modelAssetSizeId** | [**String**](.md)| UUID model_asset_size_id | 
 
 ### Return type
 
@@ -1230,9 +1230,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.ModelApi();
 
-var modelComment = new HydrogenNucleusApi.ModelComment(); // ModelComment | model_comment
+var modelComment = null; // Object | model_comment
 
-var modelCommentId = "b4c033db-9d05-4a33-8e28-40650d454487"; // String | UUID model_comment_id
+var modelCommentId = "\"b4c033db-9d05-4a33-8e28-40650d454487\""; // String | UUID model_comment_id
 
 
 var callback = function(error, data, response) {
@@ -1249,8 +1249,8 @@ apiInstance.updateModelCommentUsingPut(modelComment, modelCommentId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelComment** | [**ModelComment**](ModelComment.md)| model_comment | 
- **modelCommentId** | **String**| UUID model_comment_id | 
+ **modelComment** | **Object**| model_comment | 
+ **modelCommentId** | [**String**](.md)| UUID model_comment_id | 
 
 ### Return type
 
@@ -1284,9 +1284,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.ModelApi();
 
-var modelHolding = new HydrogenNucleusApi.ModelHolding(); // ModelHolding | model_holding
+var modelHolding = null; // Object | model_holding
 
-var modelHoldingId = "b4c033db-9d05-4a33-8e28-40650d454487"; // String | UUID model_holding_id
+var modelHoldingId = "\"b4c033db-9d05-4a33-8e28-40650d454487\""; // String | UUID model_holding_id
 
 
 var callback = function(error, data, response) {
@@ -1303,8 +1303,8 @@ apiInstance.updateModelHoldingUsingPut(modelHolding, modelHoldingId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelHolding** | [**ModelHolding**](ModelHolding.md)| model_holding | 
- **modelHoldingId** | **String**| UUID model_holding_id | 
+ **modelHolding** | **Object**| model_holding | 
+ **modelHoldingId** | [**String**](.md)| UUID model_holding_id | 
 
 ### Return type
 
@@ -1338,9 +1338,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.ModelApi();
 
-var modelTransaction = new HydrogenNucleusApi.ModelTransaction(); // ModelTransaction | model_transaction
+var modelTransaction = null; // Object | model_transaction
 
-var modelTransactionId = "b4c033db-9d05-4a33-8e28-40650d454487"; // String | UUID model_transaction_id
+var modelTransactionId = "\"b4c033db-9d05-4a33-8e28-40650d454487\""; // String | UUID model_transaction_id
 
 
 var callback = function(error, data, response) {
@@ -1357,8 +1357,8 @@ apiInstance.updateModelTransactionUsingPut(modelTransaction, modelTransactionId,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelTransaction** | [**ModelTransaction**](ModelTransaction.md)| model_transaction | 
- **modelTransactionId** | **String**| UUID model_transaction_id | 
+ **modelTransaction** | **Object**| model_transaction | 
+ **modelTransactionId** | [**String**](.md)| UUID model_transaction_id | 
 
 ### Return type
 
@@ -1392,9 +1392,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.ModelApi();
 
-var model = new HydrogenNucleusApi.Model(); // Model | model
+var model = null; // Object | model
 
-var modelId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID model_id
+var modelId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID model_id
 
 
 var callback = function(error, data, response) {
@@ -1411,8 +1411,8 @@ apiInstance.updateModelUsingPut(model, modelId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model** | [**Model**](Model.md)| model | 
- **modelId** | **String**| UUID model_id | 
+ **model** | **Object**| model | 
+ **modelId** | [**String**](.md)| UUID model_id | 
 
 ### Return type
 

@@ -15,12 +15,7 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.math.BigDecimal;
@@ -28,37 +23,37 @@ import java.math.BigDecimal;
 /**
  * BeneficiaryBequestConfig
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class BeneficiaryBequestConfig {
-  @SerializedName("years_until_bequest")
-  private Integer yearsUntilBequest = 0;
+  @SerializedName("bequest_duration")
+  private Integer bequestDuration = 10;
 
   @SerializedName("bequest_amount")
   private BigDecimal bequestAmount = null;
 
-  @SerializedName("bequest_duration")
-  private Integer bequestDuration = 10;
+  @SerializedName("years_until_bequest")
+  private Integer yearsUntilBequest = 0;
 
-  public BeneficiaryBequestConfig yearsUntilBequest(Integer yearsUntilBequest) {
-    this.yearsUntilBequest = yearsUntilBequest;
+  public BeneficiaryBequestConfig bequestDuration(Integer bequestDuration) {
+    this.bequestDuration = bequestDuration;
     return this;
   }
 
    /**
-   * Get yearsUntilBequest
-   * minimum: 0
-   * @return yearsUntilBequest
+   * Get bequestDuration
+   * minimum: 1
+   * @return bequestDuration
   **/
   @ApiModelProperty(value = "")
-  public Integer getYearsUntilBequest() {
-    return yearsUntilBequest;
+  public Integer getBequestDuration() {
+    return bequestDuration;
   }
 
-  public void setYearsUntilBequest(Integer yearsUntilBequest) {
-    this.yearsUntilBequest = yearsUntilBequest;
+  public void setBequestDuration(Integer bequestDuration) {
+    this.bequestDuration = bequestDuration;
   }
 
   public BeneficiaryBequestConfig bequestAmount(BigDecimal bequestAmount) {
@@ -80,23 +75,23 @@ public class BeneficiaryBequestConfig {
     this.bequestAmount = bequestAmount;
   }
 
-  public BeneficiaryBequestConfig bequestDuration(Integer bequestDuration) {
-    this.bequestDuration = bequestDuration;
+  public BeneficiaryBequestConfig yearsUntilBequest(Integer yearsUntilBequest) {
+    this.yearsUntilBequest = yearsUntilBequest;
     return this;
   }
 
    /**
-   * Get bequestDuration
-   * minimum: 1
-   * @return bequestDuration
+   * Get yearsUntilBequest
+   * minimum: 0
+   * @return yearsUntilBequest
   **/
   @ApiModelProperty(value = "")
-  public Integer getBequestDuration() {
-    return bequestDuration;
+  public Integer getYearsUntilBequest() {
+    return yearsUntilBequest;
   }
 
-  public void setBequestDuration(Integer bequestDuration) {
-    this.bequestDuration = bequestDuration;
+  public void setYearsUntilBequest(Integer yearsUntilBequest) {
+    this.yearsUntilBequest = yearsUntilBequest;
   }
 
 
@@ -109,14 +104,14 @@ public class BeneficiaryBequestConfig {
       return false;
     }
     BeneficiaryBequestConfig beneficiaryBequestConfig = (BeneficiaryBequestConfig) o;
-    return Objects.equals(this.yearsUntilBequest, beneficiaryBequestConfig.yearsUntilBequest) &&
+    return Objects.equals(this.bequestDuration, beneficiaryBequestConfig.bequestDuration) &&
         Objects.equals(this.bequestAmount, beneficiaryBequestConfig.bequestAmount) &&
-        Objects.equals(this.bequestDuration, beneficiaryBequestConfig.bequestDuration);
+        Objects.equals(this.yearsUntilBequest, beneficiaryBequestConfig.yearsUntilBequest);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(yearsUntilBequest, bequestAmount, bequestDuration);
+    return Objects.hash(bequestDuration, bequestAmount, yearsUntilBequest);
   }
 
 
@@ -125,9 +120,9 @@ public class BeneficiaryBequestConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class BeneficiaryBequestConfig {\n");
     
-    sb.append("    yearsUntilBequest: ").append(toIndentedString(yearsUntilBequest)).append("\n");
-    sb.append("    bequestAmount: ").append(toIndentedString(bequestAmount)).append("\n");
     sb.append("    bequestDuration: ").append(toIndentedString(bequestDuration)).append("\n");
+    sb.append("    bequestAmount: ").append(toIndentedString(bequestAmount)).append("\n");
+    sb.append("    yearsUntilBequest: ").append(toIndentedString(yearsUntilBequest)).append("\n");
     sb.append("}");
     return sb.toString();
   }

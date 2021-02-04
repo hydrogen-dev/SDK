@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **body** | **Object** |  |  [optional]
-**status** | **Object** |  |  [optional]
 **statusCode** | [**StatusCodeEnum**](#StatusCodeEnum) |  |  [optional]
 **statusCodeValue** | **Integer** |  |  [optional]
 

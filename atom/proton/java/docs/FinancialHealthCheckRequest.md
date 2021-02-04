@@ -4,16 +4,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientId** | [**UUID**](UUID.md) |  |  [optional]
-**totalLiabilities** | **Float** |  |  [optional]
+**grossAnnualIncome** | **Float** |  |  [optional]
 **liquidAssets** | **Float** |  |  [optional]
+**netMonthlyIncome** | **Float** |  |  [optional]
+**clientId** | [**UUID**](UUID.md) |  |  [optional]
+**shortTermLiabilities** | **Float** |  |  [optional]
 **monthlyExpenses** | **Float** |  |  [optional]
+**totalLiabilities** | **Float** |  |  [optional]
+**lookbackPeriods** | **Integer** |  |  [optional]
 **ratioTargets** | [**RatioTargets**](RatioTargets.md) |  |  [optional]
 **nonLiquidAssets** | **Float** |  |  [optional]
-**grossAnnualIncome** | **Float** |  |  [optional]
-**lookbackPeriods** | **Integer** |  |  [optional]
-**netMonthlyIncome** | **Float** |  |  [optional]
-**shortTermLiabilities** | **Float** |  |  [optional]
 
 
 

@@ -32,7 +32,7 @@ class TestRatioTargets(unittest.TestCase):
     def testRatioTargets(self):
         """Test RatioTargets"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.ratio_targets.RatioTargets()  # noqa: E501
+        # model = proton_api.models.ratio_targets.RatioTargets()  # noqa: E501
         pass
 
 

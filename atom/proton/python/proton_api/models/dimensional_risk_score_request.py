@@ -32,57 +32,57 @@ class DimensionalRiskScoreRequest(object):
     """
     swagger_types = {
         'post_score': 'bool',
-        'questionnaire_id': 'str',
-        'dims': 'list[str]',
         'max_answers': 'list[float]',
-        'client_id': 'str',
         'answer_weights': 'list[float]',
+        'dims': 'list[str]',
+        'client_id': 'str',
         'answers': 'list[float]',
-        'answer_dims': 'list[list[str]]',
-        'dim_weights': 'list[float]'
+        'dim_weights': 'list[float]',
+        'questionnaire_id': 'str',
+        'answer_dims': 'list[list[str]]'
     }
 
     attribute_map = {
         'post_score': 'post_score',
-        'questionnaire_id': 'questionnaire_id',
-        'dims': 'dims',
         'max_answers': 'max_answers',
-        'client_id': 'client_id',
         'answer_weights': 'answer_weights',
+        'dims': 'dims',
+        'client_id': 'client_id',
         'answers': 'answers',
-        'answer_dims': 'answer_dims',
-        'dim_weights': 'dim_weights'
+        'dim_weights': 'dim_weights',
+        'questionnaire_id': 'questionnaire_id',
+        'answer_dims': 'answer_dims'
     }
 
-    def __init__(self, post_score=False, questionnaire_id=None, dims=None, max_answers=None, client_id=None, answer_weights=None, answers=None, answer_dims=None, dim_weights=None):  # noqa: E501
+    def __init__(self, post_score=False, max_answers=None, answer_weights=None, dims=None, client_id=None, answers=None, dim_weights=None, questionnaire_id=None, answer_dims=None):  # noqa: E501
         """DimensionalRiskScoreRequest - a model defined in Swagger"""  # noqa: E501
 
         self._post_score = None
-        self._questionnaire_id = None
-        self._dims = None
         self._max_answers = None
-        self._client_id = None
         self._answer_weights = None
+        self._dims = None
+        self._client_id = None
         self._answers = None
-        self._answer_dims = None
         self._dim_weights = None
+        self._questionnaire_id = None
+        self._answer_dims = None
         self.discriminator = None
 
         if post_score is not None:
             self.post_score = post_score
-        if questionnaire_id is not None:
-            self.questionnaire_id = questionnaire_id
-        self.dims = dims
         self.max_answers = max_answers
-        if client_id is not None:
-            self.client_id = client_id
         if answer_weights is not None:
             self.answer_weights = answer_weights
+        self.dims = dims
+        if client_id is not None:
+            self.client_id = client_id
         if answers is not None:
             self.answers = answers
-        self.answer_dims = answer_dims
         if dim_weights is not None:
             self.dim_weights = dim_weights
+        if questionnaire_id is not None:
+            self.questionnaire_id = questionnaire_id
+        self.answer_dims = answer_dims
 
     @property
     def post_score(self):
@@ -104,50 +104,6 @@ class DimensionalRiskScoreRequest(object):
         """
 
         self._post_score = post_score
-
-    @property
-    def questionnaire_id(self):
-        """Gets the questionnaire_id of this DimensionalRiskScoreRequest.  # noqa: E501
-
-
-        :return: The questionnaire_id of this DimensionalRiskScoreRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._questionnaire_id
-
-    @questionnaire_id.setter
-    def questionnaire_id(self, questionnaire_id):
-        """Sets the questionnaire_id of this DimensionalRiskScoreRequest.
-
-
-        :param questionnaire_id: The questionnaire_id of this DimensionalRiskScoreRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._questionnaire_id = questionnaire_id
-
-    @property
-    def dims(self):
-        """Gets the dims of this DimensionalRiskScoreRequest.  # noqa: E501
-
-
-        :return: The dims of this DimensionalRiskScoreRequest.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._dims
-
-    @dims.setter
-    def dims(self, dims):
-        """Sets the dims of this DimensionalRiskScoreRequest.
-
-
-        :param dims: The dims of this DimensionalRiskScoreRequest.  # noqa: E501
-        :type: list[str]
-        """
-        if dims is None:
-            raise ValueError("Invalid value for `dims`, must not be `None`")  # noqa: E501
-
-        self._dims = dims
 
     @property
     def max_answers(self):
@@ -173,27 +129,6 @@ class DimensionalRiskScoreRequest(object):
         self._max_answers = max_answers
 
     @property
-    def client_id(self):
-        """Gets the client_id of this DimensionalRiskScoreRequest.  # noqa: E501
-
-
-        :return: The client_id of this DimensionalRiskScoreRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._client_id
-
-    @client_id.setter
-    def client_id(self, client_id):
-        """Sets the client_id of this DimensionalRiskScoreRequest.
-
-
-        :param client_id: The client_id of this DimensionalRiskScoreRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._client_id = client_id
-
-    @property
     def answer_weights(self):
         """Gets the answer_weights of this DimensionalRiskScoreRequest.  # noqa: E501
 
@@ -213,6 +148,50 @@ class DimensionalRiskScoreRequest(object):
         """
 
         self._answer_weights = answer_weights
+
+    @property
+    def dims(self):
+        """Gets the dims of this DimensionalRiskScoreRequest.  # noqa: E501
+
+
+        :return: The dims of this DimensionalRiskScoreRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._dims
+
+    @dims.setter
+    def dims(self, dims):
+        """Sets the dims of this DimensionalRiskScoreRequest.
+
+
+        :param dims: The dims of this DimensionalRiskScoreRequest.  # noqa: E501
+        :type: list[str]
+        """
+        if dims is None:
+            raise ValueError("Invalid value for `dims`, must not be `None`")  # noqa: E501
+
+        self._dims = dims
+
+    @property
+    def client_id(self):
+        """Gets the client_id of this DimensionalRiskScoreRequest.  # noqa: E501
+
+
+        :return: The client_id of this DimensionalRiskScoreRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_id
+
+    @client_id.setter
+    def client_id(self, client_id):
+        """Sets the client_id of this DimensionalRiskScoreRequest.
+
+
+        :param client_id: The client_id of this DimensionalRiskScoreRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._client_id = client_id
 
     @property
     def answers(self):
@@ -236,6 +215,48 @@ class DimensionalRiskScoreRequest(object):
         self._answers = answers
 
     @property
+    def dim_weights(self):
+        """Gets the dim_weights of this DimensionalRiskScoreRequest.  # noqa: E501
+
+
+        :return: The dim_weights of this DimensionalRiskScoreRequest.  # noqa: E501
+        :rtype: list[float]
+        """
+        return self._dim_weights
+
+    @dim_weights.setter
+    def dim_weights(self, dim_weights):
+        """Sets the dim_weights of this DimensionalRiskScoreRequest.
+
+
+        :param dim_weights: The dim_weights of this DimensionalRiskScoreRequest.  # noqa: E501
+        :type: list[float]
+        """
+
+        self._dim_weights = dim_weights
+
+    @property
+    def questionnaire_id(self):
+        """Gets the questionnaire_id of this DimensionalRiskScoreRequest.  # noqa: E501
+
+
+        :return: The questionnaire_id of this DimensionalRiskScoreRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._questionnaire_id
+
+    @questionnaire_id.setter
+    def questionnaire_id(self, questionnaire_id):
+        """Sets the questionnaire_id of this DimensionalRiskScoreRequest.
+
+
+        :param questionnaire_id: The questionnaire_id of this DimensionalRiskScoreRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._questionnaire_id = questionnaire_id
+
+    @property
     def answer_dims(self):
         """Gets the answer_dims of this DimensionalRiskScoreRequest.  # noqa: E501
 
@@ -257,27 +278,6 @@ class DimensionalRiskScoreRequest(object):
             raise ValueError("Invalid value for `answer_dims`, must not be `None`")  # noqa: E501
 
         self._answer_dims = answer_dims
-
-    @property
-    def dim_weights(self):
-        """Gets the dim_weights of this DimensionalRiskScoreRequest.  # noqa: E501
-
-
-        :return: The dim_weights of this DimensionalRiskScoreRequest.  # noqa: E501
-        :rtype: list[float]
-        """
-        return self._dim_weights
-
-    @dim_weights.setter
-    def dim_weights(self, dim_weights):
-        """Sets the dim_weights of this DimensionalRiskScoreRequest.
-
-
-        :param dim_weights: The dim_weights of this DimensionalRiskScoreRequest.  # noqa: E501
-        :type: list[float]
-        """
-
-        self._dim_weights = dim_weights
 
     def to_dict(self):
         """Returns the model properties as a dict"""

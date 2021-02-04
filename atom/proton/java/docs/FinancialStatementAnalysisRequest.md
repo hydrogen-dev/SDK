@@ -4,29 +4,21 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**periodQuarter** | **Integer** |  |  [optional]
-**showHistory** | **Boolean** |  |  [optional]
-**clientId** | [**UUID**](UUID.md) |  |  [optional]
-**currencyConversion** | **String** |  |  [optional]
-**accountingMethod** | [**AccountingMethodEnum**](#AccountingMethodEnum) |  | 
 **periodLength** | [**PeriodLengthEnum**](#PeriodLengthEnum) |  |  [optional]
-**periodType** | [**PeriodTypeEnum**](#PeriodTypeEnum) |  |  [optional]
-**periodYear** | **Integer** |  |  [optional]
-**endDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**currencyCode** | **String** |  |  [optional]
-**statNames** | [**List&lt;StatNamesEnum&gt;**](#List&lt;StatNamesEnum&gt;) |  |  [optional]
-**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**statementType** | [**StatementTypeEnum**](#StatementTypeEnum) |  |  [optional]
-**historyFrequencyInterval** | [**HistoryFrequencyIntervalEnum**](#HistoryFrequencyIntervalEnum) |  |  [optional]
 **periodMonth** | **Integer** |  |  [optional]
-
-
-<a name="AccountingMethodEnum"></a>
-## Enum: AccountingMethodEnum
-Name | Value
----- | -----
-ACCRUAL | &quot;accrual&quot;
-CASH | &quot;cash&quot;
+**endDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**clientId** | [**UUID**](UUID.md) |  |  [optional]
+**accountingMethod** | [**AccountingMethodEnum**](#AccountingMethodEnum) |  | 
+**periodYear** | **Integer** |  |  [optional]
+**currencyConversion** | **String** |  |  [optional]
+**historyFrequencyInterval** | [**HistoryFrequencyIntervalEnum**](#HistoryFrequencyIntervalEnum) |  |  [optional]
+**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**periodType** | [**PeriodTypeEnum**](#PeriodTypeEnum) |  |  [optional]
+**currencyCode** | **String** |  |  [optional]
+**showHistory** | **Boolean** |  |  [optional]
+**statNames** | [**List&lt;StatNamesEnum&gt;**](#List&lt;StatNamesEnum&gt;) |  |  [optional]
+**periodQuarter** | **Integer** |  |  [optional]
+**statementType** | [**StatementTypeEnum**](#StatementTypeEnum) |  |  [optional]
 
 
 <a name="PeriodLengthEnum"></a>
@@ -39,6 +31,25 @@ MONTHLY | &quot;monthly&quot;
 YTD | &quot;ytd&quot;
 QTD | &quot;qtd&quot;
 MTD | &quot;mtd&quot;
+
+
+<a name="AccountingMethodEnum"></a>
+## Enum: AccountingMethodEnum
+Name | Value
+---- | -----
+ACCRUAL | &quot;accrual&quot;
+CASH | &quot;cash&quot;
+
+
+<a name="HistoryFrequencyIntervalEnum"></a>
+## Enum: HistoryFrequencyIntervalEnum
+Name | Value
+---- | -----
+DAY | &quot;day&quot;
+WEEK | &quot;week&quot;
+MONTH | &quot;month&quot;
+QUARTER | &quot;quarter&quot;
+YEAR | &quot;year&quot;
 
 
 <a name="PeriodTypeEnum"></a>
@@ -75,17 +86,6 @@ Name | Value
 INCOME_STATEMENT | &quot;income_statement&quot;
 BALANCE_SHEET | &quot;balance_sheet&quot;
 ALL | &quot;all&quot;
-
-
-<a name="HistoryFrequencyIntervalEnum"></a>
-## Enum: HistoryFrequencyIntervalEnum
-Name | Value
----- | -----
-DAY | &quot;day&quot;
-WEEK | &quot;week&quot;
-MONTH | &quot;month&quot;
-QUARTER | &quot;quarter&quot;
-YEAR | &quot;year&quot;
 
 
 

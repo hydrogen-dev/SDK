@@ -15,12 +15,14 @@ Name | Type | Description | Notes
 **description** | **String** | description | [optional] 
 **id** | **String** |  | [optional] 
 **isCleansed** | **Boolean** | is_cleansed | [optional] 
+**isDisputed** | **Boolean** | is_disputed | [optional] 
 **isRead** | **Boolean** | isRead | [optional] 
 **isRecurring** | **Boolean** | is_recurring | [optional] 
 **location** | [**Location**](Location.md) | location | [optional] 
 **memo** | **String** | memo | [optional] 
 **merchant** | **String** | merchant | [optional] 
 **merchantCategoryCode** | **Number** | merchant_category_code | [optional] 
+**metadata** | **{String: String}** | metadata | [optional] 
 **modelId** | **String** | modelId | 
 **portfolioId** | **String** | portfolioId | 
 **price** | **Number** | price | [optional] 

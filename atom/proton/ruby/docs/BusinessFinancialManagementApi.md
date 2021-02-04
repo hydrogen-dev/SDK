@@ -31,7 +31,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::BusinessFinancialManagementApi.new
 
 business_financial_health_check_request = ProtonApi::BusinessFinancialHealthCheckRequest.new # BusinessFinancialHealthCheckRequest | Request payload for Business Financial Health Check
@@ -87,7 +86,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::BusinessFinancialManagementApi.new
 
 cash_analysis_request = ProtonApi::CashAnalysisRequest.new # CashAnalysisRequest | Request payload for Cash Analysis
@@ -143,7 +141,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::BusinessFinancialManagementApi.new
 
 customer_analysis_request = ProtonApi::CustomerAnalysisRequest.new # CustomerAnalysisRequest | Request payload for Customer Analysis
@@ -199,7 +196,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::BusinessFinancialManagementApi.new
 
 financial_statement_analysis_request = ProtonApi::FinancialStatementAnalysisRequest.new # FinancialStatementAnalysisRequest | Request payload for Financial Statement Analysis
@@ -255,7 +251,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::BusinessFinancialManagementApi.new
 
 invoice_analysis_request = ProtonApi::BusinessInvoiceAnalysisRequest.new # BusinessInvoiceAnalysisRequest | Request payload for Invoice Analysis

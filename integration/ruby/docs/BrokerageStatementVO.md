@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **nucleus_account_id** | **String** |  | [optional] 
-**statements** | [**Array&lt;StatementModel&gt;**](StatementModel.md) |  | [optional] 
+**statements** | **Object** |  | [optional] 
 **vendor_name** | **String** |  | [optional] 
 
 

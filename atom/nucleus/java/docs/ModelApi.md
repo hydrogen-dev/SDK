@@ -44,7 +44,6 @@ Create a new asset size record for a model.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -61,8 +60,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 ModelAssetSize req = new ModelAssetSize(); // ModelAssetSize | req
 try {
@@ -105,7 +102,6 @@ Model composition changes represent a change in a model’s holdings.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -122,8 +118,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 OrderReconcileRequest changeRequest = new OrderReconcileRequest(); // OrderReconcileRequest | changeRequest
 UUID modelId = new UUID(); // UUID | UUID model_id
@@ -168,7 +162,6 @@ Create a new comment for a model available for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -185,8 +178,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 ModelComment modelCommentRequest = new ModelComment(); // ModelComment | modelCommentRequest
 try {
@@ -229,7 +220,6 @@ Create a new model holding record for a specific model and date.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -246,8 +236,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 ModelHolding modelHoldingRequest = new ModelHolding(); // ModelHolding | modelHoldingRequest
 try {
@@ -290,7 +278,6 @@ Create a new transaction record for a security under a model for a specific date
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -307,8 +294,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 ModelTransaction modelTransactionRequest = new ModelTransaction(); // ModelTransaction | modelTransactionRequest
 try {
@@ -351,7 +336,6 @@ Create a new model for your firm to which a portfolios can later subscribe.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -368,8 +352,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 Model modelInfoRequest = new Model(); // Model | modelInfoRequest
 try {
@@ -412,7 +394,6 @@ Permanently delete a model asset size record for a model.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -429,8 +410,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 UUID modelAssetSizeId = new UUID(); // UUID | UUID model_asset_size_id
 try {
@@ -472,7 +451,6 @@ Permanently delete a model comment for a model
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -489,8 +467,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 UUID modelCommentId = new UUID(); // UUID | UUID model_comment_id
 try {
@@ -532,7 +508,6 @@ Permanently delete a model holding record for a model.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -549,8 +524,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 UUID modelHoldingId = new UUID(); // UUID | UUID model_holding_id
 try {
@@ -592,7 +565,6 @@ Permanently delete a model transaction for a model.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -609,8 +581,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 UUID modelTransactionId = new UUID(); // UUID | UUID model_transaction_id
 try {
@@ -652,7 +622,6 @@ Permanently delete a model for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -669,8 +638,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 UUID modelId = new UUID(); // UUID | UUID model_id
 try {
@@ -712,7 +679,6 @@ Get details for all models defined for your firm to which portfolios can subscri
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -729,8 +695,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -781,7 +745,6 @@ Get a list of asset sizes per date for all models defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -798,8 +761,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 Boolean ascending = false; // Boolean | ascending
 String currencyConversion = "currencyConversion_example"; // String | currency_conversion
@@ -852,7 +813,6 @@ Retrieve the information for a model asset size record for a model.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -869,8 +829,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 UUID modelAssetSizeId = new UUID(); // UUID | UUID model_asset_size_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -915,7 +873,6 @@ List all comments for all models defined by your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -932,8 +889,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -984,7 +939,6 @@ Retrieve the information for a model comment for a model.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1001,8 +955,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 UUID modelCommentId = new UUID(); // UUID | UUID model_comment_id
 try {
@@ -1045,7 +997,6 @@ Get all model holding records for all models defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1062,8 +1013,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -1114,7 +1063,6 @@ Retrieve the information for a model holding record for a model.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1131,8 +1079,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 UUID modelHoldingId = new UUID(); // UUID | UUID model_holding_id
 try {
@@ -1175,7 +1121,6 @@ Get details for all transaction records for all models defined by your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1192,8 +1137,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -1244,7 +1187,6 @@ Retrieve the information for a model transaction for a model.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1261,8 +1203,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 UUID modelTransactionId = new UUID(); // UUID | UUID model_transaction_id
 try {
@@ -1305,7 +1245,6 @@ Get the information for a model for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1322,8 +1261,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
 UUID modelId = new UUID(); // UUID | UUID model_id
 try {
@@ -1366,7 +1303,6 @@ Update a model asset size record for a model.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1383,10 +1319,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
-ModelAssetSize modelAssetSize = new ModelAssetSize(); // ModelAssetSize | model_asset_size
+Object modelAssetSize = null; // Object | model_asset_size
 UUID modelAssetSizeId = new UUID(); // UUID | UUID model_asset_size_id
 try {
     ModelAssetSize result = apiInstance.updateModelAssetSizeUsingPut(modelAssetSize, modelAssetSizeId);
@@ -1401,7 +1335,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelAssetSize** | [**ModelAssetSize**](ModelAssetSize.md)| model_asset_size |
+ **modelAssetSize** | **Object**| model_asset_size |
  **modelAssetSizeId** | [**UUID**](.md)| UUID model_asset_size_id |
 
 ### Return type
@@ -1429,7 +1363,6 @@ Update a model comment for a model.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1446,10 +1379,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
-ModelComment modelComment = new ModelComment(); // ModelComment | model_comment
+Object modelComment = null; // Object | model_comment
 UUID modelCommentId = new UUID(); // UUID | UUID model_comment_id
 try {
     ModelComment result = apiInstance.updateModelCommentUsingPut(modelComment, modelCommentId);
@@ -1464,7 +1395,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelComment** | [**ModelComment**](ModelComment.md)| model_comment |
+ **modelComment** | **Object**| model_comment |
  **modelCommentId** | [**UUID**](.md)| UUID model_comment_id |
 
 ### Return type
@@ -1492,7 +1423,6 @@ Update a model holding record for a model.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1509,10 +1439,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
-ModelHolding modelHolding = new ModelHolding(); // ModelHolding | model_holding
+Object modelHolding = null; // Object | model_holding
 UUID modelHoldingId = new UUID(); // UUID | UUID model_holding_id
 try {
     ModelHolding result = apiInstance.updateModelHoldingUsingPut(modelHolding, modelHoldingId);
@@ -1527,7 +1455,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelHolding** | [**ModelHolding**](ModelHolding.md)| model_holding |
+ **modelHolding** | **Object**| model_holding |
  **modelHoldingId** | [**UUID**](.md)| UUID model_holding_id |
 
 ### Return type
@@ -1555,7 +1483,6 @@ Update a model transaction for a model.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1572,10 +1499,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
-ModelTransaction modelTransaction = new ModelTransaction(); // ModelTransaction | model_transaction
+Object modelTransaction = null; // Object | model_transaction
 UUID modelTransactionId = new UUID(); // UUID | UUID model_transaction_id
 try {
     ModelTransaction result = apiInstance.updateModelTransactionUsingPut(modelTransaction, modelTransactionId);
@@ -1590,7 +1515,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelTransaction** | [**ModelTransaction**](ModelTransaction.md)| model_transaction |
+ **modelTransaction** | **Object**| model_transaction |
  **modelTransactionId** | [**UUID**](.md)| UUID model_transaction_id |
 
 ### Return type
@@ -1618,7 +1543,6 @@ Update a model for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ModelApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1635,10 +1559,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ModelApi apiInstance = new ModelApi();
-Model model = new Model(); // Model | model
+Object model = null; // Object | model
 UUID modelId = new UUID(); // UUID | UUID model_id
 try {
     Model result = apiInstance.updateModelUsingPut(model, modelId);
@@ -1653,7 +1575,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model** | [**Model**](Model.md)| model |
+ **model** | **Object**| model |
  **modelId** | [**UUID**](.md)| UUID model_id |
 
 ### Return type

@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **nucleusCardId** | **String** |  | [optional] 
 **reason** | **String** |  | [optional] 
-**vendorRequest** | **{String: String}** |  | [optional] 
+**vendorRequest** | **Object** |  | [optional] 
 **wallet** | **String** |  | [optional] 
 
 
@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 ## Enum: WalletEnum
 
 
-* `apple` (value: `"apple"`)
-
 * `google` (value: `"google"`)
+
+* `apple` (value: `"apple"`)
 
 * `samsung` (value: `"samsung"`)
 

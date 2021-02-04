@@ -31,78 +31,47 @@ class CardUnloadRequestCO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'amount': 'float',
-        'nucleus_card_id': 'str',
-        'reason': 'str',
-        'vendor_request': 'dict(str, str)'
+        'nucleus_funding_id': 'str',
+        'reason': 'str'
     }
 
     attribute_map = {
-        'amount': 'amount',
-        'nucleus_card_id': 'nucleus_card_id',
-        'reason': 'reason',
-        'vendor_request': 'vendor_request'
+        'nucleus_funding_id': 'nucleus_funding_id',
+        'reason': 'reason'
     }
 
-    def __init__(self, amount=None, nucleus_card_id=None, reason=None, vendor_request=None):  # noqa: E501
+    def __init__(self, nucleus_funding_id=None, reason=None):  # noqa: E501
         """CardUnloadRequestCO - a model defined in Swagger"""  # noqa: E501
 
-        self._amount = None
-        self._nucleus_card_id = None
+        self._nucleus_funding_id = None
         self._reason = None
-        self._vendor_request = None
         self.discriminator = None
 
-        if amount is not None:
-            self.amount = amount
-        if nucleus_card_id is not None:
-            self.nucleus_card_id = nucleus_card_id
+        if nucleus_funding_id is not None:
+            self.nucleus_funding_id = nucleus_funding_id
         if reason is not None:
             self.reason = reason
-        if vendor_request is not None:
-            self.vendor_request = vendor_request
 
     @property
-    def amount(self):
-        """Gets the amount of this CardUnloadRequestCO.  # noqa: E501
+    def nucleus_funding_id(self):
+        """Gets the nucleus_funding_id of this CardUnloadRequestCO.  # noqa: E501
 
 
-        :return: The amount of this CardUnloadRequestCO.  # noqa: E501
-        :rtype: float
-        """
-        return self._amount
-
-    @amount.setter
-    def amount(self, amount):
-        """Sets the amount of this CardUnloadRequestCO.
-
-
-        :param amount: The amount of this CardUnloadRequestCO.  # noqa: E501
-        :type: float
-        """
-
-        self._amount = amount
-
-    @property
-    def nucleus_card_id(self):
-        """Gets the nucleus_card_id of this CardUnloadRequestCO.  # noqa: E501
-
-
-        :return: The nucleus_card_id of this CardUnloadRequestCO.  # noqa: E501
+        :return: The nucleus_funding_id of this CardUnloadRequestCO.  # noqa: E501
         :rtype: str
         """
-        return self._nucleus_card_id
+        return self._nucleus_funding_id
 
-    @nucleus_card_id.setter
-    def nucleus_card_id(self, nucleus_card_id):
-        """Sets the nucleus_card_id of this CardUnloadRequestCO.
+    @nucleus_funding_id.setter
+    def nucleus_funding_id(self, nucleus_funding_id):
+        """Sets the nucleus_funding_id of this CardUnloadRequestCO.
 
 
-        :param nucleus_card_id: The nucleus_card_id of this CardUnloadRequestCO.  # noqa: E501
+        :param nucleus_funding_id: The nucleus_funding_id of this CardUnloadRequestCO.  # noqa: E501
         :type: str
         """
 
-        self._nucleus_card_id = nucleus_card_id
+        self._nucleus_funding_id = nucleus_funding_id
 
     @property
     def reason(self):
@@ -124,27 +93,6 @@ class CardUnloadRequestCO(object):
         """
 
         self._reason = reason
-
-    @property
-    def vendor_request(self):
-        """Gets the vendor_request of this CardUnloadRequestCO.  # noqa: E501
-
-
-        :return: The vendor_request of this CardUnloadRequestCO.  # noqa: E501
-        :rtype: dict(str, str)
-        """
-        return self._vendor_request
-
-    @vendor_request.setter
-    def vendor_request(self, vendor_request):
-        """Sets the vendor_request of this CardUnloadRequestCO.
-
-
-        :param vendor_request: The vendor_request of this CardUnloadRequestCO.  # noqa: E501
-        :type: dict(str, str)
-        """
-
-        self._vendor_request = vendor_request
 
     def to_dict(self):
         """Returns the model properties as a dict"""

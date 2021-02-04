@@ -31,125 +31,146 @@ class MonteCarloRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'portfolio_id': 'str',
         'max_sample': 'list[float]',
-        'p': 'list[float]',
-        'aggregation_account_id': 'str',
-        'allocation_id': 'str',
-        'mu': 'list[float]',
-        'n': 'int',
-        'sigma': 'list[float]',
-        'account_id': 'str',
-        'init_bal': 'float',
-        'remove_outliers': 'bool',
-        'model_id': 'str',
-        'max_bal': 'list[float]',
-        'min_bal': 'list[float]',
-        'use_proxy_data': 'bool',
-        'cf': 'list[list[float]]',
         'result_type': 'str',
         'ret_mod': 'list[float]',
+        'remove_outliers': 'bool',
+        'max_bal': 'list[float]',
         'market_data_source': 'str',
-        'portfolio_id': 'str',
-        'frequency_interval': 'str',
+        'p': 'list[float]',
+        'allocation_id': 'str',
+        'use_proxy_data': 'bool',
+        'aggregation_account_id': 'str',
+        'init_bal': 'float',
+        'min_sample': 'list[float]',
         'create_log': 'bool',
-        'min_sample': 'list[float]'
+        'mu': 'list[float]',
+        'account_id': 'str',
+        'sigma': 'list[float]',
+        'model_id': 'str',
+        'n': 'int',
+        'min_bal': 'list[float]',
+        'frequency_interval': 'str',
+        'cf': 'list[list[float]]'
     }
 
     attribute_map = {
+        'portfolio_id': 'portfolio_id',
         'max_sample': 'max_sample',
-        'p': 'p',
-        'aggregation_account_id': 'aggregation_account_id',
-        'allocation_id': 'allocation_id',
-        'mu': 'mu',
-        'n': 'n',
-        'sigma': 'sigma',
-        'account_id': 'account_id',
-        'init_bal': 'init_bal',
-        'remove_outliers': 'remove_outliers',
-        'model_id': 'model_id',
-        'max_bal': 'max_bal',
-        'min_bal': 'min_bal',
-        'use_proxy_data': 'use_proxy_data',
-        'cf': 'cf',
         'result_type': 'result_type',
         'ret_mod': 'ret_mod',
+        'remove_outliers': 'remove_outliers',
+        'max_bal': 'max_bal',
         'market_data_source': 'market_data_source',
-        'portfolio_id': 'portfolio_id',
-        'frequency_interval': 'frequency_interval',
+        'p': 'p',
+        'allocation_id': 'allocation_id',
+        'use_proxy_data': 'use_proxy_data',
+        'aggregation_account_id': 'aggregation_account_id',
+        'init_bal': 'init_bal',
+        'min_sample': 'min_sample',
         'create_log': 'create_log',
-        'min_sample': 'min_sample'
+        'mu': 'mu',
+        'account_id': 'account_id',
+        'sigma': 'sigma',
+        'model_id': 'model_id',
+        'n': 'n',
+        'min_bal': 'min_bal',
+        'frequency_interval': 'frequency_interval',
+        'cf': 'cf'
     }
 
-    def __init__(self, max_sample=None, p=None, aggregation_account_id=None, allocation_id=None, mu=None, n=1000, sigma=None, account_id=None, init_bal=None, remove_outliers=False, model_id=None, max_bal=None, min_bal=None, use_proxy_data=False, cf=None, result_type='raw', ret_mod=None, market_data_source='nucleus', portfolio_id=None, frequency_interval='year', create_log=False, min_sample=None):  # noqa: E501
+    def __init__(self, portfolio_id=None, max_sample=None, result_type='raw', ret_mod=None, remove_outliers=False, max_bal=None, market_data_source='nucleus', p=None, allocation_id=None, use_proxy_data=False, aggregation_account_id=None, init_bal=None, min_sample=None, create_log=False, mu=None, account_id=None, sigma=None, model_id=None, n=1000, min_bal=None, frequency_interval='year', cf=None):  # noqa: E501
         """MonteCarloRequest - a model defined in Swagger"""  # noqa: E501
 
+        self._portfolio_id = None
         self._max_sample = None
-        self._p = None
-        self._aggregation_account_id = None
-        self._allocation_id = None
-        self._mu = None
-        self._n = None
-        self._sigma = None
-        self._account_id = None
-        self._init_bal = None
-        self._remove_outliers = None
-        self._model_id = None
-        self._max_bal = None
-        self._min_bal = None
-        self._use_proxy_data = None
-        self._cf = None
         self._result_type = None
         self._ret_mod = None
+        self._remove_outliers = None
+        self._max_bal = None
         self._market_data_source = None
-        self._portfolio_id = None
-        self._frequency_interval = None
-        self._create_log = None
+        self._p = None
+        self._allocation_id = None
+        self._use_proxy_data = None
+        self._aggregation_account_id = None
+        self._init_bal = None
         self._min_sample = None
+        self._create_log = None
+        self._mu = None
+        self._account_id = None
+        self._sigma = None
+        self._model_id = None
+        self._n = None
+        self._min_bal = None
+        self._frequency_interval = None
+        self._cf = None
         self.discriminator = None
 
+        if portfolio_id is not None:
+            self.portfolio_id = portfolio_id
         if max_sample is not None:
             self.max_sample = max_sample
-        if p is not None:
-            self.p = p
-        if aggregation_account_id is not None:
-            self.aggregation_account_id = aggregation_account_id
-        if allocation_id is not None:
-            self.allocation_id = allocation_id
-        if mu is not None:
-            self.mu = mu
-        if n is not None:
-            self.n = n
-        if sigma is not None:
-            self.sigma = sigma
-        if account_id is not None:
-            self.account_id = account_id
-        if init_bal is not None:
-            self.init_bal = init_bal
-        if remove_outliers is not None:
-            self.remove_outliers = remove_outliers
-        if model_id is not None:
-            self.model_id = model_id
-        if max_bal is not None:
-            self.max_bal = max_bal
-        if min_bal is not None:
-            self.min_bal = min_bal
-        if use_proxy_data is not None:
-            self.use_proxy_data = use_proxy_data
-        self.cf = cf
         if result_type is not None:
             self.result_type = result_type
         if ret_mod is not None:
             self.ret_mod = ret_mod
+        if remove_outliers is not None:
+            self.remove_outliers = remove_outliers
+        if max_bal is not None:
+            self.max_bal = max_bal
         if market_data_source is not None:
             self.market_data_source = market_data_source
-        if portfolio_id is not None:
-            self.portfolio_id = portfolio_id
-        if frequency_interval is not None:
-            self.frequency_interval = frequency_interval
-        if create_log is not None:
-            self.create_log = create_log
+        if p is not None:
+            self.p = p
+        if allocation_id is not None:
+            self.allocation_id = allocation_id
+        if use_proxy_data is not None:
+            self.use_proxy_data = use_proxy_data
+        if aggregation_account_id is not None:
+            self.aggregation_account_id = aggregation_account_id
+        if init_bal is not None:
+            self.init_bal = init_bal
         if min_sample is not None:
             self.min_sample = min_sample
+        if create_log is not None:
+            self.create_log = create_log
+        if mu is not None:
+            self.mu = mu
+        if account_id is not None:
+            self.account_id = account_id
+        if sigma is not None:
+            self.sigma = sigma
+        if model_id is not None:
+            self.model_id = model_id
+        if n is not None:
+            self.n = n
+        if min_bal is not None:
+            self.min_bal = min_bal
+        if frequency_interval is not None:
+            self.frequency_interval = frequency_interval
+        self.cf = cf
+
+    @property
+    def portfolio_id(self):
+        """Gets the portfolio_id of this MonteCarloRequest.  # noqa: E501
+
+
+        :return: The portfolio_id of this MonteCarloRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._portfolio_id
+
+    @portfolio_id.setter
+    def portfolio_id(self, portfolio_id):
+        """Sets the portfolio_id of this MonteCarloRequest.
+
+
+        :param portfolio_id: The portfolio_id of this MonteCarloRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._portfolio_id = portfolio_id
 
     @property
     def max_sample(self):
@@ -171,308 +192,6 @@ class MonteCarloRequest(object):
         """
 
         self._max_sample = max_sample
-
-    @property
-    def p(self):
-        """Gets the p of this MonteCarloRequest.  # noqa: E501
-
-
-        :return: The p of this MonteCarloRequest.  # noqa: E501
-        :rtype: list[float]
-        """
-        return self._p
-
-    @p.setter
-    def p(self, p):
-        """Sets the p of this MonteCarloRequest.
-
-
-        :param p: The p of this MonteCarloRequest.  # noqa: E501
-        :type: list[float]
-        """
-
-        self._p = p
-
-    @property
-    def aggregation_account_id(self):
-        """Gets the aggregation_account_id of this MonteCarloRequest.  # noqa: E501
-
-
-        :return: The aggregation_account_id of this MonteCarloRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._aggregation_account_id
-
-    @aggregation_account_id.setter
-    def aggregation_account_id(self, aggregation_account_id):
-        """Sets the aggregation_account_id of this MonteCarloRequest.
-
-
-        :param aggregation_account_id: The aggregation_account_id of this MonteCarloRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._aggregation_account_id = aggregation_account_id
-
-    @property
-    def allocation_id(self):
-        """Gets the allocation_id of this MonteCarloRequest.  # noqa: E501
-
-
-        :return: The allocation_id of this MonteCarloRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._allocation_id
-
-    @allocation_id.setter
-    def allocation_id(self, allocation_id):
-        """Sets the allocation_id of this MonteCarloRequest.
-
-
-        :param allocation_id: The allocation_id of this MonteCarloRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._allocation_id = allocation_id
-
-    @property
-    def mu(self):
-        """Gets the mu of this MonteCarloRequest.  # noqa: E501
-
-
-        :return: The mu of this MonteCarloRequest.  # noqa: E501
-        :rtype: list[float]
-        """
-        return self._mu
-
-    @mu.setter
-    def mu(self, mu):
-        """Sets the mu of this MonteCarloRequest.
-
-
-        :param mu: The mu of this MonteCarloRequest.  # noqa: E501
-        :type: list[float]
-        """
-
-        self._mu = mu
-
-    @property
-    def n(self):
-        """Gets the n of this MonteCarloRequest.  # noqa: E501
-
-
-        :return: The n of this MonteCarloRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._n
-
-    @n.setter
-    def n(self, n):
-        """Sets the n of this MonteCarloRequest.
-
-
-        :param n: The n of this MonteCarloRequest.  # noqa: E501
-        :type: int
-        """
-        if n is not None and n > 10000:  # noqa: E501
-            raise ValueError("Invalid value for `n`, must be a value less than or equal to `10000`")  # noqa: E501
-        if n is not None and n < 1:  # noqa: E501
-            raise ValueError("Invalid value for `n`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._n = n
-
-    @property
-    def sigma(self):
-        """Gets the sigma of this MonteCarloRequest.  # noqa: E501
-
-
-        :return: The sigma of this MonteCarloRequest.  # noqa: E501
-        :rtype: list[float]
-        """
-        return self._sigma
-
-    @sigma.setter
-    def sigma(self, sigma):
-        """Sets the sigma of this MonteCarloRequest.
-
-
-        :param sigma: The sigma of this MonteCarloRequest.  # noqa: E501
-        :type: list[float]
-        """
-
-        self._sigma = sigma
-
-    @property
-    def account_id(self):
-        """Gets the account_id of this MonteCarloRequest.  # noqa: E501
-
-
-        :return: The account_id of this MonteCarloRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._account_id
-
-    @account_id.setter
-    def account_id(self, account_id):
-        """Sets the account_id of this MonteCarloRequest.
-
-
-        :param account_id: The account_id of this MonteCarloRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._account_id = account_id
-
-    @property
-    def init_bal(self):
-        """Gets the init_bal of this MonteCarloRequest.  # noqa: E501
-
-
-        :return: The init_bal of this MonteCarloRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._init_bal
-
-    @init_bal.setter
-    def init_bal(self, init_bal):
-        """Sets the init_bal of this MonteCarloRequest.
-
-
-        :param init_bal: The init_bal of this MonteCarloRequest.  # noqa: E501
-        :type: float
-        """
-        if init_bal is not None and init_bal < 0:  # noqa: E501
-            raise ValueError("Invalid value for `init_bal`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._init_bal = init_bal
-
-    @property
-    def remove_outliers(self):
-        """Gets the remove_outliers of this MonteCarloRequest.  # noqa: E501
-
-
-        :return: The remove_outliers of this MonteCarloRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._remove_outliers
-
-    @remove_outliers.setter
-    def remove_outliers(self, remove_outliers):
-        """Sets the remove_outliers of this MonteCarloRequest.
-
-
-        :param remove_outliers: The remove_outliers of this MonteCarloRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._remove_outliers = remove_outliers
-
-    @property
-    def model_id(self):
-        """Gets the model_id of this MonteCarloRequest.  # noqa: E501
-
-
-        :return: The model_id of this MonteCarloRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._model_id
-
-    @model_id.setter
-    def model_id(self, model_id):
-        """Sets the model_id of this MonteCarloRequest.
-
-
-        :param model_id: The model_id of this MonteCarloRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._model_id = model_id
-
-    @property
-    def max_bal(self):
-        """Gets the max_bal of this MonteCarloRequest.  # noqa: E501
-
-
-        :return: The max_bal of this MonteCarloRequest.  # noqa: E501
-        :rtype: list[float]
-        """
-        return self._max_bal
-
-    @max_bal.setter
-    def max_bal(self, max_bal):
-        """Sets the max_bal of this MonteCarloRequest.
-
-
-        :param max_bal: The max_bal of this MonteCarloRequest.  # noqa: E501
-        :type: list[float]
-        """
-
-        self._max_bal = max_bal
-
-    @property
-    def min_bal(self):
-        """Gets the min_bal of this MonteCarloRequest.  # noqa: E501
-
-
-        :return: The min_bal of this MonteCarloRequest.  # noqa: E501
-        :rtype: list[float]
-        """
-        return self._min_bal
-
-    @min_bal.setter
-    def min_bal(self, min_bal):
-        """Sets the min_bal of this MonteCarloRequest.
-
-
-        :param min_bal: The min_bal of this MonteCarloRequest.  # noqa: E501
-        :type: list[float]
-        """
-
-        self._min_bal = min_bal
-
-    @property
-    def use_proxy_data(self):
-        """Gets the use_proxy_data of this MonteCarloRequest.  # noqa: E501
-
-
-        :return: The use_proxy_data of this MonteCarloRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._use_proxy_data
-
-    @use_proxy_data.setter
-    def use_proxy_data(self, use_proxy_data):
-        """Sets the use_proxy_data of this MonteCarloRequest.
-
-
-        :param use_proxy_data: The use_proxy_data of this MonteCarloRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._use_proxy_data = use_proxy_data
-
-    @property
-    def cf(self):
-        """Gets the cf of this MonteCarloRequest.  # noqa: E501
-
-
-        :return: The cf of this MonteCarloRequest.  # noqa: E501
-        :rtype: list[list[float]]
-        """
-        return self._cf
-
-    @cf.setter
-    def cf(self, cf):
-        """Sets the cf of this MonteCarloRequest.
-
-
-        :param cf: The cf of this MonteCarloRequest.  # noqa: E501
-        :type: list[list[float]]
-        """
-        if cf is None:
-            raise ValueError("Invalid value for `cf`, must not be `None`")  # noqa: E501
-
-        self._cf = cf
 
     @property
     def result_type(self):
@@ -523,6 +242,48 @@ class MonteCarloRequest(object):
         self._ret_mod = ret_mod
 
     @property
+    def remove_outliers(self):
+        """Gets the remove_outliers of this MonteCarloRequest.  # noqa: E501
+
+
+        :return: The remove_outliers of this MonteCarloRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._remove_outliers
+
+    @remove_outliers.setter
+    def remove_outliers(self, remove_outliers):
+        """Sets the remove_outliers of this MonteCarloRequest.
+
+
+        :param remove_outliers: The remove_outliers of this MonteCarloRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._remove_outliers = remove_outliers
+
+    @property
+    def max_bal(self):
+        """Gets the max_bal of this MonteCarloRequest.  # noqa: E501
+
+
+        :return: The max_bal of this MonteCarloRequest.  # noqa: E501
+        :rtype: list[float]
+        """
+        return self._max_bal
+
+    @max_bal.setter
+    def max_bal(self, max_bal):
+        """Sets the max_bal of this MonteCarloRequest.
+
+
+        :param max_bal: The max_bal of this MonteCarloRequest.  # noqa: E501
+        :type: list[float]
+        """
+
+        self._max_bal = max_bal
+
+    @property
     def market_data_source(self):
         """Gets the market_data_source of this MonteCarloRequest.  # noqa: E501
 
@@ -550,25 +311,283 @@ class MonteCarloRequest(object):
         self._market_data_source = market_data_source
 
     @property
-    def portfolio_id(self):
-        """Gets the portfolio_id of this MonteCarloRequest.  # noqa: E501
+    def p(self):
+        """Gets the p of this MonteCarloRequest.  # noqa: E501
 
 
-        :return: The portfolio_id of this MonteCarloRequest.  # noqa: E501
+        :return: The p of this MonteCarloRequest.  # noqa: E501
+        :rtype: list[float]
+        """
+        return self._p
+
+    @p.setter
+    def p(self, p):
+        """Sets the p of this MonteCarloRequest.
+
+
+        :param p: The p of this MonteCarloRequest.  # noqa: E501
+        :type: list[float]
+        """
+
+        self._p = p
+
+    @property
+    def allocation_id(self):
+        """Gets the allocation_id of this MonteCarloRequest.  # noqa: E501
+
+
+        :return: The allocation_id of this MonteCarloRequest.  # noqa: E501
         :rtype: str
         """
-        return self._portfolio_id
+        return self._allocation_id
 
-    @portfolio_id.setter
-    def portfolio_id(self, portfolio_id):
-        """Sets the portfolio_id of this MonteCarloRequest.
+    @allocation_id.setter
+    def allocation_id(self, allocation_id):
+        """Sets the allocation_id of this MonteCarloRequest.
 
 
-        :param portfolio_id: The portfolio_id of this MonteCarloRequest.  # noqa: E501
+        :param allocation_id: The allocation_id of this MonteCarloRequest.  # noqa: E501
         :type: str
         """
 
-        self._portfolio_id = portfolio_id
+        self._allocation_id = allocation_id
+
+    @property
+    def use_proxy_data(self):
+        """Gets the use_proxy_data of this MonteCarloRequest.  # noqa: E501
+
+
+        :return: The use_proxy_data of this MonteCarloRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_proxy_data
+
+    @use_proxy_data.setter
+    def use_proxy_data(self, use_proxy_data):
+        """Sets the use_proxy_data of this MonteCarloRequest.
+
+
+        :param use_proxy_data: The use_proxy_data of this MonteCarloRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_proxy_data = use_proxy_data
+
+    @property
+    def aggregation_account_id(self):
+        """Gets the aggregation_account_id of this MonteCarloRequest.  # noqa: E501
+
+
+        :return: The aggregation_account_id of this MonteCarloRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._aggregation_account_id
+
+    @aggregation_account_id.setter
+    def aggregation_account_id(self, aggregation_account_id):
+        """Sets the aggregation_account_id of this MonteCarloRequest.
+
+
+        :param aggregation_account_id: The aggregation_account_id of this MonteCarloRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._aggregation_account_id = aggregation_account_id
+
+    @property
+    def init_bal(self):
+        """Gets the init_bal of this MonteCarloRequest.  # noqa: E501
+
+
+        :return: The init_bal of this MonteCarloRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._init_bal
+
+    @init_bal.setter
+    def init_bal(self, init_bal):
+        """Sets the init_bal of this MonteCarloRequest.
+
+
+        :param init_bal: The init_bal of this MonteCarloRequest.  # noqa: E501
+        :type: float
+        """
+        if init_bal is not None and init_bal < 0:  # noqa: E501
+            raise ValueError("Invalid value for `init_bal`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._init_bal = init_bal
+
+    @property
+    def min_sample(self):
+        """Gets the min_sample of this MonteCarloRequest.  # noqa: E501
+
+
+        :return: The min_sample of this MonteCarloRequest.  # noqa: E501
+        :rtype: list[float]
+        """
+        return self._min_sample
+
+    @min_sample.setter
+    def min_sample(self, min_sample):
+        """Sets the min_sample of this MonteCarloRequest.
+
+
+        :param min_sample: The min_sample of this MonteCarloRequest.  # noqa: E501
+        :type: list[float]
+        """
+
+        self._min_sample = min_sample
+
+    @property
+    def create_log(self):
+        """Gets the create_log of this MonteCarloRequest.  # noqa: E501
+
+
+        :return: The create_log of this MonteCarloRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._create_log
+
+    @create_log.setter
+    def create_log(self, create_log):
+        """Sets the create_log of this MonteCarloRequest.
+
+
+        :param create_log: The create_log of this MonteCarloRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._create_log = create_log
+
+    @property
+    def mu(self):
+        """Gets the mu of this MonteCarloRequest.  # noqa: E501
+
+
+        :return: The mu of this MonteCarloRequest.  # noqa: E501
+        :rtype: list[float]
+        """
+        return self._mu
+
+    @mu.setter
+    def mu(self, mu):
+        """Sets the mu of this MonteCarloRequest.
+
+
+        :param mu: The mu of this MonteCarloRequest.  # noqa: E501
+        :type: list[float]
+        """
+
+        self._mu = mu
+
+    @property
+    def account_id(self):
+        """Gets the account_id of this MonteCarloRequest.  # noqa: E501
+
+
+        :return: The account_id of this MonteCarloRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._account_id
+
+    @account_id.setter
+    def account_id(self, account_id):
+        """Sets the account_id of this MonteCarloRequest.
+
+
+        :param account_id: The account_id of this MonteCarloRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._account_id = account_id
+
+    @property
+    def sigma(self):
+        """Gets the sigma of this MonteCarloRequest.  # noqa: E501
+
+
+        :return: The sigma of this MonteCarloRequest.  # noqa: E501
+        :rtype: list[float]
+        """
+        return self._sigma
+
+    @sigma.setter
+    def sigma(self, sigma):
+        """Sets the sigma of this MonteCarloRequest.
+
+
+        :param sigma: The sigma of this MonteCarloRequest.  # noqa: E501
+        :type: list[float]
+        """
+
+        self._sigma = sigma
+
+    @property
+    def model_id(self):
+        """Gets the model_id of this MonteCarloRequest.  # noqa: E501
+
+
+        :return: The model_id of this MonteCarloRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._model_id
+
+    @model_id.setter
+    def model_id(self, model_id):
+        """Sets the model_id of this MonteCarloRequest.
+
+
+        :param model_id: The model_id of this MonteCarloRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._model_id = model_id
+
+    @property
+    def n(self):
+        """Gets the n of this MonteCarloRequest.  # noqa: E501
+
+
+        :return: The n of this MonteCarloRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._n
+
+    @n.setter
+    def n(self, n):
+        """Sets the n of this MonteCarloRequest.
+
+
+        :param n: The n of this MonteCarloRequest.  # noqa: E501
+        :type: int
+        """
+        if n is not None and n > 10000:  # noqa: E501
+            raise ValueError("Invalid value for `n`, must be a value less than or equal to `10000`")  # noqa: E501
+        if n is not None and n < 1:  # noqa: E501
+            raise ValueError("Invalid value for `n`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._n = n
+
+    @property
+    def min_bal(self):
+        """Gets the min_bal of this MonteCarloRequest.  # noqa: E501
+
+
+        :return: The min_bal of this MonteCarloRequest.  # noqa: E501
+        :rtype: list[float]
+        """
+        return self._min_bal
+
+    @min_bal.setter
+    def min_bal(self, min_bal):
+        """Sets the min_bal of this MonteCarloRequest.
+
+
+        :param min_bal: The min_bal of this MonteCarloRequest.  # noqa: E501
+        :type: list[float]
+        """
+
+        self._min_bal = min_bal
 
     @property
     def frequency_interval(self):
@@ -598,46 +617,27 @@ class MonteCarloRequest(object):
         self._frequency_interval = frequency_interval
 
     @property
-    def create_log(self):
-        """Gets the create_log of this MonteCarloRequest.  # noqa: E501
+    def cf(self):
+        """Gets the cf of this MonteCarloRequest.  # noqa: E501
 
 
-        :return: The create_log of this MonteCarloRequest.  # noqa: E501
-        :rtype: bool
+        :return: The cf of this MonteCarloRequest.  # noqa: E501
+        :rtype: list[list[float]]
         """
-        return self._create_log
+        return self._cf
 
-    @create_log.setter
-    def create_log(self, create_log):
-        """Sets the create_log of this MonteCarloRequest.
+    @cf.setter
+    def cf(self, cf):
+        """Sets the cf of this MonteCarloRequest.
 
 
-        :param create_log: The create_log of this MonteCarloRequest.  # noqa: E501
-        :type: bool
+        :param cf: The cf of this MonteCarloRequest.  # noqa: E501
+        :type: list[list[float]]
         """
+        if cf is None:
+            raise ValueError("Invalid value for `cf`, must not be `None`")  # noqa: E501
 
-        self._create_log = create_log
-
-    @property
-    def min_sample(self):
-        """Gets the min_sample of this MonteCarloRequest.  # noqa: E501
-
-
-        :return: The min_sample of this MonteCarloRequest.  # noqa: E501
-        :rtype: list[float]
-        """
-        return self._min_sample
-
-    @min_sample.setter
-    def min_sample(self, min_sample):
-        """Sets the min_sample of this MonteCarloRequest.
-
-
-        :param min_sample: The min_sample of this MonteCarloRequest.  # noqa: E501
-        :type: list[float]
-        """
-
-        self._min_sample = min_sample
+        self._cf = cf
 
     def to_dict(self):
         """Returns the model properties as a dict"""

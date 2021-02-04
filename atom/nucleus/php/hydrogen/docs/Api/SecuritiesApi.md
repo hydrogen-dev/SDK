@@ -885,7 +885,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\SecuritiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$security_exclusion = new \com\hydrogen\nucleus\Model\SecurityExclusion(); // \com\hydrogen\nucleus\Model\SecurityExclusion | security_exclusion
+$security_exclusion = new \stdClass; // object | security_exclusion
 $security_exclusion_id = "security_exclusion_id_example"; // string | UUID security_exclusion_id
 
 try {
@@ -901,7 +901,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **security_exclusion** | [**\com\hydrogen\nucleus\Model\SecurityExclusion**](../Model/SecurityExclusion.md)| security_exclusion |
+ **security_exclusion** | **object**| security_exclusion |
  **security_exclusion_id** | [**string**](../Model/.md)| UUID security_exclusion_id |
 
 ### Return type
@@ -954,7 +954,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\SecuritiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$security_price = new \com\hydrogen\nucleus\Model\SecurityPrice(); // \com\hydrogen\nucleus\Model\SecurityPrice | security_price
+$security_price = new \stdClass; // object | security_price
 $security_price_id = "security_price_id_example"; // string | UUID security_price_id
 
 try {
@@ -970,7 +970,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **security_price** | [**\com\hydrogen\nucleus\Model\SecurityPrice**](../Model/SecurityPrice.md)| security_price |
+ **security_price** | **object**| security_price |
  **security_price_id** | [**string**](../Model/.md)| UUID security_price_id |
 
 ### Return type
@@ -1023,7 +1023,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\SecuritiesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$security = new \com\hydrogen\nucleus\Model\Security(); // \com\hydrogen\nucleus\Model\Security | security
+$security = new \stdClass; // object | security
 $security_id = "security_id_example"; // string | UUID security_id
 
 try {
@@ -1039,7 +1039,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **security** | [**\com\hydrogen\nucleus\Model\Security**](../Model/Security.md)| security |
+ **security** | **object**| security |
  **security_id** | [**string**](../Model/.md)| UUID security_id |
 
 ### Return type

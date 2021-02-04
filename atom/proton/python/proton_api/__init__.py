@@ -18,6 +18,7 @@ from __future__ import absolute_import
 # import apis into sdk package
 from proton_api.api.annuities_api import AnnuitiesApi
 from proton_api.api.business_financial_management_api import BusinessFinancialManagementApi
+from proton_api.api.cards_api import CardsApi
 from proton_api.api.financial_health_api import FinancialHealthApi
 from proton_api.api.financial_planning_api import FinancialPlanningApi
 from proton_api.api.goals_api import GoalsApi
@@ -28,6 +29,7 @@ from proton_api.api.portfolio_management_api import PortfolioManagementApi
 from proton_api.api.risk_scoring_api import RiskScoringApi
 from proton_api.api.simulations_api import SimulationsApi
 from proton_api.auth_api import AuthApi
+
 # import ApiClient
 from proton_api.api_client import ApiClient
 from proton_api.configuration import Configuration
@@ -49,6 +51,8 @@ from proton_api.models.business_financial_health_check_request import BusinessFi
 from proton_api.models.business_invoice_analysis_request import BusinessInvoiceAnalysisRequest
 from proton_api.models.calculator_deposit_schedule import CalculatorDepositSchedule
 from proton_api.models.calculator_deposit_schedule1 import CalculatorDepositSchedule1
+from proton_api.models.card_limit_check_request import CardLimitCheckRequest
+from proton_api.models.card_transaction_authorization_request import CardTransactionAuthorizationRequest
 from proton_api.models.cash_analysis_request import CashAnalysisRequest
 from proton_api.models.cash_flow_analysis_request import CashFlowAnalysisRequest
 from proton_api.models.children_education_config import ChildrenEducationConfig

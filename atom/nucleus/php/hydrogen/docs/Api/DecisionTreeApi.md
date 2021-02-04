@@ -951,7 +951,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\DecisionTreeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$decision_tree = new \com\hydrogen\nucleus\Model\DecisionTree(); // \com\hydrogen\nucleus\Model\DecisionTree | decision_tree
+$decision_tree = new \stdClass; // object | decision_tree
 $decision_tree_id = "decision_tree_id_example"; // string | UUID decision_tree_id
 
 try {
@@ -967,7 +967,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **decision_tree** | [**\com\hydrogen\nucleus\Model\DecisionTree**](../Model/DecisionTree.md)| decision_tree |
+ **decision_tree** | **object**| decision_tree |
  **decision_tree_id** | [**string**](../Model/.md)| UUID decision_tree_id |
 
 ### Return type
@@ -1020,7 +1020,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\DecisionTreeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$json_node = new \com\hydrogen\nucleus\Model\JsonNode(); // \com\hydrogen\nucleus\Model\JsonNode | jsonNode
+$json_node = new \stdClass; // object | jsonNode
 $node_relationship_id = "node_relationship_id_example"; // string | UUID node_relationship_id
 
 try {
@@ -1036,7 +1036,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **json_node** | [**\com\hydrogen\nucleus\Model\JsonNode**](../Model/JsonNode.md)| jsonNode |
+ **json_node** | **object**| jsonNode |
  **node_relationship_id** | [**string**](../Model/.md)| UUID node_relationship_id |
 
 ### Return type
@@ -1089,7 +1089,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\DecisionTreeApi(
     new GuzzleHttp\Client(),
     $config
 );
-$json_node = new \com\hydrogen\nucleus\Model\JsonNode(); // \com\hydrogen\nucleus\Model\JsonNode | jsonNode
+$json_node = new \stdClass; // object | jsonNode
 $node_id = "node_id_example"; // string | UUID node_id
 
 try {
@@ -1105,7 +1105,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **json_node** | [**\com\hydrogen\nucleus\Model\JsonNode**](../Model/JsonNode.md)| jsonNode |
+ **json_node** | **object**| jsonNode |
  **node_id** | [**string**](../Model/.md)| UUID node_id |
 
 ### Return type

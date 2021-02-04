@@ -18,14 +18,12 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModelProperty;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 /**
  * CardPinRequestCO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class CardPinRequestCO {
   @SerializedName("nucleus_card_id")
   private UUID nucleusCardId = null;
@@ -37,7 +35,7 @@ public class CardPinRequestCO {
   private String reason = null;
 
   @SerializedName("vendor_request")
-  private Map<String, String> vendorRequest = null;
+  private Object vendorRequest = null;
 
   public CardPinRequestCO nucleusCardId(UUID nucleusCardId) {
     this.nucleusCardId = nucleusCardId;
@@ -93,16 +91,8 @@ public class CardPinRequestCO {
     this.reason = reason;
   }
 
-  public CardPinRequestCO vendorRequest(Map<String, String> vendorRequest) {
+  public CardPinRequestCO vendorRequest(Object vendorRequest) {
     this.vendorRequest = vendorRequest;
-    return this;
-  }
-
-  public CardPinRequestCO putVendorRequestItem(String key, String vendorRequestItem) {
-    if (this.vendorRequest == null) {
-      this.vendorRequest = new HashMap<String, String>();
-    }
-    this.vendorRequest.put(key, vendorRequestItem);
     return this;
   }
 
@@ -111,11 +101,11 @@ public class CardPinRequestCO {
    * @return vendorRequest
   **/
   @ApiModelProperty(value = "")
-  public Map<String, String> getVendorRequest() {
+  public Object getVendorRequest() {
     return vendorRequest;
   }
 
-  public void setVendorRequest(Map<String, String> vendorRequest) {
+  public void setVendorRequest(Object vendorRequest) {
     this.vendorRequest = vendorRequest;
   }
 

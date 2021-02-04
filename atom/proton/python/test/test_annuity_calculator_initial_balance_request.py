@@ -32,7 +32,7 @@ class TestAnnuityCalculatorInitialBalanceRequest(unittest.TestCase):
     def testAnnuityCalculatorInitialBalanceRequest(self):
         """Test AnnuityCalculatorInitialBalanceRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.annuity_calculator_initial_balance_request.AnnuityCalculatorInitialBalanceRequest()  # noqa: E501
+        # model = proton_api.models.annuity_calculator_initial_balance_request.AnnuityCalculatorInitialBalanceRequest()  # noqa: E501
         pass
 
 

@@ -4,21 +4,23 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_fx_rate_bulk_using_post**](ResourceApi.md#create_fx_rate_bulk_using_post) | **POST** /resource/fx_rate | Create a bulk fxRate
+[**get_aggregation_account_category_mapping_using_get**](ResourceApi.md#get_aggregation_account_category_mapping_using_get) | **GET** /resource/account_category | Get All Aggregation Account Category mapping
+[**get_aggregation_account_transaction_category_mapping_using_get**](ResourceApi.md#get_aggregation_account_transaction_category_mapping_using_get) | **GET** /resource/merchant_category | Get All Aggregation Account Transaction Category mapping
 [**get_all_country_using_get**](ResourceApi.md#get_all_country_using_get) | **GET** /resource/country | Get All Countries
 [**get_all_currency_using_get**](ResourceApi.md#get_all_currency_using_get) | **GET** /resource/currency | Get All Currencies
 [**get_all_merchant_category_code_using_get**](ResourceApi.md#get_all_merchant_category_code_using_get) | **GET** /resource/merchant_category_code | Get All Merchant Category Codes
 [**get_all_states_using_get**](ResourceApi.md#get_all_states_using_get) | **GET** /resource/state | List all state resource
 [**get_all_statistics_using_get**](ResourceApi.md#get_all_statistics_using_get) | **GET** /resource/statistic | List all statistic resource
 [**get_currency_exchange_rate_all_using_get**](ResourceApi.md#get_currency_exchange_rate_all_using_get) | **GET** /resource/fx_rate | List all fxRates
+[**get_merchants_all_using_get**](ResourceApi.md#get_merchants_all_using_get) | **GET** /resource/merchant | Get all merchants
 
 
-# **create_fx_rate_bulk_using_post**
-> Array&lt;FxRate&gt; create_fx_rate_bulk_using_post(fx_rate_list)
+# **get_aggregation_account_category_mapping_using_get**
+> Array&lt;CategoryResponseVO&gt; get_aggregation_account_category_mapping_using_get(opts)
 
-Create a bulk fxRate
+Get All Aggregation Account Category mapping
 
-Create a bulk fxRate.
+Get All Aggregation Account Category mapping.
 
 ### Example
 ```ruby
@@ -37,15 +39,18 @@ end
 
 api_instance = NucleusApi::ResourceApi.new
 
-fx_rate_list = [NucleusApi::FxRate.new] # Array<FxRate> | fxRateList
-
+opts = { 
+  categories: 'categories_example', # String | categories
+  tenant_name: 'tenant_name_example', # String | tenant_name
+  vendor_name: 'vendor_name_example' # String | vendor_name
+}
 
 begin
-  #Create a bulk fxRate
-  result = api_instance.create_fx_rate_bulk_using_post(fx_rate_list)
+  #Get All Aggregation Account Category mapping
+  result = api_instance.get_aggregation_account_category_mapping_using_get(opts)
   p result
 rescue NucleusApi::ApiError => e
-  puts "Exception when calling ResourceApi->create_fx_rate_bulk_using_post: #{e}"
+  puts "Exception when calling ResourceApi->get_aggregation_account_category_mapping_using_get: #{e}"
 end
 ```
 
@@ -53,11 +58,13 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fx_rate_list** | [**Array&lt;FxRate&gt;**](FxRate.md)| fxRateList | 
+ **categories** | **String**| categories | [optional] 
+ **tenant_name** | **String**| tenant_name | [optional] 
+ **vendor_name** | **String**| vendor_name | [optional] 
 
 ### Return type
 
-[**Array&lt;FxRate&gt;**](FxRate.md)
+[**Array&lt;CategoryResponseVO&gt;**](CategoryResponseVO.md)
 
 ### Authorization
 
@@ -65,8 +72,70 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: */*
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+
+# **get_aggregation_account_transaction_category_mapping_using_get**
+> Array&lt;CategoryResponseVO&gt; get_aggregation_account_transaction_category_mapping_using_get(opts)
+
+Get All Aggregation Account Transaction Category mapping
+
+Get All Aggregation Account Transaction Category mapping.
+
+### Example
+```ruby
+# load the gem
+require 'nucleus_api'
+# Setup authorization
+NucleusApi.configure do |config|
+# Use one of the below method to generate oauth token        
+# Creating a token for grant_type=client_credentials
+ config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+# Creating a token for grant_type=password
+ config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
+end
+
+api_instance = NucleusApi::ResourceApi.new
+
+opts = { 
+  categories: 'categories_example', # String | categories
+  tenant_name: 'tenant_name_example', # String | tenant_name
+  vendor_name: 'vendor_name_example' # String | vendor_name
+}
+
+begin
+  #Get All Aggregation Account Transaction Category mapping
+  result = api_instance.get_aggregation_account_transaction_category_mapping_using_get(opts)
+  p result
+rescue NucleusApi::ApiError => e
+  puts "Exception when calling ResourceApi->get_aggregation_account_transaction_category_mapping_using_get: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categories** | **String**| categories | [optional] 
+ **tenant_name** | **String**| tenant_name | [optional] 
+ **vendor_name** | **String**| vendor_name | [optional] 
+
+### Return type
+
+[**Array&lt;CategoryResponseVO&gt;**](CategoryResponseVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 
@@ -173,7 +242,7 @@ This endpoint does not need any parameter.
 
 
 # **get_all_merchant_category_code_using_get**
-> Array&lt;MerchantCategoryCode&gt; get_all_merchant_category_code_using_get
+> Array&lt;MerchantCategoryCode&gt; get_all_merchant_category_code_using_get(opts)
 
 Get All Merchant Category Codes
 
@@ -196,9 +265,13 @@ end
 
 api_instance = NucleusApi::ResourceApi.new
 
+opts = { 
+  filter: 'filter_example' # String | filter
+}
+
 begin
   #Get All Merchant Category Codes
-  result = api_instance.get_all_merchant_category_code_using_get
+  result = api_instance.get_all_merchant_category_code_using_get(opts)
   p result
 rescue NucleusApi::ApiError => e
   puts "Exception when calling ResourceApi->get_all_merchant_category_code_using_get: #{e}"
@@ -206,7 +279,10 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **String**| filter | [optional] 
 
 ### Return type
 
@@ -378,6 +454,72 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Array&lt;FxRateView&gt;**](FxRateView.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+
+
+# **get_merchants_all_using_get**
+> MXMerchantRes get_merchants_all_using_get(opts)
+
+Get all merchants
+
+List all merchants.
+
+### Example
+```ruby
+# load the gem
+require 'nucleus_api'
+# Setup authorization
+NucleusApi.configure do |config|
+# Use one of the below method to generate oauth token        
+# Creating a token for grant_type=client_credentials
+ config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+# Creating a token for grant_type=password
+ config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
+end
+
+api_instance = NucleusApi::ResourceApi.new
+
+opts = { 
+  ascending: false, # BOOLEAN | ascending
+  filter: 'filter_example', # String | filter
+  order_by: 'id', # String | order_by
+  page: 0, # Integer | page
+  size: 25 # Integer | size
+}
+
+begin
+  #Get all merchants
+  result = api_instance.get_merchants_all_using_get(opts)
+  p result
+rescue NucleusApi::ApiError => e
+  puts "Exception when calling ResourceApi->get_merchants_all_using_get: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ascending** | **BOOLEAN**| ascending | [optional] [default to false]
+ **filter** | **String**| filter | [optional] 
+ **order_by** | **String**| order_by | [optional] [default to id]
+ **page** | **Integer**| page | [optional] [default to 0]
+ **size** | **Integer**| size | [optional] [default to 25]
+
+### Return type
+
+[**MXMerchantRes**](MXMerchantRes.md)
 
 ### Authorization
 

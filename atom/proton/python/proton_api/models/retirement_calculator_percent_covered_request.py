@@ -31,166 +31,139 @@ class RetirementCalculatorPercentCoveredRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'inflation_rate': 'float',
-        'current_age': 'int',
-        'deposit_schedule': 'CalculatorDepositSchedule1',
-        'portfolio_return': 'float',
-        'retirement_income': 'float',
+        'retirement_savings': 'float',
         'aggregation_account_ids': 'list[str]',
-        'retirement_expenses': 'float',
-        'retirement_tax': 'float',
-        'account_ids': 'list[str]',
         'retirement_age': 'int',
+        'retirement_income': 'float',
+        'retirement_expenses': 'float',
+        'current_age': 'int',
+        'account_ids': 'list[str]',
+        'retirement_tax': 'float',
+        'inflation_rate': 'float',
         'death_age': 'int',
-        'retirement_savings': 'float'
+        'portfolio_return': 'float',
+        'deposit_schedule': 'CalculatorDepositSchedule1'
     }
 
     attribute_map = {
-        'inflation_rate': 'inflation_rate',
-        'current_age': 'current_age',
-        'deposit_schedule': 'deposit_schedule',
-        'portfolio_return': 'portfolio_return',
-        'retirement_income': 'retirement_income',
+        'retirement_savings': 'retirement_savings',
         'aggregation_account_ids': 'aggregation_account_ids',
-        'retirement_expenses': 'retirement_expenses',
-        'retirement_tax': 'retirement_tax',
-        'account_ids': 'account_ids',
         'retirement_age': 'retirement_age',
+        'retirement_income': 'retirement_income',
+        'retirement_expenses': 'retirement_expenses',
+        'current_age': 'current_age',
+        'account_ids': 'account_ids',
+        'retirement_tax': 'retirement_tax',
+        'inflation_rate': 'inflation_rate',
         'death_age': 'death_age',
-        'retirement_savings': 'retirement_savings'
+        'portfolio_return': 'portfolio_return',
+        'deposit_schedule': 'deposit_schedule'
     }
 
-    def __init__(self, inflation_rate=0.0, current_age=None, deposit_schedule=None, portfolio_return=None, retirement_income=0.0, aggregation_account_ids=None, retirement_expenses=None, retirement_tax=0.0, account_ids=None, retirement_age=65, death_age=None, retirement_savings=0.0):  # noqa: E501
+    def __init__(self, retirement_savings=0.0, aggregation_account_ids=None, retirement_age=65, retirement_income=0.0, retirement_expenses=None, current_age=None, account_ids=None, retirement_tax=0.0, inflation_rate=0.0, death_age=None, portfolio_return=None, deposit_schedule=None):  # noqa: E501
         """RetirementCalculatorPercentCoveredRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._inflation_rate = None
-        self._current_age = None
-        self._deposit_schedule = None
-        self._portfolio_return = None
-        self._retirement_income = None
-        self._aggregation_account_ids = None
-        self._retirement_expenses = None
-        self._retirement_tax = None
-        self._account_ids = None
-        self._retirement_age = None
-        self._death_age = None
         self._retirement_savings = None
+        self._aggregation_account_ids = None
+        self._retirement_age = None
+        self._retirement_income = None
+        self._retirement_expenses = None
+        self._current_age = None
+        self._account_ids = None
+        self._retirement_tax = None
+        self._inflation_rate = None
+        self._death_age = None
+        self._portfolio_return = None
+        self._deposit_schedule = None
         self.discriminator = None
 
-        if inflation_rate is not None:
-            self.inflation_rate = inflation_rate
-        self.current_age = current_age
-        if deposit_schedule is not None:
-            self.deposit_schedule = deposit_schedule
-        self.portfolio_return = portfolio_return
-        if retirement_income is not None:
-            self.retirement_income = retirement_income
-        if aggregation_account_ids is not None:
-            self.aggregation_account_ids = aggregation_account_ids
-        self.retirement_expenses = retirement_expenses
-        if retirement_tax is not None:
-            self.retirement_tax = retirement_tax
-        if account_ids is not None:
-            self.account_ids = account_ids
-        if retirement_age is not None:
-            self.retirement_age = retirement_age
-        self.death_age = death_age
         if retirement_savings is not None:
             self.retirement_savings = retirement_savings
+        if aggregation_account_ids is not None:
+            self.aggregation_account_ids = aggregation_account_ids
+        if retirement_age is not None:
+            self.retirement_age = retirement_age
+        if retirement_income is not None:
+            self.retirement_income = retirement_income
+        self.retirement_expenses = retirement_expenses
+        self.current_age = current_age
+        if account_ids is not None:
+            self.account_ids = account_ids
+        if retirement_tax is not None:
+            self.retirement_tax = retirement_tax
+        if inflation_rate is not None:
+            self.inflation_rate = inflation_rate
+        self.death_age = death_age
+        self.portfolio_return = portfolio_return
+        if deposit_schedule is not None:
+            self.deposit_schedule = deposit_schedule
 
     @property
-    def inflation_rate(self):
-        """Gets the inflation_rate of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+    def retirement_savings(self):
+        """Gets the retirement_savings of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
 
 
-        :return: The inflation_rate of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+        :return: The retirement_savings of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
         :rtype: float
         """
-        return self._inflation_rate
+        return self._retirement_savings
 
-    @inflation_rate.setter
-    def inflation_rate(self, inflation_rate):
-        """Sets the inflation_rate of this RetirementCalculatorPercentCoveredRequest.
+    @retirement_savings.setter
+    def retirement_savings(self, retirement_savings):
+        """Sets the retirement_savings of this RetirementCalculatorPercentCoveredRequest.
 
 
-        :param inflation_rate: The inflation_rate of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+        :param retirement_savings: The retirement_savings of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
         :type: float
         """
-        if inflation_rate is not None and inflation_rate < -1:  # noqa: E501
-            raise ValueError("Invalid value for `inflation_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
+        if retirement_savings is not None and retirement_savings < 0:  # noqa: E501
+            raise ValueError("Invalid value for `retirement_savings`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._inflation_rate = inflation_rate
+        self._retirement_savings = retirement_savings
 
     @property
-    def current_age(self):
-        """Gets the current_age of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+    def aggregation_account_ids(self):
+        """Gets the aggregation_account_ids of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
 
 
-        :return: The current_age of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+        :return: The aggregation_account_ids of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._aggregation_account_ids
+
+    @aggregation_account_ids.setter
+    def aggregation_account_ids(self, aggregation_account_ids):
+        """Sets the aggregation_account_ids of this RetirementCalculatorPercentCoveredRequest.
+
+
+        :param aggregation_account_ids: The aggregation_account_ids of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._aggregation_account_ids = aggregation_account_ids
+
+    @property
+    def retirement_age(self):
+        """Gets the retirement_age of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+
+
+        :return: The retirement_age of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
         :rtype: int
         """
-        return self._current_age
+        return self._retirement_age
 
-    @current_age.setter
-    def current_age(self, current_age):
-        """Sets the current_age of this RetirementCalculatorPercentCoveredRequest.
+    @retirement_age.setter
+    def retirement_age(self, retirement_age):
+        """Sets the retirement_age of this RetirementCalculatorPercentCoveredRequest.
 
 
-        :param current_age: The current_age of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+        :param retirement_age: The retirement_age of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
         :type: int
         """
-        if current_age is None:
-            raise ValueError("Invalid value for `current_age`, must not be `None`")  # noqa: E501
-        if current_age is not None and current_age < 0:  # noqa: E501
-            raise ValueError("Invalid value for `current_age`, must be a value greater than or equal to `0`")  # noqa: E501
+        if retirement_age is not None and retirement_age < 0:  # noqa: E501
+            raise ValueError("Invalid value for `retirement_age`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._current_age = current_age
-
-    @property
-    def deposit_schedule(self):
-        """Gets the deposit_schedule of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
-
-
-        :return: The deposit_schedule of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
-        :rtype: CalculatorDepositSchedule1
-        """
-        return self._deposit_schedule
-
-    @deposit_schedule.setter
-    def deposit_schedule(self, deposit_schedule):
-        """Sets the deposit_schedule of this RetirementCalculatorPercentCoveredRequest.
-
-
-        :param deposit_schedule: The deposit_schedule of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
-        :type: CalculatorDepositSchedule1
-        """
-
-        self._deposit_schedule = deposit_schedule
-
-    @property
-    def portfolio_return(self):
-        """Gets the portfolio_return of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
-
-
-        :return: The portfolio_return of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._portfolio_return
-
-    @portfolio_return.setter
-    def portfolio_return(self, portfolio_return):
-        """Sets the portfolio_return of this RetirementCalculatorPercentCoveredRequest.
-
-
-        :param portfolio_return: The portfolio_return of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
-        :type: float
-        """
-        if portfolio_return is None:
-            raise ValueError("Invalid value for `portfolio_return`, must not be `None`")  # noqa: E501
-        if portfolio_return is not None and portfolio_return < -1:  # noqa: E501
-            raise ValueError("Invalid value for `portfolio_return`, must be a value greater than or equal to `-1`")  # noqa: E501
-
-        self._portfolio_return = portfolio_return
+        self._retirement_age = retirement_age
 
     @property
     def retirement_income(self):
@@ -214,27 +187,6 @@ class RetirementCalculatorPercentCoveredRequest(object):
             raise ValueError("Invalid value for `retirement_income`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._retirement_income = retirement_income
-
-    @property
-    def aggregation_account_ids(self):
-        """Gets the aggregation_account_ids of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
-
-
-        :return: The aggregation_account_ids of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._aggregation_account_ids
-
-    @aggregation_account_ids.setter
-    def aggregation_account_ids(self, aggregation_account_ids):
-        """Sets the aggregation_account_ids of this RetirementCalculatorPercentCoveredRequest.
-
-
-        :param aggregation_account_ids: The aggregation_account_ids of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._aggregation_account_ids = aggregation_account_ids
 
     @property
     def retirement_expenses(self):
@@ -262,6 +214,52 @@ class RetirementCalculatorPercentCoveredRequest(object):
         self._retirement_expenses = retirement_expenses
 
     @property
+    def current_age(self):
+        """Gets the current_age of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+
+
+        :return: The current_age of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._current_age
+
+    @current_age.setter
+    def current_age(self, current_age):
+        """Sets the current_age of this RetirementCalculatorPercentCoveredRequest.
+
+
+        :param current_age: The current_age of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+        :type: int
+        """
+        if current_age is None:
+            raise ValueError("Invalid value for `current_age`, must not be `None`")  # noqa: E501
+        if current_age is not None and current_age < 0:  # noqa: E501
+            raise ValueError("Invalid value for `current_age`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._current_age = current_age
+
+    @property
+    def account_ids(self):
+        """Gets the account_ids of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+
+
+        :return: The account_ids of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._account_ids
+
+    @account_ids.setter
+    def account_ids(self, account_ids):
+        """Sets the account_ids of this RetirementCalculatorPercentCoveredRequest.
+
+
+        :param account_ids: The account_ids of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._account_ids = account_ids
+
+    @property
     def retirement_tax(self):
         """Gets the retirement_tax of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
 
@@ -287,48 +285,27 @@ class RetirementCalculatorPercentCoveredRequest(object):
         self._retirement_tax = retirement_tax
 
     @property
-    def account_ids(self):
-        """Gets the account_ids of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+    def inflation_rate(self):
+        """Gets the inflation_rate of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
 
 
-        :return: The account_ids of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
-        :rtype: list[str]
+        :return: The inflation_rate of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+        :rtype: float
         """
-        return self._account_ids
+        return self._inflation_rate
 
-    @account_ids.setter
-    def account_ids(self, account_ids):
-        """Sets the account_ids of this RetirementCalculatorPercentCoveredRequest.
+    @inflation_rate.setter
+    def inflation_rate(self, inflation_rate):
+        """Sets the inflation_rate of this RetirementCalculatorPercentCoveredRequest.
 
 
-        :param account_ids: The account_ids of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
-        :type: list[str]
+        :param inflation_rate: The inflation_rate of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+        :type: float
         """
+        if inflation_rate is not None and inflation_rate < -1:  # noqa: E501
+            raise ValueError("Invalid value for `inflation_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
 
-        self._account_ids = account_ids
-
-    @property
-    def retirement_age(self):
-        """Gets the retirement_age of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
-
-
-        :return: The retirement_age of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._retirement_age
-
-    @retirement_age.setter
-    def retirement_age(self, retirement_age):
-        """Sets the retirement_age of this RetirementCalculatorPercentCoveredRequest.
-
-
-        :param retirement_age: The retirement_age of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
-        :type: int
-        """
-        if retirement_age is not None and retirement_age < 0:  # noqa: E501
-            raise ValueError("Invalid value for `retirement_age`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._retirement_age = retirement_age
+        self._inflation_rate = inflation_rate
 
     @property
     def death_age(self):
@@ -356,27 +333,50 @@ class RetirementCalculatorPercentCoveredRequest(object):
         self._death_age = death_age
 
     @property
-    def retirement_savings(self):
-        """Gets the retirement_savings of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+    def portfolio_return(self):
+        """Gets the portfolio_return of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
 
 
-        :return: The retirement_savings of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+        :return: The portfolio_return of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
         :rtype: float
         """
-        return self._retirement_savings
+        return self._portfolio_return
 
-    @retirement_savings.setter
-    def retirement_savings(self, retirement_savings):
-        """Sets the retirement_savings of this RetirementCalculatorPercentCoveredRequest.
+    @portfolio_return.setter
+    def portfolio_return(self, portfolio_return):
+        """Sets the portfolio_return of this RetirementCalculatorPercentCoveredRequest.
 
 
-        :param retirement_savings: The retirement_savings of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+        :param portfolio_return: The portfolio_return of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
         :type: float
         """
-        if retirement_savings is not None and retirement_savings < 0:  # noqa: E501
-            raise ValueError("Invalid value for `retirement_savings`, must be a value greater than or equal to `0`")  # noqa: E501
+        if portfolio_return is None:
+            raise ValueError("Invalid value for `portfolio_return`, must not be `None`")  # noqa: E501
+        if portfolio_return is not None and portfolio_return < -1:  # noqa: E501
+            raise ValueError("Invalid value for `portfolio_return`, must be a value greater than or equal to `-1`")  # noqa: E501
 
-        self._retirement_savings = retirement_savings
+        self._portfolio_return = portfolio_return
+
+    @property
+    def deposit_schedule(self):
+        """Gets the deposit_schedule of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+
+
+        :return: The deposit_schedule of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+        :rtype: CalculatorDepositSchedule1
+        """
+        return self._deposit_schedule
+
+    @deposit_schedule.setter
+    def deposit_schedule(self, deposit_schedule):
+        """Sets the deposit_schedule of this RetirementCalculatorPercentCoveredRequest.
+
+
+        :param deposit_schedule: The deposit_schedule of this RetirementCalculatorPercentCoveredRequest.  # noqa: E501
+        :type: CalculatorDepositSchedule1
+        """
+
+        self._deposit_schedule = deposit_schedule
 
     def to_dict(self):
         """Returns the model properties as a dict"""

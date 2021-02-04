@@ -23,7 +23,7 @@ import java.util.UUID;
 /**
  * IavRequestCO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class IavRequestCO {
   @SerializedName("auth_token")
   private String authToken = null;
@@ -181,14 +181,14 @@ public class IavRequestCO {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    IavRequestCO IavRequestCO = (IavRequestCO) o;
-    return Objects.equals(this.authToken, IavRequestCO.authToken) &&
-        Objects.equals(this.isCash, IavRequestCO.isCash) &&
-        Objects.equals(this.nucleusAccountId, IavRequestCO.nucleusAccountId) &&
-        Objects.equals(this.nucleusClientId, IavRequestCO.nucleusClientId) &&
-        Objects.equals(this.nucleusTransferFields, IavRequestCO.nucleusTransferFields) &&
-        Objects.equals(this.product, IavRequestCO.product) &&
-        Objects.equals(this.vendorRequest, IavRequestCO.vendorRequest);
+    IavRequestCO iavRequestCO = (IavRequestCO) o;
+    return Objects.equals(this.authToken, iavRequestCO.authToken) &&
+        Objects.equals(this.isCash, iavRequestCO.isCash) &&
+        Objects.equals(this.nucleusAccountId, iavRequestCO.nucleusAccountId) &&
+        Objects.equals(this.nucleusClientId, iavRequestCO.nucleusClientId) &&
+        Objects.equals(this.nucleusTransferFields, iavRequestCO.nucleusTransferFields) &&
+        Objects.equals(this.product, iavRequestCO.product) &&
+        Objects.equals(this.vendorRequest, iavRequestCO.vendorRequest);
   }
 
   @Override

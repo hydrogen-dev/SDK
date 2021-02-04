@@ -18,7 +18,7 @@ import com.hydrogen.nucleus.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-12T11:03:26.704Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-28T16:21:02.928Z")
 public class ApiKeyAuth implements Authentication {
   private final String location;
   private final String paramName;

@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **string** | accountId | [optional] 
+**business_id** | **string** | businessId | [optional] 
 **client_id** | **string** | clientId | [optional] 
 **country_of_issue** | **string** | country_of_issue | [optional] 
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
@@ -17,6 +18,7 @@ Name | Type | Description | Notes
 **expiry_date** | [**\DateTime**](\DateTime.md) | expiry_date | [optional] 
 **id** | **string** |  | [optional] 
 **is_active** | **bool** | is_active | [optional] 
+**is_sensitive** | **bool** | is_sensitive | [optional] 
 **is_verified** | **bool** | is_verified | [optional] 
 **issue_date** | [**\DateTime**](\DateTime.md) | issue_date | [optional] 
 **metadata** | **map[string,string]** | metadata | [optional] 

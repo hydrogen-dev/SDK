@@ -312,8 +312,8 @@ class AggregationAccountTransaction(object):
         :param is_fee: The is_fee of this AggregationAccountTransaction.  # noqa: E501
         :type: str
         """
-        allowed_values = ["FALSE", "TRUE", "NULL"]  # noqa: E501
-        if is_fee is not None and is_fee.upper() not in allowed_values:
+        allowed_values = ["true", "false", "null"]  # noqa: E501
+        if is_fee not in allowed_values:
             raise ValueError(
                 "Invalid value for `is_fee` ({0}), must be one of {1}"  # noqa: E501
                 .format(is_fee, allowed_values)
@@ -360,8 +360,8 @@ class AggregationAccountTransaction(object):
         :param is_transfer: The is_transfer of this AggregationAccountTransaction.  # noqa: E501
         :type: str
         """
-        allowed_values = ["FALSE", "TRUE", "NULL"]  # noqa: E501
-        if is_transfer is not None and is_transfer.upper() not in allowed_values:
+        allowed_values = ["true", "false", "null"]  # noqa: E501
+        if is_transfer not in allowed_values:
             raise ValueError(
                 "Invalid value for `is_transfer` ({0}), must be one of {1}"  # noqa: E501
                 .format(is_transfer, allowed_values)

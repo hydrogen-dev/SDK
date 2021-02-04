@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**depositAmount** | **Number** |  | [optional] [default to 0.0]
 **adjustDepositForInflation** | **Boolean** |  | [optional] [default to true]
 **depositFrequencyInterval** | **String** |  | [optional] [default to 'year']
+**depositAmount** | **Number** |  | [optional] [default to 0.0]
 
 
 <a name="DepositFrequencyIntervalEnum"></a>

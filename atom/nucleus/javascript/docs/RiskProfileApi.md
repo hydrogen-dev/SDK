@@ -81,7 +81,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.RiskProfileApi();
 
-var riskProfileId = "1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c"; // String | UUID risk_profile_id
+var riskProfileId = "\"1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c\""; // String | UUID risk_profile_id
 
 
 var callback = function(error, data, response) {
@@ -98,7 +98,7 @@ apiInstance.deleteRiskProfileUsingDelete(riskProfileId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **riskProfileId** | **String**| UUID risk_profile_id | 
+ **riskProfileId** | [**String**](.md)| UUID risk_profile_id | 
 
 ### Return type
 
@@ -192,7 +192,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.RiskProfileApi();
 
-var riskProfileId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID risk_profile_id
+var riskProfileId = "\"62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d\""; // String | UUID risk_profile_id
 
 
 var callback = function(error, data, response) {
@@ -209,7 +209,7 @@ apiInstance.getRiskProfileUsingGet(riskProfileId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **riskProfileId** | **String**| UUID risk_profile_id | 
+ **riskProfileId** | [**String**](.md)| UUID risk_profile_id | 
 
 ### Return type
 
@@ -243,9 +243,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.RiskProfileApi();
 
-var riskProfile = new HydrogenNucleusApi.RiskProfile(); // RiskProfile | risk_profile
+var riskProfile = null; // Object | risk_profile
 
-var riskProfileId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID risk_profile_id
+var riskProfileId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID risk_profile_id
 
 
 var callback = function(error, data, response) {
@@ -262,8 +262,8 @@ apiInstance.updateRiskProfileUsingPut(riskProfile, riskProfileId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **riskProfile** | [**RiskProfile**](RiskProfile.md)| risk_profile | 
- **riskProfileId** | **String**| UUID risk_profile_id | 
+ **riskProfile** | **Object**| risk_profile | 
+ **riskProfileId** | [**String**](.md)| UUID risk_profile_id | 
 
 ### Return type
 

@@ -31,81 +31,123 @@ class BusinessInvoiceAnalysisRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'customer_id': 'str',
+        'end_date': 'date',
         'overdue_periods': 'list[Periods]',
-        'show_outstanding_invoices': 'bool',
-        'show_history': 'bool',
         'client_id': 'str',
-        'future_due_periods': 'list[Periods]',
+        'response_limit': 'int',
         'currency_conversion': 'str',
         'history_frequency_interval': 'str',
-        'end_date': 'date',
-        'currency_code': 'str',
         'start_date': 'date',
-        'response_limit': 'int',
+        'show_history': 'bool',
+        'currency_code': 'str',
         'invoice_ids': 'list[str]',
-        'customer_id': 'str'
+        'show_outstanding_invoices': 'bool',
+        'future_due_periods': 'list[Periods]'
     }
 
     attribute_map = {
+        'customer_id': 'customer_id',
+        'end_date': 'end_date',
         'overdue_periods': 'overdue_periods',
-        'show_outstanding_invoices': 'show_outstanding_invoices',
-        'show_history': 'show_history',
         'client_id': 'client_id',
-        'future_due_periods': 'future_due_periods',
+        'response_limit': 'response_limit',
         'currency_conversion': 'currency_conversion',
         'history_frequency_interval': 'history_frequency_interval',
-        'end_date': 'end_date',
-        'currency_code': 'currency_code',
         'start_date': 'start_date',
-        'response_limit': 'response_limit',
+        'show_history': 'show_history',
+        'currency_code': 'currency_code',
         'invoice_ids': 'invoice_ids',
-        'customer_id': 'customer_id'
+        'show_outstanding_invoices': 'show_outstanding_invoices',
+        'future_due_periods': 'future_due_periods'
     }
 
-    def __init__(self, overdue_periods=None, show_outstanding_invoices=False, show_history=False, client_id=None, future_due_periods=None, currency_conversion=None, history_frequency_interval='month', end_date=None, currency_code=None, start_date=None, response_limit=10, invoice_ids=None, customer_id=None):  # noqa: E501
+    def __init__(self, customer_id=None, end_date=None, overdue_periods=None, client_id=None, response_limit=10, currency_conversion=None, history_frequency_interval='month', start_date=None, show_history=False, currency_code=None, invoice_ids=None, show_outstanding_invoices=False, future_due_periods=None):  # noqa: E501
         """BusinessInvoiceAnalysisRequest - a model defined in Swagger"""  # noqa: E501
 
+        self._customer_id = None
+        self._end_date = None
         self._overdue_periods = None
-        self._show_outstanding_invoices = None
-        self._show_history = None
         self._client_id = None
-        self._future_due_periods = None
+        self._response_limit = None
         self._currency_conversion = None
         self._history_frequency_interval = None
-        self._end_date = None
-        self._currency_code = None
         self._start_date = None
-        self._response_limit = None
+        self._show_history = None
+        self._currency_code = None
         self._invoice_ids = None
-        self._customer_id = None
+        self._show_outstanding_invoices = None
+        self._future_due_periods = None
         self.discriminator = None
 
+        if customer_id is not None:
+            self.customer_id = customer_id
+        if end_date is not None:
+            self.end_date = end_date
         if overdue_periods is not None:
             self.overdue_periods = overdue_periods
-        if show_outstanding_invoices is not None:
-            self.show_outstanding_invoices = show_outstanding_invoices
-        if show_history is not None:
-            self.show_history = show_history
         if client_id is not None:
             self.client_id = client_id
-        if future_due_periods is not None:
-            self.future_due_periods = future_due_periods
+        if response_limit is not None:
+            self.response_limit = response_limit
         if currency_conversion is not None:
             self.currency_conversion = currency_conversion
         if history_frequency_interval is not None:
             self.history_frequency_interval = history_frequency_interval
-        if end_date is not None:
-            self.end_date = end_date
-        if currency_code is not None:
-            self.currency_code = currency_code
         if start_date is not None:
             self.start_date = start_date
-        if response_limit is not None:
-            self.response_limit = response_limit
+        if show_history is not None:
+            self.show_history = show_history
+        if currency_code is not None:
+            self.currency_code = currency_code
         if invoice_ids is not None:
             self.invoice_ids = invoice_ids
-        if customer_id is not None:
-            self.customer_id = customer_id
+        if show_outstanding_invoices is not None:
+            self.show_outstanding_invoices = show_outstanding_invoices
+        if future_due_periods is not None:
+            self.future_due_periods = future_due_periods
+
+    @property
+    def customer_id(self):
+        """Gets the customer_id of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+
+
+        :return: The customer_id of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._customer_id
+
+    @customer_id.setter
+    def customer_id(self, customer_id):
+        """Sets the customer_id of this BusinessInvoiceAnalysisRequest.
+
+
+        :param customer_id: The customer_id of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._customer_id = customer_id
+
+    @property
+    def end_date(self):
+        """Gets the end_date of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+
+
+        :return: The end_date of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+        :rtype: date
+        """
+        return self._end_date
+
+    @end_date.setter
+    def end_date(self, end_date):
+        """Sets the end_date of this BusinessInvoiceAnalysisRequest.
+
+
+        :param end_date: The end_date of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+        :type: date
+        """
+
+        self._end_date = end_date
 
     @property
     def overdue_periods(self):
@@ -129,48 +171,6 @@ class BusinessInvoiceAnalysisRequest(object):
         self._overdue_periods = overdue_periods
 
     @property
-    def show_outstanding_invoices(self):
-        """Gets the show_outstanding_invoices of this BusinessInvoiceAnalysisRequest.  # noqa: E501
-
-
-        :return: The show_outstanding_invoices of this BusinessInvoiceAnalysisRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._show_outstanding_invoices
-
-    @show_outstanding_invoices.setter
-    def show_outstanding_invoices(self, show_outstanding_invoices):
-        """Sets the show_outstanding_invoices of this BusinessInvoiceAnalysisRequest.
-
-
-        :param show_outstanding_invoices: The show_outstanding_invoices of this BusinessInvoiceAnalysisRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._show_outstanding_invoices = show_outstanding_invoices
-
-    @property
-    def show_history(self):
-        """Gets the show_history of this BusinessInvoiceAnalysisRequest.  # noqa: E501
-
-
-        :return: The show_history of this BusinessInvoiceAnalysisRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._show_history
-
-    @show_history.setter
-    def show_history(self, show_history):
-        """Sets the show_history of this BusinessInvoiceAnalysisRequest.
-
-
-        :param show_history: The show_history of this BusinessInvoiceAnalysisRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._show_history = show_history
-
-    @property
     def client_id(self):
         """Gets the client_id of this BusinessInvoiceAnalysisRequest.  # noqa: E501
 
@@ -192,25 +192,27 @@ class BusinessInvoiceAnalysisRequest(object):
         self._client_id = client_id
 
     @property
-    def future_due_periods(self):
-        """Gets the future_due_periods of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+    def response_limit(self):
+        """Gets the response_limit of this BusinessInvoiceAnalysisRequest.  # noqa: E501
 
 
-        :return: The future_due_periods of this BusinessInvoiceAnalysisRequest.  # noqa: E501
-        :rtype: list[Periods]
+        :return: The response_limit of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+        :rtype: int
         """
-        return self._future_due_periods
+        return self._response_limit
 
-    @future_due_periods.setter
-    def future_due_periods(self, future_due_periods):
-        """Sets the future_due_periods of this BusinessInvoiceAnalysisRequest.
+    @response_limit.setter
+    def response_limit(self, response_limit):
+        """Sets the response_limit of this BusinessInvoiceAnalysisRequest.
 
 
-        :param future_due_periods: The future_due_periods of this BusinessInvoiceAnalysisRequest.  # noqa: E501
-        :type: list[Periods]
+        :param response_limit: The response_limit of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+        :type: int
         """
+        if response_limit is not None and response_limit < 1:  # noqa: E501
+            raise ValueError("Invalid value for `response_limit`, must be a value greater than or equal to `1`")  # noqa: E501
 
-        self._future_due_periods = future_due_periods
+        self._response_limit = response_limit
 
     @property
     def currency_conversion(self):
@@ -261,25 +263,46 @@ class BusinessInvoiceAnalysisRequest(object):
         self._history_frequency_interval = history_frequency_interval
 
     @property
-    def end_date(self):
-        """Gets the end_date of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+    def start_date(self):
+        """Gets the start_date of this BusinessInvoiceAnalysisRequest.  # noqa: E501
 
 
-        :return: The end_date of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+        :return: The start_date of this BusinessInvoiceAnalysisRequest.  # noqa: E501
         :rtype: date
         """
-        return self._end_date
+        return self._start_date
 
-    @end_date.setter
-    def end_date(self, end_date):
-        """Sets the end_date of this BusinessInvoiceAnalysisRequest.
+    @start_date.setter
+    def start_date(self, start_date):
+        """Sets the start_date of this BusinessInvoiceAnalysisRequest.
 
 
-        :param end_date: The end_date of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+        :param start_date: The start_date of this BusinessInvoiceAnalysisRequest.  # noqa: E501
         :type: date
         """
 
-        self._end_date = end_date
+        self._start_date = start_date
+
+    @property
+    def show_history(self):
+        """Gets the show_history of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+
+
+        :return: The show_history of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._show_history
+
+    @show_history.setter
+    def show_history(self, show_history):
+        """Sets the show_history of this BusinessInvoiceAnalysisRequest.
+
+
+        :param show_history: The show_history of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._show_history = show_history
 
     @property
     def currency_code(self):
@@ -303,50 +326,6 @@ class BusinessInvoiceAnalysisRequest(object):
         self._currency_code = currency_code
 
     @property
-    def start_date(self):
-        """Gets the start_date of this BusinessInvoiceAnalysisRequest.  # noqa: E501
-
-
-        :return: The start_date of this BusinessInvoiceAnalysisRequest.  # noqa: E501
-        :rtype: date
-        """
-        return self._start_date
-
-    @start_date.setter
-    def start_date(self, start_date):
-        """Sets the start_date of this BusinessInvoiceAnalysisRequest.
-
-
-        :param start_date: The start_date of this BusinessInvoiceAnalysisRequest.  # noqa: E501
-        :type: date
-        """
-
-        self._start_date = start_date
-
-    @property
-    def response_limit(self):
-        """Gets the response_limit of this BusinessInvoiceAnalysisRequest.  # noqa: E501
-
-
-        :return: The response_limit of this BusinessInvoiceAnalysisRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._response_limit
-
-    @response_limit.setter
-    def response_limit(self, response_limit):
-        """Sets the response_limit of this BusinessInvoiceAnalysisRequest.
-
-
-        :param response_limit: The response_limit of this BusinessInvoiceAnalysisRequest.  # noqa: E501
-        :type: int
-        """
-        if response_limit is not None and response_limit < 1:  # noqa: E501
-            raise ValueError("Invalid value for `response_limit`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._response_limit = response_limit
-
-    @property
     def invoice_ids(self):
         """Gets the invoice_ids of this BusinessInvoiceAnalysisRequest.  # noqa: E501
 
@@ -368,25 +347,46 @@ class BusinessInvoiceAnalysisRequest(object):
         self._invoice_ids = invoice_ids
 
     @property
-    def customer_id(self):
-        """Gets the customer_id of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+    def show_outstanding_invoices(self):
+        """Gets the show_outstanding_invoices of this BusinessInvoiceAnalysisRequest.  # noqa: E501
 
 
-        :return: The customer_id of this BusinessInvoiceAnalysisRequest.  # noqa: E501
-        :rtype: str
+        :return: The show_outstanding_invoices of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+        :rtype: bool
         """
-        return self._customer_id
+        return self._show_outstanding_invoices
 
-    @customer_id.setter
-    def customer_id(self, customer_id):
-        """Sets the customer_id of this BusinessInvoiceAnalysisRequest.
+    @show_outstanding_invoices.setter
+    def show_outstanding_invoices(self, show_outstanding_invoices):
+        """Sets the show_outstanding_invoices of this BusinessInvoiceAnalysisRequest.
 
 
-        :param customer_id: The customer_id of this BusinessInvoiceAnalysisRequest.  # noqa: E501
-        :type: str
+        :param show_outstanding_invoices: The show_outstanding_invoices of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+        :type: bool
         """
 
-        self._customer_id = customer_id
+        self._show_outstanding_invoices = show_outstanding_invoices
+
+    @property
+    def future_due_periods(self):
+        """Gets the future_due_periods of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+
+
+        :return: The future_due_periods of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+        :rtype: list[Periods]
+        """
+        return self._future_due_periods
+
+    @future_due_periods.setter
+    def future_due_periods(self, future_due_periods):
+        """Sets the future_due_periods of this BusinessInvoiceAnalysisRequest.
+
+
+        :param future_due_periods: The future_due_periods of this BusinessInvoiceAnalysisRequest.  # noqa: E501
+        :type: list[Periods]
+        """
+
+        self._future_due_periods = future_due_periods
 
     def to_dict(self):
         """Returns the model properties as a dict"""

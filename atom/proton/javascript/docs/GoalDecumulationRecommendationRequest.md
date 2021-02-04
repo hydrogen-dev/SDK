@@ -3,28 +3,39 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**goalId** | **String** |  | [optional] 
-**currInv** | **Number** |  | [optional] 
-**dHorizon** | **Number** |  | [optional] 
-**n** | **Number** |  | [optional] [default to 1000]
-**horizonFrequency** | **String** |  | [optional] [default to 'year']
-**clientId** | **String** |  | [optional] 
-**removeOutliers** | **Boolean** |  | [optional] [default to true]
-**withdrawalConfig** | [**[GoalWithdrawalConfig]**](GoalWithdrawalConfig.md) |  | [optional] 
-**aHorizon** | **Number** |  | [optional] 
-**confTgt** | **Number** |  | [optional] [default to 0.9]
-**pRet** | **[Number]** |  | 
 **threshType** | **String** |  | [optional] [default to 'perc']
-**thresh** | **Number** |  | [optional] 
-**depositConfig** | [**[DecumulationGoalDepositConfig]**](DecumulationGoalDepositConfig.md) |  | [optional] 
-**recommendationConfig** | [**RecommendationConfig1**](RecommendationConfig1.md) |  | [optional] 
+**goalId** | **String** |  | [optional] 
+**clientId** | **String** |  | [optional] 
+**confTgt** | **Number** |  | [optional] [default to 0.9]
+**removeOutliers** | **Boolean** |  | [optional] [default to true]
+**aHorizon** | **Number** |  | [optional] 
+**withdrawalConfig** | [**[GoalWithdrawalConfig]**](GoalWithdrawalConfig.md) |  | [optional] 
+**pRet** | **[Number]** |  | 
 **compoundingRate** | **Number** |  | [optional] [default to 0.0]
+**adjustForCompounding** | **Boolean** |  | [optional] [default to false]
+**depositConfig** | [**[DecumulationGoalDepositConfig]**](DecumulationGoalDepositConfig.md) |  | [optional] 
+**thresh** | **Number** |  | [optional] 
+**horizonFrequency** | **String** |  | [optional] [default to 'year']
+**recommendationConfig** | [**RecommendationConfig1**](RecommendationConfig1.md) |  | [optional] 
+**createLog** | **Boolean** |  | [optional] [default to false]
 **withdrawalTax** | **Number** |  | [optional] [default to 0.0]
 **tradingDaysPerYear** | **Number** |  | [optional] [default to 252]
-**adjustForCompounding** | **Boolean** |  | [optional] [default to false]
+**n** | **Number** |  | [optional] [default to 1000]
+**dHorizon** | **Number** |  | [optional] 
 **pRisk** | **[Number]** |  | 
-**createLog** | **Boolean** |  | [optional] [default to false]
+**currInv** | **Number** |  | [optional] 
 **recommendType** | **String** |  | [optional] [default to 'horizon']
+
+
+<a name="ThreshTypeEnum"></a>
+## Enum: ThreshTypeEnum
+
+
+* `amnt` (value: `"amnt"`)
+
+* `perc` (value: `"perc"`)
+
+
 
 
 <a name="HorizonFrequencyEnum"></a>
@@ -44,17 +55,6 @@ Name | Type | Description | Notes
 * `week` (value: `"week"`)
 
 * `day` (value: `"day"`)
-
-
-
-
-<a name="ThreshTypeEnum"></a>
-## Enum: ThreshTypeEnum
-
-
-* `amnt` (value: `"amnt"`)
-
-* `perc` (value: `"perc"`)
 
 
 

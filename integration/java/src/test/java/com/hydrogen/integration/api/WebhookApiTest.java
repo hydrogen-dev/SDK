@@ -14,10 +14,9 @@
 package com.hydrogen.integration.api;
 
 import com.hydrogen.integration.ApiException;
-import com.hydrogen.integration.model.Webhook;
 import com.hydrogen.integration.model.PageWebhook;
 import java.util.UUID;
-
+import com.hydrogen.integration.model.Webhook;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -49,7 +48,7 @@ public class WebhookApiTest {
     /**
      * Delete a webhook
      *
-     * Permanently delete a webhook for your firm. The webhook_id must be provided.
+     * Permanently delete a webhook for your business. The webhook_id must be provided.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -65,7 +64,7 @@ public class WebhookApiTest {
     /**
      * List all webhooks
      *
-     * Get information for all webhooks defined for your firm.
+     * Get information for all webhooks defined for your business.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -101,14 +100,14 @@ public class WebhookApiTest {
     /**
      * Update a webhook
      *
-     * Update a webhook for your firm. The webhook_id must be provided
+     * Update a webhook for your business. The webhook_id must be provided
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
     public void updateWebhookUsingPutTest() throws ApiException {
-        Webhook webhook = null;
+        Object webhook = null;
         UUID webhookId = null;
         Webhook response = api.updateWebhookUsingPut(webhook, webhookId);
 

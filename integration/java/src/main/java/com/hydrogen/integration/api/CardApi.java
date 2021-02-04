@@ -13,6 +13,7 @@
 
 package com.hydrogen.integration.api;
 
+import com.hydrogen.integration.model.CardReplaceResponseVO;
 import com.hydrogen.integration.ApiCallback;
 import com.hydrogen.integration.ApiClient;
 import com.hydrogen.integration.ApiException;
@@ -27,23 +28,34 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.hydrogen.integration.model.CardBaseRequestCO;
-import com.hydrogen.integration.model.CardClientRequestCO;
-import com.hydrogen.integration.model.CardReloadRequestCO;
-import com.hydrogen.integration.model.CardTransactionResponseVO;
-import com.hydrogen.integration.model.CardTransferRequestCO;
-import com.hydrogen.integration.model.CardUnloadRequestCO;
 import com.hydrogen.integration.model.BaseResponseVO;
+import com.hydrogen.integration.model.CardAutoReloadRequestCO;
+import com.hydrogen.integration.model.CardAutoReloadResponseVO;
 import com.hydrogen.integration.model.CardBalanceResponseVO;
-import com.hydrogen.integration.model.CardClientResponseVO;
+import com.hydrogen.integration.model.CardBaseRequestCO;
+import com.hydrogen.integration.model.CardBusinessRequestCO;
+import com.hydrogen.integration.model.CardClientRequestCO;
+import com.hydrogen.integration.model.CardLoadRequestCO;
+import com.hydrogen.integration.model.CardLoadUnloadResponseVO;
 import com.hydrogen.integration.model.CardPinRequestCO;
-import com.hydrogen.integration.model.CardReloadUnloadResponseVO;
+import com.hydrogen.integration.model.CardReserveAccountResponseVO;
+import com.hydrogen.integration.model.CardSpendingControlRequestCO;
+import com.hydrogen.integration.model.CardSpendingControlResponseVO;
 import com.hydrogen.integration.model.CardTokenRequestCO;
 import com.hydrogen.integration.model.CardTokenResponseVO;
-import com.hydrogen.integration.model.CardTransferResponseVO;
+import com.hydrogen.integration.model.CardTransactionResponseVO;
+import com.hydrogen.integration.model.CardUnloadRequestCO;
+import com.hydrogen.integration.model.CardUpdatePinRequestCO;
+import com.hydrogen.integration.model.CreateBusinessResponseVO;
+import com.hydrogen.integration.model.CreateCardClientResponseVO;
+import com.hydrogen.integration.model.GetCardImageResponseVO;
+import com.hydrogen.integration.model.GetCardPciDetailsResponseVO;
+import com.hydrogen.integration.model.GetCardStatementResponseVO;
 import com.hydrogen.integration.model.GetCardTokenResponseVO;
 import org.threeten.bp.LocalDate;
 import java.util.UUID;
+import com.hydrogen.integration.model.UpdateBusinessResponseVO;
+import com.hydrogen.integration.model.UpdateCardClientResponseVO;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -70,6 +82,128 @@ public class CardApi {
         this.apiClient = apiClient;
     }
 
+    /**
+     * Build call for createAutoReloadUsingPost
+     * @param request request (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call createAutoReloadUsingPostCall(CardAutoReloadRequestCO request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = request;
+
+        // create path and map variables
+        String localVarPath = "/card/auto_reload";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call createAutoReloadUsingPostValidateBeforeCall(CardAutoReloadRequestCO request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'request' is set
+        if (request == null) {
+            throw new ApiException("Missing the required parameter 'request' when calling createAutoReloadUsingPost(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = createAutoReloadUsingPostCall(request, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Card auto reload
+     * 
+     * @param request request (required)
+     * @return CardAutoReloadResponseVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CardAutoReloadResponseVO createAutoReloadUsingPost(CardAutoReloadRequestCO request) throws ApiException {
+        ApiResponse<CardAutoReloadResponseVO> resp = createAutoReloadUsingPostWithHttpInfo(request);
+        return resp.getData();
+    }
+
+    /**
+     * Card auto reload
+     * 
+     * @param request request (required)
+     * @return ApiResponse&lt;CardAutoReloadResponseVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CardAutoReloadResponseVO> createAutoReloadUsingPostWithHttpInfo(CardAutoReloadRequestCO request) throws ApiException {
+        com.squareup.okhttp.Call call = createAutoReloadUsingPostValidateBeforeCall(request, null, null);
+        Type localVarReturnType = new TypeToken<CardAutoReloadResponseVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Card auto reload (asynchronously)
+     * 
+     * @param request request (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call createAutoReloadUsingPostAsync(CardAutoReloadRequestCO request, final ApiCallback<CardAutoReloadResponseVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = createAutoReloadUsingPostValidateBeforeCall(request, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CardAutoReloadResponseVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
     /**
      * Build call for createCardActivateUsingPost
      * @param activateRequest activateRequest (required)
@@ -189,6 +323,128 @@ public class CardApi {
 
         com.squareup.okhttp.Call call = createCardActivateUsingPostValidateBeforeCall(activateRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<BaseResponseVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for createCardBusinessUsingPost
+     * @param cardBusinessRequestCO cardBusinessRequestCO (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call createCardBusinessUsingPostCall(CardBusinessRequestCO cardBusinessRequestCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = cardBusinessRequestCO;
+
+        // create path and map variables
+        String localVarPath = "/card/business";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call createCardBusinessUsingPostValidateBeforeCall(CardBusinessRequestCO cardBusinessRequestCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'cardBusinessRequestCO' is set
+        if (cardBusinessRequestCO == null) {
+            throw new ApiException("Missing the required parameter 'cardBusinessRequestCO' when calling createCardBusinessUsingPost(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = createCardBusinessUsingPostCall(cardBusinessRequestCO, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Create a card business
+     * 
+     * @param cardBusinessRequestCO cardBusinessRequestCO (required)
+     * @return CreateBusinessResponseVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CreateBusinessResponseVO createCardBusinessUsingPost(CardBusinessRequestCO cardBusinessRequestCO) throws ApiException {
+        ApiResponse<CreateBusinessResponseVO> resp = createCardBusinessUsingPostWithHttpInfo(cardBusinessRequestCO);
+        return resp.getData();
+    }
+
+    /**
+     * Create a card business
+     * 
+     * @param cardBusinessRequestCO cardBusinessRequestCO (required)
+     * @return ApiResponse&lt;CreateBusinessResponseVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CreateBusinessResponseVO> createCardBusinessUsingPostWithHttpInfo(CardBusinessRequestCO cardBusinessRequestCO) throws ApiException {
+        com.squareup.okhttp.Call call = createCardBusinessUsingPostValidateBeforeCall(cardBusinessRequestCO, null, null);
+        Type localVarReturnType = new TypeToken<CreateBusinessResponseVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create a card business (asynchronously)
+     * 
+     * @param cardBusinessRequestCO cardBusinessRequestCO (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call createCardBusinessUsingPostAsync(CardBusinessRequestCO cardBusinessRequestCO, final ApiCallback<CreateBusinessResponseVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = createCardBusinessUsingPostValidateBeforeCall(cardBusinessRequestCO, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CreateBusinessResponseVO>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -433,6 +689,128 @@ public class CardApi {
 
         com.squareup.okhttp.Call call = createCardIssueUsingPostValidateBeforeCall(issueRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<BaseResponseVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for createCardLoadUsingPost
+     * @param loadRequest loadRequest (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call createCardLoadUsingPostCall(CardLoadRequestCO loadRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = loadRequest;
+
+        // create path and map variables
+        String localVarPath = "/card/load";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call createCardLoadUsingPostValidateBeforeCall(CardLoadRequestCO loadRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'loadRequest' is set
+        if (loadRequest == null) {
+            throw new ApiException("Missing the required parameter 'loadRequest' when calling createCardLoadUsingPost(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = createCardLoadUsingPostCall(loadRequest, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Create a card load
+     * 
+     * @param loadRequest loadRequest (required)
+     * @return CardLoadUnloadResponseVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CardLoadUnloadResponseVO createCardLoadUsingPost(CardLoadRequestCO loadRequest) throws ApiException {
+        ApiResponse<CardLoadUnloadResponseVO> resp = createCardLoadUsingPostWithHttpInfo(loadRequest);
+        return resp.getData();
+    }
+
+    /**
+     * Create a card load
+     * 
+     * @param loadRequest loadRequest (required)
+     * @return ApiResponse&lt;CardLoadUnloadResponseVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CardLoadUnloadResponseVO> createCardLoadUsingPostWithHttpInfo(CardLoadRequestCO loadRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createCardLoadUsingPostValidateBeforeCall(loadRequest, null, null);
+        Type localVarReturnType = new TypeToken<CardLoadUnloadResponseVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create a card load (asynchronously)
+     * 
+     * @param loadRequest loadRequest (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call createCardLoadUsingPostAsync(CardLoadRequestCO loadRequest, final ApiCallback<CardLoadUnloadResponseVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = createCardLoadUsingPostValidateBeforeCall(loadRequest, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CardLoadUnloadResponseVO>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -803,18 +1181,18 @@ public class CardApi {
         return call;
     }
     /**
-     * Build call for createCardReloadUsingPost
-     * @param reloadRequest reloadRequest (required)
+     * Build call for createCardReplaceUsingPost
+     * @param request request (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createCardReloadUsingPostCall(CardReloadRequestCO reloadRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = reloadRequest;
+    public com.squareup.okhttp.Call createCardReplaceUsingPostCall(CardBaseRequestCO request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = request;
 
         // create path and map variables
-        String localVarPath = "/card/reload";
+        String localVarPath = "/card/replace";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -852,53 +1230,53 @@ public class CardApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createCardReloadUsingPostValidateBeforeCall(CardReloadRequestCO reloadRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createCardReplaceUsingPostValidateBeforeCall(CardBaseRequestCO request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'reloadRequest' is set
-        if (reloadRequest == null) {
-            throw new ApiException("Missing the required parameter 'reloadRequest' when calling createCardReloadUsingPost(Async)");
+        // verify the required parameter 'request' is set
+        if (request == null) {
+            throw new ApiException("Missing the required parameter 'request' when calling createCardReplaceUsingPost(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = createCardReloadUsingPostCall(reloadRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createCardReplaceUsingPostCall(request, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
-     * Create a card reload
+     * Create card replace
      * 
-     * @param reloadRequest reloadRequest (required)
-     * @return CardReloadUnloadResponseVO
+     * @param request request (required)
+     * @return CardReplaceResponseVO
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CardReloadUnloadResponseVO createCardReloadUsingPost(CardReloadRequestCO reloadRequest) throws ApiException {
-        ApiResponse<CardReloadUnloadResponseVO> resp = createCardReloadUsingPostWithHttpInfo(reloadRequest);
+    public CardReplaceResponseVO createCardReplaceUsingPost(CardBaseRequestCO request) throws ApiException {
+        ApiResponse<CardReplaceResponseVO> resp = createCardReplaceUsingPostWithHttpInfo(request);
         return resp.getData();
     }
 
     /**
-     * Create a card reload
+     * Create card replace
      * 
-     * @param reloadRequest reloadRequest (required)
-     * @return ApiResponse&lt;CardReloadUnloadResponseVO&gt;
+     * @param request request (required)
+     * @return ApiResponse&lt;CardReplaceResponseVO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CardReloadUnloadResponseVO> createCardReloadUsingPostWithHttpInfo(CardReloadRequestCO reloadRequest) throws ApiException {
-        com.squareup.okhttp.Call call = createCardReloadUsingPostValidateBeforeCall(reloadRequest, null, null);
-        Type localVarReturnType = new TypeToken<CardReloadUnloadResponseVO>(){}.getType();
+    public ApiResponse<CardReplaceResponseVO> createCardReplaceUsingPostWithHttpInfo(CardBaseRequestCO request) throws ApiException {
+        com.squareup.okhttp.Call call = createCardReplaceUsingPostValidateBeforeCall(request, null, null);
+        Type localVarReturnType = new TypeToken<CardReplaceResponseVO>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Create a card reload (asynchronously)
+     * Create card replace (asynchronously)
      * 
-     * @param reloadRequest reloadRequest (required)
+     * @param request request (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createCardReloadUsingPostAsync(CardReloadRequestCO reloadRequest, final ApiCallback<CardReloadUnloadResponseVO> callback) throws ApiException {
+    public com.squareup.okhttp.Call createCardReplaceUsingPostAsync(CardBaseRequestCO request, final ApiCallback<CardReplaceResponseVO> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -919,8 +1297,130 @@ public class CardApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createCardReloadUsingPostValidateBeforeCall(reloadRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<CardReloadUnloadResponseVO>(){}.getType();
+        com.squareup.okhttp.Call call = createCardReplaceUsingPostValidateBeforeCall(request, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CardReplaceResponseVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for createCardSpendingControlUsingPost
+     * @param request request (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call createCardSpendingControlUsingPostCall(CardSpendingControlRequestCO request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = request;
+
+        // create path and map variables
+        String localVarPath = "/card/spending_control";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call createCardSpendingControlUsingPostValidateBeforeCall(CardSpendingControlRequestCO request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'request' is set
+        if (request == null) {
+            throw new ApiException("Missing the required parameter 'request' when calling createCardSpendingControlUsingPost(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = createCardSpendingControlUsingPostCall(request, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Create card spending control
+     * 
+     * @param request request (required)
+     * @return CardSpendingControlResponseVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CardSpendingControlResponseVO createCardSpendingControlUsingPost(CardSpendingControlRequestCO request) throws ApiException {
+        ApiResponse<CardSpendingControlResponseVO> resp = createCardSpendingControlUsingPostWithHttpInfo(request);
+        return resp.getData();
+    }
+
+    /**
+     * Create card spending control
+     * 
+     * @param request request (required)
+     * @return ApiResponse&lt;CardSpendingControlResponseVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CardSpendingControlResponseVO> createCardSpendingControlUsingPostWithHttpInfo(CardSpendingControlRequestCO request) throws ApiException {
+        com.squareup.okhttp.Call call = createCardSpendingControlUsingPostValidateBeforeCall(request, null, null);
+        Type localVarReturnType = new TypeToken<CardSpendingControlResponseVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create card spending control (asynchronously)
+     * 
+     * @param request request (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call createCardSpendingControlUsingPostAsync(CardSpendingControlRequestCO request, final ApiCallback<CardSpendingControlResponseVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = createCardSpendingControlUsingPostValidateBeforeCall(request, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CardSpendingControlResponseVO>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1169,128 +1669,6 @@ public class CardApi {
         return call;
     }
     /**
-     * Build call for createCardTransferUsingPost
-     * @param transferRequest transferRequest (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call createCardTransferUsingPostCall(CardTransferRequestCO transferRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = transferRequest;
-
-        // create path and map variables
-        String localVarPath = "/card/transfer";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "oauth2" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createCardTransferUsingPostValidateBeforeCall(CardTransferRequestCO transferRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'transferRequest' is set
-        if (transferRequest == null) {
-            throw new ApiException("Missing the required parameter 'transferRequest' when calling createCardTransferUsingPost(Async)");
-        }
-        
-
-        com.squareup.okhttp.Call call = createCardTransferUsingPostCall(transferRequest, progressListener, progressRequestListener);
-        return call;
-
-    }
-
-    /**
-     * Create Card transfer
-     * 
-     * @param transferRequest transferRequest (required)
-     * @return CardTransferResponseVO
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public CardTransferResponseVO createCardTransferUsingPost(CardTransferRequestCO transferRequest) throws ApiException {
-        ApiResponse<CardTransferResponseVO> resp = createCardTransferUsingPostWithHttpInfo(transferRequest);
-        return resp.getData();
-    }
-
-    /**
-     * Create Card transfer
-     * 
-     * @param transferRequest transferRequest (required)
-     * @return ApiResponse&lt;CardTransferResponseVO&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<CardTransferResponseVO> createCardTransferUsingPostWithHttpInfo(CardTransferRequestCO transferRequest) throws ApiException {
-        com.squareup.okhttp.Call call = createCardTransferUsingPostValidateBeforeCall(transferRequest, null, null);
-        Type localVarReturnType = new TypeToken<CardTransferResponseVO>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Create Card transfer (asynchronously)
-     * 
-     * @param transferRequest transferRequest (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call createCardTransferUsingPostAsync(CardTransferRequestCO transferRequest, final ApiCallback<CardTransferResponseVO> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = createCardTransferUsingPostValidateBeforeCall(transferRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<CardTransferResponseVO>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
      * Build call for createCardUnloadUsingPost
      * @param reloadRequest reloadRequest (required)
      * @param progressListener Progress listener
@@ -1357,11 +1735,11 @@ public class CardApi {
      * Create a card upload
      * 
      * @param reloadRequest reloadRequest (required)
-     * @return CardReloadUnloadResponseVO
+     * @return CardLoadUnloadResponseVO
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CardReloadUnloadResponseVO createCardUnloadUsingPost(CardUnloadRequestCO reloadRequest) throws ApiException {
-        ApiResponse<CardReloadUnloadResponseVO> resp = createCardUnloadUsingPostWithHttpInfo(reloadRequest);
+    public CardLoadUnloadResponseVO createCardUnloadUsingPost(CardUnloadRequestCO reloadRequest) throws ApiException {
+        ApiResponse<CardLoadUnloadResponseVO> resp = createCardUnloadUsingPostWithHttpInfo(reloadRequest);
         return resp.getData();
     }
 
@@ -1369,12 +1747,12 @@ public class CardApi {
      * Create a card upload
      * 
      * @param reloadRequest reloadRequest (required)
-     * @return ApiResponse&lt;CardReloadUnloadResponseVO&gt;
+     * @return ApiResponse&lt;CardLoadUnloadResponseVO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CardReloadUnloadResponseVO> createCardUnloadUsingPostWithHttpInfo(CardUnloadRequestCO reloadRequest) throws ApiException {
+    public ApiResponse<CardLoadUnloadResponseVO> createCardUnloadUsingPostWithHttpInfo(CardUnloadRequestCO reloadRequest) throws ApiException {
         com.squareup.okhttp.Call call = createCardUnloadUsingPostValidateBeforeCall(reloadRequest, null, null);
-        Type localVarReturnType = new TypeToken<CardReloadUnloadResponseVO>(){}.getType();
+        Type localVarReturnType = new TypeToken<CardLoadUnloadResponseVO>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1386,7 +1764,7 @@ public class CardApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createCardUnloadUsingPostAsync(CardUnloadRequestCO reloadRequest, final ApiCallback<CardReloadUnloadResponseVO> callback) throws ApiException {
+    public com.squareup.okhttp.Call createCardUnloadUsingPostAsync(CardUnloadRequestCO reloadRequest, final ApiCallback<CardLoadUnloadResponseVO> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1408,7 +1786,7 @@ public class CardApi {
         }
 
         com.squareup.okhttp.Call call = createCardUnloadUsingPostValidateBeforeCall(reloadRequest, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<CardReloadUnloadResponseVO>(){}.getType();
+        Type localVarReturnType = new TypeToken<CardLoadUnloadResponseVO>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1479,11 +1857,11 @@ public class CardApi {
      * Create a card client
      * 
      * @param cardClientRequestCO cardClientRequestCO (required)
-     * @return CardClientResponseVO
+     * @return CreateCardClientResponseVO
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CardClientResponseVO createClientCardUsingPost(CardClientRequestCO cardClientRequestCO) throws ApiException {
-        ApiResponse<CardClientResponseVO> resp = createClientCardUsingPostWithHttpInfo(cardClientRequestCO);
+    public CreateCardClientResponseVO createClientCardUsingPost(CardClientRequestCO cardClientRequestCO) throws ApiException {
+        ApiResponse<CreateCardClientResponseVO> resp = createClientCardUsingPostWithHttpInfo(cardClientRequestCO);
         return resp.getData();
     }
 
@@ -1491,12 +1869,12 @@ public class CardApi {
      * Create a card client
      * 
      * @param cardClientRequestCO cardClientRequestCO (required)
-     * @return ApiResponse&lt;CardClientResponseVO&gt;
+     * @return ApiResponse&lt;CreateCardClientResponseVO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CardClientResponseVO> createClientCardUsingPostWithHttpInfo(CardClientRequestCO cardClientRequestCO) throws ApiException {
+    public ApiResponse<CreateCardClientResponseVO> createClientCardUsingPostWithHttpInfo(CardClientRequestCO cardClientRequestCO) throws ApiException {
         com.squareup.okhttp.Call call = createClientCardUsingPostValidateBeforeCall(cardClientRequestCO, null, null);
-        Type localVarReturnType = new TypeToken<CardClientResponseVO>(){}.getType();
+        Type localVarReturnType = new TypeToken<CreateCardClientResponseVO>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1508,7 +1886,7 @@ public class CardApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createClientCardUsingPostAsync(CardClientRequestCO cardClientRequestCO, final ApiCallback<CardClientResponseVO> callback) throws ApiException {
+    public com.squareup.okhttp.Call createClientCardUsingPostAsync(CardClientRequestCO cardClientRequestCO, final ApiCallback<CreateCardClientResponseVO> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1530,7 +1908,7 @@ public class CardApi {
         }
 
         com.squareup.okhttp.Call call = createClientCardUsingPostValidateBeforeCall(cardClientRequestCO, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<CardClientResponseVO>(){}.getType();
+        Type localVarReturnType = new TypeToken<CreateCardClientResponseVO>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1670,19 +2048,19 @@ public class CardApi {
         return call;
     }
     /**
-     * Build call for getCardTokenUsingToken
-     * @param id id (required)
+     * Build call for getCardImage
+     * @param cardId card_id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getCardTokenUsingTokenCall(UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getCardImageCall(UUID cardId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/card/token/{id}"
-            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+        String localVarPath = "/card/image/{card_id}"
+            .replaceAll("\\{" + "card_id" + "\\}", apiClient.escapeString(cardId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1720,53 +2098,53 @@ public class CardApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getCardTokenUsingTokenValidateBeforeCall(UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getCardImageValidateBeforeCall(UUID cardId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling getCardTokenUsingToken(Async)");
+        // verify the required parameter 'cardId' is set
+        if (cardId == null) {
+            throw new ApiException("Missing the required parameter 'cardId' when calling getCardImage(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = getCardTokenUsingTokenCall(id, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getCardImageCall(cardId, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
-     * Get a card token
+     * Get card image
      * 
-     * @param id id (required)
-     * @return GetCardTokenResponseVO
+     * @param cardId card_id (required)
+     * @return GetCardImageResponseVO
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GetCardTokenResponseVO getCardTokenUsingToken(UUID id) throws ApiException {
-        ApiResponse<GetCardTokenResponseVO> resp = getCardTokenUsingTokenWithHttpInfo(id);
+    public GetCardImageResponseVO getCardImage(UUID cardId) throws ApiException {
+        ApiResponse<GetCardImageResponseVO> resp = getCardImageWithHttpInfo(cardId);
         return resp.getData();
     }
 
     /**
-     * Get a card token
+     * Get card image
      * 
-     * @param id id (required)
-     * @return ApiResponse&lt;GetCardTokenResponseVO&gt;
+     * @param cardId card_id (required)
+     * @return ApiResponse&lt;GetCardImageResponseVO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GetCardTokenResponseVO> getCardTokenUsingTokenWithHttpInfo(UUID id) throws ApiException {
-        com.squareup.okhttp.Call call = getCardTokenUsingTokenValidateBeforeCall(id, null, null);
-        Type localVarReturnType = new TypeToken<GetCardTokenResponseVO>(){}.getType();
+    public ApiResponse<GetCardImageResponseVO> getCardImageWithHttpInfo(UUID cardId) throws ApiException {
+        com.squareup.okhttp.Call call = getCardImageValidateBeforeCall(cardId, null, null);
+        Type localVarReturnType = new TypeToken<GetCardImageResponseVO>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Get a card token (asynchronously)
+     * Get card image (asynchronously)
      * 
-     * @param id id (required)
+     * @param cardId card_id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getCardTokenUsingTokenAsync(UUID id, final ApiCallback<GetCardTokenResponseVO> callback) throws ApiException {
+    public com.squareup.okhttp.Call getCardImageAsync(UUID cardId, final ApiCallback<GetCardImageResponseVO> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1787,8 +2165,520 @@ public class CardApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getCardTokenUsingTokenValidateBeforeCall(id, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<GetCardTokenResponseVO>(){}.getType();
+        com.squareup.okhttp.Call call = getCardImageValidateBeforeCall(cardId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<GetCardImageResponseVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getCardPciDetails
+     * @param cardId card_id (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getCardPciDetailsCall(UUID cardId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/card/pci_details/{card_id}"
+            .replaceAll("\\{" + "card_id" + "\\}", apiClient.escapeString(cardId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getCardPciDetailsValidateBeforeCall(UUID cardId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'cardId' is set
+        if (cardId == null) {
+            throw new ApiException("Missing the required parameter 'cardId' when calling getCardPciDetails(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getCardPciDetailsCall(cardId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get card pci details
+     * 
+     * @param cardId card_id (required)
+     * @return GetCardPciDetailsResponseVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public GetCardPciDetailsResponseVO getCardPciDetails(UUID cardId) throws ApiException {
+        ApiResponse<GetCardPciDetailsResponseVO> resp = getCardPciDetailsWithHttpInfo(cardId);
+        return resp.getData();
+    }
+
+    /**
+     * Get card pci details
+     * 
+     * @param cardId card_id (required)
+     * @return ApiResponse&lt;GetCardPciDetailsResponseVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<GetCardPciDetailsResponseVO> getCardPciDetailsWithHttpInfo(UUID cardId) throws ApiException {
+        com.squareup.okhttp.Call call = getCardPciDetailsValidateBeforeCall(cardId, null, null);
+        Type localVarReturnType = new TypeToken<GetCardPciDetailsResponseVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get card pci details (asynchronously)
+     * 
+     * @param cardId card_id (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getCardPciDetailsAsync(UUID cardId, final ApiCallback<GetCardPciDetailsResponseVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getCardPciDetailsValidateBeforeCall(cardId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<GetCardPciDetailsResponseVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getCardReserveAccountDetailsUsingGet
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getCardReserveAccountDetailsUsingGetCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/card/reserve";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getCardReserveAccountDetailsUsingGetValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = getCardReserveAccountDetailsUsingGetCall(progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Card reserve account
+     * 
+     * @return CardReserveAccountResponseVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CardReserveAccountResponseVO getCardReserveAccountDetailsUsingGet() throws ApiException {
+        ApiResponse<CardReserveAccountResponseVO> resp = getCardReserveAccountDetailsUsingGetWithHttpInfo();
+        return resp.getData();
+    }
+
+    /**
+     * Card reserve account
+     * 
+     * @return ApiResponse&lt;CardReserveAccountResponseVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CardReserveAccountResponseVO> getCardReserveAccountDetailsUsingGetWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = getCardReserveAccountDetailsUsingGetValidateBeforeCall(null, null);
+        Type localVarReturnType = new TypeToken<CardReserveAccountResponseVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Card reserve account (asynchronously)
+     * 
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getCardReserveAccountDetailsUsingGetAsync(final ApiCallback<CardReserveAccountResponseVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getCardReserveAccountDetailsUsingGetValidateBeforeCall(progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CardReserveAccountResponseVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getCardStatementUsingGet
+     * @param cardId card_id (required)
+     * @param endDate end_date (optional)
+     * @param startDate start_date (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getCardStatementUsingGetCall(UUID cardId, LocalDate endDate, LocalDate startDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/card/statement/{card_id}"
+            .replaceAll("\\{" + "card_id" + "\\}", apiClient.escapeString(cardId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (endDate != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("end_date", endDate));
+        if (startDate != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("start_date", startDate));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getCardStatementUsingGetValidateBeforeCall(UUID cardId, LocalDate endDate, LocalDate startDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'cardId' is set
+        if (cardId == null) {
+            throw new ApiException("Missing the required parameter 'cardId' when calling getCardStatementUsingGet(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getCardStatementUsingGetCall(cardId, endDate, startDate, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get card statement
+     * 
+     * @param cardId card_id (required)
+     * @param endDate end_date (optional)
+     * @param startDate start_date (optional)
+     * @return GetCardStatementResponseVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public GetCardStatementResponseVO getCardStatementUsingGet(UUID cardId, LocalDate endDate, LocalDate startDate) throws ApiException {
+        ApiResponse<GetCardStatementResponseVO> resp = getCardStatementUsingGetWithHttpInfo(cardId, endDate, startDate);
+        return resp.getData();
+    }
+
+    /**
+     * Get card statement
+     * 
+     * @param cardId card_id (required)
+     * @param endDate end_date (optional)
+     * @param startDate start_date (optional)
+     * @return ApiResponse&lt;GetCardStatementResponseVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<GetCardStatementResponseVO> getCardStatementUsingGetWithHttpInfo(UUID cardId, LocalDate endDate, LocalDate startDate) throws ApiException {
+        com.squareup.okhttp.Call call = getCardStatementUsingGetValidateBeforeCall(cardId, endDate, startDate, null, null);
+        Type localVarReturnType = new TypeToken<GetCardStatementResponseVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get card statement (asynchronously)
+     * 
+     * @param cardId card_id (required)
+     * @param endDate end_date (optional)
+     * @param startDate start_date (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getCardStatementUsingGetAsync(UUID cardId, LocalDate endDate, LocalDate startDate, final ApiCallback<GetCardStatementResponseVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getCardStatementUsingGetValidateBeforeCall(cardId, endDate, startDate, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<GetCardStatementResponseVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getCardTokenUsingToken
+     * @param id id (required)
+     * @param deviceId device_id (optional)
+     * @param deviceType device_type (optional)
+     * @param wallet wallet (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getCardTokenUsingTokenCall(UUID id, String deviceId, String deviceType, String wallet, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/card/token/{id}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (deviceId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("device_id", deviceId));
+        if (deviceType != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("device_type", deviceType));
+        if (wallet != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("wallet", wallet));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getCardTokenUsingTokenValidateBeforeCall(UUID id, String deviceId, String deviceType, String wallet, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling getCardTokenUsingToken(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getCardTokenUsingTokenCall(id, deviceId, deviceType, wallet, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get a card token
+     * 
+     * @param id id (required)
+     * @param deviceId device_id (optional)
+     * @param deviceType device_type (optional)
+     * @param wallet wallet (optional)
+     * @return List&lt;GetCardTokenResponseVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public List<GetCardTokenResponseVO> getCardTokenUsingToken(UUID id, String deviceId, String deviceType, String wallet) throws ApiException {
+        ApiResponse<List<GetCardTokenResponseVO>> resp = getCardTokenUsingTokenWithHttpInfo(id, deviceId, deviceType, wallet);
+        return resp.getData();
+    }
+
+    /**
+     * Get a card token
+     * 
+     * @param id id (required)
+     * @param deviceId device_id (optional)
+     * @param deviceType device_type (optional)
+     * @param wallet wallet (optional)
+     * @return ApiResponse&lt;List&lt;GetCardTokenResponseVO&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<List<GetCardTokenResponseVO>> getCardTokenUsingTokenWithHttpInfo(UUID id, String deviceId, String deviceType, String wallet) throws ApiException {
+        com.squareup.okhttp.Call call = getCardTokenUsingTokenValidateBeforeCall(id, deviceId, deviceType, wallet, null, null);
+        Type localVarReturnType = new TypeToken<List<GetCardTokenResponseVO>>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get a card token (asynchronously)
+     * 
+     * @param id id (required)
+     * @param deviceId device_id (optional)
+     * @param deviceType device_type (optional)
+     * @param wallet wallet (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getCardTokenUsingTokenAsync(UUID id, String deviceId, String deviceType, String wallet, final ApiCallback<List<GetCardTokenResponseVO>> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getCardTokenUsingTokenValidateBeforeCall(id, deviceId, deviceType, wallet, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<List<GetCardTokenResponseVO>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -2051,6 +2941,129 @@ public class CardApi {
         return call;
     }
     /**
+     * Build call for updateCardBusinessUsingPut
+     * @param nucleusBusinessId nucleus_business_id (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call updateCardBusinessUsingPutCall(UUID nucleusBusinessId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/card/business/{nucleus_business_id}"
+            .replaceAll("\\{" + "nucleus_business_id" + "\\}", apiClient.escapeString(nucleusBusinessId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call updateCardBusinessUsingPutValidateBeforeCall(UUID nucleusBusinessId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'nucleusBusinessId' is set
+        if (nucleusBusinessId == null) {
+            throw new ApiException("Missing the required parameter 'nucleusBusinessId' when calling updateCardBusinessUsingPut(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = updateCardBusinessUsingPutCall(nucleusBusinessId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Update a card business
+     * 
+     * @param nucleusBusinessId nucleus_business_id (required)
+     * @return UpdateBusinessResponseVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public UpdateBusinessResponseVO updateCardBusinessUsingPut(UUID nucleusBusinessId) throws ApiException {
+        ApiResponse<UpdateBusinessResponseVO> resp = updateCardBusinessUsingPutWithHttpInfo(nucleusBusinessId);
+        return resp.getData();
+    }
+
+    /**
+     * Update a card business
+     * 
+     * @param nucleusBusinessId nucleus_business_id (required)
+     * @return ApiResponse&lt;UpdateBusinessResponseVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<UpdateBusinessResponseVO> updateCardBusinessUsingPutWithHttpInfo(UUID nucleusBusinessId) throws ApiException {
+        com.squareup.okhttp.Call call = updateCardBusinessUsingPutValidateBeforeCall(nucleusBusinessId, null, null);
+        Type localVarReturnType = new TypeToken<UpdateBusinessResponseVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update a card business (asynchronously)
+     * 
+     * @param nucleusBusinessId nucleus_business_id (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call updateCardBusinessUsingPutAsync(UUID nucleusBusinessId, final ApiCallback<UpdateBusinessResponseVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = updateCardBusinessUsingPutValidateBeforeCall(nucleusBusinessId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<UpdateBusinessResponseVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for updateCardPinUsingPost
      * @param cardPinRequestCO cardPinRequestCO (required)
      * @param id id (required)
@@ -2059,7 +3072,7 @@ public class CardApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateCardPinUsingPostCall(CardPinRequestCO cardPinRequestCO, UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateCardPinUsingPostCall(CardUpdatePinRequestCO cardPinRequestCO, UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = cardPinRequestCO;
 
         // create path and map variables
@@ -2102,7 +3115,7 @@ public class CardApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateCardPinUsingPostValidateBeforeCall(CardPinRequestCO cardPinRequestCO, UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateCardPinUsingPostValidateBeforeCall(CardUpdatePinRequestCO cardPinRequestCO, UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'cardPinRequestCO' is set
         if (cardPinRequestCO == null) {
@@ -2128,7 +3141,7 @@ public class CardApi {
      * @return BaseResponseVO
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public BaseResponseVO updateCardPinUsingPost(CardPinRequestCO cardPinRequestCO, UUID id) throws ApiException {
+    public BaseResponseVO updateCardPinUsingPost(CardUpdatePinRequestCO cardPinRequestCO, UUID id) throws ApiException {
         ApiResponse<BaseResponseVO> resp = updateCardPinUsingPostWithHttpInfo(cardPinRequestCO, id);
         return resp.getData();
     }
@@ -2141,7 +3154,7 @@ public class CardApi {
      * @return ApiResponse&lt;BaseResponseVO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<BaseResponseVO> updateCardPinUsingPostWithHttpInfo(CardPinRequestCO cardPinRequestCO, UUID id) throws ApiException {
+    public ApiResponse<BaseResponseVO> updateCardPinUsingPostWithHttpInfo(CardUpdatePinRequestCO cardPinRequestCO, UUID id) throws ApiException {
         com.squareup.okhttp.Call call = updateCardPinUsingPostValidateBeforeCall(cardPinRequestCO, id, null, null);
         Type localVarReturnType = new TypeToken<BaseResponseVO>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -2156,7 +3169,7 @@ public class CardApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateCardPinUsingPostAsync(CardPinRequestCO cardPinRequestCO, UUID id, final ApiCallback<BaseResponseVO> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateCardPinUsingPostAsync(CardUpdatePinRequestCO cardPinRequestCO, UUID id, final ApiCallback<BaseResponseVO> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2179,6 +3192,129 @@ public class CardApi {
 
         com.squareup.okhttp.Call call = updateCardPinUsingPostValidateBeforeCall(cardPinRequestCO, id, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<BaseResponseVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for updateCardSpendingControlUsingPut
+     * @param nucleusSpendingControlId nucleus_spending_control_id (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call updateCardSpendingControlUsingPutCall(UUID nucleusSpendingControlId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/card/spending_control/{nucleus_spending_control_id}"
+            .replaceAll("\\{" + "nucleus_spending_control_id" + "\\}", apiClient.escapeString(nucleusSpendingControlId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call updateCardSpendingControlUsingPutValidateBeforeCall(UUID nucleusSpendingControlId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'nucleusSpendingControlId' is set
+        if (nucleusSpendingControlId == null) {
+            throw new ApiException("Missing the required parameter 'nucleusSpendingControlId' when calling updateCardSpendingControlUsingPut(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = updateCardSpendingControlUsingPutCall(nucleusSpendingControlId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Update a card spending control
+     * 
+     * @param nucleusSpendingControlId nucleus_spending_control_id (required)
+     * @return CardSpendingControlResponseVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public CardSpendingControlResponseVO updateCardSpendingControlUsingPut(UUID nucleusSpendingControlId) throws ApiException {
+        ApiResponse<CardSpendingControlResponseVO> resp = updateCardSpendingControlUsingPutWithHttpInfo(nucleusSpendingControlId);
+        return resp.getData();
+    }
+
+    /**
+     * Update a card spending control
+     * 
+     * @param nucleusSpendingControlId nucleus_spending_control_id (required)
+     * @return ApiResponse&lt;CardSpendingControlResponseVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<CardSpendingControlResponseVO> updateCardSpendingControlUsingPutWithHttpInfo(UUID nucleusSpendingControlId) throws ApiException {
+        com.squareup.okhttp.Call call = updateCardSpendingControlUsingPutValidateBeforeCall(nucleusSpendingControlId, null, null);
+        Type localVarReturnType = new TypeToken<CardSpendingControlResponseVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update a card spending control (asynchronously)
+     * 
+     * @param nucleusSpendingControlId nucleus_spending_control_id (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call updateCardSpendingControlUsingPutAsync(UUID nucleusSpendingControlId, final ApiCallback<CardSpendingControlResponseVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = updateCardSpendingControlUsingPutValidateBeforeCall(nucleusSpendingControlId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<CardSpendingControlResponseVO>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -2301,6 +3437,251 @@ public class CardApi {
         }
 
         com.squareup.okhttp.Call call = updateCardUsingPutValidateBeforeCall(id, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BaseResponseVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for updateClientCardUsingPut
+     * @param id id (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call updateClientCardUsingPutCall(UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/card/client/{id}"
+            .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call updateClientCardUsingPutValidateBeforeCall(UUID id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling updateClientCardUsingPut(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = updateClientCardUsingPutCall(id, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Update a card client
+     * 
+     * @param id id (required)
+     * @return UpdateCardClientResponseVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public UpdateCardClientResponseVO updateClientCardUsingPut(UUID id) throws ApiException {
+        ApiResponse<UpdateCardClientResponseVO> resp = updateClientCardUsingPutWithHttpInfo(id);
+        return resp.getData();
+    }
+
+    /**
+     * Update a card client
+     * 
+     * @param id id (required)
+     * @return ApiResponse&lt;UpdateCardClientResponseVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<UpdateCardClientResponseVO> updateClientCardUsingPutWithHttpInfo(UUID id) throws ApiException {
+        com.squareup.okhttp.Call call = updateClientCardUsingPutValidateBeforeCall(id, null, null);
+        Type localVarReturnType = new TypeToken<UpdateCardClientResponseVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update a card client (asynchronously)
+     * 
+     * @param id id (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call updateClientCardUsingPutAsync(UUID id, final ApiCallback<UpdateCardClientResponseVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = updateClientCardUsingPutValidateBeforeCall(id, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<UpdateCardClientResponseVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for verifyCardPinUsingPost
+     * @param cardPinRequestCO cardPinRequestCO (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call verifyCardPinUsingPostCall(CardPinRequestCO cardPinRequestCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = cardPinRequestCO;
+
+        // create path and map variables
+        String localVarPath = "/card/pin/verify";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call verifyCardPinUsingPostValidateBeforeCall(CardPinRequestCO cardPinRequestCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'cardPinRequestCO' is set
+        if (cardPinRequestCO == null) {
+            throw new ApiException("Missing the required parameter 'cardPinRequestCO' when calling verifyCardPinUsingPost(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = verifyCardPinUsingPostCall(cardPinRequestCO, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * verify card pin
+     * 
+     * @param cardPinRequestCO cardPinRequestCO (required)
+     * @return BaseResponseVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public BaseResponseVO verifyCardPinUsingPost(CardPinRequestCO cardPinRequestCO) throws ApiException {
+        ApiResponse<BaseResponseVO> resp = verifyCardPinUsingPostWithHttpInfo(cardPinRequestCO);
+        return resp.getData();
+    }
+
+    /**
+     * verify card pin
+     * 
+     * @param cardPinRequestCO cardPinRequestCO (required)
+     * @return ApiResponse&lt;BaseResponseVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<BaseResponseVO> verifyCardPinUsingPostWithHttpInfo(CardPinRequestCO cardPinRequestCO) throws ApiException {
+        com.squareup.okhttp.Call call = verifyCardPinUsingPostValidateBeforeCall(cardPinRequestCO, null, null);
+        Type localVarReturnType = new TypeToken<BaseResponseVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * verify card pin (asynchronously)
+     * 
+     * @param cardPinRequestCO cardPinRequestCO (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call verifyCardPinUsingPostAsync(CardPinRequestCO cardPinRequestCO, final ApiCallback<BaseResponseVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = verifyCardPinUsingPostValidateBeforeCall(cardPinRequestCO, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<BaseResponseVO>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

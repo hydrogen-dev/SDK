@@ -31,7 +31,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::PersonalFinancialManagementApi.new
 
 budget_calculator_request = ProtonApi::BudgetCalculatorRequest.new # BudgetCalculatorRequest | Request payload for Budget Calculator
@@ -87,7 +86,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::PersonalFinancialManagementApi.new
 
 cash_flow_analysis_request = ProtonApi::CashFlowAnalysisRequest.new # CashFlowAnalysisRequest | Request payload for Cash Flow Analysis
@@ -143,7 +141,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::PersonalFinancialManagementApi.new
 
 fee_analysis_request = ProtonApi::FeeAnalysisRequest.new # FeeAnalysisRequest | Request payload for Fee Analysis
@@ -199,7 +196,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::PersonalFinancialManagementApi.new
 
 financial_picture_request = ProtonApi::FinancialPictureRequest.new # FinancialPictureRequest | Request payload for Financial Picture
@@ -255,7 +251,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::PersonalFinancialManagementApi.new
 
 recurring_transaction_analysis_request = ProtonApi::RecurringTransactionAnalysisRequest.new # RecurringTransactionAnalysisRequest | Request payload for Recurring Transaction Analysis

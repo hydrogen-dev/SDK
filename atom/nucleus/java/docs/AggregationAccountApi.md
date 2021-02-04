@@ -46,7 +46,6 @@ Create a balance records under an aggregation accounts.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -63,8 +62,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 List<AggregationAccountBalance> aggregationAccountBalance = Arrays.asList(new AggregationAccountBalance()); // List<AggregationAccountBalance> | aggregationAccountBalance
 try {
@@ -107,7 +104,6 @@ Create a balance record under an aggregation account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -124,8 +120,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 AggregationAccountBalance aggregationAccountBalance = new AggregationAccountBalance(); // AggregationAccountBalance | aggregationAccountBalance
 try {
@@ -168,7 +162,6 @@ Create a bulk aggregation account under a client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -185,8 +178,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 List<AggregationAccount> aggregationAccountList = Arrays.asList(new AggregationAccount()); // List<AggregationAccount> | aggregationAccountList
 try {
@@ -229,7 +220,6 @@ Create a bulk aggregation account holding.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -246,8 +236,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 List<AggregationAccountHolding> aggregationTransaction = Arrays.asList(new AggregationAccountHolding()); // List<AggregationAccountHolding> | aggregationTransaction
 try {
@@ -290,7 +278,6 @@ Create a holding record under an aggregation account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -307,8 +294,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 AggregationAccountHolding aggregationAccountHolding = new AggregationAccountHolding(); // AggregationAccountHolding | aggregationAccountHolding
 try {
@@ -351,7 +336,6 @@ Create a bulk transaction record under an aggregation account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -368,8 +352,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 List<AggregationAccountTransaction> aggregationAccountTransactions = Arrays.asList(new AggregationAccountTransaction()); // List<AggregationAccountTransaction> | aggregationAccountTransactions
 try {
@@ -412,7 +394,6 @@ Create a transaction record under an aggregation account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -429,8 +410,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 AggregationAccountTransaction aggregationAccountTransaction = new AggregationAccountTransaction(); // AggregationAccountTransaction | aggregationAccountTransaction
 try {
@@ -473,7 +452,6 @@ Create an aggregation account under a client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -490,8 +468,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 AggregationAccount aggregationAccount = new AggregationAccount(); // AggregationAccount | aggregationAccount
 try {
@@ -534,7 +510,6 @@ Permanently delete a balance record for an aggregation account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -551,8 +526,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 UUID aggregationAccountBalanceId = new UUID(); // UUID | UUID aggregation_account_balance_id
 try {
@@ -594,7 +567,6 @@ Permanently delete a holding record for an aggregation account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -611,8 +583,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 UUID aggregationAccountHoldingId = new UUID(); // UUID | UUID aggregation_account_holding_id
 try {
@@ -654,7 +624,6 @@ Permanently delete a transaction record for an aggregation account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -671,8 +640,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 UUID aggregationAccountTransactionId = new UUID(); // UUID | UUID aggregation_account_transaction_id
 try {
@@ -714,7 +681,6 @@ Permanently delete an aggregation account under a client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -731,8 +697,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 UUID aggregationAccountId = new UUID(); // UUID | UUID aggregation_account_id
 try {
@@ -774,7 +738,6 @@ Retrieve the information for a specific aggregation account associated with a cl
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -791,8 +754,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 UUID aggregationAccountId = new UUID(); // UUID | UUID aggregation_account_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -837,7 +798,6 @@ Get information for all aggregation accounts for all clients defined for your fi
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -854,8 +814,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -906,7 +864,6 @@ Get all of the balance records for all aggregation accounts defined for your fir
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -923,8 +880,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 Boolean ascending = false; // Boolean | ascending
 String currencyConversion = "currencyConversion_example"; // String | currency_conversion
@@ -977,7 +932,6 @@ Retrieve the information for a specific balance record for an aggregation accoun
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -994,8 +948,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 UUID aggregationAccountBalanceId = new UUID(); // UUID | UUID aggregation_account_balance_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -1040,7 +992,6 @@ Get all of the holding records for all aggregation accounts defined for your fir
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1057,8 +1008,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 Boolean ascending = false; // Boolean | ascending
 String currencyConversion = "currencyConversion_example"; // String | currency_conversion
@@ -1111,7 +1060,6 @@ Retrieve the information for a specific holding record for an aggregation accoun
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1128,8 +1076,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 UUID aggregationAccountHoldingId = new UUID(); // UUID | UUID aggregation_account_holding_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -1174,7 +1120,6 @@ Retrieve the information for a specific aggregation account with aggregate data 
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1191,8 +1136,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 UUID clientId = new UUID(); // UUID | UUID client_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -1237,7 +1180,6 @@ Get all of the transaction records for all aggregation accounts defined for your
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1254,8 +1196,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 Boolean ascending = false; // Boolean | ascending
 String currencyConversion = "currencyConversion_example"; // String | currency_conversion
@@ -1308,7 +1248,6 @@ Retrieve the information for a specific transaction record for an aggregation ac
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1325,8 +1264,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 UUID aggregationAccountTransactionId = new UUID(); // UUID | UUID aggregation_account_transaction_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -1371,7 +1308,6 @@ Retrieve the information for a specific aggregation account associated with a cl
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1388,8 +1324,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
 UUID aggregationAccountId = new UUID(); // UUID | UUID aggregation_account_id
 try {
@@ -1432,7 +1366,6 @@ Update a balance record for an aggregation account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1449,10 +1382,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
-AggregationAccountBalance aggregationAccountBalance = new AggregationAccountBalance(); // AggregationAccountBalance | aggregation_account_balance
+Object aggregationAccountBalance = null; // Object | aggregation_account_balance
 UUID aggregationAccountBalanceId = new UUID(); // UUID | UUID aggregation_account_balance_id
 try {
     AggregationAccountBalance result = apiInstance.updateAggregationAccountBalanceUsingPut(aggregationAccountBalance, aggregationAccountBalanceId);
@@ -1467,7 +1398,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccountBalance** | [**AggregationAccountBalance**](AggregationAccountBalance.md)| aggregation_account_balance |
+ **aggregationAccountBalance** | **Object**| aggregation_account_balance |
  **aggregationAccountBalanceId** | [**UUID**](.md)| UUID aggregation_account_balance_id |
 
 ### Return type
@@ -1495,7 +1426,6 @@ Update a bulk aggregation account under a client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1512,10 +1442,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
-List<AggregationAccount> aggregationAccountList = Arrays.asList(new AggregationAccount()); // List<AggregationAccount> | aggregationAccountList
+List<Object> aggregationAccountList = Arrays.asList(new List<Object>()); // List<Object> | aggregationAccountList
 try {
     List<AggregationAccount> result = apiInstance.updateAggregationAccountBulkUsingPut(aggregationAccountList);
     System.out.println(result);
@@ -1529,7 +1457,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccountList** | [**List&lt;AggregationAccount&gt;**](AggregationAccount.md)| aggregationAccountList |
+ **aggregationAccountList** | **List&lt;Object&gt;**| aggregationAccountList |
 
 ### Return type
 
@@ -1556,7 +1484,6 @@ Update a bulk holding record for an aggregation account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1573,10 +1500,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
-List<AggregationAccountHolding> aggregationAccountHolding = Arrays.asList(new AggregationAccountHolding()); // List<AggregationAccountHolding> | aggregationAccountHolding
+List<Object> aggregationAccountHolding = Arrays.asList(new List<Object>()); // List<Object> | aggregationAccountHolding
 try {
     List<AggregationAccountHolding> result = apiInstance.updateAggregationAccountHoldingBulkUsingPut(aggregationAccountHolding);
     System.out.println(result);
@@ -1590,7 +1515,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccountHolding** | [**List&lt;AggregationAccountHolding&gt;**](AggregationAccountHolding.md)| aggregationAccountHolding |
+ **aggregationAccountHolding** | **List&lt;Object&gt;**| aggregationAccountHolding |
 
 ### Return type
 
@@ -1617,7 +1542,6 @@ Update a holding record for an aggregation account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1634,10 +1558,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
-AggregationAccountHolding aggregationAccountHolding = new AggregationAccountHolding(); // AggregationAccountHolding | aggregation_account_holding
+Object aggregationAccountHolding = null; // Object | aggregation_account_holding
 UUID aggregationAccountHoldingId = new UUID(); // UUID | UUID aggregation_account_holding_id
 try {
     AggregationAccountHolding result = apiInstance.updateAggregationAccountHoldingUsingPut(aggregationAccountHolding, aggregationAccountHoldingId);
@@ -1652,7 +1574,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccountHolding** | [**AggregationAccountHolding**](AggregationAccountHolding.md)| aggregation_account_holding |
+ **aggregationAccountHolding** | **Object**| aggregation_account_holding |
  **aggregationAccountHoldingId** | [**UUID**](.md)| UUID aggregation_account_holding_id |
 
 ### Return type
@@ -1680,7 +1602,6 @@ Update a transaction record for an aggregation account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1697,10 +1618,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
-AggregationAccountTransaction aggregationAccountTransaction = new AggregationAccountTransaction(); // AggregationAccountTransaction | aggregation_account_transaction
+Object aggregationAccountTransaction = null; // Object | aggregation_account_transaction
 UUID aggregationAccountTransactionId = new UUID(); // UUID | UUID aggregation_account_transaction_id
 try {
     AggregationAccountTransaction result = apiInstance.updateAggregationAccountTransactionUsingPut(aggregationAccountTransaction, aggregationAccountTransactionId);
@@ -1715,7 +1634,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccountTransaction** | [**AggregationAccountTransaction**](AggregationAccountTransaction.md)| aggregation_account_transaction |
+ **aggregationAccountTransaction** | **Object**| aggregation_account_transaction |
  **aggregationAccountTransactionId** | [**UUID**](.md)| UUID aggregation_account_transaction_id |
 
 ### Return type
@@ -1743,7 +1662,6 @@ Update the information for an aggregation account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AggregationAccountApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1760,10 +1678,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AggregationAccountApi apiInstance = new AggregationAccountApi();
-AggregationAccount aggregationAccount = new AggregationAccount(); // AggregationAccount | aggregation_account
+Object aggregationAccount = null; // Object | aggregation_account
 UUID aggregationAccountId = new UUID(); // UUID | UUID aggregation_account_id
 try {
     AggregationAccount result = apiInstance.updateAggregationAccountUsingPut(aggregationAccount, aggregationAccountId);
@@ -1778,7 +1694,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccount** | [**AggregationAccount**](AggregationAccount.md)| aggregation_account |
+ **aggregationAccount** | **Object**| aggregation_account |
  **aggregationAccountId** | [**UUID**](.md)| UUID aggregation_account_id |
 
 ### Return type

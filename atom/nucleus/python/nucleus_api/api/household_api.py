@@ -792,7 +792,7 @@ class HouseholdApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Household household: household (required)
+        :param object household: household (required)
         :param str household_id: UUID household_id (required)
         :return: Household
                  If the method is called asynchronously,
@@ -815,7 +815,7 @@ class HouseholdApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Household household: household (required)
+        :param object household: household (required)
         :param str household_id: UUID household_id (required)
         :return: Household
                  If the method is called asynchronously,

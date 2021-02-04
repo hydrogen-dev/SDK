@@ -13,11 +13,11 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.Customer;
 import com.hydrogen.nucleus.model.CustomerRevenue;
 import com.hydrogen.nucleus.model.PageCustomer;
 import com.hydrogen.nucleus.model.PageCustomerRevenue;
-import com.hydrogen.nucleus.ApiException;
 
 import java.util.UUID;
 import org.junit.Test;
@@ -180,7 +180,7 @@ public class CustomerApiTest {
      */
     @Test
     public void updateCustomerRevenueUsingPutTest() throws ApiException {
-        CustomerRevenue customerRevenue = null;
+        Object customerRevenue = null;
         UUID customerRevenueId = null;
         CustomerRevenue response = api.updateCustomerRevenueUsingPut(customerRevenue, customerRevenueId);
 
@@ -197,7 +197,7 @@ public class CustomerApiTest {
      */
     @Test
     public void updateCustomerUsingPutTest() throws ApiException {
-        Customer customer = null;
+        Object customer = null;
         UUID customerId = null;
         Customer response = api.updateCustomerUsingPut(customer, customerId);
 

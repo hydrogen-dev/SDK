@@ -31,7 +31,7 @@ import org.threeten.bp.OffsetDateTime;
  * Score Object
  */
 @ApiModel(description = "Score Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-12T11:03:26.704Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-28T16:21:02.928Z")
 
 
 

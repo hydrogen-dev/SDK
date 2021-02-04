@@ -13,11 +13,11 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.Invoice;
 import com.hydrogen.nucleus.model.InvoicePayment;
 import com.hydrogen.nucleus.model.PageInvoice;
 import com.hydrogen.nucleus.model.PageInvoicePayment;
-import com.hydrogen.nucleus.ApiException;
 
 import java.util.UUID;
 import org.junit.Test;
@@ -182,7 +182,7 @@ public class InvoiceApiTest {
      */
     @Test
     public void updateInvoicePaymentUsingPutTest() throws ApiException {
-        InvoicePayment invoicePayment = null;
+        Object invoicePayment = null;
         UUID invoicePaymentId = null;
         InvoicePayment response = api.updateInvoicePaymentUsingPut(invoicePayment, invoicePaymentId);
 
@@ -199,7 +199,7 @@ public class InvoiceApiTest {
      */
     @Test
     public void updateInvoiceUsingPutTest() throws ApiException {
-        Invoice invoice = null;
+        Object invoice = null;
         UUID invoiceId = null;
         Invoice response = api.updateInvoiceUsingPut(invoice, invoiceId);
 

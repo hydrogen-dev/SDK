@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **orderType** | **String** | orderType |  [optional]
 **portfolioId** | [**UUID**](UUID.md) | portfolioId |  [optional]
 **price** | **Double** | price |  [optional]
-**quantity** | **Double** | quantity | 
+**quantity** | **Double** | quantity |  [optional]
 **secondaryId** | **String** |  |  [optional]
 **securityId** | [**UUID**](UUID.md) | securityId | 
 **tmpTrackerId** | [**UUID**](UUID.md) |  |  [optional]

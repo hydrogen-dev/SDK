@@ -13,8 +13,8 @@
 
 package com.hydrogen.proton.api;
 
-import com.hydrogen.proton.model.RebalancingSignalRequest;
 import com.hydrogen.proton.ApiException;
+import com.hydrogen.proton.model.RebalancingSignalRequest;
 import org.junit.Test;
 import org.junit.Ignore;
 

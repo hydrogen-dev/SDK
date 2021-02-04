@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
  * BankCredit Object
  */
 @ApiModel(description = "BankCredit Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class BankCredit {
   @SerializedName("amount")
   private Double amount = null;
@@ -148,7 +148,7 @@ public class BankCredit {
    * merchant
    * @return merchant
   **/
-  @ApiModelProperty(example = "merchant", required = true, value = "merchant")
+  @ApiModelProperty(example = "merchant", value = "merchant")
   public String getMerchant() {
     return merchant;
   }

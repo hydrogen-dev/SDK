@@ -13,25 +13,24 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiCallback;
 import com.hydrogen.nucleus.ApiClient;
 import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.ApiResponse;
 import com.hydrogen.nucleus.Configuration;
 import com.hydrogen.nucleus.Pair;
-import com.hydrogen.nucleus.ProgressResponseBody;
-import com.hydrogen.nucleus.model.Benchmark;
-import com.hydrogen.nucleus.model.DateDoubleVO;
-import com.hydrogen.nucleus.model.PageBenchmark;
-import com.hydrogen.nucleus.ApiCallback;
 import com.hydrogen.nucleus.ProgressRequestBody;
+import com.hydrogen.nucleus.ProgressResponseBody;
 
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
 
+import com.hydrogen.nucleus.model.Benchmark;
+import com.hydrogen.nucleus.model.DateDoubleVO;
 import org.threeten.bp.LocalDate;
-
+import com.hydrogen.nucleus.model.PageBenchmark;
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -716,7 +715,7 @@ public class BenchmarkApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateBenchmarkUsingPutCall(Benchmark benchmark, UUID benchmarkId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateBenchmarkUsingPutCall(Object benchmark, UUID benchmarkId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = benchmark;
 
         // create path and map variables
@@ -759,7 +758,7 @@ public class BenchmarkApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateBenchmarkUsingPutValidateBeforeCall(Benchmark benchmark, UUID benchmarkId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateBenchmarkUsingPutValidateBeforeCall(Object benchmark, UUID benchmarkId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'benchmark' is set
         if (benchmark == null) {
@@ -785,7 +784,7 @@ public class BenchmarkApi {
      * @return Benchmark
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Benchmark updateBenchmarkUsingPut(Benchmark benchmark, UUID benchmarkId) throws ApiException {
+    public Benchmark updateBenchmarkUsingPut(Object benchmark, UUID benchmarkId) throws ApiException {
         ApiResponse<Benchmark> resp = updateBenchmarkUsingPutWithHttpInfo(benchmark, benchmarkId);
         return resp.getData();
     }
@@ -798,7 +797,7 @@ public class BenchmarkApi {
      * @return ApiResponse&lt;Benchmark&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Benchmark> updateBenchmarkUsingPutWithHttpInfo(Benchmark benchmark, UUID benchmarkId) throws ApiException {
+    public ApiResponse<Benchmark> updateBenchmarkUsingPutWithHttpInfo(Object benchmark, UUID benchmarkId) throws ApiException {
         com.squareup.okhttp.Call call = updateBenchmarkUsingPutValidateBeforeCall(benchmark, benchmarkId, null, null);
         Type localVarReturnType = new TypeToken<Benchmark>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -813,7 +812,7 @@ public class BenchmarkApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateBenchmarkUsingPutAsync(Benchmark benchmark, UUID benchmarkId, final ApiCallback<Benchmark> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateBenchmarkUsingPutAsync(Object benchmark, UUID benchmarkId, final ApiCallback<Benchmark> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

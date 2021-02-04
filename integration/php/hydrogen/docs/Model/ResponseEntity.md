@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **body** | **object** |  | [optional] 
-**status** | **object** |  | [optional] 
 **status_code** | **string** |  | [optional] 
 **status_code_value** | **int** |  | [optional] 
 

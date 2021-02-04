@@ -32,7 +32,7 @@ class TestCalculatorDepositSchedule(unittest.TestCase):
     def testCalculatorDepositSchedule(self):
         """Test CalculatorDepositSchedule"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.calculator_deposit_schedule.CalculatorDepositSchedule()  # noqa: E501
+        # model = proton_api.models.calculator_deposit_schedule.CalculatorDepositSchedule()  # noqa: E501
         pass
 
 

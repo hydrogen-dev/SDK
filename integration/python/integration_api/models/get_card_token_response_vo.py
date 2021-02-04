@@ -31,72 +31,56 @@ class GetCardTokenResponseVO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'card_status': 'str',
         'message': 'str',
         'nucleus_card_id': 'str',
-        'token': 'str',
+        'pan_reference': 'str',
+        'status': 'str',
+        'token_reference': 'str',
         'vendor_name': 'str',
         'vendor_response': 'object',
         'wallet': 'str'
     }
 
     attribute_map = {
-        'card_status': 'card_status',
         'message': 'message',
         'nucleus_card_id': 'nucleus_card_id',
-        'token': 'token',
+        'pan_reference': 'pan_reference',
+        'status': 'status',
+        'token_reference': 'token_reference',
         'vendor_name': 'vendor_name',
         'vendor_response': 'vendor_response',
         'wallet': 'wallet'
     }
 
-    def __init__(self, card_status=None, message=None, nucleus_card_id=None, token=None, vendor_name=None, vendor_response=None, wallet=None):  # noqa: E501
+    def __init__(self, message=None, nucleus_card_id=None, pan_reference=None, status=None, token_reference=None, vendor_name=None, vendor_response=None, wallet=None):  # noqa: E501
         """GetCardTokenResponseVO - a model defined in Swagger"""  # noqa: E501
 
-        self._card_status = None
         self._message = None
         self._nucleus_card_id = None
-        self._token = None
+        self._pan_reference = None
+        self._status = None
+        self._token_reference = None
         self._vendor_name = None
         self._vendor_response = None
         self._wallet = None
         self.discriminator = None
 
-        if card_status is not None:
-            self.card_status = card_status
         if message is not None:
             self.message = message
         if nucleus_card_id is not None:
             self.nucleus_card_id = nucleus_card_id
-        if token is not None:
-            self.token = token
+        if pan_reference is not None:
+            self.pan_reference = pan_reference
+        if status is not None:
+            self.status = status
+        if token_reference is not None:
+            self.token_reference = token_reference
         if vendor_name is not None:
             self.vendor_name = vendor_name
         if vendor_response is not None:
             self.vendor_response = vendor_response
         if wallet is not None:
             self.wallet = wallet
-
-    @property
-    def card_status(self):
-        """Gets the card_status of this GetCardTokenResponseVO.  # noqa: E501
-
-
-        :return: The card_status of this GetCardTokenResponseVO.  # noqa: E501
-        :rtype: str
-        """
-        return self._card_status
-
-    @card_status.setter
-    def card_status(self, card_status):
-        """Sets the card_status of this GetCardTokenResponseVO.
-
-
-        :param card_status: The card_status of this GetCardTokenResponseVO.  # noqa: E501
-        :type: str
-        """
-
-        self._card_status = card_status
 
     @property
     def message(self):
@@ -141,25 +125,67 @@ class GetCardTokenResponseVO(object):
         self._nucleus_card_id = nucleus_card_id
 
     @property
-    def token(self):
-        """Gets the token of this GetCardTokenResponseVO.  # noqa: E501
+    def pan_reference(self):
+        """Gets the pan_reference of this GetCardTokenResponseVO.  # noqa: E501
 
 
-        :return: The token of this GetCardTokenResponseVO.  # noqa: E501
+        :return: The pan_reference of this GetCardTokenResponseVO.  # noqa: E501
         :rtype: str
         """
-        return self._token
+        return self._pan_reference
 
-    @token.setter
-    def token(self, token):
-        """Sets the token of this GetCardTokenResponseVO.
+    @pan_reference.setter
+    def pan_reference(self, pan_reference):
+        """Sets the pan_reference of this GetCardTokenResponseVO.
 
 
-        :param token: The token of this GetCardTokenResponseVO.  # noqa: E501
+        :param pan_reference: The pan_reference of this GetCardTokenResponseVO.  # noqa: E501
         :type: str
         """
 
-        self._token = token
+        self._pan_reference = pan_reference
+
+    @property
+    def status(self):
+        """Gets the status of this GetCardTokenResponseVO.  # noqa: E501
+
+
+        :return: The status of this GetCardTokenResponseVO.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this GetCardTokenResponseVO.
+
+
+        :param status: The status of this GetCardTokenResponseVO.  # noqa: E501
+        :type: str
+        """
+
+        self._status = status
+
+    @property
+    def token_reference(self):
+        """Gets the token_reference of this GetCardTokenResponseVO.  # noqa: E501
+
+
+        :return: The token_reference of this GetCardTokenResponseVO.  # noqa: E501
+        :rtype: str
+        """
+        return self._token_reference
+
+    @token_reference.setter
+    def token_reference(self, token_reference):
+        """Sets the token_reference of this GetCardTokenResponseVO.
+
+
+        :param token_reference: The token_reference of this GetCardTokenResponseVO.  # noqa: E501
+        :type: str
+        """
+
+        self._token_reference = token_reference
 
     @property
     def vendor_name(self):
@@ -221,6 +247,12 @@ class GetCardTokenResponseVO(object):
         :param wallet: The wallet of this GetCardTokenResponseVO.  # noqa: E501
         :type: str
         """
+        allowed_values = ["google", "apple", "samsung"]  # noqa: E501
+        if wallet not in allowed_values:
+            raise ValueError(
+                "Invalid value for `wallet` ({0}), must be one of {1}"  # noqa: E501
+                .format(wallet, allowed_values)
+            )
 
         self._wallet = wallet
 

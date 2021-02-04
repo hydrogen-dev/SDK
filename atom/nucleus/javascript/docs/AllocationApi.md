@@ -31,49 +31,16 @@ Create a new allocation composition record for an allocation.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AllocationApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        createAllocationComposition();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var allocRequest = new HydrogenNucleusApi.AllocationComposition(); // AllocationComposition | allocRequest
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -82,11 +49,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const createAllocationComposition = () => {
-    var apiInstance = new HydrogenNucleusApi.AllocationApi();
-    var allocRequest = new HydrogenNucleusApi.AllocationComposition(); // AllocationComposition | allocRequest
-    apiInstance.createAllocationCompositionUsingPost(allocRequest, callback);
-}
+apiInstance.createAllocationCompositionUsingPost(allocRequest, callback);
 ```
 
 ### Parameters
@@ -119,49 +82,16 @@ Create a new allocation for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AllocationApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        createAllocation();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var allocationRequest = new HydrogenNucleusApi.Allocation(); // Allocation | allocationRequest
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -170,11 +100,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const createAllocation = () => {
-    var apiInstance = new HydrogenNucleusApi.AllocationApi();
-    var allocationRequest = new HydrogenNucleusApi.Allocation(); // Allocation | allocationRequest
-    apiInstance.createAllocationUsingPost(allocationRequest, callback);
-}
+apiInstance.createAllocationUsingPost(allocationRequest, callback);
 ```
 
 ### Parameters
@@ -207,69 +133,32 @@ Permanently delete an allocation composition record for an allocation.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AllocationApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        deleteAllocationComposition();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var allocationCompositionId = "\"2b74355b-00eb-460b-a504-822248e50621\""; // String | UUID allocation_composition_id
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
-const deleteAllocationComposition = () => {
-    var apiInstance = new HydrogenNucleusApi.AllocationApi();
-    var allocationCompositionId = "2b74355b-00eb-460b-a504-822248e50621"; // String | UUID allocation_composition_id
-    apiInstance.deleteAllocationCompositionUsingDelete(allocationCompositionId, callback);
-}
+apiInstance.deleteAllocationCompositionUsingDelete(allocationCompositionId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocationCompositionId** | **String**| UUID allocation_composition_id | 
+ **allocationCompositionId** | [**String**](.md)| UUID allocation_composition_id | 
 
 ### Return type
 
@@ -295,69 +184,32 @@ Permanently delete an allocation defined by your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AllocationApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        deleteAllocation();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var allocationId = "\"04907eaa-3f33-49be-a35b-378cdf639fba\""; // String | UUID allocation_id
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
-const deleteAllocation = () => {
-    var apiInstance = new HydrogenNucleusApi.AllocationApi();
-    var allocationId = "04907eaa-3f33-49be-a35b-378cdf639fba"; // String | UUID allocation_id
-    apiInstance.deleteAllocationUsingDelete(allocationId, callback);
-}
+apiInstance.deleteAllocationUsingDelete(allocationId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocationId** | **String**| UUID allocation_id | 
+ **allocationId** | [**String**](.md)| UUID allocation_id | 
 
 ### Return type
 
@@ -381,49 +233,16 @@ List all Allocation aggregated data overview
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AllocationApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        getAllocationAllAggregateData();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var allocationId = "\"2035f52d-2c5b-4e07-8904-cb037bad7aff\""; // String | Allocation Id
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -432,18 +251,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const getAllocationAllAggregateData = () => {
-    var apiInstance = new HydrogenNucleusApi.AllocationApi();
-    var allocationId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | Allocation Id
-    apiInstance.getAllocationAllAggregateDataUsingGet(allocationId, callback);
-}
+apiInstance.getAllocationAllAggregateDataUsingGet(allocationId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocationId** | **String**| Allocation Id | 
+ **allocationId** | [**String**](.md)| Allocation Id | 
 
 ### Return type
 
@@ -469,49 +284,23 @@ Get a list of asset sizes by date for a specific allocation.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AllocationApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        getAllocationAllAssetSizeAll();
-    }
+var allocationId = "allocationId_example"; // String | UUID allocation_id
+
+var opts = { 
+  'endDate': new Date("2013-10-20"), // Date | end date
+  'getLatest': true, // Boolean | get_latest
+  'isCurrentWeight': true, // Boolean | is_current_weight
+  'sortType': "sortType_example", // String | D (Daily), Q (quarterly), M (Monthly), Y (Annually) 
+  'startDate': new Date("2013-10-20") // Date | start date
 };
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -520,25 +309,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const getAllocationAllAssetSizeAll = () => {
-    var apiInstance = new HydrogenNucleusApi.AllocationApi();
-    var allocationId = "allocationId_example"; // String | UUID allocation_id
-    var opts = { 
-      'endDate': new Date("2013-10-20"), // Date | end date
-      'getLatest': true, // Boolean | get_latest
-      'isCurrentWeight': true, // Boolean | is_current_weight
-      'sortType': "sortType_example", // String | D (Daily), Q (quarterly), M (Monthly), Y (Annually) 
-      'startDate': new Date("2013-10-20") // Date | start date
-    };
-    apiInstance.getAllocationAllAssetSizeAllUsingGet(allocationId, opts, callback);
-}
+apiInstance.getAllocationAllAssetSizeAllUsingGet(allocationId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocationId** | **String**| UUID allocation_id | 
+ **allocationId** | [**String**](.md)| UUID allocation_id | 
  **endDate** | **Date**| end date | [optional] 
  **getLatest** | **Boolean**| get_latest | [optional] 
  **isCurrentWeight** | **Boolean**| is_current_weight | [optional] [default to true]
@@ -569,49 +347,20 @@ Get the information for all securities assigned to a specific allocation.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AllocationApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        getAllocationAllHoldingAll();
-    }
+var allocationId = "allocationId_example"; // String | UUID allocation_id
+
+var opts = { 
+  'endDate': new Date("2013-10-20"), // Date | end date
+  'startDate': new Date("2013-10-20") // Date | start date
 };
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -620,22 +369,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const getAllocationAllHoldingAll = () => {
-    var apiInstance = new HydrogenNucleusApi.AllocationApi();
-    var allocationId = "allocationId_example"; // String | UUID allocation_id
-    var opts = { 
-      'endDate': new Date("2013-10-20"), // Date | end date
-      'startDate': new Date("2013-10-20") // Date | start date
-    };
-    apiInstance.getAllocationAllHoldingAllUsingGet(allocationId, opts, callback);
-}
+apiInstance.getAllocationAllHoldingAllUsingGet(allocationId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocationId** | **String**| UUID allocation_id | 
+ **allocationId** | [**String**](.md)| UUID allocation_id | 
  **endDate** | **Date**| end date | [optional] 
  **startDate** | **Date**| start date | [optional] 
 
@@ -663,49 +404,24 @@ Get the information for all transactions made under an allocation to achieve the
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AllocationApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        getAllocationAllTransactionAll();
-    }
+var allocationId = "allocationId_example"; // String | UUID allocation_id
+
+var opts = { 
+  'ascending': false, // Boolean | ascending
+  'endDate': new Date("2013-10-20"), // Date | end date
+  'orderBy': "update_date", // String | order_by
+  'page': 0, // Number | page
+  'size': 25, // Number | size
+  'startDate': new Date("2013-10-20") // Date | start date
 };
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -714,26 +430,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const getAllocationAllTransactionAll = () => {
-    var apiInstance = new HydrogenNucleusApi.AllocationApi();
-    var allocationId = "allocationId_example"; // String | UUID allocation_id
-    var opts = { 
-      'ascending': false, // Boolean | ascending
-      'endDate': new Date("2013-10-20"), // Date | end date
-      'orderBy': "update_date", // String | order_by
-      'page': 0, // Number | page
-      'size': 25, // Number | size
-      'startDate': new Date("2013-10-20") // Date | start date
-    };
-    apiInstance.getAllocationAllTransactionAllUsingGet(allocationId, opts, callback);
-}
+apiInstance.getAllocationAllTransactionAllUsingGet(allocationId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocationId** | **String**| UUID allocation_id | 
+ **allocationId** | [**String**](.md)| UUID allocation_id | 
  **ascending** | **Boolean**| ascending | [optional] [default to false]
  **endDate** | **Date**| end date | [optional] 
  **orderBy** | **String**| order_by | [optional] [default to update_date]
@@ -765,49 +469,21 @@ Get details for all allocations defined for your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AllocationApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        getAllocationAll();
-    }
+var opts = { 
+  'ascending': false, // Boolean | ascending
+  'filter': "filter_example", // String | filter
+  'orderBy': "update_date", // String | order_by
+  'page': 0, // Number | page
+  'size': 25 // Number | size
 };
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -816,17 +492,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const getAllocationAll = () => {
-    var apiInstance = new HydrogenNucleusApi.AllocationApi();
-    var opts = { 
-      'ascending': false, // Boolean | ascending
-      'filter': "filter_example", // String | filter
-      'orderBy': "update_date", // String | order_by
-      'page': 0, // Number | page
-      'size': 25 // Number | size
-    };
-    apiInstance.getAllocationAllUsingGet(opts, callback);
-}
+apiInstance.getAllocationAllUsingGet(opts, callback);
 ```
 
 ### Parameters
@@ -863,49 +529,21 @@ Get the allocation composition for all allocations.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AllocationApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        getAllocationCompositionAll();
-    }
+var opts = { 
+  'ascending': false, // Boolean | ascending
+  'filter': "filter_example", // String | filter
+  'orderBy': "update_date", // String | order_by
+  'page': 0, // Number | page
+  'size': 25 // Number | size
 };
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -914,17 +552,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const getAllocationCompositionAll = () => {
-    var apiInstance = new HydrogenNucleusApi.AllocationApi();
-    var opts = { 
-      'ascending': false, // Boolean | ascending
-      'filter': "filter_example", // String | filter
-      'orderBy': "update_date", // String | order_by
-      'page': 0, // Number | page
-      'size': 25 // Number | size
-    };
-    apiInstance.getAllocationCompositionAllUsingGet(opts, callback);
-}
+apiInstance.getAllocationCompositionAllUsingGet(opts, callback);
 ```
 
 ### Parameters
@@ -961,49 +589,16 @@ Retrieve the information of an allocation composition record for an allocation.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AllocationApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        getAllocationComposition();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var allocationCompositionId = "\"2b74355b-00eb-460b-a504-822248e50621\""; // String | UUID allocation_composition_id
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1012,19 +607,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const getAllocationComposition = () => {
-    var apiInstance = new HydrogenNucleusApi.AllocationApi();
-    var allocationCompositionId = "2b74355b-00eb-460b-a504-822248e50621"; // String | UUID allocation_composition_id
-
-    apiInstance.getAllocationCompositionUsingGet(allocationCompositionId, callback);
-}
+apiInstance.getAllocationCompositionUsingGet(allocationCompositionId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocationCompositionId** | **String**| UUID allocation_composition_id | 
+ **allocationCompositionId** | [**String**](.md)| UUID allocation_composition_id | 
 
 ### Return type
 
@@ -1050,49 +640,16 @@ Retrieve the information for an allocation defined by your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AllocationApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        getAllocation();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var allocationId = "\"04907eaa-3f33-49be-a35b-378cdf639fba\""; // String | UUID allocation_id
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1101,19 +658,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const getAllocation = () => {
-    var apiInstance = new HydrogenNucleusApi.AllocationApi();
-    var allocationId = "04907eaa-3f33-49be-a35b-378cdf639fba"; // String | UUID allocation_id
-
-    apiInstance.getAllocationUsingGet(allocationId, callback);
-}
+apiInstance.getAllocationUsingGet(allocationId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocationId** | **String**| UUID allocation_id | 
+ **allocationId** | [**String**](.md)| UUID allocation_id | 
 
 ### Return type
 
@@ -1139,49 +691,18 @@ Update the information of an allocation composition record for an allocation.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AllocationApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        updateAllocationComposition();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var allocationComposition = null; // Object | allocation_composition
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var allocationCompositionId = "\"f96fad3e-a8cf-4915-bc0c-da4d9693ab83\""; // String | UUID allocation_composition_id
 
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1190,21 +711,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const updateAllocationComposition = () => {
-    var apiInstance = new HydrogenNucleusApi.AllocationApi();
-    var allocationComposition = new HydrogenNucleusApi.AllocationComposition(); // AllocationComposition | allocation_composition
-    var allocationCompositionId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID allocation_composition_id
-    apiInstance.updateAllocationCompositionUsingPut(allocationComposition, allocationCompositionId, callback);
-
-}
+apiInstance.updateAllocationCompositionUsingPut(allocationComposition, allocationCompositionId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocationComposition** | [**AllocationComposition**](AllocationComposition.md)| allocation_composition | 
- **allocationCompositionId** | **String**| UUID allocation_composition_id | 
+ **allocationComposition** | **Object**| allocation_composition | 
+ **allocationCompositionId** | [**String**](.md)| UUID allocation_composition_id | 
 
 ### Return type
 
@@ -1230,49 +745,18 @@ Update an allocation defined by your firm.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AllocationApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        updateAllocation();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var allocation = null; // Object | allocation
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var allocationId = "\"f96fad3e-a8cf-4915-bc0c-da4d9693ab83\""; // String | UUID allocation_id
 
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1281,21 +765,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const updateAllocation = () => {
-    var apiInstance = new HydrogenNucleusApi.AllocationApi();
-    var allocation = new HydrogenNucleusApi.Allocation(); // Allocation | allocation
-
-    var allocationId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID allocation_id
-    apiInstance.updateAllocationUsingPut(allocation, allocationId, callback);
-}
+apiInstance.updateAllocationUsingPut(allocation, allocationId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocation** | [**Allocation**](Allocation.md)| allocation | 
- **allocationId** | **String**| UUID allocation_id | 
+ **allocation** | **Object**| allocation | 
+ **allocationId** | [**String**](.md)| UUID allocation_id | 
 
 ### Return type
 

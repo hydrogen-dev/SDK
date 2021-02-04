@@ -533,7 +533,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\RoundupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$roundup_setting = new \com\hydrogen\nucleus\Model\RoundupSettings(); // \com\hydrogen\nucleus\Model\RoundupSettings | roundup_setting
+$roundup_setting = new \stdClass; // object | roundup_setting
 $roundup_setting_id = "roundup_setting_id_example"; // string | UUID roundup_setting_id
 
 try {
@@ -549,7 +549,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roundup_setting** | [**\com\hydrogen\nucleus\Model\RoundupSettings**](../Model/RoundupSettings.md)| roundup_setting |
+ **roundup_setting** | **object**| roundup_setting |
  **roundup_setting_id** | [**string**](../Model/.md)| UUID roundup_setting_id |
 
 ### Return type

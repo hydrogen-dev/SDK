@@ -27,9 +27,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import com.hydrogen.integration.model.Webhook;
 import com.hydrogen.integration.model.PageWebhook;
 import java.util.UUID;
+import com.hydrogen.integration.model.Webhook;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -244,7 +244,7 @@ public class WebhookApi {
 
     /**
      * Delete a webhook
-     * Permanently delete a webhook for your firm. The webhook_id must be provided.
+     * Permanently delete a webhook for your business. The webhook_id must be provided.
      * @param webhookId UUID webhook_id (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -254,7 +254,7 @@ public class WebhookApi {
 
     /**
      * Delete a webhook
-     * Permanently delete a webhook for your firm. The webhook_id must be provided.
+     * Permanently delete a webhook for your business. The webhook_id must be provided.
      * @param webhookId UUID webhook_id (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -266,7 +266,7 @@ public class WebhookApi {
 
     /**
      * Delete a webhook (asynchronously)
-     * Permanently delete a webhook for your firm. The webhook_id must be provided.
+     * Permanently delete a webhook for your business. The webhook_id must be provided.
      * @param webhookId UUID webhook_id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -371,7 +371,7 @@ public class WebhookApi {
 
     /**
      * List all webhooks
-     * Get information for all webhooks defined for your firm.
+     * Get information for all webhooks defined for your business.
      * @param ascending ascending (optional, default to false)
      * @param filter filter (optional)
      * @param orderBy order_by (optional, default to update_date)
@@ -387,7 +387,7 @@ public class WebhookApi {
 
     /**
      * List all webhooks
-     * Get information for all webhooks defined for your firm.
+     * Get information for all webhooks defined for your business.
      * @param ascending ascending (optional, default to false)
      * @param filter filter (optional)
      * @param orderBy order_by (optional, default to update_date)
@@ -404,7 +404,7 @@ public class WebhookApi {
 
     /**
      * List all webhooks (asynchronously)
-     * Get information for all webhooks defined for your firm.
+     * Get information for all webhooks defined for your business.
      * @param ascending ascending (optional, default to false)
      * @param filter filter (optional)
      * @param orderBy order_by (optional, default to update_date)
@@ -572,7 +572,7 @@ public class WebhookApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateWebhookUsingPutCall(Webhook webhook, UUID webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateWebhookUsingPutCall(Object webhook, UUID webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = webhook;
 
         // create path and map variables
@@ -615,7 +615,7 @@ public class WebhookApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateWebhookUsingPutValidateBeforeCall(Webhook webhook, UUID webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateWebhookUsingPutValidateBeforeCall(Object webhook, UUID webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'webhook' is set
         if (webhook == null) {
@@ -635,26 +635,26 @@ public class WebhookApi {
 
     /**
      * Update a webhook
-     * Update a webhook for your firm. The webhook_id must be provided
+     * Update a webhook for your business. The webhook_id must be provided
      * @param webhook webhook (required)
      * @param webhookId UUID webhook_id (required)
      * @return Webhook
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Webhook updateWebhookUsingPut(Webhook webhook, UUID webhookId) throws ApiException {
+    public Webhook updateWebhookUsingPut(Object webhook, UUID webhookId) throws ApiException {
         ApiResponse<Webhook> resp = updateWebhookUsingPutWithHttpInfo(webhook, webhookId);
         return resp.getData();
     }
 
     /**
      * Update a webhook
-     * Update a webhook for your firm. The webhook_id must be provided
+     * Update a webhook for your business. The webhook_id must be provided
      * @param webhook webhook (required)
      * @param webhookId UUID webhook_id (required)
      * @return ApiResponse&lt;Webhook&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Webhook> updateWebhookUsingPutWithHttpInfo(Webhook webhook, UUID webhookId) throws ApiException {
+    public ApiResponse<Webhook> updateWebhookUsingPutWithHttpInfo(Object webhook, UUID webhookId) throws ApiException {
         com.squareup.okhttp.Call call = updateWebhookUsingPutValidateBeforeCall(webhook, webhookId, null, null);
         Type localVarReturnType = new TypeToken<Webhook>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -662,14 +662,14 @@ public class WebhookApi {
 
     /**
      * Update a webhook (asynchronously)
-     * Update a webhook for your firm. The webhook_id must be provided
+     * Update a webhook for your business. The webhook_id must be provided
      * @param webhook webhook (required)
      * @param webhookId UUID webhook_id (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateWebhookUsingPutAsync(Webhook webhook, UUID webhookId, final ApiCallback<Webhook> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateWebhookUsingPutAsync(Object webhook, UUID webhookId, final ApiCallback<Webhook> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

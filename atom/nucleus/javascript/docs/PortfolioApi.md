@@ -362,7 +362,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-var portfolioAssetSizeId = "01b252d3-1412-477f-8d29-6e2ff6e54c81"; // String | UUID portfolio_asset_size_id
+var portfolioAssetSizeId = "\"01b252d3-1412-477f-8d29-6e2ff6e54c81\""; // String | UUID portfolio_asset_size_id
 
 
 var callback = function(error, data, response) {
@@ -379,7 +379,7 @@ apiInstance.deletePortfolioAssetSizeUsingDelete(portfolioAssetSizeId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioAssetSizeId** | **String**| UUID portfolio_asset_size_id | 
+ **portfolioAssetSizeId** | [**String**](.md)| UUID portfolio_asset_size_id | 
 
 ### Return type
 
@@ -413,7 +413,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-var portfolioCommentId = "099961da-7f41-4309-950f-2b51689a0033"; // String | UUID portfolio_comment_id
+var portfolioCommentId = "\"099961da-7f41-4309-950f-2b51689a0033\""; // String | UUID portfolio_comment_id
 
 
 var callback = function(error, data, response) {
@@ -430,7 +430,7 @@ apiInstance.deletePortfolioCommentUsingDelete(portfolioCommentId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioCommentId** | **String**| UUID portfolio_comment_id | 
+ **portfolioCommentId** | [**String**](.md)| UUID portfolio_comment_id | 
 
 ### Return type
 
@@ -464,7 +464,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-var portfolioGoalId = "04907eaa-3f33-49be-a35b-378cdf639fba"; // String | UUID portfolio_goal_id
+var portfolioGoalId = "\"04907eaa-3f33-49be-a35b-378cdf639fba\""; // String | UUID portfolio_goal_id
 
 
 var callback = function(error, data, response) {
@@ -481,7 +481,7 @@ apiInstance.deletePortfolioGoalUsingDelete(portfolioGoalId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioGoalId** | **String**| UUID portfolio_goal_id | 
+ **portfolioGoalId** | [**String**](.md)| UUID portfolio_goal_id | 
 
 ### Return type
 
@@ -515,7 +515,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-var portfolioHoldingId = "099961da-7f41-4309-950f-2b51689a0033"; // String | UUID portfolio_holding_id
+var portfolioHoldingId = "\"099961da-7f41-4309-950f-2b51689a0033\""; // String | UUID portfolio_holding_id
 
 
 var callback = function(error, data, response) {
@@ -532,7 +532,7 @@ apiInstance.deletePortfolioHoldingUsingDelete(portfolioHoldingId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioHoldingId** | **String**| UUID portfolio_holding_id | 
+ **portfolioHoldingId** | [**String**](.md)| UUID portfolio_holding_id | 
 
 ### Return type
 
@@ -566,7 +566,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-var portfolioTransactionId = "099961da-7f41-4309-950f-2b51689a0033"; // String | UUID portfolio_transaction_id
+var portfolioTransactionId = "\"099961da-7f41-4309-950f-2b51689a0033\""; // String | UUID portfolio_transaction_id
 
 
 var callback = function(error, data, response) {
@@ -583,7 +583,7 @@ apiInstance.deletePortfolioTransactionUsingDelete(portfolioTransactionId, callba
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioTransactionId** | **String**| UUID portfolio_transaction_id | 
+ **portfolioTransactionId** | [**String**](.md)| UUID portfolio_transaction_id | 
 
 ### Return type
 
@@ -617,7 +617,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-var portfolioId = "04907eaa-3f33-49be-a35b-378cdf639fba"; // String | UUID portfolio_id
+var portfolioId = "\"04907eaa-3f33-49be-a35b-378cdf639fba\""; // String | UUID portfolio_id
 
 
 var callback = function(error, data, response) {
@@ -634,7 +634,7 @@ apiInstance.deletePortfolioUsingDelete(portfolioId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioId** | **String**| UUID portfolio_id | 
+ **portfolioId** | [**String**](.md)| UUID portfolio_id | 
 
 ### Return type
 
@@ -668,7 +668,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-var portfolioId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | Portfolio Id
+var portfolioId = "\"f96fad3e-a8cf-4915-bc0c-da4d9693ab83\""; // String | Portfolio Id
 
 var opts = { 
   'showAssetClass': true, // Boolean | true or false
@@ -692,7 +692,7 @@ apiInstance.getPortfolioAggregatedDataUsingGet(portfolioId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioId** | **String**| Portfolio Id | 
+ **portfolioId** | [**String**](.md)| Portfolio Id | 
  **showAssetClass** | **Boolean**| true or false | [optional] [default to true]
  **showCategory** | **Boolean**| true or false | [optional] [default to true]
  **showIndustry** | **Boolean**| true or false | [optional] [default to true]
@@ -873,7 +873,7 @@ apiInstance.getPortfolioAssetSizeUsingGet(portfolioAssetSizeId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioAssetSizeId** | **String**| portfolio_asset_size_id | 
+ **portfolioAssetSizeId** | [**String**](.md)| portfolio_asset_size_id | 
  **currencyConversion** | **String**| currency_conversion | [optional] 
 
 ### Return type
@@ -968,7 +968,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-var portfolioCommentId = "099961da-7f41-4309-950f-2b51689a0033"; // String | UUID portfolio_comment_id
+var portfolioCommentId = "\"099961da-7f41-4309-950f-2b51689a0033\""; // String | UUID portfolio_comment_id
 
 
 var callback = function(error, data, response) {
@@ -985,7 +985,7 @@ apiInstance.getPortfolioCommentUsingGet(portfolioCommentId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioCommentId** | **String**| UUID portfolio_comment_id | 
+ **portfolioCommentId** | [**String**](.md)| UUID portfolio_comment_id | 
 
 ### Return type
 
@@ -1079,7 +1079,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-var portfolioGoalId = "04907eaa-3f33-49be-a35b-378cdf639fba"; // String | UUID portfolio_goal_id
+var portfolioGoalId = "\"04907eaa-3f33-49be-a35b-378cdf639fba\""; // String | UUID portfolio_goal_id
 
 
 var callback = function(error, data, response) {
@@ -1096,7 +1096,7 @@ apiInstance.getPortfolioGoalUsingGet(portfolioGoalId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioGoalId** | **String**| UUID portfolio_goal_id | 
+ **portfolioGoalId** | [**String**](.md)| UUID portfolio_goal_id | 
 
 ### Return type
 
@@ -1192,7 +1192,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-var portfolioHoldingId = "099961da-7f41-4309-950f-2b51689a0033"; // String | UUID portfolio_holding_id
+var portfolioHoldingId = "\"099961da-7f41-4309-950f-2b51689a0033\""; // String | UUID portfolio_holding_id
 
 var opts = { 
   'currencyConversion': "currencyConversion_example" // String | USD
@@ -1212,7 +1212,7 @@ apiInstance.getPortfolioHoldingUsingGet(portfolioHoldingId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioHoldingId** | **String**| UUID portfolio_holding_id | 
+ **portfolioHoldingId** | [**String**](.md)| UUID portfolio_holding_id | 
  **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
@@ -1309,7 +1309,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-var portfolioTransactionId = "099961da-7f41-4309-950f-2b51689a0033"; // String | UUID portfolio_transaction_id
+var portfolioTransactionId = "\"099961da-7f41-4309-950f-2b51689a0033\""; // String | UUID portfolio_transaction_id
 
 var opts = { 
   'currencyConversion': "currencyConversion_example" // String | USD
@@ -1329,7 +1329,7 @@ apiInstance.getPortfolioTransactionUsingGet(portfolioTransactionId, opts, callba
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioTransactionId** | **String**| UUID portfolio_transaction_id | 
+ **portfolioTransactionId** | [**String**](.md)| UUID portfolio_transaction_id | 
  **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
@@ -1364,7 +1364,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-var portfolioId = "04907eaa-3f33-49be-a35b-378cdf639fba"; // String | UUID portfolio_id
+var portfolioId = "\"04907eaa-3f33-49be-a35b-378cdf639fba\""; // String | UUID portfolio_id
 
 
 var callback = function(error, data, response) {
@@ -1381,7 +1381,7 @@ apiInstance.getPortfolioUsingGet(portfolioId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioId** | **String**| UUID portfolio_id | 
+ **portfolioId** | [**String**](.md)| UUID portfolio_id | 
 
 ### Return type
 
@@ -1415,9 +1415,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-var portfolioAssetSize = new HydrogenNucleusApi.PortfolioAssetSizeLog(); // PortfolioAssetSizeLog | portfolio_asset_size
+var portfolioAssetSize = null; // Object | portfolio_asset_size
 
-var portfolioAssetSizeId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID portfolio_asset_size_id
+var portfolioAssetSizeId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID portfolio_asset_size_id
 
 
 var callback = function(error, data, response) {
@@ -1434,8 +1434,8 @@ apiInstance.updatePortfolioAssetSizeUsingPut(portfolioAssetSize, portfolioAssetS
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioAssetSize** | [**PortfolioAssetSizeLog**](PortfolioAssetSizeLog.md)| portfolio_asset_size | 
- **portfolioAssetSizeId** | **String**| UUID portfolio_asset_size_id | 
+ **portfolioAssetSize** | **Object**| portfolio_asset_size | 
+ **portfolioAssetSizeId** | [**String**](.md)| UUID portfolio_asset_size_id | 
 
 ### Return type
 
@@ -1469,9 +1469,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-var portfolioComment = new HydrogenNucleusApi.PortfolioComment(); // PortfolioComment | portfolio_comment
+var portfolioComment = null; // Object | portfolio_comment
 
-var portfolioCommentId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID portfolio_comment_id
+var portfolioCommentId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID portfolio_comment_id
 
 
 var callback = function(error, data, response) {
@@ -1488,8 +1488,8 @@ apiInstance.updatePortfolioCommentUsingPut(portfolioComment, portfolioCommentId,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioComment** | [**PortfolioComment**](PortfolioComment.md)| portfolio_comment | 
- **portfolioCommentId** | **String**| UUID portfolio_comment_id | 
+ **portfolioComment** | **Object**| portfolio_comment | 
+ **portfolioCommentId** | [**String**](.md)| UUID portfolio_comment_id | 
 
 ### Return type
 
@@ -1523,9 +1523,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-var portfolioGoal = new HydrogenNucleusApi.PortfolioGoal(); // PortfolioGoal | portfolio_goal
+var portfolioGoal = null; // Object | portfolio_goal
 
-var portfolioGoalId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID portfolio_goal_id
+var portfolioGoalId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID portfolio_goal_id
 
 
 var callback = function(error, data, response) {
@@ -1542,8 +1542,8 @@ apiInstance.updatePortfolioGoalUsingPut(portfolioGoal, portfolioGoalId, callback
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioGoal** | [**PortfolioGoal**](PortfolioGoal.md)| portfolio_goal | 
- **portfolioGoalId** | **String**| UUID portfolio_goal_id | 
+ **portfolioGoal** | **Object**| portfolio_goal | 
+ **portfolioGoalId** | [**String**](.md)| UUID portfolio_goal_id | 
 
 ### Return type
 
@@ -1577,9 +1577,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-var portfolioHolding = new HydrogenNucleusApi.PortfolioHoldingLog(); // PortfolioHoldingLog | portfolio_holding
+var portfolioHolding = null; // Object | portfolio_holding
 
-var portfolioHoldingId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID portfolio_holding_id
+var portfolioHoldingId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID portfolio_holding_id
 
 
 var callback = function(error, data, response) {
@@ -1596,8 +1596,8 @@ apiInstance.updatePortfolioHoldingUsingPut(portfolioHolding, portfolioHoldingId,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioHolding** | [**PortfolioHoldingLog**](PortfolioHoldingLog.md)| portfolio_holding | 
- **portfolioHoldingId** | **String**| UUID portfolio_holding_id | 
+ **portfolioHolding** | **Object**| portfolio_holding | 
+ **portfolioHoldingId** | [**String**](.md)| UUID portfolio_holding_id | 
 
 ### Return type
 
@@ -1631,9 +1631,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-var portfolioTransaction = new HydrogenNucleusApi.PortfolioTransaction(); // PortfolioTransaction | portfolio_transaction
+var portfolioTransaction = null; // Object | portfolio_transaction
 
-var portfolioTransactionId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID portfolio_transaction_id
+var portfolioTransactionId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID portfolio_transaction_id
 
 
 var callback = function(error, data, response) {
@@ -1650,8 +1650,8 @@ apiInstance.updatePortfolioTransactionUsingPut(portfolioTransaction, portfolioTr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioTransaction** | [**PortfolioTransaction**](PortfolioTransaction.md)| portfolio_transaction | 
- **portfolioTransactionId** | **String**| UUID portfolio_transaction_id | 
+ **portfolioTransaction** | **Object**| portfolio_transaction | 
+ **portfolioTransactionId** | [**String**](.md)| UUID portfolio_transaction_id | 
 
 ### Return type
 
@@ -1685,9 +1685,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.PortfolioApi();
 
-var portfolio = new HydrogenNucleusApi.Portfolio(); // Portfolio | portfolio
+var portfolio = null; // Object | portfolio
 
-var portfolioId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID portfolio_id
+var portfolioId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID portfolio_id
 
 
 var callback = function(error, data, response) {
@@ -1704,8 +1704,8 @@ apiInstance.updatePortfolioUsingPut(portfolio, portfolioId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio** | [**Portfolio**](Portfolio.md)| portfolio | 
- **portfolioId** | **String**| UUID portfolio_id | 
+ **portfolio** | **Object**| portfolio | 
+ **portfolioId** | [**String**](.md)| UUID portfolio_id | 
 
 ### Return type
 

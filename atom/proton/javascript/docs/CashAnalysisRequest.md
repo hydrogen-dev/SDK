@@ -3,29 +3,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**scope** | **String** |  | [optional] [default to 'all']
-**showOutflowDetails** | **Boolean** |  | [optional] [default to false]
-**showHistory** | **Boolean** |  | [optional] [default to false]
+**endDate** | **Date** |  | [optional] 
 **clientId** | **String** |  | [optional] 
 **showInflowDetails** | **Boolean** |  | [optional] [default to false]
 **currencyConversion** | **String** |  | [optional] 
-**endDate** | **Date** |  | [optional] 
-**currencyCode** | **String** |  | [optional] 
-**startDate** | **Date** |  | [optional] 
 **historyFrequencyInterval** | **String** |  | [optional] [default to 'month']
-
-
-<a name="ScopeEnum"></a>
-## Enum: ScopeEnum
-
-
-* `all` (value: `"all"`)
-
-* `external` (value: `"external"`)
-
-* `internal` (value: `"internal"`)
-
-
+**startDate** | **Date** |  | [optional] 
+**showHistory** | **Boolean** |  | [optional] [default to false]
+**currencyCode** | **String** |  | [optional] 
+**showOutflowDetails** | **Boolean** |  | [optional] [default to false]
+**scope** | **String** |  | [optional] [default to 'all']
 
 
 <a name="HistoryFrequencyIntervalEnum"></a>
@@ -41,6 +28,19 @@ Name | Type | Description | Notes
 * `quarter` (value: `"quarter"`)
 
 * `year` (value: `"year"`)
+
+
+
+
+<a name="ScopeEnum"></a>
+## Enum: ScopeEnum
+
+
+* `all` (value: `"all"`)
+
+* `external` (value: `"external"`)
+
+* `internal` (value: `"internal"`)
 
 
 

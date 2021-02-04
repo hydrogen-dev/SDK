@@ -3,15 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**inflationRate** | **Number** |  | [optional] [default to 0.0]
-**depositSchedule** | [**[SavingsDepositSchedule]**](SavingsDepositSchedule.md) |  | [optional] 
-**createLog** | **Boolean** |  | [optional] [default to false]
 **aggregationAccountIds** | **[String]** |  | [optional] 
-**initialBalance** | **Number** |  | [optional] 
-**horizon** | **Number** |  | 
-**horizonFrequencyInterval** | **String** |  | [optional] [default to 'year']
 **taxRate** | **Number** |  | [optional] [default to 0.0]
 **accountIds** | **[String]** |  | [optional] 
+**initialBalance** | **Number** |  | [optional] 
+**createLog** | **Boolean** |  | [optional] [default to false]
+**inflationRate** | **Number** |  | [optional] [default to 0.0]
+**horizon** | **Number** |  | 
+**horizonFrequencyInterval** | **String** |  | [optional] [default to 'year']
+**depositSchedule** | [**[SavingsDepositSchedule]**](SavingsDepositSchedule.md) |  | [optional] 
 **returnSchedule** | **[Number]** |  | 
 
 

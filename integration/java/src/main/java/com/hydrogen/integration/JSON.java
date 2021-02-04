@@ -26,7 +26,9 @@ import org.threeten.bp.LocalDate;
 import org.threeten.bp.OffsetDateTime;
 import org.threeten.bp.format.DateTimeFormatter;
 
+import com.hydrogen.integration.model.*;
 import okio.ByteString;
+import org.threeten.bp.format.DateTimeParseException;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -221,6 +223,8 @@ public class JSON {
 
         private DateTimeFormatter formatter;
 
+        private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+
         public LocalDateTypeAdapter() {
             this(DateTimeFormatter.ISO_LOCAL_DATE);
         }
@@ -250,7 +254,11 @@ public class JSON {
                     return null;
                 default:
                     String date = in.nextString();
-                    return LocalDate.parse(date, formatter);
+                    try {
+                        return LocalDate.parse(date, formatter);
+                    }catch (DateTimeParseException dateTimeParseException) {
+                        return LocalDate.parse(date, dateTimeFormatter);
+                    }
             }
         }
     }
@@ -327,6 +335,7 @@ public class JSON {
     public static class DateTypeAdapter extends TypeAdapter<Date> {
 
         private DateFormat dateFormat;
+
 
         public DateTypeAdapter() {
         }

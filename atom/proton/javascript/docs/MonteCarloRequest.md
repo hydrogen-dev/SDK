@@ -3,28 +3,28 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**portfolioId** | **String** |  | [optional] 
 **maxSample** | **[Number]** |  | [optional] 
-**p** | **[Number]** |  | [optional] 
-**aggregationAccountId** | **String** |  | [optional] 
-**allocationId** | **String** |  | [optional] 
-**mu** | **[Number]** |  | [optional] 
-**n** | **Number** |  | [optional] [default to 1000]
-**sigma** | **[Number]** |  | [optional] 
-**accountId** | **String** |  | [optional] 
-**initBal** | **Number** |  | [optional] 
-**removeOutliers** | **Boolean** |  | [optional] [default to false]
-**modelId** | **String** |  | [optional] 
-**maxBal** | **[Number]** |  | [optional] 
-**minBal** | **[Number]** |  | [optional] 
-**useProxyData** | **Boolean** |  | [optional] [default to false]
-**cf** | **[[Number]]** |  | 
 **resultType** | **String** |  | [optional] [default to 'raw']
 **retMod** | **[Number]** |  | [optional] 
+**removeOutliers** | **Boolean** |  | [optional] [default to false]
+**maxBal** | **[Number]** |  | [optional] 
 **marketDataSource** | **String** |  | [optional] [default to 'nucleus']
-**portfolioId** | **String** |  | [optional] 
-**frequencyInterval** | **String** |  | [optional] [default to 'year']
-**createLog** | **Boolean** |  | [optional] [default to false]
+**p** | **[Number]** |  | [optional] 
+**allocationId** | **String** |  | [optional] 
+**useProxyData** | **Boolean** |  | [optional] [default to false]
+**aggregationAccountId** | **String** |  | [optional] 
+**initBal** | **Number** |  | [optional] 
 **minSample** | **[Number]** |  | [optional] 
+**createLog** | **Boolean** |  | [optional] [default to false]
+**mu** | **[Number]** |  | [optional] 
+**accountId** | **String** |  | [optional] 
+**sigma** | **[Number]** |  | [optional] 
+**modelId** | **String** |  | [optional] 
+**n** | **Number** |  | [optional] [default to 1000]
+**minBal** | **[Number]** |  | [optional] 
+**frequencyInterval** | **String** |  | [optional] [default to 'year']
+**cf** | **[[Number]]** |  | 
 
 
 <a name="ResultTypeEnum"></a>

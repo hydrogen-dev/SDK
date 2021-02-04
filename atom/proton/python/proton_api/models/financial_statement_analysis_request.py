@@ -31,136 +31,163 @@ class FinancialStatementAnalysisRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'period_quarter': 'int',
-        'show_history': 'bool',
-        'client_id': 'str',
-        'currency_conversion': 'str',
-        'accounting_method': 'str',
         'period_length': 'str',
-        'period_type': 'str',
-        'period_year': 'int',
+        'period_month': 'int',
         'end_date': 'date',
-        'currency_code': 'str',
-        'stat_names': 'list[str]',
-        'start_date': 'date',
-        'statement_type': 'str',
+        'client_id': 'str',
+        'accounting_method': 'str',
+        'period_year': 'int',
+        'currency_conversion': 'str',
         'history_frequency_interval': 'str',
-        'period_month': 'int'
+        'start_date': 'date',
+        'period_type': 'str',
+        'currency_code': 'str',
+        'show_history': 'bool',
+        'stat_names': 'list[str]',
+        'period_quarter': 'int',
+        'statement_type': 'str'
     }
 
     attribute_map = {
-        'period_quarter': 'period_quarter',
-        'show_history': 'show_history',
-        'client_id': 'client_id',
-        'currency_conversion': 'currency_conversion',
-        'accounting_method': 'accounting_method',
         'period_length': 'period_length',
-        'period_type': 'period_type',
-        'period_year': 'period_year',
+        'period_month': 'period_month',
         'end_date': 'end_date',
-        'currency_code': 'currency_code',
-        'stat_names': 'stat_names',
-        'start_date': 'start_date',
-        'statement_type': 'statement_type',
+        'client_id': 'client_id',
+        'accounting_method': 'accounting_method',
+        'period_year': 'period_year',
+        'currency_conversion': 'currency_conversion',
         'history_frequency_interval': 'history_frequency_interval',
-        'period_month': 'period_month'
+        'start_date': 'start_date',
+        'period_type': 'period_type',
+        'currency_code': 'currency_code',
+        'show_history': 'show_history',
+        'stat_names': 'stat_names',
+        'period_quarter': 'period_quarter',
+        'statement_type': 'statement_type'
     }
 
-    def __init__(self, period_quarter=None, show_history=False, client_id=None, currency_conversion=None, accounting_method=None, period_length='quarterly', period_type=None, period_year=None, end_date=None, currency_code=None, stat_names=None, start_date=None, statement_type='all', history_frequency_interval='month', period_month=None):  # noqa: E501
+    def __init__(self, period_length='quarterly', period_month=None, end_date=None, client_id=None, accounting_method=None, period_year=None, currency_conversion=None, history_frequency_interval='month', start_date=None, period_type=None, currency_code=None, show_history=False, stat_names=None, period_quarter=None, statement_type='all'):  # noqa: E501
         """FinancialStatementAnalysisRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._period_quarter = None
-        self._show_history = None
-        self._client_id = None
-        self._currency_conversion = None
-        self._accounting_method = None
         self._period_length = None
-        self._period_type = None
-        self._period_year = None
-        self._end_date = None
-        self._currency_code = None
-        self._stat_names = None
-        self._start_date = None
-        self._statement_type = None
-        self._history_frequency_interval = None
         self._period_month = None
+        self._end_date = None
+        self._client_id = None
+        self._accounting_method = None
+        self._period_year = None
+        self._currency_conversion = None
+        self._history_frequency_interval = None
+        self._start_date = None
+        self._period_type = None
+        self._currency_code = None
+        self._show_history = None
+        self._stat_names = None
+        self._period_quarter = None
+        self._statement_type = None
         self.discriminator = None
 
-        if period_quarter is not None:
-            self.period_quarter = period_quarter
-        if show_history is not None:
-            self.show_history = show_history
-        if client_id is not None:
-            self.client_id = client_id
-        if currency_conversion is not None:
-            self.currency_conversion = currency_conversion
-        self.accounting_method = accounting_method
         if period_length is not None:
             self.period_length = period_length
-        if period_type is not None:
-            self.period_type = period_type
-        if period_year is not None:
-            self.period_year = period_year
-        if end_date is not None:
-            self.end_date = end_date
-        if currency_code is not None:
-            self.currency_code = currency_code
-        if stat_names is not None:
-            self.stat_names = stat_names
-        if start_date is not None:
-            self.start_date = start_date
-        if statement_type is not None:
-            self.statement_type = statement_type
-        if history_frequency_interval is not None:
-            self.history_frequency_interval = history_frequency_interval
         if period_month is not None:
             self.period_month = period_month
+        if end_date is not None:
+            self.end_date = end_date
+        if client_id is not None:
+            self.client_id = client_id
+        self.accounting_method = accounting_method
+        if period_year is not None:
+            self.period_year = period_year
+        if currency_conversion is not None:
+            self.currency_conversion = currency_conversion
+        if history_frequency_interval is not None:
+            self.history_frequency_interval = history_frequency_interval
+        if start_date is not None:
+            self.start_date = start_date
+        if period_type is not None:
+            self.period_type = period_type
+        if currency_code is not None:
+            self.currency_code = currency_code
+        if show_history is not None:
+            self.show_history = show_history
+        if stat_names is not None:
+            self.stat_names = stat_names
+        if period_quarter is not None:
+            self.period_quarter = period_quarter
+        if statement_type is not None:
+            self.statement_type = statement_type
 
     @property
-    def period_quarter(self):
-        """Gets the period_quarter of this FinancialStatementAnalysisRequest.  # noqa: E501
+    def period_length(self):
+        """Gets the period_length of this FinancialStatementAnalysisRequest.  # noqa: E501
 
 
-        :return: The period_quarter of this FinancialStatementAnalysisRequest.  # noqa: E501
+        :return: The period_length of this FinancialStatementAnalysisRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._period_length
+
+    @period_length.setter
+    def period_length(self, period_length):
+        """Sets the period_length of this FinancialStatementAnalysisRequest.
+
+
+        :param period_length: The period_length of this FinancialStatementAnalysisRequest.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["annual", "quarterly", "monthly", "ytd", "qtd", "mtd"]  # noqa: E501
+        if period_length not in allowed_values:
+            raise ValueError(
+                "Invalid value for `period_length` ({0}), must be one of {1}"  # noqa: E501
+                .format(period_length, allowed_values)
+            )
+
+        self._period_length = period_length
+
+    @property
+    def period_month(self):
+        """Gets the period_month of this FinancialStatementAnalysisRequest.  # noqa: E501
+
+
+        :return: The period_month of this FinancialStatementAnalysisRequest.  # noqa: E501
         :rtype: int
         """
-        return self._period_quarter
+        return self._period_month
 
-    @period_quarter.setter
-    def period_quarter(self, period_quarter):
-        """Sets the period_quarter of this FinancialStatementAnalysisRequest.
+    @period_month.setter
+    def period_month(self, period_month):
+        """Sets the period_month of this FinancialStatementAnalysisRequest.
 
 
-        :param period_quarter: The period_quarter of this FinancialStatementAnalysisRequest.  # noqa: E501
+        :param period_month: The period_month of this FinancialStatementAnalysisRequest.  # noqa: E501
         :type: int
         """
-        if period_quarter is not None and period_quarter > 4:  # noqa: E501
-            raise ValueError("Invalid value for `period_quarter`, must be a value less than or equal to `4`")  # noqa: E501
-        if period_quarter is not None and period_quarter < 1:  # noqa: E501
-            raise ValueError("Invalid value for `period_quarter`, must be a value greater than or equal to `1`")  # noqa: E501
+        if period_month is not None and period_month > 12:  # noqa: E501
+            raise ValueError("Invalid value for `period_month`, must be a value less than or equal to `12`")  # noqa: E501
+        if period_month is not None and period_month < 1:  # noqa: E501
+            raise ValueError("Invalid value for `period_month`, must be a value greater than or equal to `1`")  # noqa: E501
 
-        self._period_quarter = period_quarter
+        self._period_month = period_month
 
     @property
-    def show_history(self):
-        """Gets the show_history of this FinancialStatementAnalysisRequest.  # noqa: E501
+    def end_date(self):
+        """Gets the end_date of this FinancialStatementAnalysisRequest.  # noqa: E501
 
 
-        :return: The show_history of this FinancialStatementAnalysisRequest.  # noqa: E501
-        :rtype: bool
+        :return: The end_date of this FinancialStatementAnalysisRequest.  # noqa: E501
+        :rtype: date
         """
-        return self._show_history
+        return self._end_date
 
-    @show_history.setter
-    def show_history(self, show_history):
-        """Sets the show_history of this FinancialStatementAnalysisRequest.
+    @end_date.setter
+    def end_date(self, end_date):
+        """Sets the end_date of this FinancialStatementAnalysisRequest.
 
 
-        :param show_history: The show_history of this FinancialStatementAnalysisRequest.  # noqa: E501
-        :type: bool
+        :param end_date: The end_date of this FinancialStatementAnalysisRequest.  # noqa: E501
+        :type: date
         """
 
-        self._show_history = show_history
+        self._end_date = end_date
 
     @property
     def client_id(self):
@@ -182,27 +209,6 @@ class FinancialStatementAnalysisRequest(object):
         """
 
         self._client_id = client_id
-
-    @property
-    def currency_conversion(self):
-        """Gets the currency_conversion of this FinancialStatementAnalysisRequest.  # noqa: E501
-
-
-        :return: The currency_conversion of this FinancialStatementAnalysisRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._currency_conversion
-
-    @currency_conversion.setter
-    def currency_conversion(self, currency_conversion):
-        """Sets the currency_conversion of this FinancialStatementAnalysisRequest.
-
-
-        :param currency_conversion: The currency_conversion of this FinancialStatementAnalysisRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._currency_conversion = currency_conversion
 
     @property
     def accounting_method(self):
@@ -234,31 +240,94 @@ class FinancialStatementAnalysisRequest(object):
         self._accounting_method = accounting_method
 
     @property
-    def period_length(self):
-        """Gets the period_length of this FinancialStatementAnalysisRequest.  # noqa: E501
+    def period_year(self):
+        """Gets the period_year of this FinancialStatementAnalysisRequest.  # noqa: E501
 
 
-        :return: The period_length of this FinancialStatementAnalysisRequest.  # noqa: E501
+        :return: The period_year of this FinancialStatementAnalysisRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._period_year
+
+    @period_year.setter
+    def period_year(self, period_year):
+        """Sets the period_year of this FinancialStatementAnalysisRequest.
+
+
+        :param period_year: The period_year of this FinancialStatementAnalysisRequest.  # noqa: E501
+        :type: int
+        """
+
+        self._period_year = period_year
+
+    @property
+    def currency_conversion(self):
+        """Gets the currency_conversion of this FinancialStatementAnalysisRequest.  # noqa: E501
+
+
+        :return: The currency_conversion of this FinancialStatementAnalysisRequest.  # noqa: E501
         :rtype: str
         """
-        return self._period_length
+        return self._currency_conversion
 
-    @period_length.setter
-    def period_length(self, period_length):
-        """Sets the period_length of this FinancialStatementAnalysisRequest.
+    @currency_conversion.setter
+    def currency_conversion(self, currency_conversion):
+        """Sets the currency_conversion of this FinancialStatementAnalysisRequest.
 
 
-        :param period_length: The period_length of this FinancialStatementAnalysisRequest.  # noqa: E501
+        :param currency_conversion: The currency_conversion of this FinancialStatementAnalysisRequest.  # noqa: E501
         :type: str
         """
-        allowed_values = ["annual", "quarterly", "monthly", "ytd", "qtd", "mtd"]  # noqa: E501
-        if period_length not in allowed_values:
+
+        self._currency_conversion = currency_conversion
+
+    @property
+    def history_frequency_interval(self):
+        """Gets the history_frequency_interval of this FinancialStatementAnalysisRequest.  # noqa: E501
+
+
+        :return: The history_frequency_interval of this FinancialStatementAnalysisRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._history_frequency_interval
+
+    @history_frequency_interval.setter
+    def history_frequency_interval(self, history_frequency_interval):
+        """Sets the history_frequency_interval of this FinancialStatementAnalysisRequest.
+
+
+        :param history_frequency_interval: The history_frequency_interval of this FinancialStatementAnalysisRequest.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["day", "week", "month", "quarter", "year"]  # noqa: E501
+        if history_frequency_interval not in allowed_values:
             raise ValueError(
-                "Invalid value for `period_length` ({0}), must be one of {1}"  # noqa: E501
-                .format(period_length, allowed_values)
+                "Invalid value for `history_frequency_interval` ({0}), must be one of {1}"  # noqa: E501
+                .format(history_frequency_interval, allowed_values)
             )
 
-        self._period_length = period_length
+        self._history_frequency_interval = history_frequency_interval
+
+    @property
+    def start_date(self):
+        """Gets the start_date of this FinancialStatementAnalysisRequest.  # noqa: E501
+
+
+        :return: The start_date of this FinancialStatementAnalysisRequest.  # noqa: E501
+        :rtype: date
+        """
+        return self._start_date
+
+    @start_date.setter
+    def start_date(self, start_date):
+        """Sets the start_date of this FinancialStatementAnalysisRequest.
+
+
+        :param start_date: The start_date of this FinancialStatementAnalysisRequest.  # noqa: E501
+        :type: date
+        """
+
+        self._start_date = start_date
 
     @property
     def period_type(self):
@@ -288,48 +357,6 @@ class FinancialStatementAnalysisRequest(object):
         self._period_type = period_type
 
     @property
-    def period_year(self):
-        """Gets the period_year of this FinancialStatementAnalysisRequest.  # noqa: E501
-
-
-        :return: The period_year of this FinancialStatementAnalysisRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._period_year
-
-    @period_year.setter
-    def period_year(self, period_year):
-        """Sets the period_year of this FinancialStatementAnalysisRequest.
-
-
-        :param period_year: The period_year of this FinancialStatementAnalysisRequest.  # noqa: E501
-        :type: int
-        """
-
-        self._period_year = period_year
-
-    @property
-    def end_date(self):
-        """Gets the end_date of this FinancialStatementAnalysisRequest.  # noqa: E501
-
-
-        :return: The end_date of this FinancialStatementAnalysisRequest.  # noqa: E501
-        :rtype: date
-        """
-        return self._end_date
-
-    @end_date.setter
-    def end_date(self, end_date):
-        """Sets the end_date of this FinancialStatementAnalysisRequest.
-
-
-        :param end_date: The end_date of this FinancialStatementAnalysisRequest.  # noqa: E501
-        :type: date
-        """
-
-        self._end_date = end_date
-
-    @property
     def currency_code(self):
         """Gets the currency_code of this FinancialStatementAnalysisRequest.  # noqa: E501
 
@@ -349,6 +376,27 @@ class FinancialStatementAnalysisRequest(object):
         """
 
         self._currency_code = currency_code
+
+    @property
+    def show_history(self):
+        """Gets the show_history of this FinancialStatementAnalysisRequest.  # noqa: E501
+
+
+        :return: The show_history of this FinancialStatementAnalysisRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._show_history
+
+    @show_history.setter
+    def show_history(self, show_history):
+        """Sets the show_history of this FinancialStatementAnalysisRequest.
+
+
+        :param show_history: The show_history of this FinancialStatementAnalysisRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._show_history = show_history
 
     @property
     def stat_names(self):
@@ -379,25 +427,29 @@ class FinancialStatementAnalysisRequest(object):
         self._stat_names = stat_names
 
     @property
-    def start_date(self):
-        """Gets the start_date of this FinancialStatementAnalysisRequest.  # noqa: E501
+    def period_quarter(self):
+        """Gets the period_quarter of this FinancialStatementAnalysisRequest.  # noqa: E501
 
 
-        :return: The start_date of this FinancialStatementAnalysisRequest.  # noqa: E501
-        :rtype: date
+        :return: The period_quarter of this FinancialStatementAnalysisRequest.  # noqa: E501
+        :rtype: int
         """
-        return self._start_date
+        return self._period_quarter
 
-    @start_date.setter
-    def start_date(self, start_date):
-        """Sets the start_date of this FinancialStatementAnalysisRequest.
+    @period_quarter.setter
+    def period_quarter(self, period_quarter):
+        """Sets the period_quarter of this FinancialStatementAnalysisRequest.
 
 
-        :param start_date: The start_date of this FinancialStatementAnalysisRequest.  # noqa: E501
-        :type: date
+        :param period_quarter: The period_quarter of this FinancialStatementAnalysisRequest.  # noqa: E501
+        :type: int
         """
+        if period_quarter is not None and period_quarter > 4:  # noqa: E501
+            raise ValueError("Invalid value for `period_quarter`, must be a value less than or equal to `4`")  # noqa: E501
+        if period_quarter is not None and period_quarter < 1:  # noqa: E501
+            raise ValueError("Invalid value for `period_quarter`, must be a value greater than or equal to `1`")  # noqa: E501
 
-        self._start_date = start_date
+        self._period_quarter = period_quarter
 
     @property
     def statement_type(self):
@@ -425,58 +477,6 @@ class FinancialStatementAnalysisRequest(object):
             )
 
         self._statement_type = statement_type
-
-    @property
-    def history_frequency_interval(self):
-        """Gets the history_frequency_interval of this FinancialStatementAnalysisRequest.  # noqa: E501
-
-
-        :return: The history_frequency_interval of this FinancialStatementAnalysisRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._history_frequency_interval
-
-    @history_frequency_interval.setter
-    def history_frequency_interval(self, history_frequency_interval):
-        """Sets the history_frequency_interval of this FinancialStatementAnalysisRequest.
-
-
-        :param history_frequency_interval: The history_frequency_interval of this FinancialStatementAnalysisRequest.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["day", "week", "month", "quarter", "year"]  # noqa: E501
-        if history_frequency_interval not in allowed_values:
-            raise ValueError(
-                "Invalid value for `history_frequency_interval` ({0}), must be one of {1}"  # noqa: E501
-                .format(history_frequency_interval, allowed_values)
-            )
-
-        self._history_frequency_interval = history_frequency_interval
-
-    @property
-    def period_month(self):
-        """Gets the period_month of this FinancialStatementAnalysisRequest.  # noqa: E501
-
-
-        :return: The period_month of this FinancialStatementAnalysisRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._period_month
-
-    @period_month.setter
-    def period_month(self, period_month):
-        """Sets the period_month of this FinancialStatementAnalysisRequest.
-
-
-        :param period_month: The period_month of this FinancialStatementAnalysisRequest.  # noqa: E501
-        :type: int
-        """
-        if period_month is not None and period_month > 12:  # noqa: E501
-            raise ValueError("Invalid value for `period_month`, must be a value less than or equal to `12`")  # noqa: E501
-        if period_month is not None and period_month < 1:  # noqa: E501
-            raise ValueError("Invalid value for `period_month`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._period_month = period_month
 
     def to_dict(self):
         """Returns the model properties as a dict"""

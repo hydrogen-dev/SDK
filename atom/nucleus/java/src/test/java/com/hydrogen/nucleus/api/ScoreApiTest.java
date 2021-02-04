@@ -13,9 +13,9 @@
 
 package com.hydrogen.nucleus.api;
 
-import com.hydrogen.nucleus.model.Score;
 import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.PageScore;
+import com.hydrogen.nucleus.model.Score;
 
 import java.util.UUID;
 import org.junit.Test;
@@ -108,7 +108,7 @@ public class ScoreApiTest {
      */
     @Test
     public void updateScoreUsingPutTest() throws ApiException {
-        Score score = null;
+        Object score = null;
         UUID scoreId = null;
         Score response = api.updateScoreUsingPut(score, scoreId);
 

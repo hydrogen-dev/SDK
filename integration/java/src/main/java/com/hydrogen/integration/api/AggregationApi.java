@@ -13,6 +13,7 @@
 
 package com.hydrogen.integration.api;
 
+import com.hydrogen.integration.model.AggregationAccountResponseVO;
 import com.hydrogen.integration.ApiCallback;
 import com.hydrogen.integration.ApiClient;
 import com.hydrogen.integration.ApiException;
@@ -29,12 +30,10 @@ import java.io.IOException;
 
 import com.hydrogen.integration.model.AggregationAccountBalanceResponseVO;
 import com.hydrogen.integration.model.AggregationAccountHoldingResponseVO;
-import com.hydrogen.integration.model.AggregationAccountResponseVO;
 import com.hydrogen.integration.model.AggregationAccountTransactionResponseVO;
+import com.hydrogen.integration.model.AggregationAccountsResponseVO;
 import com.hydrogen.integration.model.AggregationRequestObject;
 import com.hydrogen.integration.model.PropertyValueResponseVO;
-import com.hydrogen.integration.model.AggregationAccountsResponseVO;
-
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -1410,6 +1409,147 @@ public class AggregationApi {
 
         com.squareup.okhttp.Call call = getAggregationAccountUsingGetValidateBeforeCall(nucleusAggregationAccountId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<AggregationAccountResponseVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getPropertyValue
+     * @param nucleusAggregationAccountId nucleus_aggregation_account_id (required)
+     * @param nucleusClientId nucleus_client_id (required)
+     * @param product product (optional, default to atom)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getPropertyValueCall(UUID nucleusAggregationAccountId, UUID nucleusClientId, String product, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/property_value";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (nucleusAggregationAccountId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("nucleus_aggregation_account_id", nucleusAggregationAccountId));
+        if (nucleusClientId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("nucleus_client_id", nucleusClientId));
+        if (product != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("product", product));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getPropertyValueValidateBeforeCall(UUID nucleusAggregationAccountId, UUID nucleusClientId, String product, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'nucleusAggregationAccountId' is set
+        if (nucleusAggregationAccountId == null) {
+            throw new ApiException("Missing the required parameter 'nucleusAggregationAccountId' when calling getPropertyValue(Async)");
+        }
+        
+        // verify the required parameter 'nucleusClientId' is set
+        if (nucleusClientId == null) {
+            throw new ApiException("Missing the required parameter 'nucleusClientId' when calling getPropertyValue(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getPropertyValueCall(nucleusAggregationAccountId, nucleusClientId, product, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get Value of the given property
+     * Get Value of the given property
+     * @param nucleusAggregationAccountId nucleus_aggregation_account_id (required)
+     * @param nucleusClientId nucleus_client_id (required)
+     * @param product product (optional, default to atom)
+     * @return PropertyValueResponseVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PropertyValueResponseVO getPropertyValue(UUID nucleusAggregationAccountId, UUID nucleusClientId, String product) throws ApiException {
+        ApiResponse<PropertyValueResponseVO> resp = getPropertyValueWithHttpInfo(nucleusAggregationAccountId, nucleusClientId, product);
+        return resp.getData();
+    }
+
+    /**
+     * Get Value of the given property
+     * Get Value of the given property
+     * @param nucleusAggregationAccountId nucleus_aggregation_account_id (required)
+     * @param nucleusClientId nucleus_client_id (required)
+     * @param product product (optional, default to atom)
+     * @return ApiResponse&lt;PropertyValueResponseVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PropertyValueResponseVO> getPropertyValueWithHttpInfo(UUID nucleusAggregationAccountId, UUID nucleusClientId, String product) throws ApiException {
+        com.squareup.okhttp.Call call = getPropertyValueValidateBeforeCall(nucleusAggregationAccountId, nucleusClientId, product, null, null);
+        Type localVarReturnType = new TypeToken<PropertyValueResponseVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get Value of the given property (asynchronously)
+     * Get Value of the given property
+     * @param nucleusAggregationAccountId nucleus_aggregation_account_id (required)
+     * @param nucleusClientId nucleus_client_id (required)
+     * @param product product (optional, default to atom)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getPropertyValueAsync(UUID nucleusAggregationAccountId, UUID nucleusClientId, String product, final ApiCallback<PropertyValueResponseVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getPropertyValueValidateBeforeCall(nucleusAggregationAccountId, nucleusClientId, product, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PropertyValueResponseVO>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

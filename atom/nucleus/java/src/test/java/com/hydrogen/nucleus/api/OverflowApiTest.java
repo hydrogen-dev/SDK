@@ -13,13 +13,12 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.Overflow;
 import com.hydrogen.nucleus.model.OverflowSettings;
 import com.hydrogen.nucleus.model.OverflowVO;
 import com.hydrogen.nucleus.model.PageOverflow;
 import com.hydrogen.nucleus.model.PageOverflowSettings;
-import com.hydrogen.nucleus.ApiException;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -163,7 +162,7 @@ public class OverflowApiTest {
      */
     @Test
     public void updateOverflowSettingsUsingPutTest() throws ApiException {
-        OverflowSettings overflowSettings = null;
+        Object overflowSettings = null;
         UUID overflowSettingsId = null;
         OverflowSettings response = api.updateOverflowSettingsUsingPut(overflowSettings, overflowSettingsId);
 

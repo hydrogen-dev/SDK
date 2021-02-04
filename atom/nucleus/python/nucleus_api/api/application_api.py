@@ -439,7 +439,7 @@ class ApplicationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Application application: application (required)
+        :param object application: application (required)
         :param str application_id: UUID application_id (required)
         :return: Application
                  If the method is called asynchronously,
@@ -462,7 +462,7 @@ class ApplicationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Application application: application (required)
+        :param object application: application (required)
         :param str application_id: UUID application_id (required)
         :return: Application
                  If the method is called asynchronously,

@@ -1302,7 +1302,7 @@ end
 
 api_instance = NucleusApi::ModelApi.new
 
-model_asset_size = NucleusApi::ModelAssetSize.new # ModelAssetSize | model_asset_size
+model_asset_size = nil # Object | model_asset_size
 
 model_asset_size_id = 'model_asset_size_id_example' # String | UUID model_asset_size_id
 
@@ -1320,7 +1320,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model_asset_size** | [**ModelAssetSize**](ModelAssetSize.md)| model_asset_size | 
+ **model_asset_size** | **Object**| model_asset_size | 
  **model_asset_size_id** | [**String**](.md)| UUID model_asset_size_id | 
 
 ### Return type
@@ -1362,7 +1362,7 @@ end
 
 api_instance = NucleusApi::ModelApi.new
 
-model_comment = NucleusApi::ModelComment.new # ModelComment | model_comment
+model_comment = nil # Object | model_comment
 
 model_comment_id = 'model_comment_id_example' # String | UUID model_comment_id
 
@@ -1380,7 +1380,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model_comment** | [**ModelComment**](ModelComment.md)| model_comment | 
+ **model_comment** | **Object**| model_comment | 
  **model_comment_id** | [**String**](.md)| UUID model_comment_id | 
 
 ### Return type
@@ -1422,7 +1422,7 @@ end
 
 api_instance = NucleusApi::ModelApi.new
 
-model_holding = NucleusApi::ModelHolding.new # ModelHolding | model_holding
+model_holding = nil # Object | model_holding
 
 model_holding_id = 'model_holding_id_example' # String | UUID model_holding_id
 
@@ -1440,7 +1440,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model_holding** | [**ModelHolding**](ModelHolding.md)| model_holding | 
+ **model_holding** | **Object**| model_holding | 
  **model_holding_id** | [**String**](.md)| UUID model_holding_id | 
 
 ### Return type
@@ -1482,7 +1482,7 @@ end
 
 api_instance = NucleusApi::ModelApi.new
 
-model_transaction = NucleusApi::ModelTransaction.new # ModelTransaction | model_transaction
+model_transaction = nil # Object | model_transaction
 
 model_transaction_id = 'model_transaction_id_example' # String | UUID model_transaction_id
 
@@ -1500,7 +1500,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model_transaction** | [**ModelTransaction**](ModelTransaction.md)| model_transaction | 
+ **model_transaction** | **Object**| model_transaction | 
  **model_transaction_id** | [**String**](.md)| UUID model_transaction_id | 
 
 ### Return type
@@ -1542,7 +1542,7 @@ end
 
 api_instance = NucleusApi::ModelApi.new
 
-model = NucleusApi::Model.new # Model | model
+model = nil # Object | model
 
 model_id = 'model_id_example' # String | UUID model_id
 
@@ -1560,7 +1560,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model** | [**Model**](Model.md)| model | 
+ **model** | **Object**| model | 
  **model_id** | [**String**](.md)| UUID model_id | 
 
 ### Return type

@@ -15,12 +15,7 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.math.BigDecimal;
@@ -28,35 +23,16 @@ import java.math.BigDecimal;
 /**
  * GoalConfig
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class GoalConfig {
-  @SerializedName("goal_amount")
-  private BigDecimal goalAmount = null;
-
   @SerializedName("goal_inflation")
   private Float goalInflation = 0.0f;
 
-  public GoalConfig goalAmount(BigDecimal goalAmount) {
-    this.goalAmount = goalAmount;
-    return this;
-  }
-
-   /**
-   * Get goalAmount
-   * minimum: 0
-   * @return goalAmount
-  **/
-  @ApiModelProperty(value = "")
-  public BigDecimal getGoalAmount() {
-    return goalAmount;
-  }
-
-  public void setGoalAmount(BigDecimal goalAmount) {
-    this.goalAmount = goalAmount;
-  }
+  @SerializedName("goal_amount")
+  private BigDecimal goalAmount = null;
 
   public GoalConfig goalInflation(Float goalInflation) {
     this.goalInflation = goalInflation;
@@ -77,6 +53,25 @@ public class GoalConfig {
     this.goalInflation = goalInflation;
   }
 
+  public GoalConfig goalAmount(BigDecimal goalAmount) {
+    this.goalAmount = goalAmount;
+    return this;
+  }
+
+   /**
+   * Get goalAmount
+   * minimum: 0
+   * @return goalAmount
+  **/
+  @ApiModelProperty(value = "")
+  public BigDecimal getGoalAmount() {
+    return goalAmount;
+  }
+
+  public void setGoalAmount(BigDecimal goalAmount) {
+    this.goalAmount = goalAmount;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -87,13 +82,13 @@ public class GoalConfig {
       return false;
     }
     GoalConfig goalConfig = (GoalConfig) o;
-    return Objects.equals(this.goalAmount, goalConfig.goalAmount) &&
-        Objects.equals(this.goalInflation, goalConfig.goalInflation);
+    return Objects.equals(this.goalInflation, goalConfig.goalInflation) &&
+        Objects.equals(this.goalAmount, goalConfig.goalAmount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(goalAmount, goalInflation);
+    return Objects.hash(goalInflation, goalAmount);
   }
 
 
@@ -102,8 +97,8 @@ public class GoalConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class GoalConfig {\n");
     
-    sb.append("    goalAmount: ").append(toIndentedString(goalAmount)).append("\n");
     sb.append("    goalInflation: ").append(toIndentedString(goalInflation)).append("\n");
+    sb.append("    goalAmount: ").append(toIndentedString(goalAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

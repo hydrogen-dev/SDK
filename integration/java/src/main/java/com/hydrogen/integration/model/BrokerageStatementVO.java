@@ -18,20 +18,18 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModelProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 /**
  * BrokerageStatementVO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class BrokerageStatementVO {
   @SerializedName("nucleus_account_id")
   private UUID nucleusAccountId = null;
 
   @SerializedName("statements")
-  private List<StatementModel> statements = null;
+  private Object statements = null;
 
   @SerializedName("vendor_name")
   private String vendorName = null;
@@ -54,16 +52,8 @@ public class BrokerageStatementVO {
     this.nucleusAccountId = nucleusAccountId;
   }
 
-  public BrokerageStatementVO statements(List<StatementModel> statements) {
+  public BrokerageStatementVO statements(Object statements) {
     this.statements = statements;
-    return this;
-  }
-
-  public BrokerageStatementVO addStatementsItem(StatementModel statementsItem) {
-    if (this.statements == null) {
-      this.statements = new ArrayList<StatementModel>();
-    }
-    this.statements.add(statementsItem);
     return this;
   }
 
@@ -72,11 +62,11 @@ public class BrokerageStatementVO {
    * @return statements
   **/
   @ApiModelProperty(value = "")
-  public List<StatementModel> getStatements() {
+  public Object getStatements() {
     return statements;
   }
 
-  public void setStatements(List<StatementModel> statements) {
+  public void setStatements(Object statements) {
     this.statements = statements;
   }
 

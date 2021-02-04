@@ -32,7 +32,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::AnnuitiesApi.new
 
 annuity_calculator_accumulation_horizon_request = ProtonApi::AnnuityCalculatorAccumulationHorizonRequest.new # AnnuityCalculatorAccumulationHorizonRequest | Request payload for Annuity Calculator - Accumulation Horizon
@@ -88,7 +87,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::AnnuitiesApi.new
 
 annuity_calculator_annuity_amount_request = ProtonApi::AnnuityCalculatorAnnuityAmountRequest.new # AnnuityCalculatorAnnuityAmountRequest | Request payload for Annuity Calculator - Annuity Amount
@@ -144,7 +142,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::AnnuitiesApi.new
 
 annuity_calculator_decumulation_horizon_request = ProtonApi::AnnuityCalculatorDecumulationHorizonRequest.new # AnnuityCalculatorDecumulationHorizonRequest | Request payload for Annuity Calculator - Decumulation Horizon
@@ -200,7 +197,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::AnnuitiesApi.new
 
 annuity_calculator_deposit_amount_request = ProtonApi::AnnuityCalculatorDepositAmountRequest.new # AnnuityCalculatorDepositAmountRequest | Request payload for Annuity Calculator - Deposit Amount
@@ -256,7 +252,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::AnnuitiesApi.new
 
 annuity_calculator_initial_balance_request = ProtonApi::AnnuityCalculatorInitialBalanceRequest.new # AnnuityCalculatorInitialBalanceRequest | Request payload for Annuity Calculator - Initial Balance
@@ -312,7 +307,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::AnnuitiesApi.new
 
 variable_annuity_request = ProtonApi::VariableAnnuityRequest.new # VariableAnnuityRequest | Request payload for Variable Annuity

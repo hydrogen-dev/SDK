@@ -56,7 +56,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 answer = nucleus_api.Answer() # Answer | answer
@@ -120,7 +120,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 client_response = nucleus_api.ClientResponse() # ClientResponse | clientResponse
@@ -184,7 +184,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 question = nucleus_api.Question() # Question | question
@@ -248,7 +248,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 questionnaire = nucleus_api.Questionnaire() # Questionnaire | questionnaire
@@ -312,7 +312,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 answer_id = 'answer_id_example' # str | UUID answer_id
@@ -375,7 +375,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 client_response_id = 'client_response_id_example' # str | UUID client_response_id
@@ -438,7 +438,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 question_id = 'question_id_example' # str | UUID question_id
@@ -501,7 +501,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 questionnaire_id = 'questionnaire_id_example' # str | UUID questionnaire_id
@@ -564,7 +564,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -636,7 +636,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 answer_id = 'answer_id_example' # str | UUID answer_id
@@ -700,7 +700,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -772,7 +772,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 client_response_id = 'client_response_id_example' # str | UUID client_response_id
@@ -836,7 +836,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -908,7 +908,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 question_id = 'question_id_example' # str | UUID question_id
@@ -972,7 +972,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -1044,7 +1044,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
 questionnaire_id = 'questionnaire_id_example' # str | UUID questionnaire_id
@@ -1108,10 +1108,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
-answer = nucleus_api.Answer() # Answer | answer
+answer = NULL # object | answer
 answer_id = 'answer_id_example' # str | UUID answer_id
 
 try:
@@ -1126,7 +1126,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **answer** | [**Answer**](Answer.md)| answer | 
+ **answer** | **object**| answer | 
  **answer_id** | [**str**](.md)| UUID answer_id | 
 
 ### Return type
@@ -1174,10 +1174,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
-client_response = nucleus_api.ClientResponse() # ClientResponse | client_response
+client_response = NULL # object | client_response
 client_response_id = 'client_response_id_example' # str | UUID client_response_id
 
 try:
@@ -1192,7 +1192,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client_response** | [**ClientResponse**](ClientResponse.md)| client_response | 
+ **client_response** | **object**| client_response | 
  **client_response_id** | [**str**](.md)| UUID client_response_id | 
 
 ### Return type
@@ -1240,10 +1240,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
-question = nucleus_api.Question() # Question | question
+question = NULL # object | question
 question_id = 'question_id_example' # str | UUID question_id
 
 try:
@@ -1258,7 +1258,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **question** | [**Question**](Question.md)| question | 
+ **question** | **object**| question | 
  **question_id** | [**str**](.md)| UUID question_id | 
 
 ### Return type
@@ -1306,10 +1306,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.QuestionnaireApi(nucleus_api.ApiClient(configuration))
-questionnaire = nucleus_api.Questionnaire() # Questionnaire | questionnaire
+questionnaire = NULL # object | questionnaire
 questionnaire_id = 'questionnaire_id_example' # str | UUID questionnaire_id
 
 try:
@@ -1324,7 +1324,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **questionnaire** | [**Questionnaire**](Questionnaire.md)| questionnaire | 
+ **questionnaire** | **object**| questionnaire | 
  **questionnaire_id** | [**str**](.md)| UUID questionnaire_id | 
 
 ### Return type

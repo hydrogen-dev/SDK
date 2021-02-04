@@ -31,7 +31,6 @@ class Card(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account_id': 'str',
         'address': 'list[CardAddress]',
         'card_holder_name': 'str',
         'card_image': 'str',
@@ -49,6 +48,7 @@ class Card(object):
         'id': 'str',
         'institution_name': 'str',
         'is_active': 'bool',
+        'is_pin_set': 'bool',
         'is_primary': 'bool',
         'is_reloadable': 'bool',
         'mask': 'str',
@@ -57,15 +57,11 @@ class Card(object):
         'portfolio_id': 'str',
         'prepaid_amount': 'float',
         'secondary_id': 'str',
-        'spending_limit_atm': 'float',
-        'spending_limit_purchase': 'float',
         'status': 'str',
-        'transaction_limit': 'int',
         'update_date': 'datetime'
     }
 
     attribute_map = {
-        'account_id': 'account_id',
         'address': 'address',
         'card_holder_name': 'card_holder_name',
         'card_image': 'card_image',
@@ -83,6 +79,7 @@ class Card(object):
         'id': 'id',
         'institution_name': 'institution_name',
         'is_active': 'is_active',
+        'is_pin_set': 'is_pin_set',
         'is_primary': 'is_primary',
         'is_reloadable': 'is_reloadable',
         'mask': 'mask',
@@ -91,17 +88,13 @@ class Card(object):
         'portfolio_id': 'portfolio_id',
         'prepaid_amount': 'prepaid_amount',
         'secondary_id': 'secondary_id',
-        'spending_limit_atm': 'spending_limit_atm',
-        'spending_limit_purchase': 'spending_limit_purchase',
         'status': 'status',
-        'transaction_limit': 'transaction_limit',
         'update_date': 'update_date'
     }
 
-    def __init__(self, account_id=None, address=None, card_holder_name=None, card_image=None, card_issuance=None, card_name=None, card_network=None, card_program_id=None, card_type=None, client_id=None, create_date=None, credit_limit=None, currency_code=None, expiry_date=None, fulfillment=None, id=None, institution_name=None, is_active=None, is_primary=None, is_reloadable=None, mask=None, metadata=None, phone_number=None, portfolio_id=None, prepaid_amount=None, secondary_id=None, spending_limit_atm=None, spending_limit_purchase=None, status=None, transaction_limit=None, update_date=None):  # noqa: E501
+    def __init__(self, address=None, card_holder_name=None, card_image=None, card_issuance=None, card_name=None, card_network=None, card_program_id=None, card_type=None, client_id=None, create_date=None, credit_limit=None, currency_code=None, expiry_date=None, fulfillment=None, id=None, institution_name=None, is_active=None, is_primary=None, is_reloadable=None, mask=None, metadata=None, is_pin_set=None, phone_number=None, portfolio_id=None, prepaid_amount=None, secondary_id=None, status=None, update_date=None):  # noqa: E501
         """Card - a model defined in Swagger"""  # noqa: E501
 
-        self._account_id = None
         self._address = None
         self._card_holder_name = None
         self._card_image = None
@@ -119,6 +112,7 @@ class Card(object):
         self._id = None
         self._institution_name = None
         self._is_active = None
+        self._is_pin_set = None
         self._is_primary = None
         self._is_reloadable = None
         self._mask = None
@@ -127,15 +121,10 @@ class Card(object):
         self._portfolio_id = None
         self._prepaid_amount = None
         self._secondary_id = None
-        self._spending_limit_atm = None
-        self._spending_limit_purchase = None
         self._status = None
-        self._transaction_limit = None
         self._update_date = None
         self.discriminator = None
 
-        if account_id is not None:
-            self.account_id = account_id
         if address is not None:
             self.address = address
         self.card_holder_name = card_holder_name
@@ -163,6 +152,8 @@ class Card(object):
         self.institution_name = institution_name
         if is_active is not None:
             self.is_active = is_active
+        if is_pin_set is not None:
+            self.is_pin_set = is_pin_set
         if is_primary is not None:
             self.is_primary = is_primary
         if is_reloadable is not None:
@@ -173,45 +164,15 @@ class Card(object):
             self.metadata = metadata
         if phone_number is not None:
             self.phone_number = phone_number
-        if portfolio_id is not None:
-            self.portfolio_id = portfolio_id
+        self.portfolio_id = portfolio_id
         if prepaid_amount is not None:
             self.prepaid_amount = prepaid_amount
         if secondary_id is not None:
             self.secondary_id = secondary_id
-        if spending_limit_atm is not None:
-            self.spending_limit_atm = spending_limit_atm
-        if spending_limit_purchase is not None:
-            self.spending_limit_purchase = spending_limit_purchase
         if status is not None:
             self.status = status
-        if transaction_limit is not None:
-            self.transaction_limit = transaction_limit
         if update_date is not None:
             self.update_date = update_date
-
-    @property
-    def account_id(self):
-        """Gets the account_id of this Card.  # noqa: E501
-
-        accountId  # noqa: E501
-
-        :return: The account_id of this Card.  # noqa: E501
-        :rtype: str
-        """
-        return self._account_id
-
-    @account_id.setter
-    def account_id(self, account_id):
-        """Sets the account_id of this Card.
-
-        accountId  # noqa: E501
-
-        :param account_id: The account_id of this Card.  # noqa: E501
-        :type: str
-        """
-
-        self._account_id = account_id
 
     @property
     def address(self):
@@ -613,6 +574,29 @@ class Card(object):
         self._is_active = is_active
 
     @property
+    def is_pin_set(self):
+        """Gets the is_pin_set of this Card.  # noqa: E501
+
+        is_pin_set  # noqa: E501
+
+        :return: The is_pin_set of this Card.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_pin_set
+
+    @is_pin_set.setter
+    def is_pin_set(self, is_pin_set):
+        """Sets the is_pin_set of this Card.
+
+        is_pin_set  # noqa: E501
+
+        :param is_pin_set: The is_pin_set of this Card.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_pin_set = is_pin_set
+
+    @property
     def is_primary(self):
         """Gets the is_primary of this Card.  # noqa: E501
 
@@ -745,6 +729,8 @@ class Card(object):
         :param portfolio_id: The portfolio_id of this Card.  # noqa: E501
         :type: str
         """
+        if portfolio_id is None:
+            raise ValueError("Invalid value for `portfolio_id`, must not be `None`")  # noqa: E501
 
         self._portfolio_id = portfolio_id
 
@@ -793,52 +779,6 @@ class Card(object):
         self._secondary_id = secondary_id
 
     @property
-    def spending_limit_atm(self):
-        """Gets the spending_limit_atm of this Card.  # noqa: E501
-
-        spendingLimitAtm  # noqa: E501
-
-        :return: The spending_limit_atm of this Card.  # noqa: E501
-        :rtype: float
-        """
-        return self._spending_limit_atm
-
-    @spending_limit_atm.setter
-    def spending_limit_atm(self, spending_limit_atm):
-        """Sets the spending_limit_atm of this Card.
-
-        spendingLimitAtm  # noqa: E501
-
-        :param spending_limit_atm: The spending_limit_atm of this Card.  # noqa: E501
-        :type: float
-        """
-
-        self._spending_limit_atm = spending_limit_atm
-
-    @property
-    def spending_limit_purchase(self):
-        """Gets the spending_limit_purchase of this Card.  # noqa: E501
-
-        spendingLimitPurchase  # noqa: E501
-
-        :return: The spending_limit_purchase of this Card.  # noqa: E501
-        :rtype: float
-        """
-        return self._spending_limit_purchase
-
-    @spending_limit_purchase.setter
-    def spending_limit_purchase(self, spending_limit_purchase):
-        """Sets the spending_limit_purchase of this Card.
-
-        spendingLimitPurchase  # noqa: E501
-
-        :param spending_limit_purchase: The spending_limit_purchase of this Card.  # noqa: E501
-        :type: float
-        """
-
-        self._spending_limit_purchase = spending_limit_purchase
-
-    @property
     def status(self):
         """Gets the status of this Card.  # noqa: E501
 
@@ -860,29 +800,6 @@ class Card(object):
         """
 
         self._status = status
-
-    @property
-    def transaction_limit(self):
-        """Gets the transaction_limit of this Card.  # noqa: E501
-
-        transactionLimit  # noqa: E501
-
-        :return: The transaction_limit of this Card.  # noqa: E501
-        :rtype: int
-        """
-        return self._transaction_limit
-
-    @transaction_limit.setter
-    def transaction_limit(self, transaction_limit):
-        """Sets the transaction_limit of this Card.
-
-        transactionLimit  # noqa: E501
-
-        :param transaction_limit: The transaction_limit of this Card.  # noqa: E501
-        :type: int
-        """
-
-        self._transaction_limit = transaction_limit
 
     @property
     def update_date(self):

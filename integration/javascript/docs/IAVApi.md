@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="createIAVUsingPost"></a>
 # **createIAVUsingPost**
-> IavResponseVo createIAVUsingPost(iavRequestCO, opts)
+> IavResponseVo createIAVUsingPost(iavRequestCO)
 
 Instant Account Verification of an account.
 
@@ -29,9 +29,6 @@ var apiInstance = new HydrogenIntegrationApi.IAVApi();
 
 var iavRequestCO = new HydrogenIntegrationApi.IavRequestCO(); // IavRequestCO | iavRequestCO
 
-var opts = { 
-  'authorization': "authorization_example" // String | Authorization
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -40,7 +37,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createIAVUsingPost(iavRequestCO, opts, callback);
+apiInstance.createIAVUsingPost(iavRequestCO, callback);
 ```
 
 ### Parameters
@@ -48,7 +45,6 @@ apiInstance.createIAVUsingPost(iavRequestCO, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **iavRequestCO** | [**IavRequestCO**](IavRequestCO.md)| iavRequestCO | 
- **authorization** | **String**| Authorization | [optional] 
 
 ### Return type
 
@@ -81,6 +77,7 @@ var oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenIntegrationApi.IAVApi();
+
 var nucleusBankLinkId = "nucleusBankLinkId_example"; // String | nucleus_bank_link_id
 
 

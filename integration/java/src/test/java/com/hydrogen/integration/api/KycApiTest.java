@@ -14,9 +14,8 @@
 package com.hydrogen.integration.api;
 
 import com.hydrogen.integration.ApiException;
-import com.hydrogen.integration.model.KycResponseVo;
 import com.hydrogen.integration.model.KycRequestCO;
-
+import com.hydrogen.integration.model.KycResponseVo;
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -58,11 +57,12 @@ public class KycApiTest {
      */
     @Test
     public void getKYCStatusUsingGetTest() throws ApiException {
-        UUID nucleusClientId = null;
         Boolean getLatest = null;
         String kycType = null;
+        UUID nucleusBusinessId = null;
+        UUID nucleusClientId = null;
         String product = null;
-        List<KycResponseVo> response = api.getKYCStatusUsingGet(nucleusClientId, getLatest, kycType, product);
+        List<KycResponseVo> response = api.getKYCStatusUsingGet(getLatest, kycType, nucleusBusinessId, nucleusClientId, product);
 
         // TODO: test validations
     }

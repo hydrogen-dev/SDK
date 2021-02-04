@@ -32,7 +32,7 @@ class TestAccumulationGoalDepositConfig(unittest.TestCase):
     def testAccumulationGoalDepositConfig(self):
         """Test AccumulationGoalDepositConfig"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.accumulation_goal_deposit_config.AccumulationGoalDepositConfig()  # noqa: E501
+        # model = proton_api.models.accumulation_goal_deposit_config.AccumulationGoalDepositConfig()  # noqa: E501
         pass
 
 

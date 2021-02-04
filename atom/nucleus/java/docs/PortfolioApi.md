@@ -49,7 +49,6 @@ Create a new asset size record for a portfolio.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -66,8 +65,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 PortfolioAssetSizeLog portfolioAssetSizeLogRequest = new PortfolioAssetSizeLog(); // PortfolioAssetSizeLog | portfolioAssetSizeLogRequest
 try {
@@ -110,7 +107,6 @@ Create a new comment for a portfolio defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -127,8 +123,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 PortfolioComment portfolioComment = new PortfolioComment(); // PortfolioComment | portfolioComment
 try {
@@ -171,7 +165,6 @@ Create an portfolio goal.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -188,8 +181,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 PortfolioGoal portfolioGoal = new PortfolioGoal(); // PortfolioGoal | portfolioGoal
 try {
@@ -232,7 +223,6 @@ Create a new holding record for a portfolio.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -249,8 +239,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 PortfolioHoldingLog portfolioHoldinLogRequest = new PortfolioHoldingLog(); // PortfolioHoldingLog | portfolioHoldinLogRequest
 try {
@@ -293,7 +281,6 @@ Create a new transaction record for a portfolio.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -310,8 +297,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 PortfolioTransaction portfolioTransactionRequest = new PortfolioTransaction(); // PortfolioTransaction | portfolioTransactionRequest
 try {
@@ -354,7 +339,6 @@ Create a new portfolio for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -371,8 +355,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 Portfolio portfolioRequest = new Portfolio(); // Portfolio | portfolioRequest
 try {
@@ -415,7 +397,6 @@ Permanently delete a portfolio asset size record for a portfolio.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -432,8 +413,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioAssetSizeId = new UUID(); // UUID | UUID portfolio_asset_size_id
 try {
@@ -475,7 +454,6 @@ Permanently delete a portfolio comment for a portfolio.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -492,8 +470,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioCommentId = new UUID(); // UUID | UUID portfolio_comment_id
 try {
@@ -535,7 +511,6 @@ Permanently delete an portfolio-goal mapping.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -552,8 +527,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioGoalId = new UUID(); // UUID | UUID portfolio_goal_id
 try {
@@ -595,7 +568,6 @@ Permanently delete a portfolio holding record for a portfolio.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -612,8 +584,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioHoldingId = new UUID(); // UUID | UUID portfolio_holding_id
 try {
@@ -655,7 +625,6 @@ Permanently delete a portfolio transaction record for a portfolio.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -672,8 +641,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioTransactionId = new UUID(); // UUID | UUID portfolio_transaction_id
 try {
@@ -715,7 +682,6 @@ Permanently delete a portfolio for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -732,8 +698,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioId = new UUID(); // UUID | UUID portfolio_id
 try {
@@ -775,7 +739,6 @@ Retrieve the information for a securities associated with a portfolio.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -792,8 +755,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioId = new UUID(); // UUID | Portfolio Id
 Boolean showAssetClass = true; // Boolean | true or false
@@ -846,7 +807,6 @@ Get the information for all portfolios assigned to all of your firm’s accounts
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -863,8 +823,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -915,7 +873,6 @@ Retrieve the information for a portfolio asset size record for a portfolio.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -932,8 +889,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 Boolean ascending = false; // Boolean | ascending
 String currencyConversion = "currencyConversion_example"; // String | currency_conversion
@@ -986,7 +941,6 @@ Retrieve the information for a portfolio asset size record for a portfolio.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1003,8 +957,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioAssetSizeId = new UUID(); // UUID | portfolio_asset_size_id
 String currencyConversion = "currencyConversion_example"; // String | currency_conversion
@@ -1049,7 +1001,6 @@ List all comments for all portfolios defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1066,8 +1017,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -1118,7 +1067,6 @@ Retrieve the information for a portfolio comment for a portfolio.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1135,8 +1083,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioCommentId = new UUID(); // UUID | UUID portfolio_comment_id
 try {
@@ -1179,7 +1125,6 @@ Get information for all portfolio-goal mappings defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1196,8 +1141,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -1248,7 +1191,6 @@ Retrieve the information for a specific portfolio-goal mapping.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1265,8 +1207,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioGoalId = new UUID(); // UUID | UUID portfolio_goal_id
 try {
@@ -1309,7 +1249,6 @@ Get the information for all holding records for all portfolios defined for your 
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1326,8 +1265,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 Boolean ascending = false; // Boolean | ascending
 String currencyConversion = "currencyConversion_example"; // String | currency_conversion
@@ -1380,7 +1317,6 @@ Retrieve the information for a portfolio holding record for a portfolio.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1397,8 +1333,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioHoldingId = new UUID(); // UUID | UUID portfolio_holding_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -1443,7 +1377,6 @@ Get the information for all transaction records for all portfolios defined for y
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1460,8 +1393,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 Boolean ascending = false; // Boolean | ascending
 String currencyConversion = "currencyConversion_example"; // String | currency_conversion
@@ -1514,7 +1445,6 @@ Retrieve the information for a portfolio transaction record for a portfolio.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1531,8 +1461,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioTransactionId = new UUID(); // UUID | UUID portfolio_transaction_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -1577,7 +1505,6 @@ Retrieve a portfolio for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1594,8 +1521,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
 UUID portfolioId = new UUID(); // UUID | UUID portfolio_id
 try {
@@ -1638,7 +1563,6 @@ Update the information for a portfolio asset size record for a portfolio.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1655,10 +1579,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
-PortfolioAssetSizeLog portfolioAssetSize = new PortfolioAssetSizeLog(); // PortfolioAssetSizeLog | portfolio_asset_size
+Object portfolioAssetSize = null; // Object | portfolio_asset_size
 UUID portfolioAssetSizeId = new UUID(); // UUID | UUID portfolio_asset_size_id
 try {
     PortfolioAssetSizeLog result = apiInstance.updatePortfolioAssetSizeUsingPut(portfolioAssetSize, portfolioAssetSizeId);
@@ -1673,7 +1595,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioAssetSize** | [**PortfolioAssetSizeLog**](PortfolioAssetSizeLog.md)| portfolio_asset_size |
+ **portfolioAssetSize** | **Object**| portfolio_asset_size |
  **portfolioAssetSizeId** | [**UUID**](.md)| UUID portfolio_asset_size_id |
 
 ### Return type
@@ -1701,7 +1623,6 @@ Update the information for a portfolio comment for a portfolio.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1718,10 +1639,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
-PortfolioComment portfolioComment = new PortfolioComment(); // PortfolioComment | portfolio_comment
+Object portfolioComment = null; // Object | portfolio_comment
 UUID portfolioCommentId = new UUID(); // UUID | UUID portfolio_comment_id
 try {
     PortfolioComment result = apiInstance.updatePortfolioCommentUsingPut(portfolioComment, portfolioCommentId);
@@ -1736,7 +1655,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioComment** | [**PortfolioComment**](PortfolioComment.md)| portfolio_comment |
+ **portfolioComment** | **Object**| portfolio_comment |
  **portfolioCommentId** | [**UUID**](.md)| UUID portfolio_comment_id |
 
 ### Return type
@@ -1764,7 +1683,6 @@ Update the information for an portfolio-goal mapping.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1781,10 +1699,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
-PortfolioGoal portfolioGoal = new PortfolioGoal(); // PortfolioGoal | portfolio_goal
+Object portfolioGoal = null; // Object | portfolio_goal
 UUID portfolioGoalId = new UUID(); // UUID | UUID portfolio_goal_id
 try {
     PortfolioGoal result = apiInstance.updatePortfolioGoalUsingPut(portfolioGoal, portfolioGoalId);
@@ -1799,7 +1715,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioGoal** | [**PortfolioGoal**](PortfolioGoal.md)| portfolio_goal |
+ **portfolioGoal** | **Object**| portfolio_goal |
  **portfolioGoalId** | [**UUID**](.md)| UUID portfolio_goal_id |
 
 ### Return type
@@ -1827,7 +1743,6 @@ Update the information for a portfolio holding record for a portfolio.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1844,10 +1759,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
-PortfolioHoldingLog portfolioHolding = new PortfolioHoldingLog(); // PortfolioHoldingLog | portfolio_holding
+Object portfolioHolding = null; // Object | portfolio_holding
 UUID portfolioHoldingId = new UUID(); // UUID | UUID portfolio_holding_id
 try {
     PortfolioHoldingLog result = apiInstance.updatePortfolioHoldingUsingPut(portfolioHolding, portfolioHoldingId);
@@ -1862,7 +1775,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioHolding** | [**PortfolioHoldingLog**](PortfolioHoldingLog.md)| portfolio_holding |
+ **portfolioHolding** | **Object**| portfolio_holding |
  **portfolioHoldingId** | [**UUID**](.md)| UUID portfolio_holding_id |
 
 ### Return type
@@ -1890,7 +1803,6 @@ Update the information for a portfolio transaction record for a portfolio.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1907,10 +1819,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
-PortfolioTransaction portfolioTransaction = new PortfolioTransaction(); // PortfolioTransaction | portfolio_transaction
+Object portfolioTransaction = null; // Object | portfolio_transaction
 UUID portfolioTransactionId = new UUID(); // UUID | UUID portfolio_transaction_id
 try {
     PortfolioTransaction result = apiInstance.updatePortfolioTransactionUsingPut(portfolioTransaction, portfolioTransactionId);
@@ -1925,7 +1835,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioTransaction** | [**PortfolioTransaction**](PortfolioTransaction.md)| portfolio_transaction |
+ **portfolioTransaction** | **Object**| portfolio_transaction |
  **portfolioTransactionId** | [**UUID**](.md)| UUID portfolio_transaction_id |
 
 ### Return type
@@ -1953,7 +1863,6 @@ Update a portfolio for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PortfolioApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1970,10 +1879,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PortfolioApi apiInstance = new PortfolioApi();
-Portfolio portfolio = new Portfolio(); // Portfolio | portfolio
+Object portfolio = null; // Object | portfolio
 UUID portfolioId = new UUID(); // UUID | UUID portfolio_id
 try {
     Portfolio result = apiInstance.updatePortfolioUsingPut(portfolio, portfolioId);
@@ -1988,7 +1895,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio** | [**Portfolio**](Portfolio.md)| portfolio |
+ **portfolio** | **Object**| portfolio |
  **portfolioId** | [**UUID**](.md)| UUID portfolio_id |
 
 ### Return type

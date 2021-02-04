@@ -31,52 +31,26 @@ class CardClientRequestCO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'nucleus_card_id': 'str',
         'nucleus_client_id': 'str',
         'vendor_request': 'dict(str, str)'
     }
 
     attribute_map = {
-        'nucleus_card_id': 'nucleus_card_id',
         'nucleus_client_id': 'nucleus_client_id',
         'vendor_request': 'vendor_request'
     }
 
-    def __init__(self, nucleus_card_id=None, nucleus_client_id=None, vendor_request=None):  # noqa: E501
+    def __init__(self, nucleus_client_id=None, vendor_request=None):  # noqa: E501
         """CardClientRequestCO - a model defined in Swagger"""  # noqa: E501
 
-        self._nucleus_card_id = None
         self._nucleus_client_id = None
         self._vendor_request = None
         self.discriminator = None
 
-        if nucleus_card_id is not None:
-            self.nucleus_card_id = nucleus_card_id
         if nucleus_client_id is not None:
             self.nucleus_client_id = nucleus_client_id
         if vendor_request is not None:
             self.vendor_request = vendor_request
-
-    @property
-    def nucleus_card_id(self):
-        """Gets the nucleus_card_id of this CardClientRequestCO.  # noqa: E501
-
-
-        :return: The nucleus_card_id of this CardClientRequestCO.  # noqa: E501
-        :rtype: str
-        """
-        return self._nucleus_card_id
-
-    @nucleus_card_id.setter
-    def nucleus_card_id(self, nucleus_card_id):
-        """Sets the nucleus_card_id of this CardClientRequestCO.
-
-
-        :param nucleus_card_id: The nucleus_card_id of this CardClientRequestCO.  # noqa: E501
-        :type: str
-        """
-
-        self._nucleus_card_id = nucleus_card_id
 
     @property
     def nucleus_client_id(self):

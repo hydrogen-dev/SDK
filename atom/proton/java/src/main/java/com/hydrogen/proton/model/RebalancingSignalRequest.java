@@ -15,12 +15,7 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.UUID;
@@ -29,63 +24,45 @@ import org.threeten.bp.LocalDate;
 /**
  * RebalancingSignalRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class RebalancingSignalRequest {
-  @SerializedName("settings")
-  private Settings settings = null;
-
-  @SerializedName("update_model")
-  private Boolean updateModel = false;
+  @SerializedName("end_date")
+  private LocalDate endDate = null;
 
   @SerializedName("model_id")
   private UUID modelId = null;
 
-  @SerializedName("end_date")
-  private LocalDate endDate = null;
-
   @SerializedName("initial_weights")
   private Object initialWeights = null;
+
+  @SerializedName("update_model")
+  private Boolean updateModel = false;
 
   @SerializedName("start_date")
   private LocalDate startDate = null;
 
-  public RebalancingSignalRequest settings(Settings settings) {
-    this.settings = settings;
+  @SerializedName("settings")
+  private Settings settings = null;
+
+  public RebalancingSignalRequest endDate(LocalDate endDate) {
+    this.endDate = endDate;
     return this;
   }
 
    /**
-   * Get settings
-   * @return settings
+   * Get endDate
+   * @return endDate
   **/
-  @ApiModelProperty(value = "")
-  public Settings getSettings() {
-    return settings;
+  @ApiModelProperty(required = true, value = "")
+  public LocalDate getEndDate() {
+    return endDate;
   }
 
-  public void setSettings(Settings settings) {
-    this.settings = settings;
-  }
-
-  public RebalancingSignalRequest updateModel(Boolean updateModel) {
-    this.updateModel = updateModel;
-    return this;
-  }
-
-   /**
-   * Get updateModel
-   * @return updateModel
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isUpdateModel() {
-    return updateModel;
-  }
-
-  public void setUpdateModel(Boolean updateModel) {
-    this.updateModel = updateModel;
+  public void setEndDate(LocalDate endDate) {
+    this.endDate = endDate;
   }
 
   public RebalancingSignalRequest modelId(UUID modelId) {
@@ -106,24 +83,6 @@ public class RebalancingSignalRequest {
     this.modelId = modelId;
   }
 
-  public RebalancingSignalRequest endDate(LocalDate endDate) {
-    this.endDate = endDate;
-    return this;
-  }
-
-   /**
-   * Get endDate
-   * @return endDate
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public LocalDate getEndDate() {
-    return endDate;
-  }
-
-  public void setEndDate(LocalDate endDate) {
-    this.endDate = endDate;
-  }
-
   public RebalancingSignalRequest initialWeights(Object initialWeights) {
     this.initialWeights = initialWeights;
     return this;
@@ -140,6 +99,24 @@ public class RebalancingSignalRequest {
 
   public void setInitialWeights(Object initialWeights) {
     this.initialWeights = initialWeights;
+  }
+
+  public RebalancingSignalRequest updateModel(Boolean updateModel) {
+    this.updateModel = updateModel;
+    return this;
+  }
+
+   /**
+   * Get updateModel
+   * @return updateModel
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isUpdateModel() {
+    return updateModel;
+  }
+
+  public void setUpdateModel(Boolean updateModel) {
+    this.updateModel = updateModel;
   }
 
   public RebalancingSignalRequest startDate(LocalDate startDate) {
@@ -160,6 +137,24 @@ public class RebalancingSignalRequest {
     this.startDate = startDate;
   }
 
+  public RebalancingSignalRequest settings(Settings settings) {
+    this.settings = settings;
+    return this;
+  }
+
+   /**
+   * Get settings
+   * @return settings
+  **/
+  @ApiModelProperty(value = "")
+  public Settings getSettings() {
+    return settings;
+  }
+
+  public void setSettings(Settings settings) {
+    this.settings = settings;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -170,17 +165,17 @@ public class RebalancingSignalRequest {
       return false;
     }
     RebalancingSignalRequest rebalancingSignalRequest = (RebalancingSignalRequest) o;
-    return Objects.equals(this.settings, rebalancingSignalRequest.settings) &&
-        Objects.equals(this.updateModel, rebalancingSignalRequest.updateModel) &&
+    return Objects.equals(this.endDate, rebalancingSignalRequest.endDate) &&
         Objects.equals(this.modelId, rebalancingSignalRequest.modelId) &&
-        Objects.equals(this.endDate, rebalancingSignalRequest.endDate) &&
         Objects.equals(this.initialWeights, rebalancingSignalRequest.initialWeights) &&
-        Objects.equals(this.startDate, rebalancingSignalRequest.startDate);
+        Objects.equals(this.updateModel, rebalancingSignalRequest.updateModel) &&
+        Objects.equals(this.startDate, rebalancingSignalRequest.startDate) &&
+        Objects.equals(this.settings, rebalancingSignalRequest.settings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(settings, updateModel, modelId, endDate, initialWeights, startDate);
+    return Objects.hash(endDate, modelId, initialWeights, updateModel, startDate, settings);
   }
 
 
@@ -189,12 +184,12 @@ public class RebalancingSignalRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class RebalancingSignalRequest {\n");
     
-    sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
-    sb.append("    updateModel: ").append(toIndentedString(updateModel)).append("\n");
-    sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
+    sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
     sb.append("    initialWeights: ").append(toIndentedString(initialWeights)).append("\n");
+    sb.append("    updateModel: ").append(toIndentedString(updateModel)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -32,7 +32,7 @@ class TestFinancialHealthCheckRequest(unittest.TestCase):
     def testFinancialHealthCheckRequest(self):
         """Test FinancialHealthCheckRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.financial_health_check_request.FinancialHealthCheckRequest()  # noqa: E501
+        # model = proton_api.models.financial_health_check_request.FinancialHealthCheckRequest()  # noqa: E501
         pass
 
 

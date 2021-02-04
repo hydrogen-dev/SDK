@@ -13,34 +13,24 @@
 
 package com.hydrogen.nucleus.model;
 
-import java.util.Objects;
-
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
-import org.threeten.bp.LocalDate;
 import org.threeten.bp.OffsetDateTime;
+
+import java.util.*;
 
 /**
  * Client Object
  */
 @ApiModel(description = "Client Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-12T11:03:26.704Z")
-
-
-
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-05T16:10:44.662Z")
 public class Client {
   @SerializedName("address")
   private List<ClientAddress> address = null;
+
+  @SerializedName("business_id")
+  private UUID businessId = null;
 
   @SerializedName("citizenship_status")
   private String citizenshipStatus = null;
@@ -58,7 +48,7 @@ public class Client {
   private OffsetDateTime createDate = null;
 
   @SerializedName("date_of_birth")
-  private LocalDate dateOfBirth = null;
+  private String dateOfBirth = null;
 
   @SerializedName("email")
   private String email = null;
@@ -164,6 +154,24 @@ public class Client {
     this.address = address;
   }
 
+  public Client businessId(UUID businessId) {
+    this.businessId = businessId;
+    return this;
+  }
+
+   /**
+   * business_id
+   * @return businessId
+  **/
+  @ApiModelProperty(example = "5cc48294-5f28-41f2-8eb4-898e83932327", value = "business_id")
+  public UUID getBusinessId() {
+    return businessId;
+  }
+
+  public void setBusinessId(UUID businessId) {
+    this.businessId = businessId;
+  }
+
   public Client citizenshipStatus(String citizenshipStatus) {
     this.citizenshipStatus = citizenshipStatus;
     return this;
@@ -253,7 +261,7 @@ public class Client {
     return createDate;
   }
 
-  public Client dateOfBirth(LocalDate dateOfBirth) {
+  public Client dateOfBirth(String dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -263,11 +271,11 @@ public class Client {
    * @return dateOfBirth
   **/
   @ApiModelProperty(example = "1900-01-01", value = "dateOfBirth")
-  public LocalDate getDateOfBirth() {
+  public String getDateOfBirth() {
     return dateOfBirth;
   }
 
-  public void setDateOfBirth(LocalDate dateOfBirth) {
+  public void setDateOfBirth(String dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
 
@@ -705,7 +713,7 @@ public class Client {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -714,6 +722,7 @@ public class Client {
     }
     Client client = (Client) o;
     return Objects.equals(this.address, client.address) &&
+        Objects.equals(this.businessId, client.businessId) &&
         Objects.equals(this.citizenshipStatus, client.citizenshipStatus) &&
         Objects.equals(this.clientType, client.clientType) &&
         Objects.equals(this.countryOfCitizenship, client.countryOfCitizenship) &&
@@ -750,7 +759,7 @@ public class Client {
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, citizenshipStatus, clientType, countryOfCitizenship, countryOfResidence, createDate, dateOfBirth, email, employment, firmName, firmType, firstName, gender, hydroId, id, identificationNumber, identificationNumberType, image, income, isActive, isVerified, lastName, liquidNetWorth, metadata, middleName, phoneNumber, secondaryId, status, suffix, title, totalNetWorth, updateDate, username);
+    return Objects.hash(address, businessId, citizenshipStatus, clientType, countryOfCitizenship, countryOfResidence, createDate, dateOfBirth, email, employment, firmName, firmType, firstName, gender, hydroId, id, identificationNumber, identificationNumberType, image, income, isActive, isVerified, lastName, liquidNetWorth, metadata, middleName, phoneNumber, secondaryId, status, suffix, title, totalNetWorth, updateDate, username);
   }
 
 
@@ -758,8 +767,9 @@ public class Client {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Client {\n");
-    
+
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    businessId: ").append(toIndentedString(businessId)).append("\n");
     sb.append("    citizenshipStatus: ").append(toIndentedString(citizenshipStatus)).append("\n");
     sb.append("    clientType: ").append(toIndentedString(clientType)).append("\n");
     sb.append("    countryOfCitizenship: ").append(toIndentedString(countryOfCitizenship)).append("\n");
@@ -800,7 +810,7 @@ public class Client {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

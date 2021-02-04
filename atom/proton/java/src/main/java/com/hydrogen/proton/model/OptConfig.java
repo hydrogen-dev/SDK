@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.IOException;
@@ -31,17 +30,11 @@ import org.threeten.bp.LocalDate;
 /**
  * OptConfig
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class OptConfig {
-  @SerializedName("w_asset_config")
-  private Object wAssetConfig = null;
-
-  @SerializedName("min_assets")
-  private Integer minAssets = null;
-
   /**
    * Gets or Sets secTypes
    */
@@ -94,11 +87,11 @@ public class OptConfig {
   @SerializedName("sec_types")
   private List<SecTypesEnum> secTypes = new ArrayList<SecTypesEnum>();
 
-  @SerializedName("w_config")
-  private WConfig wConfig = null;
-
   @SerializedName("end_date")
   private LocalDate endDate = null;
+
+  @SerializedName("w_config")
+  private WConfig wConfig = null;
 
   @SerializedName("start_date")
   private LocalDate startDate = null;
@@ -106,42 +99,11 @@ public class OptConfig {
   @SerializedName("tickers")
   private List<String> tickers = new ArrayList<String>();
 
-  public OptConfig wAssetConfig(Object wAssetConfig) {
-    this.wAssetConfig = wAssetConfig;
-    return this;
-  }
+  @SerializedName("min_assets")
+  private Integer minAssets = null;
 
-   /**
-   * Get wAssetConfig
-   * @return wAssetConfig
-  **/
-  @ApiModelProperty(value = "")
-  public Object getWAssetConfig() {
-    return wAssetConfig;
-  }
-
-  public void setWAssetConfig(Object wAssetConfig) {
-    this.wAssetConfig = wAssetConfig;
-  }
-
-  public OptConfig minAssets(Integer minAssets) {
-    this.minAssets = minAssets;
-    return this;
-  }
-
-   /**
-   * Get minAssets
-   * minimum: 1
-   * @return minAssets
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getMinAssets() {
-    return minAssets;
-  }
-
-  public void setMinAssets(Integer minAssets) {
-    this.minAssets = minAssets;
-  }
+  @SerializedName("w_asset_config")
+  private Object wAssetConfig = null;
 
   public OptConfig secTypes(List<SecTypesEnum> secTypes) {
     this.secTypes = secTypes;
@@ -166,24 +128,6 @@ public class OptConfig {
     this.secTypes = secTypes;
   }
 
-  public OptConfig wConfig(WConfig wConfig) {
-    this.wConfig = wConfig;
-    return this;
-  }
-
-   /**
-   * Get wConfig
-   * @return wConfig
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public WConfig getWConfig() {
-    return wConfig;
-  }
-
-  public void setWConfig(WConfig wConfig) {
-    this.wConfig = wConfig;
-  }
-
   public OptConfig endDate(LocalDate endDate) {
     this.endDate = endDate;
     return this;
@@ -200,6 +144,24 @@ public class OptConfig {
 
   public void setEndDate(LocalDate endDate) {
     this.endDate = endDate;
+  }
+
+  public OptConfig wConfig(WConfig wConfig) {
+    this.wConfig = wConfig;
+    return this;
+  }
+
+   /**
+   * Get wConfig
+   * @return wConfig
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public WConfig getWConfig() {
+    return wConfig;
+  }
+
+  public void setWConfig(WConfig wConfig) {
+    this.wConfig = wConfig;
   }
 
   public OptConfig startDate(LocalDate startDate) {
@@ -243,6 +205,43 @@ public class OptConfig {
     this.tickers = tickers;
   }
 
+  public OptConfig minAssets(Integer minAssets) {
+    this.minAssets = minAssets;
+    return this;
+  }
+
+   /**
+   * Get minAssets
+   * minimum: 1
+   * @return minAssets
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getMinAssets() {
+    return minAssets;
+  }
+
+  public void setMinAssets(Integer minAssets) {
+    this.minAssets = minAssets;
+  }
+
+  public OptConfig wAssetConfig(Object wAssetConfig) {
+    this.wAssetConfig = wAssetConfig;
+    return this;
+  }
+
+   /**
+   * Get wAssetConfig
+   * @return wAssetConfig
+  **/
+  @ApiModelProperty(value = "")
+  public Object getWAssetConfig() {
+    return wAssetConfig;
+  }
+
+  public void setWAssetConfig(Object wAssetConfig) {
+    this.wAssetConfig = wAssetConfig;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -253,18 +252,18 @@ public class OptConfig {
       return false;
     }
     OptConfig optConfig = (OptConfig) o;
-    return Objects.equals(this.wAssetConfig, optConfig.wAssetConfig) &&
-        Objects.equals(this.minAssets, optConfig.minAssets) &&
-        Objects.equals(this.secTypes, optConfig.secTypes) &&
-        Objects.equals(this.wConfig, optConfig.wConfig) &&
+    return Objects.equals(this.secTypes, optConfig.secTypes) &&
         Objects.equals(this.endDate, optConfig.endDate) &&
+        Objects.equals(this.wConfig, optConfig.wConfig) &&
         Objects.equals(this.startDate, optConfig.startDate) &&
-        Objects.equals(this.tickers, optConfig.tickers);
+        Objects.equals(this.tickers, optConfig.tickers) &&
+        Objects.equals(this.minAssets, optConfig.minAssets) &&
+        Objects.equals(this.wAssetConfig, optConfig.wAssetConfig);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(wAssetConfig, minAssets, secTypes, wConfig, endDate, startDate, tickers);
+    return Objects.hash(secTypes, endDate, wConfig, startDate, tickers, minAssets, wAssetConfig);
   }
 
 
@@ -273,13 +272,13 @@ public class OptConfig {
     StringBuilder sb = new StringBuilder();
     sb.append("class OptConfig {\n");
     
-    sb.append("    wAssetConfig: ").append(toIndentedString(wAssetConfig)).append("\n");
-    sb.append("    minAssets: ").append(toIndentedString(minAssets)).append("\n");
     sb.append("    secTypes: ").append(toIndentedString(secTypes)).append("\n");
-    sb.append("    wConfig: ").append(toIndentedString(wConfig)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
+    sb.append("    wConfig: ").append(toIndentedString(wConfig)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    tickers: ").append(toIndentedString(tickers)).append("\n");
+    sb.append("    minAssets: ").append(toIndentedString(minAssets)).append("\n");
+    sb.append("    wAssetConfig: ").append(toIndentedString(wAssetConfig)).append("\n");
     sb.append("}");
     return sb.toString();
   }

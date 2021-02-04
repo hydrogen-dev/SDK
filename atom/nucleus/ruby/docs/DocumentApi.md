@@ -271,7 +271,7 @@ end
 
 api_instance = NucleusApi::DocumentApi.new
 
-document = NucleusApi::Document.new # Document | document
+document = nil # Object | document
 
 document_id = 'document_id_example' # String | UUID document_id
 
@@ -289,7 +289,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **document** | [**Document**](Document.md)| document | 
+ **document** | **Object**| document | 
  **document_id** | [**String**](.md)| UUID document_id | 
 
 ### Return type

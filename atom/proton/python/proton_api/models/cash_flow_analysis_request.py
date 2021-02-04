@@ -31,213 +31,81 @@ class CashFlowAnalysisRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'scope': 'str',
-        'benchmark_start_date': 'date',
-        'show_spending_details': 'bool',
-        'client_id': 'str',
-        'currency_conversion': 'str',
-        'start_date': 'date',
         'aggregation_account_ids': 'list[str]',
         'end_date': 'date',
-        'show_income_details': 'bool',
-        'currency_code': 'str',
-        'account_ids': 'list[str]',
         'benchmark_end_date': 'date',
-        'show_history': 'bool'
+        'client_id': 'str',
+        'account_ids': 'list[str]',
+        'show_income_details': 'bool',
+        'show_history': 'bool',
+        'start_date': 'date',
+        'currency_conversion': 'str',
+        'currency_code': 'str',
+        'benchmark_start_date': 'date',
+        'show_spending_details': 'bool',
+        'scope': 'str'
     }
 
     attribute_map = {
-        'scope': 'scope',
-        'benchmark_start_date': 'benchmark_start_date',
-        'show_spending_details': 'show_spending_details',
-        'client_id': 'client_id',
-        'currency_conversion': 'currency_conversion',
-        'start_date': 'start_date',
         'aggregation_account_ids': 'aggregation_account_ids',
         'end_date': 'end_date',
-        'show_income_details': 'show_income_details',
-        'currency_code': 'currency_code',
-        'account_ids': 'account_ids',
         'benchmark_end_date': 'benchmark_end_date',
-        'show_history': 'show_history'
+        'client_id': 'client_id',
+        'account_ids': 'account_ids',
+        'show_income_details': 'show_income_details',
+        'show_history': 'show_history',
+        'start_date': 'start_date',
+        'currency_conversion': 'currency_conversion',
+        'currency_code': 'currency_code',
+        'benchmark_start_date': 'benchmark_start_date',
+        'show_spending_details': 'show_spending_details',
+        'scope': 'scope'
     }
 
-    def __init__(self, scope='all', benchmark_start_date=None, show_spending_details=False, client_id=None, currency_conversion=None, start_date=None, aggregation_account_ids=None, end_date=None, show_income_details=False, currency_code=None, account_ids=None, benchmark_end_date=None, show_history=False):  # noqa: E501
+    def __init__(self, aggregation_account_ids=None, end_date=None, benchmark_end_date=None, client_id=None, account_ids=None, show_income_details=False, show_history=False, start_date=None, currency_conversion=None, currency_code=None, benchmark_start_date=None, show_spending_details=False, scope='all'):  # noqa: E501
         """CashFlowAnalysisRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._scope = None
-        self._benchmark_start_date = None
-        self._show_spending_details = None
-        self._client_id = None
-        self._currency_conversion = None
-        self._start_date = None
         self._aggregation_account_ids = None
         self._end_date = None
-        self._show_income_details = None
-        self._currency_code = None
-        self._account_ids = None
         self._benchmark_end_date = None
+        self._client_id = None
+        self._account_ids = None
+        self._show_income_details = None
         self._show_history = None
+        self._start_date = None
+        self._currency_conversion = None
+        self._currency_code = None
+        self._benchmark_start_date = None
+        self._show_spending_details = None
+        self._scope = None
         self.discriminator = None
 
-        if scope is not None:
-            self.scope = scope
-        if benchmark_start_date is not None:
-            self.benchmark_start_date = benchmark_start_date
-        if show_spending_details is not None:
-            self.show_spending_details = show_spending_details
-        if client_id is not None:
-            self.client_id = client_id
-        if currency_conversion is not None:
-            self.currency_conversion = currency_conversion
-        if start_date is not None:
-            self.start_date = start_date
         if aggregation_account_ids is not None:
             self.aggregation_account_ids = aggregation_account_ids
         if end_date is not None:
             self.end_date = end_date
-        if show_income_details is not None:
-            self.show_income_details = show_income_details
-        if currency_code is not None:
-            self.currency_code = currency_code
-        if account_ids is not None:
-            self.account_ids = account_ids
         if benchmark_end_date is not None:
             self.benchmark_end_date = benchmark_end_date
+        if client_id is not None:
+            self.client_id = client_id
+        if account_ids is not None:
+            self.account_ids = account_ids
+        if show_income_details is not None:
+            self.show_income_details = show_income_details
         if show_history is not None:
             self.show_history = show_history
-
-    @property
-    def scope(self):
-        """Gets the scope of this CashFlowAnalysisRequest.  # noqa: E501
-
-
-        :return: The scope of this CashFlowAnalysisRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._scope
-
-    @scope.setter
-    def scope(self, scope):
-        """Sets the scope of this CashFlowAnalysisRequest.
-
-
-        :param scope: The scope of this CashFlowAnalysisRequest.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["all", "external", "internal"]  # noqa: E501
-        if scope not in allowed_values:
-            raise ValueError(
-                "Invalid value for `scope` ({0}), must be one of {1}"  # noqa: E501
-                .format(scope, allowed_values)
-            )
-
-        self._scope = scope
-
-    @property
-    def benchmark_start_date(self):
-        """Gets the benchmark_start_date of this CashFlowAnalysisRequest.  # noqa: E501
-
-
-        :return: The benchmark_start_date of this CashFlowAnalysisRequest.  # noqa: E501
-        :rtype: date
-        """
-        return self._benchmark_start_date
-
-    @benchmark_start_date.setter
-    def benchmark_start_date(self, benchmark_start_date):
-        """Sets the benchmark_start_date of this CashFlowAnalysisRequest.
-
-
-        :param benchmark_start_date: The benchmark_start_date of this CashFlowAnalysisRequest.  # noqa: E501
-        :type: date
-        """
-
-        self._benchmark_start_date = benchmark_start_date
-
-    @property
-    def show_spending_details(self):
-        """Gets the show_spending_details of this CashFlowAnalysisRequest.  # noqa: E501
-
-
-        :return: The show_spending_details of this CashFlowAnalysisRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._show_spending_details
-
-    @show_spending_details.setter
-    def show_spending_details(self, show_spending_details):
-        """Sets the show_spending_details of this CashFlowAnalysisRequest.
-
-
-        :param show_spending_details: The show_spending_details of this CashFlowAnalysisRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._show_spending_details = show_spending_details
-
-    @property
-    def client_id(self):
-        """Gets the client_id of this CashFlowAnalysisRequest.  # noqa: E501
-
-
-        :return: The client_id of this CashFlowAnalysisRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._client_id
-
-    @client_id.setter
-    def client_id(self, client_id):
-        """Sets the client_id of this CashFlowAnalysisRequest.
-
-
-        :param client_id: The client_id of this CashFlowAnalysisRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._client_id = client_id
-
-    @property
-    def currency_conversion(self):
-        """Gets the currency_conversion of this CashFlowAnalysisRequest.  # noqa: E501
-
-
-        :return: The currency_conversion of this CashFlowAnalysisRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._currency_conversion
-
-    @currency_conversion.setter
-    def currency_conversion(self, currency_conversion):
-        """Sets the currency_conversion of this CashFlowAnalysisRequest.
-
-
-        :param currency_conversion: The currency_conversion of this CashFlowAnalysisRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._currency_conversion = currency_conversion
-
-    @property
-    def start_date(self):
-        """Gets the start_date of this CashFlowAnalysisRequest.  # noqa: E501
-
-
-        :return: The start_date of this CashFlowAnalysisRequest.  # noqa: E501
-        :rtype: date
-        """
-        return self._start_date
-
-    @start_date.setter
-    def start_date(self, start_date):
-        """Sets the start_date of this CashFlowAnalysisRequest.
-
-
-        :param start_date: The start_date of this CashFlowAnalysisRequest.  # noqa: E501
-        :type: date
-        """
-
-        self._start_date = start_date
+        if start_date is not None:
+            self.start_date = start_date
+        if currency_conversion is not None:
+            self.currency_conversion = currency_conversion
+        if currency_code is not None:
+            self.currency_code = currency_code
+        if benchmark_start_date is not None:
+            self.benchmark_start_date = benchmark_start_date
+        if show_spending_details is not None:
+            self.show_spending_details = show_spending_details
+        if scope is not None:
+            self.scope = scope
 
     @property
     def aggregation_account_ids(self):
@@ -282,46 +150,46 @@ class CashFlowAnalysisRequest(object):
         self._end_date = end_date
 
     @property
-    def show_income_details(self):
-        """Gets the show_income_details of this CashFlowAnalysisRequest.  # noqa: E501
+    def benchmark_end_date(self):
+        """Gets the benchmark_end_date of this CashFlowAnalysisRequest.  # noqa: E501
 
 
-        :return: The show_income_details of this CashFlowAnalysisRequest.  # noqa: E501
-        :rtype: bool
+        :return: The benchmark_end_date of this CashFlowAnalysisRequest.  # noqa: E501
+        :rtype: date
         """
-        return self._show_income_details
+        return self._benchmark_end_date
 
-    @show_income_details.setter
-    def show_income_details(self, show_income_details):
-        """Sets the show_income_details of this CashFlowAnalysisRequest.
+    @benchmark_end_date.setter
+    def benchmark_end_date(self, benchmark_end_date):
+        """Sets the benchmark_end_date of this CashFlowAnalysisRequest.
 
 
-        :param show_income_details: The show_income_details of this CashFlowAnalysisRequest.  # noqa: E501
-        :type: bool
+        :param benchmark_end_date: The benchmark_end_date of this CashFlowAnalysisRequest.  # noqa: E501
+        :type: date
         """
 
-        self._show_income_details = show_income_details
+        self._benchmark_end_date = benchmark_end_date
 
     @property
-    def currency_code(self):
-        """Gets the currency_code of this CashFlowAnalysisRequest.  # noqa: E501
+    def client_id(self):
+        """Gets the client_id of this CashFlowAnalysisRequest.  # noqa: E501
 
 
-        :return: The currency_code of this CashFlowAnalysisRequest.  # noqa: E501
+        :return: The client_id of this CashFlowAnalysisRequest.  # noqa: E501
         :rtype: str
         """
-        return self._currency_code
+        return self._client_id
 
-    @currency_code.setter
-    def currency_code(self, currency_code):
-        """Sets the currency_code of this CashFlowAnalysisRequest.
+    @client_id.setter
+    def client_id(self, client_id):
+        """Sets the client_id of this CashFlowAnalysisRequest.
 
 
-        :param currency_code: The currency_code of this CashFlowAnalysisRequest.  # noqa: E501
+        :param client_id: The client_id of this CashFlowAnalysisRequest.  # noqa: E501
         :type: str
         """
 
-        self._currency_code = currency_code
+        self._client_id = client_id
 
     @property
     def account_ids(self):
@@ -345,25 +213,25 @@ class CashFlowAnalysisRequest(object):
         self._account_ids = account_ids
 
     @property
-    def benchmark_end_date(self):
-        """Gets the benchmark_end_date of this CashFlowAnalysisRequest.  # noqa: E501
+    def show_income_details(self):
+        """Gets the show_income_details of this CashFlowAnalysisRequest.  # noqa: E501
 
 
-        :return: The benchmark_end_date of this CashFlowAnalysisRequest.  # noqa: E501
-        :rtype: date
+        :return: The show_income_details of this CashFlowAnalysisRequest.  # noqa: E501
+        :rtype: bool
         """
-        return self._benchmark_end_date
+        return self._show_income_details
 
-    @benchmark_end_date.setter
-    def benchmark_end_date(self, benchmark_end_date):
-        """Sets the benchmark_end_date of this CashFlowAnalysisRequest.
+    @show_income_details.setter
+    def show_income_details(self, show_income_details):
+        """Sets the show_income_details of this CashFlowAnalysisRequest.
 
 
-        :param benchmark_end_date: The benchmark_end_date of this CashFlowAnalysisRequest.  # noqa: E501
-        :type: date
+        :param show_income_details: The show_income_details of this CashFlowAnalysisRequest.  # noqa: E501
+        :type: bool
         """
 
-        self._benchmark_end_date = benchmark_end_date
+        self._show_income_details = show_income_details
 
     @property
     def show_history(self):
@@ -385,6 +253,138 @@ class CashFlowAnalysisRequest(object):
         """
 
         self._show_history = show_history
+
+    @property
+    def start_date(self):
+        """Gets the start_date of this CashFlowAnalysisRequest.  # noqa: E501
+
+
+        :return: The start_date of this CashFlowAnalysisRequest.  # noqa: E501
+        :rtype: date
+        """
+        return self._start_date
+
+    @start_date.setter
+    def start_date(self, start_date):
+        """Sets the start_date of this CashFlowAnalysisRequest.
+
+
+        :param start_date: The start_date of this CashFlowAnalysisRequest.  # noqa: E501
+        :type: date
+        """
+
+        self._start_date = start_date
+
+    @property
+    def currency_conversion(self):
+        """Gets the currency_conversion of this CashFlowAnalysisRequest.  # noqa: E501
+
+
+        :return: The currency_conversion of this CashFlowAnalysisRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_conversion
+
+    @currency_conversion.setter
+    def currency_conversion(self, currency_conversion):
+        """Sets the currency_conversion of this CashFlowAnalysisRequest.
+
+
+        :param currency_conversion: The currency_conversion of this CashFlowAnalysisRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_conversion = currency_conversion
+
+    @property
+    def currency_code(self):
+        """Gets the currency_code of this CashFlowAnalysisRequest.  # noqa: E501
+
+
+        :return: The currency_code of this CashFlowAnalysisRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_code
+
+    @currency_code.setter
+    def currency_code(self, currency_code):
+        """Sets the currency_code of this CashFlowAnalysisRequest.
+
+
+        :param currency_code: The currency_code of this CashFlowAnalysisRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_code = currency_code
+
+    @property
+    def benchmark_start_date(self):
+        """Gets the benchmark_start_date of this CashFlowAnalysisRequest.  # noqa: E501
+
+
+        :return: The benchmark_start_date of this CashFlowAnalysisRequest.  # noqa: E501
+        :rtype: date
+        """
+        return self._benchmark_start_date
+
+    @benchmark_start_date.setter
+    def benchmark_start_date(self, benchmark_start_date):
+        """Sets the benchmark_start_date of this CashFlowAnalysisRequest.
+
+
+        :param benchmark_start_date: The benchmark_start_date of this CashFlowAnalysisRequest.  # noqa: E501
+        :type: date
+        """
+
+        self._benchmark_start_date = benchmark_start_date
+
+    @property
+    def show_spending_details(self):
+        """Gets the show_spending_details of this CashFlowAnalysisRequest.  # noqa: E501
+
+
+        :return: The show_spending_details of this CashFlowAnalysisRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._show_spending_details
+
+    @show_spending_details.setter
+    def show_spending_details(self, show_spending_details):
+        """Sets the show_spending_details of this CashFlowAnalysisRequest.
+
+
+        :param show_spending_details: The show_spending_details of this CashFlowAnalysisRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._show_spending_details = show_spending_details
+
+    @property
+    def scope(self):
+        """Gets the scope of this CashFlowAnalysisRequest.  # noqa: E501
+
+
+        :return: The scope of this CashFlowAnalysisRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._scope
+
+    @scope.setter
+    def scope(self, scope):
+        """Sets the scope of this CashFlowAnalysisRequest.
+
+
+        :param scope: The scope of this CashFlowAnalysisRequest.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["all", "external", "internal"]  # noqa: E501
+        if scope not in allowed_values:
+            raise ValueError(
+                "Invalid value for `scope` ({0}), must be one of {1}"  # noqa: E501
+                .format(scope, allowed_values)
+            )
+
+        self._scope = scope
 
     def to_dict(self):
         """Returns the model properties as a dict"""

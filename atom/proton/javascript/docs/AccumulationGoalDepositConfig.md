@@ -3,28 +3,17 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**depEndReference** | **String** |  | [optional] [default to 'a_end']
-**depInflation** | **Number** |  | [optional] [default to 0.0]
 **depAmount** | **Number** |  | [optional] 
-**depStartReference** | **String** |  | [optional] [default to 'a_start']
-**depFrequency** | **String** |  | [optional] [default to 'year']
 **depEndPeriod** | **Number** |  | [optional] [default to 0]
+**depEndReference** | **String** |  | [optional] [default to 'a_end']
+**depFrequency** | **String** |  | [optional] [default to 'year']
 **depStartPeriod** | **Number** |  | [optional] [default to 0]
+**depInflation** | **Number** |  | [optional] [default to 0.0]
+**depStartReference** | **String** |  | [optional] [default to 'a_start']
 
 
 <a name="DepEndReferenceEnum"></a>
 ## Enum: DepEndReferenceEnum
-
-
-* `start` (value: `"a_start"`)
-
-* `end` (value: `"a_end"`)
-
-
-
-
-<a name="DepStartReferenceEnum"></a>
-## Enum: DepStartReferenceEnum
 
 
 * `start` (value: `"a_start"`)
@@ -51,6 +40,17 @@ Name | Type | Description | Notes
 * `week` (value: `"week"`)
 
 * `day` (value: `"day"`)
+
+
+
+
+<a name="DepStartReferenceEnum"></a>
+## Enum: DepStartReferenceEnum
+
+
+* `start` (value: `"a_start"`)
+
+* `end` (value: `"a_end"`)
 
 
 

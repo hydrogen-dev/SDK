@@ -609,7 +609,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\InvoiceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$invoice_payment = new \com\hydrogen\nucleus\Model\InvoicePayment(); // \com\hydrogen\nucleus\Model\InvoicePayment | invoice_payment
+$invoice_payment = new \stdClass; // object | invoice_payment
 $invoice_payment_id = "invoice_payment_id_example"; // string | UUID invoice_payment_id
 
 try {
@@ -625,7 +625,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoice_payment** | [**\com\hydrogen\nucleus\Model\InvoicePayment**](../Model/InvoicePayment.md)| invoice_payment |
+ **invoice_payment** | **object**| invoice_payment |
  **invoice_payment_id** | [**string**](../Model/.md)| UUID invoice_payment_id |
 
 ### Return type
@@ -678,7 +678,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\InvoiceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$invoice = new \com\hydrogen\nucleus\Model\Invoice(); // \com\hydrogen\nucleus\Model\Invoice | invoice
+$invoice = new \stdClass; // object | invoice
 $invoice_id = "invoice_id_example"; // string | UUID invoice_id
 
 try {
@@ -694,7 +694,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoice** | [**\com\hydrogen\nucleus\Model\Invoice**](../Model/Invoice.md)| invoice |
+ **invoice** | **object**| invoice |
  **invoice_id** | [**string**](../Model/.md)| UUID invoice_id |
 
 ### Return type

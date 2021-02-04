@@ -119,7 +119,7 @@ null (empty response body)
 
 List all KMS Clients
 
-Get details for all clients registered with your firm.
+Get details for all clients registered with your business.
 
 ### Example
 ```javascript
@@ -134,6 +134,7 @@ var apiInstance = new HydrogenIntegrationApi.KMSApi();
 
 var opts = { 
   'ascending': false, // Boolean | ascending
+  'filter': "filter_example", // String | filter
   'orderBy': "update_date", // String | order_by
   'page': 0, // Number | page
   'size': 25 // Number | size
@@ -154,6 +155,7 @@ apiInstance.getKMSAllUsingGet(opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **filter** | **String**| filter | [optional] 
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Number**| page | [optional] [default to 0]
  **size** | **Number**| size | [optional] [default to 25]

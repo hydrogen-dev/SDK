@@ -897,7 +897,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\AllocationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$allocation_composition = new \com\hydrogen\nucleus\Model\AllocationComposition(); // \com\hydrogen\nucleus\Model\AllocationComposition | allocation_composition
+$allocation_composition = new \stdClass; // object | allocation_composition
 $allocation_composition_id = "allocation_composition_id_example"; // string | UUID allocation_composition_id
 
 try {
@@ -913,7 +913,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocation_composition** | [**\com\hydrogen\nucleus\Model\AllocationComposition**](../Model/AllocationComposition.md)| allocation_composition |
+ **allocation_composition** | **object**| allocation_composition |
  **allocation_composition_id** | [**string**](../Model/.md)| UUID allocation_composition_id |
 
 ### Return type
@@ -966,7 +966,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\AllocationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$allocation = new \com\hydrogen\nucleus\Model\Allocation(); // \com\hydrogen\nucleus\Model\Allocation | allocation
+$allocation = new \stdClass; // object | allocation
 $allocation_id = "allocation_id_example"; // string | UUID allocation_id
 
 try {
@@ -982,7 +982,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocation** | [**\com\hydrogen\nucleus\Model\Allocation**](../Model/Allocation.md)| allocation |
+ **allocation** | **object**| allocation |
  **allocation_id** | [**string**](../Model/.md)| UUID allocation_id |
 
 ### Return type

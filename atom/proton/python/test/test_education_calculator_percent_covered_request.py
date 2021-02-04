@@ -32,7 +32,7 @@ class TestEducationCalculatorPercentCoveredRequest(unittest.TestCase):
     def testEducationCalculatorPercentCoveredRequest(self):
         """Test EducationCalculatorPercentCoveredRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.education_calculator_percent_covered_request.EducationCalculatorPercentCoveredRequest()  # noqa: E501
+        # model = proton_api.models.education_calculator_percent_covered_request.EducationCalculatorPercentCoveredRequest()  # noqa: E501
         pass
 
 

@@ -32,12 +32,13 @@ class Client(object):
     """
     swagger_types = {
         'address': 'list[ClientAddress]',
+        'business_id': 'str',
         'citizenship_status': 'str',
         'client_type': 'str',
         'country_of_citizenship': 'list[str]',
         'country_of_residence': 'str',
         'create_date': 'datetime',
-        'date_of_birth': 'date',
+        'date_of_birth': 'str',
         'email': 'str',
         'employment': 'Employment',
         'firm_name': 'str',
@@ -68,6 +69,7 @@ class Client(object):
 
     attribute_map = {
         'address': 'address',
+        'business_id': 'business_id',
         'citizenship_status': 'citizenship_status',
         'client_type': 'client_type',
         'country_of_citizenship': 'country_of_citizenship',
@@ -102,10 +104,11 @@ class Client(object):
         'username': 'username'
     }
 
-    def __init__(self, address=None, citizenship_status=None, client_type=None, country_of_citizenship=None, country_of_residence=None, create_date=None, date_of_birth=None, email=None, employment=None, firm_name=None, firm_type=None, first_name=None, gender=None, hydro_id=None, id=None, identification_number=None, identification_number_type=None, image=None, income=None, is_active=None, is_verified=None, last_name=None, liquid_net_worth=None, metadata=None, middle_name=None, phone_number=None, secondary_id=None, status=None, suffix=None, title=None, total_net_worth=None, update_date=None, username=None):  # noqa: E501
+    def __init__(self, address=None, business_id=None, citizenship_status=None, client_type=None, country_of_citizenship=None, country_of_residence=None, create_date=None, date_of_birth=None, email=None, employment=None, firm_name=None, firm_type=None, first_name=None, gender=None, hydro_id=None, id=None, identification_number=None, identification_number_type=None, image=None, income=None, is_active=None, is_verified=None, last_name=None, liquid_net_worth=None, metadata=None, middle_name=None, phone_number=None, secondary_id=None, status=None, suffix=None, title=None, total_net_worth=None, update_date=None, username=None):  # noqa: E501
         """Client - a model defined in Swagger"""  # noqa: E501
 
         self._address = None
+        self._business_id = None
         self._citizenship_status = None
         self._client_type = None
         self._country_of_citizenship = None
@@ -142,6 +145,8 @@ class Client(object):
 
         if address is not None:
             self.address = address
+        if business_id is not None:
+            self.business_id = business_id
         if citizenship_status is not None:
             self.citizenship_status = citizenship_status
         self.client_type = client_type
@@ -225,6 +230,29 @@ class Client(object):
         """
 
         self._address = address
+
+    @property
+    def business_id(self):
+        """Gets the business_id of this Client.  # noqa: E501
+
+        business_id  # noqa: E501
+
+        :return: The business_id of this Client.  # noqa: E501
+        :rtype: str
+        """
+        return self._business_id
+
+    @business_id.setter
+    def business_id(self, business_id):
+        """Sets the business_id of this Client.
+
+        business_id  # noqa: E501
+
+        :param business_id: The business_id of this Client.  # noqa: E501
+        :type: str
+        """
+
+        self._business_id = business_id
 
     @property
     def citizenship_status(self):
@@ -348,7 +376,7 @@ class Client(object):
         dateOfBirth  # noqa: E501
 
         :return: The date_of_birth of this Client.  # noqa: E501
-        :rtype: date
+        :rtype: str
         """
         return self._date_of_birth
 
@@ -359,7 +387,7 @@ class Client(object):
         dateOfBirth  # noqa: E501
 
         :param date_of_birth: The date_of_birth of this Client.  # noqa: E501
-        :type: date
+        :type: str
         """
 
         self._date_of_birth = date_of_birth

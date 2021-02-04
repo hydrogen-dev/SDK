@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **wMinMinor** | **Float** |  |  [optional]
-**wMaxMajor** | **Float** |  |  [optional]
-**wMinMajor** | **Float** |  |  [optional]
 **cashAmount** | **Float** |  |  [optional]
+**wMinMajor** | **Float** |  |  [optional]
 **wMaxMinor** | **Float** |  |  [optional]
+**wMaxMajor** | **Float** |  |  [optional]
 
 
 

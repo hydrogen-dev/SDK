@@ -32,7 +32,7 @@ class TestScenarioAnalysisRequest(unittest.TestCase):
     def testScenarioAnalysisRequest(self):
         """Test ScenarioAnalysisRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.scenario_analysis_request.ScenarioAnalysisRequest()  # noqa: E501
+        # model = proton_api.models.scenario_analysis_request.ScenarioAnalysisRequest()  # noqa: E501
         pass
 
 

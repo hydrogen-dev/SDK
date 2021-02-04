@@ -533,7 +533,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\OverflowApi(
     new GuzzleHttp\Client(),
     $config
 );
-$overflow_settings = new \com\hydrogen\nucleus\Model\OverflowSettings(); // \com\hydrogen\nucleus\Model\OverflowSettings | overflow_settings
+$overflow_settings = new \stdClass; // object | overflow_settings
 $overflow_settings_id = "overflow_settings_id_example"; // string | UUID overflow_settings_id
 
 try {
@@ -549,7 +549,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **overflow_settings** | [**\com\hydrogen\nucleus\Model\OverflowSettings**](../Model/OverflowSettings.md)| overflow_settings |
+ **overflow_settings** | **object**| overflow_settings |
  **overflow_settings_id** | [**string**](../Model/.md)| UUID overflow_settings_id |
 
 ### Return type

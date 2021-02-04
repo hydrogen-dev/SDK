@@ -1515,7 +1515,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\ModelApi(
     new GuzzleHttp\Client(),
     $config
 );
-$model_asset_size = new \com\hydrogen\nucleus\Model\ModelAssetSize(); // \com\hydrogen\nucleus\Model\ModelAssetSize | model_asset_size
+$model_asset_size = new \stdClass; // object | model_asset_size
 $model_asset_size_id = "model_asset_size_id_example"; // string | UUID model_asset_size_id
 
 try {
@@ -1531,7 +1531,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model_asset_size** | [**\com\hydrogen\nucleus\Model\ModelAssetSize**](../Model/ModelAssetSize.md)| model_asset_size |
+ **model_asset_size** | **object**| model_asset_size |
  **model_asset_size_id** | [**string**](../Model/.md)| UUID model_asset_size_id |
 
 ### Return type
@@ -1584,7 +1584,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\ModelApi(
     new GuzzleHttp\Client(),
     $config
 );
-$model_comment = new \com\hydrogen\nucleus\Model\ModelComment(); // \com\hydrogen\nucleus\Model\ModelComment | model_comment
+$model_comment = new \stdClass; // object | model_comment
 $model_comment_id = "model_comment_id_example"; // string | UUID model_comment_id
 
 try {
@@ -1600,7 +1600,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model_comment** | [**\com\hydrogen\nucleus\Model\ModelComment**](../Model/ModelComment.md)| model_comment |
+ **model_comment** | **object**| model_comment |
  **model_comment_id** | [**string**](../Model/.md)| UUID model_comment_id |
 
 ### Return type
@@ -1653,7 +1653,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\ModelApi(
     new GuzzleHttp\Client(),
     $config
 );
-$model_holding = new \com\hydrogen\nucleus\Model\ModelHolding(); // \com\hydrogen\nucleus\Model\ModelHolding | model_holding
+$model_holding = new \stdClass; // object | model_holding
 $model_holding_id = "model_holding_id_example"; // string | UUID model_holding_id
 
 try {
@@ -1669,7 +1669,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model_holding** | [**\com\hydrogen\nucleus\Model\ModelHolding**](../Model/ModelHolding.md)| model_holding |
+ **model_holding** | **object**| model_holding |
  **model_holding_id** | [**string**](../Model/.md)| UUID model_holding_id |
 
 ### Return type
@@ -1722,7 +1722,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\ModelApi(
     new GuzzleHttp\Client(),
     $config
 );
-$model_transaction = new \com\hydrogen\nucleus\Model\ModelTransaction(); // \com\hydrogen\nucleus\Model\ModelTransaction | model_transaction
+$model_transaction = new \stdClass; // object | model_transaction
 $model_transaction_id = "model_transaction_id_example"; // string | UUID model_transaction_id
 
 try {
@@ -1738,7 +1738,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model_transaction** | [**\com\hydrogen\nucleus\Model\ModelTransaction**](../Model/ModelTransaction.md)| model_transaction |
+ **model_transaction** | **object**| model_transaction |
  **model_transaction_id** | [**string**](../Model/.md)| UUID model_transaction_id |
 
 ### Return type
@@ -1791,7 +1791,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\ModelApi(
     new GuzzleHttp\Client(),
     $config
 );
-$model = new \com\hydrogen\nucleus\Model\Model(); // \com\hydrogen\nucleus\Model\Model | model
+$model = new \stdClass; // object | model
 $model_id = "model_id_example"; // string | UUID model_id
 
 try {
@@ -1807,7 +1807,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **model** | [**\com\hydrogen\nucleus\Model\Model**](../Model/Model.md)| model |
+ **model** | **object**| model |
  **model_id** | [**string**](../Model/.md)| UUID model_id |
 
 ### Return type

@@ -13,15 +13,14 @@
 
 package com.hydrogen.proton.api;
 
-import com.hydrogen.proton.ApiCallback;
 import com.hydrogen.proton.ApiClient;
 import com.hydrogen.proton.ApiException;
+import com.hydrogen.proton.ProgressResponseBody;
+import com.hydrogen.proton.ApiCallback;
 import com.hydrogen.proton.ApiResponse;
 import com.hydrogen.proton.Configuration;
 import com.hydrogen.proton.Pair;
 import com.hydrogen.proton.ProgressRequestBody;
-import com.hydrogen.proton.ProgressResponseBody;
-import com.hydrogen.proton.model.RetirementCalculatorExpensesRequest;
 
 import com.google.gson.reflect.TypeToken;
 
@@ -38,6 +37,7 @@ import com.hydrogen.proton.model.PurchaseCalculatorAmountRequest;
 import com.hydrogen.proton.model.PurchaseCalculatorDepositAmountRequest;
 import com.hydrogen.proton.model.PurchaseCalculatorHorizonRequest;
 import com.hydrogen.proton.model.RetirementCalculatorDepositAmountRequest;
+import com.hydrogen.proton.model.RetirementCalculatorExpensesRequest;
 import com.hydrogen.proton.model.RetirementCalculatorPercentCoveredRequest;
 
 import java.lang.reflect.Type;

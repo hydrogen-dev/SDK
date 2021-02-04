@@ -13,6 +13,8 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
+import com.hydrogen.nucleus.model.PagePortfolio;
 import com.hydrogen.nucleus.model.PagePortfolioAssetSizeLog;
 import com.hydrogen.nucleus.model.PagePortfolioComment;
 import com.hydrogen.nucleus.model.PagePortfolioGoal;
@@ -24,9 +26,6 @@ import com.hydrogen.nucleus.model.PortfolioComment;
 import com.hydrogen.nucleus.model.PortfolioGoal;
 import com.hydrogen.nucleus.model.PortfolioHoldingLog;
 import com.hydrogen.nucleus.model.PortfolioTransaction;
-import com.hydrogen.nucleus.ApiException;
-import com.hydrogen.nucleus.model.PagePortfolio;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -485,7 +484,7 @@ public class PortfolioApiTest {
      */
     @Test
     public void updatePortfolioAssetSizeUsingPutTest() throws ApiException {
-        PortfolioAssetSizeLog portfolioAssetSize = null;
+        Object portfolioAssetSize = null;
         UUID portfolioAssetSizeId = null;
         PortfolioAssetSizeLog response = api.updatePortfolioAssetSizeUsingPut(portfolioAssetSize, portfolioAssetSizeId);
 
@@ -502,7 +501,7 @@ public class PortfolioApiTest {
      */
     @Test
     public void updatePortfolioCommentUsingPutTest() throws ApiException {
-        PortfolioComment portfolioComment = null;
+        Object portfolioComment = null;
         UUID portfolioCommentId = null;
         PortfolioComment response = api.updatePortfolioCommentUsingPut(portfolioComment, portfolioCommentId);
 
@@ -519,7 +518,7 @@ public class PortfolioApiTest {
      */
     @Test
     public void updatePortfolioGoalUsingPutTest() throws ApiException {
-        PortfolioGoal portfolioGoal = null;
+        Object portfolioGoal = null;
         UUID portfolioGoalId = null;
         PortfolioGoal response = api.updatePortfolioGoalUsingPut(portfolioGoal, portfolioGoalId);
 
@@ -536,7 +535,7 @@ public class PortfolioApiTest {
      */
     @Test
     public void updatePortfolioHoldingUsingPutTest() throws ApiException {
-        PortfolioHoldingLog portfolioHolding = null;
+        Object portfolioHolding = null;
         UUID portfolioHoldingId = null;
         PortfolioHoldingLog response = api.updatePortfolioHoldingUsingPut(portfolioHolding, portfolioHoldingId);
 
@@ -553,7 +552,7 @@ public class PortfolioApiTest {
      */
     @Test
     public void updatePortfolioTransactionUsingPutTest() throws ApiException {
-        PortfolioTransaction portfolioTransaction = null;
+        Object portfolioTransaction = null;
         UUID portfolioTransactionId = null;
         PortfolioTransaction response = api.updatePortfolioTransactionUsingPut(portfolioTransaction, portfolioTransactionId);
 
@@ -570,7 +569,7 @@ public class PortfolioApiTest {
      */
     @Test
     public void updatePortfolioUsingPutTest() throws ApiException {
-        Portfolio portfolio = null;
+        Object portfolio = null;
         UUID portfolioId = null;
         Portfolio response = api.updatePortfolioUsingPut(portfolio, portfolioId);
 

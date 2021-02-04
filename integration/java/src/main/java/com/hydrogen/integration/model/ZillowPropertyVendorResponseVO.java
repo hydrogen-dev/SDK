@@ -21,27 +21,111 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ZillowPropertyVendorResponseVO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class ZillowPropertyVendorResponseVO {
-  @SerializedName("zp_id")
-  private String zpId = null;
+  @SerializedName("currency")
+  private String currency = null;
 
-  public ZillowPropertyVendorResponseVO zpId(String zpId) {
-    this.zpId = zpId;
+  @SerializedName("link")
+  private String link = null;
+
+  @SerializedName("text")
+  private String text = null;
+
+  @SerializedName("zestimate")
+  private String zestimate = null;
+
+  @SerializedName("zpid")
+  private String zpid = null;
+
+  public ZillowPropertyVendorResponseVO currency(String currency) {
+    this.currency = currency;
     return this;
   }
 
    /**
-   * Get zpId
-   * @return zpId
+   * Get currency
+   * @return currency
   **/
   @ApiModelProperty(value = "")
-  public String getZpId() {
-    return zpId;
+  public String getCurrency() {
+    return currency;
   }
 
-  public void setZpId(String zpId) {
-    this.zpId = zpId;
+  public void setCurrency(String currency) {
+    this.currency = currency;
+  }
+
+  public ZillowPropertyVendorResponseVO link(String link) {
+    this.link = link;
+    return this;
+  }
+
+   /**
+   * Get link
+   * @return link
+  **/
+  @ApiModelProperty(value = "")
+  public String getLink() {
+    return link;
+  }
+
+  public void setLink(String link) {
+    this.link = link;
+  }
+
+  public ZillowPropertyVendorResponseVO text(String text) {
+    this.text = text;
+    return this;
+  }
+
+   /**
+   * Get text
+   * @return text
+  **/
+  @ApiModelProperty(value = "")
+  public String getText() {
+    return text;
+  }
+
+  public void setText(String text) {
+    this.text = text;
+  }
+
+  public ZillowPropertyVendorResponseVO zestimate(String zestimate) {
+    this.zestimate = zestimate;
+    return this;
+  }
+
+   /**
+   * Get zestimate
+   * @return zestimate
+  **/
+  @ApiModelProperty(value = "")
+  public String getZestimate() {
+    return zestimate;
+  }
+
+  public void setZestimate(String zestimate) {
+    this.zestimate = zestimate;
+  }
+
+  public ZillowPropertyVendorResponseVO zpid(String zpid) {
+    this.zpid = zpid;
+    return this;
+  }
+
+   /**
+   * Get zpid
+   * @return zpid
+  **/
+  @ApiModelProperty(value = "")
+  public String getZpid() {
+    return zpid;
+  }
+
+  public void setZpid(String zpid) {
+    this.zpid = zpid;
   }
 
 
@@ -54,12 +138,16 @@ public class ZillowPropertyVendorResponseVO {
       return false;
     }
     ZillowPropertyVendorResponseVO zillowPropertyVendorResponseVO = (ZillowPropertyVendorResponseVO) o;
-    return Objects.equals(this.zpId, zillowPropertyVendorResponseVO.zpId);
+    return Objects.equals(this.currency, zillowPropertyVendorResponseVO.currency) &&
+        Objects.equals(this.link, zillowPropertyVendorResponseVO.link) &&
+        Objects.equals(this.text, zillowPropertyVendorResponseVO.text) &&
+        Objects.equals(this.zestimate, zillowPropertyVendorResponseVO.zestimate) &&
+        Objects.equals(this.zpid, zillowPropertyVendorResponseVO.zpid);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(zpId);
+    return Objects.hash(currency, link, text, zestimate, zpid);
   }
 
 
@@ -68,7 +156,11 @@ public class ZillowPropertyVendorResponseVO {
     StringBuilder sb = new StringBuilder();
     sb.append("class ZillowPropertyVendorResponseVO {\n");
     
-    sb.append("    zpId: ").append(toIndentedString(zpId)).append("\n");
+    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    sb.append("    link: ").append(toIndentedString(link)).append("\n");
+    sb.append("    text: ").append(toIndentedString(text)).append("\n");
+    sb.append("    zestimate: ").append(toIndentedString(zestimate)).append("\n");
+    sb.append("    zpid: ").append(toIndentedString(zpid)).append("\n");
     sb.append("}");
     return sb.toString();
   }

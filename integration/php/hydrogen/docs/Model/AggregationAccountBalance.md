@@ -4,9 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **aggregation_account_id** | **string** | aggregationAccountId | [optional] 
-**available_balance** | **string** | availableBalance | [optional] 
-**available_credit** | **string** | availableCredit | [optional] 
-**balance** | **string** | balance | [optional] 
+**available_balance** | **double** | availableBalance | [optional] 
+**available_credit** | **double** | availableCredit | [optional] 
+**balance** | **double** | balance | [optional] 
 **balance_time_stamp** | [**\DateTime**](\DateTime.md) | balanceTimeStamp | 
 **create_date** | [**\DateTime**](\DateTime.md) | createDate | [optional] 
 **currency_code** | **string** | currencyCode | 

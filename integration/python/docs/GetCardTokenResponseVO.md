@@ -3,10 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**card_status** | **str** |  | [optional] 
 **message** | **str** |  | [optional] 
 **nucleus_card_id** | **str** |  | [optional] 
-**token** | **str** |  | [optional] 
+**pan_reference** | **str** |  | [optional] 
+**status** | **str** |  | [optional] 
+**token_reference** | **str** |  | [optional] 
 **vendor_name** | **str** |  | [optional] 
 **vendor_response** | **object** |  | [optional] 
 **wallet** | **str** |  | [optional] 

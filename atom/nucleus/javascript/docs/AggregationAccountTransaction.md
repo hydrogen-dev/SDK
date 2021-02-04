@@ -25,11 +25,11 @@ Name | Type | Description | Notes
 ## Enum: IsFeeEnum
 
 
-* `FALSE` (value: `"FALSE"`)
+* `true` (value: `"true"`)
 
-* `TRUE` (value: `"TRUE"`)
+* `false` (value: `"false"`)
 
-* `NULL` (value: `"NULL"`)
+* `null` (value: `"null"`)
 
 
 
@@ -38,11 +38,11 @@ Name | Type | Description | Notes
 ## Enum: IsTransferEnum
 
 
-* `FALSE` (value: `"FALSE"`)
+* `true` (value: `"true"`)
 
-* `TRUE` (value: `"TRUE"`)
+* `false` (value: `"false"`)
 
-* `NULL` (value: `"NULL"`)
+* `null` (value: `"null"`)
 
 
 

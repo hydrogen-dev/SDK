@@ -32,7 +32,7 @@ module NucleusApi
     def initialize
       super
       @authorization = 'Authorization'
-      @client_token = 'client_token'
+      @client_token = 'Client-Token'
       @grant_type_key = 'grant_type'
       @client_credentials = 'client_credentials'
       @password = 'password'
@@ -64,11 +64,9 @@ module NucleusApi
     end
 
     def create_client_token_credential(client_id, client_secret, client_token)
-      self.create_client_credential(client_id, client_secret)
-      access_token = @config.access_token
-      @config.access_token = nil
+      basic_cred = 'Basic ' + ["#{client_id}:#{client_secret}"].pack('m').delete("\r\n")
       header_params = {}
-      header_params[@authorization] = @bearer + access_token;
+      header_params[@authorization] = basic_cred;
       header_params[@client_token] = @bearer + client_token;
       response = Typhoeus::Request.new(
           client_token_auth_url,

@@ -15,51 +15,46 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * GuaranteedRateBenefit
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class GuaranteedRateBenefit {
-  @SerializedName("max_rate")
-  private Float maxRate = null;
+  @SerializedName("start_period")
+  private Integer startPeriod = 1;
 
   @SerializedName("end_period")
   private Integer endPeriod = null;
 
+  @SerializedName("max_rate")
+  private Float maxRate = null;
+
   @SerializedName("min_rate")
   private Float minRate = 0.0f;
 
-  @SerializedName("start_period")
-  private Integer startPeriod = 1;
-
-  public GuaranteedRateBenefit maxRate(Float maxRate) {
-    this.maxRate = maxRate;
+  public GuaranteedRateBenefit startPeriod(Integer startPeriod) {
+    this.startPeriod = startPeriod;
     return this;
   }
 
    /**
-   * Get maxRate
-   * minimum: -1
-   * @return maxRate
+   * Get startPeriod
+   * minimum: 1
+   * @return startPeriod
   **/
   @ApiModelProperty(value = "")
-  public Float getMaxRate() {
-    return maxRate;
+  public Integer getStartPeriod() {
+    return startPeriod;
   }
 
-  public void setMaxRate(Float maxRate) {
-    this.maxRate = maxRate;
+  public void setStartPeriod(Integer startPeriod) {
+    this.startPeriod = startPeriod;
   }
 
   public GuaranteedRateBenefit endPeriod(Integer endPeriod) {
@@ -81,6 +76,25 @@ public class GuaranteedRateBenefit {
     this.endPeriod = endPeriod;
   }
 
+  public GuaranteedRateBenefit maxRate(Float maxRate) {
+    this.maxRate = maxRate;
+    return this;
+  }
+
+   /**
+   * Get maxRate
+   * minimum: -1
+   * @return maxRate
+  **/
+  @ApiModelProperty(value = "")
+  public Float getMaxRate() {
+    return maxRate;
+  }
+
+  public void setMaxRate(Float maxRate) {
+    this.maxRate = maxRate;
+  }
+
   public GuaranteedRateBenefit minRate(Float minRate) {
     this.minRate = minRate;
     return this;
@@ -100,25 +114,6 @@ public class GuaranteedRateBenefit {
     this.minRate = minRate;
   }
 
-  public GuaranteedRateBenefit startPeriod(Integer startPeriod) {
-    this.startPeriod = startPeriod;
-    return this;
-  }
-
-   /**
-   * Get startPeriod
-   * minimum: 1
-   * @return startPeriod
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getStartPeriod() {
-    return startPeriod;
-  }
-
-  public void setStartPeriod(Integer startPeriod) {
-    this.startPeriod = startPeriod;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -129,15 +124,15 @@ public class GuaranteedRateBenefit {
       return false;
     }
     GuaranteedRateBenefit guaranteedRateBenefit = (GuaranteedRateBenefit) o;
-    return Objects.equals(this.maxRate, guaranteedRateBenefit.maxRate) &&
+    return Objects.equals(this.startPeriod, guaranteedRateBenefit.startPeriod) &&
         Objects.equals(this.endPeriod, guaranteedRateBenefit.endPeriod) &&
-        Objects.equals(this.minRate, guaranteedRateBenefit.minRate) &&
-        Objects.equals(this.startPeriod, guaranteedRateBenefit.startPeriod);
+        Objects.equals(this.maxRate, guaranteedRateBenefit.maxRate) &&
+        Objects.equals(this.minRate, guaranteedRateBenefit.minRate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(maxRate, endPeriod, minRate, startPeriod);
+    return Objects.hash(startPeriod, endPeriod, maxRate, minRate);
   }
 
 
@@ -146,10 +141,10 @@ public class GuaranteedRateBenefit {
     StringBuilder sb = new StringBuilder();
     sb.append("class GuaranteedRateBenefit {\n");
     
-    sb.append("    maxRate: ").append(toIndentedString(maxRate)).append("\n");
-    sb.append("    endPeriod: ").append(toIndentedString(endPeriod)).append("\n");
-    sb.append("    minRate: ").append(toIndentedString(minRate)).append("\n");
     sb.append("    startPeriod: ").append(toIndentedString(startPeriod)).append("\n");
+    sb.append("    endPeriod: ").append(toIndentedString(endPeriod)).append("\n");
+    sb.append("    maxRate: ").append(toIndentedString(maxRate)).append("\n");
+    sb.append("    minRate: ").append(toIndentedString(minRate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

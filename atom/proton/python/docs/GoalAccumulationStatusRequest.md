@@ -3,27 +3,27 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**goal_id** | **str** |  | [optional] 
-**curr_inv** | **float** |  | [optional] 
-**n** | **int** |  | [optional] [default to 1000]
-**horizon_frequency** | **str** |  | [optional] [default to 'year']
-**client_id** | **str** |  | [optional] 
-**remove_outliers** | **bool** |  | [optional] [default to True]
-**goal_config** | [**GoalConfig**](GoalConfig.md) |  | [optional] 
-**conf_tgt** | **float** |  | [optional] [default to 0.9]
-**p_ret** | **list[float]** |  | 
-**horizon** | **int** |  | [optional] 
 **thresh_type** | **str** |  | [optional] [default to 'perc']
-**thresh** | **float** |  | [optional] 
-**deposit_config** | [**list[AccumulationGoalDepositConfig]**](AccumulationGoalDepositConfig.md) |  | [optional] 
-**recommendation_config** | [**RecommendationConfig**](RecommendationConfig.md) |  | [optional] 
+**goal_id** | **str** |  | [optional] 
+**client_id** | **str** |  | [optional] 
+**conf_tgt** | **float** |  | [optional] [default to 0.9]
+**remove_outliers** | **bool** |  | [optional] [default to True]
+**p_ret** | **list[float]** |  | 
 **compounding_rate** | **float** |  | [optional] [default to 0.0]
-**withdrawal_tax** | **float** |  | [optional] [default to 0.0]
-**trading_days_per_year** | **int** |  | [optional] [default to 252]
 **adjust_for_compounding** | **bool** |  | [optional] [default to False]
-**p_risk** | **list[float]** |  | 
+**deposit_config** | [**list[AccumulationGoalDepositConfig]**](AccumulationGoalDepositConfig.md) |  | [optional] 
+**thresh** | **float** |  | [optional] 
+**horizon_frequency** | **str** |  | [optional] [default to 'year']
+**recommendation_config** | [**RecommendationConfig**](RecommendationConfig.md) |  | [optional] 
 **create_log** | **bool** |  | [optional] [default to False]
+**withdrawal_tax** | **float** |  | [optional] [default to 0.0]
+**goal_config** | [**GoalConfig**](GoalConfig.md) |  | [optional] 
+**trading_days_per_year** | **int** |  | [optional] [default to 252]
+**n** | **int** |  | [optional] [default to 1000]
+**p_risk** | **list[float]** |  | 
+**horizon** | **int** |  | [optional] 
 **recommend_type** | **str** |  | [optional] [default to 'horizon']
+**curr_inv** | **float** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

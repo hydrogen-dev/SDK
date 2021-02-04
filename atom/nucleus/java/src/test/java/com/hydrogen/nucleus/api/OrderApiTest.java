@@ -13,20 +13,19 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.AccountPortfolioRebalanceRequest;
 import com.hydrogen.nucleus.model.Order;
 import com.hydrogen.nucleus.model.OrderReconcileRequest;
 import com.hydrogen.nucleus.model.OrderReconcileReturnObject;
 import com.hydrogen.nucleus.model.OrderStatus;
 import com.hydrogen.nucleus.model.OrderTrack;
+import com.hydrogen.nucleus.model.OrderVoClone;
+import com.hydrogen.nucleus.model.PageOrder;
 import com.hydrogen.nucleus.model.PageOrderBulk;
 import com.hydrogen.nucleus.model.PageOrderStatus;
 import com.hydrogen.nucleus.model.PageOrderTrack;
 import com.hydrogen.nucleus.model.TokenDateRequest;
-import com.hydrogen.nucleus.ApiException;
-import com.hydrogen.nucleus.model.OrderVoClone;
-import com.hydrogen.nucleus.model.PageOrder;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -496,7 +495,7 @@ public class OrderApiTest {
      */
     @Test
     public void updateOrderStatusUsingPutTest() throws ApiException {
-        OrderStatus orderStatus = null;
+        Object orderStatus = null;
         UUID orderStatusId = null;
         OrderStatus response = api.updateOrderStatusUsingPut(orderStatus, orderStatusId);
 
@@ -513,7 +512,7 @@ public class OrderApiTest {
      */
     @Test
     public void updateOrderTrackUsingPutTest() throws ApiException {
-        OrderTrack orderTrack = null;
+        Object orderTrack = null;
         UUID orderTrackId = null;
         OrderTrack response = api.updateOrderTrackUsingPut(orderTrack, orderTrackId);
 
@@ -530,7 +529,7 @@ public class OrderApiTest {
      */
     @Test
     public void updateOrderUsingPutTest() throws ApiException {
-        Order order = null;
+        Object order = null;
         UUID orderId = null;
         Order response = api.updateOrderUsingPut(order, orderId);
 

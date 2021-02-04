@@ -21,10 +21,6 @@ import com.hydrogen.nucleus.Configuration;
 import com.hydrogen.nucleus.Pair;
 import com.hydrogen.nucleus.ProgressRequestBody;
 import com.hydrogen.nucleus.ProgressResponseBody;
-import com.hydrogen.nucleus.model.CardProgram;
-import com.hydrogen.nucleus.model.PageCard;
-import com.hydrogen.nucleus.model.PageCardProgram;
-import com.hydrogen.nucleus.model.PagePortfolioTransaction;
 
 import com.google.gson.reflect.TypeToken;
 
@@ -32,8 +28,11 @@ import java.io.IOException;
 
 
 import com.hydrogen.nucleus.model.Card;
+import com.hydrogen.nucleus.model.CardProgram;
 import org.threeten.bp.LocalDate;
-
+import com.hydrogen.nucleus.model.PageCard;
+import com.hydrogen.nucleus.model.PageCardProgram;
+import com.hydrogen.nucleus.model.PagePortfolioTransaction;
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -1402,7 +1401,7 @@ public class CardApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateCardProgramUsingPutCall(CardProgram cardProgram, UUID cardProgramId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateCardProgramUsingPutCall(Object cardProgram, UUID cardProgramId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = cardProgram;
 
         // create path and map variables
@@ -1445,7 +1444,7 @@ public class CardApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateCardProgramUsingPutValidateBeforeCall(CardProgram cardProgram, UUID cardProgramId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateCardProgramUsingPutValidateBeforeCall(Object cardProgram, UUID cardProgramId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'cardProgram' is set
         if (cardProgram == null) {
@@ -1471,7 +1470,7 @@ public class CardApi {
      * @return CardProgram
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CardProgram updateCardProgramUsingPut(CardProgram cardProgram, UUID cardProgramId) throws ApiException {
+    public CardProgram updateCardProgramUsingPut(Object cardProgram, UUID cardProgramId) throws ApiException {
         ApiResponse<CardProgram> resp = updateCardProgramUsingPutWithHttpInfo(cardProgram, cardProgramId);
         return resp.getData();
     }
@@ -1484,7 +1483,7 @@ public class CardApi {
      * @return ApiResponse&lt;CardProgram&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CardProgram> updateCardProgramUsingPutWithHttpInfo(CardProgram cardProgram, UUID cardProgramId) throws ApiException {
+    public ApiResponse<CardProgram> updateCardProgramUsingPutWithHttpInfo(Object cardProgram, UUID cardProgramId) throws ApiException {
         com.squareup.okhttp.Call call = updateCardProgramUsingPutValidateBeforeCall(cardProgram, cardProgramId, null, null);
         Type localVarReturnType = new TypeToken<CardProgram>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1499,7 +1498,7 @@ public class CardApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateCardProgramUsingPutAsync(CardProgram cardProgram, UUID cardProgramId, final ApiCallback<CardProgram> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateCardProgramUsingPutAsync(Object cardProgram, UUID cardProgramId, final ApiCallback<CardProgram> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1534,7 +1533,7 @@ public class CardApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateCardUsingPutCall(Card card, UUID cardId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateCardUsingPutCall(Object card, UUID cardId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = card;
 
         // create path and map variables
@@ -1577,7 +1576,7 @@ public class CardApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateCardUsingPutValidateBeforeCall(Card card, UUID cardId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateCardUsingPutValidateBeforeCall(Object card, UUID cardId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'card' is set
         if (card == null) {
@@ -1603,7 +1602,7 @@ public class CardApi {
      * @return Card
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Card updateCardUsingPut(Card card, UUID cardId) throws ApiException {
+    public Card updateCardUsingPut(Object card, UUID cardId) throws ApiException {
         ApiResponse<Card> resp = updateCardUsingPutWithHttpInfo(card, cardId);
         return resp.getData();
     }
@@ -1616,7 +1615,7 @@ public class CardApi {
      * @return ApiResponse&lt;Card&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Card> updateCardUsingPutWithHttpInfo(Card card, UUID cardId) throws ApiException {
+    public ApiResponse<Card> updateCardUsingPutWithHttpInfo(Object card, UUID cardId) throws ApiException {
         com.squareup.okhttp.Call call = updateCardUsingPutValidateBeforeCall(card, cardId, null, null);
         Type localVarReturnType = new TypeToken<Card>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1631,7 +1630,7 @@ public class CardApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateCardUsingPutAsync(Card card, UUID cardId, final ApiCallback<Card> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateCardUsingPutAsync(Object card, UUID cardId, final ApiCallback<Card> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

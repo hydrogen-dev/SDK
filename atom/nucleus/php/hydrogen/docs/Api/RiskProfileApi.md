@@ -321,7 +321,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\RiskProfileApi(
     new GuzzleHttp\Client(),
     $config
 );
-$risk_profile = new \com\hydrogen\nucleus\Model\RiskProfile(); // \com\hydrogen\nucleus\Model\RiskProfile | risk_profile
+$risk_profile = new \stdClass; // object | risk_profile
 $risk_profile_id = "risk_profile_id_example"; // string | UUID risk_profile_id
 
 try {
@@ -337,7 +337,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **risk_profile** | [**\com\hydrogen\nucleus\Model\RiskProfile**](../Model/RiskProfile.md)| risk_profile |
+ **risk_profile** | **object**| risk_profile |
  **risk_profile_id** | [**string**](../Model/.md)| UUID risk_profile_id |
 
 ### Return type

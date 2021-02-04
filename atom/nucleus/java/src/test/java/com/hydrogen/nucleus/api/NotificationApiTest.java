@@ -13,14 +13,13 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.Notification;
 import com.hydrogen.nucleus.model.NotificationClient;
+import com.hydrogen.nucleus.model.NotificationSetting;
 import com.hydrogen.nucleus.model.PageNotification;
 import com.hydrogen.nucleus.model.PageNotificationClient;
 import com.hydrogen.nucleus.model.PageNotificationSetting;
-import com.hydrogen.nucleus.ApiException;
-import com.hydrogen.nucleus.model.NotificationSetting;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -248,7 +247,7 @@ public class NotificationApiTest {
      */
     @Test
     public void updateNotificationClientUsingPutTest() throws ApiException {
-        NotificationClient notificationClient = null;
+        Object notificationClient = null;
         UUID notificationClientId = null;
         NotificationClient response = api.updateNotificationClientUsingPut(notificationClient, notificationClientId);
 
@@ -265,7 +264,7 @@ public class NotificationApiTest {
      */
     @Test
     public void updateNotificationSettingUsingPutTest() throws ApiException {
-        NotificationSetting notificationSetting = null;
+        Object notificationSetting = null;
         UUID notificationSettingId = null;
         NotificationSetting response = api.updateNotificationSettingUsingPut(notificationSetting, notificationSettingId);
 
@@ -282,7 +281,7 @@ public class NotificationApiTest {
      */
     @Test
     public void updateNotificationUsingPutTest() throws ApiException {
-        Notification notification = null;
+        Object notification = null;
         UUID notificationId = null;
         Notification response = api.updateNotificationUsingPut(notification, notificationId);
 

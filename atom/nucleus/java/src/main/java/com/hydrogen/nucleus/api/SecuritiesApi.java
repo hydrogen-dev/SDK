@@ -21,18 +21,18 @@ import com.hydrogen.nucleus.Configuration;
 import com.hydrogen.nucleus.Pair;
 import com.hydrogen.nucleus.ProgressRequestBody;
 import com.hydrogen.nucleus.ProgressResponseBody;
-import com.hydrogen.nucleus.model.PageSecurity;
-import com.hydrogen.nucleus.model.PageSecurityExclusion;
-import com.hydrogen.nucleus.model.PageSecurityPrice;
-import com.hydrogen.nucleus.model.Security;
-import com.hydrogen.nucleus.model.SecurityExclusion;
-import com.hydrogen.nucleus.model.SecurityPrice;
 
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
 
+import com.hydrogen.nucleus.model.PageSecurity;
+import com.hydrogen.nucleus.model.PageSecurityExclusion;
+import com.hydrogen.nucleus.model.PageSecurityPrice;
+import com.hydrogen.nucleus.model.Security;
+import com.hydrogen.nucleus.model.SecurityExclusion;
+import com.hydrogen.nucleus.model.SecurityPrice;
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -1602,7 +1602,7 @@ public class SecuritiesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateSecurityExclusionUsingPutCall(SecurityExclusion securityExclusion, UUID securityExclusionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateSecurityExclusionUsingPutCall(Object securityExclusion, UUID securityExclusionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = securityExclusion;
 
         // create path and map variables
@@ -1645,7 +1645,7 @@ public class SecuritiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateSecurityExclusionUsingPutValidateBeforeCall(SecurityExclusion securityExclusion, UUID securityExclusionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateSecurityExclusionUsingPutValidateBeforeCall(Object securityExclusion, UUID securityExclusionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'securityExclusion' is set
         if (securityExclusion == null) {
@@ -1671,7 +1671,7 @@ public class SecuritiesApi {
      * @return SecurityExclusion
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SecurityExclusion updateSecurityExclusionUsingPut(SecurityExclusion securityExclusion, UUID securityExclusionId) throws ApiException {
+    public SecurityExclusion updateSecurityExclusionUsingPut(Object securityExclusion, UUID securityExclusionId) throws ApiException {
         ApiResponse<SecurityExclusion> resp = updateSecurityExclusionUsingPutWithHttpInfo(securityExclusion, securityExclusionId);
         return resp.getData();
     }
@@ -1684,7 +1684,7 @@ public class SecuritiesApi {
      * @return ApiResponse&lt;SecurityExclusion&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SecurityExclusion> updateSecurityExclusionUsingPutWithHttpInfo(SecurityExclusion securityExclusion, UUID securityExclusionId) throws ApiException {
+    public ApiResponse<SecurityExclusion> updateSecurityExclusionUsingPutWithHttpInfo(Object securityExclusion, UUID securityExclusionId) throws ApiException {
         com.squareup.okhttp.Call call = updateSecurityExclusionUsingPutValidateBeforeCall(securityExclusion, securityExclusionId, null, null);
         Type localVarReturnType = new TypeToken<SecurityExclusion>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1699,7 +1699,7 @@ public class SecuritiesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateSecurityExclusionUsingPutAsync(SecurityExclusion securityExclusion, UUID securityExclusionId, final ApiCallback<SecurityExclusion> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateSecurityExclusionUsingPutAsync(Object securityExclusion, UUID securityExclusionId, final ApiCallback<SecurityExclusion> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1734,7 +1734,7 @@ public class SecuritiesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateSecurityPriceUsingPutCall(SecurityPrice securityPrice, UUID securityPriceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateSecurityPriceUsingPutCall(Object securityPrice, UUID securityPriceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = securityPrice;
 
         // create path and map variables
@@ -1777,7 +1777,7 @@ public class SecuritiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateSecurityPriceUsingPutValidateBeforeCall(SecurityPrice securityPrice, UUID securityPriceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateSecurityPriceUsingPutValidateBeforeCall(Object securityPrice, UUID securityPriceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'securityPrice' is set
         if (securityPrice == null) {
@@ -1803,7 +1803,7 @@ public class SecuritiesApi {
      * @return SecurityPrice
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SecurityPrice updateSecurityPriceUsingPut(SecurityPrice securityPrice, UUID securityPriceId) throws ApiException {
+    public SecurityPrice updateSecurityPriceUsingPut(Object securityPrice, UUID securityPriceId) throws ApiException {
         ApiResponse<SecurityPrice> resp = updateSecurityPriceUsingPutWithHttpInfo(securityPrice, securityPriceId);
         return resp.getData();
     }
@@ -1816,7 +1816,7 @@ public class SecuritiesApi {
      * @return ApiResponse&lt;SecurityPrice&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SecurityPrice> updateSecurityPriceUsingPutWithHttpInfo(SecurityPrice securityPrice, UUID securityPriceId) throws ApiException {
+    public ApiResponse<SecurityPrice> updateSecurityPriceUsingPutWithHttpInfo(Object securityPrice, UUID securityPriceId) throws ApiException {
         com.squareup.okhttp.Call call = updateSecurityPriceUsingPutValidateBeforeCall(securityPrice, securityPriceId, null, null);
         Type localVarReturnType = new TypeToken<SecurityPrice>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1831,7 +1831,7 @@ public class SecuritiesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateSecurityPriceUsingPutAsync(SecurityPrice securityPrice, UUID securityPriceId, final ApiCallback<SecurityPrice> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateSecurityPriceUsingPutAsync(Object securityPrice, UUID securityPriceId, final ApiCallback<SecurityPrice> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1866,7 +1866,7 @@ public class SecuritiesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateSecurityUsingPutCall(Security security, UUID securityId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateSecurityUsingPutCall(Object security, UUID securityId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = security;
 
         // create path and map variables
@@ -1909,7 +1909,7 @@ public class SecuritiesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateSecurityUsingPutValidateBeforeCall(Security security, UUID securityId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateSecurityUsingPutValidateBeforeCall(Object security, UUID securityId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'security' is set
         if (security == null) {
@@ -1935,7 +1935,7 @@ public class SecuritiesApi {
      * @return Security
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Security updateSecurityUsingPut(Security security, UUID securityId) throws ApiException {
+    public Security updateSecurityUsingPut(Object security, UUID securityId) throws ApiException {
         ApiResponse<Security> resp = updateSecurityUsingPutWithHttpInfo(security, securityId);
         return resp.getData();
     }
@@ -1948,7 +1948,7 @@ public class SecuritiesApi {
      * @return ApiResponse&lt;Security&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Security> updateSecurityUsingPutWithHttpInfo(Security security, UUID securityId) throws ApiException {
+    public ApiResponse<Security> updateSecurityUsingPutWithHttpInfo(Object security, UUID securityId) throws ApiException {
         com.squareup.okhttp.Call call = updateSecurityUsingPutValidateBeforeCall(security, securityId, null, null);
         Type localVarReturnType = new TypeToken<Security>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1963,7 +1963,7 @@ public class SecuritiesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateSecurityUsingPutAsync(Security security, UUID securityId, final ApiCallback<Security> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateSecurityUsingPutAsync(Object security, UUID securityId, final ApiCallback<Security> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

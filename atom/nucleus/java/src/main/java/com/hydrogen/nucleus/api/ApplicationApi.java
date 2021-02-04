@@ -21,14 +21,14 @@ import com.hydrogen.nucleus.Configuration;
 import com.hydrogen.nucleus.Pair;
 import com.hydrogen.nucleus.ProgressRequestBody;
 import com.hydrogen.nucleus.ProgressResponseBody;
-import com.hydrogen.nucleus.model.Application;
-import com.hydrogen.nucleus.model.PageApplication;
 
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
 
+import com.hydrogen.nucleus.model.Application;
+import com.hydrogen.nucleus.model.PageApplication;
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -572,7 +572,7 @@ public class ApplicationApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateApplicationUsingPutCall(Application application, UUID applicationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateApplicationUsingPutCall(Object application, UUID applicationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = application;
 
         // create path and map variables
@@ -615,7 +615,7 @@ public class ApplicationApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateApplicationUsingPutValidateBeforeCall(Application application, UUID applicationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateApplicationUsingPutValidateBeforeCall(Object application, UUID applicationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'application' is set
         if (application == null) {
@@ -641,7 +641,7 @@ public class ApplicationApi {
      * @return Application
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Application updateApplicationUsingPut(Application application, UUID applicationId) throws ApiException {
+    public Application updateApplicationUsingPut(Object application, UUID applicationId) throws ApiException {
         ApiResponse<Application> resp = updateApplicationUsingPutWithHttpInfo(application, applicationId);
         return resp.getData();
     }
@@ -654,7 +654,7 @@ public class ApplicationApi {
      * @return ApiResponse&lt;Application&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Application> updateApplicationUsingPutWithHttpInfo(Application application, UUID applicationId) throws ApiException {
+    public ApiResponse<Application> updateApplicationUsingPutWithHttpInfo(Object application, UUID applicationId) throws ApiException {
         com.squareup.okhttp.Call call = updateApplicationUsingPutValidateBeforeCall(application, applicationId, null, null);
         Type localVarReturnType = new TypeToken<Application>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -669,7 +669,7 @@ public class ApplicationApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateApplicationUsingPutAsync(Application application, UUID applicationId, final ApiCallback<Application> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateApplicationUsingPutAsync(Object application, UUID applicationId, final ApiCallback<Application> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

@@ -4,17 +4,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **portfolioTickers** | **[String]** |  | [optional] 
-**createLog** | **Boolean** |  | [optional] [default to false]
-**aggregationAccountId** | **String** |  | [optional] 
-**allocationId** | **String** |  | [optional] 
-**modelId** | **String** |  | [optional] 
-**portfolioWeights** | **[Number]** |  | [optional] 
 **endDate** | **Date** |  | [optional] 
-**startDate** | **Date** |  | [optional] 
-**useProxyData** | **Boolean** |  | [optional] [default to false]
-**accountId** | **String** |  | [optional] 
-**marketDataSource** | **String** |  | [optional] [default to 'nucleus']
 **portfolioId** | **String** |  | [optional] 
+**marketDataSource** | **String** |  | [optional] [default to 'nucleus']
+**modelId** | **String** |  | [optional] 
+**createLog** | **Boolean** |  | [optional] [default to false]
+**allocationId** | **String** |  | [optional] 
+**useProxyData** | **Boolean** |  | [optional] [default to false]
+**startDate** | **Date** |  | [optional] 
+**accountId** | **String** |  | [optional] 
+**aggregationAccountId** | **String** |  | [optional] 
+**portfolioWeights** | **[Number]** |  | [optional] 
 
 
 <a name="MarketDataSourceEnum"></a>

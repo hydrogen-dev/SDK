@@ -13,20 +13,31 @@
 
 package com.hydrogen.integration.api;
 
-import com.hydrogen.integration.model.BrokerageAccountCO;
+import com.hydrogen.integration.ApiException;
 import com.hydrogen.integration.model.BrokerageAccountVO;
+import com.hydrogen.integration.model.BrokerageCreateClientVO;
+import com.hydrogen.integration.model.BrokerageDepositVO;
+import com.hydrogen.integration.model.BrokerageAccountCO;
+import com.hydrogen.integration.model.BrokerageBalanceVO;
 import com.hydrogen.integration.model.BrokerageBankLinkCO;
 import com.hydrogen.integration.model.BrokerageBankLinkVO;
-import com.hydrogen.integration.model.BrokerageCreateClientVO;
-import com.hydrogen.integration.model.BrokerageStatementVO;
-import com.hydrogen.integration.model.CreateOrderResponse;
-import com.hydrogen.integration.model.GetOrderResponse;
-import com.hydrogen.integration.model.ResponseEntity;
-import com.hydrogen.integration.model.BrokerageUpdateClientVO;
-import com.hydrogen.integration.ApiException;
 import com.hydrogen.integration.model.BrokerageClientCO;
+import com.hydrogen.integration.model.BrokerageDepositCO;
+import com.hydrogen.integration.model.BrokerageDocumentCO;
+import com.hydrogen.integration.model.BrokerageDocumentVO;
+import com.hydrogen.integration.model.BrokerageHoldingVO;
+import com.hydrogen.integration.model.BrokerageOrderCO;
+import com.hydrogen.integration.model.BrokerageOrderVO;
+import com.hydrogen.integration.model.BrokeragePerformanceVO;
+import com.hydrogen.integration.model.BrokerageSecuritiesVO;
+import com.hydrogen.integration.model.BrokerageStatementVO;
+import com.hydrogen.integration.model.BrokerageTransactionVO;
+import com.hydrogen.integration.model.BrokerageUpdateClientVO;
+import com.hydrogen.integration.model.BrokerageWithdrawalCO;
+import com.hydrogen.integration.model.BrokerageWithdrawalVO;
+import com.hydrogen.integration.model.GetTransactionsResponse;
+import org.threeten.bp.LocalDate;
 import org.threeten.bp.OffsetDateTime;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -41,6 +52,22 @@ public class BrokerageApiTest {
 
     
     /**
+     * Cancel an Order
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void cancelOrderUsingPutTest() throws ApiException {
+        UUID nucleusOrderId = null;
+        api.cancelOrderUsingPut(nucleusOrderId);
+
+        // TODO: test validations
+    }
+    
+    /**
      * create a Bank Link
      *
      * 
@@ -49,9 +76,9 @@ public class BrokerageApiTest {
      *          if the Api call fails
      */
     @Test
-    public void createBankLinkUsingPostTest() throws ApiException {
+    public void createBankLinkUsingPost1Test() throws ApiException {
         BrokerageBankLinkCO brokerageBankLinkCO = null;
-        BrokerageBankLinkVO response = api.createBankLinkUsingPost(brokerageBankLinkCO);
+        BrokerageBankLinkVO response = api.createBankLinkUsingPost1(brokerageBankLinkCO);
 
         // TODO: test validations
     }
@@ -89,6 +116,38 @@ public class BrokerageApiTest {
     }
     
     /**
+     * Create a deposit
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createDepositUsingPostTest() throws ApiException {
+        BrokerageDepositCO brokerageDepositCO = null;
+        BrokerageDepositVO response = api.createDepositUsingPost(brokerageDepositCO);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Create a Brokerage document
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createDocumentUsingPostTest() throws ApiException {
+        BrokerageDocumentCO documentCO = null;
+        BrokerageDocumentVO response = api.createDocumentUsingPost(documentCO);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Create an Order
      *
      * 
@@ -98,8 +157,24 @@ public class BrokerageApiTest {
      */
     @Test
     public void createOrderUsingPostTest() throws ApiException {
-        UUID nucleusOrderId = null;
-        CreateOrderResponse response = api.createOrderUsingPost(nucleusOrderId);
+        BrokerageOrderCO brokerageOrderCO = null;
+        BrokerageOrderVO response = api.createOrderUsingPost(brokerageOrderCO);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Create a withdrawal
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createWithdrawalUsingPostTest() throws ApiException {
+        BrokerageWithdrawalCO brokerageWithdrawalCO = null;
+        BrokerageWithdrawalVO response = api.createWithdrawalUsingPost(brokerageWithdrawalCO);
 
         // TODO: test validations
     }
@@ -113,15 +188,15 @@ public class BrokerageApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteBankLinkUsingDeleteTest() throws ApiException {
+    public void deleteBankLinkUsingDelete1Test() throws ApiException {
         UUID nucleusBankLinkId = null;
-        ResponseEntity response = api.deleteBankLinkUsingDelete(nucleusBankLinkId);
+        api.deleteBankLinkUsingDelete1(nucleusBankLinkId);
 
         // TODO: test validations
     }
     
     /**
-     * Delete an Order
+     * Get account balance
      *
      * 
      *
@@ -129,9 +204,9 @@ public class BrokerageApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteOrderUsingDeleteTest() throws ApiException {
-        UUID nucleusOrderId = null;
-        api.deleteOrderUsingDelete(nucleusOrderId);
+    public void getBalanceUsingGet1Test() throws ApiException {
+        UUID nucleusPortfolioId = null;
+        BrokerageBalanceVO response = api.getBalanceUsingGet1(nucleusPortfolioId);
 
         // TODO: test validations
     }
@@ -145,9 +220,9 @@ public class BrokerageApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getBankLinkUsingGetTest() throws ApiException {
+    public void getBankLinkUsingGet1Test() throws ApiException {
         UUID nucleusBankLinkId = null;
-        BrokerageBankLinkVO response = api.getBankLinkUsingGet(nucleusBankLinkId);
+        BrokerageBankLinkVO response = api.getBankLinkUsingGet1(nucleusBankLinkId);
 
         // TODO: test validations
     }
@@ -172,6 +247,54 @@ public class BrokerageApiTest {
     }
     
     /**
+     * Get a Brokerage document
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getDocumentUsingGetTest() throws ApiException {
+        UUID nucleusDocumentId = null;
+        BrokerageDocumentVO response = api.getDocumentUsingGet(nucleusDocumentId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get portfolio holding performance
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getHoldingPerformanceUsingGetTest() throws ApiException {
+        UUID nucleusPortfolioId = null;
+        BrokeragePerformanceVO response = api.getHoldingPerformanceUsingGet(nucleusPortfolioId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get portfolio holdings
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getHoldingUsingGetTest() throws ApiException {
+        UUID nucleusPortfolioId = null;
+        BrokerageHoldingVO response = api.getHoldingUsingGet(nucleusPortfolioId);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Get an Order
      *
      * 
@@ -182,7 +305,44 @@ public class BrokerageApiTest {
     @Test
     public void getOrderUsingGetTest() throws ApiException {
         UUID nucleusOrderId = null;
-        GetOrderResponse response = api.getOrderUsingGet(nucleusOrderId);
+        BrokerageOrderVO response = api.getOrderUsingGet(nucleusOrderId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get securities information
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getSecuritiesUsingGetTest() throws ApiException {
+        String vendorName = null;
+        Boolean getFundamentals = null;
+        UUID nucleusSecurityId = null;
+        BrokerageSecuritiesVO response = api.getSecuritiesUsingGet(vendorName, getFundamentals, nucleusSecurityId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get account transactions
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getTransactionsUsingGetTest() throws ApiException {
+        GetTransactionsResponse drivewealthResponse = null;
+        LocalDate endDate = null;
+        UUID nucleusPortfolioId = null;
+        LocalDate startDate = null;
+        BrokerageTransactionVO response = api.getTransactionsUsingGet(drivewealthResponse, endDate, nucleusPortfolioId, startDate);
 
         // TODO: test validations
     }
@@ -196,9 +356,9 @@ public class BrokerageApiTest {
      *          if the Api call fails
      */
     @Test
-    public void updateBankLinkUsingPutTest() throws ApiException {
+    public void updateBankLinkUsingPut1Test() throws ApiException {
         UUID nucleusBankLinkId = null;
-        BrokerageBankLinkVO response = api.updateBankLinkUsingPut(nucleusBankLinkId);
+        BrokerageBankLinkVO response = api.updateBankLinkUsingPut1(nucleusBankLinkId);
 
         // TODO: test validations
     }

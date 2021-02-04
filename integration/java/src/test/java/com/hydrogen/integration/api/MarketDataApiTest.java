@@ -16,8 +16,8 @@ package com.hydrogen.integration.api;
 import com.hydrogen.integration.ApiException;
 import com.hydrogen.integration.model.MdHistoryRequestCO;
 import com.hydrogen.integration.model.MdHistoryResponseVO;
-import com.hydrogen.integration.model.MdQuoteResponseVO;
 import com.hydrogen.integration.model.MdQuoteRequestCO;
+import com.hydrogen.integration.model.MdQuoteResponseVO;
 import org.junit.Test;
 import org.junit.Ignore;
 

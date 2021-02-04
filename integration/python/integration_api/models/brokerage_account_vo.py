@@ -31,67 +31,41 @@ class BrokerageAccountVO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'electron_document_id': 'list[str]',
         'message': 'str',
-        'nucleus_client_id': 'str',
+        'nucleus_account_id': 'str',
         'status': 'str',
         'vendor_name': 'str',
         'vendor_response': 'object'
     }
 
     attribute_map = {
-        'electron_document_id': 'electron_document_id',
         'message': 'message',
-        'nucleus_client_id': 'nucleus_client_id',
+        'nucleus_account_id': 'nucleus_account_id',
         'status': 'status',
         'vendor_name': 'vendor_name',
         'vendor_response': 'vendor_response'
     }
 
-    def __init__(self, electron_document_id=None, message=None, nucleus_client_id=None, status=None, vendor_name=None, vendor_response=None):  # noqa: E501
+    def __init__(self, message=None, nucleus_account_id=None, status=None, vendor_name=None, vendor_response=None):  # noqa: E501
         """BrokerageAccountVO - a model defined in Swagger"""  # noqa: E501
 
-        self._electron_document_id = None
         self._message = None
-        self._nucleus_client_id = None
+        self._nucleus_account_id = None
         self._status = None
         self._vendor_name = None
         self._vendor_response = None
         self.discriminator = None
 
-        if electron_document_id is not None:
-            self.electron_document_id = electron_document_id
         if message is not None:
             self.message = message
-        if nucleus_client_id is not None:
-            self.nucleus_client_id = nucleus_client_id
+        if nucleus_account_id is not None:
+            self.nucleus_account_id = nucleus_account_id
         if status is not None:
             self.status = status
         if vendor_name is not None:
             self.vendor_name = vendor_name
         if vendor_response is not None:
             self.vendor_response = vendor_response
-
-    @property
-    def electron_document_id(self):
-        """Gets the electron_document_id of this BrokerageAccountVO.  # noqa: E501
-
-
-        :return: The electron_document_id of this BrokerageAccountVO.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._electron_document_id
-
-    @electron_document_id.setter
-    def electron_document_id(self, electron_document_id):
-        """Sets the electron_document_id of this BrokerageAccountVO.
-
-
-        :param electron_document_id: The electron_document_id of this BrokerageAccountVO.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._electron_document_id = electron_document_id
 
     @property
     def message(self):
@@ -115,25 +89,25 @@ class BrokerageAccountVO(object):
         self._message = message
 
     @property
-    def nucleus_client_id(self):
-        """Gets the nucleus_client_id of this BrokerageAccountVO.  # noqa: E501
+    def nucleus_account_id(self):
+        """Gets the nucleus_account_id of this BrokerageAccountVO.  # noqa: E501
 
 
-        :return: The nucleus_client_id of this BrokerageAccountVO.  # noqa: E501
+        :return: The nucleus_account_id of this BrokerageAccountVO.  # noqa: E501
         :rtype: str
         """
-        return self._nucleus_client_id
+        return self._nucleus_account_id
 
-    @nucleus_client_id.setter
-    def nucleus_client_id(self, nucleus_client_id):
-        """Sets the nucleus_client_id of this BrokerageAccountVO.
+    @nucleus_account_id.setter
+    def nucleus_account_id(self, nucleus_account_id):
+        """Sets the nucleus_account_id of this BrokerageAccountVO.
 
 
-        :param nucleus_client_id: The nucleus_client_id of this BrokerageAccountVO.  # noqa: E501
+        :param nucleus_account_id: The nucleus_account_id of this BrokerageAccountVO.  # noqa: E501
         :type: str
         """
 
-        self._nucleus_client_id = nucleus_client_id
+        self._nucleus_account_id = nucleus_account_id
 
     @property
     def status(self):

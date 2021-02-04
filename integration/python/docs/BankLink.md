@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **str** | accountId | [optional] 
-**available_balance** | **str** | available_balance | [optional] 
-**balance** | **str** | balance | [optional] 
+**available_balance** | **float** | available_balance | [optional] 
+**balance** | **float** | balance | [optional] 
 **bank_account_holder** | **str** | bankAccountHolder | 
 **bank_account_name** | **str** | bankAccountName | [optional] 
 **bank_account_number** | **str** | bankAccountNumber | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **is_active** | **bool** | isActive | [optional] 
 **is_default** | **bool** | isDefault | [optional] 
 **is_link_verified** | **bool** | isLinkVerified | [optional] 
-**link_verified_date** | **datetime** | linkVerifiedDate | [optional] 
+**link_verified_date** | **date** | linkVerifiedDate | [optional] 
 **mask** | **str** | mask | [optional] 
 **metadata** | **dict(str, str)** | metadata | [optional] 
 **name** | **str** | name | 

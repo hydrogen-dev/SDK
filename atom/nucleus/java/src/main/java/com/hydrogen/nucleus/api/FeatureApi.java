@@ -21,16 +21,16 @@ import com.hydrogen.nucleus.Configuration;
 import com.hydrogen.nucleus.Pair;
 import com.hydrogen.nucleus.ProgressRequestBody;
 import com.hydrogen.nucleus.ProgressResponseBody;
-import com.hydrogen.nucleus.model.Feature;
-import com.hydrogen.nucleus.model.FeatureTrack;
-import com.hydrogen.nucleus.model.PageFeature;
-import com.hydrogen.nucleus.model.PageFeatureTrack;
 
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
 
+import com.hydrogen.nucleus.model.Feature;
+import com.hydrogen.nucleus.model.FeatureTrack;
+import com.hydrogen.nucleus.model.PageFeature;
+import com.hydrogen.nucleus.model.PageFeatureTrack;
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -1081,7 +1081,7 @@ public class FeatureApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateFeatureTrackUsingPutCall(FeatureTrack featureTrack, UUID featureTrackId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateFeatureTrackUsingPutCall(Object featureTrack, UUID featureTrackId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = featureTrack;
 
         // create path and map variables
@@ -1124,7 +1124,7 @@ public class FeatureApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateFeatureTrackUsingPutValidateBeforeCall(FeatureTrack featureTrack, UUID featureTrackId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateFeatureTrackUsingPutValidateBeforeCall(Object featureTrack, UUID featureTrackId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'featureTrack' is set
         if (featureTrack == null) {
@@ -1150,7 +1150,7 @@ public class FeatureApi {
      * @return FeatureTrack
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public FeatureTrack updateFeatureTrackUsingPut(FeatureTrack featureTrack, UUID featureTrackId) throws ApiException {
+    public FeatureTrack updateFeatureTrackUsingPut(Object featureTrack, UUID featureTrackId) throws ApiException {
         ApiResponse<FeatureTrack> resp = updateFeatureTrackUsingPutWithHttpInfo(featureTrack, featureTrackId);
         return resp.getData();
     }
@@ -1163,7 +1163,7 @@ public class FeatureApi {
      * @return ApiResponse&lt;FeatureTrack&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<FeatureTrack> updateFeatureTrackUsingPutWithHttpInfo(FeatureTrack featureTrack, UUID featureTrackId) throws ApiException {
+    public ApiResponse<FeatureTrack> updateFeatureTrackUsingPutWithHttpInfo(Object featureTrack, UUID featureTrackId) throws ApiException {
         com.squareup.okhttp.Call call = updateFeatureTrackUsingPutValidateBeforeCall(featureTrack, featureTrackId, null, null);
         Type localVarReturnType = new TypeToken<FeatureTrack>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1178,7 +1178,7 @@ public class FeatureApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateFeatureTrackUsingPutAsync(FeatureTrack featureTrack, UUID featureTrackId, final ApiCallback<FeatureTrack> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateFeatureTrackUsingPutAsync(Object featureTrack, UUID featureTrackId, final ApiCallback<FeatureTrack> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1213,7 +1213,7 @@ public class FeatureApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateFeatureUsingPutCall(Feature feature, UUID featureId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateFeatureUsingPutCall(Object feature, UUID featureId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = feature;
 
         // create path and map variables
@@ -1256,7 +1256,7 @@ public class FeatureApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateFeatureUsingPutValidateBeforeCall(Feature feature, UUID featureId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateFeatureUsingPutValidateBeforeCall(Object feature, UUID featureId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'feature' is set
         if (feature == null) {
@@ -1282,7 +1282,7 @@ public class FeatureApi {
      * @return Feature
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Feature updateFeatureUsingPut(Feature feature, UUID featureId) throws ApiException {
+    public Feature updateFeatureUsingPut(Object feature, UUID featureId) throws ApiException {
         ApiResponse<Feature> resp = updateFeatureUsingPutWithHttpInfo(feature, featureId);
         return resp.getData();
     }
@@ -1295,7 +1295,7 @@ public class FeatureApi {
      * @return ApiResponse&lt;Feature&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Feature> updateFeatureUsingPutWithHttpInfo(Feature feature, UUID featureId) throws ApiException {
+    public ApiResponse<Feature> updateFeatureUsingPutWithHttpInfo(Object feature, UUID featureId) throws ApiException {
         com.squareup.okhttp.Call call = updateFeatureUsingPutValidateBeforeCall(feature, featureId, null, null);
         Type localVarReturnType = new TypeToken<Feature>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1310,7 +1310,7 @@ public class FeatureApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateFeatureUsingPutAsync(Feature feature, UUID featureId, final ApiCallback<Feature> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateFeatureUsingPutAsync(Object feature, UUID featureId, final ApiCallback<Feature> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

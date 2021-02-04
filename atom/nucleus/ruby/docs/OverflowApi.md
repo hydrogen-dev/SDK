@@ -454,7 +454,7 @@ end
 
 api_instance = NucleusApi::OverflowApi.new
 
-overflow_settings = NucleusApi::OverflowSettings.new # OverflowSettings | overflow_settings
+overflow_settings = nil # Object | overflow_settings
 
 overflow_settings_id = 'overflow_settings_id_example' # String | UUID overflow_settings_id
 
@@ -472,7 +472,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **overflow_settings** | [**OverflowSettings**](OverflowSettings.md)| overflow_settings | 
+ **overflow_settings** | **Object**| overflow_settings | 
  **overflow_settings_id** | [**String**](.md)| UUID overflow_settings_id | 
 
 ### Return type

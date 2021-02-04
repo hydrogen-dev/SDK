@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.IOException;
@@ -32,64 +31,13 @@ import java.util.UUID;
 /**
  * VariableAnnuityRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class VariableAnnuityRequest {
-  @SerializedName("guaranteed_accumulation_benefit")
-  private Float guaranteedAccumulationBenefit = 0.0f;
-
-  @SerializedName("p")
-  private BigDecimal p = null;
-
-  @SerializedName("aggregation_account_id")
-  private UUID aggregationAccountId = null;
-
-  @SerializedName("allocation_id")
-  private UUID allocationId = null;
-
-  @SerializedName("portfolio_weights")
-  private List<Float> portfolioWeights = null;
-
-  @SerializedName("end_date")
-  private String endDate = null;
-
-  @SerializedName("n")
-  private Integer n = 1000;
-
-  @SerializedName("account_id")
-  private UUID accountId = null;
-
-  @SerializedName("portfolio_tickers")
-  private List<String> portfolioTickers = null;
-
-  @SerializedName("initial_balance")
-  private Float initialBalance = 0.0f;
-
-  @SerializedName("remove_outliers")
-  private Boolean removeOutliers = false;
-
-  @SerializedName("model_id")
-  private UUID modelId = null;
-
-  @SerializedName("guaranteed_rate_benefit")
-  private List<GuaranteedRateBenefit> guaranteedRateBenefit = null;
-
-  @SerializedName("deposit_schedule")
-  private AnnuityDepositSchedule depositSchedule = null;
-
-  @SerializedName("use_proxy_data")
-  private Boolean useProxyData = false;
-
-  @SerializedName("accumulation_horizon")
-  private Integer accumulationHorizon = null;
-
-  @SerializedName("inflation_rate")
-  private Float inflationRate = 0.0f;
-
-  @SerializedName("annuitization_rate")
-  private Float annuitizationRate = 0.0f;
+  @SerializedName("portfolio_id")
+  private UUID portfolioId = null;
 
   /**
    * Gets or Sets resultType
@@ -143,11 +91,20 @@ public class VariableAnnuityRequest {
   @SerializedName("result_type")
   private ResultTypeEnum resultType = ResultTypeEnum.MEDIAN;
 
-  @SerializedName("start_date")
-  private String startDate = null;
+  @SerializedName("inflation_rate")
+  private Float inflationRate = 0.0f;
 
-  @SerializedName("portfolio_id")
-  private UUID portfolioId = null;
+  @SerializedName("remove_outliers")
+  private Boolean removeOutliers = false;
+
+  @SerializedName("deposit_schedule")
+  private AnnuityDepositSchedule depositSchedule = null;
+
+  @SerializedName("annuitization_rate")
+  private Float annuitizationRate = 0.0f;
+
+  @SerializedName("end_date")
+  private String endDate = null;
 
   /**
    * Gets or Sets marketDataSource
@@ -199,8 +156,59 @@ public class VariableAnnuityRequest {
   @SerializedName("market_data_source")
   private MarketDataSourceEnum marketDataSource = MarketDataSourceEnum.NUCLEUS;
 
+  @SerializedName("tax_rate")
+  private Float taxRate = 0.0f;
+
+  @SerializedName("p")
+  private BigDecimal p = null;
+
+  @SerializedName("allocation_id")
+  private UUID allocationId = null;
+
+  @SerializedName("use_proxy_data")
+  private Boolean useProxyData = false;
+
+  @SerializedName("start_date")
+  private String startDate = null;
+
+  @SerializedName("aggregation_account_id")
+  private UUID aggregationAccountId = null;
+
+  @SerializedName("initial_balance")
+  private Float initialBalance = 0.0f;
+
+  @SerializedName("create_log")
+  private Boolean createLog = false;
+
+  @SerializedName("decumulation_horizon")
+  private Integer decumulationHorizon = null;
+
+  @SerializedName("account_id")
+  private UUID accountId = null;
+
+  @SerializedName("accumulation_horizon")
+  private Integer accumulationHorizon = null;
+
   @SerializedName("trading_days_per_year")
   private Integer tradingDaysPerYear = 252;
+
+  @SerializedName("portfolio_weights")
+  private List<Float> portfolioWeights = null;
+
+  @SerializedName("guaranteed_accumulation_benefit")
+  private Float guaranteedAccumulationBenefit = 0.0f;
+
+  @SerializedName("portfolio_tickers")
+  private List<String> portfolioTickers = null;
+
+  @SerializedName("guaranteed_rate_benefit")
+  private List<GuaranteedRateBenefit> guaranteedRateBenefit = null;
+
+  @SerializedName("model_id")
+  private UUID modelId = null;
+
+  @SerializedName("n")
+  private Integer n = 1000;
 
   /**
    * Gets or Sets frequencyInterval
@@ -258,331 +266,40 @@ public class VariableAnnuityRequest {
   @SerializedName("frequency_interval")
   private FrequencyIntervalEnum frequencyInterval = FrequencyIntervalEnum.YEAR;
 
-  @SerializedName("create_log")
-  private Boolean createLog = false;
-
-  @SerializedName("decumulation_horizon")
-  private Integer decumulationHorizon = null;
-
-  @SerializedName("tax_rate")
-  private Float taxRate = 0.0f;
-
-  public VariableAnnuityRequest guaranteedAccumulationBenefit(Float guaranteedAccumulationBenefit) {
-    this.guaranteedAccumulationBenefit = guaranteedAccumulationBenefit;
+  public VariableAnnuityRequest portfolioId(UUID portfolioId) {
+    this.portfolioId = portfolioId;
     return this;
   }
 
    /**
-   * Get guaranteedAccumulationBenefit
-   * minimum: 0
-   * @return guaranteedAccumulationBenefit
+   * Get portfolioId
+   * @return portfolioId
   **/
   @ApiModelProperty(value = "")
-  public Float getGuaranteedAccumulationBenefit() {
-    return guaranteedAccumulationBenefit;
+  public UUID getPortfolioId() {
+    return portfolioId;
   }
 
-  public void setGuaranteedAccumulationBenefit(Float guaranteedAccumulationBenefit) {
-    this.guaranteedAccumulationBenefit = guaranteedAccumulationBenefit;
+  public void setPortfolioId(UUID portfolioId) {
+    this.portfolioId = portfolioId;
   }
 
-  public VariableAnnuityRequest p(BigDecimal p) {
-    this.p = p;
+  public VariableAnnuityRequest resultType(ResultTypeEnum resultType) {
+    this.resultType = resultType;
     return this;
   }
 
    /**
-   * Get p
-   * minimum: 0
-   * maximum: 100
-   * @return p
+   * Get resultType
+   * @return resultType
   **/
   @ApiModelProperty(value = "")
-  public BigDecimal getP() {
-    return p;
+  public ResultTypeEnum getResultType() {
+    return resultType;
   }
 
-  public void setP(BigDecimal p) {
-    this.p = p;
-  }
-
-  public VariableAnnuityRequest aggregationAccountId(UUID aggregationAccountId) {
-    this.aggregationAccountId = aggregationAccountId;
-    return this;
-  }
-
-   /**
-   * Get aggregationAccountId
-   * @return aggregationAccountId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getAggregationAccountId() {
-    return aggregationAccountId;
-  }
-
-  public void setAggregationAccountId(UUID aggregationAccountId) {
-    this.aggregationAccountId = aggregationAccountId;
-  }
-
-  public VariableAnnuityRequest allocationId(UUID allocationId) {
-    this.allocationId = allocationId;
-    return this;
-  }
-
-   /**
-   * Get allocationId
-   * @return allocationId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getAllocationId() {
-    return allocationId;
-  }
-
-  public void setAllocationId(UUID allocationId) {
-    this.allocationId = allocationId;
-  }
-
-  public VariableAnnuityRequest portfolioWeights(List<Float> portfolioWeights) {
-    this.portfolioWeights = portfolioWeights;
-    return this;
-  }
-
-  public VariableAnnuityRequest addPortfolioWeightsItem(Float portfolioWeightsItem) {
-    if (this.portfolioWeights == null) {
-      this.portfolioWeights = new ArrayList<Float>();
-    }
-    this.portfolioWeights.add(portfolioWeightsItem);
-    return this;
-  }
-
-   /**
-   * Get portfolioWeights
-   * @return portfolioWeights
-  **/
-  @ApiModelProperty(value = "")
-  public List<Float> getPortfolioWeights() {
-    return portfolioWeights;
-  }
-
-  public void setPortfolioWeights(List<Float> portfolioWeights) {
-    this.portfolioWeights = portfolioWeights;
-  }
-
-  public VariableAnnuityRequest endDate(String endDate) {
-    this.endDate = endDate;
-    return this;
-  }
-
-   /**
-   * Get endDate
-   * @return endDate
-  **/
-  @ApiModelProperty(value = "")
-  public String getEndDate() {
-    return endDate;
-  }
-
-  public void setEndDate(String endDate) {
-    this.endDate = endDate;
-  }
-
-  public VariableAnnuityRequest n(Integer n) {
-    this.n = n;
-    return this;
-  }
-
-   /**
-   * Get n
-   * minimum: 1
-   * @return n
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getN() {
-    return n;
-  }
-
-  public void setN(Integer n) {
-    this.n = n;
-  }
-
-  public VariableAnnuityRequest accountId(UUID accountId) {
-    this.accountId = accountId;
-    return this;
-  }
-
-   /**
-   * Get accountId
-   * @return accountId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getAccountId() {
-    return accountId;
-  }
-
-  public void setAccountId(UUID accountId) {
-    this.accountId = accountId;
-  }
-
-  public VariableAnnuityRequest portfolioTickers(List<String> portfolioTickers) {
-    this.portfolioTickers = portfolioTickers;
-    return this;
-  }
-
-  public VariableAnnuityRequest addPortfolioTickersItem(String portfolioTickersItem) {
-    if (this.portfolioTickers == null) {
-      this.portfolioTickers = new ArrayList<String>();
-    }
-    this.portfolioTickers.add(portfolioTickersItem);
-    return this;
-  }
-
-   /**
-   * Get portfolioTickers
-   * @return portfolioTickers
-  **/
-  @ApiModelProperty(value = "")
-  public List<String> getPortfolioTickers() {
-    return portfolioTickers;
-  }
-
-  public void setPortfolioTickers(List<String> portfolioTickers) {
-    this.portfolioTickers = portfolioTickers;
-  }
-
-  public VariableAnnuityRequest initialBalance(Float initialBalance) {
-    this.initialBalance = initialBalance;
-    return this;
-  }
-
-   /**
-   * Get initialBalance
-   * minimum: 0
-   * @return initialBalance
-  **/
-  @ApiModelProperty(value = "")
-  public Float getInitialBalance() {
-    return initialBalance;
-  }
-
-  public void setInitialBalance(Float initialBalance) {
-    this.initialBalance = initialBalance;
-  }
-
-  public VariableAnnuityRequest removeOutliers(Boolean removeOutliers) {
-    this.removeOutliers = removeOutliers;
-    return this;
-  }
-
-   /**
-   * Get removeOutliers
-   * @return removeOutliers
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isRemoveOutliers() {
-    return removeOutliers;
-  }
-
-  public void setRemoveOutliers(Boolean removeOutliers) {
-    this.removeOutliers = removeOutliers;
-  }
-
-  public VariableAnnuityRequest modelId(UUID modelId) {
-    this.modelId = modelId;
-    return this;
-  }
-
-   /**
-   * Get modelId
-   * @return modelId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getModelId() {
-    return modelId;
-  }
-
-  public void setModelId(UUID modelId) {
-    this.modelId = modelId;
-  }
-
-  public VariableAnnuityRequest guaranteedRateBenefit(List<GuaranteedRateBenefit> guaranteedRateBenefit) {
-    this.guaranteedRateBenefit = guaranteedRateBenefit;
-    return this;
-  }
-
-  public VariableAnnuityRequest addGuaranteedRateBenefitItem(GuaranteedRateBenefit guaranteedRateBenefitItem) {
-    if (this.guaranteedRateBenefit == null) {
-      this.guaranteedRateBenefit = new ArrayList<GuaranteedRateBenefit>();
-    }
-    this.guaranteedRateBenefit.add(guaranteedRateBenefitItem);
-    return this;
-  }
-
-   /**
-   * Get guaranteedRateBenefit
-   * @return guaranteedRateBenefit
-  **/
-  @ApiModelProperty(value = "")
-  public List<GuaranteedRateBenefit> getGuaranteedRateBenefit() {
-    return guaranteedRateBenefit;
-  }
-
-  public void setGuaranteedRateBenefit(List<GuaranteedRateBenefit> guaranteedRateBenefit) {
-    this.guaranteedRateBenefit = guaranteedRateBenefit;
-  }
-
-  public VariableAnnuityRequest depositSchedule(AnnuityDepositSchedule depositSchedule) {
-    this.depositSchedule = depositSchedule;
-    return this;
-  }
-
-   /**
-   * Get depositSchedule
-   * @return depositSchedule
-  **/
-  @ApiModelProperty(value = "")
-  public AnnuityDepositSchedule getDepositSchedule() {
-    return depositSchedule;
-  }
-
-  public void setDepositSchedule(AnnuityDepositSchedule depositSchedule) {
-    this.depositSchedule = depositSchedule;
-  }
-
-  public VariableAnnuityRequest useProxyData(Boolean useProxyData) {
-    this.useProxyData = useProxyData;
-    return this;
-  }
-
-   /**
-   * Get useProxyData
-   * @return useProxyData
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isUseProxyData() {
-    return useProxyData;
-  }
-
-  public void setUseProxyData(Boolean useProxyData) {
-    this.useProxyData = useProxyData;
-  }
-
-  public VariableAnnuityRequest accumulationHorizon(Integer accumulationHorizon) {
-    this.accumulationHorizon = accumulationHorizon;
-    return this;
-  }
-
-   /**
-   * Get accumulationHorizon
-   * minimum: 0
-   * @return accumulationHorizon
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getAccumulationHorizon() {
-    return accumulationHorizon;
-  }
-
-  public void setAccumulationHorizon(Integer accumulationHorizon) {
-    this.accumulationHorizon = accumulationHorizon;
+  public void setResultType(ResultTypeEnum resultType) {
+    this.resultType = resultType;
   }
 
   public VariableAnnuityRequest inflationRate(Float inflationRate) {
@@ -605,6 +322,42 @@ public class VariableAnnuityRequest {
     this.inflationRate = inflationRate;
   }
 
+  public VariableAnnuityRequest removeOutliers(Boolean removeOutliers) {
+    this.removeOutliers = removeOutliers;
+    return this;
+  }
+
+   /**
+   * Get removeOutliers
+   * @return removeOutliers
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isRemoveOutliers() {
+    return removeOutliers;
+  }
+
+  public void setRemoveOutliers(Boolean removeOutliers) {
+    this.removeOutliers = removeOutliers;
+  }
+
+  public VariableAnnuityRequest depositSchedule(AnnuityDepositSchedule depositSchedule) {
+    this.depositSchedule = depositSchedule;
+    return this;
+  }
+
+   /**
+   * Get depositSchedule
+   * @return depositSchedule
+  **/
+  @ApiModelProperty(value = "")
+  public AnnuityDepositSchedule getDepositSchedule() {
+    return depositSchedule;
+  }
+
+  public void setDepositSchedule(AnnuityDepositSchedule depositSchedule) {
+    this.depositSchedule = depositSchedule;
+  }
+
   public VariableAnnuityRequest annuitizationRate(Float annuitizationRate) {
     this.annuitizationRate = annuitizationRate;
     return this;
@@ -624,58 +377,22 @@ public class VariableAnnuityRequest {
     this.annuitizationRate = annuitizationRate;
   }
 
-  public VariableAnnuityRequest resultType(ResultTypeEnum resultType) {
-    this.resultType = resultType;
+  public VariableAnnuityRequest endDate(String endDate) {
+    this.endDate = endDate;
     return this;
   }
 
    /**
-   * Get resultType
-   * @return resultType
+   * Get endDate
+   * @return endDate
   **/
   @ApiModelProperty(value = "")
-  public ResultTypeEnum getResultType() {
-    return resultType;
+  public String getEndDate() {
+    return endDate;
   }
 
-  public void setResultType(ResultTypeEnum resultType) {
-    this.resultType = resultType;
-  }
-
-  public VariableAnnuityRequest startDate(String startDate) {
-    this.startDate = startDate;
-    return this;
-  }
-
-   /**
-   * Get startDate
-   * @return startDate
-  **/
-  @ApiModelProperty(value = "")
-  public String getStartDate() {
-    return startDate;
-  }
-
-  public void setStartDate(String startDate) {
-    this.startDate = startDate;
-  }
-
-  public VariableAnnuityRequest portfolioId(UUID portfolioId) {
-    this.portfolioId = portfolioId;
-    return this;
-  }
-
-   /**
-   * Get portfolioId
-   * @return portfolioId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getPortfolioId() {
-    return portfolioId;
-  }
-
-  public void setPortfolioId(UUID portfolioId) {
-    this.portfolioId = portfolioId;
+  public void setEndDate(String endDate) {
+    this.endDate = endDate;
   }
 
   public VariableAnnuityRequest marketDataSource(MarketDataSourceEnum marketDataSource) {
@@ -696,41 +413,135 @@ public class VariableAnnuityRequest {
     this.marketDataSource = marketDataSource;
   }
 
-  public VariableAnnuityRequest tradingDaysPerYear(Integer tradingDaysPerYear) {
-    this.tradingDaysPerYear = tradingDaysPerYear;
+  public VariableAnnuityRequest taxRate(Float taxRate) {
+    this.taxRate = taxRate;
     return this;
   }
 
    /**
-   * Get tradingDaysPerYear
-   * minimum: 1
-   * @return tradingDaysPerYear
+   * Get taxRate
+   * minimum: 0
+   * maximum: 1
+   * @return taxRate
   **/
   @ApiModelProperty(value = "")
-  public Integer getTradingDaysPerYear() {
-    return tradingDaysPerYear;
+  public Float getTaxRate() {
+    return taxRate;
   }
 
-  public void setTradingDaysPerYear(Integer tradingDaysPerYear) {
-    this.tradingDaysPerYear = tradingDaysPerYear;
+  public void setTaxRate(Float taxRate) {
+    this.taxRate = taxRate;
   }
 
-  public VariableAnnuityRequest frequencyInterval(FrequencyIntervalEnum frequencyInterval) {
-    this.frequencyInterval = frequencyInterval;
+  public VariableAnnuityRequest p(BigDecimal p) {
+    this.p = p;
     return this;
   }
 
    /**
-   * Get frequencyInterval
-   * @return frequencyInterval
+   * Get p
+   * minimum: 0
+   * maximum: 100
+   * @return p
   **/
   @ApiModelProperty(value = "")
-  public FrequencyIntervalEnum getFrequencyInterval() {
-    return frequencyInterval;
+  public BigDecimal getP() {
+    return p;
   }
 
-  public void setFrequencyInterval(FrequencyIntervalEnum frequencyInterval) {
-    this.frequencyInterval = frequencyInterval;
+  public void setP(BigDecimal p) {
+    this.p = p;
+  }
+
+  public VariableAnnuityRequest allocationId(UUID allocationId) {
+    this.allocationId = allocationId;
+    return this;
+  }
+
+   /**
+   * Get allocationId
+   * @return allocationId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getAllocationId() {
+    return allocationId;
+  }
+
+  public void setAllocationId(UUID allocationId) {
+    this.allocationId = allocationId;
+  }
+
+  public VariableAnnuityRequest useProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+    return this;
+  }
+
+   /**
+   * Get useProxyData
+   * @return useProxyData
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isUseProxyData() {
+    return useProxyData;
+  }
+
+  public void setUseProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+  }
+
+  public VariableAnnuityRequest startDate(String startDate) {
+    this.startDate = startDate;
+    return this;
+  }
+
+   /**
+   * Get startDate
+   * @return startDate
+  **/
+  @ApiModelProperty(value = "")
+  public String getStartDate() {
+    return startDate;
+  }
+
+  public void setStartDate(String startDate) {
+    this.startDate = startDate;
+  }
+
+  public VariableAnnuityRequest aggregationAccountId(UUID aggregationAccountId) {
+    this.aggregationAccountId = aggregationAccountId;
+    return this;
+  }
+
+   /**
+   * Get aggregationAccountId
+   * @return aggregationAccountId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getAggregationAccountId() {
+    return aggregationAccountId;
+  }
+
+  public void setAggregationAccountId(UUID aggregationAccountId) {
+    this.aggregationAccountId = aggregationAccountId;
+  }
+
+  public VariableAnnuityRequest initialBalance(Float initialBalance) {
+    this.initialBalance = initialBalance;
+    return this;
+  }
+
+   /**
+   * Get initialBalance
+   * minimum: 0
+   * @return initialBalance
+  **/
+  @ApiModelProperty(value = "")
+  public Float getInitialBalance() {
+    return initialBalance;
+  }
+
+  public void setInitialBalance(Float initialBalance) {
+    this.initialBalance = initialBalance;
   }
 
   public VariableAnnuityRequest createLog(Boolean createLog) {
@@ -770,24 +581,212 @@ public class VariableAnnuityRequest {
     this.decumulationHorizon = decumulationHorizon;
   }
 
-  public VariableAnnuityRequest taxRate(Float taxRate) {
-    this.taxRate = taxRate;
+  public VariableAnnuityRequest accountId(UUID accountId) {
+    this.accountId = accountId;
     return this;
   }
 
    /**
-   * Get taxRate
-   * minimum: 0
-   * maximum: 1
-   * @return taxRate
+   * Get accountId
+   * @return accountId
   **/
   @ApiModelProperty(value = "")
-  public Float getTaxRate() {
-    return taxRate;
+  public UUID getAccountId() {
+    return accountId;
   }
 
-  public void setTaxRate(Float taxRate) {
-    this.taxRate = taxRate;
+  public void setAccountId(UUID accountId) {
+    this.accountId = accountId;
+  }
+
+  public VariableAnnuityRequest accumulationHorizon(Integer accumulationHorizon) {
+    this.accumulationHorizon = accumulationHorizon;
+    return this;
+  }
+
+   /**
+   * Get accumulationHorizon
+   * minimum: 0
+   * @return accumulationHorizon
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getAccumulationHorizon() {
+    return accumulationHorizon;
+  }
+
+  public void setAccumulationHorizon(Integer accumulationHorizon) {
+    this.accumulationHorizon = accumulationHorizon;
+  }
+
+  public VariableAnnuityRequest tradingDaysPerYear(Integer tradingDaysPerYear) {
+    this.tradingDaysPerYear = tradingDaysPerYear;
+    return this;
+  }
+
+   /**
+   * Get tradingDaysPerYear
+   * minimum: 1
+   * @return tradingDaysPerYear
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getTradingDaysPerYear() {
+    return tradingDaysPerYear;
+  }
+
+  public void setTradingDaysPerYear(Integer tradingDaysPerYear) {
+    this.tradingDaysPerYear = tradingDaysPerYear;
+  }
+
+  public VariableAnnuityRequest portfolioWeights(List<Float> portfolioWeights) {
+    this.portfolioWeights = portfolioWeights;
+    return this;
+  }
+
+  public VariableAnnuityRequest addPortfolioWeightsItem(Float portfolioWeightsItem) {
+    if (this.portfolioWeights == null) {
+      this.portfolioWeights = new ArrayList<Float>();
+    }
+    this.portfolioWeights.add(portfolioWeightsItem);
+    return this;
+  }
+
+   /**
+   * Get portfolioWeights
+   * @return portfolioWeights
+  **/
+  @ApiModelProperty(value = "")
+  public List<Float> getPortfolioWeights() {
+    return portfolioWeights;
+  }
+
+  public void setPortfolioWeights(List<Float> portfolioWeights) {
+    this.portfolioWeights = portfolioWeights;
+  }
+
+  public VariableAnnuityRequest guaranteedAccumulationBenefit(Float guaranteedAccumulationBenefit) {
+    this.guaranteedAccumulationBenefit = guaranteedAccumulationBenefit;
+    return this;
+  }
+
+   /**
+   * Get guaranteedAccumulationBenefit
+   * minimum: 0
+   * @return guaranteedAccumulationBenefit
+  **/
+  @ApiModelProperty(value = "")
+  public Float getGuaranteedAccumulationBenefit() {
+    return guaranteedAccumulationBenefit;
+  }
+
+  public void setGuaranteedAccumulationBenefit(Float guaranteedAccumulationBenefit) {
+    this.guaranteedAccumulationBenefit = guaranteedAccumulationBenefit;
+  }
+
+  public VariableAnnuityRequest portfolioTickers(List<String> portfolioTickers) {
+    this.portfolioTickers = portfolioTickers;
+    return this;
+  }
+
+  public VariableAnnuityRequest addPortfolioTickersItem(String portfolioTickersItem) {
+    if (this.portfolioTickers == null) {
+      this.portfolioTickers = new ArrayList<String>();
+    }
+    this.portfolioTickers.add(portfolioTickersItem);
+    return this;
+  }
+
+   /**
+   * Get portfolioTickers
+   * @return portfolioTickers
+  **/
+  @ApiModelProperty(value = "")
+  public List<String> getPortfolioTickers() {
+    return portfolioTickers;
+  }
+
+  public void setPortfolioTickers(List<String> portfolioTickers) {
+    this.portfolioTickers = portfolioTickers;
+  }
+
+  public VariableAnnuityRequest guaranteedRateBenefit(List<GuaranteedRateBenefit> guaranteedRateBenefit) {
+    this.guaranteedRateBenefit = guaranteedRateBenefit;
+    return this;
+  }
+
+  public VariableAnnuityRequest addGuaranteedRateBenefitItem(GuaranteedRateBenefit guaranteedRateBenefitItem) {
+    if (this.guaranteedRateBenefit == null) {
+      this.guaranteedRateBenefit = new ArrayList<GuaranteedRateBenefit>();
+    }
+    this.guaranteedRateBenefit.add(guaranteedRateBenefitItem);
+    return this;
+  }
+
+   /**
+   * Get guaranteedRateBenefit
+   * @return guaranteedRateBenefit
+  **/
+  @ApiModelProperty(value = "")
+  public List<GuaranteedRateBenefit> getGuaranteedRateBenefit() {
+    return guaranteedRateBenefit;
+  }
+
+  public void setGuaranteedRateBenefit(List<GuaranteedRateBenefit> guaranteedRateBenefit) {
+    this.guaranteedRateBenefit = guaranteedRateBenefit;
+  }
+
+  public VariableAnnuityRequest modelId(UUID modelId) {
+    this.modelId = modelId;
+    return this;
+  }
+
+   /**
+   * Get modelId
+   * @return modelId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getModelId() {
+    return modelId;
+  }
+
+  public void setModelId(UUID modelId) {
+    this.modelId = modelId;
+  }
+
+  public VariableAnnuityRequest n(Integer n) {
+    this.n = n;
+    return this;
+  }
+
+   /**
+   * Get n
+   * minimum: 1
+   * @return n
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getN() {
+    return n;
+  }
+
+  public void setN(Integer n) {
+    this.n = n;
+  }
+
+  public VariableAnnuityRequest frequencyInterval(FrequencyIntervalEnum frequencyInterval) {
+    this.frequencyInterval = frequencyInterval;
+    return this;
+  }
+
+   /**
+   * Get frequencyInterval
+   * @return frequencyInterval
+  **/
+  @ApiModelProperty(value = "")
+  public FrequencyIntervalEnum getFrequencyInterval() {
+    return frequencyInterval;
+  }
+
+  public void setFrequencyInterval(FrequencyIntervalEnum frequencyInterval) {
+    this.frequencyInterval = frequencyInterval;
   }
 
 
@@ -800,38 +799,38 @@ public class VariableAnnuityRequest {
       return false;
     }
     VariableAnnuityRequest variableAnnuityRequest = (VariableAnnuityRequest) o;
-    return Objects.equals(this.guaranteedAccumulationBenefit, variableAnnuityRequest.guaranteedAccumulationBenefit) &&
-        Objects.equals(this.p, variableAnnuityRequest.p) &&
-        Objects.equals(this.aggregationAccountId, variableAnnuityRequest.aggregationAccountId) &&
-        Objects.equals(this.allocationId, variableAnnuityRequest.allocationId) &&
-        Objects.equals(this.portfolioWeights, variableAnnuityRequest.portfolioWeights) &&
-        Objects.equals(this.endDate, variableAnnuityRequest.endDate) &&
-        Objects.equals(this.n, variableAnnuityRequest.n) &&
-        Objects.equals(this.accountId, variableAnnuityRequest.accountId) &&
-        Objects.equals(this.portfolioTickers, variableAnnuityRequest.portfolioTickers) &&
-        Objects.equals(this.initialBalance, variableAnnuityRequest.initialBalance) &&
-        Objects.equals(this.removeOutliers, variableAnnuityRequest.removeOutliers) &&
-        Objects.equals(this.modelId, variableAnnuityRequest.modelId) &&
-        Objects.equals(this.guaranteedRateBenefit, variableAnnuityRequest.guaranteedRateBenefit) &&
-        Objects.equals(this.depositSchedule, variableAnnuityRequest.depositSchedule) &&
-        Objects.equals(this.useProxyData, variableAnnuityRequest.useProxyData) &&
-        Objects.equals(this.accumulationHorizon, variableAnnuityRequest.accumulationHorizon) &&
-        Objects.equals(this.inflationRate, variableAnnuityRequest.inflationRate) &&
-        Objects.equals(this.annuitizationRate, variableAnnuityRequest.annuitizationRate) &&
+    return Objects.equals(this.portfolioId, variableAnnuityRequest.portfolioId) &&
         Objects.equals(this.resultType, variableAnnuityRequest.resultType) &&
-        Objects.equals(this.startDate, variableAnnuityRequest.startDate) &&
-        Objects.equals(this.portfolioId, variableAnnuityRequest.portfolioId) &&
+        Objects.equals(this.inflationRate, variableAnnuityRequest.inflationRate) &&
+        Objects.equals(this.removeOutliers, variableAnnuityRequest.removeOutliers) &&
+        Objects.equals(this.depositSchedule, variableAnnuityRequest.depositSchedule) &&
+        Objects.equals(this.annuitizationRate, variableAnnuityRequest.annuitizationRate) &&
+        Objects.equals(this.endDate, variableAnnuityRequest.endDate) &&
         Objects.equals(this.marketDataSource, variableAnnuityRequest.marketDataSource) &&
-        Objects.equals(this.tradingDaysPerYear, variableAnnuityRequest.tradingDaysPerYear) &&
-        Objects.equals(this.frequencyInterval, variableAnnuityRequest.frequencyInterval) &&
+        Objects.equals(this.taxRate, variableAnnuityRequest.taxRate) &&
+        Objects.equals(this.p, variableAnnuityRequest.p) &&
+        Objects.equals(this.allocationId, variableAnnuityRequest.allocationId) &&
+        Objects.equals(this.useProxyData, variableAnnuityRequest.useProxyData) &&
+        Objects.equals(this.startDate, variableAnnuityRequest.startDate) &&
+        Objects.equals(this.aggregationAccountId, variableAnnuityRequest.aggregationAccountId) &&
+        Objects.equals(this.initialBalance, variableAnnuityRequest.initialBalance) &&
         Objects.equals(this.createLog, variableAnnuityRequest.createLog) &&
         Objects.equals(this.decumulationHorizon, variableAnnuityRequest.decumulationHorizon) &&
-        Objects.equals(this.taxRate, variableAnnuityRequest.taxRate);
+        Objects.equals(this.accountId, variableAnnuityRequest.accountId) &&
+        Objects.equals(this.accumulationHorizon, variableAnnuityRequest.accumulationHorizon) &&
+        Objects.equals(this.tradingDaysPerYear, variableAnnuityRequest.tradingDaysPerYear) &&
+        Objects.equals(this.portfolioWeights, variableAnnuityRequest.portfolioWeights) &&
+        Objects.equals(this.guaranteedAccumulationBenefit, variableAnnuityRequest.guaranteedAccumulationBenefit) &&
+        Objects.equals(this.portfolioTickers, variableAnnuityRequest.portfolioTickers) &&
+        Objects.equals(this.guaranteedRateBenefit, variableAnnuityRequest.guaranteedRateBenefit) &&
+        Objects.equals(this.modelId, variableAnnuityRequest.modelId) &&
+        Objects.equals(this.n, variableAnnuityRequest.n) &&
+        Objects.equals(this.frequencyInterval, variableAnnuityRequest.frequencyInterval);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(guaranteedAccumulationBenefit, p, aggregationAccountId, allocationId, portfolioWeights, endDate, n, accountId, portfolioTickers, initialBalance, removeOutliers, modelId, guaranteedRateBenefit, depositSchedule, useProxyData, accumulationHorizon, inflationRate, annuitizationRate, resultType, startDate, portfolioId, marketDataSource, tradingDaysPerYear, frequencyInterval, createLog, decumulationHorizon, taxRate);
+    return Objects.hash(portfolioId, resultType, inflationRate, removeOutliers, depositSchedule, annuitizationRate, endDate, marketDataSource, taxRate, p, allocationId, useProxyData, startDate, aggregationAccountId, initialBalance, createLog, decumulationHorizon, accountId, accumulationHorizon, tradingDaysPerYear, portfolioWeights, guaranteedAccumulationBenefit, portfolioTickers, guaranteedRateBenefit, modelId, n, frequencyInterval);
   }
 
 
@@ -840,33 +839,33 @@ public class VariableAnnuityRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class VariableAnnuityRequest {\n");
     
-    sb.append("    guaranteedAccumulationBenefit: ").append(toIndentedString(guaranteedAccumulationBenefit)).append("\n");
-    sb.append("    p: ").append(toIndentedString(p)).append("\n");
-    sb.append("    aggregationAccountId: ").append(toIndentedString(aggregationAccountId)).append("\n");
-    sb.append("    allocationId: ").append(toIndentedString(allocationId)).append("\n");
-    sb.append("    portfolioWeights: ").append(toIndentedString(portfolioWeights)).append("\n");
-    sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
-    sb.append("    n: ").append(toIndentedString(n)).append("\n");
-    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-    sb.append("    portfolioTickers: ").append(toIndentedString(portfolioTickers)).append("\n");
-    sb.append("    initialBalance: ").append(toIndentedString(initialBalance)).append("\n");
-    sb.append("    removeOutliers: ").append(toIndentedString(removeOutliers)).append("\n");
-    sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
-    sb.append("    guaranteedRateBenefit: ").append(toIndentedString(guaranteedRateBenefit)).append("\n");
-    sb.append("    depositSchedule: ").append(toIndentedString(depositSchedule)).append("\n");
-    sb.append("    useProxyData: ").append(toIndentedString(useProxyData)).append("\n");
-    sb.append("    accumulationHorizon: ").append(toIndentedString(accumulationHorizon)).append("\n");
-    sb.append("    inflationRate: ").append(toIndentedString(inflationRate)).append("\n");
-    sb.append("    annuitizationRate: ").append(toIndentedString(annuitizationRate)).append("\n");
-    sb.append("    resultType: ").append(toIndentedString(resultType)).append("\n");
-    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    portfolioId: ").append(toIndentedString(portfolioId)).append("\n");
+    sb.append("    resultType: ").append(toIndentedString(resultType)).append("\n");
+    sb.append("    inflationRate: ").append(toIndentedString(inflationRate)).append("\n");
+    sb.append("    removeOutliers: ").append(toIndentedString(removeOutliers)).append("\n");
+    sb.append("    depositSchedule: ").append(toIndentedString(depositSchedule)).append("\n");
+    sb.append("    annuitizationRate: ").append(toIndentedString(annuitizationRate)).append("\n");
+    sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("    marketDataSource: ").append(toIndentedString(marketDataSource)).append("\n");
-    sb.append("    tradingDaysPerYear: ").append(toIndentedString(tradingDaysPerYear)).append("\n");
-    sb.append("    frequencyInterval: ").append(toIndentedString(frequencyInterval)).append("\n");
+    sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
+    sb.append("    p: ").append(toIndentedString(p)).append("\n");
+    sb.append("    allocationId: ").append(toIndentedString(allocationId)).append("\n");
+    sb.append("    useProxyData: ").append(toIndentedString(useProxyData)).append("\n");
+    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    sb.append("    aggregationAccountId: ").append(toIndentedString(aggregationAccountId)).append("\n");
+    sb.append("    initialBalance: ").append(toIndentedString(initialBalance)).append("\n");
     sb.append("    createLog: ").append(toIndentedString(createLog)).append("\n");
     sb.append("    decumulationHorizon: ").append(toIndentedString(decumulationHorizon)).append("\n");
-    sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
+    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    sb.append("    accumulationHorizon: ").append(toIndentedString(accumulationHorizon)).append("\n");
+    sb.append("    tradingDaysPerYear: ").append(toIndentedString(tradingDaysPerYear)).append("\n");
+    sb.append("    portfolioWeights: ").append(toIndentedString(portfolioWeights)).append("\n");
+    sb.append("    guaranteedAccumulationBenefit: ").append(toIndentedString(guaranteedAccumulationBenefit)).append("\n");
+    sb.append("    portfolioTickers: ").append(toIndentedString(portfolioTickers)).append("\n");
+    sb.append("    guaranteedRateBenefit: ").append(toIndentedString(guaranteedRateBenefit)).append("\n");
+    sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
+    sb.append("    n: ").append(toIndentedString(n)).append("\n");
+    sb.append("    frequencyInterval: ").append(toIndentedString(frequencyInterval)).append("\n");
     sb.append("}");
     return sb.toString();
   }

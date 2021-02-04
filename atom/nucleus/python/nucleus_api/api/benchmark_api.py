@@ -546,7 +546,7 @@ class BenchmarkApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Benchmark benchmark: benchmark (required)
+        :param object benchmark: benchmark (required)
         :param str benchmark_id: UUID benchmark_id (required)
         :return: Benchmark
                  If the method is called asynchronously,
@@ -569,7 +569,7 @@ class BenchmarkApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Benchmark benchmark: benchmark (required)
+        :param object benchmark: benchmark (required)
         :param str benchmark_id: UUID benchmark_id (required)
         :return: Benchmark
                  If the method is called asynchronously,

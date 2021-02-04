@@ -3,41 +3,41 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**goalId** | **String** |  | [optional] 
-**allocationMethod** | **String** |  | 
-**currInv** | **Number** |  | [optional] 
-**riskScore** | **Number** |  | [optional] 
-**n** | **Number** |  | [optional] [default to 1000]
-**allocationPriority** | **String** |  | 
-**horizonFrequency** | **String** |  | [optional] [default to 'year']
-**allocations** | **[String]** |  | [optional] 
-**clientId** | **String** |  | [optional] 
-**removeOutliers** | **Boolean** |  | [optional] [default to true]
-**useProxyData** | **Boolean** |  | [optional] [default to false]
-**goalConfig** | [**GoalConfig**](GoalConfig.md) |  | [optional] 
-**confTgt** | **Number** |  | [optional] [default to 0.9]
-**horizon** | **Number** |  | [optional] 
 **threshType** | **String** |  | [optional] [default to 'perc']
-**thresh** | **Number** |  | [optional] 
-**depositConfig** | [**[AccumulationGoalDepositConfig]**](AccumulationGoalDepositConfig.md) |  | [optional] 
+**goalId** | **String** |  | [optional] 
+**clientId** | **String** |  | [optional] 
+**confTgt** | **Number** |  | [optional] [default to 0.9]
+**riskScore** | **Number** |  | [optional] 
+**removeOutliers** | **Boolean** |  | [optional] [default to true]
+**allocationPriority** | **String** |  | 
 **marketDataSource** | **String** |  | [optional] [default to 'nucleus']
-**recommendationConfig** | [**RecommendationConfig**](RecommendationConfig.md) |  | [optional] 
-**optConfig** | [**OptConfig**](OptConfig.md) |  | [optional] 
-**withdrawalTax** | **Number** |  | [optional] [default to 0.0]
-**tradingDaysPerYear** | **Number** |  | [optional] [default to 252]
 **compoundingRate** | **Number** |  | [optional] [default to 0.0]
 **adjustForCompounding** | **Boolean** |  | [optional] [default to false]
+**optConfig** | [**OptConfig**](OptConfig.md) |  | [optional] 
+**depositConfig** | [**[AccumulationGoalDepositConfig]**](AccumulationGoalDepositConfig.md) |  | [optional] 
+**useProxyData** | **Boolean** |  | [optional] [default to false]
+**thresh** | **Number** |  | [optional] 
+**horizonFrequency** | **String** |  | [optional] [default to 'year']
+**recommendationConfig** | [**RecommendationConfig**](RecommendationConfig.md) |  | [optional] 
 **createLog** | **Boolean** |  | [optional] [default to false]
+**withdrawalTax** | **Number** |  | [optional] [default to 0.0]
+**goalConfig** | [**GoalConfig**](GoalConfig.md) |  | [optional] 
+**tradingDaysPerYear** | **Number** |  | [optional] [default to 252]
+**allocations** | **[String]** |  | [optional] 
+**n** | **Number** |  | [optional] [default to 1000]
+**horizon** | **Number** |  | [optional] 
 **recommendType** | **String** |  | [optional] [default to 'horizon']
+**currInv** | **Number** |  | [optional] 
+**allocationMethod** | **String** |  | 
 
 
-<a name="AllocationMethodEnum"></a>
-## Enum: AllocationMethodEnum
+<a name="ThreshTypeEnum"></a>
+## Enum: ThreshTypeEnum
 
 
-* `select` (value: `"select"`)
+* `amnt` (value: `"amnt"`)
 
-* `create` (value: `"create"`)
+* `perc` (value: `"perc"`)
 
 
 
@@ -49,6 +49,17 @@ Name | Type | Description | Notes
 * `goal` (value: `"goal"`)
 
 * `risk` (value: `"risk"`)
+
+
+
+
+<a name="MarketDataSourceEnum"></a>
+## Enum: MarketDataSourceEnum
+
+
+* `nucleus` (value: `"nucleus"`)
+
+* `integration` (value: `"integration"`)
 
 
 
@@ -74,28 +85,6 @@ Name | Type | Description | Notes
 
 
 
-<a name="ThreshTypeEnum"></a>
-## Enum: ThreshTypeEnum
-
-
-* `amnt` (value: `"amnt"`)
-
-* `perc` (value: `"perc"`)
-
-
-
-
-<a name="MarketDataSourceEnum"></a>
-## Enum: MarketDataSourceEnum
-
-
-* `nucleus` (value: `"nucleus"`)
-
-* `integration` (value: `"integration"`)
-
-
-
-
 <a name="RecommendTypeEnum"></a>
 ## Enum: RecommendTypeEnum
 
@@ -107,6 +96,17 @@ Name | Type | Description | Notes
 * `combo` (value: `"combo"`)
 
 * `horizon` (value: `"horizon"`)
+
+
+
+
+<a name="AllocationMethodEnum"></a>
+## Enum: AllocationMethodEnum
+
+
+* `select` (value: `"select"`)
+
+* `create` (value: `"create"`)
 
 
 

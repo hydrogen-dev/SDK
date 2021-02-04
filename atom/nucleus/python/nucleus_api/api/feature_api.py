@@ -835,7 +835,7 @@ class FeatureApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param FeatureTrack feature_track: feature_track (required)
+        :param object feature_track: feature_track (required)
         :param str feature_track_id: UUID feature_track_id (required)
         :return: FeatureTrack
                  If the method is called asynchronously,
@@ -858,7 +858,7 @@ class FeatureApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param FeatureTrack feature_track: feature_track (required)
+        :param object feature_track: feature_track (required)
         :param str feature_track_id: UUID feature_track_id (required)
         :return: FeatureTrack
                  If the method is called asynchronously,
@@ -942,7 +942,7 @@ class FeatureApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Feature feature: feature (required)
+        :param object feature: feature (required)
         :param str feature_id: UUID feature_id (required)
         :return: Feature
                  If the method is called asynchronously,
@@ -965,7 +965,7 @@ class FeatureApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Feature feature: feature (required)
+        :param object feature: feature (required)
         :param str feature_id: UUID feature_id (required)
         :return: Feature
                  If the method is called asynchronously,

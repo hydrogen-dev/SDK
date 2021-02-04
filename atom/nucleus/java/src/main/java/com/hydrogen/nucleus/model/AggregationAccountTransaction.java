@@ -13,8 +13,6 @@
 
 package com.hydrogen.nucleus.model;
 
-import java.util.Objects;
-
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,20 +20,18 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.threeten.bp.OffsetDateTime;
 
 import java.io.IOException;
 import java.util.Map;
+import java.util.Objects;
 import java.util.UUID;
-import org.threeten.bp.OffsetDateTime;
 
 /**
  * Aggregation Account Transaction Object
  */
 @ApiModel(description = "Aggregation Account Transaction Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-12T11:03:26.704Z")
-
-
-
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-31T15:47:19.766Z")
 public class AggregationAccountTransaction {
   @SerializedName("aggregation_account_id")
   private UUID aggregationAccountId = null;
@@ -66,11 +62,11 @@ public class AggregationAccountTransaction {
    */
   @JsonAdapter(IsFeeEnum.Adapter.class)
   public enum IsFeeEnum {
-    FALSE("FALSE"),
+    TRUE("true"),
     
-    TRUE("TRUE"),
+    FALSE("false"),
     
-    NULL("NULL");
+    NULL("null");
 
     private String value;
 
@@ -104,14 +100,14 @@ public class AggregationAccountTransaction {
 
       @Override
       public IsFeeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        Object value = jsonReader.nextString();
         return IsFeeEnum.fromValue(String.valueOf(value));
       }
     }
   }
 
   @SerializedName("is_fee")
-  private IsFeeEnum isFee = null;
+  private IsFeeEnum isFee = IsFeeEnum.NULL;
 
   @SerializedName("is_recurring")
   private Boolean isRecurring = null;
@@ -121,11 +117,11 @@ public class AggregationAccountTransaction {
    */
   @JsonAdapter(IsTransferEnum.Adapter.class)
   public enum IsTransferEnum {
-    FALSE("FALSE"),
+    TRUE("true"),
     
-    TRUE("TRUE"),
+    FALSE("false"),
     
-    NULL("NULL");
+    NULL("null");
 
     private String value;
 
@@ -159,14 +155,14 @@ public class AggregationAccountTransaction {
 
       @Override
       public IsTransferEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        Object value = jsonReader.nextString();
         return IsTransferEnum.fromValue(String.valueOf(value));
       }
     }
   }
 
   @SerializedName("is_transfer")
-  private IsTransferEnum isTransfer = null;
+  private IsTransferEnum isTransfer = IsTransferEnum.NULL;
 
   @SerializedName("metadata")
   private Map<String, String> metadata = null;
@@ -428,7 +424,7 @@ public class AggregationAccountTransaction {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -464,7 +460,7 @@ public class AggregationAccountTransaction {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AggregationAccountTransaction {\n");
-    
+
     sb.append("    aggregationAccountId: ").append(toIndentedString(aggregationAccountId)).append("\n");
     sb.append("    bankCredit: ").append(toIndentedString(bankCredit)).append("\n");
     sb.append("    cash: ").append(toIndentedString(cash)).append("\n");
@@ -489,7 +485,7 @@ public class AggregationAccountTransaction {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

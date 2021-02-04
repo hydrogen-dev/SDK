@@ -271,7 +271,7 @@ end
 
 api_instance = NucleusApi::WebhookApi.new
 
-webhook = NucleusApi::Webhook.new # Webhook | webhook
+webhook = nil # Object | webhook
 
 webhook_id = 'webhook_id_example' # String | UUID webhook_id
 
@@ -289,7 +289,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook** | [**Webhook**](Webhook.md)| webhook | 
+ **webhook** | **Object**| webhook | 
  **webhook_id** | [**String**](.md)| UUID webhook_id | 
 
 ### Return type

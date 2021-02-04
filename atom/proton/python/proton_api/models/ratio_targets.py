@@ -32,45 +32,45 @@ class RatioTargets(object):
     """
     swagger_types = {
         'current_ratio': 'float',
-        'liquidity_ratio_liabilities': 'float',
-        'asset_allocation_ratio': 'float',
-        'savings_ratio_net': 'float',
         'liquidity_ratio_expenses': 'float',
-        'savings_ratio_gross': 'float'
+        'liquidity_ratio_liabilities': 'float',
+        'savings_ratio_gross': 'float',
+        'savings_ratio_net': 'float',
+        'asset_allocation_ratio': 'float'
     }
 
     attribute_map = {
         'current_ratio': 'current_ratio',
-        'liquidity_ratio_liabilities': 'liquidity_ratio_liabilities',
-        'asset_allocation_ratio': 'asset_allocation_ratio',
-        'savings_ratio_net': 'savings_ratio_net',
         'liquidity_ratio_expenses': 'liquidity_ratio_expenses',
-        'savings_ratio_gross': 'savings_ratio_gross'
+        'liquidity_ratio_liabilities': 'liquidity_ratio_liabilities',
+        'savings_ratio_gross': 'savings_ratio_gross',
+        'savings_ratio_net': 'savings_ratio_net',
+        'asset_allocation_ratio': 'asset_allocation_ratio'
     }
 
-    def __init__(self, current_ratio=0.5, liquidity_ratio_liabilities=0.1, asset_allocation_ratio=1.5, savings_ratio_net=0.1, liquidity_ratio_expenses=2.5, savings_ratio_gross=0.1):  # noqa: E501
+    def __init__(self, current_ratio=0.5, liquidity_ratio_expenses=2.5, liquidity_ratio_liabilities=0.1, savings_ratio_gross=0.1, savings_ratio_net=0.1, asset_allocation_ratio=1.5):  # noqa: E501
         """RatioTargets - a model defined in Swagger"""  # noqa: E501
 
         self._current_ratio = None
-        self._liquidity_ratio_liabilities = None
-        self._asset_allocation_ratio = None
-        self._savings_ratio_net = None
         self._liquidity_ratio_expenses = None
+        self._liquidity_ratio_liabilities = None
         self._savings_ratio_gross = None
+        self._savings_ratio_net = None
+        self._asset_allocation_ratio = None
         self.discriminator = None
 
         if current_ratio is not None:
             self.current_ratio = current_ratio
-        if liquidity_ratio_liabilities is not None:
-            self.liquidity_ratio_liabilities = liquidity_ratio_liabilities
-        if asset_allocation_ratio is not None:
-            self.asset_allocation_ratio = asset_allocation_ratio
-        if savings_ratio_net is not None:
-            self.savings_ratio_net = savings_ratio_net
         if liquidity_ratio_expenses is not None:
             self.liquidity_ratio_expenses = liquidity_ratio_expenses
+        if liquidity_ratio_liabilities is not None:
+            self.liquidity_ratio_liabilities = liquidity_ratio_liabilities
         if savings_ratio_gross is not None:
             self.savings_ratio_gross = savings_ratio_gross
+        if savings_ratio_net is not None:
+            self.savings_ratio_net = savings_ratio_net
+        if asset_allocation_ratio is not None:
+            self.asset_allocation_ratio = asset_allocation_ratio
 
     @property
     def current_ratio(self):
@@ -96,6 +96,29 @@ class RatioTargets(object):
         self._current_ratio = current_ratio
 
     @property
+    def liquidity_ratio_expenses(self):
+        """Gets the liquidity_ratio_expenses of this RatioTargets.  # noqa: E501
+
+
+        :return: The liquidity_ratio_expenses of this RatioTargets.  # noqa: E501
+        :rtype: float
+        """
+        return self._liquidity_ratio_expenses
+
+    @liquidity_ratio_expenses.setter
+    def liquidity_ratio_expenses(self, liquidity_ratio_expenses):
+        """Sets the liquidity_ratio_expenses of this RatioTargets.
+
+
+        :param liquidity_ratio_expenses: The liquidity_ratio_expenses of this RatioTargets.  # noqa: E501
+        :type: float
+        """
+        if liquidity_ratio_expenses is not None and liquidity_ratio_expenses < 0:  # noqa: E501
+            raise ValueError("Invalid value for `liquidity_ratio_expenses`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._liquidity_ratio_expenses = liquidity_ratio_expenses
+
+    @property
     def liquidity_ratio_liabilities(self):
         """Gets the liquidity_ratio_liabilities of this RatioTargets.  # noqa: E501
 
@@ -119,27 +142,27 @@ class RatioTargets(object):
         self._liquidity_ratio_liabilities = liquidity_ratio_liabilities
 
     @property
-    def asset_allocation_ratio(self):
-        """Gets the asset_allocation_ratio of this RatioTargets.  # noqa: E501
+    def savings_ratio_gross(self):
+        """Gets the savings_ratio_gross of this RatioTargets.  # noqa: E501
 
 
-        :return: The asset_allocation_ratio of this RatioTargets.  # noqa: E501
+        :return: The savings_ratio_gross of this RatioTargets.  # noqa: E501
         :rtype: float
         """
-        return self._asset_allocation_ratio
+        return self._savings_ratio_gross
 
-    @asset_allocation_ratio.setter
-    def asset_allocation_ratio(self, asset_allocation_ratio):
-        """Sets the asset_allocation_ratio of this RatioTargets.
+    @savings_ratio_gross.setter
+    def savings_ratio_gross(self, savings_ratio_gross):
+        """Sets the savings_ratio_gross of this RatioTargets.
 
 
-        :param asset_allocation_ratio: The asset_allocation_ratio of this RatioTargets.  # noqa: E501
+        :param savings_ratio_gross: The savings_ratio_gross of this RatioTargets.  # noqa: E501
         :type: float
         """
-        if asset_allocation_ratio is not None and asset_allocation_ratio < 0:  # noqa: E501
-            raise ValueError("Invalid value for `asset_allocation_ratio`, must be a value greater than or equal to `0`")  # noqa: E501
+        if savings_ratio_gross is not None and savings_ratio_gross < 0:  # noqa: E501
+            raise ValueError("Invalid value for `savings_ratio_gross`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._asset_allocation_ratio = asset_allocation_ratio
+        self._savings_ratio_gross = savings_ratio_gross
 
     @property
     def savings_ratio_net(self):
@@ -165,50 +188,27 @@ class RatioTargets(object):
         self._savings_ratio_net = savings_ratio_net
 
     @property
-    def liquidity_ratio_expenses(self):
-        """Gets the liquidity_ratio_expenses of this RatioTargets.  # noqa: E501
+    def asset_allocation_ratio(self):
+        """Gets the asset_allocation_ratio of this RatioTargets.  # noqa: E501
 
 
-        :return: The liquidity_ratio_expenses of this RatioTargets.  # noqa: E501
+        :return: The asset_allocation_ratio of this RatioTargets.  # noqa: E501
         :rtype: float
         """
-        return self._liquidity_ratio_expenses
+        return self._asset_allocation_ratio
 
-    @liquidity_ratio_expenses.setter
-    def liquidity_ratio_expenses(self, liquidity_ratio_expenses):
-        """Sets the liquidity_ratio_expenses of this RatioTargets.
+    @asset_allocation_ratio.setter
+    def asset_allocation_ratio(self, asset_allocation_ratio):
+        """Sets the asset_allocation_ratio of this RatioTargets.
 
 
-        :param liquidity_ratio_expenses: The liquidity_ratio_expenses of this RatioTargets.  # noqa: E501
+        :param asset_allocation_ratio: The asset_allocation_ratio of this RatioTargets.  # noqa: E501
         :type: float
         """
-        if liquidity_ratio_expenses is not None and liquidity_ratio_expenses < 0:  # noqa: E501
-            raise ValueError("Invalid value for `liquidity_ratio_expenses`, must be a value greater than or equal to `0`")  # noqa: E501
+        if asset_allocation_ratio is not None and asset_allocation_ratio < 0:  # noqa: E501
+            raise ValueError("Invalid value for `asset_allocation_ratio`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._liquidity_ratio_expenses = liquidity_ratio_expenses
-
-    @property
-    def savings_ratio_gross(self):
-        """Gets the savings_ratio_gross of this RatioTargets.  # noqa: E501
-
-
-        :return: The savings_ratio_gross of this RatioTargets.  # noqa: E501
-        :rtype: float
-        """
-        return self._savings_ratio_gross
-
-    @savings_ratio_gross.setter
-    def savings_ratio_gross(self, savings_ratio_gross):
-        """Sets the savings_ratio_gross of this RatioTargets.
-
-
-        :param savings_ratio_gross: The savings_ratio_gross of this RatioTargets.  # noqa: E501
-        :type: float
-        """
-        if savings_ratio_gross is not None and savings_ratio_gross < 0:  # noqa: E501
-            raise ValueError("Invalid value for `savings_ratio_gross`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._savings_ratio_gross = savings_ratio_gross
+        self._asset_allocation_ratio = asset_allocation_ratio
 
     def to_dict(self):
         """Returns the model properties as a dict"""

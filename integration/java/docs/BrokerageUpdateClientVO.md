@@ -6,9 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message** | **String** |  |  [optional]
 **nucleusClientId** | [**UUID**](UUID.md) |  |  [optional]
+**status** | **String** |  |  [optional]
 **vendorName** | **String** |  |  [optional]
-**vendorRequestData** | [**List&lt;BaseDocument&gt;**](BaseDocument.md) |  |  [optional]
-**vendorResponse** | [**UpdateClientResponse**](UpdateClientResponse.md) |  |  [optional]
+**vendorRequestData** | **Object** |  |  [optional]
+**vendorResponse** | **Object** |  |  [optional]
 
 
 

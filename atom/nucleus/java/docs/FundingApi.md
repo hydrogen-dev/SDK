@@ -44,7 +44,6 @@ Create a new bank link for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -61,8 +60,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
 BankLink bankLinkInfoRequest = new BankLink(); // BankLink | bankLinkInfoRequest
 try {
@@ -105,7 +102,6 @@ Create a new deposit request for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -122,8 +118,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
 DailyDeposit dailyDepositRequest = new DailyDeposit(); // DailyDeposit | dailyDepositRequest
 try {
@@ -166,7 +160,6 @@ Create a new funding request for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -183,8 +176,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
 Funding fundingRequest = new Funding(); // Funding | fundingRequest
 try {
@@ -227,7 +218,6 @@ Create a new external account transfer for a client account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -244,8 +234,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
 ExternalAccountTransfer externalAccountTransferRequest = new ExternalAccountTransfer(); // ExternalAccountTransfer | externalAccountTransferRequest
 try {
@@ -288,7 +276,6 @@ Create a new withdrawal request for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -305,8 +292,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
 DailyWithdrawal dailyWithdrawalRequest = new DailyWithdrawal(); // DailyWithdrawal | dailyWithdrawalRequest
 try {
@@ -349,7 +334,6 @@ Permanently delete a bank link defined for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -366,8 +350,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
 UUID bankLinkId = new UUID(); // UUID | UUID bank_link_id
 try {
@@ -409,7 +391,6 @@ Permanently delete a deposit request for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -426,8 +407,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
 UUID depositId = new UUID(); // UUID | UUID deposit_id
 try {
@@ -469,7 +448,6 @@ Permanently delete a funding request defined for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -486,8 +464,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
 UUID fundingId = new UUID(); // UUID | UUID funding_id
 try {
@@ -529,7 +505,6 @@ Permanently delete a external account transfer from a client account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -546,8 +521,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
 UUID transferId = new UUID(); // UUID | UUID external_account_transfer_id
 try {
@@ -589,7 +562,6 @@ Permanently delete a withdrawal request from an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -606,8 +578,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
 UUID withdrawalId = new UUID(); // UUID | UUID withdrawal_id
 try {
@@ -649,7 +619,6 @@ Get all bank links defined for all clients defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -666,8 +635,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
 Boolean ascending = false; // Boolean | ascending
 String currencyConversion = "currencyConversion_example"; // String | currency_conversion
@@ -720,7 +687,6 @@ Retrieve the information for a bank link for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -737,8 +703,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
 UUID bankLinkId = new UUID(); // UUID | UUID bank_link_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -783,7 +747,6 @@ Get the information for all deposit requests for all clients.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -800,8 +763,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
 Boolean ascending = false; // Boolean | ascending
 String currencyConversion = "currencyConversion_example"; // String | currency_conversion
@@ -854,7 +815,6 @@ Retrieve the information for a deposit request for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -871,8 +831,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
 UUID depositId = new UUID(); // UUID | UUID deposit_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -917,7 +875,6 @@ Get the information for all funding requests defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -934,8 +891,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
 Boolean ascending = false; // Boolean | ascending
 String currencyConversion = "currencyConversion_example"; // String | currency_conversion
@@ -988,7 +943,6 @@ Retrieve the information for a funding request for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1005,8 +959,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
 UUID fundingId = new UUID(); // UUID | UUID funding_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -1051,7 +1003,6 @@ Get the information for all external account transfers defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1068,8 +1019,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
 Boolean ascending = false; // Boolean | ascending
 String currencyConversion = "currencyConversion_example"; // String | currency_conversion
@@ -1122,7 +1071,6 @@ Retrieve the information for a external account transfer for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1139,8 +1087,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
 UUID transferId = new UUID(); // UUID | UUID external_account_transfer_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -1185,7 +1131,6 @@ Get the information for all withdrawal requests for all clients.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1202,8 +1147,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
 Boolean ascending = false; // Boolean | ascending
 String currencyConversion = "currencyConversion_example"; // String | currency_conversion
@@ -1256,7 +1199,6 @@ Retrieve the information for a withdrawal request for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1273,8 +1215,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
 UUID withdrawalId = new UUID(); // UUID | UUID withdrawal_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -1319,7 +1259,6 @@ Update bank link list for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1336,10 +1275,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
-List<BankLink> bankLinkList = Arrays.asList(new BankLink()); // List<BankLink> | bankLinkList
+List<Object> bankLinkList = Arrays.asList(new List<Object>()); // List<Object> | bankLinkList
 try {
     List<BankLink> result = apiInstance.updateBankLinkBulkUsingPut(bankLinkList);
     System.out.println(result);
@@ -1353,7 +1290,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bankLinkList** | [**List&lt;BankLink&gt;**](BankLink.md)| bankLinkList |
+ **bankLinkList** | **List&lt;Object&gt;**| bankLinkList |
 
 ### Return type
 
@@ -1380,7 +1317,6 @@ Update the information for a bank link for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1397,10 +1333,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
-BankLink bankLink = new BankLink(); // BankLink | bank_link
+Object bankLink = null; // Object | bank_link
 UUID bankLinkId = new UUID(); // UUID | UUID bank_link_id
 try {
     BankLink result = apiInstance.updateBankLinkUsingPut(bankLink, bankLinkId);
@@ -1415,7 +1349,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bankLink** | [**BankLink**](BankLink.md)| bank_link |
+ **bankLink** | **Object**| bank_link |
  **bankLinkId** | [**UUID**](.md)| UUID bank_link_id |
 
 ### Return type
@@ -1443,7 +1377,6 @@ Update the information for a deposit request for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1460,10 +1393,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
-DailyDeposit deposit = new DailyDeposit(); // DailyDeposit | deposit
+Object deposit = null; // Object | deposit
 UUID depositId = new UUID(); // UUID | UUID deposit_id
 try {
     DailyDeposit result = apiInstance.updateDepositUsingPut(deposit, depositId);
@@ -1478,7 +1409,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **deposit** | [**DailyDeposit**](DailyDeposit.md)| deposit |
+ **deposit** | **Object**| deposit |
  **depositId** | [**UUID**](.md)| UUID deposit_id |
 
 ### Return type
@@ -1506,7 +1437,6 @@ Update the information for a funding request for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1523,10 +1453,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
-Funding funding = new Funding(); // Funding | funding
+Object funding = null; // Object | funding
 UUID fundingId = new UUID(); // UUID | UUID funding_id
 try {
     Funding result = apiInstance.updateFundingUsingPut(funding, fundingId);
@@ -1541,7 +1469,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **funding** | [**Funding**](Funding.md)| funding |
+ **funding** | **Object**| funding |
  **fundingId** | [**UUID**](.md)| UUID funding_id |
 
 ### Return type
@@ -1569,7 +1497,6 @@ Update the information for a external account transfer for a client account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1586,10 +1513,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
-ExternalAccountTransfer transfer = new ExternalAccountTransfer(); // ExternalAccountTransfer | transfer
+Object transfer = null; // Object | transfer
 UUID transferId = new UUID(); // UUID | UUID external_account_transfer_id
 try {
     ExternalAccountTransfer result = apiInstance.updateTransferUsingPut(transfer, transferId);
@@ -1604,7 +1529,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transfer** | [**ExternalAccountTransfer**](ExternalAccountTransfer.md)| transfer |
+ **transfer** | **Object**| transfer |
  **transferId** | [**UUID**](.md)| UUID external_account_transfer_id |
 
 ### Return type
@@ -1632,7 +1557,6 @@ Update the information for a withdrawal request for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FundingApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1649,10 +1573,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FundingApi apiInstance = new FundingApi();
-DailyWithdrawal withdrawal = new DailyWithdrawal(); // DailyWithdrawal | withdrawal
+Object withdrawal = null; // Object | withdrawal
 UUID withdrawalId = new UUID(); // UUID | UUID withdrawal_id
 try {
     DailyWithdrawal result = apiInstance.updateWithdrawalUsingPut(withdrawal, withdrawalId);
@@ -1667,7 +1589,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **withdrawal** | [**DailyWithdrawal**](DailyWithdrawal.md)| withdrawal |
+ **withdrawal** | **Object**| withdrawal |
  **withdrawalId** | [**UUID**](.md)| UUID withdrawal_id |
 
 ### Return type

@@ -10,7 +10,6 @@ For more information, please visit [https://www.hydrogenplatform.com/contact](ht
 ## Requirements
 
 PHP 5.5 and later
-
 ### Update Base Path 
 Follow steps to verify the base URL path:
 1. Go to Configuration file located under lib folder.
@@ -46,7 +45,7 @@ Then run `composer install`
 Download the files and include `autoload.php`:
 
 ```php
-    require_once('/path/to/SwaggerClient-php/vendor/autoload.php');
+    require_once('../vendor/autoload.php');
 ```
 
 ## Tests
@@ -83,6 +82,7 @@ $config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
 }
+
 $apiInstance = new com\hydrogen\proton\Api\AnnuitiesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -118,6 +118,8 @@ Class | Method | HTTP request | Description
 *BusinessFinancialManagementApi* | [**customerAnalysis**](docs/Api/BusinessFinancialManagementApi.md#customeranalysis) | **POST** /business/customer_analysis | Customer Analysis
 *BusinessFinancialManagementApi* | [**financialStatementAnalysis**](docs/Api/BusinessFinancialManagementApi.md#financialstatementanalysis) | **POST** /business/financial_statement_analysis | Financial Statement Analysis
 *BusinessFinancialManagementApi* | [**invoiceAnalysis**](docs/Api/BusinessFinancialManagementApi.md#invoiceanalysis) | **POST** /business/invoice_analysis | Invoice Analysis
+*CardsApi* | [**cardLimitCheck**](docs/Api/CardsApi.md#cardlimitcheck) | **POST** /card_limit_check | Card Limit Check
+*CardsApi* | [**cardTransactionAuthorization**](docs/Api/CardsApi.md#cardtransactionauthorization) | **POST** /card_authorization | Card Transaction Authorization
 *FinancialHealthApi* | [**diversificationScore**](docs/Api/FinancialHealthApi.md#diversificationscore) | **POST** /diversification_score | Diversification Score
 *FinancialHealthApi* | [**emergencyFundCalculator**](docs/Api/FinancialHealthApi.md#emergencyfundcalculator) | **POST** /emergency_fund_calculator | Emergency Fund Calculator
 *FinancialHealthApi* | [**financialHealthCheck**](docs/Api/FinancialHealthApi.md#financialhealthcheck) | **POST** /financial_health_check | Financial Health Check
@@ -179,6 +181,8 @@ Class | Method | HTTP request | Description
  - [BusinessInvoiceAnalysisRequest](docs/Model/BusinessInvoiceAnalysisRequest.md)
  - [CalculatorDepositSchedule](docs/Model/CalculatorDepositSchedule.md)
  - [CalculatorDepositSchedule1](docs/Model/CalculatorDepositSchedule1.md)
+ - [CardLimitCheckRequest](docs/Model/CardLimitCheckRequest.md)
+ - [CardTransactionAuthorizationRequest](docs/Model/CardTransactionAuthorizationRequest.md)
  - [CashAnalysisRequest](docs/Model/CashAnalysisRequest.md)
  - [CashFlowAnalysisRequest](docs/Model/CashFlowAnalysisRequest.md)
  - [ChildrenEducationConfig](docs/Model/ChildrenEducationConfig.md)

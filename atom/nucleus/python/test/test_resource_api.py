@@ -29,10 +29,17 @@ class TestResourceApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_create_fx_rate_bulk_using_post(self):
-        """Test case for create_fx_rate_bulk_using_post
+    def test_get_aggregation_account_category_mapping_using_get(self):
+        """Test case for get_aggregation_account_category_mapping_using_get
 
-        Create a bulk fxRate  # noqa: E501
+        Get All Aggregation Account Category mapping  # noqa: E501
+        """
+        pass
+
+    def test_get_aggregation_account_transaction_category_mapping_using_get(self):
+        """Test case for get_aggregation_account_transaction_category_mapping_using_get
+
+        Get All Aggregation Account Transaction Category mapping  # noqa: E501
         """
         pass
 
@@ -75,6 +82,13 @@ class TestResourceApi(unittest.TestCase):
         """Test case for get_currency_exchange_rate_all_using_get
 
         List all fxRates  # noqa: E501
+        """
+        pass
+
+    def test_get_merchants_all_using_get(self):
+        """Test case for get_merchants_all_using_get
+
+        Get all merchants  # noqa: E501
         """
         pass
 

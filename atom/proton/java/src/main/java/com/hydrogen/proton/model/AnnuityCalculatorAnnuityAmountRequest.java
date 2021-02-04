@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.IOException;
@@ -31,13 +30,37 @@ import java.util.UUID;
 /**
  * AnnuityCalculatorAnnuityAmountRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class AnnuityCalculatorAnnuityAmountRequest {
+  @SerializedName("annuity_amount")
+  private Float annuityAmount = 1.0f;
+
+  @SerializedName("aggregation_account_ids")
+  private List<UUID> aggregationAccountIds = null;
+
+  @SerializedName("tax_rate")
+  private Float taxRate = 0.0f;
+
+  @SerializedName("account_ids")
+  private List<UUID> accountIds = null;
+
+  @SerializedName("initial_balance")
+  private Float initialBalance = 0.0f;
+
+  @SerializedName("create_log")
+  private Boolean createLog = false;
+
   @SerializedName("inflation_rate")
   private Float inflationRate = 0.0f;
+
+  @SerializedName("decumulation_horizon")
+  private Integer decumulationHorizon = null;
+
+  @SerializedName("accumulation_horizon")
+  private Integer accumulationHorizon = null;
 
   /**
    * Gets or Sets annuityFrequencyInterval
@@ -95,126 +118,29 @@ public class AnnuityCalculatorAnnuityAmountRequest {
   @SerializedName("annuity_frequency_interval")
   private AnnuityFrequencyIntervalEnum annuityFrequencyInterval = AnnuityFrequencyIntervalEnum.YEAR;
 
-  @SerializedName("deposit_schedule")
-  private AnnuityDepositSchedule depositSchedule = null;
-
   @SerializedName("portfolio_return")
   private Float portfolioReturn = null;
 
-  @SerializedName("create_log")
-  private Boolean createLog = false;
+  @SerializedName("deposit_schedule")
+  private AnnuityDepositSchedule depositSchedule = null;
 
-  @SerializedName("aggregation_account_ids")
-  private List<UUID> aggregationAccountIds = null;
-
-  @SerializedName("initial_balance")
-  private Float initialBalance = 0.0f;
-
-  @SerializedName("decumulation_horizon")
-  private Integer decumulationHorizon = null;
-
-  @SerializedName("tax_rate")
-  private Float taxRate = 0.0f;
-
-  @SerializedName("account_ids")
-  private List<UUID> accountIds = null;
-
-  @SerializedName("annuity_amount")
-  private Float annuityAmount = 1.0f;
-
-  @SerializedName("accumulation_horizon")
-  private Integer accumulationHorizon = null;
-
-  public AnnuityCalculatorAnnuityAmountRequest inflationRate(Float inflationRate) {
-    this.inflationRate = inflationRate;
+  public AnnuityCalculatorAnnuityAmountRequest annuityAmount(Float annuityAmount) {
+    this.annuityAmount = annuityAmount;
     return this;
   }
 
    /**
-   * Get inflationRate
-   * minimum: -1
-   * maximum: 20
-   * @return inflationRate
+   * Get annuityAmount
+   * minimum: 0
+   * @return annuityAmount
   **/
   @ApiModelProperty(value = "")
-  public Float getInflationRate() {
-    return inflationRate;
+  public Float getAnnuityAmount() {
+    return annuityAmount;
   }
 
-  public void setInflationRate(Float inflationRate) {
-    this.inflationRate = inflationRate;
-  }
-
-  public AnnuityCalculatorAnnuityAmountRequest annuityFrequencyInterval(AnnuityFrequencyIntervalEnum annuityFrequencyInterval) {
-    this.annuityFrequencyInterval = annuityFrequencyInterval;
-    return this;
-  }
-
-   /**
-   * Get annuityFrequencyInterval
-   * @return annuityFrequencyInterval
-  **/
-  @ApiModelProperty(value = "")
-  public AnnuityFrequencyIntervalEnum getAnnuityFrequencyInterval() {
-    return annuityFrequencyInterval;
-  }
-
-  public void setAnnuityFrequencyInterval(AnnuityFrequencyIntervalEnum annuityFrequencyInterval) {
-    this.annuityFrequencyInterval = annuityFrequencyInterval;
-  }
-
-  public AnnuityCalculatorAnnuityAmountRequest depositSchedule(AnnuityDepositSchedule depositSchedule) {
-    this.depositSchedule = depositSchedule;
-    return this;
-  }
-
-   /**
-   * Get depositSchedule
-   * @return depositSchedule
-  **/
-  @ApiModelProperty(value = "")
-  public AnnuityDepositSchedule getDepositSchedule() {
-    return depositSchedule;
-  }
-
-  public void setDepositSchedule(AnnuityDepositSchedule depositSchedule) {
-    this.depositSchedule = depositSchedule;
-  }
-
-  public AnnuityCalculatorAnnuityAmountRequest portfolioReturn(Float portfolioReturn) {
-    this.portfolioReturn = portfolioReturn;
-    return this;
-  }
-
-   /**
-   * Get portfolioReturn
-   * @return portfolioReturn
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Float getPortfolioReturn() {
-    return portfolioReturn;
-  }
-
-  public void setPortfolioReturn(Float portfolioReturn) {
-    this.portfolioReturn = portfolioReturn;
-  }
-
-  public AnnuityCalculatorAnnuityAmountRequest createLog(Boolean createLog) {
-    this.createLog = createLog;
-    return this;
-  }
-
-   /**
-   * Get createLog
-   * @return createLog
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isCreateLog() {
-    return createLog;
-  }
-
-  public void setCreateLog(Boolean createLog) {
-    this.createLog = createLog;
+  public void setAnnuityAmount(Float annuityAmount) {
+    this.annuityAmount = annuityAmount;
   }
 
   public AnnuityCalculatorAnnuityAmountRequest aggregationAccountIds(List<UUID> aggregationAccountIds) {
@@ -241,44 +167,6 @@ public class AnnuityCalculatorAnnuityAmountRequest {
 
   public void setAggregationAccountIds(List<UUID> aggregationAccountIds) {
     this.aggregationAccountIds = aggregationAccountIds;
-  }
-
-  public AnnuityCalculatorAnnuityAmountRequest initialBalance(Float initialBalance) {
-    this.initialBalance = initialBalance;
-    return this;
-  }
-
-   /**
-   * Get initialBalance
-   * minimum: 0
-   * @return initialBalance
-  **/
-  @ApiModelProperty(value = "")
-  public Float getInitialBalance() {
-    return initialBalance;
-  }
-
-  public void setInitialBalance(Float initialBalance) {
-    this.initialBalance = initialBalance;
-  }
-
-  public AnnuityCalculatorAnnuityAmountRequest decumulationHorizon(Integer decumulationHorizon) {
-    this.decumulationHorizon = decumulationHorizon;
-    return this;
-  }
-
-   /**
-   * Get decumulationHorizon
-   * minimum: 1
-   * @return decumulationHorizon
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getDecumulationHorizon() {
-    return decumulationHorizon;
-  }
-
-  public void setDecumulationHorizon(Integer decumulationHorizon) {
-    this.decumulationHorizon = decumulationHorizon;
   }
 
   public AnnuityCalculatorAnnuityAmountRequest taxRate(Float taxRate) {
@@ -327,23 +215,80 @@ public class AnnuityCalculatorAnnuityAmountRequest {
     this.accountIds = accountIds;
   }
 
-  public AnnuityCalculatorAnnuityAmountRequest annuityAmount(Float annuityAmount) {
-    this.annuityAmount = annuityAmount;
+  public AnnuityCalculatorAnnuityAmountRequest initialBalance(Float initialBalance) {
+    this.initialBalance = initialBalance;
     return this;
   }
 
    /**
-   * Get annuityAmount
+   * Get initialBalance
    * minimum: 0
-   * @return annuityAmount
+   * @return initialBalance
   **/
   @ApiModelProperty(value = "")
-  public Float getAnnuityAmount() {
-    return annuityAmount;
+  public Float getInitialBalance() {
+    return initialBalance;
   }
 
-  public void setAnnuityAmount(Float annuityAmount) {
-    this.annuityAmount = annuityAmount;
+  public void setInitialBalance(Float initialBalance) {
+    this.initialBalance = initialBalance;
+  }
+
+  public AnnuityCalculatorAnnuityAmountRequest createLog(Boolean createLog) {
+    this.createLog = createLog;
+    return this;
+  }
+
+   /**
+   * Get createLog
+   * @return createLog
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isCreateLog() {
+    return createLog;
+  }
+
+  public void setCreateLog(Boolean createLog) {
+    this.createLog = createLog;
+  }
+
+  public AnnuityCalculatorAnnuityAmountRequest inflationRate(Float inflationRate) {
+    this.inflationRate = inflationRate;
+    return this;
+  }
+
+   /**
+   * Get inflationRate
+   * minimum: -1
+   * maximum: 20
+   * @return inflationRate
+  **/
+  @ApiModelProperty(value = "")
+  public Float getInflationRate() {
+    return inflationRate;
+  }
+
+  public void setInflationRate(Float inflationRate) {
+    this.inflationRate = inflationRate;
+  }
+
+  public AnnuityCalculatorAnnuityAmountRequest decumulationHorizon(Integer decumulationHorizon) {
+    this.decumulationHorizon = decumulationHorizon;
+    return this;
+  }
+
+   /**
+   * Get decumulationHorizon
+   * minimum: 1
+   * @return decumulationHorizon
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getDecumulationHorizon() {
+    return decumulationHorizon;
+  }
+
+  public void setDecumulationHorizon(Integer decumulationHorizon) {
+    this.decumulationHorizon = decumulationHorizon;
   }
 
   public AnnuityCalculatorAnnuityAmountRequest accumulationHorizon(Integer accumulationHorizon) {
@@ -365,6 +310,60 @@ public class AnnuityCalculatorAnnuityAmountRequest {
     this.accumulationHorizon = accumulationHorizon;
   }
 
+  public AnnuityCalculatorAnnuityAmountRequest annuityFrequencyInterval(AnnuityFrequencyIntervalEnum annuityFrequencyInterval) {
+    this.annuityFrequencyInterval = annuityFrequencyInterval;
+    return this;
+  }
+
+   /**
+   * Get annuityFrequencyInterval
+   * @return annuityFrequencyInterval
+  **/
+  @ApiModelProperty(value = "")
+  public AnnuityFrequencyIntervalEnum getAnnuityFrequencyInterval() {
+    return annuityFrequencyInterval;
+  }
+
+  public void setAnnuityFrequencyInterval(AnnuityFrequencyIntervalEnum annuityFrequencyInterval) {
+    this.annuityFrequencyInterval = annuityFrequencyInterval;
+  }
+
+  public AnnuityCalculatorAnnuityAmountRequest portfolioReturn(Float portfolioReturn) {
+    this.portfolioReturn = portfolioReturn;
+    return this;
+  }
+
+   /**
+   * Get portfolioReturn
+   * @return portfolioReturn
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Float getPortfolioReturn() {
+    return portfolioReturn;
+  }
+
+  public void setPortfolioReturn(Float portfolioReturn) {
+    this.portfolioReturn = portfolioReturn;
+  }
+
+  public AnnuityCalculatorAnnuityAmountRequest depositSchedule(AnnuityDepositSchedule depositSchedule) {
+    this.depositSchedule = depositSchedule;
+    return this;
+  }
+
+   /**
+   * Get depositSchedule
+   * @return depositSchedule
+  **/
+  @ApiModelProperty(value = "")
+  public AnnuityDepositSchedule getDepositSchedule() {
+    return depositSchedule;
+  }
+
+  public void setDepositSchedule(AnnuityDepositSchedule depositSchedule) {
+    this.depositSchedule = depositSchedule;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -375,23 +374,23 @@ public class AnnuityCalculatorAnnuityAmountRequest {
       return false;
     }
     AnnuityCalculatorAnnuityAmountRequest annuityCalculatorAnnuityAmountRequest = (AnnuityCalculatorAnnuityAmountRequest) o;
-    return Objects.equals(this.inflationRate, annuityCalculatorAnnuityAmountRequest.inflationRate) &&
-        Objects.equals(this.annuityFrequencyInterval, annuityCalculatorAnnuityAmountRequest.annuityFrequencyInterval) &&
-        Objects.equals(this.depositSchedule, annuityCalculatorAnnuityAmountRequest.depositSchedule) &&
-        Objects.equals(this.portfolioReturn, annuityCalculatorAnnuityAmountRequest.portfolioReturn) &&
-        Objects.equals(this.createLog, annuityCalculatorAnnuityAmountRequest.createLog) &&
+    return Objects.equals(this.annuityAmount, annuityCalculatorAnnuityAmountRequest.annuityAmount) &&
         Objects.equals(this.aggregationAccountIds, annuityCalculatorAnnuityAmountRequest.aggregationAccountIds) &&
-        Objects.equals(this.initialBalance, annuityCalculatorAnnuityAmountRequest.initialBalance) &&
-        Objects.equals(this.decumulationHorizon, annuityCalculatorAnnuityAmountRequest.decumulationHorizon) &&
         Objects.equals(this.taxRate, annuityCalculatorAnnuityAmountRequest.taxRate) &&
         Objects.equals(this.accountIds, annuityCalculatorAnnuityAmountRequest.accountIds) &&
-        Objects.equals(this.annuityAmount, annuityCalculatorAnnuityAmountRequest.annuityAmount) &&
-        Objects.equals(this.accumulationHorizon, annuityCalculatorAnnuityAmountRequest.accumulationHorizon);
+        Objects.equals(this.initialBalance, annuityCalculatorAnnuityAmountRequest.initialBalance) &&
+        Objects.equals(this.createLog, annuityCalculatorAnnuityAmountRequest.createLog) &&
+        Objects.equals(this.inflationRate, annuityCalculatorAnnuityAmountRequest.inflationRate) &&
+        Objects.equals(this.decumulationHorizon, annuityCalculatorAnnuityAmountRequest.decumulationHorizon) &&
+        Objects.equals(this.accumulationHorizon, annuityCalculatorAnnuityAmountRequest.accumulationHorizon) &&
+        Objects.equals(this.annuityFrequencyInterval, annuityCalculatorAnnuityAmountRequest.annuityFrequencyInterval) &&
+        Objects.equals(this.portfolioReturn, annuityCalculatorAnnuityAmountRequest.portfolioReturn) &&
+        Objects.equals(this.depositSchedule, annuityCalculatorAnnuityAmountRequest.depositSchedule);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inflationRate, annuityFrequencyInterval, depositSchedule, portfolioReturn, createLog, aggregationAccountIds, initialBalance, decumulationHorizon, taxRate, accountIds, annuityAmount, accumulationHorizon);
+    return Objects.hash(annuityAmount, aggregationAccountIds, taxRate, accountIds, initialBalance, createLog, inflationRate, decumulationHorizon, accumulationHorizon, annuityFrequencyInterval, portfolioReturn, depositSchedule);
   }
 
 
@@ -400,18 +399,18 @@ public class AnnuityCalculatorAnnuityAmountRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnnuityCalculatorAnnuityAmountRequest {\n");
     
-    sb.append("    inflationRate: ").append(toIndentedString(inflationRate)).append("\n");
-    sb.append("    annuityFrequencyInterval: ").append(toIndentedString(annuityFrequencyInterval)).append("\n");
-    sb.append("    depositSchedule: ").append(toIndentedString(depositSchedule)).append("\n");
-    sb.append("    portfolioReturn: ").append(toIndentedString(portfolioReturn)).append("\n");
-    sb.append("    createLog: ").append(toIndentedString(createLog)).append("\n");
+    sb.append("    annuityAmount: ").append(toIndentedString(annuityAmount)).append("\n");
     sb.append("    aggregationAccountIds: ").append(toIndentedString(aggregationAccountIds)).append("\n");
-    sb.append("    initialBalance: ").append(toIndentedString(initialBalance)).append("\n");
-    sb.append("    decumulationHorizon: ").append(toIndentedString(decumulationHorizon)).append("\n");
     sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
     sb.append("    accountIds: ").append(toIndentedString(accountIds)).append("\n");
-    sb.append("    annuityAmount: ").append(toIndentedString(annuityAmount)).append("\n");
+    sb.append("    initialBalance: ").append(toIndentedString(initialBalance)).append("\n");
+    sb.append("    createLog: ").append(toIndentedString(createLog)).append("\n");
+    sb.append("    inflationRate: ").append(toIndentedString(inflationRate)).append("\n");
+    sb.append("    decumulationHorizon: ").append(toIndentedString(decumulationHorizon)).append("\n");
     sb.append("    accumulationHorizon: ").append(toIndentedString(accumulationHorizon)).append("\n");
+    sb.append("    annuityFrequencyInterval: ").append(toIndentedString(annuityFrequencyInterval)).append("\n");
+    sb.append("    portfolioReturn: ").append(toIndentedString(portfolioReturn)).append("\n");
+    sb.append("    depositSchedule: ").append(toIndentedString(depositSchedule)).append("\n");
     sb.append("}");
     return sb.toString();
   }

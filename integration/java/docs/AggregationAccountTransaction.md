@@ -13,9 +13,12 @@ Name | Type | Description | Notes
 **investment** | [**Investment**](Investment.md) |  |  [optional]
 **isActive** | **Boolean** | isActive |  [optional]
 **isExcludedAnalysis** | **Boolean** | is_excluded_analysis |  [optional]
+**isFee** | **Boolean** |  |  [optional]
 **isRecurring** | **Boolean** |  |  [optional]
+**isTransfer** | **Boolean** |  |  [optional]
 **metadata** | **Map&lt;String, String&gt;** |  |  [optional]
 **secondaryId** | **String** |  |  [optional]
+**status** | **String** | status |  [optional]
 **transactionDate** | [**OffsetDateTime**](OffsetDateTime.md) | transactionDate | 
 **updateDate** | [**OffsetDateTime**](OffsetDateTime.md) | updateDate |  [optional]
 

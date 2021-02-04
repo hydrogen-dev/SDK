@@ -3,19 +3,19 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**customerId** | **String** |  | [optional] 
+**endDate** | **Date** |  | [optional] 
 **overduePeriods** | [**[Periods]**](Periods.md) |  | [optional] 
-**showOutstandingInvoices** | **Boolean** |  | [optional] [default to false]
-**showHistory** | **Boolean** |  | [optional] [default to false]
 **clientId** | **String** |  | [optional] 
-**futureDuePeriods** | [**[Periods]**](Periods.md) |  | [optional] 
+**responseLimit** | **Number** |  | [optional] [default to 10]
 **currencyConversion** | **String** |  | [optional] 
 **historyFrequencyInterval** | **String** |  | [optional] [default to 'month']
-**endDate** | **Date** |  | [optional] 
-**currencyCode** | **String** |  | [optional] 
 **startDate** | **Date** |  | [optional] 
-**responseLimit** | **Number** |  | [optional] [default to 10]
+**showHistory** | **Boolean** |  | [optional] [default to false]
+**currencyCode** | **String** |  | [optional] 
 **invoiceIds** | **[String]** |  | [optional] 
-**customerId** | **String** |  | [optional] 
+**showOutstandingInvoices** | **Boolean** |  | [optional] [default to false]
+**futureDuePeriods** | [**[Periods]**](Periods.md) |  | [optional] 
 
 
 <a name="HistoryFrequencyIntervalEnum"></a>

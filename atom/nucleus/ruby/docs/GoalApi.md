@@ -743,7 +743,7 @@ end
 
 api_instance = NucleusApi::GoalApi.new
 
-goal_track = NucleusApi::GoalTrack.new # GoalTrack | goal_track
+goal_track = nil # Object | goal_track
 
 goal_track_id = 'goal_track_id_example' # String | UUID goal_track_id
 
@@ -761,7 +761,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goal_track** | [**GoalTrack**](GoalTrack.md)| goal_track | 
+ **goal_track** | **Object**| goal_track | 
  **goal_track_id** | [**String**](.md)| UUID goal_track_id | 
 
 ### Return type
@@ -803,7 +803,7 @@ end
 
 api_instance = NucleusApi::GoalApi.new
 
-goal = NucleusApi::Goal.new # Goal | goal
+goal = nil # Object | goal
 
 goal_id = 'goal_id_example' # String | UUID goal_id
 
@@ -821,7 +821,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goal** | [**Goal**](Goal.md)| goal | 
+ **goal** | **Object**| goal | 
  **goal_id** | [**String**](.md)| UUID goal_id | 
 
 ### Return type

@@ -51,7 +51,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_exclusion_request = nucleus_api.SecurityExclusion() # SecurityExclusion | securityExclusionRequest
@@ -115,7 +115,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_price_request = nucleus_api.SecurityPrice() # SecurityPrice | securityPriceRequest
@@ -179,7 +179,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 securities_info_request = nucleus_api.Security() # Security | securitiesInfoRequest
@@ -243,7 +243,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_exclusion_id = 'security_exclusion_id_example' # str | UUID security_exclusion_id
@@ -306,7 +306,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_price_id = 'security_price_id_example' # str | UUID security_price_id
@@ -369,7 +369,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_id = 'security_id_example' # str | UUID security_id
@@ -432,7 +432,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -504,7 +504,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -576,7 +576,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_exclusion_id = 'security_exclusion_id_example' # str | UUID security_exclusion_id
@@ -640,7 +640,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -714,7 +714,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_price_id = 'security_price_id_example' # str | UUID security_price_id
@@ -780,7 +780,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
 security_id = 'security_id_example' # str | UUID security_id
@@ -844,10 +844,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
-security_exclusion = nucleus_api.SecurityExclusion() # SecurityExclusion | security_exclusion
+security_exclusion = NULL # object | security_exclusion
 security_exclusion_id = 'security_exclusion_id_example' # str | UUID security_exclusion_id
 
 try:
@@ -862,7 +862,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **security_exclusion** | [**SecurityExclusion**](SecurityExclusion.md)| security_exclusion | 
+ **security_exclusion** | **object**| security_exclusion | 
  **security_exclusion_id** | [**str**](.md)| UUID security_exclusion_id | 
 
 ### Return type
@@ -910,10 +910,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
-security_price = nucleus_api.SecurityPrice() # SecurityPrice | security_price
+security_price = NULL # object | security_price
 security_price_id = 'security_price_id_example' # str | UUID security_price_id
 
 try:
@@ -928,7 +928,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **security_price** | [**SecurityPrice**](SecurityPrice.md)| security_price | 
+ **security_price** | **object**| security_price | 
  **security_price_id** | [**str**](.md)| UUID security_price_id | 
 
 ### Return type
@@ -976,10 +976,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.SecuritiesApi(nucleus_api.ApiClient(configuration))
-security = nucleus_api.Security() # Security | security
+security = NULL # object | security
 security_id = 'security_id_example' # str | UUID security_id
 
 try:
@@ -994,7 +994,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **security** | [**Security**](Security.md)| security | 
+ **security** | **object**| security | 
  **security_id** | [**str**](.md)| UUID security_id | 
 
 ### Return type

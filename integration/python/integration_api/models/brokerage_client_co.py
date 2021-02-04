@@ -31,47 +31,26 @@ class BrokerageClientCO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'nucleus_account_id': 'str',
-        'nucleus_client_id': 'str'
+        'nucleus_client_id': 'str',
+        'nucleus_document_ids': 'list[str]'
     }
 
     attribute_map = {
-        'nucleus_account_id': 'nucleus_account_id',
-        'nucleus_client_id': 'nucleus_client_id'
+        'nucleus_client_id': 'nucleus_client_id',
+        'nucleus_document_ids': 'nucleus_document_ids'
     }
 
-    def __init__(self, nucleus_account_id=None, nucleus_client_id=None):  # noqa: E501
+    def __init__(self, nucleus_client_id=None, nucleus_document_ids=None):  # noqa: E501
         """BrokerageClientCO - a model defined in Swagger"""  # noqa: E501
 
-        self._nucleus_account_id = None
         self._nucleus_client_id = None
+        self._nucleus_document_ids = None
         self.discriminator = None
 
-        if nucleus_account_id is not None:
-            self.nucleus_account_id = nucleus_account_id
         if nucleus_client_id is not None:
             self.nucleus_client_id = nucleus_client_id
-
-    @property
-    def nucleus_account_id(self):
-        """Gets the nucleus_account_id of this BrokerageClientCO.  # noqa: E501
-
-
-        :return: The nucleus_account_id of this BrokerageClientCO.  # noqa: E501
-        :rtype: str
-        """
-        return self._nucleus_account_id
-
-    @nucleus_account_id.setter
-    def nucleus_account_id(self, nucleus_account_id):
-        """Sets the nucleus_account_id of this BrokerageClientCO.
-
-
-        :param nucleus_account_id: The nucleus_account_id of this BrokerageClientCO.  # noqa: E501
-        :type: str
-        """
-
-        self._nucleus_account_id = nucleus_account_id
+        if nucleus_document_ids is not None:
+            self.nucleus_document_ids = nucleus_document_ids
 
     @property
     def nucleus_client_id(self):
@@ -93,6 +72,27 @@ class BrokerageClientCO(object):
         """
 
         self._nucleus_client_id = nucleus_client_id
+
+    @property
+    def nucleus_document_ids(self):
+        """Gets the nucleus_document_ids of this BrokerageClientCO.  # noqa: E501
+
+
+        :return: The nucleus_document_ids of this BrokerageClientCO.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._nucleus_document_ids
+
+    @nucleus_document_ids.setter
+    def nucleus_document_ids(self, nucleus_document_ids):
+        """Sets the nucleus_document_ids of this BrokerageClientCO.
+
+
+        :param nucleus_document_ids: The nucleus_document_ids of this BrokerageClientCO.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._nucleus_document_ids = nucleus_document_ids
 
     def to_dict(self):
         """Returns the model properties as a dict"""

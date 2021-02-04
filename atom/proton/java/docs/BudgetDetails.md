@@ -4,16 +4,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**aggregationAccounts** | [**List&lt;BudgetAggregationAccount&gt;**](BudgetAggregationAccount.md) |  |  [optional]
-**totalValue** | **Float** |  |  [optional]
-**clientId** | [**UUID**](UUID.md) |  |  [optional]
-**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**budget** | [**List&lt;BudgetComponent&gt;**](BudgetComponent.md) |  |  [optional]
+**frequencyUnit** | [**FrequencyUnitEnum**](#FrequencyUnitEnum) |  | 
 **endDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**clientId** | [**UUID**](UUID.md) |  |  [optional]
+**budget** | [**List&lt;BudgetComponent&gt;**](BudgetComponent.md) |  |  [optional]
+**totalValue** | **Float** |  |  [optional]
+**accountId** | [**UUID**](UUID.md) |  |  [optional]
+**aggregationAccounts** | [**List&lt;BudgetAggregationAccount&gt;**](BudgetAggregationAccount.md) |  |  [optional]
 **currencyCode** | **String** |  |  [optional]
 **frequency** | **Integer** |  |  [optional]
-**accountId** | [**UUID**](UUID.md) |  |  [optional]
-**frequencyUnit** | [**FrequencyUnitEnum**](#FrequencyUnitEnum) |  | 
+**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
 
 
 <a name="FrequencyUnitEnum"></a>

@@ -5,17 +5,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **portfolioTickers** | **List&lt;String&gt;** |  |  [optional]
-**createLog** | **Boolean** |  |  [optional]
-**aggregationAccountId** | [**UUID**](UUID.md) |  |  [optional]
-**allocationId** | [**UUID**](UUID.md) |  |  [optional]
-**modelId** | [**UUID**](UUID.md) |  |  [optional]
-**portfolioWeights** | **List&lt;Float&gt;** |  |  [optional]
 **endDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**useProxyData** | **Boolean** |  |  [optional]
-**accountId** | [**UUID**](UUID.md) |  |  [optional]
-**marketDataSource** | [**MarketDataSourceEnum**](#MarketDataSourceEnum) |  |  [optional]
 **portfolioId** | [**UUID**](UUID.md) |  |  [optional]
+**marketDataSource** | [**MarketDataSourceEnum**](#MarketDataSourceEnum) |  |  [optional]
+**modelId** | [**UUID**](UUID.md) |  |  [optional]
+**createLog** | **Boolean** |  |  [optional]
+**allocationId** | [**UUID**](UUID.md) |  |  [optional]
+**useProxyData** | **Boolean** |  |  [optional]
+**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**accountId** | [**UUID**](UUID.md) |  |  [optional]
+**aggregationAccountId** | [**UUID**](UUID.md) |  |  [optional]
+**portfolioWeights** | **List&lt;Float&gt;** |  |  [optional]
 
 
 <a name="MarketDataSourceEnum"></a>

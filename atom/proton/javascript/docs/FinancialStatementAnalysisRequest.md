@@ -3,32 +3,21 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**periodQuarter** | **Number** |  | [optional] 
-**showHistory** | **Boolean** |  | [optional] [default to false]
-**clientId** | **String** |  | [optional] 
-**currencyConversion** | **String** |  | [optional] 
-**accountingMethod** | **String** |  | 
 **periodLength** | **String** |  | [optional] [default to 'quarterly']
-**periodType** | **String** |  | [optional] 
-**periodYear** | **Number** |  | [optional] 
-**endDate** | **Date** |  | [optional] 
-**currencyCode** | **String** |  | [optional] 
-**statNames** | **[String]** |  | [optional] 
-**startDate** | **Date** |  | [optional] 
-**statementType** | **String** |  | [optional] [default to 'all']
-**historyFrequencyInterval** | **String** |  | [optional] [default to 'month']
 **periodMonth** | **Number** |  | [optional] 
-
-
-<a name="AccountingMethodEnum"></a>
-## Enum: AccountingMethodEnum
-
-
-* `accrual` (value: `"accrual"`)
-
-* `cash` (value: `"cash"`)
-
-
+**endDate** | **Date** |  | [optional] 
+**clientId** | **String** |  | [optional] 
+**accountingMethod** | **String** |  | 
+**periodYear** | **Number** |  | [optional] 
+**currencyConversion** | **String** |  | [optional] 
+**historyFrequencyInterval** | **String** |  | [optional] [default to 'month']
+**startDate** | **Date** |  | [optional] 
+**periodType** | **String** |  | [optional] 
+**currencyCode** | **String** |  | [optional] 
+**showHistory** | **Boolean** |  | [optional] [default to false]
+**statNames** | **[String]** |  | [optional] 
+**periodQuarter** | **Number** |  | [optional] 
+**statementType** | **String** |  | [optional] [default to 'all']
 
 
 <a name="PeriodLengthEnum"></a>
@@ -46,6 +35,34 @@ Name | Type | Description | Notes
 * `qtd` (value: `"qtd"`)
 
 * `mtd` (value: `"mtd"`)
+
+
+
+
+<a name="AccountingMethodEnum"></a>
+## Enum: AccountingMethodEnum
+
+
+* `accrual` (value: `"accrual"`)
+
+* `cash` (value: `"cash"`)
+
+
+
+
+<a name="HistoryFrequencyIntervalEnum"></a>
+## Enum: HistoryFrequencyIntervalEnum
+
+
+* `day` (value: `"day"`)
+
+* `week` (value: `"week"`)
+
+* `month` (value: `"month"`)
+
+* `quarter` (value: `"quarter"`)
+
+* `year` (value: `"year"`)
 
 
 
@@ -103,23 +120,6 @@ Name | Type | Description | Notes
 * `balanceSheet` (value: `"balance_sheet"`)
 
 * `all` (value: `"all"`)
-
-
-
-
-<a name="HistoryFrequencyIntervalEnum"></a>
-## Enum: HistoryFrequencyIntervalEnum
-
-
-* `day` (value: `"day"`)
-
-* `week` (value: `"week"`)
-
-* `month` (value: `"month"`)
-
-* `quarter` (value: `"quarter"`)
-
-* `year` (value: `"year"`)
 
 
 

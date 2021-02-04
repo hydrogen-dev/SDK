@@ -62,7 +62,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 bank_link_info_request = nucleus_api.BankLink() # BankLink | bankLinkInfoRequest
@@ -126,7 +126,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 daily_deposit_request = nucleus_api.DailyDeposit() # DailyDeposit | dailyDepositRequest
@@ -190,7 +190,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 funding_request = nucleus_api.Funding() # Funding | fundingRequest
@@ -254,7 +254,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 external_account_transfer_request = nucleus_api.ExternalAccountTransfer() # ExternalAccountTransfer | externalAccountTransferRequest
@@ -318,7 +318,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 daily_withdrawal_request = nucleus_api.DailyWithdrawal() # DailyWithdrawal | dailyWithdrawalRequest
@@ -382,7 +382,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 bank_link_id = 'bank_link_id_example' # str | UUID bank_link_id
@@ -445,7 +445,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 deposit_id = 'deposit_id_example' # str | UUID deposit_id
@@ -508,7 +508,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 funding_id = 'funding_id_example' # str | UUID funding_id
@@ -571,7 +571,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 transfer_id = 'transfer_id_example' # str | UUID external_account_transfer_id
@@ -634,7 +634,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 withdrawal_id = 'withdrawal_id_example' # str | UUID withdrawal_id
@@ -697,7 +697,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -771,7 +771,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 bank_link_id = 'bank_link_id_example' # str | UUID bank_link_id
@@ -837,7 +837,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -911,7 +911,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 deposit_id = 'deposit_id_example' # str | UUID deposit_id
@@ -977,7 +977,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -1051,7 +1051,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 funding_id = 'funding_id_example' # str | UUID funding_id
@@ -1117,7 +1117,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -1191,7 +1191,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 transfer_id = 'transfer_id_example' # str | UUID external_account_transfer_id
@@ -1257,7 +1257,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -1331,7 +1331,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
 withdrawal_id = 'withdrawal_id_example' # str | UUID withdrawal_id
@@ -1397,10 +1397,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
-bank_link_list = [nucleus_api.BankLink()] # list[BankLink] | bankLinkList
+bank_link_list = [nucleus_api.list[object]()] # list[object] | bankLinkList
 
 try:
     # Update list of bank link
@@ -1414,7 +1414,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bank_link_list** | [**list[BankLink]**](BankLink.md)| bankLinkList | 
+ **bank_link_list** | **list[object]**| bankLinkList | 
 
 ### Return type
 
@@ -1461,10 +1461,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
-bank_link = nucleus_api.BankLink() # BankLink | bank_link
+bank_link = NULL # object | bank_link
 bank_link_id = 'bank_link_id_example' # str | UUID bank_link_id
 
 try:
@@ -1479,7 +1479,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bank_link** | [**BankLink**](BankLink.md)| bank_link | 
+ **bank_link** | **object**| bank_link | 
  **bank_link_id** | [**str**](.md)| UUID bank_link_id | 
 
 ### Return type
@@ -1527,10 +1527,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
-deposit = nucleus_api.DailyDeposit() # DailyDeposit | deposit
+deposit = NULL # object | deposit
 deposit_id = 'deposit_id_example' # str | UUID deposit_id
 
 try:
@@ -1545,7 +1545,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **deposit** | [**DailyDeposit**](DailyDeposit.md)| deposit | 
+ **deposit** | **object**| deposit | 
  **deposit_id** | [**str**](.md)| UUID deposit_id | 
 
 ### Return type
@@ -1593,10 +1593,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
-funding = nucleus_api.Funding() # Funding | funding
+funding = NULL # object | funding
 funding_id = 'funding_id_example' # str | UUID funding_id
 
 try:
@@ -1611,7 +1611,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **funding** | [**Funding**](Funding.md)| funding | 
+ **funding** | **object**| funding | 
  **funding_id** | [**str**](.md)| UUID funding_id | 
 
 ### Return type
@@ -1659,10 +1659,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
-transfer = nucleus_api.ExternalAccountTransfer() # ExternalAccountTransfer | transfer
+transfer = NULL # object | transfer
 transfer_id = 'transfer_id_example' # str | UUID external_account_transfer_id
 
 try:
@@ -1677,7 +1677,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transfer** | [**ExternalAccountTransfer**](ExternalAccountTransfer.md)| transfer | 
+ **transfer** | **object**| transfer | 
  **transfer_id** | [**str**](.md)| UUID external_account_transfer_id | 
 
 ### Return type
@@ -1725,10 +1725,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.FundingApi(nucleus_api.ApiClient(configuration))
-withdrawal = nucleus_api.DailyWithdrawal() # DailyWithdrawal | withdrawal
+withdrawal = NULL # object | withdrawal
 withdrawal_id = 'withdrawal_id_example' # str | UUID withdrawal_id
 
 try:
@@ -1743,7 +1743,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **withdrawal** | [**DailyWithdrawal**](DailyWithdrawal.md)| withdrawal | 
+ **withdrawal** | **object**| withdrawal | 
  **withdrawal_id** | [**str**](.md)| UUID withdrawal_id | 
 
 ### Return type

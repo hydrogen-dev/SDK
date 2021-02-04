@@ -4,13 +4,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **asset_class** | **string** | Security asset class | [optional] 
-**broker** | **string** | Security broker | [optional] 
+**brokers** | [**\com\hydrogen\nucleus\Model\Brokers[]**](Brokers.md) | brokers | [optional] 
 **category** | **string** | Security category | [optional] 
 **create_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **currency_code** | **string** | currency_code | [optional] 
 **cusip** | **string** | cusip | [optional] 
+**description** | **string** | description | [optional] 
 **exchange** | **string** | Security exchange | [optional] 
 **id** | **string** |  | [optional] 
+**image** | **string** | image | [optional] 
 **industry** | **string** | Security industry | [optional] 
 **is_active** | **bool** | Security is active | [optional] 
 **isin** | **string** | isin | [optional] 

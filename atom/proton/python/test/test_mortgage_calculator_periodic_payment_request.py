@@ -32,7 +32,7 @@ class TestMortgageCalculatorPeriodicPaymentRequest(unittest.TestCase):
     def testMortgageCalculatorPeriodicPaymentRequest(self):
         """Test MortgageCalculatorPeriodicPaymentRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.mortgage_calculator_periodic_payment_request.MortgageCalculatorPeriodicPaymentRequest()  # noqa: E501
+        # model = proton_api.models.mortgage_calculator_periodic_payment_request.MortgageCalculatorPeriodicPaymentRequest()  # noqa: E501
         pass
 
 

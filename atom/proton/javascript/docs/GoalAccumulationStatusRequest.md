@@ -3,27 +3,38 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**goalId** | **String** |  | [optional] 
-**currInv** | **Number** |  | [optional] 
-**n** | **Number** |  | [optional] [default to 1000]
-**horizonFrequency** | **String** |  | [optional] [default to 'year']
-**clientId** | **String** |  | [optional] 
-**removeOutliers** | **Boolean** |  | [optional] [default to true]
-**goalConfig** | [**GoalConfig**](GoalConfig.md) |  | [optional] 
-**confTgt** | **Number** |  | [optional] [default to 0.9]
-**pRet** | **[Number]** |  | 
-**horizon** | **Number** |  | [optional] 
 **threshType** | **String** |  | [optional] [default to 'perc']
-**thresh** | **Number** |  | [optional] 
-**depositConfig** | [**[AccumulationGoalDepositConfig]**](AccumulationGoalDepositConfig.md) |  | [optional] 
-**recommendationConfig** | [**RecommendationConfig**](RecommendationConfig.md) |  | [optional] 
+**goalId** | **String** |  | [optional] 
+**clientId** | **String** |  | [optional] 
+**confTgt** | **Number** |  | [optional] [default to 0.9]
+**removeOutliers** | **Boolean** |  | [optional] [default to true]
+**pRet** | **[Number]** |  | 
 **compoundingRate** | **Number** |  | [optional] [default to 0.0]
-**withdrawalTax** | **Number** |  | [optional] [default to 0.0]
-**tradingDaysPerYear** | **Number** |  | [optional] [default to 252]
 **adjustForCompounding** | **Boolean** |  | [optional] [default to false]
-**pRisk** | **[Number]** |  | 
+**depositConfig** | [**[AccumulationGoalDepositConfig]**](AccumulationGoalDepositConfig.md) |  | [optional] 
+**thresh** | **Number** |  | [optional] 
+**horizonFrequency** | **String** |  | [optional] [default to 'year']
+**recommendationConfig** | [**RecommendationConfig**](RecommendationConfig.md) |  | [optional] 
 **createLog** | **Boolean** |  | [optional] [default to false]
+**withdrawalTax** | **Number** |  | [optional] [default to 0.0]
+**goalConfig** | [**GoalConfig**](GoalConfig.md) |  | [optional] 
+**tradingDaysPerYear** | **Number** |  | [optional] [default to 252]
+**n** | **Number** |  | [optional] [default to 1000]
+**pRisk** | **[Number]** |  | 
+**horizon** | **Number** |  | [optional] 
 **recommendType** | **String** |  | [optional] [default to 'horizon']
+**currInv** | **Number** |  | [optional] 
+
+
+<a name="ThreshTypeEnum"></a>
+## Enum: ThreshTypeEnum
+
+
+* `amnt` (value: `"amnt"`)
+
+* `perc` (value: `"perc"`)
+
+
 
 
 <a name="HorizonFrequencyEnum"></a>
@@ -43,17 +54,6 @@ Name | Type | Description | Notes
 * `week` (value: `"week"`)
 
 * `day` (value: `"day"`)
-
-
-
-
-<a name="ThreshTypeEnum"></a>
-## Enum: ThreshTypeEnum
-
-
-* `amnt` (value: `"amnt"`)
-
-* `perc` (value: `"perc"`)
 
 
 

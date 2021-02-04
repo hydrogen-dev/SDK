@@ -48,7 +48,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CardApi(nucleus_api.ApiClient(configuration))
 card_program_request = nucleus_api.CardProgram() # CardProgram | cardProgramRequest
@@ -112,7 +112,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CardApi(nucleus_api.ApiClient(configuration))
 card_request = nucleus_api.Card() # Card | cardRequest
@@ -176,7 +176,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CardApi(nucleus_api.ApiClient(configuration))
 card_program_id = 'card_program_id_example' # str | UUID card_program_id
@@ -239,7 +239,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CardApi(nucleus_api.ApiClient(configuration))
 card_id = 'card_id_example' # str | UUID card_id
@@ -302,7 +302,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CardApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -374,7 +374,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CardApi(nucleus_api.ApiClient(configuration))
 card_id = 'card_id_example' # str | Card Id
@@ -448,7 +448,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CardApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -520,7 +520,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CardApi(nucleus_api.ApiClient(configuration))
 card_program_id = 'card_program_id_example' # str | UUID card_program_id
@@ -584,7 +584,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CardApi(nucleus_api.ApiClient(configuration))
 card_id = 'card_id_example' # str | UUID card_id
@@ -662,7 +662,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CardApi(nucleus_api.ApiClient(configuration))
 card_id = 'card_id_example' # str | UUID card_id
@@ -726,10 +726,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CardApi(nucleus_api.ApiClient(configuration))
-card_program = nucleus_api.CardProgram() # CardProgram | card_program
+card_program = NULL # object | card_program
 card_program_id = 'card_program_id_example' # str | UUID card_program_id
 
 try:
@@ -744,7 +744,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **card_program** | [**CardProgram**](CardProgram.md)| card_program | 
+ **card_program** | **object**| card_program | 
  **card_program_id** | [**str**](.md)| UUID card_program_id | 
 
 ### Return type
@@ -792,10 +792,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.CardApi(nucleus_api.ApiClient(configuration))
-card = nucleus_api.Card() # Card | card
+card = NULL # object | card
 card_id = 'card_id_example' # str | UUID card_id
 
 try:
@@ -810,7 +810,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **card** | [**Card**](Card.md)| card | 
+ **card** | **object**| card | 
  **card_id** | [**str**](.md)| UUID card_id | 
 
 ### Return type

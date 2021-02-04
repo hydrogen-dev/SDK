@@ -31,88 +31,46 @@ class FeeAnalysisRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'client_id': 'str',
-        'currency_conversion': 'str',
         'aggregation_account_ids': 'list[str]',
         'end_date': 'date',
-        'currency_code': 'str',
-        'start_date': 'date'
+        'client_id': 'str',
+        'currency_conversion': 'str',
+        'start_date': 'date',
+        'currency_code': 'str'
     }
 
     attribute_map = {
-        'client_id': 'client_id',
-        'currency_conversion': 'currency_conversion',
         'aggregation_account_ids': 'aggregation_account_ids',
         'end_date': 'end_date',
-        'currency_code': 'currency_code',
-        'start_date': 'start_date'
+        'client_id': 'client_id',
+        'currency_conversion': 'currency_conversion',
+        'start_date': 'start_date',
+        'currency_code': 'currency_code'
     }
 
-    def __init__(self, client_id=None, currency_conversion=None, aggregation_account_ids=None, end_date=None, currency_code=None, start_date=None):  # noqa: E501
+    def __init__(self, aggregation_account_ids=None, end_date=None, client_id=None, currency_conversion=None, start_date=None, currency_code=None):  # noqa: E501
         """FeeAnalysisRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._client_id = None
-        self._currency_conversion = None
         self._aggregation_account_ids = None
         self._end_date = None
-        self._currency_code = None
+        self._client_id = None
+        self._currency_conversion = None
         self._start_date = None
+        self._currency_code = None
         self.discriminator = None
 
-        if client_id is not None:
-            self.client_id = client_id
-        if currency_conversion is not None:
-            self.currency_conversion = currency_conversion
         if aggregation_account_ids is not None:
             self.aggregation_account_ids = aggregation_account_ids
         if end_date is not None:
             self.end_date = end_date
-        if currency_code is not None:
-            self.currency_code = currency_code
+        if client_id is not None:
+            self.client_id = client_id
+        if currency_conversion is not None:
+            self.currency_conversion = currency_conversion
         if start_date is not None:
             self.start_date = start_date
-
-    @property
-    def client_id(self):
-        """Gets the client_id of this FeeAnalysisRequest.  # noqa: E501
-
-
-        :return: The client_id of this FeeAnalysisRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._client_id
-
-    @client_id.setter
-    def client_id(self, client_id):
-        """Sets the client_id of this FeeAnalysisRequest.
-
-
-        :param client_id: The client_id of this FeeAnalysisRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._client_id = client_id
-
-    @property
-    def currency_conversion(self):
-        """Gets the currency_conversion of this FeeAnalysisRequest.  # noqa: E501
-
-
-        :return: The currency_conversion of this FeeAnalysisRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._currency_conversion
-
-    @currency_conversion.setter
-    def currency_conversion(self, currency_conversion):
-        """Sets the currency_conversion of this FeeAnalysisRequest.
-
-
-        :param currency_conversion: The currency_conversion of this FeeAnalysisRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._currency_conversion = currency_conversion
+        if currency_code is not None:
+            self.currency_code = currency_code
 
     @property
     def aggregation_account_ids(self):
@@ -157,25 +115,46 @@ class FeeAnalysisRequest(object):
         self._end_date = end_date
 
     @property
-    def currency_code(self):
-        """Gets the currency_code of this FeeAnalysisRequest.  # noqa: E501
+    def client_id(self):
+        """Gets the client_id of this FeeAnalysisRequest.  # noqa: E501
 
 
-        :return: The currency_code of this FeeAnalysisRequest.  # noqa: E501
+        :return: The client_id of this FeeAnalysisRequest.  # noqa: E501
         :rtype: str
         """
-        return self._currency_code
+        return self._client_id
 
-    @currency_code.setter
-    def currency_code(self, currency_code):
-        """Sets the currency_code of this FeeAnalysisRequest.
+    @client_id.setter
+    def client_id(self, client_id):
+        """Sets the client_id of this FeeAnalysisRequest.
 
 
-        :param currency_code: The currency_code of this FeeAnalysisRequest.  # noqa: E501
+        :param client_id: The client_id of this FeeAnalysisRequest.  # noqa: E501
         :type: str
         """
 
-        self._currency_code = currency_code
+        self._client_id = client_id
+
+    @property
+    def currency_conversion(self):
+        """Gets the currency_conversion of this FeeAnalysisRequest.  # noqa: E501
+
+
+        :return: The currency_conversion of this FeeAnalysisRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_conversion
+
+    @currency_conversion.setter
+    def currency_conversion(self, currency_conversion):
+        """Sets the currency_conversion of this FeeAnalysisRequest.
+
+
+        :param currency_conversion: The currency_conversion of this FeeAnalysisRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_conversion = currency_conversion
 
     @property
     def start_date(self):
@@ -197,6 +176,27 @@ class FeeAnalysisRequest(object):
         """
 
         self._start_date = start_date
+
+    @property
+    def currency_code(self):
+        """Gets the currency_code of this FeeAnalysisRequest.  # noqa: E501
+
+
+        :return: The currency_code of this FeeAnalysisRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_code
+
+    @currency_code.setter
+    def currency_code(self, currency_code):
+        """Sets the currency_code of this FeeAnalysisRequest.
+
+
+        :param currency_code: The currency_code of this FeeAnalysisRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_code = currency_code
 
     def to_dict(self):
         """Returns the model properties as a dict"""

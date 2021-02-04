@@ -31,74 +31,51 @@ class GoalWithdrawalConfig(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'with_amount': 'float',
         'with_start_reference': 'str',
+        'with_amount': 'float',
         'with_inflation': 'float',
-        'with_frequency': 'str',
-        'with_end_reference': 'str',
+        'with_start_period': 'int',
         'with_end_period': 'int',
-        'with_start_period': 'int'
+        'with_end_reference': 'str',
+        'with_frequency': 'str'
     }
 
     attribute_map = {
-        'with_amount': 'with_amount',
         'with_start_reference': 'with_start_reference',
+        'with_amount': 'with_amount',
         'with_inflation': 'with_inflation',
-        'with_frequency': 'with_frequency',
-        'with_end_reference': 'with_end_reference',
+        'with_start_period': 'with_start_period',
         'with_end_period': 'with_end_period',
-        'with_start_period': 'with_start_period'
+        'with_end_reference': 'with_end_reference',
+        'with_frequency': 'with_frequency'
     }
 
-    def __init__(self, with_amount=None, with_start_reference='a_end', with_inflation=0.0, with_frequency='year', with_end_reference='d_end', with_end_period=0, with_start_period=0):  # noqa: E501
+    def __init__(self, with_start_reference='a_end', with_amount=None, with_inflation=0.0, with_start_period=0, with_end_period=0, with_end_reference='d_end', with_frequency='year'):  # noqa: E501
         """GoalWithdrawalConfig - a model defined in Swagger"""  # noqa: E501
 
-        self._with_amount = None
         self._with_start_reference = None
+        self._with_amount = None
         self._with_inflation = None
-        self._with_frequency = None
-        self._with_end_reference = None
-        self._with_end_period = None
         self._with_start_period = None
+        self._with_end_period = None
+        self._with_end_reference = None
+        self._with_frequency = None
         self.discriminator = None
 
-        if with_amount is not None:
-            self.with_amount = with_amount
         if with_start_reference is not None:
             self.with_start_reference = with_start_reference
+        if with_amount is not None:
+            self.with_amount = with_amount
         if with_inflation is not None:
             self.with_inflation = with_inflation
-        if with_frequency is not None:
-            self.with_frequency = with_frequency
-        if with_end_reference is not None:
-            self.with_end_reference = with_end_reference
-        if with_end_period is not None:
-            self.with_end_period = with_end_period
         if with_start_period is not None:
             self.with_start_period = with_start_period
-
-    @property
-    def with_amount(self):
-        """Gets the with_amount of this GoalWithdrawalConfig.  # noqa: E501
-
-
-        :return: The with_amount of this GoalWithdrawalConfig.  # noqa: E501
-        :rtype: float
-        """
-        return self._with_amount
-
-    @with_amount.setter
-    def with_amount(self, with_amount):
-        """Sets the with_amount of this GoalWithdrawalConfig.
-
-
-        :param with_amount: The with_amount of this GoalWithdrawalConfig.  # noqa: E501
-        :type: float
-        """
-        if with_amount is not None and with_amount < 0:  # noqa: E501
-            raise ValueError("Invalid value for `with_amount`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._with_amount = with_amount
+        if with_end_period is not None:
+            self.with_end_period = with_end_period
+        if with_end_reference is not None:
+            self.with_end_reference = with_end_reference
+        if with_frequency is not None:
+            self.with_frequency = with_frequency
 
     @property
     def with_start_reference(self):
@@ -128,6 +105,29 @@ class GoalWithdrawalConfig(object):
         self._with_start_reference = with_start_reference
 
     @property
+    def with_amount(self):
+        """Gets the with_amount of this GoalWithdrawalConfig.  # noqa: E501
+
+
+        :return: The with_amount of this GoalWithdrawalConfig.  # noqa: E501
+        :rtype: float
+        """
+        return self._with_amount
+
+    @with_amount.setter
+    def with_amount(self, with_amount):
+        """Sets the with_amount of this GoalWithdrawalConfig.
+
+
+        :param with_amount: The with_amount of this GoalWithdrawalConfig.  # noqa: E501
+        :type: float
+        """
+        if with_amount is not None and with_amount < 0:  # noqa: E501
+            raise ValueError("Invalid value for `with_amount`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._with_amount = with_amount
+
+    @property
     def with_inflation(self):
         """Gets the with_inflation of this GoalWithdrawalConfig.  # noqa: E501
 
@@ -151,31 +151,46 @@ class GoalWithdrawalConfig(object):
         self._with_inflation = with_inflation
 
     @property
-    def with_frequency(self):
-        """Gets the with_frequency of this GoalWithdrawalConfig.  # noqa: E501
+    def with_start_period(self):
+        """Gets the with_start_period of this GoalWithdrawalConfig.  # noqa: E501
 
 
-        :return: The with_frequency of this GoalWithdrawalConfig.  # noqa: E501
-        :rtype: str
+        :return: The with_start_period of this GoalWithdrawalConfig.  # noqa: E501
+        :rtype: int
         """
-        return self._with_frequency
+        return self._with_start_period
 
-    @with_frequency.setter
-    def with_frequency(self, with_frequency):
-        """Sets the with_frequency of this GoalWithdrawalConfig.
+    @with_start_period.setter
+    def with_start_period(self, with_start_period):
+        """Sets the with_start_period of this GoalWithdrawalConfig.
 
 
-        :param with_frequency: The with_frequency of this GoalWithdrawalConfig.  # noqa: E501
-        :type: str
+        :param with_start_period: The with_start_period of this GoalWithdrawalConfig.  # noqa: E501
+        :type: int
         """
-        allowed_values = ["year", "six_months", "quarter", "month", "two_weeks", "week", "day"]  # noqa: E501
-        if with_frequency not in allowed_values:
-            raise ValueError(
-                "Invalid value for `with_frequency` ({0}), must be one of {1}"  # noqa: E501
-                .format(with_frequency, allowed_values)
-            )
 
-        self._with_frequency = with_frequency
+        self._with_start_period = with_start_period
+
+    @property
+    def with_end_period(self):
+        """Gets the with_end_period of this GoalWithdrawalConfig.  # noqa: E501
+
+
+        :return: The with_end_period of this GoalWithdrawalConfig.  # noqa: E501
+        :rtype: int
+        """
+        return self._with_end_period
+
+    @with_end_period.setter
+    def with_end_period(self, with_end_period):
+        """Sets the with_end_period of this GoalWithdrawalConfig.
+
+
+        :param with_end_period: The with_end_period of this GoalWithdrawalConfig.  # noqa: E501
+        :type: int
+        """
+
+        self._with_end_period = with_end_period
 
     @property
     def with_end_reference(self):
@@ -205,46 +220,31 @@ class GoalWithdrawalConfig(object):
         self._with_end_reference = with_end_reference
 
     @property
-    def with_end_period(self):
-        """Gets the with_end_period of this GoalWithdrawalConfig.  # noqa: E501
+    def with_frequency(self):
+        """Gets the with_frequency of this GoalWithdrawalConfig.  # noqa: E501
 
 
-        :return: The with_end_period of this GoalWithdrawalConfig.  # noqa: E501
-        :rtype: int
+        :return: The with_frequency of this GoalWithdrawalConfig.  # noqa: E501
+        :rtype: str
         """
-        return self._with_end_period
+        return self._with_frequency
 
-    @with_end_period.setter
-    def with_end_period(self, with_end_period):
-        """Sets the with_end_period of this GoalWithdrawalConfig.
+    @with_frequency.setter
+    def with_frequency(self, with_frequency):
+        """Sets the with_frequency of this GoalWithdrawalConfig.
 
 
-        :param with_end_period: The with_end_period of this GoalWithdrawalConfig.  # noqa: E501
-        :type: int
+        :param with_frequency: The with_frequency of this GoalWithdrawalConfig.  # noqa: E501
+        :type: str
         """
+        allowed_values = ["year", "six_months", "quarter", "month", "two_weeks", "week", "day"]  # noqa: E501
+        if with_frequency not in allowed_values:
+            raise ValueError(
+                "Invalid value for `with_frequency` ({0}), must be one of {1}"  # noqa: E501
+                .format(with_frequency, allowed_values)
+            )
 
-        self._with_end_period = with_end_period
-
-    @property
-    def with_start_period(self):
-        """Gets the with_start_period of this GoalWithdrawalConfig.  # noqa: E501
-
-
-        :return: The with_start_period of this GoalWithdrawalConfig.  # noqa: E501
-        :rtype: int
-        """
-        return self._with_start_period
-
-    @with_start_period.setter
-    def with_start_period(self, with_start_period):
-        """Sets the with_start_period of this GoalWithdrawalConfig.
-
-
-        :param with_start_period: The with_start_period of this GoalWithdrawalConfig.  # noqa: E501
-        :type: int
-        """
-
-        self._with_start_period = with_start_period
+        self._with_frequency = with_frequency
 
     def to_dict(self):
         """Returns the model properties as a dict"""

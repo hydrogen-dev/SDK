@@ -32,44 +32,44 @@ class RiskScoreRequest(object):
     """
     swagger_types = {
         'post_score': 'bool',
-        'questionnaire_id': 'str',
+        'weights': 'list[float]',
         'max_answers': 'list[float]',
         'client_id': 'str',
         'answers': 'list[float]',
-        'weights': 'list[float]'
+        'questionnaire_id': 'str'
     }
 
     attribute_map = {
         'post_score': 'post_score',
-        'questionnaire_id': 'questionnaire_id',
+        'weights': 'weights',
         'max_answers': 'max_answers',
         'client_id': 'client_id',
         'answers': 'answers',
-        'weights': 'weights'
+        'questionnaire_id': 'questionnaire_id'
     }
 
-    def __init__(self, post_score=False, questionnaire_id=None, max_answers=None, client_id=None, answers=None, weights=None):  # noqa: E501
+    def __init__(self, post_score=False, weights=None, max_answers=None, client_id=None, answers=None, questionnaire_id=None):  # noqa: E501
         """RiskScoreRequest - a model defined in Swagger"""  # noqa: E501
 
         self._post_score = None
-        self._questionnaire_id = None
+        self._weights = None
         self._max_answers = None
         self._client_id = None
         self._answers = None
-        self._weights = None
+        self._questionnaire_id = None
         self.discriminator = None
 
         if post_score is not None:
             self.post_score = post_score
-        if questionnaire_id is not None:
-            self.questionnaire_id = questionnaire_id
+        if weights is not None:
+            self.weights = weights
         self.max_answers = max_answers
         if client_id is not None:
             self.client_id = client_id
         if answers is not None:
             self.answers = answers
-        if weights is not None:
-            self.weights = weights
+        if questionnaire_id is not None:
+            self.questionnaire_id = questionnaire_id
 
     @property
     def post_score(self):
@@ -93,25 +93,25 @@ class RiskScoreRequest(object):
         self._post_score = post_score
 
     @property
-    def questionnaire_id(self):
-        """Gets the questionnaire_id of this RiskScoreRequest.  # noqa: E501
+    def weights(self):
+        """Gets the weights of this RiskScoreRequest.  # noqa: E501
 
 
-        :return: The questionnaire_id of this RiskScoreRequest.  # noqa: E501
-        :rtype: str
+        :return: The weights of this RiskScoreRequest.  # noqa: E501
+        :rtype: list[float]
         """
-        return self._questionnaire_id
+        return self._weights
 
-    @questionnaire_id.setter
-    def questionnaire_id(self, questionnaire_id):
-        """Sets the questionnaire_id of this RiskScoreRequest.
+    @weights.setter
+    def weights(self, weights):
+        """Sets the weights of this RiskScoreRequest.
 
 
-        :param questionnaire_id: The questionnaire_id of this RiskScoreRequest.  # noqa: E501
-        :type: str
+        :param weights: The weights of this RiskScoreRequest.  # noqa: E501
+        :type: list[float]
         """
 
-        self._questionnaire_id = questionnaire_id
+        self._weights = weights
 
     @property
     def max_answers(self):
@@ -179,25 +179,25 @@ class RiskScoreRequest(object):
         self._answers = answers
 
     @property
-    def weights(self):
-        """Gets the weights of this RiskScoreRequest.  # noqa: E501
+    def questionnaire_id(self):
+        """Gets the questionnaire_id of this RiskScoreRequest.  # noqa: E501
 
 
-        :return: The weights of this RiskScoreRequest.  # noqa: E501
-        :rtype: list[float]
+        :return: The questionnaire_id of this RiskScoreRequest.  # noqa: E501
+        :rtype: str
         """
-        return self._weights
+        return self._questionnaire_id
 
-    @weights.setter
-    def weights(self, weights):
-        """Sets the weights of this RiskScoreRequest.
+    @questionnaire_id.setter
+    def questionnaire_id(self, questionnaire_id):
+        """Sets the questionnaire_id of this RiskScoreRequest.
 
 
-        :param weights: The weights of this RiskScoreRequest.  # noqa: E501
-        :type: list[float]
+        :param questionnaire_id: The questionnaire_id of this RiskScoreRequest.  # noqa: E501
+        :type: str
         """
 
-        self._weights = weights
+        self._questionnaire_id = questionnaire_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **nucleusAccountId** | [**UUID**](UUID.md) |  |  [optional]
-**statements** | [**List&lt;StatementModel&gt;**](StatementModel.md) |  |  [optional]
+**statements** | **Object** |  |  [optional]
 **vendorName** | **String** |  |  [optional]
 
 

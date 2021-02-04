@@ -1,4 +1,4 @@
-# swagger_client.FinancialHealthApi
+# proton_api.FinancialHealthApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/proton/v1*
 
@@ -41,7 +41,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.FinancialHealthApi(proton_api.ApiClient(configuration))
@@ -108,7 +107,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 
-
 # create an instance of the API class
 api_instance = proton_api.FinancialHealthApi(proton_api.ApiClient(configuration))
 emergency_fund_calculator_request = proton_api.EmergencyFundCalculatorRequest() # EmergencyFundCalculatorRequest | Request payload for Emergency Fund Calculator
@@ -174,7 +172,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 
-
 # create an instance of the API class
 api_instance = proton_api.FinancialHealthApi(proton_api.ApiClient(configuration))
 financial_health_check_request = proton_api.FinancialHealthCheckRequest() # FinancialHealthCheckRequest | Request payload for Financial Health Check
@@ -239,7 +236,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.FinancialHealthApi(proton_api.ApiClient(configuration))

@@ -31,51 +31,95 @@ class AccumulationGoalDepositConfig(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'dep_end_reference': 'str',
-        'dep_inflation': 'float',
         'dep_amount': 'float',
-        'dep_start_reference': 'str',
-        'dep_frequency': 'str',
         'dep_end_period': 'int',
-        'dep_start_period': 'int'
+        'dep_end_reference': 'str',
+        'dep_frequency': 'str',
+        'dep_start_period': 'int',
+        'dep_inflation': 'float',
+        'dep_start_reference': 'str'
     }
 
     attribute_map = {
-        'dep_end_reference': 'dep_end_reference',
-        'dep_inflation': 'dep_inflation',
         'dep_amount': 'dep_amount',
-        'dep_start_reference': 'dep_start_reference',
-        'dep_frequency': 'dep_frequency',
         'dep_end_period': 'dep_end_period',
-        'dep_start_period': 'dep_start_period'
+        'dep_end_reference': 'dep_end_reference',
+        'dep_frequency': 'dep_frequency',
+        'dep_start_period': 'dep_start_period',
+        'dep_inflation': 'dep_inflation',
+        'dep_start_reference': 'dep_start_reference'
     }
 
-    def __init__(self, dep_end_reference='a_end', dep_inflation=0.0, dep_amount=None, dep_start_reference='a_start', dep_frequency='year', dep_end_period=0, dep_start_period=0):  # noqa: E501
+    def __init__(self, dep_amount=None, dep_end_period=0, dep_end_reference='a_end', dep_frequency='year', dep_start_period=0, dep_inflation=0.0, dep_start_reference='a_start'):  # noqa: E501
         """AccumulationGoalDepositConfig - a model defined in Swagger"""  # noqa: E501
 
-        self._dep_end_reference = None
-        self._dep_inflation = None
         self._dep_amount = None
-        self._dep_start_reference = None
-        self._dep_frequency = None
         self._dep_end_period = None
+        self._dep_end_reference = None
+        self._dep_frequency = None
         self._dep_start_period = None
+        self._dep_inflation = None
+        self._dep_start_reference = None
         self.discriminator = None
 
-        if dep_end_reference is not None:
-            self.dep_end_reference = dep_end_reference
-        if dep_inflation is not None:
-            self.dep_inflation = dep_inflation
         if dep_amount is not None:
             self.dep_amount = dep_amount
-        if dep_start_reference is not None:
-            self.dep_start_reference = dep_start_reference
-        if dep_frequency is not None:
-            self.dep_frequency = dep_frequency
         if dep_end_period is not None:
             self.dep_end_period = dep_end_period
+        if dep_end_reference is not None:
+            self.dep_end_reference = dep_end_reference
+        if dep_frequency is not None:
+            self.dep_frequency = dep_frequency
         if dep_start_period is not None:
             self.dep_start_period = dep_start_period
+        if dep_inflation is not None:
+            self.dep_inflation = dep_inflation
+        if dep_start_reference is not None:
+            self.dep_start_reference = dep_start_reference
+
+    @property
+    def dep_amount(self):
+        """Gets the dep_amount of this AccumulationGoalDepositConfig.  # noqa: E501
+
+
+        :return: The dep_amount of this AccumulationGoalDepositConfig.  # noqa: E501
+        :rtype: float
+        """
+        return self._dep_amount
+
+    @dep_amount.setter
+    def dep_amount(self, dep_amount):
+        """Sets the dep_amount of this AccumulationGoalDepositConfig.
+
+
+        :param dep_amount: The dep_amount of this AccumulationGoalDepositConfig.  # noqa: E501
+        :type: float
+        """
+        if dep_amount is not None and dep_amount < 0:  # noqa: E501
+            raise ValueError("Invalid value for `dep_amount`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._dep_amount = dep_amount
+
+    @property
+    def dep_end_period(self):
+        """Gets the dep_end_period of this AccumulationGoalDepositConfig.  # noqa: E501
+
+
+        :return: The dep_end_period of this AccumulationGoalDepositConfig.  # noqa: E501
+        :rtype: int
+        """
+        return self._dep_end_period
+
+    @dep_end_period.setter
+    def dep_end_period(self, dep_end_period):
+        """Sets the dep_end_period of this AccumulationGoalDepositConfig.
+
+
+        :param dep_end_period: The dep_end_period of this AccumulationGoalDepositConfig.  # noqa: E501
+        :type: int
+        """
+
+        self._dep_end_period = dep_end_period
 
     @property
     def dep_end_reference(self):
@@ -105,79 +149,6 @@ class AccumulationGoalDepositConfig(object):
         self._dep_end_reference = dep_end_reference
 
     @property
-    def dep_inflation(self):
-        """Gets the dep_inflation of this AccumulationGoalDepositConfig.  # noqa: E501
-
-
-        :return: The dep_inflation of this AccumulationGoalDepositConfig.  # noqa: E501
-        :rtype: float
-        """
-        return self._dep_inflation
-
-    @dep_inflation.setter
-    def dep_inflation(self, dep_inflation):
-        """Sets the dep_inflation of this AccumulationGoalDepositConfig.
-
-
-        :param dep_inflation: The dep_inflation of this AccumulationGoalDepositConfig.  # noqa: E501
-        :type: float
-        """
-        if dep_inflation is not None and dep_inflation < -1:  # noqa: E501
-            raise ValueError("Invalid value for `dep_inflation`, must be a value greater than or equal to `-1`")  # noqa: E501
-
-        self._dep_inflation = dep_inflation
-
-    @property
-    def dep_amount(self):
-        """Gets the dep_amount of this AccumulationGoalDepositConfig.  # noqa: E501
-
-
-        :return: The dep_amount of this AccumulationGoalDepositConfig.  # noqa: E501
-        :rtype: float
-        """
-        return self._dep_amount
-
-    @dep_amount.setter
-    def dep_amount(self, dep_amount):
-        """Sets the dep_amount of this AccumulationGoalDepositConfig.
-
-
-        :param dep_amount: The dep_amount of this AccumulationGoalDepositConfig.  # noqa: E501
-        :type: float
-        """
-        if dep_amount is not None and dep_amount < 0:  # noqa: E501
-            raise ValueError("Invalid value for `dep_amount`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._dep_amount = dep_amount
-
-    @property
-    def dep_start_reference(self):
-        """Gets the dep_start_reference of this AccumulationGoalDepositConfig.  # noqa: E501
-
-
-        :return: The dep_start_reference of this AccumulationGoalDepositConfig.  # noqa: E501
-        :rtype: str
-        """
-        return self._dep_start_reference
-
-    @dep_start_reference.setter
-    def dep_start_reference(self, dep_start_reference):
-        """Sets the dep_start_reference of this AccumulationGoalDepositConfig.
-
-
-        :param dep_start_reference: The dep_start_reference of this AccumulationGoalDepositConfig.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["a_start", "a_end"]  # noqa: E501
-        if dep_start_reference not in allowed_values:
-            raise ValueError(
-                "Invalid value for `dep_start_reference` ({0}), must be one of {1}"  # noqa: E501
-                .format(dep_start_reference, allowed_values)
-            )
-
-        self._dep_start_reference = dep_start_reference
-
-    @property
     def dep_frequency(self):
         """Gets the dep_frequency of this AccumulationGoalDepositConfig.  # noqa: E501
 
@@ -205,27 +176,6 @@ class AccumulationGoalDepositConfig(object):
         self._dep_frequency = dep_frequency
 
     @property
-    def dep_end_period(self):
-        """Gets the dep_end_period of this AccumulationGoalDepositConfig.  # noqa: E501
-
-
-        :return: The dep_end_period of this AccumulationGoalDepositConfig.  # noqa: E501
-        :rtype: int
-        """
-        return self._dep_end_period
-
-    @dep_end_period.setter
-    def dep_end_period(self, dep_end_period):
-        """Sets the dep_end_period of this AccumulationGoalDepositConfig.
-
-
-        :param dep_end_period: The dep_end_period of this AccumulationGoalDepositConfig.  # noqa: E501
-        :type: int
-        """
-
-        self._dep_end_period = dep_end_period
-
-    @property
     def dep_start_period(self):
         """Gets the dep_start_period of this AccumulationGoalDepositConfig.  # noqa: E501
 
@@ -245,6 +195,56 @@ class AccumulationGoalDepositConfig(object):
         """
 
         self._dep_start_period = dep_start_period
+
+    @property
+    def dep_inflation(self):
+        """Gets the dep_inflation of this AccumulationGoalDepositConfig.  # noqa: E501
+
+
+        :return: The dep_inflation of this AccumulationGoalDepositConfig.  # noqa: E501
+        :rtype: float
+        """
+        return self._dep_inflation
+
+    @dep_inflation.setter
+    def dep_inflation(self, dep_inflation):
+        """Sets the dep_inflation of this AccumulationGoalDepositConfig.
+
+
+        :param dep_inflation: The dep_inflation of this AccumulationGoalDepositConfig.  # noqa: E501
+        :type: float
+        """
+        if dep_inflation is not None and dep_inflation < -1:  # noqa: E501
+            raise ValueError("Invalid value for `dep_inflation`, must be a value greater than or equal to `-1`")  # noqa: E501
+
+        self._dep_inflation = dep_inflation
+
+    @property
+    def dep_start_reference(self):
+        """Gets the dep_start_reference of this AccumulationGoalDepositConfig.  # noqa: E501
+
+
+        :return: The dep_start_reference of this AccumulationGoalDepositConfig.  # noqa: E501
+        :rtype: str
+        """
+        return self._dep_start_reference
+
+    @dep_start_reference.setter
+    def dep_start_reference(self, dep_start_reference):
+        """Sets the dep_start_reference of this AccumulationGoalDepositConfig.
+
+
+        :param dep_start_reference: The dep_start_reference of this AccumulationGoalDepositConfig.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["a_start", "a_end"]  # noqa: E501
+        if dep_start_reference not in allowed_values:
+            raise ValueError(
+                "Invalid value for `dep_start_reference` ({0}), must be one of {1}"  # noqa: E501
+                .format(dep_start_reference, allowed_values)
+            )
+
+        self._dep_start_reference = dep_start_reference
 
     def to_dict(self):
         """Returns the model properties as a dict"""

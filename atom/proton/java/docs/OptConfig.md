@@ -4,13 +4,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**wAssetConfig** | **Object** |  |  [optional]
-**minAssets** | **Integer** |  | 
 **secTypes** | [**List&lt;SecTypesEnum&gt;**](#List&lt;SecTypesEnum&gt;) |  | 
-**wConfig** | [**WConfig**](WConfig.md) |  | 
 **endDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**wConfig** | [**WConfig**](WConfig.md) |  | 
 **startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
 **tickers** | **List&lt;String&gt;** |  | 
+**minAssets** | **Integer** |  | 
+**wAssetConfig** | **Object** |  |  [optional]
 
 
 <a name="List<SecTypesEnum>"></a>

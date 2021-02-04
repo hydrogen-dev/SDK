@@ -15,18 +15,13 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * SensitivityFactor
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
@@ -37,11 +32,11 @@ public class SensitivityFactor {
   @SerializedName("lag")
   private Integer lag = 0;
 
-  @SerializedName("ticker")
-  private String ticker = null;
-
   @SerializedName("change_amount")
   private Float changeAmount = null;
+
+  @SerializedName("ticker")
+  private String ticker = null;
 
   public SensitivityFactor changeDuration(Integer changeDuration) {
     this.changeDuration = changeDuration;
@@ -81,24 +76,6 @@ public class SensitivityFactor {
     this.lag = lag;
   }
 
-  public SensitivityFactor ticker(String ticker) {
-    this.ticker = ticker;
-    return this;
-  }
-
-   /**
-   * Get ticker
-   * @return ticker
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getTicker() {
-    return ticker;
-  }
-
-  public void setTicker(String ticker) {
-    this.ticker = ticker;
-  }
-
   public SensitivityFactor changeAmount(Float changeAmount) {
     this.changeAmount = changeAmount;
     return this;
@@ -118,6 +95,24 @@ public class SensitivityFactor {
     this.changeAmount = changeAmount;
   }
 
+  public SensitivityFactor ticker(String ticker) {
+    this.ticker = ticker;
+    return this;
+  }
+
+   /**
+   * Get ticker
+   * @return ticker
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getTicker() {
+    return ticker;
+  }
+
+  public void setTicker(String ticker) {
+    this.ticker = ticker;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,13 +125,13 @@ public class SensitivityFactor {
     SensitivityFactor sensitivityFactor = (SensitivityFactor) o;
     return Objects.equals(this.changeDuration, sensitivityFactor.changeDuration) &&
         Objects.equals(this.lag, sensitivityFactor.lag) &&
-        Objects.equals(this.ticker, sensitivityFactor.ticker) &&
-        Objects.equals(this.changeAmount, sensitivityFactor.changeAmount);
+        Objects.equals(this.changeAmount, sensitivityFactor.changeAmount) &&
+        Objects.equals(this.ticker, sensitivityFactor.ticker);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(changeDuration, lag, ticker, changeAmount);
+    return Objects.hash(changeDuration, lag, changeAmount, ticker);
   }
 
 
@@ -147,8 +142,8 @@ public class SensitivityFactor {
     
     sb.append("    changeDuration: ").append(toIndentedString(changeDuration)).append("\n");
     sb.append("    lag: ").append(toIndentedString(lag)).append("\n");
-    sb.append("    ticker: ").append(toIndentedString(ticker)).append("\n");
     sb.append("    changeAmount: ").append(toIndentedString(changeAmount)).append("\n");
+    sb.append("    ticker: ").append(toIndentedString(ticker)).append("\n");
     sb.append("}");
     return sb.toString();
   }

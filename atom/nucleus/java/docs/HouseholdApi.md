@@ -26,7 +26,6 @@ Create a new household, with your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import HouseholdApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -43,8 +42,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 HouseholdApi apiInstance = new HouseholdApi();
 Household household = new Household(); // Household | household
 try {
@@ -87,7 +84,6 @@ Permanently delete a household
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import HouseholdApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -104,8 +100,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 HouseholdApi apiInstance = new HouseholdApi();
 UUID householdId = new UUID(); // UUID | UUID household_id
 try {
@@ -147,7 +141,6 @@ Get details for all Household.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import HouseholdApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -164,8 +157,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 HouseholdApi apiInstance = new HouseholdApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -216,7 +207,6 @@ Get a list of asset sizes per date for a client&#39;s household.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import HouseholdApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -233,8 +223,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 HouseholdApi apiInstance = new HouseholdApi();
 UUID householdId = new UUID(); // UUID | UUID household_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -289,7 +277,6 @@ Get the information for all the securities that are currently being held by a ho
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import HouseholdApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -306,8 +293,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 HouseholdApi apiInstance = new HouseholdApi();
 UUID householdId = new UUID(); // UUID | UUID household_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -358,7 +343,6 @@ Get the information for all transactions under a household client ids registered
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import HouseholdApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -375,8 +359,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 HouseholdApi apiInstance = new HouseholdApi();
 UUID householdId = new UUID(); // UUID | UUID household_id
 Boolean ascending = false; // Boolean | ascending
@@ -433,7 +415,6 @@ Retrieve the information for a Household.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import HouseholdApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -450,8 +431,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 HouseholdApi apiInstance = new HouseholdApi();
 UUID householdId = new UUID(); // UUID | UUID household_id
 try {
@@ -494,7 +473,6 @@ Update the information for a Household.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import HouseholdApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -511,10 +489,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 HouseholdApi apiInstance = new HouseholdApi();
-Household household = new Household(); // Household | household
+Object household = null; // Object | household
 UUID householdId = new UUID(); // UUID | UUID household_id
 try {
     Household result = apiInstance.updateHouseholdUsingPut(household, householdId);
@@ -529,7 +505,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **household** | [**Household**](Household.md)| household |
+ **household** | **Object**| household |
  **householdId** | [**UUID**](.md)| UUID household_id |
 
 ### Return type

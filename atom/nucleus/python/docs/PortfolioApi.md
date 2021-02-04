@@ -67,7 +67,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_asset_size_log_request = nucleus_api.PortfolioAssetSizeLog() # PortfolioAssetSizeLog | portfolioAssetSizeLogRequest
@@ -131,7 +131,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_comment = nucleus_api.PortfolioComment() # PortfolioComment | portfolioComment
@@ -195,7 +195,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_goal = nucleus_api.PortfolioGoal() # PortfolioGoal | portfolioGoal
@@ -259,7 +259,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_holdin_log_request = nucleus_api.PortfolioHoldingLog() # PortfolioHoldingLog | portfolioHoldinLogRequest
@@ -323,7 +323,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_transaction_request = nucleus_api.PortfolioTransaction() # PortfolioTransaction | portfolioTransactionRequest
@@ -387,7 +387,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_request = nucleus_api.Portfolio() # Portfolio | portfolioRequest
@@ -451,7 +451,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_asset_size_id = 'portfolio_asset_size_id_example' # str | UUID portfolio_asset_size_id
@@ -514,7 +514,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_comment_id = 'portfolio_comment_id_example' # str | UUID portfolio_comment_id
@@ -577,7 +577,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_goal_id = 'portfolio_goal_id_example' # str | UUID portfolio_goal_id
@@ -640,7 +640,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_holding_id = 'portfolio_holding_id_example' # str | UUID portfolio_holding_id
@@ -703,7 +703,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_transaction_id = 'portfolio_transaction_id_example' # str | UUID portfolio_transaction_id
@@ -766,7 +766,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_id = 'portfolio_id_example' # str | UUID portfolio_id
@@ -829,7 +829,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_id = 'portfolio_id_example' # str | Portfolio Id
@@ -903,7 +903,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -975,7 +975,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -1049,7 +1049,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_asset_size_id = 'portfolio_asset_size_id_example' # str | portfolio_asset_size_id
@@ -1115,7 +1115,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -1187,7 +1187,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_comment_id = 'portfolio_comment_id_example' # str | UUID portfolio_comment_id
@@ -1251,7 +1251,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -1323,7 +1323,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_goal_id = 'portfolio_goal_id_example' # str | UUID portfolio_goal_id
@@ -1387,7 +1387,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -1461,7 +1461,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_holding_id = 'portfolio_holding_id_example' # str | UUID portfolio_holding_id
@@ -1527,7 +1527,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -1601,7 +1601,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_transaction_id = 'portfolio_transaction_id_example' # str | UUID portfolio_transaction_id
@@ -1667,7 +1667,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
 portfolio_id = 'portfolio_id_example' # str | UUID portfolio_id
@@ -1731,10 +1731,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
-portfolio_asset_size = nucleus_api.PortfolioAssetSizeLog() # PortfolioAssetSizeLog | portfolio_asset_size
+portfolio_asset_size = NULL # object | portfolio_asset_size
 portfolio_asset_size_id = 'portfolio_asset_size_id_example' # str | UUID portfolio_asset_size_id
 
 try:
@@ -1749,7 +1749,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_asset_size** | [**PortfolioAssetSizeLog**](PortfolioAssetSizeLog.md)| portfolio_asset_size | 
+ **portfolio_asset_size** | **object**| portfolio_asset_size | 
  **portfolio_asset_size_id** | [**str**](.md)| UUID portfolio_asset_size_id | 
 
 ### Return type
@@ -1797,10 +1797,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
-portfolio_comment = nucleus_api.PortfolioComment() # PortfolioComment | portfolio_comment
+portfolio_comment = NULL # object | portfolio_comment
 portfolio_comment_id = 'portfolio_comment_id_example' # str | UUID portfolio_comment_id
 
 try:
@@ -1815,7 +1815,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_comment** | [**PortfolioComment**](PortfolioComment.md)| portfolio_comment | 
+ **portfolio_comment** | **object**| portfolio_comment | 
  **portfolio_comment_id** | [**str**](.md)| UUID portfolio_comment_id | 
 
 ### Return type
@@ -1863,10 +1863,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
-portfolio_goal = nucleus_api.PortfolioGoal() # PortfolioGoal | portfolio_goal
+portfolio_goal = NULL # object | portfolio_goal
 portfolio_goal_id = 'portfolio_goal_id_example' # str | UUID portfolio_goal_id
 
 try:
@@ -1881,7 +1881,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_goal** | [**PortfolioGoal**](PortfolioGoal.md)| portfolio_goal | 
+ **portfolio_goal** | **object**| portfolio_goal | 
  **portfolio_goal_id** | [**str**](.md)| UUID portfolio_goal_id | 
 
 ### Return type
@@ -1929,10 +1929,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
-portfolio_holding = nucleus_api.PortfolioHoldingLog() # PortfolioHoldingLog | portfolio_holding
+portfolio_holding = NULL # object | portfolio_holding
 portfolio_holding_id = 'portfolio_holding_id_example' # str | UUID portfolio_holding_id
 
 try:
@@ -1947,7 +1947,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_holding** | [**PortfolioHoldingLog**](PortfolioHoldingLog.md)| portfolio_holding | 
+ **portfolio_holding** | **object**| portfolio_holding | 
  **portfolio_holding_id** | [**str**](.md)| UUID portfolio_holding_id | 
 
 ### Return type
@@ -1995,10 +1995,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
-portfolio_transaction = nucleus_api.PortfolioTransaction() # PortfolioTransaction | portfolio_transaction
+portfolio_transaction = NULL # object | portfolio_transaction
 portfolio_transaction_id = 'portfolio_transaction_id_example' # str | UUID portfolio_transaction_id
 
 try:
@@ -2013,7 +2013,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio_transaction** | [**PortfolioTransaction**](PortfolioTransaction.md)| portfolio_transaction | 
+ **portfolio_transaction** | **object**| portfolio_transaction | 
  **portfolio_transaction_id** | [**str**](.md)| UUID portfolio_transaction_id | 
 
 ### Return type
@@ -2061,10 +2061,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PortfolioApi(nucleus_api.ApiClient(configuration))
-portfolio = nucleus_api.Portfolio() # Portfolio | portfolio
+portfolio = NULL # object | portfolio
 portfolio_id = 'portfolio_id_example' # str | UUID portfolio_id
 
 try:
@@ -2079,7 +2079,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolio** | [**Portfolio**](Portfolio.md)| portfolio | 
+ **portfolio** | **object**| portfolio | 
  **portfolio_id** | [**str**](.md)| UUID portfolio_id | 
 
 ### Return type

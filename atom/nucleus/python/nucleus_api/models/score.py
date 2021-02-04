@@ -390,7 +390,7 @@ class Score(object):
         if score_type is None:
             raise ValueError("Invalid value for `score_type`, must not be `None`")  # noqa: E501
         allowed_values = ["goal_achievement_score", "portfolio_optimization_score", "credit_score", "dimensional_risk_score", "diversification_score", "risk_score", "risk_profile"]  # noqa: E501
-        if score_type is not None and score_type.lower() not in allowed_values:
+        if score_type not in allowed_values:
             raise ValueError(
                 "Invalid value for `score_type` ({0}), must be one of {1}"  # noqa: E501
                 .format(score_type, allowed_values)

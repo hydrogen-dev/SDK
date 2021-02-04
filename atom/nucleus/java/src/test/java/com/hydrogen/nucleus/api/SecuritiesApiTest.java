@@ -13,14 +13,13 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.PageSecurity;
 import com.hydrogen.nucleus.model.PageSecurityExclusion;
 import com.hydrogen.nucleus.model.PageSecurityPrice;
 import com.hydrogen.nucleus.model.Security;
 import com.hydrogen.nucleus.model.SecurityExclusion;
 import com.hydrogen.nucleus.model.SecurityPrice;
-import com.hydrogen.nucleus.ApiException;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -250,7 +249,7 @@ public class SecuritiesApiTest {
      */
     @Test
     public void updateSecurityExclusionUsingPutTest() throws ApiException {
-        SecurityExclusion securityExclusion = null;
+        Object securityExclusion = null;
         UUID securityExclusionId = null;
         SecurityExclusion response = api.updateSecurityExclusionUsingPut(securityExclusion, securityExclusionId);
 
@@ -267,7 +266,7 @@ public class SecuritiesApiTest {
      */
     @Test
     public void updateSecurityPriceUsingPutTest() throws ApiException {
-        SecurityPrice securityPrice = null;
+        Object securityPrice = null;
         UUID securityPriceId = null;
         SecurityPrice response = api.updateSecurityPriceUsingPut(securityPrice, securityPriceId);
 
@@ -284,7 +283,7 @@ public class SecuritiesApiTest {
      */
     @Test
     public void updateSecurityUsingPutTest() throws ApiException {
-        Security security = null;
+        Object security = null;
         UUID securityId = null;
         Security response = api.updateSecurityUsingPut(security, securityId);
 

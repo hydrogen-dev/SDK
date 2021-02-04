@@ -4,21 +4,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**optConfig** | [**OptConfig**](OptConfig.md) |  |  [optional]
+**marketDataSource** | [**MarketDataSourceEnum**](#MarketDataSourceEnum) |  |  [optional]
 **allocations** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
 **clientId** | [**UUID**](UUID.md) |  |  [optional]
-**allocationMethod** | [**AllocationMethodEnum**](#AllocationMethodEnum) |  | 
+**optConfig** | [**OptConfig**](OptConfig.md) |  |  [optional]
 **riskScore** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **useProxyData** | **Boolean** |  |  [optional]
-**marketDataSource** | [**MarketDataSourceEnum**](#MarketDataSourceEnum) |  |  [optional]
-
-
-<a name="AllocationMethodEnum"></a>
-## Enum: AllocationMethodEnum
-Name | Value
----- | -----
-SELECT | &quot;select&quot;
-CREATE | &quot;create&quot;
+**allocationMethod** | [**AllocationMethodEnum**](#AllocationMethodEnum) |  | 
 
 
 <a name="MarketDataSourceEnum"></a>
@@ -27,6 +19,14 @@ Name | Value
 ---- | -----
 NUCLEUS | &quot;nucleus&quot;
 INTEGRATION | &quot;integration&quot;
+
+
+<a name="AllocationMethodEnum"></a>
+## Enum: AllocationMethodEnum
+Name | Value
+---- | -----
+SELECT | &quot;select&quot;
+CREATE | &quot;create&quot;
 
 
 

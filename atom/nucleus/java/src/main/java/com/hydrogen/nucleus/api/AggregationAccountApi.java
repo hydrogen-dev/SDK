@@ -21,6 +21,12 @@ import com.hydrogen.nucleus.Configuration;
 import com.hydrogen.nucleus.Pair;
 import com.hydrogen.nucleus.ProgressRequestBody;
 import com.hydrogen.nucleus.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
 import com.hydrogen.nucleus.model.AggregationAccount;
 import com.hydrogen.nucleus.model.AggregationAccountBalance;
 import com.hydrogen.nucleus.model.AggregationAccountHolding;
@@ -29,12 +35,6 @@ import com.hydrogen.nucleus.model.PageAggregationAccount;
 import com.hydrogen.nucleus.model.PageAggregationAccountBalance;
 import com.hydrogen.nucleus.model.PageAggregationAccountHolding;
 import com.hydrogen.nucleus.model.PageAggregationAccountTransaction;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -2881,7 +2881,7 @@ public class AggregationAccountApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateAggregationAccountBalanceUsingPutCall(AggregationAccountBalance aggregationAccountBalance, UUID aggregationAccountBalanceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateAggregationAccountBalanceUsingPutCall(Object aggregationAccountBalance, UUID aggregationAccountBalanceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = aggregationAccountBalance;
 
         // create path and map variables
@@ -2924,7 +2924,7 @@ public class AggregationAccountApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateAggregationAccountBalanceUsingPutValidateBeforeCall(AggregationAccountBalance aggregationAccountBalance, UUID aggregationAccountBalanceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateAggregationAccountBalanceUsingPutValidateBeforeCall(Object aggregationAccountBalance, UUID aggregationAccountBalanceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'aggregationAccountBalance' is set
         if (aggregationAccountBalance == null) {
@@ -2950,7 +2950,7 @@ public class AggregationAccountApi {
      * @return AggregationAccountBalance
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AggregationAccountBalance updateAggregationAccountBalanceUsingPut(AggregationAccountBalance aggregationAccountBalance, UUID aggregationAccountBalanceId) throws ApiException {
+    public AggregationAccountBalance updateAggregationAccountBalanceUsingPut(Object aggregationAccountBalance, UUID aggregationAccountBalanceId) throws ApiException {
         ApiResponse<AggregationAccountBalance> resp = updateAggregationAccountBalanceUsingPutWithHttpInfo(aggregationAccountBalance, aggregationAccountBalanceId);
         return resp.getData();
     }
@@ -2963,7 +2963,7 @@ public class AggregationAccountApi {
      * @return ApiResponse&lt;AggregationAccountBalance&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AggregationAccountBalance> updateAggregationAccountBalanceUsingPutWithHttpInfo(AggregationAccountBalance aggregationAccountBalance, UUID aggregationAccountBalanceId) throws ApiException {
+    public ApiResponse<AggregationAccountBalance> updateAggregationAccountBalanceUsingPutWithHttpInfo(Object aggregationAccountBalance, UUID aggregationAccountBalanceId) throws ApiException {
         com.squareup.okhttp.Call call = updateAggregationAccountBalanceUsingPutValidateBeforeCall(aggregationAccountBalance, aggregationAccountBalanceId, null, null);
         Type localVarReturnType = new TypeToken<AggregationAccountBalance>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -2978,7 +2978,7 @@ public class AggregationAccountApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateAggregationAccountBalanceUsingPutAsync(AggregationAccountBalance aggregationAccountBalance, UUID aggregationAccountBalanceId, final ApiCallback<AggregationAccountBalance> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateAggregationAccountBalanceUsingPutAsync(Object aggregationAccountBalance, UUID aggregationAccountBalanceId, final ApiCallback<AggregationAccountBalance> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3012,7 +3012,7 @@ public class AggregationAccountApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateAggregationAccountBulkUsingPutCall(List<AggregationAccount> aggregationAccountList, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateAggregationAccountBulkUsingPutCall(List<Object> aggregationAccountList, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = aggregationAccountList;
 
         // create path and map variables
@@ -3054,7 +3054,7 @@ public class AggregationAccountApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateAggregationAccountBulkUsingPutValidateBeforeCall(List<AggregationAccount> aggregationAccountList, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateAggregationAccountBulkUsingPutValidateBeforeCall(List<Object> aggregationAccountList, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'aggregationAccountList' is set
         if (aggregationAccountList == null) {
@@ -3074,7 +3074,7 @@ public class AggregationAccountApi {
      * @return List&lt;AggregationAccount&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<AggregationAccount> updateAggregationAccountBulkUsingPut(List<AggregationAccount> aggregationAccountList) throws ApiException {
+    public List<AggregationAccount> updateAggregationAccountBulkUsingPut(List<Object> aggregationAccountList) throws ApiException {
         ApiResponse<List<AggregationAccount>> resp = updateAggregationAccountBulkUsingPutWithHttpInfo(aggregationAccountList);
         return resp.getData();
     }
@@ -3086,7 +3086,7 @@ public class AggregationAccountApi {
      * @return ApiResponse&lt;List&lt;AggregationAccount&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<AggregationAccount>> updateAggregationAccountBulkUsingPutWithHttpInfo(List<AggregationAccount> aggregationAccountList) throws ApiException {
+    public ApiResponse<List<AggregationAccount>> updateAggregationAccountBulkUsingPutWithHttpInfo(List<Object> aggregationAccountList) throws ApiException {
         com.squareup.okhttp.Call call = updateAggregationAccountBulkUsingPutValidateBeforeCall(aggregationAccountList, null, null);
         Type localVarReturnType = new TypeToken<List<AggregationAccount>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -3100,7 +3100,7 @@ public class AggregationAccountApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateAggregationAccountBulkUsingPutAsync(List<AggregationAccount> aggregationAccountList, final ApiCallback<List<AggregationAccount>> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateAggregationAccountBulkUsingPutAsync(List<Object> aggregationAccountList, final ApiCallback<List<AggregationAccount>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3134,7 +3134,7 @@ public class AggregationAccountApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateAggregationAccountHoldingBulkUsingPutCall(List<AggregationAccountHolding> aggregationAccountHolding, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateAggregationAccountHoldingBulkUsingPutCall(List<Object> aggregationAccountHolding, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = aggregationAccountHolding;
 
         // create path and map variables
@@ -3176,7 +3176,7 @@ public class AggregationAccountApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateAggregationAccountHoldingBulkUsingPutValidateBeforeCall(List<AggregationAccountHolding> aggregationAccountHolding, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateAggregationAccountHoldingBulkUsingPutValidateBeforeCall(List<Object> aggregationAccountHolding, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'aggregationAccountHolding' is set
         if (aggregationAccountHolding == null) {
@@ -3196,7 +3196,7 @@ public class AggregationAccountApi {
      * @return List&lt;AggregationAccountHolding&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<AggregationAccountHolding> updateAggregationAccountHoldingBulkUsingPut(List<AggregationAccountHolding> aggregationAccountHolding) throws ApiException {
+    public List<AggregationAccountHolding> updateAggregationAccountHoldingBulkUsingPut(List<Object> aggregationAccountHolding) throws ApiException {
         ApiResponse<List<AggregationAccountHolding>> resp = updateAggregationAccountHoldingBulkUsingPutWithHttpInfo(aggregationAccountHolding);
         return resp.getData();
     }
@@ -3208,7 +3208,7 @@ public class AggregationAccountApi {
      * @return ApiResponse&lt;List&lt;AggregationAccountHolding&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<AggregationAccountHolding>> updateAggregationAccountHoldingBulkUsingPutWithHttpInfo(List<AggregationAccountHolding> aggregationAccountHolding) throws ApiException {
+    public ApiResponse<List<AggregationAccountHolding>> updateAggregationAccountHoldingBulkUsingPutWithHttpInfo(List<Object> aggregationAccountHolding) throws ApiException {
         com.squareup.okhttp.Call call = updateAggregationAccountHoldingBulkUsingPutValidateBeforeCall(aggregationAccountHolding, null, null);
         Type localVarReturnType = new TypeToken<List<AggregationAccountHolding>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -3222,7 +3222,7 @@ public class AggregationAccountApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateAggregationAccountHoldingBulkUsingPutAsync(List<AggregationAccountHolding> aggregationAccountHolding, final ApiCallback<List<AggregationAccountHolding>> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateAggregationAccountHoldingBulkUsingPutAsync(List<Object> aggregationAccountHolding, final ApiCallback<List<AggregationAccountHolding>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3257,7 +3257,7 @@ public class AggregationAccountApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateAggregationAccountHoldingUsingPutCall(AggregationAccountHolding aggregationAccountHolding, UUID aggregationAccountHoldingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateAggregationAccountHoldingUsingPutCall(Object aggregationAccountHolding, UUID aggregationAccountHoldingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = aggregationAccountHolding;
 
         // create path and map variables
@@ -3300,7 +3300,7 @@ public class AggregationAccountApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateAggregationAccountHoldingUsingPutValidateBeforeCall(AggregationAccountHolding aggregationAccountHolding, UUID aggregationAccountHoldingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateAggregationAccountHoldingUsingPutValidateBeforeCall(Object aggregationAccountHolding, UUID aggregationAccountHoldingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'aggregationAccountHolding' is set
         if (aggregationAccountHolding == null) {
@@ -3326,7 +3326,7 @@ public class AggregationAccountApi {
      * @return AggregationAccountHolding
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AggregationAccountHolding updateAggregationAccountHoldingUsingPut(AggregationAccountHolding aggregationAccountHolding, UUID aggregationAccountHoldingId) throws ApiException {
+    public AggregationAccountHolding updateAggregationAccountHoldingUsingPut(Object aggregationAccountHolding, UUID aggregationAccountHoldingId) throws ApiException {
         ApiResponse<AggregationAccountHolding> resp = updateAggregationAccountHoldingUsingPutWithHttpInfo(aggregationAccountHolding, aggregationAccountHoldingId);
         return resp.getData();
     }
@@ -3339,7 +3339,7 @@ public class AggregationAccountApi {
      * @return ApiResponse&lt;AggregationAccountHolding&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AggregationAccountHolding> updateAggregationAccountHoldingUsingPutWithHttpInfo(AggregationAccountHolding aggregationAccountHolding, UUID aggregationAccountHoldingId) throws ApiException {
+    public ApiResponse<AggregationAccountHolding> updateAggregationAccountHoldingUsingPutWithHttpInfo(Object aggregationAccountHolding, UUID aggregationAccountHoldingId) throws ApiException {
         com.squareup.okhttp.Call call = updateAggregationAccountHoldingUsingPutValidateBeforeCall(aggregationAccountHolding, aggregationAccountHoldingId, null, null);
         Type localVarReturnType = new TypeToken<AggregationAccountHolding>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -3354,7 +3354,7 @@ public class AggregationAccountApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateAggregationAccountHoldingUsingPutAsync(AggregationAccountHolding aggregationAccountHolding, UUID aggregationAccountHoldingId, final ApiCallback<AggregationAccountHolding> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateAggregationAccountHoldingUsingPutAsync(Object aggregationAccountHolding, UUID aggregationAccountHoldingId, final ApiCallback<AggregationAccountHolding> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3389,7 +3389,7 @@ public class AggregationAccountApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateAggregationAccountTransactionUsingPutCall(AggregationAccountTransaction aggregationAccountTransaction, UUID aggregationAccountTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateAggregationAccountTransactionUsingPutCall(Object aggregationAccountTransaction, UUID aggregationAccountTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = aggregationAccountTransaction;
 
         // create path and map variables
@@ -3432,7 +3432,7 @@ public class AggregationAccountApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateAggregationAccountTransactionUsingPutValidateBeforeCall(AggregationAccountTransaction aggregationAccountTransaction, UUID aggregationAccountTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateAggregationAccountTransactionUsingPutValidateBeforeCall(Object aggregationAccountTransaction, UUID aggregationAccountTransactionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'aggregationAccountTransaction' is set
         if (aggregationAccountTransaction == null) {
@@ -3458,7 +3458,7 @@ public class AggregationAccountApi {
      * @return AggregationAccountTransaction
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AggregationAccountTransaction updateAggregationAccountTransactionUsingPut(AggregationAccountTransaction aggregationAccountTransaction, UUID aggregationAccountTransactionId) throws ApiException {
+    public AggregationAccountTransaction updateAggregationAccountTransactionUsingPut(Object aggregationAccountTransaction, UUID aggregationAccountTransactionId) throws ApiException {
         ApiResponse<AggregationAccountTransaction> resp = updateAggregationAccountTransactionUsingPutWithHttpInfo(aggregationAccountTransaction, aggregationAccountTransactionId);
         return resp.getData();
     }
@@ -3471,7 +3471,7 @@ public class AggregationAccountApi {
      * @return ApiResponse&lt;AggregationAccountTransaction&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AggregationAccountTransaction> updateAggregationAccountTransactionUsingPutWithHttpInfo(AggregationAccountTransaction aggregationAccountTransaction, UUID aggregationAccountTransactionId) throws ApiException {
+    public ApiResponse<AggregationAccountTransaction> updateAggregationAccountTransactionUsingPutWithHttpInfo(Object aggregationAccountTransaction, UUID aggregationAccountTransactionId) throws ApiException {
         com.squareup.okhttp.Call call = updateAggregationAccountTransactionUsingPutValidateBeforeCall(aggregationAccountTransaction, aggregationAccountTransactionId, null, null);
         Type localVarReturnType = new TypeToken<AggregationAccountTransaction>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -3486,7 +3486,7 @@ public class AggregationAccountApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateAggregationAccountTransactionUsingPutAsync(AggregationAccountTransaction aggregationAccountTransaction, UUID aggregationAccountTransactionId, final ApiCallback<AggregationAccountTransaction> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateAggregationAccountTransactionUsingPutAsync(Object aggregationAccountTransaction, UUID aggregationAccountTransactionId, final ApiCallback<AggregationAccountTransaction> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3521,7 +3521,7 @@ public class AggregationAccountApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateAggregationAccountUsingPutCall(AggregationAccount aggregationAccount, UUID aggregationAccountId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateAggregationAccountUsingPutCall(Object aggregationAccount, UUID aggregationAccountId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = aggregationAccount;
 
         // create path and map variables
@@ -3564,7 +3564,7 @@ public class AggregationAccountApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateAggregationAccountUsingPutValidateBeforeCall(AggregationAccount aggregationAccount, UUID aggregationAccountId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateAggregationAccountUsingPutValidateBeforeCall(Object aggregationAccount, UUID aggregationAccountId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'aggregationAccount' is set
         if (aggregationAccount == null) {
@@ -3590,7 +3590,7 @@ public class AggregationAccountApi {
      * @return AggregationAccount
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AggregationAccount updateAggregationAccountUsingPut(AggregationAccount aggregationAccount, UUID aggregationAccountId) throws ApiException {
+    public AggregationAccount updateAggregationAccountUsingPut(Object aggregationAccount, UUID aggregationAccountId) throws ApiException {
         ApiResponse<AggregationAccount> resp = updateAggregationAccountUsingPutWithHttpInfo(aggregationAccount, aggregationAccountId);
         return resp.getData();
     }
@@ -3603,7 +3603,7 @@ public class AggregationAccountApi {
      * @return ApiResponse&lt;AggregationAccount&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AggregationAccount> updateAggregationAccountUsingPutWithHttpInfo(AggregationAccount aggregationAccount, UUID aggregationAccountId) throws ApiException {
+    public ApiResponse<AggregationAccount> updateAggregationAccountUsingPutWithHttpInfo(Object aggregationAccount, UUID aggregationAccountId) throws ApiException {
         com.squareup.okhttp.Call call = updateAggregationAccountUsingPutValidateBeforeCall(aggregationAccount, aggregationAccountId, null, null);
         Type localVarReturnType = new TypeToken<AggregationAccount>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -3618,7 +3618,7 @@ public class AggregationAccountApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateAggregationAccountUsingPutAsync(AggregationAccount aggregationAccount, UUID aggregationAccountId, final ApiCallback<AggregationAccount> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateAggregationAccountUsingPutAsync(Object aggregationAccount, UUID aggregationAccountId, final ApiCallback<AggregationAccount> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

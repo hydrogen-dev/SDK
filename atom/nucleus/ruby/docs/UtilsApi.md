@@ -753,7 +753,7 @@ end
 
 api_instance = NucleusApi::UtilsApi.new
 
-reason_code = NucleusApi::ReasonCode.new # ReasonCode | reason_code
+reason_code = nil # Object | reason_code
 
 reason_code_id = 'reason_code_id_example' # String | UUID reason_code_id
 
@@ -771,7 +771,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reason_code** | [**ReasonCode**](ReasonCode.md)| reason_code | 
+ **reason_code** | **Object**| reason_code | 
  **reason_code_id** | [**String**](.md)| UUID reason_code_id | 
 
 ### Return type
@@ -813,7 +813,7 @@ end
 
 api_instance = NucleusApi::UtilsApi.new
 
-stage = NucleusApi::Stage.new # Stage | stage
+stage = nil # Object | stage
 
 stage_id = 'stage_id_example' # String | UUID stage_id
 
@@ -831,7 +831,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage** | [**Stage**](Stage.md)| stage | 
+ **stage** | **Object**| stage | 
  **stage_id** | [**String**](.md)| UUID stage_id | 
 
 ### Return type
@@ -873,7 +873,7 @@ end
 
 api_instance = NucleusApi::UtilsApi.new
 
-transaction_code = NucleusApi::TransactionCode.new # TransactionCode | transaction_code
+transaction_code = nil # Object | transaction_code
 
 transaction_code_id = 'transaction_code_id_example' # String | UUID transaction_code_id
 
@@ -891,7 +891,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transaction_code** | [**TransactionCode**](TransactionCode.md)| transaction_code | 
+ **transaction_code** | **Object**| transaction_code | 
  **transaction_code_id** | [**String**](.md)| UUID transaction_code_id | 
 
 ### Return type

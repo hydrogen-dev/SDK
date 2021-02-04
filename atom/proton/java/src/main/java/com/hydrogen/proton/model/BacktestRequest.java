@@ -15,12 +15,7 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.math.BigDecimal;
@@ -30,76 +25,40 @@ import org.threeten.bp.LocalDate;
 /**
  * BacktestRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class BacktestRequest {
-  @SerializedName("asset_sizes")
-  private Boolean assetSizes = true;
-
-  @SerializedName("settings")
-  private Settings settings = null;
-
   @SerializedName("asset_size")
   private BigDecimal assetSize = null;
-
-  @SerializedName("trades")
-  private Boolean trades = true;
-
-  @SerializedName("holdings")
-  private Boolean holdings = true;
-
-  @SerializedName("model_id")
-  private UUID modelId = null;
 
   @SerializedName("end_date")
   private LocalDate endDate = null;
 
+  @SerializedName("stats")
+  private Boolean stats = true;
+
+  @SerializedName("asset_sizes")
+  private Boolean assetSizes = true;
+
+  @SerializedName("model_id")
+  private UUID modelId = null;
+
   @SerializedName("initial_weights")
   private Object initialWeights = null;
 
-  @SerializedName("stats")
-  private Boolean stats = true;
+  @SerializedName("trades")
+  private Boolean trades = true;
 
   @SerializedName("start_date")
   private LocalDate startDate = null;
 
-  public BacktestRequest assetSizes(Boolean assetSizes) {
-    this.assetSizes = assetSizes;
-    return this;
-  }
+  @SerializedName("settings")
+  private Settings settings = null;
 
-   /**
-   * Get assetSizes
-   * @return assetSizes
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isAssetSizes() {
-    return assetSizes;
-  }
-
-  public void setAssetSizes(Boolean assetSizes) {
-    this.assetSizes = assetSizes;
-  }
-
-  public BacktestRequest settings(Settings settings) {
-    this.settings = settings;
-    return this;
-  }
-
-   /**
-   * Get settings
-   * @return settings
-  **/
-  @ApiModelProperty(value = "")
-  public Settings getSettings() {
-    return settings;
-  }
-
-  public void setSettings(Settings settings) {
-    this.settings = settings;
-  }
+  @SerializedName("holdings")
+  private Boolean holdings = true;
 
   public BacktestRequest assetSize(BigDecimal assetSize) {
     this.assetSize = assetSize;
@@ -120,60 +79,6 @@ public class BacktestRequest {
     this.assetSize = assetSize;
   }
 
-  public BacktestRequest trades(Boolean trades) {
-    this.trades = trades;
-    return this;
-  }
-
-   /**
-   * Get trades
-   * @return trades
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isTrades() {
-    return trades;
-  }
-
-  public void setTrades(Boolean trades) {
-    this.trades = trades;
-  }
-
-  public BacktestRequest holdings(Boolean holdings) {
-    this.holdings = holdings;
-    return this;
-  }
-
-   /**
-   * Get holdings
-   * @return holdings
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isHoldings() {
-    return holdings;
-  }
-
-  public void setHoldings(Boolean holdings) {
-    this.holdings = holdings;
-  }
-
-  public BacktestRequest modelId(UUID modelId) {
-    this.modelId = modelId;
-    return this;
-  }
-
-   /**
-   * Get modelId
-   * @return modelId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getModelId() {
-    return modelId;
-  }
-
-  public void setModelId(UUID modelId) {
-    this.modelId = modelId;
-  }
-
   public BacktestRequest endDate(LocalDate endDate) {
     this.endDate = endDate;
     return this;
@@ -190,24 +95,6 @@ public class BacktestRequest {
 
   public void setEndDate(LocalDate endDate) {
     this.endDate = endDate;
-  }
-
-  public BacktestRequest initialWeights(Object initialWeights) {
-    this.initialWeights = initialWeights;
-    return this;
-  }
-
-   /**
-   * Get initialWeights
-   * @return initialWeights
-  **/
-  @ApiModelProperty(value = "")
-  public Object getInitialWeights() {
-    return initialWeights;
-  }
-
-  public void setInitialWeights(Object initialWeights) {
-    this.initialWeights = initialWeights;
   }
 
   public BacktestRequest stats(Boolean stats) {
@@ -228,6 +115,78 @@ public class BacktestRequest {
     this.stats = stats;
   }
 
+  public BacktestRequest assetSizes(Boolean assetSizes) {
+    this.assetSizes = assetSizes;
+    return this;
+  }
+
+   /**
+   * Get assetSizes
+   * @return assetSizes
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isAssetSizes() {
+    return assetSizes;
+  }
+
+  public void setAssetSizes(Boolean assetSizes) {
+    this.assetSizes = assetSizes;
+  }
+
+  public BacktestRequest modelId(UUID modelId) {
+    this.modelId = modelId;
+    return this;
+  }
+
+   /**
+   * Get modelId
+   * @return modelId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getModelId() {
+    return modelId;
+  }
+
+  public void setModelId(UUID modelId) {
+    this.modelId = modelId;
+  }
+
+  public BacktestRequest initialWeights(Object initialWeights) {
+    this.initialWeights = initialWeights;
+    return this;
+  }
+
+   /**
+   * Get initialWeights
+   * @return initialWeights
+  **/
+  @ApiModelProperty(value = "")
+  public Object getInitialWeights() {
+    return initialWeights;
+  }
+
+  public void setInitialWeights(Object initialWeights) {
+    this.initialWeights = initialWeights;
+  }
+
+  public BacktestRequest trades(Boolean trades) {
+    this.trades = trades;
+    return this;
+  }
+
+   /**
+   * Get trades
+   * @return trades
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isTrades() {
+    return trades;
+  }
+
+  public void setTrades(Boolean trades) {
+    this.trades = trades;
+  }
+
   public BacktestRequest startDate(LocalDate startDate) {
     this.startDate = startDate;
     return this;
@@ -246,6 +205,42 @@ public class BacktestRequest {
     this.startDate = startDate;
   }
 
+  public BacktestRequest settings(Settings settings) {
+    this.settings = settings;
+    return this;
+  }
+
+   /**
+   * Get settings
+   * @return settings
+  **/
+  @ApiModelProperty(value = "")
+  public Settings getSettings() {
+    return settings;
+  }
+
+  public void setSettings(Settings settings) {
+    this.settings = settings;
+  }
+
+  public BacktestRequest holdings(Boolean holdings) {
+    this.holdings = holdings;
+    return this;
+  }
+
+   /**
+   * Get holdings
+   * @return holdings
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isHoldings() {
+    return holdings;
+  }
+
+  public void setHoldings(Boolean holdings) {
+    this.holdings = holdings;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -256,21 +251,21 @@ public class BacktestRequest {
       return false;
     }
     BacktestRequest backtestRequest = (BacktestRequest) o;
-    return Objects.equals(this.assetSizes, backtestRequest.assetSizes) &&
-        Objects.equals(this.settings, backtestRequest.settings) &&
-        Objects.equals(this.assetSize, backtestRequest.assetSize) &&
-        Objects.equals(this.trades, backtestRequest.trades) &&
-        Objects.equals(this.holdings, backtestRequest.holdings) &&
-        Objects.equals(this.modelId, backtestRequest.modelId) &&
+    return Objects.equals(this.assetSize, backtestRequest.assetSize) &&
         Objects.equals(this.endDate, backtestRequest.endDate) &&
-        Objects.equals(this.initialWeights, backtestRequest.initialWeights) &&
         Objects.equals(this.stats, backtestRequest.stats) &&
-        Objects.equals(this.startDate, backtestRequest.startDate);
+        Objects.equals(this.assetSizes, backtestRequest.assetSizes) &&
+        Objects.equals(this.modelId, backtestRequest.modelId) &&
+        Objects.equals(this.initialWeights, backtestRequest.initialWeights) &&
+        Objects.equals(this.trades, backtestRequest.trades) &&
+        Objects.equals(this.startDate, backtestRequest.startDate) &&
+        Objects.equals(this.settings, backtestRequest.settings) &&
+        Objects.equals(this.holdings, backtestRequest.holdings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetSizes, settings, assetSize, trades, holdings, modelId, endDate, initialWeights, stats, startDate);
+    return Objects.hash(assetSize, endDate, stats, assetSizes, modelId, initialWeights, trades, startDate, settings, holdings);
   }
 
 
@@ -279,16 +274,16 @@ public class BacktestRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class BacktestRequest {\n");
     
-    sb.append("    assetSizes: ").append(toIndentedString(assetSizes)).append("\n");
-    sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
     sb.append("    assetSize: ").append(toIndentedString(assetSize)).append("\n");
-    sb.append("    trades: ").append(toIndentedString(trades)).append("\n");
-    sb.append("    holdings: ").append(toIndentedString(holdings)).append("\n");
-    sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
-    sb.append("    initialWeights: ").append(toIndentedString(initialWeights)).append("\n");
     sb.append("    stats: ").append(toIndentedString(stats)).append("\n");
+    sb.append("    assetSizes: ").append(toIndentedString(assetSizes)).append("\n");
+    sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
+    sb.append("    initialWeights: ").append(toIndentedString(initialWeights)).append("\n");
+    sb.append("    trades: ").append(toIndentedString(trades)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    sb.append("    settings: ").append(toIndentedString(settings)).append("\n");
+    sb.append("    holdings: ").append(toIndentedString(holdings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

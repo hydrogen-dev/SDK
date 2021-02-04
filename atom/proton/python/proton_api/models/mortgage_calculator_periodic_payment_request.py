@@ -31,59 +31,59 @@ class MortgageCalculatorPeriodicPaymentRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'down_payment': 'float',
-        'home_price': 'float',
         'mortgage_term': 'int',
+        'home_price': 'float',
+        'down_payment': 'float',
         'interest_rate': 'float'
     }
 
     attribute_map = {
-        'down_payment': 'down_payment',
-        'home_price': 'home_price',
         'mortgage_term': 'mortgage_term',
+        'home_price': 'home_price',
+        'down_payment': 'down_payment',
         'interest_rate': 'interest_rate'
     }
 
-    def __init__(self, down_payment=None, home_price=None, mortgage_term=360, interest_rate=0.04):  # noqa: E501
+    def __init__(self, mortgage_term=360, home_price=None, down_payment=None, interest_rate=0.04):  # noqa: E501
         """MortgageCalculatorPeriodicPaymentRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._down_payment = None
-        self._home_price = None
         self._mortgage_term = None
+        self._home_price = None
+        self._down_payment = None
         self._interest_rate = None
         self.discriminator = None
 
-        self.down_payment = down_payment
-        self.home_price = home_price
         if mortgage_term is not None:
             self.mortgage_term = mortgage_term
+        self.home_price = home_price
+        self.down_payment = down_payment
         if interest_rate is not None:
             self.interest_rate = interest_rate
 
     @property
-    def down_payment(self):
-        """Gets the down_payment of this MortgageCalculatorPeriodicPaymentRequest.  # noqa: E501
+    def mortgage_term(self):
+        """Gets the mortgage_term of this MortgageCalculatorPeriodicPaymentRequest.  # noqa: E501
 
 
-        :return: The down_payment of this MortgageCalculatorPeriodicPaymentRequest.  # noqa: E501
-        :rtype: float
+        :return: The mortgage_term of this MortgageCalculatorPeriodicPaymentRequest.  # noqa: E501
+        :rtype: int
         """
-        return self._down_payment
+        return self._mortgage_term
 
-    @down_payment.setter
-    def down_payment(self, down_payment):
-        """Sets the down_payment of this MortgageCalculatorPeriodicPaymentRequest.
+    @mortgage_term.setter
+    def mortgage_term(self, mortgage_term):
+        """Sets the mortgage_term of this MortgageCalculatorPeriodicPaymentRequest.
 
 
-        :param down_payment: The down_payment of this MortgageCalculatorPeriodicPaymentRequest.  # noqa: E501
-        :type: float
+        :param mortgage_term: The mortgage_term of this MortgageCalculatorPeriodicPaymentRequest.  # noqa: E501
+        :type: int
         """
-        if down_payment is None:
-            raise ValueError("Invalid value for `down_payment`, must not be `None`")  # noqa: E501
-        if down_payment is not None and down_payment < 0:  # noqa: E501
-            raise ValueError("Invalid value for `down_payment`, must be a value greater than or equal to `0`")  # noqa: E501
+        if mortgage_term is not None and mortgage_term > 600:  # noqa: E501
+            raise ValueError("Invalid value for `mortgage_term`, must be a value less than or equal to `600`")  # noqa: E501
+        if mortgage_term is not None and mortgage_term < 0:  # noqa: E501
+            raise ValueError("Invalid value for `mortgage_term`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._down_payment = down_payment
+        self._mortgage_term = mortgage_term
 
     @property
     def home_price(self):
@@ -111,29 +111,29 @@ class MortgageCalculatorPeriodicPaymentRequest(object):
         self._home_price = home_price
 
     @property
-    def mortgage_term(self):
-        """Gets the mortgage_term of this MortgageCalculatorPeriodicPaymentRequest.  # noqa: E501
+    def down_payment(self):
+        """Gets the down_payment of this MortgageCalculatorPeriodicPaymentRequest.  # noqa: E501
 
 
-        :return: The mortgage_term of this MortgageCalculatorPeriodicPaymentRequest.  # noqa: E501
-        :rtype: int
+        :return: The down_payment of this MortgageCalculatorPeriodicPaymentRequest.  # noqa: E501
+        :rtype: float
         """
-        return self._mortgage_term
+        return self._down_payment
 
-    @mortgage_term.setter
-    def mortgage_term(self, mortgage_term):
-        """Sets the mortgage_term of this MortgageCalculatorPeriodicPaymentRequest.
+    @down_payment.setter
+    def down_payment(self, down_payment):
+        """Sets the down_payment of this MortgageCalculatorPeriodicPaymentRequest.
 
 
-        :param mortgage_term: The mortgage_term of this MortgageCalculatorPeriodicPaymentRequest.  # noqa: E501
-        :type: int
+        :param down_payment: The down_payment of this MortgageCalculatorPeriodicPaymentRequest.  # noqa: E501
+        :type: float
         """
-        if mortgage_term is not None and mortgage_term > 600:  # noqa: E501
-            raise ValueError("Invalid value for `mortgage_term`, must be a value less than or equal to `600`")  # noqa: E501
-        if mortgage_term is not None and mortgage_term < 0:  # noqa: E501
-            raise ValueError("Invalid value for `mortgage_term`, must be a value greater than or equal to `0`")  # noqa: E501
+        if down_payment is None:
+            raise ValueError("Invalid value for `down_payment`, must not be `None`")  # noqa: E501
+        if down_payment is not None and down_payment < 0:  # noqa: E501
+            raise ValueError("Invalid value for `down_payment`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._mortgage_term = mortgage_term
+        self._down_payment = down_payment
 
     @property
     def interest_rate(self):

@@ -1,6 +1,6 @@
 # com\hydrogen\integration\KMSApi
 
-All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1/*
+All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,7 +22,6 @@ Create an secret key.
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -90,7 +89,6 @@ Permanently delete an secret key value under a tenant.
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -147,17 +145,16 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getKMSAllUsingGet**
-> \com\hydrogen\integration\Model\PageKmsConfig_ getKMSAllUsingGet($ascending, $order_by, $page, $size)
+> \com\hydrogen\integration\Model\PageKmsConfig_ getKMSAllUsingGet($ascending, $filter, $order_by, $page, $size)
 
 List all KMS Clients
 
-Get details for all clients registered with your firm.
+Get details for all clients registered with your business.
 
 ### Example
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -183,12 +180,13 @@ $apiInstance = new com\hydrogen\integration\Api\KMSApi(
     $config
 );
 $ascending = false; // bool | ascending
+$filter = "filter_example"; // string | filter
 $order_by = "update_date"; // string | order_by
 $page = 0; // int | page
 $size = 25; // int | size
 
 try {
-    $result = $apiInstance->getKMSAllUsingGet($ascending, $order_by, $page, $size);
+    $result = $apiInstance->getKMSAllUsingGet($ascending, $filter, $order_by, $page, $size);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling KMSApi->getKMSAllUsingGet: ', $e->getMessage(), PHP_EOL;
@@ -201,6 +199,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **bool**| ascending | [optional] [default to false]
+ **filter** | **string**| filter | [optional]
  **order_by** | **string**| order_by | [optional] [default to update_date]
  **page** | **int**| page | [optional] [default to 0]
  **size** | **int**| size | [optional] [default to 25]
@@ -231,7 +230,6 @@ Retrieve the information for a specific value associated with a Secret key.
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -299,7 +297,6 @@ Update the information for an key value.
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials

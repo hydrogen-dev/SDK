@@ -5,16 +5,24 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **portfolioTickers** | **List&lt;String&gt;** |  |  [optional]
-**events** | [**List&lt;EventsEnum&gt;**](#List&lt;EventsEnum&gt;) |  |  [optional]
-**createLog** | **Boolean** |  |  [optional]
-**aggregationAccountId** | [**UUID**](UUID.md) |  |  [optional]
-**allocationId** | [**UUID**](UUID.md) |  |  [optional]
-**modelId** | [**UUID**](UUID.md) |  |  [optional]
-**portfolioWeights** | **List&lt;Float&gt;** |  |  [optional]
-**useProxyData** | **Boolean** |  |  [optional]
-**accountId** | [**UUID**](UUID.md) |  |  [optional]
 **marketDataSource** | [**MarketDataSourceEnum**](#MarketDataSourceEnum) |  |  [optional]
 **portfolioId** | [**UUID**](UUID.md) |  |  [optional]
+**modelId** | [**UUID**](UUID.md) |  |  [optional]
+**createLog** | **Boolean** |  |  [optional]
+**allocationId** | [**UUID**](UUID.md) |  |  [optional]
+**events** | [**List&lt;EventsEnum&gt;**](#List&lt;EventsEnum&gt;) |  |  [optional]
+**useProxyData** | **Boolean** |  |  [optional]
+**accountId** | [**UUID**](UUID.md) |  |  [optional]
+**aggregationAccountId** | [**UUID**](UUID.md) |  |  [optional]
+**portfolioWeights** | **List&lt;Float&gt;** |  |  [optional]
+
+
+<a name="MarketDataSourceEnum"></a>
+## Enum: MarketDataSourceEnum
+Name | Value
+---- | -----
+NUCLEUS | &quot;nucleus&quot;
+INTEGRATION | &quot;integration&quot;
 
 
 <a name="List<EventsEnum>"></a>
@@ -29,14 +37,6 @@ SEPTEMBER_ELEVENTH | &quot;september_eleventh&quot;
 _1987_BLACK_MONDAY | &quot;1987_black_monday&quot;
 _1992_BLACK_WEDNESDAY | &quot;1992_black_wednesday&quot;
 _1997_ASIAN_FINANCIAL_CRISIS | &quot;1997_asian_financial_crisis&quot;
-
-
-<a name="MarketDataSourceEnum"></a>
-## Enum: MarketDataSourceEnum
-Name | Value
----- | -----
-NUCLEUS | &quot;nucleus&quot;
-INTEGRATION | &quot;integration&quot;
 
 
 

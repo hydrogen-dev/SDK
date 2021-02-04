@@ -44,7 +44,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.OverflowApi(nucleus_api.ApiClient(configuration))
 overflow_settings = nucleus_api.OverflowSettings() # OverflowSettings | overflowSettings
@@ -108,7 +108,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.OverflowApi(nucleus_api.ApiClient(configuration))
 overflow_vo = nucleus_api.OverflowVO() # OverflowVO | overflowVO
@@ -172,7 +172,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.OverflowApi(nucleus_api.ApiClient(configuration))
 overflow_settings_id = 'overflow_settings_id_example' # str | UUID overflow_settings_id
@@ -235,7 +235,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.OverflowApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -307,7 +307,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.OverflowApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -379,7 +379,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.OverflowApi(nucleus_api.ApiClient(configuration))
 overflow_settings_id = 'overflow_settings_id_example' # str | UUID overflow_settings_id
@@ -443,7 +443,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.OverflowApi(nucleus_api.ApiClient(configuration))
 overflow_id = 'overflow_id_example' # str | UUID overflow_id
@@ -507,10 +507,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.OverflowApi(nucleus_api.ApiClient(configuration))
-overflow_settings = nucleus_api.OverflowSettings() # OverflowSettings | overflow_settings
+overflow_settings = NULL # object | overflow_settings
 overflow_settings_id = 'overflow_settings_id_example' # str | UUID overflow_settings_id
 
 try:
@@ -525,7 +525,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **overflow_settings** | [**OverflowSettings**](OverflowSettings.md)| overflow_settings | 
+ **overflow_settings** | **object**| overflow_settings | 
  **overflow_settings_id** | [**str**](.md)| UUID overflow_settings_id | 
 
 ### Return type

@@ -13,15 +13,15 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.Allocation;
 import com.hydrogen.nucleus.model.AllocationAggregatedVO;
 import com.hydrogen.nucleus.model.AllocationComposition;
 import com.hydrogen.nucleus.model.DateDoubleVO;
+import org.threeten.bp.LocalDate;
 import com.hydrogen.nucleus.model.ModelHoldingVO;
 import com.hydrogen.nucleus.model.PageAllocation;
 import com.hydrogen.nucleus.model.PageAllocationComposition;
-import com.hydrogen.nucleus.ApiException;
-import org.threeten.bp.LocalDate;
 import com.hydrogen.nucleus.model.PageModelTransaction;
 import java.util.UUID;
 import org.junit.Test;
@@ -261,7 +261,7 @@ public class AllocationApiTest {
      */
     @Test
     public void updateAllocationCompositionUsingPutTest() throws ApiException {
-        AllocationComposition allocationComposition = null;
+        Object allocationComposition = null;
         UUID allocationCompositionId = null;
         AllocationComposition response = api.updateAllocationCompositionUsingPut(allocationComposition, allocationCompositionId);
 
@@ -278,7 +278,7 @@ public class AllocationApiTest {
      */
     @Test
     public void updateAllocationUsingPutTest() throws ApiException {
-        Allocation allocation = null;
+        Object allocation = null;
         UUID allocationId = null;
         Allocation response = api.updateAllocationUsingPut(allocation, allocationId);
 

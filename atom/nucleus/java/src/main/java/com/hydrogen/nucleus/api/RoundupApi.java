@@ -21,8 +21,6 @@ import com.hydrogen.nucleus.Configuration;
 import com.hydrogen.nucleus.Pair;
 import com.hydrogen.nucleus.ProgressRequestBody;
 import com.hydrogen.nucleus.ProgressResponseBody;
-import com.hydrogen.nucleus.model.RoundupCO;
-import com.hydrogen.nucleus.model.RoundupSettings;
 
 import com.google.gson.reflect.TypeToken;
 
@@ -32,7 +30,8 @@ import java.io.IOException;
 import com.hydrogen.nucleus.model.PageRoundup;
 import com.hydrogen.nucleus.model.PageRoundupSettings;
 import com.hydrogen.nucleus.model.Roundup;
-
+import com.hydrogen.nucleus.model.RoundupCO;
+import com.hydrogen.nucleus.model.RoundupSettings;
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -964,7 +963,7 @@ public class RoundupApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateRoundupSettingsUsingPutCall(RoundupSettings roundupSetting, UUID roundupSettingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateRoundupSettingsUsingPutCall(Object roundupSetting, UUID roundupSettingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = roundupSetting;
 
         // create path and map variables
@@ -1007,7 +1006,7 @@ public class RoundupApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateRoundupSettingsUsingPutValidateBeforeCall(RoundupSettings roundupSetting, UUID roundupSettingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateRoundupSettingsUsingPutValidateBeforeCall(Object roundupSetting, UUID roundupSettingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'roundupSetting' is set
         if (roundupSetting == null) {
@@ -1033,7 +1032,7 @@ public class RoundupApi {
      * @return RoundupSettings
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public RoundupSettings updateRoundupSettingsUsingPut(RoundupSettings roundupSetting, UUID roundupSettingId) throws ApiException {
+    public RoundupSettings updateRoundupSettingsUsingPut(Object roundupSetting, UUID roundupSettingId) throws ApiException {
         ApiResponse<RoundupSettings> resp = updateRoundupSettingsUsingPutWithHttpInfo(roundupSetting, roundupSettingId);
         return resp.getData();
     }
@@ -1046,7 +1045,7 @@ public class RoundupApi {
      * @return ApiResponse&lt;RoundupSettings&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<RoundupSettings> updateRoundupSettingsUsingPutWithHttpInfo(RoundupSettings roundupSetting, UUID roundupSettingId) throws ApiException {
+    public ApiResponse<RoundupSettings> updateRoundupSettingsUsingPutWithHttpInfo(Object roundupSetting, UUID roundupSettingId) throws ApiException {
         com.squareup.okhttp.Call call = updateRoundupSettingsUsingPutValidateBeforeCall(roundupSetting, roundupSettingId, null, null);
         Type localVarReturnType = new TypeToken<RoundupSettings>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1061,7 +1060,7 @@ public class RoundupApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateRoundupSettingsUsingPutAsync(RoundupSettings roundupSetting, UUID roundupSettingId, final ApiCallback<RoundupSettings> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateRoundupSettingsUsingPutAsync(Object roundupSetting, UUID roundupSettingId, final ApiCallback<RoundupSettings> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

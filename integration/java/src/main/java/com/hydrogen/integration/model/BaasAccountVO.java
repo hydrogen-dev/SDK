@@ -23,7 +23,7 @@ import java.util.UUID;
 /**
  * BaasAccountVO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class BaasAccountVO {
   @SerializedName("account_number")
   private String accountNumber = null;
@@ -47,7 +47,7 @@ public class BaasAccountVO {
   private String status = null;
 
   @SerializedName("vendor_name")
-  private Object vendorName = null;
+  private String vendorName = null;
 
   @SerializedName("vendor_response")
   private Object vendorResponse = null;
@@ -178,7 +178,7 @@ public class BaasAccountVO {
     this.status = status;
   }
 
-  public BaasAccountVO vendorName(Object vendorName) {
+  public BaasAccountVO vendorName(String vendorName) {
     this.vendorName = vendorName;
     return this;
   }
@@ -188,11 +188,11 @@ public class BaasAccountVO {
    * @return vendorName
   **/
   @ApiModelProperty(value = "")
-  public Object getVendorName() {
+  public String getVendorName() {
     return vendorName;
   }
 
-  public void setVendorName(Object vendorName) {
+  public void setVendorName(String vendorName) {
     this.vendorName = vendorName;
   }
 

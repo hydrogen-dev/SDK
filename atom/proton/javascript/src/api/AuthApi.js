@@ -17,7 +17,7 @@
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
-        define(['ApiClient'], factory);
+        define(['src/ApiClient'], factory);
     } else if (typeof module === 'object' && module.exports) {
         // CommonJS-like environments that support module.exports, like Node.
         module.exports = factory(require('../ApiClient'), require('superagent'));
@@ -114,40 +114,37 @@
             var clientTokenUrl = this.tokenUrl + '/client-token';
             var defaultHeaders = {};
             var _this = ApiClient.instance;
-            var tokenCallback = function (error, data, response) {
-                if (error) {
+
+            var clientToken = opts['Client-Token'];
+            var auth = {
+                'client_id': opts['client_id'],
+                'client_secret': opts['client_secret']
+            }
+            var headers = {
+                'Client-Token' : 'Bearer ' + clientToken
+            }
+
+            var request = superagent('POST',clientTokenUrl);
+            request.set(defaultHeaders).set(_this.normalizeParams(headers));
+            request.auth(auth['client_id'] || '', auth['client_secret'] || '');
+            request.end(function(error, response) {
+                if (callback) {
+                    var data = null;
+                    if (!error) {
+                        try {
+                            var returnType = Object;
+                            data = _this.deserialize(response, returnType);
+                            if (_this.enableCookies && typeof window === 'undefined'){
+                                _this.agent.saveCookies(response);
+                            }
+                        } catch (err) {
+                            error = err;
+                        }
+                    }
                     callback(error, data, response);
                 }
-                var accessToken = data.access_token;
-                var clientToken = opts['client_token'];
-                var headers = {
-                    'Authorization' : 'Bearer '+ accessToken,
-                    'Client-Token' : 'Bearer ' + clientToken
-                }
-                var request = superagent('POST',clientTokenUrl);
-                request.set(defaultHeaders).set(_this.normalizeParams(headers));
-                request.end(function(error, response) {
-                    if (callback) {
-                        var data = null;
-                        if (!error) {
-                            try {
-                                var returnType = Object;
-                                data = _this.deserialize(response, returnType);
-                                if (_this.enableCookies && typeof window === 'undefined'){
-                                    _this.agent.saveCookies(response);
-                                }
-                            } catch (err) {
-                                error = err;
-                            }
-                        }
-                        callback(error, data, response);
-                    }
-                });
-                return request;
-            };
-            opts['grant_type'] = 'client_credentials';
-            console.log(opts);
-            this.createUsingPostClientCredentials(opts, tokenCallback);
+            });
+            return request;
         }
 
         /**

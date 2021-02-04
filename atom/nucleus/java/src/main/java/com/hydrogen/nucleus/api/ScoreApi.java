@@ -21,7 +21,6 @@ import com.hydrogen.nucleus.Configuration;
 import com.hydrogen.nucleus.Pair;
 import com.hydrogen.nucleus.ProgressRequestBody;
 import com.hydrogen.nucleus.ProgressResponseBody;
-import com.hydrogen.nucleus.model.Score;
 
 import com.google.gson.reflect.TypeToken;
 
@@ -29,7 +28,7 @@ import java.io.IOException;
 
 
 import com.hydrogen.nucleus.model.PageScore;
-
+import com.hydrogen.nucleus.model.Score;
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -573,7 +572,7 @@ public class ScoreApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateScoreUsingPutCall(Score score, UUID scoreId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateScoreUsingPutCall(Object score, UUID scoreId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = score;
 
         // create path and map variables
@@ -616,7 +615,7 @@ public class ScoreApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateScoreUsingPutValidateBeforeCall(Score score, UUID scoreId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateScoreUsingPutValidateBeforeCall(Object score, UUID scoreId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'score' is set
         if (score == null) {
@@ -642,7 +641,7 @@ public class ScoreApi {
      * @return Score
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Score updateScoreUsingPut(Score score, UUID scoreId) throws ApiException {
+    public Score updateScoreUsingPut(Object score, UUID scoreId) throws ApiException {
         ApiResponse<Score> resp = updateScoreUsingPutWithHttpInfo(score, scoreId);
         return resp.getData();
     }
@@ -655,7 +654,7 @@ public class ScoreApi {
      * @return ApiResponse&lt;Score&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Score> updateScoreUsingPutWithHttpInfo(Score score, UUID scoreId) throws ApiException {
+    public ApiResponse<Score> updateScoreUsingPutWithHttpInfo(Object score, UUID scoreId) throws ApiException {
         com.squareup.okhttp.Call call = updateScoreUsingPutValidateBeforeCall(score, scoreId, null, null);
         Type localVarReturnType = new TypeToken<Score>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -670,7 +669,7 @@ public class ScoreApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateScoreUsingPutAsync(Score score, UUID scoreId, final ApiCallback<Score> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateScoreUsingPutAsync(Object score, UUID scoreId, final ApiCallback<Score> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

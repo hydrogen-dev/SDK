@@ -67,7 +67,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
@@ -132,7 +131,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_status_request = nucleus_api.AccountStatus() # AccountStatus | accountStatusRequest
@@ -196,7 +195,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_type_request = nucleus_api.AccountType() # AccountType | accountTypeRequest
@@ -260,7 +259,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 client_account_request = nucleus_api.Account() # Account | clientAccountRequest
@@ -324,7 +323,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_allocation_id = 'account_allocation_id_example' # str | UUID account_allocation_id
@@ -387,7 +386,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | account_id
@@ -451,7 +450,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_status_id = 'account_status_id_example' # str | UUID account_status_id
@@ -514,7 +513,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_type_id = 'account_type_id_example' # str | UUID account_type_id
@@ -577,7 +576,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | UUID account_id
@@ -640,7 +639,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -712,7 +711,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -784,7 +783,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_allocation_id = 'account_allocation_id_example' # str | UUID account_allocation_id
@@ -848,7 +847,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | Account Id
@@ -924,7 +923,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -994,7 +993,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | UUID account_id
@@ -1062,7 +1061,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | account_id
@@ -1126,7 +1125,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -1198,7 +1197,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_status_id = 'account_status_id_example' # str | UUID account_status_id
@@ -1262,7 +1261,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -1334,7 +1333,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_type_id = 'account_type_id_example' # str | UUID account_type_id
@@ -1398,7 +1397,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | UUID account_id
@@ -1462,7 +1461,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -1534,7 +1533,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | UUID account_id
@@ -1606,7 +1605,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | UUID account_id
@@ -1684,7 +1683,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 acl_client_permission_vo = nucleus_api.AclClientPermissionVO() # AclClientPermissionVO | aclClientPermissionVO
@@ -1748,7 +1747,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | UUID account_id
@@ -1814,11 +1813,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_allocation_id = 'account_allocation_id_example' # str | UUID account_allocation_id
-account_allocation_mapping = nucleus_api.AccountAllocationMapping() # AccountAllocationMapping | account_allocation_mapping (optional)
+account_allocation_mapping = NULL # object | account_allocation_mapping (optional)
 
 try:
     # Update an account allocation
@@ -1833,7 +1832,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_allocation_id** | [**str**](.md)| UUID account_allocation_id | 
- **account_allocation_mapping** | [**AccountAllocationMapping**](AccountAllocationMapping.md)| account_allocation_mapping | [optional] 
+ **account_allocation_mapping** | **object**| account_allocation_mapping | [optional] 
 
 ### Return type
 
@@ -1880,10 +1879,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
-account_status = nucleus_api.AccountStatus() # AccountStatus | account_status
+account_status = NULL # object | account_status
 account_status_id = 'account_status_id_example' # str | UUID account_status_id
 
 try:
@@ -1898,7 +1897,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_status** | [**AccountStatus**](AccountStatus.md)| account_status | 
+ **account_status** | **object**| account_status | 
  **account_status_id** | [**str**](.md)| UUID account_status_id | 
 
 ### Return type
@@ -1946,10 +1945,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
-account_type = nucleus_api.AccountType() # AccountType | account_type
+account_type = NULL # object | account_type
 account_type_id = 'account_type_id_example' # str | UUID account_type_id
 
 try:
@@ -1964,7 +1963,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_type** | [**AccountType**](AccountType.md)| account_type | 
+ **account_type** | **object**| account_type | 
  **account_type_id** | [**str**](.md)| UUID account_type_id | 
 
 ### Return type
@@ -2012,10 +2011,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
-account = nucleus_api.Account() # Account | account
+account = NULL # object | account
 account_id = 'account_id_example' # str | UUID account_id
 
 try:
@@ -2030,7 +2029,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account** | [**Account**](Account.md)| account | 
+ **account** | **object**| account | 
  **account_id** | [**str**](.md)| UUID account_id | 
 
 ### Return type
@@ -2078,11 +2077,11 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AccountApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | account_id
-acl_client_permission_vo = nucleus_api.AclClientPermissionVO() # AclClientPermissionVO | aclClientPermissionVO
+acl_client_permission_vo = NULL # object | aclClientPermissionVO
 
 try:
     # Update an account permission
@@ -2097,7 +2096,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_id** | [**str**](.md)| account_id | 
- **acl_client_permission_vo** | [**AclClientPermissionVO**](AclClientPermissionVO.md)| aclClientPermissionVO | 
+ **acl_client_permission_vo** | **object**| aclClientPermissionVO | 
 
 ### Return type
 

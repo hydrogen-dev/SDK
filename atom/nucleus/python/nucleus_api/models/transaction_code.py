@@ -34,8 +34,8 @@ class TransactionCode(object):
         'category': 'str',
         'create_date': 'datetime',
         'id': 'str',
-        'is_buy': 'bool',
-        'is_fee': 'bool',
+        'is_buy': 'str',
+        'is_fee': 'str',
         'is_transfer': 'str',
         'metadata': 'dict(str, str)',
         'secondary_id': 'str',
@@ -175,10 +175,9 @@ class TransactionCode(object):
     def is_buy(self):
         """Gets the is_buy of this TransactionCode.  # noqa: E501
 
-        isBuy  # noqa: E501
 
         :return: The is_buy of this TransactionCode.  # noqa: E501
-        :rtype: bool
+        :rtype: str
         """
         return self._is_buy
 
@@ -186,11 +185,16 @@ class TransactionCode(object):
     def is_buy(self, is_buy):
         """Sets the is_buy of this TransactionCode.
 
-        isBuy  # noqa: E501
 
         :param is_buy: The is_buy of this TransactionCode.  # noqa: E501
-        :type: bool
+        :type: str
         """
+        allowed_values = ["true", "false", "null"]  # noqa: E501
+        if is_buy not in allowed_values:
+            raise ValueError(
+                "Invalid value for `is_buy` ({0}), must be one of {1}"  # noqa: E501
+                .format(is_buy, allowed_values)
+            )
 
         self._is_buy = is_buy
 
@@ -198,10 +202,9 @@ class TransactionCode(object):
     def is_fee(self):
         """Gets the is_fee of this TransactionCode.  # noqa: E501
 
-        isFee  # noqa: E501
 
         :return: The is_fee of this TransactionCode.  # noqa: E501
-        :rtype: bool
+        :rtype: str
         """
         return self._is_fee
 
@@ -209,11 +212,16 @@ class TransactionCode(object):
     def is_fee(self, is_fee):
         """Sets the is_fee of this TransactionCode.
 
-        isFee  # noqa: E501
 
         :param is_fee: The is_fee of this TransactionCode.  # noqa: E501
-        :type: bool
+        :type: str
         """
+        allowed_values = ["true", "false", "null"]  # noqa: E501
+        if is_fee not in allowed_values:
+            raise ValueError(
+                "Invalid value for `is_fee` ({0}), must be one of {1}"  # noqa: E501
+                .format(is_fee, allowed_values)
+            )
 
         self._is_fee = is_fee
 
@@ -235,8 +243,8 @@ class TransactionCode(object):
         :param is_transfer: The is_transfer of this TransactionCode.  # noqa: E501
         :type: str
         """
-        allowed_values = ["FALSE", "TRUE", "NULL"]  # noqa: E501
-        if is_transfer is not None and is_transfer.upper() not in allowed_values:
+        allowed_values = ["true", "false", "null"]  # noqa: E501
+        if is_transfer not in allowed_values:
             raise ValueError(
                 "Invalid value for `is_transfer` ({0}), must be one of {1}"  # noqa: E501
                 .format(is_transfer, allowed_values)

@@ -21,14 +21,14 @@ import com.hydrogen.nucleus.Configuration;
 import com.hydrogen.nucleus.Pair;
 import com.hydrogen.nucleus.ProgressRequestBody;
 import com.hydrogen.nucleus.ProgressResponseBody;
-import com.hydrogen.nucleus.model.FinancialStatement;
-import com.hydrogen.nucleus.model.PageFinancialStatement;
 
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
 
+import com.hydrogen.nucleus.model.FinancialStatement;
+import com.hydrogen.nucleus.model.PageFinancialStatement;
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -584,7 +584,7 @@ public class FinancialStatementApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateFinancialStatementUsingPutCall(FinancialStatement financialStatement, UUID financialStatementId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateFinancialStatementUsingPutCall(Object financialStatement, UUID financialStatementId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = financialStatement;
 
         // create path and map variables
@@ -627,7 +627,7 @@ public class FinancialStatementApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateFinancialStatementUsingPutValidateBeforeCall(FinancialStatement financialStatement, UUID financialStatementId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateFinancialStatementUsingPutValidateBeforeCall(Object financialStatement, UUID financialStatementId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'financialStatement' is set
         if (financialStatement == null) {
@@ -653,7 +653,7 @@ public class FinancialStatementApi {
      * @return FinancialStatement
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public FinancialStatement updateFinancialStatementUsingPut(FinancialStatement financialStatement, UUID financialStatementId) throws ApiException {
+    public FinancialStatement updateFinancialStatementUsingPut(Object financialStatement, UUID financialStatementId) throws ApiException {
         ApiResponse<FinancialStatement> resp = updateFinancialStatementUsingPutWithHttpInfo(financialStatement, financialStatementId);
         return resp.getData();
     }
@@ -666,7 +666,7 @@ public class FinancialStatementApi {
      * @return ApiResponse&lt;FinancialStatement&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<FinancialStatement> updateFinancialStatementUsingPutWithHttpInfo(FinancialStatement financialStatement, UUID financialStatementId) throws ApiException {
+    public ApiResponse<FinancialStatement> updateFinancialStatementUsingPutWithHttpInfo(Object financialStatement, UUID financialStatementId) throws ApiException {
         com.squareup.okhttp.Call call = updateFinancialStatementUsingPutValidateBeforeCall(financialStatement, financialStatementId, null, null);
         Type localVarReturnType = new TypeToken<FinancialStatement>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -681,7 +681,7 @@ public class FinancialStatementApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateFinancialStatementUsingPutAsync(FinancialStatement financialStatement, UUID financialStatementId, final ApiCallback<FinancialStatement> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateFinancialStatementUsingPutAsync(Object financialStatement, UUID financialStatementId, final ApiCallback<FinancialStatement> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

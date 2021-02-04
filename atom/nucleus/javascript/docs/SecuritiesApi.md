@@ -193,7 +193,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.SecuritiesApi();
 
-var securityExclusionId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID security_exclusion_id
+var securityExclusionId = "\"62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d\""; // String | UUID security_exclusion_id
 
 
 var callback = function(error, data, response) {
@@ -210,7 +210,7 @@ apiInstance.deleteSecurityExclusionUsingDelete(securityExclusionId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **securityExclusionId** | **String**| UUID security_exclusion_id | 
+ **securityExclusionId** | [**String**](.md)| UUID security_exclusion_id | 
 
 ### Return type
 
@@ -244,7 +244,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.SecuritiesApi();
 
-var securityPriceId = "739ecd39-e1ae-4a0b-b266-dd3ddc616163"; // String | UUID security_price_id
+var securityPriceId = "\"739ecd39-e1ae-4a0b-b266-dd3ddc616163\""; // String | UUID security_price_id
 
 
 var callback = function(error, data, response) {
@@ -261,7 +261,7 @@ apiInstance.deleteSecurityPriceUsingDelete(securityPriceId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **securityPriceId** | **String**| UUID security_price_id | 
+ **securityPriceId** | [**String**](.md)| UUID security_price_id | 
 
 ### Return type
 
@@ -295,7 +295,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.SecuritiesApi();
 
-var securityId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID security_id
+var securityId = "\"62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d\""; // String | UUID security_id
 
 
 var callback = function(error, data, response) {
@@ -312,7 +312,7 @@ apiInstance.deleteSecurityUsingDelete(securityId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **securityId** | **String**| UUID security_id | 
+ **securityId** | [**String**](.md)| UUID security_id | 
 
 ### Return type
 
@@ -466,7 +466,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.SecuritiesApi();
 
-var securityExclusionId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID security_exclusion_id
+var securityExclusionId = "\"62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d\""; // String | UUID security_exclusion_id
 
 
 var callback = function(error, data, response) {
@@ -483,7 +483,7 @@ apiInstance.getSecurityExclusionUsingGet(securityExclusionId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **securityExclusionId** | **String**| UUID security_exclusion_id | 
+ **securityExclusionId** | [**String**](.md)| UUID security_exclusion_id | 
 
 ### Return type
 
@@ -579,7 +579,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.SecuritiesApi();
 
-var securityPriceId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID security_price_id
+var securityPriceId = "\"62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d\""; // String | UUID security_price_id
 
 var opts = { 
   'currencyConversion': "currencyConversion_example" // String | USD
@@ -599,7 +599,7 @@ apiInstance.getSecurityPriceUsingGet(securityPriceId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **securityPriceId** | **String**| UUID security_price_id | 
+ **securityPriceId** | [**String**](.md)| UUID security_price_id | 
  **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
@@ -634,7 +634,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.SecuritiesApi();
 
-var securityId = "739ecd39-e1ae-4a0b-b266-dd3ddc616163"; // String | UUID security_id
+var securityId = "\"739ecd39-e1ae-4a0b-b266-dd3ddc616163\""; // String | UUID security_id
 
 
 var callback = function(error, data, response) {
@@ -651,7 +651,7 @@ apiInstance.getSecurityUsingGet(securityId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **securityId** | **String**| UUID security_id | 
+ **securityId** | [**String**](.md)| UUID security_id | 
 
 ### Return type
 
@@ -685,9 +685,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.SecuritiesApi();
 
-var securityExclusion = new HydrogenNucleusApi.SecurityExclusion(); // SecurityExclusion | security_exclusion
+var securityExclusion = null; // Object | security_exclusion
 
-var securityExclusionId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID security_exclusion_id
+var securityExclusionId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID security_exclusion_id
 
 
 var callback = function(error, data, response) {
@@ -704,8 +704,8 @@ apiInstance.updateSecurityExclusionUsingPut(securityExclusion, securityExclusion
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **securityExclusion** | [**SecurityExclusion**](SecurityExclusion.md)| security_exclusion | 
- **securityExclusionId** | **String**| UUID security_exclusion_id | 
+ **securityExclusion** | **Object**| security_exclusion | 
+ **securityExclusionId** | [**String**](.md)| UUID security_exclusion_id | 
 
 ### Return type
 
@@ -739,9 +739,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.SecuritiesApi();
 
-var securityPrice = new HydrogenNucleusApi.SecurityPrice(); // SecurityPrice | security_price
+var securityPrice = null; // Object | security_price
 
-var securityPriceId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID security_price_id
+var securityPriceId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID security_price_id
 
 
 var callback = function(error, data, response) {
@@ -758,8 +758,8 @@ apiInstance.updateSecurityPriceUsingPut(securityPrice, securityPriceId, callback
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **securityPrice** | [**SecurityPrice**](SecurityPrice.md)| security_price | 
- **securityPriceId** | **String**| UUID security_price_id | 
+ **securityPrice** | **Object**| security_price | 
+ **securityPriceId** | [**String**](.md)| UUID security_price_id | 
 
 ### Return type
 
@@ -793,9 +793,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.SecuritiesApi();
 
-var security = new HydrogenNucleusApi.Security(); // Security | security
+var security = null; // Object | security
 
-var securityId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID security_id
+var securityId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID security_id
 
 
 var callback = function(error, data, response) {
@@ -812,8 +812,8 @@ apiInstance.updateSecurityUsingPut(security, securityId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **security** | [**Security**](Security.md)| security | 
- **securityId** | **String**| UUID security_id | 
+ **security** | **Object**| security | 
+ **securityId** | [**String**](.md)| UUID security_id | 
 
 ### Return type
 

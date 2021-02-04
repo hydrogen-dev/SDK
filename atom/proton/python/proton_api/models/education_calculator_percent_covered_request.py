@@ -31,67 +31,88 @@ class EducationCalculatorPercentCoveredRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'total_annual_cost': 'float',
-        'general_inflation_rate': 'float',
-        'education_inflation_rate': 'float',
-        'deposit_schedule': 'CalculatorDepositSchedule1',
-        'portfolio_return': 'float',
         'aggregation_account_ids': 'list[str]',
-        'initial_balance': 'float',
-        'decumulation_horizon': 'int',
+        'total_annual_cost': 'float',
         'tax_rate': 'float',
         'account_ids': 'list[str]',
-        'accumulation_horizon': 'int'
+        'initial_balance': 'float',
+        'decumulation_horizon': 'int',
+        'accumulation_horizon': 'int',
+        'education_inflation_rate': 'float',
+        'portfolio_return': 'float',
+        'deposit_schedule': 'CalculatorDepositSchedule1',
+        'general_inflation_rate': 'float'
     }
 
     attribute_map = {
-        'total_annual_cost': 'total_annual_cost',
-        'general_inflation_rate': 'general_inflation_rate',
-        'education_inflation_rate': 'education_inflation_rate',
-        'deposit_schedule': 'deposit_schedule',
-        'portfolio_return': 'portfolio_return',
         'aggregation_account_ids': 'aggregation_account_ids',
-        'initial_balance': 'initial_balance',
-        'decumulation_horizon': 'decumulation_horizon',
+        'total_annual_cost': 'total_annual_cost',
         'tax_rate': 'tax_rate',
         'account_ids': 'account_ids',
-        'accumulation_horizon': 'accumulation_horizon'
+        'initial_balance': 'initial_balance',
+        'decumulation_horizon': 'decumulation_horizon',
+        'accumulation_horizon': 'accumulation_horizon',
+        'education_inflation_rate': 'education_inflation_rate',
+        'portfolio_return': 'portfolio_return',
+        'deposit_schedule': 'deposit_schedule',
+        'general_inflation_rate': 'general_inflation_rate'
     }
 
-    def __init__(self, total_annual_cost=None, general_inflation_rate=0.0, education_inflation_rate=0.05, deposit_schedule=None, portfolio_return=None, aggregation_account_ids=None, initial_balance=0.0, decumulation_horizon=None, tax_rate=0.0, account_ids=None, accumulation_horizon=None):  # noqa: E501
+    def __init__(self, aggregation_account_ids=None, total_annual_cost=None, tax_rate=0.0, account_ids=None, initial_balance=0.0, decumulation_horizon=None, accumulation_horizon=None, education_inflation_rate=0.05, portfolio_return=None, deposit_schedule=None, general_inflation_rate=0.0):  # noqa: E501
         """EducationCalculatorPercentCoveredRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._total_annual_cost = None
-        self._general_inflation_rate = None
-        self._education_inflation_rate = None
-        self._deposit_schedule = None
-        self._portfolio_return = None
         self._aggregation_account_ids = None
-        self._initial_balance = None
-        self._decumulation_horizon = None
+        self._total_annual_cost = None
         self._tax_rate = None
         self._account_ids = None
+        self._initial_balance = None
+        self._decumulation_horizon = None
         self._accumulation_horizon = None
+        self._education_inflation_rate = None
+        self._portfolio_return = None
+        self._deposit_schedule = None
+        self._general_inflation_rate = None
         self.discriminator = None
 
-        self.total_annual_cost = total_annual_cost
-        if general_inflation_rate is not None:
-            self.general_inflation_rate = general_inflation_rate
-        if education_inflation_rate is not None:
-            self.education_inflation_rate = education_inflation_rate
-        if deposit_schedule is not None:
-            self.deposit_schedule = deposit_schedule
-        self.portfolio_return = portfolio_return
         if aggregation_account_ids is not None:
             self.aggregation_account_ids = aggregation_account_ids
-        if initial_balance is not None:
-            self.initial_balance = initial_balance
-        self.decumulation_horizon = decumulation_horizon
+        self.total_annual_cost = total_annual_cost
         if tax_rate is not None:
             self.tax_rate = tax_rate
         if account_ids is not None:
             self.account_ids = account_ids
+        if initial_balance is not None:
+            self.initial_balance = initial_balance
+        self.decumulation_horizon = decumulation_horizon
         self.accumulation_horizon = accumulation_horizon
+        if education_inflation_rate is not None:
+            self.education_inflation_rate = education_inflation_rate
+        self.portfolio_return = portfolio_return
+        if deposit_schedule is not None:
+            self.deposit_schedule = deposit_schedule
+        if general_inflation_rate is not None:
+            self.general_inflation_rate = general_inflation_rate
+
+    @property
+    def aggregation_account_ids(self):
+        """Gets the aggregation_account_ids of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+
+
+        :return: The aggregation_account_ids of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._aggregation_account_ids
+
+    @aggregation_account_ids.setter
+    def aggregation_account_ids(self, aggregation_account_ids):
+        """Sets the aggregation_account_ids of this EducationCalculatorPercentCoveredRequest.
+
+
+        :param aggregation_account_ids: The aggregation_account_ids of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._aggregation_account_ids = aggregation_account_ids
 
     @property
     def total_annual_cost(self):
@@ -119,117 +140,50 @@ class EducationCalculatorPercentCoveredRequest(object):
         self._total_annual_cost = total_annual_cost
 
     @property
-    def general_inflation_rate(self):
-        """Gets the general_inflation_rate of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+    def tax_rate(self):
+        """Gets the tax_rate of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
 
 
-        :return: The general_inflation_rate of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+        :return: The tax_rate of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
         :rtype: float
         """
-        return self._general_inflation_rate
+        return self._tax_rate
 
-    @general_inflation_rate.setter
-    def general_inflation_rate(self, general_inflation_rate):
-        """Sets the general_inflation_rate of this EducationCalculatorPercentCoveredRequest.
+    @tax_rate.setter
+    def tax_rate(self, tax_rate):
+        """Sets the tax_rate of this EducationCalculatorPercentCoveredRequest.
 
 
-        :param general_inflation_rate: The general_inflation_rate of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+        :param tax_rate: The tax_rate of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
         :type: float
         """
-        if general_inflation_rate is not None and general_inflation_rate < -1:  # noqa: E501
-            raise ValueError("Invalid value for `general_inflation_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
+        if tax_rate is not None and tax_rate > 1:  # noqa: E501
+            raise ValueError("Invalid value for `tax_rate`, must be a value less than or equal to `1`")  # noqa: E501
+        if tax_rate is not None and tax_rate < 0:  # noqa: E501
+            raise ValueError("Invalid value for `tax_rate`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._general_inflation_rate = general_inflation_rate
-
-    @property
-    def education_inflation_rate(self):
-        """Gets the education_inflation_rate of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
-
-
-        :return: The education_inflation_rate of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._education_inflation_rate
-
-    @education_inflation_rate.setter
-    def education_inflation_rate(self, education_inflation_rate):
-        """Sets the education_inflation_rate of this EducationCalculatorPercentCoveredRequest.
-
-
-        :param education_inflation_rate: The education_inflation_rate of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
-        :type: float
-        """
-        if education_inflation_rate is not None and education_inflation_rate < -1:  # noqa: E501
-            raise ValueError("Invalid value for `education_inflation_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
-
-        self._education_inflation_rate = education_inflation_rate
+        self._tax_rate = tax_rate
 
     @property
-    def deposit_schedule(self):
-        """Gets the deposit_schedule of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+    def account_ids(self):
+        """Gets the account_ids of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
 
 
-        :return: The deposit_schedule of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
-        :rtype: CalculatorDepositSchedule1
-        """
-        return self._deposit_schedule
-
-    @deposit_schedule.setter
-    def deposit_schedule(self, deposit_schedule):
-        """Sets the deposit_schedule of this EducationCalculatorPercentCoveredRequest.
-
-
-        :param deposit_schedule: The deposit_schedule of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
-        :type: CalculatorDepositSchedule1
-        """
-
-        self._deposit_schedule = deposit_schedule
-
-    @property
-    def portfolio_return(self):
-        """Gets the portfolio_return of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
-
-
-        :return: The portfolio_return of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._portfolio_return
-
-    @portfolio_return.setter
-    def portfolio_return(self, portfolio_return):
-        """Sets the portfolio_return of this EducationCalculatorPercentCoveredRequest.
-
-
-        :param portfolio_return: The portfolio_return of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
-        :type: float
-        """
-        if portfolio_return is None:
-            raise ValueError("Invalid value for `portfolio_return`, must not be `None`")  # noqa: E501
-        if portfolio_return is not None and portfolio_return < -1:  # noqa: E501
-            raise ValueError("Invalid value for `portfolio_return`, must be a value greater than or equal to `-1`")  # noqa: E501
-
-        self._portfolio_return = portfolio_return
-
-    @property
-    def aggregation_account_ids(self):
-        """Gets the aggregation_account_ids of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
-
-
-        :return: The aggregation_account_ids of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+        :return: The account_ids of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
         :rtype: list[str]
         """
-        return self._aggregation_account_ids
+        return self._account_ids
 
-    @aggregation_account_ids.setter
-    def aggregation_account_ids(self, aggregation_account_ids):
-        """Sets the aggregation_account_ids of this EducationCalculatorPercentCoveredRequest.
+    @account_ids.setter
+    def account_ids(self, account_ids):
+        """Sets the account_ids of this EducationCalculatorPercentCoveredRequest.
 
 
-        :param aggregation_account_ids: The aggregation_account_ids of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+        :param account_ids: The account_ids of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
         :type: list[str]
         """
 
-        self._aggregation_account_ids = aggregation_account_ids
+        self._account_ids = account_ids
 
     @property
     def initial_balance(self):
@@ -280,52 +234,6 @@ class EducationCalculatorPercentCoveredRequest(object):
         self._decumulation_horizon = decumulation_horizon
 
     @property
-    def tax_rate(self):
-        """Gets the tax_rate of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
-
-
-        :return: The tax_rate of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._tax_rate
-
-    @tax_rate.setter
-    def tax_rate(self, tax_rate):
-        """Sets the tax_rate of this EducationCalculatorPercentCoveredRequest.
-
-
-        :param tax_rate: The tax_rate of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
-        :type: float
-        """
-        if tax_rate is not None and tax_rate > 1:  # noqa: E501
-            raise ValueError("Invalid value for `tax_rate`, must be a value less than or equal to `1`")  # noqa: E501
-        if tax_rate is not None and tax_rate < 0:  # noqa: E501
-            raise ValueError("Invalid value for `tax_rate`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._tax_rate = tax_rate
-
-    @property
-    def account_ids(self):
-        """Gets the account_ids of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
-
-
-        :return: The account_ids of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._account_ids
-
-    @account_ids.setter
-    def account_ids(self, account_ids):
-        """Sets the account_ids of this EducationCalculatorPercentCoveredRequest.
-
-
-        :param account_ids: The account_ids of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._account_ids = account_ids
-
-    @property
     def accumulation_horizon(self):
         """Gets the accumulation_horizon of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
 
@@ -349,6 +257,98 @@ class EducationCalculatorPercentCoveredRequest(object):
             raise ValueError("Invalid value for `accumulation_horizon`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._accumulation_horizon = accumulation_horizon
+
+    @property
+    def education_inflation_rate(self):
+        """Gets the education_inflation_rate of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+
+
+        :return: The education_inflation_rate of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._education_inflation_rate
+
+    @education_inflation_rate.setter
+    def education_inflation_rate(self, education_inflation_rate):
+        """Sets the education_inflation_rate of this EducationCalculatorPercentCoveredRequest.
+
+
+        :param education_inflation_rate: The education_inflation_rate of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+        :type: float
+        """
+        if education_inflation_rate is not None and education_inflation_rate < -1:  # noqa: E501
+            raise ValueError("Invalid value for `education_inflation_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
+
+        self._education_inflation_rate = education_inflation_rate
+
+    @property
+    def portfolio_return(self):
+        """Gets the portfolio_return of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+
+
+        :return: The portfolio_return of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._portfolio_return
+
+    @portfolio_return.setter
+    def portfolio_return(self, portfolio_return):
+        """Sets the portfolio_return of this EducationCalculatorPercentCoveredRequest.
+
+
+        :param portfolio_return: The portfolio_return of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+        :type: float
+        """
+        if portfolio_return is None:
+            raise ValueError("Invalid value for `portfolio_return`, must not be `None`")  # noqa: E501
+        if portfolio_return is not None and portfolio_return < -1:  # noqa: E501
+            raise ValueError("Invalid value for `portfolio_return`, must be a value greater than or equal to `-1`")  # noqa: E501
+
+        self._portfolio_return = portfolio_return
+
+    @property
+    def deposit_schedule(self):
+        """Gets the deposit_schedule of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+
+
+        :return: The deposit_schedule of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+        :rtype: CalculatorDepositSchedule1
+        """
+        return self._deposit_schedule
+
+    @deposit_schedule.setter
+    def deposit_schedule(self, deposit_schedule):
+        """Sets the deposit_schedule of this EducationCalculatorPercentCoveredRequest.
+
+
+        :param deposit_schedule: The deposit_schedule of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+        :type: CalculatorDepositSchedule1
+        """
+
+        self._deposit_schedule = deposit_schedule
+
+    @property
+    def general_inflation_rate(self):
+        """Gets the general_inflation_rate of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+
+
+        :return: The general_inflation_rate of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._general_inflation_rate
+
+    @general_inflation_rate.setter
+    def general_inflation_rate(self, general_inflation_rate):
+        """Sets the general_inflation_rate of this EducationCalculatorPercentCoveredRequest.
+
+
+        :param general_inflation_rate: The general_inflation_rate of this EducationCalculatorPercentCoveredRequest.  # noqa: E501
+        :type: float
+        """
+        if general_inflation_rate is not None and general_inflation_rate < -1:  # noqa: E501
+            raise ValueError("Invalid value for `general_inflation_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
+
+        self._general_inflation_rate = general_inflation_rate
 
     def to_dict(self):
         """Returns the model properties as a dict"""

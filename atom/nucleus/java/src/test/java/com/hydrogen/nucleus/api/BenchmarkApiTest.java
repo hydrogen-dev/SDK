@@ -13,10 +13,10 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.Benchmark;
 import com.hydrogen.nucleus.model.DateDoubleVO;
 import com.hydrogen.nucleus.model.PageBenchmark;
-import com.hydrogen.nucleus.ApiException;
 import org.threeten.bp.LocalDate;
 
 import java.util.UUID;
@@ -131,7 +131,7 @@ public class BenchmarkApiTest {
      */
     @Test
     public void updateBenchmarkUsingPutTest() throws ApiException {
-        Benchmark benchmark = null;
+        Object benchmark = null;
         UUID benchmarkId = null;
         Benchmark response = api.updateBenchmarkUsingPut(benchmark, benchmarkId);
 

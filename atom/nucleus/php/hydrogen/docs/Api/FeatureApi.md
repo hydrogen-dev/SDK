@@ -601,7 +601,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\FeatureApi(
     new GuzzleHttp\Client(),
     $config
 );
-$feature_track = new \com\hydrogen\nucleus\Model\FeatureTrack(); // \com\hydrogen\nucleus\Model\FeatureTrack | feature_track
+$feature_track = new \stdClass; // object | feature_track
 $feature_track_id = "feature_track_id_example"; // string | UUID feature_track_id
 
 try {
@@ -617,7 +617,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **feature_track** | [**\com\hydrogen\nucleus\Model\FeatureTrack**](../Model/FeatureTrack.md)| feature_track |
+ **feature_track** | **object**| feature_track |
  **feature_track_id** | [**string**](../Model/.md)| UUID feature_track_id |
 
 ### Return type
@@ -670,7 +670,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\FeatureApi(
     new GuzzleHttp\Client(),
     $config
 );
-$feature = new \com\hydrogen\nucleus\Model\Feature(); // \com\hydrogen\nucleus\Model\Feature | feature
+$feature = new \stdClass; // object | feature
 $feature_id = "feature_id_example"; // string | UUID feature_id
 
 try {
@@ -686,7 +686,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **feature** | [**\com\hydrogen\nucleus\Model\Feature**](../Model/Feature.md)| feature |
+ **feature** | **object**| feature |
  **feature_id** | [**string**](../Model/.md)| UUID feature_id |
 
 ### Return type

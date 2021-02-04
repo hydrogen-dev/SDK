@@ -43,6 +43,13 @@ class TestUtilsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_audit_log_all_using_get(self):
+        """Test case for get_audit_log_all_using_get
+
+        Gel all audit log  # noqa: E501
+        """
+        pass
+
     def test_get_widget_link_using_get(self):
         """Test case for get_widget_link_using_get
 

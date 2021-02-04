@@ -813,7 +813,7 @@ end
 
 api_instance = NucleusApi::DecisionTreeApi.new
 
-decision_tree = NucleusApi::DecisionTree.new # DecisionTree | decision_tree
+decision_tree = nil # Object | decision_tree
 
 decision_tree_id = 'decision_tree_id_example' # String | UUID decision_tree_id
 
@@ -831,7 +831,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **decision_tree** | [**DecisionTree**](DecisionTree.md)| decision_tree | 
+ **decision_tree** | **Object**| decision_tree | 
  **decision_tree_id** | [**String**](.md)| UUID decision_tree_id | 
 
 ### Return type
@@ -873,7 +873,7 @@ end
 
 api_instance = NucleusApi::DecisionTreeApi.new
 
-json_node = NucleusApi::JsonNode.new # JsonNode | jsonNode
+json_node = nil # Object | jsonNode
 
 node_relationship_id = 'node_relationship_id_example' # String | UUID node_relationship_id
 
@@ -891,7 +891,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **json_node** | [**JsonNode**](JsonNode.md)| jsonNode | 
+ **json_node** | **Object**| jsonNode | 
  **node_relationship_id** | [**String**](.md)| UUID node_relationship_id | 
 
 ### Return type
@@ -933,7 +933,7 @@ end
 
 api_instance = NucleusApi::DecisionTreeApi.new
 
-json_node = NucleusApi::JsonNode.new # JsonNode | jsonNode
+json_node = nil # Object | jsonNode
 
 node_id = 'node_id_example' # String | UUID node_id
 
@@ -951,7 +951,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **json_node** | [**JsonNode**](JsonNode.md)| jsonNode | 
+ **json_node** | **Object**| jsonNode | 
  **node_id** | [**String**](.md)| UUID node_id | 
 
 ### Return type

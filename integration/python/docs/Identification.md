@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 **country_of_issue** | **str** |  | [optional] 
 **doc_number** | **str** |  | [optional] 
 **doc_type** | **str** |  | [optional] 
-**expiry_date** | **datetime** |  | [optional] 
-**issue_date** | **datetime** |  | [optional] 
+**expiry_date** | **date** |  | [optional] 
+**issue_date** | **date** |  | [optional] 
 **issuing_authority** | **str** |  | [optional] 
 **state_of_issue** | **str** |  | [optional] 
 

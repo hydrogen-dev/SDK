@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **is_client** | **BOOLEAN** | is_client | [optional] 
 **is_closed** | **BOOLEAN** | is_closed | [optional] 
 **is_converted** | **BOOLEAN** | is_converted | [optional] 
+**is_verified** | **BOOLEAN** | is_verified | [optional] 
 **metadata** | **Hash&lt;String, String&gt;** |  | [optional] 
 **name** | **String** | name | 
 **order_index** | **Integer** | orderIndex | [optional] 

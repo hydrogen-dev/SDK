@@ -4,12 +4,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | [**Array&lt;ClientAddress&gt;**](ClientAddress.md) |  | [optional] 
+**business_id** | **String** | business_id | [optional] 
 **citizenship_status** | **String** | citizenshipStatus | [optional] 
 **client_type** | **String** | clientTypeId | 
 **country_of_citizenship** | **Array&lt;String&gt;** | countryOfCitizenship | [optional] 
 **country_of_residence** | **String** | countryOfResidence | [optional] 
 **create_date** | **DateTime** |  | [optional] 
-**date_of_birth** | **Date** | dateOfBirth | [optional] 
+**date_of_birth** | **String** | dateOfBirth | [optional] 
 **email** | **String** | email | [optional] 
 **employment** | [**Employment**](Employment.md) |  | [optional] 
 **firm_name** | **String** | firmName | [optional] 
@@ -36,5 +37,3 @@ Name | Type | Description | Notes
 **total_net_worth** | **Float** | totalNetWorth | [optional] 
 **update_date** | **DateTime** |  | [optional] 
 **username** | **String** | username | 
-
-

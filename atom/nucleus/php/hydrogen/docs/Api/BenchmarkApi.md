@@ -395,7 +395,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\BenchmarkApi(
     new GuzzleHttp\Client(),
     $config
 );
-$benchmark = new \com\hydrogen\nucleus\Model\Benchmark(); // \com\hydrogen\nucleus\Model\Benchmark | benchmark
+$benchmark = new \stdClass; // object | benchmark
 $benchmark_id = "benchmark_id_example"; // string | UUID benchmark_id
 
 try {
@@ -411,7 +411,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **benchmark** | [**\com\hydrogen\nucleus\Model\Benchmark**](../Model/Benchmark.md)| benchmark |
+ **benchmark** | **object**| benchmark |
  **benchmark_id** | [**string**](../Model/.md)| UUID benchmark_id |
 
 ### Return type

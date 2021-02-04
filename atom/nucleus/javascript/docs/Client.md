@@ -4,12 +4,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | [**[ClientAddress]**](ClientAddress.md) |  | [optional] 
+**businessId** | **String** | business_id | [optional] 
 **citizenshipStatus** | **String** | citizenshipStatus | [optional] 
 **clientType** | **String** | clientTypeId | 
 **countryOfCitizenship** | **[String]** | countryOfCitizenship | [optional] 
 **countryOfResidence** | **String** | countryOfResidence | [optional] 
 **createDate** | **Date** |  | [optional] 
-**dateOfBirth** | **Date** | dateOfBirth | [optional] 
+**dateOfBirth** | **String** | dateOfBirth | [optional] 
 **email** | **String** | email | [optional] 
 **employment** | [**Employment**](Employment.md) |  | [optional] 
 **firmName** | **String** | firmName | [optional] 

@@ -33,12 +33,109 @@ class BrokerageApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_bank_link_using_post(self, brokerage_bank_link_co, **kwargs):  # noqa: E501
+    def cancel_order_using_put(self, nucleus_order_id, **kwargs):  # noqa: E501
+        """Cancel an Order  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.cancel_order_using_put(nucleus_order_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str nucleus_order_id: nucleus_order_id (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.cancel_order_using_put_with_http_info(nucleus_order_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.cancel_order_using_put_with_http_info(nucleus_order_id, **kwargs)  # noqa: E501
+            return data
+
+    def cancel_order_using_put_with_http_info(self, nucleus_order_id, **kwargs):  # noqa: E501
+        """Cancel an Order  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.cancel_order_using_put_with_http_info(nucleus_order_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str nucleus_order_id: nucleus_order_id (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['nucleus_order_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method cancel_order_using_put" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'nucleus_order_id' is set
+        if ('nucleus_order_id' not in params or
+                params['nucleus_order_id'] is None):
+            raise ValueError("Missing the required parameter `nucleus_order_id` when calling `cancel_order_using_put`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'nucleus_order_id' in params:
+            path_params['nucleus_order_id'] = params['nucleus_order_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['*/*'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/brokerage/order/{nucleus_order_id}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def create_bank_link_using_post1(self, brokerage_bank_link_co, **kwargs):  # noqa: E501
         """create a Bank Link  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_bank_link_using_post(brokerage_bank_link_co, async_req=True)
+        >>> thread = api.create_bank_link_using_post1(brokerage_bank_link_co, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -49,17 +146,17 @@ class BrokerageApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_bank_link_using_post_with_http_info(brokerage_bank_link_co, **kwargs)  # noqa: E501
+            return self.create_bank_link_using_post1_with_http_info(brokerage_bank_link_co, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_bank_link_using_post_with_http_info(brokerage_bank_link_co, **kwargs)  # noqa: E501
+            (data) = self.create_bank_link_using_post1_with_http_info(brokerage_bank_link_co, **kwargs)  # noqa: E501
             return data
 
-    def create_bank_link_using_post_with_http_info(self, brokerage_bank_link_co, **kwargs):  # noqa: E501
+    def create_bank_link_using_post1_with_http_info(self, brokerage_bank_link_co, **kwargs):  # noqa: E501
         """create a Bank Link  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_bank_link_using_post_with_http_info(brokerage_bank_link_co, async_req=True)
+        >>> thread = api.create_bank_link_using_post1_with_http_info(brokerage_bank_link_co, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -80,14 +177,14 @@ class BrokerageApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_bank_link_using_post" % key
+                    " to method create_bank_link_using_post1" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'brokerage_bank_link_co' is set
         if ('brokerage_bank_link_co' not in params or
                 params['brokerage_bank_link_co'] is None):
-            raise ValueError("Missing the required parameter `brokerage_bank_link_co` when calling `create_bank_link_using_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `brokerage_bank_link_co` when calling `create_bank_link_using_post1`")  # noqa: E501
 
         collection_formats = {}
 
@@ -324,43 +421,237 @@ class BrokerageApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_order_using_post(self, nucleus_order_id, **kwargs):  # noqa: E501
-        """Create an Order  # noqa: E501
+    def create_deposit_using_post(self, brokerage_deposit_co, **kwargs):  # noqa: E501
+        """Create a deposit  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_order_using_post(nucleus_order_id, async_req=True)
+        >>> thread = api.create_deposit_using_post(brokerage_deposit_co, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str nucleus_order_id: nucleus_order_id (required)
-        :return: CreateOrderResponse
+        :param BrokerageDepositCO brokerage_deposit_co: brokerageDepositCO (required)
+        :return: BrokerageDepositVO
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_order_using_post_with_http_info(nucleus_order_id, **kwargs)  # noqa: E501
+            return self.create_deposit_using_post_with_http_info(brokerage_deposit_co, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_order_using_post_with_http_info(nucleus_order_id, **kwargs)  # noqa: E501
+            (data) = self.create_deposit_using_post_with_http_info(brokerage_deposit_co, **kwargs)  # noqa: E501
             return data
 
-    def create_order_using_post_with_http_info(self, nucleus_order_id, **kwargs):  # noqa: E501
-        """Create an Order  # noqa: E501
+    def create_deposit_using_post_with_http_info(self, brokerage_deposit_co, **kwargs):  # noqa: E501
+        """Create a deposit  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_order_using_post_with_http_info(nucleus_order_id, async_req=True)
+        >>> thread = api.create_deposit_using_post_with_http_info(brokerage_deposit_co, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str nucleus_order_id: nucleus_order_id (required)
-        :return: CreateOrderResponse
+        :param BrokerageDepositCO brokerage_deposit_co: brokerageDepositCO (required)
+        :return: BrokerageDepositVO
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['nucleus_order_id']  # noqa: E501
+        all_params = ['brokerage_deposit_co']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_deposit_using_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'brokerage_deposit_co' is set
+        if ('brokerage_deposit_co' not in params or
+                params['brokerage_deposit_co'] is None):
+            raise ValueError("Missing the required parameter `brokerage_deposit_co` when calling `create_deposit_using_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'brokerage_deposit_co' in params:
+            body_params = params['brokerage_deposit_co']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['*/*'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/brokerage/deposit', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='BrokerageDepositVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def create_document_using_post(self, document_co, **kwargs):  # noqa: E501
+        """Create a Brokerage document  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_document_using_post(document_co, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param BrokerageDocumentCO document_co: documentCO (required)
+        :return: BrokerageDocumentVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_document_using_post_with_http_info(document_co, **kwargs)  # noqa: E501
+        else:
+            (data) = self.create_document_using_post_with_http_info(document_co, **kwargs)  # noqa: E501
+            return data
+
+    def create_document_using_post_with_http_info(self, document_co, **kwargs):  # noqa: E501
+        """Create a Brokerage document  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_document_using_post_with_http_info(document_co, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param BrokerageDocumentCO document_co: documentCO (required)
+        :return: BrokerageDocumentVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['document_co']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_document_using_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'document_co' is set
+        if ('document_co' not in params or
+                params['document_co'] is None):
+            raise ValueError("Missing the required parameter `document_co` when calling `create_document_using_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'document_co' in params:
+            body_params = params['document_co']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['*/*'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/brokerage/document', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='BrokerageDocumentVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def create_order_using_post(self, brokerage_order_co, **kwargs):  # noqa: E501
+        """Create an Order  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_order_using_post(brokerage_order_co, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param BrokerageOrderCO brokerage_order_co: brokerageOrderCO (required)
+        :return: BrokerageOrderVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_order_using_post_with_http_info(brokerage_order_co, **kwargs)  # noqa: E501
+        else:
+            (data) = self.create_order_using_post_with_http_info(brokerage_order_co, **kwargs)  # noqa: E501
+            return data
+
+    def create_order_using_post_with_http_info(self, brokerage_order_co, **kwargs):  # noqa: E501
+        """Create an Order  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_order_using_post_with_http_info(brokerage_order_co, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param BrokerageOrderCO brokerage_order_co: brokerageOrderCO (required)
+        :return: BrokerageOrderVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['brokerage_order_co']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -375,18 +666,16 @@ class BrokerageApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'nucleus_order_id' is set
-        if ('nucleus_order_id' not in params or
-                params['nucleus_order_id'] is None):
-            raise ValueError("Missing the required parameter `nucleus_order_id` when calling `create_order_using_post`")  # noqa: E501
+        # verify the required parameter 'brokerage_order_co' is set
+        if ('brokerage_order_co' not in params or
+                params['brokerage_order_co'] is None):
+            raise ValueError("Missing the required parameter `brokerage_order_co` when calling `create_order_using_post`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'nucleus_order_id' in params:
-            query_params.append(('nucleus_order_id', params['nucleus_order_id']))  # noqa: E501
 
         header_params = {}
 
@@ -394,6 +683,8 @@ class BrokerageApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'brokerage_order_co' in params:
+            body_params = params['brokerage_order_co']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['*/*'])  # noqa: E501
@@ -413,7 +704,7 @@ class BrokerageApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='CreateOrderResponse',  # noqa: E501
+            response_type='BrokerageOrderVO',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -421,38 +712,135 @@ class BrokerageApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_bank_link_using_delete(self, nucleus_bank_link_id, **kwargs):  # noqa: E501
-        """Delete a Bank Link  # noqa: E501
+    def create_withdrawal_using_post(self, brokerage_withdrawal_co, **kwargs):  # noqa: E501
+        """Create a withdrawal  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_bank_link_using_delete(nucleus_bank_link_id, async_req=True)
+        >>> thread = api.create_withdrawal_using_post(brokerage_withdrawal_co, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str nucleus_bank_link_id: nucleus_bank_link_id (required)
-        :return: ResponseEntity
+        :param BrokerageWithdrawalCO brokerage_withdrawal_co: brokerageWithdrawalCO (required)
+        :return: BrokerageWithdrawalVO
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_bank_link_using_delete_with_http_info(nucleus_bank_link_id, **kwargs)  # noqa: E501
+            return self.create_withdrawal_using_post_with_http_info(brokerage_withdrawal_co, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_bank_link_using_delete_with_http_info(nucleus_bank_link_id, **kwargs)  # noqa: E501
+            (data) = self.create_withdrawal_using_post_with_http_info(brokerage_withdrawal_co, **kwargs)  # noqa: E501
             return data
 
-    def delete_bank_link_using_delete_with_http_info(self, nucleus_bank_link_id, **kwargs):  # noqa: E501
+    def create_withdrawal_using_post_with_http_info(self, brokerage_withdrawal_co, **kwargs):  # noqa: E501
+        """Create a withdrawal  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_withdrawal_using_post_with_http_info(brokerage_withdrawal_co, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param BrokerageWithdrawalCO brokerage_withdrawal_co: brokerageWithdrawalCO (required)
+        :return: BrokerageWithdrawalVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['brokerage_withdrawal_co']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_withdrawal_using_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'brokerage_withdrawal_co' is set
+        if ('brokerage_withdrawal_co' not in params or
+                params['brokerage_withdrawal_co'] is None):
+            raise ValueError("Missing the required parameter `brokerage_withdrawal_co` when calling `create_withdrawal_using_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'brokerage_withdrawal_co' in params:
+            body_params = params['brokerage_withdrawal_co']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['*/*'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/brokerage/withdrawal', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='BrokerageWithdrawalVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_bank_link_using_delete1(self, nucleus_bank_link_id, **kwargs):  # noqa: E501
         """Delete a Bank Link  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_bank_link_using_delete_with_http_info(nucleus_bank_link_id, async_req=True)
+        >>> thread = api.delete_bank_link_using_delete1(nucleus_bank_link_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str nucleus_bank_link_id: nucleus_bank_link_id (required)
-        :return: ResponseEntity
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.delete_bank_link_using_delete1_with_http_info(nucleus_bank_link_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_bank_link_using_delete1_with_http_info(nucleus_bank_link_id, **kwargs)  # noqa: E501
+            return data
+
+    def delete_bank_link_using_delete1_with_http_info(self, nucleus_bank_link_id, **kwargs):  # noqa: E501
+        """Delete a Bank Link  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_bank_link_using_delete1_with_http_info(nucleus_bank_link_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str nucleus_bank_link_id: nucleus_bank_link_id (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -468,14 +856,14 @@ class BrokerageApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_bank_link_using_delete" % key
+                    " to method delete_bank_link_using_delete1" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'nucleus_bank_link_id' is set
         if ('nucleus_bank_link_id' not in params or
                 params['nucleus_bank_link_id'] is None):
-            raise ValueError("Missing the required parameter `nucleus_bank_link_id` when calling `delete_bank_link_using_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `nucleus_bank_link_id` when calling `delete_bank_link_using_delete1`")  # noqa: E501
 
         collection_formats = {}
 
@@ -506,7 +894,7 @@ class BrokerageApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ResponseEntity',  # noqa: E501
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -514,43 +902,43 @@ class BrokerageApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_order_using_delete(self, nucleus_order_id, **kwargs):  # noqa: E501
-        """Delete an Order  # noqa: E501
+    def get_balance_using_get1(self, nucleus_portfolio_id, **kwargs):  # noqa: E501
+        """Get account balance  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_order_using_delete(nucleus_order_id, async_req=True)
+        >>> thread = api.get_balance_using_get1(nucleus_portfolio_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str nucleus_order_id: nucleus_order_id (required)
-        :return: None
+        :param str nucleus_portfolio_id: nucleus_portfolio_id (required)
+        :return: BrokerageBalanceVO
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_order_using_delete_with_http_info(nucleus_order_id, **kwargs)  # noqa: E501
+            return self.get_balance_using_get1_with_http_info(nucleus_portfolio_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_order_using_delete_with_http_info(nucleus_order_id, **kwargs)  # noqa: E501
+            (data) = self.get_balance_using_get1_with_http_info(nucleus_portfolio_id, **kwargs)  # noqa: E501
             return data
 
-    def delete_order_using_delete_with_http_info(self, nucleus_order_id, **kwargs):  # noqa: E501
-        """Delete an Order  # noqa: E501
+    def get_balance_using_get1_with_http_info(self, nucleus_portfolio_id, **kwargs):  # noqa: E501
+        """Get account balance  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_order_using_delete_with_http_info(nucleus_order_id, async_req=True)
+        >>> thread = api.get_balance_using_get1_with_http_info(nucleus_portfolio_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str nucleus_order_id: nucleus_order_id (required)
-        :return: None
+        :param str nucleus_portfolio_id: nucleus_portfolio_id (required)
+        :return: BrokerageBalanceVO
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['nucleus_order_id']  # noqa: E501
+        all_params = ['nucleus_portfolio_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -561,22 +949,22 @@ class BrokerageApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_order_using_delete" % key
+                    " to method get_balance_using_get1" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'nucleus_order_id' is set
-        if ('nucleus_order_id' not in params or
-                params['nucleus_order_id'] is None):
-            raise ValueError("Missing the required parameter `nucleus_order_id` when calling `delete_order_using_delete`")  # noqa: E501
+        # verify the required parameter 'nucleus_portfolio_id' is set
+        if ('nucleus_portfolio_id' not in params or
+                params['nucleus_portfolio_id'] is None):
+            raise ValueError("Missing the required parameter `nucleus_portfolio_id` when calling `get_balance_using_get1`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
+        if 'nucleus_portfolio_id' in params:
+            path_params['nucleus_portfolio_id'] = params['nucleus_portfolio_id']  # noqa: E501
 
         query_params = []
-        if 'nucleus_order_id' in params:
-            query_params.append(('nucleus_order_id', params['nucleus_order_id']))  # noqa: E501
 
         header_params = {}
 
@@ -592,14 +980,14 @@ class BrokerageApi(object):
         auth_settings = ['oauth2']  # noqa: E501
 
         return self.api_client.call_api(
-            '/brokerage/order', 'DELETE',
+            '/brokerage/balance/{nucleus_portfolio_id}', 'GET',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='BrokerageBalanceVO',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -607,12 +995,12 @@ class BrokerageApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_bank_link_using_get(self, nucleus_bank_link_id, **kwargs):  # noqa: E501
+    def get_bank_link_using_get1(self, nucleus_bank_link_id, **kwargs):  # noqa: E501
         """Get a Bank Link  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_bank_link_using_get(nucleus_bank_link_id, async_req=True)
+        >>> thread = api.get_bank_link_using_get1(nucleus_bank_link_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -623,17 +1011,17 @@ class BrokerageApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_bank_link_using_get_with_http_info(nucleus_bank_link_id, **kwargs)  # noqa: E501
+            return self.get_bank_link_using_get1_with_http_info(nucleus_bank_link_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_bank_link_using_get_with_http_info(nucleus_bank_link_id, **kwargs)  # noqa: E501
+            (data) = self.get_bank_link_using_get1_with_http_info(nucleus_bank_link_id, **kwargs)  # noqa: E501
             return data
 
-    def get_bank_link_using_get_with_http_info(self, nucleus_bank_link_id, **kwargs):  # noqa: E501
+    def get_bank_link_using_get1_with_http_info(self, nucleus_bank_link_id, **kwargs):  # noqa: E501
         """Get a Bank Link  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_bank_link_using_get_with_http_info(nucleus_bank_link_id, async_req=True)
+        >>> thread = api.get_bank_link_using_get1_with_http_info(nucleus_bank_link_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -654,14 +1042,14 @@ class BrokerageApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_bank_link_using_get" % key
+                    " to method get_bank_link_using_get1" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'nucleus_bank_link_id' is set
         if ('nucleus_bank_link_id' not in params or
                 params['nucleus_bank_link_id'] is None):
-            raise ValueError("Missing the required parameter `nucleus_bank_link_id` when calling `get_bank_link_using_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `nucleus_bank_link_id` when calling `get_bank_link_using_get1`")  # noqa: E501
 
         collection_formats = {}
 
@@ -802,7 +1190,7 @@ class BrokerageApi(object):
         auth_settings = ['oauth2']  # noqa: E501
 
         return self.api_client.call_api(
-            '/brokerage/{nucleus_account_id}/statement', 'GET',
+            '/brokerage/statement/{nucleus_account_id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -810,6 +1198,285 @@ class BrokerageApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='BrokerageStatementVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_document_using_get(self, nucleus_document_id, **kwargs):  # noqa: E501
+        """Get a Brokerage document  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_document_using_get(nucleus_document_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str nucleus_document_id: nucleus_document_id (required)
+        :return: BrokerageDocumentVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_document_using_get_with_http_info(nucleus_document_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_document_using_get_with_http_info(nucleus_document_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_document_using_get_with_http_info(self, nucleus_document_id, **kwargs):  # noqa: E501
+        """Get a Brokerage document  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_document_using_get_with_http_info(nucleus_document_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str nucleus_document_id: nucleus_document_id (required)
+        :return: BrokerageDocumentVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['nucleus_document_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_document_using_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'nucleus_document_id' is set
+        if ('nucleus_document_id' not in params or
+                params['nucleus_document_id'] is None):
+            raise ValueError("Missing the required parameter `nucleus_document_id` when calling `get_document_using_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'nucleus_document_id' in params:
+            path_params['nucleus_document_id'] = params['nucleus_document_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['*/*'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/brokerage/document/{nucleus_document_id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='BrokerageDocumentVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_holding_performance_using_get(self, nucleus_portfolio_id, **kwargs):  # noqa: E501
+        """Get portfolio holding performance  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_holding_performance_using_get(nucleus_portfolio_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str nucleus_portfolio_id: nucleus_portfolio_id (required)
+        :return: BrokeragePerformanceVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_holding_performance_using_get_with_http_info(nucleus_portfolio_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_holding_performance_using_get_with_http_info(nucleus_portfolio_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_holding_performance_using_get_with_http_info(self, nucleus_portfolio_id, **kwargs):  # noqa: E501
+        """Get portfolio holding performance  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_holding_performance_using_get_with_http_info(nucleus_portfolio_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str nucleus_portfolio_id: nucleus_portfolio_id (required)
+        :return: BrokeragePerformanceVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['nucleus_portfolio_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_holding_performance_using_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'nucleus_portfolio_id' is set
+        if ('nucleus_portfolio_id' not in params or
+                params['nucleus_portfolio_id'] is None):
+            raise ValueError("Missing the required parameter `nucleus_portfolio_id` when calling `get_holding_performance_using_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'nucleus_portfolio_id' in params:
+            path_params['nucleus_portfolio_id'] = params['nucleus_portfolio_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['*/*'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/brokerage/holding/performance/{nucleus_portfolio_id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='BrokeragePerformanceVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_holding_using_get(self, nucleus_portfolio_id, **kwargs):  # noqa: E501
+        """Get portfolio holdings  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_holding_using_get(nucleus_portfolio_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str nucleus_portfolio_id: nucleus_portfolio_id (required)
+        :return: BrokerageHoldingVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_holding_using_get_with_http_info(nucleus_portfolio_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_holding_using_get_with_http_info(nucleus_portfolio_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_holding_using_get_with_http_info(self, nucleus_portfolio_id, **kwargs):  # noqa: E501
+        """Get portfolio holdings  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_holding_using_get_with_http_info(nucleus_portfolio_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str nucleus_portfolio_id: nucleus_portfolio_id (required)
+        :return: BrokerageHoldingVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['nucleus_portfolio_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_holding_using_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'nucleus_portfolio_id' is set
+        if ('nucleus_portfolio_id' not in params or
+                params['nucleus_portfolio_id'] is None):
+            raise ValueError("Missing the required parameter `nucleus_portfolio_id` when calling `get_holding_using_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'nucleus_portfolio_id' in params:
+            path_params['nucleus_portfolio_id'] = params['nucleus_portfolio_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['*/*'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/brokerage/holding/{nucleus_portfolio_id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='BrokerageHoldingVO',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -827,7 +1494,7 @@ class BrokerageApi(object):
 
         :param async_req bool
         :param str nucleus_order_id: nucleus_order_id (required)
-        :return: GetOrderResponse
+        :return: BrokerageOrderVO
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -848,7 +1515,7 @@ class BrokerageApi(object):
 
         :param async_req bool
         :param str nucleus_order_id: nucleus_order_id (required)
-        :return: GetOrderResponse
+        :return: BrokerageOrderVO
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -876,10 +1543,10 @@ class BrokerageApi(object):
         collection_formats = {}
 
         path_params = {}
+        if 'nucleus_order_id' in params:
+            path_params['nucleus_order_id'] = params['nucleus_order_id']  # noqa: E501
 
         query_params = []
-        if 'nucleus_order_id' in params:
-            query_params.append(('nucleus_order_id', params['nucleus_order_id']))  # noqa: E501
 
         header_params = {}
 
@@ -895,14 +1562,14 @@ class BrokerageApi(object):
         auth_settings = ['oauth2']  # noqa: E501
 
         return self.api_client.call_api(
-            '/brokerage/order', 'GET',
+            '/brokerage/order/{nucleus_order_id}', 'GET',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GetOrderResponse',  # noqa: E501
+            response_type='BrokerageOrderVO',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -910,12 +1577,230 @@ class BrokerageApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_bank_link_using_put(self, nucleus_bank_link_id, **kwargs):  # noqa: E501
+    def get_securities_using_get(self, vendor_name, **kwargs):  # noqa: E501
+        """Get securities information  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_securities_using_get(vendor_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str vendor_name: vendor_name (required)
+        :param bool get_fundamentals: get_fundamentals
+        :param str nucleus_security_id: nucleus_security_id
+        :return: BrokerageSecuritiesVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_securities_using_get_with_http_info(vendor_name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_securities_using_get_with_http_info(vendor_name, **kwargs)  # noqa: E501
+            return data
+
+    def get_securities_using_get_with_http_info(self, vendor_name, **kwargs):  # noqa: E501
+        """Get securities information  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_securities_using_get_with_http_info(vendor_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str vendor_name: vendor_name (required)
+        :param bool get_fundamentals: get_fundamentals
+        :param str nucleus_security_id: nucleus_security_id
+        :return: BrokerageSecuritiesVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['vendor_name', 'get_fundamentals', 'nucleus_security_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_securities_using_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'vendor_name' is set
+        if ('vendor_name' not in params or
+                params['vendor_name'] is None):
+            raise ValueError("Missing the required parameter `vendor_name` when calling `get_securities_using_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'get_fundamentals' in params:
+            query_params.append(('get_fundamentals', params['get_fundamentals']))  # noqa: E501
+        if 'nucleus_security_id' in params:
+            query_params.append(('nucleus_security_id', params['nucleus_security_id']))  # noqa: E501
+        if 'vendor_name' in params:
+            query_params.append(('vendor_name', params['vendor_name']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['*/*'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/brokerage/securities', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='BrokerageSecuritiesVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_transactions_using_get(self, drivewealth_response, end_date, nucleus_portfolio_id, start_date, **kwargs):  # noqa: E501
+        """Get account transactions  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_transactions_using_get(drivewealth_response, end_date, nucleus_portfolio_id, start_date, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param GetTransactionsResponse drivewealth_response: drivewealthResponse (required)
+        :param date end_date: end_date (required)
+        :param str nucleus_portfolio_id: nucleus_portfolio_id (required)
+        :param date start_date: start_date (required)
+        :return: BrokerageTransactionVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_transactions_using_get_with_http_info(drivewealth_response, end_date, nucleus_portfolio_id, start_date, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_transactions_using_get_with_http_info(drivewealth_response, end_date, nucleus_portfolio_id, start_date, **kwargs)  # noqa: E501
+            return data
+
+    def get_transactions_using_get_with_http_info(self, drivewealth_response, end_date, nucleus_portfolio_id, start_date, **kwargs):  # noqa: E501
+        """Get account transactions  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_transactions_using_get_with_http_info(drivewealth_response, end_date, nucleus_portfolio_id, start_date, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param GetTransactionsResponse drivewealth_response: drivewealthResponse (required)
+        :param date end_date: end_date (required)
+        :param str nucleus_portfolio_id: nucleus_portfolio_id (required)
+        :param date start_date: start_date (required)
+        :return: BrokerageTransactionVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['drivewealth_response', 'end_date', 'nucleus_portfolio_id', 'start_date']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_transactions_using_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'drivewealth_response' is set
+        if ('drivewealth_response' not in params or
+                params['drivewealth_response'] is None):
+            raise ValueError("Missing the required parameter `drivewealth_response` when calling `get_transactions_using_get`")  # noqa: E501
+        # verify the required parameter 'end_date' is set
+        if ('end_date' not in params or
+                params['end_date'] is None):
+            raise ValueError("Missing the required parameter `end_date` when calling `get_transactions_using_get`")  # noqa: E501
+        # verify the required parameter 'nucleus_portfolio_id' is set
+        if ('nucleus_portfolio_id' not in params or
+                params['nucleus_portfolio_id'] is None):
+            raise ValueError("Missing the required parameter `nucleus_portfolio_id` when calling `get_transactions_using_get`")  # noqa: E501
+        # verify the required parameter 'start_date' is set
+        if ('start_date' not in params or
+                params['start_date'] is None):
+            raise ValueError("Missing the required parameter `start_date` when calling `get_transactions_using_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'nucleus_portfolio_id' in params:
+            path_params['nucleus_portfolio_id'] = params['nucleus_portfolio_id']  # noqa: E501
+
+        query_params = []
+        if 'end_date' in params:
+            query_params.append(('end_date', params['end_date']))  # noqa: E501
+        if 'start_date' in params:
+            query_params.append(('start_date', params['start_date']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'drivewealth_response' in params:
+            body_params = params['drivewealth_response']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['*/*'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/brokerage/transaction/{nucleus_portfolio_id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='BrokerageTransactionVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_bank_link_using_put1(self, nucleus_bank_link_id, **kwargs):  # noqa: E501
         """Update a Bank Link  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_bank_link_using_put(nucleus_bank_link_id, async_req=True)
+        >>> thread = api.update_bank_link_using_put1(nucleus_bank_link_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -926,17 +1811,17 @@ class BrokerageApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_bank_link_using_put_with_http_info(nucleus_bank_link_id, **kwargs)  # noqa: E501
+            return self.update_bank_link_using_put1_with_http_info(nucleus_bank_link_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_bank_link_using_put_with_http_info(nucleus_bank_link_id, **kwargs)  # noqa: E501
+            (data) = self.update_bank_link_using_put1_with_http_info(nucleus_bank_link_id, **kwargs)  # noqa: E501
             return data
 
-    def update_bank_link_using_put_with_http_info(self, nucleus_bank_link_id, **kwargs):  # noqa: E501
+    def update_bank_link_using_put1_with_http_info(self, nucleus_bank_link_id, **kwargs):  # noqa: E501
         """Update a Bank Link  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_bank_link_using_put_with_http_info(nucleus_bank_link_id, async_req=True)
+        >>> thread = api.update_bank_link_using_put1_with_http_info(nucleus_bank_link_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -957,14 +1842,14 @@ class BrokerageApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_bank_link_using_put" % key
+                    " to method update_bank_link_using_put1" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'nucleus_bank_link_id' is set
         if ('nucleus_bank_link_id' not in params or
                 params['nucleus_bank_link_id'] is None):
-            raise ValueError("Missing the required parameter `nucleus_bank_link_id` when calling `update_bank_link_using_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `nucleus_bank_link_id` when calling `update_bank_link_using_put1`")  # noqa: E501
 
         collection_formats = {}
 

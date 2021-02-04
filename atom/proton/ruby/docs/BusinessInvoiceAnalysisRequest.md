@@ -3,18 +3,18 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**customer_id** | **String** |  | [optional] 
+**end_date** | **Date** |  | [optional] 
 **overdue_periods** | [**Array&lt;Periods&gt;**](Periods.md) |  | [optional] 
-**show_outstanding_invoices** | **BOOLEAN** |  | [optional] [default to false]
-**show_history** | **BOOLEAN** |  | [optional] [default to false]
 **client_id** | **String** |  | [optional] 
-**future_due_periods** | [**Array&lt;Periods&gt;**](Periods.md) |  | [optional] 
+**response_limit** | **Integer** |  | [optional] [default to 10]
 **currency_conversion** | **String** |  | [optional] 
 **history_frequency_interval** | **String** |  | [optional] [default to &#39;month&#39;]
-**end_date** | **Date** |  | [optional] 
-**currency_code** | **String** |  | [optional] 
 **start_date** | **Date** |  | [optional] 
-**response_limit** | **Integer** |  | [optional] [default to 10]
+**show_history** | **BOOLEAN** |  | [optional] [default to false]
+**currency_code** | **String** |  | [optional] 
 **invoice_ids** | **Array&lt;String&gt;** |  | [optional] 
-**customer_id** | **String** |  | [optional] 
+**show_outstanding_invoices** | **BOOLEAN** |  | [optional] [default to false]
+**future_due_periods** | [**Array&lt;Periods&gt;**](Periods.md) |  | [optional] 
 
 

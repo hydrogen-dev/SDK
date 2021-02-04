@@ -4,19 +4,19 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**customerId** | [**UUID**](UUID.md) |  |  [optional]
+**endDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
 **overduePeriods** | [**List&lt;Periods&gt;**](Periods.md) |  |  [optional]
-**showOutstandingInvoices** | **Boolean** |  |  [optional]
-**showHistory** | **Boolean** |  |  [optional]
 **clientId** | [**UUID**](UUID.md) |  |  [optional]
-**futureDuePeriods** | [**List&lt;Periods&gt;**](Periods.md) |  |  [optional]
+**responseLimit** | **Integer** |  |  [optional]
 **currencyConversion** | **String** |  |  [optional]
 **historyFrequencyInterval** | [**HistoryFrequencyIntervalEnum**](#HistoryFrequencyIntervalEnum) |  |  [optional]
-**endDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**currencyCode** | **String** |  |  [optional]
 **startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**responseLimit** | **Integer** |  |  [optional]
+**showHistory** | **Boolean** |  |  [optional]
+**currencyCode** | **String** |  |  [optional]
 **invoiceIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
-**customerId** | [**UUID**](UUID.md) |  |  [optional]
+**showOutstandingInvoices** | **Boolean** |  |  [optional]
+**futureDuePeriods** | [**List&lt;Periods&gt;**](Periods.md) |  |  [optional]
 
 
 <a name="HistoryFrequencyIntervalEnum"></a>

@@ -13,6 +13,7 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.BankLink;
 import com.hydrogen.nucleus.model.DailyDeposit;
 import com.hydrogen.nucleus.model.DailyWithdrawal;
@@ -23,8 +24,6 @@ import com.hydrogen.nucleus.model.PageDailyDeposit;
 import com.hydrogen.nucleus.model.PageDailyWithdrawal;
 import com.hydrogen.nucleus.model.PageExternalAccountTransfer;
 import com.hydrogen.nucleus.model.PageFunding;
-import com.hydrogen.nucleus.ApiException;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -400,7 +399,7 @@ public class FundingApiTest {
      */
     @Test
     public void updateBankLinkBulkUsingPutTest() throws ApiException {
-        List<BankLink> bankLinkList = null;
+        List<Object> bankLinkList = null;
         List<BankLink> response = api.updateBankLinkBulkUsingPut(bankLinkList);
 
         // TODO: test validations
@@ -416,7 +415,7 @@ public class FundingApiTest {
      */
     @Test
     public void updateBankLinkUsingPutTest() throws ApiException {
-        BankLink bankLink = null;
+        Object bankLink = null;
         UUID bankLinkId = null;
         BankLink response = api.updateBankLinkUsingPut(bankLink, bankLinkId);
 
@@ -433,7 +432,7 @@ public class FundingApiTest {
      */
     @Test
     public void updateDepositUsingPutTest() throws ApiException {
-        DailyDeposit deposit = null;
+        Object deposit = null;
         UUID depositId = null;
         DailyDeposit response = api.updateDepositUsingPut(deposit, depositId);
 
@@ -450,7 +449,7 @@ public class FundingApiTest {
      */
     @Test
     public void updateFundingUsingPutTest() throws ApiException {
-        Funding funding = null;
+        Object funding = null;
         UUID fundingId = null;
         Funding response = api.updateFundingUsingPut(funding, fundingId);
 
@@ -467,7 +466,7 @@ public class FundingApiTest {
      */
     @Test
     public void updateTransferUsingPutTest() throws ApiException {
-        ExternalAccountTransfer transfer = null;
+        Object transfer = null;
         UUID transferId = null;
         ExternalAccountTransfer response = api.updateTransferUsingPut(transfer, transferId);
 
@@ -484,7 +483,7 @@ public class FundingApiTest {
      */
     @Test
     public void updateWithdrawalUsingPutTest() throws ApiException {
-        DailyWithdrawal withdrawal = null;
+        Object withdrawal = null;
         UUID withdrawalId = null;
         DailyWithdrawal response = api.updateWithdrawalUsingPut(withdrawal, withdrawalId);
 

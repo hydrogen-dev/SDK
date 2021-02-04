@@ -15,11 +15,7 @@ package com.hydrogen.nucleus.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -27,16 +23,40 @@ import io.swagger.annotations.ApiModelProperty;
  * MerchantCategoryCode Object
  */
 @ApiModel(description = "MerchantCategoryCode Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-12T11:03:26.704Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-28T16:21:02.928Z")
 
 
 
 public class MerchantCategoryCode {
+  @SerializedName("category")
+  private String category = null;
+
   @SerializedName("description")
   private String description = null;
 
   @SerializedName("mcc")
   private Integer mcc = null;
+
+  @SerializedName("subcategory")
+  private String subcategory = null;
+
+  public MerchantCategoryCode category(String category) {
+    this.category = category;
+    return this;
+  }
+
+   /**
+   * category
+   * @return category
+  **/
+  @ApiModelProperty(example = "Shopping", value = "category")
+  public String getCategory() {
+    return category;
+  }
+
+  public void setCategory(String category) {
+    this.category = category;
+  }
 
   public MerchantCategoryCode description(String description) {
     this.description = description;
@@ -74,6 +94,24 @@ public class MerchantCategoryCode {
     this.mcc = mcc;
   }
 
+  public MerchantCategoryCode subcategory(String subcategory) {
+    this.subcategory = subcategory;
+    return this;
+  }
+
+   /**
+   * subcategory
+   * @return subcategory
+  **/
+  @ApiModelProperty(example = "Florists", value = "subcategory")
+  public String getSubcategory() {
+    return subcategory;
+  }
+
+  public void setSubcategory(String subcategory) {
+    this.subcategory = subcategory;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -84,13 +122,15 @@ public class MerchantCategoryCode {
       return false;
     }
     MerchantCategoryCode merchantCategoryCode = (MerchantCategoryCode) o;
-    return Objects.equals(this.description, merchantCategoryCode.description) &&
-        Objects.equals(this.mcc, merchantCategoryCode.mcc);
+    return Objects.equals(this.category, merchantCategoryCode.category) &&
+        Objects.equals(this.description, merchantCategoryCode.description) &&
+        Objects.equals(this.mcc, merchantCategoryCode.mcc) &&
+        Objects.equals(this.subcategory, merchantCategoryCode.subcategory);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, mcc);
+    return Objects.hash(category, description, mcc, subcategory);
   }
 
 
@@ -99,8 +139,10 @@ public class MerchantCategoryCode {
     StringBuilder sb = new StringBuilder();
     sb.append("class MerchantCategoryCode {\n");
     
+    sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    mcc: ").append(toIndentedString(mcc)).append("\n");
+    sb.append("    subcategory: ").append(toIndentedString(subcategory)).append("\n");
     sb.append("}");
     return sb.toString();
   }

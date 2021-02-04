@@ -15,12 +15,7 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.UUID;
@@ -28,22 +23,34 @@ import java.util.UUID;
 /**
  * FinancialHealthCheckRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class FinancialHealthCheckRequest {
-  @SerializedName("client_id")
-  private UUID clientId = null;
-
-  @SerializedName("total_liabilities")
-  private Float totalLiabilities = null;
+  @SerializedName("gross_annual_income")
+  private Float grossAnnualIncome = null;
 
   @SerializedName("liquid_assets")
   private Float liquidAssets = null;
 
+  @SerializedName("net_monthly_income")
+  private Float netMonthlyIncome = null;
+
+  @SerializedName("client_id")
+  private UUID clientId = null;
+
+  @SerializedName("short_term_liabilities")
+  private Float shortTermLiabilities = null;
+
   @SerializedName("monthly_expenses")
   private Float monthlyExpenses = null;
+
+  @SerializedName("total_liabilities")
+  private Float totalLiabilities = null;
+
+  @SerializedName("lookback_periods")
+  private Integer lookbackPeriods = 3;
 
   @SerializedName("ratio_targets")
   private RatioTargets ratioTargets = null;
@@ -51,53 +58,23 @@ public class FinancialHealthCheckRequest {
   @SerializedName("non_liquid_assets")
   private Float nonLiquidAssets = null;
 
-  @SerializedName("gross_annual_income")
-  private Float grossAnnualIncome = null;
-
-  @SerializedName("lookback_periods")
-  private Integer lookbackPeriods = 3;
-
-  @SerializedName("net_monthly_income")
-  private Float netMonthlyIncome = null;
-
-  @SerializedName("short_term_liabilities")
-  private Float shortTermLiabilities = null;
-
-  public FinancialHealthCheckRequest clientId(UUID clientId) {
-    this.clientId = clientId;
+  public FinancialHealthCheckRequest grossAnnualIncome(Float grossAnnualIncome) {
+    this.grossAnnualIncome = grossAnnualIncome;
     return this;
   }
 
    /**
-   * Get clientId
-   * @return clientId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getClientId() {
-    return clientId;
-  }
-
-  public void setClientId(UUID clientId) {
-    this.clientId = clientId;
-  }
-
-  public FinancialHealthCheckRequest totalLiabilities(Float totalLiabilities) {
-    this.totalLiabilities = totalLiabilities;
-    return this;
-  }
-
-   /**
-   * Get totalLiabilities
+   * Get grossAnnualIncome
    * minimum: 0
-   * @return totalLiabilities
+   * @return grossAnnualIncome
   **/
   @ApiModelProperty(value = "")
-  public Float getTotalLiabilities() {
-    return totalLiabilities;
+  public Float getGrossAnnualIncome() {
+    return grossAnnualIncome;
   }
 
-  public void setTotalLiabilities(Float totalLiabilities) {
-    this.totalLiabilities = totalLiabilities;
+  public void setGrossAnnualIncome(Float grossAnnualIncome) {
+    this.grossAnnualIncome = grossAnnualIncome;
   }
 
   public FinancialHealthCheckRequest liquidAssets(Float liquidAssets) {
@@ -119,6 +96,62 @@ public class FinancialHealthCheckRequest {
     this.liquidAssets = liquidAssets;
   }
 
+  public FinancialHealthCheckRequest netMonthlyIncome(Float netMonthlyIncome) {
+    this.netMonthlyIncome = netMonthlyIncome;
+    return this;
+  }
+
+   /**
+   * Get netMonthlyIncome
+   * minimum: 0
+   * @return netMonthlyIncome
+  **/
+  @ApiModelProperty(value = "")
+  public Float getNetMonthlyIncome() {
+    return netMonthlyIncome;
+  }
+
+  public void setNetMonthlyIncome(Float netMonthlyIncome) {
+    this.netMonthlyIncome = netMonthlyIncome;
+  }
+
+  public FinancialHealthCheckRequest clientId(UUID clientId) {
+    this.clientId = clientId;
+    return this;
+  }
+
+   /**
+   * Get clientId
+   * @return clientId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getClientId() {
+    return clientId;
+  }
+
+  public void setClientId(UUID clientId) {
+    this.clientId = clientId;
+  }
+
+  public FinancialHealthCheckRequest shortTermLiabilities(Float shortTermLiabilities) {
+    this.shortTermLiabilities = shortTermLiabilities;
+    return this;
+  }
+
+   /**
+   * Get shortTermLiabilities
+   * minimum: 0
+   * @return shortTermLiabilities
+  **/
+  @ApiModelProperty(value = "")
+  public Float getShortTermLiabilities() {
+    return shortTermLiabilities;
+  }
+
+  public void setShortTermLiabilities(Float shortTermLiabilities) {
+    this.shortTermLiabilities = shortTermLiabilities;
+  }
+
   public FinancialHealthCheckRequest monthlyExpenses(Float monthlyExpenses) {
     this.monthlyExpenses = monthlyExpenses;
     return this;
@@ -136,6 +169,44 @@ public class FinancialHealthCheckRequest {
 
   public void setMonthlyExpenses(Float monthlyExpenses) {
     this.monthlyExpenses = monthlyExpenses;
+  }
+
+  public FinancialHealthCheckRequest totalLiabilities(Float totalLiabilities) {
+    this.totalLiabilities = totalLiabilities;
+    return this;
+  }
+
+   /**
+   * Get totalLiabilities
+   * minimum: 0
+   * @return totalLiabilities
+  **/
+  @ApiModelProperty(value = "")
+  public Float getTotalLiabilities() {
+    return totalLiabilities;
+  }
+
+  public void setTotalLiabilities(Float totalLiabilities) {
+    this.totalLiabilities = totalLiabilities;
+  }
+
+  public FinancialHealthCheckRequest lookbackPeriods(Integer lookbackPeriods) {
+    this.lookbackPeriods = lookbackPeriods;
+    return this;
+  }
+
+   /**
+   * Get lookbackPeriods
+   * minimum: 1
+   * @return lookbackPeriods
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getLookbackPeriods() {
+    return lookbackPeriods;
+  }
+
+  public void setLookbackPeriods(Integer lookbackPeriods) {
+    this.lookbackPeriods = lookbackPeriods;
   }
 
   public FinancialHealthCheckRequest ratioTargets(RatioTargets ratioTargets) {
@@ -175,82 +246,6 @@ public class FinancialHealthCheckRequest {
     this.nonLiquidAssets = nonLiquidAssets;
   }
 
-  public FinancialHealthCheckRequest grossAnnualIncome(Float grossAnnualIncome) {
-    this.grossAnnualIncome = grossAnnualIncome;
-    return this;
-  }
-
-   /**
-   * Get grossAnnualIncome
-   * minimum: 0
-   * @return grossAnnualIncome
-  **/
-  @ApiModelProperty(value = "")
-  public Float getGrossAnnualIncome() {
-    return grossAnnualIncome;
-  }
-
-  public void setGrossAnnualIncome(Float grossAnnualIncome) {
-    this.grossAnnualIncome = grossAnnualIncome;
-  }
-
-  public FinancialHealthCheckRequest lookbackPeriods(Integer lookbackPeriods) {
-    this.lookbackPeriods = lookbackPeriods;
-    return this;
-  }
-
-   /**
-   * Get lookbackPeriods
-   * minimum: 1
-   * @return lookbackPeriods
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getLookbackPeriods() {
-    return lookbackPeriods;
-  }
-
-  public void setLookbackPeriods(Integer lookbackPeriods) {
-    this.lookbackPeriods = lookbackPeriods;
-  }
-
-  public FinancialHealthCheckRequest netMonthlyIncome(Float netMonthlyIncome) {
-    this.netMonthlyIncome = netMonthlyIncome;
-    return this;
-  }
-
-   /**
-   * Get netMonthlyIncome
-   * minimum: 0
-   * @return netMonthlyIncome
-  **/
-  @ApiModelProperty(value = "")
-  public Float getNetMonthlyIncome() {
-    return netMonthlyIncome;
-  }
-
-  public void setNetMonthlyIncome(Float netMonthlyIncome) {
-    this.netMonthlyIncome = netMonthlyIncome;
-  }
-
-  public FinancialHealthCheckRequest shortTermLiabilities(Float shortTermLiabilities) {
-    this.shortTermLiabilities = shortTermLiabilities;
-    return this;
-  }
-
-   /**
-   * Get shortTermLiabilities
-   * minimum: 0
-   * @return shortTermLiabilities
-  **/
-  @ApiModelProperty(value = "")
-  public Float getShortTermLiabilities() {
-    return shortTermLiabilities;
-  }
-
-  public void setShortTermLiabilities(Float shortTermLiabilities) {
-    this.shortTermLiabilities = shortTermLiabilities;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -261,21 +256,21 @@ public class FinancialHealthCheckRequest {
       return false;
     }
     FinancialHealthCheckRequest financialHealthCheckRequest = (FinancialHealthCheckRequest) o;
-    return Objects.equals(this.clientId, financialHealthCheckRequest.clientId) &&
-        Objects.equals(this.totalLiabilities, financialHealthCheckRequest.totalLiabilities) &&
+    return Objects.equals(this.grossAnnualIncome, financialHealthCheckRequest.grossAnnualIncome) &&
         Objects.equals(this.liquidAssets, financialHealthCheckRequest.liquidAssets) &&
-        Objects.equals(this.monthlyExpenses, financialHealthCheckRequest.monthlyExpenses) &&
-        Objects.equals(this.ratioTargets, financialHealthCheckRequest.ratioTargets) &&
-        Objects.equals(this.nonLiquidAssets, financialHealthCheckRequest.nonLiquidAssets) &&
-        Objects.equals(this.grossAnnualIncome, financialHealthCheckRequest.grossAnnualIncome) &&
-        Objects.equals(this.lookbackPeriods, financialHealthCheckRequest.lookbackPeriods) &&
         Objects.equals(this.netMonthlyIncome, financialHealthCheckRequest.netMonthlyIncome) &&
-        Objects.equals(this.shortTermLiabilities, financialHealthCheckRequest.shortTermLiabilities);
+        Objects.equals(this.clientId, financialHealthCheckRequest.clientId) &&
+        Objects.equals(this.shortTermLiabilities, financialHealthCheckRequest.shortTermLiabilities) &&
+        Objects.equals(this.monthlyExpenses, financialHealthCheckRequest.monthlyExpenses) &&
+        Objects.equals(this.totalLiabilities, financialHealthCheckRequest.totalLiabilities) &&
+        Objects.equals(this.lookbackPeriods, financialHealthCheckRequest.lookbackPeriods) &&
+        Objects.equals(this.ratioTargets, financialHealthCheckRequest.ratioTargets) &&
+        Objects.equals(this.nonLiquidAssets, financialHealthCheckRequest.nonLiquidAssets);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(clientId, totalLiabilities, liquidAssets, monthlyExpenses, ratioTargets, nonLiquidAssets, grossAnnualIncome, lookbackPeriods, netMonthlyIncome, shortTermLiabilities);
+    return Objects.hash(grossAnnualIncome, liquidAssets, netMonthlyIncome, clientId, shortTermLiabilities, monthlyExpenses, totalLiabilities, lookbackPeriods, ratioTargets, nonLiquidAssets);
   }
 
 
@@ -284,16 +279,16 @@ public class FinancialHealthCheckRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class FinancialHealthCheckRequest {\n");
     
-    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
-    sb.append("    totalLiabilities: ").append(toIndentedString(totalLiabilities)).append("\n");
+    sb.append("    grossAnnualIncome: ").append(toIndentedString(grossAnnualIncome)).append("\n");
     sb.append("    liquidAssets: ").append(toIndentedString(liquidAssets)).append("\n");
+    sb.append("    netMonthlyIncome: ").append(toIndentedString(netMonthlyIncome)).append("\n");
+    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
+    sb.append("    shortTermLiabilities: ").append(toIndentedString(shortTermLiabilities)).append("\n");
     sb.append("    monthlyExpenses: ").append(toIndentedString(monthlyExpenses)).append("\n");
+    sb.append("    totalLiabilities: ").append(toIndentedString(totalLiabilities)).append("\n");
+    sb.append("    lookbackPeriods: ").append(toIndentedString(lookbackPeriods)).append("\n");
     sb.append("    ratioTargets: ").append(toIndentedString(ratioTargets)).append("\n");
     sb.append("    nonLiquidAssets: ").append(toIndentedString(nonLiquidAssets)).append("\n");
-    sb.append("    grossAnnualIncome: ").append(toIndentedString(grossAnnualIncome)).append("\n");
-    sb.append("    lookbackPeriods: ").append(toIndentedString(lookbackPeriods)).append("\n");
-    sb.append("    netMonthlyIncome: ").append(toIndentedString(netMonthlyIncome)).append("\n");
-    sb.append("    shortTermLiabilities: ").append(toIndentedString(shortTermLiabilities)).append("\n");
     sb.append("}");
     return sb.toString();
   }

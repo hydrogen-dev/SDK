@@ -143,9 +143,8 @@ class Webhook(object):
         :param integration_service: The integration_service of this Webhook.  # noqa: E501
         :type: list[str]
         """
-        allowed_values = ["KYC", "KYC_STATUS"]  # noqa: E501
-        if not set((integration_service_value.lower() for integration_service_value in integration_service))\
-                .issubset(set((value.lower() for value in allowed_values))):
+        allowed_values = ["kyc", "kyc_status", "async_accounting_customer", "async_accounting_customer_revenue", "async_accounting_invoice", "async_accounting_invoice_payment", "async_aggregation_account", "async_aggregation_account_transaction", "async_aggregation_account_holding"]  # noqa: E501
+        if not set(integration_service).issubset(set(allowed_values)):
             raise ValueError(
                 "Invalid values for `integration_service` [{0}], must be a subset of [{1}]"  # noqa: E501
                 .format(", ".join(map(str, set(integration_service) - set(allowed_values))),  # noqa: E501

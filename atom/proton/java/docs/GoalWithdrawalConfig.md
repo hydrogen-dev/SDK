@@ -4,17 +4,25 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**withAmount** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **withStartReference** | [**WithStartReferenceEnum**](#WithStartReferenceEnum) |  |  [optional]
+**withAmount** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **withInflation** | **Float** |  |  [optional]
-**withFrequency** | [**WithFrequencyEnum**](#WithFrequencyEnum) |  |  [optional]
-**withEndReference** | [**WithEndReferenceEnum**](#WithEndReferenceEnum) |  |  [optional]
-**withEndPeriod** | **Integer** |  |  [optional]
 **withStartPeriod** | **Integer** |  |  [optional]
+**withEndPeriod** | **Integer** |  |  [optional]
+**withEndReference** | [**WithEndReferenceEnum**](#WithEndReferenceEnum) |  |  [optional]
+**withFrequency** | [**WithFrequencyEnum**](#WithFrequencyEnum) |  |  [optional]
 
 
 <a name="WithStartReferenceEnum"></a>
 ## Enum: WithStartReferenceEnum
+Name | Value
+---- | -----
+A_END | &quot;a_end&quot;
+D_END | &quot;d_end&quot;
+
+
+<a name="WithEndReferenceEnum"></a>
+## Enum: WithEndReferenceEnum
 Name | Value
 ---- | -----
 A_END | &quot;a_end&quot;
@@ -32,14 +40,6 @@ MONTH | &quot;month&quot;
 TWO_WEEKS | &quot;two_weeks&quot;
 WEEK | &quot;week&quot;
 DAY | &quot;day&quot;
-
-
-<a name="WithEndReferenceEnum"></a>
-## Enum: WithEndReferenceEnum
-Name | Value
----- | -----
-A_END | &quot;a_end&quot;
-D_END | &quot;d_end&quot;
 
 
 

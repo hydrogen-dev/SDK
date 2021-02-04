@@ -17,63 +17,63 @@ Name | Type | Description | Notes
 ## Enum: [AtomServiceEnum]
 
 
-* `CLIENT` (value: `"CLIENT"`)
+* `client` (value: `"client"`)
 
-* `CLIENT_STATUS` (value: `"CLIENT_STATUS"`)
+* `client_status` (value: `"client_status"`)
 
-* `ACCOUNT_STATUS` (value: `"ACCOUNT_STATUS"`)
+* `account_status` (value: `"account_status"`)
 
-* `ACCOUNT` (value: `"ACCOUNT"`)
+* `account` (value: `"account"`)
 
-* `CARD` (value: `"CARD"`)
+* `card` (value: `"card"`)
 
-* `CARD_STATUS` (value: `"CARD_STATUS"`)
+* `card_status` (value: `"card_status"`)
 
-* `PORTFOLIO_ASSET_SIZE` (value: `"PORTFOLIO_ASSET_SIZE"`)
+* `portfolio_asset_size` (value: `"portfolio_asset_size"`)
 
-* `PORTFOLIO_TRANSACTION` (value: `"PORTFOLIO_TRANSACTION"`)
+* `portfolio_transaction` (value: `"portfolio_transaction"`)
 
-* `PORTFOLIO_TRANSACTION_STATUS` (value: `"PORTFOLIO_TRANSACTION_STATUS"`)
+* `portfolio_transaction_status` (value: `"portfolio_transaction_status"`)
 
-* `PORTFOLIO_HOLDING` (value: `"PORTFOLIO_HOLDING"`)
+* `portfolio_holding` (value: `"portfolio_holding"`)
 
-* `AGGREGATION_ACCOUNT` (value: `"AGGREGATION_ACCOUNT"`)
+* `aggregation_account` (value: `"aggregation_account"`)
 
-* `AGGREGATION_ACCOUNT_STATUS` (value: `"AGGREGATION_ACCOUNT_STATUS"`)
+* `aggregation_account_status` (value: `"aggregation_account_status"`)
 
-* `NOTIFICATION_CLIENT` (value: `"NOTIFICATION_CLIENT"`)
+* `notification_client` (value: `"notification_client"`)
 
-* `AGGREGATION_ACCOUNT_BALANCE` (value: `"AGGREGATION_ACCOUNT_BALANCE"`)
+* `aggregation_account_balance` (value: `"aggregation_account_balance"`)
 
-* `AUDIT_LOG` (value: `"AUDIT_LOG"`)
+* `audit_log` (value: `"audit_log"`)
 
-* `SUPPORT_TICKET` (value: `"SUPPORT_TICKET"`)
+* `support_ticket` (value: `"support_ticket"`)
 
-* `FEATURE_TRACK` (value: `"FEATURE_TRACK"`)
+* `feature_track` (value: `"feature_track"`)
 
-* `AGGREGATION_ACCOUNT_TRANSACTION` (value: `"AGGREGATION_ACCOUNT_TRANSACTION"`)
+* `aggregation_account_transaction` (value: `"aggregation_account_transaction"`)
 
-* `AGGREGATION_ACCOUNT_TRANSACTION_STATUS` (value: `"AGGREGATION_ACCOUNT_TRANSACTION_STATUS"`)
+* `aggregation_account_transaction_status` (value: `"aggregation_account_transaction_status"`)
 
-* `AGGREGATION_ACCOUNT_HOLDING` (value: `"AGGREGATION_ACCOUNT_HOLDING"`)
+* `aggregation_account_holding` (value: `"aggregation_account_holding"`)
 
-* `ORDER_TRACK` (value: `"ORDER_TRACK"`)
+* `order_track` (value: `"order_track"`)
 
-* `FUNDING` (value: `"FUNDING"`)
+* `funding` (value: `"funding"`)
 
-* `FUNDING_STATUS` (value: `"FUNDING_STATUS"`)
+* `funding_status` (value: `"funding_status"`)
 
-* `BUDGET` (value: `"BUDGET"`)
+* `budget` (value: `"budget"`)
 
-* `DOCUMENT` (value: `"DOCUMENT"`)
+* `document` (value: `"document"`)
 
-* `CLIENT_RESPONSE` (value: `"CLIENT_RESPONSE"`)
+* `client_response` (value: `"client_response"`)
 
-* `CLIENT_VERIFIED` (value: `"CLIENT_VERIFIED"`)
+* `client_verified` (value: `"client_verified"`)
 
-* `DOCUMENT_VERIFIED` (value: `"DOCUMENT_VERIFIED"`)
+* `document_verified` (value: `"document_verified"`)
 
-* `BANK_LINK_VERIFIED` (value: `"BANK_LINK_VERIFIED"`)
+* `bank_link_verified` (value: `"bank_link_verified"`)
 
 
 

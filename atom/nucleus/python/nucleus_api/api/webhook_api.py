@@ -439,7 +439,7 @@ class WebhookApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Webhook webhook: webhook (required)
+        :param object webhook: webhook (required)
         :param str webhook_id: UUID webhook_id (required)
         :return: Webhook
                  If the method is called asynchronously,
@@ -462,7 +462,7 @@ class WebhookApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Webhook webhook: webhook (required)
+        :param object webhook: webhook (required)
         :param str webhook_id: UUID webhook_id (required)
         :return: Webhook
                  If the method is called asynchronously,

@@ -33,7 +33,6 @@ class AggregationAccount(object):
     swagger_types = {
         'account_holder': 'str',
         'account_name': 'str',
-        'account_number': 'str',
         'bank_link_id': 'str',
         'category': 'str',
         'client_id': 'str',
@@ -45,8 +44,10 @@ class AggregationAccount(object):
         'is_active': 'bool',
         'is_asset': 'bool',
         'is_business': 'bool',
+        'is_cash': 'bool',
         'is_investment': 'bool',
         'is_link_verified': 'bool',
+        'is_manual': 'bool',
         'mask': 'str',
         'metadata': 'dict(str, str)',
         'secondary_id': 'str',
@@ -57,7 +58,6 @@ class AggregationAccount(object):
     attribute_map = {
         'account_holder': 'account_holder',
         'account_name': 'account_name',
-        'account_number': 'account_number',
         'bank_link_id': 'bank_link_id',
         'category': 'category',
         'client_id': 'client_id',
@@ -69,8 +69,10 @@ class AggregationAccount(object):
         'is_active': 'is_active',
         'is_asset': 'is_asset',
         'is_business': 'is_business',
+        'is_cash': 'is_cash',
         'is_investment': 'is_investment',
         'is_link_verified': 'is_link_verified',
+        'is_manual': 'is_manual',
         'mask': 'mask',
         'metadata': 'metadata',
         'secondary_id': 'secondary_id',
@@ -78,12 +80,11 @@ class AggregationAccount(object):
         'update_date': 'update_date'
     }
 
-    def __init__(self, account_holder=None, account_name=None, account_number=None, bank_link_id=None, category=None, client_id=None, create_date=None, currency_code=None, financial_offer_id=None, id=None, institution_name=None, is_active=None, is_asset=None, is_business=None, is_investment=None, is_link_verified=None, mask=None, metadata=None, secondary_id=None, subcategory=None, update_date=None):  # noqa: E501
+    def __init__(self, account_holder=None, account_name=None, bank_link_id=None, category=None, client_id=None, create_date=None, currency_code=None, financial_offer_id=None, id=None, institution_name=None, is_active=None, is_asset=None, is_business=None, is_cash=None, is_investment=None, is_link_verified=None, is_manual=None, mask=None, metadata=None, secondary_id=None, subcategory=None, update_date=None):  # noqa: E501
         """AggregationAccount - a model defined in Swagger"""  # noqa: E501
 
         self._account_holder = None
         self._account_name = None
-        self._account_number = None
         self._bank_link_id = None
         self._category = None
         self._client_id = None
@@ -95,8 +96,10 @@ class AggregationAccount(object):
         self._is_active = None
         self._is_asset = None
         self._is_business = None
+        self._is_cash = None
         self._is_investment = None
         self._is_link_verified = None
+        self._is_manual = None
         self._mask = None
         self._metadata = None
         self._secondary_id = None
@@ -107,8 +110,6 @@ class AggregationAccount(object):
         if account_holder is not None:
             self.account_holder = account_holder
         self.account_name = account_name
-        if account_number is not None:
-            self.account_number = account_number
         if bank_link_id is not None:
             self.bank_link_id = bank_link_id
         self.category = category
@@ -128,10 +129,14 @@ class AggregationAccount(object):
             self.is_asset = is_asset
         if is_business is not None:
             self.is_business = is_business
+        if is_cash is not None:
+            self.is_cash = is_cash
         if is_investment is not None:
             self.is_investment = is_investment
         if is_link_verified is not None:
             self.is_link_verified = is_link_verified
+        if is_manual is not None:
+            self.is_manual = is_manual
         if mask is not None:
             self.mask = mask
         if metadata is not None:
@@ -190,29 +195,6 @@ class AggregationAccount(object):
             raise ValueError("Invalid value for `account_name`, must not be `None`")  # noqa: E501
 
         self._account_name = account_name
-
-    @property
-    def account_number(self):
-        """Gets the account_number of this AggregationAccount.  # noqa: E501
-
-        accountNumber  # noqa: E501
-
-        :return: The account_number of this AggregationAccount.  # noqa: E501
-        :rtype: str
-        """
-        return self._account_number
-
-    @account_number.setter
-    def account_number(self, account_number):
-        """Sets the account_number of this AggregationAccount.
-
-        accountNumber  # noqa: E501
-
-        :param account_number: The account_number of this AggregationAccount.  # noqa: E501
-        :type: str
-        """
-
-        self._account_number = account_number
 
     @property
     def bank_link_id(self):
@@ -470,6 +452,29 @@ class AggregationAccount(object):
         self._is_business = is_business
 
     @property
+    def is_cash(self):
+        """Gets the is_cash of this AggregationAccount.  # noqa: E501
+
+        isCash  # noqa: E501
+
+        :return: The is_cash of this AggregationAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_cash
+
+    @is_cash.setter
+    def is_cash(self, is_cash):
+        """Sets the is_cash of this AggregationAccount.
+
+        isCash  # noqa: E501
+
+        :param is_cash: The is_cash of this AggregationAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_cash = is_cash
+
+    @property
     def is_investment(self):
         """Gets the is_investment of this AggregationAccount.  # noqa: E501
 
@@ -514,6 +519,29 @@ class AggregationAccount(object):
         """
 
         self._is_link_verified = is_link_verified
+
+    @property
+    def is_manual(self):
+        """Gets the is_manual of this AggregationAccount.  # noqa: E501
+
+        isManual  # noqa: E501
+
+        :return: The is_manual of this AggregationAccount.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_manual
+
+    @is_manual.setter
+    def is_manual(self, is_manual):
+        """Sets the is_manual of this AggregationAccount.
+
+        isManual  # noqa: E501
+
+        :param is_manual: The is_manual of this AggregationAccount.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_manual = is_manual
 
     @property
     def mask(self):

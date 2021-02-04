@@ -4,13 +4,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **asset_class** | **str** | Security asset class | [optional] 
-**broker** | **str** | Security broker | [optional] 
+**brokers** | [**list[Brokers]**](Brokers.md) | brokers | [optional] 
 **category** | **str** | Security category | [optional] 
 **create_date** | **datetime** |  | [optional] 
 **currency_code** | **str** | currency_code | [optional] 
 **cusip** | **str** | cusip | [optional] 
+**description** | **str** | description | [optional] 
 **exchange** | **str** | Security exchange | [optional] 
 **id** | **str** |  | [optional] 
+**image** | **str** | image | [optional] 
 **industry** | **str** | Security industry | [optional] 
 **is_active** | **bool** | Security is active | [optional] 
 **isin** | **str** | isin | [optional] 

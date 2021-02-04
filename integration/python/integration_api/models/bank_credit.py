@@ -74,7 +74,8 @@ class BankCredit(object):
             self.location = location
         if memo is not None:
             self.memo = memo
-        self.merchant = merchant
+        if merchant is not None:
+            self.merchant = merchant
         if subcategory is not None:
             self.subcategory = subcategory
         self.transaction_type = transaction_type
@@ -214,8 +215,6 @@ class BankCredit(object):
         :param merchant: The merchant of this BankCredit.  # noqa: E501
         :type: str
         """
-        if merchant is None:
-            raise ValueError("Invalid value for `merchant`, must not be `None`")  # noqa: E501
 
         self._merchant = merchant
 

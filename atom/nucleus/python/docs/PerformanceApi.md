@@ -45,7 +45,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PerformanceApi(nucleus_api.ApiClient(configuration))
 account_id = 'account_id_example' # str | Account Id -/account
@@ -155,7 +155,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PerformanceApi(nucleus_api.ApiClient(configuration))
 allocation_id = 'allocation_id_example' # str | Allocation Id -/allocation
@@ -267,7 +267,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PerformanceApi(nucleus_api.ApiClient(configuration))
 benchmark_id = 'benchmark_id_example' # str | Benchmark Id - /benchmark
@@ -377,7 +377,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PerformanceApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | Client Id -/client
@@ -487,7 +487,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PerformanceApi(nucleus_api.ApiClient(configuration))
 client_id = 'client_id_example' # str | client_id
@@ -601,7 +601,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PerformanceApi(nucleus_api.ApiClient(configuration))
 household_id = 'household_id_example' # str | Household Id -/household
@@ -711,7 +711,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PerformanceApi(nucleus_api.ApiClient(configuration))
 model_id = 'model_id_example' # str | Model Id - /model
@@ -821,7 +821,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PerformanceApi(nucleus_api.ApiClient(configuration))
 portfolio_id = 'portfolio_id_example' # str | Portfolio Id -/portoflio
@@ -931,7 +931,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.PerformanceApi(nucleus_api.ApiClient(configuration))
 security_id = 'security_id_example' # str | security_id

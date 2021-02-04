@@ -23,7 +23,6 @@ Create a new Risk Profile.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import RiskProfileApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -40,8 +39,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 RiskProfileApi apiInstance = new RiskProfileApi();
 RiskProfile riskProfile = new RiskProfile(); // RiskProfile | riskProfile
 try {
@@ -84,7 +81,6 @@ Permanently Delete a Risk Profile.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import RiskProfileApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -101,8 +97,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 RiskProfileApi apiInstance = new RiskProfileApi();
 UUID riskProfileId = new UUID(); // UUID | UUID risk_profile_id
 try {
@@ -144,7 +138,6 @@ Get All Risk Profile.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import RiskProfileApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -161,8 +154,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 RiskProfileApi apiInstance = new RiskProfileApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -213,7 +204,6 @@ Get a Risk Profile.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import RiskProfileApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -230,8 +220,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 RiskProfileApi apiInstance = new RiskProfileApi();
 UUID riskProfileId = new UUID(); // UUID | UUID risk_profile_id
 try {
@@ -274,7 +262,6 @@ Update a Risk Profile.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import RiskProfileApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -291,10 +278,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 RiskProfileApi apiInstance = new RiskProfileApi();
-RiskProfile riskProfile = new RiskProfile(); // RiskProfile | risk_profile
+Object riskProfile = null; // Object | risk_profile
 UUID riskProfileId = new UUID(); // UUID | UUID risk_profile_id
 try {
     RiskProfile result = apiInstance.updateRiskProfileUsingPut(riskProfile, riskProfileId);
@@ -309,7 +294,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **riskProfile** | [**RiskProfile**](RiskProfile.md)| risk_profile |
+ **riskProfile** | **Object**| risk_profile |
  **riskProfileId** | [**UUID**](.md)| UUID risk_profile_id |
 
 ### Return type

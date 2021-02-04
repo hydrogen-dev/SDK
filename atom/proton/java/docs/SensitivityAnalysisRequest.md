@@ -4,21 +4,29 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tradingDaysPerYear** | **Integer** |  |  [optional]
 **portfolioTickers** | **List&lt;String&gt;** |  |  [optional]
-**frequencyInterval** | [**FrequencyIntervalEnum**](#FrequencyIntervalEnum) |  | 
-**sensitivityFactor** | [**SensitivityFactor**](SensitivityFactor.md) |  | 
-**createLog** | **Boolean** |  |  [optional]
-**aggregationAccountId** | [**UUID**](UUID.md) |  |  [optional]
-**allocationId** | [**UUID**](UUID.md) |  |  [optional]
-**modelId** | [**UUID**](UUID.md) |  |  [optional]
-**portfolioWeights** | **List&lt;Float&gt;** |  |  [optional]
 **endDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**useProxyData** | **Boolean** |  |  [optional]
-**accountId** | [**UUID**](UUID.md) |  |  [optional]
-**marketDataSource** | [**MarketDataSourceEnum**](#MarketDataSourceEnum) |  |  [optional]
 **portfolioId** | [**UUID**](UUID.md) |  |  [optional]
+**marketDataSource** | [**MarketDataSourceEnum**](#MarketDataSourceEnum) |  |  [optional]
+**modelId** | [**UUID**](UUID.md) |  |  [optional]
+**createLog** | **Boolean** |  |  [optional]
+**allocationId** | [**UUID**](UUID.md) |  |  [optional]
+**useProxyData** | **Boolean** |  |  [optional]
+**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**accountId** | [**UUID**](UUID.md) |  |  [optional]
+**frequencyInterval** | [**FrequencyIntervalEnum**](#FrequencyIntervalEnum) |  | 
+**aggregationAccountId** | [**UUID**](UUID.md) |  |  [optional]
+**tradingDaysPerYear** | **Integer** |  |  [optional]
+**portfolioWeights** | **List&lt;Float&gt;** |  |  [optional]
+**sensitivityFactor** | [**SensitivityFactor**](SensitivityFactor.md) |  | 
+
+
+<a name="MarketDataSourceEnum"></a>
+## Enum: MarketDataSourceEnum
+Name | Value
+---- | -----
+NUCLEUS | &quot;nucleus&quot;
+INTEGRATION | &quot;integration&quot;
 
 
 <a name="FrequencyIntervalEnum"></a>
@@ -30,14 +38,6 @@ QUARTER | &quot;quarter&quot;
 MONTH | &quot;month&quot;
 WEEK | &quot;week&quot;
 DAY | &quot;day&quot;
-
-
-<a name="MarketDataSourceEnum"></a>
-## Enum: MarketDataSourceEnum
-Name | Value
----- | -----
-NUCLEUS | &quot;nucleus&quot;
-INTEGRATION | &quot;integration&quot;
 
 
 

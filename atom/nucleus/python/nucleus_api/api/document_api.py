@@ -439,7 +439,7 @@ class DocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Document document: document (required)
+        :param object document: document (required)
         :param str document_id: UUID document_id (required)
         :return: Document
                  If the method is called asynchronously,
@@ -462,7 +462,7 @@ class DocumentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Document document: document (required)
+        :param object document: document (required)
         :param str document_id: UUID document_id (required)
         :return: Document
                  If the method is called asynchronously,

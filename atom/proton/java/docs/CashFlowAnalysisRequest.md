@@ -4,19 +4,19 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**scope** | [**ScopeEnum**](#ScopeEnum) |  |  [optional]
-**benchmarkStartDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**showSpendingDetails** | **Boolean** |  |  [optional]
-**clientId** | [**UUID**](UUID.md) |  |  [optional]
-**currencyConversion** | **String** |  |  [optional]
-**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
 **aggregationAccountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
 **endDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**showIncomeDetails** | **Boolean** |  |  [optional]
-**currencyCode** | **String** |  |  [optional]
-**accountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
 **benchmarkEndDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**clientId** | [**UUID**](UUID.md) |  |  [optional]
+**accountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
+**showIncomeDetails** | **Boolean** |  |  [optional]
 **showHistory** | **Boolean** |  |  [optional]
+**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**currencyConversion** | **String** |  |  [optional]
+**currencyCode** | **String** |  |  [optional]
+**benchmarkStartDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**showSpendingDetails** | **Boolean** |  |  [optional]
+**scope** | [**ScopeEnum**](#ScopeEnum) |  |  [optional]
 
 
 <a name="ScopeEnum"></a>

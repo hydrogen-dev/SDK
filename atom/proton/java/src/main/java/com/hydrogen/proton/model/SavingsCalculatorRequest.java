@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.IOException;
@@ -32,25 +31,28 @@ import java.util.UUID;
 /**
  * SavingsCalculatorRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class SavingsCalculatorRequest {
-  @SerializedName("inflation_rate")
-  private Float inflationRate = 0.0f;
+  @SerializedName("aggregation_account_ids")
+  private List<UUID> aggregationAccountIds = null;
 
-  @SerializedName("deposit_schedule")
-  private List<SavingsDepositSchedule> depositSchedule = null;
+  @SerializedName("tax_rate")
+  private Float taxRate = 0.0f;
+
+  @SerializedName("account_ids")
+  private List<UUID> accountIds = null;
+
+  @SerializedName("initial_balance")
+  private BigDecimal initialBalance = null;
 
   @SerializedName("create_log")
   private Boolean createLog = false;
 
-  @SerializedName("aggregation_account_ids")
-  private List<UUID> aggregationAccountIds = null;
-
-  @SerializedName("initial_balance")
-  private BigDecimal initialBalance = null;
+  @SerializedName("inflation_rate")
+  private Float inflationRate = 0.0f;
 
   @SerializedName("horizon")
   private Integer horizon = null;
@@ -111,77 +113,11 @@ public class SavingsCalculatorRequest {
   @SerializedName("horizon_frequency_interval")
   private HorizonFrequencyIntervalEnum horizonFrequencyInterval = HorizonFrequencyIntervalEnum.YEAR;
 
-  @SerializedName("tax_rate")
-  private Float taxRate = 0.0f;
-
-  @SerializedName("account_ids")
-  private List<UUID> accountIds = null;
+  @SerializedName("deposit_schedule")
+  private List<SavingsDepositSchedule> depositSchedule = null;
 
   @SerializedName("return_schedule")
   private List<Float> returnSchedule = new ArrayList<Float>();
-
-  public SavingsCalculatorRequest inflationRate(Float inflationRate) {
-    this.inflationRate = inflationRate;
-    return this;
-  }
-
-   /**
-   * Get inflationRate
-   * minimum: -1
-   * @return inflationRate
-  **/
-  @ApiModelProperty(value = "")
-  public Float getInflationRate() {
-    return inflationRate;
-  }
-
-  public void setInflationRate(Float inflationRate) {
-    this.inflationRate = inflationRate;
-  }
-
-  public SavingsCalculatorRequest depositSchedule(List<SavingsDepositSchedule> depositSchedule) {
-    this.depositSchedule = depositSchedule;
-    return this;
-  }
-
-  public SavingsCalculatorRequest addDepositScheduleItem(SavingsDepositSchedule depositScheduleItem) {
-    if (this.depositSchedule == null) {
-      this.depositSchedule = new ArrayList<SavingsDepositSchedule>();
-    }
-    this.depositSchedule.add(depositScheduleItem);
-    return this;
-  }
-
-   /**
-   * Get depositSchedule
-   * @return depositSchedule
-  **/
-  @ApiModelProperty(value = "")
-  public List<SavingsDepositSchedule> getDepositSchedule() {
-    return depositSchedule;
-  }
-
-  public void setDepositSchedule(List<SavingsDepositSchedule> depositSchedule) {
-    this.depositSchedule = depositSchedule;
-  }
-
-  public SavingsCalculatorRequest createLog(Boolean createLog) {
-    this.createLog = createLog;
-    return this;
-  }
-
-   /**
-   * Get createLog
-   * @return createLog
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isCreateLog() {
-    return createLog;
-  }
-
-  public void setCreateLog(Boolean createLog) {
-    this.createLog = createLog;
-  }
 
   public SavingsCalculatorRequest aggregationAccountIds(List<UUID> aggregationAccountIds) {
     this.aggregationAccountIds = aggregationAccountIds;
@@ -207,62 +143,6 @@ public class SavingsCalculatorRequest {
 
   public void setAggregationAccountIds(List<UUID> aggregationAccountIds) {
     this.aggregationAccountIds = aggregationAccountIds;
-  }
-
-  public SavingsCalculatorRequest initialBalance(BigDecimal initialBalance) {
-    this.initialBalance = initialBalance;
-    return this;
-  }
-
-   /**
-   * Get initialBalance
-   * minimum: 0
-   * @return initialBalance
-  **/
-  @ApiModelProperty(value = "")
-  public BigDecimal getInitialBalance() {
-    return initialBalance;
-  }
-
-  public void setInitialBalance(BigDecimal initialBalance) {
-    this.initialBalance = initialBalance;
-  }
-
-  public SavingsCalculatorRequest horizon(Integer horizon) {
-    this.horizon = horizon;
-    return this;
-  }
-
-   /**
-   * Get horizon
-   * minimum: 0
-   * @return horizon
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getHorizon() {
-    return horizon;
-  }
-
-  public void setHorizon(Integer horizon) {
-    this.horizon = horizon;
-  }
-
-  public SavingsCalculatorRequest horizonFrequencyInterval(HorizonFrequencyIntervalEnum horizonFrequencyInterval) {
-    this.horizonFrequencyInterval = horizonFrequencyInterval;
-    return this;
-  }
-
-   /**
-   * Get horizonFrequencyInterval
-   * @return horizonFrequencyInterval
-  **/
-  @ApiModelProperty(value = "")
-  public HorizonFrequencyIntervalEnum getHorizonFrequencyInterval() {
-    return horizonFrequencyInterval;
-  }
-
-  public void setHorizonFrequencyInterval(HorizonFrequencyIntervalEnum horizonFrequencyInterval) {
-    this.horizonFrequencyInterval = horizonFrequencyInterval;
   }
 
   public SavingsCalculatorRequest taxRate(Float taxRate) {
@@ -311,6 +191,125 @@ public class SavingsCalculatorRequest {
     this.accountIds = accountIds;
   }
 
+  public SavingsCalculatorRequest initialBalance(BigDecimal initialBalance) {
+    this.initialBalance = initialBalance;
+    return this;
+  }
+
+   /**
+   * Get initialBalance
+   * minimum: 0
+   * @return initialBalance
+  **/
+  @ApiModelProperty(value = "")
+  public BigDecimal getInitialBalance() {
+    return initialBalance;
+  }
+
+  public void setInitialBalance(BigDecimal initialBalance) {
+    this.initialBalance = initialBalance;
+  }
+
+  public SavingsCalculatorRequest createLog(Boolean createLog) {
+    this.createLog = createLog;
+    return this;
+  }
+
+   /**
+   * Get createLog
+   * @return createLog
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isCreateLog() {
+    return createLog;
+  }
+
+  public void setCreateLog(Boolean createLog) {
+    this.createLog = createLog;
+  }
+
+  public SavingsCalculatorRequest inflationRate(Float inflationRate) {
+    this.inflationRate = inflationRate;
+    return this;
+  }
+
+   /**
+   * Get inflationRate
+   * minimum: -1
+   * @return inflationRate
+  **/
+  @ApiModelProperty(value = "")
+  public Float getInflationRate() {
+    return inflationRate;
+  }
+
+  public void setInflationRate(Float inflationRate) {
+    this.inflationRate = inflationRate;
+  }
+
+  public SavingsCalculatorRequest horizon(Integer horizon) {
+    this.horizon = horizon;
+    return this;
+  }
+
+   /**
+   * Get horizon
+   * minimum: 0
+   * @return horizon
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getHorizon() {
+    return horizon;
+  }
+
+  public void setHorizon(Integer horizon) {
+    this.horizon = horizon;
+  }
+
+  public SavingsCalculatorRequest horizonFrequencyInterval(HorizonFrequencyIntervalEnum horizonFrequencyInterval) {
+    this.horizonFrequencyInterval = horizonFrequencyInterval;
+    return this;
+  }
+
+   /**
+   * Get horizonFrequencyInterval
+   * @return horizonFrequencyInterval
+  **/
+  @ApiModelProperty(value = "")
+  public HorizonFrequencyIntervalEnum getHorizonFrequencyInterval() {
+    return horizonFrequencyInterval;
+  }
+
+  public void setHorizonFrequencyInterval(HorizonFrequencyIntervalEnum horizonFrequencyInterval) {
+    this.horizonFrequencyInterval = horizonFrequencyInterval;
+  }
+
+  public SavingsCalculatorRequest depositSchedule(List<SavingsDepositSchedule> depositSchedule) {
+    this.depositSchedule = depositSchedule;
+    return this;
+  }
+
+  public SavingsCalculatorRequest addDepositScheduleItem(SavingsDepositSchedule depositScheduleItem) {
+    if (this.depositSchedule == null) {
+      this.depositSchedule = new ArrayList<SavingsDepositSchedule>();
+    }
+    this.depositSchedule.add(depositScheduleItem);
+    return this;
+  }
+
+   /**
+   * Get depositSchedule
+   * @return depositSchedule
+  **/
+  @ApiModelProperty(value = "")
+  public List<SavingsDepositSchedule> getDepositSchedule() {
+    return depositSchedule;
+  }
+
+  public void setDepositSchedule(List<SavingsDepositSchedule> depositSchedule) {
+    this.depositSchedule = depositSchedule;
+  }
+
   public SavingsCalculatorRequest returnSchedule(List<Float> returnSchedule) {
     this.returnSchedule = returnSchedule;
     return this;
@@ -344,21 +343,21 @@ public class SavingsCalculatorRequest {
       return false;
     }
     SavingsCalculatorRequest savingsCalculatorRequest = (SavingsCalculatorRequest) o;
-    return Objects.equals(this.inflationRate, savingsCalculatorRequest.inflationRate) &&
-        Objects.equals(this.depositSchedule, savingsCalculatorRequest.depositSchedule) &&
-        Objects.equals(this.createLog, savingsCalculatorRequest.createLog) &&
-        Objects.equals(this.aggregationAccountIds, savingsCalculatorRequest.aggregationAccountIds) &&
-        Objects.equals(this.initialBalance, savingsCalculatorRequest.initialBalance) &&
-        Objects.equals(this.horizon, savingsCalculatorRequest.horizon) &&
-        Objects.equals(this.horizonFrequencyInterval, savingsCalculatorRequest.horizonFrequencyInterval) &&
+    return Objects.equals(this.aggregationAccountIds, savingsCalculatorRequest.aggregationAccountIds) &&
         Objects.equals(this.taxRate, savingsCalculatorRequest.taxRate) &&
         Objects.equals(this.accountIds, savingsCalculatorRequest.accountIds) &&
+        Objects.equals(this.initialBalance, savingsCalculatorRequest.initialBalance) &&
+        Objects.equals(this.createLog, savingsCalculatorRequest.createLog) &&
+        Objects.equals(this.inflationRate, savingsCalculatorRequest.inflationRate) &&
+        Objects.equals(this.horizon, savingsCalculatorRequest.horizon) &&
+        Objects.equals(this.horizonFrequencyInterval, savingsCalculatorRequest.horizonFrequencyInterval) &&
+        Objects.equals(this.depositSchedule, savingsCalculatorRequest.depositSchedule) &&
         Objects.equals(this.returnSchedule, savingsCalculatorRequest.returnSchedule);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inflationRate, depositSchedule, createLog, aggregationAccountIds, initialBalance, horizon, horizonFrequencyInterval, taxRate, accountIds, returnSchedule);
+    return Objects.hash(aggregationAccountIds, taxRate, accountIds, initialBalance, createLog, inflationRate, horizon, horizonFrequencyInterval, depositSchedule, returnSchedule);
   }
 
 
@@ -367,15 +366,15 @@ public class SavingsCalculatorRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class SavingsCalculatorRequest {\n");
     
-    sb.append("    inflationRate: ").append(toIndentedString(inflationRate)).append("\n");
-    sb.append("    depositSchedule: ").append(toIndentedString(depositSchedule)).append("\n");
-    sb.append("    createLog: ").append(toIndentedString(createLog)).append("\n");
     sb.append("    aggregationAccountIds: ").append(toIndentedString(aggregationAccountIds)).append("\n");
-    sb.append("    initialBalance: ").append(toIndentedString(initialBalance)).append("\n");
-    sb.append("    horizon: ").append(toIndentedString(horizon)).append("\n");
-    sb.append("    horizonFrequencyInterval: ").append(toIndentedString(horizonFrequencyInterval)).append("\n");
     sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
     sb.append("    accountIds: ").append(toIndentedString(accountIds)).append("\n");
+    sb.append("    initialBalance: ").append(toIndentedString(initialBalance)).append("\n");
+    sb.append("    createLog: ").append(toIndentedString(createLog)).append("\n");
+    sb.append("    inflationRate: ").append(toIndentedString(inflationRate)).append("\n");
+    sb.append("    horizon: ").append(toIndentedString(horizon)).append("\n");
+    sb.append("    horizonFrequencyInterval: ").append(toIndentedString(horizonFrequencyInterval)).append("\n");
+    sb.append("    depositSchedule: ").append(toIndentedString(depositSchedule)).append("\n");
     sb.append("    returnSchedule: ").append(toIndentedString(returnSchedule)).append("\n");
     sb.append("}");
     return sb.toString();

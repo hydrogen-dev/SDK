@@ -447,7 +447,7 @@ class BudgetApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Budget budget: budget (required)
+        :param object budget: budget (required)
         :param str budget_id: UUID budget_id (required)
         :return: Budget
                  If the method is called asynchronously,
@@ -470,7 +470,7 @@ class BudgetApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Budget budget: budget (required)
+        :param object budget: budget (required)
         :param str budget_id: UUID budget_id (required)
         :return: Budget
                  If the method is called asynchronously,

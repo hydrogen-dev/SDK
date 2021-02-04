@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,73 +30,11 @@ import org.threeten.bp.LocalDate;
 /**
  * FinancialStatementAnalysisRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class FinancialStatementAnalysisRequest {
-  @SerializedName("period_quarter")
-  private Integer periodQuarter = null;
-
-  @SerializedName("show_history")
-  private Boolean showHistory = false;
-
-  @SerializedName("client_id")
-  private UUID clientId = null;
-
-  @SerializedName("currency_conversion")
-  private String currencyConversion = null;
-
-  /**
-   * Gets or Sets accountingMethod
-   */
-  @JsonAdapter(AccountingMethodEnum.Adapter.class)
-  public enum AccountingMethodEnum {
-    ACCRUAL("accrual"),
-    
-    CASH("cash");
-
-    private String value;
-
-    AccountingMethodEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static AccountingMethodEnum fromValue(String text) {
-      for (AccountingMethodEnum b : AccountingMethodEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<AccountingMethodEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final AccountingMethodEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public AccountingMethodEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return AccountingMethodEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
-  @SerializedName("accounting_method")
-  private AccountingMethodEnum accountingMethod = null;
-
   /**
    * Gets or Sets periodLength
    */
@@ -156,6 +93,130 @@ public class FinancialStatementAnalysisRequest {
   @SerializedName("period_length")
   private PeriodLengthEnum periodLength = PeriodLengthEnum.QUARTERLY;
 
+  @SerializedName("period_month")
+  private Integer periodMonth = null;
+
+  @SerializedName("end_date")
+  private LocalDate endDate = null;
+
+  @SerializedName("client_id")
+  private UUID clientId = null;
+
+  /**
+   * Gets or Sets accountingMethod
+   */
+  @JsonAdapter(AccountingMethodEnum.Adapter.class)
+  public enum AccountingMethodEnum {
+    ACCRUAL("accrual"),
+    
+    CASH("cash");
+
+    private String value;
+
+    AccountingMethodEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static AccountingMethodEnum fromValue(String text) {
+      for (AccountingMethodEnum b : AccountingMethodEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<AccountingMethodEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final AccountingMethodEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public AccountingMethodEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return AccountingMethodEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
+  @SerializedName("accounting_method")
+  private AccountingMethodEnum accountingMethod = null;
+
+  @SerializedName("period_year")
+  private Integer periodYear = null;
+
+  @SerializedName("currency_conversion")
+  private String currencyConversion = null;
+
+  /**
+   * Gets or Sets historyFrequencyInterval
+   */
+  @JsonAdapter(HistoryFrequencyIntervalEnum.Adapter.class)
+  public enum HistoryFrequencyIntervalEnum {
+    DAY("day"),
+    
+    WEEK("week"),
+    
+    MONTH("month"),
+    
+    QUARTER("quarter"),
+    
+    YEAR("year");
+
+    private String value;
+
+    HistoryFrequencyIntervalEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static HistoryFrequencyIntervalEnum fromValue(String text) {
+      for (HistoryFrequencyIntervalEnum b : HistoryFrequencyIntervalEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<HistoryFrequencyIntervalEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final HistoryFrequencyIntervalEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public HistoryFrequencyIntervalEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return HistoryFrequencyIntervalEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
+  @SerializedName("history_frequency_interval")
+  private HistoryFrequencyIntervalEnum historyFrequencyInterval = HistoryFrequencyIntervalEnum.MONTH;
+
+  @SerializedName("start_date")
+  private LocalDate startDate = null;
+
   /**
    * Gets or Sets periodType
    */
@@ -206,14 +267,11 @@ public class FinancialStatementAnalysisRequest {
   @SerializedName("period_type")
   private PeriodTypeEnum periodType = null;
 
-  @SerializedName("period_year")
-  private Integer periodYear = null;
-
-  @SerializedName("end_date")
-  private LocalDate endDate = null;
-
   @SerializedName("currency_code")
   private String currencyCode = null;
+
+  @SerializedName("show_history")
+  private Boolean showHistory = false;
 
   /**
    * Gets or Sets statNames
@@ -287,8 +345,8 @@ public class FinancialStatementAnalysisRequest {
   @SerializedName("stat_names")
   private List<StatNamesEnum> statNames = null;
 
-  @SerializedName("start_date")
-  private LocalDate startDate = null;
+  @SerializedName("period_quarter")
+  private Integer periodQuarter = null;
 
   /**
    * Gets or Sets statementType
@@ -342,157 +400,6 @@ public class FinancialStatementAnalysisRequest {
   @SerializedName("statement_type")
   private StatementTypeEnum statementType = StatementTypeEnum.ALL;
 
-  /**
-   * Gets or Sets historyFrequencyInterval
-   */
-  @JsonAdapter(HistoryFrequencyIntervalEnum.Adapter.class)
-  public enum HistoryFrequencyIntervalEnum {
-    DAY("day"),
-    
-    WEEK("week"),
-    
-    MONTH("month"),
-    
-    QUARTER("quarter"),
-    
-    YEAR("year");
-
-    private String value;
-
-    HistoryFrequencyIntervalEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static HistoryFrequencyIntervalEnum fromValue(String text) {
-      for (HistoryFrequencyIntervalEnum b : HistoryFrequencyIntervalEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<HistoryFrequencyIntervalEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final HistoryFrequencyIntervalEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public HistoryFrequencyIntervalEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return HistoryFrequencyIntervalEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
-  @SerializedName("history_frequency_interval")
-  private HistoryFrequencyIntervalEnum historyFrequencyInterval = HistoryFrequencyIntervalEnum.MONTH;
-
-  @SerializedName("period_month")
-  private Integer periodMonth = null;
-
-  public FinancialStatementAnalysisRequest periodQuarter(Integer periodQuarter) {
-    this.periodQuarter = periodQuarter;
-    return this;
-  }
-
-   /**
-   * Get periodQuarter
-   * minimum: 1
-   * maximum: 4
-   * @return periodQuarter
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getPeriodQuarter() {
-    return periodQuarter;
-  }
-
-  public void setPeriodQuarter(Integer periodQuarter) {
-    this.periodQuarter = periodQuarter;
-  }
-
-  public FinancialStatementAnalysisRequest showHistory(Boolean showHistory) {
-    this.showHistory = showHistory;
-    return this;
-  }
-
-   /**
-   * Get showHistory
-   * @return showHistory
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isShowHistory() {
-    return showHistory;
-  }
-
-  public void setShowHistory(Boolean showHistory) {
-    this.showHistory = showHistory;
-  }
-
-  public FinancialStatementAnalysisRequest clientId(UUID clientId) {
-    this.clientId = clientId;
-    return this;
-  }
-
-   /**
-   * Get clientId
-   * @return clientId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getClientId() {
-    return clientId;
-  }
-
-  public void setClientId(UUID clientId) {
-    this.clientId = clientId;
-  }
-
-  public FinancialStatementAnalysisRequest currencyConversion(String currencyConversion) {
-    this.currencyConversion = currencyConversion;
-    return this;
-  }
-
-   /**
-   * Get currencyConversion
-   * @return currencyConversion
-  **/
-  @ApiModelProperty(value = "")
-  public String getCurrencyConversion() {
-    return currencyConversion;
-  }
-
-  public void setCurrencyConversion(String currencyConversion) {
-    this.currencyConversion = currencyConversion;
-  }
-
-  public FinancialStatementAnalysisRequest accountingMethod(AccountingMethodEnum accountingMethod) {
-    this.accountingMethod = accountingMethod;
-    return this;
-  }
-
-   /**
-   * Get accountingMethod
-   * @return accountingMethod
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public AccountingMethodEnum getAccountingMethod() {
-    return accountingMethod;
-  }
-
-  public void setAccountingMethod(AccountingMethodEnum accountingMethod) {
-    this.accountingMethod = accountingMethod;
-  }
-
   public FinancialStatementAnalysisRequest periodLength(PeriodLengthEnum periodLength) {
     this.periodLength = periodLength;
     return this;
@@ -511,40 +418,24 @@ public class FinancialStatementAnalysisRequest {
     this.periodLength = periodLength;
   }
 
-  public FinancialStatementAnalysisRequest periodType(PeriodTypeEnum periodType) {
-    this.periodType = periodType;
+  public FinancialStatementAnalysisRequest periodMonth(Integer periodMonth) {
+    this.periodMonth = periodMonth;
     return this;
   }
 
    /**
-   * Get periodType
-   * @return periodType
+   * Get periodMonth
+   * minimum: 1
+   * maximum: 12
+   * @return periodMonth
   **/
   @ApiModelProperty(value = "")
-  public PeriodTypeEnum getPeriodType() {
-    return periodType;
+  public Integer getPeriodMonth() {
+    return periodMonth;
   }
 
-  public void setPeriodType(PeriodTypeEnum periodType) {
-    this.periodType = periodType;
-  }
-
-  public FinancialStatementAnalysisRequest periodYear(Integer periodYear) {
-    this.periodYear = periodYear;
-    return this;
-  }
-
-   /**
-   * Get periodYear
-   * @return periodYear
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getPeriodYear() {
-    return periodYear;
-  }
-
-  public void setPeriodYear(Integer periodYear) {
-    this.periodYear = periodYear;
+  public void setPeriodMonth(Integer periodMonth) {
+    this.periodMonth = periodMonth;
   }
 
   public FinancialStatementAnalysisRequest endDate(LocalDate endDate) {
@@ -565,6 +456,132 @@ public class FinancialStatementAnalysisRequest {
     this.endDate = endDate;
   }
 
+  public FinancialStatementAnalysisRequest clientId(UUID clientId) {
+    this.clientId = clientId;
+    return this;
+  }
+
+   /**
+   * Get clientId
+   * @return clientId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getClientId() {
+    return clientId;
+  }
+
+  public void setClientId(UUID clientId) {
+    this.clientId = clientId;
+  }
+
+  public FinancialStatementAnalysisRequest accountingMethod(AccountingMethodEnum accountingMethod) {
+    this.accountingMethod = accountingMethod;
+    return this;
+  }
+
+   /**
+   * Get accountingMethod
+   * @return accountingMethod
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public AccountingMethodEnum getAccountingMethod() {
+    return accountingMethod;
+  }
+
+  public void setAccountingMethod(AccountingMethodEnum accountingMethod) {
+    this.accountingMethod = accountingMethod;
+  }
+
+  public FinancialStatementAnalysisRequest periodYear(Integer periodYear) {
+    this.periodYear = periodYear;
+    return this;
+  }
+
+   /**
+   * Get periodYear
+   * @return periodYear
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getPeriodYear() {
+    return periodYear;
+  }
+
+  public void setPeriodYear(Integer periodYear) {
+    this.periodYear = periodYear;
+  }
+
+  public FinancialStatementAnalysisRequest currencyConversion(String currencyConversion) {
+    this.currencyConversion = currencyConversion;
+    return this;
+  }
+
+   /**
+   * Get currencyConversion
+   * @return currencyConversion
+  **/
+  @ApiModelProperty(value = "")
+  public String getCurrencyConversion() {
+    return currencyConversion;
+  }
+
+  public void setCurrencyConversion(String currencyConversion) {
+    this.currencyConversion = currencyConversion;
+  }
+
+  public FinancialStatementAnalysisRequest historyFrequencyInterval(HistoryFrequencyIntervalEnum historyFrequencyInterval) {
+    this.historyFrequencyInterval = historyFrequencyInterval;
+    return this;
+  }
+
+   /**
+   * Get historyFrequencyInterval
+   * @return historyFrequencyInterval
+  **/
+  @ApiModelProperty(value = "")
+  public HistoryFrequencyIntervalEnum getHistoryFrequencyInterval() {
+    return historyFrequencyInterval;
+  }
+
+  public void setHistoryFrequencyInterval(HistoryFrequencyIntervalEnum historyFrequencyInterval) {
+    this.historyFrequencyInterval = historyFrequencyInterval;
+  }
+
+  public FinancialStatementAnalysisRequest startDate(LocalDate startDate) {
+    this.startDate = startDate;
+    return this;
+  }
+
+   /**
+   * Get startDate
+   * @return startDate
+  **/
+  @ApiModelProperty(value = "")
+  public LocalDate getStartDate() {
+    return startDate;
+  }
+
+  public void setStartDate(LocalDate startDate) {
+    this.startDate = startDate;
+  }
+
+  public FinancialStatementAnalysisRequest periodType(PeriodTypeEnum periodType) {
+    this.periodType = periodType;
+    return this;
+  }
+
+   /**
+   * Get periodType
+   * @return periodType
+  **/
+  @ApiModelProperty(value = "")
+  public PeriodTypeEnum getPeriodType() {
+    return periodType;
+  }
+
+  public void setPeriodType(PeriodTypeEnum periodType) {
+    this.periodType = periodType;
+  }
+
   public FinancialStatementAnalysisRequest currencyCode(String currencyCode) {
     this.currencyCode = currencyCode;
     return this;
@@ -581,6 +598,24 @@ public class FinancialStatementAnalysisRequest {
 
   public void setCurrencyCode(String currencyCode) {
     this.currencyCode = currencyCode;
+  }
+
+  public FinancialStatementAnalysisRequest showHistory(Boolean showHistory) {
+    this.showHistory = showHistory;
+    return this;
+  }
+
+   /**
+   * Get showHistory
+   * @return showHistory
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isShowHistory() {
+    return showHistory;
+  }
+
+  public void setShowHistory(Boolean showHistory) {
+    this.showHistory = showHistory;
   }
 
   public FinancialStatementAnalysisRequest statNames(List<StatNamesEnum> statNames) {
@@ -609,22 +644,24 @@ public class FinancialStatementAnalysisRequest {
     this.statNames = statNames;
   }
 
-  public FinancialStatementAnalysisRequest startDate(LocalDate startDate) {
-    this.startDate = startDate;
+  public FinancialStatementAnalysisRequest periodQuarter(Integer periodQuarter) {
+    this.periodQuarter = periodQuarter;
     return this;
   }
 
    /**
-   * Get startDate
-   * @return startDate
+   * Get periodQuarter
+   * minimum: 1
+   * maximum: 4
+   * @return periodQuarter
   **/
   @ApiModelProperty(value = "")
-  public LocalDate getStartDate() {
-    return startDate;
+  public Integer getPeriodQuarter() {
+    return periodQuarter;
   }
 
-  public void setStartDate(LocalDate startDate) {
-    this.startDate = startDate;
+  public void setPeriodQuarter(Integer periodQuarter) {
+    this.periodQuarter = periodQuarter;
   }
 
   public FinancialStatementAnalysisRequest statementType(StatementTypeEnum statementType) {
@@ -645,44 +682,6 @@ public class FinancialStatementAnalysisRequest {
     this.statementType = statementType;
   }
 
-  public FinancialStatementAnalysisRequest historyFrequencyInterval(HistoryFrequencyIntervalEnum historyFrequencyInterval) {
-    this.historyFrequencyInterval = historyFrequencyInterval;
-    return this;
-  }
-
-   /**
-   * Get historyFrequencyInterval
-   * @return historyFrequencyInterval
-  **/
-  @ApiModelProperty(value = "")
-  public HistoryFrequencyIntervalEnum getHistoryFrequencyInterval() {
-    return historyFrequencyInterval;
-  }
-
-  public void setHistoryFrequencyInterval(HistoryFrequencyIntervalEnum historyFrequencyInterval) {
-    this.historyFrequencyInterval = historyFrequencyInterval;
-  }
-
-  public FinancialStatementAnalysisRequest periodMonth(Integer periodMonth) {
-    this.periodMonth = periodMonth;
-    return this;
-  }
-
-   /**
-   * Get periodMonth
-   * minimum: 1
-   * maximum: 12
-   * @return periodMonth
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getPeriodMonth() {
-    return periodMonth;
-  }
-
-  public void setPeriodMonth(Integer periodMonth) {
-    this.periodMonth = periodMonth;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -693,26 +692,26 @@ public class FinancialStatementAnalysisRequest {
       return false;
     }
     FinancialStatementAnalysisRequest financialStatementAnalysisRequest = (FinancialStatementAnalysisRequest) o;
-    return Objects.equals(this.periodQuarter, financialStatementAnalysisRequest.periodQuarter) &&
-        Objects.equals(this.showHistory, financialStatementAnalysisRequest.showHistory) &&
-        Objects.equals(this.clientId, financialStatementAnalysisRequest.clientId) &&
-        Objects.equals(this.currencyConversion, financialStatementAnalysisRequest.currencyConversion) &&
-        Objects.equals(this.accountingMethod, financialStatementAnalysisRequest.accountingMethod) &&
-        Objects.equals(this.periodLength, financialStatementAnalysisRequest.periodLength) &&
-        Objects.equals(this.periodType, financialStatementAnalysisRequest.periodType) &&
-        Objects.equals(this.periodYear, financialStatementAnalysisRequest.periodYear) &&
+    return Objects.equals(this.periodLength, financialStatementAnalysisRequest.periodLength) &&
+        Objects.equals(this.periodMonth, financialStatementAnalysisRequest.periodMonth) &&
         Objects.equals(this.endDate, financialStatementAnalysisRequest.endDate) &&
-        Objects.equals(this.currencyCode, financialStatementAnalysisRequest.currencyCode) &&
-        Objects.equals(this.statNames, financialStatementAnalysisRequest.statNames) &&
-        Objects.equals(this.startDate, financialStatementAnalysisRequest.startDate) &&
-        Objects.equals(this.statementType, financialStatementAnalysisRequest.statementType) &&
+        Objects.equals(this.clientId, financialStatementAnalysisRequest.clientId) &&
+        Objects.equals(this.accountingMethod, financialStatementAnalysisRequest.accountingMethod) &&
+        Objects.equals(this.periodYear, financialStatementAnalysisRequest.periodYear) &&
+        Objects.equals(this.currencyConversion, financialStatementAnalysisRequest.currencyConversion) &&
         Objects.equals(this.historyFrequencyInterval, financialStatementAnalysisRequest.historyFrequencyInterval) &&
-        Objects.equals(this.periodMonth, financialStatementAnalysisRequest.periodMonth);
+        Objects.equals(this.startDate, financialStatementAnalysisRequest.startDate) &&
+        Objects.equals(this.periodType, financialStatementAnalysisRequest.periodType) &&
+        Objects.equals(this.currencyCode, financialStatementAnalysisRequest.currencyCode) &&
+        Objects.equals(this.showHistory, financialStatementAnalysisRequest.showHistory) &&
+        Objects.equals(this.statNames, financialStatementAnalysisRequest.statNames) &&
+        Objects.equals(this.periodQuarter, financialStatementAnalysisRequest.periodQuarter) &&
+        Objects.equals(this.statementType, financialStatementAnalysisRequest.statementType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(periodQuarter, showHistory, clientId, currencyConversion, accountingMethod, periodLength, periodType, periodYear, endDate, currencyCode, statNames, startDate, statementType, historyFrequencyInterval, periodMonth);
+    return Objects.hash(periodLength, periodMonth, endDate, clientId, accountingMethod, periodYear, currencyConversion, historyFrequencyInterval, startDate, periodType, currencyCode, showHistory, statNames, periodQuarter, statementType);
   }
 
 
@@ -721,21 +720,21 @@ public class FinancialStatementAnalysisRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class FinancialStatementAnalysisRequest {\n");
     
-    sb.append("    periodQuarter: ").append(toIndentedString(periodQuarter)).append("\n");
-    sb.append("    showHistory: ").append(toIndentedString(showHistory)).append("\n");
-    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
-    sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
-    sb.append("    accountingMethod: ").append(toIndentedString(accountingMethod)).append("\n");
     sb.append("    periodLength: ").append(toIndentedString(periodLength)).append("\n");
-    sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
-    sb.append("    periodYear: ").append(toIndentedString(periodYear)).append("\n");
-    sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
-    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
-    sb.append("    statNames: ").append(toIndentedString(statNames)).append("\n");
-    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
-    sb.append("    statementType: ").append(toIndentedString(statementType)).append("\n");
-    sb.append("    historyFrequencyInterval: ").append(toIndentedString(historyFrequencyInterval)).append("\n");
     sb.append("    periodMonth: ").append(toIndentedString(periodMonth)).append("\n");
+    sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
+    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
+    sb.append("    accountingMethod: ").append(toIndentedString(accountingMethod)).append("\n");
+    sb.append("    periodYear: ").append(toIndentedString(periodYear)).append("\n");
+    sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
+    sb.append("    historyFrequencyInterval: ").append(toIndentedString(historyFrequencyInterval)).append("\n");
+    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
+    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
+    sb.append("    showHistory: ").append(toIndentedString(showHistory)).append("\n");
+    sb.append("    statNames: ").append(toIndentedString(statNames)).append("\n");
+    sb.append("    periodQuarter: ").append(toIndentedString(periodQuarter)).append("\n");
+    sb.append("    statementType: ").append(toIndentedString(statementType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

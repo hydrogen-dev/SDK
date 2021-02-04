@@ -152,7 +152,6 @@ const createAnnuityCalculatorAccumulationHorizon = () => {
     var annuityCalculatorAccumulationHorizonRequest = new HydrogenProtonApi.AnnuityCalculatorAccumulationHorizonRequest(); // {AnnuityCalculatorAccumulationHorizonRequest} Request payload for Annuity Calculator - Accumulation Horizon
     api.annuityCalculatorAccumulationHorizon(annuityCalculatorAccumulationHorizonRequest, callback);
 }
-
 ```
 
 ## Documentation for API Endpoints
@@ -172,6 +171,8 @@ Class | Method | HTTP request | Description
 *HydrogenProtonApi.BusinessFinancialManagementApi* | [**customerAnalysis**](docs/BusinessFinancialManagementApi.md#customerAnalysis) | **POST** /business/customer_analysis | Customer Analysis
 *HydrogenProtonApi.BusinessFinancialManagementApi* | [**financialStatementAnalysis**](docs/BusinessFinancialManagementApi.md#financialStatementAnalysis) | **POST** /business/financial_statement_analysis | Financial Statement Analysis
 *HydrogenProtonApi.BusinessFinancialManagementApi* | [**invoiceAnalysis**](docs/BusinessFinancialManagementApi.md#invoiceAnalysis) | **POST** /business/invoice_analysis | Invoice Analysis
+*HydrogenProtonApi.CardsApi* | [**cardLimitCheck**](docs/CardsApi.md#cardLimitCheck) | **POST** /card_limit_check | Card Limit Check
+*HydrogenProtonApi.CardsApi* | [**cardTransactionAuthorization**](docs/CardsApi.md#cardTransactionAuthorization) | **POST** /card_authorization | Card Transaction Authorization
 *HydrogenProtonApi.FinancialHealthApi* | [**diversificationScore**](docs/FinancialHealthApi.md#diversificationScore) | **POST** /diversification_score | Diversification Score
 *HydrogenProtonApi.FinancialHealthApi* | [**emergencyFundCalculator**](docs/FinancialHealthApi.md#emergencyFundCalculator) | **POST** /emergency_fund_calculator | Emergency Fund Calculator
 *HydrogenProtonApi.FinancialHealthApi* | [**financialHealthCheck**](docs/FinancialHealthApi.md#financialHealthCheck) | **POST** /financial_health_check | Financial Health Check
@@ -233,6 +234,8 @@ Class | Method | HTTP request | Description
  - [HydrogenProtonApi.BusinessInvoiceAnalysisRequest](docs/BusinessInvoiceAnalysisRequest.md)
  - [HydrogenProtonApi.CalculatorDepositSchedule](docs/CalculatorDepositSchedule.md)
  - [HydrogenProtonApi.CalculatorDepositSchedule1](docs/CalculatorDepositSchedule1.md)
+ - [HydrogenProtonApi.CardLimitCheckRequest](docs/CardLimitCheckRequest.md)
+ - [HydrogenProtonApi.CardTransactionAuthorizationRequest](docs/CardTransactionAuthorizationRequest.md)
  - [HydrogenProtonApi.CashAnalysisRequest](docs/CashAnalysisRequest.md)
  - [HydrogenProtonApi.CashFlowAnalysisRequest](docs/CashFlowAnalysisRequest.md)
  - [HydrogenProtonApi.ChildrenEducationConfig](docs/ChildrenEducationConfig.md)

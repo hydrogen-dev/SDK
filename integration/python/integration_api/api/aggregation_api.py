@@ -1089,3 +1089,110 @@ class AggregationApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
+    def get_property_value(self, nucleus_aggregation_account_id, nucleus_client_id, **kwargs):  # noqa: E501
+        """Get Value of the given property  # noqa: E501
+
+        Get Value of the given property  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_property_value(nucleus_aggregation_account_id, nucleus_client_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str nucleus_aggregation_account_id: nucleus_aggregation_account_id (required)
+        :param str nucleus_client_id: nucleus_client_id (required)
+        :param str product: product
+        :return: PropertyValueResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_property_value_with_http_info(nucleus_aggregation_account_id, nucleus_client_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_property_value_with_http_info(nucleus_aggregation_account_id, nucleus_client_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_property_value_with_http_info(self, nucleus_aggregation_account_id, nucleus_client_id, **kwargs):  # noqa: E501
+        """Get Value of the given property  # noqa: E501
+
+        Get Value of the given property  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_property_value_with_http_info(nucleus_aggregation_account_id, nucleus_client_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str nucleus_aggregation_account_id: nucleus_aggregation_account_id (required)
+        :param str nucleus_client_id: nucleus_client_id (required)
+        :param str product: product
+        :return: PropertyValueResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['nucleus_aggregation_account_id', 'nucleus_client_id', 'product']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_property_value" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'nucleus_aggregation_account_id' is set
+        if ('nucleus_aggregation_account_id' not in params or
+                params['nucleus_aggregation_account_id'] is None):
+            raise ValueError("Missing the required parameter `nucleus_aggregation_account_id` when calling `get_property_value`")  # noqa: E501
+        # verify the required parameter 'nucleus_client_id' is set
+        if ('nucleus_client_id' not in params or
+                params['nucleus_client_id'] is None):
+            raise ValueError("Missing the required parameter `nucleus_client_id` when calling `get_property_value`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'nucleus_aggregation_account_id' in params:
+            query_params.append(('nucleus_aggregation_account_id', params['nucleus_aggregation_account_id']))  # noqa: E501
+        if 'nucleus_client_id' in params:
+            query_params.append(('nucleus_client_id', params['nucleus_client_id']))  # noqa: E501
+        if 'product' in params:
+            query_params.append(('product', params['product']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/property_value', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='PropertyValueResponseVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)

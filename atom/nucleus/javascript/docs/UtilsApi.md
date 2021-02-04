@@ -193,7 +193,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.UtilsApi();
 
-var reasonCodeId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID reason_code_id
+var reasonCodeId = "\"62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d\""; // String | UUID reason_code_id
 
 
 var callback = function(error, data, response) {
@@ -210,7 +210,7 @@ apiInstance.deleteReasonCodeUsingDelete(reasonCodeId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reasonCodeId** | **String**| UUID reason_code_id | 
+ **reasonCodeId** | [**String**](.md)| UUID reason_code_id | 
 
 ### Return type
 
@@ -261,7 +261,7 @@ apiInstance.deleteStageUsingDelete(stageId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stageId** | **String**| UUID stage_id | 
+ **stageId** | [**String**](.md)| UUID stage_id | 
 
 ### Return type
 
@@ -295,7 +295,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.UtilsApi();
 
-var transactionCodeId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID transaction_code_id
+var transactionCodeId = "\"62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d\""; // String | UUID transaction_code_id
 
 
 var callback = function(error, data, response) {
@@ -312,7 +312,7 @@ apiInstance.deleteTransactionCodeUsingDelete(transactionCodeId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transactionCodeId** | **String**| UUID transaction_code_id | 
+ **transactionCodeId** | [**String**](.md)| UUID transaction_code_id | 
 
 ### Return type
 
@@ -406,7 +406,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.UtilsApi();
 
-var reasonCodeId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID reason_code_id
+var reasonCodeId = "\"62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d\""; // String | UUID reason_code_id
 
 
 var callback = function(error, data, response) {
@@ -423,7 +423,7 @@ apiInstance.getReasonCodeUsingGet(reasonCodeId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reasonCodeId** | **String**| UUID reason_code_id | 
+ **reasonCodeId** | [**String**](.md)| UUID reason_code_id | 
 
 ### Return type
 
@@ -517,7 +517,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.UtilsApi();
 
-var stageId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID stage_id
+var stageId = "\"62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d\""; // String | UUID stage_id
 
 
 var callback = function(error, data, response) {
@@ -534,7 +534,7 @@ apiInstance.getStageUsingGet(stageId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stageId** | **String**| UUID stage_id | 
+ **stageId** | [**String**](.md)| UUID stage_id | 
 
 ### Return type
 
@@ -628,7 +628,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.UtilsApi();
 
-var transactionCodeId = "62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d"; // String | UUID transaction_code_id
+var transactionCodeId = "\"62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d\""; // String | UUID transaction_code_id
 
 
 var callback = function(error, data, response) {
@@ -645,7 +645,7 @@ apiInstance.getTransactionCodeUsingGet(transactionCodeId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transactionCodeId** | **String**| UUID transaction_code_id | 
+ **transactionCodeId** | [**String**](.md)| UUID transaction_code_id | 
 
 ### Return type
 
@@ -679,9 +679,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.UtilsApi();
 
-var reasonCode = new HydrogenNucleusApi.ReasonCode(); // ReasonCode | reason_code
+var reasonCode = null; // Object | reason_code
 
-var reasonCodeId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID reason_code_id
+var reasonCodeId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID reason_code_id
 
 
 var callback = function(error, data, response) {
@@ -698,8 +698,8 @@ apiInstance.updateReasonCodeUsingPut(reasonCode, reasonCodeId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reasonCode** | [**ReasonCode**](ReasonCode.md)| reason_code | 
- **reasonCodeId** | **String**| UUID reason_code_id | 
+ **reasonCode** | **Object**| reason_code | 
+ **reasonCodeId** | [**String**](.md)| UUID reason_code_id | 
 
 ### Return type
 
@@ -733,9 +733,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.UtilsApi();
 
-var stage = new HydrogenNucleusApi.Stage(); // Stage | stage
+var stage = null; // Object | stage
 
-var stageId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID stage_id
+var stageId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID stage_id
 
 
 var callback = function(error, data, response) {
@@ -752,8 +752,8 @@ apiInstance.updateStageUsingPut(stage, stageId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage** | [**Stage**](Stage.md)| stage | 
- **stageId** | **String**| UUID stage_id | 
+ **stage** | **Object**| stage | 
+ **stageId** | [**String**](.md)| UUID stage_id | 
 
 ### Return type
 
@@ -787,9 +787,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.UtilsApi();
 
-var transactionCode = new HydrogenNucleusApi.TransactionCode(); // TransactionCode | transaction_code
+var transactionCode = null; // Object | transaction_code
 
-var transactionCodeId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID transaction_code_id
+var transactionCodeId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID transaction_code_id
 
 
 var callback = function(error, data, response) {
@@ -806,8 +806,8 @@ apiInstance.updateTransactionCodeUsingPut(transactionCode, transactionCodeId, ca
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transactionCode** | [**TransactionCode**](TransactionCode.md)| transaction_code | 
- **transactionCodeId** | **String**| UUID transaction_code_id | 
+ **transactionCode** | **Object**| transaction_code | 
+ **transactionCodeId** | [**String**](.md)| UUID transaction_code_id | 
 
 ### Return type
 

@@ -15,33 +15,48 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * MortgageCalculatorHomePriceRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class MortgageCalculatorHomePriceRequest {
+  @SerializedName("mortgage_term")
+  private Integer mortgageTerm = 360;
+
   @SerializedName("periodic_payment")
   private Float periodicPayment = null;
 
   @SerializedName("down_payment")
   private Float downPayment = null;
 
-  @SerializedName("mortgage_term")
-  private Integer mortgageTerm = 360;
-
   @SerializedName("interest_rate")
   private Float interestRate = 0.04f;
+
+  public MortgageCalculatorHomePriceRequest mortgageTerm(Integer mortgageTerm) {
+    this.mortgageTerm = mortgageTerm;
+    return this;
+  }
+
+   /**
+   * Get mortgageTerm
+   * minimum: 0
+   * maximum: 600
+   * @return mortgageTerm
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getMortgageTerm() {
+    return mortgageTerm;
+  }
+
+  public void setMortgageTerm(Integer mortgageTerm) {
+    this.mortgageTerm = mortgageTerm;
+  }
 
   public MortgageCalculatorHomePriceRequest periodicPayment(Float periodicPayment) {
     this.periodicPayment = periodicPayment;
@@ -81,26 +96,6 @@ public class MortgageCalculatorHomePriceRequest {
     this.downPayment = downPayment;
   }
 
-  public MortgageCalculatorHomePriceRequest mortgageTerm(Integer mortgageTerm) {
-    this.mortgageTerm = mortgageTerm;
-    return this;
-  }
-
-   /**
-   * Get mortgageTerm
-   * minimum: 0
-   * maximum: 600
-   * @return mortgageTerm
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getMortgageTerm() {
-    return mortgageTerm;
-  }
-
-  public void setMortgageTerm(Integer mortgageTerm) {
-    this.mortgageTerm = mortgageTerm;
-  }
-
   public MortgageCalculatorHomePriceRequest interestRate(Float interestRate) {
     this.interestRate = interestRate;
     return this;
@@ -130,15 +125,15 @@ public class MortgageCalculatorHomePriceRequest {
       return false;
     }
     MortgageCalculatorHomePriceRequest mortgageCalculatorHomePriceRequest = (MortgageCalculatorHomePriceRequest) o;
-    return Objects.equals(this.periodicPayment, mortgageCalculatorHomePriceRequest.periodicPayment) &&
+    return Objects.equals(this.mortgageTerm, mortgageCalculatorHomePriceRequest.mortgageTerm) &&
+        Objects.equals(this.periodicPayment, mortgageCalculatorHomePriceRequest.periodicPayment) &&
         Objects.equals(this.downPayment, mortgageCalculatorHomePriceRequest.downPayment) &&
-        Objects.equals(this.mortgageTerm, mortgageCalculatorHomePriceRequest.mortgageTerm) &&
         Objects.equals(this.interestRate, mortgageCalculatorHomePriceRequest.interestRate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(periodicPayment, downPayment, mortgageTerm, interestRate);
+    return Objects.hash(mortgageTerm, periodicPayment, downPayment, interestRate);
   }
 
 
@@ -147,9 +142,9 @@ public class MortgageCalculatorHomePriceRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class MortgageCalculatorHomePriceRequest {\n");
     
+    sb.append("    mortgageTerm: ").append(toIndentedString(mortgageTerm)).append("\n");
     sb.append("    periodicPayment: ").append(toIndentedString(periodicPayment)).append("\n");
     sb.append("    downPayment: ").append(toIndentedString(downPayment)).append("\n");
-    sb.append("    mortgageTerm: ").append(toIndentedString(mortgageTerm)).append("\n");
     sb.append("    interestRate: ").append(toIndentedString(interestRate)).append("\n");
     sb.append("}");
     return sb.toString();

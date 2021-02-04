@@ -13,9 +13,9 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.Budget;
 import com.hydrogen.nucleus.model.PageBudget;
-import com.hydrogen.nucleus.ApiException;
 
 import java.util.UUID;
 import org.junit.Test;
@@ -110,7 +110,7 @@ public class BudgetApiTest {
      */
     @Test
     public void updateBudgetUsingPutTest() throws ApiException {
-        Budget budget = null;
+        Object budget = null;
         UUID budgetId = null;
         Budget response = api.updateBudgetUsingPut(budget, budgetId);
 

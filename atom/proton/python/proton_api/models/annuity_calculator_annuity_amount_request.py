@@ -31,190 +31,96 @@ class AnnuityCalculatorAnnuityAmountRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'inflation_rate': 'float',
-        'annuity_frequency_interval': 'str',
-        'deposit_schedule': 'AnnuityDepositSchedule',
-        'portfolio_return': 'float',
-        'create_log': 'bool',
+        'annuity_amount': 'float',
         'aggregation_account_ids': 'list[str]',
-        'initial_balance': 'float',
-        'decumulation_horizon': 'int',
         'tax_rate': 'float',
         'account_ids': 'list[str]',
-        'annuity_amount': 'float',
-        'accumulation_horizon': 'int'
+        'initial_balance': 'float',
+        'create_log': 'bool',
+        'inflation_rate': 'float',
+        'decumulation_horizon': 'int',
+        'accumulation_horizon': 'int',
+        'annuity_frequency_interval': 'str',
+        'portfolio_return': 'float',
+        'deposit_schedule': 'AnnuityDepositSchedule'
     }
 
     attribute_map = {
-        'inflation_rate': 'inflation_rate',
-        'annuity_frequency_interval': 'annuity_frequency_interval',
-        'deposit_schedule': 'deposit_schedule',
-        'portfolio_return': 'portfolio_return',
-        'create_log': 'create_log',
+        'annuity_amount': 'annuity_amount',
         'aggregation_account_ids': 'aggregation_account_ids',
-        'initial_balance': 'initial_balance',
-        'decumulation_horizon': 'decumulation_horizon',
         'tax_rate': 'tax_rate',
         'account_ids': 'account_ids',
-        'annuity_amount': 'annuity_amount',
-        'accumulation_horizon': 'accumulation_horizon'
+        'initial_balance': 'initial_balance',
+        'create_log': 'create_log',
+        'inflation_rate': 'inflation_rate',
+        'decumulation_horizon': 'decumulation_horizon',
+        'accumulation_horizon': 'accumulation_horizon',
+        'annuity_frequency_interval': 'annuity_frequency_interval',
+        'portfolio_return': 'portfolio_return',
+        'deposit_schedule': 'deposit_schedule'
     }
 
-    def __init__(self, inflation_rate=0.0, annuity_frequency_interval='year', deposit_schedule=None, portfolio_return=None, create_log=False, aggregation_account_ids=None, initial_balance=0.0, decumulation_horizon=None, tax_rate=0.0, account_ids=None, annuity_amount=1.0, accumulation_horizon=None):  # noqa: E501
+    def __init__(self, annuity_amount=1.0, aggregation_account_ids=None, tax_rate=0.0, account_ids=None, initial_balance=0.0, create_log=False, inflation_rate=0.0, decumulation_horizon=None, accumulation_horizon=None, annuity_frequency_interval='year', portfolio_return=None, deposit_schedule=None):  # noqa: E501
         """AnnuityCalculatorAnnuityAmountRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._inflation_rate = None
-        self._annuity_frequency_interval = None
-        self._deposit_schedule = None
-        self._portfolio_return = None
-        self._create_log = None
+        self._annuity_amount = None
         self._aggregation_account_ids = None
-        self._initial_balance = None
-        self._decumulation_horizon = None
         self._tax_rate = None
         self._account_ids = None
-        self._annuity_amount = None
+        self._initial_balance = None
+        self._create_log = None
+        self._inflation_rate = None
+        self._decumulation_horizon = None
         self._accumulation_horizon = None
+        self._annuity_frequency_interval = None
+        self._portfolio_return = None
+        self._deposit_schedule = None
         self.discriminator = None
 
-        if inflation_rate is not None:
-            self.inflation_rate = inflation_rate
-        if annuity_frequency_interval is not None:
-            self.annuity_frequency_interval = annuity_frequency_interval
-        if deposit_schedule is not None:
-            self.deposit_schedule = deposit_schedule
-        self.portfolio_return = portfolio_return
-        if create_log is not None:
-            self.create_log = create_log
+        if annuity_amount is not None:
+            self.annuity_amount = annuity_amount
         if aggregation_account_ids is not None:
             self.aggregation_account_ids = aggregation_account_ids
-        if initial_balance is not None:
-            self.initial_balance = initial_balance
-        self.decumulation_horizon = decumulation_horizon
         if tax_rate is not None:
             self.tax_rate = tax_rate
         if account_ids is not None:
             self.account_ids = account_ids
-        if annuity_amount is not None:
-            self.annuity_amount = annuity_amount
+        if initial_balance is not None:
+            self.initial_balance = initial_balance
+        if create_log is not None:
+            self.create_log = create_log
+        if inflation_rate is not None:
+            self.inflation_rate = inflation_rate
+        self.decumulation_horizon = decumulation_horizon
         self.accumulation_horizon = accumulation_horizon
+        if annuity_frequency_interval is not None:
+            self.annuity_frequency_interval = annuity_frequency_interval
+        self.portfolio_return = portfolio_return
+        if deposit_schedule is not None:
+            self.deposit_schedule = deposit_schedule
 
     @property
-    def inflation_rate(self):
-        """Gets the inflation_rate of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+    def annuity_amount(self):
+        """Gets the annuity_amount of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
 
 
-        :return: The inflation_rate of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+        :return: The annuity_amount of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
         :rtype: float
         """
-        return self._inflation_rate
+        return self._annuity_amount
 
-    @inflation_rate.setter
-    def inflation_rate(self, inflation_rate):
-        """Sets the inflation_rate of this AnnuityCalculatorAnnuityAmountRequest.
+    @annuity_amount.setter
+    def annuity_amount(self, annuity_amount):
+        """Sets the annuity_amount of this AnnuityCalculatorAnnuityAmountRequest.
 
 
-        :param inflation_rate: The inflation_rate of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+        :param annuity_amount: The annuity_amount of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
         :type: float
         """
-        if inflation_rate is not None and inflation_rate > 20:  # noqa: E501
-            raise ValueError("Invalid value for `inflation_rate`, must be a value less than or equal to `20`")  # noqa: E501
-        if inflation_rate is not None and inflation_rate < -1:  # noqa: E501
-            raise ValueError("Invalid value for `inflation_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
+        if annuity_amount is not None and annuity_amount < 0:  # noqa: E501
+            raise ValueError("Invalid value for `annuity_amount`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._inflation_rate = inflation_rate
-
-    @property
-    def annuity_frequency_interval(self):
-        """Gets the annuity_frequency_interval of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
-
-
-        :return: The annuity_frequency_interval of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._annuity_frequency_interval
-
-    @annuity_frequency_interval.setter
-    def annuity_frequency_interval(self, annuity_frequency_interval):
-        """Sets the annuity_frequency_interval of this AnnuityCalculatorAnnuityAmountRequest.
-
-
-        :param annuity_frequency_interval: The annuity_frequency_interval of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["year", "quarter", "month", "week", "day"]  # noqa: E501
-        if annuity_frequency_interval not in allowed_values:
-            raise ValueError(
-                "Invalid value for `annuity_frequency_interval` ({0}), must be one of {1}"  # noqa: E501
-                .format(annuity_frequency_interval, allowed_values)
-            )
-
-        self._annuity_frequency_interval = annuity_frequency_interval
-
-    @property
-    def deposit_schedule(self):
-        """Gets the deposit_schedule of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
-
-
-        :return: The deposit_schedule of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
-        :rtype: AnnuityDepositSchedule
-        """
-        return self._deposit_schedule
-
-    @deposit_schedule.setter
-    def deposit_schedule(self, deposit_schedule):
-        """Sets the deposit_schedule of this AnnuityCalculatorAnnuityAmountRequest.
-
-
-        :param deposit_schedule: The deposit_schedule of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
-        :type: AnnuityDepositSchedule
-        """
-
-        self._deposit_schedule = deposit_schedule
-
-    @property
-    def portfolio_return(self):
-        """Gets the portfolio_return of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
-
-
-        :return: The portfolio_return of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._portfolio_return
-
-    @portfolio_return.setter
-    def portfolio_return(self, portfolio_return):
-        """Sets the portfolio_return of this AnnuityCalculatorAnnuityAmountRequest.
-
-
-        :param portfolio_return: The portfolio_return of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
-        :type: float
-        """
-        if portfolio_return is None:
-            raise ValueError("Invalid value for `portfolio_return`, must not be `None`")  # noqa: E501
-
-        self._portfolio_return = portfolio_return
-
-    @property
-    def create_log(self):
-        """Gets the create_log of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
-
-
-        :return: The create_log of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._create_log
-
-    @create_log.setter
-    def create_log(self, create_log):
-        """Sets the create_log of this AnnuityCalculatorAnnuityAmountRequest.
-
-
-        :param create_log: The create_log of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._create_log = create_log
+        self._annuity_amount = annuity_amount
 
     @property
     def aggregation_account_ids(self):
@@ -236,54 +142,6 @@ class AnnuityCalculatorAnnuityAmountRequest(object):
         """
 
         self._aggregation_account_ids = aggregation_account_ids
-
-    @property
-    def initial_balance(self):
-        """Gets the initial_balance of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
-
-
-        :return: The initial_balance of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._initial_balance
-
-    @initial_balance.setter
-    def initial_balance(self, initial_balance):
-        """Sets the initial_balance of this AnnuityCalculatorAnnuityAmountRequest.
-
-
-        :param initial_balance: The initial_balance of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
-        :type: float
-        """
-        if initial_balance is not None and initial_balance < 0:  # noqa: E501
-            raise ValueError("Invalid value for `initial_balance`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._initial_balance = initial_balance
-
-    @property
-    def decumulation_horizon(self):
-        """Gets the decumulation_horizon of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
-
-
-        :return: The decumulation_horizon of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._decumulation_horizon
-
-    @decumulation_horizon.setter
-    def decumulation_horizon(self, decumulation_horizon):
-        """Sets the decumulation_horizon of this AnnuityCalculatorAnnuityAmountRequest.
-
-
-        :param decumulation_horizon: The decumulation_horizon of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
-        :type: int
-        """
-        if decumulation_horizon is None:
-            raise ValueError("Invalid value for `decumulation_horizon`, must not be `None`")  # noqa: E501
-        if decumulation_horizon is not None and decumulation_horizon < 1:  # noqa: E501
-            raise ValueError("Invalid value for `decumulation_horizon`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._decumulation_horizon = decumulation_horizon
 
     @property
     def tax_rate(self):
@@ -332,27 +190,98 @@ class AnnuityCalculatorAnnuityAmountRequest(object):
         self._account_ids = account_ids
 
     @property
-    def annuity_amount(self):
-        """Gets the annuity_amount of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+    def initial_balance(self):
+        """Gets the initial_balance of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
 
 
-        :return: The annuity_amount of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+        :return: The initial_balance of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
         :rtype: float
         """
-        return self._annuity_amount
+        return self._initial_balance
 
-    @annuity_amount.setter
-    def annuity_amount(self, annuity_amount):
-        """Sets the annuity_amount of this AnnuityCalculatorAnnuityAmountRequest.
+    @initial_balance.setter
+    def initial_balance(self, initial_balance):
+        """Sets the initial_balance of this AnnuityCalculatorAnnuityAmountRequest.
 
 
-        :param annuity_amount: The annuity_amount of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+        :param initial_balance: The initial_balance of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
         :type: float
         """
-        if annuity_amount is not None and annuity_amount < 0:  # noqa: E501
-            raise ValueError("Invalid value for `annuity_amount`, must be a value greater than or equal to `0`")  # noqa: E501
+        if initial_balance is not None and initial_balance < 0:  # noqa: E501
+            raise ValueError("Invalid value for `initial_balance`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._annuity_amount = annuity_amount
+        self._initial_balance = initial_balance
+
+    @property
+    def create_log(self):
+        """Gets the create_log of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+
+
+        :return: The create_log of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._create_log
+
+    @create_log.setter
+    def create_log(self, create_log):
+        """Sets the create_log of this AnnuityCalculatorAnnuityAmountRequest.
+
+
+        :param create_log: The create_log of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._create_log = create_log
+
+    @property
+    def inflation_rate(self):
+        """Gets the inflation_rate of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+
+
+        :return: The inflation_rate of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._inflation_rate
+
+    @inflation_rate.setter
+    def inflation_rate(self, inflation_rate):
+        """Sets the inflation_rate of this AnnuityCalculatorAnnuityAmountRequest.
+
+
+        :param inflation_rate: The inflation_rate of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+        :type: float
+        """
+        if inflation_rate is not None and inflation_rate > 20:  # noqa: E501
+            raise ValueError("Invalid value for `inflation_rate`, must be a value less than or equal to `20`")  # noqa: E501
+        if inflation_rate is not None and inflation_rate < -1:  # noqa: E501
+            raise ValueError("Invalid value for `inflation_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
+
+        self._inflation_rate = inflation_rate
+
+    @property
+    def decumulation_horizon(self):
+        """Gets the decumulation_horizon of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+
+
+        :return: The decumulation_horizon of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._decumulation_horizon
+
+    @decumulation_horizon.setter
+    def decumulation_horizon(self, decumulation_horizon):
+        """Sets the decumulation_horizon of this AnnuityCalculatorAnnuityAmountRequest.
+
+
+        :param decumulation_horizon: The decumulation_horizon of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+        :type: int
+        """
+        if decumulation_horizon is None:
+            raise ValueError("Invalid value for `decumulation_horizon`, must not be `None`")  # noqa: E501
+        if decumulation_horizon is not None and decumulation_horizon < 1:  # noqa: E501
+            raise ValueError("Invalid value for `decumulation_horizon`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._decumulation_horizon = decumulation_horizon
 
     @property
     def accumulation_horizon(self):
@@ -378,6 +307,77 @@ class AnnuityCalculatorAnnuityAmountRequest(object):
             raise ValueError("Invalid value for `accumulation_horizon`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._accumulation_horizon = accumulation_horizon
+
+    @property
+    def annuity_frequency_interval(self):
+        """Gets the annuity_frequency_interval of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+
+
+        :return: The annuity_frequency_interval of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._annuity_frequency_interval
+
+    @annuity_frequency_interval.setter
+    def annuity_frequency_interval(self, annuity_frequency_interval):
+        """Sets the annuity_frequency_interval of this AnnuityCalculatorAnnuityAmountRequest.
+
+
+        :param annuity_frequency_interval: The annuity_frequency_interval of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["year", "quarter", "month", "week", "day"]  # noqa: E501
+        if annuity_frequency_interval not in allowed_values:
+            raise ValueError(
+                "Invalid value for `annuity_frequency_interval` ({0}), must be one of {1}"  # noqa: E501
+                .format(annuity_frequency_interval, allowed_values)
+            )
+
+        self._annuity_frequency_interval = annuity_frequency_interval
+
+    @property
+    def portfolio_return(self):
+        """Gets the portfolio_return of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+
+
+        :return: The portfolio_return of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._portfolio_return
+
+    @portfolio_return.setter
+    def portfolio_return(self, portfolio_return):
+        """Sets the portfolio_return of this AnnuityCalculatorAnnuityAmountRequest.
+
+
+        :param portfolio_return: The portfolio_return of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+        :type: float
+        """
+        if portfolio_return is None:
+            raise ValueError("Invalid value for `portfolio_return`, must not be `None`")  # noqa: E501
+
+        self._portfolio_return = portfolio_return
+
+    @property
+    def deposit_schedule(self):
+        """Gets the deposit_schedule of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+
+
+        :return: The deposit_schedule of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+        :rtype: AnnuityDepositSchedule
+        """
+        return self._deposit_schedule
+
+    @deposit_schedule.setter
+    def deposit_schedule(self, deposit_schedule):
+        """Sets the deposit_schedule of this AnnuityCalculatorAnnuityAmountRequest.
+
+
+        :param deposit_schedule: The deposit_schedule of this AnnuityCalculatorAnnuityAmountRequest.  # noqa: E501
+        :type: AnnuityDepositSchedule
+        """
+
+        self._deposit_schedule = deposit_schedule
 
     def to_dict(self):
         """Returns the model properties as a dict"""

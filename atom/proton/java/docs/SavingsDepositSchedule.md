@@ -4,10 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**depositAmount** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **adjustDepositForInflation** | **Boolean** |  |  [optional]
-**depositDuration** | **Integer** |  |  [optional]
 **depositFrequencyInterval** | [**DepositFrequencyIntervalEnum**](#DepositFrequencyIntervalEnum) |  |  [optional]
+**depositAmount** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+**depositDuration** | **Integer** |  |  [optional]
 
 
 <a name="DepositFrequencyIntervalEnum"></a>

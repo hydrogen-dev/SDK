@@ -5,12 +5,14 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_baas_account_using_post**](BaasApi.md#create_baas_account_using_post) | **POST** /baas/account | create a Baas account
+[**create_baas_business_using_post**](BaasApi.md#create_baas_business_using_post) | **POST** /baas/business | Create a Baas Business
 [**create_baas_client_using_post**](BaasApi.md#create_baas_client_using_post) | **POST** /baas/client | Create a Baas Client
 [**create_baas_sub_account_using_post**](BaasApi.md#create_baas_sub_account_using_post) | **POST** /baas/subaccount | create a Baas subaccount
 [**get_baas_account_statement_using_get**](BaasApi.md#get_baas_account_statement_using_get) | **GET** /baas/statement/{nucleus_account_id} | Get a Baas account statement
 [**get_baas_portfolio_balance_using_get**](BaasApi.md#get_baas_portfolio_balance_using_get) | **GET** /baas/balance/{nucleus_portfolio_id} | Get a Baas portfolio balance
 [**get_baas_portfolio_transaction_using_get**](BaasApi.md#get_baas_portfolio_transaction_using_get) | **GET** /baas/transaction/{nucleus_portfolio_id} | Get a Baas portfolio transaction
-[**update_baas_client_using_put**](BaasApi.md#update_baas_client_using_put) | **PUT** /baas/client | Update a Baas client
+[**update_baas_business_using_put**](BaasApi.md#update_baas_business_using_put) | **PUT** /baas/business/{nucleus_business_id} | Update a Baas business
+[**update_baas_client_using_put**](BaasApi.md#update_baas_client_using_put) | **PUT** /baas/client/{nucleus_client_id} | Update a Baas client
 
 
 # **create_baas_account_using_post**
@@ -42,8 +44,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.BaasApi(integration_api.ApiClient(configuration))
 baas_account_co = integration_api.BaasAccountCO() # BaasAccountCO | baasAccountCO
@@ -65,6 +68,71 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BaasAccountVO**](BaasAccountVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_baas_business_using_post**
+> BaasBusinessVO create_baas_business_using_post(baas_business_co)
+
+Create a Baas Business
+
+### Example
+```python
+from __future__ import print_function
+import time
+import integration_api
+from integration_api.rest import ApiException
+from pprint import pprint
+
+
+# Configure OAuth2 access token for authorization: oauth2
+configuration = integration_api.Configuration()
+
+# create an instance of the API class
+api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
+
+#api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
+
+# OR
+
+#api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
+
+
+configuration.access_token = api_token_response.access_token
+# create an instance of the API class
+api_instance = integration_api.BaasApi(integration_api.ApiClient(configuration))
+baas_business_co = integration_api.CreateBaasBusinessCO() # CreateBaasBusinessCO | baasBusinessCO
+
+try:
+    # Create a Baas Business
+    api_response = api_instance.create_baas_business_using_post(baas_business_co)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BaasApi->create_baas_business_using_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **baas_business_co** | [**CreateBaasBusinessCO**](CreateBaasBusinessCO.md)| baasBusinessCO | 
+
+### Return type
+
+[**BaasBusinessVO**](BaasBusinessVO.md)
 
 ### Authorization
 
@@ -106,11 +174,12 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.BaasApi(integration_api.ApiClient(configuration))
-baas_client_co = integration_api.BaasClientCO() # BaasClientCO | baasClientCO
+baas_client_co = integration_api.CreateBaasClientCO() # CreateBaasClientCO | baasClientCO
 
 try:
     # Create a Baas Client
@@ -124,7 +193,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **baas_client_co** | [**BaasClientCO**](BaasClientCO.md)| baasClientCO | 
+ **baas_client_co** | [**CreateBaasClientCO**](CreateBaasClientCO.md)| baasClientCO | 
 
 ### Return type
 
@@ -170,8 +239,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.BaasApi(integration_api.ApiClient(configuration))
 baas_sub_account_co = integration_api.BaasSubAccountCO() # BaasSubAccountCO | baasSubAccountCO
@@ -234,8 +304,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.BaasApi(integration_api.ApiClient(configuration))
 end_date = '2013-10-20' # date | end_date
@@ -304,8 +375,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.BaasApi(integration_api.ApiClient(configuration))
 nucleus_portfolio_id = 'nucleus_portfolio_id_example' # str | nucleus_portfolio_id
@@ -372,8 +444,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.BaasApi(integration_api.ApiClient(configuration))
 nucleus_portfolio_id = 'nucleus_portfolio_id_example' # str | nucleus_portfolio_id
@@ -411,8 +484,75 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **update_baas_business_using_put**
+> BaasBusinessVO update_baas_business_using_put(nucleus_business_id, baas_business_co=baas_business_co)
+
+Update a Baas business
+
+### Example
+```python
+from __future__ import print_function
+import time
+import integration_api
+from integration_api.rest import ApiException
+from pprint import pprint
+
+
+# Configure OAuth2 access token for authorization: oauth2
+configuration = integration_api.Configuration()
+
+# create an instance of the API class
+api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
+
+#api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
+
+# OR
+
+#api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
+
+
+configuration.access_token = api_token_response.access_token
+# create an instance of the API class
+api_instance = integration_api.BaasApi(integration_api.ApiClient(configuration))
+nucleus_business_id = 'nucleus_business_id_example' # str | nucleus_business_id
+baas_business_co = integration_api.UpdateBaasBusinessCO() # UpdateBaasBusinessCO | baasBusinessCO (optional)
+
+try:
+    # Update a Baas business
+    api_response = api_instance.update_baas_business_using_put(nucleus_business_id, baas_business_co=baas_business_co)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BaasApi->update_baas_business_using_put: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nucleus_business_id** | [**str**](.md)| nucleus_business_id | 
+ **baas_business_co** | [**UpdateBaasBusinessCO**](UpdateBaasBusinessCO.md)| baasBusinessCO | [optional] 
+
+### Return type
+
+[**BaasBusinessVO**](BaasBusinessVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **update_baas_client_using_put**
-> BaasClientVO update_baas_client_using_put(baas_client_co)
+> BaasClientVO update_baas_client_using_put(nucleus_client_id, baas_client_co=baas_client_co)
 
 Update a Baas client
 
@@ -440,15 +580,17 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.BaasApi(integration_api.ApiClient(configuration))
-baas_client_co = integration_api.BaasClientCO() # BaasClientCO | baasClientCO
+nucleus_client_id = 'nucleus_client_id_example' # str | nucleus_client_id
+baas_client_co = integration_api.UpdateBaasClientCO() # UpdateBaasClientCO | baasClientCO (optional)
 
 try:
     # Update a Baas client
-    api_response = api_instance.update_baas_client_using_put(baas_client_co)
+    api_response = api_instance.update_baas_client_using_put(nucleus_client_id, baas_client_co=baas_client_co)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BaasApi->update_baas_client_using_put: %s\n" % e)
@@ -458,7 +600,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **baas_client_co** | [**BaasClientCO**](BaasClientCO.md)| baasClientCO | 
+ **nucleus_client_id** | [**str**](.md)| nucleus_client_id | 
+ **baas_client_co** | [**UpdateBaasClientCO**](UpdateBaasClientCO.md)| baasClientCO | [optional] 
 
 ### Return type
 

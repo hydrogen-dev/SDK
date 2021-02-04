@@ -105,7 +105,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g https://sandbox.hydrogenplatform.com/integration/v1/
+     * @param basePath Base path of the URL (e.g https://sandbox.hydrogenplatform.com/integration/v1
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {

@@ -21,7 +21,6 @@ Create a new audit log.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AuditLogApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -38,8 +37,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AuditLogApi apiInstance = new AuditLogApi();
 AuditLog auditLog = new AuditLog(); // AuditLog | auditLog
 try {
@@ -82,7 +79,6 @@ Get details for all audit log.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AuditLogApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -99,8 +95,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AuditLogApi apiInstance = new AuditLogApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -151,7 +145,6 @@ Retrieve the information for a audit log.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import AuditLogApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -168,8 +161,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 AuditLogApi apiInstance = new AuditLogApi();
 UUID auditLogId = new UUID(); // UUID | UUID audit_log_id
 try {

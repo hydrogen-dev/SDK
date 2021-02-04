@@ -23,7 +23,6 @@ One active webhook service is allowed at all times.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import WebhookApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -40,8 +39,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 WebhookApi apiInstance = new WebhookApi();
 Webhook webhookRequest = new Webhook(); // Webhook | webhookRequest
 try {
@@ -84,7 +81,6 @@ Permanently delete a webhook for your firm. The webhook_id must be provided.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import WebhookApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -101,8 +97,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 WebhookApi apiInstance = new WebhookApi();
 UUID webhookId = new UUID(); // UUID | UUID webhook_id
 try {
@@ -144,7 +138,6 @@ Get information for all webhooks defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import WebhookApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -161,8 +154,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 WebhookApi apiInstance = new WebhookApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -213,7 +204,6 @@ Retrieve the information for a specific webhook. The webhook_id must be provided
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import WebhookApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -230,8 +220,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 WebhookApi apiInstance = new WebhookApi();
 UUID webhookId = new UUID(); // UUID | UUID webhook_id
 try {
@@ -274,7 +262,6 @@ Update a webhook for your firm. The webhook_id must be provided
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import WebhookApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -291,10 +278,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 WebhookApi apiInstance = new WebhookApi();
-Webhook webhook = new Webhook(); // Webhook | webhook
+Object webhook = null; // Object | webhook
 UUID webhookId = new UUID(); // UUID | UUID webhook_id
 try {
     Webhook result = apiInstance.updateWebhookUsingPut(webhook, webhookId);
@@ -309,7 +294,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook** | [**Webhook**](Webhook.md)| webhook |
+ **webhook** | **Object**| webhook |
  **webhookId** | [**UUID**](.md)| UUID webhook_id |
 
 ### Return type

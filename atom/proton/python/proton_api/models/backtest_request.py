@@ -31,106 +31,64 @@ class BacktestRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'asset_sizes': 'bool',
-        'settings': 'Settings',
         'asset_size': 'float',
-        'trades': 'bool',
-        'holdings': 'bool',
-        'model_id': 'str',
         'end_date': 'date',
-        'initial_weights': 'object',
         'stats': 'bool',
-        'start_date': 'date'
+        'asset_sizes': 'bool',
+        'model_id': 'str',
+        'initial_weights': 'object',
+        'trades': 'bool',
+        'start_date': 'date',
+        'settings': 'Settings',
+        'holdings': 'bool'
     }
 
     attribute_map = {
-        'asset_sizes': 'asset_sizes',
-        'settings': 'settings',
         'asset_size': 'asset_size',
-        'trades': 'trades',
-        'holdings': 'holdings',
-        'model_id': 'model_id',
         'end_date': 'end_date',
-        'initial_weights': 'initial_weights',
         'stats': 'stats',
-        'start_date': 'start_date'
+        'asset_sizes': 'asset_sizes',
+        'model_id': 'model_id',
+        'initial_weights': 'initial_weights',
+        'trades': 'trades',
+        'start_date': 'start_date',
+        'settings': 'settings',
+        'holdings': 'holdings'
     }
 
-    def __init__(self, asset_sizes=True, settings=None, asset_size=None, trades=True, holdings=True, model_id=None, end_date=None, initial_weights=None, stats=True, start_date=None):  # noqa: E501
+    def __init__(self, asset_size=None, end_date=None, stats=True, asset_sizes=True, model_id=None, initial_weights=None, trades=True, start_date=None, settings=None, holdings=True):  # noqa: E501
         """BacktestRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._asset_sizes = None
-        self._settings = None
         self._asset_size = None
-        self._trades = None
-        self._holdings = None
-        self._model_id = None
         self._end_date = None
-        self._initial_weights = None
         self._stats = None
+        self._asset_sizes = None
+        self._model_id = None
+        self._initial_weights = None
+        self._trades = None
         self._start_date = None
+        self._settings = None
+        self._holdings = None
         self.discriminator = None
 
-        if asset_sizes is not None:
-            self.asset_sizes = asset_sizes
-        if settings is not None:
-            self.settings = settings
         if asset_size is not None:
             self.asset_size = asset_size
-        if trades is not None:
-            self.trades = trades
-        if holdings is not None:
-            self.holdings = holdings
-        if model_id is not None:
-            self.model_id = model_id
         self.end_date = end_date
-        if initial_weights is not None:
-            self.initial_weights = initial_weights
         if stats is not None:
             self.stats = stats
+        if asset_sizes is not None:
+            self.asset_sizes = asset_sizes
+        if model_id is not None:
+            self.model_id = model_id
+        if initial_weights is not None:
+            self.initial_weights = initial_weights
+        if trades is not None:
+            self.trades = trades
         self.start_date = start_date
-
-    @property
-    def asset_sizes(self):
-        """Gets the asset_sizes of this BacktestRequest.  # noqa: E501
-
-
-        :return: The asset_sizes of this BacktestRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._asset_sizes
-
-    @asset_sizes.setter
-    def asset_sizes(self, asset_sizes):
-        """Sets the asset_sizes of this BacktestRequest.
-
-
-        :param asset_sizes: The asset_sizes of this BacktestRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._asset_sizes = asset_sizes
-
-    @property
-    def settings(self):
-        """Gets the settings of this BacktestRequest.  # noqa: E501
-
-
-        :return: The settings of this BacktestRequest.  # noqa: E501
-        :rtype: Settings
-        """
-        return self._settings
-
-    @settings.setter
-    def settings(self, settings):
-        """Sets the settings of this BacktestRequest.
-
-
-        :param settings: The settings of this BacktestRequest.  # noqa: E501
-        :type: Settings
-        """
-
-        self._settings = settings
+        if settings is not None:
+            self.settings = settings
+        if holdings is not None:
+            self.holdings = holdings
 
     @property
     def asset_size(self):
@@ -156,69 +114,6 @@ class BacktestRequest(object):
         self._asset_size = asset_size
 
     @property
-    def trades(self):
-        """Gets the trades of this BacktestRequest.  # noqa: E501
-
-
-        :return: The trades of this BacktestRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._trades
-
-    @trades.setter
-    def trades(self, trades):
-        """Sets the trades of this BacktestRequest.
-
-
-        :param trades: The trades of this BacktestRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._trades = trades
-
-    @property
-    def holdings(self):
-        """Gets the holdings of this BacktestRequest.  # noqa: E501
-
-
-        :return: The holdings of this BacktestRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._holdings
-
-    @holdings.setter
-    def holdings(self, holdings):
-        """Sets the holdings of this BacktestRequest.
-
-
-        :param holdings: The holdings of this BacktestRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._holdings = holdings
-
-    @property
-    def model_id(self):
-        """Gets the model_id of this BacktestRequest.  # noqa: E501
-
-
-        :return: The model_id of this BacktestRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._model_id
-
-    @model_id.setter
-    def model_id(self, model_id):
-        """Sets the model_id of this BacktestRequest.
-
-
-        :param model_id: The model_id of this BacktestRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._model_id = model_id
-
-    @property
     def end_date(self):
         """Gets the end_date of this BacktestRequest.  # noqa: E501
 
@@ -242,6 +137,69 @@ class BacktestRequest(object):
         self._end_date = end_date
 
     @property
+    def stats(self):
+        """Gets the stats of this BacktestRequest.  # noqa: E501
+
+
+        :return: The stats of this BacktestRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._stats
+
+    @stats.setter
+    def stats(self, stats):
+        """Sets the stats of this BacktestRequest.
+
+
+        :param stats: The stats of this BacktestRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._stats = stats
+
+    @property
+    def asset_sizes(self):
+        """Gets the asset_sizes of this BacktestRequest.  # noqa: E501
+
+
+        :return: The asset_sizes of this BacktestRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._asset_sizes
+
+    @asset_sizes.setter
+    def asset_sizes(self, asset_sizes):
+        """Sets the asset_sizes of this BacktestRequest.
+
+
+        :param asset_sizes: The asset_sizes of this BacktestRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._asset_sizes = asset_sizes
+
+    @property
+    def model_id(self):
+        """Gets the model_id of this BacktestRequest.  # noqa: E501
+
+
+        :return: The model_id of this BacktestRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._model_id
+
+    @model_id.setter
+    def model_id(self, model_id):
+        """Sets the model_id of this BacktestRequest.
+
+
+        :param model_id: The model_id of this BacktestRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._model_id = model_id
+
+    @property
     def initial_weights(self):
         """Gets the initial_weights of this BacktestRequest.  # noqa: E501
 
@@ -263,25 +221,25 @@ class BacktestRequest(object):
         self._initial_weights = initial_weights
 
     @property
-    def stats(self):
-        """Gets the stats of this BacktestRequest.  # noqa: E501
+    def trades(self):
+        """Gets the trades of this BacktestRequest.  # noqa: E501
 
 
-        :return: The stats of this BacktestRequest.  # noqa: E501
+        :return: The trades of this BacktestRequest.  # noqa: E501
         :rtype: bool
         """
-        return self._stats
+        return self._trades
 
-    @stats.setter
-    def stats(self, stats):
-        """Sets the stats of this BacktestRequest.
+    @trades.setter
+    def trades(self, trades):
+        """Sets the trades of this BacktestRequest.
 
 
-        :param stats: The stats of this BacktestRequest.  # noqa: E501
+        :param trades: The trades of this BacktestRequest.  # noqa: E501
         :type: bool
         """
 
-        self._stats = stats
+        self._trades = trades
 
     @property
     def start_date(self):
@@ -305,6 +263,48 @@ class BacktestRequest(object):
             raise ValueError("Invalid value for `start_date`, must not be `None`")  # noqa: E501
 
         self._start_date = start_date
+
+    @property
+    def settings(self):
+        """Gets the settings of this BacktestRequest.  # noqa: E501
+
+
+        :return: The settings of this BacktestRequest.  # noqa: E501
+        :rtype: Settings
+        """
+        return self._settings
+
+    @settings.setter
+    def settings(self, settings):
+        """Sets the settings of this BacktestRequest.
+
+
+        :param settings: The settings of this BacktestRequest.  # noqa: E501
+        :type: Settings
+        """
+
+        self._settings = settings
+
+    @property
+    def holdings(self):
+        """Gets the holdings of this BacktestRequest.  # noqa: E501
+
+
+        :return: The holdings of this BacktestRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._holdings
+
+    @holdings.setter
+    def holdings(self, holdings):
+        """Sets the holdings of this BacktestRequest.
+
+
+        :param holdings: The holdings of this BacktestRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._holdings = holdings
 
     def to_dict(self):
         """Returns the model properties as a dict"""

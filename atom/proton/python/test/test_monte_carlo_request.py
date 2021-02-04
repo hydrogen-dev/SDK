@@ -32,7 +32,7 @@ class TestMonteCarloRequest(unittest.TestCase):
     def testMonteCarloRequest(self):
         """Test MonteCarloRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.monte_carlo_request.MonteCarloRequest()  # noqa: E501
+        # model = proton_api.models.monte_carlo_request.MonteCarloRequest()  # noqa: E501
         pass
 
 

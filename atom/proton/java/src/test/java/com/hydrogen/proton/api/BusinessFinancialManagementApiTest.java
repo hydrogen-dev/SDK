@@ -13,12 +13,12 @@
 
 package com.hydrogen.proton.api;
 
-import com.hydrogen.proton.model.FinancialStatementAnalysisRequest;
 import com.hydrogen.proton.ApiException;
 import com.hydrogen.proton.model.BusinessFinancialHealthCheckRequest;
 import com.hydrogen.proton.model.BusinessInvoiceAnalysisRequest;
 import com.hydrogen.proton.model.CashAnalysisRequest;
 import com.hydrogen.proton.model.CustomerAnalysisRequest;
+import com.hydrogen.proton.model.FinancialStatementAnalysisRequest;
 import org.junit.Test;
 import org.junit.Ignore;
 

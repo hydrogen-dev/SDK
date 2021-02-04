@@ -31,148 +31,56 @@ class RecommendationConfig(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'horizon_min': 'int',
-        'dep_min': 'float',
-        'dep_max': 'float',
-        'horizon_max': 'int',
         'recommended_inflation': 'float',
-        'inv_max': 'float',
         'recommend': 'bool',
-        'inv_min': 'float'
+        'inv_max': 'float',
+        'horizon_min': 'int',
+        'horizon_max': 'int',
+        'dep_max': 'float',
+        'inv_min': 'float',
+        'dep_min': 'float'
     }
 
     attribute_map = {
-        'horizon_min': 'horizon_min',
-        'dep_min': 'dep_min',
-        'dep_max': 'dep_max',
-        'horizon_max': 'horizon_max',
         'recommended_inflation': 'recommended_inflation',
-        'inv_max': 'inv_max',
         'recommend': 'recommend',
-        'inv_min': 'inv_min'
+        'inv_max': 'inv_max',
+        'horizon_min': 'horizon_min',
+        'horizon_max': 'horizon_max',
+        'dep_max': 'dep_max',
+        'inv_min': 'inv_min',
+        'dep_min': 'dep_min'
     }
 
-    def __init__(self, horizon_min=1, dep_min=None, dep_max=None, horizon_max=64, recommended_inflation=0.0, inv_max=None, recommend=True, inv_min=None):  # noqa: E501
+    def __init__(self, recommended_inflation=0.0, recommend=True, inv_max=None, horizon_min=1, horizon_max=64, dep_max=None, inv_min=None, dep_min=None):  # noqa: E501
         """RecommendationConfig - a model defined in Swagger"""  # noqa: E501
 
-        self._horizon_min = None
-        self._dep_min = None
-        self._dep_max = None
-        self._horizon_max = None
         self._recommended_inflation = None
-        self._inv_max = None
         self._recommend = None
+        self._inv_max = None
+        self._horizon_min = None
+        self._horizon_max = None
+        self._dep_max = None
         self._inv_min = None
+        self._dep_min = None
         self.discriminator = None
 
-        if horizon_min is not None:
-            self.horizon_min = horizon_min
-        if dep_min is not None:
-            self.dep_min = dep_min
-        if dep_max is not None:
-            self.dep_max = dep_max
-        if horizon_max is not None:
-            self.horizon_max = horizon_max
         if recommended_inflation is not None:
             self.recommended_inflation = recommended_inflation
-        if inv_max is not None:
-            self.inv_max = inv_max
         if recommend is not None:
             self.recommend = recommend
+        if inv_max is not None:
+            self.inv_max = inv_max
+        if horizon_min is not None:
+            self.horizon_min = horizon_min
+        if horizon_max is not None:
+            self.horizon_max = horizon_max
+        if dep_max is not None:
+            self.dep_max = dep_max
         if inv_min is not None:
             self.inv_min = inv_min
-
-    @property
-    def horizon_min(self):
-        """Gets the horizon_min of this RecommendationConfig.  # noqa: E501
-
-
-        :return: The horizon_min of this RecommendationConfig.  # noqa: E501
-        :rtype: int
-        """
-        return self._horizon_min
-
-    @horizon_min.setter
-    def horizon_min(self, horizon_min):
-        """Sets the horizon_min of this RecommendationConfig.
-
-
-        :param horizon_min: The horizon_min of this RecommendationConfig.  # noqa: E501
-        :type: int
-        """
-        if horizon_min is not None and horizon_min < 0:  # noqa: E501
-            raise ValueError("Invalid value for `horizon_min`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._horizon_min = horizon_min
-
-    @property
-    def dep_min(self):
-        """Gets the dep_min of this RecommendationConfig.  # noqa: E501
-
-
-        :return: The dep_min of this RecommendationConfig.  # noqa: E501
-        :rtype: float
-        """
-        return self._dep_min
-
-    @dep_min.setter
-    def dep_min(self, dep_min):
-        """Sets the dep_min of this RecommendationConfig.
-
-
-        :param dep_min: The dep_min of this RecommendationConfig.  # noqa: E501
-        :type: float
-        """
-        if dep_min is not None and dep_min < 0:  # noqa: E501
-            raise ValueError("Invalid value for `dep_min`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._dep_min = dep_min
-
-    @property
-    def dep_max(self):
-        """Gets the dep_max of this RecommendationConfig.  # noqa: E501
-
-
-        :return: The dep_max of this RecommendationConfig.  # noqa: E501
-        :rtype: float
-        """
-        return self._dep_max
-
-    @dep_max.setter
-    def dep_max(self, dep_max):
-        """Sets the dep_max of this RecommendationConfig.
-
-
-        :param dep_max: The dep_max of this RecommendationConfig.  # noqa: E501
-        :type: float
-        """
-        if dep_max is not None and dep_max < 0:  # noqa: E501
-            raise ValueError("Invalid value for `dep_max`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._dep_max = dep_max
-
-    @property
-    def horizon_max(self):
-        """Gets the horizon_max of this RecommendationConfig.  # noqa: E501
-
-
-        :return: The horizon_max of this RecommendationConfig.  # noqa: E501
-        :rtype: int
-        """
-        return self._horizon_max
-
-    @horizon_max.setter
-    def horizon_max(self, horizon_max):
-        """Sets the horizon_max of this RecommendationConfig.
-
-
-        :param horizon_max: The horizon_max of this RecommendationConfig.  # noqa: E501
-        :type: int
-        """
-        if horizon_max is not None and horizon_max < 0:  # noqa: E501
-            raise ValueError("Invalid value for `horizon_max`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._horizon_max = horizon_max
+        if dep_min is not None:
+            self.dep_min = dep_min
 
     @property
     def recommended_inflation(self):
@@ -198,6 +106,27 @@ class RecommendationConfig(object):
         self._recommended_inflation = recommended_inflation
 
     @property
+    def recommend(self):
+        """Gets the recommend of this RecommendationConfig.  # noqa: E501
+
+
+        :return: The recommend of this RecommendationConfig.  # noqa: E501
+        :rtype: bool
+        """
+        return self._recommend
+
+    @recommend.setter
+    def recommend(self, recommend):
+        """Sets the recommend of this RecommendationConfig.
+
+
+        :param recommend: The recommend of this RecommendationConfig.  # noqa: E501
+        :type: bool
+        """
+
+        self._recommend = recommend
+
+    @property
     def inv_max(self):
         """Gets the inv_max of this RecommendationConfig.  # noqa: E501
 
@@ -221,25 +150,73 @@ class RecommendationConfig(object):
         self._inv_max = inv_max
 
     @property
-    def recommend(self):
-        """Gets the recommend of this RecommendationConfig.  # noqa: E501
+    def horizon_min(self):
+        """Gets the horizon_min of this RecommendationConfig.  # noqa: E501
 
 
-        :return: The recommend of this RecommendationConfig.  # noqa: E501
-        :rtype: bool
+        :return: The horizon_min of this RecommendationConfig.  # noqa: E501
+        :rtype: int
         """
-        return self._recommend
+        return self._horizon_min
 
-    @recommend.setter
-    def recommend(self, recommend):
-        """Sets the recommend of this RecommendationConfig.
+    @horizon_min.setter
+    def horizon_min(self, horizon_min):
+        """Sets the horizon_min of this RecommendationConfig.
 
 
-        :param recommend: The recommend of this RecommendationConfig.  # noqa: E501
-        :type: bool
+        :param horizon_min: The horizon_min of this RecommendationConfig.  # noqa: E501
+        :type: int
         """
+        if horizon_min is not None and horizon_min < 0:  # noqa: E501
+            raise ValueError("Invalid value for `horizon_min`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._recommend = recommend
+        self._horizon_min = horizon_min
+
+    @property
+    def horizon_max(self):
+        """Gets the horizon_max of this RecommendationConfig.  # noqa: E501
+
+
+        :return: The horizon_max of this RecommendationConfig.  # noqa: E501
+        :rtype: int
+        """
+        return self._horizon_max
+
+    @horizon_max.setter
+    def horizon_max(self, horizon_max):
+        """Sets the horizon_max of this RecommendationConfig.
+
+
+        :param horizon_max: The horizon_max of this RecommendationConfig.  # noqa: E501
+        :type: int
+        """
+        if horizon_max is not None and horizon_max < 0:  # noqa: E501
+            raise ValueError("Invalid value for `horizon_max`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._horizon_max = horizon_max
+
+    @property
+    def dep_max(self):
+        """Gets the dep_max of this RecommendationConfig.  # noqa: E501
+
+
+        :return: The dep_max of this RecommendationConfig.  # noqa: E501
+        :rtype: float
+        """
+        return self._dep_max
+
+    @dep_max.setter
+    def dep_max(self, dep_max):
+        """Sets the dep_max of this RecommendationConfig.
+
+
+        :param dep_max: The dep_max of this RecommendationConfig.  # noqa: E501
+        :type: float
+        """
+        if dep_max is not None and dep_max < 0:  # noqa: E501
+            raise ValueError("Invalid value for `dep_max`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._dep_max = dep_max
 
     @property
     def inv_min(self):
@@ -263,6 +240,29 @@ class RecommendationConfig(object):
             raise ValueError("Invalid value for `inv_min`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._inv_min = inv_min
+
+    @property
+    def dep_min(self):
+        """Gets the dep_min of this RecommendationConfig.  # noqa: E501
+
+
+        :return: The dep_min of this RecommendationConfig.  # noqa: E501
+        :rtype: float
+        """
+        return self._dep_min
+
+    @dep_min.setter
+    def dep_min(self, dep_min):
+        """Sets the dep_min of this RecommendationConfig.
+
+
+        :param dep_min: The dep_min of this RecommendationConfig.  # noqa: E501
+        :type: float
+        """
+        if dep_min is not None and dep_min < 0:  # noqa: E501
+            raise ValueError("Invalid value for `dep_min`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._dep_min = dep_min
 
     def to_dict(self):
         """Returns the model properties as a dict"""

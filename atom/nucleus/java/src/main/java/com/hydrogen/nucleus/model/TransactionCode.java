@@ -13,28 +13,24 @@
 
 package com.hydrogen.nucleus.model;
 
-import java.util.Objects;
-
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.threeten.bp.OffsetDateTime;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.UUID;
-import org.threeten.bp.OffsetDateTime;
 
 /**
  * TransactionCode
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-12T11:03:26.704Z")
-
-
-
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-31T15:47:19.766Z")
 public class TransactionCode {
   @SerializedName("category")
   private String category = null;
@@ -45,22 +41,120 @@ public class TransactionCode {
   @SerializedName("id")
   private UUID id = null;
 
+  /**
+   * Gets or Sets isBuy
+   */
+  @JsonAdapter(IsBuyEnum.Adapter.class)
+  public enum IsBuyEnum {
+    TRUE("true"),
+    
+    FALSE("false"),
+    
+    NULL("null");
+
+    private String value;
+
+    IsBuyEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static IsBuyEnum fromValue(String text) {
+      for (IsBuyEnum b : IsBuyEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<IsBuyEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final IsBuyEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public IsBuyEnum read(final JsonReader jsonReader) throws IOException {
+        Object value = jsonReader.nextString();
+        return IsBuyEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   @SerializedName("is_buy")
-  private Boolean isBuy = null;
+  private IsBuyEnum isBuy = IsBuyEnum.NULL;
+
+  /**
+   * Gets or Sets isFee
+   */
+  @JsonAdapter(IsFeeEnum.Adapter.class)
+  public enum IsFeeEnum {
+    TRUE("true"),
+    
+    FALSE("false"),
+    
+    NULL("null");
+
+    private String value;
+
+    IsFeeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static IsFeeEnum fromValue(String text) {
+      for (IsFeeEnum b : IsFeeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<IsFeeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final IsFeeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public IsFeeEnum read(final JsonReader jsonReader) throws IOException {
+        Object value = jsonReader.nextString();
+        return IsFeeEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
 
   @SerializedName("is_fee")
-  private Boolean isFee = null;
+  private IsFeeEnum isFee = IsFeeEnum.NULL;
 
   /**
    * Gets or Sets isTransfer
    */
   @JsonAdapter(IsTransferEnum.Adapter.class)
   public enum IsTransferEnum {
-    FALSE("FALSE"),
+    TRUE("true"),
     
-    TRUE("TRUE"),
+    FALSE("false"),
     
-    NULL("NULL");
+    NULL("null");
 
     private String value;
 
@@ -94,14 +188,14 @@ public class TransactionCode {
 
       @Override
       public IsTransferEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        Object value = jsonReader.nextString();
         return IsTransferEnum.fromValue(String.valueOf(value));
       }
     }
   }
 
   @SerializedName("is_transfer")
-  private IsTransferEnum isTransfer = null;
+  private IsTransferEnum isTransfer = IsTransferEnum.NULL;
 
   @SerializedName("metadata")
   private Map<String, String> metadata = null;
@@ -160,47 +254,29 @@ public class TransactionCode {
     return id;
   }
 
-  public TransactionCode isBuy(Boolean isBuy) {
-    this.isBuy = isBuy;
-    return this;
-  }
-
    /**
-   * isBuy
+   * Get isBuy
    * @return isBuy
   **/
-  @ApiModelProperty(example = "false", value = "isBuy")
-  public Boolean isIsBuy() {
+  @ApiModelProperty(example = "false", value = "")
+  public IsBuyEnum getIsBuy() {
     return isBuy;
   }
 
-  public void setIsBuy(Boolean isBuy) {
-    this.isBuy = isBuy;
-  }
-
-  public TransactionCode isFee(Boolean isFee) {
-    this.isFee = isFee;
-    return this;
-  }
-
    /**
-   * isFee
+   * Get isFee
    * @return isFee
   **/
-  @ApiModelProperty(example = "false", value = "isFee")
-  public Boolean isIsFee() {
+  @ApiModelProperty(example = "false", value = "")
+  public IsFeeEnum getIsFee() {
     return isFee;
-  }
-
-  public void setIsFee(Boolean isFee) {
-    this.isFee = isFee;
   }
 
    /**
    * Get isTransfer
    * @return isTransfer
   **/
-  @ApiModelProperty(example = "False", value = "")
+  @ApiModelProperty(example = "false", value = "")
   public IsTransferEnum getIsTransfer() {
     return isTransfer;
   }
@@ -323,7 +399,7 @@ public class TransactionCode {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -356,7 +432,7 @@ public class TransactionCode {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TransactionCode {\n");
-    
+
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
@@ -378,7 +454,7 @@ public class TransactionCode {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

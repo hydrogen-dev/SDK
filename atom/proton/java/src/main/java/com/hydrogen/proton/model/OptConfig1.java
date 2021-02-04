@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.IOException;
@@ -30,17 +29,11 @@ import java.util.List;
 /**
  * OptConfig1
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class OptConfig1 {
-  @SerializedName("w_asset_config")
-  private Object wAssetConfig = null;
-
-  @SerializedName("min_assets")
-  private Integer minAssets = 1;
-
   /**
    * Gets or Sets secTypes
    */
@@ -99,42 +92,11 @@ public class OptConfig1 {
   @SerializedName("tickers")
   private List<String> tickers = null;
 
-  public OptConfig1 wAssetConfig(Object wAssetConfig) {
-    this.wAssetConfig = wAssetConfig;
-    return this;
-  }
+  @SerializedName("min_assets")
+  private Integer minAssets = 1;
 
-   /**
-   * Get wAssetConfig
-   * @return wAssetConfig
-  **/
-  @ApiModelProperty(value = "")
-  public Object getWAssetConfig() {
-    return wAssetConfig;
-  }
-
-  public void setWAssetConfig(Object wAssetConfig) {
-    this.wAssetConfig = wAssetConfig;
-  }
-
-  public OptConfig1 minAssets(Integer minAssets) {
-    this.minAssets = minAssets;
-    return this;
-  }
-
-   /**
-   * Get minAssets
-   * minimum: 1
-   * @return minAssets
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getMinAssets() {
-    return minAssets;
-  }
-
-  public void setMinAssets(Integer minAssets) {
-    this.minAssets = minAssets;
-  }
+  @SerializedName("w_asset_config")
+  private Object wAssetConfig = null;
 
   public OptConfig1 secTypes(List<SecTypesEnum> secTypes) {
     this.secTypes = secTypes;
@@ -206,6 +168,43 @@ public class OptConfig1 {
     this.tickers = tickers;
   }
 
+  public OptConfig1 minAssets(Integer minAssets) {
+    this.minAssets = minAssets;
+    return this;
+  }
+
+   /**
+   * Get minAssets
+   * minimum: 1
+   * @return minAssets
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getMinAssets() {
+    return minAssets;
+  }
+
+  public void setMinAssets(Integer minAssets) {
+    this.minAssets = minAssets;
+  }
+
+  public OptConfig1 wAssetConfig(Object wAssetConfig) {
+    this.wAssetConfig = wAssetConfig;
+    return this;
+  }
+
+   /**
+   * Get wAssetConfig
+   * @return wAssetConfig
+  **/
+  @ApiModelProperty(value = "")
+  public Object getWAssetConfig() {
+    return wAssetConfig;
+  }
+
+  public void setWAssetConfig(Object wAssetConfig) {
+    this.wAssetConfig = wAssetConfig;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -216,16 +215,16 @@ public class OptConfig1 {
       return false;
     }
     OptConfig1 optConfig1 = (OptConfig1) o;
-    return Objects.equals(this.wAssetConfig, optConfig1.wAssetConfig) &&
-        Objects.equals(this.minAssets, optConfig1.minAssets) &&
-        Objects.equals(this.secTypes, optConfig1.secTypes) &&
+    return Objects.equals(this.secTypes, optConfig1.secTypes) &&
         Objects.equals(this.wConfig, optConfig1.wConfig) &&
-        Objects.equals(this.tickers, optConfig1.tickers);
+        Objects.equals(this.tickers, optConfig1.tickers) &&
+        Objects.equals(this.minAssets, optConfig1.minAssets) &&
+        Objects.equals(this.wAssetConfig, optConfig1.wAssetConfig);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(wAssetConfig, minAssets, secTypes, wConfig, tickers);
+    return Objects.hash(secTypes, wConfig, tickers, minAssets, wAssetConfig);
   }
 
 
@@ -234,11 +233,11 @@ public class OptConfig1 {
     StringBuilder sb = new StringBuilder();
     sb.append("class OptConfig1 {\n");
     
-    sb.append("    wAssetConfig: ").append(toIndentedString(wAssetConfig)).append("\n");
-    sb.append("    minAssets: ").append(toIndentedString(minAssets)).append("\n");
     sb.append("    secTypes: ").append(toIndentedString(secTypes)).append("\n");
     sb.append("    wConfig: ").append(toIndentedString(wConfig)).append("\n");
     sb.append("    tickers: ").append(toIndentedString(tickers)).append("\n");
+    sb.append("    minAssets: ").append(toIndentedString(minAssets)).append("\n");
+    sb.append("    wAssetConfig: ").append(toIndentedString(wAssetConfig)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -27,7 +27,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::LifeInsuranceApi.new
 
 life_insurance_needs_calculator_request = ProtonApi::LifeInsuranceNeedsCalculatorRequest.new # LifeInsuranceNeedsCalculatorRequest | Request payload for Life Insurance Needs Calculator

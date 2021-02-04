@@ -12,9 +12,12 @@ Name | Type | Description | Notes
 **investment** | [**Investment**](Investment.md) |  | [optional] 
 **is_active** | **BOOLEAN** | isActive | [optional] 
 **is_excluded_analysis** | **BOOLEAN** | is_excluded_analysis | [optional] 
+**is_fee** | **BOOLEAN** |  | [optional] 
 **is_recurring** | **BOOLEAN** |  | [optional] 
+**is_transfer** | **BOOLEAN** |  | [optional] 
 **metadata** | **Hash&lt;String, String&gt;** |  | [optional] 
 **secondary_id** | **String** |  | [optional] 
+**status** | **String** | status | [optional] 
 **transaction_date** | **DateTime** | transactionDate | 
 **update_date** | **DateTime** | updateDate | [optional] 
 

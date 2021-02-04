@@ -75,6 +75,7 @@ const createMvo = () => {
     var mvoRequest = new HydrogenProtonApi.MvoRequest(); // MvoRequest | Request payload for MVO
     apiInstance.mvo(mvoRequest, callback);
 }
+
 ```
 
 ### Parameters

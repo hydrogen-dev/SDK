@@ -31,161 +31,67 @@ class MvoRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'w_asset_config': 'object',
-        'tgt_type': 'str',
-        'tgt_val': 'float',
-        'min_assets': 'int',
         'sec_types': 'list[str]',
-        'w_config': 'WConfig',
         'end_date': 'date',
+        'market_data_source': 'str',
+        'tgt_val': 'float',
+        'tgt_type': 'str',
         'use_proxy_data': 'bool',
+        'w_config': 'WConfig',
         'start_date': 'date',
         'tickers': 'list[str]',
-        'market_data_source': 'str'
+        'min_assets': 'int',
+        'w_asset_config': 'object'
     }
 
     attribute_map = {
-        'w_asset_config': 'w_asset_config',
-        'tgt_type': 'tgt_type',
-        'tgt_val': 'tgt_val',
-        'min_assets': 'min_assets',
         'sec_types': 'sec_types',
-        'w_config': 'w_config',
         'end_date': 'end_date',
+        'market_data_source': 'market_data_source',
+        'tgt_val': 'tgt_val',
+        'tgt_type': 'tgt_type',
         'use_proxy_data': 'use_proxy_data',
+        'w_config': 'w_config',
         'start_date': 'start_date',
         'tickers': 'tickers',
-        'market_data_source': 'market_data_source'
+        'min_assets': 'min_assets',
+        'w_asset_config': 'w_asset_config'
     }
 
-    def __init__(self, w_asset_config=None, tgt_type=None, tgt_val=0.0, min_assets=None, sec_types=None, w_config=None, end_date=None, use_proxy_data=False, start_date=None, tickers=None, market_data_source='nucleus'):  # noqa: E501
+    def __init__(self, sec_types=None, end_date=None, market_data_source='nucleus', tgt_val=0.0, tgt_type=None, use_proxy_data=False, w_config=None, start_date=None, tickers=None, min_assets=None, w_asset_config=None):  # noqa: E501
         """MvoRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._w_asset_config = None
-        self._tgt_type = None
-        self._tgt_val = None
-        self._min_assets = None
         self._sec_types = None
-        self._w_config = None
         self._end_date = None
+        self._market_data_source = None
+        self._tgt_val = None
+        self._tgt_type = None
         self._use_proxy_data = None
+        self._w_config = None
         self._start_date = None
         self._tickers = None
-        self._market_data_source = None
+        self._min_assets = None
+        self._w_asset_config = None
         self.discriminator = None
 
-        if w_asset_config is not None:
-            self.w_asset_config = w_asset_config
-        if tgt_type is not None:
-            self.tgt_type = tgt_type
-        if tgt_val is not None:
-            self.tgt_val = tgt_val
-        self.min_assets = min_assets
         self.sec_types = sec_types
-        self.w_config = w_config
         if end_date is not None:
             self.end_date = end_date
+        if market_data_source is not None:
+            self.market_data_source = market_data_source
+        if tgt_val is not None:
+            self.tgt_val = tgt_val
+        if tgt_type is not None:
+            self.tgt_type = tgt_type
         if use_proxy_data is not None:
             self.use_proxy_data = use_proxy_data
+        self.w_config = w_config
         if start_date is not None:
             self.start_date = start_date
         self.tickers = tickers
-        if market_data_source is not None:
-            self.market_data_source = market_data_source
-
-    @property
-    def w_asset_config(self):
-        """Gets the w_asset_config of this MvoRequest.  # noqa: E501
-
-
-        :return: The w_asset_config of this MvoRequest.  # noqa: E501
-        :rtype: object
-        """
-        return self._w_asset_config
-
-    @w_asset_config.setter
-    def w_asset_config(self, w_asset_config):
-        """Sets the w_asset_config of this MvoRequest.
-
-
-        :param w_asset_config: The w_asset_config of this MvoRequest.  # noqa: E501
-        :type: object
-        """
-
-        self._w_asset_config = w_asset_config
-
-    @property
-    def tgt_type(self):
-        """Gets the tgt_type of this MvoRequest.  # noqa: E501
-
-
-        :return: The tgt_type of this MvoRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._tgt_type
-
-    @tgt_type.setter
-    def tgt_type(self, tgt_type):
-        """Sets the tgt_type of this MvoRequest.
-
-
-        :param tgt_type: The tgt_type of this MvoRequest.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["risk", "return"]  # noqa: E501
-        if tgt_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `tgt_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(tgt_type, allowed_values)
-            )
-
-        self._tgt_type = tgt_type
-
-    @property
-    def tgt_val(self):
-        """Gets the tgt_val of this MvoRequest.  # noqa: E501
-
-
-        :return: The tgt_val of this MvoRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._tgt_val
-
-    @tgt_val.setter
-    def tgt_val(self, tgt_val):
-        """Sets the tgt_val of this MvoRequest.
-
-
-        :param tgt_val: The tgt_val of this MvoRequest.  # noqa: E501
-        :type: float
-        """
-
-        self._tgt_val = tgt_val
-
-    @property
-    def min_assets(self):
-        """Gets the min_assets of this MvoRequest.  # noqa: E501
-
-
-        :return: The min_assets of this MvoRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._min_assets
-
-    @min_assets.setter
-    def min_assets(self, min_assets):
-        """Sets the min_assets of this MvoRequest.
-
-
-        :param min_assets: The min_assets of this MvoRequest.  # noqa: E501
-        :type: int
-        """
-        if min_assets is None:
-            raise ValueError("Invalid value for `min_assets`, must not be `None`")  # noqa: E501
-        if min_assets is not None and min_assets < 1:  # noqa: E501
-            raise ValueError("Invalid value for `min_assets`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._min_assets = min_assets
+        self.min_assets = min_assets
+        if w_asset_config is not None:
+            self.w_asset_config = w_asset_config
 
     @property
     def sec_types(self):
@@ -218,29 +124,6 @@ class MvoRequest(object):
         self._sec_types = sec_types
 
     @property
-    def w_config(self):
-        """Gets the w_config of this MvoRequest.  # noqa: E501
-
-
-        :return: The w_config of this MvoRequest.  # noqa: E501
-        :rtype: WConfig
-        """
-        return self._w_config
-
-    @w_config.setter
-    def w_config(self, w_config):
-        """Sets the w_config of this MvoRequest.
-
-
-        :param w_config: The w_config of this MvoRequest.  # noqa: E501
-        :type: WConfig
-        """
-        if w_config is None:
-            raise ValueError("Invalid value for `w_config`, must not be `None`")  # noqa: E501
-
-        self._w_config = w_config
-
-    @property
     def end_date(self):
         """Gets the end_date of this MvoRequest.  # noqa: E501
 
@@ -262,6 +145,81 @@ class MvoRequest(object):
         self._end_date = end_date
 
     @property
+    def market_data_source(self):
+        """Gets the market_data_source of this MvoRequest.  # noqa: E501
+
+
+        :return: The market_data_source of this MvoRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._market_data_source
+
+    @market_data_source.setter
+    def market_data_source(self, market_data_source):
+        """Sets the market_data_source of this MvoRequest.
+
+
+        :param market_data_source: The market_data_source of this MvoRequest.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["nucleus", "integration"]  # noqa: E501
+        if market_data_source not in allowed_values:
+            raise ValueError(
+                "Invalid value for `market_data_source` ({0}), must be one of {1}"  # noqa: E501
+                .format(market_data_source, allowed_values)
+            )
+
+        self._market_data_source = market_data_source
+
+    @property
+    def tgt_val(self):
+        """Gets the tgt_val of this MvoRequest.  # noqa: E501
+
+
+        :return: The tgt_val of this MvoRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._tgt_val
+
+    @tgt_val.setter
+    def tgt_val(self, tgt_val):
+        """Sets the tgt_val of this MvoRequest.
+
+
+        :param tgt_val: The tgt_val of this MvoRequest.  # noqa: E501
+        :type: float
+        """
+
+        self._tgt_val = tgt_val
+
+    @property
+    def tgt_type(self):
+        """Gets the tgt_type of this MvoRequest.  # noqa: E501
+
+
+        :return: The tgt_type of this MvoRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._tgt_type
+
+    @tgt_type.setter
+    def tgt_type(self, tgt_type):
+        """Sets the tgt_type of this MvoRequest.
+
+
+        :param tgt_type: The tgt_type of this MvoRequest.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["risk", "return"]  # noqa: E501
+        if tgt_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `tgt_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(tgt_type, allowed_values)
+            )
+
+        self._tgt_type = tgt_type
+
+    @property
     def use_proxy_data(self):
         """Gets the use_proxy_data of this MvoRequest.  # noqa: E501
 
@@ -281,6 +239,29 @@ class MvoRequest(object):
         """
 
         self._use_proxy_data = use_proxy_data
+
+    @property
+    def w_config(self):
+        """Gets the w_config of this MvoRequest.  # noqa: E501
+
+
+        :return: The w_config of this MvoRequest.  # noqa: E501
+        :rtype: WConfig
+        """
+        return self._w_config
+
+    @w_config.setter
+    def w_config(self, w_config):
+        """Sets the w_config of this MvoRequest.
+
+
+        :param w_config: The w_config of this MvoRequest.  # noqa: E501
+        :type: WConfig
+        """
+        if w_config is None:
+            raise ValueError("Invalid value for `w_config`, must not be `None`")  # noqa: E501
+
+        self._w_config = w_config
 
     @property
     def start_date(self):
@@ -327,31 +308,50 @@ class MvoRequest(object):
         self._tickers = tickers
 
     @property
-    def market_data_source(self):
-        """Gets the market_data_source of this MvoRequest.  # noqa: E501
+    def min_assets(self):
+        """Gets the min_assets of this MvoRequest.  # noqa: E501
 
 
-        :return: The market_data_source of this MvoRequest.  # noqa: E501
-        :rtype: str
+        :return: The min_assets of this MvoRequest.  # noqa: E501
+        :rtype: int
         """
-        return self._market_data_source
+        return self._min_assets
 
-    @market_data_source.setter
-    def market_data_source(self, market_data_source):
-        """Sets the market_data_source of this MvoRequest.
+    @min_assets.setter
+    def min_assets(self, min_assets):
+        """Sets the min_assets of this MvoRequest.
 
 
-        :param market_data_source: The market_data_source of this MvoRequest.  # noqa: E501
-        :type: str
+        :param min_assets: The min_assets of this MvoRequest.  # noqa: E501
+        :type: int
         """
-        allowed_values = ["nucleus", "integration"]  # noqa: E501
-        if market_data_source not in allowed_values:
-            raise ValueError(
-                "Invalid value for `market_data_source` ({0}), must be one of {1}"  # noqa: E501
-                .format(market_data_source, allowed_values)
-            )
+        if min_assets is None:
+            raise ValueError("Invalid value for `min_assets`, must not be `None`")  # noqa: E501
+        if min_assets is not None and min_assets < 1:  # noqa: E501
+            raise ValueError("Invalid value for `min_assets`, must be a value greater than or equal to `1`")  # noqa: E501
 
-        self._market_data_source = market_data_source
+        self._min_assets = min_assets
+
+    @property
+    def w_asset_config(self):
+        """Gets the w_asset_config of this MvoRequest.  # noqa: E501
+
+
+        :return: The w_asset_config of this MvoRequest.  # noqa: E501
+        :rtype: object
+        """
+        return self._w_asset_config
+
+    @w_asset_config.setter
+    def w_asset_config(self, w_asset_config):
+        """Sets the w_asset_config of this MvoRequest.
+
+
+        :param w_asset_config: The w_asset_config of this MvoRequest.  # noqa: E501
+        :type: object
+        """
+
+        self._w_asset_config = w_asset_config
 
     def to_dict(self):
         """Returns the model properties as a dict"""

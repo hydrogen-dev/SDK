@@ -13,11 +13,11 @@
 
 package com.hydrogen.proton.api;
 
-import com.hydrogen.proton.model.PortfolioWhatIfRequest;
 import com.hydrogen.proton.ApiException;
 import com.hydrogen.proton.model.BacktestRequest;
 import com.hydrogen.proton.model.EventStudyRequest;
 import com.hydrogen.proton.model.MonteCarloRequest;
+import com.hydrogen.proton.model.PortfolioWhatIfRequest;
 import com.hydrogen.proton.model.SavingsCalculatorRequest;
 import com.hydrogen.proton.model.ScenarioAnalysisRequest;
 import com.hydrogen.proton.model.SensitivityAnalysisRequest;

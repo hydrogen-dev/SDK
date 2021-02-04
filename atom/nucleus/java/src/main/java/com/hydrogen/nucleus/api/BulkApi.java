@@ -21,15 +21,15 @@ import com.hydrogen.nucleus.Configuration;
 import com.hydrogen.nucleus.Pair;
 import com.hydrogen.nucleus.ProgressRequestBody;
 import com.hydrogen.nucleus.ProgressResponseBody;
-import com.hydrogen.nucleus.model.BulkTransaction;
-import com.hydrogen.nucleus.model.BulkTransactionVO;
-import com.hydrogen.nucleus.model.JsonNode;
 
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
 
+import com.hydrogen.nucleus.model.BulkTransaction;
+import com.hydrogen.nucleus.model.BulkTransactionVO;
+import com.hydrogen.nucleus.model.JsonNode;
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -453,7 +453,7 @@ public class BulkApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateBulkUsingPutCall(JsonNode data, String entityUri, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateBulkUsingPutCall(Object data, String entityUri, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = data;
 
         // create path and map variables
@@ -496,7 +496,7 @@ public class BulkApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateBulkUsingPutValidateBeforeCall(JsonNode data, String entityUri, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateBulkUsingPutValidateBeforeCall(Object data, String entityUri, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'data' is set
         if (data == null) {
@@ -522,7 +522,7 @@ public class BulkApi {
      * @return BulkTransaction
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public BulkTransaction updateBulkUsingPut(JsonNode data, String entityUri) throws ApiException {
+    public BulkTransaction updateBulkUsingPut(Object data, String entityUri) throws ApiException {
         ApiResponse<BulkTransaction> resp = updateBulkUsingPutWithHttpInfo(data, entityUri);
         return resp.getData();
     }
@@ -535,7 +535,7 @@ public class BulkApi {
      * @return ApiResponse&lt;BulkTransaction&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<BulkTransaction> updateBulkUsingPutWithHttpInfo(JsonNode data, String entityUri) throws ApiException {
+    public ApiResponse<BulkTransaction> updateBulkUsingPutWithHttpInfo(Object data, String entityUri) throws ApiException {
         com.squareup.okhttp.Call call = updateBulkUsingPutValidateBeforeCall(data, entityUri, null, null);
         Type localVarReturnType = new TypeToken<BulkTransaction>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -550,7 +550,7 @@ public class BulkApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateBulkUsingPutAsync(JsonNode data, String entityUri, final ApiCallback<BulkTransaction> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateBulkUsingPutAsync(Object data, String entityUri, final ApiCallback<BulkTransaction> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

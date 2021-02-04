@@ -13,14 +13,13 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.PageReasonCode;
 import com.hydrogen.nucleus.model.PageStage;
 import com.hydrogen.nucleus.model.PageTransactionCode;
+import com.hydrogen.nucleus.model.ReasonCode;
 import com.hydrogen.nucleus.model.Stage;
 import com.hydrogen.nucleus.model.TransactionCode;
-import com.hydrogen.nucleus.ApiException;
-import com.hydrogen.nucleus.model.ReasonCode;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -248,7 +247,7 @@ public class UtilsApiTest {
      */
     @Test
     public void updateReasonCodeUsingPutTest() throws ApiException {
-        ReasonCode reasonCode = null;
+        Object reasonCode = null;
         UUID reasonCodeId = null;
         ReasonCode response = api.updateReasonCodeUsingPut(reasonCode, reasonCodeId);
 
@@ -265,7 +264,7 @@ public class UtilsApiTest {
      */
     @Test
     public void updateStageUsingPutTest() throws ApiException {
-        Stage stage = null;
+        Object stage = null;
         UUID stageId = null;
         Stage response = api.updateStageUsingPut(stage, stageId);
 
@@ -282,7 +281,7 @@ public class UtilsApiTest {
      */
     @Test
     public void updateTransactionCodeUsingPutTest() throws ApiException {
-        TransactionCode transactionCode = null;
+        Object transactionCode = null;
         UUID transactionCodeId = null;
         TransactionCode response = api.updateTransactionCodeUsingPut(transactionCode, transactionCodeId);
 

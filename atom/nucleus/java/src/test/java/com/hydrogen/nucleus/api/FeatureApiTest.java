@@ -13,11 +13,11 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.Feature;
 import com.hydrogen.nucleus.model.FeatureTrack;
 import com.hydrogen.nucleus.model.PageFeature;
 import com.hydrogen.nucleus.model.PageFeatureTrack;
-import com.hydrogen.nucleus.ApiException;
 
 import java.util.UUID;
 import org.junit.Test;
@@ -178,7 +178,7 @@ public class FeatureApiTest {
      */
     @Test
     public void updateFeatureTrackUsingPutTest() throws ApiException {
-        FeatureTrack featureTrack = null;
+        Object featureTrack = null;
         UUID featureTrackId = null;
         FeatureTrack response = api.updateFeatureTrackUsingPut(featureTrack, featureTrackId);
 
@@ -195,7 +195,7 @@ public class FeatureApiTest {
      */
     @Test
     public void updateFeatureUsingPutTest() throws ApiException {
-        Feature feature = null;
+        Object feature = null;
         UUID featureId = null;
         Feature response = api.updateFeatureUsingPut(feature, featureId);
 

@@ -76,10 +76,10 @@ apiInstance.getAccountPerformanceUsingGet(accountId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **String**| Account Id -/account | 
+ **accountId** | [**String**](.md)| Account Id -/account | 
  **activePremiumPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
  **annualizedReturnPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
- **benchmarkId** | **String**| Client Benchmark or Tenant Benchmark id -/benchmark | [optional] 
+ **benchmarkId** | [**String**](.md)| Client Benchmark or Tenant Benchmark id -/benchmark | [optional] 
  **endDate** | **Date**| end date | [optional] 
  **histFactor** | **Number**| Histogram factor- (statId: 39, default: 5) | [optional] 
  **marDownSideDeviation** | **Number**| minimum acceptable return for downside deviation - (statId: 58, default: 0)  | [optional] 
@@ -176,10 +176,10 @@ apiInstance.getAllocationPerformanceUsingGet(allocationId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocationId** | **String**| Allocation Id -/allocation | 
+ **allocationId** | [**String**](.md)| Allocation Id -/allocation | 
  **activePremiumPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
  **annualizedReturnPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
- **benchmarkId** | **String**| Tenant Benchmark Id -/benchmark | [optional] 
+ **benchmarkId** | [**String**](.md)| Tenant Benchmark Id -/benchmark | [optional] 
  **endDate** | **Date**| end date | [optional] 
  **histFactor** | **Number**| Histogram factor- (statId: 39, default: 5) | [optional] 
  **isCurrentWeight** | **Boolean**| is_current_weight | [optional] [default to true]
@@ -276,10 +276,10 @@ apiInstance.getBenchmarkPerformanceUsingGet(benchmarkId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **benchmarkId** | **String**| Benchmark Id - /benchmark | 
+ **benchmarkId** | [**String**](.md)| Benchmark Id - /benchmark | 
  **activePremiumPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
  **annualizedReturnPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
- **comparisonBenchmarkId** | **String**| comparison_benchmark_id | [optional] 
+ **comparisonBenchmarkId** | [**String**](.md)| comparison_benchmark_id | [optional] 
  **endDate** | **Date**| end date | [optional] 
  **histFactor** | **Number**| Histogram factor- (statId: 39, default: 5) | [optional] 
  **marDownSideDeviation** | **Number**| minimum acceptable return for downside deviation - (statId: 58, default: 0)  | [optional] 
@@ -375,10 +375,10 @@ apiInstance.getClientPerformanceUsingGet(clientId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clientId** | **String**| Client Id -/client | 
+ **clientId** | [**String**](.md)| Client Id -/client | 
  **activePremiumPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
  **annualizedReturnPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
- **benchmarkId** | **String**| Client Benchmark or Tenant Benchmark id -/benchmark | [optional] 
+ **benchmarkId** | [**String**](.md)| Client Benchmark or Tenant Benchmark id -/benchmark | [optional] 
  **endDate** | **Date**| end date | [optional] 
  **histFactor** | **Number**| Histogram factor- (statId: 39, default: 5) | [optional] 
  **marDownSideDeviation** | **Number**| minimum acceptable return for downside deviation - (statId: 58, default: 0)  | [optional] 
@@ -477,11 +477,11 @@ apiInstance.getGoalPerformanceUsingGet(clientId, goalId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clientId** | **String**| client_id | 
- **goalId** | **String**| Goal Id - /account | 
+ **clientId** | [**String**](.md)| client_id | 
+ **goalId** | [**String**](.md)| Goal Id - /account | 
  **activePremiumPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
  **annualizedReturnPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
- **benchmarkId** | **String**| Client Benchmark or Tenant Benchmark id -/benchmark | [optional] 
+ **benchmarkId** | [**String**](.md)| Client Benchmark or Tenant Benchmark id -/benchmark | [optional] 
  **endDate** | **Date**| end date | [optional] [default to null]
  **histFactor** | **Number**| Histogram factor- (statId: 39, default: 5) | [optional] 
  **marDownSideDeviation** | **Number**| minimum acceptable return for downside deviation - (statId: 58, default: 0)  | [optional] 
@@ -578,10 +578,10 @@ apiInstance.getHouseholdClientPerformanceUsingGet(householdId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **householdId** | **String**| Household Id -/household | 
+ **householdId** | [**String**](.md)| Household Id -/household | 
  **activePremiumPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
  **annualizedReturnPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
- **benchmarkId** | **String**| Client Benchmark or Tenant Benchmark id -/benchmark | [optional] 
+ **benchmarkId** | [**String**](.md)| Client Benchmark or Tenant Benchmark id -/benchmark | [optional] 
  **endDate** | **Date**| end date | [optional] 
  **histFactor** | **Number**| Histogram factor- (statId: 39, default: 5) | [optional] 
  **marDownSideDeviation** | **Number**| minimum acceptable return for downside deviation - (statId: 58, default: 0)  | [optional] 
@@ -677,10 +677,10 @@ apiInstance.getModelPerformanceUsingGet(modelId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **modelId** | **String**| Model Id - /model | 
+ **modelId** | [**String**](.md)| Model Id - /model | 
  **activePremiumPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
  **annualizedReturnPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
- **benchmarkId** | **String**| Tenant Benchmark Id -/benchmark | [optional] 
+ **benchmarkId** | [**String**](.md)| Tenant Benchmark Id -/benchmark | [optional] 
  **endDate** | **Date**| end date | [optional] 
  **histFactor** | **Number**| Histogram factor- (statId: 39, default: 5) | [optional] 
  **marDownSideDeviation** | **Number**| minimum acceptable return for downside deviation - (statId: 58, default: 0)  | [optional] 
@@ -776,10 +776,10 @@ apiInstance.getPortfolioPerformanceUsingGet(portfolioId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **portfolioId** | **String**| Portfolio Id -/portoflio | 
+ **portfolioId** | [**String**](.md)| Portfolio Id -/portoflio | 
  **activePremiumPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
  **annualizedReturnPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
- **benchmarkId** | **String**| Benchmark Id - benchmarkId or clientBenchmarkId -/benchmark | [optional] 
+ **benchmarkId** | [**String**](.md)| Benchmark Id - benchmarkId or clientBenchmarkId -/benchmark | [optional] 
  **endDate** | **Date**| end date | [optional] 
  **histFactor** | **Number**| Histogram factor- (statId: 39, default: 5) | [optional] 
  **marDownSideDeviation** | **Number**| minimum acceptable return for downside deviation - (statId: 58, default: 0)  | [optional] 
@@ -877,11 +877,11 @@ apiInstance.getSecurityPerformanceUsingGet(securityId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **securityId** | **String**| security_id | 
+ **securityId** | [**String**](.md)| security_id | 
  **activePremiumPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
  **annualizedReturnPeriod** | **String**| Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: &#39;D&#39;) | [optional] 
  **benchTicker** | **String**| Bench Ticker for security - (default: ^GSPC)  | [optional] 
- **benchmarkId** | **String**| benchmark_id | [optional] 
+ **benchmarkId** | [**String**](.md)| benchmark_id | [optional] 
  **endDate** | **Date**| Ending parameter for time window | [optional] 
  **histFactor** | **Number**| Histogram factor- (statId: 39, default: 5) | [optional] 
  **marDownSideDeviation** | **Number**| minimum acceptable return for downside deviation - (statId: 58, default: 0)  | [optional] 

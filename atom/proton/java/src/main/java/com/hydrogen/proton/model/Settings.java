@@ -20,18 +20,29 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
  * Settings
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class Settings {
+  @SerializedName("drift_rebal")
+  private Boolean driftRebal = null;
+
+  @SerializedName("downside")
+  private Boolean downside = null;
+
+  @SerializedName("default_drift_factor")
+  private Float defaultDriftFactor = null;
+
+  @SerializedName("period_rebal")
+  private Boolean periodRebal = null;
+
   /**
    * Gets or Sets rebalancePeriod
    */
@@ -144,52 +155,22 @@ public class Settings {
   @SerializedName("tax_efficiency_id")
   private TaxEfficiencyIdEnum taxEfficiencyId = null;
 
-  @SerializedName("downside")
-  private Boolean downside = null;
-
-  @SerializedName("default_drift_factor")
-  private Float defaultDriftFactor = null;
-
-  @SerializedName("drift_rebal")
-  private Boolean driftRebal = null;
-
-  @SerializedName("period_rebal")
-  private Boolean periodRebal = null;
-
-  public Settings rebalancePeriod(RebalancePeriodEnum rebalancePeriod) {
-    this.rebalancePeriod = rebalancePeriod;
+  public Settings driftRebal(Boolean driftRebal) {
+    this.driftRebal = driftRebal;
     return this;
   }
 
    /**
-   * Get rebalancePeriod
-   * @return rebalancePeriod
+   * Get driftRebal
+   * @return driftRebal
   **/
   @ApiModelProperty(value = "")
-  public RebalancePeriodEnum getRebalancePeriod() {
-    return rebalancePeriod;
+  public Boolean isDriftRebal() {
+    return driftRebal;
   }
 
-  public void setRebalancePeriod(RebalancePeriodEnum rebalancePeriod) {
-    this.rebalancePeriod = rebalancePeriod;
-  }
-
-  public Settings taxEfficiencyId(TaxEfficiencyIdEnum taxEfficiencyId) {
-    this.taxEfficiencyId = taxEfficiencyId;
-    return this;
-  }
-
-   /**
-   * Get taxEfficiencyId
-   * @return taxEfficiencyId
-  **/
-  @ApiModelProperty(value = "")
-  public TaxEfficiencyIdEnum getTaxEfficiencyId() {
-    return taxEfficiencyId;
-  }
-
-  public void setTaxEfficiencyId(TaxEfficiencyIdEnum taxEfficiencyId) {
-    this.taxEfficiencyId = taxEfficiencyId;
+  public void setDriftRebal(Boolean driftRebal) {
+    this.driftRebal = driftRebal;
   }
 
   public Settings downside(Boolean downside) {
@@ -229,24 +210,6 @@ public class Settings {
     this.defaultDriftFactor = defaultDriftFactor;
   }
 
-  public Settings driftRebal(Boolean driftRebal) {
-    this.driftRebal = driftRebal;
-    return this;
-  }
-
-   /**
-   * Get driftRebal
-   * @return driftRebal
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isDriftRebal() {
-    return driftRebal;
-  }
-
-  public void setDriftRebal(Boolean driftRebal) {
-    this.driftRebal = driftRebal;
-  }
-
   public Settings periodRebal(Boolean periodRebal) {
     this.periodRebal = periodRebal;
     return this;
@@ -265,6 +228,42 @@ public class Settings {
     this.periodRebal = periodRebal;
   }
 
+  public Settings rebalancePeriod(RebalancePeriodEnum rebalancePeriod) {
+    this.rebalancePeriod = rebalancePeriod;
+    return this;
+  }
+
+   /**
+   * Get rebalancePeriod
+   * @return rebalancePeriod
+  **/
+  @ApiModelProperty(value = "")
+  public RebalancePeriodEnum getRebalancePeriod() {
+    return rebalancePeriod;
+  }
+
+  public void setRebalancePeriod(RebalancePeriodEnum rebalancePeriod) {
+    this.rebalancePeriod = rebalancePeriod;
+  }
+
+  public Settings taxEfficiencyId(TaxEfficiencyIdEnum taxEfficiencyId) {
+    this.taxEfficiencyId = taxEfficiencyId;
+    return this;
+  }
+
+   /**
+   * Get taxEfficiencyId
+   * @return taxEfficiencyId
+  **/
+  @ApiModelProperty(value = "")
+  public TaxEfficiencyIdEnum getTaxEfficiencyId() {
+    return taxEfficiencyId;
+  }
+
+  public void setTaxEfficiencyId(TaxEfficiencyIdEnum taxEfficiencyId) {
+    this.taxEfficiencyId = taxEfficiencyId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -275,17 +274,17 @@ public class Settings {
       return false;
     }
     Settings settings = (Settings) o;
-    return Objects.equals(this.rebalancePeriod, settings.rebalancePeriod) &&
-        Objects.equals(this.taxEfficiencyId, settings.taxEfficiencyId) &&
+    return Objects.equals(this.driftRebal, settings.driftRebal) &&
         Objects.equals(this.downside, settings.downside) &&
         Objects.equals(this.defaultDriftFactor, settings.defaultDriftFactor) &&
-        Objects.equals(this.driftRebal, settings.driftRebal) &&
-        Objects.equals(this.periodRebal, settings.periodRebal);
+        Objects.equals(this.periodRebal, settings.periodRebal) &&
+        Objects.equals(this.rebalancePeriod, settings.rebalancePeriod) &&
+        Objects.equals(this.taxEfficiencyId, settings.taxEfficiencyId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(rebalancePeriod, taxEfficiencyId, downside, defaultDriftFactor, driftRebal, periodRebal);
+    return Objects.hash(driftRebal, downside, defaultDriftFactor, periodRebal, rebalancePeriod, taxEfficiencyId);
   }
 
 
@@ -294,12 +293,12 @@ public class Settings {
     StringBuilder sb = new StringBuilder();
     sb.append("class Settings {\n");
     
-    sb.append("    rebalancePeriod: ").append(toIndentedString(rebalancePeriod)).append("\n");
-    sb.append("    taxEfficiencyId: ").append(toIndentedString(taxEfficiencyId)).append("\n");
+    sb.append("    driftRebal: ").append(toIndentedString(driftRebal)).append("\n");
     sb.append("    downside: ").append(toIndentedString(downside)).append("\n");
     sb.append("    defaultDriftFactor: ").append(toIndentedString(defaultDriftFactor)).append("\n");
-    sb.append("    driftRebal: ").append(toIndentedString(driftRebal)).append("\n");
     sb.append("    periodRebal: ").append(toIndentedString(periodRebal)).append("\n");
+    sb.append("    rebalancePeriod: ").append(toIndentedString(rebalancePeriod)).append("\n");
+    sb.append("    taxEfficiencyId: ").append(toIndentedString(taxEfficiencyId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

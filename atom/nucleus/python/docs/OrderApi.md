@@ -65,7 +65,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -132,7 +131,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -199,7 +197,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -264,7 +261,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -331,7 +327,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -398,7 +393,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -465,7 +459,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -532,7 +525,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -597,7 +589,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -662,7 +653,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -727,7 +717,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -792,7 +781,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -859,7 +847,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -924,7 +911,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -991,7 +977,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -1058,7 +1043,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -1125,7 +1109,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -1189,7 +1172,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -1253,7 +1235,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -1317,7 +1298,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -1390,7 +1370,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -1463,7 +1442,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -1536,7 +1514,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -1601,7 +1578,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -1674,7 +1650,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -1739,7 +1714,6 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
@@ -1804,11 +1778,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
-order_status = nucleus_api.OrderStatus() # OrderStatus | order_status
+order_status = NULL # object | order_status
 order_status_id = 'order_status_id_example' # str | UUID order_status_id
 
 try:
@@ -1823,7 +1796,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_status** | [**OrderStatus**](OrderStatus.md)| order_status | 
+ **order_status** | **object**| order_status | 
  **order_status_id** | [**str**](.md)| UUID order_status_id | 
 
 ### Return type
@@ -1871,11 +1844,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
-order_track = nucleus_api.OrderTrack() # OrderTrack | order_track
+order_track = NULL # object | order_track
 order_track_id = 'order_track_id_example' # str | UUID order_track_id
 
 try:
@@ -1890,7 +1862,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_track** | [**OrderTrack**](OrderTrack.md)| order_track | 
+ **order_track** | **object**| order_track | 
  **order_track_id** | [**str**](.md)| UUID order_track_id | 
 
 ### Return type
@@ -1938,11 +1910,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
 
 # create an instance of the API class
 api_instance = nucleus_api.OrderApi(nucleus_api.ApiClient(configuration))
-order = nucleus_api.Order() # Order | order
+order = NULL # object | order
 order_id = 'order_id_example' # str | UUID order_id
 
 try:
@@ -1957,7 +1928,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order** | [**Order**](Order.md)| order | 
+ **order** | **object**| order | 
  **order_id** | [**str**](.md)| UUID order_id | 
 
 ### Return type

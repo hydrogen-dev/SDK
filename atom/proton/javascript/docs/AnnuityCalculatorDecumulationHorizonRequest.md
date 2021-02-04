@@ -3,18 +3,18 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**inflationRate** | **Number** |  | [optional] [default to 0.0]
-**annuityFrequencyInterval** | **String** |  | [optional] [default to 'year']
-**depositSchedule** | [**AnnuityDepositSchedule**](AnnuityDepositSchedule.md) |  | [optional] 
-**portfolioReturn** | **Number** |  | 
-**createLog** | **Boolean** |  | [optional] [default to false]
+**annuityAmount** | **Number** |  | 
 **aggregationAccountIds** | **[String]** |  | [optional] 
-**initialBalance** | **Number** |  | [optional] [default to 0.0]
-**decumulationHorizon** | **Number** |  | [optional] 
 **taxRate** | **Number** |  | [optional] [default to 0.0]
 **accountIds** | **[String]** |  | [optional] 
-**annuityAmount** | **Number** |  | 
+**initialBalance** | **Number** |  | [optional] [default to 0.0]
+**createLog** | **Boolean** |  | [optional] [default to false]
+**inflationRate** | **Number** |  | [optional] [default to 0.0]
+**decumulationHorizon** | **Number** |  | [optional] 
 **accumulationHorizon** | **Number** |  | 
+**annuityFrequencyInterval** | **String** |  | [optional] [default to 'year']
+**portfolioReturn** | **Number** |  | 
+**depositSchedule** | [**AnnuityDepositSchedule**](AnnuityDepositSchedule.md) |  | [optional] 
 
 
 <a name="AnnuityFrequencyIntervalEnum"></a>

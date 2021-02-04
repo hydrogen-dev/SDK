@@ -29,7 +29,6 @@ IntegrationApi.configure do |config|
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
-
 api_instance = IntegrationApi::MarketDataApi.new
 
 history_request = IntegrationApi::MdHistoryRequestCO.new # MdHistoryRequestCO | historyRequest
@@ -85,7 +84,6 @@ IntegrationApi.configure do |config|
 # Creating a token using client token
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = IntegrationApi::MarketDataApi.new
 

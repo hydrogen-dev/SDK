@@ -32,62 +32,94 @@ class KycVendorRequestDataVO(object):
     """
     swagger_types = {
         'address': 'list[ClientAddress]',
+        'business_addresses': 'list[BusinessAddress]',
         'country_of_residence': 'str',
         'date_of_birth': 'datetime',
-        'electron_document_id': 'str',
+        'dba_name': 'str',
         'email': 'str',
         'first_name': 'str',
         'gender': 'str',
         'identification_number': 'str',
         'identification_number_type': 'str',
+        'incorporation_date': 'date',
+        'incorporation_state': 'str',
+        'is_public': 'bool',
         'last_name': 'str',
+        'legal_name': 'str',
+        'legal_structure': 'str',
         'metadata': 'object',
         'middle_name': 'str',
-        'phone_number': 'str'
+        'nucleus_document_id': 'str',
+        'owners': 'list[Ownership]',
+        'phone_number': 'str',
+        'ticker': 'str',
+        'website': 'str'
     }
 
     attribute_map = {
         'address': 'address',
+        'business_addresses': 'business_addresses',
         'country_of_residence': 'country_of_residence',
         'date_of_birth': 'date_of_birth',
-        'electron_document_id': 'electron_document_id',
+        'dba_name': 'dba_name',
         'email': 'email',
         'first_name': 'first_name',
         'gender': 'gender',
         'identification_number': 'identification_number',
         'identification_number_type': 'identification_number_type',
+        'incorporation_date': 'incorporation_date',
+        'incorporation_state': 'incorporation_state',
+        'is_public': 'is_public',
         'last_name': 'last_name',
+        'legal_name': 'legal_name',
+        'legal_structure': 'legal_structure',
         'metadata': 'metadata',
         'middle_name': 'middle_name',
-        'phone_number': 'phone_number'
+        'nucleus_document_id': 'nucleus_document_id',
+        'owners': 'owners',
+        'phone_number': 'phone_number',
+        'ticker': 'ticker',
+        'website': 'website'
     }
 
-    def __init__(self, address=None, country_of_residence=None, date_of_birth=None, electron_document_id=None, email=None, first_name=None, gender=None, identification_number=None, identification_number_type=None, last_name=None, metadata=None, middle_name=None, phone_number=None):  # noqa: E501
+    def __init__(self, address=None, business_addresses=None, country_of_residence=None, date_of_birth=None, dba_name=None, email=None, first_name=None, gender=None, identification_number=None, identification_number_type=None, incorporation_date=None, incorporation_state=None, is_public=None, last_name=None, legal_name=None, legal_structure=None, metadata=None, middle_name=None, nucleus_document_id=None, owners=None, phone_number=None, ticker=None, website=None):  # noqa: E501
         """KycVendorRequestDataVO - a model defined in Swagger"""  # noqa: E501
 
         self._address = None
+        self._business_addresses = None
         self._country_of_residence = None
         self._date_of_birth = None
-        self._electron_document_id = None
+        self._dba_name = None
         self._email = None
         self._first_name = None
         self._gender = None
         self._identification_number = None
         self._identification_number_type = None
+        self._incorporation_date = None
+        self._incorporation_state = None
+        self._is_public = None
         self._last_name = None
+        self._legal_name = None
+        self._legal_structure = None
         self._metadata = None
         self._middle_name = None
+        self._nucleus_document_id = None
+        self._owners = None
         self._phone_number = None
+        self._ticker = None
+        self._website = None
         self.discriminator = None
 
         if address is not None:
             self.address = address
+        if business_addresses is not None:
+            self.business_addresses = business_addresses
         if country_of_residence is not None:
             self.country_of_residence = country_of_residence
         if date_of_birth is not None:
             self.date_of_birth = date_of_birth
-        if electron_document_id is not None:
-            self.electron_document_id = electron_document_id
+        if dba_name is not None:
+            self.dba_name = dba_name
         if email is not None:
             self.email = email
         if first_name is not None:
@@ -98,14 +130,32 @@ class KycVendorRequestDataVO(object):
             self.identification_number = identification_number
         if identification_number_type is not None:
             self.identification_number_type = identification_number_type
+        if incorporation_date is not None:
+            self.incorporation_date = incorporation_date
+        if incorporation_state is not None:
+            self.incorporation_state = incorporation_state
+        if is_public is not None:
+            self.is_public = is_public
         if last_name is not None:
             self.last_name = last_name
+        if legal_name is not None:
+            self.legal_name = legal_name
+        if legal_structure is not None:
+            self.legal_structure = legal_structure
         if metadata is not None:
             self.metadata = metadata
         if middle_name is not None:
             self.middle_name = middle_name
+        if nucleus_document_id is not None:
+            self.nucleus_document_id = nucleus_document_id
+        if owners is not None:
+            self.owners = owners
         if phone_number is not None:
             self.phone_number = phone_number
+        if ticker is not None:
+            self.ticker = ticker
+        if website is not None:
+            self.website = website
 
     @property
     def address(self):
@@ -127,6 +177,27 @@ class KycVendorRequestDataVO(object):
         """
 
         self._address = address
+
+    @property
+    def business_addresses(self):
+        """Gets the business_addresses of this KycVendorRequestDataVO.  # noqa: E501
+
+
+        :return: The business_addresses of this KycVendorRequestDataVO.  # noqa: E501
+        :rtype: list[BusinessAddress]
+        """
+        return self._business_addresses
+
+    @business_addresses.setter
+    def business_addresses(self, business_addresses):
+        """Sets the business_addresses of this KycVendorRequestDataVO.
+
+
+        :param business_addresses: The business_addresses of this KycVendorRequestDataVO.  # noqa: E501
+        :type: list[BusinessAddress]
+        """
+
+        self._business_addresses = business_addresses
 
     @property
     def country_of_residence(self):
@@ -171,25 +242,25 @@ class KycVendorRequestDataVO(object):
         self._date_of_birth = date_of_birth
 
     @property
-    def electron_document_id(self):
-        """Gets the electron_document_id of this KycVendorRequestDataVO.  # noqa: E501
+    def dba_name(self):
+        """Gets the dba_name of this KycVendorRequestDataVO.  # noqa: E501
 
 
-        :return: The electron_document_id of this KycVendorRequestDataVO.  # noqa: E501
+        :return: The dba_name of this KycVendorRequestDataVO.  # noqa: E501
         :rtype: str
         """
-        return self._electron_document_id
+        return self._dba_name
 
-    @electron_document_id.setter
-    def electron_document_id(self, electron_document_id):
-        """Sets the electron_document_id of this KycVendorRequestDataVO.
+    @dba_name.setter
+    def dba_name(self, dba_name):
+        """Sets the dba_name of this KycVendorRequestDataVO.
 
 
-        :param electron_document_id: The electron_document_id of this KycVendorRequestDataVO.  # noqa: E501
+        :param dba_name: The dba_name of this KycVendorRequestDataVO.  # noqa: E501
         :type: str
         """
 
-        self._electron_document_id = electron_document_id
+        self._dba_name = dba_name
 
     @property
     def email(self):
@@ -297,6 +368,69 @@ class KycVendorRequestDataVO(object):
         self._identification_number_type = identification_number_type
 
     @property
+    def incorporation_date(self):
+        """Gets the incorporation_date of this KycVendorRequestDataVO.  # noqa: E501
+
+
+        :return: The incorporation_date of this KycVendorRequestDataVO.  # noqa: E501
+        :rtype: date
+        """
+        return self._incorporation_date
+
+    @incorporation_date.setter
+    def incorporation_date(self, incorporation_date):
+        """Sets the incorporation_date of this KycVendorRequestDataVO.
+
+
+        :param incorporation_date: The incorporation_date of this KycVendorRequestDataVO.  # noqa: E501
+        :type: date
+        """
+
+        self._incorporation_date = incorporation_date
+
+    @property
+    def incorporation_state(self):
+        """Gets the incorporation_state of this KycVendorRequestDataVO.  # noqa: E501
+
+
+        :return: The incorporation_state of this KycVendorRequestDataVO.  # noqa: E501
+        :rtype: str
+        """
+        return self._incorporation_state
+
+    @incorporation_state.setter
+    def incorporation_state(self, incorporation_state):
+        """Sets the incorporation_state of this KycVendorRequestDataVO.
+
+
+        :param incorporation_state: The incorporation_state of this KycVendorRequestDataVO.  # noqa: E501
+        :type: str
+        """
+
+        self._incorporation_state = incorporation_state
+
+    @property
+    def is_public(self):
+        """Gets the is_public of this KycVendorRequestDataVO.  # noqa: E501
+
+
+        :return: The is_public of this KycVendorRequestDataVO.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_public
+
+    @is_public.setter
+    def is_public(self, is_public):
+        """Sets the is_public of this KycVendorRequestDataVO.
+
+
+        :param is_public: The is_public of this KycVendorRequestDataVO.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_public = is_public
+
+    @property
     def last_name(self):
         """Gets the last_name of this KycVendorRequestDataVO.  # noqa: E501
 
@@ -316,6 +450,48 @@ class KycVendorRequestDataVO(object):
         """
 
         self._last_name = last_name
+
+    @property
+    def legal_name(self):
+        """Gets the legal_name of this KycVendorRequestDataVO.  # noqa: E501
+
+
+        :return: The legal_name of this KycVendorRequestDataVO.  # noqa: E501
+        :rtype: str
+        """
+        return self._legal_name
+
+    @legal_name.setter
+    def legal_name(self, legal_name):
+        """Sets the legal_name of this KycVendorRequestDataVO.
+
+
+        :param legal_name: The legal_name of this KycVendorRequestDataVO.  # noqa: E501
+        :type: str
+        """
+
+        self._legal_name = legal_name
+
+    @property
+    def legal_structure(self):
+        """Gets the legal_structure of this KycVendorRequestDataVO.  # noqa: E501
+
+
+        :return: The legal_structure of this KycVendorRequestDataVO.  # noqa: E501
+        :rtype: str
+        """
+        return self._legal_structure
+
+    @legal_structure.setter
+    def legal_structure(self, legal_structure):
+        """Sets the legal_structure of this KycVendorRequestDataVO.
+
+
+        :param legal_structure: The legal_structure of this KycVendorRequestDataVO.  # noqa: E501
+        :type: str
+        """
+
+        self._legal_structure = legal_structure
 
     @property
     def metadata(self):
@@ -360,6 +536,48 @@ class KycVendorRequestDataVO(object):
         self._middle_name = middle_name
 
     @property
+    def nucleus_document_id(self):
+        """Gets the nucleus_document_id of this KycVendorRequestDataVO.  # noqa: E501
+
+
+        :return: The nucleus_document_id of this KycVendorRequestDataVO.  # noqa: E501
+        :rtype: str
+        """
+        return self._nucleus_document_id
+
+    @nucleus_document_id.setter
+    def nucleus_document_id(self, nucleus_document_id):
+        """Sets the nucleus_document_id of this KycVendorRequestDataVO.
+
+
+        :param nucleus_document_id: The nucleus_document_id of this KycVendorRequestDataVO.  # noqa: E501
+        :type: str
+        """
+
+        self._nucleus_document_id = nucleus_document_id
+
+    @property
+    def owners(self):
+        """Gets the owners of this KycVendorRequestDataVO.  # noqa: E501
+
+
+        :return: The owners of this KycVendorRequestDataVO.  # noqa: E501
+        :rtype: list[Ownership]
+        """
+        return self._owners
+
+    @owners.setter
+    def owners(self, owners):
+        """Sets the owners of this KycVendorRequestDataVO.
+
+
+        :param owners: The owners of this KycVendorRequestDataVO.  # noqa: E501
+        :type: list[Ownership]
+        """
+
+        self._owners = owners
+
+    @property
     def phone_number(self):
         """Gets the phone_number of this KycVendorRequestDataVO.  # noqa: E501
 
@@ -379,6 +597,48 @@ class KycVendorRequestDataVO(object):
         """
 
         self._phone_number = phone_number
+
+    @property
+    def ticker(self):
+        """Gets the ticker of this KycVendorRequestDataVO.  # noqa: E501
+
+
+        :return: The ticker of this KycVendorRequestDataVO.  # noqa: E501
+        :rtype: str
+        """
+        return self._ticker
+
+    @ticker.setter
+    def ticker(self, ticker):
+        """Sets the ticker of this KycVendorRequestDataVO.
+
+
+        :param ticker: The ticker of this KycVendorRequestDataVO.  # noqa: E501
+        :type: str
+        """
+
+        self._ticker = ticker
+
+    @property
+    def website(self):
+        """Gets the website of this KycVendorRequestDataVO.  # noqa: E501
+
+
+        :return: The website of this KycVendorRequestDataVO.  # noqa: E501
+        :rtype: str
+        """
+        return self._website
+
+    @website.setter
+    def website(self, website):
+        """Sets the website of this KycVendorRequestDataVO.
+
+
+        :param website: The website of this KycVendorRequestDataVO.  # noqa: E501
+        :type: str
+        """
+
+        self._website = website
 
     def to_dict(self):
         """Returns the model properties as a dict"""

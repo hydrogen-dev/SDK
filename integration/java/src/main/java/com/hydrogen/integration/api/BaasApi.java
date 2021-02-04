@@ -13,15 +13,8 @@
 
 package com.hydrogen.integration.api;
 
-import com.hydrogen.integration.ApiClient;
-import com.hydrogen.integration.model.BaasAccountCO;
-import com.hydrogen.integration.model.BaasAccountVO;
-import com.hydrogen.integration.model.BaasBalanceVO;
-import com.hydrogen.integration.model.BaasClientCO;
-import com.hydrogen.integration.model.BaasStatementsVO;
-import com.hydrogen.integration.model.BaasSubAccountCO;
-import com.hydrogen.integration.model.BaasTransactionsVO;
 import com.hydrogen.integration.ApiCallback;
+import com.hydrogen.integration.ApiClient;
 import com.hydrogen.integration.ApiException;
 import com.hydrogen.integration.ApiResponse;
 import com.hydrogen.integration.Configuration;
@@ -34,10 +27,21 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.hydrogen.integration.model.BaasAccountCO;
+import com.hydrogen.integration.model.BaasAccountVO;
+import com.hydrogen.integration.model.BaasBalanceVO;
+import com.hydrogen.integration.model.BaasBusinessVO;
 import com.hydrogen.integration.model.BaasClientVO;
+import com.hydrogen.integration.model.BaasStatementsVO;
+import com.hydrogen.integration.model.BaasSubAccountCO;
 import com.hydrogen.integration.model.BaasSubAccountVO;
+import com.hydrogen.integration.model.BaasTransactionsVO;
+import com.hydrogen.integration.model.CreateBaasBusinessCO;
+import com.hydrogen.integration.model.CreateBaasClientCO;
 import org.threeten.bp.LocalDate;
 import java.util.UUID;
+import com.hydrogen.integration.model.UpdateBaasBusinessCO;
+import com.hydrogen.integration.model.UpdateBaasClientCO;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -187,6 +191,128 @@ public class BaasApi {
         return call;
     }
     /**
+     * Build call for createBaasBusinessUsingPost
+     * @param baasBusinessCO baasBusinessCO (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call createBaasBusinessUsingPostCall(CreateBaasBusinessCO baasBusinessCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = baasBusinessCO;
+
+        // create path and map variables
+        String localVarPath = "/baas/business";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call createBaasBusinessUsingPostValidateBeforeCall(CreateBaasBusinessCO baasBusinessCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'baasBusinessCO' is set
+        if (baasBusinessCO == null) {
+            throw new ApiException("Missing the required parameter 'baasBusinessCO' when calling createBaasBusinessUsingPost(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = createBaasBusinessUsingPostCall(baasBusinessCO, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Create a Baas Business
+     * 
+     * @param baasBusinessCO baasBusinessCO (required)
+     * @return BaasBusinessVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public BaasBusinessVO createBaasBusinessUsingPost(CreateBaasBusinessCO baasBusinessCO) throws ApiException {
+        ApiResponse<BaasBusinessVO> resp = createBaasBusinessUsingPostWithHttpInfo(baasBusinessCO);
+        return resp.getData();
+    }
+
+    /**
+     * Create a Baas Business
+     * 
+     * @param baasBusinessCO baasBusinessCO (required)
+     * @return ApiResponse&lt;BaasBusinessVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<BaasBusinessVO> createBaasBusinessUsingPostWithHttpInfo(CreateBaasBusinessCO baasBusinessCO) throws ApiException {
+        com.squareup.okhttp.Call call = createBaasBusinessUsingPostValidateBeforeCall(baasBusinessCO, null, null);
+        Type localVarReturnType = new TypeToken<BaasBusinessVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Create a Baas Business (asynchronously)
+     * 
+     * @param baasBusinessCO baasBusinessCO (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call createBaasBusinessUsingPostAsync(CreateBaasBusinessCO baasBusinessCO, final ApiCallback<BaasBusinessVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = createBaasBusinessUsingPostValidateBeforeCall(baasBusinessCO, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BaasBusinessVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for createBaasClientUsingPost
      * @param baasClientCO baasClientCO (required)
      * @param progressListener Progress listener
@@ -194,7 +320,7 @@ public class BaasApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createBaasClientUsingPostCall(BaasClientCO baasClientCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createBaasClientUsingPostCall(CreateBaasClientCO baasClientCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = baasClientCO;
 
         // create path and map variables
@@ -236,7 +362,7 @@ public class BaasApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createBaasClientUsingPostValidateBeforeCall(BaasClientCO baasClientCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createBaasClientUsingPostValidateBeforeCall(CreateBaasClientCO baasClientCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'baasClientCO' is set
         if (baasClientCO == null) {
@@ -256,7 +382,7 @@ public class BaasApi {
      * @return BaasClientVO
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public BaasClientVO createBaasClientUsingPost(BaasClientCO baasClientCO) throws ApiException {
+    public BaasClientVO createBaasClientUsingPost(CreateBaasClientCO baasClientCO) throws ApiException {
         ApiResponse<BaasClientVO> resp = createBaasClientUsingPostWithHttpInfo(baasClientCO);
         return resp.getData();
     }
@@ -268,7 +394,7 @@ public class BaasApi {
      * @return ApiResponse&lt;BaasClientVO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<BaasClientVO> createBaasClientUsingPostWithHttpInfo(BaasClientCO baasClientCO) throws ApiException {
+    public ApiResponse<BaasClientVO> createBaasClientUsingPostWithHttpInfo(CreateBaasClientCO baasClientCO) throws ApiException {
         com.squareup.okhttp.Call call = createBaasClientUsingPostValidateBeforeCall(baasClientCO, null, null);
         Type localVarReturnType = new TypeToken<BaasClientVO>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -282,7 +408,7 @@ public class BaasApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createBaasClientUsingPostAsync(BaasClientCO baasClientCO, final ApiCallback<BaasClientVO> callback) throws ApiException {
+    public com.squareup.okhttp.Call createBaasClientUsingPostAsync(CreateBaasClientCO baasClientCO, final ApiCallback<BaasClientVO> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -852,18 +978,20 @@ public class BaasApi {
         return call;
     }
     /**
-     * Build call for updateBaasClientUsingPut
-     * @param baasClientCO baasClientCO (required)
+     * Build call for updateBaasBusinessUsingPut
+     * @param nucleusBusinessId nucleus_business_id (required)
+     * @param baasBusinessCO baasBusinessCO (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateBaasClientUsingPutCall(BaasClientCO baasClientCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = baasClientCO;
+    public com.squareup.okhttp.Call updateBaasBusinessUsingPutCall(UUID nucleusBusinessId, UpdateBaasBusinessCO baasBusinessCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = baasBusinessCO;
 
         // create path and map variables
-        String localVarPath = "/baas/client";
+        String localVarPath = "/baas/business/{nucleus_business_id}"
+            .replaceAll("\\{" + "nucleus_business_id" + "\\}", apiClient.escapeString(nucleusBusinessId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -901,53 +1029,56 @@ public class BaasApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateBaasClientUsingPutValidateBeforeCall(BaasClientCO baasClientCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateBaasBusinessUsingPutValidateBeforeCall(UUID nucleusBusinessId, UpdateBaasBusinessCO baasBusinessCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'baasClientCO' is set
-        if (baasClientCO == null) {
-            throw new ApiException("Missing the required parameter 'baasClientCO' when calling updateBaasClientUsingPut(Async)");
+        // verify the required parameter 'nucleusBusinessId' is set
+        if (nucleusBusinessId == null) {
+            throw new ApiException("Missing the required parameter 'nucleusBusinessId' when calling updateBaasBusinessUsingPut(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = updateBaasClientUsingPutCall(baasClientCO, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateBaasBusinessUsingPutCall(nucleusBusinessId, baasBusinessCO, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
-     * Update a Baas client
+     * Update a Baas business
      * 
-     * @param baasClientCO baasClientCO (required)
-     * @return BaasClientVO
+     * @param nucleusBusinessId nucleus_business_id (required)
+     * @param baasBusinessCO baasBusinessCO (optional)
+     * @return BaasBusinessVO
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public BaasClientVO updateBaasClientUsingPut(BaasClientCO baasClientCO) throws ApiException {
-        ApiResponse<BaasClientVO> resp = updateBaasClientUsingPutWithHttpInfo(baasClientCO);
+    public BaasBusinessVO updateBaasBusinessUsingPut(UUID nucleusBusinessId, UpdateBaasBusinessCO baasBusinessCO) throws ApiException {
+        ApiResponse<BaasBusinessVO> resp = updateBaasBusinessUsingPutWithHttpInfo(nucleusBusinessId, baasBusinessCO);
         return resp.getData();
     }
 
     /**
-     * Update a Baas client
+     * Update a Baas business
      * 
-     * @param baasClientCO baasClientCO (required)
-     * @return ApiResponse&lt;BaasClientVO&gt;
+     * @param nucleusBusinessId nucleus_business_id (required)
+     * @param baasBusinessCO baasBusinessCO (optional)
+     * @return ApiResponse&lt;BaasBusinessVO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<BaasClientVO> updateBaasClientUsingPutWithHttpInfo(BaasClientCO baasClientCO) throws ApiException {
-        com.squareup.okhttp.Call call = updateBaasClientUsingPutValidateBeforeCall(baasClientCO, null, null);
-        Type localVarReturnType = new TypeToken<BaasClientVO>(){}.getType();
+    public ApiResponse<BaasBusinessVO> updateBaasBusinessUsingPutWithHttpInfo(UUID nucleusBusinessId, UpdateBaasBusinessCO baasBusinessCO) throws ApiException {
+        com.squareup.okhttp.Call call = updateBaasBusinessUsingPutValidateBeforeCall(nucleusBusinessId, baasBusinessCO, null, null);
+        Type localVarReturnType = new TypeToken<BaasBusinessVO>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Update a Baas client (asynchronously)
+     * Update a Baas business (asynchronously)
      * 
-     * @param baasClientCO baasClientCO (required)
+     * @param nucleusBusinessId nucleus_business_id (required)
+     * @param baasBusinessCO baasBusinessCO (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateBaasClientUsingPutAsync(BaasClientCO baasClientCO, final ApiCallback<BaasClientVO> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateBaasBusinessUsingPutAsync(UUID nucleusBusinessId, UpdateBaasBusinessCO baasBusinessCO, final ApiCallback<BaasBusinessVO> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -968,7 +1099,134 @@ public class BaasApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateBaasClientUsingPutValidateBeforeCall(baasClientCO, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateBaasBusinessUsingPutValidateBeforeCall(nucleusBusinessId, baasBusinessCO, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BaasBusinessVO>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for updateBaasClientUsingPut
+     * @param nucleusClientId nucleus_client_id (required)
+     * @param baasClientCO baasClientCO (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call updateBaasClientUsingPutCall(UUID nucleusClientId, UpdateBaasClientCO baasClientCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = baasClientCO;
+
+        // create path and map variables
+        String localVarPath = "/baas/client/{nucleus_client_id}"
+            .replaceAll("\\{" + "nucleus_client_id" + "\\}", apiClient.escapeString(nucleusClientId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call updateBaasClientUsingPutValidateBeforeCall(UUID nucleusClientId, UpdateBaasClientCO baasClientCO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'nucleusClientId' is set
+        if (nucleusClientId == null) {
+            throw new ApiException("Missing the required parameter 'nucleusClientId' when calling updateBaasClientUsingPut(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = updateBaasClientUsingPutCall(nucleusClientId, baasClientCO, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Update a Baas client
+     * 
+     * @param nucleusClientId nucleus_client_id (required)
+     * @param baasClientCO baasClientCO (optional)
+     * @return BaasClientVO
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public BaasClientVO updateBaasClientUsingPut(UUID nucleusClientId, UpdateBaasClientCO baasClientCO) throws ApiException {
+        ApiResponse<BaasClientVO> resp = updateBaasClientUsingPutWithHttpInfo(nucleusClientId, baasClientCO);
+        return resp.getData();
+    }
+
+    /**
+     * Update a Baas client
+     * 
+     * @param nucleusClientId nucleus_client_id (required)
+     * @param baasClientCO baasClientCO (optional)
+     * @return ApiResponse&lt;BaasClientVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<BaasClientVO> updateBaasClientUsingPutWithHttpInfo(UUID nucleusClientId, UpdateBaasClientCO baasClientCO) throws ApiException {
+        com.squareup.okhttp.Call call = updateBaasClientUsingPutValidateBeforeCall(nucleusClientId, baasClientCO, null, null);
+        Type localVarReturnType = new TypeToken<BaasClientVO>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update a Baas client (asynchronously)
+     * 
+     * @param nucleusClientId nucleus_client_id (required)
+     * @param baasClientCO baasClientCO (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call updateBaasClientUsingPutAsync(UUID nucleusClientId, UpdateBaasClientCO baasClientCO, final ApiCallback<BaasClientVO> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = updateBaasClientUsingPutValidateBeforeCall(nucleusClientId, baasClientCO, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<BaasClientVO>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

@@ -26,7 +26,6 @@ Create a Roundup Settings for Roundup amount with your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import RoundupApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -43,8 +42,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 RoundupApi apiInstance = new RoundupApi();
 RoundupSettings roundupSettings = new RoundupSettings(); // RoundupSettings | roundupSettings
 try {
@@ -87,7 +84,6 @@ Create a new roundup with your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import RoundupApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -104,8 +100,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 RoundupApi apiInstance = new RoundupApi();
 RoundupCO roundupCO = new RoundupCO(); // RoundupCO | roundupCO
 try {
@@ -148,7 +142,6 @@ Permanently delete a  roundup settings registered with your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import RoundupApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -165,8 +158,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 RoundupApi apiInstance = new RoundupApi();
 UUID roundupSettingId = new UUID(); // UUID | UUID roundup_setting_id
 try {
@@ -208,7 +199,6 @@ Get details for all roundups.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import RoundupApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -225,8 +215,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 RoundupApi apiInstance = new RoundupApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -277,7 +265,6 @@ Get details for all roundup setting with your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import RoundupApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -294,8 +281,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 RoundupApi apiInstance = new RoundupApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -346,7 +331,6 @@ Retrieve the information for a Roundup Settings with your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import RoundupApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -363,8 +347,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 RoundupApi apiInstance = new RoundupApi();
 UUID roundupSettingId = new UUID(); // UUID | UUID roundup_setting_id
 try {
@@ -407,7 +389,6 @@ Retrieve the information for a Roundup.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import RoundupApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -424,8 +405,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 RoundupApi apiInstance = new RoundupApi();
 UUID roundupId = new UUID(); // UUID | UUID roundup_id
 try {
@@ -468,7 +447,6 @@ Update the information for a roundup setting registered with your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import RoundupApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -485,10 +463,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 RoundupApi apiInstance = new RoundupApi();
-RoundupSettings roundupSetting = new RoundupSettings(); // RoundupSettings | roundup_setting
+Object roundupSetting = null; // Object | roundup_setting
 UUID roundupSettingId = new UUID(); // UUID | UUID roundup_setting_id
 try {
     RoundupSettings result = apiInstance.updateRoundupSettingsUsingPut(roundupSetting, roundupSettingId);
@@ -503,7 +479,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roundupSetting** | [**RoundupSettings**](RoundupSettings.md)| roundup_setting |
+ **roundupSetting** | **Object**| roundup_setting |
  **roundupSettingId** | [**UUID**](.md)| UUID roundup_setting_id |
 
 ### Return type

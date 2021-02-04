@@ -26,7 +26,6 @@ Create a new Overflow Settings request.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OverflowApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -43,8 +42,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OverflowApi apiInstance = new OverflowApi();
 OverflowSettings overflowSettings = new OverflowSettings(); // OverflowSettings | overflowSettings
 try {
@@ -87,7 +84,6 @@ Create a new Overflow request.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OverflowApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -104,8 +100,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OverflowApi apiInstance = new OverflowApi();
 OverflowVO overflowVO = new OverflowVO(); // OverflowVO | overflowVO
 try {
@@ -148,7 +142,6 @@ Permanently delete a  overflow settings registered with your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OverflowApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -165,8 +158,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OverflowApi apiInstance = new OverflowApi();
 UUID overflowSettingsId = new UUID(); // UUID | UUID overflow_settings_id
 try {
@@ -208,7 +199,6 @@ Get details for all overflow.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OverflowApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -225,8 +215,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OverflowApi apiInstance = new OverflowApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -277,7 +265,6 @@ Get details for all overflow setting.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OverflowApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -294,8 +281,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OverflowApi apiInstance = new OverflowApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -346,7 +331,6 @@ Retrieve the information for a Overflow Settings.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OverflowApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -363,8 +347,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OverflowApi apiInstance = new OverflowApi();
 UUID overflowSettingsId = new UUID(); // UUID | UUID overflow_settings_id
 try {
@@ -407,7 +389,6 @@ Retrieve the information for a Overflow.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OverflowApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -424,8 +405,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OverflowApi apiInstance = new OverflowApi();
 UUID overflowId = new UUID(); // UUID | UUID overflow_id
 try {
@@ -468,7 +447,6 @@ Update the information for a overflow setting registered with your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OverflowApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -485,10 +463,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OverflowApi apiInstance = new OverflowApi();
-OverflowSettings overflowSettings = new OverflowSettings(); // OverflowSettings | overflow_settings
+Object overflowSettings = null; // Object | overflow_settings
 UUID overflowSettingsId = new UUID(); // UUID | UUID overflow_settings_id
 try {
     OverflowSettings result = apiInstance.updateOverflowSettingsUsingPut(overflowSettings, overflowSettingsId);
@@ -503,7 +479,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **overflowSettings** | [**OverflowSettings**](OverflowSettings.md)| overflow_settings |
+ **overflowSettings** | **Object**| overflow_settings |
  **overflowSettingsId** | [**UUID**](.md)| UUID overflow_settings_id |
 
 ### Return type

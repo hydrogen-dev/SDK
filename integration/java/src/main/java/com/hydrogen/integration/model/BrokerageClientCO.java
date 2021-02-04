@@ -18,36 +18,20 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModelProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 /**
  * BrokerageClientCO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class BrokerageClientCO {
-  @SerializedName("nucleus_account_id")
-  private UUID nucleusAccountId = null;
-
   @SerializedName("nucleus_client_id")
   private UUID nucleusClientId = null;
 
-  public BrokerageClientCO nucleusAccountId(UUID nucleusAccountId) {
-    this.nucleusAccountId = nucleusAccountId;
-    return this;
-  }
-
-   /**
-   * Get nucleusAccountId
-   * @return nucleusAccountId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getNucleusAccountId() {
-    return nucleusAccountId;
-  }
-
-  public void setNucleusAccountId(UUID nucleusAccountId) {
-    this.nucleusAccountId = nucleusAccountId;
-  }
+  @SerializedName("nucleus_document_ids")
+  private List<UUID> nucleusDocumentIds = null;
 
   public BrokerageClientCO nucleusClientId(UUID nucleusClientId) {
     this.nucleusClientId = nucleusClientId;
@@ -67,6 +51,32 @@ public class BrokerageClientCO {
     this.nucleusClientId = nucleusClientId;
   }
 
+  public BrokerageClientCO nucleusDocumentIds(List<UUID> nucleusDocumentIds) {
+    this.nucleusDocumentIds = nucleusDocumentIds;
+    return this;
+  }
+
+  public BrokerageClientCO addNucleusDocumentIdsItem(UUID nucleusDocumentIdsItem) {
+    if (this.nucleusDocumentIds == null) {
+      this.nucleusDocumentIds = new ArrayList<UUID>();
+    }
+    this.nucleusDocumentIds.add(nucleusDocumentIdsItem);
+    return this;
+  }
+
+   /**
+   * Get nucleusDocumentIds
+   * @return nucleusDocumentIds
+  **/
+  @ApiModelProperty(value = "")
+  public List<UUID> getNucleusDocumentIds() {
+    return nucleusDocumentIds;
+  }
+
+  public void setNucleusDocumentIds(List<UUID> nucleusDocumentIds) {
+    this.nucleusDocumentIds = nucleusDocumentIds;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -77,13 +87,13 @@ public class BrokerageClientCO {
       return false;
     }
     BrokerageClientCO brokerageClientCO = (BrokerageClientCO) o;
-    return Objects.equals(this.nucleusAccountId, brokerageClientCO.nucleusAccountId) &&
-        Objects.equals(this.nucleusClientId, brokerageClientCO.nucleusClientId);
+    return Objects.equals(this.nucleusClientId, brokerageClientCO.nucleusClientId) &&
+        Objects.equals(this.nucleusDocumentIds, brokerageClientCO.nucleusDocumentIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nucleusAccountId, nucleusClientId);
+    return Objects.hash(nucleusClientId, nucleusDocumentIds);
   }
 
 
@@ -92,8 +102,8 @@ public class BrokerageClientCO {
     StringBuilder sb = new StringBuilder();
     sb.append("class BrokerageClientCO {\n");
     
-    sb.append("    nucleusAccountId: ").append(toIndentedString(nucleusAccountId)).append("\n");
     sb.append("    nucleusClientId: ").append(toIndentedString(nucleusClientId)).append("\n");
+    sb.append("    nucleusDocumentIds: ").append(toIndentedString(nucleusDocumentIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

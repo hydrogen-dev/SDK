@@ -994,7 +994,7 @@ end
 
 api_instance = NucleusApi::QuestionnaireApi.new
 
-answer = NucleusApi::Answer.new # Answer | answer
+answer = nil # Object | answer
 
 answer_id = 'answer_id_example' # String | UUID answer_id
 
@@ -1012,7 +1012,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **answer** | [**Answer**](Answer.md)| answer | 
+ **answer** | **Object**| answer | 
  **answer_id** | [**String**](.md)| UUID answer_id | 
 
 ### Return type
@@ -1054,7 +1054,7 @@ end
 
 api_instance = NucleusApi::QuestionnaireApi.new
 
-client_response = NucleusApi::ClientResponse.new # ClientResponse | client_response
+client_response = nil # Object | client_response
 
 client_response_id = 'client_response_id_example' # String | UUID client_response_id
 
@@ -1072,7 +1072,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client_response** | [**ClientResponse**](ClientResponse.md)| client_response | 
+ **client_response** | **Object**| client_response | 
  **client_response_id** | [**String**](.md)| UUID client_response_id | 
 
 ### Return type
@@ -1114,7 +1114,7 @@ end
 
 api_instance = NucleusApi::QuestionnaireApi.new
 
-question = NucleusApi::Question.new # Question | question
+question = nil # Object | question
 
 question_id = 'question_id_example' # String | UUID question_id
 
@@ -1132,7 +1132,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **question** | [**Question**](Question.md)| question | 
+ **question** | **Object**| question | 
  **question_id** | [**String**](.md)| UUID question_id | 
 
 ### Return type
@@ -1174,7 +1174,7 @@ end
 
 api_instance = NucleusApi::QuestionnaireApi.new
 
-questionnaire = NucleusApi::Questionnaire.new # Questionnaire | questionnaire
+questionnaire = nil # Object | questionnaire
 
 questionnaire_id = 'questionnaire_id_example' # String | UUID questionnaire_id
 
@@ -1192,7 +1192,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **questionnaire** | [**Questionnaire**](Questionnaire.md)| questionnaire | 
+ **questionnaire** | **Object**| questionnaire | 
  **questionnaire_id** | [**String**](.md)| UUID questionnaire_id | 
 
 ### Return type

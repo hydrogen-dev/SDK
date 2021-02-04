@@ -26,18 +26,18 @@ Name | Type | Description | Notes
 ## Enum: IsFeeEnum
 Name | Value
 ---- | -----
-FALSE | &quot;FALSE&quot;
-TRUE | &quot;TRUE&quot;
-NULL | &quot;NULL&quot;
+TRUE | &quot;true&quot;
+FALSE | &quot;false&quot;
+NULL | &quot;null&quot;
 
 
 <a name="IsTransferEnum"></a>
 ## Enum: IsTransferEnum
 Name | Value
 ---- | -----
-FALSE | &quot;FALSE&quot;
-TRUE | &quot;TRUE&quot;
-NULL | &quot;NULL&quot;
+TRUE | &quot;true&quot;
+FALSE | &quot;false&quot;
+NULL | &quot;null&quot;
 
 
 

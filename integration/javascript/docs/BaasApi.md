@@ -5,12 +5,14 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createBaasAccountUsingPost**](BaasApi.md#createBaasAccountUsingPost) | **POST** /baas/account | create a Baas account
+[**createBaasBusinessUsingPost**](BaasApi.md#createBaasBusinessUsingPost) | **POST** /baas/business | Create a Baas Business
 [**createBaasClientUsingPost**](BaasApi.md#createBaasClientUsingPost) | **POST** /baas/client | Create a Baas Client
 [**createBaasSubAccountUsingPost**](BaasApi.md#createBaasSubAccountUsingPost) | **POST** /baas/subaccount | create a Baas subaccount
 [**getBaasAccountStatementUsingGet**](BaasApi.md#getBaasAccountStatementUsingGet) | **GET** /baas/statement/{nucleus_account_id} | Get a Baas account statement
 [**getBaasPortfolioBalanceUsingGet**](BaasApi.md#getBaasPortfolioBalanceUsingGet) | **GET** /baas/balance/{nucleus_portfolio_id} | Get a Baas portfolio balance
 [**getBaasPortfolioTransactionUsingGet**](BaasApi.md#getBaasPortfolioTransactionUsingGet) | **GET** /baas/transaction/{nucleus_portfolio_id} | Get a Baas portfolio transaction
-[**updateBaasClientUsingPut**](BaasApi.md#updateBaasClientUsingPut) | **PUT** /baas/client | Update a Baas client
+[**updateBaasBusinessUsingPut**](BaasApi.md#updateBaasBusinessUsingPut) | **PUT** /baas/business/{nucleus_business_id} | Update a Baas business
+[**updateBaasClientUsingPut**](BaasApi.md#updateBaasClientUsingPut) | **PUT** /baas/client/{nucleus_client_id} | Update a Baas client
 
 
 <a name="createBaasAccountUsingPost"></a>
@@ -62,6 +64,55 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: */*
 
+<a name="createBaasBusinessUsingPost"></a>
+# **createBaasBusinessUsingPost**
+> BaasBusinessVO createBaasBusinessUsingPost(baasBusinessCO)
+
+Create a Baas Business
+
+### Example
+```javascript
+var HydrogenIntegrationApi = require('hydrogen_integration_api');
+var defaultClient = HydrogenIntegrationApi.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2
+var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new HydrogenIntegrationApi.BaasApi();
+
+var baasBusinessCO = new HydrogenIntegrationApi.CreateBaasBusinessCO(); // CreateBaasBusinessCO | baasBusinessCO
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createBaasBusinessUsingPost(baasBusinessCO, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **baasBusinessCO** | [**CreateBaasBusinessCO**](CreateBaasBusinessCO.md)| baasBusinessCO | 
+
+### Return type
+
+[**BaasBusinessVO**](BaasBusinessVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
 <a name="createBaasClientUsingPost"></a>
 # **createBaasClientUsingPost**
 > BaasClientVO createBaasClientUsingPost(baasClientCO)
@@ -79,7 +130,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenIntegrationApi.BaasApi();
 
-var baasClientCO = new HydrogenIntegrationApi.BaasClientCO(); // BaasClientCO | baasClientCO
+var baasClientCO = new HydrogenIntegrationApi.CreateBaasClientCO(); // CreateBaasClientCO | baasClientCO
 
 
 var callback = function(error, data, response) {
@@ -96,7 +147,7 @@ apiInstance.createBaasClientUsingPost(baasClientCO, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **baasClientCO** | [**BaasClientCO**](BaasClientCO.md)| baasClientCO | 
+ **baasClientCO** | [**CreateBaasClientCO**](CreateBaasClientCO.md)| baasClientCO | 
 
 ### Return type
 
@@ -329,9 +380,62 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: */*
 
+<a name="updateBaasBusinessUsingPut"></a>
+# **updateBaasBusinessUsingPut**
+> BaasBusinessVO updateBaasBusinessUsingPut(nucleusBusinessId, opts)
+
+Update a Baas business
+
+### Example
+```javascript
+var HydrogenIntegrationApi = require('hydrogen_integration_api');
+var defaultClient = HydrogenIntegrationApi.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2
+var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new HydrogenIntegrationApi.BaasApi();
+
+var nucleusBusinessId = "nucleusBusinessId_example"; // String | nucleus_business_id
+
+var opts = { 
+  'baasBusinessCO': new HydrogenIntegrationApi.UpdateBaasBusinessCO() // UpdateBaasBusinessCO | baasBusinessCO
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateBaasBusinessUsingPut(nucleusBusinessId, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nucleusBusinessId** | [**String**](.md)| nucleus_business_id | 
+ **baasBusinessCO** | [**UpdateBaasBusinessCO**](UpdateBaasBusinessCO.md)| baasBusinessCO | [optional] 
+
+### Return type
+
+[**BaasBusinessVO**](BaasBusinessVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
 <a name="updateBaasClientUsingPut"></a>
 # **updateBaasClientUsingPut**
-> BaasClientVO updateBaasClientUsingPut(baasClientCO)
+> BaasClientVO updateBaasClientUsingPut(nucleusClientId, opts)
 
 Update a Baas client
 
@@ -346,8 +450,11 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenIntegrationApi.BaasApi();
 
-var baasClientCO = new HydrogenIntegrationApi.BaasClientCO(); // BaasClientCO | baasClientCO
+var nucleusClientId = "nucleusClientId_example"; // String | nucleus_client_id
 
+var opts = { 
+  'baasClientCO': new HydrogenIntegrationApi.UpdateBaasClientCO() // UpdateBaasClientCO | baasClientCO
+};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -356,14 +463,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.updateBaasClientUsingPut(baasClientCO, callback);
+apiInstance.updateBaasClientUsingPut(nucleusClientId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **baasClientCO** | [**BaasClientCO**](BaasClientCO.md)| baasClientCO | 
+ **nucleusClientId** | [**String**](.md)| nucleus_client_id | 
+ **baasClientCO** | [**UpdateBaasClientCO**](UpdateBaasClientCO.md)| baasClientCO | [optional] 
 
 ### Return type
 

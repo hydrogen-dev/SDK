@@ -29,13 +29,6 @@ class TestClientApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_create_client_hydro_using_post(self):
-        """Test case for create_client_hydro_using_post
-
-        Create a client-hydro relationship  # noqa: E501
-        """
-        pass
-
     def test_create_client_status_using_post(self):
         """Test case for create_client_status_using_post
 
@@ -47,13 +40,6 @@ class TestClientApi(unittest.TestCase):
         """Test case for create_client_using_post
 
         Create a client  # noqa: E501
-        """
-        pass
-
-    def test_delete_client_hydro_using_delete(self):
-        """Test case for delete_client_hydro_using_delete
-
-        Delete a client-hydro relationship  # noqa: E501
         """
         pass
 
@@ -113,20 +99,6 @@ class TestClientApi(unittest.TestCase):
         """
         pass
 
-    def test_get_client_hydro_all_using_get(self):
-        """Test case for get_client_hydro_all_using_get
-
-        List all client-hydro relationship  # noqa: E501
-        """
-        pass
-
-    def test_get_client_hydro_using_get(self):
-        """Test case for get_client_hydro_using_get
-
-        Retrieve a client-hydro relationship  # noqa: E501
-        """
-        pass
-
     def test_get_client_status_all_using_get(self):
         """Test case for get_client_status_all_using_get
 
@@ -152,13 +124,6 @@ class TestClientApi(unittest.TestCase):
         """Test case for get_client_using_get
 
         Retrieve a client  # noqa: E501
-        """
-        pass
-
-    def test_update_client_hydro_using_put(self):
-        """Test case for update_client_hydro_using_put
-
-        Update a client-hydro relationship  # noqa: E501
         """
         pass
 

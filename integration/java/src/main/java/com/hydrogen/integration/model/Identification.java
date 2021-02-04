@@ -17,12 +17,13 @@ import java.util.Objects;
 
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModelProperty;
+import org.threeten.bp.LocalDate;
 import org.threeten.bp.OffsetDateTime;
 
 /**
  * Identification
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class Identification {
   @SerializedName("country_of_issue")
   private String countryOfIssue = null;
@@ -34,10 +35,10 @@ public class Identification {
   private String docType = null;
 
   @SerializedName("expiry_date")
-  private OffsetDateTime expiryDate = null;
+  private LocalDate expiryDate = null;
 
   @SerializedName("issue_date")
-  private OffsetDateTime issueDate = null;
+  private LocalDate issueDate = null;
 
   @SerializedName("issuing_authority")
   private String issuingAuthority = null;
@@ -99,7 +100,7 @@ public class Identification {
     this.docType = docType;
   }
 
-  public Identification expiryDate(OffsetDateTime expiryDate) {
+  public Identification expiryDate(LocalDate expiryDate) {
     this.expiryDate = expiryDate;
     return this;
   }
@@ -109,15 +110,15 @@ public class Identification {
    * @return expiryDate
   **/
   @ApiModelProperty(value = "")
-  public OffsetDateTime getExpiryDate() {
+  public LocalDate getExpiryDate() {
     return expiryDate;
   }
 
-  public void setExpiryDate(OffsetDateTime expiryDate) {
+  public void setExpiryDate(LocalDate expiryDate) {
     this.expiryDate = expiryDate;
   }
 
-  public Identification issueDate(OffsetDateTime issueDate) {
+  public Identification issueDate(LocalDate issueDate) {
     this.issueDate = issueDate;
     return this;
   }
@@ -127,11 +128,11 @@ public class Identification {
    * @return issueDate
   **/
   @ApiModelProperty(value = "")
-  public OffsetDateTime getIssueDate() {
+  public LocalDate getIssueDate() {
     return issueDate;
   }
 
-  public void setIssueDate(OffsetDateTime issueDate) {
+  public void setIssueDate(LocalDate issueDate) {
     this.issueDate = issueDate;
   }
 

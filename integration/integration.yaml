@@ -1,20 +1,24 @@
 swagger: '2.0'
 info:
-  description: Hydrogen Integration API
+  description: The Hydrogen Integration API
   version: 1.2.1
   title: Hydrogen Integration API
   termsOfService: 'https://www.hydrogenplatform.com/legal/terms'
   contact:
-    name: The Hydrogen Technology Corporation
+    name: Hydrogen Technology Corporation
     url: 'https://www.hydrogenplatform.com/contact'
     email: info@hydrogenplatform.com
-host: 'sandbox.hydrogenplatform.com:8000'
+host: 'api.hydrogenplatform.com:8000'
 basePath: /
 tags:
+  - name: ACH
+    description: Ach Controller
+  - name: Accounting
+    description: Accounting Controller
   - name: Aggregation
     description: Aggregation Controller
-  - name: AuditLog
-    description: Log Controller
+  - name: Async
+    description: Async Controller
   - name: Baas
     description: Baas Controller
   - name: Brokerage
@@ -29,11 +33,905 @@ tags:
     description: Kyc Controller
   - name: MarketData
     description: Market Data Controller
+  - name: RTP
+    description: Rtp Controller
+  - name: SMS
+    description: SMS Controller
+  - name: SMTP
+    description: Smtp Controller
   - name: Utils
-    description: Utils Controller
+    description: Log Controller
   - name: Webhook
     description: Webhook Controller
+  - name: Wire
+    description: Wire Controller
 paths:
+  /accounting/customer:
+    get:
+      tags:
+        - Accounting
+      summary: Update/Create all customers in Nucleus for a given nucleus_client_id
+      description: Update/Create all customers in Nucleus for a given nucleus_client_id
+      operationId: createOrUpdateCustomer
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_client_id
+          in: query
+          description: nucleus_client_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AccountingFinalResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/accounting/customer/{nucleus_customer_id}':
+    get:
+      tags:
+        - Accounting
+      summary: Update customer in Nucleus for a given nucleus_customer_id
+      description: Update customer in Nucleus for a given nucleus_customer_id
+      operationId: updateCustomer
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_customer_id
+          in: path
+          description: nucleus_customer_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AccountingFinalResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/accounting/customer_revenue/{nucleus_customer_id}':
+    get:
+      tags:
+        - Accounting
+      summary: Update/Create all customers revenue in Nucleus for a given nucleus_customer_id
+      description: Update/Create all customers revenue in Nucleus for a given nucleus_customer_id
+      operationId: createOrUpdateCustomerRevenue
+      produces:
+        - application/json
+      parameters:
+        - name: accounting_method
+          in: query
+          description: accounting_method
+          required: false
+          type: string
+          default: accrual
+        - name: end_date
+          in: query
+          description: end_date
+          required: false
+          type: string
+          default: 'null'
+          format: date-time
+        - name: nucleus_customer_id
+          in: path
+          description: nucleus_customer_id
+          required: true
+          type: string
+          format: uuid
+        - name: start_date
+          in: query
+          description: start_date
+          required: true
+          type: string
+          format: date-time
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AccountingFinalResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /accounting/invoice:
+    get:
+      tags:
+        - Accounting
+      summary: Update/Create all invoices in Nucleus for a given nucleus_client_id
+      description: Update/Create all invoices in Nucleus for a given nucleus_client_id
+      operationId: createOrUpdateInvoices
+      produces:
+        - application/json
+      parameters:
+        - name: end_date
+          in: query
+          description: end_date
+          required: false
+          type: string
+          default: 'null'
+          format: date-time
+        - name: nucleus_customer_id
+          in: query
+          description: nucleus_customer_id
+          required: true
+          type: string
+          format: uuid
+        - name: start_date
+          in: query
+          description: start_date
+          required: true
+          type: string
+          format: date-time
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AccountingFinalResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/accounting/invoice/{nucleus_invoice_id}':
+    get:
+      tags:
+        - Accounting
+      summary: Update invoice in Nucleus for a given nucleus_invoice_id
+      description: Update invoice in Nucleus for a given nucleus_invoice_id
+      operationId: updateInvoice
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_invoice_id
+          in: path
+          description: nucleus_invoice_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AccountingFinalResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/accounting/invoice_payment/{nucleus_invoice_id}':
+    get:
+      tags:
+        - Accounting
+      summary: Create/Update invoice payment in Nucleus for a given nucleus_invoice_id
+      description: Create/Update invoice payment in Nucleus for a given nucleus_invoice_id
+      operationId: createOrUpdateInvoicePayment
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_invoice_id
+          in: path
+          description: nucleus_invoice_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AccountingFinalResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /accounting/report:
+    get:
+      tags:
+        - Accounting
+      summary: Get accounting stats from financial statements at the vendor for the business provided
+      description: Get accounting stats from financial statements at the vendor for the business provided
+      operationId: getAccountingStats
+      produces:
+        - application/json
+      parameters:
+        - name: accounting_method
+          in: query
+          description: accounting_method
+          required: false
+          type: string
+          default: accrual
+        - name: nucleus_client_id
+          in: query
+          description: nucleus_client_id
+          required: false
+          type: string
+          format: uuid
+        - name: period_length
+          in: query
+          description: period_length
+          required: false
+          type: string
+        - name: period_month
+          in: query
+          description: period_month
+          required: false
+          type: integer
+          format: int32
+        - name: period_quarter
+          in: query
+          description: period_quarter
+          required: false
+          type: integer
+          format: int32
+        - name: period_type
+          in: query
+          description: period_type
+          required: false
+          type: string
+        - name: period_year
+          in: query
+          description: period_year
+          required: false
+          type: integer
+          format: int32
+        - name: report
+          in: query
+          description: report
+          required: false
+          type: string
+        - name: statement_date
+          in: query
+          description: statement_date
+          required: false
+          type: string
+          format: date-time
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AccountingFinalResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/accounting/vendor/{id}':
+    put:
+      tags:
+        - Accounting
+      summary: Enable/Disable relation with particular accounting vendor.
+      description: Enable/Disable link with particular accounting vendor.
+      operationId: updateAccountingVendorAccessConfigIsActiveById
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          type: string
+          format: uuid
+        - name: is_active
+          in: query
+          description: is_active
+          required: true
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/VendorAccessConfigVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    delete:
+      tags:
+        - Accounting
+      summary: Permanently delete relation with particular accounting vendor.
+      description: Permanently delete relation with particular accounting vendor.
+      operationId: deleteAccountingVendorAccessConfigIsActiveById
+      produces:
+        - '*/*'
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+        - oauth2: []
+      deprecated: false
+  '/accounting/vendor/{nucleus_client_id}':
+    get:
+      tags:
+        - Accounting
+      summary: Get Accounting Vendor Config
+      description: Get Accounting vendor config information with its status.
+      operationId: getAccountingVendorInfoUsingClientId
+      produces:
+        - '*/*'
+      parameters:
+        - name: nucleus_client_id
+          in: path
+          description: nucleus_client_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/VendorAccessConfigVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /ach:
+    get:
+      tags:
+        - ACH
+      summary: Get a list of tenant's ACH transfers
+      operationId: getListOfTenantAchTransfersUsingGet
+      produces:
+        - application/json
+      parameters:
+        - name: end_date
+          in: query
+          description: end_date
+          required: false
+          type: string
+          format: date
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 25
+          format: int32
+        - name: start_date
+          in: query
+          description: start_date
+          required: false
+          type: string
+          format: date
+        - name: status
+          in: query
+          description: status
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Page«AchTransferResponseVO»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    post:
+      tags:
+        - ACH
+      summary: Submit an ACH transfer
+      operationId: submitAchTransferUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: transferRequest
+          description: transferRequest
+          required: true
+          schema:
+            $ref: '#/definitions/AchTransferRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AchTransferResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/ach/balance/{portfolio_id}':
+    get:
+      tags:
+        - ACH
+      summary: Get balance
+      operationId: getBalanceUsingGet
+      produces:
+        - application/json
+      parameters:
+        - name: end_date
+          in: query
+          description: end_date
+          required: false
+          type: string
+          format: date
+        - name: portfolio_id
+          in: path
+          description: portfolio_id
+          required: true
+          type: string
+          format: uuid
+        - name: start_date
+          in: query
+          description: start_date
+          required: false
+          type: string
+          format: date
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AchBalanceResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /ach/bank_link:
+    post:
+      tags:
+        - ACH
+      summary: Create bank link
+      operationId: createBankLinkUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: achBankLinkRequestCO
+          description: achBankLinkRequestCO
+          required: true
+          schema:
+            $ref: '#/definitions/AchBankLinkRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AchBankLinkResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/ach/bank_link/client/{nucleus_client_id}':
+    get:
+      tags:
+        - ACH
+      summary: Get client bank links
+      operationId: getClientBankLinksUsingGet
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_client_id
+          in: path
+          description: nucleus_client_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AchBankLinkResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /ach/bank_link/reserve:
+    get:
+      tags:
+        - ACH
+      summary: Get bank links for a reserve account
+      operationId: getBankLinksForReserveAccountUsingGet
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AchBankLinkResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/ach/bank_link/{nucleus_bank_link_id}':
+    get:
+      tags:
+        - ACH
+      summary: Get bank link
+      operationId: getBankLinkUsingGet
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_bank_link_id
+          in: path
+          description: nucleus_bank_link_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AchBankLinkResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    put:
+      tags:
+        - ACH
+      summary: Update bank link
+      operationId: updateBankLinkUsingPut
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_bank_link_id
+          in: path
+          description: nucleus_bank_link_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AchBankLinkResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    delete:
+      tags:
+        - ACH
+      summary: Delete bank link
+      operationId: deleteBankLinkUsingDelete
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_bank_link_id
+          in: path
+          description: nucleus_bank_link_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AchBankLinkResponseVO'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+        - oauth2: []
+      deprecated: false
+  /ach/business:
+    post:
+      tags:
+        - ACH
+      summary: Create a business
+      operationId: createBusinessUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: businessRequest
+          description: businessRequest
+          required: true
+          schema:
+            $ref: '#/definitions/AchBusinessRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BaseResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /ach/card_link:
+    post:
+      tags:
+        - ACH
+      summary: Create an ACH card link
+      operationId: createAchCardLinkUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: cardLinkRequestCO
+          description: cardLinkRequestCO
+          required: true
+          schema:
+            $ref: '#/definitions/AchCardLinkRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AchCardLinkResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /ach/client:
+    post:
+      tags:
+        - ACH
+      summary: Create a client
+      operationId: createClientUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: clientRequest
+          description: clientRequest
+          required: true
+          schema:
+            $ref: '#/definitions/AchClientRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AchClientResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/ach/client/{nucleus_client_id}':
+    get:
+      tags:
+        - ACH
+      summary: Get a list of client's ACH transfers
+      operationId: getListOfClientAchTransfersUsingGet
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_client_id
+          in: path
+          description: nucleus_client_id
+          required: true
+          type: string
+          format: uuid
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 25
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Page«AchTransferResponseVO»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/ach/{nucleus_funding_id}':
+    get:
+      tags:
+        - ACH
+      summary: Get the ACH transfer
+      operationId: getAchTransferUsingGet
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_funding_id
+          in: path
+          description: nucleus_funding_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AchTransferResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    delete:
+      tags:
+        - ACH
+      summary: Cancel the ACH transfer
+      operationId: cancelAchTransferUsingDelete
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_funding_id
+          in: path
+          description: nucleus_funding_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AchTransferResponseVO'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+        - oauth2: []
+      deprecated: false
   /aggregation/account:
     get:
       tags:
@@ -354,10 +1252,172 @@ paths:
       security:
         - oauth2: []
       deprecated: false
+  '/async/status/{id}':
+    get:
+      tags:
+        - Async
+      summary: Get Status of async transaction created through GET/POST endpoints
+      description: Get Status of async transaction created through GET/POST endpoints
+      operationId: getAsyncStatus
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: UUID Async Transaction Id
+          required: true
+          type: string
+          format: uuid
+          x-example: 62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AsyncTransactionVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/async/{integration_type}/{service}':
+    get:
+      tags:
+        - Async
+      summary: Create async transaction for GET endpoints for bulk data
+      description: Create async transaction for GET endpoints for bulk data
+      operationId: getAsyncData
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: UUID id
+          required: false
+          type: string
+          format: uuid
+          x-example: 62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d
+        - name: integration_type
+          in: path
+          description: String integration_type
+          required: true
+          type: string
+          x-example: accounting
+        - name: service
+          in: path
+          description: String service
+          required: true
+          type: string
+          x-example: customer
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AsyncTransaction'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    post:
+      tags:
+        - Async
+      summary: Create async transaction for POST endpoints for bulk data
+      description: Create async transaction for POST endpoints for bulk data
+      operationId: getAsyncData_2
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: data
+          description: data
+          required: true
+          schema:
+            $ref: '#/definitions/JsonNode'
+        - name: integration_type
+          in: path
+          description: String integration_type
+          required: true
+          type: string
+          x-example: accounting
+        - name: service
+          in: path
+          description: String service
+          required: true
+          type: string
+          x-example: customer
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AsyncTransaction'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/async/{integration_type}/{service}/{id}':
+    get:
+      tags:
+        - Async
+      summary: Create async transaction for GET endpoints for bulk data
+      description: Create async transaction for GET endpoints for bulk data
+      operationId: getAsyncData_1
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: UUID id
+          required: false
+          type: string
+          format: uuid
+          x-example: 62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d
+        - name: integration_type
+          in: path
+          description: String integration_type
+          required: true
+          type: string
+          x-example: accounting
+        - name: service
+          in: path
+          description: String service
+          required: true
+          type: string
+          x-example: customer
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AsyncTransaction'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
   /audit_log:
     get:
       tags:
-        - AuditLog
+        - Utils
       summary: Gel all audit log
       operationId: getAuditLogAllUsingGet
       produces:
@@ -523,6 +1583,78 @@ paths:
       security:
         - oauth2: []
       deprecated: false
+  /baas/business:
+    post:
+      tags:
+        - Baas
+      summary: Create a Baas Business
+      operationId: createBaasBusinessUsingPost
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: baasBusinessCO
+          description: baasBusinessCO
+          required: true
+          schema:
+            $ref: '#/definitions/CreateBaasBusinessCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BaasBusinessVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/baas/business/{nucleus_business_id}':
+    put:
+      tags:
+        - Baas
+      summary: Update a Baas business
+      operationId: updateBaasBusinessUsingPut
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: baasBusinessCO
+          description: baasBusinessCO
+          required: false
+          schema:
+            $ref: '#/definitions/UpdateBaasBusinessCO'
+        - name: nucleus_business_id
+          in: path
+          description: nucleus_business_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BaasBusinessVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
   /baas/client:
     post:
       tags:
@@ -539,7 +1671,7 @@ paths:
           description: baasClientCO
           required: true
           schema:
-            $ref: '#/definitions/BaasClientCO'
+            $ref: '#/definitions/CreateBaasClientCO'
       responses:
         '200':
           description: OK
@@ -556,6 +1688,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
+  '/baas/client/{nucleus_client_id}':
     put:
       tags:
         - Baas
@@ -569,9 +1702,15 @@ paths:
         - in: body
           name: baasClientCO
           description: baasClientCO
-          required: true
+          required: false
           schema:
-            $ref: '#/definitions/BaasClientCO'
+            $ref: '#/definitions/UpdateBaasClientCO'
+        - name: nucleus_client_id
+          in: path
+          description: nucleus_client_id
+          required: true
+          type: string
+          format: uuid
       responses:
         '200':
           description: OK
@@ -741,12 +1880,41 @@ paths:
       security:
         - oauth2: []
       deprecated: false
+  '/brokerage/balance/{nucleus_portfolio_id}':
+    get:
+      tags:
+        - Brokerage
+      summary: Get account balance
+      operationId: getBalanceUsingGet_1
+      produces:
+        - '*/*'
+      parameters:
+        - name: nucleus_portfolio_id
+          in: path
+          description: nucleus_portfolio_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BrokerageBalanceVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
   /brokerage/bank_link:
     post:
       tags:
         - Brokerage
       summary: create a Bank Link
-      operationId: createBankLinkUsingPost
+      operationId: createBankLinkUsingPost_1
       consumes:
         - application/json
       produces:
@@ -779,7 +1947,7 @@ paths:
       tags:
         - Brokerage
       summary: Get a Bank Link
-      operationId: getBankLinkUsingGet
+      operationId: getBankLinkUsingGet_1
       produces:
         - '*/*'
       parameters:
@@ -807,7 +1975,7 @@ paths:
       tags:
         - Brokerage
       summary: Update a Bank Link
-      operationId: updateBankLinkUsingPut
+      operationId: updateBankLinkUsingPut_1
       consumes:
         - application/json
       produces:
@@ -839,7 +2007,7 @@ paths:
       tags:
         - Brokerage
       summary: Delete a Bank Link
-      operationId: deleteBankLinkUsingDelete
+      operationId: deleteBankLinkUsingDelete_1
       produces:
         - '*/*'
       parameters:
@@ -852,8 +2020,6 @@ paths:
       responses:
         '200':
           description: OK
-          schema:
-            $ref: '#/definitions/ResponseEntity'
         '204':
           description: No Content
         '401':
@@ -928,56 +2094,28 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /brokerage/order:
-    get:
-      tags:
-        - Brokerage
-      summary: Get an Order
-      operationId: getOrderUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: nucleus_order_id
-          in: query
-          description: nucleus_order_id
-          required: true
-          type: string
-          format: uuid
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/GetOrderResponse'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
+  /brokerage/deposit:
     post:
       tags:
         - Brokerage
-      summary: Create an Order
-      operationId: createOrderUsingPost
+      summary: Create a deposit
+      operationId: createDepositUsingPost
       consumes:
         - application/json
       produces:
         - '*/*'
       parameters:
-        - name: nucleus_order_id
-          in: query
-          description: nucleus_order_id
+        - in: body
+          name: brokerageDepositCO
+          description: brokerageDepositCO
           required: true
-          type: string
-          format: uuid
+          schema:
+            $ref: '#/definitions/BrokerageDepositCO'
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/CreateOrderResponse'
+            $ref: '#/definitions/BrokerageDepositVO'
         '201':
           description: Created
         '401':
@@ -989,16 +2127,170 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-    delete:
+  /brokerage/document:
+    post:
       tags:
         - Brokerage
-      summary: Delete an Order
-      operationId: deleteOrderUsingDelete
+      summary: Create a Brokerage document
+      operationId: createDocumentUsingPost
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: documentCO
+          description: documentCO
+          required: true
+          schema:
+            $ref: '#/definitions/BrokerageDocumentCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BrokerageDocumentVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/brokerage/document/{nucleus_document_id}':
+    get:
+      tags:
+        - Brokerage
+      summary: Get a Brokerage document
+      operationId: getDocumentUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: nucleus_document_id
+          in: path
+          description: nucleus_document_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BrokerageDocumentVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/brokerage/holding/performance/{nucleus_portfolio_id}':
+    get:
+      tags:
+        - Brokerage
+      summary: Get portfolio holding performance
+      operationId: getHoldingPerformanceUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: nucleus_portfolio_id
+          in: path
+          description: nucleus_portfolio_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BrokeragePerformanceVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/brokerage/holding/{nucleus_portfolio_id}':
+    get:
+      tags:
+        - Brokerage
+      summary: Get portfolio holdings
+      operationId: getHoldingUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: nucleus_portfolio_id
+          in: path
+          description: nucleus_portfolio_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BrokerageHoldingVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /brokerage/order:
+    post:
+      tags:
+        - Brokerage
+      summary: Create an Order
+      operationId: createOrderUsingPost
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: brokerageOrderCO
+          description: brokerageOrderCO
+          required: true
+          schema:
+            $ref: '#/definitions/BrokerageOrderCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BrokerageOrderVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/brokerage/order/{nucleus_order_id}':
+    get:
+      tags:
+        - Brokerage
+      summary: Get an Order
+      operationId: getOrderUsingGet
       produces:
         - '*/*'
       parameters:
         - name: nucleus_order_id
-          in: query
+          in: path
           description: nucleus_order_id
           required: true
           type: string
@@ -1006,16 +2298,88 @@ paths:
       responses:
         '200':
           description: OK
-        '204':
-          description: No Content
+          schema:
+            $ref: '#/definitions/BrokerageOrderVO'
         '401':
           description: Unauthorized
         '403':
           description: Forbidden
+        '404':
+          description: Not Found
       security:
         - oauth2: []
       deprecated: false
-  '/brokerage/{nucleus_account_id}/statement':
+    put:
+      tags:
+        - Brokerage
+      summary: Cancel an Order
+      operationId: cancelOrderUsingPut
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - name: nucleus_order_id
+          in: path
+          description: nucleus_order_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /brokerage/securities:
+    get:
+      tags:
+        - Brokerage
+      summary: Get securities information
+      operationId: getSecuritiesUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: get_fundamentals
+          in: query
+          description: get_fundamentals
+          required: false
+          type: boolean
+          default: false
+        - name: nucleus_security_id
+          in: query
+          description: nucleus_security_id
+          required: false
+          type: string
+          format: uuid
+        - name: vendor_name
+          in: query
+          description: vendor_name
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BrokerageSecuritiesVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/brokerage/statement/{nucleus_account_id}':
     get:
       tags:
         - Brokerage
@@ -1061,6 +2425,86 @@ paths:
       security:
         - oauth2: []
       deprecated: false
+  '/brokerage/transaction/{nucleus_portfolio_id}':
+    get:
+      tags:
+        - Brokerage
+      summary: Get account transactions
+      operationId: getTransactionsUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: drivewealthResponse
+          description: drivewealthResponse
+          required: true
+          schema:
+            $ref: '#/definitions/GetTransactionsResponse'
+        - name: end_date
+          in: query
+          description: end_date
+          required: true
+          type: string
+          format: date
+        - name: nucleus_portfolio_id
+          in: path
+          description: nucleus_portfolio_id
+          required: true
+          type: string
+          format: uuid
+        - name: start_date
+          in: query
+          description: start_date
+          required: true
+          type: string
+          format: date
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BrokerageTransactionVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /brokerage/withdrawal:
+    post:
+      tags:
+        - Brokerage
+      summary: Create a withdrawal
+      operationId: createWithdrawalUsingPost
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: brokerageWithdrawalCO
+          description: brokerageWithdrawalCO
+          required: true
+          schema:
+            $ref: '#/definitions/BrokerageWithdrawalCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BrokerageWithdrawalVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
   /card/activate:
     post:
       tags:
@@ -1083,6 +2527,39 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/BaseResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /card/auto_reload:
+    post:
+      tags:
+        - Card
+      summary: Card auto reload
+      operationId: createAutoReloadUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: request
+          required: true
+          schema:
+            $ref: '#/definitions/CardAutoReloadRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CardAutoReloadResponseVO'
         '201':
           description: Created
         '401':
@@ -1135,6 +2612,72 @@ paths:
       security:
         - oauth2: []
       deprecated: false
+  /card/business:
+    post:
+      tags:
+        - Card
+      summary: Create a card business
+      operationId: createCardBusinessUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: cardBusinessRequestCO
+          description: cardBusinessRequestCO
+          required: true
+          schema:
+            $ref: '#/definitions/CardBusinessRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CreateBusinessResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/card/business/{nucleus_business_id}':
+    put:
+      tags:
+        - Card
+      summary: Update a card business
+      operationId: updateCardBusinessUsingPut
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_business_id
+          in: path
+          description: nucleus_business_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/UpdateBusinessResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
   /card/client:
     post:
       tags:
@@ -1156,7 +2699,40 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/CardClientResponseVO'
+            $ref: '#/definitions/CreateCardClientResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/card/client/{id}':
+    put:
+      tags:
+        - Card
+      summary: Update a card client
+      operationId: updateClientCardUsingPut
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/UpdateCardClientResponseVO'
         '201':
           description: Created
         '401':
@@ -1201,6 +2777,35 @@ paths:
       security:
         - oauth2: []
       deprecated: false
+  '/card/image/{card_id}':
+    get:
+      tags:
+        - Card
+      summary: Get card image
+      operationId: getCardImage
+      produces:
+        - application/json
+      parameters:
+        - name: card_id
+          in: path
+          description: card_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GetCardImageResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
   /card/issue:
     post:
       tags:
@@ -1234,12 +2839,107 @@ paths:
       security:
         - oauth2: []
       deprecated: false
+  /card/load:
+    post:
+      tags:
+        - Card
+      summary: Create a card load
+      operationId: createCardLoadUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: loadRequest
+          description: loadRequest
+          required: true
+          schema:
+            $ref: '#/definitions/CardLoadRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CardLoadUnloadResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/card/pci_details/{card_id}':
+    get:
+      tags:
+        - Card
+      summary: Get card pci details
+      operationId: getCardPciDetails
+      produces:
+        - application/json
+      parameters:
+        - name: card_id
+          in: path
+          description: card_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GetCardPciDetailsResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
   /card/pin:
     post:
       tags:
         - Card
       summary: pin card
       operationId: createCardPinUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: cardPinRequestCO
+          description: cardPinRequestCO
+          required: true
+          schema:
+            $ref: '#/definitions/CardPinRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BaseResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /card/pin/verify:
+    post:
+      tags:
+        - Card
+      summary: verify card pin
+      operationId: verifyCardPinUsingPost
       consumes:
         - application/json
       produces:
@@ -1283,7 +2983,7 @@ paths:
           description: cardPinRequestCO
           required: true
           schema:
-            $ref: '#/definitions/CardPinRequestCO'
+            $ref: '#/definitions/CardUpdatePinRequestCO'
         - name: id
           in: path
           description: id
@@ -1372,30 +3072,159 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /card/reload:
+  /card/replace:
     post:
       tags:
         - Card
-      summary: Create a card reload
-      operationId: createCardReloadUsingPost
+      summary: Create card replace
+      operationId: createCardReplaceUsingPost
       consumes:
         - application/json
       produces:
         - application/json
       parameters:
         - in: body
-          name: reloadRequest
-          description: reloadRequest
+          name: request
+          description: request
           required: true
           schema:
-            $ref: '#/definitions/CardReloadRequestCO'
+            $ref: '#/definitions/CardBaseRequestCO'
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/CardReloadUnloadResponseVO'
+            $ref: '#/definitions/CardReplaceResponseVO'
         '201':
           description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /card/reserve:
+    get:
+      tags:
+        - Card
+      summary: Card reserve account
+      operationId: getCardReserveAccountDetailsUsingGet
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CardReserveAccountResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /card/spending_control:
+    post:
+      tags:
+        - Card
+      summary: Create card spending control
+      operationId: createCardSpendingControlUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: request
+          required: true
+          schema:
+            $ref: '#/definitions/CardSpendingControlRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CardSpendingControlResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/card/spending_control/{nucleus_spending_control_id}':
+    put:
+      tags:
+        - Card
+      summary: Update a card spending control
+      operationId: updateCardSpendingControlUsingPut
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_spending_control_id
+          in: path
+          description: nucleus_spending_control_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CardSpendingControlResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/card/statement/{card_id}':
+    get:
+      tags:
+        - Card
+      summary: Get card statement
+      operationId: getCardStatementUsingGet
+      produces:
+        - application/json
+      parameters:
+        - name: card_id
+          in: path
+          description: card_id
+          required: true
+          type: string
+          format: uuid
+        - name: end_date
+          in: query
+          description: end_date
+          required: false
+          type: string
+          format: date
+        - name: start_date
+          in: query
+          description: start_date
+          required: false
+          type: string
+          format: date
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/GetCardStatementResponseVO'
         '401':
           description: Unauthorized
         '403':
@@ -1480,17 +3309,46 @@ paths:
       produces:
         - application/json
       parameters:
+        - name: device_id
+          in: query
+          description: device_id
+          required: false
+          type: string
+        - name: device_type
+          in: query
+          description: device_type
+          required: false
+          type: string
+          enum:
+            - watch
+            - mobile_phone
+            - tablet
+            - gaming_device
+            - vehicle
+            - appliance
+            - laptop
         - name: id
           in: path
           description: id
           required: true
           type: string
           format: uuid
+        - name: wallet
+          in: query
+          description: wallet
+          required: false
+          type: string
+          enum:
+            - google
+            - apple
+            - samsung
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/GetCardTokenResponseVO'
+            type: array
+            items:
+              $ref: '#/definitions/GetCardTokenResponseVO'
         '401':
           description: Unauthorized
         '403':
@@ -1541,39 +3399,6 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /card/transfer:
-    post:
-      tags:
-        - Card
-      summary: Create Card transfer
-      operationId: createCardTransferUsingPost
-      consumes:
-        - application/json
-      produces:
-        - application/json
-      parameters:
-        - in: body
-          name: transferRequest
-          description: transferRequest
-          required: true
-          schema:
-            $ref: '#/definitions/CardTransferRequestCO'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/CardTransferResponseVO'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
   /card/unload:
     post:
       tags:
@@ -1595,7 +3420,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/CardReloadUnloadResponseVO'
+            $ref: '#/definitions/CardLoadUnloadResponseVO'
         '201':
           description: Created
         '401':
@@ -1737,7 +3562,7 @@ paths:
       tags:
         - KMS
       summary: List all KMS Clients
-      description: Get details for all clients registered with your firm.
+      description: Get details for all clients registered with your business.
       operationId: getKMSAllUsingGet
       produces:
         - application/json
@@ -1748,6 +3573,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
         - name: order_by
           in: query
           description: order_by
@@ -1947,7 +3777,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/kyc_status/{nucleus_client_id}':
+  /kyc_status:
     get:
       tags:
         - KYC
@@ -1969,10 +3799,16 @@ paths:
           required: false
           type: string
           default: all
+        - name: nucleus_business_id
+          in: query
+          description: nucleus_business_id
+          required: false
+          type: string
+          format: uuid
         - name: nucleus_client_id
-          in: path
+          in: query
           description: nucleus_client_id
-          required: true
+          required: false
           type: string
           format: uuid
         - name: product
@@ -2064,6 +3900,47 @@ paths:
         - oauth2: []
       deprecated: false
   /property_value:
+    get:
+      tags:
+        - Aggregation
+      summary: Get Value of the given property
+      description: Get Value of the given property
+      operationId: getPropertyValue
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_aggregation_account_id
+          in: query
+          description: nucleus_aggregation_account_id
+          required: true
+          type: string
+          format: uuid
+        - name: nucleus_client_id
+          in: query
+          description: nucleus_client_id
+          required: true
+          type: string
+          format: uuid
+        - name: product
+          in: query
+          description: product
+          required: false
+          type: string
+          default: atom
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/PropertyValueResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
     post:
       tags:
         - Aggregation
@@ -2088,6 +3965,408 @@ paths:
             $ref: '#/definitions/PropertyValueResponseVO'
         '201':
           description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /rtp:
+    post:
+      tags:
+        - RTP
+      summary: Submit a RTP transfer
+      operationId: submitRtpTransferUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: transferRequest
+          description: transferRequest
+          required: true
+          schema:
+            $ref: '#/definitions/RtpTransferRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/RtpTransferResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /rtp/bank_link:
+    post:
+      tags:
+        - RTP
+      summary: Create bank link
+      operationId: createBankLinkUsingPost_2
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: request
+          required: true
+          schema:
+            $ref: '#/definitions/RtpBankLinkRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/RtpBankLinkResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/rtp/bank_link/client/{nucleus_client_id}':
+    get:
+      tags:
+        - RTP
+      summary: Get client bank links
+      operationId: getClientBankLinksUsingGet_1
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_client_id
+          in: path
+          description: nucleus_client_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/RtpBankLinkResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/rtp/bank_link/{nucleus_bank_link_id}':
+    get:
+      tags:
+        - RTP
+      summary: Get bank link
+      operationId: getBankLinkUsingGet_2
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_bank_link_id
+          in: path
+          description: nucleus_bank_link_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/RtpBankLinkResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    put:
+      tags:
+        - RTP
+      summary: Update bank link
+      operationId: updateBankLinkUsingPut_2
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_bank_link_id
+          in: path
+          description: nucleus_bank_link_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/RtpBankLinkResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    delete:
+      tags:
+        - RTP
+      summary: Delete bank link
+      operationId: deleteBankLinkUsingDelete_2
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_bank_link_id
+          in: path
+          description: nucleus_bank_link_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/RtpBankLinkResponseVO'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+        - oauth2: []
+      deprecated: false
+  '/rtp/client/{nucleus_client_id}':
+    get:
+      tags:
+        - RTP
+      summary: Get a list of Rtp transfers
+      operationId: getListOfRtpTransfersUsingGet
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_client_id
+          in: path
+          description: nucleus_client_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/RtpTransferResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/rtp/{nucleus_funding_id}':
+    get:
+      tags:
+        - RTP
+      summary: Get the RTP transfer
+      operationId: getRtpTransferUsingGet
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_funding_id
+          in: path
+          description: nucleus_funding_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/RtpTransferResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    delete:
+      tags:
+        - RTP
+      summary: Cancel the RTP transfer
+      operationId: cancelRtpTransferUsingDelete
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_funding_id
+          in: path
+          description: nucleus_funding_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/RtpTransferResponseVO'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+        - oauth2: []
+      deprecated: false
+  /sms:
+    post:
+      tags:
+        - SMS
+      summary: Send SMS to recipient
+      description: Send SMS to recipient
+      operationId: sendSMS
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: smsVO
+          description: smsVO
+          required: true
+          schema:
+            $ref: '#/definitions/SMSVO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SMSResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/sms/status/{sms_id}':
+    get:
+      tags:
+        - SMS
+      summary: Fetch details for corresponding sms_id
+      description: Fetch details for corresponding sms_id
+      operationId: getVendorCallLimit
+      produces:
+        - '*/*'
+      parameters:
+        - name: sms_id
+          in: path
+          description: sms_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SMS'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /smtp:
+    post:
+      tags:
+        - SMTP
+      summary: Send Mail to recipient
+      description: Send Mail to recipient
+      operationId: sendMail
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: smtpVO
+          description: smtpVO
+          required: true
+          schema:
+            $ref: '#/definitions/SmtpVO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SmtpResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/smtp/status/{email_id}':
+    get:
+      tags:
+        - SMTP
+      summary: Fetch details for corresponding email_id
+      description: Fetch details for corresponding email_id
+      operationId: getEmailDetails
+      produces:
+        - '*/*'
+      parameters:
+        - name: email_id
+          in: path
+          description: email_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Email'
         '401':
           description: Unauthorized
         '403':
@@ -2170,7 +4449,7 @@ paths:
       tags:
         - Webhook
       summary: List all webhooks
-      description: Get information for all webhooks defined for your firm.
+      description: Get information for all webhooks defined for your business.
       operationId: getWebhookAllUsingGet
       produces:
         - '*/*'
@@ -2288,7 +4567,7 @@ paths:
       tags:
         - Webhook
       summary: Update a webhook
-      description: Update a webhook for your firm. The webhook_id must be provided
+      description: Update a webhook for your business. The webhook_id must be provided
       operationId: updateWebhookUsingPut
       consumes:
         - application/json
@@ -2328,7 +4607,7 @@ paths:
       tags:
         - Webhook
       summary: Delete a webhook
-      description: Permanently delete a webhook for your firm. The webhook_id must be provided.
+      description: Permanently delete a webhook for your business. The webhook_id must be provided.
       operationId: deleteWebhookUsingDelete
       produces:
         - '*/*'
@@ -2399,12 +4678,538 @@ paths:
       security:
         - oauth2: []
       deprecated: false
+  /wire:
+    post:
+      tags:
+        - Wire
+      summary: Submit a Wire transfer
+      operationId: submitWireTransferUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: transferRequest
+          description: transferRequest
+          required: true
+          schema:
+            $ref: '#/definitions/WireTransferRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/WireTransferResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /wire/bank_link:
+    post:
+      tags:
+        - Wire
+      summary: Create bank link
+      operationId: createBankLinkUsingPost_3
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: request
+          required: true
+          schema:
+            $ref: '#/definitions/WireBankLinkRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/WireBankLinkResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/wire/bank_link/client/{nucleus_client_id}':
+    get:
+      tags:
+        - Wire
+      summary: Get client bank links
+      operationId: getClientBankLinksUsingGet_2
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_client_id
+          in: path
+          description: nucleus_client_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/WireBankLinkResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/wire/bank_link/{nucleus_bank_link_id}':
+    get:
+      tags:
+        - Wire
+      summary: Get bank link
+      operationId: getBankLinkUsingGet_3
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_bank_link_id
+          in: path
+          description: nucleus_bank_link_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/WireBankLinkResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    put:
+      tags:
+        - Wire
+      summary: Update bank link
+      operationId: updateBankLinkUsingPut_3
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_bank_link_id
+          in: path
+          description: nucleus_bank_link_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/WireBankLinkResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    delete:
+      tags:
+        - Wire
+      summary: Delete bank link
+      operationId: deleteBankLinkUsingDelete_3
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_bank_link_id
+          in: path
+          description: nucleus_bank_link_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/WireBankLinkResponseVO'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+        - oauth2: []
+      deprecated: false
+  '/wire/client/{nucleus_client_id}':
+    get:
+      tags:
+        - Wire
+      summary: Get a list of Wire transfers
+      operationId: getListOfWireTransfersUsingGet
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_client_id
+          in: path
+          description: nucleus_client_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/WireTransferResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/wire/{nucleus_funding_id}':
+    get:
+      tags:
+        - Wire
+      summary: Get the Wire transfer
+      operationId: getWireTransferUsingGet
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_funding_id
+          in: path
+          description: nucleus_funding_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/WireTransferResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    delete:
+      tags:
+        - Wire
+      summary: Cancel the Wire transfer
+      operationId: cancelWireTransferUsingDelete
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_funding_id
+          in: path
+          description: nucleus_funding_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/WireTransferResponseVO'
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+        - oauth2: []
+      deprecated: false
 securityDefinitions:
   oauth2:
     type: oauth2
-    tokenUrl: 'https://sandbox.hydrogenplatform.com/authorization/v1/oauth/token'
+    tokenUrl: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token'
     flow: application
 definitions:
+  AccountingCustomerResponseVO:
+    type: object
+    properties:
+      body:
+        $ref: '#/definitions/Customer'
+      status_code:
+        type: integer
+        format: int32
+    title: AccountingCustomerResponseVO
+  AccountingCustomerRevenueResponseVO:
+    type: object
+    properties:
+      body:
+        $ref: '#/definitions/CustomerRevenue'
+      status_code:
+        type: integer
+        format: int32
+    title: AccountingCustomerRevenueResponseVO
+  AccountingFinalResponseVO:
+    type: object
+    properties:
+      integration_type:
+        type: string
+      message:
+        type: string
+      nucleus_customer_revenues:
+        type: array
+        items:
+          $ref: '#/definitions/AccountingCustomerRevenueResponseVO'
+      nucleus_customers:
+        type: array
+        items:
+          $ref: '#/definitions/AccountingCustomerResponseVO'
+      nucleus_financial_statement:
+        $ref: '#/definitions/AccountingStatsResponseVO'
+      nucleus_invoice_payments:
+        type: array
+        items:
+          $ref: '#/definitions/AccountingInvoicePaymentResponseVO'
+      nucleus_invoices:
+        type: array
+        items:
+          $ref: '#/definitions/AccountingInvoiceResponseVO'
+      vendor_name:
+        type: string
+    title: AccountingFinalResponseVO
+  AccountingInvoicePaymentResponseVO:
+    type: object
+    properties:
+      body:
+        $ref: '#/definitions/InvoicePayment'
+      status_code:
+        type: integer
+        format: int32
+    title: AccountingInvoicePaymentResponseVO
+  AccountingInvoiceResponseVO:
+    type: object
+    properties:
+      body:
+        $ref: '#/definitions/Invoice'
+      status_code:
+        type: integer
+        format: int32
+    title: AccountingInvoiceResponseVO
+  AccountingStatsResponseVO:
+    type: object
+    properties:
+      body:
+        $ref: '#/definitions/FinancialStatement'
+      status_code:
+        type: integer
+        format: int32
+    title: AccountingStatsResponseVO
+  AchBalanceResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_asset_sizes_posted:
+        type: array
+        items:
+          type: object
+      nucleus_asset_sizes_updated:
+        type: array
+        items:
+          type: object
+      nucleus_portfolio_id:
+        type: string
+        format: uuid
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: AchBalanceResponseVO
+  AchBankLinkRequestCO:
+    type: object
+    properties:
+      is_reserve:
+        type: boolean
+      nucleus_bank_link_id:
+        type: string
+        format: uuid
+      vendor_request:
+        type: object
+    title: AchBankLinkRequestCO
+  AchBankLinkResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_bank_link_id:
+        type: string
+        format: uuid
+      nucleus_client_id:
+        type: string
+        format: uuid
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_request_data:
+        $ref: '#/definitions/BankLinkVendorDataVO'
+      vendor_response:
+        type: object
+    title: AchBankLinkResponseVO
+  AchBusinessRequestCO:
+    type: object
+    properties:
+      kyc_required:
+        type: boolean
+      nucleus_business_id:
+        type: string
+        format: uuid
+      vendor_request:
+        type: object
+    title: AchBusinessRequestCO
+  AchBusinessResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_business_id:
+        type: string
+        format: uuid
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: AchBusinessResponseVO
+  AchCardLinkRequestCO:
+    type: object
+    properties:
+      nucleus_client_id:
+        type: string
+        format: uuid
+      vendor_request:
+        type: object
+    title: AchCardLinkRequestCO
+  AchCardLinkResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_bank_link_id:
+        type: string
+        format: uuid
+      nucleus_client_id:
+        type: string
+        format: uuid
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: AchCardLinkResponseVO
+  AchClientRequestCO:
+    type: object
+    properties:
+      kyc_required:
+        type: boolean
+      nucleus_client_id:
+        type: string
+        format: uuid
+      vendor_request:
+        type: object
+    title: AchClientRequestCO
+  AchClientResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_client_id:
+        type: string
+        format: uuid
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: AchClientResponseVO
+  AchTransferRequestCO:
+    type: object
+    properties:
+      is_reserve:
+        type: boolean
+      nucleus_funding_id:
+        type: string
+        format: uuid
+      vendor_request:
+        type: object
+    title: AchTransferRequestCO
+  AchTransferResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_funding_id:
+        type: string
+        format: uuid
+      status:
+        type: string
+      status_details:
+        type: string
+      vendor_name:
+        type: string
+      vendor_request:
+        type: object
+      vendor_response:
+        type: object
+    title: AchTransferResponseVO
+  Acquiree:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      symbol:
+        type: string
+    title: Acquiree
+  Acquirer:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      symbol:
+        type: string
+    title: Acquirer
   Address:
     type: object
     properties:
@@ -2425,13 +5230,13 @@ definitions:
       type:
         type: string
         enum:
-          - HOME
-          - WORK
-          - BILLING
-          - MAILING
-          - LEGAL
-          - RESIDENCE
-          - UNKNOWN
+          - home
+          - work
+          - billing
+          - mailing
+          - legal
+          - residence
+          - 'null'
     title: Address
   AggregationAccount:
     type: object
@@ -2448,10 +5253,6 @@ definitions:
         type: string
         example: Bank Gold Checking
         description: accountName
-      account_number:
-        type: string
-        example: 566788991
-        description: accountNumber
       bank_link_id:
         type: string
         format: uuid
@@ -2497,6 +5298,10 @@ definitions:
         type: boolean
         example: false
         description: isBusiness
+      is_cash:
+        type: boolean
+        example: true
+        description: isCash
       is_investment:
         type: boolean
         example: false
@@ -2505,6 +5310,10 @@ definitions:
         type: boolean
         example: true
         description: isLinkVerified
+      is_manual:
+        type: boolean
+        example: false
+        description: isManual
       mask:
         type: string
         description: mask
@@ -2536,15 +5345,18 @@ definitions:
         example: 2feae367-77be-4613-9cd0-f62fd5b3cff9
         description: aggregationAccountId
       available_balance:
-        type: string
+        type: number
+        format: double
         example: 10000
         description: availableBalance
       available_credit:
-        type: string
+        type: number
+        format: double
         example: 10000
         description: availableCredit
       balance:
-        type: string
+        type: number
+        format: double
         example: 9000
         description: balance
       balance_time_stamp:
@@ -2757,9 +5569,14 @@ definitions:
         type: boolean
         example: false
         description: is_excluded_analysis
-      is_recurring:
+      is_fee:
         type: boolean
         example: false
+        readOnly: true
+      is_recurring:
+        type: boolean
+      is_transfer:
+        type: boolean
       metadata:
         type: object
         example: {}
@@ -2768,6 +5585,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
+      status:
+        type: string
+        example: active
+        description: status
       transaction_date:
         type: string
         format: date-time
@@ -2860,6 +5681,34 @@ definitions:
       ephemeral_public_key:
         type: string
     title: ApplePayload
+  AsyncTransaction:
+    type: object
+    properties:
+      create_date:
+        type: string
+        format: date-time
+      id:
+        type: string
+        format: uuid
+      response:
+        type: object
+      status:
+        type: string
+      update_date:
+        type: string
+        format: date-time
+    title: AsyncTransaction
+  AsyncTransactionVO:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uuid
+      response:
+        type: object
+      status:
+        type: string
+    title: AsyncTransactionVO
   BaasAccountCO:
     type: object
     properties:
@@ -2890,7 +5739,7 @@ definitions:
       status:
         type: string
       vendor_name:
-        type: object
+        type: string
       vendor_response:
         type: object
     title: BaasAccountVO
@@ -2913,91 +5762,50 @@ definitions:
       vendor_name:
         type: object
     title: BaasBalanceVO
-  BaasClientCO:
+  BaasBusinessVO:
     type: object
     properties:
-      electron_document_id:
+      message:
+        type: string
+      nucleus_business_id:
+        type: string
+        format: uuid
+      nucleus_document_id:
         type: array
         items:
           type: string
           format: uuid
-      nucleus_client_id:
+      status:
         type: string
-        format: uuid
-    title: BaasClientCO
+      vendor_name:
+        type: string
+      vendor_request_data:
+        $ref: '#/definitions/BusinessVendorRequestDataVO'
+      vendor_response:
+        type: object
+    title: BaasBusinessVO
   BaasClientVO:
     type: object
     properties:
-      electron_document_id:
-        type: array
-        items:
-          type: string
-          format: uuid
       message:
         type: string
       nucleus_client_id:
         type: string
         format: uuid
+      nucleus_document_id:
+        type: array
+        items:
+          type: string
+          format: uuid
       status:
         type: string
       vendor_name:
-        type: object
+        type: string
       vendor_request_data:
-        $ref: '#/definitions/BaasClientVendorDataVO'
+        $ref: '#/definitions/ClientVendorRequestDataVO'
       vendor_response:
         type: object
     title: BaasClientVO
-  BaasClientVendorDataVO:
-    type: object
-    properties:
-      addresses:
-        type: array
-        items:
-          $ref: '#/definitions/Address'
-      backup_with_holding_percent:
-        type: boolean
-      country_of_citizenship:
-        type: string
-      date_of_birth:
-        type: string
-        format: date-time
-      email:
-        type: string
-      first_name:
-        type: string
-      gender:
-        type: string
-        enum:
-          - M
-          - F
-          - U
-      identification_number:
-        type: string
-      identification_number_type:
-        type: string
-      identifications:
-        type: array
-        items:
-          $ref: '#/definitions/Identification'
-      last_name:
-        type: string
-      metadata:
-        type: object
-        additionalProperties:
-          type: string
-      middle_name:
-        type: string
-      phone_number:
-        type: string
-      politically_exposed_person:
-        $ref: '#/definitions/PoliticallyExposedPersonDTO'
-      reg_o:
-        type: boolean
-      suffix:
-        type: string
-      title:
-        type: string
-    title: BaasClientVendorDataVO
   BaasStatementVO:
     type: object
     properties:
@@ -3043,13 +5851,16 @@ definitions:
         type: string
       message:
         type: string
+      nucleus_client_id:
+        type: string
+        format: uuid
       nucleus_portfolio_id:
         type: string
         format: uuid
       status:
         type: string
       vendor_name:
-        type: object
+        type: string
       vendor_response:
         type: object
     title: BaasSubAccountVO
@@ -3076,7 +5887,6 @@ definitions:
     type: object
     required:
       - amount
-      - merchant
       - transaction_type
     properties:
       amount:
@@ -3126,11 +5936,13 @@ definitions:
         example: 1c28dade-8679-4df5-9b9d-c508d04fcb0c
         description: accountId
       available_balance:
-        type: string
+        type: number
+        format: double
         example: 1000
         description: available_balance
       balance:
-        type: string
+        type: number
+        format: double
         example: 1000.12
         description: balance
       bank_account_holder:
@@ -3174,7 +5986,7 @@ definitions:
         description: isLinkVerified
       link_verified_date:
         type: string
-        format: date-time
+        format: date
         example: '2017-11-01'
         description: linkVerifiedDate
       mask:
@@ -3219,53 +6031,19 @@ definitions:
         type: integer
         format: int32
     title: BankLinkResponseInternalObjectVO
-  BaseDocument:
+  BankLinkVendorDataVO:
     type: object
     properties:
-      data:
-        $ref: '#/definitions/DigitalDocumentData'
-      type:
+      bank_account_name:
         type: string
-        enum:
-          - BASIC_INFO
-          - ADDRESS_INFO
-          - PERSONAL_INFO
-          - IDENTIFICATION_INFO
-          - EMPLOYMENT_INFO
-          - INVESTOR_PROFILE_INFO
-          - COMPLIANCE_AML_INFO
-          - DISCLOSURES
-          - MARGIN_DISCLOSURE
-          - MARKETING_INFO
-          - CUSTODIAN_INFO
-          - INSTITUTIONAL_INFO
-          - DIRECTOR_INFO
-          - TRUST_INFO
-          - JOINT_BASIC_INFO
-          - JOINT_ADDRESS_INFO
-          - JOINT_PERSONAL_INFO
-          - JOINT_IDENTIFICATION_INFO
-          - JOINT_EMPLOYMENT_INFO
-          - JOINT_INVESTOR_PROFILE_INFO
-          - JOINT_COMPLIANCE_AML_INFO
-          - JOINT_DISCLOSURES
-          - JOINT_MARGIN_DISCLOSURE
-          - JOINT_MARKETING_INFO
-          - JOINT_CUSTODIAN_INFO
-          - JOINT_INSTITUTIONAL_INFO
-          - JOINT_DIRECTOR_INFO
-          - JOINT_TRUST_INFO
-    title: BaseDocument
+      name:
+        type: string
+    title: BankLinkVendorDataVO
   BaseResponseVO:
     type: object
     properties:
-      card_status:
-        type: string
       message:
         type: string
-      nucleus_card_id:
-        type: string
-        format: uuid
       vendor_name:
         type: string
       vendor_response:
@@ -3274,29 +6052,21 @@ definitions:
   BrokerageAccountCO:
     type: object
     properties:
-      electron_document_id:
+      nucleus_account_id:
+        type: string
+        format: uuid
+      nucleus_document_ids:
         type: array
         items:
           type: string
           format: uuid
-      nucleus_account_id:
-        type: string
-        format: uuid
-      nucleus_account_type_id:
-        type: string
-        format: uuid
     title: BrokerageAccountCO
   BrokerageAccountVO:
     type: object
     properties:
-      electron_document_id:
-        type: array
-        items:
-          type: string
-          format: uuid
       message:
         type: string
-      nucleus_client_id:
+      nucleus_account_id:
         type: string
         format: uuid
       status:
@@ -3306,6 +6076,25 @@ definitions:
       vendor_response:
         type: object
     title: BrokerageAccountVO
+  BrokerageBalanceVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_asset_sizes_posted:
+        type: array
+        items:
+          $ref: '#/definitions/PortfolioAssetSizeLog'
+      nucleus_portfolio_id:
+        type: string
+        format: uuid
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: BrokerageBalanceVO
   BrokerageBankLinkCO:
     type: object
     properties:
@@ -3325,18 +6114,22 @@ definitions:
         type: string
       vendor_name:
         type: string
+      vendor_request_data:
+        type: object
       vendor_response:
         type: object
     title: BrokerageBankLinkVO
   BrokerageClientCO:
     type: object
     properties:
-      nucleus_account_id:
-        type: string
-        format: uuid
       nucleus_client_id:
         type: string
         format: uuid
+      nucleus_document_ids:
+        type: array
+        items:
+          type: string
+          format: uuid
     title: BrokerageClientCO
   BrokerageCreateClientVO:
     type: object
@@ -3351,8 +6144,129 @@ definitions:
       vendor_name:
         type: string
       vendor_response:
-        $ref: '#/definitions/CreateClientResponse'
+        type: object
     title: BrokerageCreateClientVO
+  BrokerageDepositCO:
+    type: object
+    properties:
+      nucleus_funding_id:
+        type: string
+        format: uuid
+    title: BrokerageDepositCO
+  BrokerageDepositVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_funding_id:
+        type: string
+        format: uuid
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: BrokerageDepositVO
+  BrokerageDocumentCO:
+    type: object
+    properties:
+      nucleus_client_id:
+        type: string
+        format: uuid
+      nucleus_document_id:
+        type: string
+        format: uuid
+    title: BrokerageDocumentCO
+  BrokerageDocumentVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_client_id:
+        type: string
+        format: uuid
+      nucleus_document_id:
+        type: string
+        format: uuid
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: BrokerageDocumentVO
+  BrokerageHoldingVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_holdings_posted:
+        type: object
+      nucleus_portfolio_id:
+        type: string
+        format: uuid
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: BrokerageHoldingVO
+  BrokerageOrderCO:
+    type: object
+    properties:
+      nucleus_order_id:
+        type: string
+        format: uuid
+    title: BrokerageOrderCO
+  BrokerageOrderVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_order_id:
+        type: string
+        format: uuid
+      order_status_id:
+        type: string
+        format: uuid
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: BrokerageOrderVO
+  BrokeragePerformanceVO:
+    type: object
+    properties:
+      holdings_performance:
+        type: object
+      message:
+        type: string
+      nucleus_portfolio_id:
+        type: string
+        format: uuid
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: BrokeragePerformanceVO
+  BrokerageSecuritiesVO:
+    type: object
+    properties:
+      message:
+        type: string
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: BrokerageSecuritiesVO
   BrokerageStatementVO:
     type: object
     properties:
@@ -3360,12 +6274,27 @@ definitions:
         type: string
         format: uuid
       statements:
-        type: array
-        items:
-          $ref: '#/definitions/StatementModel'
+        type: object
       vendor_name:
         type: string
     title: BrokerageStatementVO
+  BrokerageTransactionVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_portfolio_id:
+        type: string
+        format: uuid
+      nucleus_transactions_posted:
+        type: object
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: BrokerageTransactionVO
   BrokerageUpdateClientVO:
     type: object
     properties:
@@ -3374,20 +6303,153 @@ definitions:
       nucleus_client_id:
         type: string
         format: uuid
+      status:
+        type: string
       vendor_name:
         type: string
       vendor_request_data:
+        type: object
+      vendor_response:
+        type: object
+    title: BrokerageUpdateClientVO
+  BrokerageWithdrawalCO:
+    type: object
+    properties:
+      nucleus_funding_id:
+        type: string
+        format: uuid
+    title: BrokerageWithdrawalCO
+  BrokerageWithdrawalVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_funding_id:
+        type: string
+        format: uuid
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: BrokerageWithdrawalVO
+  BusinessAddress:
+    type: object
+    properties:
+      address_line1:
+        type: string
+        example: 123 Main Street Room 22
+        description: address_line1
+      address_line2:
+        type: string
+        example: University Dorm
+        description: address_line2
+      city:
+        type: string
+        example: New York
+        description: city
+      country:
+        type: string
+        example: US
+        description: country
+      is_primary:
+        type: boolean
+        example: true
+        description: is_primary
+      postalcode:
+        type: string
+        example: 123123123
+        description: postalcode
+      state:
+        type: string
+        example: NY
+        description: state
+      type:
+        type: string
+        example: mailing
+        description: type
+    title: BusinessAddress
+    description: BusinessAddress Object
+  BusinessVendorRequestDataVO:
+    type: object
+    properties:
+      business_addresses:
         type: array
         items:
-          $ref: '#/definitions/BaseDocument'
+          $ref: '#/definitions/BusinessAddress'
+      dba_name:
+        type: string
+      email:
+        type: string
+      identification_number:
+        type: string
+      identification_number_type:
+        type: string
+      incorporation_date:
+        type: string
+        format: date
+      incorporation_state:
+        type: string
+      is_public:
+        type: boolean
+      legal_name:
+        type: string
+      legal_structure:
+        type: string
+      metadata:
+        type: object
+        additionalProperties:
+          type: string
+      owners:
+        type: array
+        items:
+          $ref: '#/definitions/Ownership'
+      phone_number:
+        type: string
+      ticker:
+        type: string
+      website:
+        type: string
+    title: BusinessVendorRequestDataVO
+  CardAutoReloadRequestCO:
+    type: object
+    properties:
+      nucleus_bank_link_id:
+        type: string
+        format: uuid
+      nucleus_client_id:
+        type: string
+        format: uuid
+      reload_amount:
+        type: number
+        format: double
+      threshold_amount:
+        type: number
+        format: double
+    title: CardAutoReloadRequestCO
+  CardAutoReloadResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_client_id:
+        type: string
+        format: uuid
+      reload_amount:
+        type: number
+        format: double
+      threshold_amount:
+        type: number
+        format: double
+      vendor_name:
+        type: string
       vendor_response:
-        $ref: '#/definitions/UpdateClientResponse'
-    title: BrokerageUpdateClientVO
+        type: object
+    title: CardAutoReloadResponseVO
   CardBalanceResponseVO:
     type: object
     properties:
-      card_status:
-        type: string
       message:
         type: string
       nucleus_asset_sizes_posted:
@@ -3416,15 +6478,17 @@ definitions:
         type: string
       vendor_request:
         type: object
-        additionalProperties:
-          type: string
     title: CardBaseRequestCO
+  CardBusinessRequestCO:
+    type: object
+    properties:
+      nucleus_business_id:
+        type: string
+        format: uuid
+    title: CardBusinessRequestCO
   CardClientRequestCO:
     type: object
     properties:
-      nucleus_card_id:
-        type: string
-        format: uuid
       nucleus_client_id:
         type: string
         format: uuid
@@ -3433,9 +6497,21 @@ definitions:
         additionalProperties:
           type: string
     title: CardClientRequestCO
-  CardClientResponseVO:
+  CardLoadRequestCO:
     type: object
     properties:
+      nucleus_funding_id:
+        type: string
+        format: uuid
+      reason:
+        type: string
+    title: CardLoadRequestCO
+  CardLoadUnloadResponseVO:
+    type: object
+    properties:
+      amount:
+        type: number
+        format: double
       card_status:
         type: string
       message:
@@ -3443,16 +6519,14 @@ definitions:
       nucleus_card_id:
         type: string
         format: uuid
-      nucleus_client_id:
+      nucleus_funding_id:
         type: string
         format: uuid
-      status:
-        type: string
       vendor_name:
         type: string
       vendor_response:
         type: object
-    title: CardClientResponseVO
+    title: CardLoadUnloadResponseVO
   CardPinRequestCO:
     type: object
     properties:
@@ -3465,43 +6539,71 @@ definitions:
         type: string
       vendor_request:
         type: object
-        additionalProperties:
-          type: string
     title: CardPinRequestCO
-  CardReloadRequestCO:
+  CardReplaceResponseVO:
     type: object
     properties:
-      amount:
-        type: number
-        format: double
-      nucleus_card_id:
-        type: string
-        format: uuid
-      reason:
-        type: string
-      vendor_request:
-        type: object
-        additionalProperties:
-          type: string
-    title: CardReloadRequestCO
-  CardReloadUnloadResponseVO:
-    type: object
-    properties:
-      amount:
-        type: number
-        format: double
       card_status:
         type: string
       message:
         type: string
+      new_nucleus_card_id:
+        type: string
+        format: uuid
       nucleus_card_id:
+        type: string
+        format: uuid
+      replaced_nucleus_card_id:
         type: string
         format: uuid
       vendor_name:
         type: string
       vendor_response:
         type: object
-    title: CardReloadUnloadResponseVO
+    title: CardReplaceResponseVO
+  CardReserveAccountResponseVO:
+    type: object
+    properties:
+      balance:
+        type: number
+        format: double
+      balance_available:
+        type: number
+        format: double
+      message:
+        type: string
+      overdraft_limit:
+        type: number
+        format: double
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+      wallet_id:
+        type: string
+    title: CardReserveAccountResponseVO
+  CardSpendingControlRequestCO:
+    type: object
+    properties:
+      nucleus_spending_control_id:
+        type: string
+        format: uuid
+    title: CardSpendingControlRequestCO
+  CardSpendingControlResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_spending_control_id:
+        type: string
+        format: uuid
+      vendor_name:
+        type: string
+      vendor_request_data:
+        $ref: '#/definitions/SpendingControlVendorRequestDataVO'
+      vendor_response:
+        type: object
+    title: CardSpendingControlResponseVO
   CardTokenRequestCO:
     type: object
     properties:
@@ -3512,13 +6614,11 @@ definitions:
         type: string
       vendor_request:
         type: object
-        additionalProperties:
-          type: string
       wallet:
         type: string
         enum:
-          - apple
           - google
+          - apple
           - samsung
     title: CardTokenRequestCO
   CardTokenResponseVO:
@@ -3526,8 +6626,6 @@ definitions:
     properties:
       apple_payload:
         $ref: '#/definitions/ApplePayload'
-      card_status:
-        type: string
       google_payload:
         $ref: '#/definitions/GooglePayload'
       message:
@@ -3544,15 +6642,13 @@ definitions:
       wallet:
         type: string
         enum:
-          - apple
           - google
+          - apple
           - samsung
     title: CardTokenResponseVO
   CardTransactionResponseVO:
     type: object
     properties:
-      card_status:
-        type: string
       message:
         type: string
       nucleus_card_id:
@@ -3571,55 +6667,27 @@ definitions:
       vendor_response:
         type: object
     title: CardTransactionResponseVO
-  CardTransferRequestCO:
+  CardUnloadRequestCO:
     type: object
     properties:
-      nucleus_card_id_from:
-        type: string
-        format: uuid
-      nucleus_card_id_to:
+      nucleus_funding_id:
         type: string
         format: uuid
       reason:
         type: string
-    title: CardTransferRequestCO
-  CardTransferResponseVO:
+    title: CardUnloadRequestCO
+  CardUpdatePinRequestCO:
     type: object
     properties:
-      card_status:
+      current_pin:
         type: string
-      message:
+      new_pin:
         type: string
-      nucleus_card_id:
-        type: string
-        format: uuid
-      nucleus_card_id_from:
-        type: string
-        format: uuid
-      nucleus_card_id_to:
-        type: string
-        format: uuid
-      vendor_name:
-        type: string
-      vendor_response:
-        type: object
-    title: CardTransferResponseVO
-  CardUnloadRequestCO:
-    type: object
-    properties:
-      amount:
-        type: number
-        format: double
-      nucleus_card_id:
-        type: string
-        format: uuid
       reason:
         type: string
       vendor_request:
         type: object
-        additionalProperties:
-          type: string
-    title: CardUnloadRequestCO
+    title: CardUpdatePinRequestCO
   Cash:
     type: object
     required:
@@ -3669,50 +6737,116 @@ definitions:
       type:
         type: string
         enum:
-          - HOME
-          - WORK
-          - BILLING
-          - MAILING
-          - LEGAL
-          - RESIDENCE
-          - UNKNOWN
+          - home
+          - work
+          - billing
+          - mailing
+          - legal
+          - residence
+          - 'null'
     title: ClientAddress
     description: ClientAddress Object
-  CreateClientResponse:
+  ClientVendorRequestDataVO:
     type: object
     properties:
-      created_when:
-        type: string
-        format: date-time
-      documents:
+      addresses:
         type: array
         items:
-          type: object
-      id:
+          $ref: '#/definitions/Address'
+      business_name:
         type: string
-        format: uuid
-      parent_ib:
-        $ref: '#/definitions/ParentIB'
-      referral_code:
+      country_of_citizenship:
         type: string
-      status:
-        $ref: '#/definitions/ExpandedProperty'
-      updated_when:
+      date_of_birth:
         type: string
-        format: date-time
-      user_type:
-        $ref: '#/definitions/ExpandedProperty'
-      wlp_id:
+        format: date
+      email:
         type: string
-    title: CreateClientResponse
-  CreateOrderResponse:
+      first_name:
+        type: string
+      gender:
+        type: string
+      identification_number:
+        type: string
+      identification_number_type:
+        type: string
+      identifications:
+        type: array
+        items:
+          $ref: '#/definitions/Identification'
+      last_name:
+        type: string
+      metadata:
+        type: object
+        additionalProperties:
+          type: string
+      middle_name:
+        type: string
+      phone_number:
+        type: string
+      politically_exposed_person:
+        $ref: '#/definitions/PoliticallyExposedPersonDTO'
+      prefix:
+        type: string
+      suffix:
+        type: string
+      title:
+        type: string
+    title: ClientVendorRequestDataVO
+  CreateBaasBusinessCO:
     type: object
     properties:
-      order_id:
+      nucleus_business_id:
         type: string
-      order_no:
+        format: uuid
+      nucleus_document_ids:
+        type: array
+        items:
+          type: string
+          format: uuid
+    title: CreateBaasBusinessCO
+  CreateBaasClientCO:
+    type: object
+    properties:
+      nucleus_client_id:
         type: string
-    title: CreateOrderResponse
+        format: uuid
+      nucleus_document_ids:
+        type: array
+        items:
+          type: string
+          format: uuid
+    title: CreateBaasClientCO
+  CreateBusinessResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_business_id:
+        type: string
+        format: uuid
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: CreateBusinessResponseVO
+  CreateCardClientResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_client_id:
+        type: string
+        format: uuid
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: CreateCardClientResponseVO
   CreateUserRequest:
     type: object
     properties:
@@ -3731,9 +6865,285 @@ definitions:
       vendor_request:
         type: object
     title: CreateUserRequest
-  DigitalDocumentData:
+  Customer:
     type: object
-    title: DigitalDocumentData
+    required:
+      - company_name
+    properties:
+      address:
+        type: array
+        items:
+          $ref: '#/definitions/CustomerAddress'
+      client_id:
+        type: string
+        format: uuid
+        example: 50d76212-0fcd-4d36-8633-e4a52cbcb79f
+        description: clientId
+      company_name:
+        type: string
+        example: hydrogen
+        description: companyName
+      create_date:
+        type: string
+        format: date-time
+      description:
+        type: string
+        example: zgzIeci1iCzGYuqwNiFM
+        description: description
+      first_name:
+        type: string
+        example: firstname
+        description: firstName
+      id:
+        type: string
+        format: uuid
+      identification_number:
+        type: string
+        example: vAh1e9nuzp5NHmM6derx
+        description: identificationNumber
+      is_active:
+        type: boolean
+        example: true
+        description: isActive
+      last_name:
+        type: string
+        example: lastName
+        description: lastName
+      metadata:
+        type: object
+        example: {}
+        description: metadata
+        readOnly: true
+        additionalProperties:
+          type: string
+      secondary_id:
+        type: string
+      status:
+        type: string
+        example: Completed
+        description: status
+      update_date:
+        type: string
+        format: date-time
+    title: Customer
+    description: Customer Object
+  CustomerAddress:
+    type: object
+    required:
+      - address_line1
+      - city
+      - country
+      - state
+      - type
+    properties:
+      address_line1:
+        type: string
+        example: Apt 404B
+        description: addressLine1
+      address_line2:
+        type: string
+        example: Example Street
+        description: addressLine2
+      city:
+        type: string
+        example: New York
+        description: city
+      country:
+        type: string
+        example: US
+        description: country
+      postalcode:
+        type: string
+        example: 10001
+        description: postalcode
+      state:
+        type: string
+        example: CA
+        description: state
+      type:
+        type: string
+        example: Home
+        description: type
+    title: CustomerAddress
+    description: CustomerAddress Object
+  CustomerRevenue:
+    type: object
+    required:
+      - accounting_method
+      - currency_code
+      - customer_id
+      - date
+      - revenue
+    properties:
+      accounting_method:
+        type: string
+        example: cash
+        description: accounting_method
+      create_date:
+        type: string
+        format: date-time
+      currency_code:
+        type: string
+        example: USD
+        description: currency_code
+      customer_id:
+        type: string
+        format: uuid
+        example: 50d76212-0fcd-4d36-8633-e4a52cbcb79f
+        description: customerId
+      date:
+        type: string
+        format: date
+        example: '2020-03-18'
+        description: date
+      id:
+        type: string
+        format: uuid
+      revenue:
+        type: number
+        format: double
+        example: 10
+        description: revenue
+      secondary_id:
+        type: string
+      update_date:
+        type: string
+        format: date-time
+    title: CustomerRevenue
+    description: Customer Revenue Object
+  Dividend:
+    type: object
+    properties:
+      amount_per_share:
+        type: number
+        format: double
+      tax_code:
+        type: string
+      type:
+        type: string
+    title: Dividend
+  DividendTax:
+    type: object
+    properties:
+      rate:
+        type: number
+        format: double
+      type:
+        type: string
+    title: DividendTax
+  Email:
+    type: object
+    properties:
+      click:
+        type: array
+        items:
+          $ref: '#/definitions/EmailClick'
+      create_date:
+        type: string
+        format: date-time
+      delivery_status:
+        type: string
+        example: delivered
+        description: deliveryStatus
+      delivery_status_timestamp:
+        type: string
+        format: date-time
+        example: '2018-11-29T14:48:38.000+0000'
+        description: deliveryStatusTimestamp
+      email_id:
+        type: string
+        format: uuid
+      from:
+        type: string
+        example: test@gmail.com
+        description: from
+      id:
+        type: string
+        format: uuid
+      nucleus_business_id:
+        type: string
+        format: uuid
+        example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+        description: nucleusBusinessId
+      nucleus_client_id:
+        type: string
+        format: uuid
+        example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+        description: nucleusClientId
+      open:
+        type: array
+        items:
+          $ref: '#/definitions/EmailOpen'
+      reason:
+        type: string
+        example: Address Unsubscribed
+        description: reason
+      secondary_id:
+        type: string
+      spam:
+        type: boolean
+        example: false
+        description: spam
+      subject:
+        type: string
+        example: For Update of Terms
+        description: subject
+      to:
+        type: string
+        example: test1@gmail.com
+        description: to
+      unsubscribe:
+        type: boolean
+        example: false
+        description: unsubscribe
+      update_date:
+        type: string
+        format: date-time
+      vendor_id:
+        type: string
+        format: uuid
+        example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+        description: vendorId
+      vendor_name:
+        type: string
+    title: Email
+    description: Email Object
+  EmailClick:
+    type: object
+    required:
+      - click_timestamp
+      - url
+    properties:
+      click_timestamp:
+        type: string
+        format: date-time
+        example: '2018-11-29T14:48:38.000+0000'
+        description: click_timestamp
+      email:
+        $ref: '#/definitions/Email'
+      id:
+        type: string
+        format: uuid
+      url:
+        type: string
+        description: url
+    title: EmailClick
+  EmailOpen:
+    type: object
+    required:
+      - open_timestamp
+    properties:
+      email:
+        $ref: '#/definitions/Email'
+      id:
+        type: string
+        format: uuid
+      open_timestamp:
+        type: string
+        format: date-time
+        example: '2018-11-29T14:48:38.000+0000'
+        description: open_timestamp
+    title: EmailOpen
   ExchangePublicTokenVO:
     type: object
     properties:
@@ -3767,25 +7177,156 @@ definitions:
       vendor_request:
         type: object
     title: ExchangeTokenCO
-  ExpandedProperty:
+  FinancialStatement:
+    type: object
+    required:
+      - accounting_method
+      - currency_code
+      - statement_date
+      - statement_type
+    properties:
+      accounting_method:
+        type: string
+        example: cash
+        description: accounting_method
+      client_id:
+        type: string
+        format: uuid
+        example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+        description: clientId
+      create_date:
+        type: string
+        format: date-time
+      currency_code:
+        type: string
+        example: USD
+        description: currencyCode
+      id:
+        type: string
+        format: uuid
+      metadata:
+        type: object
+        example: {}
+        readOnly: true
+        additionalProperties:
+          type: string
+      period_length:
+        type: string
+        example: annual
+        description: periodLength
+      period_month:
+        type: integer
+        format: int32
+        example: 3
+        description: periodMonth
+      period_quarter:
+        type: integer
+        format: int32
+        example: 1
+        description: periodQuarter
+      period_type:
+        type: string
+        example: calendar
+        description: periodType
+      period_year:
+        type: integer
+        format: int32
+        example: 2020
+        description: periodYear
+      secondary_id:
+        type: string
+      statement_date:
+        type: string
+        format: date
+        example: '2018-01-09''T''12:00:00'
+        description: statementDate
+      statement_type:
+        type: string
+        example: balance_sheet
+        description: statement_type
+      stats:
+        type: array
+        example: []
+        description: stats
+        items:
+          $ref: '#/definitions/Stat'
+      update_date:
+        type: string
+        format: date-time
+    title: FinancialStatement
+    description: FinancialStatement Object
+  GetCardImageResponseVO:
     type: object
     properties:
-      description:
-        type: string
-      name:
-        type: string
-    title: ExpandedProperty
-  GetCardTokenResponseVO:
-    type: object
-    properties:
-      card_status:
+      image_url:
         type: string
       message:
         type: string
       nucleus_card_id:
         type: string
         format: uuid
-      token:
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: GetCardImageResponseVO
+  GetCardPciDetailsResponseVO:
+    type: object
+    properties:
+      cvv:
+        type: string
+      expiry_date:
+        type: string
+      message:
+        type: string
+      nucleus_card_id:
+        type: string
+        format: uuid
+      pan:
+        type: string
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: GetCardPciDetailsResponseVO
+  GetCardStatementResponseVO:
+    type: object
+    properties:
+      currency_code:
+        type: string
+      ending_balance:
+        type: number
+        format: double
+      initial_balance:
+        type: number
+        format: double
+      message:
+        type: string
+      nucleus_card_id:
+        type: string
+        format: uuid
+      transactions:
+        type: array
+        items:
+          type: object
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: GetCardStatementResponseVO
+  GetCardTokenResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_card_id:
+        type: string
+        format: uuid
+      pan_reference:
+        type: string
+      status:
+        type: string
+      token_reference:
         type: string
       vendor_name:
         type: string
@@ -3793,55 +7334,19 @@ definitions:
         type: object
       wallet:
         type: string
+        enum:
+          - google
+          - apple
+          - samsung
     title: GetCardTokenResponseVO
-  GetOrderResponse:
+  GetTransactionsResponse:
     type: object
     properties:
-      account_id:
-        type: string
-      account_no:
-        type: string
-      amount_cash:
-        type: integer
-        format: int32
-      average_price:
-        type: number
-        format: double
-      created:
-        type: string
-      created_by:
-        type: string
-      cumulative_quantity:
-        type: number
-        format: double
-      fees:
-        type: number
-        format: double
-      id:
-        type: string
-      order_expires:
-        type: string
-      order_no:
-        type: string
-      quantity:
-        type: number
-        format: double
-      side:
-        type: string
-      status:
-        type: string
-      status_message:
-        $ref: '#/definitions/StatusMessage'
-      symbol:
-        type: string
-      total_order_amount:
-        type: integer
-        format: int32
-      type:
-        type: string
-      user_id:
-        type: string
-    title: GetOrderResponse
+      transactions:
+        type: array
+        items:
+          $ref: '#/definitions/Transaction'
+    title: GetTransactionsResponse
   GooglePayload:
     type: object
     properties:
@@ -3859,8 +7364,6 @@ definitions:
   IavBankLinkResponseVo:
     type: object
     properties:
-      is_error_occurred:
-        type: boolean
       message:
         type: string
       response:
@@ -3868,7 +7371,7 @@ definitions:
         items:
           $ref: '#/definitions/BankLinkResponseInternalObjectVO'
     title: IavBankLinkResponseVo
-  IavCO:
+  IavRequestCO:
     type: object
     properties:
       auth_token:
@@ -3922,15 +7425,26 @@ definitions:
         type: string
       expiry_date:
         type: string
-        format: date-time
+        format: date
       issue_date:
         type: string
-        format: date-time
+        format: date
       issuing_authority:
         type: string
       state_of_issue:
         type: string
     title: Identification
+  Instrument:
+    type: object
+    properties:
+      id:
+        type: string
+        format: uuid
+      name:
+        type: string
+      symbol:
+        type: string
+    title: Instrument
   Investment:
     type: object
     required:
@@ -3944,6 +7458,10 @@ definitions:
         format: double
         example: 2345
         description: fee
+      investment_type:
+        type: string
+        example: investmentType
+        description: investmentType
       price:
         type: number
         format: double
@@ -3978,6 +7496,167 @@ definitions:
         description: value
     title: Investment
     description: Investment Object
+  Invoice:
+    type: object
+    required:
+      - currency_code
+      - customer_id
+      - due_date
+      - invoice_date
+      - invoice_number
+      - total_amount
+    properties:
+      client_id:
+        type: string
+        format: uuid
+        example: 5cc48294-5f28-41f2-8eb4-898e83932327
+        description: client_id
+      create_date:
+        type: string
+        format: date-time
+      currency_code:
+        type: string
+        example: USD
+        description: currency_code
+      customer_id:
+        type: string
+        format: uuid
+        example: 14566616-6846-4090-beae-5b1568b82370
+        description: customer_id
+      department:
+        type: string
+        example: invoice department
+        description: department
+      description:
+        type: string
+        example: invoice description
+        description: description
+      document_id:
+        type: string
+        format: uuid
+        example: ffec4069-f3bd-46f0-bf62-c7c77b400e37
+        description: document_id
+      due_date:
+        type: string
+        format: date-time
+        example: '2020-03-18T18:17:23.579+0000'
+        description: due_date
+      id:
+        type: string
+        format: uuid
+      invoice_date:
+        type: string
+        format: date-time
+        example: '2020-03-18'
+        description: invoice_date
+      invoice_name:
+        type: string
+        example: Uber invoice
+        description: invoice_name
+      invoice_number:
+        type: string
+        example: 2334889
+        description: invoice_number
+      is_active:
+        type: boolean
+        example: true
+        description: is_active
+      line_items:
+        type: array
+        example: []
+        description: lineItems
+        items:
+          $ref: '#/definitions/LineItems'
+      metadata:
+        type: object
+        example: {}
+        readOnly: true
+        additionalProperties:
+          type: string
+      payment_instructions:
+        type: string
+        example: payment instructions
+        description: paymentInstructions
+      payment_terms:
+        type: string
+        example: payment terms
+        description: paymentTerms
+      secondary_id:
+        type: string
+      status:
+        type: string
+        example: '2020-03-18T18:17:23.579+0000'
+        description: status
+      total_amount:
+        type: number
+        format: double
+        example: 12
+        description: totalAmount
+      total_discount:
+        type: number
+        format: double
+        example: 10000
+        description: totalDiscount
+      total_due:
+        type: number
+        format: double
+        example: 10000
+        description: totalDue
+      total_subtotal:
+        type: number
+        format: double
+        example: 10000
+        description: totalSubtotal
+      total_tax:
+        type: number
+        format: double
+        example: 10000
+        description: totalTax
+      update_date:
+        type: string
+        format: date-time
+    title: Invoice
+    description: Invoice Object
+  InvoicePayment:
+    type: object
+    required:
+      - currency_code
+      - invoice_id
+      - payment_amount
+      - payment_date
+    properties:
+      create_date:
+        type: string
+        format: date-time
+      currency_code:
+        type: string
+        example: USD
+        description: currency_code
+      id:
+        type: string
+        format: uuid
+      invoice_id:
+        type: string
+        format: uuid
+        example: 14566616-6846-4090-beae-5b1568b82370
+        description: invoiceId
+      payment_amount:
+        type: number
+        format: float
+        example: 100
+        description: paymentAmount
+      payment_date:
+        type: string
+        format: date-time
+        example: '2020-03-18T18:17:23.579+0000'
+        description: paymentDate
+      secondary_id:
+        type: string
+      update_date:
+        type: string
+        format: date-time
+    title: InvoicePayment
+    description: InvoicePayment Object
   JsonNode:
     type: object
     properties:
@@ -4093,19 +7772,24 @@ definitions:
         type: string
       doc_type:
         type: string
-      electron_document_id:
-        type: string
       kyc_type:
         type: string
       metadata:
         type: array
         items:
           $ref: '#/definitions/Map«string,object»'
+      nucleus_business_id:
+        type: string
+        format: uuid
       nucleus_client_id:
         type: string
         format: uuid
+      nucleus_document_id:
+        type: string
       product:
         type: string
+      vendor_request:
+        type: object
     title: KycRequestCO
   KycResponseVo:
     type: object
@@ -4113,14 +7797,17 @@ definitions:
       create_date:
         type: string
         format: date-time
-      electron_document_id:
-        type: string
-        format: uuid
       kyc_status:
         type: string
       kyc_type:
         type: string
+      nucleus_business_id:
+        type: string
+        format: uuid
       nucleus_client_id:
+        type: string
+        format: uuid
+      nucleus_document_id:
         type: string
         format: uuid
       product:
@@ -4142,14 +7829,17 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/ClientAddress'
+      business_addresses:
+        type: array
+        items:
+          $ref: '#/definitions/BusinessAddress'
       country_of_residence:
         type: string
       date_of_birth:
         type: string
-        format: date-time
-      electron_document_id:
+        format: date
+      dba_name:
         type: string
-        format: uuid
       email:
         type: string
       first_name:
@@ -4160,15 +7850,84 @@ definitions:
         type: string
       identification_number_type:
         type: string
+      incorporation_date:
+        type: string
+        format: date
+      incorporation_state:
+        type: string
+      is_public:
+        type: boolean
       last_name:
+        type: string
+      legal_name:
+        type: string
+      legal_structure:
         type: string
       metadata:
         type: object
       middle_name:
         type: string
+      nucleus_document_id:
+        type: string
+        format: uuid
+      owners:
+        type: array
+        items:
+          $ref: '#/definitions/Ownership'
       phone_number:
         type: string
+      ticker:
+        type: string
+      website:
+        type: string
     title: KycVendorRequestDataVO
+  LineItems:
+    type: object
+    required:
+      - amount
+      - currency_code
+      - description
+      - quantity
+      - rate
+    properties:
+      amount:
+        type: number
+        format: double
+        example: 23.9
+        description: amount
+      currency_code:
+        type: string
+        example: USD
+        description: currency_code
+      description:
+        type: string
+        example: description
+        description: description
+      line_item_id:
+        type: string
+        description: lineItemId
+      quantity:
+        type: number
+        format: double
+        example: 23.9
+        description: quantity
+      rate:
+        type: number
+        format: double
+        example: 23.9
+        description: rate
+      subtotal:
+        type: number
+        format: double
+        example: 2345
+        description: subtotal
+      tax:
+        type: number
+        format: double
+        example: 2345
+        description: tax
+    title: LineItems
+    description: LineItems Object
   Location:
     type: object
     properties:
@@ -4345,6 +8104,16 @@ definitions:
         items:
           $ref: '#/definitions/MdQuoteItemVO'
     title: MdQuoteResponseVO
+  MergerAcquisition:
+    type: object
+    properties:
+      acquiree:
+        $ref: '#/definitions/Acquiree'
+      acquirer:
+        $ref: '#/definitions/Acquirer'
+      type:
+        type: string
+    title: MergerAcquisition
   NucleusTransferFieldsCO:
     type: object
     properties:
@@ -4354,6 +8123,46 @@ definitions:
       nucleus_transfer_all_cash:
         type: boolean
     title: NucleusTransferFieldsCO
+  Ownership:
+    type: object
+    properties:
+      client:
+        $ref: '#/definitions/ClientVendorRequestDataVO'
+      role:
+        type: string
+    title: Ownership
+  Page«AchTransferResponseVO»:
+    type: object
+    properties:
+      content:
+        type: array
+        items:
+          $ref: '#/definitions/AchTransferResponseVO'
+      first:
+        type: boolean
+      last:
+        type: boolean
+      number:
+        type: integer
+        format: int32
+      number_of_elements:
+        type: integer
+        format: int32
+      size:
+        type: integer
+        format: int32
+      sort:
+        type: array
+        items:
+          $ref: '#/definitions/Sort'
+      total_elements:
+        type: integer
+        format: int64
+      total_pages:
+        type: integer
+        format: int32
+    title: Page«AchTransferResponseVO»
+    description: Page Object
   Page«KmsConfig»:
     type: object
     properties:
@@ -4450,15 +8259,6 @@ definitions:
         format: int32
     title: Page«object»
     description: Page Object
-  ParentIB:
-    type: object
-    properties:
-      id:
-        type: string
-        format: uuid
-      name:
-        type: string
-    title: ParentIB
   PoliticallyExposedPersonDTO:
     type: object
     properties:
@@ -4471,6 +8271,73 @@ definitions:
       position:
         type: string
     title: PoliticallyExposedPersonDTO
+  PortfolioAssetSizeLog:
+    type: object
+    required:
+      - account_id
+      - asset_size
+      - cash_flow
+      - date
+      - model_id
+      - portfolio_id
+    properties:
+      account_id:
+        type: string
+        format: uuid
+        example: 11c28dade-8679-4df5-9b9d-c508d04fcb0c
+        description: accountId
+      asset_size:
+        type: number
+        format: double
+        example: 100
+        description: asset_size
+      asset_size_available:
+        type: number
+        format: double
+        example: 100
+        description: asset_size_available
+      asset_size_pending:
+        type: number
+        format: double
+        example: 100
+        description: asset_size_pending
+      cash_flow:
+        type: number
+        format: double
+        example: 100
+        description: cash_flow
+      create_date:
+        type: string
+        format: date-time
+      currency_code:
+        type: string
+        example: USD
+        description: currency_code
+      date:
+        type: string
+        format: date-time
+        example: '2018-11-29T14:48:38.000+0000'
+        description: date
+      id:
+        type: string
+        format: uuid
+      model_id:
+        type: string
+        format: uuid
+        example: 62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d
+        description: modelId
+      portfolio_id:
+        type: string
+        format: uuid
+        example: c34794e9-f927-468b-b47e-ea17c3d533c5
+        description: portfolioId
+      secondary_id:
+        type: string
+      update_date:
+        type: string
+        format: date-time
+    title: PortfolioAssetSizeLog
+    description: PortfolioAssetSizeLog Object
   PropertyValueResponseVO:
     type: object
     properties:
@@ -4490,8 +8357,6 @@ definitions:
     type: object
     properties:
       body:
-        type: object
-      status:
         type: object
       status_code:
         type: string
@@ -4567,12 +8432,212 @@ definitions:
         type: integer
         format: int32
     title: ResponseEntity
+  RtpBankLinkRequestCO:
+    type: object
+    properties:
+      nucleus_bank_link_id:
+        type: string
+        format: uuid
+      vendor_request:
+        type: object
+    title: RtpBankLinkRequestCO
+  RtpBankLinkResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_bank_link_id:
+        type: string
+        format: uuid
+      nucleus_client_id:
+        type: string
+        format: uuid
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_request_data:
+        $ref: '#/definitions/BankLinkVendorDataVO'
+      vendor_response:
+        type: object
+    title: RtpBankLinkResponseVO
+  RtpTransferRequestCO:
+    type: object
+    properties:
+      nucleus_funding_id:
+        type: string
+        format: uuid
+      vendor_request:
+        type: object
+    title: RtpTransferRequestCO
+  RtpTransferResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_funding_id:
+        type: string
+        format: uuid
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_request:
+        type: object
+      vendor_response:
+        type: object
+    title: RtpTransferResponseVO
+  SMS:
+    type: object
+    properties:
+      create_date:
+        type: string
+        format: date-time
+      delivery_status:
+        type: string
+        example: delivered
+        description: deliveryStatus
+      delivery_status_timestamp:
+        type: string
+        format: date-time
+        example: '2018-11-29T14:48:38.000+0000'
+        description: deliveryStatusTimestamp
+      from:
+        type: string
+        example: '+13044519882'
+        description: from
+      id:
+        type: string
+        format: uuid
+      nucleus_business_id:
+        type: string
+        format: uuid
+        example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+        description: nucleusBusinessId
+      nucleus_client_id:
+        type: string
+        format: uuid
+        example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+        description: nucleusClientId
+      reply_message:
+        type: string
+        example: We have received your message
+        description: replyMessage
+      secondary_id:
+        type: string
+      sms_id:
+        type: string
+        format: uuid
+      to:
+        type: string
+        example: '+13044519882'
+        description: to
+      type:
+        type: string
+        example: sms_sent
+        description: type
+      update_date:
+        type: string
+        format: date-time
+      vendor_account_id:
+        type: string
+      vendor_id:
+        type: string
+        format: uuid
+        example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+        description: vendorId
+      vendor_name:
+        type: string
+      vendor_sms_id:
+        type: string
+    title: SMS
+    description: SMS Object
+  SMSResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_business_id:
+        type: string
+        format: uuid
+      nucleus_client_id:
+        type: string
+        format: uuid
+      sms_id:
+        type: string
+        format: uuid
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: SMSResponseVO
+  SMSVO:
+    type: object
+    properties:
+      from:
+        type: string
+      message:
+        type: string
+      nucleus_business_id:
+        type: string
+        format: uuid
+      nucleus_client_id:
+        type: string
+        format: uuid
+      to:
+        type: string
+    title: SMSVO
   SamsungPayload:
     type: object
     properties:
       issuer_payload:
         type: string
     title: SamsungPayload
+  SmtpResponseVO:
+    type: object
+    properties:
+      email_id:
+        type: string
+        format: uuid
+      message:
+        type: string
+      nucleus_business_id:
+        type: string
+        format: uuid
+      nucleus_client_id:
+        type: string
+        format: uuid
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: SmtpResponseVO
+  SmtpVO:
+    type: object
+    properties:
+      body:
+        type: string
+      business_name:
+        type: string
+      first_name:
+        type: string
+      from:
+        type: string
+      last_name:
+        type: string
+      nucleus_business_id:
+        type: string
+        format: uuid
+      nucleus_client_id:
+        type: string
+        format: uuid
+      reply_to:
+        type: string
+      subject:
+        type: string
+      to:
+        type: string
+    title: SmtpVO
   Sort:
     type: object
     properties:
@@ -4602,194 +8667,157 @@ definitions:
         description: property
     title: Sort
     description: Sort Object
-  StatementModel:
+  SpendingControlVendorRequestDataVO:
     type: object
     properties:
-      statement_date:
+      client_id:
+        type: string
+        format: uuid
+      control_scope:
+        type: string
+      control_type:
+        type: string
+      control_values:
+        type: array
+        items:
+          type: string
+      currency_code:
+        type: string
+      description:
+        type: string
+      frequency_unit:
+        type: string
+      is_active:
+        type: boolean
+      limit_value:
+        type: number
+        format: double
+    title: SpendingControlVendorRequestDataVO
+  Stat:
+    type: object
+    required:
+      - stat_name
+      - stat_value
+    properties:
+      stat_name:
+        type: string
+        example: total_expenses
+        description: statName
+      stat_value:
+        type: number
+        format: double
+        example: 23.9
+        description: statValue
+    title: Stat
+    description: Stat Object
+  Transaction:
+    type: object
+    properties:
+      account_amount:
+        type: number
+        format: double
+      account_balance:
+        type: number
+        format: double
+      account_type:
+        type: string
+      comment:
+        type: string
+      dividend:
+        $ref: '#/definitions/Dividend'
+      dividend_tax:
+        $ref: '#/definitions/DividendTax'
+      dnb:
+        type: boolean
+      fee_base:
+        type: number
+        format: double
+      fee_exchange:
+        type: number
+        format: double
+      fee_sec:
+        type: number
+        format: double
+      fee_taf:
+        type: number
+        format: double
+      fee_xtra_shares:
+        type: number
+        format: double
+      fill_px:
+        type: number
+        format: double
+      fill_qty:
+        type: number
+        format: double
+      fin_tran_id:
+        type: string
+      fin_tran_type_id:
+        type: string
+      instrument:
+        $ref: '#/definitions/Instrument'
+      merger_acquisition:
+        $ref: '#/definitions/MergerAcquisition'
+      order_id:
+        type: string
+      position_delta:
+        type: number
+        format: double
+      system_amount:
+        type: number
+        format: double
+      tran_when:
         type: string
         format: date-time
-      statement_link:
-        type: string
-      statement_link_expiry:
-        type: string
-      statement_name:
-        type: string
-      statement_type:
-        type: string
-    title: StatementModel
-  StatusMessage:
+    title: Transaction
+  UpdateBaasBusinessCO:
     type: object
     properties:
-      error_code:
-        type: string
+      nucleus_document_ids:
+        type: array
+        items:
+          type: string
+          format: uuid
+    title: UpdateBaasBusinessCO
+  UpdateBaasClientCO:
+    type: object
+    properties:
+      nucleus_document_ids:
+        type: array
+        items:
+          type: string
+          format: uuid
+    title: UpdateBaasClientCO
+  UpdateBusinessResponseVO:
+    type: object
+    properties:
       message:
         type: string
-    title: StatusMessage
-  UpdateClientResponse:
+      nucleus_business_id:
+        type: string
+        format: uuid
+      vendor_name:
+        type: string
+      vendor_request_data:
+        $ref: '#/definitions/BusinessVendorRequestDataVO'
+      vendor_response:
+        type: object
+    title: UpdateBusinessResponseVO
+  UpdateCardClientResponseVO:
     type: object
     properties:
-      ack_customer_agreement:
-        type: boolean
-      ack_disclosure_rule14b:
-        type: boolean
-      ack_finders_fee:
-        type: boolean
-      ack_foreign_finders_fee:
-        type: boolean
-      ack_joint_customer_agreement:
-        type: boolean
-      ack_joint_disclosure_rule14b:
-        type: boolean
-      ack_joint_finders_fee:
-        type: boolean
-      ack_joint_foreign_finders_fee:
-        type: boolean
-      ack_joint_market_data:
-        type: boolean
-      ack_market_data:
-        type: boolean
-      ack_signed_by:
+      message:
         type: string
-      ack_signed_when:
-        type: string
-      address_line1:
-        type: string
-      address_line2:
-        type: string
-      address_proof_review_by:
+      nucleus_client_id:
         type: string
         format: uuid
-      address_proof_review_when:
+      vendor_name:
         type: string
-        format: date-time
-      annual_income:
-        type: string
-      annual_income_number:
-        type: integer
-        format: int32
-      approved_by:
-        type: string
-        format: uuid
-      approved_when:
-        type: string
-        format: date-time
-      avatar_url:
-        type: string
-      bad_password_count:
-        type: integer
-        format: int32
-      brand_ambassador:
-        type: boolean
-      citizenship:
-        type: string
-      city:
-        type: string
-      country_id:
-        type: string
-      created_when:
-        type: string
-        format: date-time
-      director:
-        type: boolean
-      display_name:
-        type: string
-      dob:
-        type: string
-        format: date-time
-      email:
-        type: string
-      employer_business:
-        type: string
-      employer_company:
-        type: string
-      employer_country_id:
-        type: string
-      employer_is_broker:
-        type: boolean
-      employment_status:
-        $ref: '#/definitions/ExpandedProperty'
-      employment_years:
-        type: integer
-        format: int32
-      first_name:
-        type: string
-      gender:
-        $ref: '#/definitions/ExpandedProperty'
-      id:
-        type: string
-        format: uuid
-      id_no:
-        type: string
-      investment_experience:
-        $ref: '#/definitions/ExpandedProperty'
-      investment_objectives:
-        $ref: '#/definitions/ExpandedProperty'
-      kyc_when:
-        type: string
-        format: date-time
-      language_id:
-        type: string
-        enum:
-          - en_US
-          - zh_CN
-          - es_ES
-          - pt_BR
-      last_login_when:
-        type: string
-        format: date-time
-      last_name:
-        type: string
-      margin_default:
-        type: integer
-        format: int32
-      marital_status:
-        $ref: '#/definitions/ExpandedProperty'
-      networth_liquid:
-        type: string
-      networth_total:
-        type: string
-      ownership_type:
-        type: string
-      parent_ib:
-        $ref: '#/definitions/ParentIB'
-      phone:
-        type: string
-      picture_review_by:
-        type: string
-        format: uuid
-      picture_review_when:
-        type: string
-        format: date-time
-      politcally_exposed:
-        type: boolean
-      referral_code:
-        type: string
-      risk_tolerance:
-        type: string
-      state_province:
-        type: string
-      status:
-        $ref: '#/definitions/ExpandedProperty'
-      terms_of_use:
-        type: boolean
-      updated_when:
-        type: string
-        format: date-time
-      us_citizen:
-        type: boolean
-      user_note_qty:
-        type: integer
-        format: int32
-      user_type:
-        $ref: '#/definitions/ExpandedProperty'
-      username:
-        type: string
-      wlp_id:
-        type: string
-      zip_postal_code:
-        type: integer
-        format: int32
-    title: UpdateClientResponse
+      vendor_request_data:
+        type: object
+      vendor_response:
+        type: object
+    title: UpdateCardClientResponseVO
   UserResponseInterface:
     type: object
     title: UserResponseInterface
@@ -4810,6 +8838,22 @@ definitions:
       vendor_response:
         $ref: '#/definitions/UserResponseInterface'
     title: UserResponseVO
+  VendorAccessConfigVO:
+    type: object
+    properties:
+      active:
+        type: boolean
+      id:
+        type: string
+        format: uuid
+        example: 5236b981-d632-4e4c-b2b9-c6f1ccc74b72
+        description: id
+      vendor_name:
+        type: string
+        example: Xero
+        description: vendorName
+    title: VendorAccessConfigVO
+    description: VendorAccessConfigVO Object
   Webhook:
     type: object
     required:
@@ -4832,8 +8876,15 @@ definitions:
         items:
           type: string
           enum:
-            - KYC
-            - KYC_STATUS
+            - kyc
+            - kyc_status
+            - async_accounting_customer
+            - async_accounting_customer_revenue
+            - async_accounting_invoice
+            - async_accounting_invoice_payment
+            - async_aggregation_account
+            - async_aggregation_account_transaction
+            - async_aggregation_account_holding
       is_active:
         type: boolean
         example: true
@@ -4861,9 +8912,72 @@ definitions:
       widget_url:
         type: string
     title: WidgetUrlVO
+  WireBankLinkRequestCO:
+    type: object
+    properties:
+      nucleus_bank_link_id:
+        type: string
+        format: uuid
+      vendor_request:
+        type: object
+    title: WireBankLinkRequestCO
+  WireBankLinkResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_bank_link_id:
+        type: string
+        format: uuid
+      nucleus_client_id:
+        type: string
+        format: uuid
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_request_data:
+        $ref: '#/definitions/BankLinkVendorDataVO'
+      vendor_response:
+        type: object
+    title: WireBankLinkResponseVO
+  WireTransferRequestCO:
+    type: object
+    properties:
+      nucleus_funding_id:
+        type: string
+        format: uuid
+      vendor_request:
+        type: object
+    title: WireTransferRequestCO
+  WireTransferResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_funding_id:
+        type: string
+        format: uuid
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_request:
+        type: object
+      vendor_response:
+        type: object
+    title: WireTransferResponseVO
   ZillowPropertyVendorResponseVO:
     type: object
     properties:
-      zp_id:
+      currency:
+        type: string
+      link:
+        type: string
+      text:
+        type: string
+      zestimate:
+        type: string
+      zpid:
         type: string
     title: ZillowPropertyVendorResponseVO

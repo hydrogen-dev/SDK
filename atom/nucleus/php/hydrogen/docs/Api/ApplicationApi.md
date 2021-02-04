@@ -321,7 +321,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\ApplicationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$application = new \com\hydrogen\nucleus\Model\Application(); // \com\hydrogen\nucleus\Model\Application | application
+$application = new \stdClass; // object | application
 $application_id = "application_id_example"; // string | UUID application_id
 
 try {
@@ -337,7 +337,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application** | [**\com\hydrogen\nucleus\Model\Application**](../Model/Application.md)| application |
+ **application** | **object**| application |
  **application_id** | [**string**](../Model/.md)| UUID application_id |
 
 ### Return type

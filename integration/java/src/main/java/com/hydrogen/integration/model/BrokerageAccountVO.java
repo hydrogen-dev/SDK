@@ -18,23 +18,18 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModelProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 /**
  * BrokerageAccountVO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class BrokerageAccountVO {
-  @SerializedName("electron_document_id")
-  private List<UUID> electronDocumentId = null;
-
   @SerializedName("message")
   private String message = null;
 
-  @SerializedName("nucleus_client_id")
-  private UUID nucleusClientId = null;
+  @SerializedName("nucleus_account_id")
+  private UUID nucleusAccountId = null;
 
   @SerializedName("status")
   private String status = null;
@@ -44,32 +39,6 @@ public class BrokerageAccountVO {
 
   @SerializedName("vendor_response")
   private Object vendorResponse = null;
-
-  public BrokerageAccountVO electronDocumentId(List<UUID> electronDocumentId) {
-    this.electronDocumentId = electronDocumentId;
-    return this;
-  }
-
-  public BrokerageAccountVO addElectronDocumentIdItem(UUID electronDocumentIdItem) {
-    if (this.electronDocumentId == null) {
-      this.electronDocumentId = new ArrayList<UUID>();
-    }
-    this.electronDocumentId.add(electronDocumentIdItem);
-    return this;
-  }
-
-   /**
-   * Get electronDocumentId
-   * @return electronDocumentId
-  **/
-  @ApiModelProperty(value = "")
-  public List<UUID> getElectronDocumentId() {
-    return electronDocumentId;
-  }
-
-  public void setElectronDocumentId(List<UUID> electronDocumentId) {
-    this.electronDocumentId = electronDocumentId;
-  }
 
   public BrokerageAccountVO message(String message) {
     this.message = message;
@@ -89,22 +58,22 @@ public class BrokerageAccountVO {
     this.message = message;
   }
 
-  public BrokerageAccountVO nucleusClientId(UUID nucleusClientId) {
-    this.nucleusClientId = nucleusClientId;
+  public BrokerageAccountVO nucleusAccountId(UUID nucleusAccountId) {
+    this.nucleusAccountId = nucleusAccountId;
     return this;
   }
 
    /**
-   * Get nucleusClientId
-   * @return nucleusClientId
+   * Get nucleusAccountId
+   * @return nucleusAccountId
   **/
   @ApiModelProperty(value = "")
-  public UUID getNucleusClientId() {
-    return nucleusClientId;
+  public UUID getNucleusAccountId() {
+    return nucleusAccountId;
   }
 
-  public void setNucleusClientId(UUID nucleusClientId) {
-    this.nucleusClientId = nucleusClientId;
+  public void setNucleusAccountId(UUID nucleusAccountId) {
+    this.nucleusAccountId = nucleusAccountId;
   }
 
   public BrokerageAccountVO status(String status) {
@@ -171,9 +140,8 @@ public class BrokerageAccountVO {
       return false;
     }
     BrokerageAccountVO brokerageAccountVO = (BrokerageAccountVO) o;
-    return Objects.equals(this.electronDocumentId, brokerageAccountVO.electronDocumentId) &&
-        Objects.equals(this.message, brokerageAccountVO.message) &&
-        Objects.equals(this.nucleusClientId, brokerageAccountVO.nucleusClientId) &&
+    return Objects.equals(this.message, brokerageAccountVO.message) &&
+        Objects.equals(this.nucleusAccountId, brokerageAccountVO.nucleusAccountId) &&
         Objects.equals(this.status, brokerageAccountVO.status) &&
         Objects.equals(this.vendorName, brokerageAccountVO.vendorName) &&
         Objects.equals(this.vendorResponse, brokerageAccountVO.vendorResponse);
@@ -181,7 +149,7 @@ public class BrokerageAccountVO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(electronDocumentId, message, nucleusClientId, status, vendorName, vendorResponse);
+    return Objects.hash(message, nucleusAccountId, status, vendorName, vendorResponse);
   }
 
 
@@ -190,9 +158,8 @@ public class BrokerageAccountVO {
     StringBuilder sb = new StringBuilder();
     sb.append("class BrokerageAccountVO {\n");
     
-    sb.append("    electronDocumentId: ").append(toIndentedString(electronDocumentId)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    nucleusClientId: ").append(toIndentedString(nucleusClientId)).append("\n");
+    sb.append("    nucleusAccountId: ").append(toIndentedString(nucleusAccountId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    vendorName: ").append(toIndentedString(vendorName)).append("\n");
     sb.append("    vendorResponse: ").append(toIndentedString(vendorResponse)).append("\n");

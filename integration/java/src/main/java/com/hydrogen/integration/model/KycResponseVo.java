@@ -24,13 +24,10 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * KycResponseVo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class KycResponseVo {
   @SerializedName("create_date")
   private OffsetDateTime createDate = null;
-
-  @SerializedName("electron_document_id")
-  private UUID electronDocumentId = null;
 
   @SerializedName("kyc_status")
   private String kycStatus = null;
@@ -38,8 +35,14 @@ public class KycResponseVo {
   @SerializedName("kyc_type")
   private String kycType = null;
 
+  @SerializedName("nucleus_business_id")
+  private UUID nucleusBusinessId = null;
+
   @SerializedName("nucleus_client_id")
   private UUID nucleusClientId = null;
+
+  @SerializedName("nucleus_document_id")
+  private UUID nucleusDocumentId = null;
 
   @SerializedName("product")
   private String product = null;
@@ -72,24 +75,6 @@ public class KycResponseVo {
 
   public void setCreateDate(OffsetDateTime createDate) {
     this.createDate = createDate;
-  }
-
-  public KycResponseVo electronDocumentId(UUID electronDocumentId) {
-    this.electronDocumentId = electronDocumentId;
-    return this;
-  }
-
-   /**
-   * Get electronDocumentId
-   * @return electronDocumentId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getElectronDocumentId() {
-    return electronDocumentId;
-  }
-
-  public void setElectronDocumentId(UUID electronDocumentId) {
-    this.electronDocumentId = electronDocumentId;
   }
 
   public KycResponseVo kycStatus(String kycStatus) {
@@ -128,6 +113,24 @@ public class KycResponseVo {
     this.kycType = kycType;
   }
 
+  public KycResponseVo nucleusBusinessId(UUID nucleusBusinessId) {
+    this.nucleusBusinessId = nucleusBusinessId;
+    return this;
+  }
+
+   /**
+   * Get nucleusBusinessId
+   * @return nucleusBusinessId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getNucleusBusinessId() {
+    return nucleusBusinessId;
+  }
+
+  public void setNucleusBusinessId(UUID nucleusBusinessId) {
+    this.nucleusBusinessId = nucleusBusinessId;
+  }
+
   public KycResponseVo nucleusClientId(UUID nucleusClientId) {
     this.nucleusClientId = nucleusClientId;
     return this;
@@ -144,6 +147,24 @@ public class KycResponseVo {
 
   public void setNucleusClientId(UUID nucleusClientId) {
     this.nucleusClientId = nucleusClientId;
+  }
+
+  public KycResponseVo nucleusDocumentId(UUID nucleusDocumentId) {
+    this.nucleusDocumentId = nucleusDocumentId;
+    return this;
+  }
+
+   /**
+   * Get nucleusDocumentId
+   * @return nucleusDocumentId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getNucleusDocumentId() {
+    return nucleusDocumentId;
+  }
+
+  public void setNucleusDocumentId(UUID nucleusDocumentId) {
+    this.nucleusDocumentId = nucleusDocumentId;
   }
 
   public KycResponseVo product(String product) {
@@ -247,10 +268,11 @@ public class KycResponseVo {
     }
     KycResponseVo kycResponseVo = (KycResponseVo) o;
     return Objects.equals(this.createDate, kycResponseVo.createDate) &&
-        Objects.equals(this.electronDocumentId, kycResponseVo.electronDocumentId) &&
         Objects.equals(this.kycStatus, kycResponseVo.kycStatus) &&
         Objects.equals(this.kycType, kycResponseVo.kycType) &&
+        Objects.equals(this.nucleusBusinessId, kycResponseVo.nucleusBusinessId) &&
         Objects.equals(this.nucleusClientId, kycResponseVo.nucleusClientId) &&
+        Objects.equals(this.nucleusDocumentId, kycResponseVo.nucleusDocumentId) &&
         Objects.equals(this.product, kycResponseVo.product) &&
         Objects.equals(this.updateDate, kycResponseVo.updateDate) &&
         Objects.equals(this.vendorName, kycResponseVo.vendorName) &&
@@ -260,7 +282,7 @@ public class KycResponseVo {
 
   @Override
   public int hashCode() {
-    return Objects.hash(createDate, electronDocumentId, kycStatus, kycType, nucleusClientId, product, updateDate, vendorName, vendorRequestData, vendorResponse);
+    return Objects.hash(createDate, kycStatus, kycType, nucleusBusinessId, nucleusClientId, nucleusDocumentId, product, updateDate, vendorName, vendorRequestData, vendorResponse);
   }
 
 
@@ -270,10 +292,11 @@ public class KycResponseVo {
     sb.append("class KycResponseVo {\n");
     
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
-    sb.append("    electronDocumentId: ").append(toIndentedString(electronDocumentId)).append("\n");
     sb.append("    kycStatus: ").append(toIndentedString(kycStatus)).append("\n");
     sb.append("    kycType: ").append(toIndentedString(kycType)).append("\n");
+    sb.append("    nucleusBusinessId: ").append(toIndentedString(nucleusBusinessId)).append("\n");
     sb.append("    nucleusClientId: ").append(toIndentedString(nucleusClientId)).append("\n");
+    sb.append("    nucleusDocumentId: ").append(toIndentedString(nucleusDocumentId)).append("\n");
     sb.append("    product: ").append(toIndentedString(product)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("    vendorName: ").append(toIndentedString(vendorName)).append("\n");

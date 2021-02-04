@@ -31,81 +31,81 @@ class FinancialPictureRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'show_category_breakdown': 'bool',
-        'client_id': 'str',
-        'currency_conversion': 'str',
-        'create_log': 'bool',
-        'show_change': 'bool',
         'end_date': 'date',
-        'currency_code': 'str',
+        'client_id': 'str',
+        'create_log': 'bool',
+        'currency_conversion': 'str',
+        'show_history': 'bool',
         'start_date': 'date',
-        'show_history': 'bool'
+        'currency_code': 'str',
+        'show_category_breakdown': 'bool',
+        'show_change': 'bool'
     }
 
     attribute_map = {
-        'show_category_breakdown': 'show_category_breakdown',
-        'client_id': 'client_id',
-        'currency_conversion': 'currency_conversion',
-        'create_log': 'create_log',
-        'show_change': 'show_change',
         'end_date': 'end_date',
-        'currency_code': 'currency_code',
+        'client_id': 'client_id',
+        'create_log': 'create_log',
+        'currency_conversion': 'currency_conversion',
+        'show_history': 'show_history',
         'start_date': 'start_date',
-        'show_history': 'show_history'
+        'currency_code': 'currency_code',
+        'show_category_breakdown': 'show_category_breakdown',
+        'show_change': 'show_change'
     }
 
-    def __init__(self, show_category_breakdown=True, client_id=None, currency_conversion=None, create_log=False, show_change=False, end_date=None, currency_code=None, start_date=None, show_history=False):  # noqa: E501
+    def __init__(self, end_date=None, client_id=None, create_log=False, currency_conversion=None, show_history=False, start_date=None, currency_code=None, show_category_breakdown=True, show_change=False):  # noqa: E501
         """FinancialPictureRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._show_category_breakdown = None
-        self._client_id = None
-        self._currency_conversion = None
-        self._create_log = None
-        self._show_change = None
         self._end_date = None
-        self._currency_code = None
-        self._start_date = None
+        self._client_id = None
+        self._create_log = None
+        self._currency_conversion = None
         self._show_history = None
+        self._start_date = None
+        self._currency_code = None
+        self._show_category_breakdown = None
+        self._show_change = None
         self.discriminator = None
 
-        if show_category_breakdown is not None:
-            self.show_category_breakdown = show_category_breakdown
-        self.client_id = client_id
-        if currency_conversion is not None:
-            self.currency_conversion = currency_conversion
-        if create_log is not None:
-            self.create_log = create_log
-        if show_change is not None:
-            self.show_change = show_change
         if end_date is not None:
             self.end_date = end_date
-        if currency_code is not None:
-            self.currency_code = currency_code
-        if start_date is not None:
-            self.start_date = start_date
+        self.client_id = client_id
+        if create_log is not None:
+            self.create_log = create_log
+        if currency_conversion is not None:
+            self.currency_conversion = currency_conversion
         if show_history is not None:
             self.show_history = show_history
+        if start_date is not None:
+            self.start_date = start_date
+        if currency_code is not None:
+            self.currency_code = currency_code
+        if show_category_breakdown is not None:
+            self.show_category_breakdown = show_category_breakdown
+        if show_change is not None:
+            self.show_change = show_change
 
     @property
-    def show_category_breakdown(self):
-        """Gets the show_category_breakdown of this FinancialPictureRequest.  # noqa: E501
+    def end_date(self):
+        """Gets the end_date of this FinancialPictureRequest.  # noqa: E501
 
 
-        :return: The show_category_breakdown of this FinancialPictureRequest.  # noqa: E501
-        :rtype: bool
+        :return: The end_date of this FinancialPictureRequest.  # noqa: E501
+        :rtype: date
         """
-        return self._show_category_breakdown
+        return self._end_date
 
-    @show_category_breakdown.setter
-    def show_category_breakdown(self, show_category_breakdown):
-        """Sets the show_category_breakdown of this FinancialPictureRequest.
+    @end_date.setter
+    def end_date(self, end_date):
+        """Sets the end_date of this FinancialPictureRequest.
 
 
-        :param show_category_breakdown: The show_category_breakdown of this FinancialPictureRequest.  # noqa: E501
-        :type: bool
+        :param end_date: The end_date of this FinancialPictureRequest.  # noqa: E501
+        :type: date
         """
 
-        self._show_category_breakdown = show_category_breakdown
+        self._end_date = end_date
 
     @property
     def client_id(self):
@@ -131,27 +131,6 @@ class FinancialPictureRequest(object):
         self._client_id = client_id
 
     @property
-    def currency_conversion(self):
-        """Gets the currency_conversion of this FinancialPictureRequest.  # noqa: E501
-
-
-        :return: The currency_conversion of this FinancialPictureRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._currency_conversion
-
-    @currency_conversion.setter
-    def currency_conversion(self, currency_conversion):
-        """Sets the currency_conversion of this FinancialPictureRequest.
-
-
-        :param currency_conversion: The currency_conversion of this FinancialPictureRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._currency_conversion = currency_conversion
-
-    @property
     def create_log(self):
         """Gets the create_log of this FinancialPictureRequest.  # noqa: E501
 
@@ -173,67 +152,46 @@ class FinancialPictureRequest(object):
         self._create_log = create_log
 
     @property
-    def show_change(self):
-        """Gets the show_change of this FinancialPictureRequest.  # noqa: E501
+    def currency_conversion(self):
+        """Gets the currency_conversion of this FinancialPictureRequest.  # noqa: E501
 
 
-        :return: The show_change of this FinancialPictureRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._show_change
-
-    @show_change.setter
-    def show_change(self, show_change):
-        """Sets the show_change of this FinancialPictureRequest.
-
-
-        :param show_change: The show_change of this FinancialPictureRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._show_change = show_change
-
-    @property
-    def end_date(self):
-        """Gets the end_date of this FinancialPictureRequest.  # noqa: E501
-
-
-        :return: The end_date of this FinancialPictureRequest.  # noqa: E501
-        :rtype: date
-        """
-        return self._end_date
-
-    @end_date.setter
-    def end_date(self, end_date):
-        """Sets the end_date of this FinancialPictureRequest.
-
-
-        :param end_date: The end_date of this FinancialPictureRequest.  # noqa: E501
-        :type: date
-        """
-
-        self._end_date = end_date
-
-    @property
-    def currency_code(self):
-        """Gets the currency_code of this FinancialPictureRequest.  # noqa: E501
-
-
-        :return: The currency_code of this FinancialPictureRequest.  # noqa: E501
+        :return: The currency_conversion of this FinancialPictureRequest.  # noqa: E501
         :rtype: str
         """
-        return self._currency_code
+        return self._currency_conversion
 
-    @currency_code.setter
-    def currency_code(self, currency_code):
-        """Sets the currency_code of this FinancialPictureRequest.
+    @currency_conversion.setter
+    def currency_conversion(self, currency_conversion):
+        """Sets the currency_conversion of this FinancialPictureRequest.
 
 
-        :param currency_code: The currency_code of this FinancialPictureRequest.  # noqa: E501
+        :param currency_conversion: The currency_conversion of this FinancialPictureRequest.  # noqa: E501
         :type: str
         """
 
-        self._currency_code = currency_code
+        self._currency_conversion = currency_conversion
+
+    @property
+    def show_history(self):
+        """Gets the show_history of this FinancialPictureRequest.  # noqa: E501
+
+
+        :return: The show_history of this FinancialPictureRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._show_history
+
+    @show_history.setter
+    def show_history(self, show_history):
+        """Sets the show_history of this FinancialPictureRequest.
+
+
+        :param show_history: The show_history of this FinancialPictureRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._show_history = show_history
 
     @property
     def start_date(self):
@@ -257,25 +215,67 @@ class FinancialPictureRequest(object):
         self._start_date = start_date
 
     @property
-    def show_history(self):
-        """Gets the show_history of this FinancialPictureRequest.  # noqa: E501
+    def currency_code(self):
+        """Gets the currency_code of this FinancialPictureRequest.  # noqa: E501
 
 
-        :return: The show_history of this FinancialPictureRequest.  # noqa: E501
+        :return: The currency_code of this FinancialPictureRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_code
+
+    @currency_code.setter
+    def currency_code(self, currency_code):
+        """Sets the currency_code of this FinancialPictureRequest.
+
+
+        :param currency_code: The currency_code of this FinancialPictureRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_code = currency_code
+
+    @property
+    def show_category_breakdown(self):
+        """Gets the show_category_breakdown of this FinancialPictureRequest.  # noqa: E501
+
+
+        :return: The show_category_breakdown of this FinancialPictureRequest.  # noqa: E501
         :rtype: bool
         """
-        return self._show_history
+        return self._show_category_breakdown
 
-    @show_history.setter
-    def show_history(self, show_history):
-        """Sets the show_history of this FinancialPictureRequest.
+    @show_category_breakdown.setter
+    def show_category_breakdown(self, show_category_breakdown):
+        """Sets the show_category_breakdown of this FinancialPictureRequest.
 
 
-        :param show_history: The show_history of this FinancialPictureRequest.  # noqa: E501
+        :param show_category_breakdown: The show_category_breakdown of this FinancialPictureRequest.  # noqa: E501
         :type: bool
         """
 
-        self._show_history = show_history
+        self._show_category_breakdown = show_category_breakdown
+
+    @property
+    def show_change(self):
+        """Gets the show_change of this FinancialPictureRequest.  # noqa: E501
+
+
+        :return: The show_change of this FinancialPictureRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._show_change
+
+    @show_change.setter
+    def show_change(self, show_change):
+        """Sets the show_change of this FinancialPictureRequest.
+
+
+        :param show_change: The show_change of this FinancialPictureRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._show_change = show_change
 
     def to_dict(self):
         """Returns the model properties as a dict"""

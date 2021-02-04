@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,59 +29,11 @@ import java.util.UUID;
 /**
  * EmergencyFundCalculatorRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class EmergencyFundCalculatorRequest {
-  @SerializedName("telecom_payments")
-  private Float telecomPayments = 0.0f;
-
-  @SerializedName("savings_horizon")
-  private List<Integer> savingsHorizon = null;
-
-  @SerializedName("insurance_payments")
-  private Float insurancePayments = 0.0f;
-
-  @SerializedName("client_id")
-  private UUID clientId = null;
-
-  @SerializedName("aggregation_account_ids")
-  private List<UUID> aggregationAccountIds = null;
-
-  @SerializedName("interest_rate")
-  private Float interestRate = 0.0f;
-
-  @SerializedName("other_expenses")
-  private Object otherExpenses = null;
-
-  @SerializedName("emergency_fund_duration")
-  private Integer emergencyFundDuration = null;
-
-  @SerializedName("debt_payments")
-  private Float debtPayments = 0.0f;
-
-  @SerializedName("housing_cost")
-  private Float housingCost = 0.0f;
-
-  @SerializedName("food_costs")
-  private Float foodCosts = 0.0f;
-
-  @SerializedName("utility_payments")
-  private Float utilityPayments = 0.0f;
-
-  @SerializedName("account_ids")
-  private List<UUID> accountIds = null;
-
-  @SerializedName("transportation_costs")
-  private Float transportationCosts = 0.0f;
-
-  @SerializedName("lookback_periods")
-  private Integer lookbackPeriods = 3;
-
-  @SerializedName("current_emergency_fund_balance")
-  private Float currentEmergencyFundBalance = 0.0f;
-
   /**
    * Gets or Sets frequencyUnit
    */
@@ -141,6 +92,313 @@ public class EmergencyFundCalculatorRequest {
   @SerializedName("frequency_unit")
   private FrequencyUnitEnum frequencyUnit = FrequencyUnitEnum.MONTH;
 
+  @SerializedName("aggregation_account_ids")
+  private List<UUID> aggregationAccountIds = null;
+
+  @SerializedName("food_costs")
+  private Float foodCosts = 0.0f;
+
+  @SerializedName("housing_cost")
+  private Float housingCost = 0.0f;
+
+  @SerializedName("debt_payments")
+  private Float debtPayments = 0.0f;
+
+  @SerializedName("client_id")
+  private UUID clientId = null;
+
+  @SerializedName("account_ids")
+  private List<UUID> accountIds = null;
+
+  @SerializedName("utility_payments")
+  private Float utilityPayments = 0.0f;
+
+  @SerializedName("insurance_payments")
+  private Float insurancePayments = 0.0f;
+
+  @SerializedName("transportation_costs")
+  private Float transportationCosts = 0.0f;
+
+  @SerializedName("lookback_periods")
+  private Integer lookbackPeriods = 3;
+
+  @SerializedName("emergency_fund_duration")
+  private Integer emergencyFundDuration = null;
+
+  @SerializedName("interest_rate")
+  private Float interestRate = 0.0f;
+
+  @SerializedName("telecom_payments")
+  private Float telecomPayments = 0.0f;
+
+  @SerializedName("savings_horizon")
+  private List<Integer> savingsHorizon = null;
+
+  @SerializedName("other_expenses")
+  private Object otherExpenses = null;
+
+  @SerializedName("current_emergency_fund_balance")
+  private Float currentEmergencyFundBalance = 0.0f;
+
+  public EmergencyFundCalculatorRequest frequencyUnit(FrequencyUnitEnum frequencyUnit) {
+    this.frequencyUnit = frequencyUnit;
+    return this;
+  }
+
+   /**
+   * Get frequencyUnit
+   * @return frequencyUnit
+  **/
+  @ApiModelProperty(value = "")
+  public FrequencyUnitEnum getFrequencyUnit() {
+    return frequencyUnit;
+  }
+
+  public void setFrequencyUnit(FrequencyUnitEnum frequencyUnit) {
+    this.frequencyUnit = frequencyUnit;
+  }
+
+  public EmergencyFundCalculatorRequest aggregationAccountIds(List<UUID> aggregationAccountIds) {
+    this.aggregationAccountIds = aggregationAccountIds;
+    return this;
+  }
+
+  public EmergencyFundCalculatorRequest addAggregationAccountIdsItem(UUID aggregationAccountIdsItem) {
+    if (this.aggregationAccountIds == null) {
+      this.aggregationAccountIds = new ArrayList<UUID>();
+    }
+    this.aggregationAccountIds.add(aggregationAccountIdsItem);
+    return this;
+  }
+
+   /**
+   * Get aggregationAccountIds
+   * @return aggregationAccountIds
+  **/
+  @ApiModelProperty(value = "")
+  public List<UUID> getAggregationAccountIds() {
+    return aggregationAccountIds;
+  }
+
+  public void setAggregationAccountIds(List<UUID> aggregationAccountIds) {
+    this.aggregationAccountIds = aggregationAccountIds;
+  }
+
+  public EmergencyFundCalculatorRequest foodCosts(Float foodCosts) {
+    this.foodCosts = foodCosts;
+    return this;
+  }
+
+   /**
+   * Get foodCosts
+   * minimum: 0
+   * @return foodCosts
+  **/
+  @ApiModelProperty(value = "")
+  public Float getFoodCosts() {
+    return foodCosts;
+  }
+
+  public void setFoodCosts(Float foodCosts) {
+    this.foodCosts = foodCosts;
+  }
+
+  public EmergencyFundCalculatorRequest housingCost(Float housingCost) {
+    this.housingCost = housingCost;
+    return this;
+  }
+
+   /**
+   * Get housingCost
+   * minimum: 0
+   * @return housingCost
+  **/
+  @ApiModelProperty(value = "")
+  public Float getHousingCost() {
+    return housingCost;
+  }
+
+  public void setHousingCost(Float housingCost) {
+    this.housingCost = housingCost;
+  }
+
+  public EmergencyFundCalculatorRequest debtPayments(Float debtPayments) {
+    this.debtPayments = debtPayments;
+    return this;
+  }
+
+   /**
+   * Get debtPayments
+   * minimum: 0
+   * @return debtPayments
+  **/
+  @ApiModelProperty(value = "")
+  public Float getDebtPayments() {
+    return debtPayments;
+  }
+
+  public void setDebtPayments(Float debtPayments) {
+    this.debtPayments = debtPayments;
+  }
+
+  public EmergencyFundCalculatorRequest clientId(UUID clientId) {
+    this.clientId = clientId;
+    return this;
+  }
+
+   /**
+   * Get clientId
+   * @return clientId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getClientId() {
+    return clientId;
+  }
+
+  public void setClientId(UUID clientId) {
+    this.clientId = clientId;
+  }
+
+  public EmergencyFundCalculatorRequest accountIds(List<UUID> accountIds) {
+    this.accountIds = accountIds;
+    return this;
+  }
+
+  public EmergencyFundCalculatorRequest addAccountIdsItem(UUID accountIdsItem) {
+    if (this.accountIds == null) {
+      this.accountIds = new ArrayList<UUID>();
+    }
+    this.accountIds.add(accountIdsItem);
+    return this;
+  }
+
+   /**
+   * Get accountIds
+   * @return accountIds
+  **/
+  @ApiModelProperty(value = "")
+  public List<UUID> getAccountIds() {
+    return accountIds;
+  }
+
+  public void setAccountIds(List<UUID> accountIds) {
+    this.accountIds = accountIds;
+  }
+
+  public EmergencyFundCalculatorRequest utilityPayments(Float utilityPayments) {
+    this.utilityPayments = utilityPayments;
+    return this;
+  }
+
+   /**
+   * Get utilityPayments
+   * minimum: 0
+   * @return utilityPayments
+  **/
+  @ApiModelProperty(value = "")
+  public Float getUtilityPayments() {
+    return utilityPayments;
+  }
+
+  public void setUtilityPayments(Float utilityPayments) {
+    this.utilityPayments = utilityPayments;
+  }
+
+  public EmergencyFundCalculatorRequest insurancePayments(Float insurancePayments) {
+    this.insurancePayments = insurancePayments;
+    return this;
+  }
+
+   /**
+   * Get insurancePayments
+   * minimum: 0
+   * @return insurancePayments
+  **/
+  @ApiModelProperty(value = "")
+  public Float getInsurancePayments() {
+    return insurancePayments;
+  }
+
+  public void setInsurancePayments(Float insurancePayments) {
+    this.insurancePayments = insurancePayments;
+  }
+
+  public EmergencyFundCalculatorRequest transportationCosts(Float transportationCosts) {
+    this.transportationCosts = transportationCosts;
+    return this;
+  }
+
+   /**
+   * Get transportationCosts
+   * minimum: 0
+   * @return transportationCosts
+  **/
+  @ApiModelProperty(value = "")
+  public Float getTransportationCosts() {
+    return transportationCosts;
+  }
+
+  public void setTransportationCosts(Float transportationCosts) {
+    this.transportationCosts = transportationCosts;
+  }
+
+  public EmergencyFundCalculatorRequest lookbackPeriods(Integer lookbackPeriods) {
+    this.lookbackPeriods = lookbackPeriods;
+    return this;
+  }
+
+   /**
+   * Get lookbackPeriods
+   * minimum: 1
+   * @return lookbackPeriods
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getLookbackPeriods() {
+    return lookbackPeriods;
+  }
+
+  public void setLookbackPeriods(Integer lookbackPeriods) {
+    this.lookbackPeriods = lookbackPeriods;
+  }
+
+  public EmergencyFundCalculatorRequest emergencyFundDuration(Integer emergencyFundDuration) {
+    this.emergencyFundDuration = emergencyFundDuration;
+    return this;
+  }
+
+   /**
+   * Get emergencyFundDuration
+   * minimum: 1
+   * @return emergencyFundDuration
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getEmergencyFundDuration() {
+    return emergencyFundDuration;
+  }
+
+  public void setEmergencyFundDuration(Integer emergencyFundDuration) {
+    this.emergencyFundDuration = emergencyFundDuration;
+  }
+
+  public EmergencyFundCalculatorRequest interestRate(Float interestRate) {
+    this.interestRate = interestRate;
+    return this;
+  }
+
+   /**
+   * Get interestRate
+   * minimum: 0
+   * @return interestRate
+  **/
+  @ApiModelProperty(value = "")
+  public Float getInterestRate() {
+    return interestRate;
+  }
+
+  public void setInterestRate(Float interestRate) {
+    this.interestRate = interestRate;
+  }
+
   public EmergencyFundCalculatorRequest telecomPayments(Float telecomPayments) {
     this.telecomPayments = telecomPayments;
     return this;
@@ -186,88 +444,6 @@ public class EmergencyFundCalculatorRequest {
     this.savingsHorizon = savingsHorizon;
   }
 
-  public EmergencyFundCalculatorRequest insurancePayments(Float insurancePayments) {
-    this.insurancePayments = insurancePayments;
-    return this;
-  }
-
-   /**
-   * Get insurancePayments
-   * minimum: 0
-   * @return insurancePayments
-  **/
-  @ApiModelProperty(value = "")
-  public Float getInsurancePayments() {
-    return insurancePayments;
-  }
-
-  public void setInsurancePayments(Float insurancePayments) {
-    this.insurancePayments = insurancePayments;
-  }
-
-  public EmergencyFundCalculatorRequest clientId(UUID clientId) {
-    this.clientId = clientId;
-    return this;
-  }
-
-   /**
-   * Get clientId
-   * @return clientId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getClientId() {
-    return clientId;
-  }
-
-  public void setClientId(UUID clientId) {
-    this.clientId = clientId;
-  }
-
-  public EmergencyFundCalculatorRequest aggregationAccountIds(List<UUID> aggregationAccountIds) {
-    this.aggregationAccountIds = aggregationAccountIds;
-    return this;
-  }
-
-  public EmergencyFundCalculatorRequest addAggregationAccountIdsItem(UUID aggregationAccountIdsItem) {
-    if (this.aggregationAccountIds == null) {
-      this.aggregationAccountIds = new ArrayList<UUID>();
-    }
-    this.aggregationAccountIds.add(aggregationAccountIdsItem);
-    return this;
-  }
-
-   /**
-   * Get aggregationAccountIds
-   * @return aggregationAccountIds
-  **/
-  @ApiModelProperty(value = "")
-  public List<UUID> getAggregationAccountIds() {
-    return aggregationAccountIds;
-  }
-
-  public void setAggregationAccountIds(List<UUID> aggregationAccountIds) {
-    this.aggregationAccountIds = aggregationAccountIds;
-  }
-
-  public EmergencyFundCalculatorRequest interestRate(Float interestRate) {
-    this.interestRate = interestRate;
-    return this;
-  }
-
-   /**
-   * Get interestRate
-   * minimum: 0
-   * @return interestRate
-  **/
-  @ApiModelProperty(value = "")
-  public Float getInterestRate() {
-    return interestRate;
-  }
-
-  public void setInterestRate(Float interestRate) {
-    this.interestRate = interestRate;
-  }
-
   public EmergencyFundCalculatorRequest otherExpenses(Object otherExpenses) {
     this.otherExpenses = otherExpenses;
     return this;
@@ -284,165 +460,6 @@ public class EmergencyFundCalculatorRequest {
 
   public void setOtherExpenses(Object otherExpenses) {
     this.otherExpenses = otherExpenses;
-  }
-
-  public EmergencyFundCalculatorRequest emergencyFundDuration(Integer emergencyFundDuration) {
-    this.emergencyFundDuration = emergencyFundDuration;
-    return this;
-  }
-
-   /**
-   * Get emergencyFundDuration
-   * minimum: 1
-   * @return emergencyFundDuration
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getEmergencyFundDuration() {
-    return emergencyFundDuration;
-  }
-
-  public void setEmergencyFundDuration(Integer emergencyFundDuration) {
-    this.emergencyFundDuration = emergencyFundDuration;
-  }
-
-  public EmergencyFundCalculatorRequest debtPayments(Float debtPayments) {
-    this.debtPayments = debtPayments;
-    return this;
-  }
-
-   /**
-   * Get debtPayments
-   * minimum: 0
-   * @return debtPayments
-  **/
-  @ApiModelProperty(value = "")
-  public Float getDebtPayments() {
-    return debtPayments;
-  }
-
-  public void setDebtPayments(Float debtPayments) {
-    this.debtPayments = debtPayments;
-  }
-
-  public EmergencyFundCalculatorRequest housingCost(Float housingCost) {
-    this.housingCost = housingCost;
-    return this;
-  }
-
-   /**
-   * Get housingCost
-   * minimum: 0
-   * @return housingCost
-  **/
-  @ApiModelProperty(value = "")
-  public Float getHousingCost() {
-    return housingCost;
-  }
-
-  public void setHousingCost(Float housingCost) {
-    this.housingCost = housingCost;
-  }
-
-  public EmergencyFundCalculatorRequest foodCosts(Float foodCosts) {
-    this.foodCosts = foodCosts;
-    return this;
-  }
-
-   /**
-   * Get foodCosts
-   * minimum: 0
-   * @return foodCosts
-  **/
-  @ApiModelProperty(value = "")
-  public Float getFoodCosts() {
-    return foodCosts;
-  }
-
-  public void setFoodCosts(Float foodCosts) {
-    this.foodCosts = foodCosts;
-  }
-
-  public EmergencyFundCalculatorRequest utilityPayments(Float utilityPayments) {
-    this.utilityPayments = utilityPayments;
-    return this;
-  }
-
-   /**
-   * Get utilityPayments
-   * minimum: 0
-   * @return utilityPayments
-  **/
-  @ApiModelProperty(value = "")
-  public Float getUtilityPayments() {
-    return utilityPayments;
-  }
-
-  public void setUtilityPayments(Float utilityPayments) {
-    this.utilityPayments = utilityPayments;
-  }
-
-  public EmergencyFundCalculatorRequest accountIds(List<UUID> accountIds) {
-    this.accountIds = accountIds;
-    return this;
-  }
-
-  public EmergencyFundCalculatorRequest addAccountIdsItem(UUID accountIdsItem) {
-    if (this.accountIds == null) {
-      this.accountIds = new ArrayList<UUID>();
-    }
-    this.accountIds.add(accountIdsItem);
-    return this;
-  }
-
-   /**
-   * Get accountIds
-   * @return accountIds
-  **/
-  @ApiModelProperty(value = "")
-  public List<UUID> getAccountIds() {
-    return accountIds;
-  }
-
-  public void setAccountIds(List<UUID> accountIds) {
-    this.accountIds = accountIds;
-  }
-
-  public EmergencyFundCalculatorRequest transportationCosts(Float transportationCosts) {
-    this.transportationCosts = transportationCosts;
-    return this;
-  }
-
-   /**
-   * Get transportationCosts
-   * minimum: 0
-   * @return transportationCosts
-  **/
-  @ApiModelProperty(value = "")
-  public Float getTransportationCosts() {
-    return transportationCosts;
-  }
-
-  public void setTransportationCosts(Float transportationCosts) {
-    this.transportationCosts = transportationCosts;
-  }
-
-  public EmergencyFundCalculatorRequest lookbackPeriods(Integer lookbackPeriods) {
-    this.lookbackPeriods = lookbackPeriods;
-    return this;
-  }
-
-   /**
-   * Get lookbackPeriods
-   * minimum: 1
-   * @return lookbackPeriods
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getLookbackPeriods() {
-    return lookbackPeriods;
-  }
-
-  public void setLookbackPeriods(Integer lookbackPeriods) {
-    this.lookbackPeriods = lookbackPeriods;
   }
 
   public EmergencyFundCalculatorRequest currentEmergencyFundBalance(Float currentEmergencyFundBalance) {
@@ -464,24 +481,6 @@ public class EmergencyFundCalculatorRequest {
     this.currentEmergencyFundBalance = currentEmergencyFundBalance;
   }
 
-  public EmergencyFundCalculatorRequest frequencyUnit(FrequencyUnitEnum frequencyUnit) {
-    this.frequencyUnit = frequencyUnit;
-    return this;
-  }
-
-   /**
-   * Get frequencyUnit
-   * @return frequencyUnit
-  **/
-  @ApiModelProperty(value = "")
-  public FrequencyUnitEnum getFrequencyUnit() {
-    return frequencyUnit;
-  }
-
-  public void setFrequencyUnit(FrequencyUnitEnum frequencyUnit) {
-    this.frequencyUnit = frequencyUnit;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -492,28 +491,28 @@ public class EmergencyFundCalculatorRequest {
       return false;
     }
     EmergencyFundCalculatorRequest emergencyFundCalculatorRequest = (EmergencyFundCalculatorRequest) o;
-    return Objects.equals(this.telecomPayments, emergencyFundCalculatorRequest.telecomPayments) &&
-        Objects.equals(this.savingsHorizon, emergencyFundCalculatorRequest.savingsHorizon) &&
-        Objects.equals(this.insurancePayments, emergencyFundCalculatorRequest.insurancePayments) &&
-        Objects.equals(this.clientId, emergencyFundCalculatorRequest.clientId) &&
+    return Objects.equals(this.frequencyUnit, emergencyFundCalculatorRequest.frequencyUnit) &&
         Objects.equals(this.aggregationAccountIds, emergencyFundCalculatorRequest.aggregationAccountIds) &&
-        Objects.equals(this.interestRate, emergencyFundCalculatorRequest.interestRate) &&
-        Objects.equals(this.otherExpenses, emergencyFundCalculatorRequest.otherExpenses) &&
-        Objects.equals(this.emergencyFundDuration, emergencyFundCalculatorRequest.emergencyFundDuration) &&
-        Objects.equals(this.debtPayments, emergencyFundCalculatorRequest.debtPayments) &&
-        Objects.equals(this.housingCost, emergencyFundCalculatorRequest.housingCost) &&
         Objects.equals(this.foodCosts, emergencyFundCalculatorRequest.foodCosts) &&
-        Objects.equals(this.utilityPayments, emergencyFundCalculatorRequest.utilityPayments) &&
+        Objects.equals(this.housingCost, emergencyFundCalculatorRequest.housingCost) &&
+        Objects.equals(this.debtPayments, emergencyFundCalculatorRequest.debtPayments) &&
+        Objects.equals(this.clientId, emergencyFundCalculatorRequest.clientId) &&
         Objects.equals(this.accountIds, emergencyFundCalculatorRequest.accountIds) &&
+        Objects.equals(this.utilityPayments, emergencyFundCalculatorRequest.utilityPayments) &&
+        Objects.equals(this.insurancePayments, emergencyFundCalculatorRequest.insurancePayments) &&
         Objects.equals(this.transportationCosts, emergencyFundCalculatorRequest.transportationCosts) &&
         Objects.equals(this.lookbackPeriods, emergencyFundCalculatorRequest.lookbackPeriods) &&
-        Objects.equals(this.currentEmergencyFundBalance, emergencyFundCalculatorRequest.currentEmergencyFundBalance) &&
-        Objects.equals(this.frequencyUnit, emergencyFundCalculatorRequest.frequencyUnit);
+        Objects.equals(this.emergencyFundDuration, emergencyFundCalculatorRequest.emergencyFundDuration) &&
+        Objects.equals(this.interestRate, emergencyFundCalculatorRequest.interestRate) &&
+        Objects.equals(this.telecomPayments, emergencyFundCalculatorRequest.telecomPayments) &&
+        Objects.equals(this.savingsHorizon, emergencyFundCalculatorRequest.savingsHorizon) &&
+        Objects.equals(this.otherExpenses, emergencyFundCalculatorRequest.otherExpenses) &&
+        Objects.equals(this.currentEmergencyFundBalance, emergencyFundCalculatorRequest.currentEmergencyFundBalance);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(telecomPayments, savingsHorizon, insurancePayments, clientId, aggregationAccountIds, interestRate, otherExpenses, emergencyFundDuration, debtPayments, housingCost, foodCosts, utilityPayments, accountIds, transportationCosts, lookbackPeriods, currentEmergencyFundBalance, frequencyUnit);
+    return Objects.hash(frequencyUnit, aggregationAccountIds, foodCosts, housingCost, debtPayments, clientId, accountIds, utilityPayments, insurancePayments, transportationCosts, lookbackPeriods, emergencyFundDuration, interestRate, telecomPayments, savingsHorizon, otherExpenses, currentEmergencyFundBalance);
   }
 
 
@@ -522,23 +521,23 @@ public class EmergencyFundCalculatorRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class EmergencyFundCalculatorRequest {\n");
     
-    sb.append("    telecomPayments: ").append(toIndentedString(telecomPayments)).append("\n");
-    sb.append("    savingsHorizon: ").append(toIndentedString(savingsHorizon)).append("\n");
-    sb.append("    insurancePayments: ").append(toIndentedString(insurancePayments)).append("\n");
-    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
+    sb.append("    frequencyUnit: ").append(toIndentedString(frequencyUnit)).append("\n");
     sb.append("    aggregationAccountIds: ").append(toIndentedString(aggregationAccountIds)).append("\n");
-    sb.append("    interestRate: ").append(toIndentedString(interestRate)).append("\n");
-    sb.append("    otherExpenses: ").append(toIndentedString(otherExpenses)).append("\n");
-    sb.append("    emergencyFundDuration: ").append(toIndentedString(emergencyFundDuration)).append("\n");
-    sb.append("    debtPayments: ").append(toIndentedString(debtPayments)).append("\n");
-    sb.append("    housingCost: ").append(toIndentedString(housingCost)).append("\n");
     sb.append("    foodCosts: ").append(toIndentedString(foodCosts)).append("\n");
-    sb.append("    utilityPayments: ").append(toIndentedString(utilityPayments)).append("\n");
+    sb.append("    housingCost: ").append(toIndentedString(housingCost)).append("\n");
+    sb.append("    debtPayments: ").append(toIndentedString(debtPayments)).append("\n");
+    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
     sb.append("    accountIds: ").append(toIndentedString(accountIds)).append("\n");
+    sb.append("    utilityPayments: ").append(toIndentedString(utilityPayments)).append("\n");
+    sb.append("    insurancePayments: ").append(toIndentedString(insurancePayments)).append("\n");
     sb.append("    transportationCosts: ").append(toIndentedString(transportationCosts)).append("\n");
     sb.append("    lookbackPeriods: ").append(toIndentedString(lookbackPeriods)).append("\n");
+    sb.append("    emergencyFundDuration: ").append(toIndentedString(emergencyFundDuration)).append("\n");
+    sb.append("    interestRate: ").append(toIndentedString(interestRate)).append("\n");
+    sb.append("    telecomPayments: ").append(toIndentedString(telecomPayments)).append("\n");
+    sb.append("    savingsHorizon: ").append(toIndentedString(savingsHorizon)).append("\n");
+    sb.append("    otherExpenses: ").append(toIndentedString(otherExpenses)).append("\n");
     sb.append("    currentEmergencyFundBalance: ").append(toIndentedString(currentEmergencyFundBalance)).append("\n");
-    sb.append("    frequencyUnit: ").append(toIndentedString(frequencyUnit)).append("\n");
     sb.append("}");
     return sb.toString();
   }

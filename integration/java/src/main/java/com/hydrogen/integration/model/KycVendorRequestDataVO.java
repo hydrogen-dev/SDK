@@ -23,14 +23,18 @@ import java.util.List;
 import java.util.UUID;
 
 import org.threeten.bp.LocalDate;
+import org.threeten.bp.OffsetDateTime;
 
 /**
  * KycVendorRequestDataVO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class KycVendorRequestDataVO {
   @SerializedName("address")
   private List<ClientAddress> address = null;
+
+  @SerializedName("business_addresses")
+  private List<BusinessAddress> businessAddresses = null;
 
   @SerializedName("country_of_residence")
   private String countryOfResidence = null;
@@ -38,8 +42,8 @@ public class KycVendorRequestDataVO {
   @SerializedName("date_of_birth")
   private LocalDate dateOfBirth = null;
 
-  @SerializedName("electron_document_id")
-  private UUID electronDocumentId = null;
+  @SerializedName("dba_name")
+  private String dbaName = null;
 
   @SerializedName("email")
   private String email = null;
@@ -56,8 +60,23 @@ public class KycVendorRequestDataVO {
   @SerializedName("identification_number_type")
   private String identificationNumberType = null;
 
+  @SerializedName("incorporation_date")
+  private LocalDate incorporationDate = null;
+
+  @SerializedName("incorporation_state")
+  private String incorporationState = null;
+
+  @SerializedName("is_public")
+  private Boolean isPublic = null;
+
   @SerializedName("last_name")
   private String lastName = null;
+
+  @SerializedName("legal_name")
+  private String legalName = null;
+
+  @SerializedName("legal_structure")
+  private String legalStructure = null;
 
   @SerializedName("metadata")
   private Object metadata = null;
@@ -65,8 +84,20 @@ public class KycVendorRequestDataVO {
   @SerializedName("middle_name")
   private String middleName = null;
 
+  @SerializedName("nucleus_document_id")
+  private UUID nucleusDocumentId = null;
+
+  @SerializedName("owners")
+  private List<Ownership> owners = null;
+
   @SerializedName("phone_number")
   private String phoneNumber = null;
+
+  @SerializedName("ticker")
+  private String ticker = null;
+
+  @SerializedName("website")
+  private String website = null;
 
   public KycVendorRequestDataVO address(List<ClientAddress> address) {
     this.address = address;
@@ -92,6 +123,32 @@ public class KycVendorRequestDataVO {
 
   public void setAddress(List<ClientAddress> address) {
     this.address = address;
+  }
+
+  public KycVendorRequestDataVO businessAddresses(List<BusinessAddress> businessAddresses) {
+    this.businessAddresses = businessAddresses;
+    return this;
+  }
+
+  public KycVendorRequestDataVO addBusinessAddressesItem(BusinessAddress businessAddressesItem) {
+    if (this.businessAddresses == null) {
+      this.businessAddresses = new ArrayList<BusinessAddress>();
+    }
+    this.businessAddresses.add(businessAddressesItem);
+    return this;
+  }
+
+   /**
+   * Get businessAddresses
+   * @return businessAddresses
+  **/
+  @ApiModelProperty(value = "")
+  public List<BusinessAddress> getBusinessAddresses() {
+    return businessAddresses;
+  }
+
+  public void setBusinessAddresses(List<BusinessAddress> businessAddresses) {
+    this.businessAddresses = businessAddresses;
   }
 
   public KycVendorRequestDataVO countryOfResidence(String countryOfResidence) {
@@ -130,22 +187,22 @@ public class KycVendorRequestDataVO {
     this.dateOfBirth = dateOfBirth;
   }
 
-  public KycVendorRequestDataVO electronDocumentId(UUID electronDocumentId) {
-    this.electronDocumentId = electronDocumentId;
+  public KycVendorRequestDataVO dbaName(String dbaName) {
+    this.dbaName = dbaName;
     return this;
   }
 
    /**
-   * Get electronDocumentId
-   * @return electronDocumentId
+   * Get dbaName
+   * @return dbaName
   **/
   @ApiModelProperty(value = "")
-  public UUID getElectronDocumentId() {
-    return electronDocumentId;
+  public String getDbaName() {
+    return dbaName;
   }
 
-  public void setElectronDocumentId(UUID electronDocumentId) {
-    this.electronDocumentId = electronDocumentId;
+  public void setDbaName(String dbaName) {
+    this.dbaName = dbaName;
   }
 
   public KycVendorRequestDataVO email(String email) {
@@ -238,6 +295,60 @@ public class KycVendorRequestDataVO {
     this.identificationNumberType = identificationNumberType;
   }
 
+  public KycVendorRequestDataVO incorporationDate(LocalDate incorporationDate) {
+    this.incorporationDate = incorporationDate;
+    return this;
+  }
+
+   /**
+   * Get incorporationDate
+   * @return incorporationDate
+  **/
+  @ApiModelProperty(value = "")
+  public LocalDate getIncorporationDate() {
+    return incorporationDate;
+  }
+
+  public void setIncorporationDate(LocalDate incorporationDate) {
+    this.incorporationDate = incorporationDate;
+  }
+
+  public KycVendorRequestDataVO incorporationState(String incorporationState) {
+    this.incorporationState = incorporationState;
+    return this;
+  }
+
+   /**
+   * Get incorporationState
+   * @return incorporationState
+  **/
+  @ApiModelProperty(value = "")
+  public String getIncorporationState() {
+    return incorporationState;
+  }
+
+  public void setIncorporationState(String incorporationState) {
+    this.incorporationState = incorporationState;
+  }
+
+  public KycVendorRequestDataVO isPublic(Boolean isPublic) {
+    this.isPublic = isPublic;
+    return this;
+  }
+
+   /**
+   * Get isPublic
+   * @return isPublic
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsPublic() {
+    return isPublic;
+  }
+
+  public void setIsPublic(Boolean isPublic) {
+    this.isPublic = isPublic;
+  }
+
   public KycVendorRequestDataVO lastName(String lastName) {
     this.lastName = lastName;
     return this;
@@ -254,6 +365,42 @@ public class KycVendorRequestDataVO {
 
   public void setLastName(String lastName) {
     this.lastName = lastName;
+  }
+
+  public KycVendorRequestDataVO legalName(String legalName) {
+    this.legalName = legalName;
+    return this;
+  }
+
+   /**
+   * Get legalName
+   * @return legalName
+  **/
+  @ApiModelProperty(value = "")
+  public String getLegalName() {
+    return legalName;
+  }
+
+  public void setLegalName(String legalName) {
+    this.legalName = legalName;
+  }
+
+  public KycVendorRequestDataVO legalStructure(String legalStructure) {
+    this.legalStructure = legalStructure;
+    return this;
+  }
+
+   /**
+   * Get legalStructure
+   * @return legalStructure
+  **/
+  @ApiModelProperty(value = "")
+  public String getLegalStructure() {
+    return legalStructure;
+  }
+
+  public void setLegalStructure(String legalStructure) {
+    this.legalStructure = legalStructure;
   }
 
   public KycVendorRequestDataVO metadata(Object metadata) {
@@ -292,6 +439,50 @@ public class KycVendorRequestDataVO {
     this.middleName = middleName;
   }
 
+  public KycVendorRequestDataVO nucleusDocumentId(UUID nucleusDocumentId) {
+    this.nucleusDocumentId = nucleusDocumentId;
+    return this;
+  }
+
+   /**
+   * Get nucleusDocumentId
+   * @return nucleusDocumentId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getNucleusDocumentId() {
+    return nucleusDocumentId;
+  }
+
+  public void setNucleusDocumentId(UUID nucleusDocumentId) {
+    this.nucleusDocumentId = nucleusDocumentId;
+  }
+
+  public KycVendorRequestDataVO owners(List<Ownership> owners) {
+    this.owners = owners;
+    return this;
+  }
+
+  public KycVendorRequestDataVO addOwnersItem(Ownership ownersItem) {
+    if (this.owners == null) {
+      this.owners = new ArrayList<Ownership>();
+    }
+    this.owners.add(ownersItem);
+    return this;
+  }
+
+   /**
+   * Get owners
+   * @return owners
+  **/
+  @ApiModelProperty(value = "")
+  public List<Ownership> getOwners() {
+    return owners;
+  }
+
+  public void setOwners(List<Ownership> owners) {
+    this.owners = owners;
+  }
+
   public KycVendorRequestDataVO phoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
@@ -310,6 +501,42 @@ public class KycVendorRequestDataVO {
     this.phoneNumber = phoneNumber;
   }
 
+  public KycVendorRequestDataVO ticker(String ticker) {
+    this.ticker = ticker;
+    return this;
+  }
+
+   /**
+   * Get ticker
+   * @return ticker
+  **/
+  @ApiModelProperty(value = "")
+  public String getTicker() {
+    return ticker;
+  }
+
+  public void setTicker(String ticker) {
+    this.ticker = ticker;
+  }
+
+  public KycVendorRequestDataVO website(String website) {
+    this.website = website;
+    return this;
+  }
+
+   /**
+   * Get website
+   * @return website
+  **/
+  @ApiModelProperty(value = "")
+  public String getWebsite() {
+    return website;
+  }
+
+  public void setWebsite(String website) {
+    this.website = website;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -321,23 +548,33 @@ public class KycVendorRequestDataVO {
     }
     KycVendorRequestDataVO kycVendorRequestDataVO = (KycVendorRequestDataVO) o;
     return Objects.equals(this.address, kycVendorRequestDataVO.address) &&
+        Objects.equals(this.businessAddresses, kycVendorRequestDataVO.businessAddresses) &&
         Objects.equals(this.countryOfResidence, kycVendorRequestDataVO.countryOfResidence) &&
         Objects.equals(this.dateOfBirth, kycVendorRequestDataVO.dateOfBirth) &&
-        Objects.equals(this.electronDocumentId, kycVendorRequestDataVO.electronDocumentId) &&
+        Objects.equals(this.dbaName, kycVendorRequestDataVO.dbaName) &&
         Objects.equals(this.email, kycVendorRequestDataVO.email) &&
         Objects.equals(this.firstName, kycVendorRequestDataVO.firstName) &&
         Objects.equals(this.gender, kycVendorRequestDataVO.gender) &&
         Objects.equals(this.identificationNumber, kycVendorRequestDataVO.identificationNumber) &&
         Objects.equals(this.identificationNumberType, kycVendorRequestDataVO.identificationNumberType) &&
+        Objects.equals(this.incorporationDate, kycVendorRequestDataVO.incorporationDate) &&
+        Objects.equals(this.incorporationState, kycVendorRequestDataVO.incorporationState) &&
+        Objects.equals(this.isPublic, kycVendorRequestDataVO.isPublic) &&
         Objects.equals(this.lastName, kycVendorRequestDataVO.lastName) &&
+        Objects.equals(this.legalName, kycVendorRequestDataVO.legalName) &&
+        Objects.equals(this.legalStructure, kycVendorRequestDataVO.legalStructure) &&
         Objects.equals(this.metadata, kycVendorRequestDataVO.metadata) &&
         Objects.equals(this.middleName, kycVendorRequestDataVO.middleName) &&
-        Objects.equals(this.phoneNumber, kycVendorRequestDataVO.phoneNumber);
+        Objects.equals(this.nucleusDocumentId, kycVendorRequestDataVO.nucleusDocumentId) &&
+        Objects.equals(this.owners, kycVendorRequestDataVO.owners) &&
+        Objects.equals(this.phoneNumber, kycVendorRequestDataVO.phoneNumber) &&
+        Objects.equals(this.ticker, kycVendorRequestDataVO.ticker) &&
+        Objects.equals(this.website, kycVendorRequestDataVO.website);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, countryOfResidence, dateOfBirth, electronDocumentId, email, firstName, gender, identificationNumber, identificationNumberType, lastName, metadata, middleName, phoneNumber);
+    return Objects.hash(address, businessAddresses, countryOfResidence, dateOfBirth, dbaName, email, firstName, gender, identificationNumber, identificationNumberType, incorporationDate, incorporationState, isPublic, lastName, legalName, legalStructure, metadata, middleName, nucleusDocumentId, owners, phoneNumber, ticker, website);
   }
 
 
@@ -347,18 +584,28 @@ public class KycVendorRequestDataVO {
     sb.append("class KycVendorRequestDataVO {\n");
     
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    businessAddresses: ").append(toIndentedString(businessAddresses)).append("\n");
     sb.append("    countryOfResidence: ").append(toIndentedString(countryOfResidence)).append("\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
-    sb.append("    electronDocumentId: ").append(toIndentedString(electronDocumentId)).append("\n");
+    sb.append("    dbaName: ").append(toIndentedString(dbaName)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
     sb.append("    identificationNumber: ").append(toIndentedString(identificationNumber)).append("\n");
     sb.append("    identificationNumberType: ").append(toIndentedString(identificationNumberType)).append("\n");
+    sb.append("    incorporationDate: ").append(toIndentedString(incorporationDate)).append("\n");
+    sb.append("    incorporationState: ").append(toIndentedString(incorporationState)).append("\n");
+    sb.append("    isPublic: ").append(toIndentedString(isPublic)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
+    sb.append("    legalName: ").append(toIndentedString(legalName)).append("\n");
+    sb.append("    legalStructure: ").append(toIndentedString(legalStructure)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    middleName: ").append(toIndentedString(middleName)).append("\n");
+    sb.append("    nucleusDocumentId: ").append(toIndentedString(nucleusDocumentId)).append("\n");
+    sb.append("    owners: ").append(toIndentedString(owners)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    sb.append("    ticker: ").append(toIndentedString(ticker)).append("\n");
+    sb.append("    website: ").append(toIndentedString(website)).append("\n");
     sb.append("}");
     return sb.toString();
   }

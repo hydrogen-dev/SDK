@@ -31,107 +31,44 @@ class RebalancingSignalRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'settings': 'Settings',
-        'update_model': 'bool',
-        'model_id': 'str',
         'end_date': 'date',
+        'model_id': 'str',
         'initial_weights': 'object',
-        'start_date': 'date'
+        'update_model': 'bool',
+        'start_date': 'date',
+        'settings': 'Settings'
     }
 
     attribute_map = {
-        'settings': 'settings',
-        'update_model': 'update_model',
-        'model_id': 'model_id',
         'end_date': 'end_date',
+        'model_id': 'model_id',
         'initial_weights': 'initial_weights',
-        'start_date': 'start_date'
+        'update_model': 'update_model',
+        'start_date': 'start_date',
+        'settings': 'settings'
     }
 
-    def __init__(self, settings=None, update_model=False, model_id=None, end_date=None, initial_weights=None, start_date=None):  # noqa: E501
+    def __init__(self, end_date=None, model_id=None, initial_weights=None, update_model=False, start_date=None, settings=None):  # noqa: E501
         """RebalancingSignalRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._settings = None
-        self._update_model = None
-        self._model_id = None
         self._end_date = None
+        self._model_id = None
         self._initial_weights = None
+        self._update_model = None
         self._start_date = None
+        self._settings = None
         self.discriminator = None
 
-        if settings is not None:
-            self.settings = settings
-        if update_model is not None:
-            self.update_model = update_model
+        self.end_date = end_date
         if model_id is not None:
             self.model_id = model_id
-        self.end_date = end_date
         if initial_weights is not None:
             self.initial_weights = initial_weights
+        if update_model is not None:
+            self.update_model = update_model
         self.start_date = start_date
-
-    @property
-    def settings(self):
-        """Gets the settings of this RebalancingSignalRequest.  # noqa: E501
-
-
-        :return: The settings of this RebalancingSignalRequest.  # noqa: E501
-        :rtype: Settings
-        """
-        return self._settings
-
-    @settings.setter
-    def settings(self, settings):
-        """Sets the settings of this RebalancingSignalRequest.
-
-
-        :param settings: The settings of this RebalancingSignalRequest.  # noqa: E501
-        :type: Settings
-        """
-
-        self._settings = settings
-
-    @property
-    def update_model(self):
-        """Gets the update_model of this RebalancingSignalRequest.  # noqa: E501
-
-
-        :return: The update_model of this RebalancingSignalRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._update_model
-
-    @update_model.setter
-    def update_model(self, update_model):
-        """Sets the update_model of this RebalancingSignalRequest.
-
-
-        :param update_model: The update_model of this RebalancingSignalRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._update_model = update_model
-
-    @property
-    def model_id(self):
-        """Gets the model_id of this RebalancingSignalRequest.  # noqa: E501
-
-
-        :return: The model_id of this RebalancingSignalRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._model_id
-
-    @model_id.setter
-    def model_id(self, model_id):
-        """Sets the model_id of this RebalancingSignalRequest.
-
-
-        :param model_id: The model_id of this RebalancingSignalRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._model_id = model_id
+        if settings is not None:
+            self.settings = settings
 
     @property
     def end_date(self):
@@ -157,6 +94,27 @@ class RebalancingSignalRequest(object):
         self._end_date = end_date
 
     @property
+    def model_id(self):
+        """Gets the model_id of this RebalancingSignalRequest.  # noqa: E501
+
+
+        :return: The model_id of this RebalancingSignalRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._model_id
+
+    @model_id.setter
+    def model_id(self, model_id):
+        """Sets the model_id of this RebalancingSignalRequest.
+
+
+        :param model_id: The model_id of this RebalancingSignalRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._model_id = model_id
+
+    @property
     def initial_weights(self):
         """Gets the initial_weights of this RebalancingSignalRequest.  # noqa: E501
 
@@ -176,6 +134,27 @@ class RebalancingSignalRequest(object):
         """
 
         self._initial_weights = initial_weights
+
+    @property
+    def update_model(self):
+        """Gets the update_model of this RebalancingSignalRequest.  # noqa: E501
+
+
+        :return: The update_model of this RebalancingSignalRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._update_model
+
+    @update_model.setter
+    def update_model(self, update_model):
+        """Sets the update_model of this RebalancingSignalRequest.
+
+
+        :param update_model: The update_model of this RebalancingSignalRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._update_model = update_model
 
     @property
     def start_date(self):
@@ -199,6 +178,27 @@ class RebalancingSignalRequest(object):
             raise ValueError("Invalid value for `start_date`, must not be `None`")  # noqa: E501
 
         self._start_date = start_date
+
+    @property
+    def settings(self):
+        """Gets the settings of this RebalancingSignalRequest.  # noqa: E501
+
+
+        :return: The settings of this RebalancingSignalRequest.  # noqa: E501
+        :rtype: Settings
+        """
+        return self._settings
+
+    @settings.setter
+    def settings(self, settings):
+        """Sets the settings of this RebalancingSignalRequest.
+
+
+        :param settings: The settings of this RebalancingSignalRequest.  # noqa: E501
+        :type: Settings
+        """
+
+        self._settings = settings
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -32,7 +32,7 @@ class TestRiskAllocationRequest(unittest.TestCase):
     def testRiskAllocationRequest(self):
         """Test RiskAllocationRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.risk_allocation_request.RiskAllocationRequest()  # noqa: E501
+        # model = proton_api.models.risk_allocation_request.RiskAllocationRequest()  # noqa: E501
         pass
 
 

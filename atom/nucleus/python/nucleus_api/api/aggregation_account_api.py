@@ -2245,7 +2245,7 @@ class AggregationAccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AggregationAccountBalance aggregation_account_balance: aggregation_account_balance (required)
+        :param object aggregation_account_balance: aggregation_account_balance (required)
         :param str aggregation_account_balance_id: UUID aggregation_account_balance_id (required)
         :return: AggregationAccountBalance
                  If the method is called asynchronously,
@@ -2268,7 +2268,7 @@ class AggregationAccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AggregationAccountBalance aggregation_account_balance: aggregation_account_balance (required)
+        :param object aggregation_account_balance: aggregation_account_balance (required)
         :param str aggregation_account_balance_id: UUID aggregation_account_balance_id (required)
         :return: AggregationAccountBalance
                  If the method is called asynchronously,
@@ -2352,7 +2352,7 @@ class AggregationAccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[AggregationAccount] aggregation_account_list: aggregationAccountList (required)
+        :param list[object] aggregation_account_list: aggregationAccountList (required)
         :return: list[AggregationAccount]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2374,7 +2374,7 @@ class AggregationAccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[AggregationAccount] aggregation_account_list: aggregationAccountList (required)
+        :param list[object] aggregation_account_list: aggregationAccountList (required)
         :return: list[AggregationAccount]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2451,7 +2451,7 @@ class AggregationAccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[AggregationAccountHolding] aggregation_account_holding: aggregationAccountHolding (required)
+        :param list[object] aggregation_account_holding: aggregationAccountHolding (required)
         :return: list[AggregationAccountHolding]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2473,7 +2473,7 @@ class AggregationAccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[AggregationAccountHolding] aggregation_account_holding: aggregationAccountHolding (required)
+        :param list[object] aggregation_account_holding: aggregationAccountHolding (required)
         :return: list[AggregationAccountHolding]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2550,7 +2550,7 @@ class AggregationAccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AggregationAccountHolding aggregation_account_holding: aggregation_account_holding (required)
+        :param object aggregation_account_holding: aggregation_account_holding (required)
         :param str aggregation_account_holding_id: UUID aggregation_account_holding_id (required)
         :return: AggregationAccountHolding
                  If the method is called asynchronously,
@@ -2573,7 +2573,7 @@ class AggregationAccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AggregationAccountHolding aggregation_account_holding: aggregation_account_holding (required)
+        :param object aggregation_account_holding: aggregation_account_holding (required)
         :param str aggregation_account_holding_id: UUID aggregation_account_holding_id (required)
         :return: AggregationAccountHolding
                  If the method is called asynchronously,
@@ -2657,7 +2657,7 @@ class AggregationAccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AggregationAccountTransaction aggregation_account_transaction: aggregation_account_transaction (required)
+        :param object aggregation_account_transaction: aggregation_account_transaction (required)
         :param str aggregation_account_transaction_id: UUID aggregation_account_transaction_id (required)
         :return: AggregationAccountTransaction
                  If the method is called asynchronously,
@@ -2680,7 +2680,7 @@ class AggregationAccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AggregationAccountTransaction aggregation_account_transaction: aggregation_account_transaction (required)
+        :param object aggregation_account_transaction: aggregation_account_transaction (required)
         :param str aggregation_account_transaction_id: UUID aggregation_account_transaction_id (required)
         :return: AggregationAccountTransaction
                  If the method is called asynchronously,
@@ -2764,7 +2764,7 @@ class AggregationAccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AggregationAccount aggregation_account: aggregation_account (required)
+        :param object aggregation_account: aggregation_account (required)
         :param str aggregation_account_id: UUID aggregation_account_id (required)
         :return: AggregationAccount
                  If the method is called asynchronously,
@@ -2787,7 +2787,7 @@ class AggregationAccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AggregationAccount aggregation_account: aggregation_account (required)
+        :param object aggregation_account: aggregation_account (required)
         :param str aggregation_account_id: UUID aggregation_account_id (required)
         :return: AggregationAccount
                  If the method is called asynchronously,

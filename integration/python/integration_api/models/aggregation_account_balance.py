@@ -32,9 +32,9 @@ class AggregationAccountBalance(object):
     """
     swagger_types = {
         'aggregation_account_id': 'str',
-        'available_balance': 'str',
-        'available_credit': 'str',
-        'balance': 'str',
+        'available_balance': 'float',
+        'available_credit': 'float',
+        'balance': 'float',
         'balance_time_stamp': 'datetime',
         'create_date': 'datetime',
         'currency_code': 'str',
@@ -125,7 +125,7 @@ class AggregationAccountBalance(object):
         availableBalance  # noqa: E501
 
         :return: The available_balance of this AggregationAccountBalance.  # noqa: E501
-        :rtype: str
+        :rtype: float
         """
         return self._available_balance
 
@@ -136,7 +136,7 @@ class AggregationAccountBalance(object):
         availableBalance  # noqa: E501
 
         :param available_balance: The available_balance of this AggregationAccountBalance.  # noqa: E501
-        :type: str
+        :type: float
         """
 
         self._available_balance = available_balance
@@ -148,7 +148,7 @@ class AggregationAccountBalance(object):
         availableCredit  # noqa: E501
 
         :return: The available_credit of this AggregationAccountBalance.  # noqa: E501
-        :rtype: str
+        :rtype: float
         """
         return self._available_credit
 
@@ -159,7 +159,7 @@ class AggregationAccountBalance(object):
         availableCredit  # noqa: E501
 
         :param available_credit: The available_credit of this AggregationAccountBalance.  # noqa: E501
-        :type: str
+        :type: float
         """
 
         self._available_credit = available_credit
@@ -171,7 +171,7 @@ class AggregationAccountBalance(object):
         balance  # noqa: E501
 
         :return: The balance of this AggregationAccountBalance.  # noqa: E501
-        :rtype: str
+        :rtype: float
         """
         return self._balance
 
@@ -182,7 +182,7 @@ class AggregationAccountBalance(object):
         balance  # noqa: E501
 
         :param balance: The balance of this AggregationAccountBalance.  # noqa: E501
-        :type: str
+        :type: float
         """
 
         self._balance = balance

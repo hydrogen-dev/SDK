@@ -1,16 +1,18 @@
 # com\hydrogen\integration\BaasApi
 
-All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1/*
+All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createBaasAccountUsingPost**](BaasApi.md#createBaasAccountUsingPost) | **POST** /baas/account | create a Baas account
+[**createBaasBusinessUsingPost**](BaasApi.md#createBaasBusinessUsingPost) | **POST** /baas/business | Create a Baas Business
 [**createBaasClientUsingPost**](BaasApi.md#createBaasClientUsingPost) | **POST** /baas/client | Create a Baas Client
 [**createBaasSubAccountUsingPost**](BaasApi.md#createBaasSubAccountUsingPost) | **POST** /baas/subaccount | create a Baas subaccount
 [**getBaasAccountStatementUsingGet**](BaasApi.md#getBaasAccountStatementUsingGet) | **GET** /baas/statement/{nucleus_account_id} | Get a Baas account statement
 [**getBaasPortfolioBalanceUsingGet**](BaasApi.md#getBaasPortfolioBalanceUsingGet) | **GET** /baas/balance/{nucleus_portfolio_id} | Get a Baas portfolio balance
 [**getBaasPortfolioTransactionUsingGet**](BaasApi.md#getBaasPortfolioTransactionUsingGet) | **GET** /baas/transaction/{nucleus_portfolio_id} | Get a Baas portfolio transaction
-[**updateBaasClientUsingPut**](BaasApi.md#updateBaasClientUsingPut) | **PUT** /baas/client | Update a Baas client
+[**updateBaasBusinessUsingPut**](BaasApi.md#updateBaasBusinessUsingPut) | **PUT** /baas/business/{nucleus_business_id} | Update a Baas business
+[**updateBaasClientUsingPut**](BaasApi.md#updateBaasClientUsingPut) | **PUT** /baas/client/{nucleus_client_id} | Update a Baas client
 
 
 # **createBaasAccountUsingPost**
@@ -22,7 +24,6 @@ create a Baas account
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -79,16 +80,15 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **createBaasClientUsingPost**
-> \com\hydrogen\integration\Model\BaasClientVO createBaasClientUsingPost($baas_client_co)
+# **createBaasBusinessUsingPost**
+> \com\hydrogen\integration\Model\BaasBusinessVO createBaasBusinessUsingPost($baas_business_co)
 
-Create a Baas Client
+Create a Baas Business
 
 ### Example
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -113,7 +113,72 @@ $apiInstance = new com\hydrogen\integration\Api\BaasApi(
     new GuzzleHttp\Client(),
     $config
 );
-$baas_client_co = new \com\hydrogen\integration\Model\BaasClientCO(); // \com\hydrogen\integration\Model\BaasClientCO | baasClientCO
+$baas_business_co = new \com\hydrogen\integration\Model\CreateBaasBusinessCO(); // \com\hydrogen\integration\Model\CreateBaasBusinessCO | baasBusinessCO
+
+try {
+    $result = $apiInstance->createBaasBusinessUsingPost($baas_business_co);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling BaasApi->createBaasBusinessUsingPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **baas_business_co** | [**\com\hydrogen\integration\Model\CreateBaasBusinessCO**](../Model/CreateBaasBusinessCO.md)| baasBusinessCO |
+
+### Return type
+
+[**\com\hydrogen\integration\Model\BaasBusinessVO**](../Model/BaasBusinessVO.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **createBaasClientUsingPost**
+> \com\hydrogen\integration\Model\BaasClientVO createBaasClientUsingPost($baas_client_co)
+
+Create a Baas Client
+
+### Example
+```php
+<?php
+require_once('../vendor/autoload.php');
+try {
+// Use one of the below method to generate oauth token
+// 1) Generate Token for client credentials
+$config =
+        \com\hydrogen\integration\AuthApiClient::getDefaultConfiguration()
+            ->createClientCredential("MYCLIENTID",
+             "MYCLIENTSECRET");
+// 2) Generate Token for password credentials
+$config =
+        \com\hydrogen\integration\AuthApiClient::
+        getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
+                      ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\integration\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
+} catch (\com\hydrogen\integration\ApiException $e) {
+    print_r($e);
+}
+$apiInstance = new com\hydrogen\integration\Api\BaasApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$baas_client_co = new \com\hydrogen\integration\Model\CreateBaasClientCO(); // \com\hydrogen\integration\Model\CreateBaasClientCO | baasClientCO
 
 try {
     $result = $apiInstance->createBaasClientUsingPost($baas_client_co);
@@ -128,7 +193,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **baas_client_co** | [**\com\hydrogen\integration\Model\BaasClientCO**](../Model/BaasClientCO.md)| baasClientCO |
+ **baas_client_co** | [**\com\hydrogen\integration\Model\CreateBaasClientCO**](../Model/CreateBaasClientCO.md)| baasClientCO |
 
 ### Return type
 
@@ -154,7 +219,6 @@ create a Baas subaccount
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -220,7 +284,6 @@ Get a Baas account statement
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -292,7 +355,6 @@ Get a Baas portfolio balance
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -362,7 +424,6 @@ Get a Baas portfolio transaction
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -423,16 +484,15 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **updateBaasClientUsingPut**
-> \com\hydrogen\integration\Model\BaasClientVO updateBaasClientUsingPut($baas_client_co)
+# **updateBaasBusinessUsingPut**
+> \com\hydrogen\integration\Model\BaasBusinessVO updateBaasBusinessUsingPut($nucleus_business_id, $baas_business_co)
 
-Update a Baas client
+Update a Baas business
 
 ### Example
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -457,10 +517,78 @@ $apiInstance = new com\hydrogen\integration\Api\BaasApi(
     new GuzzleHttp\Client(),
     $config
 );
-$baas_client_co = new \com\hydrogen\integration\Model\BaasClientCO(); // \com\hydrogen\integration\Model\BaasClientCO | baasClientCO
+$nucleus_business_id = "nucleus_business_id_example"; // string | nucleus_business_id
+$baas_business_co = new \com\hydrogen\integration\Model\UpdateBaasBusinessCO(); // \com\hydrogen\integration\Model\UpdateBaasBusinessCO | baasBusinessCO
 
 try {
-    $result = $apiInstance->updateBaasClientUsingPut($baas_client_co);
+    $result = $apiInstance->updateBaasBusinessUsingPut($nucleus_business_id, $baas_business_co);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling BaasApi->updateBaasBusinessUsingPut: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nucleus_business_id** | [**string**](../Model/.md)| nucleus_business_id |
+ **baas_business_co** | [**\com\hydrogen\integration\Model\UpdateBaasBusinessCO**](../Model/UpdateBaasBusinessCO.md)| baasBusinessCO | [optional]
+
+### Return type
+
+[**\com\hydrogen\integration\Model\BaasBusinessVO**](../Model/BaasBusinessVO.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateBaasClientUsingPut**
+> \com\hydrogen\integration\Model\BaasClientVO updateBaasClientUsingPut($nucleus_client_id, $baas_client_co)
+
+Update a Baas client
+
+### Example
+```php
+<?php
+require_once('../vendor/autoload.php');
+try {
+// Use one of the below method to generate oauth token
+// 1) Generate Token for client credentials
+$config =
+        \com\hydrogen\integration\AuthApiClient::getDefaultConfiguration()
+            ->createClientCredential("MYCLIENTID",
+             "MYCLIENTSECRET");
+// 2) Generate Token for password credentials
+$config =
+        \com\hydrogen\integration\AuthApiClient::
+        getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
+                      ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\integration\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
+} catch (\com\hydrogen\integration\ApiException $e) {
+    print_r($e);
+}
+$apiInstance = new com\hydrogen\integration\Api\BaasApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$nucleus_client_id = "nucleus_client_id_example"; // string | nucleus_client_id
+$baas_client_co = new \com\hydrogen\integration\Model\UpdateBaasClientCO(); // \com\hydrogen\integration\Model\UpdateBaasClientCO | baasClientCO
+
+try {
+    $result = $apiInstance->updateBaasClientUsingPut($nucleus_client_id, $baas_client_co);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling BaasApi->updateBaasClientUsingPut: ', $e->getMessage(), PHP_EOL;
@@ -472,7 +600,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **baas_client_co** | [**\com\hydrogen\integration\Model\BaasClientCO**](../Model/BaasClientCO.md)| baasClientCO |
+ **nucleus_client_id** | [**string**](../Model/.md)| nucleus_client_id |
+ **baas_client_co** | [**\com\hydrogen\integration\Model\UpdateBaasClientCO**](../Model/UpdateBaasClientCO.md)| baasClientCO | [optional]
 
 ### Return type
 

@@ -51,7 +51,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 reason_code_request = nucleus_api.ReasonCode() # ReasonCode | reasonCodeRequest
@@ -115,7 +115,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 stage_request = nucleus_api.Stage() # Stage | stageRequest
@@ -179,7 +179,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 transaction_request = nucleus_api.TransactionCode() # TransactionCode | transactionRequest
@@ -243,7 +243,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 reason_code_id = 'reason_code_id_example' # str | UUID reason_code_id
@@ -306,7 +306,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 stage_id = 'stage_id_example' # str | UUID stage_id
@@ -369,7 +369,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 transaction_code_id = 'transaction_code_id_example' # str | UUID transaction_code_id
@@ -432,7 +432,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -504,7 +504,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 reason_code_id = 'reason_code_id_example' # str | UUID reason_code_id
@@ -568,7 +568,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -640,7 +640,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 stage_id = 'stage_id_example' # str | UUID stage_id
@@ -704,7 +704,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -776,7 +776,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
 transaction_code_id = 'transaction_code_id_example' # str | UUID transaction_code_id
@@ -840,10 +840,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
-reason_code = nucleus_api.ReasonCode() # ReasonCode | reason_code
+reason_code = NULL # object | reason_code
 reason_code_id = 'reason_code_id_example' # str | UUID reason_code_id
 
 try:
@@ -858,7 +858,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reason_code** | [**ReasonCode**](ReasonCode.md)| reason_code | 
+ **reason_code** | **object**| reason_code | 
  **reason_code_id** | [**str**](.md)| UUID reason_code_id | 
 
 ### Return type
@@ -906,10 +906,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
-stage = nucleus_api.Stage() # Stage | stage
+stage = NULL # object | stage
 stage_id = 'stage_id_example' # str | UUID stage_id
 
 try:
@@ -924,7 +924,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage** | [**Stage**](Stage.md)| stage | 
+ **stage** | **object**| stage | 
  **stage_id** | [**str**](.md)| UUID stage_id | 
 
 ### Return type
@@ -972,10 +972,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.UtilsApi(nucleus_api.ApiClient(configuration))
-transaction_code = nucleus_api.TransactionCode() # TransactionCode | transaction_code
+transaction_code = NULL # object | transaction_code
 transaction_code_id = 'transaction_code_id_example' # str | UUID transaction_code_id
 
 try:
@@ -990,7 +990,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transaction_code** | [**TransactionCode**](TransactionCode.md)| transaction_code | 
+ **transaction_code** | **object**| transaction_code | 
  **transaction_code_id** | [**str**](.md)| UUID transaction_code_id | 
 
 ### Return type

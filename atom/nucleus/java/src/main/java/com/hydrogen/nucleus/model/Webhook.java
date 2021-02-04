@@ -13,8 +13,6 @@
 
 package com.hydrogen.nucleus.model;
 
-import java.util.Objects;
-
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,83 +20,82 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.threeten.bp.OffsetDateTime;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
-import org.threeten.bp.OffsetDateTime;
 
 /**
  * Webhook Object
  */
 @ApiModel(description = "Webhook Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-12T11:03:26.704Z")
-
-
-
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-31T15:47:19.766Z")
 public class Webhook {
   /**
    * Gets or Sets atomService
    */
   @JsonAdapter(AtomServiceEnum.Adapter.class)
   public enum AtomServiceEnum {
-    CLIENT("CLIENT"),
+    CLIENT("client"),
     
-    CLIENT_STATUS("CLIENT_STATUS"),
+    CLIENT_STATUS("client_status"),
     
-    ACCOUNT_STATUS("ACCOUNT_STATUS"),
+    ACCOUNT_STATUS("account_status"),
     
-    ACCOUNT("ACCOUNT"),
+    ACCOUNT("account"),
     
-    CARD("CARD"),
+    CARD("card"),
     
-    CARD_STATUS("CARD_STATUS"),
+    CARD_STATUS("card_status"),
     
-    PORTFOLIO_ASSET_SIZE("PORTFOLIO_ASSET_SIZE"),
+    PORTFOLIO_ASSET_SIZE("portfolio_asset_size"),
     
-    PORTFOLIO_TRANSACTION("PORTFOLIO_TRANSACTION"),
+    PORTFOLIO_TRANSACTION("portfolio_transaction"),
     
-    PORTFOLIO_TRANSACTION_STATUS("PORTFOLIO_TRANSACTION_STATUS"),
+    PORTFOLIO_TRANSACTION_STATUS("portfolio_transaction_status"),
     
-    PORTFOLIO_HOLDING("PORTFOLIO_HOLDING"),
+    PORTFOLIO_HOLDING("portfolio_holding"),
     
-    AGGREGATION_ACCOUNT("AGGREGATION_ACCOUNT"),
+    AGGREGATION_ACCOUNT("aggregation_account"),
     
-    AGGREGATION_ACCOUNT_STATUS("AGGREGATION_ACCOUNT_STATUS"),
+    AGGREGATION_ACCOUNT_STATUS("aggregation_account_status"),
     
-    NOTIFICATION_CLIENT("NOTIFICATION_CLIENT"),
+    NOTIFICATION_CLIENT("notification_client"),
     
-    AGGREGATION_ACCOUNT_BALANCE("AGGREGATION_ACCOUNT_BALANCE"),
+    AGGREGATION_ACCOUNT_BALANCE("aggregation_account_balance"),
     
-    AUDIT_LOG("AUDIT_LOG"),
+    AUDIT_LOG("audit_log"),
     
-    SUPPORT_TICKET("SUPPORT_TICKET"),
+    SUPPORT_TICKET("support_ticket"),
     
-    FEATURE_TRACK("FEATURE_TRACK"),
+    FEATURE_TRACK("feature_track"),
     
-    AGGREGATION_ACCOUNT_TRANSACTION("AGGREGATION_ACCOUNT_TRANSACTION"),
+    AGGREGATION_ACCOUNT_TRANSACTION("aggregation_account_transaction"),
     
-    AGGREGATION_ACCOUNT_TRANSACTION_STATUS("AGGREGATION_ACCOUNT_TRANSACTION_STATUS"),
+    AGGREGATION_ACCOUNT_TRANSACTION_STATUS("aggregation_account_transaction_status"),
     
-    AGGREGATION_ACCOUNT_HOLDING("AGGREGATION_ACCOUNT_HOLDING"),
+    AGGREGATION_ACCOUNT_HOLDING("aggregation_account_holding"),
     
-    ORDER_TRACK("ORDER_TRACK"),
+    ORDER_TRACK("order_track"),
     
-    FUNDING("FUNDING"),
+    FUNDING("funding"),
     
-    FUNDING_STATUS("FUNDING_STATUS"),
+    FUNDING_STATUS("funding_status"),
     
-    BUDGET("BUDGET"),
+    BUDGET("budget"),
     
-    DOCUMENT("DOCUMENT"),
+    DOCUMENT("document"),
     
-    CLIENT_RESPONSE("CLIENT_RESPONSE"),
+    CLIENT_RESPONSE("client_response"),
     
-    CLIENT_VERIFIED("CLIENT_VERIFIED"),
+    CLIENT_VERIFIED("client_verified"),
     
-    DOCUMENT_VERIFIED("DOCUMENT_VERIFIED"),
+    DOCUMENT_VERIFIED("document_verified"),
     
-    BANK_LINK_VERIFIED("BANK_LINK_VERIFIED");
+    BANK_LINK_VERIFIED("bank_link_verified");
 
     private String value;
 
@@ -132,7 +129,7 @@ public class Webhook {
 
       @Override
       public AtomServiceEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        Object value = jsonReader.nextString();
         return AtomServiceEnum.fromValue(String.valueOf(value));
       }
     }
@@ -271,7 +268,7 @@ public class Webhook {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -299,7 +296,7 @@ public class Webhook {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Webhook {\n");
-    
+
     sb.append("    atomService: ").append(toIndentedString(atomService)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
@@ -316,7 +313,7 @@ public class Webhook {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

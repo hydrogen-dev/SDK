@@ -45,49 +45,16 @@ Create a balance records under an aggregation accounts.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        createAggregationAccountBalanceBulk();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccountBalance = [new HydrogenNucleusApi.AggregationAccountBalance()]; // [AggregationAccountBalance] | aggregationAccountBalance
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -96,11 +63,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const createAggregationAccountBalanceBulk = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccountBalance = new HydrogenNucleusApi.AggregationAccountBalance(); // [AggregationAccountBalance] | aggregationAccountBalance
-    apiInstance.createAggregationAccountBalanceBulkUsingPost(aggregationAccountBalance, callback);
-}
+apiInstance.createAggregationAccountBalanceBulkUsingPost(aggregationAccountBalance, callback);
 ```
 
 ### Parameters
@@ -133,49 +96,16 @@ Create a balance record under an aggregation account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        createAggregationAccountBalance();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccountBalance = new HydrogenNucleusApi.AggregationAccountBalance(); // AggregationAccountBalance | aggregationAccountBalance
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -184,11 +114,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const createAggregationAccountBalance = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccountBalance = new HydrogenNucleusApi.AggregationAccountBalance(); // AggregationAccountBalance | aggregationAccountBalance
-    apiInstance.createAggregationAccountBalanceUsingPost(aggregationAccountBalance, callback);
-}
+apiInstance.createAggregationAccountBalanceUsingPost(aggregationAccountBalance, callback);
 ```
 
 ### Parameters
@@ -221,49 +147,16 @@ Create a bulk aggregation account under a client.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        createAggregationAccountBulk();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccountList = [new HydrogenNucleusApi.AggregationAccount()]; // [AggregationAccount] | aggregationAccountList
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -272,11 +165,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const createAggregationAccountBulk = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccountList = new HydrogenNucleusApi.AggregationAccount(); // [AggregationAccount] | aggregationAccountList
-    apiInstance.createAggregationAccountBulkUsingPost(aggregationAccountList, callback);
-}
+apiInstance.createAggregationAccountBulkUsingPost(aggregationAccountList, callback);
 ```
 
 ### Parameters
@@ -309,49 +198,16 @@ Create a bulk aggregation account holding.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        createAggregationAccountHoldingBulk();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationTransaction = [new HydrogenNucleusApi.AggregationAccountHolding()]; // [AggregationAccountHolding] | aggregationTransaction
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -360,11 +216,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const createAggregationAccountHoldingBulk = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationTransaction = new HydrogenNucleusApi.AggregationAccountHolding(); // [AggregationAccountHolding] | aggregationTransaction
-    apiInstance.createAggregationAccountHoldingBulkUsingPost(aggregationTransaction, callback);
-}
+apiInstance.createAggregationAccountHoldingBulkUsingPost(aggregationTransaction, callback);
 ```
 
 ### Parameters
@@ -397,49 +249,16 @@ Create a holding record under an aggregation account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        createAggregationAccountHolding();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccountHolding = new HydrogenNucleusApi.AggregationAccountHolding(); // AggregationAccountHolding | aggregationAccountHolding
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -448,11 +267,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const createAggregationAccountHolding = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccountHolding = new HydrogenNucleusApi.AggregationAccountHolding(); // AggregationAccountHolding | aggregationAccountHolding
-    apiInstance.createAggregationAccountHoldingUsingPost(aggregationAccountHolding, callback);
-}
+apiInstance.createAggregationAccountHoldingUsingPost(aggregationAccountHolding, callback);
 ```
 
 ### Parameters
@@ -485,49 +300,16 @@ Create a bulk transaction record under an aggregation account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        createAggregationAccountTransactionBulk();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccountTransactions = [new HydrogenNucleusApi.AggregationAccountTransaction()]; // [AggregationAccountTransaction] | aggregationAccountTransactions
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -536,11 +318,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const createAggregationAccountTransactionBulk = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccountTransactions = new HydrogenNucleusApi.AggregationAccountTransaction(); // [AggregationAccountTransaction] | aggregationAccountTransactions
-    apiInstance.createAggregationAccountTransactionBulkUsingPost(aggregationAccountTransactions, callback);
-}
+apiInstance.createAggregationAccountTransactionBulkUsingPost(aggregationAccountTransactions, callback);
 ```
 
 ### Parameters
@@ -573,49 +351,16 @@ Create a transaction record under an aggregation account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        createAggregationAccountTransaction();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccountTransaction = new HydrogenNucleusApi.AggregationAccountTransaction(); // AggregationAccountTransaction | aggregationAccountTransaction
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -624,11 +369,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const createAggregationAccountTransaction = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccountTransaction = new HydrogenNucleusApi.AggregationAccountTransaction(); // AggregationAccountTransaction | aggregationAccountTransaction
-    apiInstance.createAggregationAccountTransactionUsingPost(aggregationAccountTransaction, callback);
-}
+apiInstance.createAggregationAccountTransactionUsingPost(aggregationAccountTransaction, callback);
 ```
 
 ### Parameters
@@ -661,49 +402,16 @@ Create an aggregation account under a client.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        createAggregationAccount();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccount = new HydrogenNucleusApi.AggregationAccount(); // AggregationAccount | aggregationAccount
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -712,11 +420,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const createAggregationAccount = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccount = new HydrogenNucleusApi.AggregationAccount(); // AggregationAccount | aggregationAccount
-    apiInstance.createAggregationAccountUsingPost(aggregationAccount, callback);
-}
+apiInstance.createAggregationAccountUsingPost(aggregationAccount, callback);
 ```
 
 ### Parameters
@@ -749,69 +453,32 @@ Permanently delete a balance record for an aggregation account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        deleteAggregationAccountBalance();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccountBalanceId = "\"f96fad3e-a8cf-4915-bc0c-da4d9693ab83\""; // String | UUID aggregation_account_balance_id
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
-const deleteAggregationAccountBalance = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccountBalanceId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID aggregation_account_balance_id
-    apiInstance.deleteAggregationAccountBalanceUsingDelete(aggregationAccountBalanceId, callback);
-}
+apiInstance.deleteAggregationAccountBalanceUsingDelete(aggregationAccountBalanceId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccountBalanceId** | **String**| UUID aggregation_account_balance_id | 
+ **aggregationAccountBalanceId** | [**String**](.md)| UUID aggregation_account_balance_id | 
 
 ### Return type
 
@@ -837,69 +504,32 @@ Permanently delete a holding record for an aggregation account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        deleteAggregationAccountHolding();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccountHoldingId = "\"f96fad3e-a8cf-4915-bc0c-da4d9693ab83\""; // String | UUID aggregation_account_holding_id
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
-const deleteAggregationAccountHolding = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccountHoldingId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID aggregation_account_holding_id
-    apiInstance.deleteAggregationAccountHoldingUsingDelete(aggregationAccountHoldingId, callback);
-}
+apiInstance.deleteAggregationAccountHoldingUsingDelete(aggregationAccountHoldingId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccountHoldingId** | **String**| UUID aggregation_account_holding_id | 
+ **aggregationAccountHoldingId** | [**String**](.md)| UUID aggregation_account_holding_id | 
 
 ### Return type
 
@@ -925,69 +555,32 @@ Permanently delete a transaction record for an aggregation account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        deleteAggregationAccountTransaction();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccountTransactionId = "\"f96fad3e-a8cf-4915-bc0c-da4d9693ab83\""; // String | UUID aggregation_account_transaction_id
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
-const deleteAggregationAccountTransaction = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccountTransactionId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID aggregation_account_transaction_id
-    apiInstance.deleteAggregationAccountTransactionUsingDelete(aggregationAccountTransactionId, callback);
-}
+apiInstance.deleteAggregationAccountTransactionUsingDelete(aggregationAccountTransactionId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccountTransactionId** | **String**| UUID aggregation_account_transaction_id | 
+ **aggregationAccountTransactionId** | [**String**](.md)| UUID aggregation_account_transaction_id | 
 
 ### Return type
 
@@ -1013,69 +606,32 @@ Permanently delete an aggregation account under a client.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        deleteAggregationAccount();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccountId = "\"f96fad3e-a8cf-4915-bc0c-da4d9693ab83\""; // String | UUID aggregation_account_id
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
-const deleteAggregationAccount = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccountId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID aggregation_account_id
-    apiInstance.deleteAggregationAccountUsingDelete(aggregationAccountId, callback);
-}
+apiInstance.deleteAggregationAccountUsingDelete(aggregationAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccountId** | **String**| UUID aggregation_account_id | 
+ **aggregationAccountId** | [**String**](.md)| UUID aggregation_account_id | 
 
 ### Return type
 
@@ -1101,49 +657,19 @@ Retrieve the information for a specific aggregation account associated with a cl
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        getAggregationAccountAggregateData();
-    }
+var aggregationAccountId = "\"f96fad3e-a8cf-4915-bc0c-da4d9693ab83\""; // String | UUID aggregation_account_id
+
+var opts = { 
+  'currencyConversion': "currencyConversion_example" // String | USD
 };
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1152,18 +678,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const getAggregationAccountAggregateData = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccountId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID aggregation_account_id
-    apiInstance.getAggregationAccountAggregateDataUsingGet(aggregationAccountId, opts, callback);
-}
+apiInstance.getAggregationAccountAggregateDataUsingGet(aggregationAccountId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccountId** | **String**| UUID aggregation_account_id | 
+ **aggregationAccountId** | [**String**](.md)| UUID aggregation_account_id | 
  **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
@@ -1190,49 +712,21 @@ Get information for all aggregation accounts for all clients defined for your fi
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        getAggregationAccountAll();
-    }
+var opts = { 
+  'ascending': false, // Boolean | ascending
+  'filter': "filter_example", // String | filter
+  'orderBy': "update_date", // String | order_by
+  'page': 0, // Number | page
+  'size': 25 // Number | size
 };
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1241,17 +735,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const getAggregationAccountAll = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var opts = { 
-      'ascending': false, // Boolean | ascending
-      'filter': "filter_example", // String | filter
-      'orderBy': "update_date", // String | order_by
-      'page': 0, // Number | page
-      'size': 25 // Number | size
-    };
-    apiInstance.getAggregationAccountAllUsingGet(opts, callback);
-}
+apiInstance.getAggregationAccountAllUsingGet(opts, callback);
 ```
 
 ### Parameters
@@ -1288,49 +772,22 @@ Get all of the balance records for all aggregation accounts defined for your fir
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        getAggregationAccountBalanceAll();
-    }
+var opts = { 
+  'ascending': false, // Boolean | ascending
+  'currencyConversion': "currencyConversion_example", // String | currency_conversion
+  'filter': "filter_example", // String | filter
+  'orderBy': "update_date", // String | order_by
+  'page': 0, // Number | page
+  'size': 25 // Number | size
 };
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1339,18 +796,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const getAggregationAccountBalanceAll = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var opts = { 
-      'ascending': false, // Boolean | ascending
-      'currencyConversion': "currencyConversion_example", // String | currency_conversion
-      'filter': "filter_example", // String | filter
-      'orderBy': "update_date", // String | order_by
-      'page': 0, // Number | page
-      'size': 25 // Number | size
-    };
-    apiInstance.getAggregationAccountBalanceAllUsingGet(opts, callback);
-}
+apiInstance.getAggregationAccountBalanceAllUsingGet(opts, callback);
 ```
 
 ### Parameters
@@ -1388,49 +834,19 @@ Retrieve the information for a specific balance record for an aggregation accoun
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        getAggregationAccountBalance();
-    }
+var aggregationAccountBalanceId = "\"f96fad3e-a8cf-4915-bc0c-da4d9693ab83\""; // String | UUID aggregation_account_balance_id
+
+var opts = { 
+  'currencyConversion': "currencyConversion_example" // String | USD
 };
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1439,21 +855,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const getAggregationAccountBalance = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccountBalanceId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID aggregation_account_balance_id
-    var opts = { 
-      'currencyConversion': "currencyConversion_example" // String | USD
-    };
-    apiInstance.getAggregationAccountBalanceUsingGet(aggregationAccountBalanceId, opts, callback);
-}
+apiInstance.getAggregationAccountBalanceUsingGet(aggregationAccountBalanceId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccountBalanceId** | **String**| UUID aggregation_account_balance_id | 
+ **aggregationAccountBalanceId** | [**String**](.md)| UUID aggregation_account_balance_id | 
  **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
@@ -1480,49 +889,22 @@ Get all of the holding records for all aggregation accounts defined for your fir
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        getAggregationAccountHoldingAll();
-    }
+var opts = { 
+  'ascending': false, // Boolean | ascending
+  'currencyConversion': "currencyConversion_example", // String | currency_conversion
+  'filter': "filter_example", // String | filter
+  'orderBy': "update_date", // String | order_by
+  'page': 0, // Number | page
+  'size': 25 // Number | size
 };
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1531,18 +913,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const getAggregationAccountHoldingAll = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var opts = { 
-      'ascending': false, // Boolean | ascending
-      'currencyConversion': "currencyConversion_example", // String | currency_conversion
-      'filter': "filter_example", // String | filter
-      'orderBy': "update_date", // String | order_by
-      'page': 0, // Number | page
-      'size': 25 // Number | size
-    };
-    apiInstance.getAggregationAccountHoldingAllUsingGet(opts, callback);
-}
+apiInstance.getAggregationAccountHoldingAllUsingGet(opts, callback);
 ```
 
 ### Parameters
@@ -1580,49 +951,19 @@ Retrieve the information for a specific holding record for an aggregation accoun
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        getAggregationAccountHolding();
-    }
+var aggregationAccountHoldingId = "\"f96fad3e-a8cf-4915-bc0c-da4d9693ab83\""; // String | UUID aggregation_account_holding_id
+
+var opts = { 
+  'currencyConversion': "currencyConversion_example" // String | USD
 };
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1631,22 +972,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const getAggregationAccountHolding = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccountHoldingId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID aggregation_account_holding_id
-
-    var opts = { 
-      'currencyConversion': "currencyConversion_example" // String | USD
-    };
-    apiInstance.getAggregationAccountHoldingUsingGet(aggregationAccountHoldingId, opts, callback);
-}
+apiInstance.getAggregationAccountHoldingUsingGet(aggregationAccountHoldingId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccountHoldingId** | **String**| UUID aggregation_account_holding_id | 
+ **aggregationAccountHoldingId** | [**String**](.md)| UUID aggregation_account_holding_id | 
  **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
@@ -1673,49 +1006,19 @@ Retrieve the information for a specific aggregation account with aggregate data 
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        getAggregationAccountOverview();
-    }
+var clientId = "\"f96fad3e-a8cf-4915-bc0c-da4d9693ab83\""; // String | UUID client_id
+
+var opts = { 
+  'currencyConversion': "currencyConversion_example" // String | USD
 };
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1724,22 +1027,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const getAggregationAccountOverview = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var clientId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID client_id
-
-    var opts = { 
-      'currencyConversion': "currencyConversion_example" // String | USD
-    };
-    apiInstance.getAggregationAccountOverviewUsingGet(clientId, opts, callback);
-}
+apiInstance.getAggregationAccountOverviewUsingGet(clientId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clientId** | **String**| UUID client_id | 
+ **clientId** | [**String**](.md)| UUID client_id | 
  **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
@@ -1766,49 +1061,22 @@ Get all of the transaction records for all aggregation accounts defined for your
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        getAggregationAccountTransactionAll();
-    }
+var opts = { 
+  'ascending': false, // Boolean | ascending
+  'currencyConversion': "currencyConversion_example", // String | currency_conversion
+  'filter': "filter_example", // String | filter
+  'orderBy': "update_date", // String | order_by
+  'page': 0, // Number | page
+  'size': 25 // Number | size
 };
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1817,18 +1085,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const getAggregationAccountTransactionAll = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var opts = { 
-      'ascending': false, // Boolean | ascending
-      'currencyConversion': "currencyConversion_example", // String | currency_conversion
-      'filter': "filter_example", // String | filter
-      'orderBy': "update_date", // String | order_by
-      'page': 0, // Number | page
-      'size': 25 // Number | size
-    };
-    apiInstance.getAggregationAccountTransactionAllUsingGet(opts, callback);
-}
+apiInstance.getAggregationAccountTransactionAllUsingGet(opts, callback);
 ```
 
 ### Parameters
@@ -1866,49 +1123,19 @@ Retrieve the information for a specific transaction record for an aggregation ac
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        getAggregationAccountTransaction();
-    }
+var aggregationAccountTransactionId = "\"f96fad3e-a8cf-4915-bc0c-da4d9693ab83\""; // String | UUID aggregation_account_transaction_id
+
+var opts = { 
+  'currencyConversion': "currencyConversion_example" // String | USD
 };
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1917,22 +1144,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const getAggregationAccountTransaction = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccountTransactionId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID aggregation_account_transaction_id
-
-    var opts = { 
-      'currencyConversion': "currencyConversion_example" // String | USD
-    };
-    apiInstance.getAggregationAccountTransactionUsingGet(aggregationAccountTransactionId, opts, callback);
-}
+apiInstance.getAggregationAccountTransactionUsingGet(aggregationAccountTransactionId, opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccountTransactionId** | **String**| UUID aggregation_account_transaction_id | 
+ **aggregationAccountTransactionId** | [**String**](.md)| UUID aggregation_account_transaction_id | 
  **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
@@ -1959,49 +1178,16 @@ Retrieve the information for a specific aggregation account associated with a cl
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        getAggregationAccount();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccountId = "\"f96fad3e-a8cf-4915-bc0c-da4d9693ab83\""; // String | UUID aggregation_account_id
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -2010,18 +1196,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const getAggregationAccount = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccountId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID aggregation_account_id
-    apiInstance.getAggregationAccountUsingGet(aggregationAccountId, callback);
-}
+apiInstance.getAggregationAccountUsingGet(aggregationAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccountId** | **String**| UUID aggregation_account_id | 
+ **aggregationAccountId** | [**String**](.md)| UUID aggregation_account_id | 
 
 ### Return type
 
@@ -2047,49 +1229,18 @@ Update a balance record for an aggregation account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        updateAggregationAccountBalance();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccountBalance = null; // Object | aggregation_account_balance
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccountBalanceId = "\"f96fad3e-a8cf-4915-bc0c-da4d9693ab83\""; // String | UUID aggregation_account_balance_id
 
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -2098,22 +1249,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const updateAggregationAccountBalance = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccountBalance = new HydrogenNucleusApi.AggregationAccountBalance(); // AggregationAccountBalance | aggregation_account_balance
-
-    var aggregationAccountBalanceId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID aggregation_account_balance_id
-    apiInstance.updateAggregationAccountBalanceUsingPut(aggregationAccountBalance, aggregationAccountBalanceId, callback);
-
-}
+apiInstance.updateAggregationAccountBalanceUsingPut(aggregationAccountBalance, aggregationAccountBalanceId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccountBalance** | [**AggregationAccountBalance**](AggregationAccountBalance.md)| aggregation_account_balance | 
- **aggregationAccountBalanceId** | **String**| UUID aggregation_account_balance_id | 
+ **aggregationAccountBalance** | **Object**| aggregation_account_balance | 
+ **aggregationAccountBalanceId** | [**String**](.md)| UUID aggregation_account_balance_id | 
 
 ### Return type
 
@@ -2139,49 +1283,16 @@ Update a bulk aggregation account under a client.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        updateAggregationAccountBulk();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccountList = [new HydrogenNucleusApi.[Object]()]; // [Object] | aggregationAccountList
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -2190,19 +1301,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const updateAggregationAccountBulk = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccountList = new HydrogenNucleusApi.AggregationAccount(); // [AggregationAccount] | aggregationAccountList
-    apiInstance.updateAggregationAccountBulkUsingPut(aggregationAccountList, callback);
-}
-
+apiInstance.updateAggregationAccountBulkUsingPut(aggregationAccountList, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccountList** | [**[AggregationAccount]**](AggregationAccount.md)| aggregationAccountList | 
+ **aggregationAccountList** | **[Object]**| aggregationAccountList | 
 
 ### Return type
 
@@ -2228,49 +1334,16 @@ Update a bulk holding record for an aggregation account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        updateAggregationAccountHoldingBulk();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccountHolding = [new HydrogenNucleusApi.[Object]()]; // [Object] | aggregationAccountHolding
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -2279,18 +1352,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const updateAggregationAccountHoldingBulk = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccountHolding = new HydrogenNucleusApi.AggregationAccountHolding(); // [AggregationAccountHolding] | aggregationAccountHolding
-    apiInstance.updateAggregationAccountHoldingBulkUsingPut(aggregationAccountHolding, callback);
-}
+apiInstance.updateAggregationAccountHoldingBulkUsingPut(aggregationAccountHolding, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccountHolding** | [**[AggregationAccountHolding]**](AggregationAccountHolding.md)| aggregationAccountHolding | 
+ **aggregationAccountHolding** | **[Object]**| aggregationAccountHolding | 
 
 ### Return type
 
@@ -2316,49 +1385,18 @@ Update a holding record for an aggregation account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        updateAggregationAccountHolding();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccountHolding = null; // Object | aggregation_account_holding
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccountHoldingId = "\"f96fad3e-a8cf-4915-bc0c-da4d9693ab83\""; // String | UUID aggregation_account_holding_id
 
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -2367,21 +1405,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const updateAggregationAccountHolding = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccountHolding = new HydrogenNucleusApi.AggregationAccountHolding(); // AggregationAccountHolding | aggregation_account_holding
-
-    var aggregationAccountHoldingId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID aggregation_account_holding_id
-    apiInstance.updateAggregationAccountHoldingUsingPut(aggregationAccountHolding, aggregationAccountHoldingId, callback);
-}
+apiInstance.updateAggregationAccountHoldingUsingPut(aggregationAccountHolding, aggregationAccountHoldingId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccountHolding** | [**AggregationAccountHolding**](AggregationAccountHolding.md)| aggregation_account_holding | 
- **aggregationAccountHoldingId** | **String**| UUID aggregation_account_holding_id | 
+ **aggregationAccountHolding** | **Object**| aggregation_account_holding | 
+ **aggregationAccountHoldingId** | [**String**](.md)| UUID aggregation_account_holding_id | 
 
 ### Return type
 
@@ -2407,49 +1439,18 @@ Update a transaction record for an aggregation account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        updateAggregationAccountTransaction();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccountTransaction = null; // Object | aggregation_account_transaction
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccountTransactionId = "\"f96fad3e-a8cf-4915-bc0c-da4d9693ab83\""; // String | UUID aggregation_account_transaction_id
 
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -2458,20 +1459,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const updateAggregationAccountTransaction = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    var aggregationAccountTransaction = new HydrogenNucleusApi.AggregationAccountTransaction(); // AggregationAccountTransaction | aggregation_account_transaction
-    var aggregationAccountTransactionId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID aggregation_account_transaction_id
-    apiInstance.updateAggregationAccountTransactionUsingPut(aggregationAccountTransaction, aggregationAccountTransactionId, callback);
-}
+apiInstance.updateAggregationAccountTransactionUsingPut(aggregationAccountTransaction, aggregationAccountTransactionId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccountTransaction** | [**AggregationAccountTransaction**](AggregationAccountTransaction.md)| aggregation_account_transaction | 
- **aggregationAccountTransactionId** | **String**| UUID aggregation_account_transaction_id | 
+ **aggregationAccountTransaction** | **Object**| aggregation_account_transaction | 
+ **aggregationAccountTransactionId** | [**String**](.md)| UUID aggregation_account_transaction_id | 
 
 ### Return type
 
@@ -2497,49 +1493,18 @@ Update the information for an aggregation account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        updateAggregationAccount();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccount = null; // Object | aggregation_account
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var aggregationAccountId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID aggregation_account_id
 
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -2548,22 +1513,15 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const updateAggregationAccount = () => {
-    var apiInstance = new HydrogenNucleusApi.AggregationAccountApi();
-    
-    var aggregationAccount = new HydrogenNucleusApi.AggregationAccount(); // AggregationAccount | aggregation_account
-    var aggregationAccountId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID aggregation_account_id
-    apiInstance.updateAggregationAccountUsingPut(aggregationAccount, aggregationAccountId, callback);
-
-}
+apiInstance.updateAggregationAccountUsingPut(aggregationAccount, aggregationAccountId, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregationAccount** | [**AggregationAccount**](AggregationAccount.md)| aggregation_account | 
- **aggregationAccountId** | **String**| UUID aggregation_account_id | 
+ **aggregationAccount** | **Object**| aggregation_account | 
+ **aggregationAccountId** | [**String**](.md)| UUID aggregation_account_id | 
 
 ### Return type
 

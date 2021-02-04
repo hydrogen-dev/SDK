@@ -29,7 +29,6 @@ import java.io.IOException;
 
 import com.hydrogen.integration.model.KmsConfig;
 import com.hydrogen.integration.model.PageKmsConfig;
-
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -301,6 +300,7 @@ public class KmsApi {
     /**
      * Build call for getKMSAllUsingGet
      * @param ascending ascending (optional, default to false)
+     * @param filter filter (optional)
      * @param orderBy order_by (optional, default to update_date)
      * @param page page (optional, default to 0)
      * @param size size (optional, default to 25)
@@ -309,7 +309,7 @@ public class KmsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getKMSAllUsingGetCall(Boolean ascending, String orderBy, Integer page, Integer size, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getKMSAllUsingGetCall(Boolean ascending, String filter, String orderBy, Integer page, Integer size, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -319,6 +319,8 @@ public class KmsApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         if (ascending != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
+        if (filter != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
         if (orderBy != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
         if (page != null)
@@ -359,49 +361,52 @@ public class KmsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getKMSAllUsingGetValidateBeforeCall(Boolean ascending, String orderBy, Integer page, Integer size, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getKMSAllUsingGetValidateBeforeCall(Boolean ascending, String filter, String orderBy, Integer page, Integer size, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getKMSAllUsingGetCall(ascending, orderBy, page, size, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getKMSAllUsingGetCall(ascending, filter, orderBy, page, size, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
      * List all KMS Clients
-     * Get details for all clients registered with your firm.
+     * Get details for all clients registered with your business.
      * @param ascending ascending (optional, default to false)
+     * @param filter filter (optional)
      * @param orderBy order_by (optional, default to update_date)
      * @param page page (optional, default to 0)
      * @param size size (optional, default to 25)
      * @return PageKmsConfig
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PageKmsConfig getKMSAllUsingGet(Boolean ascending, String orderBy, Integer page, Integer size) throws ApiException {
-        ApiResponse<PageKmsConfig> resp = getKMSAllUsingGetWithHttpInfo(ascending, orderBy, page, size);
+    public PageKmsConfig getKMSAllUsingGet(Boolean ascending, String filter, String orderBy, Integer page, Integer size) throws ApiException {
+        ApiResponse<PageKmsConfig> resp = getKMSAllUsingGetWithHttpInfo(ascending, filter, orderBy, page, size);
         return resp.getData();
     }
 
     /**
      * List all KMS Clients
-     * Get details for all clients registered with your firm.
+     * Get details for all clients registered with your business.
      * @param ascending ascending (optional, default to false)
+     * @param filter filter (optional)
      * @param orderBy order_by (optional, default to update_date)
      * @param page page (optional, default to 0)
      * @param size size (optional, default to 25)
      * @return ApiResponse&lt;PageKmsConfig&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PageKmsConfig> getKMSAllUsingGetWithHttpInfo(Boolean ascending, String orderBy, Integer page, Integer size) throws ApiException {
-        com.squareup.okhttp.Call call = getKMSAllUsingGetValidateBeforeCall(ascending, orderBy, page, size, null, null);
+    public ApiResponse<PageKmsConfig> getKMSAllUsingGetWithHttpInfo(Boolean ascending, String filter, String orderBy, Integer page, Integer size) throws ApiException {
+        com.squareup.okhttp.Call call = getKMSAllUsingGetValidateBeforeCall(ascending, filter, orderBy, page, size, null, null);
         Type localVarReturnType = new TypeToken<PageKmsConfig>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * List all KMS Clients (asynchronously)
-     * Get details for all clients registered with your firm.
+     * Get details for all clients registered with your business.
      * @param ascending ascending (optional, default to false)
+     * @param filter filter (optional)
      * @param orderBy order_by (optional, default to update_date)
      * @param page page (optional, default to 0)
      * @param size size (optional, default to 25)
@@ -409,7 +414,7 @@ public class KmsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getKMSAllUsingGetAsync(Boolean ascending, String orderBy, Integer page, Integer size, final ApiCallback<PageKmsConfig> callback) throws ApiException {
+    public com.squareup.okhttp.Call getKMSAllUsingGetAsync(Boolean ascending, String filter, String orderBy, Integer page, Integer size, final ApiCallback<PageKmsConfig> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -430,7 +435,7 @@ public class KmsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getKMSAllUsingGetValidateBeforeCall(ascending, orderBy, page, size, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getKMSAllUsingGetValidateBeforeCall(ascending, filter, orderBy, page, size, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PageKmsConfig>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

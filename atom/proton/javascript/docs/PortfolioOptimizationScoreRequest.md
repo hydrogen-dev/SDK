@@ -3,31 +3,20 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**optConfig** | [**OptConfig1**](OptConfig1.md) |  | [optional] 
-**tgtType** | **String** |  | [optional] [default to 'return']
 **portfolioTickers** | **[String]** |  | [optional] 
-**createLog** | **Boolean** |  | [optional] [default to false]
-**aggregationAccountId** | **String** |  | [optional] 
-**allocationId** | **String** |  | [optional] 
-**modelId** | **String** |  | [optional] 
-**portfolioWeights** | **[Number]** |  | [optional] 
 **endDate** | **Date** |  | [optional] 
-**startDate** | **Date** |  | [optional] 
-**useProxyData** | **Boolean** |  | [optional] [default to false]
-**accountId** | **String** |  | [optional] 
-**marketDataSource** | **String** |  | [optional] [default to 'nucleus']
 **portfolioId** | **String** |  | [optional] 
-
-
-<a name="TgtTypeEnum"></a>
-## Enum: TgtTypeEnum
-
-
-* `risk` (value: `"risk"`)
-
-* `_return` (value: `"return"`)
-
-
+**marketDataSource** | **String** |  | [optional] [default to 'nucleus']
+**modelId** | **String** |  | [optional] 
+**createLog** | **Boolean** |  | [optional] [default to false]
+**optConfig** | [**OptConfig1**](OptConfig1.md) |  | [optional] 
+**allocationId** | **String** |  | [optional] 
+**tgtType** | **String** |  | [optional] [default to 'return']
+**useProxyData** | **Boolean** |  | [optional] [default to false]
+**startDate** | **Date** |  | [optional] 
+**accountId** | **String** |  | [optional] 
+**aggregationAccountId** | **String** |  | [optional] 
+**portfolioWeights** | **[Number]** |  | [optional] 
 
 
 <a name="MarketDataSourceEnum"></a>
@@ -37,6 +26,17 @@ Name | Type | Description | Notes
 * `nucleus` (value: `"nucleus"`)
 
 * `integration` (value: `"integration"`)
+
+
+
+
+<a name="TgtTypeEnum"></a>
+## Enum: TgtTypeEnum
+
+
+* `risk` (value: `"risk"`)
+
+* `_return` (value: `"return"`)
 
 
 

@@ -17,6 +17,7 @@ Run a mean-variance optimization for a group of potential investments
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;

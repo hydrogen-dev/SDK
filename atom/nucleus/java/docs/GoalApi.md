@@ -31,7 +31,6 @@ Create a goal track record for a goal under a client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -48,8 +47,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 GoalApi apiInstance = new GoalApi();
 GoalTrack goalTrack = new GoalTrack(); // GoalTrack | goalTrack
 try {
@@ -92,7 +89,6 @@ Create a new goal for your firm that clients can customize for themselves.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -109,8 +105,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 GoalApi apiInstance = new GoalApi();
 Goal goalRequest = new Goal(); // Goal | goalRequest
 try {
@@ -153,7 +147,6 @@ Permanently delete an goal track record for a goal under a client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -170,8 +163,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 GoalApi apiInstance = new GoalApi();
 UUID goalTrackId = new UUID(); // UUID | UUID goal_track_id
 try {
@@ -213,7 +204,6 @@ Permanently delete a goal for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -230,8 +220,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 GoalApi apiInstance = new GoalApi();
 UUID goalId = new UUID(); // UUID | UUID goal_id
 try {
@@ -273,7 +261,6 @@ Get the details for all goals defined by your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -290,8 +277,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 GoalApi apiInstance = new GoalApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -342,7 +327,6 @@ Get a list of asset sizes per date for a goal for a specified client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -359,8 +343,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 GoalApi apiInstance = new GoalApi();
 UUID clientId = new UUID(); // UUID | client_id
 UUID goalId = new UUID(); // UUID | UUID goal_id
@@ -417,7 +399,6 @@ Get the information for all the securities that are currently being held in port
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -434,8 +415,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 GoalApi apiInstance = new GoalApi();
 UUID clientId = new UUID(); // UUID | client_id
 UUID goalId = new UUID(); // UUID | UUID goal_id
@@ -488,7 +467,6 @@ Get information for all goal track records stored for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -505,8 +483,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 GoalApi apiInstance = new GoalApi();
 Boolean ascending = false; // Boolean | ascending
 String endDate = "endDate_example"; // String | end date 
@@ -563,7 +539,6 @@ Retrieve the information for a specific goal track record for a goal under a cli
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -580,8 +555,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 GoalApi apiInstance = new GoalApi();
 UUID goalTrackId = new UUID(); // UUID | UUID goal_track_id
 try {
@@ -624,7 +597,6 @@ Get the information for all transactions under portfolios associated with a part
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -641,8 +613,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 GoalApi apiInstance = new GoalApi();
 UUID clientId = new UUID(); // UUID | client_id
 UUID goalId = new UUID(); // UUID | UUID goal_id
@@ -703,7 +673,6 @@ Retrieve the information for a goal defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -720,8 +689,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 GoalApi apiInstance = new GoalApi();
 UUID goalId = new UUID(); // UUID | UUID goal_id
 try {
@@ -764,7 +731,6 @@ Update the information for a goal track record.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -781,10 +747,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 GoalApi apiInstance = new GoalApi();
-GoalTrack goalTrack = new GoalTrack(); // GoalTrack | goal_track
+Object goalTrack = null; // Object | goal_track
 UUID goalTrackId = new UUID(); // UUID | UUID goal_track_id
 try {
     GoalTrack result = apiInstance.updateGoalTrackUsingPut(goalTrack, goalTrackId);
@@ -799,7 +763,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goalTrack** | [**GoalTrack**](GoalTrack.md)| goal_track |
+ **goalTrack** | **Object**| goal_track |
  **goalTrackId** | [**UUID**](.md)| UUID goal_track_id |
 
 ### Return type
@@ -827,7 +791,6 @@ Update a goal defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import GoalApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -844,10 +807,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 GoalApi apiInstance = new GoalApi();
-Goal goal = new Goal(); // Goal | goal
+Object goal = null; // Object | goal
 UUID goalId = new UUID(); // UUID | UUID goal_id
 try {
     Goal result = apiInstance.updateGoalUsingPut(goal, goalId);
@@ -862,7 +823,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **goal** | [**Goal**](Goal.md)| goal |
+ **goal** | **Object**| goal |
  **goalId** | [**UUID**](.md)| UUID goal_id |
 
 ### Return type

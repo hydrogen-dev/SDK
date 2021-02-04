@@ -23,7 +23,7 @@ import java.util.UUID;
 /**
  * AggregationRequestObject
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class AggregationRequestObject {
   @SerializedName("nucleus_aggregation_account_id")
   private UUID nucleusAggregationAccountId = null;

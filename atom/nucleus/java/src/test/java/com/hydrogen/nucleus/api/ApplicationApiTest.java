@@ -13,9 +13,9 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.Application;
 import com.hydrogen.nucleus.model.PageApplication;
-import com.hydrogen.nucleus.ApiException;
 
 import java.util.UUID;
 import org.junit.Test;
@@ -108,7 +108,7 @@ public class ApplicationApiTest {
      */
     @Test
     public void updateApplicationUsingPutTest() throws ApiException {
-        Application application = null;
+        Object application = null;
         UUID applicationId = null;
         Application response = api.updateApplicationUsingPut(application, applicationId);
 

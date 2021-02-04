@@ -15,12 +15,7 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.math.BigDecimal;
@@ -31,232 +26,55 @@ import java.util.UUID;
 /**
  * LifeInsuranceNeedsCalculatorRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class LifeInsuranceNeedsCalculatorRequest {
-  @SerializedName("existing_life_insurance")
-  private BigDecimal existingLifeInsurance = null;
-
-  @SerializedName("mortgage_balance")
-  private BigDecimal mortgageBalance = null;
-
-  @SerializedName("general_inflation_rate")
-  private Float generalInflationRate = 0.0f;
-
-  @SerializedName("education_inflation_rate")
-  private Float educationInflationRate = 0.0f;
-
-  @SerializedName("client_id")
-  private UUID clientId = null;
-
-  @SerializedName("beneficiary_bequest_config")
-  private List<BeneficiaryBequestConfig> beneficiaryBequestConfig = null;
+  @SerializedName("children_education_config")
+  private List<ChildrenEducationConfig> childrenEducationConfig = null;
 
   @SerializedName("liquid_assets")
   private BigDecimal liquidAssets = null;
 
-  @SerializedName("end_of_life_expenses")
-  private BigDecimal endOfLifeExpenses = null;
+  @SerializedName("other_debt")
+  private BigDecimal otherDebt = null;
 
-  @SerializedName("interest_rate")
-  private Float interestRate = null;
-
-  @SerializedName("children_education_config")
-  private List<ChildrenEducationConfig> childrenEducationConfig = null;
-
-  @SerializedName("income_config")
-  private List<IncomeConfig> incomeConfig = null;
+  @SerializedName("client_id")
+  private UUID clientId = null;
 
   @SerializedName("tax_rate")
   private Float taxRate = 0.0f;
 
+  @SerializedName("end_of_life_expenses")
+  private BigDecimal endOfLifeExpenses = null;
+
+  @SerializedName("mortgage_balance")
+  private BigDecimal mortgageBalance = null;
+
+  @SerializedName("income_config")
+  private List<IncomeConfig> incomeConfig = null;
+
+  @SerializedName("beneficiary_bequest_config")
+  private List<BeneficiaryBequestConfig> beneficiaryBequestConfig = null;
+
   @SerializedName("margin_of_error")
   private Float marginOfError = 0.0f;
+
+  @SerializedName("education_inflation_rate")
+  private Float educationInflationRate = 0.0f;
+
+  @SerializedName("interest_rate")
+  private Float interestRate = null;
+
+  @SerializedName("existing_life_insurance")
+  private BigDecimal existingLifeInsurance = null;
 
   @SerializedName("benefit_amount_rounding")
   private Integer benefitAmountRounding = 0;
 
-  @SerializedName("other_debt")
-  private BigDecimal otherDebt = null;
-
-  public LifeInsuranceNeedsCalculatorRequest existingLifeInsurance(BigDecimal existingLifeInsurance) {
-    this.existingLifeInsurance = existingLifeInsurance;
-    return this;
-  }
-
-   /**
-   * Get existingLifeInsurance
-   * minimum: 0
-   * @return existingLifeInsurance
-  **/
-  @ApiModelProperty(value = "")
-  public BigDecimal getExistingLifeInsurance() {
-    return existingLifeInsurance;
-  }
-
-  public void setExistingLifeInsurance(BigDecimal existingLifeInsurance) {
-    this.existingLifeInsurance = existingLifeInsurance;
-  }
-
-  public LifeInsuranceNeedsCalculatorRequest mortgageBalance(BigDecimal mortgageBalance) {
-    this.mortgageBalance = mortgageBalance;
-    return this;
-  }
-
-   /**
-   * Get mortgageBalance
-   * minimum: 0
-   * @return mortgageBalance
-  **/
-  @ApiModelProperty(value = "")
-  public BigDecimal getMortgageBalance() {
-    return mortgageBalance;
-  }
-
-  public void setMortgageBalance(BigDecimal mortgageBalance) {
-    this.mortgageBalance = mortgageBalance;
-  }
-
-  public LifeInsuranceNeedsCalculatorRequest generalInflationRate(Float generalInflationRate) {
-    this.generalInflationRate = generalInflationRate;
-    return this;
-  }
-
-   /**
-   * Get generalInflationRate
-   * minimum: -1
-   * @return generalInflationRate
-  **/
-  @ApiModelProperty(value = "")
-  public Float getGeneralInflationRate() {
-    return generalInflationRate;
-  }
-
-  public void setGeneralInflationRate(Float generalInflationRate) {
-    this.generalInflationRate = generalInflationRate;
-  }
-
-  public LifeInsuranceNeedsCalculatorRequest educationInflationRate(Float educationInflationRate) {
-    this.educationInflationRate = educationInflationRate;
-    return this;
-  }
-
-   /**
-   * Get educationInflationRate
-   * minimum: -1
-   * @return educationInflationRate
-  **/
-  @ApiModelProperty(value = "")
-  public Float getEducationInflationRate() {
-    return educationInflationRate;
-  }
-
-  public void setEducationInflationRate(Float educationInflationRate) {
-    this.educationInflationRate = educationInflationRate;
-  }
-
-  public LifeInsuranceNeedsCalculatorRequest clientId(UUID clientId) {
-    this.clientId = clientId;
-    return this;
-  }
-
-   /**
-   * Get clientId
-   * @return clientId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getClientId() {
-    return clientId;
-  }
-
-  public void setClientId(UUID clientId) {
-    this.clientId = clientId;
-  }
-
-  public LifeInsuranceNeedsCalculatorRequest beneficiaryBequestConfig(List<BeneficiaryBequestConfig> beneficiaryBequestConfig) {
-    this.beneficiaryBequestConfig = beneficiaryBequestConfig;
-    return this;
-  }
-
-  public LifeInsuranceNeedsCalculatorRequest addBeneficiaryBequestConfigItem(BeneficiaryBequestConfig beneficiaryBequestConfigItem) {
-    if (this.beneficiaryBequestConfig == null) {
-      this.beneficiaryBequestConfig = new ArrayList<BeneficiaryBequestConfig>();
-    }
-    this.beneficiaryBequestConfig.add(beneficiaryBequestConfigItem);
-    return this;
-  }
-
-   /**
-   * Get beneficiaryBequestConfig
-   * @return beneficiaryBequestConfig
-  **/
-  @ApiModelProperty(value = "")
-  public List<BeneficiaryBequestConfig> getBeneficiaryBequestConfig() {
-    return beneficiaryBequestConfig;
-  }
-
-  public void setBeneficiaryBequestConfig(List<BeneficiaryBequestConfig> beneficiaryBequestConfig) {
-    this.beneficiaryBequestConfig = beneficiaryBequestConfig;
-  }
-
-  public LifeInsuranceNeedsCalculatorRequest liquidAssets(BigDecimal liquidAssets) {
-    this.liquidAssets = liquidAssets;
-    return this;
-  }
-
-   /**
-   * Get liquidAssets
-   * minimum: 0
-   * @return liquidAssets
-  **/
-  @ApiModelProperty(value = "")
-  public BigDecimal getLiquidAssets() {
-    return liquidAssets;
-  }
-
-  public void setLiquidAssets(BigDecimal liquidAssets) {
-    this.liquidAssets = liquidAssets;
-  }
-
-  public LifeInsuranceNeedsCalculatorRequest endOfLifeExpenses(BigDecimal endOfLifeExpenses) {
-    this.endOfLifeExpenses = endOfLifeExpenses;
-    return this;
-  }
-
-   /**
-   * Get endOfLifeExpenses
-   * minimum: 0
-   * @return endOfLifeExpenses
-  **/
-  @ApiModelProperty(value = "")
-  public BigDecimal getEndOfLifeExpenses() {
-    return endOfLifeExpenses;
-  }
-
-  public void setEndOfLifeExpenses(BigDecimal endOfLifeExpenses) {
-    this.endOfLifeExpenses = endOfLifeExpenses;
-  }
-
-  public LifeInsuranceNeedsCalculatorRequest interestRate(Float interestRate) {
-    this.interestRate = interestRate;
-    return this;
-  }
-
-   /**
-   * Get interestRate
-   * minimum: -1
-   * @return interestRate
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Float getInterestRate() {
-    return interestRate;
-  }
-
-  public void setInterestRate(Float interestRate) {
-    this.interestRate = interestRate;
-  }
+  @SerializedName("general_inflation_rate")
+  private Float generalInflationRate = 0.0f;
 
   public LifeInsuranceNeedsCalculatorRequest childrenEducationConfig(List<ChildrenEducationConfig> childrenEducationConfig) {
     this.childrenEducationConfig = childrenEducationConfig;
@@ -282,6 +100,120 @@ public class LifeInsuranceNeedsCalculatorRequest {
 
   public void setChildrenEducationConfig(List<ChildrenEducationConfig> childrenEducationConfig) {
     this.childrenEducationConfig = childrenEducationConfig;
+  }
+
+  public LifeInsuranceNeedsCalculatorRequest liquidAssets(BigDecimal liquidAssets) {
+    this.liquidAssets = liquidAssets;
+    return this;
+  }
+
+   /**
+   * Get liquidAssets
+   * minimum: 0
+   * @return liquidAssets
+  **/
+  @ApiModelProperty(value = "")
+  public BigDecimal getLiquidAssets() {
+    return liquidAssets;
+  }
+
+  public void setLiquidAssets(BigDecimal liquidAssets) {
+    this.liquidAssets = liquidAssets;
+  }
+
+  public LifeInsuranceNeedsCalculatorRequest otherDebt(BigDecimal otherDebt) {
+    this.otherDebt = otherDebt;
+    return this;
+  }
+
+   /**
+   * Get otherDebt
+   * minimum: 0
+   * @return otherDebt
+  **/
+  @ApiModelProperty(value = "")
+  public BigDecimal getOtherDebt() {
+    return otherDebt;
+  }
+
+  public void setOtherDebt(BigDecimal otherDebt) {
+    this.otherDebt = otherDebt;
+  }
+
+  public LifeInsuranceNeedsCalculatorRequest clientId(UUID clientId) {
+    this.clientId = clientId;
+    return this;
+  }
+
+   /**
+   * Get clientId
+   * @return clientId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getClientId() {
+    return clientId;
+  }
+
+  public void setClientId(UUID clientId) {
+    this.clientId = clientId;
+  }
+
+  public LifeInsuranceNeedsCalculatorRequest taxRate(Float taxRate) {
+    this.taxRate = taxRate;
+    return this;
+  }
+
+   /**
+   * Get taxRate
+   * minimum: 0
+   * maximum: 1
+   * @return taxRate
+  **/
+  @ApiModelProperty(value = "")
+  public Float getTaxRate() {
+    return taxRate;
+  }
+
+  public void setTaxRate(Float taxRate) {
+    this.taxRate = taxRate;
+  }
+
+  public LifeInsuranceNeedsCalculatorRequest endOfLifeExpenses(BigDecimal endOfLifeExpenses) {
+    this.endOfLifeExpenses = endOfLifeExpenses;
+    return this;
+  }
+
+   /**
+   * Get endOfLifeExpenses
+   * minimum: 0
+   * @return endOfLifeExpenses
+  **/
+  @ApiModelProperty(value = "")
+  public BigDecimal getEndOfLifeExpenses() {
+    return endOfLifeExpenses;
+  }
+
+  public void setEndOfLifeExpenses(BigDecimal endOfLifeExpenses) {
+    this.endOfLifeExpenses = endOfLifeExpenses;
+  }
+
+  public LifeInsuranceNeedsCalculatorRequest mortgageBalance(BigDecimal mortgageBalance) {
+    this.mortgageBalance = mortgageBalance;
+    return this;
+  }
+
+   /**
+   * Get mortgageBalance
+   * minimum: 0
+   * @return mortgageBalance
+  **/
+  @ApiModelProperty(value = "")
+  public BigDecimal getMortgageBalance() {
+    return mortgageBalance;
+  }
+
+  public void setMortgageBalance(BigDecimal mortgageBalance) {
+    this.mortgageBalance = mortgageBalance;
   }
 
   public LifeInsuranceNeedsCalculatorRequest incomeConfig(List<IncomeConfig> incomeConfig) {
@@ -310,24 +242,30 @@ public class LifeInsuranceNeedsCalculatorRequest {
     this.incomeConfig = incomeConfig;
   }
 
-  public LifeInsuranceNeedsCalculatorRequest taxRate(Float taxRate) {
-    this.taxRate = taxRate;
+  public LifeInsuranceNeedsCalculatorRequest beneficiaryBequestConfig(List<BeneficiaryBequestConfig> beneficiaryBequestConfig) {
+    this.beneficiaryBequestConfig = beneficiaryBequestConfig;
+    return this;
+  }
+
+  public LifeInsuranceNeedsCalculatorRequest addBeneficiaryBequestConfigItem(BeneficiaryBequestConfig beneficiaryBequestConfigItem) {
+    if (this.beneficiaryBequestConfig == null) {
+      this.beneficiaryBequestConfig = new ArrayList<BeneficiaryBequestConfig>();
+    }
+    this.beneficiaryBequestConfig.add(beneficiaryBequestConfigItem);
     return this;
   }
 
    /**
-   * Get taxRate
-   * minimum: 0
-   * maximum: 1
-   * @return taxRate
+   * Get beneficiaryBequestConfig
+   * @return beneficiaryBequestConfig
   **/
   @ApiModelProperty(value = "")
-  public Float getTaxRate() {
-    return taxRate;
+  public List<BeneficiaryBequestConfig> getBeneficiaryBequestConfig() {
+    return beneficiaryBequestConfig;
   }
 
-  public void setTaxRate(Float taxRate) {
-    this.taxRate = taxRate;
+  public void setBeneficiaryBequestConfig(List<BeneficiaryBequestConfig> beneficiaryBequestConfig) {
+    this.beneficiaryBequestConfig = beneficiaryBequestConfig;
   }
 
   public LifeInsuranceNeedsCalculatorRequest marginOfError(Float marginOfError) {
@@ -347,6 +285,63 @@ public class LifeInsuranceNeedsCalculatorRequest {
 
   public void setMarginOfError(Float marginOfError) {
     this.marginOfError = marginOfError;
+  }
+
+  public LifeInsuranceNeedsCalculatorRequest educationInflationRate(Float educationInflationRate) {
+    this.educationInflationRate = educationInflationRate;
+    return this;
+  }
+
+   /**
+   * Get educationInflationRate
+   * minimum: -1
+   * @return educationInflationRate
+  **/
+  @ApiModelProperty(value = "")
+  public Float getEducationInflationRate() {
+    return educationInflationRate;
+  }
+
+  public void setEducationInflationRate(Float educationInflationRate) {
+    this.educationInflationRate = educationInflationRate;
+  }
+
+  public LifeInsuranceNeedsCalculatorRequest interestRate(Float interestRate) {
+    this.interestRate = interestRate;
+    return this;
+  }
+
+   /**
+   * Get interestRate
+   * minimum: -1
+   * @return interestRate
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Float getInterestRate() {
+    return interestRate;
+  }
+
+  public void setInterestRate(Float interestRate) {
+    this.interestRate = interestRate;
+  }
+
+  public LifeInsuranceNeedsCalculatorRequest existingLifeInsurance(BigDecimal existingLifeInsurance) {
+    this.existingLifeInsurance = existingLifeInsurance;
+    return this;
+  }
+
+   /**
+   * Get existingLifeInsurance
+   * minimum: 0
+   * @return existingLifeInsurance
+  **/
+  @ApiModelProperty(value = "")
+  public BigDecimal getExistingLifeInsurance() {
+    return existingLifeInsurance;
+  }
+
+  public void setExistingLifeInsurance(BigDecimal existingLifeInsurance) {
+    this.existingLifeInsurance = existingLifeInsurance;
   }
 
   public LifeInsuranceNeedsCalculatorRequest benefitAmountRounding(Integer benefitAmountRounding) {
@@ -369,23 +364,23 @@ public class LifeInsuranceNeedsCalculatorRequest {
     this.benefitAmountRounding = benefitAmountRounding;
   }
 
-  public LifeInsuranceNeedsCalculatorRequest otherDebt(BigDecimal otherDebt) {
-    this.otherDebt = otherDebt;
+  public LifeInsuranceNeedsCalculatorRequest generalInflationRate(Float generalInflationRate) {
+    this.generalInflationRate = generalInflationRate;
     return this;
   }
 
    /**
-   * Get otherDebt
-   * minimum: 0
-   * @return otherDebt
+   * Get generalInflationRate
+   * minimum: -1
+   * @return generalInflationRate
   **/
   @ApiModelProperty(value = "")
-  public BigDecimal getOtherDebt() {
-    return otherDebt;
+  public Float getGeneralInflationRate() {
+    return generalInflationRate;
   }
 
-  public void setOtherDebt(BigDecimal otherDebt) {
-    this.otherDebt = otherDebt;
+  public void setGeneralInflationRate(Float generalInflationRate) {
+    this.generalInflationRate = generalInflationRate;
   }
 
 
@@ -398,26 +393,26 @@ public class LifeInsuranceNeedsCalculatorRequest {
       return false;
     }
     LifeInsuranceNeedsCalculatorRequest lifeInsuranceNeedsCalculatorRequest = (LifeInsuranceNeedsCalculatorRequest) o;
-    return Objects.equals(this.existingLifeInsurance, lifeInsuranceNeedsCalculatorRequest.existingLifeInsurance) &&
-        Objects.equals(this.mortgageBalance, lifeInsuranceNeedsCalculatorRequest.mortgageBalance) &&
-        Objects.equals(this.generalInflationRate, lifeInsuranceNeedsCalculatorRequest.generalInflationRate) &&
-        Objects.equals(this.educationInflationRate, lifeInsuranceNeedsCalculatorRequest.educationInflationRate) &&
-        Objects.equals(this.clientId, lifeInsuranceNeedsCalculatorRequest.clientId) &&
-        Objects.equals(this.beneficiaryBequestConfig, lifeInsuranceNeedsCalculatorRequest.beneficiaryBequestConfig) &&
+    return Objects.equals(this.childrenEducationConfig, lifeInsuranceNeedsCalculatorRequest.childrenEducationConfig) &&
         Objects.equals(this.liquidAssets, lifeInsuranceNeedsCalculatorRequest.liquidAssets) &&
-        Objects.equals(this.endOfLifeExpenses, lifeInsuranceNeedsCalculatorRequest.endOfLifeExpenses) &&
-        Objects.equals(this.interestRate, lifeInsuranceNeedsCalculatorRequest.interestRate) &&
-        Objects.equals(this.childrenEducationConfig, lifeInsuranceNeedsCalculatorRequest.childrenEducationConfig) &&
-        Objects.equals(this.incomeConfig, lifeInsuranceNeedsCalculatorRequest.incomeConfig) &&
+        Objects.equals(this.otherDebt, lifeInsuranceNeedsCalculatorRequest.otherDebt) &&
+        Objects.equals(this.clientId, lifeInsuranceNeedsCalculatorRequest.clientId) &&
         Objects.equals(this.taxRate, lifeInsuranceNeedsCalculatorRequest.taxRate) &&
+        Objects.equals(this.endOfLifeExpenses, lifeInsuranceNeedsCalculatorRequest.endOfLifeExpenses) &&
+        Objects.equals(this.mortgageBalance, lifeInsuranceNeedsCalculatorRequest.mortgageBalance) &&
+        Objects.equals(this.incomeConfig, lifeInsuranceNeedsCalculatorRequest.incomeConfig) &&
+        Objects.equals(this.beneficiaryBequestConfig, lifeInsuranceNeedsCalculatorRequest.beneficiaryBequestConfig) &&
         Objects.equals(this.marginOfError, lifeInsuranceNeedsCalculatorRequest.marginOfError) &&
+        Objects.equals(this.educationInflationRate, lifeInsuranceNeedsCalculatorRequest.educationInflationRate) &&
+        Objects.equals(this.interestRate, lifeInsuranceNeedsCalculatorRequest.interestRate) &&
+        Objects.equals(this.existingLifeInsurance, lifeInsuranceNeedsCalculatorRequest.existingLifeInsurance) &&
         Objects.equals(this.benefitAmountRounding, lifeInsuranceNeedsCalculatorRequest.benefitAmountRounding) &&
-        Objects.equals(this.otherDebt, lifeInsuranceNeedsCalculatorRequest.otherDebt);
+        Objects.equals(this.generalInflationRate, lifeInsuranceNeedsCalculatorRequest.generalInflationRate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(existingLifeInsurance, mortgageBalance, generalInflationRate, educationInflationRate, clientId, beneficiaryBequestConfig, liquidAssets, endOfLifeExpenses, interestRate, childrenEducationConfig, incomeConfig, taxRate, marginOfError, benefitAmountRounding, otherDebt);
+    return Objects.hash(childrenEducationConfig, liquidAssets, otherDebt, clientId, taxRate, endOfLifeExpenses, mortgageBalance, incomeConfig, beneficiaryBequestConfig, marginOfError, educationInflationRate, interestRate, existingLifeInsurance, benefitAmountRounding, generalInflationRate);
   }
 
 
@@ -426,21 +421,21 @@ public class LifeInsuranceNeedsCalculatorRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class LifeInsuranceNeedsCalculatorRequest {\n");
     
-    sb.append("    existingLifeInsurance: ").append(toIndentedString(existingLifeInsurance)).append("\n");
-    sb.append("    mortgageBalance: ").append(toIndentedString(mortgageBalance)).append("\n");
-    sb.append("    generalInflationRate: ").append(toIndentedString(generalInflationRate)).append("\n");
-    sb.append("    educationInflationRate: ").append(toIndentedString(educationInflationRate)).append("\n");
-    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
-    sb.append("    beneficiaryBequestConfig: ").append(toIndentedString(beneficiaryBequestConfig)).append("\n");
-    sb.append("    liquidAssets: ").append(toIndentedString(liquidAssets)).append("\n");
-    sb.append("    endOfLifeExpenses: ").append(toIndentedString(endOfLifeExpenses)).append("\n");
-    sb.append("    interestRate: ").append(toIndentedString(interestRate)).append("\n");
     sb.append("    childrenEducationConfig: ").append(toIndentedString(childrenEducationConfig)).append("\n");
-    sb.append("    incomeConfig: ").append(toIndentedString(incomeConfig)).append("\n");
-    sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
-    sb.append("    marginOfError: ").append(toIndentedString(marginOfError)).append("\n");
-    sb.append("    benefitAmountRounding: ").append(toIndentedString(benefitAmountRounding)).append("\n");
+    sb.append("    liquidAssets: ").append(toIndentedString(liquidAssets)).append("\n");
     sb.append("    otherDebt: ").append(toIndentedString(otherDebt)).append("\n");
+    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
+    sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
+    sb.append("    endOfLifeExpenses: ").append(toIndentedString(endOfLifeExpenses)).append("\n");
+    sb.append("    mortgageBalance: ").append(toIndentedString(mortgageBalance)).append("\n");
+    sb.append("    incomeConfig: ").append(toIndentedString(incomeConfig)).append("\n");
+    sb.append("    beneficiaryBequestConfig: ").append(toIndentedString(beneficiaryBequestConfig)).append("\n");
+    sb.append("    marginOfError: ").append(toIndentedString(marginOfError)).append("\n");
+    sb.append("    educationInflationRate: ").append(toIndentedString(educationInflationRate)).append("\n");
+    sb.append("    interestRate: ").append(toIndentedString(interestRate)).append("\n");
+    sb.append("    existingLifeInsurance: ").append(toIndentedString(existingLifeInsurance)).append("\n");
+    sb.append("    benefitAmountRounding: ").append(toIndentedString(benefitAmountRounding)).append("\n");
+    sb.append("    generalInflationRate: ").append(toIndentedString(generalInflationRate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -4,15 +4,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**scope** | [**ScopeEnum**](#ScopeEnum) |  |  [optional]
-**budgetDetails** | [**BudgetDetails**](BudgetDetails.md) |  |  [optional]
-**currencyConversion** | **String** |  |  [optional]
-**budgetId** | [**UUID**](UUID.md) |  |  [optional]
 **asOfDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**showAverageSpend** | **Boolean** |  |  [optional]
 **showBudgetTrack** | **Boolean** |  |  [optional]
-**relativeLookback** | **Boolean** |  |  [optional]
+**budgetId** | [**UUID**](UUID.md) |  |  [optional]
+**currencyConversion** | **String** |  |  [optional]
 **lookbackPeriods** | **Integer** |  |  [optional]
+**showAverageSpend** | **Boolean** |  |  [optional]
+**budgetDetails** | [**BudgetDetails**](BudgetDetails.md) |  |  [optional]
+**relativeLookback** | **Boolean** |  |  [optional]
+**scope** | [**ScopeEnum**](#ScopeEnum) |  |  [optional]
 
 
 <a name="ScopeEnum"></a>

@@ -22,6 +22,7 @@ https://sandbox.hydrogenplatform.com/nucleus/v1
 **Production Base URL**
 https://api.hydrogenplatform.com/nucleus/v1
 
+
 ### Build a gem
 
 To build the Ruby code into a gem:
@@ -35,7 +36,7 @@ Then either install the gem locally:
 ```shell
 gem install ./nucleus_api-1.8.0.gem
 ```
-(for development, run `gem install --dev ./nucleus_api-1.0.0.gem` to install the development dependencies)
+(for development, run `gem install --dev ./nucleus_api-1.8.0.gem` to install the development dependencies)
 
 or publish the gem to a gem hosting service, e.g. [RubyGems](https://rubygems.org/).
 
@@ -74,7 +75,6 @@ NucleusApi.configure do |config|
 # Creating a token using client token
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
 end
-
 
 api_instance = NucleusApi::AccountApi.new
 
@@ -128,6 +128,11 @@ Class | Method | HTTP request | Description
 *NucleusApi::AccountApi* | [**update_account_type_using_put**](docs/AccountApi.md#update_account_type_using_put) | **PUT** /account_type/{account_type_id} | Update an account type
 *NucleusApi::AccountApi* | [**update_account_using_put**](docs/AccountApi.md#update_account_using_put) | **PUT** /account/{account_id} | Update an account
 *NucleusApi::AccountApi* | [**update_client_account_permission_using_put**](docs/AccountApi.md#update_client_account_permission_using_put) | **PUT** /account_permission/{account_id} | Update an account permission
+*NucleusApi::AdminClientApi* | [**create_admin_client_using_post**](docs/AdminClientApi.md#create_admin_client_using_post) | **POST** /client | Create an admin client
+*NucleusApi::AdminClientApi* | [**delete_admin_client_using_get**](docs/AdminClientApi.md#delete_admin_client_using_get) | **DELETE** /client/{client_id} | Delete an admin client
+*NucleusApi::AdminClientApi* | [**get_admin_client_using_get**](docs/AdminClientApi.md#get_admin_client_using_get) | **GET** /client/{client_id} | Get an admin client
+*NucleusApi::AdminClientApi* | [**get_all_admin_client_using_get**](docs/AdminClientApi.md#get_all_admin_client_using_get) | **GET** /client | List all admin clients
+*NucleusApi::AdminClientApi* | [**update_admin_client_using_put**](docs/AdminClientApi.md#update_admin_client_using_put) | **PUT** /client/{client_id} | Update an admin client
 *NucleusApi::AggregationAccountApi* | [**create_aggregation_account_balance_bulk_using_post**](docs/AggregationAccountApi.md#create_aggregation_account_balance_bulk_using_post) | **POST** /bulk_aggregation_account_balance | Create a bulk aggregation account balance
 *NucleusApi::AggregationAccountApi* | [**create_aggregation_account_balance_using_post**](docs/AggregationAccountApi.md#create_aggregation_account_balance_using_post) | **POST** /aggregation_account_balance | Create an aggregation account balance
 *NucleusApi::AggregationAccountApi* | [**create_aggregation_account_bulk_using_post**](docs/AggregationAccountApi.md#create_aggregation_account_bulk_using_post) | **POST** /bulk_aggregation_account | Create a bulk aggregation account
@@ -193,6 +198,14 @@ Class | Method | HTTP request | Description
 *NucleusApi::BulkApi* | [**delete_bulk_using_delete**](docs/BulkApi.md#delete_bulk_using_delete) | **DELETE** /bulk/{entity_uri} | Delete a bulk data
 *NucleusApi::BulkApi* | [**get_bulk_status_using_get**](docs/BulkApi.md#get_bulk_status_using_get) | **GET** /bulk/status/{id} | Status of bulk transaction
 *NucleusApi::BulkApi* | [**update_bulk_using_put**](docs/BulkApi.md#update_bulk_using_put) | **PUT** /bulk/{entity_uri} | Update a bulk data
+*NucleusApi::BusinessApi* | [**create_business_using_post**](docs/BusinessApi.md#create_business_using_post) | **POST** /business | Create a business
+*NucleusApi::BusinessApi* | [**delete_business_using_delete**](docs/BusinessApi.md#delete_business_using_delete) | **DELETE** /business/{business_id} | Delete a business
+*NucleusApi::BusinessApi* | [**get_business_all_using_get**](docs/BusinessApi.md#get_business_all_using_get) | **GET** /business | List all business
+*NucleusApi::BusinessApi* | [**get_business_asset_size_using_get**](docs/BusinessApi.md#get_business_asset_size_using_get) | **GET** /business/{business_id}/asset_size | List all business asset sizes
+*NucleusApi::BusinessApi* | [**get_business_client_transaction_all_using_get**](docs/BusinessApi.md#get_business_client_transaction_all_using_get) | **GET** /business/{business_id}/transaction | List all business transactions
+*NucleusApi::BusinessApi* | [**get_business_holding_using_get**](docs/BusinessApi.md#get_business_holding_using_get) | **GET** /business/{business_id}/holding | List all business holdings
+*NucleusApi::BusinessApi* | [**get_business_using_get**](docs/BusinessApi.md#get_business_using_get) | **GET** /business/{business_id} | Retrieve a business
+*NucleusApi::BusinessApi* | [**update_business_using_put**](docs/BusinessApi.md#update_business_using_put) | **PUT** /business/{business_id} | Update a business
 *NucleusApi::CardApi* | [**create_card_program_using_post**](docs/CardApi.md#create_card_program_using_post) | **POST** /card_program | Create a cardProgram request
 *NucleusApi::CardApi* | [**create_card_using_post**](docs/CardApi.md#create_card_using_post) | **POST** /card | Create a card request
 *NucleusApi::CardApi* | [**delete_card_program_using_delete**](docs/CardApi.md#delete_card_program_using_delete) | **DELETE** /card_program/{card_program_id} | Delete an cardProgram
@@ -205,10 +218,8 @@ Class | Method | HTTP request | Description
 *NucleusApi::CardApi* | [**get_card_using_get**](docs/CardApi.md#get_card_using_get) | **GET** /card/{card_id} | Retrieve a card request
 *NucleusApi::CardApi* | [**update_card_program_using_put**](docs/CardApi.md#update_card_program_using_put) | **PUT** /card_program/{card_program_id} | Update an cardProgram
 *NucleusApi::CardApi* | [**update_card_using_put**](docs/CardApi.md#update_card_using_put) | **PUT** /card/{card_id} | Update a card request
-*NucleusApi::ClientApi* | [**create_client_hydro_using_post**](docs/ClientApi.md#create_client_hydro_using_post) | **POST** /client_hydro | Create a client-hydro relationship
 *NucleusApi::ClientApi* | [**create_client_status_using_post**](docs/ClientApi.md#create_client_status_using_post) | **POST** /client_status | Create an client status
 *NucleusApi::ClientApi* | [**create_client_using_post**](docs/ClientApi.md#create_client_using_post) | **POST** /client | Create a client
-*NucleusApi::ClientApi* | [**delete_client_hydro_using_delete**](docs/ClientApi.md#delete_client_hydro_using_delete) | **DELETE** /client_hydro/{client_hydro_id} | Delete a client-hydro relationship
 *NucleusApi::ClientApi* | [**delete_client_status_using_delete**](docs/ClientApi.md#delete_client_status_using_delete) | **DELETE** /client_status/{client_status_id} | Delete an client status
 *NucleusApi::ClientApi* | [**delete_client_using_delete**](docs/ClientApi.md#delete_client_using_delete) | **DELETE** /client/{client_id} | Delete a client
 *NucleusApi::ClientApi* | [**get_client_account_overview_using_get**](docs/ClientApi.md#get_client_account_overview_using_get) | **GET** /client/{client_id}/account_overview | List all client Account overview
@@ -217,14 +228,10 @@ Class | Method | HTTP request | Description
 *NucleusApi::ClientApi* | [**get_client_asset_size_using_get**](docs/ClientApi.md#get_client_asset_size_using_get) | **GET** /client/{client_id}/asset_size | List all client asset sizes
 *NucleusApi::ClientApi* | [**get_client_goal_overview_using_get**](docs/ClientApi.md#get_client_goal_overview_using_get) | **GET** /client/{client_id}/goal_overview | Retrieve client's goal details 
 *NucleusApi::ClientApi* | [**get_client_holding_using_get**](docs/ClientApi.md#get_client_holding_using_get) | **GET** /client/{client_id}/holding | List all client holdings
-*NucleusApi::ClientApi* | [**get_client_hydro_all_using_get**](docs/ClientApi.md#get_client_hydro_all_using_get) | **GET** /client_hydro | List all client-hydro relationship
-*NucleusApi::ClientApi* | [**get_client_hydro_using_get**](docs/ClientApi.md#get_client_hydro_using_get) | **GET** /client_hydro/{client_hydro_id} | Retrieve a client-hydro relationship
 *NucleusApi::ClientApi* | [**get_client_status_all_using_get**](docs/ClientApi.md#get_client_status_all_using_get) | **GET** /client_status | List all client statuses
 *NucleusApi::ClientApi* | [**get_client_status_using_get**](docs/ClientApi.md#get_client_status_using_get) | **GET** /client_status/{client_status_id} | Retrieve an client status
 *NucleusApi::ClientApi* | [**get_client_transaction_all_using_get**](docs/ClientApi.md#get_client_transaction_all_using_get) | **GET** /client/{client_id}/transaction | List all client transactions
 *NucleusApi::ClientApi* | [**get_client_using_get**](docs/ClientApi.md#get_client_using_get) | **GET** /client/{client_id} | Retrieve a client
-*NucleusApi::ClientApi* | [**get_total_clients_using_get**](docs/ClientApi.md#get_total_clients_using_get) | **GET** /client/total_clients | total clients
-*NucleusApi::ClientApi* | [**update_client_hydro_using_put**](docs/ClientApi.md#update_client_hydro_using_put) | **PUT** /client_hydro/{client_hydro_id} | Update a client-hydro relationship
 *NucleusApi::ClientApi* | [**update_client_status_using_put**](docs/ClientApi.md#update_client_status_using_put) | **PUT** /client_status/{client_status_id} | Update an client status
 *NucleusApi::ClientApi* | [**update_client_using_put**](docs/ClientApi.md#update_client_using_put) | **PUT** /client/{client_id} | Update a client
 *NucleusApi::CustomerApi* | [**create_customer_revenue_using_post**](docs/CustomerApi.md#create_customer_revenue_using_post) | **POST** /customer_revenue | Create a customer revenue
@@ -258,11 +265,6 @@ Class | Method | HTTP request | Description
 *NucleusApi::DocumentApi* | [**get_document_all_using_get**](docs/DocumentApi.md#get_document_all_using_get) | **GET** /document | List all Documents
 *NucleusApi::DocumentApi* | [**get_document_using_get**](docs/DocumentApi.md#get_document_using_get) | **GET** /document/{document_id} | Retrieve a Tenant Document by Document Id
 *NucleusApi::DocumentApi* | [**update_document_using_put**](docs/DocumentApi.md#update_document_using_put) | **PUT** /document/{document_id} | Update a Tenant Document
-*NucleusApi::FAQApi* | [**create_faq_using_post**](docs/FAQApi.md#create_faq_using_post) | **POST** /faq | Create a FAQ
-*NucleusApi::FAQApi* | [**delete_faq_using_delete**](docs/FAQApi.md#delete_faq_using_delete) | **DELETE** /faq/{faq_id} | Delete a FAQ
-*NucleusApi::FAQApi* | [**get_faq_all_using_get**](docs/FAQApi.md#get_faq_all_using_get) | **GET** /faq | List all FAQ
-*NucleusApi::FAQApi* | [**get_faq_using_get**](docs/FAQApi.md#get_faq_using_get) | **GET** /faq/{faq_id} | Retrieve a FAQ
-*NucleusApi::FAQApi* | [**update_faq_using_put**](docs/FAQApi.md#update_faq_using_put) | **PUT** /faq/{faq_id} | Update a FAQ
 *NucleusApi::FeatureApi* | [**create_feature_track_using_post**](docs/FeatureApi.md#create_feature_track_using_post) | **POST** /feature_track | Create a Feature Track
 *NucleusApi::FeatureApi* | [**create_feature_using_post**](docs/FeatureApi.md#create_feature_using_post) | **POST** /feature | Create a  Feature
 *NucleusApi::FeatureApi* | [**delete_feature_track_using_delete**](docs/FeatureApi.md#delete_feature_track_using_delete) | **DELETE** /feature_track/{feature_track_id} | Delete a Feature Track
@@ -273,11 +275,6 @@ Class | Method | HTTP request | Description
 *NucleusApi::FeatureApi* | [**get_feature_using_get**](docs/FeatureApi.md#get_feature_using_get) | **GET** /feature/{feature_id} | Retrieve a Feature
 *NucleusApi::FeatureApi* | [**update_feature_track_using_put**](docs/FeatureApi.md#update_feature_track_using_put) | **PUT** /feature_track/{feature_track_id} | Update a Feature Track
 *NucleusApi::FeatureApi* | [**update_feature_using_put**](docs/FeatureApi.md#update_feature_using_put) | **PUT** /feature/{feature_id} | Update a Feature
-*NucleusApi::FinancialOfferApi* | [**create_financial_offer_using_post**](docs/FinancialOfferApi.md#create_financial_offer_using_post) | **POST** /financial_offer | Create a comparison request
-*NucleusApi::FinancialOfferApi* | [**delete_financial_offer_using_delete**](docs/FinancialOfferApi.md#delete_financial_offer_using_delete) | **DELETE** /financial_offer/{financial_offer_id} | Delete a comparison request
-*NucleusApi::FinancialOfferApi* | [**get_financial_offer_all_using_get**](docs/FinancialOfferApi.md#get_financial_offer_all_using_get) | **GET** /financial_offer | List all comparison requests
-*NucleusApi::FinancialOfferApi* | [**get_financial_offer_using_get**](docs/FinancialOfferApi.md#get_financial_offer_using_get) | **GET** /financial_offer/{financial_offer_id} | Retrieve a comparison request
-*NucleusApi::FinancialOfferApi* | [**update_financial_offer_using_put**](docs/FinancialOfferApi.md#update_financial_offer_using_put) | **PUT** /financial_offer/{financial_offer_id} | Update a comparison request
 *NucleusApi::FinancialStatementApi* | [**create_financial_statement_using_post**](docs/FinancialStatementApi.md#create_financial_statement_using_post) | **POST** /financial_statement | Create an financialStatement
 *NucleusApi::FinancialStatementApi* | [**delete_financial_statement_using_delete**](docs/FinancialStatementApi.md#delete_financial_statement_using_delete) | **DELETE** /financial_statement/{financial_statement_id} | Delete an financialStatement
 *NucleusApi::FinancialStatementApi* | [**get_financial_statement_all_using_get**](docs/FinancialStatementApi.md#get_financial_statement_all_using_get) | **GET** /financial_statement | List all financialStatement
@@ -330,21 +327,6 @@ Class | Method | HTTP request | Description
 *NucleusApi::HouseholdApi* | [**get_household_client_transaction_using_get**](docs/HouseholdApi.md#get_household_client_transaction_using_get) | **GET** /household/{household_id}/transaction | List all household's client ids transactions
 *NucleusApi::HouseholdApi* | [**get_household_using_get**](docs/HouseholdApi.md#get_household_using_get) | **GET** /household/{household_id} | Retrieve a Household
 *NucleusApi::HouseholdApi* | [**update_household_using_put**](docs/HouseholdApi.md#update_household_using_put) | **PUT** /household/{household_id} | Update a Household
-*NucleusApi::InsuranceApi* | [**create_insurance_coverage_using_post**](docs/InsuranceApi.md#create_insurance_coverage_using_post) | **POST** /insurance_coverage | Create a insurance coverage request
-*NucleusApi::InsuranceApi* | [**create_insurance_discount_using_post**](docs/InsuranceApi.md#create_insurance_discount_using_post) | **POST** /insurance_discount | Create a insurance discount request
-*NucleusApi::InsuranceApi* | [**create_insurance_quote_using_post**](docs/InsuranceApi.md#create_insurance_quote_using_post) | **POST** /insurance_quote | Create a insuranceQuote request
-*NucleusApi::InsuranceApi* | [**delete_insurance_coverage_using_delete**](docs/InsuranceApi.md#delete_insurance_coverage_using_delete) | **DELETE** /insurance_coverage/{insurance_coverage_id} | Delete an insurance coverage request
-*NucleusApi::InsuranceApi* | [**delete_insurance_discount_using_delete**](docs/InsuranceApi.md#delete_insurance_discount_using_delete) | **DELETE** /insurance_discount/{insurance_discount_id} | Delete an insurance discount request
-*NucleusApi::InsuranceApi* | [**delete_insurance_quote_using_delete**](docs/InsuranceApi.md#delete_insurance_quote_using_delete) | **DELETE** /insurance_quote/{insurance_quote_id} | Delete a insuranceQuote request
-*NucleusApi::InsuranceApi* | [**get_insurance_coverage_all_using_get**](docs/InsuranceApi.md#get_insurance_coverage_all_using_get) | **GET** /insurance_coverage | Get all insurance coverage request
-*NucleusApi::InsuranceApi* | [**get_insurance_coverage_using_get**](docs/InsuranceApi.md#get_insurance_coverage_using_get) | **GET** /insurance_coverage/{insurance_coverage_id} | Get a insurance coverage request
-*NucleusApi::InsuranceApi* | [**get_insurance_discount_all_using_get**](docs/InsuranceApi.md#get_insurance_discount_all_using_get) | **GET** /insurance_discount | Get all insurance discount request
-*NucleusApi::InsuranceApi* | [**get_insurance_discount_using_get**](docs/InsuranceApi.md#get_insurance_discount_using_get) | **GET** /insurance_discount/{insurance_discount_id} | Get a insurance discount request
-*NucleusApi::InsuranceApi* | [**get_insurance_quote_all_using_get**](docs/InsuranceApi.md#get_insurance_quote_all_using_get) | **GET** /insurance_quote | List all insuranceQuote requests
-*NucleusApi::InsuranceApi* | [**get_insurance_quote_using_get**](docs/InsuranceApi.md#get_insurance_quote_using_get) | **GET** /insurance_quote/{insurance_quote_id} | Retrieve a insuranceQuote request
-*NucleusApi::InsuranceApi* | [**update_insurance_coverage_using_put**](docs/InsuranceApi.md#update_insurance_coverage_using_put) | **PUT** /insurance_coverage/{insurance_coverage_id} | Update a insurance coverage request
-*NucleusApi::InsuranceApi* | [**update_insurance_discount_using_put**](docs/InsuranceApi.md#update_insurance_discount_using_put) | **PUT** /insurance_discount/{insurance_discount_id} | Update an insurance discount 
-*NucleusApi::InsuranceApi* | [**update_insurance_quote_using_put**](docs/InsuranceApi.md#update_insurance_quote_using_put) | **PUT** /insurance_quote/{insurance_quote_id} | Update a insuranceQuote request
 *NucleusApi::InvoiceApi* | [**create_invoice_payment_using_post**](docs/InvoiceApi.md#create_invoice_payment_using_post) | **POST** /invoice_payment | Create a invoicePayment
 *NucleusApi::InvoiceApi* | [**create_invoice_using_post**](docs/InvoiceApi.md#create_invoice_using_post) | **POST** /invoice | Create a invoice
 *NucleusApi::InvoiceApi* | [**delete_invoice_payment_using_delete**](docs/InvoiceApi.md#delete_invoice_payment_using_delete) | **DELETE** /invoice_payment/{invoice_payment_id} | Delete a invoicePayment
@@ -355,26 +337,6 @@ Class | Method | HTTP request | Description
 *NucleusApi::InvoiceApi* | [**get_invoice_using_get**](docs/InvoiceApi.md#get_invoice_using_get) | **GET** /invoice/{invoice_id} | Retrieve a invoice
 *NucleusApi::InvoiceApi* | [**update_invoice_payment_using_put**](docs/InvoiceApi.md#update_invoice_payment_using_put) | **PUT** /invoice_payment/{invoice_payment_id} | Update a invoicePayment
 *NucleusApi::InvoiceApi* | [**update_invoice_using_put**](docs/InvoiceApi.md#update_invoice_using_put) | **PUT** /invoice/{invoice_id} | Update a invoice
-*NucleusApi::MarketingApi* | [**create_campaign_data_using_post**](docs/MarketingApi.md#create_campaign_data_using_post) | **POST** /campaign_data | Create a campaign data record
-*NucleusApi::MarketingApi* | [**create_campaign_plan_using_post**](docs/MarketingApi.md#create_campaign_plan_using_post) | **POST** /campaign_plan | Create a campaign plan
-*NucleusApi::MarketingApi* | [**create_campaign_using_post**](docs/MarketingApi.md#create_campaign_using_post) | **POST** /campaign | Create a campaign
-*NucleusApi::MarketingApi* | [**create_client_campaign_using_post**](docs/MarketingApi.md#create_client_campaign_using_post) | **POST** /client_campaign | Mark a client signing up through a campaign
-*NucleusApi::MarketingApi* | [**delete_campaign_data_using_delete**](docs/MarketingApi.md#delete_campaign_data_using_delete) | **DELETE** /campaign_data/{campaign_data_id} | Delete a campaign data record
-*NucleusApi::MarketingApi* | [**delete_campaign_plan_using_delete**](docs/MarketingApi.md#delete_campaign_plan_using_delete) | **DELETE** /campaign_plan/{campaign_plan_id} | Delete a campaign plan
-*NucleusApi::MarketingApi* | [**delete_campaign_using_delete**](docs/MarketingApi.md#delete_campaign_using_delete) | **DELETE** /campaign/{campaign_id} | Delete a campaign
-*NucleusApi::MarketingApi* | [**delete_client_campaign_using_delete**](docs/MarketingApi.md#delete_client_campaign_using_delete) | **DELETE** /client_campaign/{client_campaign_id} | Delete a clients/ips pair under a campaign
-*NucleusApi::MarketingApi* | [**get_campaign_all_using_get**](docs/MarketingApi.md#get_campaign_all_using_get) | **GET** /campaign | List all campaigns
-*NucleusApi::MarketingApi* | [**get_campaign_data_all_using_get**](docs/MarketingApi.md#get_campaign_data_all_using_get) | **GET** /campaign_data | List all campaign data
-*NucleusApi::MarketingApi* | [**get_campaign_data_using_get**](docs/MarketingApi.md#get_campaign_data_using_get) | **GET** /campaign_data/{campaign_data_id} | Retrieve a campaign data record
-*NucleusApi::MarketingApi* | [**get_campaign_plan_all_using_get**](docs/MarketingApi.md#get_campaign_plan_all_using_get) | **GET** /campaign_plan | List all campaign plans
-*NucleusApi::MarketingApi* | [**get_campaign_plan_using_get**](docs/MarketingApi.md#get_campaign_plan_using_get) | **GET** /campaign_plan/{campaign_plan_id} | Retrieve a campaign plan
-*NucleusApi::MarketingApi* | [**get_campaign_using_get**](docs/MarketingApi.md#get_campaign_using_get) | **GET** /campaign/{campaign_id} | Retrieve a campaign
-*NucleusApi::MarketingApi* | [**get_client_campaign_all_using_get**](docs/MarketingApi.md#get_client_campaign_all_using_get) | **GET** /client_campaign | List all clients/ips under a campaign
-*NucleusApi::MarketingApi* | [**get_client_campaign_using_get**](docs/MarketingApi.md#get_client_campaign_using_get) | **GET** /client_campaign/{client_campaign_id} | Retrieve a clients/ips pair under a campaign
-*NucleusApi::MarketingApi* | [**update_campaign_data_using_put**](docs/MarketingApi.md#update_campaign_data_using_put) | **PUT** /campaign_data/{campaign_data_id} | Update a campaign data record
-*NucleusApi::MarketingApi* | [**update_campaign_plan_using_put**](docs/MarketingApi.md#update_campaign_plan_using_put) | **PUT** /campaign_plan/{campaign_plan_id} | Update a campaign plan
-*NucleusApi::MarketingApi* | [**update_campaign_using_put**](docs/MarketingApi.md#update_campaign_using_put) | **PUT** /campaign/{campaign_id} | Update a campaign
-*NucleusApi::MarketingApi* | [**update_client_campaign_using_put**](docs/MarketingApi.md#update_client_campaign_using_put) | **PUT** /client_campaign/{client_campaign_id} | Update a clients/ips pair under a campaign
 *NucleusApi::ModelApi* | [**create_model_asset_size_using_post**](docs/ModelApi.md#create_model_asset_size_using_post) | **POST** /model_asset_size | Create a model asset size
 *NucleusApi::ModelApi* | [**create_model_change_using_post**](docs/ModelApi.md#create_model_change_using_post) | **POST** /model/{model_id}/model_change | Change a model composition
 *NucleusApi::ModelApi* | [**create_model_comment_using_post**](docs/ModelApi.md#create_model_comment_using_post) | **POST** /model_comment | Create a model commentary
@@ -513,13 +475,15 @@ Class | Method | HTTP request | Description
 *NucleusApi::QuestionnaireApi* | [**update_client_response_using_put**](docs/QuestionnaireApi.md#update_client_response_using_put) | **PUT** /client_response/{client_response_id} | Update a client response
 *NucleusApi::QuestionnaireApi* | [**update_question_using_put**](docs/QuestionnaireApi.md#update_question_using_put) | **PUT** /question/{question_id} | Update a question.
 *NucleusApi::QuestionnaireApi* | [**update_questionnaire_using_put**](docs/QuestionnaireApi.md#update_questionnaire_using_put) | **PUT** /questionnaire/{questionnaire_id} | Update a questionnaire
-*NucleusApi::ResourceApi* | [**create_fx_rate_bulk_using_post**](docs/ResourceApi.md#create_fx_rate_bulk_using_post) | **POST** /resource/fx_rate | Create a bulk fxRate
+*NucleusApi::ResourceApi* | [**get_aggregation_account_category_mapping_using_get**](docs/ResourceApi.md#get_aggregation_account_category_mapping_using_get) | **GET** /resource/account_category | Get All Aggregation Account Category mapping
+*NucleusApi::ResourceApi* | [**get_aggregation_account_transaction_category_mapping_using_get**](docs/ResourceApi.md#get_aggregation_account_transaction_category_mapping_using_get) | **GET** /resource/merchant_category | Get All Aggregation Account Transaction Category mapping
 *NucleusApi::ResourceApi* | [**get_all_country_using_get**](docs/ResourceApi.md#get_all_country_using_get) | **GET** /resource/country | Get All Countries
 *NucleusApi::ResourceApi* | [**get_all_currency_using_get**](docs/ResourceApi.md#get_all_currency_using_get) | **GET** /resource/currency | Get All Currencies
 *NucleusApi::ResourceApi* | [**get_all_merchant_category_code_using_get**](docs/ResourceApi.md#get_all_merchant_category_code_using_get) | **GET** /resource/merchant_category_code | Get All Merchant Category Codes
 *NucleusApi::ResourceApi* | [**get_all_states_using_get**](docs/ResourceApi.md#get_all_states_using_get) | **GET** /resource/state | List all state resource
 *NucleusApi::ResourceApi* | [**get_all_statistics_using_get**](docs/ResourceApi.md#get_all_statistics_using_get) | **GET** /resource/statistic | List all statistic resource
 *NucleusApi::ResourceApi* | [**get_currency_exchange_rate_all_using_get**](docs/ResourceApi.md#get_currency_exchange_rate_all_using_get) | **GET** /resource/fx_rate | List all fxRates
+*NucleusApi::ResourceApi* | [**get_merchants_all_using_get**](docs/ResourceApi.md#get_merchants_all_using_get) | **GET** /resource/merchant | Get all merchants
 *NucleusApi::RiskProfileApi* | [**create_risk_profile_using_post**](docs/RiskProfileApi.md#create_risk_profile_using_post) | **POST** /risk_profile | Create a Risk Profile
 *NucleusApi::RiskProfileApi* | [**delete_risk_profile_using_delete**](docs/RiskProfileApi.md#delete_risk_profile_using_delete) | **DELETE** /risk_profile/{risk_profile_id} | Delete a Risk Profile
 *NucleusApi::RiskProfileApi* | [**get_risk_profile_all_using_get**](docs/RiskProfileApi.md#get_risk_profile_all_using_get) | **GET** /risk_profile | Get All Risk Profile
@@ -553,31 +517,11 @@ Class | Method | HTTP request | Description
 *NucleusApi::SecuritiesApi* | [**update_security_exclusion_using_put**](docs/SecuritiesApi.md#update_security_exclusion_using_put) | **PUT** /security_exclusion/{security_exclusion_id} | Update a security exclusion
 *NucleusApi::SecuritiesApi* | [**update_security_price_using_put**](docs/SecuritiesApi.md#update_security_price_using_put) | **PUT** /security_price/{security_price_id} | Update a security price
 *NucleusApi::SecuritiesApi* | [**update_security_using_put**](docs/SecuritiesApi.md#update_security_using_put) | **PUT** /security/{security_id} | Update a security
-*NucleusApi::SupportApi* | [**create_chat_using_post**](docs/SupportApi.md#create_chat_using_post) | **POST** /chat | Create a Chat
-*NucleusApi::SupportApi* | [**create_consultation_using_post**](docs/SupportApi.md#create_consultation_using_post) | **POST** /consultation | Create a CIO Consultation
-*NucleusApi::SupportApi* | [**create_sale_using_post**](docs/SupportApi.md#create_sale_using_post) | **POST** /sales | Create a sales inquiry
-*NucleusApi::SupportApi* | [**create_support_ticket_comment_using_post**](docs/SupportApi.md#create_support_ticket_comment_using_post) | **POST** /support_ticket_comment | Create a support ticket comment
-*NucleusApi::SupportApi* | [**create_support_ticket_using_post**](docs/SupportApi.md#create_support_ticket_using_post) | **POST** /support_ticket | Create a support ticket
-*NucleusApi::SupportApi* | [**delete_chat_using_delete**](docs/SupportApi.md#delete_chat_using_delete) | **DELETE** /chat/{chat_id} | Delete a Chat
-*NucleusApi::SupportApi* | [**delete_consultation_using_delete**](docs/SupportApi.md#delete_consultation_using_delete) | **DELETE** /consultation/{consultation_id} | Delete a CIO Consultation
-*NucleusApi::SupportApi* | [**delete_sale_using_delete**](docs/SupportApi.md#delete_sale_using_delete) | **DELETE** /sales/{sales_id} | Delete a sales inquiry
-*NucleusApi::SupportApi* | [**delete_support_ticket_comment_using_delete**](docs/SupportApi.md#delete_support_ticket_comment_using_delete) | **DELETE** /support_ticket_comment/{support_ticket_comment_id} | Delete a support ticket comment
-*NucleusApi::SupportApi* | [**delete_support_ticket_using_delete**](docs/SupportApi.md#delete_support_ticket_using_delete) | **DELETE** /support_ticket/{support_ticket_id} | Delete a support ticket
-*NucleusApi::SupportApi* | [**get_chat_all_using_get**](docs/SupportApi.md#get_chat_all_using_get) | **GET** /chat | List all open chats
-*NucleusApi::SupportApi* | [**get_chat_using_get**](docs/SupportApi.md#get_chat_using_get) | **GET** /chat/{chat_id} | Retrieve a Chat
-*NucleusApi::SupportApi* | [**get_consultation_all_using_get**](docs/SupportApi.md#get_consultation_all_using_get) | **GET** /consultation | List all CIO Consultation
-*NucleusApi::SupportApi* | [**get_consultation_using_get**](docs/SupportApi.md#get_consultation_using_get) | **GET** /consultation/{consultation_id} | Retrieve a CIO Consultation
-*NucleusApi::SupportApi* | [**get_sale_all_using_get**](docs/SupportApi.md#get_sale_all_using_get) | **GET** /sales | List all sales inquiries
-*NucleusApi::SupportApi* | [**get_sale_using_get**](docs/SupportApi.md#get_sale_using_get) | **GET** /sales/{sales_id} | Retrieve a sales record
-*NucleusApi::SupportApi* | [**get_support_ticket_all_using_get**](docs/SupportApi.md#get_support_ticket_all_using_get) | **GET** /support_ticket | List all support tickets
-*NucleusApi::SupportApi* | [**get_support_ticket_comment_all_using_get**](docs/SupportApi.md#get_support_ticket_comment_all_using_get) | **GET** /support_ticket_comment | List all support ticket comments
-*NucleusApi::SupportApi* | [**get_support_ticket_comment_using_get**](docs/SupportApi.md#get_support_ticket_comment_using_get) | **GET** /support_ticket_comment/{support_ticket_comment_id} | Retrieve a support ticket comment
-*NucleusApi::SupportApi* | [**get_support_ticket_using_get**](docs/SupportApi.md#get_support_ticket_using_get) | **GET** /support_ticket/{support_ticket_id} | Retrieve a support ticket
-*NucleusApi::SupportApi* | [**update_chat_using_put**](docs/SupportApi.md#update_chat_using_put) | **PUT** /chat/{chat_id} | Update a Chat
-*NucleusApi::SupportApi* | [**update_consultation_using_put**](docs/SupportApi.md#update_consultation_using_put) | **PUT** /consultation/{consultation_id} | Update a CIO Consultation
-*NucleusApi::SupportApi* | [**update_sale_using_put**](docs/SupportApi.md#update_sale_using_put) | **PUT** /sales/{sales_id} | Update a sales inquiry
-*NucleusApi::SupportApi* | [**update_support_ticket_comment_using_put**](docs/SupportApi.md#update_support_ticket_comment_using_put) | **PUT** /support_ticket_comment/{support_ticket_comment_id} | Update a support ticket comment
-*NucleusApi::SupportApi* | [**update_support_ticket_using_put**](docs/SupportApi.md#update_support_ticket_using_put) | **PUT** /support_ticket/{support_ticket_id} | Update a support ticket
+*NucleusApi::SpendingControlApi* | [**create_spending_control_using_post**](docs/SpendingControlApi.md#create_spending_control_using_post) | **POST** /spending_control | Create a Spending Control
+*NucleusApi::SpendingControlApi* | [**delete_spending_control_using_delete**](docs/SpendingControlApi.md#delete_spending_control_using_delete) | **DELETE** /spending_control/{spending_control_id} | Delete a Spending Control
+*NucleusApi::SpendingControlApi* | [**get_spending_control_all_using_get**](docs/SpendingControlApi.md#get_spending_control_all_using_get) | **GET** /spending_control | List all Spending Control
+*NucleusApi::SpendingControlApi* | [**get_spending_control_using_get**](docs/SpendingControlApi.md#get_spending_control_using_get) | **GET** /spending_control/{spending_control_id} | Retrieve a Spending Control
+*NucleusApi::SpendingControlApi* | [**update_spending_control_using_put**](docs/SpendingControlApi.md#update_spending_control_using_put) | **PUT** /spending_control/{spending_control_id} | Update a Spending Control
 *NucleusApi::UtilsApi* | [**create_reason_code_using_post**](docs/UtilsApi.md#create_reason_code_using_post) | **POST** /reason_code | Create a reason code
 *NucleusApi::UtilsApi* | [**create_stage_using_post**](docs/UtilsApi.md#create_stage_using_post) | **POST** /stage | Create an account stage
 *NucleusApi::UtilsApi* | [**create_transaction_code_using_post**](docs/UtilsApi.md#create_transaction_code_using_post) | **POST** /transaction_code | Create a transaction code
@@ -610,6 +554,7 @@ Class | Method | HTTP request | Description
  - [NucleusApi::AccountStatus](docs/AccountStatus.md)
  - [NucleusApi::AccountType](docs/AccountType.md)
  - [NucleusApi::AclClientPermissionVO](docs/AclClientPermissionVO.md)
+ - [NucleusApi::AdminClient](docs/AdminClient.md)
  - [NucleusApi::AggregationAccount](docs/AggregationAccount.md)
  - [NucleusApi::AggregationAccountBalance](docs/AggregationAccountBalance.md)
  - [NucleusApi::AggregationAccountHolding](docs/AggregationAccountHolding.md)
@@ -631,33 +576,30 @@ Class | Method | HTTP request | Description
  - [NucleusApi::BankLinkMap](docs/BankLinkMap.md)
  - [NucleusApi::Benchmark](docs/Benchmark.md)
  - [NucleusApi::BenchmarkComposition](docs/BenchmarkComposition.md)
+ - [NucleusApi::Brokers](docs/Brokers.md)
  - [NucleusApi::Budget](docs/Budget.md)
  - [NucleusApi::BudgetAggregationAccount](docs/BudgetAggregationAccount.md)
  - [NucleusApi::BudgetObject](docs/BudgetObject.md)
  - [NucleusApi::BulkTransaction](docs/BulkTransaction.md)
  - [NucleusApi::BulkTransactionVO](docs/BulkTransactionVO.md)
- - [NucleusApi::Campaign](docs/Campaign.md)
- - [NucleusApi::CampaignData](docs/CampaignData.md)
- - [NucleusApi::CampaignPlan](docs/CampaignPlan.md)
- - [NucleusApi::CampaignPlanRate](docs/CampaignPlanRate.md)
+ - [NucleusApi::Business](docs/Business.md)
+ - [NucleusApi::BusinessAddress](docs/BusinessAddress.md)
  - [NucleusApi::Card](docs/Card.md)
  - [NucleusApi::CardAddress](docs/CardAddress.md)
  - [NucleusApi::CardProgram](docs/CardProgram.md)
  - [NucleusApi::Cash](docs/Cash.md)
  - [NucleusApi::CategoriesMap](docs/CategoriesMap.md)
- - [NucleusApi::ChatInfo](docs/ChatInfo.md)
+ - [NucleusApi::CategoryInternalResponseVO](docs/CategoryInternalResponseVO.md)
+ - [NucleusApi::CategoryResponseVO](docs/CategoryResponseVO.md)
  - [NucleusApi::Check](docs/Check.md)
  - [NucleusApi::CheckImages](docs/CheckImages.md)
  - [NucleusApi::Client](docs/Client.md)
  - [NucleusApi::ClientAccountMapping](docs/ClientAccountMapping.md)
  - [NucleusApi::ClientAddress](docs/ClientAddress.md)
- - [NucleusApi::ClientCampaignMapping](docs/ClientCampaignMapping.md)
- - [NucleusApi::ClientHydro](docs/ClientHydro.md)
  - [NucleusApi::ClientRelationship](docs/ClientRelationship.md)
  - [NucleusApi::ClientResponse](docs/ClientResponse.md)
  - [NucleusApi::ClientStatus](docs/ClientStatus.md)
  - [NucleusApi::ClientViewGoalData](docs/ClientViewGoalData.md)
- - [NucleusApi::Consultation](docs/Consultation.md)
  - [NucleusApi::Country](docs/Country.md)
  - [NucleusApi::Currency](docs/Currency.md)
  - [NucleusApi::Customer](docs/Customer.md)
@@ -672,32 +614,24 @@ Class | Method | HTTP request | Description
  - [NucleusApi::Document](docs/Document.md)
  - [NucleusApi::Employment](docs/Employment.md)
  - [NucleusApi::ExternalAccountTransfer](docs/ExternalAccountTransfer.md)
- - [NucleusApi::FAQKeyword](docs/FAQKeyword.md)
- - [NucleusApi::Faq](docs/Faq.md)
  - [NucleusApi::Feature](docs/Feature.md)
  - [NucleusApi::FeatureTrack](docs/FeatureTrack.md)
- - [NucleusApi::FinancialOffer](docs/FinancialOffer.md)
  - [NucleusApi::FinancialStatement](docs/FinancialStatement.md)
  - [NucleusApi::Funding](docs/Funding.md)
  - [NucleusApi::FundingRequestMap](docs/FundingRequestMap.md)
- - [NucleusApi::FxRate](docs/FxRate.md)
  - [NucleusApi::FxRateView](docs/FxRateView.md)
  - [NucleusApi::Goal](docs/Goal.md)
  - [NucleusApi::GoalAccountMapping](docs/GoalAccountMapping.md)
  - [NucleusApi::GoalTrack](docs/GoalTrack.md)
  - [NucleusApi::GoalTrackAccounts](docs/GoalTrackAccounts.md)
  - [NucleusApi::Household](docs/Household.md)
- - [NucleusApi::InsuranceCoverage](docs/InsuranceCoverage.md)
- - [NucleusApi::InsuranceCoverageMap](docs/InsuranceCoverageMap.md)
- - [NucleusApi::InsuranceDiscount](docs/InsuranceDiscount.md)
- - [NucleusApi::InsuranceDiscountMap](docs/InsuranceDiscountMap.md)
- - [NucleusApi::InsuranceQuote](docs/InsuranceQuote.md)
  - [NucleusApi::Investment](docs/Investment.md)
  - [NucleusApi::Invoice](docs/Invoice.md)
  - [NucleusApi::InvoicePayment](docs/InvoicePayment.md)
  - [NucleusApi::JsonNode](docs/JsonNode.md)
  - [NucleusApi::LineItems](docs/LineItems.md)
  - [NucleusApi::Location](docs/Location.md)
+ - [NucleusApi::MXMerchantRes](docs/MXMerchantRes.md)
  - [NucleusApi::Member](docs/Member.md)
  - [NucleusApi::MerchantCategoryCode](docs/MerchantCategoryCode.md)
  - [NucleusApi::MerchantsMap](docs/MerchantsMap.md)
@@ -713,6 +647,7 @@ Class | Method | HTTP request | Description
  - [NucleusApi::NotificationClient](docs/NotificationClient.md)
  - [NucleusApi::NotificationSetting](docs/NotificationSetting.md)
  - [NucleusApi::Order](docs/Order.md)
+ - [NucleusApi::OrderBulk](docs/OrderBulk.md)
  - [NucleusApi::OrderReconcileRequest](docs/OrderReconcileRequest.md)
  - [NucleusApi::OrderReconcileReturnObject](docs/OrderReconcileReturnObject.md)
  - [NucleusApi::OrderStatus](docs/OrderStatus.md)
@@ -722,11 +657,13 @@ Class | Method | HTTP request | Description
  - [NucleusApi::OverflowBankLinkMap](docs/OverflowBankLinkMap.md)
  - [NucleusApi::OverflowSettings](docs/OverflowSettings.md)
  - [NucleusApi::OverflowVO](docs/OverflowVO.md)
+ - [NucleusApi::Ownership](docs/Ownership.md)
  - [NucleusApi::PageAccount](docs/PageAccount.md)
  - [NucleusApi::PageAccountAllocationMapping](docs/PageAccountAllocationMapping.md)
  - [NucleusApi::PageAccountPermissionVO](docs/PageAccountPermissionVO.md)
  - [NucleusApi::PageAccountStatus](docs/PageAccountStatus.md)
  - [NucleusApi::PageAccountType](docs/PageAccountType.md)
+ - [NucleusApi::PageAdminClient](docs/PageAdminClient.md)
  - [NucleusApi::PageAggregationAccount](docs/PageAggregationAccount.md)
  - [NucleusApi::PageAggregationAccountBalance](docs/PageAggregationAccountBalance.md)
  - [NucleusApi::PageAggregationAccountHolding](docs/PageAggregationAccountHolding.md)
@@ -739,18 +676,12 @@ Class | Method | HTTP request | Description
  - [NucleusApi::PageBankLink](docs/PageBankLink.md)
  - [NucleusApi::PageBenchmark](docs/PageBenchmark.md)
  - [NucleusApi::PageBudget](docs/PageBudget.md)
- - [NucleusApi::PageCampaign](docs/PageCampaign.md)
- - [NucleusApi::PageCampaignData](docs/PageCampaignData.md)
- - [NucleusApi::PageCampaignPlan](docs/PageCampaignPlan.md)
+ - [NucleusApi::PageBusiness](docs/PageBusiness.md)
  - [NucleusApi::PageCard](docs/PageCard.md)
  - [NucleusApi::PageCardProgram](docs/PageCardProgram.md)
- - [NucleusApi::PageChatInfo](docs/PageChatInfo.md)
  - [NucleusApi::PageClient](docs/PageClient.md)
- - [NucleusApi::PageClientCampaignMapping](docs/PageClientCampaignMapping.md)
- - [NucleusApi::PageClientHydro](docs/PageClientHydro.md)
  - [NucleusApi::PageClientResponse](docs/PageClientResponse.md)
  - [NucleusApi::PageClientStatus](docs/PageClientStatus.md)
- - [NucleusApi::PageConsultation](docs/PageConsultation.md)
  - [NucleusApi::PageCustomer](docs/PageCustomer.md)
  - [NucleusApi::PageCustomerRevenue](docs/PageCustomerRevenue.md)
  - [NucleusApi::PageDailyDeposit](docs/PageDailyDeposit.md)
@@ -758,20 +689,16 @@ Class | Method | HTTP request | Description
  - [NucleusApi::PageDecisionTree](docs/PageDecisionTree.md)
  - [NucleusApi::PageDocument](docs/PageDocument.md)
  - [NucleusApi::PageExternalAccountTransfer](docs/PageExternalAccountTransfer.md)
- - [NucleusApi::PageFaq](docs/PageFaq.md)
  - [NucleusApi::PageFeature](docs/PageFeature.md)
  - [NucleusApi::PageFeatureTrack](docs/PageFeatureTrack.md)
- - [NucleusApi::PageFinancialOffer](docs/PageFinancialOffer.md)
  - [NucleusApi::PageFinancialStatement](docs/PageFinancialStatement.md)
  - [NucleusApi::PageFunding](docs/PageFunding.md)
  - [NucleusApi::PageGoal](docs/PageGoal.md)
  - [NucleusApi::PageGoalTrack](docs/PageGoalTrack.md)
  - [NucleusApi::PageHousehold](docs/PageHousehold.md)
- - [NucleusApi::PageInsuranceCoverage](docs/PageInsuranceCoverage.md)
- - [NucleusApi::PageInsuranceDiscount](docs/PageInsuranceDiscount.md)
- - [NucleusApi::PageInsuranceQuote](docs/PageInsuranceQuote.md)
  - [NucleusApi::PageInvoice](docs/PageInvoice.md)
  - [NucleusApi::PageInvoicePayment](docs/PageInvoicePayment.md)
+ - [NucleusApi::PageMXMerchantRes](docs/PageMXMerchantRes.md)
  - [NucleusApi::PageModel](docs/PageModel.md)
  - [NucleusApi::PageModelAssetSize](docs/PageModelAssetSize.md)
  - [NucleusApi::PageModelComment](docs/PageModelComment.md)
@@ -783,6 +710,7 @@ Class | Method | HTTP request | Description
  - [NucleusApi::PageNotificationClient](docs/PageNotificationClient.md)
  - [NucleusApi::PageNotificationSetting](docs/PageNotificationSetting.md)
  - [NucleusApi::PageOrder](docs/PageOrder.md)
+ - [NucleusApi::PageOrderBulk](docs/PageOrderBulk.md)
  - [NucleusApi::PageOrderStatus](docs/PageOrderStatus.md)
  - [NucleusApi::PageOrderTrack](docs/PageOrderTrack.md)
  - [NucleusApi::PageOverflow](docs/PageOverflow.md)
@@ -799,14 +727,12 @@ Class | Method | HTTP request | Description
  - [NucleusApi::PageRiskProfile](docs/PageRiskProfile.md)
  - [NucleusApi::PageRoundup](docs/PageRoundup.md)
  - [NucleusApi::PageRoundupSettings](docs/PageRoundupSettings.md)
- - [NucleusApi::PageSale](docs/PageSale.md)
  - [NucleusApi::PageScore](docs/PageScore.md)
  - [NucleusApi::PageSecurity](docs/PageSecurity.md)
  - [NucleusApi::PageSecurityExclusion](docs/PageSecurityExclusion.md)
  - [NucleusApi::PageSecurityPrice](docs/PageSecurityPrice.md)
+ - [NucleusApi::PageSpendingControl](docs/PageSpendingControl.md)
  - [NucleusApi::PageStage](docs/PageStage.md)
- - [NucleusApi::PageSupportTicket](docs/PageSupportTicket.md)
- - [NucleusApi::PageSupportTicketComment](docs/PageSupportTicketComment.md)
  - [NucleusApi::PageTransactionCode](docs/PageTransactionCode.md)
  - [NucleusApi::PageVAccountAssetSize](docs/PageVAccountAssetSize.md)
  - [NucleusApi::PageWebhook](docs/PageWebhook.md)
@@ -826,7 +752,6 @@ Class | Method | HTTP request | Description
  - [NucleusApi::Roundup](docs/Roundup.md)
  - [NucleusApi::RoundupCO](docs/RoundupCO.md)
  - [NucleusApi::RoundupSettings](docs/RoundupSettings.md)
- - [NucleusApi::Sale](docs/Sale.md)
  - [NucleusApi::Score](docs/Score.md)
  - [NucleusApi::SecuritiesComposition](docs/SecuritiesComposition.md)
  - [NucleusApi::SecuritiesCountry](docs/SecuritiesCountry.md)
@@ -836,13 +761,11 @@ Class | Method | HTTP request | Description
  - [NucleusApi::SecurityExclusion](docs/SecurityExclusion.md)
  - [NucleusApi::SecurityPrice](docs/SecurityPrice.md)
  - [NucleusApi::Sort](docs/Sort.md)
+ - [NucleusApi::SpendingControl](docs/SpendingControl.md)
  - [NucleusApi::Stage](docs/Stage.md)
  - [NucleusApi::Stat](docs/Stat.md)
  - [NucleusApi::State](docs/State.md)
  - [NucleusApi::StatisticResourceVO](docs/StatisticResourceVO.md)
- - [NucleusApi::SupportTicket](docs/SupportTicket.md)
- - [NucleusApi::SupportTicketComment](docs/SupportTicketComment.md)
- - [NucleusApi::SupportTicketDocument](docs/SupportTicketDocument.md)
  - [NucleusApi::TokenDateRequest](docs/TokenDateRequest.md)
  - [NucleusApi::TransactionCode](docs/TransactionCode.md)
  - [NucleusApi::VAccountAssetSize](docs/VAccountAssetSize.md)

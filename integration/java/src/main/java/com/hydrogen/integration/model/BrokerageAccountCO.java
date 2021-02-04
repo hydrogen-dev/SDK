@@ -25,42 +25,13 @@ import java.util.UUID;
 /**
  * BrokerageAccountCO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class BrokerageAccountCO {
-  @SerializedName("electron_document_id")
-  private List<UUID> electronDocumentId = null;
-
   @SerializedName("nucleus_account_id")
   private UUID nucleusAccountId = null;
 
-  @SerializedName("nucleus_account_type_id")
-  private UUID nucleusAccountTypeId = null;
-
-  public BrokerageAccountCO electronDocumentId(List<UUID> electronDocumentId) {
-    this.electronDocumentId = electronDocumentId;
-    return this;
-  }
-
-  public BrokerageAccountCO addElectronDocumentIdItem(UUID electronDocumentIdItem) {
-    if (this.electronDocumentId == null) {
-      this.electronDocumentId = new ArrayList<UUID>();
-    }
-    this.electronDocumentId.add(electronDocumentIdItem);
-    return this;
-  }
-
-   /**
-   * Get electronDocumentId
-   * @return electronDocumentId
-  **/
-  @ApiModelProperty(value = "")
-  public List<UUID> getElectronDocumentId() {
-    return electronDocumentId;
-  }
-
-  public void setElectronDocumentId(List<UUID> electronDocumentId) {
-    this.electronDocumentId = electronDocumentId;
-  }
+  @SerializedName("nucleus_document_ids")
+  private List<UUID> nucleusDocumentIds = null;
 
   public BrokerageAccountCO nucleusAccountId(UUID nucleusAccountId) {
     this.nucleusAccountId = nucleusAccountId;
@@ -80,22 +51,30 @@ public class BrokerageAccountCO {
     this.nucleusAccountId = nucleusAccountId;
   }
 
-  public BrokerageAccountCO nucleusAccountTypeId(UUID nucleusAccountTypeId) {
-    this.nucleusAccountTypeId = nucleusAccountTypeId;
+  public BrokerageAccountCO nucleusDocumentIds(List<UUID> nucleusDocumentIds) {
+    this.nucleusDocumentIds = nucleusDocumentIds;
+    return this;
+  }
+
+  public BrokerageAccountCO addNucleusDocumentIdsItem(UUID nucleusDocumentIdsItem) {
+    if (this.nucleusDocumentIds == null) {
+      this.nucleusDocumentIds = new ArrayList<UUID>();
+    }
+    this.nucleusDocumentIds.add(nucleusDocumentIdsItem);
     return this;
   }
 
    /**
-   * Get nucleusAccountTypeId
-   * @return nucleusAccountTypeId
+   * Get nucleusDocumentIds
+   * @return nucleusDocumentIds
   **/
   @ApiModelProperty(value = "")
-  public UUID getNucleusAccountTypeId() {
-    return nucleusAccountTypeId;
+  public List<UUID> getNucleusDocumentIds() {
+    return nucleusDocumentIds;
   }
 
-  public void setNucleusAccountTypeId(UUID nucleusAccountTypeId) {
-    this.nucleusAccountTypeId = nucleusAccountTypeId;
+  public void setNucleusDocumentIds(List<UUID> nucleusDocumentIds) {
+    this.nucleusDocumentIds = nucleusDocumentIds;
   }
 
 
@@ -108,14 +87,13 @@ public class BrokerageAccountCO {
       return false;
     }
     BrokerageAccountCO brokerageAccountCO = (BrokerageAccountCO) o;
-    return Objects.equals(this.electronDocumentId, brokerageAccountCO.electronDocumentId) &&
-        Objects.equals(this.nucleusAccountId, brokerageAccountCO.nucleusAccountId) &&
-        Objects.equals(this.nucleusAccountTypeId, brokerageAccountCO.nucleusAccountTypeId);
+    return Objects.equals(this.nucleusAccountId, brokerageAccountCO.nucleusAccountId) &&
+        Objects.equals(this.nucleusDocumentIds, brokerageAccountCO.nucleusDocumentIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(electronDocumentId, nucleusAccountId, nucleusAccountTypeId);
+    return Objects.hash(nucleusAccountId, nucleusDocumentIds);
   }
 
 
@@ -124,9 +102,8 @@ public class BrokerageAccountCO {
     StringBuilder sb = new StringBuilder();
     sb.append("class BrokerageAccountCO {\n");
     
-    sb.append("    electronDocumentId: ").append(toIndentedString(electronDocumentId)).append("\n");
     sb.append("    nucleusAccountId: ").append(toIndentedString(nucleusAccountId)).append("\n");
-    sb.append("    nucleusAccountTypeId: ").append(toIndentedString(nucleusAccountTypeId)).append("\n");
+    sb.append("    nucleusDocumentIds: ").append(toIndentedString(nucleusDocumentIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

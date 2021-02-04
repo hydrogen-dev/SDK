@@ -761,7 +761,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\CardApi(
     new GuzzleHttp\Client(),
     $config
 );
-$card_program = new \com\hydrogen\nucleus\Model\CardProgram(); // \com\hydrogen\nucleus\Model\CardProgram | card_program
+$card_program = new \stdClass; // object | card_program
 $card_program_id = "card_program_id_example"; // string | UUID card_program_id
 
 try {
@@ -777,7 +777,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **card_program** | [**\com\hydrogen\nucleus\Model\CardProgram**](../Model/CardProgram.md)| card_program |
+ **card_program** | **object**| card_program |
  **card_program_id** | [**string**](../Model/.md)| UUID card_program_id |
 
 ### Return type
@@ -830,7 +830,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\CardApi(
     new GuzzleHttp\Client(),
     $config
 );
-$card = new \com\hydrogen\nucleus\Model\Card(); // \com\hydrogen\nucleus\Model\Card | card
+$card = new \stdClass; // object | card
 $card_id = "card_id_example"; // string | UUID card_id
 
 try {
@@ -846,7 +846,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **card** | [**\com\hydrogen\nucleus\Model\Card**](../Model/Card.md)| card |
+ **card** | **object**| card |
  **card_id** | [**string**](../Model/.md)| UUID card_id |
 
 ### Return type

@@ -1,4 +1,4 @@
-# swagger_client.FinancialPlanningApi
+# proton_api.FinancialPlanningApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/proton/v1*
 
@@ -49,7 +49,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.FinancialPlanningApi(proton_api.ApiClient(configuration))
@@ -116,7 +115,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 
-
 # create an instance of the API class
 api_instance = proton_api.FinancialPlanningApi(proton_api.ApiClient(configuration))
 education_calculator_deposit_amount_request = proton_api.EducationCalculatorDepositAmountRequest() # EducationCalculatorDepositAmountRequest | Request payload for Education Calculator - Deposit Amount
@@ -181,7 +179,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.FinancialPlanningApi(proton_api.ApiClient(configuration))
@@ -248,7 +245,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 
-
 # create an instance of the API class
 api_instance = proton_api.FinancialPlanningApi(proton_api.ApiClient(configuration))
 mortgage_calculator_down_payment_request = proton_api.MortgageCalculatorDownPaymentRequest() # MortgageCalculatorDownPaymentRequest | Request payload for Mortgage Calculator - Down Payment
@@ -313,7 +309,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.FinancialPlanningApi(proton_api.ApiClient(configuration))
@@ -380,7 +375,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 
-
 # create an instance of the API class
 api_instance = proton_api.FinancialPlanningApi(proton_api.ApiClient(configuration))
 mortgage_calculator_periodic_payment_request = proton_api.MortgageCalculatorPeriodicPaymentRequest() # MortgageCalculatorPeriodicPaymentRequest | Request payload for Mortgage Calculator - Periodic Payment
@@ -445,7 +439,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.FinancialPlanningApi(proton_api.ApiClient(configuration))
@@ -512,7 +505,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 
-
 # create an instance of the API class
 api_instance = proton_api.FinancialPlanningApi(proton_api.ApiClient(configuration))
 purchase_calculator_deposit_amount_request = proton_api.PurchaseCalculatorDepositAmountRequest() # PurchaseCalculatorDepositAmountRequest | Request payload for Purchase Calculator - Deposit Amount
@@ -577,7 +569,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.FinancialPlanningApi(proton_api.ApiClient(configuration))
@@ -644,7 +635,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 
-
 # create an instance of the API class
 api_instance = proton_api.FinancialPlanningApi(proton_api.ApiClient(configuration))
 retirement_calculator_deposit_amount_request = proton_api.RetirementCalculatorDepositAmountRequest() # RetirementCalculatorDepositAmountRequest | Request payload for Retirement Calculator - Deposit AMount
@@ -710,7 +700,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 
-
 # create an instance of the API class
 api_instance = proton_api.FinancialPlanningApi(proton_api.ApiClient(configuration))
 retirement_calculator_expenses_request = proton_api.RetirementCalculatorExpensesRequest() # RetirementCalculatorExpensesRequest | Request payload for Retirement Calculator - Expenses
@@ -775,7 +764,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.FinancialPlanningApi(proton_api.ApiClient(configuration))

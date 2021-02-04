@@ -15,12 +15,7 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.ArrayList;
@@ -30,19 +25,13 @@ import java.util.UUID;
 /**
  * PurchaseCalculatorHorizonRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class PurchaseCalculatorHorizonRequest {
-  @SerializedName("inflation_rate")
-  private Float inflationRate = 0.0f;
-
-  @SerializedName("investment_tax")
-  private Float investmentTax = 0.0f;
-
-  @SerializedName("portfolio_return")
-  private Float portfolioReturn = null;
+  @SerializedName("purchase_amount")
+  private Float purchaseAmount = null;
 
   @SerializedName("aggregation_account_ids")
   private List<UUID> aggregationAccountIds = null;
@@ -50,71 +39,38 @@ public class PurchaseCalculatorHorizonRequest {
   @SerializedName("current_savings")
   private Float currentSavings = 0.0f;
 
-  @SerializedName("deposit_schedule")
-  private CalculatorDepositSchedule1 depositSchedule = null;
-
-  @SerializedName("purchase_amount")
-  private Float purchaseAmount = null;
-
   @SerializedName("account_ids")
   private List<UUID> accountIds = null;
 
-  public PurchaseCalculatorHorizonRequest inflationRate(Float inflationRate) {
-    this.inflationRate = inflationRate;
+  @SerializedName("investment_tax")
+  private Float investmentTax = 0.0f;
+
+  @SerializedName("inflation_rate")
+  private Float inflationRate = 0.0f;
+
+  @SerializedName("portfolio_return")
+  private Float portfolioReturn = null;
+
+  @SerializedName("deposit_schedule")
+  private CalculatorDepositSchedule1 depositSchedule = null;
+
+  public PurchaseCalculatorHorizonRequest purchaseAmount(Float purchaseAmount) {
+    this.purchaseAmount = purchaseAmount;
     return this;
   }
 
    /**
-   * Get inflationRate
-   * minimum: -1
-   * @return inflationRate
-  **/
-  @ApiModelProperty(value = "")
-  public Float getInflationRate() {
-    return inflationRate;
-  }
-
-  public void setInflationRate(Float inflationRate) {
-    this.inflationRate = inflationRate;
-  }
-
-  public PurchaseCalculatorHorizonRequest investmentTax(Float investmentTax) {
-    this.investmentTax = investmentTax;
-    return this;
-  }
-
-   /**
-   * Get investmentTax
+   * Get purchaseAmount
    * minimum: 0
-   * maximum: 1
-   * @return investmentTax
-  **/
-  @ApiModelProperty(value = "")
-  public Float getInvestmentTax() {
-    return investmentTax;
-  }
-
-  public void setInvestmentTax(Float investmentTax) {
-    this.investmentTax = investmentTax;
-  }
-
-  public PurchaseCalculatorHorizonRequest portfolioReturn(Float portfolioReturn) {
-    this.portfolioReturn = portfolioReturn;
-    return this;
-  }
-
-   /**
-   * Get portfolioReturn
-   * minimum: -1
-   * @return portfolioReturn
+   * @return purchaseAmount
   **/
   @ApiModelProperty(required = true, value = "")
-  public Float getPortfolioReturn() {
-    return portfolioReturn;
+  public Float getPurchaseAmount() {
+    return purchaseAmount;
   }
 
-  public void setPortfolioReturn(Float portfolioReturn) {
-    this.portfolioReturn = portfolioReturn;
+  public void setPurchaseAmount(Float purchaseAmount) {
+    this.purchaseAmount = purchaseAmount;
   }
 
   public PurchaseCalculatorHorizonRequest aggregationAccountIds(List<UUID> aggregationAccountIds) {
@@ -162,43 +118,6 @@ public class PurchaseCalculatorHorizonRequest {
     this.currentSavings = currentSavings;
   }
 
-  public PurchaseCalculatorHorizonRequest depositSchedule(CalculatorDepositSchedule1 depositSchedule) {
-    this.depositSchedule = depositSchedule;
-    return this;
-  }
-
-   /**
-   * Get depositSchedule
-   * @return depositSchedule
-  **/
-  @ApiModelProperty(value = "")
-  public CalculatorDepositSchedule1 getDepositSchedule() {
-    return depositSchedule;
-  }
-
-  public void setDepositSchedule(CalculatorDepositSchedule1 depositSchedule) {
-    this.depositSchedule = depositSchedule;
-  }
-
-  public PurchaseCalculatorHorizonRequest purchaseAmount(Float purchaseAmount) {
-    this.purchaseAmount = purchaseAmount;
-    return this;
-  }
-
-   /**
-   * Get purchaseAmount
-   * minimum: 0
-   * @return purchaseAmount
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Float getPurchaseAmount() {
-    return purchaseAmount;
-  }
-
-  public void setPurchaseAmount(Float purchaseAmount) {
-    this.purchaseAmount = purchaseAmount;
-  }
-
   public PurchaseCalculatorHorizonRequest accountIds(List<UUID> accountIds) {
     this.accountIds = accountIds;
     return this;
@@ -225,6 +144,82 @@ public class PurchaseCalculatorHorizonRequest {
     this.accountIds = accountIds;
   }
 
+  public PurchaseCalculatorHorizonRequest investmentTax(Float investmentTax) {
+    this.investmentTax = investmentTax;
+    return this;
+  }
+
+   /**
+   * Get investmentTax
+   * minimum: 0
+   * maximum: 1
+   * @return investmentTax
+  **/
+  @ApiModelProperty(value = "")
+  public Float getInvestmentTax() {
+    return investmentTax;
+  }
+
+  public void setInvestmentTax(Float investmentTax) {
+    this.investmentTax = investmentTax;
+  }
+
+  public PurchaseCalculatorHorizonRequest inflationRate(Float inflationRate) {
+    this.inflationRate = inflationRate;
+    return this;
+  }
+
+   /**
+   * Get inflationRate
+   * minimum: -1
+   * @return inflationRate
+  **/
+  @ApiModelProperty(value = "")
+  public Float getInflationRate() {
+    return inflationRate;
+  }
+
+  public void setInflationRate(Float inflationRate) {
+    this.inflationRate = inflationRate;
+  }
+
+  public PurchaseCalculatorHorizonRequest portfolioReturn(Float portfolioReturn) {
+    this.portfolioReturn = portfolioReturn;
+    return this;
+  }
+
+   /**
+   * Get portfolioReturn
+   * minimum: -1
+   * @return portfolioReturn
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Float getPortfolioReturn() {
+    return portfolioReturn;
+  }
+
+  public void setPortfolioReturn(Float portfolioReturn) {
+    this.portfolioReturn = portfolioReturn;
+  }
+
+  public PurchaseCalculatorHorizonRequest depositSchedule(CalculatorDepositSchedule1 depositSchedule) {
+    this.depositSchedule = depositSchedule;
+    return this;
+  }
+
+   /**
+   * Get depositSchedule
+   * @return depositSchedule
+  **/
+  @ApiModelProperty(value = "")
+  public CalculatorDepositSchedule1 getDepositSchedule() {
+    return depositSchedule;
+  }
+
+  public void setDepositSchedule(CalculatorDepositSchedule1 depositSchedule) {
+    this.depositSchedule = depositSchedule;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -235,19 +230,19 @@ public class PurchaseCalculatorHorizonRequest {
       return false;
     }
     PurchaseCalculatorHorizonRequest purchaseCalculatorHorizonRequest = (PurchaseCalculatorHorizonRequest) o;
-    return Objects.equals(this.inflationRate, purchaseCalculatorHorizonRequest.inflationRate) &&
-        Objects.equals(this.investmentTax, purchaseCalculatorHorizonRequest.investmentTax) &&
-        Objects.equals(this.portfolioReturn, purchaseCalculatorHorizonRequest.portfolioReturn) &&
+    return Objects.equals(this.purchaseAmount, purchaseCalculatorHorizonRequest.purchaseAmount) &&
         Objects.equals(this.aggregationAccountIds, purchaseCalculatorHorizonRequest.aggregationAccountIds) &&
         Objects.equals(this.currentSavings, purchaseCalculatorHorizonRequest.currentSavings) &&
-        Objects.equals(this.depositSchedule, purchaseCalculatorHorizonRequest.depositSchedule) &&
-        Objects.equals(this.purchaseAmount, purchaseCalculatorHorizonRequest.purchaseAmount) &&
-        Objects.equals(this.accountIds, purchaseCalculatorHorizonRequest.accountIds);
+        Objects.equals(this.accountIds, purchaseCalculatorHorizonRequest.accountIds) &&
+        Objects.equals(this.investmentTax, purchaseCalculatorHorizonRequest.investmentTax) &&
+        Objects.equals(this.inflationRate, purchaseCalculatorHorizonRequest.inflationRate) &&
+        Objects.equals(this.portfolioReturn, purchaseCalculatorHorizonRequest.portfolioReturn) &&
+        Objects.equals(this.depositSchedule, purchaseCalculatorHorizonRequest.depositSchedule);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inflationRate, investmentTax, portfolioReturn, aggregationAccountIds, currentSavings, depositSchedule, purchaseAmount, accountIds);
+    return Objects.hash(purchaseAmount, aggregationAccountIds, currentSavings, accountIds, investmentTax, inflationRate, portfolioReturn, depositSchedule);
   }
 
 
@@ -256,14 +251,14 @@ public class PurchaseCalculatorHorizonRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class PurchaseCalculatorHorizonRequest {\n");
     
-    sb.append("    inflationRate: ").append(toIndentedString(inflationRate)).append("\n");
-    sb.append("    investmentTax: ").append(toIndentedString(investmentTax)).append("\n");
-    sb.append("    portfolioReturn: ").append(toIndentedString(portfolioReturn)).append("\n");
+    sb.append("    purchaseAmount: ").append(toIndentedString(purchaseAmount)).append("\n");
     sb.append("    aggregationAccountIds: ").append(toIndentedString(aggregationAccountIds)).append("\n");
     sb.append("    currentSavings: ").append(toIndentedString(currentSavings)).append("\n");
-    sb.append("    depositSchedule: ").append(toIndentedString(depositSchedule)).append("\n");
-    sb.append("    purchaseAmount: ").append(toIndentedString(purchaseAmount)).append("\n");
     sb.append("    accountIds: ").append(toIndentedString(accountIds)).append("\n");
+    sb.append("    investmentTax: ").append(toIndentedString(investmentTax)).append("\n");
+    sb.append("    inflationRate: ").append(toIndentedString(inflationRate)).append("\n");
+    sb.append("    portfolioReturn: ").append(toIndentedString(portfolioReturn)).append("\n");
+    sb.append("    depositSchedule: ").append(toIndentedString(depositSchedule)).append("\n");
     sb.append("}");
     return sb.toString();
   }

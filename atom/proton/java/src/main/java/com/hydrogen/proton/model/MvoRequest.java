@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.IOException;
@@ -31,70 +30,11 @@ import org.threeten.bp.LocalDate;
 /**
  * MvoRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class MvoRequest {
-  @SerializedName("w_asset_config")
-  private Object wAssetConfig = null;
-
-  /**
-   * Gets or Sets tgtType
-   */
-  @JsonAdapter(TgtTypeEnum.Adapter.class)
-  public enum TgtTypeEnum {
-    RISK("risk"),
-    
-    RETURN("return");
-
-    private String value;
-
-    TgtTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static TgtTypeEnum fromValue(String text) {
-      for (TgtTypeEnum b : TgtTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<TgtTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TgtTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TgtTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return TgtTypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
-  @SerializedName("tgt_type")
-  private TgtTypeEnum tgtType = null;
-
-  @SerializedName("tgt_val")
-  private Float tgtVal = 0.0f;
-
-  @SerializedName("min_assets")
-  private Integer minAssets = null;
-
   /**
    * Gets or Sets secTypes
    */
@@ -147,20 +87,8 @@ public class MvoRequest {
   @SerializedName("sec_types")
   private List<SecTypesEnum> secTypes = new ArrayList<SecTypesEnum>();
 
-  @SerializedName("w_config")
-  private WConfig wConfig = null;
-
   @SerializedName("end_date")
   private LocalDate endDate = null;
-
-  @SerializedName("use_proxy_data")
-  private Boolean useProxyData = false;
-
-  @SerializedName("start_date")
-  private LocalDate startDate = null;
-
-  @SerializedName("tickers")
-  private List<String> tickers = new ArrayList<String>();
 
   /**
    * Gets or Sets marketDataSource
@@ -212,78 +140,76 @@ public class MvoRequest {
   @SerializedName("market_data_source")
   private MarketDataSourceEnum marketDataSource = MarketDataSourceEnum.NUCLEUS;
 
-  public MvoRequest wAssetConfig(Object wAssetConfig) {
-    this.wAssetConfig = wAssetConfig;
-    return this;
+  @SerializedName("tgt_val")
+  private Float tgtVal = 0.0f;
+
+  /**
+   * Gets or Sets tgtType
+   */
+  @JsonAdapter(TgtTypeEnum.Adapter.class)
+  public enum TgtTypeEnum {
+    RISK("risk"),
+    
+    RETURN("return");
+
+    private String value;
+
+    TgtTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static TgtTypeEnum fromValue(String text) {
+      for (TgtTypeEnum b : TgtTypeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<TgtTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final TgtTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public TgtTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return TgtTypeEnum.fromValue(String.valueOf(value));
+      }
+    }
   }
 
-   /**
-   * Get wAssetConfig
-   * @return wAssetConfig
-  **/
-  @ApiModelProperty(value = "")
-  public Object getWAssetConfig() {
-    return wAssetConfig;
-  }
+  @SerializedName("tgt_type")
+  private TgtTypeEnum tgtType = null;
 
-  public void setWAssetConfig(Object wAssetConfig) {
-    this.wAssetConfig = wAssetConfig;
-  }
+  @SerializedName("use_proxy_data")
+  private Boolean useProxyData = false;
 
-  public MvoRequest tgtType(TgtTypeEnum tgtType) {
-    this.tgtType = tgtType;
-    return this;
-  }
+  @SerializedName("w_config")
+  private WConfig wConfig = null;
 
-   /**
-   * Get tgtType
-   * @return tgtType
-  **/
-  @ApiModelProperty(value = "")
-  public TgtTypeEnum getTgtType() {
-    return tgtType;
-  }
+  @SerializedName("start_date")
+  private LocalDate startDate = null;
 
-  public void setTgtType(TgtTypeEnum tgtType) {
-    this.tgtType = tgtType;
-  }
+  @SerializedName("tickers")
+  private List<String> tickers = new ArrayList<String>();
 
-  public MvoRequest tgtVal(Float tgtVal) {
-    this.tgtVal = tgtVal;
-    return this;
-  }
+  @SerializedName("min_assets")
+  private Integer minAssets = null;
 
-   /**
-   * Get tgtVal
-   * @return tgtVal
-  **/
-  @ApiModelProperty(value = "")
-  public Float getTgtVal() {
-    return tgtVal;
-  }
-
-  public void setTgtVal(Float tgtVal) {
-    this.tgtVal = tgtVal;
-  }
-
-  public MvoRequest minAssets(Integer minAssets) {
-    this.minAssets = minAssets;
-    return this;
-  }
-
-   /**
-   * Get minAssets
-   * minimum: 1
-   * @return minAssets
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getMinAssets() {
-    return minAssets;
-  }
-
-  public void setMinAssets(Integer minAssets) {
-    this.minAssets = minAssets;
-  }
+  @SerializedName("w_asset_config")
+  private Object wAssetConfig = null;
 
   public MvoRequest secTypes(List<SecTypesEnum> secTypes) {
     this.secTypes = secTypes;
@@ -308,24 +234,6 @@ public class MvoRequest {
     this.secTypes = secTypes;
   }
 
-  public MvoRequest wConfig(WConfig wConfig) {
-    this.wConfig = wConfig;
-    return this;
-  }
-
-   /**
-   * Get wConfig
-   * @return wConfig
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public WConfig getWConfig() {
-    return wConfig;
-  }
-
-  public void setWConfig(WConfig wConfig) {
-    this.wConfig = wConfig;
-  }
-
   public MvoRequest endDate(LocalDate endDate) {
     this.endDate = endDate;
     return this;
@@ -344,6 +252,60 @@ public class MvoRequest {
     this.endDate = endDate;
   }
 
+  public MvoRequest marketDataSource(MarketDataSourceEnum marketDataSource) {
+    this.marketDataSource = marketDataSource;
+    return this;
+  }
+
+   /**
+   * Get marketDataSource
+   * @return marketDataSource
+  **/
+  @ApiModelProperty(value = "")
+  public MarketDataSourceEnum getMarketDataSource() {
+    return marketDataSource;
+  }
+
+  public void setMarketDataSource(MarketDataSourceEnum marketDataSource) {
+    this.marketDataSource = marketDataSource;
+  }
+
+  public MvoRequest tgtVal(Float tgtVal) {
+    this.tgtVal = tgtVal;
+    return this;
+  }
+
+   /**
+   * Get tgtVal
+   * @return tgtVal
+  **/
+  @ApiModelProperty(value = "")
+  public Float getTgtVal() {
+    return tgtVal;
+  }
+
+  public void setTgtVal(Float tgtVal) {
+    this.tgtVal = tgtVal;
+  }
+
+  public MvoRequest tgtType(TgtTypeEnum tgtType) {
+    this.tgtType = tgtType;
+    return this;
+  }
+
+   /**
+   * Get tgtType
+   * @return tgtType
+  **/
+  @ApiModelProperty(value = "")
+  public TgtTypeEnum getTgtType() {
+    return tgtType;
+  }
+
+  public void setTgtType(TgtTypeEnum tgtType) {
+    this.tgtType = tgtType;
+  }
+
   public MvoRequest useProxyData(Boolean useProxyData) {
     this.useProxyData = useProxyData;
     return this;
@@ -360,6 +322,24 @@ public class MvoRequest {
 
   public void setUseProxyData(Boolean useProxyData) {
     this.useProxyData = useProxyData;
+  }
+
+  public MvoRequest wConfig(WConfig wConfig) {
+    this.wConfig = wConfig;
+    return this;
+  }
+
+   /**
+   * Get wConfig
+   * @return wConfig
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public WConfig getWConfig() {
+    return wConfig;
+  }
+
+  public void setWConfig(WConfig wConfig) {
+    this.wConfig = wConfig;
   }
 
   public MvoRequest startDate(LocalDate startDate) {
@@ -403,22 +383,41 @@ public class MvoRequest {
     this.tickers = tickers;
   }
 
-  public MvoRequest marketDataSource(MarketDataSourceEnum marketDataSource) {
-    this.marketDataSource = marketDataSource;
+  public MvoRequest minAssets(Integer minAssets) {
+    this.minAssets = minAssets;
     return this;
   }
 
    /**
-   * Get marketDataSource
-   * @return marketDataSource
+   * Get minAssets
+   * minimum: 1
+   * @return minAssets
   **/
-  @ApiModelProperty(value = "")
-  public MarketDataSourceEnum getMarketDataSource() {
-    return marketDataSource;
+  @ApiModelProperty(required = true, value = "")
+  public Integer getMinAssets() {
+    return minAssets;
   }
 
-  public void setMarketDataSource(MarketDataSourceEnum marketDataSource) {
-    this.marketDataSource = marketDataSource;
+  public void setMinAssets(Integer minAssets) {
+    this.minAssets = minAssets;
+  }
+
+  public MvoRequest wAssetConfig(Object wAssetConfig) {
+    this.wAssetConfig = wAssetConfig;
+    return this;
+  }
+
+   /**
+   * Get wAssetConfig
+   * @return wAssetConfig
+  **/
+  @ApiModelProperty(value = "")
+  public Object getWAssetConfig() {
+    return wAssetConfig;
+  }
+
+  public void setWAssetConfig(Object wAssetConfig) {
+    this.wAssetConfig = wAssetConfig;
   }
 
 
@@ -431,22 +430,22 @@ public class MvoRequest {
       return false;
     }
     MvoRequest mvoRequest = (MvoRequest) o;
-    return Objects.equals(this.wAssetConfig, mvoRequest.wAssetConfig) &&
-        Objects.equals(this.tgtType, mvoRequest.tgtType) &&
-        Objects.equals(this.tgtVal, mvoRequest.tgtVal) &&
-        Objects.equals(this.minAssets, mvoRequest.minAssets) &&
-        Objects.equals(this.secTypes, mvoRequest.secTypes) &&
-        Objects.equals(this.wConfig, mvoRequest.wConfig) &&
+    return Objects.equals(this.secTypes, mvoRequest.secTypes) &&
         Objects.equals(this.endDate, mvoRequest.endDate) &&
+        Objects.equals(this.marketDataSource, mvoRequest.marketDataSource) &&
+        Objects.equals(this.tgtVal, mvoRequest.tgtVal) &&
+        Objects.equals(this.tgtType, mvoRequest.tgtType) &&
         Objects.equals(this.useProxyData, mvoRequest.useProxyData) &&
+        Objects.equals(this.wConfig, mvoRequest.wConfig) &&
         Objects.equals(this.startDate, mvoRequest.startDate) &&
         Objects.equals(this.tickers, mvoRequest.tickers) &&
-        Objects.equals(this.marketDataSource, mvoRequest.marketDataSource);
+        Objects.equals(this.minAssets, mvoRequest.minAssets) &&
+        Objects.equals(this.wAssetConfig, mvoRequest.wAssetConfig);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(wAssetConfig, tgtType, tgtVal, minAssets, secTypes, wConfig, endDate, useProxyData, startDate, tickers, marketDataSource);
+    return Objects.hash(secTypes, endDate, marketDataSource, tgtVal, tgtType, useProxyData, wConfig, startDate, tickers, minAssets, wAssetConfig);
   }
 
 
@@ -455,17 +454,17 @@ public class MvoRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class MvoRequest {\n");
     
-    sb.append("    wAssetConfig: ").append(toIndentedString(wAssetConfig)).append("\n");
-    sb.append("    tgtType: ").append(toIndentedString(tgtType)).append("\n");
-    sb.append("    tgtVal: ").append(toIndentedString(tgtVal)).append("\n");
-    sb.append("    minAssets: ").append(toIndentedString(minAssets)).append("\n");
     sb.append("    secTypes: ").append(toIndentedString(secTypes)).append("\n");
-    sb.append("    wConfig: ").append(toIndentedString(wConfig)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
+    sb.append("    marketDataSource: ").append(toIndentedString(marketDataSource)).append("\n");
+    sb.append("    tgtVal: ").append(toIndentedString(tgtVal)).append("\n");
+    sb.append("    tgtType: ").append(toIndentedString(tgtType)).append("\n");
     sb.append("    useProxyData: ").append(toIndentedString(useProxyData)).append("\n");
+    sb.append("    wConfig: ").append(toIndentedString(wConfig)).append("\n");
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    tickers: ").append(toIndentedString(tickers)).append("\n");
-    sb.append("    marketDataSource: ").append(toIndentedString(marketDataSource)).append("\n");
+    sb.append("    minAssets: ").append(toIndentedString(minAssets)).append("\n");
+    sb.append("    wAssetConfig: ").append(toIndentedString(wAssetConfig)).append("\n");
     sb.append("}");
     return sb.toString();
   }

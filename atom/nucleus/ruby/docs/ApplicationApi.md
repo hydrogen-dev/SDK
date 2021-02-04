@@ -271,7 +271,7 @@ end
 
 api_instance = NucleusApi::ApplicationApi.new
 
-application = NucleusApi::Application.new # Application | application
+application = nil # Object | application
 
 application_id = 'application_id_example' # String | UUID application_id
 
@@ -289,7 +289,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application** | [**Application**](Application.md)| application | 
+ **application** | **Object**| application | 
  **application_id** | [**String**](.md)| UUID application_id | 
 
 ### Return type

@@ -1627,7 +1627,7 @@ class QuestionnaireApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Answer answer: answer (required)
+        :param object answer: answer (required)
         :param str answer_id: UUID answer_id (required)
         :return: Answer
                  If the method is called asynchronously,
@@ -1650,7 +1650,7 @@ class QuestionnaireApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Answer answer: answer (required)
+        :param object answer: answer (required)
         :param str answer_id: UUID answer_id (required)
         :return: Answer
                  If the method is called asynchronously,
@@ -1734,7 +1734,7 @@ class QuestionnaireApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ClientResponse client_response: client_response (required)
+        :param object client_response: client_response (required)
         :param str client_response_id: UUID client_response_id (required)
         :return: ClientResponse
                  If the method is called asynchronously,
@@ -1757,7 +1757,7 @@ class QuestionnaireApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ClientResponse client_response: client_response (required)
+        :param object client_response: client_response (required)
         :param str client_response_id: UUID client_response_id (required)
         :return: ClientResponse
                  If the method is called asynchronously,
@@ -1841,7 +1841,7 @@ class QuestionnaireApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Question question: question (required)
+        :param object question: question (required)
         :param str question_id: UUID question_id (required)
         :return: Question
                  If the method is called asynchronously,
@@ -1864,7 +1864,7 @@ class QuestionnaireApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Question question: question (required)
+        :param object question: question (required)
         :param str question_id: UUID question_id (required)
         :return: Question
                  If the method is called asynchronously,
@@ -1948,7 +1948,7 @@ class QuestionnaireApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Questionnaire questionnaire: questionnaire (required)
+        :param object questionnaire: questionnaire (required)
         :param str questionnaire_id: UUID questionnaire_id (required)
         :return: Questionnaire
                  If the method is called asynchronously,
@@ -1971,7 +1971,7 @@ class QuestionnaireApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Questionnaire questionnaire: questionnaire (required)
+        :param object questionnaire: questionnaire (required)
         :param str questionnaire_id: UUID questionnaire_id (required)
         :return: Questionnaire
                  If the method is called asynchronously,

@@ -32,7 +32,7 @@ class TestFeeAnalysisRequest(unittest.TestCase):
     def testFeeAnalysisRequest(self):
         """Test FeeAnalysisRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.fee_analysis_request.FeeAnalysisRequest()  # noqa: E501
+        # model = proton_api.models.fee_analysis_request.FeeAnalysisRequest()  # noqa: E501
         pass
 
 

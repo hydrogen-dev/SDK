@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * MdQuoteResponseVO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class MdQuoteResponseVO {
   @SerializedName("content")
   private List<MdQuoteItemVO> content = null;

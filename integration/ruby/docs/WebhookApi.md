@@ -34,7 +34,6 @@ IntegrationApi.configure do |config|
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
-
 api_instance = IntegrationApi::WebhookApi.new
 
 webhook_request = IntegrationApi::Webhook.new # Webhook | webhookRequest
@@ -75,7 +74,7 @@ Name | Type | Description  | Notes
 
 Delete a webhook
 
-Permanently delete a webhook for your firm. The webhook_id must be provided.
+Permanently delete a webhook for your business. The webhook_id must be provided.
 
 ### Example
 ```ruby
@@ -92,7 +91,6 @@ IntegrationApi.configure do |config|
 # Creating a token using client token
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = IntegrationApi::WebhookApi.new
 
@@ -133,7 +131,7 @@ nil (empty response body)
 
 List all webhooks
 
-Get information for all webhooks defined for your firm.
+Get information for all webhooks defined for your business.
 
 ### Example
 ```ruby
@@ -150,7 +148,6 @@ IntegrationApi.configure do |config|
 # Creating a token using client token
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = IntegrationApi::WebhookApi.new
 
@@ -219,7 +216,6 @@ IntegrationApi.configure do |config|
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
-
 api_instance = IntegrationApi::WebhookApi.new
 
 webhook_id = 'webhook_id_example' # String | UUID webhook_id
@@ -260,7 +256,7 @@ Name | Type | Description  | Notes
 
 Update a webhook
 
-Update a webhook for your firm. The webhook_id must be provided
+Update a webhook for your business. The webhook_id must be provided
 
 ### Example
 ```ruby
@@ -278,10 +274,9 @@ IntegrationApi.configure do |config|
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
-
 api_instance = IntegrationApi::WebhookApi.new
 
-webhook = IntegrationApi::Webhook.new # Webhook | webhook
+webhook = nil # Object | webhook
 
 webhook_id = 'webhook_id_example' # String | UUID webhook_id
 
@@ -299,7 +294,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook** | [**Webhook**](Webhook.md)| webhook | 
+ **webhook** | **Object**| webhook | 
  **webhook_id** | [**String**](.md)| UUID webhook_id | 
 
 ### Return type

@@ -31,297 +31,85 @@ class PortfolioWhatIfRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'altered_portfolio_weights': 'list[float]',
-        'create_log': 'bool',
-        'aggregation_account_id': 'str',
-        'allocation_id': 'str',
-        'model_id': 'str',
-        'end_date': 'str',
-        'current_portfolio_tickers': 'list[str]',
-        'use_proxy_data': 'bool',
-        'altered_portfolio_tickers': 'list[str]',
-        'start_date': 'str',
         'current_portfolio_weights': 'list[float]',
-        'account_id': 'str',
+        'portfolio_id': 'str',
+        'end_date': 'str',
         'market_data_source': 'str',
-        'portfolio_id': 'str'
+        'model_id': 'str',
+        'create_log': 'bool',
+        'allocation_id': 'str',
+        'use_proxy_data': 'bool',
+        'start_date': 'str',
+        'account_id': 'str',
+        'aggregation_account_id': 'str',
+        'current_portfolio_tickers': 'list[str]',
+        'altered_portfolio_weights': 'list[float]',
+        'altered_portfolio_tickers': 'list[str]'
     }
 
     attribute_map = {
-        'altered_portfolio_weights': 'altered_portfolio_weights',
-        'create_log': 'create_log',
-        'aggregation_account_id': 'aggregation_account_id',
-        'allocation_id': 'allocation_id',
-        'model_id': 'model_id',
-        'end_date': 'end_date',
-        'current_portfolio_tickers': 'current_portfolio_tickers',
-        'use_proxy_data': 'use_proxy_data',
-        'altered_portfolio_tickers': 'altered_portfolio_tickers',
-        'start_date': 'start_date',
         'current_portfolio_weights': 'current_portfolio_weights',
-        'account_id': 'account_id',
+        'portfolio_id': 'portfolio_id',
+        'end_date': 'end_date',
         'market_data_source': 'market_data_source',
-        'portfolio_id': 'portfolio_id'
+        'model_id': 'model_id',
+        'create_log': 'create_log',
+        'allocation_id': 'allocation_id',
+        'use_proxy_data': 'use_proxy_data',
+        'start_date': 'start_date',
+        'account_id': 'account_id',
+        'aggregation_account_id': 'aggregation_account_id',
+        'current_portfolio_tickers': 'current_portfolio_tickers',
+        'altered_portfolio_weights': 'altered_portfolio_weights',
+        'altered_portfolio_tickers': 'altered_portfolio_tickers'
     }
 
-    def __init__(self, altered_portfolio_weights=None, create_log=False, aggregation_account_id=None, allocation_id=None, model_id=None, end_date=None, current_portfolio_tickers=None, use_proxy_data=False, altered_portfolio_tickers=None, start_date=None, current_portfolio_weights=None, account_id=None, market_data_source='nucleus', portfolio_id=None):  # noqa: E501
+    def __init__(self, current_portfolio_weights=None, portfolio_id=None, end_date=None, market_data_source='nucleus', model_id=None, create_log=False, allocation_id=None, use_proxy_data=False, start_date=None, account_id=None, aggregation_account_id=None, current_portfolio_tickers=None, altered_portfolio_weights=None, altered_portfolio_tickers=None):  # noqa: E501
         """PortfolioWhatIfRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._altered_portfolio_weights = None
-        self._create_log = None
-        self._aggregation_account_id = None
-        self._allocation_id = None
-        self._model_id = None
-        self._end_date = None
-        self._current_portfolio_tickers = None
-        self._use_proxy_data = None
-        self._altered_portfolio_tickers = None
-        self._start_date = None
         self._current_portfolio_weights = None
-        self._account_id = None
-        self._market_data_source = None
         self._portfolio_id = None
+        self._end_date = None
+        self._market_data_source = None
+        self._model_id = None
+        self._create_log = None
+        self._allocation_id = None
+        self._use_proxy_data = None
+        self._start_date = None
+        self._account_id = None
+        self._aggregation_account_id = None
+        self._current_portfolio_tickers = None
+        self._altered_portfolio_weights = None
+        self._altered_portfolio_tickers = None
         self.discriminator = None
 
-        self.altered_portfolio_weights = altered_portfolio_weights
-        if create_log is not None:
-            self.create_log = create_log
-        if aggregation_account_id is not None:
-            self.aggregation_account_id = aggregation_account_id
-        if allocation_id is not None:
-            self.allocation_id = allocation_id
-        if model_id is not None:
-            self.model_id = model_id
-        if end_date is not None:
-            self.end_date = end_date
-        if current_portfolio_tickers is not None:
-            self.current_portfolio_tickers = current_portfolio_tickers
-        if use_proxy_data is not None:
-            self.use_proxy_data = use_proxy_data
-        if altered_portfolio_tickers is not None:
-            self.altered_portfolio_tickers = altered_portfolio_tickers
-        if start_date is not None:
-            self.start_date = start_date
         if current_portfolio_weights is not None:
             self.current_portfolio_weights = current_portfolio_weights
-        if account_id is not None:
-            self.account_id = account_id
-        if market_data_source is not None:
-            self.market_data_source = market_data_source
         if portfolio_id is not None:
             self.portfolio_id = portfolio_id
-
-    @property
-    def altered_portfolio_weights(self):
-        """Gets the altered_portfolio_weights of this PortfolioWhatIfRequest.  # noqa: E501
-
-
-        :return: The altered_portfolio_weights of this PortfolioWhatIfRequest.  # noqa: E501
-        :rtype: list[float]
-        """
-        return self._altered_portfolio_weights
-
-    @altered_portfolio_weights.setter
-    def altered_portfolio_weights(self, altered_portfolio_weights):
-        """Sets the altered_portfolio_weights of this PortfolioWhatIfRequest.
-
-
-        :param altered_portfolio_weights: The altered_portfolio_weights of this PortfolioWhatIfRequest.  # noqa: E501
-        :type: list[float]
-        """
-        if altered_portfolio_weights is None:
-            raise ValueError("Invalid value for `altered_portfolio_weights`, must not be `None`")  # noqa: E501
-
-        self._altered_portfolio_weights = altered_portfolio_weights
-
-    @property
-    def create_log(self):
-        """Gets the create_log of this PortfolioWhatIfRequest.  # noqa: E501
-
-
-        :return: The create_log of this PortfolioWhatIfRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._create_log
-
-    @create_log.setter
-    def create_log(self, create_log):
-        """Sets the create_log of this PortfolioWhatIfRequest.
-
-
-        :param create_log: The create_log of this PortfolioWhatIfRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._create_log = create_log
-
-    @property
-    def aggregation_account_id(self):
-        """Gets the aggregation_account_id of this PortfolioWhatIfRequest.  # noqa: E501
-
-
-        :return: The aggregation_account_id of this PortfolioWhatIfRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._aggregation_account_id
-
-    @aggregation_account_id.setter
-    def aggregation_account_id(self, aggregation_account_id):
-        """Sets the aggregation_account_id of this PortfolioWhatIfRequest.
-
-
-        :param aggregation_account_id: The aggregation_account_id of this PortfolioWhatIfRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._aggregation_account_id = aggregation_account_id
-
-    @property
-    def allocation_id(self):
-        """Gets the allocation_id of this PortfolioWhatIfRequest.  # noqa: E501
-
-
-        :return: The allocation_id of this PortfolioWhatIfRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._allocation_id
-
-    @allocation_id.setter
-    def allocation_id(self, allocation_id):
-        """Sets the allocation_id of this PortfolioWhatIfRequest.
-
-
-        :param allocation_id: The allocation_id of this PortfolioWhatIfRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._allocation_id = allocation_id
-
-    @property
-    def model_id(self):
-        """Gets the model_id of this PortfolioWhatIfRequest.  # noqa: E501
-
-
-        :return: The model_id of this PortfolioWhatIfRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._model_id
-
-    @model_id.setter
-    def model_id(self, model_id):
-        """Sets the model_id of this PortfolioWhatIfRequest.
-
-
-        :param model_id: The model_id of this PortfolioWhatIfRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._model_id = model_id
-
-    @property
-    def end_date(self):
-        """Gets the end_date of this PortfolioWhatIfRequest.  # noqa: E501
-
-
-        :return: The end_date of this PortfolioWhatIfRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._end_date
-
-    @end_date.setter
-    def end_date(self, end_date):
-        """Sets the end_date of this PortfolioWhatIfRequest.
-
-
-        :param end_date: The end_date of this PortfolioWhatIfRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._end_date = end_date
-
-    @property
-    def current_portfolio_tickers(self):
-        """Gets the current_portfolio_tickers of this PortfolioWhatIfRequest.  # noqa: E501
-
-
-        :return: The current_portfolio_tickers of this PortfolioWhatIfRequest.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._current_portfolio_tickers
-
-    @current_portfolio_tickers.setter
-    def current_portfolio_tickers(self, current_portfolio_tickers):
-        """Sets the current_portfolio_tickers of this PortfolioWhatIfRequest.
-
-
-        :param current_portfolio_tickers: The current_portfolio_tickers of this PortfolioWhatIfRequest.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._current_portfolio_tickers = current_portfolio_tickers
-
-    @property
-    def use_proxy_data(self):
-        """Gets the use_proxy_data of this PortfolioWhatIfRequest.  # noqa: E501
-
-
-        :return: The use_proxy_data of this PortfolioWhatIfRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._use_proxy_data
-
-    @use_proxy_data.setter
-    def use_proxy_data(self, use_proxy_data):
-        """Sets the use_proxy_data of this PortfolioWhatIfRequest.
-
-
-        :param use_proxy_data: The use_proxy_data of this PortfolioWhatIfRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._use_proxy_data = use_proxy_data
-
-    @property
-    def altered_portfolio_tickers(self):
-        """Gets the altered_portfolio_tickers of this PortfolioWhatIfRequest.  # noqa: E501
-
-
-        :return: The altered_portfolio_tickers of this PortfolioWhatIfRequest.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._altered_portfolio_tickers
-
-    @altered_portfolio_tickers.setter
-    def altered_portfolio_tickers(self, altered_portfolio_tickers):
-        """Sets the altered_portfolio_tickers of this PortfolioWhatIfRequest.
-
-
-        :param altered_portfolio_tickers: The altered_portfolio_tickers of this PortfolioWhatIfRequest.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._altered_portfolio_tickers = altered_portfolio_tickers
-
-    @property
-    def start_date(self):
-        """Gets the start_date of this PortfolioWhatIfRequest.  # noqa: E501
-
-
-        :return: The start_date of this PortfolioWhatIfRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._start_date
-
-    @start_date.setter
-    def start_date(self, start_date):
-        """Sets the start_date of this PortfolioWhatIfRequest.
-
-
-        :param start_date: The start_date of this PortfolioWhatIfRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._start_date = start_date
+        if end_date is not None:
+            self.end_date = end_date
+        if market_data_source is not None:
+            self.market_data_source = market_data_source
+        if model_id is not None:
+            self.model_id = model_id
+        if create_log is not None:
+            self.create_log = create_log
+        if allocation_id is not None:
+            self.allocation_id = allocation_id
+        if use_proxy_data is not None:
+            self.use_proxy_data = use_proxy_data
+        if start_date is not None:
+            self.start_date = start_date
+        if account_id is not None:
+            self.account_id = account_id
+        if aggregation_account_id is not None:
+            self.aggregation_account_id = aggregation_account_id
+        if current_portfolio_tickers is not None:
+            self.current_portfolio_tickers = current_portfolio_tickers
+        self.altered_portfolio_weights = altered_portfolio_weights
+        if altered_portfolio_tickers is not None:
+            self.altered_portfolio_tickers = altered_portfolio_tickers
 
     @property
     def current_portfolio_weights(self):
@@ -345,25 +133,46 @@ class PortfolioWhatIfRequest(object):
         self._current_portfolio_weights = current_portfolio_weights
 
     @property
-    def account_id(self):
-        """Gets the account_id of this PortfolioWhatIfRequest.  # noqa: E501
+    def portfolio_id(self):
+        """Gets the portfolio_id of this PortfolioWhatIfRequest.  # noqa: E501
 
 
-        :return: The account_id of this PortfolioWhatIfRequest.  # noqa: E501
+        :return: The portfolio_id of this PortfolioWhatIfRequest.  # noqa: E501
         :rtype: str
         """
-        return self._account_id
+        return self._portfolio_id
 
-    @account_id.setter
-    def account_id(self, account_id):
-        """Sets the account_id of this PortfolioWhatIfRequest.
+    @portfolio_id.setter
+    def portfolio_id(self, portfolio_id):
+        """Sets the portfolio_id of this PortfolioWhatIfRequest.
 
 
-        :param account_id: The account_id of this PortfolioWhatIfRequest.  # noqa: E501
+        :param portfolio_id: The portfolio_id of this PortfolioWhatIfRequest.  # noqa: E501
         :type: str
         """
 
-        self._account_id = account_id
+        self._portfolio_id = portfolio_id
+
+    @property
+    def end_date(self):
+        """Gets the end_date of this PortfolioWhatIfRequest.  # noqa: E501
+
+
+        :return: The end_date of this PortfolioWhatIfRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._end_date
+
+    @end_date.setter
+    def end_date(self, end_date):
+        """Sets the end_date of this PortfolioWhatIfRequest.
+
+
+        :param end_date: The end_date of this PortfolioWhatIfRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._end_date = end_date
 
     @property
     def market_data_source(self):
@@ -393,25 +202,216 @@ class PortfolioWhatIfRequest(object):
         self._market_data_source = market_data_source
 
     @property
-    def portfolio_id(self):
-        """Gets the portfolio_id of this PortfolioWhatIfRequest.  # noqa: E501
+    def model_id(self):
+        """Gets the model_id of this PortfolioWhatIfRequest.  # noqa: E501
 
 
-        :return: The portfolio_id of this PortfolioWhatIfRequest.  # noqa: E501
+        :return: The model_id of this PortfolioWhatIfRequest.  # noqa: E501
         :rtype: str
         """
-        return self._portfolio_id
+        return self._model_id
 
-    @portfolio_id.setter
-    def portfolio_id(self, portfolio_id):
-        """Sets the portfolio_id of this PortfolioWhatIfRequest.
+    @model_id.setter
+    def model_id(self, model_id):
+        """Sets the model_id of this PortfolioWhatIfRequest.
 
 
-        :param portfolio_id: The portfolio_id of this PortfolioWhatIfRequest.  # noqa: E501
+        :param model_id: The model_id of this PortfolioWhatIfRequest.  # noqa: E501
         :type: str
         """
 
-        self._portfolio_id = portfolio_id
+        self._model_id = model_id
+
+    @property
+    def create_log(self):
+        """Gets the create_log of this PortfolioWhatIfRequest.  # noqa: E501
+
+
+        :return: The create_log of this PortfolioWhatIfRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._create_log
+
+    @create_log.setter
+    def create_log(self, create_log):
+        """Sets the create_log of this PortfolioWhatIfRequest.
+
+
+        :param create_log: The create_log of this PortfolioWhatIfRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._create_log = create_log
+
+    @property
+    def allocation_id(self):
+        """Gets the allocation_id of this PortfolioWhatIfRequest.  # noqa: E501
+
+
+        :return: The allocation_id of this PortfolioWhatIfRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._allocation_id
+
+    @allocation_id.setter
+    def allocation_id(self, allocation_id):
+        """Sets the allocation_id of this PortfolioWhatIfRequest.
+
+
+        :param allocation_id: The allocation_id of this PortfolioWhatIfRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._allocation_id = allocation_id
+
+    @property
+    def use_proxy_data(self):
+        """Gets the use_proxy_data of this PortfolioWhatIfRequest.  # noqa: E501
+
+
+        :return: The use_proxy_data of this PortfolioWhatIfRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_proxy_data
+
+    @use_proxy_data.setter
+    def use_proxy_data(self, use_proxy_data):
+        """Sets the use_proxy_data of this PortfolioWhatIfRequest.
+
+
+        :param use_proxy_data: The use_proxy_data of this PortfolioWhatIfRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_proxy_data = use_proxy_data
+
+    @property
+    def start_date(self):
+        """Gets the start_date of this PortfolioWhatIfRequest.  # noqa: E501
+
+
+        :return: The start_date of this PortfolioWhatIfRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._start_date
+
+    @start_date.setter
+    def start_date(self, start_date):
+        """Sets the start_date of this PortfolioWhatIfRequest.
+
+
+        :param start_date: The start_date of this PortfolioWhatIfRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._start_date = start_date
+
+    @property
+    def account_id(self):
+        """Gets the account_id of this PortfolioWhatIfRequest.  # noqa: E501
+
+
+        :return: The account_id of this PortfolioWhatIfRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._account_id
+
+    @account_id.setter
+    def account_id(self, account_id):
+        """Sets the account_id of this PortfolioWhatIfRequest.
+
+
+        :param account_id: The account_id of this PortfolioWhatIfRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._account_id = account_id
+
+    @property
+    def aggregation_account_id(self):
+        """Gets the aggregation_account_id of this PortfolioWhatIfRequest.  # noqa: E501
+
+
+        :return: The aggregation_account_id of this PortfolioWhatIfRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._aggregation_account_id
+
+    @aggregation_account_id.setter
+    def aggregation_account_id(self, aggregation_account_id):
+        """Sets the aggregation_account_id of this PortfolioWhatIfRequest.
+
+
+        :param aggregation_account_id: The aggregation_account_id of this PortfolioWhatIfRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._aggregation_account_id = aggregation_account_id
+
+    @property
+    def current_portfolio_tickers(self):
+        """Gets the current_portfolio_tickers of this PortfolioWhatIfRequest.  # noqa: E501
+
+
+        :return: The current_portfolio_tickers of this PortfolioWhatIfRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._current_portfolio_tickers
+
+    @current_portfolio_tickers.setter
+    def current_portfolio_tickers(self, current_portfolio_tickers):
+        """Sets the current_portfolio_tickers of this PortfolioWhatIfRequest.
+
+
+        :param current_portfolio_tickers: The current_portfolio_tickers of this PortfolioWhatIfRequest.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._current_portfolio_tickers = current_portfolio_tickers
+
+    @property
+    def altered_portfolio_weights(self):
+        """Gets the altered_portfolio_weights of this PortfolioWhatIfRequest.  # noqa: E501
+
+
+        :return: The altered_portfolio_weights of this PortfolioWhatIfRequest.  # noqa: E501
+        :rtype: list[float]
+        """
+        return self._altered_portfolio_weights
+
+    @altered_portfolio_weights.setter
+    def altered_portfolio_weights(self, altered_portfolio_weights):
+        """Sets the altered_portfolio_weights of this PortfolioWhatIfRequest.
+
+
+        :param altered_portfolio_weights: The altered_portfolio_weights of this PortfolioWhatIfRequest.  # noqa: E501
+        :type: list[float]
+        """
+        if altered_portfolio_weights is None:
+            raise ValueError("Invalid value for `altered_portfolio_weights`, must not be `None`")  # noqa: E501
+
+        self._altered_portfolio_weights = altered_portfolio_weights
+
+    @property
+    def altered_portfolio_tickers(self):
+        """Gets the altered_portfolio_tickers of this PortfolioWhatIfRequest.  # noqa: E501
+
+
+        :return: The altered_portfolio_tickers of this PortfolioWhatIfRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._altered_portfolio_tickers
+
+    @altered_portfolio_tickers.setter
+    def altered_portfolio_tickers(self, altered_portfolio_tickers):
+        """Sets the altered_portfolio_tickers of this PortfolioWhatIfRequest.
+
+
+        :param altered_portfolio_tickers: The altered_portfolio_tickers of this PortfolioWhatIfRequest.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._altered_portfolio_tickers = altered_portfolio_tickers
 
     def to_dict(self):
         """Returns the model properties as a dict"""

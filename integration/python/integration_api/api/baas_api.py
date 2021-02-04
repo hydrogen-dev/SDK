@@ -130,6 +130,103 @@ class BaasApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def create_baas_business_using_post(self, baas_business_co, **kwargs):  # noqa: E501
+        """Create a Baas Business  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_baas_business_using_post(baas_business_co, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CreateBaasBusinessCO baas_business_co: baasBusinessCO (required)
+        :return: BaasBusinessVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_baas_business_using_post_with_http_info(baas_business_co, **kwargs)  # noqa: E501
+        else:
+            (data) = self.create_baas_business_using_post_with_http_info(baas_business_co, **kwargs)  # noqa: E501
+            return data
+
+    def create_baas_business_using_post_with_http_info(self, baas_business_co, **kwargs):  # noqa: E501
+        """Create a Baas Business  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_baas_business_using_post_with_http_info(baas_business_co, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CreateBaasBusinessCO baas_business_co: baasBusinessCO (required)
+        :return: BaasBusinessVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['baas_business_co']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_baas_business_using_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'baas_business_co' is set
+        if ('baas_business_co' not in params or
+                params['baas_business_co'] is None):
+            raise ValueError("Missing the required parameter `baas_business_co` when calling `create_baas_business_using_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'baas_business_co' in params:
+            body_params = params['baas_business_co']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['*/*'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/baas/business', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='BaasBusinessVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def create_baas_client_using_post(self, baas_client_co, **kwargs):  # noqa: E501
         """Create a Baas Client  # noqa: E501
 
@@ -139,7 +236,7 @@ class BaasApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param BaasClientCO baas_client_co: baasClientCO (required)
+        :param CreateBaasClientCO baas_client_co: baasClientCO (required)
         :return: BaasClientVO
                  If the method is called asynchronously,
                  returns the request thread.
@@ -160,7 +257,7 @@ class BaasApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param BaasClientCO baas_client_co: baasClientCO (required)
+        :param CreateBaasClientCO baas_client_co: baasClientCO (required)
         :return: BaasClientVO
                  If the method is called asynchronously,
                  returns the request thread.
@@ -639,43 +736,146 @@ class BaasApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_baas_client_using_put(self, baas_client_co, **kwargs):  # noqa: E501
+    def update_baas_business_using_put(self, nucleus_business_id, **kwargs):  # noqa: E501
+        """Update a Baas business  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_baas_business_using_put(nucleus_business_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str nucleus_business_id: nucleus_business_id (required)
+        :param UpdateBaasBusinessCO baas_business_co: baasBusinessCO
+        :return: BaasBusinessVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_baas_business_using_put_with_http_info(nucleus_business_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_baas_business_using_put_with_http_info(nucleus_business_id, **kwargs)  # noqa: E501
+            return data
+
+    def update_baas_business_using_put_with_http_info(self, nucleus_business_id, **kwargs):  # noqa: E501
+        """Update a Baas business  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_baas_business_using_put_with_http_info(nucleus_business_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str nucleus_business_id: nucleus_business_id (required)
+        :param UpdateBaasBusinessCO baas_business_co: baasBusinessCO
+        :return: BaasBusinessVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['nucleus_business_id', 'baas_business_co']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_baas_business_using_put" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'nucleus_business_id' is set
+        if ('nucleus_business_id' not in params or
+                params['nucleus_business_id'] is None):
+            raise ValueError("Missing the required parameter `nucleus_business_id` when calling `update_baas_business_using_put`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'nucleus_business_id' in params:
+            path_params['nucleus_business_id'] = params['nucleus_business_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'baas_business_co' in params:
+            body_params = params['baas_business_co']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['*/*'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/baas/business/{nucleus_business_id}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='BaasBusinessVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_baas_client_using_put(self, nucleus_client_id, **kwargs):  # noqa: E501
         """Update a Baas client  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_baas_client_using_put(baas_client_co, async_req=True)
+        >>> thread = api.update_baas_client_using_put(nucleus_client_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param BaasClientCO baas_client_co: baasClientCO (required)
+        :param str nucleus_client_id: nucleus_client_id (required)
+        :param UpdateBaasClientCO baas_client_co: baasClientCO
         :return: BaasClientVO
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_baas_client_using_put_with_http_info(baas_client_co, **kwargs)  # noqa: E501
+            return self.update_baas_client_using_put_with_http_info(nucleus_client_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_baas_client_using_put_with_http_info(baas_client_co, **kwargs)  # noqa: E501
+            (data) = self.update_baas_client_using_put_with_http_info(nucleus_client_id, **kwargs)  # noqa: E501
             return data
 
-    def update_baas_client_using_put_with_http_info(self, baas_client_co, **kwargs):  # noqa: E501
+    def update_baas_client_using_put_with_http_info(self, nucleus_client_id, **kwargs):  # noqa: E501
         """Update a Baas client  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_baas_client_using_put_with_http_info(baas_client_co, async_req=True)
+        >>> thread = api.update_baas_client_using_put_with_http_info(nucleus_client_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param BaasClientCO baas_client_co: baasClientCO (required)
+        :param str nucleus_client_id: nucleus_client_id (required)
+        :param UpdateBaasClientCO baas_client_co: baasClientCO
         :return: BaasClientVO
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['baas_client_co']  # noqa: E501
+        all_params = ['nucleus_client_id', 'baas_client_co']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -690,14 +890,16 @@ class BaasApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'baas_client_co' is set
-        if ('baas_client_co' not in params or
-                params['baas_client_co'] is None):
-            raise ValueError("Missing the required parameter `baas_client_co` when calling `update_baas_client_using_put`")  # noqa: E501
+        # verify the required parameter 'nucleus_client_id' is set
+        if ('nucleus_client_id' not in params or
+                params['nucleus_client_id'] is None):
+            raise ValueError("Missing the required parameter `nucleus_client_id` when calling `update_baas_client_using_put`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
+        if 'nucleus_client_id' in params:
+            path_params['nucleus_client_id'] = params['nucleus_client_id']  # noqa: E501
 
         query_params = []
 
@@ -721,7 +923,7 @@ class BaasApi(object):
         auth_settings = ['oauth2']  # noqa: E501
 
         return self.api_client.call_api(
-            '/baas/client', 'PUT',
+            '/baas/client/{nucleus_client_id}', 'PUT',
             path_params,
             query_params,
             header_params,

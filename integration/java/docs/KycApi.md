@@ -1,11 +1,11 @@
 # KycApi
 
-All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1/*
+All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createKYCUsingPost**](KycApi.md#createKYCUsingPost) | **POST** /kyc | Do kyc for the client.
-[**getKYCStatusUsingGet**](KycApi.md#getKYCStatusUsingGet) | **GET** /kyc_status/{nucleus_client_id} | Fetch kyc_status for the given nucleus_client_id
+[**getKYCStatusUsingGet**](KycApi.md#getKYCStatusUsingGet) | **GET** /kyc_status | Fetch kyc_status for the given nucleus_client_id
 
 
 <a name="createKYCUsingPost"></a>
@@ -37,7 +37,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 KycApi apiInstance = new KycApi();
 KycRequestCO kycRequestCO = new KycRequestCO(); // KycRequestCO | kycRequestCO
 try {
@@ -70,7 +69,7 @@ Name | Type | Description  | Notes
 
 <a name="getKYCStatusUsingGet"></a>
 # **getKYCStatusUsingGet**
-> List&lt;KycResponseVo&gt; getKYCStatusUsingGet(nucleusClientId, getLatest, kycType, product)
+> List&lt;KycResponseVo&gt; getKYCStatusUsingGet(getLatest, kycType, nucleusBusinessId, nucleusClientId, product)
 
 Fetch kyc_status for the given nucleus_client_id
 
@@ -97,14 +96,14 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 KycApi apiInstance = new KycApi();
-UUID nucleusClientId = new UUID(); // UUID | nucleus_client_id
 Boolean getLatest = false; // Boolean | get_latest
 String kycType = "all"; // String | kyc_type
+UUID nucleusBusinessId = new UUID(); // UUID | nucleus_business_id
+UUID nucleusClientId = new UUID(); // UUID | nucleus_client_id
 String product = "atom"; // String | product
 try {
-    List<KycResponseVo> result = apiInstance.getKYCStatusUsingGet(nucleusClientId, getLatest, kycType, product);
+    List<KycResponseVo> result = apiInstance.getKYCStatusUsingGet(getLatest, kycType, nucleusBusinessId, nucleusClientId, product);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KycApi#getKYCStatusUsingGet");
@@ -116,9 +115,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **nucleusClientId** | [**UUID**](.md)| nucleus_client_id |
  **getLatest** | **Boolean**| get_latest | [optional] [default to false]
  **kycType** | **String**| kyc_type | [optional] [default to all]
+ **nucleusBusinessId** | [**UUID**](.md)| nucleus_business_id | [optional]
+ **nucleusClientId** | [**UUID**](.md)| nucleus_client_id | [optional]
  **product** | **String**| product | [optional] [default to atom]
 
 ### Return type

@@ -31,42 +31,146 @@ class ZillowPropertyVendorResponseVO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'zp_id': 'str'
+        'currency': 'str',
+        'link': 'str',
+        'text': 'str',
+        'zestimate': 'str',
+        'zpid': 'str'
     }
 
     attribute_map = {
-        'zp_id': 'zp_id'
+        'currency': 'currency',
+        'link': 'link',
+        'text': 'text',
+        'zestimate': 'zestimate',
+        'zpid': 'zpid'
     }
 
-    def __init__(self, zp_id=None):  # noqa: E501
+    def __init__(self, currency=None, link=None, text=None, zestimate=None, zpid=None):  # noqa: E501
         """ZillowPropertyVendorResponseVO - a model defined in Swagger"""  # noqa: E501
 
-        self._zp_id = None
+        self._currency = None
+        self._link = None
+        self._text = None
+        self._zestimate = None
+        self._zpid = None
         self.discriminator = None
 
-        if zp_id is not None:
-            self.zp_id = zp_id
+        if currency is not None:
+            self.currency = currency
+        if link is not None:
+            self.link = link
+        if text is not None:
+            self.text = text
+        if zestimate is not None:
+            self.zestimate = zestimate
+        if zpid is not None:
+            self.zpid = zpid
 
     @property
-    def zp_id(self):
-        """Gets the zp_id of this ZillowPropertyVendorResponseVO.  # noqa: E501
+    def currency(self):
+        """Gets the currency of this ZillowPropertyVendorResponseVO.  # noqa: E501
 
 
-        :return: The zp_id of this ZillowPropertyVendorResponseVO.  # noqa: E501
+        :return: The currency of this ZillowPropertyVendorResponseVO.  # noqa: E501
         :rtype: str
         """
-        return self._zp_id
+        return self._currency
 
-    @zp_id.setter
-    def zp_id(self, zp_id):
-        """Sets the zp_id of this ZillowPropertyVendorResponseVO.
+    @currency.setter
+    def currency(self, currency):
+        """Sets the currency of this ZillowPropertyVendorResponseVO.
 
 
-        :param zp_id: The zp_id of this ZillowPropertyVendorResponseVO.  # noqa: E501
+        :param currency: The currency of this ZillowPropertyVendorResponseVO.  # noqa: E501
         :type: str
         """
 
-        self._zp_id = zp_id
+        self._currency = currency
+
+    @property
+    def link(self):
+        """Gets the link of this ZillowPropertyVendorResponseVO.  # noqa: E501
+
+
+        :return: The link of this ZillowPropertyVendorResponseVO.  # noqa: E501
+        :rtype: str
+        """
+        return self._link
+
+    @link.setter
+    def link(self, link):
+        """Sets the link of this ZillowPropertyVendorResponseVO.
+
+
+        :param link: The link of this ZillowPropertyVendorResponseVO.  # noqa: E501
+        :type: str
+        """
+
+        self._link = link
+
+    @property
+    def text(self):
+        """Gets the text of this ZillowPropertyVendorResponseVO.  # noqa: E501
+
+
+        :return: The text of this ZillowPropertyVendorResponseVO.  # noqa: E501
+        :rtype: str
+        """
+        return self._text
+
+    @text.setter
+    def text(self, text):
+        """Sets the text of this ZillowPropertyVendorResponseVO.
+
+
+        :param text: The text of this ZillowPropertyVendorResponseVO.  # noqa: E501
+        :type: str
+        """
+
+        self._text = text
+
+    @property
+    def zestimate(self):
+        """Gets the zestimate of this ZillowPropertyVendorResponseVO.  # noqa: E501
+
+
+        :return: The zestimate of this ZillowPropertyVendorResponseVO.  # noqa: E501
+        :rtype: str
+        """
+        return self._zestimate
+
+    @zestimate.setter
+    def zestimate(self, zestimate):
+        """Sets the zestimate of this ZillowPropertyVendorResponseVO.
+
+
+        :param zestimate: The zestimate of this ZillowPropertyVendorResponseVO.  # noqa: E501
+        :type: str
+        """
+
+        self._zestimate = zestimate
+
+    @property
+    def zpid(self):
+        """Gets the zpid of this ZillowPropertyVendorResponseVO.  # noqa: E501
+
+
+        :return: The zpid of this ZillowPropertyVendorResponseVO.  # noqa: E501
+        :rtype: str
+        """
+        return self._zpid
+
+    @zpid.setter
+    def zpid(self, zpid):
+        """Sets the zpid of this ZillowPropertyVendorResponseVO.
+
+
+        :param zpid: The zpid of this ZillowPropertyVendorResponseVO.  # noqa: E501
+        :type: str
+        """
+
+        self._zpid = zpid
 
     def to_dict(self):
         """Returns the model properties as a dict"""

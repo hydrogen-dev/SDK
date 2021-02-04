@@ -13,9 +13,9 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.PageWebhook;
 import com.hydrogen.nucleus.model.Webhook;
-import com.hydrogen.nucleus.ApiException;
 
 import java.util.UUID;
 
@@ -109,7 +109,7 @@ public class WebhookApiTest {
      */
     @Test
     public void updateWebhookUsingPutTest() throws ApiException {
-        Webhook webhook = null;
+        Object webhook = null;
         UUID webhookId = null;
         Webhook response = api.updateWebhookUsingPut(webhook, webhookId);
 

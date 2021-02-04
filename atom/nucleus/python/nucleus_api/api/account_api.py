@@ -2692,7 +2692,7 @@ class AccountApi(object):
 
         :param async_req bool
         :param str account_allocation_id: UUID account_allocation_id (required)
-        :param AccountAllocationMapping account_allocation_mapping: account_allocation_mapping
+        :param object account_allocation_mapping: account_allocation_mapping
         :return: AccountAllocationMapping
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2715,7 +2715,7 @@ class AccountApi(object):
 
         :param async_req bool
         :param str account_allocation_id: UUID account_allocation_id (required)
-        :param AccountAllocationMapping account_allocation_mapping: account_allocation_mapping
+        :param object account_allocation_mapping: account_allocation_mapping
         :return: AccountAllocationMapping
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2794,7 +2794,7 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AccountStatus account_status: account_status (required)
+        :param object account_status: account_status (required)
         :param str account_status_id: UUID account_status_id (required)
         :return: AccountStatus
                  If the method is called asynchronously,
@@ -2817,7 +2817,7 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AccountStatus account_status: account_status (required)
+        :param object account_status: account_status (required)
         :param str account_status_id: UUID account_status_id (required)
         :return: AccountStatus
                  If the method is called asynchronously,
@@ -2901,7 +2901,7 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AccountType account_type: account_type (required)
+        :param object account_type: account_type (required)
         :param str account_type_id: UUID account_type_id (required)
         :return: AccountType
                  If the method is called asynchronously,
@@ -2924,7 +2924,7 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AccountType account_type: account_type (required)
+        :param object account_type: account_type (required)
         :param str account_type_id: UUID account_type_id (required)
         :return: AccountType
                  If the method is called asynchronously,
@@ -3008,7 +3008,7 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Account account: account (required)
+        :param object account: account (required)
         :param str account_id: UUID account_id (required)
         :return: Account
                  If the method is called asynchronously,
@@ -3031,7 +3031,7 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Account account: account (required)
+        :param object account: account (required)
         :param str account_id: UUID account_id (required)
         :return: Account
                  If the method is called asynchronously,
@@ -3116,7 +3116,7 @@ class AccountApi(object):
 
         :param async_req bool
         :param str account_id: account_id (required)
-        :param AclClientPermissionVO acl_client_permission_vo: aclClientPermissionVO (required)
+        :param object acl_client_permission_vo: aclClientPermissionVO (required)
         :return: AccountPermissionVO
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3139,7 +3139,7 @@ class AccountApi(object):
 
         :param async_req bool
         :param str account_id: account_id (required)
-        :param AclClientPermissionVO acl_client_permission_vo: aclClientPermissionVO (required)
+        :param object acl_client_permission_vo: aclClientPermissionVO (required)
         :return: AccountPermissionVO
                  If the method is called asynchronously,
                  returns the request thread.

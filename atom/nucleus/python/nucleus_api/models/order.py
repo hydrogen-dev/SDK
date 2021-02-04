@@ -32,6 +32,8 @@ class Order(object):
     """
     swagger_types = {
         'account_id': 'str',
+        'amount': 'float',
+        'commission': 'float',
         'create_date': 'datetime',
         '_date': 'date',
         'id': 'str',
@@ -53,6 +55,8 @@ class Order(object):
 
     attribute_map = {
         'account_id': 'account_id',
+        'amount': 'amount',
+        'commission': 'commission',
         'create_date': 'create_date',
         '_date': 'date',
         'id': 'id',
@@ -72,10 +76,12 @@ class Order(object):
         'update_date': 'update_date'
     }
 
-    def __init__(self, account_id=None, create_date=None, _date=None, id=None, is_read=None, metadata=None, model_id=None, order_bulk_id=None, order_ticket_id=None, order_type=None, portfolio_id=None, price=None, quantity=None, secondary_id=None, security_id=None, tmp_tracker_id=None, transaction_code_id=None, update_date=None):  # noqa: E501
+    def __init__(self, account_id=None, amount=None, commission=None, create_date=None, _date=None, id=None, is_read=None, metadata=None, model_id=None, order_bulk_id=None, order_ticket_id=None, order_type=None, portfolio_id=None, price=None, quantity=None, secondary_id=None, security_id=None, tmp_tracker_id=None, transaction_code_id=None, update_date=None):  # noqa: E501
         """Order - a model defined in Swagger"""  # noqa: E501
 
         self._account_id = None
+        self._amount = None
+        self._commission = None
         self._create_date = None
         self.__date = None
         self._id = None
@@ -97,6 +103,10 @@ class Order(object):
 
         if account_id is not None:
             self.account_id = account_id
+        if amount is not None:
+            self.amount = amount
+        if commission is not None:
+            self.commission = commission
         if create_date is not None:
             self.create_date = create_date
         self._date = _date
@@ -117,7 +127,8 @@ class Order(object):
             self.portfolio_id = portfolio_id
         if price is not None:
             self.price = price
-        self.quantity = quantity
+        if quantity is not None:
+            self.quantity = quantity
         if secondary_id is not None:
             self.secondary_id = secondary_id
         self.security_id = security_id
@@ -149,6 +160,52 @@ class Order(object):
         """
 
         self._account_id = account_id
+
+    @property
+    def amount(self):
+        """Gets the amount of this Order.  # noqa: E501
+
+        amount  # noqa: E501
+
+        :return: The amount of this Order.  # noqa: E501
+        :rtype: float
+        """
+        return self._amount
+
+    @amount.setter
+    def amount(self, amount):
+        """Sets the amount of this Order.
+
+        amount  # noqa: E501
+
+        :param amount: The amount of this Order.  # noqa: E501
+        :type: float
+        """
+
+        self._amount = amount
+
+    @property
+    def commission(self):
+        """Gets the commission of this Order.  # noqa: E501
+
+        commission  # noqa: E501
+
+        :return: The commission of this Order.  # noqa: E501
+        :rtype: float
+        """
+        return self._commission
+
+    @commission.setter
+    def commission(self, commission):
+        """Sets the commission of this Order.
+
+        commission  # noqa: E501
+
+        :param commission: The commission of this Order.  # noqa: E501
+        :type: float
+        """
+
+        self._commission = commission
 
     @property
     def create_date(self):
@@ -384,6 +441,7 @@ class Order(object):
     def price(self):
         """Gets the price of this Order.  # noqa: E501
 
+        price  # noqa: E501
 
         :return: The price of this Order.  # noqa: E501
         :rtype: float
@@ -394,6 +452,7 @@ class Order(object):
     def price(self, price):
         """Sets the price of this Order.
 
+        price  # noqa: E501
 
         :param price: The price of this Order.  # noqa: E501
         :type: float
@@ -421,8 +480,6 @@ class Order(object):
         :param quantity: The quantity of this Order.  # noqa: E501
         :type: float
         """
-        if quantity is None:
-            raise ValueError("Invalid value for `quantity`, must not be `None`")  # noqa: E501
 
         self._quantity = quantity
 

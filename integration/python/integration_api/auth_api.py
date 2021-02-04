@@ -97,10 +97,9 @@ class AuthApi(object):
         return self
 
     def create_client_token_credentials(self, client_id, client_secret, client_token, **kwargs):
-        self.create_using_post_client_credentials_with_http_info(client_id, client_secret, **kwargs)
         url = re.sub('\\.com.*', '.com/authorization/v1/client-token', self.api_client.configuration.host);
         header_params = {
-            "Authorization": "Bearer " + self.access_token,
+            "Authorization": urllib3.util.make_headers(basic_auth=client_id + ':' + client_secret).get('authorization'),
             "Client-Token": "Bearer " + client_token
         }
         response = self.api_client.rest_client.POST(url,

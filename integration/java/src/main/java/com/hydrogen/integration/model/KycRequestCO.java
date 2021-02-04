@@ -25,7 +25,7 @@ import java.util.UUID;
 /**
  * KycRequestCO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class KycRequestCO {
   @SerializedName("auth_token")
   private String authToken = null;
@@ -33,20 +33,26 @@ public class KycRequestCO {
   @SerializedName("doc_type")
   private String docType = null;
 
-  @SerializedName("electron_document_id")
-  private String electronDocumentId = null;
-
   @SerializedName("kyc_type")
   private String kycType = null;
 
   @SerializedName("metadata")
   private List<Mapstringobject> metadata = null;
 
+  @SerializedName("nucleus_business_id")
+  private UUID nucleusBusinessId = null;
+
   @SerializedName("nucleus_client_id")
   private UUID nucleusClientId = null;
 
+  @SerializedName("nucleus_document_id")
+  private String nucleusDocumentId = null;
+
   @SerializedName("product")
   private String product = null;
+
+  @SerializedName("vendor_request")
+  private Object vendorRequest = null;
 
   public KycRequestCO authToken(String authToken) {
     this.authToken = authToken;
@@ -82,24 +88,6 @@ public class KycRequestCO {
 
   public void setDocType(String docType) {
     this.docType = docType;
-  }
-
-  public KycRequestCO electronDocumentId(String electronDocumentId) {
-    this.electronDocumentId = electronDocumentId;
-    return this;
-  }
-
-   /**
-   * Get electronDocumentId
-   * @return electronDocumentId
-  **/
-  @ApiModelProperty(value = "")
-  public String getElectronDocumentId() {
-    return electronDocumentId;
-  }
-
-  public void setElectronDocumentId(String electronDocumentId) {
-    this.electronDocumentId = electronDocumentId;
   }
 
   public KycRequestCO kycType(String kycType) {
@@ -146,6 +134,24 @@ public class KycRequestCO {
     this.metadata = metadata;
   }
 
+  public KycRequestCO nucleusBusinessId(UUID nucleusBusinessId) {
+    this.nucleusBusinessId = nucleusBusinessId;
+    return this;
+  }
+
+   /**
+   * Get nucleusBusinessId
+   * @return nucleusBusinessId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getNucleusBusinessId() {
+    return nucleusBusinessId;
+  }
+
+  public void setNucleusBusinessId(UUID nucleusBusinessId) {
+    this.nucleusBusinessId = nucleusBusinessId;
+  }
+
   public KycRequestCO nucleusClientId(UUID nucleusClientId) {
     this.nucleusClientId = nucleusClientId;
     return this;
@@ -162,6 +168,24 @@ public class KycRequestCO {
 
   public void setNucleusClientId(UUID nucleusClientId) {
     this.nucleusClientId = nucleusClientId;
+  }
+
+  public KycRequestCO nucleusDocumentId(String nucleusDocumentId) {
+    this.nucleusDocumentId = nucleusDocumentId;
+    return this;
+  }
+
+   /**
+   * Get nucleusDocumentId
+   * @return nucleusDocumentId
+  **/
+  @ApiModelProperty(value = "")
+  public String getNucleusDocumentId() {
+    return nucleusDocumentId;
+  }
+
+  public void setNucleusDocumentId(String nucleusDocumentId) {
+    this.nucleusDocumentId = nucleusDocumentId;
   }
 
   public KycRequestCO product(String product) {
@@ -182,6 +206,24 @@ public class KycRequestCO {
     this.product = product;
   }
 
+  public KycRequestCO vendorRequest(Object vendorRequest) {
+    this.vendorRequest = vendorRequest;
+    return this;
+  }
+
+   /**
+   * Get vendorRequest
+   * @return vendorRequest
+  **/
+  @ApiModelProperty(value = "")
+  public Object getVendorRequest() {
+    return vendorRequest;
+  }
+
+  public void setVendorRequest(Object vendorRequest) {
+    this.vendorRequest = vendorRequest;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -194,16 +236,18 @@ public class KycRequestCO {
     KycRequestCO kycRequestCO = (KycRequestCO) o;
     return Objects.equals(this.authToken, kycRequestCO.authToken) &&
         Objects.equals(this.docType, kycRequestCO.docType) &&
-        Objects.equals(this.electronDocumentId, kycRequestCO.electronDocumentId) &&
         Objects.equals(this.kycType, kycRequestCO.kycType) &&
         Objects.equals(this.metadata, kycRequestCO.metadata) &&
+        Objects.equals(this.nucleusBusinessId, kycRequestCO.nucleusBusinessId) &&
         Objects.equals(this.nucleusClientId, kycRequestCO.nucleusClientId) &&
-        Objects.equals(this.product, kycRequestCO.product);
+        Objects.equals(this.nucleusDocumentId, kycRequestCO.nucleusDocumentId) &&
+        Objects.equals(this.product, kycRequestCO.product) &&
+        Objects.equals(this.vendorRequest, kycRequestCO.vendorRequest);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(authToken, docType, electronDocumentId, kycType, metadata, nucleusClientId, product);
+    return Objects.hash(authToken, docType, kycType, metadata, nucleusBusinessId, nucleusClientId, nucleusDocumentId, product, vendorRequest);
   }
 
 
@@ -214,11 +258,13 @@ public class KycRequestCO {
     
     sb.append("    authToken: ").append(toIndentedString(authToken)).append("\n");
     sb.append("    docType: ").append(toIndentedString(docType)).append("\n");
-    sb.append("    electronDocumentId: ").append(toIndentedString(electronDocumentId)).append("\n");
     sb.append("    kycType: ").append(toIndentedString(kycType)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    nucleusBusinessId: ").append(toIndentedString(nucleusBusinessId)).append("\n");
     sb.append("    nucleusClientId: ").append(toIndentedString(nucleusClientId)).append("\n");
+    sb.append("    nucleusDocumentId: ").append(toIndentedString(nucleusDocumentId)).append("\n");
     sb.append("    product: ").append(toIndentedString(product)).append("\n");
+    sb.append("    vendorRequest: ").append(toIndentedString(vendorRequest)).append("\n");
     sb.append("}");
     return sb.toString();
   }

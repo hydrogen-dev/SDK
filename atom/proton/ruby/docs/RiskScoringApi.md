@@ -29,7 +29,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::RiskScoringApi.new
 
 dimensional_risk_score_request = ProtonApi::DimensionalRiskScoreRequest.new # DimensionalRiskScoreRequest | Request payload for Dimensional Risk Score
@@ -85,7 +84,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::RiskScoringApi.new
 
 risk_allocation_request = ProtonApi::RiskAllocationRequest.new # RiskAllocationRequest | Request payload for Risk Allocation
@@ -141,7 +139,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::RiskScoringApi.new
 
 risk_score_request = ProtonApi::RiskScoreRequest.new # RiskScoreRequest | Request payload for Risk Score

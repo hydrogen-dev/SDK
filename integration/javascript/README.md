@@ -170,6 +170,31 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*HydrogenIntegrationApi.ACHApi* | [**cancelAchTransferUsingDelete**](docs/ACHApi.md#cancelAchTransferUsingDelete) | **DELETE** /ach/{nucleus_funding_id} | Cancel the ACH transfer
+*HydrogenIntegrationApi.ACHApi* | [**createAchCardLinkUsingPost**](docs/ACHApi.md#createAchCardLinkUsingPost) | **POST** /ach/card_link | Create an ACH card link
+*HydrogenIntegrationApi.ACHApi* | [**createBankLinkUsingPost**](docs/ACHApi.md#createBankLinkUsingPost) | **POST** /ach/bank_link | Create bank link
+*HydrogenIntegrationApi.ACHApi* | [**createBusinessUsingPost**](docs/ACHApi.md#createBusinessUsingPost) | **POST** /ach/business | Create a business
+*HydrogenIntegrationApi.ACHApi* | [**createClientUsingPost**](docs/ACHApi.md#createClientUsingPost) | **POST** /ach/client | Create a client
+*HydrogenIntegrationApi.ACHApi* | [**deleteBankLinkUsingDelete**](docs/ACHApi.md#deleteBankLinkUsingDelete) | **DELETE** /ach/bank_link/{nucleus_bank_link_id} | Delete bank link
+*HydrogenIntegrationApi.ACHApi* | [**getAchTransferUsingGet**](docs/ACHApi.md#getAchTransferUsingGet) | **GET** /ach/{nucleus_funding_id} | Get the ACH transfer
+*HydrogenIntegrationApi.ACHApi* | [**getBalanceUsingGet**](docs/ACHApi.md#getBalanceUsingGet) | **GET** /ach/balance/{portfolio_id} | Get balance
+*HydrogenIntegrationApi.ACHApi* | [**getBankLinkUsingGet**](docs/ACHApi.md#getBankLinkUsingGet) | **GET** /ach/bank_link/{nucleus_bank_link_id} | Get bank link
+*HydrogenIntegrationApi.ACHApi* | [**getBankLinksForReserveAccountUsingGet**](docs/ACHApi.md#getBankLinksForReserveAccountUsingGet) | **GET** /ach/bank_link/reserve | Get bank links for a reserve account
+*HydrogenIntegrationApi.ACHApi* | [**getClientBankLinksUsingGet**](docs/ACHApi.md#getClientBankLinksUsingGet) | **GET** /ach/bank_link/client/{nucleus_client_id} | Get client bank links
+*HydrogenIntegrationApi.ACHApi* | [**getListOfClientAchTransfersUsingGet**](docs/ACHApi.md#getListOfClientAchTransfersUsingGet) | **GET** /ach/client/{nucleus_client_id} | Get a list of client's ACH transfers
+*HydrogenIntegrationApi.ACHApi* | [**getListOfTenantAchTransfersUsingGet**](docs/ACHApi.md#getListOfTenantAchTransfersUsingGet) | **GET** /ach | Get a list of tenant's ACH transfers
+*HydrogenIntegrationApi.ACHApi* | [**submitAchTransferUsingPost**](docs/ACHApi.md#submitAchTransferUsingPost) | **POST** /ach | Submit an ACH transfer
+*HydrogenIntegrationApi.ACHApi* | [**updateBankLinkUsingPut**](docs/ACHApi.md#updateBankLinkUsingPut) | **PUT** /ach/bank_link/{nucleus_bank_link_id} | Update bank link
+*HydrogenIntegrationApi.AccountingApi* | [**createOrUpdateCustomer**](docs/AccountingApi.md#createOrUpdateCustomer) | **GET** /accounting/customer | Update/Create all customers in Nucleus for a given nucleus_client_id
+*HydrogenIntegrationApi.AccountingApi* | [**createOrUpdateCustomerRevenue**](docs/AccountingApi.md#createOrUpdateCustomerRevenue) | **GET** /accounting/customer_revenue/{nucleus_customer_id} | Update/Create all customers revenue in Nucleus for a given nucleus_customer_id
+*HydrogenIntegrationApi.AccountingApi* | [**createOrUpdateInvoicePayment**](docs/AccountingApi.md#createOrUpdateInvoicePayment) | **GET** /accounting/invoice_payment/{nucleus_invoice_id} | Create/Update invoice payment in Nucleus for a given nucleus_invoice_id
+*HydrogenIntegrationApi.AccountingApi* | [**createOrUpdateInvoices**](docs/AccountingApi.md#createOrUpdateInvoices) | **GET** /accounting/invoice | Update/Create all invoices in Nucleus for a given nucleus_client_id
+*HydrogenIntegrationApi.AccountingApi* | [**deleteAccountingVendorAccessConfigIsActiveById**](docs/AccountingApi.md#deleteAccountingVendorAccessConfigIsActiveById) | **DELETE** /accounting/vendor/{id} | Permanently delete relation with particular accounting vendor.
+*HydrogenIntegrationApi.AccountingApi* | [**getAccountingStats**](docs/AccountingApi.md#getAccountingStats) | **GET** /accounting/report | Get accounting stats from financial statements at the vendor for the business provided
+*HydrogenIntegrationApi.AccountingApi* | [**getAccountingVendorInfoUsingClientId**](docs/AccountingApi.md#getAccountingVendorInfoUsingClientId) | **GET** /accounting/vendor/{nucleus_client_id} | Get Accounting Vendor Config
+*HydrogenIntegrationApi.AccountingApi* | [**updateAccountingVendorAccessConfigIsActiveById**](docs/AccountingApi.md#updateAccountingVendorAccessConfigIsActiveById) | **PUT** /accounting/vendor/{id} | Enable/Disable relation with particular accounting vendor.
+*HydrogenIntegrationApi.AccountingApi* | [**updateCustomer**](docs/AccountingApi.md#updateCustomer) | **GET** /accounting/customer/{nucleus_customer_id} | Update customer in Nucleus for a given nucleus_customer_id
+*HydrogenIntegrationApi.AccountingApi* | [**updateInvoice**](docs/AccountingApi.md#updateInvoice) | **GET** /accounting/invoice/{nucleus_invoice_id} | Update invoice in Nucleus for a given nucleus_invoice_id
 *HydrogenIntegrationApi.AggregationApi* | [**createAggregationAccountUsingPost**](docs/AggregationApi.md#createAggregationAccountUsingPost) | **POST** /aggregation/account | Create mapping between client,vendor,tenant
 *HydrogenIntegrationApi.AggregationApi* | [**createPropertyValueUsingPost**](docs/AggregationApi.md#createPropertyValueUsingPost) | **POST** /property_value | Create mapping between client,vendor,tenant for the property
 *HydrogenIntegrationApi.AggregationApi* | [**deleteAggregationAccountUsingDelete**](docs/AggregationApi.md#deleteAggregationAccountUsingDelete) | **DELETE** /aggregation/account/{nucleus_aggregation_account_id} | De-Link mapping between client,vendor,tenant
@@ -181,43 +206,69 @@ Class | Method | HTTP request | Description
 *HydrogenIntegrationApi.AggregationApi* | [**getAggregationAccountTransactionAllUsingGet**](docs/AggregationApi.md#getAggregationAccountTransactionAllUsingGet) | **GET** /aggregation/transaction | Fetch all aggregation account balance details with for the given aggregation accounts 
 *HydrogenIntegrationApi.AggregationApi* | [**getAggregationAccountTransactionUsingGet**](docs/AggregationApi.md#getAggregationAccountTransactionUsingGet) | **GET** /aggregation/transaction/{nucleus_aggregation_account_id} | Fetch aggregation account transaction details with the mapping created in POST endpoint
 *HydrogenIntegrationApi.AggregationApi* | [**getAggregationAccountUsingGet**](docs/AggregationApi.md#getAggregationAccountUsingGet) | **GET** /aggregation/account/{nucleus_aggregation_account_id} | Fetch aggregation account details with the mapping created in POST endpoint
-*HydrogenIntegrationApi.AuditLogApi* | [**getAuditLogAllUsingGet**](docs/AuditLogApi.md#getAuditLogAllUsingGet) | **GET** /audit_log | Gel all audit log
+*HydrogenIntegrationApi.AggregationApi* | [**getPropertyValue**](docs/AggregationApi.md#getPropertyValue) | **GET** /property_value | Get Value of the given property
+*HydrogenIntegrationApi.AsyncApi* | [**getAsyncData**](docs/AsyncApi.md#getAsyncData) | **GET** /async/{integration_type}/{service} | Create async transaction for GET endpoints for bulk data
+*HydrogenIntegrationApi.AsyncApi* | [**getAsyncData1**](docs/AsyncApi.md#getAsyncData1) | **GET** /async/{integration_type}/{service}/{id} | Create async transaction for GET endpoints for bulk data
+*HydrogenIntegrationApi.AsyncApi* | [**getAsyncData2**](docs/AsyncApi.md#getAsyncData2) | **POST** /async/{integration_type}/{service} | Create async transaction for POST endpoints for bulk data
+*HydrogenIntegrationApi.AsyncApi* | [**getAsyncStatus**](docs/AsyncApi.md#getAsyncStatus) | **GET** /async/status/{id} | Get Status of async transaction created through GET/POST endpoints
 *HydrogenIntegrationApi.BaasApi* | [**createBaasAccountUsingPost**](docs/BaasApi.md#createBaasAccountUsingPost) | **POST** /baas/account | create a Baas account
+*HydrogenIntegrationApi.BaasApi* | [**createBaasBusinessUsingPost**](docs/BaasApi.md#createBaasBusinessUsingPost) | **POST** /baas/business | Create a Baas Business
 *HydrogenIntegrationApi.BaasApi* | [**createBaasClientUsingPost**](docs/BaasApi.md#createBaasClientUsingPost) | **POST** /baas/client | Create a Baas Client
 *HydrogenIntegrationApi.BaasApi* | [**createBaasSubAccountUsingPost**](docs/BaasApi.md#createBaasSubAccountUsingPost) | **POST** /baas/subaccount | create a Baas subaccount
 *HydrogenIntegrationApi.BaasApi* | [**getBaasAccountStatementUsingGet**](docs/BaasApi.md#getBaasAccountStatementUsingGet) | **GET** /baas/statement/{nucleus_account_id} | Get a Baas account statement
 *HydrogenIntegrationApi.BaasApi* | [**getBaasPortfolioBalanceUsingGet**](docs/BaasApi.md#getBaasPortfolioBalanceUsingGet) | **GET** /baas/balance/{nucleus_portfolio_id} | Get a Baas portfolio balance
 *HydrogenIntegrationApi.BaasApi* | [**getBaasPortfolioTransactionUsingGet**](docs/BaasApi.md#getBaasPortfolioTransactionUsingGet) | **GET** /baas/transaction/{nucleus_portfolio_id} | Get a Baas portfolio transaction
-*HydrogenIntegrationApi.BaasApi* | [**updateBaasClientUsingPut**](docs/BaasApi.md#updateBaasClientUsingPut) | **PUT** /baas/client | Update a Baas client
-*HydrogenIntegrationApi.BrokerageApi* | [**createBankLinkUsingPost**](docs/BrokerageApi.md#createBankLinkUsingPost) | **POST** /brokerage/bank_link | create a Bank Link
+*HydrogenIntegrationApi.BaasApi* | [**updateBaasBusinessUsingPut**](docs/BaasApi.md#updateBaasBusinessUsingPut) | **PUT** /baas/business/{nucleus_business_id} | Update a Baas business
+*HydrogenIntegrationApi.BaasApi* | [**updateBaasClientUsingPut**](docs/BaasApi.md#updateBaasClientUsingPut) | **PUT** /baas/client/{nucleus_client_id} | Update a Baas client
+*HydrogenIntegrationApi.BrokerageApi* | [**cancelOrderUsingPut**](docs/BrokerageApi.md#cancelOrderUsingPut) | **PUT** /brokerage/order/{nucleus_order_id} | Cancel an Order
+*HydrogenIntegrationApi.BrokerageApi* | [**createBankLinkUsingPost1**](docs/BrokerageApi.md#createBankLinkUsingPost1) | **POST** /brokerage/bank_link | create a Bank Link
 *HydrogenIntegrationApi.BrokerageApi* | [**createBrokerageAccountUsingPost**](docs/BrokerageApi.md#createBrokerageAccountUsingPost) | **POST** /brokerage/account | create a Brokerage account
 *HydrogenIntegrationApi.BrokerageApi* | [**createBrokerageClientUsingPost**](docs/BrokerageApi.md#createBrokerageClientUsingPost) | **POST** /brokerage/client | Create a Brokerage Client
+*HydrogenIntegrationApi.BrokerageApi* | [**createDepositUsingPost**](docs/BrokerageApi.md#createDepositUsingPost) | **POST** /brokerage/deposit | Create a deposit
+*HydrogenIntegrationApi.BrokerageApi* | [**createDocumentUsingPost**](docs/BrokerageApi.md#createDocumentUsingPost) | **POST** /brokerage/document | Create a Brokerage document
 *HydrogenIntegrationApi.BrokerageApi* | [**createOrderUsingPost**](docs/BrokerageApi.md#createOrderUsingPost) | **POST** /brokerage/order | Create an Order
-*HydrogenIntegrationApi.BrokerageApi* | [**deleteBankLinkUsingDelete**](docs/BrokerageApi.md#deleteBankLinkUsingDelete) | **DELETE** /brokerage/bank_link/{nucleus_bank_link_id} | Delete a Bank Link
-*HydrogenIntegrationApi.BrokerageApi* | [**deleteOrderUsingDelete**](docs/BrokerageApi.md#deleteOrderUsingDelete) | **DELETE** /brokerage/order | Delete an Order
-*HydrogenIntegrationApi.BrokerageApi* | [**getBankLinkUsingGet**](docs/BrokerageApi.md#getBankLinkUsingGet) | **GET** /brokerage/bank_link/{nucleus_bank_link_id} | Get a Bank Link
-*HydrogenIntegrationApi.BrokerageApi* | [**getBrokerageAccountStatementUsingGet**](docs/BrokerageApi.md#getBrokerageAccountStatementUsingGet) | **GET** /brokerage/{nucleus_account_id}/statement | Get a Brokerage account statement
-*HydrogenIntegrationApi.BrokerageApi* | [**getOrderUsingGet**](docs/BrokerageApi.md#getOrderUsingGet) | **GET** /brokerage/order | Get an Order
-*HydrogenIntegrationApi.BrokerageApi* | [**updateBankLinkUsingPut**](docs/BrokerageApi.md#updateBankLinkUsingPut) | **PUT** /brokerage/bank_link/{nucleus_bank_link_id} | Update a Bank Link
+*HydrogenIntegrationApi.BrokerageApi* | [**createWithdrawalUsingPost**](docs/BrokerageApi.md#createWithdrawalUsingPost) | **POST** /brokerage/withdrawal | Create a withdrawal
+*HydrogenIntegrationApi.BrokerageApi* | [**deleteBankLinkUsingDelete1**](docs/BrokerageApi.md#deleteBankLinkUsingDelete1) | **DELETE** /brokerage/bank_link/{nucleus_bank_link_id} | Delete a Bank Link
+*HydrogenIntegrationApi.BrokerageApi* | [**getBalanceUsingGet1**](docs/BrokerageApi.md#getBalanceUsingGet1) | **GET** /brokerage/balance/{nucleus_portfolio_id} | Get account balance
+*HydrogenIntegrationApi.BrokerageApi* | [**getBankLinkUsingGet1**](docs/BrokerageApi.md#getBankLinkUsingGet1) | **GET** /brokerage/bank_link/{nucleus_bank_link_id} | Get a Bank Link
+*HydrogenIntegrationApi.BrokerageApi* | [**getBrokerageAccountStatementUsingGet**](docs/BrokerageApi.md#getBrokerageAccountStatementUsingGet) | **GET** /brokerage/statement/{nucleus_account_id} | Get a Brokerage account statement
+*HydrogenIntegrationApi.BrokerageApi* | [**getDocumentUsingGet**](docs/BrokerageApi.md#getDocumentUsingGet) | **GET** /brokerage/document/{nucleus_document_id} | Get a Brokerage document
+*HydrogenIntegrationApi.BrokerageApi* | [**getHoldingPerformanceUsingGet**](docs/BrokerageApi.md#getHoldingPerformanceUsingGet) | **GET** /brokerage/holding/performance/{nucleus_portfolio_id} | Get portfolio holding performance
+*HydrogenIntegrationApi.BrokerageApi* | [**getHoldingUsingGet**](docs/BrokerageApi.md#getHoldingUsingGet) | **GET** /brokerage/holding/{nucleus_portfolio_id} | Get portfolio holdings
+*HydrogenIntegrationApi.BrokerageApi* | [**getOrderUsingGet**](docs/BrokerageApi.md#getOrderUsingGet) | **GET** /brokerage/order/{nucleus_order_id} | Get an Order
+*HydrogenIntegrationApi.BrokerageApi* | [**getSecuritiesUsingGet**](docs/BrokerageApi.md#getSecuritiesUsingGet) | **GET** /brokerage/securities | Get securities information
+*HydrogenIntegrationApi.BrokerageApi* | [**getTransactionsUsingGet**](docs/BrokerageApi.md#getTransactionsUsingGet) | **GET** /brokerage/transaction/{nucleus_portfolio_id} | Get account transactions
+*HydrogenIntegrationApi.BrokerageApi* | [**updateBankLinkUsingPut1**](docs/BrokerageApi.md#updateBankLinkUsingPut1) | **PUT** /brokerage/bank_link/{nucleus_bank_link_id} | Update a Bank Link
 *HydrogenIntegrationApi.BrokerageApi* | [**updateBrokerageClientUsingPut**](docs/BrokerageApi.md#updateBrokerageClientUsingPut) | **PUT** /brokerage/client | Update a Brokerage client
+*HydrogenIntegrationApi.CardApi* | [**createAutoReloadUsingPost**](docs/CardApi.md#createAutoReloadUsingPost) | **POST** /card/auto_reload | Card auto reload
 *HydrogenIntegrationApi.CardApi* | [**createCardActivateUsingPost**](docs/CardApi.md#createCardActivateUsingPost) | **POST** /card/activate | Activate card
+*HydrogenIntegrationApi.CardApi* | [**createCardBusinessUsingPost**](docs/CardApi.md#createCardBusinessUsingPost) | **POST** /card/business | Create a card business
 *HydrogenIntegrationApi.CardApi* | [**createCardCloseUsingPost**](docs/CardApi.md#createCardCloseUsingPost) | **POST** /card/close | close a card
 *HydrogenIntegrationApi.CardApi* | [**createCardIssueUsingPost**](docs/CardApi.md#createCardIssueUsingPost) | **POST** /card/issue | issue a card
+*HydrogenIntegrationApi.CardApi* | [**createCardLoadUsingPost**](docs/CardApi.md#createCardLoadUsingPost) | **POST** /card/load | Create a card load
 *HydrogenIntegrationApi.CardApi* | [**createCardPinUsingPost**](docs/CardApi.md#createCardPinUsingPost) | **POST** /card/pin | pin card
 *HydrogenIntegrationApi.CardApi* | [**createCardReactivateUsingPost**](docs/CardApi.md#createCardReactivateUsingPost) | **POST** /card/reactivate | reactivate card
 *HydrogenIntegrationApi.CardApi* | [**createCardReissueUsingPost**](docs/CardApi.md#createCardReissueUsingPost) | **POST** /card/reissue | Reissue a card
-*HydrogenIntegrationApi.CardApi* | [**createCardReloadUsingPost**](docs/CardApi.md#createCardReloadUsingPost) | **POST** /card/reload | Create a card reload
+*HydrogenIntegrationApi.CardApi* | [**createCardReplaceUsingPost**](docs/CardApi.md#createCardReplaceUsingPost) | **POST** /card/replace | Create card replace
+*HydrogenIntegrationApi.CardApi* | [**createCardSpendingControlUsingPost**](docs/CardApi.md#createCardSpendingControlUsingPost) | **POST** /card/spending_control | Create card spending control
 *HydrogenIntegrationApi.CardApi* | [**createCardSuspendUsingPost**](docs/CardApi.md#createCardSuspendUsingPost) | **POST** /card/suspend | suspend card
 *HydrogenIntegrationApi.CardApi* | [**createCardTokenUsingPost**](docs/CardApi.md#createCardTokenUsingPost) | **POST** /card/token | token card
-*HydrogenIntegrationApi.CardApi* | [**createCardTransferUsingPost**](docs/CardApi.md#createCardTransferUsingPost) | **POST** /card/transfer | Create Card transfer
 *HydrogenIntegrationApi.CardApi* | [**createCardUnloadUsingPost**](docs/CardApi.md#createCardUnloadUsingPost) | **POST** /card/unload | Create a card upload
 *HydrogenIntegrationApi.CardApi* | [**createClientCardUsingPost**](docs/CardApi.md#createClientCardUsingPost) | **POST** /card/client | Create a card client
 *HydrogenIntegrationApi.CardApi* | [**getCardBalanceUsingGet**](docs/CardApi.md#getCardBalanceUsingGet) | **GET** /card/balance/{id} | Get a Card Balance
+*HydrogenIntegrationApi.CardApi* | [**getCardImage**](docs/CardApi.md#getCardImage) | **GET** /card/image/{card_id} | Get card image
+*HydrogenIntegrationApi.CardApi* | [**getCardPciDetails**](docs/CardApi.md#getCardPciDetails) | **GET** /card/pci_details/{card_id} | Get card pci details
+*HydrogenIntegrationApi.CardApi* | [**getCardReserveAccountDetailsUsingGet**](docs/CardApi.md#getCardReserveAccountDetailsUsingGet) | **GET** /card/reserve | Card reserve account
+*HydrogenIntegrationApi.CardApi* | [**getCardStatementUsingGet**](docs/CardApi.md#getCardStatementUsingGet) | **GET** /card/statement/{card_id} | Get card statement
 *HydrogenIntegrationApi.CardApi* | [**getCardTokenUsingToken**](docs/CardApi.md#getCardTokenUsingToken) | **GET** /card/token/{id} | Get a card token
 *HydrogenIntegrationApi.CardApi* | [**getCardTransactionUsingGet**](docs/CardApi.md#getCardTransactionUsingGet) | **GET** /card/transaction/{id} | Get a card transaction
 *HydrogenIntegrationApi.CardApi* | [**getCardUsingGet**](docs/CardApi.md#getCardUsingGet) | **GET** /card/{id} | Get a card information
+*HydrogenIntegrationApi.CardApi* | [**updateCardBusinessUsingPut**](docs/CardApi.md#updateCardBusinessUsingPut) | **PUT** /card/business/{nucleus_business_id} | Update a card business
 *HydrogenIntegrationApi.CardApi* | [**updateCardPinUsingPost**](docs/CardApi.md#updateCardPinUsingPost) | **PUT** /card/pin/{id} | update a pin card
+*HydrogenIntegrationApi.CardApi* | [**updateCardSpendingControlUsingPut**](docs/CardApi.md#updateCardSpendingControlUsingPut) | **PUT** /card/spending_control/{nucleus_spending_control_id} | Update a card spending control
 *HydrogenIntegrationApi.CardApi* | [**updateCardUsingPut**](docs/CardApi.md#updateCardUsingPut) | **PUT** /card/{id} | Update a card information
+*HydrogenIntegrationApi.CardApi* | [**updateClientCardUsingPut**](docs/CardApi.md#updateClientCardUsingPut) | **PUT** /card/client/{id} | Update a card client
+*HydrogenIntegrationApi.CardApi* | [**verifyCardPinUsingPost**](docs/CardApi.md#verifyCardPinUsingPost) | **POST** /card/pin/verify | verify card pin
 *HydrogenIntegrationApi.IAVApi* | [**createIAVUsingPost**](docs/IAVApi.md#createIAVUsingPost) | **POST** /iav | Instant Account Verification of an account.
 *HydrogenIntegrationApi.IAVApi* | [**getIAVUsingGet**](docs/IAVApi.md#getIAVUsingGet) | **GET** /iav/{nucleus_bank_link_id} | Get verified account based on id.
 *HydrogenIntegrationApi.KMSApi* | [**createKMSUsingPost**](docs/KMSApi.md#createKMSUsingPost) | **POST** /kms | Create an secret key
@@ -226,21 +277,63 @@ Class | Method | HTTP request | Description
 *HydrogenIntegrationApi.KMSApi* | [**getKMSUsingGet**](docs/KMSApi.md#getKMSUsingGet) | **GET** /kms/{kms_id} | Retrieve an secret key value
 *HydrogenIntegrationApi.KMSApi* | [**updateKMSUsingPut**](docs/KMSApi.md#updateKMSUsingPut) | **PUT** /kms/{kms_id} | Update an Key Value
 *HydrogenIntegrationApi.KYCApi* | [**createKYCUsingPost**](docs/KYCApi.md#createKYCUsingPost) | **POST** /kyc | Do kyc for the client.
-*HydrogenIntegrationApi.KYCApi* | [**getKYCStatusUsingGet**](docs/KYCApi.md#getKYCStatusUsingGet) | **GET** /kyc_status/{nucleus_client_id} | Fetch kyc_status for the given nucleus_client_id
+*HydrogenIntegrationApi.KYCApi* | [**getKYCStatusUsingGet**](docs/KYCApi.md#getKYCStatusUsingGet) | **GET** /kyc_status | Fetch kyc_status for the given nucleus_client_id
 *HydrogenIntegrationApi.MarketDataApi* | [**createMarketDataHistoricalUsingPost**](docs/MarketDataApi.md#createMarketDataHistoricalUsingPost) | **POST** /market_data/historical | Create historical market data
 *HydrogenIntegrationApi.MarketDataApi* | [**createMarketDataQuoteUsingPost**](docs/MarketDataApi.md#createMarketDataQuoteUsingPost) | **POST** /market_data/quote | Create quote market data
+*HydrogenIntegrationApi.RTPApi* | [**cancelRtpTransferUsingDelete**](docs/RTPApi.md#cancelRtpTransferUsingDelete) | **DELETE** /rtp/{nucleus_funding_id} | Cancel the RTP transfer
+*HydrogenIntegrationApi.RTPApi* | [**createBankLinkUsingPost2**](docs/RTPApi.md#createBankLinkUsingPost2) | **POST** /rtp/bank_link | Create bank link
+*HydrogenIntegrationApi.RTPApi* | [**deleteBankLinkUsingDelete2**](docs/RTPApi.md#deleteBankLinkUsingDelete2) | **DELETE** /rtp/bank_link/{nucleus_bank_link_id} | Delete bank link
+*HydrogenIntegrationApi.RTPApi* | [**getBankLinkUsingGet2**](docs/RTPApi.md#getBankLinkUsingGet2) | **GET** /rtp/bank_link/{nucleus_bank_link_id} | Get bank link
+*HydrogenIntegrationApi.RTPApi* | [**getClientBankLinksUsingGet1**](docs/RTPApi.md#getClientBankLinksUsingGet1) | **GET** /rtp/bank_link/client/{nucleus_client_id} | Get client bank links
+*HydrogenIntegrationApi.RTPApi* | [**getListOfRtpTransfersUsingGet**](docs/RTPApi.md#getListOfRtpTransfersUsingGet) | **GET** /rtp/client/{nucleus_client_id} | Get a list of Rtp transfers
+*HydrogenIntegrationApi.RTPApi* | [**getRtpTransferUsingGet**](docs/RTPApi.md#getRtpTransferUsingGet) | **GET** /rtp/{nucleus_funding_id} | Get the RTP transfer
+*HydrogenIntegrationApi.RTPApi* | [**submitRtpTransferUsingPost**](docs/RTPApi.md#submitRtpTransferUsingPost) | **POST** /rtp | Submit a RTP transfer
+*HydrogenIntegrationApi.RTPApi* | [**updateBankLinkUsingPut2**](docs/RTPApi.md#updateBankLinkUsingPut2) | **PUT** /rtp/bank_link/{nucleus_bank_link_id} | Update bank link
+*HydrogenIntegrationApi.SMSApi* | [**getVendorCallLimit**](docs/SMSApi.md#getVendorCallLimit) | **GET** /sms/status/{sms_id} | Fetch details for corresponding sms_id
+*HydrogenIntegrationApi.SMSApi* | [**sendMail**](docs/SMSApi.md#sendMail) | **POST** /sms | Send SMS to recipient
+*HydrogenIntegrationApi.SMTPApi* | [**getEmailDetails**](docs/SMTPApi.md#getEmailDetails) | **GET** /smtp/status/{email_id} | Fetch details for corresponding email_id
+*HydrogenIntegrationApi.SMTPApi* | [**sendMail1**](docs/SMTPApi.md#sendMail1) | **POST** /smtp | Send Mail to recipient
 *HydrogenIntegrationApi.UtilsApi* | [**createTokenExchangeUsingPost**](docs/UtilsApi.md#createTokenExchangeUsingPost) | **POST** /token_exchange | Retrieve token based on certain vendor specific value
 *HydrogenIntegrationApi.UtilsApi* | [**createUserUsingPost**](docs/UtilsApi.md#createUserUsingPost) | **POST** /user | Create user in vendor
+*HydrogenIntegrationApi.UtilsApi* | [**getAuditLogAllUsingGet**](docs/UtilsApi.md#getAuditLogAllUsingGet) | **GET** /audit_log | Gel all audit log
 *HydrogenIntegrationApi.UtilsApi* | [**getWidgetLinkUsingGet**](docs/UtilsApi.md#getWidgetLinkUsingGet) | **GET** /widget_link/{nucleus_client_id} | Retrieve widget link
 *HydrogenIntegrationApi.WebhookApi* | [**createWebhookUsingPost**](docs/WebhookApi.md#createWebhookUsingPost) | **POST** /webhook | Create a webhook
 *HydrogenIntegrationApi.WebhookApi* | [**deleteWebhookUsingDelete**](docs/WebhookApi.md#deleteWebhookUsingDelete) | **DELETE** /webhook/{webhook_id} | Delete a webhook
 *HydrogenIntegrationApi.WebhookApi* | [**getWebhookAllUsingGet**](docs/WebhookApi.md#getWebhookAllUsingGet) | **GET** /webhook | List all webhooks
 *HydrogenIntegrationApi.WebhookApi* | [**getWebhookUsingGet**](docs/WebhookApi.md#getWebhookUsingGet) | **GET** /webhook/{webhook_id} | Retrieve a webhook
 *HydrogenIntegrationApi.WebhookApi* | [**updateWebhookUsingPut**](docs/WebhookApi.md#updateWebhookUsingPut) | **PUT** /webhook/{webhook_id} | Update a webhook
+*HydrogenIntegrationApi.WireApi* | [**cancelWireTransferUsingDelete**](docs/WireApi.md#cancelWireTransferUsingDelete) | **DELETE** /wire/{nucleus_funding_id} | Cancel the Wire transfer
+*HydrogenIntegrationApi.WireApi* | [**createBankLinkUsingPost3**](docs/WireApi.md#createBankLinkUsingPost3) | **POST** /wire/bank_link | Create bank link
+*HydrogenIntegrationApi.WireApi* | [**deleteBankLinkUsingDelete3**](docs/WireApi.md#deleteBankLinkUsingDelete3) | **DELETE** /wire/bank_link/{nucleus_bank_link_id} | Delete bank link
+*HydrogenIntegrationApi.WireApi* | [**getBankLinkUsingGet3**](docs/WireApi.md#getBankLinkUsingGet3) | **GET** /wire/bank_link/{nucleus_bank_link_id} | Get bank link
+*HydrogenIntegrationApi.WireApi* | [**getClientBankLinksUsingGet2**](docs/WireApi.md#getClientBankLinksUsingGet2) | **GET** /wire/bank_link/client/{nucleus_client_id} | Get client bank links
+*HydrogenIntegrationApi.WireApi* | [**getListOfWireTransfersUsingGet**](docs/WireApi.md#getListOfWireTransfersUsingGet) | **GET** /wire/client/{nucleus_client_id} | Get a list of Wire transfers
+*HydrogenIntegrationApi.WireApi* | [**getWireTransferUsingGet**](docs/WireApi.md#getWireTransferUsingGet) | **GET** /wire/{nucleus_funding_id} | Get the Wire transfer
+*HydrogenIntegrationApi.WireApi* | [**submitWireTransferUsingPost**](docs/WireApi.md#submitWireTransferUsingPost) | **POST** /wire | Submit a Wire transfer
+*HydrogenIntegrationApi.WireApi* | [**updateBankLinkUsingPut3**](docs/WireApi.md#updateBankLinkUsingPut3) | **PUT** /wire/bank_link/{nucleus_bank_link_id} | Update bank link
 
 
 ## Documentation for Models
 
+ - [HydrogenIntegrationApi.AccountingCustomerResponseVO](docs/AccountingCustomerResponseVO.md)
+ - [HydrogenIntegrationApi.AccountingCustomerRevenueResponseVO](docs/AccountingCustomerRevenueResponseVO.md)
+ - [HydrogenIntegrationApi.AccountingFinalResponseVO](docs/AccountingFinalResponseVO.md)
+ - [HydrogenIntegrationApi.AccountingInvoicePaymentResponseVO](docs/AccountingInvoicePaymentResponseVO.md)
+ - [HydrogenIntegrationApi.AccountingInvoiceResponseVO](docs/AccountingInvoiceResponseVO.md)
+ - [HydrogenIntegrationApi.AccountingStatsResponseVO](docs/AccountingStatsResponseVO.md)
+ - [HydrogenIntegrationApi.AchBalanceResponseVO](docs/AchBalanceResponseVO.md)
+ - [HydrogenIntegrationApi.AchBankLinkRequestCO](docs/AchBankLinkRequestCO.md)
+ - [HydrogenIntegrationApi.AchBankLinkResponseVO](docs/AchBankLinkResponseVO.md)
+ - [HydrogenIntegrationApi.AchBusinessRequestCO](docs/AchBusinessRequestCO.md)
+ - [HydrogenIntegrationApi.AchBusinessResponseVO](docs/AchBusinessResponseVO.md)
+ - [HydrogenIntegrationApi.AchCardLinkRequestCO](docs/AchCardLinkRequestCO.md)
+ - [HydrogenIntegrationApi.AchCardLinkResponseVO](docs/AchCardLinkResponseVO.md)
+ - [HydrogenIntegrationApi.AchClientRequestCO](docs/AchClientRequestCO.md)
+ - [HydrogenIntegrationApi.AchClientResponseVO](docs/AchClientResponseVO.md)
+ - [HydrogenIntegrationApi.AchTransferRequestCO](docs/AchTransferRequestCO.md)
+ - [HydrogenIntegrationApi.AchTransferResponseVO](docs/AchTransferResponseVO.md)
+ - [HydrogenIntegrationApi.Acquiree](docs/Acquiree.md)
+ - [HydrogenIntegrationApi.Acquirer](docs/Acquirer.md)
  - [HydrogenIntegrationApi.Address](docs/Address.md)
  - [HydrogenIntegrationApi.AggregationAccount](docs/AggregationAccount.md)
  - [HydrogenIntegrationApi.AggregationAccountBalance](docs/AggregationAccountBalance.md)
@@ -257,12 +350,13 @@ Class | Method | HTTP request | Description
  - [HydrogenIntegrationApi.AggregationRequestObject](docs/AggregationRequestObject.md)
  - [HydrogenIntegrationApi.AggregationVendorRequestCO](docs/AggregationVendorRequestCO.md)
  - [HydrogenIntegrationApi.ApplePayload](docs/ApplePayload.md)
+ - [HydrogenIntegrationApi.AsyncTransaction](docs/AsyncTransaction.md)
+ - [HydrogenIntegrationApi.AsyncTransactionVO](docs/AsyncTransactionVO.md)
  - [HydrogenIntegrationApi.BaasAccountCO](docs/BaasAccountCO.md)
  - [HydrogenIntegrationApi.BaasAccountVO](docs/BaasAccountVO.md)
  - [HydrogenIntegrationApi.BaasBalanceVO](docs/BaasBalanceVO.md)
- - [HydrogenIntegrationApi.BaasClientCO](docs/BaasClientCO.md)
+ - [HydrogenIntegrationApi.BaasBusinessVO](docs/BaasBusinessVO.md)
  - [HydrogenIntegrationApi.BaasClientVO](docs/BaasClientVO.md)
- - [HydrogenIntegrationApi.BaasClientVendorDataVO](docs/BaasClientVendorDataVO.md)
  - [HydrogenIntegrationApi.BaasStatementVO](docs/BaasStatementVO.md)
  - [HydrogenIntegrationApi.BaasStatementsVO](docs/BaasStatementsVO.md)
  - [HydrogenIntegrationApi.BaasSubAccountCO](docs/BaasSubAccountCO.md)
@@ -271,40 +365,73 @@ Class | Method | HTTP request | Description
  - [HydrogenIntegrationApi.BankCredit](docs/BankCredit.md)
  - [HydrogenIntegrationApi.BankLink](docs/BankLink.md)
  - [HydrogenIntegrationApi.BankLinkResponseInternalObjectVO](docs/BankLinkResponseInternalObjectVO.md)
- - [HydrogenIntegrationApi.BaseDocument](docs/BaseDocument.md)
+ - [HydrogenIntegrationApi.BankLinkVendorDataVO](docs/BankLinkVendorDataVO.md)
  - [HydrogenIntegrationApi.BaseResponseVO](docs/BaseResponseVO.md)
  - [HydrogenIntegrationApi.BrokerageAccountCO](docs/BrokerageAccountCO.md)
  - [HydrogenIntegrationApi.BrokerageAccountVO](docs/BrokerageAccountVO.md)
+ - [HydrogenIntegrationApi.BrokerageBalanceVO](docs/BrokerageBalanceVO.md)
  - [HydrogenIntegrationApi.BrokerageBankLinkCO](docs/BrokerageBankLinkCO.md)
  - [HydrogenIntegrationApi.BrokerageBankLinkVO](docs/BrokerageBankLinkVO.md)
  - [HydrogenIntegrationApi.BrokerageClientCO](docs/BrokerageClientCO.md)
  - [HydrogenIntegrationApi.BrokerageCreateClientVO](docs/BrokerageCreateClientVO.md)
+ - [HydrogenIntegrationApi.BrokerageDepositCO](docs/BrokerageDepositCO.md)
+ - [HydrogenIntegrationApi.BrokerageDepositVO](docs/BrokerageDepositVO.md)
+ - [HydrogenIntegrationApi.BrokerageDocumentCO](docs/BrokerageDocumentCO.md)
+ - [HydrogenIntegrationApi.BrokerageDocumentVO](docs/BrokerageDocumentVO.md)
+ - [HydrogenIntegrationApi.BrokerageHoldingVO](docs/BrokerageHoldingVO.md)
+ - [HydrogenIntegrationApi.BrokerageOrderCO](docs/BrokerageOrderCO.md)
+ - [HydrogenIntegrationApi.BrokerageOrderVO](docs/BrokerageOrderVO.md)
+ - [HydrogenIntegrationApi.BrokeragePerformanceVO](docs/BrokeragePerformanceVO.md)
+ - [HydrogenIntegrationApi.BrokerageSecuritiesVO](docs/BrokerageSecuritiesVO.md)
  - [HydrogenIntegrationApi.BrokerageStatementVO](docs/BrokerageStatementVO.md)
+ - [HydrogenIntegrationApi.BrokerageTransactionVO](docs/BrokerageTransactionVO.md)
  - [HydrogenIntegrationApi.BrokerageUpdateClientVO](docs/BrokerageUpdateClientVO.md)
+ - [HydrogenIntegrationApi.BrokerageWithdrawalCO](docs/BrokerageWithdrawalCO.md)
+ - [HydrogenIntegrationApi.BrokerageWithdrawalVO](docs/BrokerageWithdrawalVO.md)
+ - [HydrogenIntegrationApi.BusinessAddress](docs/BusinessAddress.md)
+ - [HydrogenIntegrationApi.BusinessVendorRequestDataVO](docs/BusinessVendorRequestDataVO.md)
+ - [HydrogenIntegrationApi.CardAutoReloadRequestCO](docs/CardAutoReloadRequestCO.md)
+ - [HydrogenIntegrationApi.CardAutoReloadResponseVO](docs/CardAutoReloadResponseVO.md)
  - [HydrogenIntegrationApi.CardBalanceResponseVO](docs/CardBalanceResponseVO.md)
  - [HydrogenIntegrationApi.CardBaseRequestCO](docs/CardBaseRequestCO.md)
+ - [HydrogenIntegrationApi.CardBusinessRequestCO](docs/CardBusinessRequestCO.md)
  - [HydrogenIntegrationApi.CardClientRequestCO](docs/CardClientRequestCO.md)
- - [HydrogenIntegrationApi.CardClientResponseVO](docs/CardClientResponseVO.md)
+ - [HydrogenIntegrationApi.CardLoadRequestCO](docs/CardLoadRequestCO.md)
+ - [HydrogenIntegrationApi.CardLoadUnloadResponseVO](docs/CardLoadUnloadResponseVO.md)
  - [HydrogenIntegrationApi.CardPinRequestCO](docs/CardPinRequestCO.md)
- - [HydrogenIntegrationApi.CardReloadRequestCO](docs/CardReloadRequestCO.md)
- - [HydrogenIntegrationApi.CardReloadUnloadResponseVO](docs/CardReloadUnloadResponseVO.md)
+ - [HydrogenIntegrationApi.CardReplaceResponseVO](docs/CardReplaceResponseVO.md)
+ - [HydrogenIntegrationApi.CardReserveAccountResponseVO](docs/CardReserveAccountResponseVO.md)
+ - [HydrogenIntegrationApi.CardSpendingControlRequestCO](docs/CardSpendingControlRequestCO.md)
+ - [HydrogenIntegrationApi.CardSpendingControlResponseVO](docs/CardSpendingControlResponseVO.md)
  - [HydrogenIntegrationApi.CardTokenRequestCO](docs/CardTokenRequestCO.md)
  - [HydrogenIntegrationApi.CardTokenResponseVO](docs/CardTokenResponseVO.md)
  - [HydrogenIntegrationApi.CardTransactionResponseVO](docs/CardTransactionResponseVO.md)
- - [HydrogenIntegrationApi.CardTransferRequestCO](docs/CardTransferRequestCO.md)
- - [HydrogenIntegrationApi.CardTransferResponseVO](docs/CardTransferResponseVO.md)
  - [HydrogenIntegrationApi.CardUnloadRequestCO](docs/CardUnloadRequestCO.md)
+ - [HydrogenIntegrationApi.CardUpdatePinRequestCO](docs/CardUpdatePinRequestCO.md)
  - [HydrogenIntegrationApi.Cash](docs/Cash.md)
  - [HydrogenIntegrationApi.ClientAddress](docs/ClientAddress.md)
- - [HydrogenIntegrationApi.CreateClientResponse](docs/CreateClientResponse.md)
- - [HydrogenIntegrationApi.CreateOrderResponse](docs/CreateOrderResponse.md)
+ - [HydrogenIntegrationApi.ClientVendorRequestDataVO](docs/ClientVendorRequestDataVO.md)
+ - [HydrogenIntegrationApi.CreateBaasBusinessCO](docs/CreateBaasBusinessCO.md)
+ - [HydrogenIntegrationApi.CreateBaasClientCO](docs/CreateBaasClientCO.md)
+ - [HydrogenIntegrationApi.CreateBusinessResponseVO](docs/CreateBusinessResponseVO.md)
+ - [HydrogenIntegrationApi.CreateCardClientResponseVO](docs/CreateCardClientResponseVO.md)
  - [HydrogenIntegrationApi.CreateUserRequest](docs/CreateUserRequest.md)
- - [HydrogenIntegrationApi.DigitalDocumentData](docs/DigitalDocumentData.md)
+ - [HydrogenIntegrationApi.Customer](docs/Customer.md)
+ - [HydrogenIntegrationApi.CustomerAddress](docs/CustomerAddress.md)
+ - [HydrogenIntegrationApi.CustomerRevenue](docs/CustomerRevenue.md)
+ - [HydrogenIntegrationApi.Dividend](docs/Dividend.md)
+ - [HydrogenIntegrationApi.DividendTax](docs/DividendTax.md)
+ - [HydrogenIntegrationApi.Email](docs/Email.md)
+ - [HydrogenIntegrationApi.EmailClick](docs/EmailClick.md)
+ - [HydrogenIntegrationApi.EmailOpen](docs/EmailOpen.md)
  - [HydrogenIntegrationApi.ExchangePublicTokenVO](docs/ExchangePublicTokenVO.md)
  - [HydrogenIntegrationApi.ExchangeTokenCO](docs/ExchangeTokenCO.md)
- - [HydrogenIntegrationApi.ExpandedProperty](docs/ExpandedProperty.md)
+ - [HydrogenIntegrationApi.FinancialStatement](docs/FinancialStatement.md)
+ - [HydrogenIntegrationApi.GetCardImageResponseVO](docs/GetCardImageResponseVO.md)
+ - [HydrogenIntegrationApi.GetCardPciDetailsResponseVO](docs/GetCardPciDetailsResponseVO.md)
+ - [HydrogenIntegrationApi.GetCardStatementResponseVO](docs/GetCardStatementResponseVO.md)
  - [HydrogenIntegrationApi.GetCardTokenResponseVO](docs/GetCardTokenResponseVO.md)
- - [HydrogenIntegrationApi.GetOrderResponse](docs/GetOrderResponse.md)
+ - [HydrogenIntegrationApi.GetTransactionsResponse](docs/GetTransactionsResponse.md)
  - [HydrogenIntegrationApi.GooglePayload](docs/GooglePayload.md)
  - [HydrogenIntegrationApi.IavAggregationResponseVo](docs/IavAggregationResponseVo.md)
  - [HydrogenIntegrationApi.IavBankLinkResponseVo](docs/IavBankLinkResponseVo.md)
@@ -313,12 +440,16 @@ Class | Method | HTTP request | Description
  - [HydrogenIntegrationApi.IavTokenExchangeVendorResponseVO](docs/IavTokenExchangeVendorResponseVO.md)
  - [HydrogenIntegrationApi.IavVendorRequestCO](docs/IavVendorRequestCO.md)
  - [HydrogenIntegrationApi.Identification](docs/Identification.md)
+ - [HydrogenIntegrationApi.Instrument](docs/Instrument.md)
  - [HydrogenIntegrationApi.Investment](docs/Investment.md)
+ - [HydrogenIntegrationApi.Invoice](docs/Invoice.md)
+ - [HydrogenIntegrationApi.InvoicePayment](docs/InvoicePayment.md)
  - [HydrogenIntegrationApi.JsonNode](docs/JsonNode.md)
  - [HydrogenIntegrationApi.KmsConfig](docs/KmsConfig.md)
  - [HydrogenIntegrationApi.KycRequestCO](docs/KycRequestCO.md)
  - [HydrogenIntegrationApi.KycResponseVo](docs/KycResponseVo.md)
  - [HydrogenIntegrationApi.KycVendorRequestDataVO](docs/KycVendorRequestDataVO.md)
+ - [HydrogenIntegrationApi.LineItems](docs/LineItems.md)
  - [HydrogenIntegrationApi.Location](docs/Location.md)
  - [HydrogenIntegrationApi.Mapstringobject](docs/Mapstringobject.md)
  - [HydrogenIntegrationApi.MdHistoryItemVO](docs/MdHistoryItemVO.md)
@@ -327,23 +458,44 @@ Class | Method | HTTP request | Description
  - [HydrogenIntegrationApi.MdQuoteItemVO](docs/MdQuoteItemVO.md)
  - [HydrogenIntegrationApi.MdQuoteRequestCO](docs/MdQuoteRequestCO.md)
  - [HydrogenIntegrationApi.MdQuoteResponseVO](docs/MdQuoteResponseVO.md)
+ - [HydrogenIntegrationApi.MergerAcquisition](docs/MergerAcquisition.md)
  - [HydrogenIntegrationApi.NucleusTransferFieldsCO](docs/NucleusTransferFieldsCO.md)
+ - [HydrogenIntegrationApi.Ownership](docs/Ownership.md)
+ - [HydrogenIntegrationApi.PageAchTransferResponseVO](docs/PageAchTransferResponseVO.md)
  - [HydrogenIntegrationApi.PageKmsConfig](docs/PageKmsConfig.md)
  - [HydrogenIntegrationApi.PageWebhook](docs/PageWebhook.md)
  - [HydrogenIntegrationApi.Pageobject](docs/Pageobject.md)
- - [HydrogenIntegrationApi.ParentIB](docs/ParentIB.md)
  - [HydrogenIntegrationApi.PoliticallyExposedPersonDTO](docs/PoliticallyExposedPersonDTO.md)
+ - [HydrogenIntegrationApi.PortfolioAssetSizeLog](docs/PortfolioAssetSizeLog.md)
  - [HydrogenIntegrationApi.PropertyValueResponseVO](docs/PropertyValueResponseVO.md)
  - [HydrogenIntegrationApi.ResponseEntity](docs/ResponseEntity.md)
+ - [HydrogenIntegrationApi.RtpBankLinkRequestCO](docs/RtpBankLinkRequestCO.md)
+ - [HydrogenIntegrationApi.RtpBankLinkResponseVO](docs/RtpBankLinkResponseVO.md)
+ - [HydrogenIntegrationApi.RtpTransferRequestCO](docs/RtpTransferRequestCO.md)
+ - [HydrogenIntegrationApi.RtpTransferResponseVO](docs/RtpTransferResponseVO.md)
+ - [HydrogenIntegrationApi.SMS](docs/SMS.md)
+ - [HydrogenIntegrationApi.SMSResponseVO](docs/SMSResponseVO.md)
+ - [HydrogenIntegrationApi.SMSVO](docs/SMSVO.md)
  - [HydrogenIntegrationApi.SamsungPayload](docs/SamsungPayload.md)
+ - [HydrogenIntegrationApi.SmtpResponseVO](docs/SmtpResponseVO.md)
+ - [HydrogenIntegrationApi.SmtpVO](docs/SmtpVO.md)
  - [HydrogenIntegrationApi.Sort](docs/Sort.md)
- - [HydrogenIntegrationApi.StatementModel](docs/StatementModel.md)
- - [HydrogenIntegrationApi.StatusMessage](docs/StatusMessage.md)
- - [HydrogenIntegrationApi.UpdateClientResponse](docs/UpdateClientResponse.md)
+ - [HydrogenIntegrationApi.SpendingControlVendorRequestDataVO](docs/SpendingControlVendorRequestDataVO.md)
+ - [HydrogenIntegrationApi.Stat](docs/Stat.md)
+ - [HydrogenIntegrationApi.Transaction](docs/Transaction.md)
+ - [HydrogenIntegrationApi.UpdateBaasBusinessCO](docs/UpdateBaasBusinessCO.md)
+ - [HydrogenIntegrationApi.UpdateBaasClientCO](docs/UpdateBaasClientCO.md)
+ - [HydrogenIntegrationApi.UpdateBusinessResponseVO](docs/UpdateBusinessResponseVO.md)
+ - [HydrogenIntegrationApi.UpdateCardClientResponseVO](docs/UpdateCardClientResponseVO.md)
  - [HydrogenIntegrationApi.UserResponseInterface](docs/UserResponseInterface.md)
  - [HydrogenIntegrationApi.UserResponseVO](docs/UserResponseVO.md)
+ - [HydrogenIntegrationApi.VendorAccessConfigVO](docs/VendorAccessConfigVO.md)
  - [HydrogenIntegrationApi.Webhook](docs/Webhook.md)
  - [HydrogenIntegrationApi.WidgetUrlVO](docs/WidgetUrlVO.md)
+ - [HydrogenIntegrationApi.WireBankLinkRequestCO](docs/WireBankLinkRequestCO.md)
+ - [HydrogenIntegrationApi.WireBankLinkResponseVO](docs/WireBankLinkResponseVO.md)
+ - [HydrogenIntegrationApi.WireTransferRequestCO](docs/WireTransferRequestCO.md)
+ - [HydrogenIntegrationApi.WireTransferResponseVO](docs/WireTransferResponseVO.md)
  - [HydrogenIntegrationApi.ZillowPropertyVendorResponseVO](docs/ZillowPropertyVendorResponseVO.md)
 
 

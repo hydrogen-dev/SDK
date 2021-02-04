@@ -31,171 +31,66 @@ class CustomerAnalysisRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'customer_ids': 'list[str]',
-        'benchmark_start_date': 'date',
-        'client_id': 'str',
-        'currency_conversion': 'str',
-        'response_limit': 'int',
         'end_date': 'date',
-        'currency_code': 'str',
-        'start_date': 'date',
         'benchmark_end_date': 'date',
-        'only_active_customers': 'bool'
+        'customer_ids': 'list[str]',
+        'client_id': 'str',
+        'response_limit': 'int',
+        'currency_conversion': 'str',
+        'start_date': 'date',
+        'currency_code': 'str',
+        'only_active_customers': 'bool',
+        'benchmark_start_date': 'date'
     }
 
     attribute_map = {
-        'customer_ids': 'customer_ids',
-        'benchmark_start_date': 'benchmark_start_date',
-        'client_id': 'client_id',
-        'currency_conversion': 'currency_conversion',
-        'response_limit': 'response_limit',
         'end_date': 'end_date',
-        'currency_code': 'currency_code',
-        'start_date': 'start_date',
         'benchmark_end_date': 'benchmark_end_date',
-        'only_active_customers': 'only_active_customers'
+        'customer_ids': 'customer_ids',
+        'client_id': 'client_id',
+        'response_limit': 'response_limit',
+        'currency_conversion': 'currency_conversion',
+        'start_date': 'start_date',
+        'currency_code': 'currency_code',
+        'only_active_customers': 'only_active_customers',
+        'benchmark_start_date': 'benchmark_start_date'
     }
 
-    def __init__(self, customer_ids=None, benchmark_start_date=None, client_id=None, currency_conversion=None, response_limit=10, end_date=None, currency_code=None, start_date=None, benchmark_end_date=None, only_active_customers=False):  # noqa: E501
+    def __init__(self, end_date=None, benchmark_end_date=None, customer_ids=None, client_id=None, response_limit=10, currency_conversion=None, start_date=None, currency_code=None, only_active_customers=False, benchmark_start_date=None):  # noqa: E501
         """CustomerAnalysisRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._customer_ids = None
-        self._benchmark_start_date = None
-        self._client_id = None
-        self._currency_conversion = None
-        self._response_limit = None
         self._end_date = None
-        self._currency_code = None
-        self._start_date = None
         self._benchmark_end_date = None
+        self._customer_ids = None
+        self._client_id = None
+        self._response_limit = None
+        self._currency_conversion = None
+        self._start_date = None
+        self._currency_code = None
         self._only_active_customers = None
+        self._benchmark_start_date = None
         self.discriminator = None
 
-        if customer_ids is not None:
-            self.customer_ids = customer_ids
-        if benchmark_start_date is not None:
-            self.benchmark_start_date = benchmark_start_date
-        if client_id is not None:
-            self.client_id = client_id
-        if currency_conversion is not None:
-            self.currency_conversion = currency_conversion
-        if response_limit is not None:
-            self.response_limit = response_limit
         if end_date is not None:
             self.end_date = end_date
-        if currency_code is not None:
-            self.currency_code = currency_code
-        if start_date is not None:
-            self.start_date = start_date
         if benchmark_end_date is not None:
             self.benchmark_end_date = benchmark_end_date
+        if customer_ids is not None:
+            self.customer_ids = customer_ids
+        if client_id is not None:
+            self.client_id = client_id
+        if response_limit is not None:
+            self.response_limit = response_limit
+        if currency_conversion is not None:
+            self.currency_conversion = currency_conversion
+        if start_date is not None:
+            self.start_date = start_date
+        if currency_code is not None:
+            self.currency_code = currency_code
         if only_active_customers is not None:
             self.only_active_customers = only_active_customers
-
-    @property
-    def customer_ids(self):
-        """Gets the customer_ids of this CustomerAnalysisRequest.  # noqa: E501
-
-
-        :return: The customer_ids of this CustomerAnalysisRequest.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._customer_ids
-
-    @customer_ids.setter
-    def customer_ids(self, customer_ids):
-        """Sets the customer_ids of this CustomerAnalysisRequest.
-
-
-        :param customer_ids: The customer_ids of this CustomerAnalysisRequest.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._customer_ids = customer_ids
-
-    @property
-    def benchmark_start_date(self):
-        """Gets the benchmark_start_date of this CustomerAnalysisRequest.  # noqa: E501
-
-
-        :return: The benchmark_start_date of this CustomerAnalysisRequest.  # noqa: E501
-        :rtype: date
-        """
-        return self._benchmark_start_date
-
-    @benchmark_start_date.setter
-    def benchmark_start_date(self, benchmark_start_date):
-        """Sets the benchmark_start_date of this CustomerAnalysisRequest.
-
-
-        :param benchmark_start_date: The benchmark_start_date of this CustomerAnalysisRequest.  # noqa: E501
-        :type: date
-        """
-
-        self._benchmark_start_date = benchmark_start_date
-
-    @property
-    def client_id(self):
-        """Gets the client_id of this CustomerAnalysisRequest.  # noqa: E501
-
-
-        :return: The client_id of this CustomerAnalysisRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._client_id
-
-    @client_id.setter
-    def client_id(self, client_id):
-        """Sets the client_id of this CustomerAnalysisRequest.
-
-
-        :param client_id: The client_id of this CustomerAnalysisRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._client_id = client_id
-
-    @property
-    def currency_conversion(self):
-        """Gets the currency_conversion of this CustomerAnalysisRequest.  # noqa: E501
-
-
-        :return: The currency_conversion of this CustomerAnalysisRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._currency_conversion
-
-    @currency_conversion.setter
-    def currency_conversion(self, currency_conversion):
-        """Sets the currency_conversion of this CustomerAnalysisRequest.
-
-
-        :param currency_conversion: The currency_conversion of this CustomerAnalysisRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._currency_conversion = currency_conversion
-
-    @property
-    def response_limit(self):
-        """Gets the response_limit of this CustomerAnalysisRequest.  # noqa: E501
-
-
-        :return: The response_limit of this CustomerAnalysisRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._response_limit
-
-    @response_limit.setter
-    def response_limit(self, response_limit):
-        """Sets the response_limit of this CustomerAnalysisRequest.
-
-
-        :param response_limit: The response_limit of this CustomerAnalysisRequest.  # noqa: E501
-        :type: int
-        """
-
-        self._response_limit = response_limit
+        if benchmark_start_date is not None:
+            self.benchmark_start_date = benchmark_start_date
 
     @property
     def end_date(self):
@@ -219,25 +114,111 @@ class CustomerAnalysisRequest(object):
         self._end_date = end_date
 
     @property
-    def currency_code(self):
-        """Gets the currency_code of this CustomerAnalysisRequest.  # noqa: E501
+    def benchmark_end_date(self):
+        """Gets the benchmark_end_date of this CustomerAnalysisRequest.  # noqa: E501
 
 
-        :return: The currency_code of this CustomerAnalysisRequest.  # noqa: E501
+        :return: The benchmark_end_date of this CustomerAnalysisRequest.  # noqa: E501
+        :rtype: date
+        """
+        return self._benchmark_end_date
+
+    @benchmark_end_date.setter
+    def benchmark_end_date(self, benchmark_end_date):
+        """Sets the benchmark_end_date of this CustomerAnalysisRequest.
+
+
+        :param benchmark_end_date: The benchmark_end_date of this CustomerAnalysisRequest.  # noqa: E501
+        :type: date
+        """
+
+        self._benchmark_end_date = benchmark_end_date
+
+    @property
+    def customer_ids(self):
+        """Gets the customer_ids of this CustomerAnalysisRequest.  # noqa: E501
+
+
+        :return: The customer_ids of this CustomerAnalysisRequest.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._customer_ids
+
+    @customer_ids.setter
+    def customer_ids(self, customer_ids):
+        """Sets the customer_ids of this CustomerAnalysisRequest.
+
+
+        :param customer_ids: The customer_ids of this CustomerAnalysisRequest.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._customer_ids = customer_ids
+
+    @property
+    def client_id(self):
+        """Gets the client_id of this CustomerAnalysisRequest.  # noqa: E501
+
+
+        :return: The client_id of this CustomerAnalysisRequest.  # noqa: E501
         :rtype: str
         """
-        return self._currency_code
+        return self._client_id
 
-    @currency_code.setter
-    def currency_code(self, currency_code):
-        """Sets the currency_code of this CustomerAnalysisRequest.
+    @client_id.setter
+    def client_id(self, client_id):
+        """Sets the client_id of this CustomerAnalysisRequest.
 
 
-        :param currency_code: The currency_code of this CustomerAnalysisRequest.  # noqa: E501
+        :param client_id: The client_id of this CustomerAnalysisRequest.  # noqa: E501
         :type: str
         """
 
-        self._currency_code = currency_code
+        self._client_id = client_id
+
+    @property
+    def response_limit(self):
+        """Gets the response_limit of this CustomerAnalysisRequest.  # noqa: E501
+
+
+        :return: The response_limit of this CustomerAnalysisRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._response_limit
+
+    @response_limit.setter
+    def response_limit(self, response_limit):
+        """Sets the response_limit of this CustomerAnalysisRequest.
+
+
+        :param response_limit: The response_limit of this CustomerAnalysisRequest.  # noqa: E501
+        :type: int
+        """
+        if response_limit is not None and response_limit < 1:  # noqa: E501
+            raise ValueError("Invalid value for `response_limit`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._response_limit = response_limit
+
+    @property
+    def currency_conversion(self):
+        """Gets the currency_conversion of this CustomerAnalysisRequest.  # noqa: E501
+
+
+        :return: The currency_conversion of this CustomerAnalysisRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_conversion
+
+    @currency_conversion.setter
+    def currency_conversion(self, currency_conversion):
+        """Sets the currency_conversion of this CustomerAnalysisRequest.
+
+
+        :param currency_conversion: The currency_conversion of this CustomerAnalysisRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_conversion = currency_conversion
 
     @property
     def start_date(self):
@@ -261,25 +242,25 @@ class CustomerAnalysisRequest(object):
         self._start_date = start_date
 
     @property
-    def benchmark_end_date(self):
-        """Gets the benchmark_end_date of this CustomerAnalysisRequest.  # noqa: E501
+    def currency_code(self):
+        """Gets the currency_code of this CustomerAnalysisRequest.  # noqa: E501
 
 
-        :return: The benchmark_end_date of this CustomerAnalysisRequest.  # noqa: E501
-        :rtype: date
+        :return: The currency_code of this CustomerAnalysisRequest.  # noqa: E501
+        :rtype: str
         """
-        return self._benchmark_end_date
+        return self._currency_code
 
-    @benchmark_end_date.setter
-    def benchmark_end_date(self, benchmark_end_date):
-        """Sets the benchmark_end_date of this CustomerAnalysisRequest.
+    @currency_code.setter
+    def currency_code(self, currency_code):
+        """Sets the currency_code of this CustomerAnalysisRequest.
 
 
-        :param benchmark_end_date: The benchmark_end_date of this CustomerAnalysisRequest.  # noqa: E501
-        :type: date
+        :param currency_code: The currency_code of this CustomerAnalysisRequest.  # noqa: E501
+        :type: str
         """
 
-        self._benchmark_end_date = benchmark_end_date
+        self._currency_code = currency_code
 
     @property
     def only_active_customers(self):
@@ -301,6 +282,27 @@ class CustomerAnalysisRequest(object):
         """
 
         self._only_active_customers = only_active_customers
+
+    @property
+    def benchmark_start_date(self):
+        """Gets the benchmark_start_date of this CustomerAnalysisRequest.  # noqa: E501
+
+
+        :return: The benchmark_start_date of this CustomerAnalysisRequest.  # noqa: E501
+        :rtype: date
+        """
+        return self._benchmark_start_date
+
+    @benchmark_start_date.setter
+    def benchmark_start_date(self, benchmark_start_date):
+        """Sets the benchmark_start_date of this CustomerAnalysisRequest.
+
+
+        :param benchmark_start_date: The benchmark_start_date of this CustomerAnalysisRequest.  # noqa: E501
+        :type: date
+        """
+
+        self._benchmark_start_date = benchmark_start_date
 
     def to_dict(self):
         """Returns the model properties as a dict"""

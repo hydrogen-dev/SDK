@@ -4,13 +4,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **postScore** | **Boolean** |  | [optional] [default to false]
-**questionnaireId** | **String** |  | [optional] 
-**dims** | **[String]** |  | 
 **maxAnswers** | **[Number]** |  | 
-**clientId** | **String** |  | [optional] 
 **answerWeights** | **[Number]** |  | [optional] 
+**dims** | **[String]** |  | 
+**clientId** | **String** |  | [optional] 
 **answers** | **[Number]** |  | [optional] 
-**answerDims** | **[[String]]** |  | 
 **dimWeights** | **[Number]** |  | [optional] 
+**questionnaireId** | **String** |  | [optional] 
+**answerDims** | **[[String]]** |  | 
 
 

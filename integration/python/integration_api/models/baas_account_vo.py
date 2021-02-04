@@ -38,7 +38,7 @@ class BaasAccountVO(object):
         'nucleus_account_id': 'str',
         'nucleus_client_id': 'str',
         'status': 'str',
-        'vendor_name': 'object',
+        'vendor_name': 'str',
         'vendor_response': 'object'
     }
 
@@ -240,7 +240,7 @@ class BaasAccountVO(object):
 
 
         :return: The vendor_name of this BaasAccountVO.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._vendor_name
 
@@ -250,7 +250,7 @@ class BaasAccountVO(object):
 
 
         :param vendor_name: The vendor_name of this BaasAccountVO.  # noqa: E501
-        :type: object
+        :type: str
         """
 
         self._vendor_name = vendor_name

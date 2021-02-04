@@ -47,7 +47,6 @@ Aggregates all orders on a given date for an account.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -64,8 +63,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 UUID accountId = new UUID(); // UUID | account_id
 TokenDateRequest req = new TokenDateRequest(); // TokenDateRequest | req
@@ -110,7 +107,6 @@ Create order records necessary to rebalance an account and all its portfolios ac
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -127,8 +123,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 UUID accountId = new UUID(); // UUID | account_id
 AccountPortfolioRebalanceRequest req = new AccountPortfolioRebalanceRequest(); // AccountPortfolioRebalanceRequest | req
@@ -173,7 +167,6 @@ Create order records necessary to rebalance an account and all its portfolios ac
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -190,8 +183,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 UUID accountId = new UUID(); // UUID | account_id
 AccountPortfolioRebalanceRequest req = new AccountPortfolioRebalanceRequest(); // AccountPortfolioRebalanceRequest | req
@@ -234,7 +225,6 @@ Create account reconciliation order
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -251,8 +241,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 UUID accountId = new UUID(); // UUID | account_id
 OrderReconcileRequest req = new OrderReconcileRequest(); // OrderReconcileRequest | req
@@ -297,7 +285,6 @@ Create order records necessary to entirely sell all the holdings within an accou
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -314,8 +301,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 UUID accountId = new UUID(); // UUID | account_id
 AccountPortfolioRebalanceRequest req = new AccountPortfolioRebalanceRequest(); // AccountPortfolioRebalanceRequest | req
@@ -360,7 +345,6 @@ Create order records necessary to rebalance an account and all its portfolios ac
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -377,8 +361,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 UUID accountId = new UUID(); // UUID | account_id
 AccountPortfolioRebalanceRequest req = new AccountPortfolioRebalanceRequest(); // AccountPortfolioRebalanceRequest | req
@@ -423,7 +405,6 @@ Aggregates all orders on a given date for a client
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -440,8 +421,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 UUID clientId = new UUID(); // UUID | client_id
 TokenDateRequest req = new TokenDateRequest(); // TokenDateRequest | req
@@ -486,7 +465,6 @@ Aggregates all orders on a given date for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -503,8 +481,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 TokenDateRequest req = new TokenDateRequest(); // TokenDateRequest | req
 try {
@@ -547,7 +523,6 @@ Create an order status for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -564,8 +539,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 OrderStatus orderStatusRequest = new OrderStatus(); // OrderStatus | orderStatusRequest
 try {
@@ -608,7 +581,6 @@ Create a new order tracking record for an order.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -625,8 +597,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 OrderTrack orderTrackRequest = new OrderTrack(); // OrderTrack | orderTrackRequest
 try {
@@ -669,7 +639,6 @@ Create an order record defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -686,8 +655,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 Order orderInfoRequest = new Order(); // Order | orderInfoRequest
 try {
@@ -730,7 +697,6 @@ Create order records necessary to rebalance a portfolio to the model to which it
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -747,8 +713,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 UUID portfolioId = new UUID(); // UUID | portfolio_id
 AccountPortfolioRebalanceRequest req = new AccountPortfolioRebalanceRequest(); // AccountPortfolioRebalanceRequest | req
@@ -793,7 +757,6 @@ Create order records necessary to rebalance a portfolio to the model to which it
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -810,8 +773,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 UUID portfolioId = new UUID(); // UUID | portfolio_id
 AccountPortfolioRebalanceRequest req = new AccountPortfolioRebalanceRequest(); // AccountPortfolioRebalanceRequest | req
@@ -854,7 +815,6 @@ Create portfolio reconciliation order
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -871,8 +831,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 UUID portfolioId = new UUID(); // UUID | portfolio_id
 OrderReconcileRequest req = new OrderReconcileRequest(); // OrderReconcileRequest | req
@@ -917,7 +875,6 @@ Create order records necessary to entirely sell all the holdings within a portfo
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -934,8 +891,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 UUID portfolioId = new UUID(); // UUID | portfolio_id
 AccountPortfolioRebalanceRequest req = new AccountPortfolioRebalanceRequest(); // AccountPortfolioRebalanceRequest | req
@@ -980,7 +935,6 @@ Create order records necessary to rebalance a portfolio to the model to which it
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -997,8 +951,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 UUID portfolioId = new UUID(); // UUID | portfolio_id
 AccountPortfolioRebalanceRequest req = new AccountPortfolioRebalanceRequest(); // AccountPortfolioRebalanceRequest | req
@@ -1043,7 +995,6 @@ Permanently delete an order status defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1060,8 +1011,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 UUID orderStatusId = new UUID(); // UUID | UUID order_status_id
 try {
@@ -1103,7 +1052,6 @@ Permanently delete an order tracking record for an order.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1120,8 +1068,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 UUID orderTrackId = new UUID(); // UUID | UUID order_track_id
 try {
@@ -1163,7 +1109,6 @@ Permanently delete an order record.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1180,8 +1125,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 UUID orderId = new UUID(); // UUID | UUID order_id
 try {
@@ -1223,7 +1166,6 @@ Get the information for all order records defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1240,8 +1182,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -1292,7 +1232,6 @@ Get the information for all bulk order records.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1309,8 +1248,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 Boolean ascending = true; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -1361,7 +1298,6 @@ Get the information for all order statuses defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1378,8 +1314,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -1430,7 +1364,6 @@ Retrieve the information for an order status defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1447,8 +1380,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 UUID orderStatusId = new UUID(); // UUID | UUID order_status_id
 try {
@@ -1491,7 +1422,6 @@ Get the information for all order tracking record for all order records.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1508,8 +1438,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -1560,7 +1488,6 @@ Retrieve the information for an order tracking record for an order.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1577,8 +1504,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 UUID orderTrackId = new UUID(); // UUID | UUID order_track_id
 try {
@@ -1621,7 +1546,6 @@ Retrieve the information for an order record.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1638,8 +1562,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
 UUID orderId = new UUID(); // UUID | UUID order_id
 try {
@@ -1682,7 +1604,6 @@ Update the information for an order status defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1699,10 +1620,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
-OrderStatus orderStatus = new OrderStatus(); // OrderStatus | order_status
+Object orderStatus = null; // Object | order_status
 UUID orderStatusId = new UUID(); // UUID | UUID order_status_id
 try {
     OrderStatus result = apiInstance.updateOrderStatusUsingPut(orderStatus, orderStatusId);
@@ -1717,7 +1636,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderStatus** | [**OrderStatus**](OrderStatus.md)| order_status |
+ **orderStatus** | **Object**| order_status |
  **orderStatusId** | [**UUID**](.md)| UUID order_status_id |
 
 ### Return type
@@ -1745,7 +1664,6 @@ Update the information for an order tracking record for an order.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1762,10 +1680,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
-OrderTrack orderTrack = new OrderTrack(); // OrderTrack | order_track
+Object orderTrack = null; // Object | order_track
 UUID orderTrackId = new UUID(); // UUID | UUID order_track_id
 try {
     OrderTrack result = apiInstance.updateOrderTrackUsingPut(orderTrack, orderTrackId);
@@ -1780,7 +1696,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderTrack** | [**OrderTrack**](OrderTrack.md)| order_track |
+ **orderTrack** | **Object**| order_track |
  **orderTrackId** | [**UUID**](.md)| UUID order_track_id |
 
 ### Return type
@@ -1808,7 +1724,6 @@ Update the information for an order record.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import OrderApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1825,10 +1740,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 OrderApi apiInstance = new OrderApi();
-Order order = new Order(); // Order | order
+Object order = null; // Object | order
 UUID orderId = new UUID(); // UUID | UUID order_id
 try {
     Order result = apiInstance.updateOrderUsingPut(order, orderId);
@@ -1843,7 +1756,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order** | [**Order**](Order.md)| order |
+ **order** | **Object**| order |
  **orderId** | [**UUID**](.md)| UUID order_id |
 
 ### Return type

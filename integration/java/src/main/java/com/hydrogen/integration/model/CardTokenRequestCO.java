@@ -22,14 +22,12 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 /**
  * CardTokenRequestCO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class CardTokenRequestCO {
   @SerializedName("nucleus_card_id")
   private UUID nucleusCardId = null;
@@ -38,16 +36,16 @@ public class CardTokenRequestCO {
   private String reason = null;
 
   @SerializedName("vendor_request")
-  private Map<String, String> vendorRequest = null;
+  private Object vendorRequest = null;
 
   /**
    * Gets or Sets wallet
    */
   @JsonAdapter(WalletEnum.Adapter.class)
   public enum WalletEnum {
-    APPLE("apple"),
-    
     GOOGLE("google"),
+    
+    APPLE("apple"),
     
     SAMSUNG("samsung");
 
@@ -83,7 +81,7 @@ public class CardTokenRequestCO {
 
       @Override
       public WalletEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        Object value = jsonReader.nextString();
         return WalletEnum.fromValue(String.valueOf(value));
       }
     }
@@ -128,16 +126,8 @@ public class CardTokenRequestCO {
     this.reason = reason;
   }
 
-  public CardTokenRequestCO vendorRequest(Map<String, String> vendorRequest) {
+  public CardTokenRequestCO vendorRequest(Object vendorRequest) {
     this.vendorRequest = vendorRequest;
-    return this;
-  }
-
-  public CardTokenRequestCO putVendorRequestItem(String key, String vendorRequestItem) {
-    if (this.vendorRequest == null) {
-      this.vendorRequest = new HashMap<String, String>();
-    }
-    this.vendorRequest.put(key, vendorRequestItem);
     return this;
   }
 
@@ -146,11 +136,11 @@ public class CardTokenRequestCO {
    * @return vendorRequest
   **/
   @ApiModelProperty(value = "")
-  public Map<String, String> getVendorRequest() {
+  public Object getVendorRequest() {
     return vendorRequest;
   }
 
-  public void setVendorRequest(Map<String, String> vendorRequest) {
+  public void setVendorRequest(Object vendorRequest) {
     this.vendorRequest = vendorRequest;
   }
 

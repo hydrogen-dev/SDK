@@ -881,7 +881,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\NotificationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$notification_client = new \com\hydrogen\nucleus\Model\NotificationClient(); // \com\hydrogen\nucleus\Model\NotificationClient | notification_client
+$notification_client = new \stdClass; // object | notification_client
 $notification_client_id = "notification_client_id_example"; // string | UUID notification_client_id
 
 try {
@@ -897,7 +897,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification_client** | [**\com\hydrogen\nucleus\Model\NotificationClient**](../Model/NotificationClient.md)| notification_client |
+ **notification_client** | **object**| notification_client |
  **notification_client_id** | [**string**](../Model/.md)| UUID notification_client_id |
 
 ### Return type
@@ -950,7 +950,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\NotificationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$notification_setting = new \com\hydrogen\nucleus\Model\NotificationSetting(); // \com\hydrogen\nucleus\Model\NotificationSetting | notification_setting
+$notification_setting = new \stdClass; // object | notification_setting
 $notification_setting_id = "notification_setting_id_example"; // string | UUID notification_setting_id
 
 try {
@@ -966,7 +966,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification_setting** | [**\com\hydrogen\nucleus\Model\NotificationSetting**](../Model/NotificationSetting.md)| notification_setting |
+ **notification_setting** | **object**| notification_setting |
  **notification_setting_id** | [**string**](../Model/.md)| UUID notification_setting_id |
 
 ### Return type
@@ -1019,7 +1019,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\NotificationApi(
     new GuzzleHttp\Client(),
     $config
 );
-$notification = new \com\hydrogen\nucleus\Model\Notification(); // \com\hydrogen\nucleus\Model\Notification | notification
+$notification = new \stdClass; // object | notification
 $notification_id = "notification_id_example"; // string | UUID notification_id
 
 try {
@@ -1035,7 +1035,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification** | [**\com\hydrogen\nucleus\Model\Notification**](../Model/Notification.md)| notification |
+ **notification** | **object**| notification |
  **notification_id** | [**string**](../Model/.md)| UUID notification_id |
 
 ### Return type

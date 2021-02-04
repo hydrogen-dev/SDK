@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**is_error_occurred** | **bool** |  | [optional] 
 **message** | **str** |  | [optional] 
 **response** | [**list[BankLinkResponseInternalObjectVO]**](BankLinkResponseInternalObjectVO.md) |  | [optional] 
 

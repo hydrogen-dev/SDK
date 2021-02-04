@@ -31,59 +31,59 @@ class GuaranteedRateBenefit(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'max_rate': 'float',
+        'start_period': 'int',
         'end_period': 'int',
-        'min_rate': 'float',
-        'start_period': 'int'
+        'max_rate': 'float',
+        'min_rate': 'float'
     }
 
     attribute_map = {
-        'max_rate': 'max_rate',
+        'start_period': 'start_period',
         'end_period': 'end_period',
-        'min_rate': 'min_rate',
-        'start_period': 'start_period'
+        'max_rate': 'max_rate',
+        'min_rate': 'min_rate'
     }
 
-    def __init__(self, max_rate=None, end_period=None, min_rate=0.0, start_period=1):  # noqa: E501
+    def __init__(self, start_period=1, end_period=None, max_rate=None, min_rate=0.0):  # noqa: E501
         """GuaranteedRateBenefit - a model defined in Swagger"""  # noqa: E501
 
-        self._max_rate = None
-        self._end_period = None
-        self._min_rate = None
         self._start_period = None
+        self._end_period = None
+        self._max_rate = None
+        self._min_rate = None
         self.discriminator = None
 
-        if max_rate is not None:
-            self.max_rate = max_rate
-        if end_period is not None:
-            self.end_period = end_period
-        if min_rate is not None:
-            self.min_rate = min_rate
         if start_period is not None:
             self.start_period = start_period
+        if end_period is not None:
+            self.end_period = end_period
+        if max_rate is not None:
+            self.max_rate = max_rate
+        if min_rate is not None:
+            self.min_rate = min_rate
 
     @property
-    def max_rate(self):
-        """Gets the max_rate of this GuaranteedRateBenefit.  # noqa: E501
+    def start_period(self):
+        """Gets the start_period of this GuaranteedRateBenefit.  # noqa: E501
 
 
-        :return: The max_rate of this GuaranteedRateBenefit.  # noqa: E501
-        :rtype: float
+        :return: The start_period of this GuaranteedRateBenefit.  # noqa: E501
+        :rtype: int
         """
-        return self._max_rate
+        return self._start_period
 
-    @max_rate.setter
-    def max_rate(self, max_rate):
-        """Sets the max_rate of this GuaranteedRateBenefit.
+    @start_period.setter
+    def start_period(self, start_period):
+        """Sets the start_period of this GuaranteedRateBenefit.
 
 
-        :param max_rate: The max_rate of this GuaranteedRateBenefit.  # noqa: E501
-        :type: float
+        :param start_period: The start_period of this GuaranteedRateBenefit.  # noqa: E501
+        :type: int
         """
-        if max_rate is not None and max_rate < -1:  # noqa: E501
-            raise ValueError("Invalid value for `max_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
+        if start_period is not None and start_period < 1:  # noqa: E501
+            raise ValueError("Invalid value for `start_period`, must be a value greater than or equal to `1`")  # noqa: E501
 
-        self._max_rate = max_rate
+        self._start_period = start_period
 
     @property
     def end_period(self):
@@ -109,6 +109,29 @@ class GuaranteedRateBenefit(object):
         self._end_period = end_period
 
     @property
+    def max_rate(self):
+        """Gets the max_rate of this GuaranteedRateBenefit.  # noqa: E501
+
+
+        :return: The max_rate of this GuaranteedRateBenefit.  # noqa: E501
+        :rtype: float
+        """
+        return self._max_rate
+
+    @max_rate.setter
+    def max_rate(self, max_rate):
+        """Sets the max_rate of this GuaranteedRateBenefit.
+
+
+        :param max_rate: The max_rate of this GuaranteedRateBenefit.  # noqa: E501
+        :type: float
+        """
+        if max_rate is not None and max_rate < -1:  # noqa: E501
+            raise ValueError("Invalid value for `max_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
+
+        self._max_rate = max_rate
+
+    @property
     def min_rate(self):
         """Gets the min_rate of this GuaranteedRateBenefit.  # noqa: E501
 
@@ -130,29 +153,6 @@ class GuaranteedRateBenefit(object):
             raise ValueError("Invalid value for `min_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
 
         self._min_rate = min_rate
-
-    @property
-    def start_period(self):
-        """Gets the start_period of this GuaranteedRateBenefit.  # noqa: E501
-
-
-        :return: The start_period of this GuaranteedRateBenefit.  # noqa: E501
-        :rtype: int
-        """
-        return self._start_period
-
-    @start_period.setter
-    def start_period(self, start_period):
-        """Sets the start_period of this GuaranteedRateBenefit.
-
-
-        :param start_period: The start_period of this GuaranteedRateBenefit.  # noqa: E501
-        :type: int
-        """
-        if start_period is not None and start_period < 1:  # noqa: E501
-            raise ValueError("Invalid value for `start_period`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._start_period = start_period
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -4,29 +4,21 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**periodMonth** | **Integer** |  |  [optional]
-**periodQuarter** | **Integer** |  |  [optional]
-**clientId** | [**UUID**](UUID.md) |  |  [optional]
-**totalLiabilities** | **Float** |  |  [optional]
-**totalRevenue** | **Float** |  |  [optional]
-**accountingMethod** | [**AccountingMethodEnum**](#AccountingMethodEnum) |  |  [optional]
-**ratioTargets** | [**RatioTargets1**](RatioTargets1.md) |  |  [optional]
 **periodLength** | [**PeriodLengthEnum**](#PeriodLengthEnum) |  |  [optional]
-**currencyConversion** | **String** |  |  [optional]
-**periodType** | [**PeriodTypeEnum**](#PeriodTypeEnum) |  |  [optional]
-**periodYear** | **Integer** |  |  [optional]
-**totalAssets** | **Float** |  |  [optional]
-**currencyCode** | **String** |  |  [optional]
 **netIncome** | **Float** |  |  [optional]
+**periodMonth** | **Integer** |  |  [optional]
+**totalRevenue** | **Float** |  |  [optional]
+**totalAssets** | **Float** |  |  [optional]
+**clientId** | [**UUID**](UUID.md) |  |  [optional]
+**accountingMethod** | [**AccountingMethodEnum**](#AccountingMethodEnum) |  |  [optional]
+**periodYear** | **Integer** |  |  [optional]
+**currencyConversion** | **String** |  |  [optional]
+**totalLiabilities** | **Float** |  |  [optional]
+**periodType** | [**PeriodTypeEnum**](#PeriodTypeEnum) |  |  [optional]
+**currencyCode** | **String** |  |  [optional]
+**ratioTargets** | [**RatioTargets1**](RatioTargets1.md) |  |  [optional]
 **totalEquity** | **Float** |  |  [optional]
-
-
-<a name="AccountingMethodEnum"></a>
-## Enum: AccountingMethodEnum
-Name | Value
----- | -----
-ACCRUAL | &quot;accrual&quot;
-CASH | &quot;cash&quot;
+**periodQuarter** | **Integer** |  |  [optional]
 
 
 <a name="PeriodLengthEnum"></a>
@@ -39,6 +31,14 @@ MONTHLY | &quot;monthly&quot;
 YTD | &quot;ytd&quot;
 QTD | &quot;qtd&quot;
 MTD | &quot;mtd&quot;
+
+
+<a name="AccountingMethodEnum"></a>
+## Enum: AccountingMethodEnum
+Name | Value
+---- | -----
+ACCRUAL | &quot;accrual&quot;
+CASH | &quot;cash&quot;
 
 
 <a name="PeriodTypeEnum"></a>

@@ -42,7 +42,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.BenchmarkApi(nucleus_api.ApiClient(configuration))
 benchmark = nucleus_api.Benchmark() # Benchmark | benchmark
@@ -106,7 +106,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.BenchmarkApi(nucleus_api.ApiClient(configuration))
 benchmark_id = 'benchmark_id_example' # str | UUID benchmark_id
@@ -169,7 +169,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.BenchmarkApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -241,7 +241,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.BenchmarkApi(nucleus_api.ApiClient(configuration))
 benchmark_id = 'benchmark_id_example' # str | UUID benchmark_id
@@ -311,7 +311,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.BenchmarkApi(nucleus_api.ApiClient(configuration))
 benchmark_id = 'benchmark_id_example' # str | UUID benchmark_id
@@ -375,10 +375,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.BenchmarkApi(nucleus_api.ApiClient(configuration))
-benchmark = nucleus_api.Benchmark() # Benchmark | benchmark
+benchmark = NULL # object | benchmark
 benchmark_id = 'benchmark_id_example' # str | UUID benchmark_id
 
 try:
@@ -393,7 +393,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **benchmark** | [**Benchmark**](Benchmark.md)| benchmark | 
+ **benchmark** | **object**| benchmark | 
  **benchmark_id** | [**str**](.md)| UUID benchmark_id | 
 
 ### Return type

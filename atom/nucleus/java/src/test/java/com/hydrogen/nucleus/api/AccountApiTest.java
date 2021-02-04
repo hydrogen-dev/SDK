@@ -13,6 +13,7 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.Account;
 import com.hydrogen.nucleus.model.AccountAllocationMapping;
 import com.hydrogen.nucleus.model.AccountPermissionVO;
@@ -20,6 +21,7 @@ import com.hydrogen.nucleus.model.AccountStatus;
 import com.hydrogen.nucleus.model.AccountType;
 import com.hydrogen.nucleus.model.AclClientPermissionVO;
 import com.hydrogen.nucleus.model.AvailableDateDoubleVO;
+import org.threeten.bp.LocalDate;
 import com.hydrogen.nucleus.model.PageAccount;
 import com.hydrogen.nucleus.model.PageAccountAllocationMapping;
 import com.hydrogen.nucleus.model.PageAccountPermissionVO;
@@ -29,9 +31,6 @@ import com.hydrogen.nucleus.model.PagePortfolioTransaction;
 import com.hydrogen.nucleus.model.PageVAccountAssetSize;
 import com.hydrogen.nucleus.model.Portfolio;
 import com.hydrogen.nucleus.model.PortfolioHoldingAgg;
-import com.hydrogen.nucleus.ApiException;
-import org.threeten.bp.LocalDate;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -518,7 +517,7 @@ public class AccountApiTest {
     @Test
     public void updateAccountAllocationMappingUsingPutTest() throws ApiException {
         UUID accountAllocationId = null;
-        AccountAllocationMapping accountAllocationMapping = null;
+        Object accountAllocationMapping = null;
         AccountAllocationMapping response = api.updateAccountAllocationMappingUsingPut(accountAllocationId, accountAllocationMapping);
 
         // TODO: test validations
@@ -534,7 +533,7 @@ public class AccountApiTest {
      */
     @Test
     public void updateAccountStatusUsingPutTest() throws ApiException {
-        AccountStatus accountStatus = null;
+        Object accountStatus = null;
         UUID accountStatusId = null;
         AccountStatus response = api.updateAccountStatusUsingPut(accountStatus, accountStatusId);
 
@@ -551,7 +550,7 @@ public class AccountApiTest {
      */
     @Test
     public void updateAccountTypeUsingPutTest() throws ApiException {
-        AccountType accountType = null;
+        Object accountType = null;
         UUID accountTypeId = null;
         AccountType response = api.updateAccountTypeUsingPut(accountType, accountTypeId);
 
@@ -568,7 +567,7 @@ public class AccountApiTest {
      */
     @Test
     public void updateAccountUsingPutTest() throws ApiException {
-        Account account = null;
+        Object account = null;
         UUID accountId = null;
         Account response = api.updateAccountUsingPut(account, accountId);
 
@@ -586,7 +585,7 @@ public class AccountApiTest {
     @Test
     public void updateClientAccountPermissionUsingPUTTest() throws ApiException {
         UUID accountId = null;
-        AclClientPermissionVO aclClientPermissionVO = null;
+        Object aclClientPermissionVO = null;
         AccountPermissionVO response = api.updateClientAccountPermissionUsingPUT(accountId, aclClientPermissionVO);
 
         // TODO: test validations

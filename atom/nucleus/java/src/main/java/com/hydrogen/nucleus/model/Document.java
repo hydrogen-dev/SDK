@@ -13,32 +13,27 @@
 
 package com.hydrogen.nucleus.model;
 
-import java.util.Objects;
-
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
-import java.util.Map;
-import java.util.UUID;
 import org.threeten.bp.LocalDate;
 import org.threeten.bp.OffsetDateTime;
+
+import java.util.Map;
+import java.util.Objects;
+import java.util.UUID;
 
 /**
  * Document Object
  */
 @ApiModel(description = "Document Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-12T11:03:26.704Z")
-
-
-
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-27T09:44:24.487Z")
 public class Document {
   @SerializedName("account_id")
   private UUID accountId = null;
+
+  @SerializedName("business_id")
+  private UUID businessId = null;
 
   @SerializedName("client_id")
   private UUID clientId = null;
@@ -79,6 +74,9 @@ public class Document {
   @SerializedName("is_active")
   private Boolean isActive = null;
 
+  @SerializedName("is_sensitive")
+  private Boolean isSensitive = null;
+
   @SerializedName("is_verified")
   private Boolean isVerified = null;
 
@@ -116,6 +114,24 @@ public class Document {
 
   public void setAccountId(UUID accountId) {
     this.accountId = accountId;
+  }
+
+  public Document businessId(UUID businessId) {
+    this.businessId = businessId;
+    return this;
+  }
+
+   /**
+   * businessId
+   * @return businessId
+  **/
+  @ApiModelProperty(example = "1c28dade-8679-4df5-9b9d-c508d04fcb0c", value = "businessId")
+  public UUID getBusinessId() {
+    return businessId;
+  }
+
+  public void setBusinessId(UUID businessId) {
+    this.businessId = businessId;
   }
 
   public Document clientId(UUID clientId) {
@@ -334,6 +350,24 @@ public class Document {
     this.isActive = isActive;
   }
 
+  public Document isSensitive(Boolean isSensitive) {
+    this.isSensitive = isSensitive;
+    return this;
+  }
+
+   /**
+   * is_sensitive
+   * @return isSensitive
+  **/
+  @ApiModelProperty(example = "true", value = "is_sensitive")
+  public Boolean isIsSensitive() {
+    return isSensitive;
+  }
+
+  public void setIsSensitive(Boolean isSensitive) {
+    this.isSensitive = isSensitive;
+  }
+
   public Document isVerified(Boolean isVerified) {
     this.isVerified = isVerified;
     return this;
@@ -435,7 +469,7 @@ public class Document {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -444,6 +478,7 @@ public class Document {
     }
     Document document = (Document) o;
     return Objects.equals(this.accountId, document.accountId) &&
+        Objects.equals(this.businessId, document.businessId) &&
         Objects.equals(this.clientId, document.clientId) &&
         Objects.equals(this.countryOfIssue, document.countryOfIssue) &&
         Objects.equals(this.createDate, document.createDate) &&
@@ -457,6 +492,7 @@ public class Document {
         Objects.equals(this.expiryDate, document.expiryDate) &&
         Objects.equals(this.id, document.id) &&
         Objects.equals(this.isActive, document.isActive) &&
+        Objects.equals(this.isSensitive, document.isSensitive) &&
         Objects.equals(this.isVerified, document.isVerified) &&
         Objects.equals(this.issueDate, document.issueDate) &&
         Objects.equals(this.metadata, document.metadata) &&
@@ -468,7 +504,7 @@ public class Document {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, clientId, countryOfIssue, createDate, docFile, docImageBack, docImageFront, docName, docNumber, docSize, docType, expiryDate, id, isActive, isVerified, issueDate, metadata, secondaryId, stateOfIssue, updateDate, urlPath);
+    return Objects.hash(accountId, businessId, clientId, countryOfIssue, createDate, docFile, docImageBack, docImageFront, docName, docNumber, docSize, docType, expiryDate, id, isActive, isSensitive, isVerified, issueDate, metadata, secondaryId, stateOfIssue, updateDate, urlPath);
   }
 
 
@@ -476,8 +512,9 @@ public class Document {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Document {\n");
-    
+
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    sb.append("    businessId: ").append(toIndentedString(businessId)).append("\n");
     sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
     sb.append("    countryOfIssue: ").append(toIndentedString(countryOfIssue)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
@@ -491,6 +528,7 @@ public class Document {
     sb.append("    expiryDate: ").append(toIndentedString(expiryDate)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
+    sb.append("    isSensitive: ").append(toIndentedString(isSensitive)).append("\n");
     sb.append("    isVerified: ").append(toIndentedString(isVerified)).append("\n");
     sb.append("    issueDate: ").append(toIndentedString(issueDate)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
@@ -506,7 +544,7 @@ public class Document {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

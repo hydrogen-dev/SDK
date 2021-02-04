@@ -33,6 +33,103 @@ class CardApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def create_auto_reload_using_post(self, request, **kwargs):  # noqa: E501
+        """Card auto reload  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_auto_reload_using_post(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CardAutoReloadRequestCO request: request (required)
+        :return: CardAutoReloadResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_auto_reload_using_post_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.create_auto_reload_using_post_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def create_auto_reload_using_post_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Card auto reload  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_auto_reload_using_post_with_http_info(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CardAutoReloadRequestCO request: request (required)
+        :return: CardAutoReloadResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['request']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_auto_reload_using_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'request' is set
+        if ('request' not in params or
+                params['request'] is None):
+            raise ValueError("Missing the required parameter `request` when calling `create_auto_reload_using_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'request' in params:
+            body_params = params['request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/card/auto_reload', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CardAutoReloadResponseVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def create_card_activate_using_post(self, activate_request, **kwargs):  # noqa: E501
         """Activate card  # noqa: E501
 
@@ -123,6 +220,103 @@ class CardApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='BaseResponseVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def create_card_business_using_post(self, card_business_request_co, **kwargs):  # noqa: E501
+        """Create a card business  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_card_business_using_post(card_business_request_co, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CardBusinessRequestCO card_business_request_co: cardBusinessRequestCO (required)
+        :return: CreateBusinessResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_card_business_using_post_with_http_info(card_business_request_co, **kwargs)  # noqa: E501
+        else:
+            (data) = self.create_card_business_using_post_with_http_info(card_business_request_co, **kwargs)  # noqa: E501
+            return data
+
+    def create_card_business_using_post_with_http_info(self, card_business_request_co, **kwargs):  # noqa: E501
+        """Create a card business  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_card_business_using_post_with_http_info(card_business_request_co, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CardBusinessRequestCO card_business_request_co: cardBusinessRequestCO (required)
+        :return: CreateBusinessResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['card_business_request_co']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_card_business_using_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'card_business_request_co' is set
+        if ('card_business_request_co' not in params or
+                params['card_business_request_co'] is None):
+            raise ValueError("Missing the required parameter `card_business_request_co` when calling `create_card_business_using_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'card_business_request_co' in params:
+            body_params = params['card_business_request_co']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/card/business', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CreateBusinessResponseVO',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -317,6 +511,103 @@ class CardApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='BaseResponseVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def create_card_load_using_post(self, load_request, **kwargs):  # noqa: E501
+        """Create a card load  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_card_load_using_post(load_request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CardLoadRequestCO load_request: loadRequest (required)
+        :return: CardLoadUnloadResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_card_load_using_post_with_http_info(load_request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.create_card_load_using_post_with_http_info(load_request, **kwargs)  # noqa: E501
+            return data
+
+    def create_card_load_using_post_with_http_info(self, load_request, **kwargs):  # noqa: E501
+        """Create a card load  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_card_load_using_post_with_http_info(load_request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CardLoadRequestCO load_request: loadRequest (required)
+        :return: CardLoadUnloadResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['load_request']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_card_load_using_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'load_request' is set
+        if ('load_request' not in params or
+                params['load_request'] is None):
+            raise ValueError("Missing the required parameter `load_request` when calling `create_card_load_using_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'load_request' in params:
+            body_params = params['load_request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/card/load', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CardLoadUnloadResponseVO',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -615,43 +906,43 @@ class CardApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_card_reload_using_post(self, reload_request, **kwargs):  # noqa: E501
-        """Create a card reload  # noqa: E501
+    def create_card_replace_using_post(self, request, **kwargs):  # noqa: E501
+        """Create card replace  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_card_reload_using_post(reload_request, async_req=True)
+        >>> thread = api.create_card_replace_using_post(request, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CardReloadRequestCO reload_request: reloadRequest (required)
-        :return: CardReloadUnloadResponseVO
+        :param CardBaseRequestCO request: request (required)
+        :return: CardReplaceResponseVO
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_card_reload_using_post_with_http_info(reload_request, **kwargs)  # noqa: E501
+            return self.create_card_replace_using_post_with_http_info(request, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_card_reload_using_post_with_http_info(reload_request, **kwargs)  # noqa: E501
+            (data) = self.create_card_replace_using_post_with_http_info(request, **kwargs)  # noqa: E501
             return data
 
-    def create_card_reload_using_post_with_http_info(self, reload_request, **kwargs):  # noqa: E501
-        """Create a card reload  # noqa: E501
+    def create_card_replace_using_post_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Create card replace  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_card_reload_using_post_with_http_info(reload_request, async_req=True)
+        >>> thread = api.create_card_replace_using_post_with_http_info(request, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param CardReloadRequestCO reload_request: reloadRequest (required)
-        :return: CardReloadUnloadResponseVO
+        :param CardBaseRequestCO request: request (required)
+        :return: CardReplaceResponseVO
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['reload_request']  # noqa: E501
+        all_params = ['request']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -662,14 +953,14 @@ class CardApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_card_reload_using_post" % key
+                    " to method create_card_replace_using_post" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'reload_request' is set
-        if ('reload_request' not in params or
-                params['reload_request'] is None):
-            raise ValueError("Missing the required parameter `reload_request` when calling `create_card_reload_using_post`")  # noqa: E501
+        # verify the required parameter 'request' is set
+        if ('request' not in params or
+                params['request'] is None):
+            raise ValueError("Missing the required parameter `request` when calling `create_card_replace_using_post`")  # noqa: E501
 
         collection_formats = {}
 
@@ -683,8 +974,8 @@ class CardApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'reload_request' in params:
-            body_params = params['reload_request']
+        if 'request' in params:
+            body_params = params['request']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
@@ -697,14 +988,111 @@ class CardApi(object):
         auth_settings = ['oauth2']  # noqa: E501
 
         return self.api_client.call_api(
-            '/card/reload', 'POST',
+            '/card/replace', 'POST',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='CardReloadUnloadResponseVO',  # noqa: E501
+            response_type='CardReplaceResponseVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def create_card_spending_control_using_post(self, request, **kwargs):  # noqa: E501
+        """Create card spending control  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_card_spending_control_using_post(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CardSpendingControlRequestCO request: request (required)
+        :return: CardSpendingControlResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_card_spending_control_using_post_with_http_info(request, **kwargs)  # noqa: E501
+        else:
+            (data) = self.create_card_spending_control_using_post_with_http_info(request, **kwargs)  # noqa: E501
+            return data
+
+    def create_card_spending_control_using_post_with_http_info(self, request, **kwargs):  # noqa: E501
+        """Create card spending control  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_card_spending_control_using_post_with_http_info(request, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CardSpendingControlRequestCO request: request (required)
+        :return: CardSpendingControlResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['request']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_card_spending_control_using_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'request' is set
+        if ('request' not in params or
+                params['request'] is None):
+            raise ValueError("Missing the required parameter `request` when calling `create_card_spending_control_using_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'request' in params:
+            body_params = params['request']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/card/spending_control', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CardSpendingControlResponseVO',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -906,103 +1294,6 @@ class CardApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_card_transfer_using_post(self, transfer_request, **kwargs):  # noqa: E501
-        """Create Card transfer  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_card_transfer_using_post(transfer_request, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param CardTransferRequestCO transfer_request: transferRequest (required)
-        :return: CardTransferResponseVO
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.create_card_transfer_using_post_with_http_info(transfer_request, **kwargs)  # noqa: E501
-        else:
-            (data) = self.create_card_transfer_using_post_with_http_info(transfer_request, **kwargs)  # noqa: E501
-            return data
-
-    def create_card_transfer_using_post_with_http_info(self, transfer_request, **kwargs):  # noqa: E501
-        """Create Card transfer  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_card_transfer_using_post_with_http_info(transfer_request, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param CardTransferRequestCO transfer_request: transferRequest (required)
-        :return: CardTransferResponseVO
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['transfer_request']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method create_card_transfer_using_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'transfer_request' is set
-        if ('transfer_request' not in params or
-                params['transfer_request'] is None):
-            raise ValueError("Missing the required parameter `transfer_request` when calling `create_card_transfer_using_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'transfer_request' in params:
-            body_params = params['transfer_request']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['oauth2']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/card/transfer', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='CardTransferResponseVO',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
     def create_card_unload_using_post(self, reload_request, **kwargs):  # noqa: E501
         """Create a card upload  # noqa: E501
 
@@ -1013,7 +1304,7 @@ class CardApi(object):
 
         :param async_req bool
         :param CardUnloadRequestCO reload_request: reloadRequest (required)
-        :return: CardReloadUnloadResponseVO
+        :return: CardLoadUnloadResponseVO
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1034,7 +1325,7 @@ class CardApi(object):
 
         :param async_req bool
         :param CardUnloadRequestCO reload_request: reloadRequest (required)
-        :return: CardReloadUnloadResponseVO
+        :return: CardLoadUnloadResponseVO
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1092,7 +1383,7 @@ class CardApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='CardReloadUnloadResponseVO',  # noqa: E501
+            response_type='CardLoadUnloadResponseVO',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1110,7 +1401,7 @@ class CardApi(object):
 
         :param async_req bool
         :param CardClientRequestCO card_client_request_co: cardClientRequestCO (required)
-        :return: CardClientResponseVO
+        :return: CreateCardClientResponseVO
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1131,7 +1422,7 @@ class CardApi(object):
 
         :param async_req bool
         :param CardClientRequestCO card_client_request_co: cardClientRequestCO (required)
-        :return: CardClientResponseVO
+        :return: CreateCardClientResponseVO
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1189,7 +1480,7 @@ class CardApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='CardClientResponseVO',  # noqa: E501
+            response_type='CreateCardClientResponseVO',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1298,6 +1589,378 @@ class CardApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_card_image(self, card_id, **kwargs):  # noqa: E501
+        """Get card image  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_card_image(card_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str card_id: card_id (required)
+        :return: GetCardImageResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_card_image_with_http_info(card_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_card_image_with_http_info(card_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_card_image_with_http_info(self, card_id, **kwargs):  # noqa: E501
+        """Get card image  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_card_image_with_http_info(card_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str card_id: card_id (required)
+        :return: GetCardImageResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['card_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_card_image" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'card_id' is set
+        if ('card_id' not in params or
+                params['card_id'] is None):
+            raise ValueError("Missing the required parameter `card_id` when calling `get_card_image`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'card_id' in params:
+            path_params['card_id'] = params['card_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/card/image/{card_id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetCardImageResponseVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_card_pci_details(self, card_id, **kwargs):  # noqa: E501
+        """Get card pci details  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_card_pci_details(card_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str card_id: card_id (required)
+        :return: GetCardPciDetailsResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_card_pci_details_with_http_info(card_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_card_pci_details_with_http_info(card_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_card_pci_details_with_http_info(self, card_id, **kwargs):  # noqa: E501
+        """Get card pci details  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_card_pci_details_with_http_info(card_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str card_id: card_id (required)
+        :return: GetCardPciDetailsResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['card_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_card_pci_details" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'card_id' is set
+        if ('card_id' not in params or
+                params['card_id'] is None):
+            raise ValueError("Missing the required parameter `card_id` when calling `get_card_pci_details`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'card_id' in params:
+            path_params['card_id'] = params['card_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/card/pci_details/{card_id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetCardPciDetailsResponseVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_card_reserve_account_details_using_get(self, **kwargs):  # noqa: E501
+        """Card reserve account  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_card_reserve_account_details_using_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: CardReserveAccountResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_card_reserve_account_details_using_get_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_card_reserve_account_details_using_get_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_card_reserve_account_details_using_get_with_http_info(self, **kwargs):  # noqa: E501
+        """Card reserve account  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_card_reserve_account_details_using_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: CardReserveAccountResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_card_reserve_account_details_using_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/card/reserve', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CardReserveAccountResponseVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_card_statement_using_get(self, card_id, **kwargs):  # noqa: E501
+        """Get card statement  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_card_statement_using_get(card_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str card_id: card_id (required)
+        :param date end_date: end_date
+        :param date start_date: start_date
+        :return: GetCardStatementResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_card_statement_using_get_with_http_info(card_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_card_statement_using_get_with_http_info(card_id, **kwargs)  # noqa: E501
+            return data
+
+    def get_card_statement_using_get_with_http_info(self, card_id, **kwargs):  # noqa: E501
+        """Get card statement  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_card_statement_using_get_with_http_info(card_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str card_id: card_id (required)
+        :param date end_date: end_date
+        :param date start_date: start_date
+        :return: GetCardStatementResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['card_id', 'end_date', 'start_date']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_card_statement_using_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'card_id' is set
+        if ('card_id' not in params or
+                params['card_id'] is None):
+            raise ValueError("Missing the required parameter `card_id` when calling `get_card_statement_using_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'card_id' in params:
+            path_params['card_id'] = params['card_id']  # noqa: E501
+
+        query_params = []
+        if 'end_date' in params:
+            query_params.append(('end_date', params['end_date']))  # noqa: E501
+        if 'start_date' in params:
+            query_params.append(('start_date', params['start_date']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/card/statement/{card_id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GetCardStatementResponseVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_card_token_using_token(self, id, **kwargs):  # noqa: E501
         """Get a card token  # noqa: E501
 
@@ -1308,7 +1971,10 @@ class CardApi(object):
 
         :param async_req bool
         :param str id: id (required)
-        :return: GetCardTokenResponseVO
+        :param str device_id: device_id
+        :param str device_type: device_type
+        :param str wallet: wallet
+        :return: list[GetCardTokenResponseVO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1329,12 +1995,15 @@ class CardApi(object):
 
         :param async_req bool
         :param str id: id (required)
-        :return: GetCardTokenResponseVO
+        :param str device_id: device_id
+        :param str device_type: device_type
+        :param str wallet: wallet
+        :return: list[GetCardTokenResponseVO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'device_id', 'device_type', 'wallet']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1361,6 +2030,12 @@ class CardApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'device_id' in params:
+            query_params.append(('device_id', params['device_id']))  # noqa: E501
+        if 'device_type' in params:
+            query_params.append(('device_type', params['device_type']))  # noqa: E501
+        if 'wallet' in params:
+            query_params.append(('wallet', params['wallet']))  # noqa: E501
 
         header_params = {}
 
@@ -1383,7 +2058,7 @@ class CardApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GetCardTokenResponseVO',  # noqa: E501
+            response_type='list[GetCardTokenResponseVO]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1585,6 +2260,103 @@ class CardApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def update_card_business_using_put(self, nucleus_business_id, **kwargs):  # noqa: E501
+        """Update a card business  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_card_business_using_put(nucleus_business_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str nucleus_business_id: nucleus_business_id (required)
+        :return: UpdateBusinessResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_card_business_using_put_with_http_info(nucleus_business_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_card_business_using_put_with_http_info(nucleus_business_id, **kwargs)  # noqa: E501
+            return data
+
+    def update_card_business_using_put_with_http_info(self, nucleus_business_id, **kwargs):  # noqa: E501
+        """Update a card business  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_card_business_using_put_with_http_info(nucleus_business_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str nucleus_business_id: nucleus_business_id (required)
+        :return: UpdateBusinessResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['nucleus_business_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_card_business_using_put" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'nucleus_business_id' is set
+        if ('nucleus_business_id' not in params or
+                params['nucleus_business_id'] is None):
+            raise ValueError("Missing the required parameter `nucleus_business_id` when calling `update_card_business_using_put`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'nucleus_business_id' in params:
+            path_params['nucleus_business_id'] = params['nucleus_business_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/card/business/{nucleus_business_id}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='UpdateBusinessResponseVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def update_card_pin_using_post(self, card_pin_request_co, id, **kwargs):  # noqa: E501
         """update a pin card  # noqa: E501
 
@@ -1594,7 +2366,7 @@ class CardApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param CardPinRequestCO card_pin_request_co: cardPinRequestCO (required)
+        :param CardUpdatePinRequestCO card_pin_request_co: cardPinRequestCO (required)
         :param str id: id (required)
         :return: BaseResponseVO
                  If the method is called asynchronously,
@@ -1616,7 +2388,7 @@ class CardApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param CardPinRequestCO card_pin_request_co: cardPinRequestCO (required)
+        :param CardUpdatePinRequestCO card_pin_request_co: cardPinRequestCO (required)
         :param str id: id (required)
         :return: BaseResponseVO
                  If the method is called asynchronously,
@@ -1683,6 +2455,103 @@ class CardApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='BaseResponseVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_card_spending_control_using_put(self, nucleus_spending_control_id, **kwargs):  # noqa: E501
+        """Update a card spending control  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_card_spending_control_using_put(nucleus_spending_control_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str nucleus_spending_control_id: nucleus_spending_control_id (required)
+        :return: CardSpendingControlResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_card_spending_control_using_put_with_http_info(nucleus_spending_control_id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_card_spending_control_using_put_with_http_info(nucleus_spending_control_id, **kwargs)  # noqa: E501
+            return data
+
+    def update_card_spending_control_using_put_with_http_info(self, nucleus_spending_control_id, **kwargs):  # noqa: E501
+        """Update a card spending control  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_card_spending_control_using_put_with_http_info(nucleus_spending_control_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str nucleus_spending_control_id: nucleus_spending_control_id (required)
+        :return: CardSpendingControlResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['nucleus_spending_control_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_card_spending_control_using_put" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'nucleus_spending_control_id' is set
+        if ('nucleus_spending_control_id' not in params or
+                params['nucleus_spending_control_id'] is None):
+            raise ValueError("Missing the required parameter `nucleus_spending_control_id` when calling `update_card_spending_control_using_put`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'nucleus_spending_control_id' in params:
+            path_params['nucleus_spending_control_id'] = params['nucleus_spending_control_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/card/spending_control/{nucleus_spending_control_id}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CardSpendingControlResponseVO',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1773,6 +2642,200 @@ class CardApi(object):
 
         return self.api_client.call_api(
             '/card/{id}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='BaseResponseVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_client_card_using_put(self, id, **kwargs):  # noqa: E501
+        """Update a card client  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_client_card_using_put(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: id (required)
+        :return: UpdateCardClientResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_client_card_using_put_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_client_card_using_put_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def update_client_card_using_put_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Update a card client  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_client_card_using_put_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: id (required)
+        :return: UpdateCardClientResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_client_card_using_put" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `update_client_card_using_put`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/card/client/{id}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='UpdateCardClientResponseVO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def verify_card_pin_using_post(self, card_pin_request_co, **kwargs):  # noqa: E501
+        """verify card pin  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.verify_card_pin_using_post(card_pin_request_co, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CardPinRequestCO card_pin_request_co: cardPinRequestCO (required)
+        :return: BaseResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.verify_card_pin_using_post_with_http_info(card_pin_request_co, **kwargs)  # noqa: E501
+        else:
+            (data) = self.verify_card_pin_using_post_with_http_info(card_pin_request_co, **kwargs)  # noqa: E501
+            return data
+
+    def verify_card_pin_using_post_with_http_info(self, card_pin_request_co, **kwargs):  # noqa: E501
+        """verify card pin  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.verify_card_pin_using_post_with_http_info(card_pin_request_co, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param CardPinRequestCO card_pin_request_co: cardPinRequestCO (required)
+        :return: BaseResponseVO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['card_pin_request_co']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method verify_card_pin_using_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'card_pin_request_co' is set
+        if ('card_pin_request_co' not in params or
+                params['card_pin_request_co'] is None):
+            raise ValueError("Missing the required parameter `card_pin_request_co` when calling `verify_card_pin_using_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'card_pin_request_co' in params:
+            body_params = params['card_pin_request_co']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/card/pin/verify', 'POST',
             path_params,
             query_params,
             header_params,

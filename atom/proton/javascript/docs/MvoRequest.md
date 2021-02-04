@@ -3,28 +3,17 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**wAssetConfig** | **Object** |  | [optional] 
-**tgtType** | **String** |  | [optional] 
-**tgtVal** | **Number** |  | [optional] [default to 0.0]
-**minAssets** | **Number** |  | 
 **secTypes** | **[String]** |  | 
-**wConfig** | [**WConfig**](WConfig.md) |  | 
 **endDate** | **Date** |  | [optional] 
+**marketDataSource** | **String** |  | [optional] [default to 'nucleus']
+**tgtVal** | **Number** |  | [optional] [default to 0.0]
+**tgtType** | **String** |  | [optional] 
 **useProxyData** | **Boolean** |  | [optional] [default to false]
+**wConfig** | [**WConfig**](WConfig.md) |  | 
 **startDate** | **Date** |  | [optional] 
 **tickers** | **[String]** |  | 
-**marketDataSource** | **String** |  | [optional] [default to 'nucleus']
-
-
-<a name="TgtTypeEnum"></a>
-## Enum: TgtTypeEnum
-
-
-* `risk` (value: `"risk"`)
-
-* `_return` (value: `"return"`)
-
-
+**minAssets** | **Number** |  | 
+**wAssetConfig** | **Object** |  | [optional] 
 
 
 <a name="[SecTypesEnum]"></a>
@@ -47,6 +36,17 @@ Name | Type | Description | Notes
 * `nucleus` (value: `"nucleus"`)
 
 * `integration` (value: `"integration"`)
+
+
+
+
+<a name="TgtTypeEnum"></a>
+## Enum: TgtTypeEnum
+
+
+* `risk` (value: `"risk"`)
+
+* `_return` (value: `"return"`)
 
 
 

@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**get_aggregation_account_transaction_all_using_get**](AggregationApi.md#get_aggregation_account_transaction_all_using_get) | **GET** /aggregation/transaction | Fetch all aggregation account balance details with for the given aggregation accounts 
 [**get_aggregation_account_transaction_using_get**](AggregationApi.md#get_aggregation_account_transaction_using_get) | **GET** /aggregation/transaction/{nucleus_aggregation_account_id} | Fetch aggregation account transaction details with the mapping created in POST endpoint
 [**get_aggregation_account_using_get**](AggregationApi.md#get_aggregation_account_using_get) | **GET** /aggregation/account/{nucleus_aggregation_account_id} | Fetch aggregation account details with the mapping created in POST endpoint
+[**get_property_value**](AggregationApi.md#get_property_value) | **GET** /property_value | Get Value of the given property
 
 
 # **create_aggregation_account_using_post**
@@ -48,8 +49,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.AggregationApi(integration_api.ApiClient(configuration))
 aggregation_request_object = integration_api.AggregationRequestObject() # AggregationRequestObject | aggregationRequestObject
@@ -114,8 +116,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.AggregationApi(integration_api.ApiClient(configuration))
 aggregation_request_object = integration_api.AggregationRequestObject() # AggregationRequestObject | aggregationRequestObject
@@ -180,8 +183,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.AggregationApi(integration_api.ApiClient(configuration))
 nucleus_aggregation_account_id = 'nucleus_aggregation_account_id_example' # str | nucleus_aggregation_account_id
@@ -245,8 +249,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.AggregationApi(integration_api.ApiClient(configuration))
 aggregation_account_id_list = ['aggregation_account_id_list_example'] # list[str] | aggregation_account_id_list
@@ -311,8 +316,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.AggregationApi(integration_api.ApiClient(configuration))
 aggregation_account_id_list = ['aggregation_account_id_list_example'] # list[str] | aggregation_account_id_list
@@ -377,8 +383,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.AggregationApi(integration_api.ApiClient(configuration))
 nucleus_aggregation_account_id = 'nucleus_aggregation_account_id_example' # str | nucleus_aggregation_account_id
@@ -443,8 +450,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.AggregationApi(integration_api.ApiClient(configuration))
 aggregation_account_id_list = ['aggregation_account_id_list_example'] # list[str] | aggregation_account_id_list
@@ -509,8 +517,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.AggregationApi(integration_api.ApiClient(configuration))
 nucleus_aggregation_account_id = 'nucleus_aggregation_account_id_example' # str | nucleus_aggregation_account_id
@@ -575,8 +584,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.AggregationApi(integration_api.ApiClient(configuration))
 aggregation_account_id_list = ['aggregation_account_id_list_example'] # list[str] | aggregation_account_id_list
@@ -641,8 +651,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.AggregationApi(integration_api.ApiClient(configuration))
 nucleus_aggregation_account_id = 'nucleus_aggregation_account_id_example' # str | nucleus_aggregation_account_id
@@ -707,8 +718,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.AggregationApi(integration_api.ApiClient(configuration))
 nucleus_aggregation_account_id = 'nucleus_aggregation_account_id_example' # str | nucleus_aggregation_account_id
@@ -739,6 +751,77 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_property_value**
+> PropertyValueResponseVO get_property_value(nucleus_aggregation_account_id, nucleus_client_id, product=product)
+
+Get Value of the given property
+
+Get Value of the given property
+
+### Example
+```python
+from __future__ import print_function
+import time
+import integration_api
+from integration_api.rest import ApiException
+from pprint import pprint
+
+
+# Configure OAuth2 access token for authorization: oauth2
+configuration = integration_api.Configuration()
+
+# create an instance of the API class
+api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
+
+#api_token_response = api_instance.create_using_post_client_credentials("client_id", "password")
+
+# OR
+
+#api_token_response = api_instance.create_using_post_password_credentials("client_id","password", "username", "secret" )
+
+# OR
+
+# api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
+
+
+configuration.access_token = api_token_response.access_token
+# create an instance of the API class
+api_instance = integration_api.AggregationApi(integration_api.ApiClient(configuration))
+nucleus_aggregation_account_id = 'nucleus_aggregation_account_id_example' # str | nucleus_aggregation_account_id
+nucleus_client_id = 'nucleus_client_id_example' # str | nucleus_client_id
+product = 'atom' # str | product (optional) (default to atom)
+
+try:
+    # Get Value of the given property
+    api_response = api_instance.get_property_value(nucleus_aggregation_account_id, nucleus_client_id, product=product)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AggregationApi->get_property_value: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nucleus_aggregation_account_id** | [**str**](.md)| nucleus_aggregation_account_id | 
+ **nucleus_client_id** | [**str**](.md)| nucleus_client_id | 
+ **product** | **str**| product | [optional] [default to atom]
+
+### Return type
+
+[**PropertyValueResponseVO**](PropertyValueResponseVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

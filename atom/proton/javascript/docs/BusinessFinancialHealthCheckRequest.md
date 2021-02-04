@@ -3,32 +3,21 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**periodMonth** | **Number** |  | [optional] 
-**periodQuarter** | **Number** |  | [optional] 
-**clientId** | **String** |  | [optional] 
-**totalLiabilities** | **Number** |  | [optional] 
-**totalRevenue** | **Number** |  | [optional] 
-**accountingMethod** | **String** |  | [optional] 
-**ratioTargets** | [**RatioTargets1**](RatioTargets1.md) |  | [optional] 
 **periodLength** | **String** |  | [optional] [default to 'quarterly']
-**currencyConversion** | **String** |  | [optional] 
-**periodType** | **String** |  | [optional] 
-**periodYear** | **Number** |  | [optional] 
-**totalAssets** | **Number** |  | [optional] 
-**currencyCode** | **String** |  | [optional] 
 **netIncome** | **Number** |  | [optional] 
+**periodMonth** | **Number** |  | [optional] 
+**totalRevenue** | **Number** |  | [optional] 
+**totalAssets** | **Number** |  | [optional] 
+**clientId** | **String** |  | [optional] 
+**accountingMethod** | **String** |  | [optional] 
+**periodYear** | **Number** |  | [optional] 
+**currencyConversion** | **String** |  | [optional] 
+**totalLiabilities** | **Number** |  | [optional] 
+**periodType** | **String** |  | [optional] 
+**currencyCode** | **String** |  | [optional] 
+**ratioTargets** | [**RatioTargets1**](RatioTargets1.md) |  | [optional] 
 **totalEquity** | **Number** |  | [optional] 
-
-
-<a name="AccountingMethodEnum"></a>
-## Enum: AccountingMethodEnum
-
-
-* `accrual` (value: `"accrual"`)
-
-* `cash` (value: `"cash"`)
-
-
+**periodQuarter** | **Number** |  | [optional] 
 
 
 <a name="PeriodLengthEnum"></a>
@@ -46,6 +35,17 @@ Name | Type | Description | Notes
 * `qtd` (value: `"qtd"`)
 
 * `mtd` (value: `"mtd"`)
+
+
+
+
+<a name="AccountingMethodEnum"></a>
+## Enum: AccountingMethodEnum
+
+
+* `accrual` (value: `"accrual"`)
+
+* `cash` (value: `"cash"`)
 
 
 

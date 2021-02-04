@@ -16,7 +16,6 @@ package com.hydrogen.integration.api;
 import com.hydrogen.integration.ApiException;
 import com.hydrogen.integration.model.KmsConfig;
 import com.hydrogen.integration.model.PageKmsConfig;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -65,7 +64,7 @@ public class KmsApiTest {
     /**
      * List all KMS Clients
      *
-     * Get details for all clients registered with your firm.
+     * Get details for all clients registered with your business.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -73,10 +72,11 @@ public class KmsApiTest {
     @Test
     public void getKMSAllUsingGetTest() throws ApiException {
         Boolean ascending = null;
+        String filter = null;
         String orderBy = null;
         Integer page = null;
         Integer size = null;
-        PageKmsConfig response = api.getKMSAllUsingGet(ascending, orderBy, page, size);
+        PageKmsConfig response = api.getKMSAllUsingGet(ascending, filter, orderBy, page, size);
 
         // TODO: test validations
     }

@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientId** | **String** |  | [optional] 
-**currencyConversion** | **String** |  | [optional] 
 **aggregationAccountIds** | **[String]** |  | [optional] 
 **endDate** | **Date** |  | [optional] 
-**currencyCode** | **String** |  | [optional] 
+**clientId** | **String** |  | [optional] 
+**currencyConversion** | **String** |  | [optional] 
 **startDate** | **Date** |  | [optional] 
+**currencyCode** | **String** |  | [optional] 
 
 

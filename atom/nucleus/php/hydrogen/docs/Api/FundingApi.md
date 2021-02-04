@@ -1462,7 +1462,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     new GuzzleHttp\Client(),
     $config
 );
-$bank_link_list = array(new \com\hydrogen\nucleus\Model\BankLink()); // \com\hydrogen\nucleus\Model\BankLink[] | bankLinkList
+$bank_link_list = array(new \com\hydrogen\nucleus\Model\object[]()); // object[] | bankLinkList
 
 try {
     $result = $apiInstance->updateBankLinkBulkUsingPut($bank_link_list);
@@ -1477,7 +1477,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bank_link_list** | [**\com\hydrogen\nucleus\Model\BankLink[]**](../Model/BankLink.md)| bankLinkList |
+ **bank_link_list** | **object[]**| bankLinkList |
 
 ### Return type
 
@@ -1529,7 +1529,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     new GuzzleHttp\Client(),
     $config
 );
-$bank_link = new \com\hydrogen\nucleus\Model\BankLink(); // \com\hydrogen\nucleus\Model\BankLink | bank_link
+$bank_link = new \stdClass; // object | bank_link
 $bank_link_id = "bank_link_id_example"; // string | UUID bank_link_id
 
 try {
@@ -1545,7 +1545,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bank_link** | [**\com\hydrogen\nucleus\Model\BankLink**](../Model/BankLink.md)| bank_link |
+ **bank_link** | **object**| bank_link |
  **bank_link_id** | [**string**](../Model/.md)| UUID bank_link_id |
 
 ### Return type
@@ -1598,7 +1598,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     new GuzzleHttp\Client(),
     $config
 );
-$deposit = new \com\hydrogen\nucleus\Model\DailyDeposit(); // \com\hydrogen\nucleus\Model\DailyDeposit | deposit
+$deposit = new \stdClass; // object | deposit
 $deposit_id = "deposit_id_example"; // string | UUID deposit_id
 
 try {
@@ -1614,7 +1614,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **deposit** | [**\com\hydrogen\nucleus\Model\DailyDeposit**](../Model/DailyDeposit.md)| deposit |
+ **deposit** | **object**| deposit |
  **deposit_id** | [**string**](../Model/.md)| UUID deposit_id |
 
 ### Return type
@@ -1667,7 +1667,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     new GuzzleHttp\Client(),
     $config
 );
-$funding = new \com\hydrogen\nucleus\Model\Funding(); // \com\hydrogen\nucleus\Model\Funding | funding
+$funding = new \stdClass; // object | funding
 $funding_id = "funding_id_example"; // string | UUID funding_id
 
 try {
@@ -1683,7 +1683,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **funding** | [**\com\hydrogen\nucleus\Model\Funding**](../Model/Funding.md)| funding |
+ **funding** | **object**| funding |
  **funding_id** | [**string**](../Model/.md)| UUID funding_id |
 
 ### Return type
@@ -1736,7 +1736,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     new GuzzleHttp\Client(),
     $config
 );
-$transfer = new \com\hydrogen\nucleus\Model\ExternalAccountTransfer(); // \com\hydrogen\nucleus\Model\ExternalAccountTransfer | transfer
+$transfer = new \stdClass; // object | transfer
 $transfer_id = "transfer_id_example"; // string | UUID external_account_transfer_id
 
 try {
@@ -1752,7 +1752,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transfer** | [**\com\hydrogen\nucleus\Model\ExternalAccountTransfer**](../Model/ExternalAccountTransfer.md)| transfer |
+ **transfer** | **object**| transfer |
  **transfer_id** | [**string**](../Model/.md)| UUID external_account_transfer_id |
 
 ### Return type
@@ -1805,7 +1805,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\FundingApi(
     new GuzzleHttp\Client(),
     $config
 );
-$withdrawal = new \com\hydrogen\nucleus\Model\DailyWithdrawal(); // \com\hydrogen\nucleus\Model\DailyWithdrawal | withdrawal
+$withdrawal = new \stdClass; // object | withdrawal
 $withdrawal_id = "withdrawal_id_example"; // string | UUID withdrawal_id
 
 try {
@@ -1821,7 +1821,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **withdrawal** | [**\com\hydrogen\nucleus\Model\DailyWithdrawal**](../Model/DailyWithdrawal.md)| withdrawal |
+ **withdrawal** | **object**| withdrawal |
  **withdrawal_id** | [**string**](../Model/.md)| UUID withdrawal_id |
 
 ### Return type

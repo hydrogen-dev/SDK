@@ -210,7 +210,7 @@ apiInstance.deleteNotificationClientUsingDelete(notificationClientId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notificationClientId** | **String**| notification_client_id | 
+ **notificationClientId** | [**String**](.md)| notification_client_id | 
 
 ### Return type
 
@@ -261,7 +261,7 @@ apiInstance.deleteNotificationSettingUsingDelete(notificationSettingId, callback
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notificationSettingId** | **String**| notification_setting_id | 
+ **notificationSettingId** | [**String**](.md)| notification_setting_id | 
 
 ### Return type
 
@@ -295,7 +295,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.NotificationApi();
 
-var notificationId = "1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c"; // String | UUID notification_id
+var notificationId = "\"1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c\""; // String | UUID notification_id
 
 
 var callback = function(error, data, response) {
@@ -312,7 +312,7 @@ apiInstance.deleteNotificationUsingDelete(notificationId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notificationId** | **String**| UUID notification_id | 
+ **notificationId** | [**String**](.md)| UUID notification_id | 
 
 ### Return type
 
@@ -483,7 +483,7 @@ apiInstance.getNotificationClientUsingGet(notificationClientId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notificationClientId** | **String**| notification_client_id | 
+ **notificationClientId** | [**String**](.md)| notification_client_id | 
 
 ### Return type
 
@@ -594,7 +594,7 @@ apiInstance.getNotificationSettingUsingGet(notificationSettingId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notificationSettingId** | **String**| notification_setting_id | 
+ **notificationSettingId** | [**String**](.md)| notification_setting_id | 
 
 ### Return type
 
@@ -645,7 +645,7 @@ apiInstance.getNotificationUsingGet(notificationId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notificationId** | **String**| notification_id | 
+ **notificationId** | [**String**](.md)| notification_id | 
 
 ### Return type
 
@@ -679,9 +679,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.NotificationApi();
 
-var notificationClient = new HydrogenNucleusApi.NotificationClient(); // NotificationClient | notification_client
+var notificationClient = null; // Object | notification_client
 
-var notificationClientId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID notification_client_id
+var notificationClientId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID notification_client_id
 
 
 var callback = function(error, data, response) {
@@ -698,8 +698,8 @@ apiInstance.updateNotificationClientUsingPut(notificationClient, notificationCli
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notificationClient** | [**NotificationClient**](NotificationClient.md)| notification_client | 
- **notificationClientId** | **String**| UUID notification_client_id | 
+ **notificationClient** | **Object**| notification_client | 
+ **notificationClientId** | [**String**](.md)| UUID notification_client_id | 
 
 ### Return type
 
@@ -733,9 +733,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.NotificationApi();
 
-var notificationSetting = new HydrogenNucleusApi.NotificationSetting(); // NotificationSetting | notification_setting
+var notificationSetting = null; // Object | notification_setting
 
-var notificationSettingId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID notification_setting_id
+var notificationSettingId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID notification_setting_id
 
 
 var callback = function(error, data, response) {
@@ -752,8 +752,8 @@ apiInstance.updateNotificationSettingUsingPut(notificationSetting, notificationS
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notificationSetting** | [**NotificationSetting**](NotificationSetting.md)| notification_setting | 
- **notificationSettingId** | **String**| UUID notification_setting_id | 
+ **notificationSetting** | **Object**| notification_setting | 
+ **notificationSettingId** | [**String**](.md)| UUID notification_setting_id | 
 
 ### Return type
 
@@ -787,9 +787,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.NotificationApi();
 
-var notification = new HydrogenNucleusApi.Notification(); // Notification | notification
+var notification = null; // Object | notification
 
-var notificationId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID notification_id
+var notificationId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID notification_id
 
 
 var callback = function(error, data, response) {
@@ -806,8 +806,8 @@ apiInstance.updateNotificationUsingPut(notification, notificationId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification** | [**Notification**](Notification.md)| notification | 
- **notificationId** | **String**| UUID notification_id | 
+ **notification** | **Object**| notification | 
+ **notificationId** | [**String**](.md)| UUID notification_id | 
 
 ### Return type
 

@@ -21,25 +21,22 @@ import com.hydrogen.nucleus.Configuration;
 import com.hydrogen.nucleus.Pair;
 import com.hydrogen.nucleus.ProgressRequestBody;
 import com.hydrogen.nucleus.ProgressResponseBody;
-import com.hydrogen.nucleus.model.AvailableDateDoubleVO;
-import com.hydrogen.nucleus.model.Client;
-import com.hydrogen.nucleus.model.ClientHydro;
-import com.hydrogen.nucleus.model.ClientStatus;
-import com.hydrogen.nucleus.model.PageClientHydro;
-import com.hydrogen.nucleus.model.PageClientStatus;
-import com.hydrogen.nucleus.model.PagePortfolioTransaction;
-import com.hydrogen.nucleus.model.PortfolioHoldingAgg;
-import com.hydrogen.nucleus.model.VClientGoalViewData;
 
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
 
+import com.hydrogen.nucleus.model.AvailableDateDoubleVO;
+import com.hydrogen.nucleus.model.Client;
+import com.hydrogen.nucleus.model.ClientStatus;
 import org.threeten.bp.LocalDate;
 import com.hydrogen.nucleus.model.PageClient;
-
+import com.hydrogen.nucleus.model.PageClientStatus;
+import com.hydrogen.nucleus.model.PagePortfolioTransaction;
+import com.hydrogen.nucleus.model.PortfolioHoldingAgg;
 import java.util.UUID;
+import com.hydrogen.nucleus.model.VClientGoalViewData;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -66,128 +63,6 @@ public class ClientApi {
         this.apiClient = apiClient;
     }
 
-    /**
-     * Build call for createClientHydroUsingPost
-     * @param clientHydro clientHydro (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call createClientHydroUsingPostCall(ClientHydro clientHydro, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = clientHydro;
-
-        // create path and map variables
-        String localVarPath = "/client_hydro";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "*/*"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "oauth2" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createClientHydroUsingPostValidateBeforeCall(ClientHydro clientHydro, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'clientHydro' is set
-        if (clientHydro == null) {
-            throw new ApiException("Missing the required parameter 'clientHydro' when calling createClientHydroUsingPost(Async)");
-        }
-        
-
-        com.squareup.okhttp.Call call = createClientHydroUsingPostCall(clientHydro, progressListener, progressRequestListener);
-        return call;
-
-    }
-
-    /**
-     * Create a client-hydro relationship
-     * Create an client-hydro relationship under a client.
-     * @param clientHydro clientHydro (required)
-     * @return ClientHydro
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ClientHydro createClientHydroUsingPost(ClientHydro clientHydro) throws ApiException {
-        ApiResponse<ClientHydro> resp = createClientHydroUsingPostWithHttpInfo(clientHydro);
-        return resp.getData();
-    }
-
-    /**
-     * Create a client-hydro relationship
-     * Create an client-hydro relationship under a client.
-     * @param clientHydro clientHydro (required)
-     * @return ApiResponse&lt;ClientHydro&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<ClientHydro> createClientHydroUsingPostWithHttpInfo(ClientHydro clientHydro) throws ApiException {
-        com.squareup.okhttp.Call call = createClientHydroUsingPostValidateBeforeCall(clientHydro, null, null);
-        Type localVarReturnType = new TypeToken<ClientHydro>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Create a client-hydro relationship (asynchronously)
-     * Create an client-hydro relationship under a client.
-     * @param clientHydro clientHydro (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call createClientHydroUsingPostAsync(ClientHydro clientHydro, final ApiCallback<ClientHydro> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = createClientHydroUsingPostValidateBeforeCall(clientHydro, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ClientHydro>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
     /**
      * Build call for createClientStatusUsingPost
      * @param clientStatusRequest clientStatusRequest (required)
@@ -430,125 +305,6 @@ public class ClientApi {
         com.squareup.okhttp.Call call = createClientUsingPostValidateBeforeCall(clientRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Client>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for deleteClientHydroUsingDelete
-     * @param clientHydroId UUID client_hydro_id (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call deleteClientHydroUsingDeleteCall(UUID clientHydroId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/client_hydro/{client_hydro_id}"
-            .replaceAll("\\{" + "client_hydro_id" + "\\}", apiClient.escapeString(clientHydroId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "*/*"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "oauth2" };
-        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteClientHydroUsingDeleteValidateBeforeCall(UUID clientHydroId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'clientHydroId' is set
-        if (clientHydroId == null) {
-            throw new ApiException("Missing the required parameter 'clientHydroId' when calling deleteClientHydroUsingDelete(Async)");
-        }
-        
-
-        com.squareup.okhttp.Call call = deleteClientHydroUsingDeleteCall(clientHydroId, progressListener, progressRequestListener);
-        return call;
-
-    }
-
-    /**
-     * Delete a client-hydro relationship
-     * Permanently delete a client-hydro relationship for a Hydro ID and a client.
-     * @param clientHydroId UUID client_hydro_id (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public void deleteClientHydroUsingDelete(UUID clientHydroId) throws ApiException {
-        deleteClientHydroUsingDeleteWithHttpInfo(clientHydroId);
-    }
-
-    /**
-     * Delete a client-hydro relationship
-     * Permanently delete a client-hydro relationship for a Hydro ID and a client.
-     * @param clientHydroId UUID client_hydro_id (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<Void> deleteClientHydroUsingDeleteWithHttpInfo(UUID clientHydroId) throws ApiException {
-        com.squareup.okhttp.Call call = deleteClientHydroUsingDeleteValidateBeforeCall(clientHydroId, null, null);
-        return apiClient.execute(call);
-    }
-
-    /**
-     * Delete a client-hydro relationship (asynchronously)
-     * Permanently delete a client-hydro relationship for a Hydro ID and a client.
-     * @param clientHydroId UUID client_hydro_id (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call deleteClientHydroUsingDeleteAsync(UUID clientHydroId, final ApiCallback<Void> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = deleteClientHydroUsingDeleteValidateBeforeCall(clientHydroId, progressListener, progressRequestListener);
-        apiClient.executeAsync(call, callback);
         return call;
     }
     /**
@@ -1632,272 +1388,6 @@ public class ClientApi {
         return call;
     }
     /**
-     * Build call for getClientHydroAllUsingGet
-     * @param ascending ascending (optional, default to false)
-     * @param filter filter (optional)
-     * @param orderBy order_by (optional, default to update_date)
-     * @param page page (optional, default to 0)
-     * @param size size (optional, default to 25)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call getClientHydroAllUsingGetCall(Boolean ascending, String filter, String orderBy, Integer page, Integer size, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/client_hydro";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (ascending != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
-        if (filter != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
-        if (orderBy != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
-        if (page != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
-        if (size != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("size", size));
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "*/*"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "oauth2" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getClientHydroAllUsingGetValidateBeforeCall(Boolean ascending, String filter, String orderBy, Integer page, Integer size, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-
-        com.squareup.okhttp.Call call = getClientHydroAllUsingGetCall(ascending, filter, orderBy, page, size, progressListener, progressRequestListener);
-        return call;
-
-    }
-
-    /**
-     * List all client-hydro relationship
-     * Get information for all client-hydro relationships for all clients defined for your firm.
-     * @param ascending ascending (optional, default to false)
-     * @param filter filter (optional)
-     * @param orderBy order_by (optional, default to update_date)
-     * @param page page (optional, default to 0)
-     * @param size size (optional, default to 25)
-     * @return PageClientHydro
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public PageClientHydro getClientHydroAllUsingGet(Boolean ascending, String filter, String orderBy, Integer page, Integer size) throws ApiException {
-        ApiResponse<PageClientHydro> resp = getClientHydroAllUsingGetWithHttpInfo(ascending, filter, orderBy, page, size);
-        return resp.getData();
-    }
-
-    /**
-     * List all client-hydro relationship
-     * Get information for all client-hydro relationships for all clients defined for your firm.
-     * @param ascending ascending (optional, default to false)
-     * @param filter filter (optional)
-     * @param orderBy order_by (optional, default to update_date)
-     * @param page page (optional, default to 0)
-     * @param size size (optional, default to 25)
-     * @return ApiResponse&lt;PageClientHydro&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<PageClientHydro> getClientHydroAllUsingGetWithHttpInfo(Boolean ascending, String filter, String orderBy, Integer page, Integer size) throws ApiException {
-        com.squareup.okhttp.Call call = getClientHydroAllUsingGetValidateBeforeCall(ascending, filter, orderBy, page, size, null, null);
-        Type localVarReturnType = new TypeToken<PageClientHydro>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * List all client-hydro relationship (asynchronously)
-     * Get information for all client-hydro relationships for all clients defined for your firm.
-     * @param ascending ascending (optional, default to false)
-     * @param filter filter (optional)
-     * @param orderBy order_by (optional, default to update_date)
-     * @param page page (optional, default to 0)
-     * @param size size (optional, default to 25)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call getClientHydroAllUsingGetAsync(Boolean ascending, String filter, String orderBy, Integer page, Integer size, final ApiCallback<PageClientHydro> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = getClientHydroAllUsingGetValidateBeforeCall(ascending, filter, orderBy, page, size, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PageClientHydro>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for getClientHydroUsingGet
-     * @param clientHydroId UUID client_hydro_id (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call getClientHydroUsingGetCall(UUID clientHydroId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/client_hydro/{client_hydro_id}"
-            .replaceAll("\\{" + "client_hydro_id" + "\\}", apiClient.escapeString(clientHydroId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "*/*"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "oauth2" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getClientHydroUsingGetValidateBeforeCall(UUID clientHydroId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'clientHydroId' is set
-        if (clientHydroId == null) {
-            throw new ApiException("Missing the required parameter 'clientHydroId' when calling getClientHydroUsingGet(Async)");
-        }
-        
-
-        com.squareup.okhttp.Call call = getClientHydroUsingGetCall(clientHydroId, progressListener, progressRequestListener);
-        return call;
-
-    }
-
-    /**
-     * Retrieve a client-hydro relationship
-     * Retrieve the information for a specific client-hydro relationship.
-     * @param clientHydroId UUID client_hydro_id (required)
-     * @return ClientHydro
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ClientHydro getClientHydroUsingGet(UUID clientHydroId) throws ApiException {
-        ApiResponse<ClientHydro> resp = getClientHydroUsingGetWithHttpInfo(clientHydroId);
-        return resp.getData();
-    }
-
-    /**
-     * Retrieve a client-hydro relationship
-     * Retrieve the information for a specific client-hydro relationship.
-     * @param clientHydroId UUID client_hydro_id (required)
-     * @return ApiResponse&lt;ClientHydro&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<ClientHydro> getClientHydroUsingGetWithHttpInfo(UUID clientHydroId) throws ApiException {
-        com.squareup.okhttp.Call call = getClientHydroUsingGetValidateBeforeCall(clientHydroId, null, null);
-        Type localVarReturnType = new TypeToken<ClientHydro>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Retrieve a client-hydro relationship (asynchronously)
-     * Retrieve the information for a specific client-hydro relationship.
-     * @param clientHydroId UUID client_hydro_id (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call getClientHydroUsingGetAsync(UUID clientHydroId, final ApiCallback<ClientHydro> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = getClientHydroUsingGetValidateBeforeCall(clientHydroId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ClientHydro>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
      * Build call for getClientStatusAllUsingGet
      * @param ascending ascending (optional, default to false)
      * @param filter filter (optional)
@@ -2452,138 +1942,6 @@ public class ClientApi {
         return call;
     }
     /**
-     * Build call for updateClientHydroUsingPut
-     * @param clientHydro client_hydro (required)
-     * @param clientHydroId UUID client_hydro_id (required)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call updateClientHydroUsingPutCall(ClientHydro clientHydro, UUID clientHydroId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = clientHydro;
-
-        // create path and map variables
-        String localVarPath = "/client_hydro/{client_hydro_id}"
-            .replaceAll("\\{" + "client_hydro_id" + "\\}", apiClient.escapeString(clientHydroId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "*/*"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "oauth2" };
-        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateClientHydroUsingPutValidateBeforeCall(ClientHydro clientHydro, UUID clientHydroId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'clientHydro' is set
-        if (clientHydro == null) {
-            throw new ApiException("Missing the required parameter 'clientHydro' when calling updateClientHydroUsingPut(Async)");
-        }
-        
-        // verify the required parameter 'clientHydroId' is set
-        if (clientHydroId == null) {
-            throw new ApiException("Missing the required parameter 'clientHydroId' when calling updateClientHydroUsingPut(Async)");
-        }
-        
-
-        com.squareup.okhttp.Call call = updateClientHydroUsingPutCall(clientHydro, clientHydroId, progressListener, progressRequestListener);
-        return call;
-
-    }
-
-    /**
-     * Update a client-hydro relationship
-     * Update the information for a client-hydro relationship.
-     * @param clientHydro client_hydro (required)
-     * @param clientHydroId UUID client_hydro_id (required)
-     * @return ClientHydro
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ClientHydro updateClientHydroUsingPut(ClientHydro clientHydro, UUID clientHydroId) throws ApiException {
-        ApiResponse<ClientHydro> resp = updateClientHydroUsingPutWithHttpInfo(clientHydro, clientHydroId);
-        return resp.getData();
-    }
-
-    /**
-     * Update a client-hydro relationship
-     * Update the information for a client-hydro relationship.
-     * @param clientHydro client_hydro (required)
-     * @param clientHydroId UUID client_hydro_id (required)
-     * @return ApiResponse&lt;ClientHydro&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<ClientHydro> updateClientHydroUsingPutWithHttpInfo(ClientHydro clientHydro, UUID clientHydroId) throws ApiException {
-        com.squareup.okhttp.Call call = updateClientHydroUsingPutValidateBeforeCall(clientHydro, clientHydroId, null, null);
-        Type localVarReturnType = new TypeToken<ClientHydro>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Update a client-hydro relationship (asynchronously)
-     * Update the information for a client-hydro relationship.
-     * @param clientHydro client_hydro (required)
-     * @param clientHydroId UUID client_hydro_id (required)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call updateClientHydroUsingPutAsync(ClientHydro clientHydro, UUID clientHydroId, final ApiCallback<ClientHydro> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = updateClientHydroUsingPutValidateBeforeCall(clientHydro, clientHydroId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ClientHydro>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
      * Build call for updateClientStatusUsingPut
      * @param clientStatus client_status (required)
      * @param clientStatusId UUID client_status_id (required)
@@ -2592,7 +1950,7 @@ public class ClientApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateClientStatusUsingPutCall(ClientStatus clientStatus, UUID clientStatusId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateClientStatusUsingPutCall(Object clientStatus, UUID clientStatusId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = clientStatus;
 
         // create path and map variables
@@ -2635,7 +1993,7 @@ public class ClientApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateClientStatusUsingPutValidateBeforeCall(ClientStatus clientStatus, UUID clientStatusId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateClientStatusUsingPutValidateBeforeCall(Object clientStatus, UUID clientStatusId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'clientStatus' is set
         if (clientStatus == null) {
@@ -2661,7 +2019,7 @@ public class ClientApi {
      * @return ClientStatus
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ClientStatus updateClientStatusUsingPut(ClientStatus clientStatus, UUID clientStatusId) throws ApiException {
+    public ClientStatus updateClientStatusUsingPut(Object clientStatus, UUID clientStatusId) throws ApiException {
         ApiResponse<ClientStatus> resp = updateClientStatusUsingPutWithHttpInfo(clientStatus, clientStatusId);
         return resp.getData();
     }
@@ -2674,7 +2032,7 @@ public class ClientApi {
      * @return ApiResponse&lt;ClientStatus&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ClientStatus> updateClientStatusUsingPutWithHttpInfo(ClientStatus clientStatus, UUID clientStatusId) throws ApiException {
+    public ApiResponse<ClientStatus> updateClientStatusUsingPutWithHttpInfo(Object clientStatus, UUID clientStatusId) throws ApiException {
         com.squareup.okhttp.Call call = updateClientStatusUsingPutValidateBeforeCall(clientStatus, clientStatusId, null, null);
         Type localVarReturnType = new TypeToken<ClientStatus>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -2689,7 +2047,7 @@ public class ClientApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateClientStatusUsingPutAsync(ClientStatus clientStatus, UUID clientStatusId, final ApiCallback<ClientStatus> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateClientStatusUsingPutAsync(Object clientStatus, UUID clientStatusId, final ApiCallback<ClientStatus> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2724,7 +2082,7 @@ public class ClientApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateClientUsingPutCall(Client client, UUID clientId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateClientUsingPutCall(Object client, UUID clientId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = client;
 
         // create path and map variables
@@ -2767,7 +2125,7 @@ public class ClientApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateClientUsingPutValidateBeforeCall(Client client, UUID clientId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateClientUsingPutValidateBeforeCall(Object client, UUID clientId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'client' is set
         if (client == null) {
@@ -2793,7 +2151,7 @@ public class ClientApi {
      * @return Client
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Client updateClientUsingPut(Client client, UUID clientId) throws ApiException {
+    public Client updateClientUsingPut(Object client, UUID clientId) throws ApiException {
         ApiResponse<Client> resp = updateClientUsingPutWithHttpInfo(client, clientId);
         return resp.getData();
     }
@@ -2806,7 +2164,7 @@ public class ClientApi {
      * @return ApiResponse&lt;Client&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Client> updateClientUsingPutWithHttpInfo(Client client, UUID clientId) throws ApiException {
+    public ApiResponse<Client> updateClientUsingPutWithHttpInfo(Object client, UUID clientId) throws ApiException {
         com.squareup.okhttp.Call call = updateClientUsingPutValidateBeforeCall(client, clientId, null, null);
         Type localVarReturnType = new TypeToken<Client>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -2821,7 +2179,7 @@ public class ClientApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateClientUsingPutAsync(Client client, UUID clientId, final ApiCallback<Client> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateClientUsingPutAsync(Object client, UUID clientId, final ApiCallback<Client> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

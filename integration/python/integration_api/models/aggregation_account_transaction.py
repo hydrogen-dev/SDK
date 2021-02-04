@@ -40,9 +40,12 @@ class AggregationAccountTransaction(object):
         'investment': 'Investment',
         'is_active': 'bool',
         'is_excluded_analysis': 'bool',
+        'is_fee': 'bool',
         'is_recurring': 'bool',
+        'is_transfer': 'bool',
         'metadata': 'dict(str, str)',
         'secondary_id': 'str',
+        'status': 'str',
         'transaction_date': 'datetime',
         'update_date': 'datetime'
     }
@@ -57,14 +60,17 @@ class AggregationAccountTransaction(object):
         'investment': 'investment',
         'is_active': 'is_active',
         'is_excluded_analysis': 'is_excluded_analysis',
+        'is_fee': 'is_fee',
         'is_recurring': 'is_recurring',
+        'is_transfer': 'is_transfer',
         'metadata': 'metadata',
         'secondary_id': 'secondary_id',
+        'status': 'status',
         'transaction_date': 'transaction_date',
         'update_date': 'update_date'
     }
 
-    def __init__(self, aggregation_account_id=None, bank_credit=None, cash=None, create_date=None, currency_code=None, id=None, investment=None, is_active=None, is_excluded_analysis=None, is_recurring=None, metadata=None, secondary_id=None, transaction_date=None, update_date=None):  # noqa: E501
+    def __init__(self, aggregation_account_id=None, bank_credit=None, cash=None, create_date=None, currency_code=None, id=None, investment=None, is_active=None, is_excluded_analysis=None, is_fee=None, is_recurring=None, is_transfer=None, metadata=None, secondary_id=None, status=None, transaction_date=None, update_date=None):  # noqa: E501
         """AggregationAccountTransaction - a model defined in Swagger"""  # noqa: E501
 
         self._aggregation_account_id = None
@@ -76,9 +82,12 @@ class AggregationAccountTransaction(object):
         self._investment = None
         self._is_active = None
         self._is_excluded_analysis = None
+        self._is_fee = None
         self._is_recurring = None
+        self._is_transfer = None
         self._metadata = None
         self._secondary_id = None
+        self._status = None
         self._transaction_date = None
         self._update_date = None
         self.discriminator = None
@@ -100,12 +109,18 @@ class AggregationAccountTransaction(object):
             self.is_active = is_active
         if is_excluded_analysis is not None:
             self.is_excluded_analysis = is_excluded_analysis
+        if is_fee is not None:
+            self.is_fee = is_fee
         if is_recurring is not None:
             self.is_recurring = is_recurring
+        if is_transfer is not None:
+            self.is_transfer = is_transfer
         if metadata is not None:
             self.metadata = metadata
         if secondary_id is not None:
             self.secondary_id = secondary_id
+        if status is not None:
+            self.status = status
         self.transaction_date = transaction_date
         if update_date is not None:
             self.update_date = update_date
@@ -314,6 +329,27 @@ class AggregationAccountTransaction(object):
         self._is_excluded_analysis = is_excluded_analysis
 
     @property
+    def is_fee(self):
+        """Gets the is_fee of this AggregationAccountTransaction.  # noqa: E501
+
+
+        :return: The is_fee of this AggregationAccountTransaction.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_fee
+
+    @is_fee.setter
+    def is_fee(self, is_fee):
+        """Sets the is_fee of this AggregationAccountTransaction.
+
+
+        :param is_fee: The is_fee of this AggregationAccountTransaction.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_fee = is_fee
+
+    @property
     def is_recurring(self):
         """Gets the is_recurring of this AggregationAccountTransaction.  # noqa: E501
 
@@ -333,6 +369,27 @@ class AggregationAccountTransaction(object):
         """
 
         self._is_recurring = is_recurring
+
+    @property
+    def is_transfer(self):
+        """Gets the is_transfer of this AggregationAccountTransaction.  # noqa: E501
+
+
+        :return: The is_transfer of this AggregationAccountTransaction.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_transfer
+
+    @is_transfer.setter
+    def is_transfer(self, is_transfer):
+        """Sets the is_transfer of this AggregationAccountTransaction.
+
+
+        :param is_transfer: The is_transfer of this AggregationAccountTransaction.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_transfer = is_transfer
 
     @property
     def metadata(self):
@@ -375,6 +432,29 @@ class AggregationAccountTransaction(object):
         """
 
         self._secondary_id = secondary_id
+
+    @property
+    def status(self):
+        """Gets the status of this AggregationAccountTransaction.  # noqa: E501
+
+        status  # noqa: E501
+
+        :return: The status of this AggregationAccountTransaction.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this AggregationAccountTransaction.
+
+        status  # noqa: E501
+
+        :param status: The status of this AggregationAccountTransaction.  # noqa: E501
+        :type: str
+        """
+
+        self._status = status
 
     @property
     def transaction_date(self):

@@ -50,7 +50,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 alloc_request = nucleus_api.AllocationComposition() # AllocationComposition | allocRequest
@@ -114,7 +114,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_request = nucleus_api.Allocation() # Allocation | allocationRequest
@@ -178,7 +178,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_composition_id = 'allocation_composition_id_example' # str | UUID allocation_composition_id
@@ -241,7 +241,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_id = 'allocation_id_example' # str | UUID allocation_id
@@ -302,7 +302,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_id = 'allocation_id_example' # str | Allocation Id
@@ -366,7 +366,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_id = 'allocation_id_example' # str | UUID allocation_id
@@ -440,7 +440,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_id = 'allocation_id_example' # str | UUID allocation_id
@@ -508,7 +508,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_id = 'allocation_id_example' # str | UUID allocation_id
@@ -584,7 +584,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -656,7 +656,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -728,7 +728,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_composition_id = 'allocation_composition_id_example' # str | UUID allocation_composition_id
@@ -792,7 +792,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
 allocation_id = 'allocation_id_example' # str | UUID allocation_id
@@ -856,10 +856,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
-allocation_composition = nucleus_api.AllocationComposition() # AllocationComposition | allocation_composition
+allocation_composition = NULL # object | allocation_composition
 allocation_composition_id = 'allocation_composition_id_example' # str | UUID allocation_composition_id
 
 try:
@@ -874,7 +874,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocation_composition** | [**AllocationComposition**](AllocationComposition.md)| allocation_composition | 
+ **allocation_composition** | **object**| allocation_composition | 
  **allocation_composition_id** | [**str**](.md)| UUID allocation_composition_id | 
 
 ### Return type
@@ -922,10 +922,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.AllocationApi(nucleus_api.ApiClient(configuration))
-allocation = nucleus_api.Allocation() # Allocation | allocation
+allocation = NULL # object | allocation
 allocation_id = 'allocation_id_example' # str | UUID allocation_id
 
 try:
@@ -940,7 +940,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **allocation** | [**Allocation**](Allocation.md)| allocation | 
+ **allocation** | **object**| allocation | 
  **allocation_id** | [**str**](.md)| UUID allocation_id | 
 
 ### Return type

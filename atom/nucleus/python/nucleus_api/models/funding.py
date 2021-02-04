@@ -50,7 +50,9 @@ class Funding(object):
         'metadata': 'dict(str, str)',
         'next_request_date': 'date',
         'portfolio_id': 'str',
+        'receiving_account_id': 'str',
         'receiving_bank_link_id': 'str',
+        'receiving_portfolio_id': 'str',
         'secondary_id': 'str',
         'start_date': 'date',
         'support_ticket_id': 'str',
@@ -81,7 +83,9 @@ class Funding(object):
         'metadata': 'metadata',
         'next_request_date': 'next_request_date',
         'portfolio_id': 'portfolio_id',
+        'receiving_account_id': 'receiving_account_id',
         'receiving_bank_link_id': 'receiving_bank_link_id',
+        'receiving_portfolio_id': 'receiving_portfolio_id',
         'secondary_id': 'secondary_id',
         'start_date': 'start_date',
         'support_ticket_id': 'support_ticket_id',
@@ -92,7 +96,7 @@ class Funding(object):
         'update_date': 'update_date'
     }
 
-    def __init__(self, account_id=None, amount=None, bank_link_id=None, card_id=None, create_date=None, currency_code=None, description=None, end_date=None, frequency=None, frequency_unit=None, funding_status=None, funding_type=None, id=None, is_active=None, is_deposit=None, last_request_date=None, metadata=None, next_request_date=None, portfolio_id=None, receiving_bank_link_id=None, secondary_id=None, start_date=None, support_ticket_id=None, threshold_amount=None, transfer_id=None, transfer_speed=None, transfer_type=None, update_date=None):  # noqa: E501
+    def __init__(self, account_id=None, amount=None, bank_link_id=None, card_id=None, create_date=None, currency_code=None, description=None, end_date=None, frequency=None, frequency_unit=None, funding_status=None, funding_type=None, id=None, is_active=None, is_deposit=None, last_request_date=None, metadata=None, next_request_date=None, portfolio_id=None, receiving_account_id=None, receiving_bank_link_id=None, receiving_portfolio_id=None, secondary_id=None, start_date=None, support_ticket_id=None, threshold_amount=None, transfer_id=None, transfer_speed=None, transfer_type=None, update_date=None):  # noqa: E501
         """Funding - a model defined in Swagger"""  # noqa: E501
 
         self._account_id = None
@@ -114,7 +118,9 @@ class Funding(object):
         self._metadata = None
         self._next_request_date = None
         self._portfolio_id = None
+        self._receiving_account_id = None
         self._receiving_bank_link_id = None
+        self._receiving_portfolio_id = None
         self._secondary_id = None
         self._start_date = None
         self._support_ticket_id = None
@@ -125,7 +131,8 @@ class Funding(object):
         self._update_date = None
         self.discriminator = None
 
-        self.account_id = account_id
+        if account_id is not None:
+            self.account_id = account_id
         if amount is not None:
             self.amount = amount
         if bank_link_id is not None:
@@ -158,8 +165,12 @@ class Funding(object):
             self.next_request_date = next_request_date
         if portfolio_id is not None:
             self.portfolio_id = portfolio_id
+        if receiving_account_id is not None:
+            self.receiving_account_id = receiving_account_id
         if receiving_bank_link_id is not None:
             self.receiving_bank_link_id = receiving_bank_link_id
+        if receiving_portfolio_id is not None:
+            self.receiving_portfolio_id = receiving_portfolio_id
         if secondary_id is not None:
             self.secondary_id = secondary_id
         self.start_date = start_date
@@ -196,8 +207,6 @@ class Funding(object):
         :param account_id: The account_id of this Funding.  # noqa: E501
         :type: str
         """
-        if account_id is None:
-            raise ValueError("Invalid value for `account_id`, must not be `None`")  # noqa: E501
 
         self._account_id = account_id
 
@@ -620,6 +629,29 @@ class Funding(object):
         self._portfolio_id = portfolio_id
 
     @property
+    def receiving_account_id(self):
+        """Gets the receiving_account_id of this Funding.  # noqa: E501
+
+        receivingAccountId  # noqa: E501
+
+        :return: The receiving_account_id of this Funding.  # noqa: E501
+        :rtype: str
+        """
+        return self._receiving_account_id
+
+    @receiving_account_id.setter
+    def receiving_account_id(self, receiving_account_id):
+        """Sets the receiving_account_id of this Funding.
+
+        receivingAccountId  # noqa: E501
+
+        :param receiving_account_id: The receiving_account_id of this Funding.  # noqa: E501
+        :type: str
+        """
+
+        self._receiving_account_id = receiving_account_id
+
+    @property
     def receiving_bank_link_id(self):
         """Gets the receiving_bank_link_id of this Funding.  # noqa: E501
 
@@ -641,6 +673,29 @@ class Funding(object):
         """
 
         self._receiving_bank_link_id = receiving_bank_link_id
+
+    @property
+    def receiving_portfolio_id(self):
+        """Gets the receiving_portfolio_id of this Funding.  # noqa: E501
+
+        receivingPortfolioId  # noqa: E501
+
+        :return: The receiving_portfolio_id of this Funding.  # noqa: E501
+        :rtype: str
+        """
+        return self._receiving_portfolio_id
+
+    @receiving_portfolio_id.setter
+    def receiving_portfolio_id(self, receiving_portfolio_id):
+        """Sets the receiving_portfolio_id of this Funding.
+
+        receivingPortfolioId  # noqa: E501
+
+        :param receiving_portfolio_id: The receiving_portfolio_id of this Funding.  # noqa: E501
+        :type: str
+        """
+
+        self._receiving_portfolio_id = receiving_portfolio_id
 
     @property
     def secondary_id(self):

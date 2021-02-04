@@ -28,6 +28,7 @@ Calculate the achievable education costs
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
@@ -88,6 +89,7 @@ Calculate the necessary periodic deposit amount to achieve education costs
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
@@ -148,6 +150,7 @@ Calculate the achievable percentage of education costs that can be covered
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
@@ -208,6 +211,7 @@ Calculate the necessary down payment for the mortgage
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
@@ -268,6 +272,7 @@ Calculate the achievable home price for the mortgage
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
@@ -328,6 +333,7 @@ Calculate the periodic payment for the mortgage
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
@@ -388,6 +394,7 @@ Calculate the achievable purchase amount
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
@@ -448,6 +455,7 @@ Calculate the necessary periodic deposit amount to achieve the purchase amount
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
@@ -508,6 +516,7 @@ Calculate the necessary time horizon to achieve the purchase amount
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
@@ -568,6 +577,7 @@ Calculate the necessary period deposit amount to achieve the retirement expenses
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
@@ -628,6 +638,7 @@ Calculate the achievable retirement expenses
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
@@ -688,6 +699,7 @@ Calculate the achievable percentage of retirement expenses that can be covered
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;

@@ -512,7 +512,7 @@ end
 
 api_instance = NucleusApi::FeatureApi.new
 
-feature_track = NucleusApi::FeatureTrack.new # FeatureTrack | feature_track
+feature_track = nil # Object | feature_track
 
 feature_track_id = 'feature_track_id_example' # String | UUID feature_track_id
 
@@ -530,7 +530,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **feature_track** | [**FeatureTrack**](FeatureTrack.md)| feature_track | 
+ **feature_track** | **Object**| feature_track | 
  **feature_track_id** | [**String**](.md)| UUID feature_track_id | 
 
 ### Return type
@@ -572,7 +572,7 @@ end
 
 api_instance = NucleusApi::FeatureApi.new
 
-feature = NucleusApi::Feature.new # Feature | feature
+feature = nil # Object | feature
 
 feature_id = 'feature_id_example' # String | UUID feature_id
 
@@ -590,7 +590,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **feature** | [**Feature**](Feature.md)| feature | 
+ **feature** | **Object**| feature | 
  **feature_id** | [**String**](.md)| UUID feature_id | 
 
 ### Return type

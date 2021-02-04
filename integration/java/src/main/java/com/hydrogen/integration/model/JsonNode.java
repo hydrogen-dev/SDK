@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * JsonNode
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class JsonNode {
   @SerializedName("array")
   private Boolean array = null;
@@ -122,7 +122,7 @@ public class JsonNode {
 
       @Override
       public NodeTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        Object value = jsonReader.nextString();
         return NodeTypeEnum.fromValue(String.valueOf(value));
       }
     }

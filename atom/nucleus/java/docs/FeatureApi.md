@@ -28,7 +28,6 @@ Create a new feature track.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FeatureApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -45,8 +44,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FeatureApi apiInstance = new FeatureApi();
 FeatureTrack featureTrack = new FeatureTrack(); // FeatureTrack | featureTrack
 try {
@@ -89,7 +86,6 @@ Create a new feature.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FeatureApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -106,8 +102,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FeatureApi apiInstance = new FeatureApi();
 Feature feature = new Feature(); // Feature | feature
 try {
@@ -150,7 +144,6 @@ Permanently delete a feature track registered with your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FeatureApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -167,8 +160,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FeatureApi apiInstance = new FeatureApi();
 UUID featureTrackId = new UUID(); // UUID | UUID feature_track_id
 try {
@@ -210,7 +201,6 @@ Permanently delete a  feature registered with your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FeatureApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -227,8 +217,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FeatureApi apiInstance = new FeatureApi();
 UUID featureId = new UUID(); // UUID | UUID feature_id
 try {
@@ -270,7 +258,6 @@ Get details for all features.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FeatureApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -287,8 +274,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FeatureApi apiInstance = new FeatureApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -339,7 +324,6 @@ Get details for all feature track.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FeatureApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -356,8 +340,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FeatureApi apiInstance = new FeatureApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -408,7 +390,6 @@ Retrieve the information for a Feature track.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FeatureApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -425,8 +406,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FeatureApi apiInstance = new FeatureApi();
 UUID featureTrackId = new UUID(); // UUID | UUID feature_track_id
 try {
@@ -469,7 +448,6 @@ Retrieve the information for a Feature.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FeatureApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -486,8 +464,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FeatureApi apiInstance = new FeatureApi();
 UUID featureId = new UUID(); // UUID | UUID feature_id
 try {
@@ -530,7 +506,6 @@ Update the information for a Feature track registered with your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FeatureApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -547,10 +522,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FeatureApi apiInstance = new FeatureApi();
-FeatureTrack featureTrack = new FeatureTrack(); // FeatureTrack | feature_track
+Object featureTrack = null; // Object | feature_track
 UUID featureTrackId = new UUID(); // UUID | UUID feature_track_id
 try {
     FeatureTrack result = apiInstance.updateFeatureTrackUsingPut(featureTrack, featureTrackId);
@@ -565,7 +538,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **featureTrack** | [**FeatureTrack**](FeatureTrack.md)| feature_track |
+ **featureTrack** | **Object**| feature_track |
  **featureTrackId** | [**UUID**](.md)| UUID feature_track_id |
 
 ### Return type
@@ -593,7 +566,6 @@ Update the information for a Feature registered with your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import FeatureApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -610,10 +582,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 FeatureApi apiInstance = new FeatureApi();
-Feature feature = new Feature(); // Feature | feature
+Object feature = null; // Object | feature
 UUID featureId = new UUID(); // UUID | UUID feature_id
 try {
     Feature result = apiInstance.updateFeatureUsingPut(feature, featureId);
@@ -628,7 +598,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **feature** | [**Feature**](Feature.md)| feature |
+ **feature** | **Object**| feature |
  **featureId** | [**UUID**](.md)| UUID feature_id |
 
 ### Return type

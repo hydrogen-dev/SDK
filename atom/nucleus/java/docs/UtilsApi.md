@@ -33,7 +33,6 @@ Create a new reason code for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -50,8 +49,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 UtilsApi apiInstance = new UtilsApi();
 ReasonCode reasonCodeRequest = new ReasonCode(); // ReasonCode | reasonCodeRequest
 try {
@@ -94,7 +91,6 @@ Create a new account stage
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -111,8 +107,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 UtilsApi apiInstance = new UtilsApi();
 Stage stageRequest = new Stage(); // Stage | stageRequest
 try {
@@ -155,7 +149,6 @@ Create a new transaction code for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -172,8 +165,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 UtilsApi apiInstance = new UtilsApi();
 TransactionCode transactionRequest = new TransactionCode(); // TransactionCode | transactionRequest
 try {
@@ -216,7 +207,6 @@ Permanently delete a reason code for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -233,8 +223,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 UtilsApi apiInstance = new UtilsApi();
 UUID reasonCodeId = new UUID(); // UUID | UUID reason_code_id
 try {
@@ -276,7 +264,6 @@ Permanently delete an account stage.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -293,8 +280,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 UtilsApi apiInstance = new UtilsApi();
 UUID stageId = new UUID(); // UUID | UUID stage_id
 try {
@@ -336,7 +321,6 @@ Permanently delete a transaction code for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -353,8 +337,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 UtilsApi apiInstance = new UtilsApi();
 UUID transactionCodeId = new UUID(); // UUID | UUID transaction_code_id
 try {
@@ -396,7 +378,6 @@ Get the information for all reason codes defined by your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -413,8 +394,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 UtilsApi apiInstance = new UtilsApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -465,7 +444,6 @@ Retrieve the information for a reason code defined by your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -482,8 +460,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 UtilsApi apiInstance = new UtilsApi();
 UUID reasonCodeId = new UUID(); // UUID | UUID reason_code_id
 try {
@@ -526,7 +502,6 @@ Get the information for all possible account stages.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -543,8 +518,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 UtilsApi apiInstance = new UtilsApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -595,7 +568,6 @@ Retrieve the information for a specific account stage.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -612,8 +584,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 UtilsApi apiInstance = new UtilsApi();
 UUID stageId = new UUID(); // UUID | UUID stage_id
 try {
@@ -656,7 +626,6 @@ Get the information for all transaction codes defined by your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -673,8 +642,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 UtilsApi apiInstance = new UtilsApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -725,7 +692,6 @@ Retrieve the information for a transaction code defined by your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -742,8 +708,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 UtilsApi apiInstance = new UtilsApi();
 UUID transactionCodeId = new UUID(); // UUID | UUID transaction_code_id
 try {
@@ -786,7 +750,6 @@ Update a reason code for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -803,10 +766,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 UtilsApi apiInstance = new UtilsApi();
-ReasonCode reasonCode = new ReasonCode(); // ReasonCode | reason_code
+Object reasonCode = null; // Object | reason_code
 UUID reasonCodeId = new UUID(); // UUID | UUID reason_code_id
 try {
     ReasonCode result = apiInstance.updateReasonCodeUsingPut(reasonCode, reasonCodeId);
@@ -821,7 +782,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reasonCode** | [**ReasonCode**](ReasonCode.md)| reason_code |
+ **reasonCode** | **Object**| reason_code |
  **reasonCodeId** | [**UUID**](.md)| UUID reason_code_id |
 
 ### Return type
@@ -849,7 +810,6 @@ Update the information for an account stage.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -866,10 +826,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 UtilsApi apiInstance = new UtilsApi();
-Stage stage = new Stage(); // Stage | stage
+Object stage = null; // Object | stage
 UUID stageId = new UUID(); // UUID | UUID stage_id
 try {
     Stage result = apiInstance.updateStageUsingPut(stage, stageId);
@@ -884,7 +842,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage** | [**Stage**](Stage.md)| stage |
+ **stage** | **Object**| stage |
  **stageId** | [**UUID**](.md)| UUID stage_id |
 
 ### Return type
@@ -912,7 +870,6 @@ Update a transaction code for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import UtilsApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -929,10 +886,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 UtilsApi apiInstance = new UtilsApi();
-TransactionCode transactionCode = new TransactionCode(); // TransactionCode | transaction_code
+Object transactionCode = null; // Object | transaction_code
 UUID transactionCodeId = new UUID(); // UUID | UUID transaction_code_id
 try {
     TransactionCode result = apiInstance.updateTransactionCodeUsingPut(transactionCode, transactionCodeId);
@@ -947,7 +902,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transactionCode** | [**TransactionCode**](TransactionCode.md)| transaction_code |
+ **transactionCode** | **Object**| transaction_code |
  **transactionCodeId** | [**UUID**](.md)| UUID transaction_code_id |
 
 ### Return type

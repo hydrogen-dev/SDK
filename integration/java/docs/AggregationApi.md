@@ -1,6 +1,6 @@
 # AggregationApi
 
-All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1/*
+All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**getAggregationAccountTransactionAllUsingGet**](AggregationApi.md#getAggregationAccountTransactionAllUsingGet) | **GET** /aggregation/transaction | Fetch all aggregation account balance details with for the given aggregation accounts 
 [**getAggregationAccountTransactionUsingGet**](AggregationApi.md#getAggregationAccountTransactionUsingGet) | **GET** /aggregation/transaction/{nucleus_aggregation_account_id} | Fetch aggregation account transaction details with the mapping created in POST endpoint
 [**getAggregationAccountUsingGet**](AggregationApi.md#getAggregationAccountUsingGet) | **GET** /aggregation/account/{nucleus_aggregation_account_id} | Fetch aggregation account details with the mapping created in POST endpoint
+[**getPropertyValue**](AggregationApi.md#getPropertyValue) | **GET** /property_value | Get Value of the given property
 
 
 <a name="createAggregationAccountUsingPost"></a>
@@ -46,7 +47,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 AggregationApi apiInstance = new AggregationApi();
 AggregationRequestObject aggregationRequestObject = new AggregationRequestObject(); // AggregationRequestObject | aggregationRequestObject
 try {
@@ -106,7 +106,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 AggregationApi apiInstance = new AggregationApi();
 AggregationRequestObject aggregationRequestObject = new AggregationRequestObject(); // AggregationRequestObject | aggregationRequestObject
 try {
@@ -166,7 +165,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 AggregationApi apiInstance = new AggregationApi();
 UUID nucleusAggregationAccountId = new UUID(); // UUID | nucleus_aggregation_account_id
 try {
@@ -225,7 +223,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 AggregationApi apiInstance = new AggregationApi();
 List<UUID> aggregationAccountIdList = Arrays.asList(new UUID()); // List<UUID> | aggregation_account_id_list
 try {
@@ -285,7 +282,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 AggregationApi apiInstance = new AggregationApi();
 List<UUID> aggregationAccountIdList = Arrays.asList(new UUID()); // List<UUID> | aggregation_account_id_list
 try {
@@ -345,7 +341,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 AggregationApi apiInstance = new AggregationApi();
 UUID nucleusAggregationAccountId = new UUID(); // UUID | nucleus_aggregation_account_id
 try {
@@ -405,7 +400,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 AggregationApi apiInstance = new AggregationApi();
 List<UUID> aggregationAccountIdList = Arrays.asList(new UUID()); // List<UUID> | aggregation_account_id_list
 try {
@@ -465,7 +459,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 AggregationApi apiInstance = new AggregationApi();
 UUID nucleusAggregationAccountId = new UUID(); // UUID | nucleus_aggregation_account_id
 try {
@@ -525,7 +518,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 AggregationApi apiInstance = new AggregationApi();
 List<UUID> aggregationAccountIdList = Arrays.asList(new UUID()); // List<UUID> | aggregation_account_id_list
 try {
@@ -585,7 +577,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 AggregationApi apiInstance = new AggregationApi();
 UUID nucleusAggregationAccountId = new UUID(); // UUID | nucleus_aggregation_account_id
 try {
@@ -645,7 +636,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 AggregationApi apiInstance = new AggregationApi();
 UUID nucleusAggregationAccountId = new UUID(); // UUID | nucleus_aggregation_account_id
 try {
@@ -675,4 +665,67 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: */*
+
+<a name="getPropertyValue"></a>
+# **getPropertyValue**
+> PropertyValueResponseVO getPropertyValue(nucleusAggregationAccountId, nucleusClientId, product)
+
+Get Value of the given property
+
+Get Value of the given property
+
+### Example
+```java
+// Import classes:
+//import com.hydrogen.integration.ApiException;
+//import com.hydrogen.integration.AuthApiClient;
+//import AggregationApi;
+
+AuthApiClient authApiClient = new AuthApiClient();
+try {
+//          Use one of the below method to generate oauth token        
+//          Creating a token for grant_type=client_credentials            
+authApiClient.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
+//          Creating a token for grant_type=password
+authApiClient.createPasswordCredential("CLIENT_ID", "CLIENT_SECRET",
+                        "USERNAME", "PASSWORD");     
+//  Creating a token using client_token
+authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
+        "CLIENT_TOKEN");      
+} catch (ApiException e) {
+e.printStackTrace();
+}
+AggregationApi apiInstance = new AggregationApi();
+UUID nucleusAggregationAccountId = new UUID(); // UUID | nucleus_aggregation_account_id
+UUID nucleusClientId = new UUID(); // UUID | nucleus_client_id
+String product = "atom"; // String | product
+try {
+    PropertyValueResponseVO result = apiInstance.getPropertyValue(nucleusAggregationAccountId, nucleusClientId, product);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AggregationApi#getPropertyValue");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nucleusAggregationAccountId** | [**UUID**](.md)| nucleus_aggregation_account_id |
+ **nucleusClientId** | [**UUID**](.md)| nucleus_client_id |
+ **product** | **String**| product | [optional] [default to atom]
+
+### Return type
+
+[**PropertyValueResponseVO**](PropertyValueResponseVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 

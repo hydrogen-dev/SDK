@@ -23,7 +23,7 @@ import java.util.UUID;
 /**
  * BrokerageCreateClientVO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class BrokerageCreateClientVO {
   @SerializedName("message")
   private String message = null;
@@ -38,7 +38,7 @@ public class BrokerageCreateClientVO {
   private String vendorName = null;
 
   @SerializedName("vendor_response")
-  private CreateClientResponse vendorResponse = null;
+  private Object vendorResponse = null;
 
   public BrokerageCreateClientVO message(String message) {
     this.message = message;
@@ -112,7 +112,7 @@ public class BrokerageCreateClientVO {
     this.vendorName = vendorName;
   }
 
-  public BrokerageCreateClientVO vendorResponse(CreateClientResponse vendorResponse) {
+  public BrokerageCreateClientVO vendorResponse(Object vendorResponse) {
     this.vendorResponse = vendorResponse;
     return this;
   }
@@ -122,11 +122,11 @@ public class BrokerageCreateClientVO {
    * @return vendorResponse
   **/
   @ApiModelProperty(value = "")
-  public CreateClientResponse getVendorResponse() {
+  public Object getVendorResponse() {
     return vendorResponse;
   }
 
-  public void setVendorResponse(CreateClientResponse vendorResponse) {
+  public void setVendorResponse(Object vendorResponse) {
     this.vendorResponse = vendorResponse;
   }
 

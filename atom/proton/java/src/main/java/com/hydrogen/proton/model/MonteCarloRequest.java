@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -31,55 +30,16 @@ import java.util.UUID;
 /**
  * MonteCarloRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class MonteCarloRequest {
+  @SerializedName("portfolio_id")
+  private UUID portfolioId = null;
+
   @SerializedName("max_sample")
   private List<Float> maxSample = null;
-
-  @SerializedName("p")
-  private List<BigDecimal> p = null;
-
-  @SerializedName("aggregation_account_id")
-  private UUID aggregationAccountId = null;
-
-  @SerializedName("allocation_id")
-  private UUID allocationId = null;
-
-  @SerializedName("mu")
-  private List<Float> mu = null;
-
-  @SerializedName("n")
-  private Integer n = 1000;
-
-  @SerializedName("sigma")
-  private List<Float> sigma = null;
-
-  @SerializedName("account_id")
-  private UUID accountId = null;
-
-  @SerializedName("init_bal")
-  private BigDecimal initBal = null;
-
-  @SerializedName("remove_outliers")
-  private Boolean removeOutliers = false;
-
-  @SerializedName("model_id")
-  private UUID modelId = null;
-
-  @SerializedName("max_bal")
-  private List<BigDecimal> maxBal = null;
-
-  @SerializedName("min_bal")
-  private List<BigDecimal> minBal = null;
-
-  @SerializedName("use_proxy_data")
-  private Boolean useProxyData = false;
-
-  @SerializedName("cf")
-  private List<List<BigDecimal>> cf = new ArrayList<List<BigDecimal>>();
 
   /**
    * Gets or Sets resultType
@@ -140,6 +100,12 @@ public class MonteCarloRequest {
   @SerializedName("ret_mod")
   private List<Float> retMod = null;
 
+  @SerializedName("remove_outliers")
+  private Boolean removeOutliers = false;
+
+  @SerializedName("max_bal")
+  private List<BigDecimal> maxBal = null;
+
   /**
    * Gets or Sets marketDataSource
    */
@@ -190,8 +156,44 @@ public class MonteCarloRequest {
   @SerializedName("market_data_source")
   private MarketDataSourceEnum marketDataSource = MarketDataSourceEnum.NUCLEUS;
 
-  @SerializedName("portfolio_id")
-  private UUID portfolioId = null;
+  @SerializedName("p")
+  private List<BigDecimal> p = null;
+
+  @SerializedName("allocation_id")
+  private UUID allocationId = null;
+
+  @SerializedName("use_proxy_data")
+  private Boolean useProxyData = false;
+
+  @SerializedName("aggregation_account_id")
+  private UUID aggregationAccountId = null;
+
+  @SerializedName("init_bal")
+  private BigDecimal initBal = null;
+
+  @SerializedName("min_sample")
+  private List<Float> minSample = null;
+
+  @SerializedName("create_log")
+  private Boolean createLog = false;
+
+  @SerializedName("mu")
+  private List<Float> mu = null;
+
+  @SerializedName("account_id")
+  private UUID accountId = null;
+
+  @SerializedName("sigma")
+  private List<Float> sigma = null;
+
+  @SerializedName("model_id")
+  private UUID modelId = null;
+
+  @SerializedName("n")
+  private Integer n = 1000;
+
+  @SerializedName("min_bal")
+  private List<BigDecimal> minBal = null;
 
   /**
    * Gets or Sets frequencyInterval
@@ -253,11 +255,26 @@ public class MonteCarloRequest {
   @SerializedName("frequency_interval")
   private FrequencyIntervalEnum frequencyInterval = FrequencyIntervalEnum.YEAR;
 
-  @SerializedName("create_log")
-  private Boolean createLog = false;
+  @SerializedName("cf")
+  private List<List<BigDecimal>> cf = new ArrayList<List<BigDecimal>>();
 
-  @SerializedName("min_sample")
-  private List<Float> minSample = null;
+  public MonteCarloRequest portfolioId(UUID portfolioId) {
+    this.portfolioId = portfolioId;
+    return this;
+  }
+
+   /**
+   * Get portfolioId
+   * @return portfolioId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getPortfolioId() {
+    return portfolioId;
+  }
+
+  public void setPortfolioId(UUID portfolioId) {
+    this.portfolioId = portfolioId;
+  }
 
   public MonteCarloRequest maxSample(List<Float> maxSample) {
     this.maxSample = maxSample;
@@ -283,306 +300,6 @@ public class MonteCarloRequest {
 
   public void setMaxSample(List<Float> maxSample) {
     this.maxSample = maxSample;
-  }
-
-  public MonteCarloRequest p(List<BigDecimal> p) {
-    this.p = p;
-    return this;
-  }
-
-  public MonteCarloRequest addPItem(BigDecimal pItem) {
-    if (this.p == null) {
-      this.p = new ArrayList<BigDecimal>();
-    }
-    this.p.add(pItem);
-    return this;
-  }
-
-   /**
-   * Get p
-   * @return p
-  **/
-  @ApiModelProperty(value = "")
-  public List<BigDecimal> getP() {
-    return p;
-  }
-
-  public void setP(List<BigDecimal> p) {
-    this.p = p;
-  }
-
-  public MonteCarloRequest aggregationAccountId(UUID aggregationAccountId) {
-    this.aggregationAccountId = aggregationAccountId;
-    return this;
-  }
-
-   /**
-   * Get aggregationAccountId
-   * @return aggregationAccountId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getAggregationAccountId() {
-    return aggregationAccountId;
-  }
-
-  public void setAggregationAccountId(UUID aggregationAccountId) {
-    this.aggregationAccountId = aggregationAccountId;
-  }
-
-  public MonteCarloRequest allocationId(UUID allocationId) {
-    this.allocationId = allocationId;
-    return this;
-  }
-
-   /**
-   * Get allocationId
-   * @return allocationId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getAllocationId() {
-    return allocationId;
-  }
-
-  public void setAllocationId(UUID allocationId) {
-    this.allocationId = allocationId;
-  }
-
-  public MonteCarloRequest mu(List<Float> mu) {
-    this.mu = mu;
-    return this;
-  }
-
-  public MonteCarloRequest addMuItem(Float muItem) {
-    if (this.mu == null) {
-      this.mu = new ArrayList<Float>();
-    }
-    this.mu.add(muItem);
-    return this;
-  }
-
-   /**
-   * Get mu
-   * @return mu
-  **/
-  @ApiModelProperty(value = "")
-  public List<Float> getMu() {
-    return mu;
-  }
-
-  public void setMu(List<Float> mu) {
-    this.mu = mu;
-  }
-
-  public MonteCarloRequest n(Integer n) {
-    this.n = n;
-    return this;
-  }
-
-   /**
-   * Get n
-   * minimum: 1
-   * maximum: 10000
-   * @return n
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getN() {
-    return n;
-  }
-
-  public void setN(Integer n) {
-    this.n = n;
-  }
-
-  public MonteCarloRequest sigma(List<Float> sigma) {
-    this.sigma = sigma;
-    return this;
-  }
-
-  public MonteCarloRequest addSigmaItem(Float sigmaItem) {
-    if (this.sigma == null) {
-      this.sigma = new ArrayList<Float>();
-    }
-    this.sigma.add(sigmaItem);
-    return this;
-  }
-
-   /**
-   * Get sigma
-   * @return sigma
-  **/
-  @ApiModelProperty(value = "")
-  public List<Float> getSigma() {
-    return sigma;
-  }
-
-  public void setSigma(List<Float> sigma) {
-    this.sigma = sigma;
-  }
-
-  public MonteCarloRequest accountId(UUID accountId) {
-    this.accountId = accountId;
-    return this;
-  }
-
-   /**
-   * Get accountId
-   * @return accountId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getAccountId() {
-    return accountId;
-  }
-
-  public void setAccountId(UUID accountId) {
-    this.accountId = accountId;
-  }
-
-  public MonteCarloRequest initBal(BigDecimal initBal) {
-    this.initBal = initBal;
-    return this;
-  }
-
-   /**
-   * Get initBal
-   * minimum: 0
-   * @return initBal
-  **/
-  @ApiModelProperty(value = "")
-  public BigDecimal getInitBal() {
-    return initBal;
-  }
-
-  public void setInitBal(BigDecimal initBal) {
-    this.initBal = initBal;
-  }
-
-  public MonteCarloRequest removeOutliers(Boolean removeOutliers) {
-    this.removeOutliers = removeOutliers;
-    return this;
-  }
-
-   /**
-   * Get removeOutliers
-   * @return removeOutliers
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isRemoveOutliers() {
-    return removeOutliers;
-  }
-
-  public void setRemoveOutliers(Boolean removeOutliers) {
-    this.removeOutliers = removeOutliers;
-  }
-
-  public MonteCarloRequest modelId(UUID modelId) {
-    this.modelId = modelId;
-    return this;
-  }
-
-   /**
-   * Get modelId
-   * @return modelId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getModelId() {
-    return modelId;
-  }
-
-  public void setModelId(UUID modelId) {
-    this.modelId = modelId;
-  }
-
-  public MonteCarloRequest maxBal(List<BigDecimal> maxBal) {
-    this.maxBal = maxBal;
-    return this;
-  }
-
-  public MonteCarloRequest addMaxBalItem(BigDecimal maxBalItem) {
-    if (this.maxBal == null) {
-      this.maxBal = new ArrayList<BigDecimal>();
-    }
-    this.maxBal.add(maxBalItem);
-    return this;
-  }
-
-   /**
-   * Get maxBal
-   * @return maxBal
-  **/
-  @ApiModelProperty(value = "")
-  public List<BigDecimal> getMaxBal() {
-    return maxBal;
-  }
-
-  public void setMaxBal(List<BigDecimal> maxBal) {
-    this.maxBal = maxBal;
-  }
-
-  public MonteCarloRequest minBal(List<BigDecimal> minBal) {
-    this.minBal = minBal;
-    return this;
-  }
-
-  public MonteCarloRequest addMinBalItem(BigDecimal minBalItem) {
-    if (this.minBal == null) {
-      this.minBal = new ArrayList<BigDecimal>();
-    }
-    this.minBal.add(minBalItem);
-    return this;
-  }
-
-   /**
-   * Get minBal
-   * @return minBal
-  **/
-  @ApiModelProperty(value = "")
-  public List<BigDecimal> getMinBal() {
-    return minBal;
-  }
-
-  public void setMinBal(List<BigDecimal> minBal) {
-    this.minBal = minBal;
-  }
-
-  public MonteCarloRequest useProxyData(Boolean useProxyData) {
-    this.useProxyData = useProxyData;
-    return this;
-  }
-
-   /**
-   * Get useProxyData
-   * @return useProxyData
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isUseProxyData() {
-    return useProxyData;
-  }
-
-  public void setUseProxyData(Boolean useProxyData) {
-    this.useProxyData = useProxyData;
-  }
-
-  public MonteCarloRequest cf(List<List<BigDecimal>> cf) {
-    this.cf = cf;
-    return this;
-  }
-
-  public MonteCarloRequest addCfItem(List<BigDecimal> cfItem) {
-    this.cf.add(cfItem);
-    return this;
-  }
-
-   /**
-   * Get cf
-   * @return cf
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public List<List<BigDecimal>> getCf() {
-    return cf;
-  }
-
-  public void setCf(List<List<BigDecimal>> cf) {
-    this.cf = cf;
   }
 
   public MonteCarloRequest resultType(ResultTypeEnum resultType) {
@@ -629,6 +346,50 @@ public class MonteCarloRequest {
     this.retMod = retMod;
   }
 
+  public MonteCarloRequest removeOutliers(Boolean removeOutliers) {
+    this.removeOutliers = removeOutliers;
+    return this;
+  }
+
+   /**
+   * Get removeOutliers
+   * @return removeOutliers
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isRemoveOutliers() {
+    return removeOutliers;
+  }
+
+  public void setRemoveOutliers(Boolean removeOutliers) {
+    this.removeOutliers = removeOutliers;
+  }
+
+  public MonteCarloRequest maxBal(List<BigDecimal> maxBal) {
+    this.maxBal = maxBal;
+    return this;
+  }
+
+  public MonteCarloRequest addMaxBalItem(BigDecimal maxBalItem) {
+    if (this.maxBal == null) {
+      this.maxBal = new ArrayList<BigDecimal>();
+    }
+    this.maxBal.add(maxBalItem);
+    return this;
+  }
+
+   /**
+   * Get maxBal
+   * @return maxBal
+  **/
+  @ApiModelProperty(value = "")
+  public List<BigDecimal> getMaxBal() {
+    return maxBal;
+  }
+
+  public void setMaxBal(List<BigDecimal> maxBal) {
+    this.maxBal = maxBal;
+  }
+
   public MonteCarloRequest marketDataSource(MarketDataSourceEnum marketDataSource) {
     this.marketDataSource = marketDataSource;
     return this;
@@ -647,58 +408,103 @@ public class MonteCarloRequest {
     this.marketDataSource = marketDataSource;
   }
 
-  public MonteCarloRequest portfolioId(UUID portfolioId) {
-    this.portfolioId = portfolioId;
+  public MonteCarloRequest p(List<BigDecimal> p) {
+    this.p = p;
+    return this;
+  }
+
+  public MonteCarloRequest addPItem(BigDecimal pItem) {
+    if (this.p == null) {
+      this.p = new ArrayList<BigDecimal>();
+    }
+    this.p.add(pItem);
     return this;
   }
 
    /**
-   * Get portfolioId
-   * @return portfolioId
+   * Get p
+   * @return p
   **/
   @ApiModelProperty(value = "")
-  public UUID getPortfolioId() {
-    return portfolioId;
+  public List<BigDecimal> getP() {
+    return p;
   }
 
-  public void setPortfolioId(UUID portfolioId) {
-    this.portfolioId = portfolioId;
+  public void setP(List<BigDecimal> p) {
+    this.p = p;
   }
 
-  public MonteCarloRequest frequencyInterval(FrequencyIntervalEnum frequencyInterval) {
-    this.frequencyInterval = frequencyInterval;
+  public MonteCarloRequest allocationId(UUID allocationId) {
+    this.allocationId = allocationId;
     return this;
   }
 
    /**
-   * Get frequencyInterval
-   * @return frequencyInterval
+   * Get allocationId
+   * @return allocationId
   **/
   @ApiModelProperty(value = "")
-  public FrequencyIntervalEnum getFrequencyInterval() {
-    return frequencyInterval;
+  public UUID getAllocationId() {
+    return allocationId;
   }
 
-  public void setFrequencyInterval(FrequencyIntervalEnum frequencyInterval) {
-    this.frequencyInterval = frequencyInterval;
+  public void setAllocationId(UUID allocationId) {
+    this.allocationId = allocationId;
   }
 
-  public MonteCarloRequest createLog(Boolean createLog) {
-    this.createLog = createLog;
+  public MonteCarloRequest useProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
     return this;
   }
 
    /**
-   * Get createLog
-   * @return createLog
+   * Get useProxyData
+   * @return useProxyData
   **/
   @ApiModelProperty(value = "")
-  public Boolean isCreateLog() {
-    return createLog;
+  public Boolean isUseProxyData() {
+    return useProxyData;
   }
 
-  public void setCreateLog(Boolean createLog) {
-    this.createLog = createLog;
+  public void setUseProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+  }
+
+  public MonteCarloRequest aggregationAccountId(UUID aggregationAccountId) {
+    this.aggregationAccountId = aggregationAccountId;
+    return this;
+  }
+
+   /**
+   * Get aggregationAccountId
+   * @return aggregationAccountId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getAggregationAccountId() {
+    return aggregationAccountId;
+  }
+
+  public void setAggregationAccountId(UUID aggregationAccountId) {
+    this.aggregationAccountId = aggregationAccountId;
+  }
+
+  public MonteCarloRequest initBal(BigDecimal initBal) {
+    this.initBal = initBal;
+    return this;
+  }
+
+   /**
+   * Get initBal
+   * minimum: 0
+   * @return initBal
+  **/
+  @ApiModelProperty(value = "")
+  public BigDecimal getInitBal() {
+    return initBal;
+  }
+
+  public void setInitBal(BigDecimal initBal) {
+    this.initBal = initBal;
   }
 
   public MonteCarloRequest minSample(List<Float> minSample) {
@@ -727,6 +533,199 @@ public class MonteCarloRequest {
     this.minSample = minSample;
   }
 
+  public MonteCarloRequest createLog(Boolean createLog) {
+    this.createLog = createLog;
+    return this;
+  }
+
+   /**
+   * Get createLog
+   * @return createLog
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isCreateLog() {
+    return createLog;
+  }
+
+  public void setCreateLog(Boolean createLog) {
+    this.createLog = createLog;
+  }
+
+  public MonteCarloRequest mu(List<Float> mu) {
+    this.mu = mu;
+    return this;
+  }
+
+  public MonteCarloRequest addMuItem(Float muItem) {
+    if (this.mu == null) {
+      this.mu = new ArrayList<Float>();
+    }
+    this.mu.add(muItem);
+    return this;
+  }
+
+   /**
+   * Get mu
+   * @return mu
+  **/
+  @ApiModelProperty(value = "")
+  public List<Float> getMu() {
+    return mu;
+  }
+
+  public void setMu(List<Float> mu) {
+    this.mu = mu;
+  }
+
+  public MonteCarloRequest accountId(UUID accountId) {
+    this.accountId = accountId;
+    return this;
+  }
+
+   /**
+   * Get accountId
+   * @return accountId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getAccountId() {
+    return accountId;
+  }
+
+  public void setAccountId(UUID accountId) {
+    this.accountId = accountId;
+  }
+
+  public MonteCarloRequest sigma(List<Float> sigma) {
+    this.sigma = sigma;
+    return this;
+  }
+
+  public MonteCarloRequest addSigmaItem(Float sigmaItem) {
+    if (this.sigma == null) {
+      this.sigma = new ArrayList<Float>();
+    }
+    this.sigma.add(sigmaItem);
+    return this;
+  }
+
+   /**
+   * Get sigma
+   * @return sigma
+  **/
+  @ApiModelProperty(value = "")
+  public List<Float> getSigma() {
+    return sigma;
+  }
+
+  public void setSigma(List<Float> sigma) {
+    this.sigma = sigma;
+  }
+
+  public MonteCarloRequest modelId(UUID modelId) {
+    this.modelId = modelId;
+    return this;
+  }
+
+   /**
+   * Get modelId
+   * @return modelId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getModelId() {
+    return modelId;
+  }
+
+  public void setModelId(UUID modelId) {
+    this.modelId = modelId;
+  }
+
+  public MonteCarloRequest n(Integer n) {
+    this.n = n;
+    return this;
+  }
+
+   /**
+   * Get n
+   * minimum: 1
+   * maximum: 10000
+   * @return n
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getN() {
+    return n;
+  }
+
+  public void setN(Integer n) {
+    this.n = n;
+  }
+
+  public MonteCarloRequest minBal(List<BigDecimal> minBal) {
+    this.minBal = minBal;
+    return this;
+  }
+
+  public MonteCarloRequest addMinBalItem(BigDecimal minBalItem) {
+    if (this.minBal == null) {
+      this.minBal = new ArrayList<BigDecimal>();
+    }
+    this.minBal.add(minBalItem);
+    return this;
+  }
+
+   /**
+   * Get minBal
+   * @return minBal
+  **/
+  @ApiModelProperty(value = "")
+  public List<BigDecimal> getMinBal() {
+    return minBal;
+  }
+
+  public void setMinBal(List<BigDecimal> minBal) {
+    this.minBal = minBal;
+  }
+
+  public MonteCarloRequest frequencyInterval(FrequencyIntervalEnum frequencyInterval) {
+    this.frequencyInterval = frequencyInterval;
+    return this;
+  }
+
+   /**
+   * Get frequencyInterval
+   * @return frequencyInterval
+  **/
+  @ApiModelProperty(value = "")
+  public FrequencyIntervalEnum getFrequencyInterval() {
+    return frequencyInterval;
+  }
+
+  public void setFrequencyInterval(FrequencyIntervalEnum frequencyInterval) {
+    this.frequencyInterval = frequencyInterval;
+  }
+
+  public MonteCarloRequest cf(List<List<BigDecimal>> cf) {
+    this.cf = cf;
+    return this;
+  }
+
+  public MonteCarloRequest addCfItem(List<BigDecimal> cfItem) {
+    this.cf.add(cfItem);
+    return this;
+  }
+
+   /**
+   * Get cf
+   * @return cf
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public List<List<BigDecimal>> getCf() {
+    return cf;
+  }
+
+  public void setCf(List<List<BigDecimal>> cf) {
+    this.cf = cf;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -737,33 +736,33 @@ public class MonteCarloRequest {
       return false;
     }
     MonteCarloRequest monteCarloRequest = (MonteCarloRequest) o;
-    return Objects.equals(this.maxSample, monteCarloRequest.maxSample) &&
-        Objects.equals(this.p, monteCarloRequest.p) &&
-        Objects.equals(this.aggregationAccountId, monteCarloRequest.aggregationAccountId) &&
-        Objects.equals(this.allocationId, monteCarloRequest.allocationId) &&
-        Objects.equals(this.mu, monteCarloRequest.mu) &&
-        Objects.equals(this.n, monteCarloRequest.n) &&
-        Objects.equals(this.sigma, monteCarloRequest.sigma) &&
-        Objects.equals(this.accountId, monteCarloRequest.accountId) &&
-        Objects.equals(this.initBal, monteCarloRequest.initBal) &&
-        Objects.equals(this.removeOutliers, monteCarloRequest.removeOutliers) &&
-        Objects.equals(this.modelId, monteCarloRequest.modelId) &&
-        Objects.equals(this.maxBal, monteCarloRequest.maxBal) &&
-        Objects.equals(this.minBal, monteCarloRequest.minBal) &&
-        Objects.equals(this.useProxyData, monteCarloRequest.useProxyData) &&
-        Objects.equals(this.cf, monteCarloRequest.cf) &&
+    return Objects.equals(this.portfolioId, monteCarloRequest.portfolioId) &&
+        Objects.equals(this.maxSample, monteCarloRequest.maxSample) &&
         Objects.equals(this.resultType, monteCarloRequest.resultType) &&
         Objects.equals(this.retMod, monteCarloRequest.retMod) &&
+        Objects.equals(this.removeOutliers, monteCarloRequest.removeOutliers) &&
+        Objects.equals(this.maxBal, monteCarloRequest.maxBal) &&
         Objects.equals(this.marketDataSource, monteCarloRequest.marketDataSource) &&
-        Objects.equals(this.portfolioId, monteCarloRequest.portfolioId) &&
-        Objects.equals(this.frequencyInterval, monteCarloRequest.frequencyInterval) &&
+        Objects.equals(this.p, monteCarloRequest.p) &&
+        Objects.equals(this.allocationId, monteCarloRequest.allocationId) &&
+        Objects.equals(this.useProxyData, monteCarloRequest.useProxyData) &&
+        Objects.equals(this.aggregationAccountId, monteCarloRequest.aggregationAccountId) &&
+        Objects.equals(this.initBal, monteCarloRequest.initBal) &&
+        Objects.equals(this.minSample, monteCarloRequest.minSample) &&
         Objects.equals(this.createLog, monteCarloRequest.createLog) &&
-        Objects.equals(this.minSample, monteCarloRequest.minSample);
+        Objects.equals(this.mu, monteCarloRequest.mu) &&
+        Objects.equals(this.accountId, monteCarloRequest.accountId) &&
+        Objects.equals(this.sigma, monteCarloRequest.sigma) &&
+        Objects.equals(this.modelId, monteCarloRequest.modelId) &&
+        Objects.equals(this.n, monteCarloRequest.n) &&
+        Objects.equals(this.minBal, monteCarloRequest.minBal) &&
+        Objects.equals(this.frequencyInterval, monteCarloRequest.frequencyInterval) &&
+        Objects.equals(this.cf, monteCarloRequest.cf);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(maxSample, p, aggregationAccountId, allocationId, mu, n, sigma, accountId, initBal, removeOutliers, modelId, maxBal, minBal, useProxyData, cf, resultType, retMod, marketDataSource, portfolioId, frequencyInterval, createLog, minSample);
+    return Objects.hash(portfolioId, maxSample, resultType, retMod, removeOutliers, maxBal, marketDataSource, p, allocationId, useProxyData, aggregationAccountId, initBal, minSample, createLog, mu, accountId, sigma, modelId, n, minBal, frequencyInterval, cf);
   }
 
 
@@ -772,28 +771,28 @@ public class MonteCarloRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class MonteCarloRequest {\n");
     
+    sb.append("    portfolioId: ").append(toIndentedString(portfolioId)).append("\n");
     sb.append("    maxSample: ").append(toIndentedString(maxSample)).append("\n");
-    sb.append("    p: ").append(toIndentedString(p)).append("\n");
-    sb.append("    aggregationAccountId: ").append(toIndentedString(aggregationAccountId)).append("\n");
-    sb.append("    allocationId: ").append(toIndentedString(allocationId)).append("\n");
-    sb.append("    mu: ").append(toIndentedString(mu)).append("\n");
-    sb.append("    n: ").append(toIndentedString(n)).append("\n");
-    sb.append("    sigma: ").append(toIndentedString(sigma)).append("\n");
-    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-    sb.append("    initBal: ").append(toIndentedString(initBal)).append("\n");
-    sb.append("    removeOutliers: ").append(toIndentedString(removeOutliers)).append("\n");
-    sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
-    sb.append("    maxBal: ").append(toIndentedString(maxBal)).append("\n");
-    sb.append("    minBal: ").append(toIndentedString(minBal)).append("\n");
-    sb.append("    useProxyData: ").append(toIndentedString(useProxyData)).append("\n");
-    sb.append("    cf: ").append(toIndentedString(cf)).append("\n");
     sb.append("    resultType: ").append(toIndentedString(resultType)).append("\n");
     sb.append("    retMod: ").append(toIndentedString(retMod)).append("\n");
+    sb.append("    removeOutliers: ").append(toIndentedString(removeOutliers)).append("\n");
+    sb.append("    maxBal: ").append(toIndentedString(maxBal)).append("\n");
     sb.append("    marketDataSource: ").append(toIndentedString(marketDataSource)).append("\n");
-    sb.append("    portfolioId: ").append(toIndentedString(portfolioId)).append("\n");
-    sb.append("    frequencyInterval: ").append(toIndentedString(frequencyInterval)).append("\n");
-    sb.append("    createLog: ").append(toIndentedString(createLog)).append("\n");
+    sb.append("    p: ").append(toIndentedString(p)).append("\n");
+    sb.append("    allocationId: ").append(toIndentedString(allocationId)).append("\n");
+    sb.append("    useProxyData: ").append(toIndentedString(useProxyData)).append("\n");
+    sb.append("    aggregationAccountId: ").append(toIndentedString(aggregationAccountId)).append("\n");
+    sb.append("    initBal: ").append(toIndentedString(initBal)).append("\n");
     sb.append("    minSample: ").append(toIndentedString(minSample)).append("\n");
+    sb.append("    createLog: ").append(toIndentedString(createLog)).append("\n");
+    sb.append("    mu: ").append(toIndentedString(mu)).append("\n");
+    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    sb.append("    sigma: ").append(toIndentedString(sigma)).append("\n");
+    sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
+    sb.append("    n: ").append(toIndentedString(n)).append("\n");
+    sb.append("    minBal: ").append(toIndentedString(minBal)).append("\n");
+    sb.append("    frequencyInterval: ").append(toIndentedString(frequencyInterval)).append("\n");
+    sb.append("    cf: ").append(toIndentedString(cf)).append("\n");
     sb.append("}");
     return sb.toString();
   }

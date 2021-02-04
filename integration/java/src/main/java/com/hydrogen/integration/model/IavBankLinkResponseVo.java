@@ -24,34 +24,13 @@ import java.util.List;
 /**
  * IavBankLinkResponseVo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class IavBankLinkResponseVo {
-  @SerializedName("is_error_occurred")
-  private Boolean isErrorOccurred = null;
-
   @SerializedName("message")
   private String message = null;
 
   @SerializedName("response")
   private List<BankLinkResponseInternalObjectVO> response = null;
-
-  public IavBankLinkResponseVo isErrorOccurred(Boolean isErrorOccurred) {
-    this.isErrorOccurred = isErrorOccurred;
-    return this;
-  }
-
-   /**
-   * Get isErrorOccurred
-   * @return isErrorOccurred
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIsErrorOccurred() {
-    return isErrorOccurred;
-  }
-
-  public void setIsErrorOccurred(Boolean isErrorOccurred) {
-    this.isErrorOccurred = isErrorOccurred;
-  }
 
   public IavBankLinkResponseVo message(String message) {
     this.message = message;
@@ -107,14 +86,13 @@ public class IavBankLinkResponseVo {
       return false;
     }
     IavBankLinkResponseVo iavBankLinkResponseVo = (IavBankLinkResponseVo) o;
-    return Objects.equals(this.isErrorOccurred, iavBankLinkResponseVo.isErrorOccurred) &&
-        Objects.equals(this.message, iavBankLinkResponseVo.message) &&
+    return Objects.equals(this.message, iavBankLinkResponseVo.message) &&
         Objects.equals(this.response, iavBankLinkResponseVo.response);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(isErrorOccurred, message, response);
+    return Objects.hash(message, response);
   }
 
 
@@ -123,7 +101,6 @@ public class IavBankLinkResponseVo {
     StringBuilder sb = new StringBuilder();
     sb.append("class IavBankLinkResponseVo {\n");
     
-    sb.append("    isErrorOccurred: ").append(toIndentedString(isErrorOccurred)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    response: ").append(toIndentedString(response)).append("\n");
     sb.append("}");

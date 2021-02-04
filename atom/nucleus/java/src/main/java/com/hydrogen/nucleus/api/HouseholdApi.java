@@ -21,19 +21,18 @@ import com.hydrogen.nucleus.Configuration;
 import com.hydrogen.nucleus.Pair;
 import com.hydrogen.nucleus.ProgressRequestBody;
 import com.hydrogen.nucleus.ProgressResponseBody;
-import com.hydrogen.nucleus.model.AvailableDateDoubleVO;
-import com.hydrogen.nucleus.model.Household;
-import com.hydrogen.nucleus.model.PageHousehold;
-import com.hydrogen.nucleus.model.PagePortfolioTransaction;
-import com.hydrogen.nucleus.model.PortfolioHoldingAgg;
 
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
 
+import com.hydrogen.nucleus.model.AvailableDateDoubleVO;
+import com.hydrogen.nucleus.model.Household;
 import org.threeten.bp.LocalDate;
-
+import com.hydrogen.nucleus.model.PageHousehold;
+import com.hydrogen.nucleus.model.PagePortfolioTransaction;
+import com.hydrogen.nucleus.model.PortfolioHoldingAgg;
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -1048,7 +1047,7 @@ public class HouseholdApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateHouseholdUsingPutCall(Household household, UUID householdId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateHouseholdUsingPutCall(Object household, UUID householdId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = household;
 
         // create path and map variables
@@ -1091,7 +1090,7 @@ public class HouseholdApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateHouseholdUsingPutValidateBeforeCall(Household household, UUID householdId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateHouseholdUsingPutValidateBeforeCall(Object household, UUID householdId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'household' is set
         if (household == null) {
@@ -1117,7 +1116,7 @@ public class HouseholdApi {
      * @return Household
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Household updateHouseholdUsingPut(Household household, UUID householdId) throws ApiException {
+    public Household updateHouseholdUsingPut(Object household, UUID householdId) throws ApiException {
         ApiResponse<Household> resp = updateHouseholdUsingPutWithHttpInfo(household, householdId);
         return resp.getData();
     }
@@ -1130,7 +1129,7 @@ public class HouseholdApi {
      * @return ApiResponse&lt;Household&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Household> updateHouseholdUsingPutWithHttpInfo(Household household, UUID householdId) throws ApiException {
+    public ApiResponse<Household> updateHouseholdUsingPutWithHttpInfo(Object household, UUID householdId) throws ApiException {
         com.squareup.okhttp.Call call = updateHouseholdUsingPutValidateBeforeCall(household, householdId, null, null);
         Type localVarReturnType = new TypeToken<Household>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1145,7 +1144,7 @@ public class HouseholdApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateHouseholdUsingPutAsync(Household household, UUID householdId, final ApiCallback<Household> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateHouseholdUsingPutAsync(Object household, UUID householdId, final ApiCallback<Household> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

@@ -13,28 +13,11 @@
 
 package com.hydrogen.nucleus.api;
 
-import com.hydrogen.nucleus.ApiCallback;
-import com.hydrogen.nucleus.ApiClient;
-import com.hydrogen.nucleus.ApiException;
-import com.hydrogen.nucleus.ApiResponse;
-import com.hydrogen.nucleus.Configuration;
-import com.hydrogen.nucleus.Pair;
-import com.hydrogen.nucleus.ProgressRequestBody;
-import com.hydrogen.nucleus.ProgressResponseBody;
-import com.hydrogen.nucleus.model.Country;
-import com.hydrogen.nucleus.model.Currency;
-import com.hydrogen.nucleus.model.FxRate;
-import com.hydrogen.nucleus.model.FxRateView;
-import com.hydrogen.nucleus.model.MerchantCategoryCode;
-
 import com.google.gson.reflect.TypeToken;
+import com.hydrogen.nucleus.*;
+import com.hydrogen.nucleus.model.*;
 
 import java.io.IOException;
-
-
-import com.hydrogen.nucleus.model.State;
-import com.hydrogen.nucleus.model.StatisticResourceVO;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -61,34 +44,36 @@ public class ResourceApi {
     }
 
     /**
-     * Build call for createFxRateBulkUsingPost
-     * @param fxRateList fxRateList (required)
+     * Build call for getAggregationAccountCategoryMappingUsingGet
+     * @param tenantName tenant_name (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createFxRateBulkUsingPostCall(List<FxRate> fxRateList, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = fxRateList;
+    public com.squareup.okhttp.Call getAggregationAccountCategoryMappingUsingGetCall(String tenantName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/resource/fx_rate";
+        String localVarPath = "/resource/account_category";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (tenantName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("tenant_name", tenantName));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "*/*"
+            "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/json"
+            
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -96,7 +81,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -106,57 +91,52 @@ public class ResourceApi {
         }
 
         String[] localVarAuthNames = new String[] { "oauth2" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createFxRateBulkUsingPostValidateBeforeCall(List<FxRate> fxRateList, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'fxRateList' is set
-        if (fxRateList == null) {
-            throw new ApiException("Missing the required parameter 'fxRateList' when calling createFxRateBulkUsingPost(Async)");
-        }
-        
+    private com.squareup.okhttp.Call getAggregationAccountCategoryMappingUsingGetValidateBeforeCall(String tenantName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 
-        com.squareup.okhttp.Call call = createFxRateBulkUsingPostCall(fxRateList, progressListener, progressRequestListener);
+
+        com.squareup.okhttp.Call call = getAggregationAccountCategoryMappingUsingGetCall(tenantName, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
-     * Create a bulk fxRate
-     * Create a bulk fxRate.
-     * @param fxRateList fxRateList (required)
-     * @return List&lt;FxRate&gt;
+     * Get All Aggregation Account Category mapping
+     * Get All Aggregation Account Category mapping.
+     * @param tenantName tenant_name (optional)
+     * @return List&lt;CategoryResponseVO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<FxRate> createFxRateBulkUsingPost(List<FxRate> fxRateList) throws ApiException {
-        ApiResponse<List<FxRate>> resp = createFxRateBulkUsingPostWithHttpInfo(fxRateList);
+    public List<CategoryResponseVO> getAggregationAccountCategoryMappingUsingGet(String tenantName) throws ApiException {
+        ApiResponse<List<CategoryResponseVO>> resp = getAggregationAccountCategoryMappingUsingGetWithHttpInfo(tenantName);
         return resp.getData();
     }
 
     /**
-     * Create a bulk fxRate
-     * Create a bulk fxRate.
-     * @param fxRateList fxRateList (required)
-     * @return ApiResponse&lt;List&lt;FxRate&gt;&gt;
+     * Get All Aggregation Account Category mapping
+     * Get All Aggregation Account Category mapping.
+     * @param tenantName tenant_name (optional)
+     * @return ApiResponse&lt;List&lt;CategoryResponseVO&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<FxRate>> createFxRateBulkUsingPostWithHttpInfo(List<FxRate> fxRateList) throws ApiException {
-        com.squareup.okhttp.Call call = createFxRateBulkUsingPostValidateBeforeCall(fxRateList, null, null);
-        Type localVarReturnType = new TypeToken<List<FxRate>>(){}.getType();
+    public ApiResponse<List<CategoryResponseVO>> getAggregationAccountCategoryMappingUsingGetWithHttpInfo(String tenantName) throws ApiException {
+        com.squareup.okhttp.Call call = getAggregationAccountCategoryMappingUsingGetValidateBeforeCall(tenantName, null, null);
+        Type localVarReturnType = new TypeToken<List<CategoryResponseVO>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Create a bulk fxRate (asynchronously)
-     * Create a bulk fxRate.
-     * @param fxRateList fxRateList (required)
+     * Get All Aggregation Account Category mapping (asynchronously)
+     * Get All Aggregation Account Category mapping.
+     * @param tenantName tenant_name (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createFxRateBulkUsingPostAsync(List<FxRate> fxRateList, final ApiCallback<List<FxRate>> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAggregationAccountCategoryMappingUsingGetAsync(String tenantName, final ApiCallback<List<CategoryResponseVO>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -177,8 +157,127 @@ public class ResourceApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createFxRateBulkUsingPostValidateBeforeCall(fxRateList, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<FxRate>>(){}.getType();
+        com.squareup.okhttp.Call call = getAggregationAccountCategoryMappingUsingGetValidateBeforeCall(tenantName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<List<CategoryResponseVO>>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getAggregationAccountTransactionCategoryMappingUsingGet
+     * @param tenantName tenant_name (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getAggregationAccountTransactionCategoryMappingUsingGetCall(String tenantName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/resource/merchant_category";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (tenantName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("tenant_name", tenantName));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getAggregationAccountTransactionCategoryMappingUsingGetValidateBeforeCall(String tenantName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+
+
+        com.squareup.okhttp.Call call = getAggregationAccountTransactionCategoryMappingUsingGetCall(tenantName, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get All Aggregation Account Transaction Category mapping
+     * Get All Aggregation Account Transaction Category mapping.
+     * @param tenantName tenant_name (optional)
+     * @return List&lt;CategoryResponseVO&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public List<CategoryResponseVO> getAggregationAccountTransactionCategoryMappingUsingGet(String tenantName) throws ApiException {
+        ApiResponse<List<CategoryResponseVO>> resp = getAggregationAccountTransactionCategoryMappingUsingGetWithHttpInfo(tenantName);
+        return resp.getData();
+    }
+
+    /**
+     * Get All Aggregation Account Transaction Category mapping
+     * Get All Aggregation Account Transaction Category mapping.
+     * @param tenantName tenant_name (optional)
+     * @return ApiResponse&lt;List&lt;CategoryResponseVO&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<List<CategoryResponseVO>> getAggregationAccountTransactionCategoryMappingUsingGetWithHttpInfo(String tenantName) throws ApiException {
+        com.squareup.okhttp.Call call = getAggregationAccountTransactionCategoryMappingUsingGetValidateBeforeCall(tenantName, null, null);
+        Type localVarReturnType = new TypeToken<List<CategoryResponseVO>>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get All Aggregation Account Transaction Category mapping (asynchronously)
+     * Get All Aggregation Account Transaction Category mapping.
+     * @param tenantName tenant_name (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getAggregationAccountTransactionCategoryMappingUsingGetAsync(String tenantName, final ApiCallback<List<CategoryResponseVO>> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getAggregationAccountTransactionCategoryMappingUsingGetValidateBeforeCall(tenantName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<List<CategoryResponseVO>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -209,7 +308,7 @@ public class ResourceApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -217,7 +316,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -232,7 +331,7 @@ public class ResourceApi {
 
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getAllCountryUsingGetValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
+
 
         com.squareup.okhttp.Call call = getAllCountryUsingGetCall(progressListener, progressRequestListener);
         return call;
@@ -241,7 +340,7 @@ public class ResourceApi {
 
     /**
      * Get All Countries
-     * Get All Countries. 
+     * Get All Countries.
      * @return List&lt;Country&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -252,7 +351,7 @@ public class ResourceApi {
 
     /**
      * Get All Countries
-     * Get All Countries. 
+     * Get All Countries.
      * @return ApiResponse&lt;List&lt;Country&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -264,7 +363,7 @@ public class ResourceApi {
 
     /**
      * Get All Countries (asynchronously)
-     * Get All Countries. 
+     * Get All Countries.
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -322,7 +421,7 @@ public class ResourceApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -330,7 +429,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -345,7 +444,7 @@ public class ResourceApi {
 
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getAllCurrencyUsingGetValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
+
 
         com.squareup.okhttp.Call call = getAllCurrencyUsingGetCall(progressListener, progressRequestListener);
         return call;
@@ -354,7 +453,7 @@ public class ResourceApi {
 
     /**
      * Get All Currencies
-     * Get All Currencies. 
+     * Get All Currencies.
      * @return List&lt;Currency&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -365,7 +464,7 @@ public class ResourceApi {
 
     /**
      * Get All Currencies
-     * Get All Currencies. 
+     * Get All Currencies.
      * @return ApiResponse&lt;List&lt;Currency&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -377,7 +476,7 @@ public class ResourceApi {
 
     /**
      * Get All Currencies (asynchronously)
-     * Get All Currencies. 
+     * Get All Currencies.
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -410,12 +509,13 @@ public class ResourceApi {
     }
     /**
      * Build call for getAllMerchantCategoryCodeUsingGet
+     * @param filter filter (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getAllMerchantCategoryCodeUsingGetCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAllMerchantCategoryCodeUsingGetCall(String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -423,6 +523,8 @@ public class ResourceApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (filter != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -435,7 +537,7 @@ public class ResourceApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -443,7 +545,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -457,10 +559,10 @@ public class ResourceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAllMerchantCategoryCodeUsingGetValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
+    private com.squareup.okhttp.Call getAllMerchantCategoryCodeUsingGetValidateBeforeCall(String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 
-        com.squareup.okhttp.Call call = getAllMerchantCategoryCodeUsingGetCall(progressListener, progressRequestListener);
+
+        com.squareup.okhttp.Call call = getAllMerchantCategoryCodeUsingGetCall(filter, progressListener, progressRequestListener);
         return call;
 
     }
@@ -468,22 +570,24 @@ public class ResourceApi {
     /**
      * Get All Merchant Category Codes
      * Get All Merchant Category Codes.
+     * @param filter filter (optional)
      * @return List&lt;MerchantCategoryCode&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<MerchantCategoryCode> getAllMerchantCategoryCodeUsingGet() throws ApiException {
-        ApiResponse<List<MerchantCategoryCode>> resp = getAllMerchantCategoryCodeUsingGetWithHttpInfo();
+    public List<MerchantCategoryCode> getAllMerchantCategoryCodeUsingGet(String filter) throws ApiException {
+        ApiResponse<List<MerchantCategoryCode>> resp = getAllMerchantCategoryCodeUsingGetWithHttpInfo(filter);
         return resp.getData();
     }
 
     /**
      * Get All Merchant Category Codes
      * Get All Merchant Category Codes.
+     * @param filter filter (optional)
      * @return ApiResponse&lt;List&lt;MerchantCategoryCode&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<MerchantCategoryCode>> getAllMerchantCategoryCodeUsingGetWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = getAllMerchantCategoryCodeUsingGetValidateBeforeCall(null, null);
+    public ApiResponse<List<MerchantCategoryCode>> getAllMerchantCategoryCodeUsingGetWithHttpInfo(String filter) throws ApiException {
+        com.squareup.okhttp.Call call = getAllMerchantCategoryCodeUsingGetValidateBeforeCall(filter, null, null);
         Type localVarReturnType = new TypeToken<List<MerchantCategoryCode>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -491,11 +595,12 @@ public class ResourceApi {
     /**
      * Get All Merchant Category Codes (asynchronously)
      * Get All Merchant Category Codes.
+     * @param filter filter (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllMerchantCategoryCodeUsingGetAsync(final ApiCallback<List<MerchantCategoryCode>> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllMerchantCategoryCodeUsingGetAsync(String filter, final ApiCallback<List<MerchantCategoryCode>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -516,7 +621,7 @@ public class ResourceApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getAllMerchantCategoryCodeUsingGetValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllMerchantCategoryCodeUsingGetValidateBeforeCall(filter, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<MerchantCategoryCode>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -551,7 +656,7 @@ public class ResourceApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -559,7 +664,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -574,7 +679,7 @@ public class ResourceApi {
 
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getAllStatesUsingGetValidateBeforeCall(String countryCode, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
+
 
         com.squareup.okhttp.Call call = getAllStatesUsingGetCall(countryCode, progressListener, progressRequestListener);
         return call;
@@ -667,7 +772,7 @@ public class ResourceApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -675,7 +780,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -690,7 +795,7 @@ public class ResourceApi {
 
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getAllStatisticsUsingGetValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
+
 
         com.squareup.okhttp.Call call = getAllStatisticsUsingGetCall(progressListener, progressRequestListener);
         return call;
@@ -783,7 +888,7 @@ public class ResourceApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -791,7 +896,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -806,7 +911,7 @@ public class ResourceApi {
 
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getCurrencyExchangeRateAllUsingGetValidateBeforeCall(String filter, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
+
 
         com.squareup.okhttp.Call call = getCurrencyExchangeRateAllUsingGetCall(filter, progressListener, progressRequestListener);
         return call;
@@ -869,6 +974,149 @@ public class ResourceApi {
 
         com.squareup.okhttp.Call call = getCurrencyExchangeRateAllUsingGetValidateBeforeCall(filter, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<FxRateView>>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getMerchantsAllUsingGet
+     * @param ascending ascending (optional, default to false)
+     * @param filter filter (optional)
+     * @param orderBy order_by (optional, default to id)
+     * @param page page (optional, default to 0)
+     * @param size size (optional, default to 25)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getMerchantsAllUsingGetCall(Boolean ascending, String filter, String orderBy, Integer page, Integer size, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/resource/merchant";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (ascending != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
+        if (filter != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+        if (orderBy != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
+        if (page != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        if (size != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("size", size));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getMerchantsAllUsingGetValidateBeforeCall(Boolean ascending, String filter, String orderBy, Integer page, Integer size, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = getMerchantsAllUsingGetCall(ascending, filter, orderBy, page, size, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Get all merchants
+     * List all merchants.
+     * @param ascending ascending (optional, default to false)
+     * @param filter filter (optional)
+     * @param orderBy order_by (optional, default to id)
+     * @param page page (optional, default to 0)
+     * @param size size (optional, default to 25)
+     * @return MXMerchantRes
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public MXMerchantRes getMerchantsAllUsingGet(Boolean ascending, String filter, String orderBy, Integer page, Integer size) throws ApiException {
+        ApiResponse<MXMerchantRes> resp = getMerchantsAllUsingGetWithHttpInfo(ascending, filter, orderBy, page, size);
+        return resp.getData();
+    }
+
+    /**
+     * Get all merchants
+     * List all merchants.
+     * @param ascending ascending (optional, default to false)
+     * @param filter filter (optional)
+     * @param orderBy order_by (optional, default to id)
+     * @param page page (optional, default to 0)
+     * @param size size (optional, default to 25)
+     * @return ApiResponse&lt;MXMerchantRes&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<MXMerchantRes> getMerchantsAllUsingGetWithHttpInfo(Boolean ascending, String filter, String orderBy, Integer page, Integer size) throws ApiException {
+        com.squareup.okhttp.Call call = getMerchantsAllUsingGetValidateBeforeCall(ascending, filter, orderBy, page, size, null, null);
+        Type localVarReturnType = new TypeToken<MXMerchantRes>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get all merchants (asynchronously)
+     * List all merchants.
+     * @param ascending ascending (optional, default to false)
+     * @param filter filter (optional)
+     * @param orderBy order_by (optional, default to id)
+     * @param page page (optional, default to 0)
+     * @param size size (optional, default to 25)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getMerchantsAllUsingGetAsync(Boolean ascending, String filter, String orderBy, Integer page, Integer size, final ApiCallback<MXMerchantRes> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getMerchantsAllUsingGetValidateBeforeCall(ascending, filter, orderBy, page, size, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<MXMerchantRes>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

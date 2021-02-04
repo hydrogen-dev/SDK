@@ -28,13 +28,10 @@ import java.util.UUID;
 /**
  * CardTokenResponseVO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class CardTokenResponseVO {
   @SerializedName("apple_payload")
   private ApplePayload applePayload = null;
-
-  @SerializedName("card_status")
-  private String cardStatus = null;
 
   @SerializedName("google_payload")
   private GooglePayload googlePayload = null;
@@ -59,9 +56,9 @@ public class CardTokenResponseVO {
    */
   @JsonAdapter(WalletEnum.Adapter.class)
   public enum WalletEnum {
-    APPLE("apple"),
-    
     GOOGLE("google"),
+    
+    APPLE("apple"),
     
     SAMSUNG("samsung");
 
@@ -97,7 +94,7 @@ public class CardTokenResponseVO {
 
       @Override
       public WalletEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        Object value = jsonReader.nextString();
         return WalletEnum.fromValue(String.valueOf(value));
       }
     }
@@ -122,24 +119,6 @@ public class CardTokenResponseVO {
 
   public void setApplePayload(ApplePayload applePayload) {
     this.applePayload = applePayload;
-  }
-
-  public CardTokenResponseVO cardStatus(String cardStatus) {
-    this.cardStatus = cardStatus;
-    return this;
-  }
-
-   /**
-   * Get cardStatus
-   * @return cardStatus
-  **/
-  @ApiModelProperty(value = "")
-  public String getCardStatus() {
-    return cardStatus;
-  }
-
-  public void setCardStatus(String cardStatus) {
-    this.cardStatus = cardStatus;
   }
 
   public CardTokenResponseVO googlePayload(GooglePayload googlePayload) {
@@ -279,7 +258,6 @@ public class CardTokenResponseVO {
     }
     CardTokenResponseVO cardTokenResponseVO = (CardTokenResponseVO) o;
     return Objects.equals(this.applePayload, cardTokenResponseVO.applePayload) &&
-        Objects.equals(this.cardStatus, cardTokenResponseVO.cardStatus) &&
         Objects.equals(this.googlePayload, cardTokenResponseVO.googlePayload) &&
         Objects.equals(this.message, cardTokenResponseVO.message) &&
         Objects.equals(this.nucleusCardId, cardTokenResponseVO.nucleusCardId) &&
@@ -291,7 +269,7 @@ public class CardTokenResponseVO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(applePayload, cardStatus, googlePayload, message, nucleusCardId, samsungPayload, vendorName, vendorResponse, wallet);
+    return Objects.hash(applePayload, googlePayload, message, nucleusCardId, samsungPayload, vendorName, vendorResponse, wallet);
   }
 
 
@@ -301,7 +279,6 @@ public class CardTokenResponseVO {
     sb.append("class CardTokenResponseVO {\n");
     
     sb.append("    applePayload: ").append(toIndentedString(applePayload)).append("\n");
-    sb.append("    cardStatus: ").append(toIndentedString(cardStatus)).append("\n");
     sb.append("    googlePayload: ").append(toIndentedString(googlePayload)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    nucleusCardId: ").append(toIndentedString(nucleusCardId)).append("\n");

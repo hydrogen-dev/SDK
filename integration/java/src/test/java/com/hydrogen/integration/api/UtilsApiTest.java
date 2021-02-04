@@ -14,14 +14,14 @@
 package com.hydrogen.integration.api;
 
 import com.hydrogen.integration.ApiException;
-import com.hydrogen.integration.model.ExchangePublicTokenVO;
 import com.hydrogen.integration.model.ExchangeTokenCO;
+import com.hydrogen.integration.model.CreateUserRequest;
+import com.hydrogen.integration.model.ExchangePublicTokenVO;
+import org.threeten.bp.OffsetDateTime;
+import com.hydrogen.integration.model.Pageobject;
+import java.util.UUID;
 import com.hydrogen.integration.model.UserResponseVO;
 import com.hydrogen.integration.model.WidgetUrlVO;
-import com.hydrogen.integration.model.CreateUserRequest;
-
-import java.util.UUID;
-
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -62,6 +62,33 @@ public class UtilsApiTest {
     public void createUserUsingPostTest() throws ApiException {
         CreateUserRequest createUserRequest = null;
         UserResponseVO response = api.createUserUsingPost(createUserRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Gel all audit log
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getAuditLogAllUsingGetTest() throws ApiException {
+        Boolean ascending = null;
+        OffsetDateTime endDate = null;
+        String event = null;
+        String integrationType = null;
+        Boolean isRequest = null;
+        UUID nucleusClientId = null;
+        String orderBy = null;
+        Integer page = null;
+        String requestType = null;
+        Integer size = null;
+        OffsetDateTime startDate = null;
+        String vendorName = null;
+        Pageobject response = api.getAuditLogAllUsingGet(ascending, endDate, event, integrationType, isRequest, nucleusClientId, orderBy, page, requestType, size, startDate, vendorName);
 
         // TODO: test validations
     }

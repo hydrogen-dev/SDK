@@ -3,27 +3,27 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**goal_id** | **string** |  | [optional] 
-**curr_inv** | **float** |  | [optional] 
-**n** | **int** |  | [optional] [default to 1000]
-**horizon_frequency** | **string** |  | [optional] [default to 'year']
-**client_id** | **string** |  | [optional] 
-**remove_outliers** | **bool** |  | [optional] [default to true]
-**goal_config** | [**\com\hydrogen\proton\Model\GoalConfig**](GoalConfig.md) |  | [optional] 
-**conf_tgt** | **float** |  | [optional] [default to 0.9]
-**p_ret** | **float[]** |  | 
-**horizon** | **int** |  | [optional] 
 **thresh_type** | **string** |  | [optional] [default to 'perc']
-**thresh** | **float** |  | [optional] 
-**deposit_config** | [**\com\hydrogen\proton\Model\AccumulationGoalDepositConfig[]**](AccumulationGoalDepositConfig.md) |  | [optional] 
-**recommendation_config** | [**\com\hydrogen\proton\Model\RecommendationConfig1**](RecommendationConfig1.md) |  | [optional] 
+**goal_id** | **string** |  | [optional] 
+**client_id** | **string** |  | [optional] 
+**conf_tgt** | **float** |  | [optional] [default to 0.9]
+**remove_outliers** | **bool** |  | [optional] [default to true]
+**p_ret** | **float[]** |  | 
 **compounding_rate** | **float** |  | [optional] [default to 0.0]
-**withdrawal_tax** | **float** |  | [optional] [default to 0.0]
-**trading_days_per_year** | **int** |  | [optional] [default to 252]
 **adjust_for_compounding** | **bool** |  | [optional] [default to false]
-**p_risk** | **float[]** |  | 
+**deposit_config** | [**\com\hydrogen\proton\Model\AccumulationGoalDepositConfig[]**](AccumulationGoalDepositConfig.md) |  | [optional] 
+**thresh** | **float** |  | [optional] 
+**horizon_frequency** | **string** |  | [optional] [default to 'year']
+**recommendation_config** | [**\com\hydrogen\proton\Model\RecommendationConfig1**](RecommendationConfig1.md) |  | [optional] 
 **create_log** | **bool** |  | [optional] [default to false]
+**withdrawal_tax** | **float** |  | [optional] [default to 0.0]
+**goal_config** | [**\com\hydrogen\proton\Model\GoalConfig**](GoalConfig.md) |  | [optional] 
+**trading_days_per_year** | **int** |  | [optional] [default to 252]
+**n** | **int** |  | [optional] [default to 1000]
+**p_risk** | **float[]** |  | 
+**horizon** | **int** |  | [optional] 
 **recommend_type** | **string** |  | [optional] [default to 'horizon']
+**curr_inv** | **float** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

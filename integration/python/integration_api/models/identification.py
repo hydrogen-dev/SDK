@@ -34,8 +34,8 @@ class Identification(object):
         'country_of_issue': 'str',
         'doc_number': 'str',
         'doc_type': 'str',
-        'expiry_date': 'datetime',
-        'issue_date': 'datetime',
+        'expiry_date': 'date',
+        'issue_date': 'date',
         'issuing_authority': 'str',
         'state_of_issue': 'str'
     }
@@ -146,7 +146,7 @@ class Identification(object):
 
 
         :return: The expiry_date of this Identification.  # noqa: E501
-        :rtype: datetime
+        :rtype: date
         """
         return self._expiry_date
 
@@ -156,7 +156,7 @@ class Identification(object):
 
 
         :param expiry_date: The expiry_date of this Identification.  # noqa: E501
-        :type: datetime
+        :type: date
         """
 
         self._expiry_date = expiry_date
@@ -167,7 +167,7 @@ class Identification(object):
 
 
         :return: The issue_date of this Identification.  # noqa: E501
-        :rtype: datetime
+        :rtype: date
         """
         return self._issue_date
 
@@ -177,7 +177,7 @@ class Identification(object):
 
 
         :param issue_date: The issue_date of this Identification.  # noqa: E501
-        :type: datetime
+        :type: date
         """
 
         self._issue_date = issue_date

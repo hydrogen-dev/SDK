@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **nucleusClientId** | [**UUID**](UUID.md) |  |  [optional]
 **status** | **String** |  |  [optional]
 **vendorName** | **String** |  |  [optional]
-**vendorResponse** | [**CreateClientResponse**](CreateClientResponse.md) |  |  [optional]
+**vendorResponse** | **Object** |  |  [optional]
 
 
 

@@ -135,7 +135,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.OverflowApi();
 
-var overflowSettingsId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID overflow_settings_id
+var overflowSettingsId = "\"2035f52d-2c5b-4e07-8904-cb037bad7aff\""; // String | UUID overflow_settings_id
 
 
 var callback = function(error, data, response) {
@@ -152,7 +152,7 @@ apiInstance.deleteOverflowSettingsUsingDelete(overflowSettingsId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **overflowSettingsId** | **String**| UUID overflow_settings_id | 
+ **overflowSettingsId** | [**String**](.md)| UUID overflow_settings_id | 
 
 ### Return type
 
@@ -306,7 +306,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.OverflowApi();
 
-var overflowSettingsId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID overflow_settings_id
+var overflowSettingsId = "\"2035f52d-2c5b-4e07-8904-cb037bad7aff\""; // String | UUID overflow_settings_id
 
 
 var callback = function(error, data, response) {
@@ -323,7 +323,7 @@ apiInstance.getOverflowSettingsUsingGet(overflowSettingsId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **overflowSettingsId** | **String**| UUID overflow_settings_id | 
+ **overflowSettingsId** | [**String**](.md)| UUID overflow_settings_id | 
 
 ### Return type
 
@@ -357,7 +357,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.OverflowApi();
 
-var overflowId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID overflow_id
+var overflowId = "\"2035f52d-2c5b-4e07-8904-cb037bad7aff\""; // String | UUID overflow_id
 
 
 var callback = function(error, data, response) {
@@ -374,7 +374,7 @@ apiInstance.getOverflowUsingGet(overflowId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **overflowId** | **String**| UUID overflow_id | 
+ **overflowId** | [**String**](.md)| UUID overflow_id | 
 
 ### Return type
 
@@ -408,9 +408,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.OverflowApi();
 
-var overflowSettings = new HydrogenNucleusApi.OverflowSettings(); // OverflowSettings | overflow_settings
+var overflowSettings = null; // Object | overflow_settings
 
-var overflowSettingsId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID overflow_settings_id
+var overflowSettingsId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID overflow_settings_id
 
 
 var callback = function(error, data, response) {
@@ -427,8 +427,8 @@ apiInstance.updateOverflowSettingsUsingPut(overflowSettings, overflowSettingsId,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **overflowSettings** | [**OverflowSettings**](OverflowSettings.md)| overflow_settings | 
- **overflowSettingsId** | **String**| UUID overflow_settings_id | 
+ **overflowSettings** | **Object**| overflow_settings | 
+ **overflowSettingsId** | [**String**](.md)| UUID overflow_settings_id | 
 
 ### Return type
 

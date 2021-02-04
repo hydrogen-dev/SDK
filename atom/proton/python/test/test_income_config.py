@@ -32,7 +32,7 @@ class TestIncomeConfig(unittest.TestCase):
     def testIncomeConfig(self):
         """Test IncomeConfig"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.income_config.IncomeConfig()  # noqa: E501
+        # model = proton_api.models.income_config.IncomeConfig()  # noqa: E501
         pass
 
 

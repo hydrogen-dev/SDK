@@ -3,15 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**inflationRate** | **Number** |  | [optional] [default to 0.0]
-**purchaseHorizon** | **Number** |  | 
-**investmentTax** | **Number** |  | [optional] [default to 0.0]
-**depositSchedule** | [**CalculatorDepositSchedule1**](CalculatorDepositSchedule1.md) |  | [optional] 
-**portfolioReturn** | **Number** |  | 
 **aggregationAccountIds** | **[String]** |  | [optional] 
-**horizonFrequencyInterval** | **String** |  | [optional] [default to 'year']
-**accountIds** | **[String]** |  | [optional] 
 **currentSavings** | **Number** |  | [optional] [default to 0.0]
+**accountIds** | **[String]** |  | [optional] 
+**investmentTax** | **Number** |  | [optional] [default to 0.0]
+**purchaseHorizon** | **Number** |  | 
+**inflationRate** | **Number** |  | [optional] [default to 0.0]
+**horizonFrequencyInterval** | **String** |  | [optional] [default to 'year']
+**portfolioReturn** | **Number** |  | 
+**depositSchedule** | [**CalculatorDepositSchedule1**](CalculatorDepositSchedule1.md) |  | [optional] 
 
 
 <a name="HorizonFrequencyIntervalEnum"></a>

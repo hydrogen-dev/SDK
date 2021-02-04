@@ -15,12 +15,7 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.math.BigDecimal;
@@ -31,7 +26,7 @@ import java.util.UUID;
 /**
  * RiskScoreRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
@@ -39,8 +34,8 @@ public class RiskScoreRequest {
   @SerializedName("post_score")
   private Boolean postScore = false;
 
-  @SerializedName("questionnaire_id")
-  private UUID questionnaireId = null;
+  @SerializedName("weights")
+  private List<Float> weights = null;
 
   @SerializedName("max_answers")
   private List<BigDecimal> maxAnswers = new ArrayList<BigDecimal>();
@@ -51,8 +46,8 @@ public class RiskScoreRequest {
   @SerializedName("answers")
   private List<BigDecimal> answers = null;
 
-  @SerializedName("weights")
-  private List<Float> weights = null;
+  @SerializedName("questionnaire_id")
+  private UUID questionnaireId = null;
 
   public RiskScoreRequest postScore(Boolean postScore) {
     this.postScore = postScore;
@@ -72,22 +67,30 @@ public class RiskScoreRequest {
     this.postScore = postScore;
   }
 
-  public RiskScoreRequest questionnaireId(UUID questionnaireId) {
-    this.questionnaireId = questionnaireId;
+  public RiskScoreRequest weights(List<Float> weights) {
+    this.weights = weights;
+    return this;
+  }
+
+  public RiskScoreRequest addWeightsItem(Float weightsItem) {
+    if (this.weights == null) {
+      this.weights = new ArrayList<Float>();
+    }
+    this.weights.add(weightsItem);
     return this;
   }
 
    /**
-   * Get questionnaireId
-   * @return questionnaireId
+   * Get weights
+   * @return weights
   **/
   @ApiModelProperty(value = "")
-  public UUID getQuestionnaireId() {
-    return questionnaireId;
+  public List<Float> getWeights() {
+    return weights;
   }
 
-  public void setQuestionnaireId(UUID questionnaireId) {
-    this.questionnaireId = questionnaireId;
+  public void setWeights(List<Float> weights) {
+    this.weights = weights;
   }
 
   public RiskScoreRequest maxAnswers(List<BigDecimal> maxAnswers) {
@@ -157,30 +160,22 @@ public class RiskScoreRequest {
     this.answers = answers;
   }
 
-  public RiskScoreRequest weights(List<Float> weights) {
-    this.weights = weights;
-    return this;
-  }
-
-  public RiskScoreRequest addWeightsItem(Float weightsItem) {
-    if (this.weights == null) {
-      this.weights = new ArrayList<Float>();
-    }
-    this.weights.add(weightsItem);
+  public RiskScoreRequest questionnaireId(UUID questionnaireId) {
+    this.questionnaireId = questionnaireId;
     return this;
   }
 
    /**
-   * Get weights
-   * @return weights
+   * Get questionnaireId
+   * @return questionnaireId
   **/
   @ApiModelProperty(value = "")
-  public List<Float> getWeights() {
-    return weights;
+  public UUID getQuestionnaireId() {
+    return questionnaireId;
   }
 
-  public void setWeights(List<Float> weights) {
-    this.weights = weights;
+  public void setQuestionnaireId(UUID questionnaireId) {
+    this.questionnaireId = questionnaireId;
   }
 
 
@@ -194,16 +189,16 @@ public class RiskScoreRequest {
     }
     RiskScoreRequest riskScoreRequest = (RiskScoreRequest) o;
     return Objects.equals(this.postScore, riskScoreRequest.postScore) &&
-        Objects.equals(this.questionnaireId, riskScoreRequest.questionnaireId) &&
+        Objects.equals(this.weights, riskScoreRequest.weights) &&
         Objects.equals(this.maxAnswers, riskScoreRequest.maxAnswers) &&
         Objects.equals(this.clientId, riskScoreRequest.clientId) &&
         Objects.equals(this.answers, riskScoreRequest.answers) &&
-        Objects.equals(this.weights, riskScoreRequest.weights);
+        Objects.equals(this.questionnaireId, riskScoreRequest.questionnaireId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(postScore, questionnaireId, maxAnswers, clientId, answers, weights);
+    return Objects.hash(postScore, weights, maxAnswers, clientId, answers, questionnaireId);
   }
 
 
@@ -213,11 +208,11 @@ public class RiskScoreRequest {
     sb.append("class RiskScoreRequest {\n");
     
     sb.append("    postScore: ").append(toIndentedString(postScore)).append("\n");
-    sb.append("    questionnaireId: ").append(toIndentedString(questionnaireId)).append("\n");
+    sb.append("    weights: ").append(toIndentedString(weights)).append("\n");
     sb.append("    maxAnswers: ").append(toIndentedString(maxAnswers)).append("\n");
     sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
     sb.append("    answers: ").append(toIndentedString(answers)).append("\n");
-    sb.append("    weights: ").append(toIndentedString(weights)).append("\n");
+    sb.append("    questionnaireId: ").append(toIndentedString(questionnaireId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

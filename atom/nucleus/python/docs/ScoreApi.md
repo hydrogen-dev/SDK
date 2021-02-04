@@ -41,7 +41,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.ScoreApi(nucleus_api.ApiClient(configuration))
 score = nucleus_api.Score() # Score | score
@@ -105,7 +105,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.ScoreApi(nucleus_api.ApiClient(configuration))
 score_id = 'score_id_example' # str | UUID score_id
@@ -168,7 +168,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.ScoreApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -240,7 +240,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.ScoreApi(nucleus_api.ApiClient(configuration))
 score_id = 'score_id_example' # str | UUID score_id
@@ -304,10 +304,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.ScoreApi(nucleus_api.ApiClient(configuration))
-score = nucleus_api.Score() # Score | score
+score = NULL # object | score
 score_id = 'score_id_example' # str | UUID score_id
 
 try:
@@ -322,7 +322,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **score** | [**Score**](Score.md)| score | 
+ **score** | **object**| score | 
  **score_id** | [**str**](.md)| UUID score_id | 
 
 ### Return type

@@ -15,12 +15,7 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.ArrayList;
@@ -30,34 +25,16 @@ import java.util.UUID;
 /**
  * EducationCalculatorDepositAmountRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class EducationCalculatorDepositAmountRequest {
-  @SerializedName("total_annual_cost")
-  private Float totalAnnualCost = null;
-
-  @SerializedName("general_inflation_rate")
-  private Float generalInflationRate = 0.0f;
-
-  @SerializedName("education_inflation_rate")
-  private Float educationInflationRate = 0.05f;
-
-  @SerializedName("deposit_schedule")
-  private CalculatorDepositSchedule depositSchedule = null;
-
-  @SerializedName("portfolio_return")
-  private Float portfolioReturn = null;
-
   @SerializedName("aggregation_account_ids")
   private List<UUID> aggregationAccountIds = null;
 
-  @SerializedName("initial_balance")
-  private Float initialBalance = 0.0f;
-
-  @SerializedName("decumulation_horizon")
-  private Integer decumulationHorizon = null;
+  @SerializedName("total_annual_cost")
+  private Float totalAnnualCost = null;
 
   @SerializedName("tax_rate")
   private Float taxRate = 0.0f;
@@ -65,105 +42,29 @@ public class EducationCalculatorDepositAmountRequest {
   @SerializedName("account_ids")
   private List<UUID> accountIds = null;
 
+  @SerializedName("initial_balance")
+  private Float initialBalance = 0.0f;
+
+  @SerializedName("decumulation_horizon")
+  private Integer decumulationHorizon = null;
+
   @SerializedName("percent_of_costs_covered")
   private Float percentOfCostsCovered = 1.0f;
 
   @SerializedName("accumulation_horizon")
   private Integer accumulationHorizon = null;
 
-  public EducationCalculatorDepositAmountRequest totalAnnualCost(Float totalAnnualCost) {
-    this.totalAnnualCost = totalAnnualCost;
-    return this;
-  }
+  @SerializedName("education_inflation_rate")
+  private Float educationInflationRate = 0.05f;
 
-   /**
-   * Get totalAnnualCost
-   * minimum: 0
-   * @return totalAnnualCost
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Float getTotalAnnualCost() {
-    return totalAnnualCost;
-  }
+  @SerializedName("portfolio_return")
+  private Float portfolioReturn = null;
 
-  public void setTotalAnnualCost(Float totalAnnualCost) {
-    this.totalAnnualCost = totalAnnualCost;
-  }
+  @SerializedName("deposit_schedule")
+  private CalculatorDepositSchedule depositSchedule = null;
 
-  public EducationCalculatorDepositAmountRequest generalInflationRate(Float generalInflationRate) {
-    this.generalInflationRate = generalInflationRate;
-    return this;
-  }
-
-   /**
-   * Get generalInflationRate
-   * minimum: -1
-   * @return generalInflationRate
-  **/
-  @ApiModelProperty(value = "")
-  public Float getGeneralInflationRate() {
-    return generalInflationRate;
-  }
-
-  public void setGeneralInflationRate(Float generalInflationRate) {
-    this.generalInflationRate = generalInflationRate;
-  }
-
-  public EducationCalculatorDepositAmountRequest educationInflationRate(Float educationInflationRate) {
-    this.educationInflationRate = educationInflationRate;
-    return this;
-  }
-
-   /**
-   * Get educationInflationRate
-   * minimum: -1
-   * @return educationInflationRate
-  **/
-  @ApiModelProperty(value = "")
-  public Float getEducationInflationRate() {
-    return educationInflationRate;
-  }
-
-  public void setEducationInflationRate(Float educationInflationRate) {
-    this.educationInflationRate = educationInflationRate;
-  }
-
-  public EducationCalculatorDepositAmountRequest depositSchedule(CalculatorDepositSchedule depositSchedule) {
-    this.depositSchedule = depositSchedule;
-    return this;
-  }
-
-   /**
-   * Get depositSchedule
-   * @return depositSchedule
-  **/
-  @ApiModelProperty(value = "")
-  public CalculatorDepositSchedule getDepositSchedule() {
-    return depositSchedule;
-  }
-
-  public void setDepositSchedule(CalculatorDepositSchedule depositSchedule) {
-    this.depositSchedule = depositSchedule;
-  }
-
-  public EducationCalculatorDepositAmountRequest portfolioReturn(Float portfolioReturn) {
-    this.portfolioReturn = portfolioReturn;
-    return this;
-  }
-
-   /**
-   * Get portfolioReturn
-   * minimum: -1
-   * @return portfolioReturn
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Float getPortfolioReturn() {
-    return portfolioReturn;
-  }
-
-  public void setPortfolioReturn(Float portfolioReturn) {
-    this.portfolioReturn = portfolioReturn;
-  }
+  @SerializedName("general_inflation_rate")
+  private Float generalInflationRate = 0.0f;
 
   public EducationCalculatorDepositAmountRequest aggregationAccountIds(List<UUID> aggregationAccountIds) {
     this.aggregationAccountIds = aggregationAccountIds;
@@ -191,42 +92,23 @@ public class EducationCalculatorDepositAmountRequest {
     this.aggregationAccountIds = aggregationAccountIds;
   }
 
-  public EducationCalculatorDepositAmountRequest initialBalance(Float initialBalance) {
-    this.initialBalance = initialBalance;
+  public EducationCalculatorDepositAmountRequest totalAnnualCost(Float totalAnnualCost) {
+    this.totalAnnualCost = totalAnnualCost;
     return this;
   }
 
    /**
-   * Get initialBalance
+   * Get totalAnnualCost
    * minimum: 0
-   * @return initialBalance
-  **/
-  @ApiModelProperty(value = "")
-  public Float getInitialBalance() {
-    return initialBalance;
-  }
-
-  public void setInitialBalance(Float initialBalance) {
-    this.initialBalance = initialBalance;
-  }
-
-  public EducationCalculatorDepositAmountRequest decumulationHorizon(Integer decumulationHorizon) {
-    this.decumulationHorizon = decumulationHorizon;
-    return this;
-  }
-
-   /**
-   * Get decumulationHorizon
-   * minimum: 0
-   * @return decumulationHorizon
+   * @return totalAnnualCost
   **/
   @ApiModelProperty(required = true, value = "")
-  public Integer getDecumulationHorizon() {
-    return decumulationHorizon;
+  public Float getTotalAnnualCost() {
+    return totalAnnualCost;
   }
 
-  public void setDecumulationHorizon(Integer decumulationHorizon) {
-    this.decumulationHorizon = decumulationHorizon;
+  public void setTotalAnnualCost(Float totalAnnualCost) {
+    this.totalAnnualCost = totalAnnualCost;
   }
 
   public EducationCalculatorDepositAmountRequest taxRate(Float taxRate) {
@@ -275,6 +157,44 @@ public class EducationCalculatorDepositAmountRequest {
     this.accountIds = accountIds;
   }
 
+  public EducationCalculatorDepositAmountRequest initialBalance(Float initialBalance) {
+    this.initialBalance = initialBalance;
+    return this;
+  }
+
+   /**
+   * Get initialBalance
+   * minimum: 0
+   * @return initialBalance
+  **/
+  @ApiModelProperty(value = "")
+  public Float getInitialBalance() {
+    return initialBalance;
+  }
+
+  public void setInitialBalance(Float initialBalance) {
+    this.initialBalance = initialBalance;
+  }
+
+  public EducationCalculatorDepositAmountRequest decumulationHorizon(Integer decumulationHorizon) {
+    this.decumulationHorizon = decumulationHorizon;
+    return this;
+  }
+
+   /**
+   * Get decumulationHorizon
+   * minimum: 0
+   * @return decumulationHorizon
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Integer getDecumulationHorizon() {
+    return decumulationHorizon;
+  }
+
+  public void setDecumulationHorizon(Integer decumulationHorizon) {
+    this.decumulationHorizon = decumulationHorizon;
+  }
+
   public EducationCalculatorDepositAmountRequest percentOfCostsCovered(Float percentOfCostsCovered) {
     this.percentOfCostsCovered = percentOfCostsCovered;
     return this;
@@ -314,6 +234,81 @@ public class EducationCalculatorDepositAmountRequest {
     this.accumulationHorizon = accumulationHorizon;
   }
 
+  public EducationCalculatorDepositAmountRequest educationInflationRate(Float educationInflationRate) {
+    this.educationInflationRate = educationInflationRate;
+    return this;
+  }
+
+   /**
+   * Get educationInflationRate
+   * minimum: -1
+   * @return educationInflationRate
+  **/
+  @ApiModelProperty(value = "")
+  public Float getEducationInflationRate() {
+    return educationInflationRate;
+  }
+
+  public void setEducationInflationRate(Float educationInflationRate) {
+    this.educationInflationRate = educationInflationRate;
+  }
+
+  public EducationCalculatorDepositAmountRequest portfolioReturn(Float portfolioReturn) {
+    this.portfolioReturn = portfolioReturn;
+    return this;
+  }
+
+   /**
+   * Get portfolioReturn
+   * minimum: -1
+   * @return portfolioReturn
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Float getPortfolioReturn() {
+    return portfolioReturn;
+  }
+
+  public void setPortfolioReturn(Float portfolioReturn) {
+    this.portfolioReturn = portfolioReturn;
+  }
+
+  public EducationCalculatorDepositAmountRequest depositSchedule(CalculatorDepositSchedule depositSchedule) {
+    this.depositSchedule = depositSchedule;
+    return this;
+  }
+
+   /**
+   * Get depositSchedule
+   * @return depositSchedule
+  **/
+  @ApiModelProperty(value = "")
+  public CalculatorDepositSchedule getDepositSchedule() {
+    return depositSchedule;
+  }
+
+  public void setDepositSchedule(CalculatorDepositSchedule depositSchedule) {
+    this.depositSchedule = depositSchedule;
+  }
+
+  public EducationCalculatorDepositAmountRequest generalInflationRate(Float generalInflationRate) {
+    this.generalInflationRate = generalInflationRate;
+    return this;
+  }
+
+   /**
+   * Get generalInflationRate
+   * minimum: -1
+   * @return generalInflationRate
+  **/
+  @ApiModelProperty(value = "")
+  public Float getGeneralInflationRate() {
+    return generalInflationRate;
+  }
+
+  public void setGeneralInflationRate(Float generalInflationRate) {
+    this.generalInflationRate = generalInflationRate;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -324,23 +319,23 @@ public class EducationCalculatorDepositAmountRequest {
       return false;
     }
     EducationCalculatorDepositAmountRequest educationCalculatorDepositAmountRequest = (EducationCalculatorDepositAmountRequest) o;
-    return Objects.equals(this.totalAnnualCost, educationCalculatorDepositAmountRequest.totalAnnualCost) &&
-        Objects.equals(this.generalInflationRate, educationCalculatorDepositAmountRequest.generalInflationRate) &&
-        Objects.equals(this.educationInflationRate, educationCalculatorDepositAmountRequest.educationInflationRate) &&
-        Objects.equals(this.depositSchedule, educationCalculatorDepositAmountRequest.depositSchedule) &&
-        Objects.equals(this.portfolioReturn, educationCalculatorDepositAmountRequest.portfolioReturn) &&
-        Objects.equals(this.aggregationAccountIds, educationCalculatorDepositAmountRequest.aggregationAccountIds) &&
-        Objects.equals(this.initialBalance, educationCalculatorDepositAmountRequest.initialBalance) &&
-        Objects.equals(this.decumulationHorizon, educationCalculatorDepositAmountRequest.decumulationHorizon) &&
+    return Objects.equals(this.aggregationAccountIds, educationCalculatorDepositAmountRequest.aggregationAccountIds) &&
+        Objects.equals(this.totalAnnualCost, educationCalculatorDepositAmountRequest.totalAnnualCost) &&
         Objects.equals(this.taxRate, educationCalculatorDepositAmountRequest.taxRate) &&
         Objects.equals(this.accountIds, educationCalculatorDepositAmountRequest.accountIds) &&
+        Objects.equals(this.initialBalance, educationCalculatorDepositAmountRequest.initialBalance) &&
+        Objects.equals(this.decumulationHorizon, educationCalculatorDepositAmountRequest.decumulationHorizon) &&
         Objects.equals(this.percentOfCostsCovered, educationCalculatorDepositAmountRequest.percentOfCostsCovered) &&
-        Objects.equals(this.accumulationHorizon, educationCalculatorDepositAmountRequest.accumulationHorizon);
+        Objects.equals(this.accumulationHorizon, educationCalculatorDepositAmountRequest.accumulationHorizon) &&
+        Objects.equals(this.educationInflationRate, educationCalculatorDepositAmountRequest.educationInflationRate) &&
+        Objects.equals(this.portfolioReturn, educationCalculatorDepositAmountRequest.portfolioReturn) &&
+        Objects.equals(this.depositSchedule, educationCalculatorDepositAmountRequest.depositSchedule) &&
+        Objects.equals(this.generalInflationRate, educationCalculatorDepositAmountRequest.generalInflationRate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalAnnualCost, generalInflationRate, educationInflationRate, depositSchedule, portfolioReturn, aggregationAccountIds, initialBalance, decumulationHorizon, taxRate, accountIds, percentOfCostsCovered, accumulationHorizon);
+    return Objects.hash(aggregationAccountIds, totalAnnualCost, taxRate, accountIds, initialBalance, decumulationHorizon, percentOfCostsCovered, accumulationHorizon, educationInflationRate, portfolioReturn, depositSchedule, generalInflationRate);
   }
 
 
@@ -349,18 +344,18 @@ public class EducationCalculatorDepositAmountRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class EducationCalculatorDepositAmountRequest {\n");
     
-    sb.append("    totalAnnualCost: ").append(toIndentedString(totalAnnualCost)).append("\n");
-    sb.append("    generalInflationRate: ").append(toIndentedString(generalInflationRate)).append("\n");
-    sb.append("    educationInflationRate: ").append(toIndentedString(educationInflationRate)).append("\n");
-    sb.append("    depositSchedule: ").append(toIndentedString(depositSchedule)).append("\n");
-    sb.append("    portfolioReturn: ").append(toIndentedString(portfolioReturn)).append("\n");
     sb.append("    aggregationAccountIds: ").append(toIndentedString(aggregationAccountIds)).append("\n");
-    sb.append("    initialBalance: ").append(toIndentedString(initialBalance)).append("\n");
-    sb.append("    decumulationHorizon: ").append(toIndentedString(decumulationHorizon)).append("\n");
+    sb.append("    totalAnnualCost: ").append(toIndentedString(totalAnnualCost)).append("\n");
     sb.append("    taxRate: ").append(toIndentedString(taxRate)).append("\n");
     sb.append("    accountIds: ").append(toIndentedString(accountIds)).append("\n");
+    sb.append("    initialBalance: ").append(toIndentedString(initialBalance)).append("\n");
+    sb.append("    decumulationHorizon: ").append(toIndentedString(decumulationHorizon)).append("\n");
     sb.append("    percentOfCostsCovered: ").append(toIndentedString(percentOfCostsCovered)).append("\n");
     sb.append("    accumulationHorizon: ").append(toIndentedString(accumulationHorizon)).append("\n");
+    sb.append("    educationInflationRate: ").append(toIndentedString(educationInflationRate)).append("\n");
+    sb.append("    portfolioReturn: ").append(toIndentedString(portfolioReturn)).append("\n");
+    sb.append("    depositSchedule: ").append(toIndentedString(depositSchedule)).append("\n");
+    sb.append("    generalInflationRate: ").append(toIndentedString(generalInflationRate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

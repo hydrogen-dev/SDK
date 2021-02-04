@@ -38,7 +38,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::FinancialPlanningApi.new
 
 education_calculator_annual_cost_request = ProtonApi::EducationCalculatorAnnualCostRequest.new # EducationCalculatorAnnualCostRequest | Request payload for Education Calculator - Annual Cost
@@ -94,7 +93,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::FinancialPlanningApi.new
 
 education_calculator_deposit_amount_request = ProtonApi::EducationCalculatorDepositAmountRequest.new # EducationCalculatorDepositAmountRequest | Request payload for Education Calculator - Deposit Amount
@@ -150,7 +148,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::FinancialPlanningApi.new
 
 education_calculator_percent_covered_request = ProtonApi::EducationCalculatorPercentCoveredRequest.new # EducationCalculatorPercentCoveredRequest | Request payload for Education Calculator - Percent Covered
@@ -206,7 +203,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::FinancialPlanningApi.new
 
 mortgage_calculator_down_payment_request = ProtonApi::MortgageCalculatorDownPaymentRequest.new # MortgageCalculatorDownPaymentRequest | Request payload for Mortgage Calculator - Down Payment
@@ -262,7 +258,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::FinancialPlanningApi.new
 
 mortgage_calculator_home_price_request = ProtonApi::MortgageCalculatorHomePriceRequest.new # MortgageCalculatorHomePriceRequest | Request payload for Mortgage Calculator - Home Price
@@ -318,7 +313,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::FinancialPlanningApi.new
 
 mortgage_calculator_periodic_payment_request = ProtonApi::MortgageCalculatorPeriodicPaymentRequest.new # MortgageCalculatorPeriodicPaymentRequest | Request payload for Mortgage Calculator - Periodic Payment
@@ -374,7 +368,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::FinancialPlanningApi.new
 
 purchase_calculator_amount_request = ProtonApi::PurchaseCalculatorAmountRequest.new # PurchaseCalculatorAmountRequest | Request payload for Purchase Calculator - Amount
@@ -430,7 +423,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::FinancialPlanningApi.new
 
 purchase_calculator_deposit_amount_request = ProtonApi::PurchaseCalculatorDepositAmountRequest.new # PurchaseCalculatorDepositAmountRequest | Request payload for Purchase Calculator - Deposit Amount
@@ -486,7 +478,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::FinancialPlanningApi.new
 
 purchase_calculator_horizon_request = ProtonApi::PurchaseCalculatorHorizonRequest.new # PurchaseCalculatorHorizonRequest | Request payload for Purchase Calculator - Horizon
@@ -542,7 +533,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::FinancialPlanningApi.new
 
 retirement_calculator_deposit_amount_request = ProtonApi::RetirementCalculatorDepositAmountRequest.new # RetirementCalculatorDepositAmountRequest | Request payload for Retirement Calculator - Deposit AMount
@@ -598,7 +588,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::FinancialPlanningApi.new
 
 retirement_calculator_expenses_request = ProtonApi::RetirementCalculatorExpensesRequest.new # RetirementCalculatorExpensesRequest | Request payload for Retirement Calculator - Expenses
@@ -654,7 +643,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::FinancialPlanningApi.new
 
 retirement_calculator_percent_covered_request = ProtonApi::RetirementCalculatorPercentCoveredRequest.new # RetirementCalculatorPercentCoveredRequest | Request payload for Retirement Calculator - Percent Covered

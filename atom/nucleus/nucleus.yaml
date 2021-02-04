@@ -8,8 +8,8 @@ info:
     name: Hydrogen Technology Corporation
     url: 'https://www.hydrogenplatform.com/contact'
     email: info@hydrogenplatform.com
-host: sandbox.hydrogenplatform.com
-basePath: /nucleus/v1
+host: 'api.hydrogenplatform.com:8000'
+basePath: /
 tags:
   - name: Account
     description: Account Controller
@@ -27,6 +27,8 @@ tags:
     description: Budget Controller
   - name: Bulk
     description: Bulk Controller
+  - name: Business
+    description: Business Controller
   - name: Card
     description: Card Controller
   - name: Client
@@ -37,12 +39,8 @@ tags:
     description: DecisionTree Controller
   - name: Document
     description: Document Controller
-  - name: FAQ
-    description: FAQ Controller
   - name: Feature
     description: Feature Controller
-  - name: FinancialOffer
-    description: Financial Offer Controller
   - name: FinancialStatement
     description: Financial Statement Controller
   - name: Funding
@@ -51,12 +49,8 @@ tags:
     description: Goal Controller
   - name: Household
     description: Household Controller
-  - name: Insurance
-    description: Insurance Controller
   - name: Invoice
     description: Invoice Controller
-  - name: Marketing
-    description: Marketing Controller
   - name: Model
     description: Model Controller
   - name: Notification
@@ -81,8 +75,8 @@ tags:
     description: Score Controller
   - name: Securities
     description: Securities Controller
-  - name: Support
-    description: Support Controller
+  - name: SpendingControl
+    description: SpendingControl Controller
   - name: Utils
     description: Utils Controller
   - name: Webhook
@@ -399,6 +393,12 @@ paths:
           type: string
           format: uuid
           x-example: 11c28dade-8679-4df5-9b9d-c508d04fcb0c
+        - name: ascending
+          in: query
+          description: ascending
+          required: false
+          type: boolean
+          default: false
         - name: currency_conversion
           in: query
           description: USD
@@ -410,11 +410,36 @@ paths:
           required: false
           type: string
           format: date
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
         - name: get_latest
           in: query
           description: true or false
           required: false
           type: boolean
+        - name: order_by
+          in: query
+          description: order_by
+          required: false
+          type: string
+          default: date
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 25
+          format: int32
         - name: start_date
           in: query
           description: 'start date '
@@ -926,6 +951,11 @@ paths:
           required: false
           type: string
           format: date
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
         - name: order_by
           in: query
           description: order_by
@@ -5027,13 +5057,13 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /campaign:
+  /business:
     get:
       tags:
-        - Marketing
-      summary: List all campaigns
-      description: Get details for all campaigns defined for your firm.
-      operationId: getCampaignAllUsingGet
+        - Business
+      summary: List all business
+      description: Get details for all business.
+      operationId: getBusinessAllUsingGet
       produces:
         - '*/*'
       parameters:
@@ -5072,7 +5102,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/Page«Campaign»'
+            $ref: '#/definitions/Page«Business»'
         '401':
           description: Unauthorized
         '403':
@@ -5084,26 +5114,26 @@ paths:
       deprecated: false
     post:
       tags:
-        - Marketing
-      summary: Create a campaign
-      description: Create a new campaign for your firm.
-      operationId: createCampaignUsingPost
+        - Business
+      summary: Create a business
+      description: 'Create a new business, or register a new business.'
+      operationId: createBusinessUsingPost
       consumes:
         - application/json
       produces:
         - '*/*'
       parameters:
         - in: body
-          name: campaignRequest
-          description: campaignRequest
+          name: businessRequest
+          description: businessRequest
           required: true
           schema:
-            $ref: '#/definitions/Campaign'
+            $ref: '#/definitions/Business'
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/Campaign'
+            $ref: '#/definitions/Business'
         '201':
           description: Created
         '401':
@@ -5115,28 +5145,28 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/campaign/{campaign_id}':
+  '/business/{business_id}':
     get:
       tags:
-        - Marketing
-      summary: Retrieve a campaign
-      description: Retrieve the information for a campaign.
-      operationId: getCampaignUsingGet
+        - Business
+      summary: Retrieve a business
+      description: Retrieve the information for a business.
+      operationId: getBusinessUsingGet
       produces:
         - '*/*'
       parameters:
-        - name: campaign_id
+        - name: business_id
           in: path
-          description: Campaign Id
+          description: UUID business_id
           required: true
           type: string
           format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
+          x-example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/Campaign'
+            $ref: '#/definitions/Business'
         '401':
           description: Unauthorized
         '403':
@@ -5148,24 +5178,24 @@ paths:
       deprecated: false
     put:
       tags:
-        - Marketing
-      summary: Update a campaign
-      description: Updated the information for a campaign
-      operationId: updateCampaignUsingPut
+        - Business
+      summary: Update a business
+      description: Update the information for a business.
+      operationId: updateBusinessUsingPut
       consumes:
         - application/json
       produces:
         - '*/*'
       parameters:
         - in: body
-          name: campaign
-          description: campaign
+          name: business
+          description: business
           required: true
           schema:
-            $ref: '#/definitions/Campaign'
-        - name: campaign_id
+            $ref: '#/definitions/Business'
+        - name: business_id
           in: path
-          description: UUID campaign_id
+          description: UUID business_id
           required: true
           type: string
           format: uuid
@@ -5174,7 +5204,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/Campaign'
+            $ref: '#/definitions/Business'
         '201':
           description: Created
         '401':
@@ -5188,20 +5218,20 @@ paths:
       deprecated: false
     delete:
       tags:
-        - Marketing
-      summary: Delete a campaign
-      description: Permanently delete a campaign
-      operationId: deleteCampaignUsingDelete
+        - Business
+      summary: Delete a business
+      description: Permanently delete a business.
+      operationId: deleteBusinessUsingDelete
       produces:
         - '*/*'
       parameters:
-        - name: campaign_id
+        - name: business_id
           in: path
-          description: Campaign Id
+          description: UUID business_id
           required: true
           type: string
           format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
+          x-example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
       responses:
         '200':
           description: OK
@@ -5214,13 +5244,134 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /campaign_data:
+  '/business/{business_id}/asset_size':
     get:
       tags:
-        - Marketing
-      summary: List all campaign data
-      description: Get details for all campaign data defined for your firm.
-      operationId: getCampaignDataAllUsingGet
+        - Business
+      summary: List all business asset sizes
+      description: Get a list of asset sizes per date for a business.
+      operationId: getBusinessAssetSizeUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: business_id
+          in: path
+          description: UUID business_id
+          required: true
+          type: string
+          format: uuid
+          x-example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+        - name: currency_conversion
+          in: query
+          description: Currency Code
+          required: false
+          type: string
+        - name: end_date
+          in: query
+          description: end date
+          required: false
+          type: string
+          default: 'null'
+          format: date
+        - name: exclude_subledger
+          in: query
+          description: exclude_subledger
+          required: false
+          type: boolean
+          default: false
+        - name: get_latest
+          in: query
+          description: true or false
+          required: false
+          type: boolean
+        - name: sort_type
+          in: query
+          description: ' Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in ()'
+          required: false
+          type: string
+        - name: start_date
+          in: query
+          description: start date
+          required: false
+          type: string
+          default: 'null'
+          format: date
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/AvailableDateDoubleVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/business/{business_id}/holding':
+    get:
+      tags:
+        - Business
+      summary: List all business holdings
+      description: Get a list of holdings for a business.
+      operationId: getBusinessHoldingUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: business_id
+          in: path
+          description: UUID business_id
+          required: true
+          type: string
+          format: uuid
+          x-example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+        - name: currency_conversion
+          in: query
+          description: Currency Code
+          required: false
+          type: string
+        - name: end_date
+          in: query
+          description: end date - yyyy-mm-dd
+          required: false
+          type: string
+        - name: get_latest
+          in: query
+          description: true or false
+          required: false
+          type: boolean
+        - name: start_date
+          in: query
+          description: start date - yyyy-mm-dd
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/PortfolioHoldingAgg'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/business/{business_id}/transaction':
+    get:
+      tags:
+        - Business
+      summary: List all business transactions
+      description: Get the information for all transactions under all client registered with your business.
+      operationId: getBusinessClientTransactionAllUsingGet
       produces:
         - '*/*'
       parameters:
@@ -5230,6 +5381,23 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: business_id
+          in: path
+          description: UUID business_id
+          required: true
+          type: string
+          format: uuid
+          x-example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
+        - name: end_date
+          in: query
+          description: end date - yyyy-mm-dd
+          required: false
+          type: string
         - name: filter
           in: query
           description: filter
@@ -5255,336 +5423,22 @@ paths:
           type: integer
           default: 25
           format: int32
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Page«CampaignData»'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    post:
-      tags:
-        - Marketing
-      summary: Create a campaign data record
-      description: Create a new  campaign data record for your firm.
-      operationId: createCampaignDataUsingPost
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: campaignDataRequest
-          description: campaignDataRequest
-          required: true
-          schema:
-            $ref: '#/definitions/CampaignData'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/CampaignData'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/campaign_data/{campaign_data_id}':
-    get:
-      tags:
-        - Marketing
-      summary: Retrieve a campaign data record
-      description: Retrieve the information for a campaign data record
-      operationId: getCampaignDataUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: campaign_data_id
-          in: path
-          description: UUID campaign_data_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/CampaignData'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    put:
-      tags:
-        - Marketing
-      summary: Update a campaign data record
-      description: Updated the information for a campaign data record
-      operationId: updateCampaignDataUsingPut
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: campaign_data
-          description: campaign_data
-          required: true
-          schema:
-            $ref: '#/definitions/CampaignPlan'
-        - name: campaign_data_id
-          in: path
-          description: UUID campaign_data_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/CampaignData'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    delete:
-      tags:
-        - Marketing
-      summary: Delete a campaign data record
-      description: Permanently delete a campaign data record
-      operationId: deleteCampaignDataUsingDelete
-      produces:
-        - '*/*'
-      parameters:
-        - name: campaign_data_id
-          in: path
-          description: UUID campaign_data_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
-      responses:
-        '200':
-          description: OK
-        '204':
-          description: No Content
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-      security:
-        - oauth2: []
-      deprecated: false
-  /campaign_plan:
-    get:
-      tags:
-        - Marketing
-      summary: List all campaign plans
-      description: Get details for all campaign plans defined for your firm.
-      operationId: getCampaignPlanAllUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: ascending
+        - name: start_date
           in: query
-          description: ascending
-          required: false
-          type: boolean
-          default: false
-        - name: filter
-          in: query
-          description: filter
+          description: start date - yyyy-mm-dd
           required: false
           type: string
-        - name: order_by
-          in: query
-          description: order_by
-          required: false
-          type: string
-          default: update_date
-        - name: page
-          in: query
-          description: page
-          required: false
-          type: integer
-          default: 0
-          format: int32
-        - name: size
-          in: query
-          description: size
-          required: false
-          type: integer
-          default: 25
-          format: int32
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/Page«CampaignPlan»'
+            $ref: '#/definitions/Page«PortfolioTransaction»'
         '401':
           description: Unauthorized
         '403':
           description: Forbidden
         '404':
           description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    post:
-      tags:
-        - Marketing
-      summary: Create a campaign plan
-      description: Create a new campaign plan for your firm.
-      operationId: createCampaignPlanUsingPost
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: campaignPlanRequest
-          description: campaignPlanRequest
-          required: true
-          schema:
-            $ref: '#/definitions/CampaignPlan'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/CampaignPlan'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/campaign_plan/{campaign_plan_id}':
-    get:
-      tags:
-        - Marketing
-      summary: Retrieve a campaign plan
-      description: Retrieve the information for a campaign plan
-      operationId: getCampaignPlanUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: campaign_plan_id
-          in: path
-          description: UUID campaign_plan_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/CampaignPlan'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    put:
-      tags:
-        - Marketing
-      summary: Update a campaign plan
-      description: Updated the information for a campaign plan
-      operationId: updateCampaignPlanUsingPut
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: campaign_plan
-          description: campaign_plan
-          required: true
-          schema:
-            $ref: '#/definitions/CampaignPlan'
-        - name: campaign_plan_id
-          in: path
-          description: UUID campaign_plan_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/CampaignPlan'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    delete:
-      tags:
-        - Marketing
-      summary: Delete a campaign plan
-      description: Permanently delete a campaign plan
-      operationId: deleteCampaignPlanUsingDelete
-      produces:
-        - '*/*'
-      parameters:
-        - name: campaign_plan_id
-          in: path
-          description: UUID campaign_plan_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
-      responses:
-        '200':
-          description: OK
-        '204':
-          description: No Content
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
       security:
         - oauth2: []
       deprecated: false
@@ -5868,6 +5722,11 @@ paths:
           required: false
           type: string
           format: date
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
         - name: order_by
           in: query
           description: order_by
@@ -6083,193 +5942,6 @@ paths:
           type: string
           format: uuid
           x-example: f96fad3e-a8cf-4915-bc0c-da4d9693ab83
-      responses:
-        '200':
-          description: OK
-        '204':
-          description: No Content
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-      security:
-        - oauth2: []
-      deprecated: false
-  /chat:
-    get:
-      tags:
-        - Support
-      summary: List all open chats
-      description: Get details for all open chat
-      operationId: getChatAllUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: ascending
-          in: query
-          description: ascending
-          required: false
-          type: boolean
-          default: false
-        - name: filter
-          in: query
-          description: filter
-          required: false
-          type: string
-        - name: order_by
-          in: query
-          description: order_by
-          required: false
-          type: string
-          default: update_date
-        - name: page
-          in: query
-          description: page
-          required: false
-          type: integer
-          default: 0
-          format: int32
-        - name: size
-          in: query
-          description: size
-          required: false
-          type: integer
-          default: 25
-          format: int32
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Page«ChatInfo»'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    post:
-      tags:
-        - Support
-      summary: Create a Chat
-      description: Create a Chat
-      operationId: createChatUsingPost
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: chatInfoRequest
-          description: chatInfoRequest
-          required: true
-          schema:
-            $ref: '#/definitions/ChatInfo'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/ChatInfo'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/chat/{chat_id}':
-    get:
-      tags:
-        - Support
-      summary: Retrieve a Chat
-      description: Retrieve the information for a Chat
-      operationId: getChatUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: chat_id
-          in: path
-          description: UUID chat_info_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/ChatInfo'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    put:
-      tags:
-        - Support
-      summary: Update a Chat
-      description: Updated the information for a Chat
-      operationId: updateChatUsingPut
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - name: chat_id
-          in: path
-          description: UUID chat_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
-        - in: body
-          name: chat_info
-          description: chat_info
-          required: true
-          schema:
-            $ref: '#/definitions/ChatInfo'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/ChatInfo'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    delete:
-      tags:
-        - Support
-      summary: Delete a Chat
-      description: Permanently delete a Chat
-      operationId: deleteChatUsingDelete
-      produces:
-        - '*/*'
-      parameters:
-        - name: chat_id
-          in: path
-          description: UUID chat_info_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
       responses:
         '200':
           description: OK
@@ -6980,6 +6652,11 @@ paths:
           description: end date - yyyy-mm-dd
           required: false
           type: string
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
         - name: order_by
           in: query
           description: order_by
@@ -7016,380 +6693,6 @@ paths:
           description: Forbidden
         '404':
           description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  /client_campaign:
-    get:
-      tags:
-        - Marketing
-      summary: List all clients/ips under a campaign
-      description: Get details for all clients/ips under a campaign
-      operationId: getClientCampaignAllUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: ascending
-          in: query
-          description: ascending
-          required: false
-          type: boolean
-          default: false
-        - name: filter
-          in: query
-          description: filter
-          required: false
-          type: string
-        - name: order_by
-          in: query
-          description: order_by
-          required: false
-          type: string
-          default: update_date
-        - name: page
-          in: query
-          description: page
-          required: false
-          type: integer
-          default: 0
-          format: int32
-        - name: size
-          in: query
-          description: size
-          required: false
-          type: integer
-          default: 25
-          format: int32
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Page«ClientCampaignMapping»'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    post:
-      tags:
-        - Marketing
-      summary: Mark a client signing up through a campaign
-      description: 'We are adding a campaign association to a clientId or ip.  We create this association because we are trying to measure how affective a campaign is in directing traffic to our website.  '
-      operationId: createClientCampaignUsingPost
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: campaignMappingRequest
-          description: campaignMappingRequest
-          required: true
-          schema:
-            $ref: '#/definitions/ClientCampaignMapping'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/ClientCampaignMapping'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/client_campaign/{client_campaign_id}':
-    get:
-      tags:
-        - Marketing
-      summary: Retrieve a clients/ips pair under a campaign
-      description: Retrieve the information for a clients/ips pair under a campaign
-      operationId: getClientCampaignUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: client_campaign_id
-          in: path
-          description: UUID client_campaign_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/ClientCampaignMapping'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    put:
-      tags:
-        - Marketing
-      summary: Update a clients/ips pair under a campaign
-      description: Updated the information for clients/ips pair under a campaign
-      operationId: updateClientCampaignUsingPut
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - name: client_campaign_id
-          in: path
-          description: UUID client_campaign_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
-        - in: body
-          name: jsonNode
-          description: jsonNode
-          required: true
-          schema:
-            $ref: '#/definitions/JsonNode'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/ClientCampaignMapping'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    delete:
-      tags:
-        - Marketing
-      summary: Delete a clients/ips pair under a campaign
-      description: Permanently delete a clients/ips pair under a campaign
-      operationId: deleteClientCampaignUsingDelete
-      produces:
-        - '*/*'
-      parameters:
-        - name: client_campaign_id
-          in: path
-          description: UUID client_campaign_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
-      responses:
-        '200':
-          description: OK
-        '204':
-          description: No Content
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-      security:
-        - oauth2: []
-      deprecated: false
-  /client_hydro:
-    get:
-      tags:
-        - Client
-      summary: List all client-hydro relationship
-      description: Get information for all client-hydro relationships for all clients defined for your firm.
-      operationId: getClientHydroAllUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: ascending
-          in: query
-          description: ascending
-          required: false
-          type: boolean
-          default: false
-        - name: filter
-          in: query
-          description: filter
-          required: false
-          type: string
-        - name: order_by
-          in: query
-          description: order_by
-          required: false
-          type: string
-          default: update_date
-        - name: page
-          in: query
-          description: page
-          required: false
-          type: integer
-          default: 0
-          format: int32
-        - name: size
-          in: query
-          description: size
-          required: false
-          type: integer
-          default: 25
-          format: int32
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Page«ClientHydro»'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    post:
-      tags:
-        - Client
-      summary: Create a client-hydro relationship
-      description: Create an client-hydro relationship under a client.
-      operationId: createClientHydroUsingPost
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: clientHydro
-          description: clientHydro
-          required: true
-          schema:
-            $ref: '#/definitions/ClientHydro'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/ClientHydro'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/client_hydro/{client_hydro_id}':
-    get:
-      tags:
-        - Client
-      summary: Retrieve a client-hydro relationship
-      description: Retrieve the information for a specific client-hydro relationship.
-      operationId: getClientHydroUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: client_hydro_id
-          in: path
-          description: UUID client_hydro_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d787cf19-d11c-49f2-abf3-f5fec1b101d4
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/ClientHydro'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    put:
-      tags:
-        - Client
-      summary: Update a client-hydro relationship
-      description: Update the information for a client-hydro relationship.
-      operationId: updateClientHydroUsingPut
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: client_hydro
-          description: client_hydro
-          required: true
-          schema:
-            $ref: '#/definitions/ClientHydro'
-        - name: client_hydro_id
-          in: path
-          description: UUID client_hydro_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/ClientHydro'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    delete:
-      tags:
-        - Client
-      summary: Delete a client-hydro relationship
-      description: Permanently delete a client-hydro relationship for a Hydro ID and a client.
-      operationId: deleteClientHydroUsingDelete
-      produces:
-        - '*/*'
-      parameters:
-        - name: client_hydro_id
-          in: path
-          description: UUID client_hydro_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d787cf19-d11c-49f2-abf3-f5fec1b101d4
-      responses:
-        '200':
-          description: OK
-        '204':
-          description: No Content
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
       security:
         - oauth2: []
       deprecated: false
@@ -7755,193 +7058,6 @@ paths:
           type: string
           format: uuid
           x-example: 62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d
-      responses:
-        '200':
-          description: OK
-        '204':
-          description: No Content
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-      security:
-        - oauth2: []
-      deprecated: false
-  /consultation:
-    get:
-      tags:
-        - Support
-      summary: List all CIO Consultation
-      description: Get details for all CIO Consultation
-      operationId: getConsultationAllUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: ascending
-          in: query
-          description: ascending
-          required: false
-          type: boolean
-          default: false
-        - name: filter
-          in: query
-          description: filter
-          required: false
-          type: string
-        - name: order_by
-          in: query
-          description: order_by
-          required: false
-          type: string
-          default: update_date
-        - name: page
-          in: query
-          description: page
-          required: false
-          type: integer
-          default: 0
-          format: int32
-        - name: size
-          in: query
-          description: size
-          required: false
-          type: integer
-          default: 25
-          format: int32
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Page«Consultation»'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    post:
-      tags:
-        - Support
-      summary: Create a CIO Consultation
-      description: Create a new CIO Consultation
-      operationId: createConsultationUsingPost
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: cioConsultationRequest
-          description: cioConsultationRequest
-          required: true
-          schema:
-            $ref: '#/definitions/Consultation'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Consultation'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/consultation/{consultation_id}':
-    get:
-      tags:
-        - Support
-      summary: Retrieve a CIO Consultation
-      description: Retrieve the information for a CIO Consultation
-      operationId: getConsultationUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: consultation_id
-          in: path
-          description: UUID consultation_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Consultation'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    put:
-      tags:
-        - Support
-      summary: Update a CIO Consultation
-      description: Updated the information CIO Consultation
-      operationId: updateConsultationUsingPut
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: consultation
-          description: consultation
-          required: true
-          schema:
-            $ref: '#/definitions/Consultation'
-        - name: consultation_id
-          in: path
-          description: UUID consultation_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Consultation'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    delete:
-      tags:
-        - Support
-      summary: Delete a CIO Consultation
-      description: Permanently delete a CIO Consultation
-      operationId: deleteConsultationUsingDelete
-      produces:
-        - '*/*'
-      parameters:
-        - name: consultation_id
-          in: path
-          description: UUID consultation_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
       responses:
         '200':
           description: OK
@@ -8943,193 +8059,6 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /faq:
-    get:
-      tags:
-        - FAQ
-      summary: List all FAQ
-      description: Get the information for all FAQ
-      operationId: getFaqAllUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: ascending
-          in: query
-          description: ascending
-          required: false
-          type: boolean
-          default: false
-        - name: filter
-          in: query
-          description: filter
-          required: false
-          type: string
-        - name: order_by
-          in: query
-          description: order_by
-          required: false
-          type: string
-          default: update_date
-        - name: page
-          in: query
-          description: page
-          required: false
-          type: integer
-          default: 0
-          format: int32
-        - name: size
-          in: query
-          description: size
-          required: false
-          type: integer
-          default: 25
-          format: int32
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Page«Faq»'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    post:
-      tags:
-        - FAQ
-      summary: Create a FAQ
-      description: Create a new FAQ
-      operationId: createFaqUsingPost
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: faqRequest
-          description: faqRequest
-          required: true
-          schema:
-            $ref: '#/definitions/Faq'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Faq'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/faq/{faq_id}':
-    get:
-      tags:
-        - FAQ
-      summary: Retrieve a FAQ
-      description: Retrieve the information for a FAQ
-      operationId: getFaqUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: faq_id
-          in: path
-          description: UUID faq_id
-          required: true
-          type: string
-          format: uuid
-          x-example: 8397d8fd-e80d-48ea-bf79-81f32b12606e
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Faq'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    put:
-      tags:
-        - FAQ
-      summary: Update a FAQ
-      description: Update the information for a FAQ
-      operationId: updateFaqUsingPut
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: faq
-          description: faq
-          required: true
-          schema:
-            $ref: '#/definitions/Faq'
-        - name: faq_id
-          in: path
-          description: UUID faq_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Faq'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    delete:
-      tags:
-        - FAQ
-      summary: Delete a FAQ
-      description: Permanently delete a FAQ
-      operationId: deleteFaqUsingDelete
-      produces:
-        - '*/*'
-      parameters:
-        - name: faq_id
-          in: path
-          description: UUID faq_id
-          required: true
-          type: string
-          format: uuid
-          x-example: 8397d8fd-e80d-48ea-bf79-81f32b12606e
-      responses:
-        '200':
-          description: OK
-        '204':
-          description: No Content
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-      security:
-        - oauth2: []
-      deprecated: false
   /feature:
     get:
       tags:
@@ -9492,203 +8421,6 @@ paths:
           type: string
           format: uuid
           x-example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
-      responses:
-        '200':
-          description: OK
-        '204':
-          description: No Content
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-      security:
-        - oauth2: []
-      deprecated: false
-  /financial_offer:
-    get:
-      tags:
-        - FinancialOffer
-      summary: List all comparison requests
-      description: Get the information for all comparison requests.
-      operationId: getFinancialOfferAllUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: ascending
-          in: query
-          description: ascending
-          required: false
-          type: boolean
-          default: false
-        - name: currency_conversion
-          in: query
-          description: currency_conversion
-          required: false
-          type: string
-        - name: filter
-          in: query
-          description: filter
-          required: false
-          type: string
-        - name: order_by
-          in: query
-          description: order_by
-          required: false
-          type: string
-          default: update_date
-        - name: page
-          in: query
-          description: page
-          required: false
-          type: integer
-          default: 0
-          format: int32
-        - name: size
-          in: query
-          description: size
-          required: false
-          type: integer
-          default: 25
-          format: int32
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Page«FinancialOffer»'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    post:
-      tags:
-        - FinancialOffer
-      summary: Create a comparison request
-      description: Create a new comparison request.
-      operationId: createFinancialOfferUsingPost
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: financialOffer
-          description: financialOffer
-          required: true
-          schema:
-            $ref: '#/definitions/FinancialOffer'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/FinancialOffer'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/financial_offer/{financial_offer_id}':
-    get:
-      tags:
-        - FinancialOffer
-      summary: Retrieve a comparison request
-      description: Retrieve the information for a comparison request.
-      operationId: getFinancialOfferUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: currency_conversion
-          in: query
-          description: USD
-          required: false
-          type: string
-        - name: financial_offer_id
-          in: path
-          description: UUID financial_offer_id
-          required: true
-          type: string
-          format: uuid
-          x-example: 1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/FinancialOffer'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    put:
-      tags:
-        - FinancialOffer
-      summary: Update a comparison request
-      description: Update the information for a comparison request.
-      operationId: updateFinancialOfferUsingPut
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: financial_offer
-          description: financial_offer
-          required: true
-          schema:
-            $ref: '#/definitions/FinancialOffer'
-        - name: financial_offer_id
-          in: path
-          description: UUID financial_offer_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/FinancialOffer'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    delete:
-      tags:
-        - FinancialOffer
-      summary: Delete a comparison request
-      description: Permanently delete a comparison request.
-      operationId: deleteFinancialOfferUsingDelete
-      produces:
-        - '*/*'
-      parameters:
-        - name: financial_offer_id
-          in: path
-          description: UUID financial_offer_id
-          required: true
-          type: string
-          format: uuid
-          x-example: 1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c
       responses:
         '200':
           description: OK
@@ -10628,6 +9360,11 @@ paths:
           required: false
           type: string
           format: date
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
         - name: goal_id
           in: path
           description: UUID goal_id
@@ -11383,6 +10120,11 @@ paths:
           required: false
           type: string
           format: date
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
         - name: household_id
           in: path
           description: UUID household_id
@@ -11427,597 +10169,6 @@ paths:
           description: Forbidden
         '404':
           description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  /insurance_coverage:
-    get:
-      tags:
-        - Insurance
-      summary: Get all insurance coverage request
-      description: Get all new insurance coverage.
-      operationId: getInsuranceCoverageAllUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: ascending
-          in: query
-          description: ascending
-          required: false
-          type: boolean
-          default: false
-        - name: currency_conversion
-          in: query
-          description: currency_conversion
-          required: false
-          type: string
-        - name: filter
-          in: query
-          description: filter
-          required: false
-          type: string
-        - name: order_by
-          in: query
-          description: order_by
-          required: false
-          type: string
-          default: update_date
-        - name: page
-          in: query
-          description: page
-          required: false
-          type: integer
-          default: 0
-          format: int32
-        - name: size
-          in: query
-          description: size
-          required: false
-          type: integer
-          default: 25
-          format: int32
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Page«InsuranceCoverage»'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    post:
-      tags:
-        - Insurance
-      summary: Create a insurance coverage request
-      description: Create a new insurance coverage.
-      operationId: createInsuranceCoverageUsingPost
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: insuranceCoverage
-          description: insuranceCoverage
-          required: true
-          schema:
-            $ref: '#/definitions/InsuranceCoverage'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/InsuranceCoverage'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/insurance_coverage/{insurance_coverage_id}':
-    get:
-      tags:
-        - Insurance
-      summary: Get a insurance coverage request
-      description: Get a new insurance coverage.
-      operationId: getInsuranceCoverageUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: currency_conversion
-          in: query
-          description: USD
-          required: false
-          type: string
-        - name: insurance_coverage_id
-          in: path
-          description: UUID insurance_coverage_id
-          required: true
-          type: string
-          format: uuid
-          x-example: 1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/InsuranceCoverage'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    put:
-      tags:
-        - Insurance
-      summary: Update a insurance coverage request
-      description: Update a new insurance coverage.
-      operationId: updateInsuranceCoverageUsingPut
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: insurance_coverage
-          description: insurance_coverage
-          required: true
-          schema:
-            $ref: '#/definitions/InsuranceCoverage'
-        - name: insurance_coverage_id
-          in: path
-          description: UUID insurance_coverage_id
-          required: true
-          type: string
-          format: uuid
-          x-example: bab849d6-de96-4dc7-a5ea-19be45c52a4e
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/InsuranceCoverage'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    delete:
-      tags:
-        - Insurance
-      summary: Delete an insurance coverage request
-      description: Delete an  insurance coverage.
-      operationId: deleteInsuranceCoverageUsingDelete
-      produces:
-        - '*/*'
-      parameters:
-        - name: insurance_coverage_id
-          in: path
-          description: UUID insurance_coverage_id
-          required: true
-          type: string
-          format: uuid
-          x-example: 1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c
-      responses:
-        '200':
-          description: OK
-        '204':
-          description: No Content
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-      security:
-        - oauth2: []
-      deprecated: false
-  /insurance_discount:
-    get:
-      tags:
-        - Insurance
-      summary: Get all insurance discount request
-      description: Get all new insurance discount.
-      operationId: getInsuranceDiscountAllUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: ascending
-          in: query
-          description: ascending
-          required: false
-          type: boolean
-          default: false
-        - name: currency_conversion
-          in: query
-          description: currency_conversion
-          required: false
-          type: string
-        - name: filter
-          in: query
-          description: filter
-          required: false
-          type: string
-        - name: order_by
-          in: query
-          description: order_by
-          required: false
-          type: string
-          default: update_date
-        - name: page
-          in: query
-          description: page
-          required: false
-          type: integer
-          default: 0
-          format: int32
-        - name: size
-          in: query
-          description: size
-          required: false
-          type: integer
-          default: 25
-          format: int32
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Page«InsuranceDiscount»'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    post:
-      tags:
-        - Insurance
-      summary: Create a insurance discount request
-      description: Create a new insurance discount.
-      operationId: createInsuranceDiscountUsingPost
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: insuranceDiscount
-          description: insuranceDiscount
-          required: true
-          schema:
-            $ref: '#/definitions/InsuranceDiscount'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/InsuranceDiscount'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/insurance_discount/{insurance_discount_id}':
-    get:
-      tags:
-        - Insurance
-      summary: Get a insurance discount request
-      description: Get a new insurance discount.
-      operationId: getInsuranceDiscountUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: currency_conversion
-          in: query
-          description: USD
-          required: false
-          type: string
-        - name: insurance_discount_id
-          in: path
-          description: ' UUID insurance_discount_id'
-          required: true
-          type: string
-          format: uuid
-          x-example: 1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/InsuranceDiscount'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    put:
-      tags:
-        - Insurance
-      summary: 'Update an insurance discount '
-      description: Update an new insurance .
-      operationId: updateInsuranceDiscountUsingPut
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: insurance_discount
-          description: insurance_discount
-          required: true
-          schema:
-            $ref: '#/definitions/InsuranceDiscount'
-        - name: insurance_discount_id
-          in: path
-          description: UUID insurance_discount_id
-          required: true
-          type: string
-          format: uuid
-          x-example: bab849d6-de96-4dc7-a5ea-19be45c52a4e
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/InsuranceDiscount'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    delete:
-      tags:
-        - Insurance
-      summary: Delete an insurance discount request
-      description: Delete an  insurance discount.
-      operationId: deleteInsuranceDiscountUsingDelete
-      produces:
-        - '*/*'
-      parameters:
-        - name: insurance_discount_id
-          in: path
-          description: UUID insurance_discount_id
-          required: true
-          type: string
-          format: uuid
-          x-example: 1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c
-      responses:
-        '200':
-          description: OK
-        '204':
-          description: No Content
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-      security:
-        - oauth2: []
-      deprecated: false
-  /insurance_quote:
-    get:
-      tags:
-        - Insurance
-      summary: List all insuranceQuote requests
-      description: Get the information for all insuranceQuote requests.
-      operationId: getInsuranceQuoteAllUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: ascending
-          in: query
-          description: ascending
-          required: false
-          type: boolean
-          default: false
-        - name: currency_conversion
-          in: query
-          description: currency_conversion
-          required: false
-          type: string
-        - name: filter
-          in: query
-          description: filter
-          required: false
-          type: string
-        - name: order_by
-          in: query
-          description: order_by
-          required: false
-          type: string
-          default: update_date
-        - name: page
-          in: query
-          description: page
-          required: false
-          type: integer
-          default: 0
-          format: int32
-        - name: size
-          in: query
-          description: size
-          required: false
-          type: integer
-          default: 25
-          format: int32
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Page«InsuranceQuote»'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    post:
-      tags:
-        - Insurance
-      summary: Create a insuranceQuote request
-      description: Create a new insuranceQuote request.
-      operationId: createInsuranceQuoteUsingPost
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: insuranceQuote
-          description: insuranceQuote
-          required: true
-          schema:
-            $ref: '#/definitions/InsuranceQuote'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/InsuranceQuote'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/insurance_quote/{insurance_quote_id}':
-    get:
-      tags:
-        - Insurance
-      summary: Retrieve a insuranceQuote request
-      description: Retrieve the information for a insuranceQuote request.
-      operationId: getInsuranceQuoteUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: currency_conversion
-          in: query
-          description: USD
-          required: false
-          type: string
-        - name: insurance_quote_id
-          in: path
-          description: UUID insurance_quote_id
-          required: true
-          type: string
-          format: uuid
-          x-example: 1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/InsuranceQuote'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    put:
-      tags:
-        - Insurance
-      summary: Update a insuranceQuote request
-      description: Update the information for a insuranceQuote request.
-      operationId: updateInsuranceQuoteUsingPut
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: insurance_quote
-          description: insurance_quote
-          required: true
-          schema:
-            $ref: '#/definitions/InsuranceQuote'
-        - name: insurance_quote_id
-          in: path
-          description: UUID insurance_quote_id
-          required: true
-          type: string
-          format: uuid
-          x-example: bab849d6-de96-4dc7-a5ea-19be45c52a4e
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/InsuranceQuote'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    delete:
-      tags:
-        - Insurance
-      summary: Delete a insuranceQuote request
-      description: Permanently delete a insuranceQuote request.
-      operationId: deleteInsuranceQuoteUsingDelete
-      produces:
-        - '*/*'
-      parameters:
-        - name: insurance_quote_id
-          in: path
-          description: UUID insurance_quote_id
-          required: true
-          type: string
-          format: uuid
-          x-example: 1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c
-      responses:
-        '200':
-          description: OK
-        '204':
-          description: No Content
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
       security:
         - oauth2: []
       deprecated: false
@@ -17603,6 +15754,42 @@ paths:
       security:
         - oauth2: []
       deprecated: false
+  /resource/account_category:
+    get:
+      tags:
+        - Resource
+      summary: Get All Aggregation Account Category mapping
+      description: Get All Aggregation Account Category mapping.
+      operationId: getAggregationAccountCategoryMappingUsingGet
+      produces:
+        - application/json
+      parameters:
+        - name: categories
+          in: query
+          description: categories
+          required: false
+          type: string
+        - name: tenant_name
+          in: query
+          description: tenant_name
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/CategoryResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
   /resource/country:
     get:
       tags:
@@ -17721,6 +15908,97 @@ paths:
       security:
         - oauth2: []
       deprecated: false
+  /resource/merchant:
+    get:
+      tags:
+        - Resource
+      summary: Get all merchants
+      description: List all merchants.
+      operationId: getMerchantsAllUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: ascending
+          in: query
+          description: ascending
+          required: false
+          type: boolean
+          default: false
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          description: order_by
+          required: false
+          type: string
+          default: id
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 25
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/MXMerchantRes'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /resource/merchant_category:
+    get:
+      tags:
+        - Resource
+      summary: Get All Aggregation Account Transaction Category mapping
+      description: Get All Aggregation Account Transaction Category mapping.
+      operationId: getAggregationAccountTransactionCategoryMappingUsingGet
+      produces:
+        - application/json
+      parameters:
+        - name: categories
+          in: query
+          description: categories
+          required: false
+          type: string
+        - name: tenant_name
+          in: query
+          description: tenant_name
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/CategoryResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
   /resource/merchant_category_code:
     get:
       tags:
@@ -17730,6 +16008,12 @@ paths:
       operationId: getAllMerchantCategoryCodeUsingGet
       produces:
         - application/json
+      parameters:
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
       responses:
         '200':
           description: OK
@@ -18286,193 +16570,6 @@ paths:
           type: string
           format: uuid
           x-example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
-      responses:
-        '200':
-          description: OK
-        '204':
-          description: No Content
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-      security:
-        - oauth2: []
-      deprecated: false
-  /sales:
-    get:
-      tags:
-        - Support
-      summary: List all sales inquiries
-      description: Get all sales inquiries defined for your firm.
-      operationId: getSaleAllUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: ascending
-          in: query
-          description: ascending
-          required: false
-          type: boolean
-          default: false
-        - name: filter
-          in: query
-          description: filter
-          required: false
-          type: string
-        - name: order_by
-          in: query
-          description: order_by
-          required: false
-          type: string
-          default: update_date
-        - name: page
-          in: query
-          description: page
-          required: false
-          type: integer
-          default: 0
-          format: int32
-        - name: size
-          in: query
-          description: size
-          required: false
-          type: integer
-          default: 25
-          format: int32
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Page«Sale»'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    post:
-      tags:
-        - Support
-      summary: Create a sales inquiry
-      description: Create a new sales inquiry for your firm.
-      operationId: createSaleUsingPost
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: saleRequest
-          description: saleRequest
-          required: true
-          schema:
-            $ref: '#/definitions/Sale'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Sale'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/sales/{sales_id}':
-    get:
-      tags:
-        - Support
-      summary: Retrieve a sales record
-      description: Retrieve the information for a sales record
-      operationId: getSaleUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: sales_id
-          in: path
-          description: UUID sales_id
-          required: true
-          type: string
-          format: uuid
-          x-example: 29fa5156-cd89-4056-9125-ce2428b05f11
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Sale'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    put:
-      tags:
-        - Support
-      summary: Update a sales inquiry
-      description: 'Update the information for a sales inquiry. '
-      operationId: updateSaleUsingPut
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: sales
-          description: sales
-          required: true
-          schema:
-            $ref: '#/definitions/Sale'
-        - name: sales_id
-          in: path
-          description: UUID sales_id
-          required: true
-          type: string
-          format: uuid
-          x-example: bab849d6-de96-4dc7-a5ea-19be45c52a4e
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Sale'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    delete:
-      tags:
-        - Support
-      summary: Delete a sales inquiry
-      description: Permanently delete a sales inquiry.
-      operationId: deleteSaleUsingDelete
-      produces:
-        - '*/*'
-      parameters:
-        - name: sales_id
-          in: path
-          description: UUID sales_id
-          required: true
-          type: string
-          format: uuid
-          x-example: 29fa5156-cd89-4056-9125-ce2428b05f11
       responses:
         '200':
           description: OK
@@ -19417,6 +17514,191 @@ paths:
       security:
         - oauth2: []
       deprecated: false
+  /spending_control:
+    get:
+      tags:
+        - SpendingControl
+      summary: List all Spending Control
+      description: List all Spending Control.
+      operationId: getSpendingControlAllUsingGet
+      produces:
+        - application/json
+      parameters:
+        - name: ascending
+          in: query
+          description: ascending
+          required: false
+          type: boolean
+          default: false
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          description: order_by
+          required: false
+          type: string
+          default: update_date
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 25
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Page«SpendingControl»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    post:
+      tags:
+        - SpendingControl
+      summary: Create a Spending Control
+      description: Create a new Spending Control.
+      operationId: createSpendingControlUsingPost
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: spendingControl
+          description: spendingControl
+          required: true
+          schema:
+            $ref: '#/definitions/SpendingControl'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SpendingControl'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/spending_control/{spending_control_id}':
+    get:
+      tags:
+        - SpendingControl
+      summary: Retrieve a Spending Control
+      description: 'Retrieve a Spending Control. '
+      operationId: getSpendingControlUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: spending_control_id
+          in: path
+          description: spending_control_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SpendingControl'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    put:
+      tags:
+        - SpendingControl
+      summary: Update a Spending Control
+      description: 'Update a Spending Control. '
+      operationId: updateSpendingControlUsingPut
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: spending_control
+          description: spending_control
+          required: true
+          schema:
+            $ref: '#/definitions/SpendingControl'
+        - name: spending_control_id
+          in: path
+          description: UUID spending_control_id
+          required: true
+          type: string
+          format: uuid
+          x-example: bab849d6-de96-4dc7-a5ea-19be45c52a4e
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SpendingControl'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    delete:
+      tags:
+        - SpendingControl
+      summary: Delete a Spending Control
+      description: Permanently Delete Spending Control.
+      operationId: deleteSpendingControlUsingDelete
+      produces:
+        - '*/*'
+      parameters:
+        - name: spending_control_id
+          in: path
+          description: spending_control_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+        - oauth2: []
+      deprecated: false
   /stage:
     get:
       tags:
@@ -19591,380 +17873,6 @@ paths:
           required: true
           type: string
           format: uuid
-      responses:
-        '200':
-          description: OK
-        '204':
-          description: No Content
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-      security:
-        - oauth2: []
-      deprecated: false
-  /support_ticket:
-    get:
-      tags:
-        - Support
-      summary: List all support tickets
-      description: Get the information for all support tickets defined for your firm.
-      operationId: getSupportTicketAllUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: ascending
-          in: query
-          description: ascending
-          required: false
-          type: boolean
-          default: false
-        - name: filter
-          in: query
-          description: filter
-          required: false
-          type: string
-        - name: order_by
-          in: query
-          description: order_by
-          required: false
-          type: string
-          default: update_date
-        - name: page
-          in: query
-          description: page
-          required: false
-          type: integer
-          default: 0
-          format: int32
-        - name: size
-          in: query
-          description: size
-          required: false
-          type: integer
-          default: 25
-          format: int32
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Page«SupportTicket»'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    post:
-      tags:
-        - Support
-      summary: Create a support ticket
-      description: Create a new support ticket for your firm.
-      operationId: createSupportTicketUsingPost
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: supportTicketRequest
-          description: supportTicketRequest
-          required: true
-          schema:
-            $ref: '#/definitions/SupportTicket'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/SupportTicket'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/support_ticket/{support_ticket_id}':
-    get:
-      tags:
-        - Support
-      summary: Retrieve a support ticket
-      description: Retrieve the information for a support ticket defined for your firm.
-      operationId: getSupportTicketUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: support_ticket_id
-          in: path
-          description: UUID support_ticket_id
-          required: true
-          type: string
-          format: uuid
-          x-example: 62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/SupportTicket'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    put:
-      tags:
-        - Support
-      summary: Update a support ticket
-      description: Update the information for a support ticket defined for your firm.
-      operationId: updateSupportTicketUsingPut
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: support_ticket
-          description: support_ticket
-          required: true
-          schema:
-            $ref: '#/definitions/SupportTicket'
-        - name: support_ticket_id
-          in: path
-          description: UUID support_ticket_id
-          required: true
-          type: string
-          format: uuid
-          x-example: bab849d6-de96-4dc7-a5ea-19be45c52a4e
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/SupportTicket'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    delete:
-      tags:
-        - Support
-      summary: Delete a support ticket
-      description: Permanently delete a support ticket for your firm.
-      operationId: deleteSupportTicketUsingDelete
-      produces:
-        - '*/*'
-      parameters:
-        - name: support_ticket_id
-          in: path
-          description: UUID support_ticket_id
-          required: true
-          type: string
-          format: uuid
-          x-example: 62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d
-      responses:
-        '200':
-          description: OK
-        '204':
-          description: No Content
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-      security:
-        - oauth2: []
-      deprecated: false
-  /support_ticket_comment:
-    get:
-      tags:
-        - Support
-      summary: List all support ticket comments
-      description: Get the information for all support ticket comments defined for your firm.
-      operationId: getSupportTicketCommentAllUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: ascending
-          in: query
-          description: ascending
-          required: false
-          type: boolean
-          default: false
-        - name: filter
-          in: query
-          description: filter
-          required: false
-          type: string
-        - name: order_by
-          in: query
-          description: order_by
-          required: false
-          type: string
-          default: update_date
-        - name: page
-          in: query
-          description: page
-          required: false
-          type: integer
-          default: 0
-          format: int32
-        - name: size
-          in: query
-          description: size
-          required: false
-          type: integer
-          default: 25
-          format: int32
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Page«SupportTicketComment»'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    post:
-      tags:
-        - Support
-      summary: Create a support ticket comment
-      description: Create a new support ticket comment for a support ticket.
-      operationId: createSupportTicketCommentUsingPost
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: supportTickerCommentRequest
-          description: supportTickerCommentRequest
-          required: true
-          schema:
-            $ref: '#/definitions/SupportTicketComment'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/SupportTicket'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/support_ticket_comment/{support_ticket_comment_id}':
-    get:
-      tags:
-        - Support
-      summary: Retrieve a support ticket comment
-      description: Retrieve the information for a support ticket comment defined for a support ticket.
-      operationId: getSupportTicketCommentUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: support_ticket_comment_id
-          in: path
-          description: UUID support_ticket_comment_id
-          required: true
-          type: string
-          format: uuid
-          x-example: 62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/SupportTicketComment'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    put:
-      tags:
-        - Support
-      summary: Update a support ticket comment
-      description: Update the information for a support ticket comments defined for a support ticket.
-      operationId: updateSupportTicketCommentUsingPut
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: support_ticket_comment
-          description: support_ticket_comment
-          required: true
-          schema:
-            $ref: '#/definitions/SupportTicketComment'
-        - name: support_ticket_comment_id
-          in: path
-          description: UUID support_ticket_comment_id
-          required: true
-          type: string
-          format: uuid
-          x-example: bab849d6-de96-4dc7-a5ea-19be45c52a4e
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/SupportTicketComment'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    delete:
-      tags:
-        - Support
-      summary: Delete a support ticket comment
-      description: Permanently delete a support ticket comment for a support ticket.
-      operationId: deleteSupportTicketCommentUsingDelete
-      produces:
-        - '*/*'
-      parameters:
-        - name: support_ticket_comment_id
-          in: path
-          description: UUID support_ticket_comment_id
-          required: true
-          type: string
-          format: uuid
-          x-example: 62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d
       responses:
         '200':
           description: OK
@@ -22197,6 +20105,22 @@ definitions:
         format: double
         description: weight
     title: BenchmarkComposition
+  Brokers:
+    type: object
+    required:
+      - broker_name
+      - status
+    properties:
+      broker_name:
+        type: string
+        example: xyz
+        description: broker_name
+      status:
+        type: string
+        example: xyz
+        description: status
+    title: Brokers
+    description: Brokers Object
   Budget:
     type: object
     required:
@@ -22367,243 +20291,167 @@ definitions:
       success:
         type: object
     title: BulkTransactionVO
-  Campaign:
+  Business:
     type: object
     required:
-      - description
-      - end_date
-      - start_date
-      - title
+      - legal_name
     properties:
-      campaign_category:
-        type: string
-      campaign_plan_id:
-        type: string
-        format: uuid
-        example: 8961182f-577d-451a-9ff1-1a8ef792efe2
-        description: campaignPlanId
-      cookie_code:
-        type: string
-        example: sample
-        description: cookieCode
-      create_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      description:
-        type: string
-        example: get users from example.com
-        description: description
-      end_date:
-        type: string
-        format: date
-        example: '2018-01-09'
-        description: endDate
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
-      is_acquisition:
-        type: boolean
-        example: true
-        description: isAcquisition
-      is_active:
-        type: boolean
-        example: true
-        description: isActive
-      landing_page:
-        type: string
-        example: Onboarding
-        description: landingPage
-      metadata:
-        type: object
-        additionalProperties:
-          type: string
-      rate:
-        type: number
-        format: double
-        example: 100
-        description: rate
-      secondary_id:
-        type: string
-        example: 7289243787238
-        readOnly: true
-      start_date:
-        type: string
-        format: date
-        example: '2018-01-09'
-        description: startDate
-      title:
-        type: string
-        example: Summer Onboarding
-        description: title
-      update_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      utm_campaign:
-        type: string
-        example: Summer-Onboarding
-        description: utmCampaign
-      utm_content:
-        type: string
-        example: Want to save extra?
-        description: utmContent
-      utm_medium:
-        type: string
-        example: Social Media
-        description: utmMedium
-      utm_source:
-        type: string
-        example: Banner Add
-        description: utmSource
-      utm_term:
-        type: string
-        example: Sample Term
-        description: utmTerm
-    title: Campaign
-    description: Campaign Object
-  CampaignData:
-    type: object
-    required:
-      - campaign_id
-      - end_date
-      - start_date
-    properties:
-      campaign_id:
-        type: string
-        format: uuid
-        example: f572eedd-deab-4efd-9b30-9e74787cad44
-        description: campaignId
-      click_through_rate:
-        type: number
-        format: double
-        example: 100
-        description: clickThroughRate
-      create_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      end_date:
-        type: string
-        format: date
-        example: '2018-01-09'
-        description: endDate
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
-      line_item:
-        type: string
-        example: banner click through
-        description: lineItem
-      metadata:
-        type: object
-        additionalProperties:
-          type: string
-      publisher_campaign_name:
-        type: string
-        example: Example Campaign Inc
-        description: publisherCampaignName
-      secondary_id:
-        type: string
-        example: 7289243787238
-        readOnly: true
-      start_date:
-        type: string
-        format: date
-        example: '2018-01-09'
-        description: startDate
-      total_clicks:
-        type: integer
-        format: int64
-        example: 10000
-        description: clickThroughRate
-      total_impressions:
-        type: integer
-        format: int64
-        example: 100000
-        description: totalImpressions
-      update_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-    title: CampaignData
-    description: CampaignData Object
-  CampaignPlan:
-    type: object
-    required:
-      - description
-    properties:
-      create_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      description:
-        type: string
-        example: Affiliate Marketing
-        description: description
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
-      is_active:
-        type: boolean
-        example: true
-        description: isActive
-      metadata:
-        type: object
-        additionalProperties:
-          type: string
-      plan_rates:
+      address:
         type: array
-        example: {}
-        description: planRates
+        example: []
+        readOnly: true
         items:
-          $ref: '#/definitions/CampaignPlanRate'
+          $ref: '#/definitions/BusinessAddress'
+      category:
+        type: string
+        example: Retail
+        description: category
+      create_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        readOnly: true
+      dba_name:
+        type: string
+        example: dba name
+        description: dbaName
+      email:
+        type: string
+        example: xyz@gmail.com
+        description: email
+      id:
+        type: string
+        format: uuid
+        example: 000183ac-2288-4564-a76b-119f4694be98
+        readOnly: true
+      identification_number:
+        type: string
+        example: 111-22-3333
+        description: identificationNumber
+      identification_number_type:
+        type: string
+        example: SSN
+        description: identificationNumberType
+      incorporation_country:
+        type: string
+        example: US
+        description: incorporationCountry
+      incorporation_date:
+        type: string
+        format: date
+        example: '2018-01-09''T''12:00:00'
+        description: incorporationDate
+      incorporation_state:
+        type: string
+        example: Alabama
+        description: incorporationState
+      is_active:
+        type: boolean
+        example: true
+        description: is_active
+      is_public:
+        type: boolean
+        example: true
+        description: is_public
+      is_verified:
+        type: boolean
+        example: false
+        description: is_verified
+      legal_name:
+        type: string
+        example: business legal name
+        description: legalName
+      legal_structure:
+        type: string
+        example: LLC
+        description: legalStructure
+      metadata:
+        type: object
+        example: {}
+        description: metadata
+        readOnly: true
+        additionalProperties:
+          type: string
+      ownership:
+        type: array
+        example: []
+        description: ownership
+        items:
+          $ref: '#/definitions/Ownership'
+      phone_number:
+        type: string
+        example: 222-222-2222
+        description: phoneNumber
       secondary_id:
         type: string
         example: 7289243787238
         readOnly: true
+      status:
+        type: string
+        example: xyz
+        description: status
+      subcategory:
+        type: string
+        example: Fast Food
+        description: subcategory
+      ticker:
+        type: string
+        example: xyz
+        description: ticker
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
         readOnly: true
-    title: CampaignPlan
-    description: CampaignPlan Object
-  CampaignPlanRate:
+      website:
+        type: string
+        example: business website
+        description: website
+    title: Business
+    description: Business Object
+  BusinessAddress:
     type: object
     required:
-      - max_asset
-      - min_asset
-      - rate
+      - address_line1
+      - city
+      - country
+      - state
+      - type
     properties:
-      max_asset:
-        type: number
-        format: double
-        example: 100
-        description: maxAsset
-      min_asset:
-        type: number
-        format: double
-        example: 1
-        description: maxAsset
-      rate:
-        type: number
-        format: double
-        example: 50
-        description: maxAsset
-    title: CampaignPlanRate
-    description: CampaignPlanRate Object
+      address_line1:
+        type: string
+        example: Apt 404B
+        description: addressLine1
+      address_line2:
+        type: string
+        example: Example Street
+        description: addressLine2
+      city:
+        type: string
+        example: New York
+        description: city
+      country:
+        type: string
+        example: US
+        description: country
+      is_primary:
+        type: boolean
+        example: false
+        description: ' is_primary'
+      postalcode:
+        type: string
+        example: 10001
+        description: postalcode
+      state:
+        type: string
+        example: CA
+        description: state
+      type:
+        type: string
+        example: Home
+        description: type
+    title: BusinessAddress
+    description: BusinessAddress Object
   Card:
     type: object
     required:
@@ -22612,14 +20460,9 @@ definitions:
       - card_name
       - card_type
       - client_id
-      - currency_code
       - institution_name
+      - portfolio_id
     properties:
-      account_id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        description: accountId
       address:
         type: array
         example: []
@@ -22696,6 +20539,10 @@ definitions:
         type: boolean
         example: true
         description: is_active
+      is_pin_set:
+        type: boolean
+        example: false
+        description: is_pin_set
       is_primary:
         type: boolean
         example: false
@@ -22732,24 +20579,9 @@ definitions:
         type: string
         example: 7289243787238
         readOnly: true
-      spending_limit_atm:
-        type: number
-        format: double
-        example: 100000
-        description: spendingLimitAtm
-      spending_limit_purchase:
-        type: number
-        format: double
-        example: 100000
-        description: spendingLimitPurchase
       status:
         type: string
         description: status
-      transaction_limit:
-        type: integer
-        format: int32
-        example: 100000
-        description: transactionLimit
       update_date:
         type: string
         format: date-time
@@ -22799,17 +20631,11 @@ definitions:
   CardProgram:
     type: object
     required:
-      - card_issuer
       - card_network
-      - card_processor
       - card_type
       - issuing_bank
       - name
     properties:
-      card_issuer:
-        type: string
-        example: visa
-        description: cardIssuer
       card_network:
         type: string
         example: xyz
@@ -22845,6 +20671,14 @@ definitions:
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
         readOnly: true
+      is_active:
+        type: boolean
+        example: true
+        description: is_active
+      is_delegated_authority:
+        type: boolean
+        example: false
+        description: is_delegated_authority
       issuing_bank:
         type: string
         example: RBC
@@ -22859,6 +20693,10 @@ definitions:
         type: string
         example: Visa
         description: name
+      program_manager:
+        type: string
+        example: xyz
+        description: programManager
       secondary_id:
         type: string
         example: 7289243787238
@@ -22907,57 +20745,28 @@ definitions:
         example: Debit
         description: category
     title: CategoriesMap
-  ChatInfo:
+  CategoryInternalResponseVO:
     type: object
-    required:
-      - chat_log
     properties:
-      assigned_to:
+      category:
         type: string
-        format: uuid
-        example: 38eb9a3b-6e7d-4a36-ba8a-0e9e7b7c7a84
-        description: assignedTo
-      chat_log:
-        type: string
-        example: balance
-        description: chatInfo
-      comments:
-        type: string
-        example: Investing
-        description: comments
-      create_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
-      is_notification:
-        type: boolean
-        example: true
-        description: isNotification
-      is_open:
-        type: boolean
-        example: true
-        description: isOpen
-      metadata:
-        type: object
-        additionalProperties:
+      subcategories:
+        type: array
+        items:
           type: string
-      secondary_id:
+      tenant_name:
         type: string
-        example: 7289243787238
-        readOnly: true
-      update_date:
+    title: CategoryInternalResponseVO
+  CategoryResponseVO:
+    type: object
+    properties:
+      categories:
+        type: array
+        items:
+          $ref: '#/definitions/CategoryInternalResponseVO'
+      vendor_name:
         type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-    title: ChatInfo
-    description: ChatInfo Object
+    title: CategoryResponseVO
   Check:
     type: object
     required:
@@ -23005,6 +20814,11 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/ClientAddress'
+      business_id:
+        type: string
+        format: uuid
+        example: 5cc48294-5f28-41f2-8eb4-898e83932327
+        description: business_id
       citizenship_status:
         type: string
         example: xyz
@@ -23031,7 +20845,6 @@ definitions:
         readOnly: true
       date_of_birth:
         type: string
-        format: date
         example: '1900-01-01'
         description: dateOfBirth
       email:
@@ -23210,101 +21023,6 @@ definitions:
         description: type
     title: ClientAddress
     description: ClientAddress Object
-  ClientCampaignMapping:
-    type: object
-    required:
-      - campaign_id
-    properties:
-      campaign_id:
-        type: string
-        format: uuid
-        example: f572eedd-deab-4efd-9b30-9e74787cad44
-        description: campaignId
-      client_id:
-        type: string
-        format: uuid
-        example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
-        description: clientId
-      create_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
-      ip:
-        type: string
-        example: 127.000.000
-        description: ip
-      metadata:
-        type: object
-        additionalProperties:
-          type: string
-      secondary_id:
-        type: string
-        example: 7289243787238
-        readOnly: true
-      update_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-    title: ClientCampaignMapping
-    description: ClientCampaignMapping Object
-  ClientHydro:
-    type: object
-    required:
-      - client_id
-      - hydro_id
-    properties:
-      client_id:
-        type: string
-        format: uuid
-        example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
-        description: clientId
-      create_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      hydro_id:
-        type: string
-        example: 10lm4nz
-        description: hydroId
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
-      is_client_raindrop_enabled:
-        type: boolean
-      is_client_raindrop_linked:
-        type: boolean
-      is_hydro_id_verified:
-        type: boolean
-        example: false
-        description: isHydroIdVerified
-      metadata:
-        type: object
-        example: {}
-        description: metadata
-        readOnly: true
-        additionalProperties:
-          type: string
-      secondary_id:
-        type: string
-        example: 7289243787238
-        readOnly: true
-      update_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-    title: ClientHydro
-    description: ClientHydro Object
   ClientRelationship:
     type: object
     required:
@@ -23469,126 +21187,6 @@ definitions:
         items:
           $ref: '#/definitions/VPortfolioVO'
     title: ClientViewGoalData
-  Consultation:
-    type: object
-    properties:
-      account_type_id:
-        type: string
-        format: uuid
-        example: 50d76212-0fcd-4d36-8633-e4a52cbcb79f
-        description: accountTypeId
-      additional_questions:
-        type: string
-        example: What is my potential return?
-        description: additionalQuestions
-      assets:
-        type: string
-        example: 5000
-        description: assets
-      assigned:
-        type: string
-        example: admin
-        description: assigned
-      calendar:
-        type: boolean
-        example: true
-        description: calendar
-      category:
-        type: string
-        example: new account
-        description: category
-      client_id:
-        type: string
-        format: uuid
-        example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
-        description: clientId
-      close_time:
-        type: string
-        format: date
-        example: '2018-01-09''T''12:00:00'
-        description: closeTime
-      closed_by:
-        type: string
-        example: admin
-        description: closedBy
-      comments:
-        type: string
-        example: wants to open account
-        description: comments
-      completed:
-        type: boolean
-        example: true
-        description: completed
-      create_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      email:
-        type: string
-        example: sample@email.com
-        description: email
-      firmname:
-        type: string
-        example: XYZ inc
-        description: firmname
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
-      investment_allocation:
-        type: string
-        example: moderate
-        description: investmentAllocation
-      investment_location:
-        type: string
-        example: US
-        description: investmentLocation
-      investment_objectives:
-        type: string
-        example: long term growth
-        description: investmentObjectives
-      is_active:
-        type: boolean
-        example: true
-        description: isActive
-      metadata:
-        type: object
-        additionalProperties:
-          type: string
-      name:
-        type: string
-        example: Sample Name
-        description: name
-      phone:
-        type: string
-        example: 111-111-1111
-        description: phone
-      reminded:
-        type: boolean
-        example: true
-        description: reminded
-      secondary_id:
-        type: string
-        example: 7289243787238
-        readOnly: true
-      source:
-        type: string
-        example: friend
-        description: source
-      time:
-        type: string
-        format: date
-        example: '2018-01-09''T''12:00:00'
-        description: time
-      update_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-    title: Consultation
-    description: Consultation Object
   Country:
     type: object
     required:
@@ -24118,6 +21716,11 @@ definitions:
         format: uuid
         example: 1c28dade-8679-4df5-9b9d-c508d04fcb0c
         description: accountId
+      business_id:
+        type: string
+        format: uuid
+        example: 1c28dade-8679-4df5-9b9d-c508d04fcb0c
+        description: businessId
       client_id:
         type: string
         format: uuid
@@ -24175,6 +21778,10 @@ definitions:
         type: boolean
         example: true
         description: is_active
+      is_sensitive:
+        type: boolean
+        example: true
+        description: is_sensitive
       is_verified:
         type: boolean
         example: false
@@ -24336,90 +21943,6 @@ definitions:
         example: '2018-06-28T18:17:23.579+0000'
         readOnly: true
     title: ExternalAccountTransfer
-  FAQKeyword:
-    type: object
-    required:
-      - keyword
-      - priority
-    properties:
-      keyword:
-        type: string
-        example: goal
-        description: keyword
-      priority:
-        type: integer
-        format: int64
-        example: 1
-        description: priority
-    title: FAQKeyword
-  Faq:
-    type: object
-    required:
-      - answer
-      - question
-    properties:
-      answer:
-        type: string
-        example: Sample
-        description: answer
-      category:
-        type: string
-        example: Account Opening
-        description: category
-      create_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      faq_keywords:
-        type: array
-        items:
-          $ref: '#/definitions/FAQKeyword'
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
-      is_active:
-        type: boolean
-        example: true
-        description: isActive
-      is_featured:
-        type: boolean
-        example: true
-        description: isFeatured
-      metadata:
-        type: object
-        additionalProperties:
-          type: string
-      number:
-        type: integer
-        format: int32
-        example: 1
-        description: number
-      question:
-        type: string
-        example: What types of accounts can I open and transfer?
-        description: question
-      secondary_id:
-        type: string
-        example: 7289243787238
-        readOnly: true
-      seo_name:
-        type: string
-        example: Taxable
-        description: seoName
-      subcategory:
-        type: string
-        example: Taxable
-        description: subcategory
-      update_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-    title: Faq
-    description: Faq Object
   Feature:
     type: object
     required:
@@ -24522,159 +22045,6 @@ definitions:
         readOnly: true
     title: FeatureTrack
     description: Feature Track Object
-  FinancialOffer:
-    type: object
-    required:
-      - category
-      - institution_name
-      - name
-      - offer_link
-    properties:
-      affiliate_rate:
-        type: number
-        format: double
-        example: 0.88
-        description: affiliateRate
-      campaign_id:
-        type: string
-        format: uuid
-        example: 24ada6e3-bbf9-4ef1-bb31-1fc7103b2301
-        description: campaignId
-      category:
-        type: string
-        example: category
-        description: category
-      client_review:
-        type: string
-        example: clientReview
-      create_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      currency_code:
-        type: string
-        example: USD
-        description: currencyCode
-      description:
-        type: string
-        example: description
-        description: description
-      document_id:
-        type: string
-        example: documentId
-      fee_amount:
-        type: number
-        format: double
-        example: 100
-        description: feeAmount
-      fee_type:
-        type: string
-        example: feeType
-      financial_rate:
-        type: number
-        format: double
-        example: 0.88
-        description: financialRate
-      financial_rate_term:
-        type: number
-        format: double
-        example: 0.88
-        description: financialRateTerm
-      financial_rate_term_unit:
-        type: string
-        example: financialRateTermUnit
-        description: financialRateTermUnit
-      financial_rate_type:
-        type: string
-        example: financialRateType
-        description: financialRateType
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
-      image:
-        type: string
-        example: image
-        description: image
-      institution_name:
-        type: string
-        example: institution_name
-        description: institution_name
-      is_active:
-        type: boolean
-        example: true
-        description: is_active
-      metadata:
-        type: object
-        example: {}
-        readOnly: true
-        additionalProperties:
-          type: string
-      minimum_contribution:
-        type: number
-        format: double
-        example: minimumContribution
-        description: minimumContribution
-      minimum_contribution_term:
-        type: number
-        format: double
-        example: 0.88
-        description: minimumContributionTerm
-      minimum_contribution_term_unit:
-        type: string
-        example: minimumContributionTermUnit
-        description: minimumContributionTermUnit
-      name:
-        type: string
-        example: Name
-        description: name
-      node_map:
-        type: array
-        example: {}
-        readOnly: true
-        items:
-          $ref: '#/definitions/AllocationNodeMap'
-      offer_link:
-        type: string
-        example: offerLink
-        description: offerLink
-      offer_term:
-        type: number
-        format: double
-        example: offerTerm
-        description: offerTerm
-      offer_term_unit:
-        type: string
-        example: offerTermUnit
-        description: offerTermUnit
-      prerequisite:
-        type: string
-        example: 100
-        description: prerequisite
-      prerequisite_type:
-        type: string
-        example: prerequisite_type
-      rating:
-        type: string
-        example: rating
-        description: rating
-      secondary_id:
-        type: string
-        example: 7289243787238
-        readOnly: true
-      subcategory:
-        type: string
-        example: subcategory
-        description: subcategory
-      update_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-    title: FinancialOffer
-    description: Financial Offer Object
   FinancialStatement:
     type: object
     required:
@@ -24764,7 +22134,6 @@ definitions:
   Funding:
     type: object
     required:
-      - account_id
       - frequency_unit
       - funding_status
       - funding_type
@@ -24820,7 +22189,7 @@ definitions:
         description: frequencyUnit
       funding_status:
         type: string
-        example: request_received
+        example: received
         description: fundingStatus
       funding_type:
         type: string
@@ -24861,11 +22230,21 @@ definitions:
         format: uuid
         example: ea30e8b7-3946-46ed-975a-4870a57d119s
         description: portfolioId
+      receiving_account_id:
+        type: string
+        format: uuid
+        example: 11c28dade-8679-4df5-9b9d-c508d04fcb0c
+        description: receivingAccountId
       receiving_bank_link_id:
         type: string
         format: uuid
         example: 02ec7d90-02fc-46c7-b201-def9b16ef65a
         description: receivingBankLinkId
+      receiving_portfolio_id:
+        type: string
+        format: uuid
+        example: ea30e8b7-3946-46ed-975a-4870a57d119s
+        description: receivingPortfolioId
       secondary_id:
         type: string
         example: 7289243787238
@@ -24890,6 +22269,10 @@ definitions:
         format: uuid
         example: 8ac40bd2-84a7-4896-804d-b837ef1df5f5
         description: transferId
+      transfer_speed:
+        type: string
+        example: standard
+        description: transferSpeed
       transfer_type:
         type: string
         example: push
@@ -25239,268 +22622,6 @@ definitions:
         example: '2018-06-28T18:17:23.579+0000'
         readOnly: true
     title: Household
-  InsuranceCoverage:
-    type: object
-    required:
-      - coverage_amount
-      - currency_code
-      - name
-    properties:
-      category:
-        type: string
-        example: Insurance Type
-        description: category
-      coverage_amount:
-        type: number
-        format: double
-        example: 100
-        description: coverageAmount
-      create_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      currency_code:
-        type: string
-        example: USD
-        description: currencyCode
-      deductible:
-        type: number
-        format: double
-        example: deductible
-        description: deductible
-      description:
-        type: string
-        example: description
-        description: description
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
-      is_active:
-        type: boolean
-        example: true
-        description: is_active
-      metadata:
-        type: object
-        example: {}
-        readOnly: true
-        additionalProperties:
-          type: string
-      name:
-        type: string
-        example: Name
-        description: name
-      node_map:
-        type: array
-        example: {}
-        readOnly: true
-        items:
-          $ref: '#/definitions/AllocationNodeMap'
-      secondary_id:
-        type: string
-        example: 7289243787238
-        readOnly: true
-      subcategory:
-        type: string
-        example: Insurance Subtype
-        description: subcategory
-      update_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-    title: InsuranceCoverage
-    description: Insurance Coverage Object
-  InsuranceCoverageMap:
-    type: object
-    required:
-      - insurance_coverage_id
-    properties:
-      insurance_coverage_id:
-        type: string
-        format: uuid
-        example: 6e14259a-9a68-4593-9e6d-8fcd0d05cf44
-        description: node_id
-    title: InsuranceCoverageMap
-  InsuranceDiscount:
-    type: object
-    required:
-      - name
-    properties:
-      category:
-        type: string
-        example: insurance category
-        description: category
-      create_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      currency_code:
-        type: string
-        example: USD
-        description: currencyCode
-      description:
-        type: string
-        example: description
-        description: description
-      discount_amount:
-        type: number
-        format: double
-        example: 100
-        description: discountAmount
-      discount_percentage:
-        type: number
-        format: double
-        example: 100
-        description: discountPercentage
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
-      is_active:
-        type: boolean
-        example: true
-        description: is_active
-      metadata:
-        type: object
-        example: {}
-        readOnly: true
-        additionalProperties:
-          type: string
-      name:
-        type: string
-        example: Name
-        description: name
-      node_map:
-        type: array
-        example: {}
-        readOnly: true
-        items:
-          $ref: '#/definitions/AllocationNodeMap'
-      secondary_id:
-        type: string
-        example: 7289243787238
-        readOnly: true
-      subcategory:
-        type: string
-        example: insurance subcategory
-        description: subcategory
-      update_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-    title: InsuranceDiscount
-    description: Insurance Discount Object
-  InsuranceDiscountMap:
-    type: object
-    required:
-      - insurance_discount_id
-    properties:
-      insurance_discount_id:
-        type: string
-        format: uuid
-        example: 6e14259a-9a68-4593-9e6d-8fcd0d05cf44
-        description: node_id
-    title: InsuranceDiscountMap
-  InsuranceQuote:
-    type: object
-    required:
-      - currency_code
-      - premium
-      - premium_frequency_unit
-    properties:
-      coverages:
-        type: array
-        example: []
-        readOnly: true
-        items:
-          $ref: '#/definitions/InsuranceCoverageMap'
-      create_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      currency_code:
-        type: string
-        example: USD
-        description: currencyCode
-      discounts:
-        type: array
-        example: []
-        readOnly: true
-        items:
-          $ref: '#/definitions/InsuranceDiscountMap'
-      end_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      financial_offer_id:
-        type: string
-        format: uuid
-        example: ffec4069-f3bd-46f0-bf62-c7c77b400e37
-        description: financial_offer_id
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
-      is_active:
-        type: boolean
-        example: true
-        description: is_active
-      metadata:
-        type: object
-        example: {}
-        readOnly: true
-        additionalProperties:
-          type: string
-      node_map:
-        type: array
-        example: []
-        readOnly: true
-        items:
-          $ref: '#/definitions/AllocationNodeMap'
-      premium:
-        type: number
-        format: double
-        example: 0.88
-        description: premium
-      premium_duration:
-        type: number
-        format: double
-        example: 0.88
-        description: premiumDuration
-      premium_frequency:
-        type: integer
-        format: int32
-        example: 1
-        description: premiumFrequency
-      premium_frequency_unit:
-        type: string
-        example: daily
-        description: premiumFrequencyUnit
-      secondary_id:
-        type: string
-        example: 7289243787238
-        readOnly: true
-      start_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      update_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-    title: InsuranceQuote
-    description: Insurance Quote Object
   Investment:
     type: object
     required:
@@ -25873,6 +22994,27 @@ definitions:
         description: state
     title: Location
     description: Location Object
+  MXMerchantRes:
+    type: object
+    properties:
+      create_date:
+        type: string
+        format: date-time
+      guid:
+        type: string
+      id:
+        type: string
+        format: uuid
+      logo_url:
+        type: string
+      name:
+        type: string
+      update_date:
+        type: string
+        format: date-time
+      website_url:
+        type: string
+    title: MXMerchantRes
   Member:
     type: object
     required:
@@ -25897,6 +23039,10 @@ definitions:
   MerchantCategoryCode:
     type: object
     properties:
+      category:
+        type: string
+        example: Shopping
+        description: category
       description:
         type: string
         example: Veterinary Services
@@ -25906,6 +23052,10 @@ definitions:
         format: int32
         example: 722
         description: mcc
+      subcategory:
+        type: string
+        example: Florists
+        description: subcategory
     title: MerchantCategoryCode
     description: MerchantCategoryCode Object
   MerchantsMap:
@@ -26598,7 +23748,6 @@ definitions:
     required:
       - date
       - order_ticket_id
-      - quantity
       - security_id
       - transaction_code_id
     properties:
@@ -26607,6 +23756,16 @@ definitions:
         format: uuid
         example: 11c28dade-8679-4df5-9b9d-c508d04fcb0c
         description: accountId
+      amount:
+        type: number
+        format: double
+        example: 9000
+        description: amount
+      commission:
+        type: number
+        format: double
+        example: 9000
+        description: commission
       create_date:
         type: string
         format: date-time
@@ -26660,6 +23819,8 @@ definitions:
       price:
         type: number
         format: double
+        example: 9000
+        description: price
       quantity:
         type: number
         format: double
@@ -27134,6 +24295,36 @@ definitions:
         description: updateBalances
     title: OverflowVO
     description: Overflow Object
+  Ownership:
+    type: object
+    required:
+      - client_id
+      - role
+    properties:
+      client_id:
+        type: string
+        format: uuid
+        example: 5cc48294-5f28-41f2-8eb4-898e83932327
+        description: client_id
+      is_beneficial:
+        type: boolean
+        example: false
+        description: is_beneficial
+      is_primary:
+        type: boolean
+        example: false
+        description: is_primary
+      percent_ownership:
+        type: number
+        format: double
+        example: 0.25
+        description: percent_ownership
+      role:
+        type: string
+        example: officer
+        description: role
+    title: Ownership
+    description: Ownership Object
   Page«AccountAllocationMapping»:
     type: object
     properties:
@@ -27678,13 +24869,13 @@ definitions:
         format: int32
     title: Page«Budget»
     description: Page Object
-  Page«CampaignData»:
+  Page«Business»:
     type: object
     properties:
       content:
         type: array
         items:
-          $ref: '#/definitions/CampaignData'
+          $ref: '#/definitions/Business'
       first:
         type: boolean
       last:
@@ -27708,71 +24899,7 @@ definitions:
       total_pages:
         type: integer
         format: int32
-    title: Page«CampaignData»
-    description: Page Object
-  Page«CampaignPlan»:
-    type: object
-    properties:
-      content:
-        type: array
-        items:
-          $ref: '#/definitions/CampaignPlan'
-      first:
-        type: boolean
-      last:
-        type: boolean
-      number:
-        type: integer
-        format: int32
-      number_of_elements:
-        type: integer
-        format: int32
-      size:
-        type: integer
-        format: int32
-      sort:
-        type: array
-        items:
-          $ref: '#/definitions/Sort'
-      total_elements:
-        type: integer
-        format: int64
-      total_pages:
-        type: integer
-        format: int32
-    title: Page«CampaignPlan»
-    description: Page Object
-  Page«Campaign»:
-    type: object
-    properties:
-      content:
-        type: array
-        items:
-          $ref: '#/definitions/Campaign'
-      first:
-        type: boolean
-      last:
-        type: boolean
-      number:
-        type: integer
-        format: int32
-      number_of_elements:
-        type: integer
-        format: int32
-      size:
-        type: integer
-        format: int32
-      sort:
-        type: array
-        items:
-          $ref: '#/definitions/Sort'
-      total_elements:
-        type: integer
-        format: int64
-      total_pages:
-        type: integer
-        format: int32
-    title: Page«Campaign»
+    title: Page«Business»
     description: Page Object
   Page«CardProgram»:
     type: object
@@ -27837,102 +24964,6 @@ definitions:
         type: integer
         format: int32
     title: Page«Card»
-    description: Page Object
-  Page«ChatInfo»:
-    type: object
-    properties:
-      content:
-        type: array
-        items:
-          $ref: '#/definitions/ChatInfo'
-      first:
-        type: boolean
-      last:
-        type: boolean
-      number:
-        type: integer
-        format: int32
-      number_of_elements:
-        type: integer
-        format: int32
-      size:
-        type: integer
-        format: int32
-      sort:
-        type: array
-        items:
-          $ref: '#/definitions/Sort'
-      total_elements:
-        type: integer
-        format: int64
-      total_pages:
-        type: integer
-        format: int32
-    title: Page«ChatInfo»
-    description: Page Object
-  Page«ClientCampaignMapping»:
-    type: object
-    properties:
-      content:
-        type: array
-        items:
-          $ref: '#/definitions/ClientCampaignMapping'
-      first:
-        type: boolean
-      last:
-        type: boolean
-      number:
-        type: integer
-        format: int32
-      number_of_elements:
-        type: integer
-        format: int32
-      size:
-        type: integer
-        format: int32
-      sort:
-        type: array
-        items:
-          $ref: '#/definitions/Sort'
-      total_elements:
-        type: integer
-        format: int64
-      total_pages:
-        type: integer
-        format: int32
-    title: Page«ClientCampaignMapping»
-    description: Page Object
-  Page«ClientHydro»:
-    type: object
-    properties:
-      content:
-        type: array
-        items:
-          $ref: '#/definitions/ClientHydro'
-      first:
-        type: boolean
-      last:
-        type: boolean
-      number:
-        type: integer
-        format: int32
-      number_of_elements:
-        type: integer
-        format: int32
-      size:
-        type: integer
-        format: int32
-      sort:
-        type: array
-        items:
-          $ref: '#/definitions/Sort'
-      total_elements:
-        type: integer
-        format: int64
-      total_pages:
-        type: integer
-        format: int32
-    title: Page«ClientHydro»
     description: Page Object
   Page«ClientResponse»:
     type: object
@@ -28029,38 +25060,6 @@ definitions:
         type: integer
         format: int32
     title: Page«Client»
-    description: Page Object
-  Page«Consultation»:
-    type: object
-    properties:
-      content:
-        type: array
-        items:
-          $ref: '#/definitions/Consultation'
-      first:
-        type: boolean
-      last:
-        type: boolean
-      number:
-        type: integer
-        format: int32
-      number_of_elements:
-        type: integer
-        format: int32
-      size:
-        type: integer
-        format: int32
-      sort:
-        type: array
-        items:
-          $ref: '#/definitions/Sort'
-      total_elements:
-        type: integer
-        format: int64
-      total_pages:
-        type: integer
-        format: int32
-    title: Page«Consultation»
     description: Page Object
   Page«CustomerRevenue»:
     type: object
@@ -28286,38 +25285,6 @@ definitions:
         format: int32
     title: Page«ExternalAccountTransfer»
     description: Page Object
-  Page«Faq»:
-    type: object
-    properties:
-      content:
-        type: array
-        items:
-          $ref: '#/definitions/Faq'
-      first:
-        type: boolean
-      last:
-        type: boolean
-      number:
-        type: integer
-        format: int32
-      number_of_elements:
-        type: integer
-        format: int32
-      size:
-        type: integer
-        format: int32
-      sort:
-        type: array
-        items:
-          $ref: '#/definitions/Sort'
-      total_elements:
-        type: integer
-        format: int64
-      total_pages:
-        type: integer
-        format: int32
-    title: Page«Faq»
-    description: Page Object
   Page«FeatureTrack»:
     type: object
     properties:
@@ -28381,38 +25348,6 @@ definitions:
         type: integer
         format: int32
     title: Page«Feature»
-    description: Page Object
-  Page«FinancialOffer»:
-    type: object
-    properties:
-      content:
-        type: array
-        items:
-          $ref: '#/definitions/FinancialOffer'
-      first:
-        type: boolean
-      last:
-        type: boolean
-      number:
-        type: integer
-        format: int32
-      number_of_elements:
-        type: integer
-        format: int32
-      size:
-        type: integer
-        format: int32
-      sort:
-        type: array
-        items:
-          $ref: '#/definitions/Sort'
-      total_elements:
-        type: integer
-        format: int64
-      total_pages:
-        type: integer
-        format: int32
-    title: Page«FinancialOffer»
     description: Page Object
   Page«FinancialStatement»:
     type: object
@@ -28574,102 +25509,6 @@ definitions:
         format: int32
     title: Page«Household»
     description: Page Object
-  Page«InsuranceCoverage»:
-    type: object
-    properties:
-      content:
-        type: array
-        items:
-          $ref: '#/definitions/InsuranceCoverage'
-      first:
-        type: boolean
-      last:
-        type: boolean
-      number:
-        type: integer
-        format: int32
-      number_of_elements:
-        type: integer
-        format: int32
-      size:
-        type: integer
-        format: int32
-      sort:
-        type: array
-        items:
-          $ref: '#/definitions/Sort'
-      total_elements:
-        type: integer
-        format: int64
-      total_pages:
-        type: integer
-        format: int32
-    title: Page«InsuranceCoverage»
-    description: Page Object
-  Page«InsuranceDiscount»:
-    type: object
-    properties:
-      content:
-        type: array
-        items:
-          $ref: '#/definitions/InsuranceDiscount'
-      first:
-        type: boolean
-      last:
-        type: boolean
-      number:
-        type: integer
-        format: int32
-      number_of_elements:
-        type: integer
-        format: int32
-      size:
-        type: integer
-        format: int32
-      sort:
-        type: array
-        items:
-          $ref: '#/definitions/Sort'
-      total_elements:
-        type: integer
-        format: int64
-      total_pages:
-        type: integer
-        format: int32
-    title: Page«InsuranceDiscount»
-    description: Page Object
-  Page«InsuranceQuote»:
-    type: object
-    properties:
-      content:
-        type: array
-        items:
-          $ref: '#/definitions/InsuranceQuote'
-      first:
-        type: boolean
-      last:
-        type: boolean
-      number:
-        type: integer
-        format: int32
-      number_of_elements:
-        type: integer
-        format: int32
-      size:
-        type: integer
-        format: int32
-      sort:
-        type: array
-        items:
-          $ref: '#/definitions/Sort'
-      total_elements:
-        type: integer
-        format: int64
-      total_pages:
-        type: integer
-        format: int32
-    title: Page«InsuranceQuote»
-    description: Page Object
   Page«InvoicePayment»:
     type: object
     properties:
@@ -28734,6 +25573,35 @@ definitions:
         format: int32
     title: Page«Invoice»
     description: Page Object
+  Page«MXMerchantRes»:
+    type: object
+    properties:
+      content:
+        type: array
+        items:
+          $ref: '#/definitions/MXMerchantRes'
+      first:
+        type: boolean
+      last:
+        type: boolean
+      number:
+        type: integer
+        format: int32
+      number_of_elements:
+        type: integer
+        format: int32
+      size:
+        type: integer
+        format: int32
+      sort:
+        $ref: '#/definitions/Sort'
+      total_elements:
+        type: integer
+        format: int64
+      total_pages:
+        type: integer
+        format: int32
+    title: Page«MXMerchantRes»
   Page«ModelAssetSize»:
     type: object
     properties:
@@ -29342,6 +26210,38 @@ definitions:
         format: int32
     title: Page«PortfolioGoal»
     description: Page Object
+  Page«PortfolioHoldingAgg»:
+    type: object
+    properties:
+      content:
+        type: array
+        items:
+          $ref: '#/definitions/PortfolioHoldingAgg'
+      first:
+        type: boolean
+      last:
+        type: boolean
+      number:
+        type: integer
+        format: int32
+      number_of_elements:
+        type: integer
+        format: int32
+      size:
+        type: integer
+        format: int32
+      sort:
+        type: array
+        items:
+          $ref: '#/definitions/Sort'
+      total_elements:
+        type: integer
+        format: int64
+      total_pages:
+        type: integer
+        format: int32
+    title: Page«PortfolioHoldingAgg»
+    description: Page Object
   Page«PortfolioHoldingLog»:
     type: object
     properties:
@@ -29630,38 +26530,6 @@ definitions:
         format: int32
     title: Page«Roundup»
     description: Page Object
-  Page«Sale»:
-    type: object
-    properties:
-      content:
-        type: array
-        items:
-          $ref: '#/definitions/Sale'
-      first:
-        type: boolean
-      last:
-        type: boolean
-      number:
-        type: integer
-        format: int32
-      number_of_elements:
-        type: integer
-        format: int32
-      size:
-        type: integer
-        format: int32
-      sort:
-        type: array
-        items:
-          $ref: '#/definitions/Sort'
-      total_elements:
-        type: integer
-        format: int64
-      total_pages:
-        type: integer
-        format: int32
-    title: Page«Sale»
-    description: Page Object
   Page«Score»:
     type: object
     properties:
@@ -29790,6 +26658,38 @@ definitions:
         format: int32
     title: Page«Security»
     description: Page Object
+  Page«SpendingControl»:
+    type: object
+    properties:
+      content:
+        type: array
+        items:
+          $ref: '#/definitions/SpendingControl'
+      first:
+        type: boolean
+      last:
+        type: boolean
+      number:
+        type: integer
+        format: int32
+      number_of_elements:
+        type: integer
+        format: int32
+      size:
+        type: integer
+        format: int32
+      sort:
+        type: array
+        items:
+          $ref: '#/definitions/Sort'
+      total_elements:
+        type: integer
+        format: int64
+      total_pages:
+        type: integer
+        format: int32
+    title: Page«SpendingControl»
+    description: Page Object
   Page«Stage»:
     type: object
     properties:
@@ -29821,70 +26721,6 @@ definitions:
         type: integer
         format: int32
     title: Page«Stage»
-    description: Page Object
-  Page«SupportTicketComment»:
-    type: object
-    properties:
-      content:
-        type: array
-        items:
-          $ref: '#/definitions/SupportTicketComment'
-      first:
-        type: boolean
-      last:
-        type: boolean
-      number:
-        type: integer
-        format: int32
-      number_of_elements:
-        type: integer
-        format: int32
-      size:
-        type: integer
-        format: int32
-      sort:
-        type: array
-        items:
-          $ref: '#/definitions/Sort'
-      total_elements:
-        type: integer
-        format: int64
-      total_pages:
-        type: integer
-        format: int32
-    title: Page«SupportTicketComment»
-    description: Page Object
-  Page«SupportTicket»:
-    type: object
-    properties:
-      content:
-        type: array
-        items:
-          $ref: '#/definitions/SupportTicket'
-      first:
-        type: boolean
-      last:
-        type: boolean
-      number:
-        type: integer
-        format: int32
-      number_of_elements:
-        type: integer
-        format: int32
-      size:
-        type: integer
-        format: int32
-      sort:
-        type: array
-        items:
-          $ref: '#/definitions/Sort'
-      total_elements:
-        type: integer
-        format: int64
-      total_pages:
-        type: integer
-        format: int32
-    title: Page«SupportTicket»
     description: Page Object
   Page«TransactionCode»:
     type: object
@@ -30447,6 +27283,10 @@ definitions:
         type: boolean
         example: false
         description: is_cleansed
+      is_disputed:
+        type: boolean
+        example: false
+        description: is_disputed
       is_read:
         type: boolean
         example: true
@@ -30472,6 +27312,13 @@ definitions:
         format: int32
         example: 3099
         description: merchant_category_code
+      metadata:
+        type: object
+        example: {}
+        description: metadata
+        readOnly: true
+        additionalProperties:
+          type: string
       model_id:
         type: string
         format: uuid
@@ -30909,115 +27756,6 @@ definitions:
         readOnly: true
     title: RoundupSettings
     description: Roundup Settings Object
-  Sale:
-    type: object
-    required:
-      - questions
-    properties:
-      assigned:
-        type: string
-        format: uuid
-        example: d31c694f-bcb5-427f-b081-91e64e90229a
-        description: assigned
-      close_time:
-        type: string
-        format: date
-        example: '2017-01-03'
-        description: closeTime
-      closed_by:
-        type: string
-        format: uuid
-        example: 099961da-7f41-4309-950f-2b51689a0033
-        description: closedBy
-      comments:
-        type: string
-        example: sample comments
-        description: comments
-      contacted:
-        type: boolean
-        example: true
-        description: contacted
-      create_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      email:
-        type: string
-        example: sample@example.com
-        description: email
-      firm_name:
-        type: string
-        example: xyz inc
-        description: firmName
-      first_name:
-        type: string
-        example: John
-        description: firstName
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
-      ip:
-        type: string
-        example: 127.0.0.1
-        description: ip
-      last_name:
-        type: string
-        example: smith
-        description: lastName
-      metadata:
-        type: object
-        example: {}
-        description: metadata
-        readOnly: true
-        additionalProperties:
-          type: string
-      method:
-        type: string
-        example: email
-        description: method
-      notification:
-        type: boolean
-      open_time:
-        type: string
-        format: date
-        example: '2017-08-01'
-        description: openTime
-      phone:
-        type: string
-        example: 11111111111
-        description: phone
-      questions:
-        type: string
-        example: Is it possible to organize a demo?
-        description: questions
-      referral_source:
-        type: string
-        example: N/A
-        description: referralSource
-      secondary_id:
-        type: string
-        example: 7289243787238
-        readOnly: true
-      solution:
-        type: string
-      subject:
-        type: string
-        example: Example
-        description: subject
-      title:
-        type: string
-        example: title
-        description: title
-      update_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-    title: Sale
-    description: Sale Object
   Score:
     type: object
     required:
@@ -31166,6 +27904,12 @@ definitions:
         type: string
         example: US Equity
         description: Security asset class
+      brokers:
+        type: array
+        example: []
+        description: brokers
+        items:
+          $ref: '#/definitions/Brokers'
       category:
         type: string
         example: sample
@@ -31183,6 +27927,10 @@ definitions:
         type: string
         example: xyz
         description: cusip
+      description:
+        type: string
+        example: Security description
+        description: description
       exchange:
         type: string
         example: sample
@@ -31192,6 +27940,10 @@ definitions:
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
         readOnly: true
+      image:
+        type: string
+        example: /sample.png
+        description: image
       industry:
         type: string
         example: Heavy Construction
@@ -31469,6 +28221,87 @@ definitions:
         description: property
     title: Sort
     description: Sort Object
+  SpendingControl:
+    type: object
+    required:
+      - client_id
+      - control_scope
+      - control_type
+      - currency_code
+    properties:
+      client_id:
+        type: string
+        format: uuid
+        example: 04638eb3-d94d-45d6-b6f3-c685bb5a6009
+        description: client_id
+      control_scope:
+        type: string
+        example: merchant_category
+        description: controlScope
+      control_type:
+        type: string
+        example: spending_limit
+        description: controlType
+      control_values:
+        type: array
+        example:
+          - Entertainment
+        description: control_values
+        items:
+          type: string
+      create_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        readOnly: true
+      currency_code:
+        type: string
+        example: USD
+        description: currency_code
+      description:
+        type: string
+        example: card spending description
+        description: description
+      frequency:
+        type: integer
+        format: int32
+        example: 1
+        description: frequency
+      frequency_unit:
+        type: string
+        example: one_time
+        description: frequency_unit
+      id:
+        type: string
+        format: uuid
+        example: 000183ac-2288-4564-a76b-119f4694be98
+        readOnly: true
+      is_active:
+        type: boolean
+        example: true
+        description: is_active
+      limit_value:
+        type: number
+        format: double
+        example: 1000
+        description: limitValue
+      metadata:
+        type: object
+        example: {}
+        readOnly: true
+        additionalProperties:
+          type: string
+      secondary_id:
+        type: string
+        example: 7289243787238
+        readOnly: true
+      update_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        readOnly: true
+    title: SpendingControl
+    description: SpendingControl Object
   Stage:
     type: object
     required:
@@ -31512,6 +28345,10 @@ definitions:
         type: boolean
         example: false
         description: is_converted
+      is_verified:
+        type: boolean
+        example: false
+        description: is_verified
       metadata:
         type: object
         additionalProperties:
@@ -31581,160 +28418,6 @@ definitions:
       type:
         type: string
     title: StatisticResourceVO
-  SupportTicket:
-    type: object
-    required:
-      - description
-      - open_time
-    properties:
-      account_id:
-        type: string
-        format: uuid
-        example: 11c28dade-8679-4df5-9b9d-c508d04fcb0c
-        description: 'SupportTicket account Id  '
-      assigned_to:
-        type: string
-        format: uuid
-        example: 2035f52d-2c5b-4e07-8904-casd3232ssd
-        description: 'SupportTicket assignee id '
-      client_id:
-        type: string
-        format: uuid
-        example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
-        description: 'SupportTicket Client Id  '
-      close_time:
-        type: string
-        format: date
-        example: '2018-01-09''T''12:00:00'
-        description: SupportTicket close time
-      create_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      description:
-        type: string
-        example: sample
-        description: SupportTicket description
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
-      metadata:
-        type: object
-        additionalProperties:
-          type: string
-      open_time:
-        type: string
-        format: date
-        example: '2018-01-01''T''12:00:00'
-        description: SupportTicket open time
-      secondary_id:
-        type: string
-        example: 7289243787238
-        readOnly: true
-      status:
-        type: string
-        example: closed
-        description: SupportTicket status
-      subject:
-        type: string
-        example: sample
-        description: SupportTicket subject
-      support_ticket_documents:
-        type: array
-        items:
-          $ref: '#/definitions/SupportTicketDocument'
-      update_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-    title: SupportTicket
-    description: SupportTicket Object
-  SupportTicketComment:
-    type: object
-    required:
-      - support_ticket_id
-    properties:
-      create_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      description:
-        type: string
-        example: Login Error
-        description: SupportTicket Comment Description
-      has_attachment:
-        type: boolean
-        example: true
-        description: Does the SupportTicket Comment contain an attachment
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
-      is_admin:
-        type: boolean
-        example: false
-        description: Is the SupportTicket Comment an admin
-      is_read:
-        type: boolean
-        example: false
-        description: Is the SupportTicket Comment read
-      metadata:
-        type: object
-        additionalProperties:
-          type: string
-      secondary_id:
-        type: string
-        example: 7289243787238
-        readOnly: true
-      support_ticket_documents:
-        type: array
-        items:
-          $ref: '#/definitions/SupportTicketDocument'
-      support_ticket_id:
-        type: string
-        format: uuid
-        example: 3551b26c-7080-4c4b-a8fc-9ce9360460ba
-        description: SupportTicket Id
-      update_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-    title: SupportTicketComment
-    description: Support Ticket Comment
-  SupportTicketDocument:
-    type: object
-    required:
-      - doc_name
-    properties:
-      doc_file:
-        type: string
-        example: sample file
-        description: docFile
-      doc_name:
-        type: string
-        example: sample document
-        description: docName
-      doc_size:
-        type: integer
-        format: int32
-        example: 1500
-        description: docSize
-      doc_type:
-        type: string
-        example: documentType
-        description: docType
-      url_path:
-        type: string
-        example: 'http://www.xyz.com/sample.pdf'
-        description: urlPath
-    title: SupportTicketDocument
   TokenDateRequest:
     type: object
     properties:
@@ -31790,21 +28473,29 @@ definitions:
         example: 000183ac-2288-4564-a76b-119f4694be98
         readOnly: true
       is_buy:
-        type: boolean
-        example: false
-        description: isBuy
-      is_fee:
-        type: boolean
-        example: false
-        description: isFee
-      is_transfer:
         type: string
-        example: 'False'
+        example: false
         readOnly: true
         enum:
-          - 'FALSE'
-          - 'TRUE'
-          - 'NULL'
+          - 'true'
+          - 'false'
+          - 'null'
+      is_fee:
+        type: string
+        example: false
+        readOnly: true
+        enum:
+          - 'true'
+          - 'false'
+          - 'null'
+      is_transfer:
+        type: string
+        example: false
+        readOnly: true
+        enum:
+          - 'true'
+          - 'false'
+          - 'null'
       metadata:
         type: object
         additionalProperties:
@@ -31955,35 +28646,35 @@ definitions:
         items:
           type: string
           enum:
-            - CLIENT
-            - CLIENT_STATUS
-            - ACCOUNT_STATUS
-            - ACCOUNT
-            - CARD
-            - CARD_STATUS
-            - PORTFOLIO_ASSET_SIZE
-            - PORTFOLIO_TRANSACTION
-            - PORTFOLIO_TRANSACTION_STATUS
-            - PORTFOLIO_HOLDING
-            - AGGREGATION_ACCOUNT
-            - AGGREGATION_ACCOUNT_STATUS
-            - NOTIFICATION_CLIENT
-            - AGGREGATION_ACCOUNT_BALANCE
-            - AUDIT_LOG
-            - SUPPORT_TICKET
-            - FEATURE_TRACK
-            - AGGREGATION_ACCOUNT_TRANSACTION
-            - AGGREGATION_ACCOUNT_TRANSACTION_STATUS
-            - AGGREGATION_ACCOUNT_HOLDING
-            - ORDER_TRACK
-            - FUNDING
-            - FUNDING_STATUS
-            - BUDGET
-            - DOCUMENT
-            - CLIENT_RESPONSE
-            - CLIENT_VERIFIED
-            - DOCUMENT_VERIFIED
-            - BANK_LINK_VERIFIED
+            - client
+            - client_status
+            - account_status
+            - account
+            - card
+            - card_status
+            - portfolio_asset_size
+            - portfolio_transaction
+            - portfolio_transaction_status
+            - portfolio_holding
+            - aggregation_account
+            - aggregation_account_status
+            - notification_client
+            - aggregation_account_balance
+            - audit_log
+            - support_ticket
+            - feature_track
+            - aggregation_account_transaction
+            - aggregation_account_transaction_status
+            - aggregation_account_holding
+            - order_track
+            - funding
+            - funding_status
+            - budget
+            - document
+            - client_response
+            - client_verified
+            - document_verified
+            - bank_link_verified
       create_date:
         type: string
         format: date-time

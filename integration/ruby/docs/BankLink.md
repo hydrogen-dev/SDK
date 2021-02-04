@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **String** | accountId | [optional] 
-**available_balance** | **String** | available_balance | [optional] 
-**balance** | **String** | balance | [optional] 
+**available_balance** | **Float** | available_balance | [optional] 
+**balance** | **Float** | balance | [optional] 
 **bank_account_holder** | **String** | bankAccountHolder | 
 **bank_account_name** | **String** | bankAccountName | [optional] 
 **bank_account_number** | **String** | bankAccountNumber | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **is_active** | **BOOLEAN** | isActive | [optional] 
 **is_default** | **BOOLEAN** | isDefault | [optional] 
 **is_link_verified** | **BOOLEAN** | isLinkVerified | [optional] 
-**link_verified_date** | **DateTime** | linkVerifiedDate | [optional] 
+**link_verified_date** | **Date** | linkVerifiedDate | [optional] 
 **mask** | **String** | mask | [optional] 
 **metadata** | **Hash&lt;String, String&gt;** | metadata | [optional] 
 **name** | **String** | name | 

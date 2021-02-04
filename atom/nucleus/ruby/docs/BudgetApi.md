@@ -277,7 +277,7 @@ end
 
 api_instance = NucleusApi::BudgetApi.new
 
-budget = NucleusApi::Budget.new # Budget | budget
+budget = nil # Object | budget
 
 budget_id = 'budget_id_example' # String | UUID budget_id
 
@@ -295,7 +295,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget** | [**Budget**](Budget.md)| budget | 
+ **budget** | **Object**| budget | 
  **budget_id** | [**String**](.md)| UUID budget_id | 
 
 ### Return type

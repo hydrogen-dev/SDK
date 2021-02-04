@@ -15,12 +15,7 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.ArrayList;
@@ -31,40 +26,76 @@ import org.threeten.bp.LocalDate;
 /**
  * CustomerAnalysisRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class CustomerAnalysisRequest {
-  @SerializedName("customer_ids")
-  private List<UUID> customerIds = null;
-
-  @SerializedName("benchmark_start_date")
-  private LocalDate benchmarkStartDate = null;
-
-  @SerializedName("client_id")
-  private UUID clientId = null;
-
-  @SerializedName("currency_conversion")
-  private String currencyConversion = null;
-
-  @SerializedName("response_limit")
-  private Integer responseLimit = 10;
-
   @SerializedName("end_date")
   private LocalDate endDate = null;
-
-  @SerializedName("currency_code")
-  private String currencyCode = null;
-
-  @SerializedName("start_date")
-  private LocalDate startDate = null;
 
   @SerializedName("benchmark_end_date")
   private LocalDate benchmarkEndDate = null;
 
+  @SerializedName("customer_ids")
+  private List<UUID> customerIds = null;
+
+  @SerializedName("client_id")
+  private UUID clientId = null;
+
+  @SerializedName("response_limit")
+  private Integer responseLimit = 10;
+
+  @SerializedName("currency_conversion")
+  private String currencyConversion = null;
+
+  @SerializedName("start_date")
+  private LocalDate startDate = null;
+
+  @SerializedName("currency_code")
+  private String currencyCode = null;
+
   @SerializedName("only_active_customers")
   private Boolean onlyActiveCustomers = false;
+
+  @SerializedName("benchmark_start_date")
+  private LocalDate benchmarkStartDate = null;
+
+  public CustomerAnalysisRequest endDate(LocalDate endDate) {
+    this.endDate = endDate;
+    return this;
+  }
+
+   /**
+   * Get endDate
+   * @return endDate
+  **/
+  @ApiModelProperty(value = "")
+  public LocalDate getEndDate() {
+    return endDate;
+  }
+
+  public void setEndDate(LocalDate endDate) {
+    this.endDate = endDate;
+  }
+
+  public CustomerAnalysisRequest benchmarkEndDate(LocalDate benchmarkEndDate) {
+    this.benchmarkEndDate = benchmarkEndDate;
+    return this;
+  }
+
+   /**
+   * Get benchmarkEndDate
+   * @return benchmarkEndDate
+  **/
+  @ApiModelProperty(value = "")
+  public LocalDate getBenchmarkEndDate() {
+    return benchmarkEndDate;
+  }
+
+  public void setBenchmarkEndDate(LocalDate benchmarkEndDate) {
+    this.benchmarkEndDate = benchmarkEndDate;
+  }
 
   public CustomerAnalysisRequest customerIds(List<UUID> customerIds) {
     this.customerIds = customerIds;
@@ -92,24 +123,6 @@ public class CustomerAnalysisRequest {
     this.customerIds = customerIds;
   }
 
-  public CustomerAnalysisRequest benchmarkStartDate(LocalDate benchmarkStartDate) {
-    this.benchmarkStartDate = benchmarkStartDate;
-    return this;
-  }
-
-   /**
-   * Get benchmarkStartDate
-   * @return benchmarkStartDate
-  **/
-  @ApiModelProperty(value = "")
-  public LocalDate getBenchmarkStartDate() {
-    return benchmarkStartDate;
-  }
-
-  public void setBenchmarkStartDate(LocalDate benchmarkStartDate) {
-    this.benchmarkStartDate = benchmarkStartDate;
-  }
-
   public CustomerAnalysisRequest clientId(UUID clientId) {
     this.clientId = clientId;
     return this;
@@ -126,6 +139,25 @@ public class CustomerAnalysisRequest {
 
   public void setClientId(UUID clientId) {
     this.clientId = clientId;
+  }
+
+  public CustomerAnalysisRequest responseLimit(Integer responseLimit) {
+    this.responseLimit = responseLimit;
+    return this;
+  }
+
+   /**
+   * Get responseLimit
+   * minimum: 1
+   * @return responseLimit
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getResponseLimit() {
+    return responseLimit;
+  }
+
+  public void setResponseLimit(Integer responseLimit) {
+    this.responseLimit = responseLimit;
   }
 
   public CustomerAnalysisRequest currencyConversion(String currencyConversion) {
@@ -146,40 +178,22 @@ public class CustomerAnalysisRequest {
     this.currencyConversion = currencyConversion;
   }
 
-  public CustomerAnalysisRequest responseLimit(Integer responseLimit) {
-    this.responseLimit = responseLimit;
+  public CustomerAnalysisRequest startDate(LocalDate startDate) {
+    this.startDate = startDate;
     return this;
   }
 
    /**
-   * Get responseLimit
-   * @return responseLimit
+   * Get startDate
+   * @return startDate
   **/
   @ApiModelProperty(value = "")
-  public Integer getResponseLimit() {
-    return responseLimit;
+  public LocalDate getStartDate() {
+    return startDate;
   }
 
-  public void setResponseLimit(Integer responseLimit) {
-    this.responseLimit = responseLimit;
-  }
-
-  public CustomerAnalysisRequest endDate(LocalDate endDate) {
-    this.endDate = endDate;
-    return this;
-  }
-
-   /**
-   * Get endDate
-   * @return endDate
-  **/
-  @ApiModelProperty(value = "")
-  public LocalDate getEndDate() {
-    return endDate;
-  }
-
-  public void setEndDate(LocalDate endDate) {
-    this.endDate = endDate;
+  public void setStartDate(LocalDate startDate) {
+    this.startDate = startDate;
   }
 
   public CustomerAnalysisRequest currencyCode(String currencyCode) {
@@ -200,42 +214,6 @@ public class CustomerAnalysisRequest {
     this.currencyCode = currencyCode;
   }
 
-  public CustomerAnalysisRequest startDate(LocalDate startDate) {
-    this.startDate = startDate;
-    return this;
-  }
-
-   /**
-   * Get startDate
-   * @return startDate
-  **/
-  @ApiModelProperty(value = "")
-  public LocalDate getStartDate() {
-    return startDate;
-  }
-
-  public void setStartDate(LocalDate startDate) {
-    this.startDate = startDate;
-  }
-
-  public CustomerAnalysisRequest benchmarkEndDate(LocalDate benchmarkEndDate) {
-    this.benchmarkEndDate = benchmarkEndDate;
-    return this;
-  }
-
-   /**
-   * Get benchmarkEndDate
-   * @return benchmarkEndDate
-  **/
-  @ApiModelProperty(value = "")
-  public LocalDate getBenchmarkEndDate() {
-    return benchmarkEndDate;
-  }
-
-  public void setBenchmarkEndDate(LocalDate benchmarkEndDate) {
-    this.benchmarkEndDate = benchmarkEndDate;
-  }
-
   public CustomerAnalysisRequest onlyActiveCustomers(Boolean onlyActiveCustomers) {
     this.onlyActiveCustomers = onlyActiveCustomers;
     return this;
@@ -254,6 +232,24 @@ public class CustomerAnalysisRequest {
     this.onlyActiveCustomers = onlyActiveCustomers;
   }
 
+  public CustomerAnalysisRequest benchmarkStartDate(LocalDate benchmarkStartDate) {
+    this.benchmarkStartDate = benchmarkStartDate;
+    return this;
+  }
+
+   /**
+   * Get benchmarkStartDate
+   * @return benchmarkStartDate
+  **/
+  @ApiModelProperty(value = "")
+  public LocalDate getBenchmarkStartDate() {
+    return benchmarkStartDate;
+  }
+
+  public void setBenchmarkStartDate(LocalDate benchmarkStartDate) {
+    this.benchmarkStartDate = benchmarkStartDate;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -264,21 +260,21 @@ public class CustomerAnalysisRequest {
       return false;
     }
     CustomerAnalysisRequest customerAnalysisRequest = (CustomerAnalysisRequest) o;
-    return Objects.equals(this.customerIds, customerAnalysisRequest.customerIds) &&
-        Objects.equals(this.benchmarkStartDate, customerAnalysisRequest.benchmarkStartDate) &&
-        Objects.equals(this.clientId, customerAnalysisRequest.clientId) &&
-        Objects.equals(this.currencyConversion, customerAnalysisRequest.currencyConversion) &&
-        Objects.equals(this.responseLimit, customerAnalysisRequest.responseLimit) &&
-        Objects.equals(this.endDate, customerAnalysisRequest.endDate) &&
-        Objects.equals(this.currencyCode, customerAnalysisRequest.currencyCode) &&
-        Objects.equals(this.startDate, customerAnalysisRequest.startDate) &&
+    return Objects.equals(this.endDate, customerAnalysisRequest.endDate) &&
         Objects.equals(this.benchmarkEndDate, customerAnalysisRequest.benchmarkEndDate) &&
-        Objects.equals(this.onlyActiveCustomers, customerAnalysisRequest.onlyActiveCustomers);
+        Objects.equals(this.customerIds, customerAnalysisRequest.customerIds) &&
+        Objects.equals(this.clientId, customerAnalysisRequest.clientId) &&
+        Objects.equals(this.responseLimit, customerAnalysisRequest.responseLimit) &&
+        Objects.equals(this.currencyConversion, customerAnalysisRequest.currencyConversion) &&
+        Objects.equals(this.startDate, customerAnalysisRequest.startDate) &&
+        Objects.equals(this.currencyCode, customerAnalysisRequest.currencyCode) &&
+        Objects.equals(this.onlyActiveCustomers, customerAnalysisRequest.onlyActiveCustomers) &&
+        Objects.equals(this.benchmarkStartDate, customerAnalysisRequest.benchmarkStartDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(customerIds, benchmarkStartDate, clientId, currencyConversion, responseLimit, endDate, currencyCode, startDate, benchmarkEndDate, onlyActiveCustomers);
+    return Objects.hash(endDate, benchmarkEndDate, customerIds, clientId, responseLimit, currencyConversion, startDate, currencyCode, onlyActiveCustomers, benchmarkStartDate);
   }
 
 
@@ -287,16 +283,16 @@ public class CustomerAnalysisRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class CustomerAnalysisRequest {\n");
     
-    sb.append("    customerIds: ").append(toIndentedString(customerIds)).append("\n");
-    sb.append("    benchmarkStartDate: ").append(toIndentedString(benchmarkStartDate)).append("\n");
-    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
-    sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
-    sb.append("    responseLimit: ").append(toIndentedString(responseLimit)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
-    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
-    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    benchmarkEndDate: ").append(toIndentedString(benchmarkEndDate)).append("\n");
+    sb.append("    customerIds: ").append(toIndentedString(customerIds)).append("\n");
+    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
+    sb.append("    responseLimit: ").append(toIndentedString(responseLimit)).append("\n");
+    sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
+    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
     sb.append("    onlyActiveCustomers: ").append(toIndentedString(onlyActiveCustomers)).append("\n");
+    sb.append("    benchmarkStartDate: ").append(toIndentedString(benchmarkStartDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -31,26 +31,59 @@ class MerchantCategoryCode(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'category': 'str',
         'description': 'str',
-        'mcc': 'int'
+        'mcc': 'int',
+        'subcategory': 'str'
     }
 
     attribute_map = {
+        'category': 'category',
         'description': 'description',
-        'mcc': 'mcc'
+        'mcc': 'mcc',
+        'subcategory': 'subcategory'
     }
 
-    def __init__(self, description=None, mcc=None):  # noqa: E501
+    def __init__(self, category=None, description=None, mcc=None, subcategory=None):  # noqa: E501
         """MerchantCategoryCode - a model defined in Swagger"""  # noqa: E501
 
+        self._category = None
         self._description = None
         self._mcc = None
+        self._subcategory = None
         self.discriminator = None
 
+        if category is not None:
+            self.category = category
         if description is not None:
             self.description = description
         if mcc is not None:
             self.mcc = mcc
+        if subcategory is not None:
+            self.subcategory = subcategory
+
+    @property
+    def category(self):
+        """Gets the category of this MerchantCategoryCode.  # noqa: E501
+
+        category  # noqa: E501
+
+        :return: The category of this MerchantCategoryCode.  # noqa: E501
+        :rtype: str
+        """
+        return self._category
+
+    @category.setter
+    def category(self, category):
+        """Sets the category of this MerchantCategoryCode.
+
+        category  # noqa: E501
+
+        :param category: The category of this MerchantCategoryCode.  # noqa: E501
+        :type: str
+        """
+
+        self._category = category
 
     @property
     def description(self):
@@ -97,6 +130,29 @@ class MerchantCategoryCode(object):
         """
 
         self._mcc = mcc
+
+    @property
+    def subcategory(self):
+        """Gets the subcategory of this MerchantCategoryCode.  # noqa: E501
+
+        subcategory  # noqa: E501
+
+        :return: The subcategory of this MerchantCategoryCode.  # noqa: E501
+        :rtype: str
+        """
+        return self._subcategory
+
+    @subcategory.setter
+    def subcategory(self, subcategory):
+        """Sets the subcategory of this MerchantCategoryCode.
+
+        subcategory  # noqa: E501
+
+        :param subcategory: The subcategory of this MerchantCategoryCode.  # noqa: E501
+        :type: str
+        """
+
+        self._subcategory = subcategory
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -14,25 +14,39 @@
 package com.hydrogen.integration.api;
 
 import com.hydrogen.integration.ApiException;
-import com.hydrogen.integration.model.CardBaseRequestCO;
-import com.hydrogen.integration.model.CardReloadRequestCO;
-import com.hydrogen.integration.model.CardTransactionResponseVO;
-import com.hydrogen.integration.model.CardTransferRequestCO;
-import com.hydrogen.integration.model.CardUnloadRequestCO;
+import com.hydrogen.integration.model.CardReplaceResponseVO;
 import com.hydrogen.integration.model.BaseResponseVO;
+import com.hydrogen.integration.model.CardAutoReloadRequestCO;
+import com.hydrogen.integration.model.CardAutoReloadResponseVO;
 import com.hydrogen.integration.model.CardBalanceResponseVO;
+import com.hydrogen.integration.model.CardBaseRequestCO;
+import com.hydrogen.integration.model.CardBusinessRequestCO;
 import com.hydrogen.integration.model.CardClientRequestCO;
-import com.hydrogen.integration.model.CardClientResponseVO;
+import com.hydrogen.integration.model.CardLoadRequestCO;
+import com.hydrogen.integration.model.CardLoadUnloadResponseVO;
 import com.hydrogen.integration.model.CardPinRequestCO;
-import com.hydrogen.integration.model.CardReloadUnloadResponseVO;
+import com.hydrogen.integration.model.CardReserveAccountResponseVO;
+import com.hydrogen.integration.model.CardSpendingControlRequestCO;
+import com.hydrogen.integration.model.CardSpendingControlResponseVO;
 import com.hydrogen.integration.model.CardTokenRequestCO;
 import com.hydrogen.integration.model.CardTokenResponseVO;
-import com.hydrogen.integration.model.CardTransferResponseVO;
+import com.hydrogen.integration.model.CardTransactionResponseVO;
+import com.hydrogen.integration.model.CardUnloadRequestCO;
+import com.hydrogen.integration.model.CardUpdatePinRequestCO;
+import com.hydrogen.integration.model.CreateBusinessResponseVO;
+import com.hydrogen.integration.model.CreateCardClientResponseVO;
+import com.hydrogen.integration.model.GetCardImageResponseVO;
+import com.hydrogen.integration.model.GetCardPciDetailsResponseVO;
+import com.hydrogen.integration.model.GetCardStatementResponseVO;
 import com.hydrogen.integration.model.GetCardTokenResponseVO;
 import org.threeten.bp.LocalDate;
 import java.util.UUID;
+import com.hydrogen.integration.model.UpdateBusinessResponseVO;
+import com.hydrogen.integration.model.UpdateCardClientResponseVO;
 import org.junit.Test;
 import org.junit.Ignore;
+
+import java.util.List;
 
 /**
  * API tests for CardApi
@@ -42,6 +56,22 @@ public class CardApiTest {
 
     private final CardApi api = new CardApi();
 
+    
+    /**
+     * Card auto reload
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createAutoReloadUsingPostTest() throws ApiException {
+        CardAutoReloadRequestCO request = null;
+        CardAutoReloadResponseVO response = api.createAutoReloadUsingPost(request);
+
+        // TODO: test validations
+    }
     
     /**
      * Activate card
@@ -55,6 +85,22 @@ public class CardApiTest {
     public void createCardActivateUsingPostTest() throws ApiException {
         CardBaseRequestCO activateRequest = null;
         BaseResponseVO response = api.createCardActivateUsingPost(activateRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Create a card business
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createCardBusinessUsingPostTest() throws ApiException {
+        CardBusinessRequestCO cardBusinessRequestCO = null;
+        CreateBusinessResponseVO response = api.createCardBusinessUsingPost(cardBusinessRequestCO);
 
         // TODO: test validations
     }
@@ -87,6 +133,22 @@ public class CardApiTest {
     public void createCardIssueUsingPostTest() throws ApiException {
         CardBaseRequestCO issueRequest = null;
         BaseResponseVO response = api.createCardIssueUsingPost(issueRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Create a card load
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createCardLoadUsingPostTest() throws ApiException {
+        CardLoadRequestCO loadRequest = null;
+        CardLoadUnloadResponseVO response = api.createCardLoadUsingPost(loadRequest);
 
         // TODO: test validations
     }
@@ -140,7 +202,7 @@ public class CardApiTest {
     }
     
     /**
-     * Create a card reload
+     * Create card replace
      *
      * 
      *
@@ -148,9 +210,25 @@ public class CardApiTest {
      *          if the Api call fails
      */
     @Test
-    public void createCardReloadUsingPostTest() throws ApiException {
-        CardReloadRequestCO reloadRequest = null;
-        CardReloadUnloadResponseVO response = api.createCardReloadUsingPost(reloadRequest);
+    public void createCardReplaceUsingPostTest() throws ApiException {
+        CardBaseRequestCO request = null;
+        CardReplaceResponseVO response = api.createCardReplaceUsingPost(request);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Create card spending control
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createCardSpendingControlUsingPostTest() throws ApiException {
+        CardSpendingControlRequestCO request = null;
+        CardSpendingControlResponseVO response = api.createCardSpendingControlUsingPost(request);
 
         // TODO: test validations
     }
@@ -188,22 +266,6 @@ public class CardApiTest {
     }
     
     /**
-     * Create Card transfer
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void createCardTransferUsingPostTest() throws ApiException {
-        CardTransferRequestCO transferRequest = null;
-        CardTransferResponseVO response = api.createCardTransferUsingPost(transferRequest);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Create a card upload
      *
      * 
@@ -214,7 +276,7 @@ public class CardApiTest {
     @Test
     public void createCardUnloadUsingPostTest() throws ApiException {
         CardUnloadRequestCO reloadRequest = null;
-        CardReloadUnloadResponseVO response = api.createCardUnloadUsingPost(reloadRequest);
+        CardLoadUnloadResponseVO response = api.createCardUnloadUsingPost(reloadRequest);
 
         // TODO: test validations
     }
@@ -230,7 +292,7 @@ public class CardApiTest {
     @Test
     public void createClientCardUsingPostTest() throws ApiException {
         CardClientRequestCO cardClientRequestCO = null;
-        CardClientResponseVO response = api.createClientCardUsingPost(cardClientRequestCO);
+        CreateCardClientResponseVO response = api.createClientCardUsingPost(cardClientRequestCO);
 
         // TODO: test validations
     }
@@ -254,6 +316,71 @@ public class CardApiTest {
     }
     
     /**
+     * Get card image
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getCardImageTest() throws ApiException {
+        UUID cardId = null;
+        GetCardImageResponseVO response = api.getCardImage(cardId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get card pci details
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getCardPciDetailsTest() throws ApiException {
+        UUID cardId = null;
+        GetCardPciDetailsResponseVO response = api.getCardPciDetails(cardId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Card reserve account
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getCardReserveAccountDetailsUsingGetTest() throws ApiException {
+        CardReserveAccountResponseVO response = api.getCardReserveAccountDetailsUsingGet();
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get card statement
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getCardStatementUsingGetTest() throws ApiException {
+        UUID cardId = null;
+        LocalDate endDate = null;
+        LocalDate startDate = null;
+        GetCardStatementResponseVO response = api.getCardStatementUsingGet(cardId, endDate, startDate);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Get a card token
      *
      * 
@@ -264,7 +391,10 @@ public class CardApiTest {
     @Test
     public void getCardTokenUsingTokenTest() throws ApiException {
         UUID id = null;
-        GetCardTokenResponseVO response = api.getCardTokenUsingToken(id);
+        String deviceId = null;
+        String deviceType = null;
+        String wallet = null;
+        List<GetCardTokenResponseVO> response = api.getCardTokenUsingToken(id, deviceId, deviceType, wallet);
 
         // TODO: test validations
     }
@@ -304,6 +434,22 @@ public class CardApiTest {
     }
     
     /**
+     * Update a card business
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateCardBusinessUsingPutTest() throws ApiException {
+        UUID nucleusBusinessId = null;
+        UpdateBusinessResponseVO response = api.updateCardBusinessUsingPut(nucleusBusinessId);
+
+        // TODO: test validations
+    }
+    
+    /**
      * update a pin card
      *
      * 
@@ -313,9 +459,25 @@ public class CardApiTest {
      */
     @Test
     public void updateCardPinUsingPostTest() throws ApiException {
-        CardPinRequestCO cardPinRequestCO = null;
+        CardUpdatePinRequestCO cardPinRequestCO = null;
         UUID id = null;
         BaseResponseVO response = api.updateCardPinUsingPost(cardPinRequestCO, id);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update a card spending control
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateCardSpendingControlUsingPutTest() throws ApiException {
+        UUID nucleusSpendingControlId = null;
+        CardSpendingControlResponseVO response = api.updateCardSpendingControlUsingPut(nucleusSpendingControlId);
 
         // TODO: test validations
     }
@@ -332,6 +494,38 @@ public class CardApiTest {
     public void updateCardUsingPutTest() throws ApiException {
         UUID id = null;
         BaseResponseVO response = api.updateCardUsingPut(id);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Update a card client
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateClientCardUsingPutTest() throws ApiException {
+        UUID id = null;
+        UpdateCardClientResponseVO response = api.updateClientCardUsingPut(id);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * verify card pin
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void verifyCardPinUsingPostTest() throws ApiException {
+        CardPinRequestCO cardPinRequestCO = null;
+        BaseResponseVO response = api.verifyCardPinUsingPost(cardPinRequestCO);
 
         // TODO: test validations
     }

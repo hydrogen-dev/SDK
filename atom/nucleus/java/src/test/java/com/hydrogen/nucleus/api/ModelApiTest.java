@@ -13,17 +13,17 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.Model;
+import com.hydrogen.nucleus.model.ModelAssetSize;
 import com.hydrogen.nucleus.model.ModelComment;
+import com.hydrogen.nucleus.model.ModelHolding;
 import com.hydrogen.nucleus.model.ModelTransaction;
 import com.hydrogen.nucleus.model.OrderReconcileRequest;
 import com.hydrogen.nucleus.model.PageModel;
 import com.hydrogen.nucleus.model.PageModelAssetSize;
 import com.hydrogen.nucleus.model.PageModelComment;
 import com.hydrogen.nucleus.model.PageModelHolding;
-import com.hydrogen.nucleus.ApiException;
-import com.hydrogen.nucleus.model.ModelAssetSize;
-import com.hydrogen.nucleus.model.ModelHolding;
 import com.hydrogen.nucleus.model.PageModelTransaction;
 import java.util.UUID;
 import org.junit.Test;
@@ -409,7 +409,7 @@ public class ModelApiTest {
      */
     @Test
     public void updateModelAssetSizeUsingPutTest() throws ApiException {
-        ModelAssetSize modelAssetSize = null;
+        Object modelAssetSize = null;
         UUID modelAssetSizeId = null;
         ModelAssetSize response = api.updateModelAssetSizeUsingPut(modelAssetSize, modelAssetSizeId);
 
@@ -426,7 +426,7 @@ public class ModelApiTest {
      */
     @Test
     public void updateModelCommentUsingPutTest() throws ApiException {
-        ModelComment modelComment = null;
+        Object modelComment = null;
         UUID modelCommentId = null;
         ModelComment response = api.updateModelCommentUsingPut(modelComment, modelCommentId);
 
@@ -443,7 +443,7 @@ public class ModelApiTest {
      */
     @Test
     public void updateModelHoldingUsingPutTest() throws ApiException {
-        ModelHolding modelHolding = null;
+        Object modelHolding = null;
         UUID modelHoldingId = null;
         ModelHolding response = api.updateModelHoldingUsingPut(modelHolding, modelHoldingId);
 
@@ -460,7 +460,7 @@ public class ModelApiTest {
      */
     @Test
     public void updateModelTransactionUsingPutTest() throws ApiException {
-        ModelTransaction modelTransaction = null;
+        Object modelTransaction = null;
         UUID modelTransactionId = null;
         ModelTransaction response = api.updateModelTransactionUsingPut(modelTransaction, modelTransactionId);
 
@@ -477,7 +477,7 @@ public class ModelApiTest {
      */
     @Test
     public void updateModelUsingPutTest() throws ApiException {
-        Model model = null;
+        Object model = null;
         UUID modelId = null;
         Model response = api.updateModelUsingPut(model, modelId);
 

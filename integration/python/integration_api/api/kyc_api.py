@@ -132,19 +132,20 @@ class KYCApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_kyc_status_using_get(self, nucleus_client_id, **kwargs):  # noqa: E501
+    def get_kyc_status_using_get(self, **kwargs):  # noqa: E501
         """Fetch kyc_status for the given nucleus_client_id  # noqa: E501
 
         Fetch kyc_status for the given nucleus_client_id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_kyc_status_using_get(nucleus_client_id, async_req=True)
+        >>> thread = api.get_kyc_status_using_get(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str nucleus_client_id: nucleus_client_id (required)
         :param bool get_latest: get_latest
         :param str kyc_type: kyc_type
+        :param str nucleus_business_id: nucleus_business_id
+        :param str nucleus_client_id: nucleus_client_id
         :param str product: product
         :return: list[KycResponseVo]
                  If the method is called asynchronously,
@@ -152,31 +153,32 @@ class KYCApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_kyc_status_using_get_with_http_info(nucleus_client_id, **kwargs)  # noqa: E501
+            return self.get_kyc_status_using_get_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.get_kyc_status_using_get_with_http_info(nucleus_client_id, **kwargs)  # noqa: E501
+            (data) = self.get_kyc_status_using_get_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def get_kyc_status_using_get_with_http_info(self, nucleus_client_id, **kwargs):  # noqa: E501
+    def get_kyc_status_using_get_with_http_info(self, **kwargs):  # noqa: E501
         """Fetch kyc_status for the given nucleus_client_id  # noqa: E501
 
         Fetch kyc_status for the given nucleus_client_id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_kyc_status_using_get_with_http_info(nucleus_client_id, async_req=True)
+        >>> thread = api.get_kyc_status_using_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str nucleus_client_id: nucleus_client_id (required)
         :param bool get_latest: get_latest
         :param str kyc_type: kyc_type
+        :param str nucleus_business_id: nucleus_business_id
+        :param str nucleus_client_id: nucleus_client_id
         :param str product: product
         :return: list[KycResponseVo]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['nucleus_client_id', 'get_latest', 'kyc_type', 'product']  # noqa: E501
+        all_params = ['get_latest', 'kyc_type', 'nucleus_business_id', 'nucleus_client_id', 'product']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -191,22 +193,20 @@ class KYCApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'nucleus_client_id' is set
-        if ('nucleus_client_id' not in params or
-                params['nucleus_client_id'] is None):
-            raise ValueError("Missing the required parameter `nucleus_client_id` when calling `get_kyc_status_using_get`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'nucleus_client_id' in params:
-            path_params['nucleus_client_id'] = params['nucleus_client_id']  # noqa: E501
 
         query_params = []
         if 'get_latest' in params:
             query_params.append(('get_latest', params['get_latest']))  # noqa: E501
         if 'kyc_type' in params:
             query_params.append(('kyc_type', params['kyc_type']))  # noqa: E501
+        if 'nucleus_business_id' in params:
+            query_params.append(('nucleus_business_id', params['nucleus_business_id']))  # noqa: E501
+        if 'nucleus_client_id' in params:
+            query_params.append(('nucleus_client_id', params['nucleus_client_id']))  # noqa: E501
         if 'product' in params:
             query_params.append(('product', params['product']))  # noqa: E501
 
@@ -224,7 +224,7 @@ class KYCApi(object):
         auth_settings = ['oauth2']  # noqa: E501
 
         return self.api_client.call_api(
-            '/kyc_status/{nucleus_client_id}', 'GET',
+            '/kyc_status', 'GET',
             path_params,
             query_params,
             header_params,

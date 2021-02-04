@@ -21,14 +21,14 @@ import com.hydrogen.nucleus.Configuration;
 import com.hydrogen.nucleus.Pair;
 import com.hydrogen.nucleus.ProgressRequestBody;
 import com.hydrogen.nucleus.ProgressResponseBody;
-import com.hydrogen.nucleus.model.AuditLog;
-import com.hydrogen.nucleus.model.PageAuditLog;
 
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
 
+import com.hydrogen.nucleus.model.AuditLog;
+import com.hydrogen.nucleus.model.PageAuditLog;
 import java.util.UUID;
 
 import java.lang.reflect.Type;

@@ -13,18 +13,22 @@
 
 package com.hydrogen.integration.api;
 
+import com.hydrogen.integration.ApiException;
 import com.hydrogen.integration.model.BaasAccountCO;
 import com.hydrogen.integration.model.BaasAccountVO;
 import com.hydrogen.integration.model.BaasBalanceVO;
-import com.hydrogen.integration.model.BaasClientCO;
+import com.hydrogen.integration.model.BaasBusinessVO;
+import com.hydrogen.integration.model.BaasClientVO;
 import com.hydrogen.integration.model.BaasStatementsVO;
 import com.hydrogen.integration.model.BaasSubAccountCO;
-import com.hydrogen.integration.model.BaasTransactionsVO;
-import com.hydrogen.integration.ApiException;
-import com.hydrogen.integration.model.BaasClientVO;
 import com.hydrogen.integration.model.BaasSubAccountVO;
+import com.hydrogen.integration.model.BaasTransactionsVO;
+import com.hydrogen.integration.model.CreateBaasBusinessCO;
+import com.hydrogen.integration.model.CreateBaasClientCO;
 import org.threeten.bp.LocalDate;
 import java.util.UUID;
+import com.hydrogen.integration.model.UpdateBaasBusinessCO;
+import com.hydrogen.integration.model.UpdateBaasClientCO;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -54,6 +58,22 @@ public class BaasApiTest {
     }
     
     /**
+     * Create a Baas Business
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createBaasBusinessUsingPostTest() throws ApiException {
+        CreateBaasBusinessCO baasBusinessCO = null;
+        BaasBusinessVO response = api.createBaasBusinessUsingPost(baasBusinessCO);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Create a Baas Client
      *
      * 
@@ -63,7 +83,7 @@ public class BaasApiTest {
      */
     @Test
     public void createBaasClientUsingPostTest() throws ApiException {
-        BaasClientCO baasClientCO = null;
+        CreateBaasClientCO baasClientCO = null;
         BaasClientVO response = api.createBaasClientUsingPost(baasClientCO);
 
         // TODO: test validations
@@ -141,6 +161,23 @@ public class BaasApiTest {
     }
     
     /**
+     * Update a Baas business
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void updateBaasBusinessUsingPutTest() throws ApiException {
+        UUID nucleusBusinessId = null;
+        UpdateBaasBusinessCO baasBusinessCO = null;
+        BaasBusinessVO response = api.updateBaasBusinessUsingPut(nucleusBusinessId, baasBusinessCO);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Update a Baas client
      *
      * 
@@ -150,8 +187,9 @@ public class BaasApiTest {
      */
     @Test
     public void updateBaasClientUsingPutTest() throws ApiException {
-        BaasClientCO baasClientCO = null;
-        BaasClientVO response = api.updateBaasClientUsingPut(baasClientCO);
+        UUID nucleusClientId = null;
+        UpdateBaasClientCO baasClientCO = null;
+        BaasClientVO response = api.updateBaasClientUsingPut(nucleusClientId, baasClientCO);
 
         // TODO: test validations
     }

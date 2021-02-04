@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **category** | **String** | category |  [optional]
 **createDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 **id** | [**UUID**](UUID.md) |  |  [optional]
-**isBuy** | **Boolean** | isBuy |  [optional]
-**isFee** | **Boolean** | isFee |  [optional]
+**isBuy** | [**IsBuyEnum**](#IsBuyEnum) |  |  [optional]
+**isFee** | [**IsFeeEnum**](#IsFeeEnum) |  |  [optional]
 **isTransfer** | [**IsTransferEnum**](#IsTransferEnum) |  |  [optional]
 **metadata** | **Map&lt;String, String&gt;** |  |  [optional]
 **secondaryId** | **String** |  |  [optional]
@@ -19,13 +19,31 @@ Name | Type | Description | Notes
 **updateDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 
 
+<a name="IsBuyEnum"></a>
+## Enum: IsBuyEnum
+Name | Value
+---- | -----
+TRUE | &quot;true&quot;
+FALSE | &quot;false&quot;
+NULL | &quot;null&quot;
+
+
+<a name="IsFeeEnum"></a>
+## Enum: IsFeeEnum
+Name | Value
+---- | -----
+TRUE | &quot;true&quot;
+FALSE | &quot;false&quot;
+NULL | &quot;null&quot;
+
+
 <a name="IsTransferEnum"></a>
 ## Enum: IsTransferEnum
 Name | Value
 ---- | -----
-FALSE | &quot;FALSE&quot;
-TRUE | &quot;TRUE&quot;
-NULL | &quot;NULL&quot;
+TRUE | &quot;true&quot;
+FALSE | &quot;false&quot;
+NULL | &quot;null&quot;
 
 
 

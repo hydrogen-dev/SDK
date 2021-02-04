@@ -31,59 +31,36 @@ class SavingsDepositSchedule(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'deposit_amount': 'float',
         'adjust_deposit_for_inflation': 'bool',
-        'deposit_duration': 'int',
-        'deposit_frequency_interval': 'str'
+        'deposit_frequency_interval': 'str',
+        'deposit_amount': 'float',
+        'deposit_duration': 'int'
     }
 
     attribute_map = {
-        'deposit_amount': 'deposit_amount',
         'adjust_deposit_for_inflation': 'adjust_deposit_for_inflation',
-        'deposit_duration': 'deposit_duration',
-        'deposit_frequency_interval': 'deposit_frequency_interval'
+        'deposit_frequency_interval': 'deposit_frequency_interval',
+        'deposit_amount': 'deposit_amount',
+        'deposit_duration': 'deposit_duration'
     }
 
-    def __init__(self, deposit_amount=None, adjust_deposit_for_inflation=True, deposit_duration=None, deposit_frequency_interval='year'):  # noqa: E501
+    def __init__(self, adjust_deposit_for_inflation=True, deposit_frequency_interval='year', deposit_amount=None, deposit_duration=None):  # noqa: E501
         """SavingsDepositSchedule - a model defined in Swagger"""  # noqa: E501
 
-        self._deposit_amount = None
         self._adjust_deposit_for_inflation = None
-        self._deposit_duration = None
         self._deposit_frequency_interval = None
+        self._deposit_amount = None
+        self._deposit_duration = None
         self.discriminator = None
 
-        if deposit_amount is not None:
-            self.deposit_amount = deposit_amount
         if adjust_deposit_for_inflation is not None:
             self.adjust_deposit_for_inflation = adjust_deposit_for_inflation
-        if deposit_duration is not None:
-            self.deposit_duration = deposit_duration
         if deposit_frequency_interval is not None:
             self.deposit_frequency_interval = deposit_frequency_interval
-
-    @property
-    def deposit_amount(self):
-        """Gets the deposit_amount of this SavingsDepositSchedule.  # noqa: E501
-
-
-        :return: The deposit_amount of this SavingsDepositSchedule.  # noqa: E501
-        :rtype: float
-        """
-        return self._deposit_amount
-
-    @deposit_amount.setter
-    def deposit_amount(self, deposit_amount):
-        """Sets the deposit_amount of this SavingsDepositSchedule.
-
-
-        :param deposit_amount: The deposit_amount of this SavingsDepositSchedule.  # noqa: E501
-        :type: float
-        """
-        if deposit_amount is not None and deposit_amount < 0:  # noqa: E501
-            raise ValueError("Invalid value for `deposit_amount`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._deposit_amount = deposit_amount
+        if deposit_amount is not None:
+            self.deposit_amount = deposit_amount
+        if deposit_duration is not None:
+            self.deposit_duration = deposit_duration
 
     @property
     def adjust_deposit_for_inflation(self):
@@ -105,29 +82,6 @@ class SavingsDepositSchedule(object):
         """
 
         self._adjust_deposit_for_inflation = adjust_deposit_for_inflation
-
-    @property
-    def deposit_duration(self):
-        """Gets the deposit_duration of this SavingsDepositSchedule.  # noqa: E501
-
-
-        :return: The deposit_duration of this SavingsDepositSchedule.  # noqa: E501
-        :rtype: int
-        """
-        return self._deposit_duration
-
-    @deposit_duration.setter
-    def deposit_duration(self, deposit_duration):
-        """Sets the deposit_duration of this SavingsDepositSchedule.
-
-
-        :param deposit_duration: The deposit_duration of this SavingsDepositSchedule.  # noqa: E501
-        :type: int
-        """
-        if deposit_duration is not None and deposit_duration < 1:  # noqa: E501
-            raise ValueError("Invalid value for `deposit_duration`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._deposit_duration = deposit_duration
 
     @property
     def deposit_frequency_interval(self):
@@ -155,6 +109,52 @@ class SavingsDepositSchedule(object):
             )
 
         self._deposit_frequency_interval = deposit_frequency_interval
+
+    @property
+    def deposit_amount(self):
+        """Gets the deposit_amount of this SavingsDepositSchedule.  # noqa: E501
+
+
+        :return: The deposit_amount of this SavingsDepositSchedule.  # noqa: E501
+        :rtype: float
+        """
+        return self._deposit_amount
+
+    @deposit_amount.setter
+    def deposit_amount(self, deposit_amount):
+        """Sets the deposit_amount of this SavingsDepositSchedule.
+
+
+        :param deposit_amount: The deposit_amount of this SavingsDepositSchedule.  # noqa: E501
+        :type: float
+        """
+        if deposit_amount is not None and deposit_amount < 0:  # noqa: E501
+            raise ValueError("Invalid value for `deposit_amount`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._deposit_amount = deposit_amount
+
+    @property
+    def deposit_duration(self):
+        """Gets the deposit_duration of this SavingsDepositSchedule.  # noqa: E501
+
+
+        :return: The deposit_duration of this SavingsDepositSchedule.  # noqa: E501
+        :rtype: int
+        """
+        return self._deposit_duration
+
+    @deposit_duration.setter
+    def deposit_duration(self, deposit_duration):
+        """Sets the deposit_duration of this SavingsDepositSchedule.
+
+
+        :param deposit_duration: The deposit_duration of this SavingsDepositSchedule.  # noqa: E501
+        :type: int
+        """
+        if deposit_duration is not None and deposit_duration < 1:  # noqa: E501
+            raise ValueError("Invalid value for `deposit_duration`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._deposit_duration = deposit_duration
 
     def to_dict(self):
         """Returns the model properties as a dict"""

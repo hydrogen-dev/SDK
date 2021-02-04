@@ -18,45 +18,19 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModelProperty;
 
-import java.util.UUID;
-
 /**
  * BaseResponseVO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class BaseResponseVO {
-  @SerializedName("card_status")
-  private String cardStatus = null;
-
   @SerializedName("message")
   private String message = null;
-
-  @SerializedName("nucleus_card_id")
-  private UUID nucleusCardId = null;
 
   @SerializedName("vendor_name")
   private String vendorName = null;
 
   @SerializedName("vendor_response")
   private Object vendorResponse = null;
-
-  public BaseResponseVO cardStatus(String cardStatus) {
-    this.cardStatus = cardStatus;
-    return this;
-  }
-
-   /**
-   * Get cardStatus
-   * @return cardStatus
-  **/
-  @ApiModelProperty(value = "")
-  public String getCardStatus() {
-    return cardStatus;
-  }
-
-  public void setCardStatus(String cardStatus) {
-    this.cardStatus = cardStatus;
-  }
 
   public BaseResponseVO message(String message) {
     this.message = message;
@@ -74,24 +48,6 @@ public class BaseResponseVO {
 
   public void setMessage(String message) {
     this.message = message;
-  }
-
-  public BaseResponseVO nucleusCardId(UUID nucleusCardId) {
-    this.nucleusCardId = nucleusCardId;
-    return this;
-  }
-
-   /**
-   * Get nucleusCardId
-   * @return nucleusCardId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getNucleusCardId() {
-    return nucleusCardId;
-  }
-
-  public void setNucleusCardId(UUID nucleusCardId) {
-    this.nucleusCardId = nucleusCardId;
   }
 
   public BaseResponseVO vendorName(String vendorName) {
@@ -140,16 +96,14 @@ public class BaseResponseVO {
       return false;
     }
     BaseResponseVO baseResponseVO = (BaseResponseVO) o;
-    return Objects.equals(this.cardStatus, baseResponseVO.cardStatus) &&
-        Objects.equals(this.message, baseResponseVO.message) &&
-        Objects.equals(this.nucleusCardId, baseResponseVO.nucleusCardId) &&
+    return Objects.equals(this.message, baseResponseVO.message) &&
         Objects.equals(this.vendorName, baseResponseVO.vendorName) &&
         Objects.equals(this.vendorResponse, baseResponseVO.vendorResponse);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardStatus, message, nucleusCardId, vendorName, vendorResponse);
+    return Objects.hash(message, vendorName, vendorResponse);
   }
 
 
@@ -158,9 +112,7 @@ public class BaseResponseVO {
     StringBuilder sb = new StringBuilder();
     sb.append("class BaseResponseVO {\n");
     
-    sb.append("    cardStatus: ").append(toIndentedString(cardStatus)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    nucleusCardId: ").append(toIndentedString(nucleusCardId)).append("\n");
     sb.append("    vendorName: ").append(toIndentedString(vendorName)).append("\n");
     sb.append("    vendorResponse: ").append(toIndentedString(vendorResponse)).append("\n");
     sb.append("}");

@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**getAggregationAccountTransactionAllUsingGet**](AggregationApi.md#getAggregationAccountTransactionAllUsingGet) | **GET** /aggregation/transaction | Fetch all aggregation account balance details with for the given aggregation accounts 
 [**getAggregationAccountTransactionUsingGet**](AggregationApi.md#getAggregationAccountTransactionUsingGet) | **GET** /aggregation/transaction/{nucleus_aggregation_account_id} | Fetch aggregation account transaction details with the mapping created in POST endpoint
 [**getAggregationAccountUsingGet**](AggregationApi.md#getAggregationAccountUsingGet) | **GET** /aggregation/account/{nucleus_aggregation_account_id} | Fetch aggregation account details with the mapping created in POST endpoint
+[**getPropertyValue**](AggregationApi.md#getPropertyValue) | **GET** /property_value | Get Value of the given property
 
 
 <a name="createAggregationAccountUsingPost"></a>
@@ -70,7 +71,7 @@ Name | Type | Description  | Notes
 
 <a name="createPropertyValueUsingPost"></a>
 # **createPropertyValueUsingPost**
-> PropertyValueResponseVO createPropertyValueUsingPost(aggregationRequestObject, opts)
+> PropertyValueResponseVO createPropertyValueUsingPost(aggregationRequestObject)
 
 Create mapping between client,vendor,tenant for the property
 
@@ -89,9 +90,6 @@ var apiInstance = new HydrogenIntegrationApi.AggregationApi();
 
 var aggregationRequestObject = new HydrogenIntegrationApi.AggregationRequestObject(); // AggregationRequestObject | aggregationRequestObject
 
-var opts = { 
-  'authorization': "authorization_example" // String | Authorization
-};
 
 var callback = function(error, data, response) {
   if (error) {
@@ -100,7 +98,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.createPropertyValueUsingPost(aggregationRequestObject, opts, callback);
+apiInstance.createPropertyValueUsingPost(aggregationRequestObject, callback);
 ```
 
 ### Parameters
@@ -108,7 +106,6 @@ apiInstance.createPropertyValueUsingPost(aggregationRequestObject, opts, callbac
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aggregationRequestObject** | [**AggregationRequestObject**](AggregationRequestObject.md)| aggregationRequestObject | 
- **authorization** | **String**| Authorization | [optional] 
 
 ### Return type
 
@@ -581,4 +578,62 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: */*
+
+<a name="getPropertyValue"></a>
+# **getPropertyValue**
+> PropertyValueResponseVO getPropertyValue(nucleusAggregationAccountId, nucleusClientId, opts)
+
+Get Value of the given property
+
+Get Value of the given property
+
+### Example
+```javascript
+var HydrogenIntegrationApi = require('hydrogen_integration_api');
+var defaultClient = HydrogenIntegrationApi.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2
+var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new HydrogenIntegrationApi.AggregationApi();
+
+var nucleusAggregationAccountId = "nucleusAggregationAccountId_example"; // String | nucleus_aggregation_account_id
+
+var nucleusClientId = "nucleusClientId_example"; // String | nucleus_client_id
+
+var opts = { 
+  'product': "atom" // String | product
+};
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getPropertyValue(nucleusAggregationAccountId, nucleusClientId, opts, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nucleusAggregationAccountId** | [**String**](.md)| nucleus_aggregation_account_id | 
+ **nucleusClientId** | [**String**](.md)| nucleus_client_id | 
+ **product** | **String**| product | [optional] [default to atom]
+
+### Return type
+
+[**PropertyValueResponseVO**](PropertyValueResponseVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 

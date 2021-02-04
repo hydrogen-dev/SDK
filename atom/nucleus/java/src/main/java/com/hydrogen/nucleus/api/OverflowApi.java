@@ -21,17 +21,17 @@ import com.hydrogen.nucleus.Configuration;
 import com.hydrogen.nucleus.Pair;
 import com.hydrogen.nucleus.ProgressRequestBody;
 import com.hydrogen.nucleus.ProgressResponseBody;
-import com.hydrogen.nucleus.model.Overflow;
-import com.hydrogen.nucleus.model.OverflowSettings;
-import com.hydrogen.nucleus.model.OverflowVO;
-import com.hydrogen.nucleus.model.PageOverflow;
-import com.hydrogen.nucleus.model.PageOverflowSettings;
 
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
 
+import com.hydrogen.nucleus.model.Overflow;
+import com.hydrogen.nucleus.model.OverflowSettings;
+import com.hydrogen.nucleus.model.OverflowVO;
+import com.hydrogen.nucleus.model.PageOverflow;
+import com.hydrogen.nucleus.model.PageOverflowSettings;
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -963,7 +963,7 @@ public class OverflowApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateOverflowSettingsUsingPutCall(OverflowSettings overflowSettings, UUID overflowSettingsId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateOverflowSettingsUsingPutCall(Object overflowSettings, UUID overflowSettingsId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = overflowSettings;
 
         // create path and map variables
@@ -1006,7 +1006,7 @@ public class OverflowApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateOverflowSettingsUsingPutValidateBeforeCall(OverflowSettings overflowSettings, UUID overflowSettingsId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateOverflowSettingsUsingPutValidateBeforeCall(Object overflowSettings, UUID overflowSettingsId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'overflowSettings' is set
         if (overflowSettings == null) {
@@ -1032,7 +1032,7 @@ public class OverflowApi {
      * @return OverflowSettings
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public OverflowSettings updateOverflowSettingsUsingPut(OverflowSettings overflowSettings, UUID overflowSettingsId) throws ApiException {
+    public OverflowSettings updateOverflowSettingsUsingPut(Object overflowSettings, UUID overflowSettingsId) throws ApiException {
         ApiResponse<OverflowSettings> resp = updateOverflowSettingsUsingPutWithHttpInfo(overflowSettings, overflowSettingsId);
         return resp.getData();
     }
@@ -1045,7 +1045,7 @@ public class OverflowApi {
      * @return ApiResponse&lt;OverflowSettings&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<OverflowSettings> updateOverflowSettingsUsingPutWithHttpInfo(OverflowSettings overflowSettings, UUID overflowSettingsId) throws ApiException {
+    public ApiResponse<OverflowSettings> updateOverflowSettingsUsingPutWithHttpInfo(Object overflowSettings, UUID overflowSettingsId) throws ApiException {
         com.squareup.okhttp.Call call = updateOverflowSettingsUsingPutValidateBeforeCall(overflowSettings, overflowSettingsId, null, null);
         Type localVarReturnType = new TypeToken<OverflowSettings>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1060,7 +1060,7 @@ public class OverflowApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateOverflowSettingsUsingPutAsync(OverflowSettings overflowSettings, UUID overflowSettingsId, final ApiCallback<OverflowSettings> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateOverflowSettingsUsingPutAsync(Object overflowSettings, UUID overflowSettingsId, final ApiCallback<OverflowSettings> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

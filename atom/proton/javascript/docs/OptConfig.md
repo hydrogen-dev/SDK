@@ -3,13 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**wAssetConfig** | **Object** |  | [optional] 
-**minAssets** | **Number** |  | 
 **secTypes** | **[String]** |  | 
-**wConfig** | [**WConfig**](WConfig.md) |  | 
 **endDate** | **Date** |  | [optional] 
+**wConfig** | [**WConfig**](WConfig.md) |  | 
 **startDate** | **Date** |  | [optional] 
 **tickers** | **[String]** |  | 
+**minAssets** | **Number** |  | 
+**wAssetConfig** | **Object** |  | [optional] 
 
 
 <a name="[SecTypesEnum]"></a>

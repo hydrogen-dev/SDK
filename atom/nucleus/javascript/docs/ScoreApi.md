@@ -81,7 +81,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.ScoreApi();
 
-var scoreId = "739ecd39-e1ae-4a0b-b266-dd3ddc616163"; // String | UUID score_id
+var scoreId = "\"739ecd39-e1ae-4a0b-b266-dd3ddc616163\""; // String | UUID score_id
 
 
 var callback = function(error, data, response) {
@@ -98,7 +98,7 @@ apiInstance.deleteScoreUsingDelete(scoreId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scoreId** | **String**| UUID score_id | 
+ **scoreId** | [**String**](.md)| UUID score_id | 
 
 ### Return type
 
@@ -192,7 +192,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.ScoreApi();
 
-var scoreId = "739ecd39-e1ae-4a0b-b266-dd3ddc616163"; // String | UUID score_id
+var scoreId = "\"739ecd39-e1ae-4a0b-b266-dd3ddc616163\""; // String | UUID score_id
 
 
 var callback = function(error, data, response) {
@@ -209,7 +209,7 @@ apiInstance.getScoreUsingGet(scoreId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scoreId** | **String**| UUID score_id | 
+ **scoreId** | [**String**](.md)| UUID score_id | 
 
 ### Return type
 
@@ -243,9 +243,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.ScoreApi();
 
-var score = new HydrogenNucleusApi.Score(); // Score | score
+var score = null; // Object | score
 
-var scoreId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID score_id
+var scoreId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID score_id
 
 
 var callback = function(error, data, response) {
@@ -262,8 +262,8 @@ apiInstance.updateScoreUsingPut(score, scoreId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **score** | [**Score**](Score.md)| score | 
- **scoreId** | **String**| UUID score_id | 
+ **score** | **Object**| score | 
+ **scoreId** | [**String**](.md)| UUID score_id | 
 
 ### Return type
 

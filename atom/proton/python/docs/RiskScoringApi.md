@@ -1,4 +1,4 @@
-# swagger_client.RiskScoringApi
+# proton_api.RiskScoringApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/proton/v1*
 
@@ -40,7 +40,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.RiskScoringApi(proton_api.ApiClient(configuration))
@@ -107,7 +106,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 
-
 # create an instance of the API class
 api_instance = proton_api.RiskScoringApi(proton_api.ApiClient(configuration))
 risk_allocation_request = proton_api.RiskAllocationRequest() # RiskAllocationRequest | Request payload for Risk Allocation
@@ -172,7 +170,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.RiskScoringApi(proton_api.ApiClient(configuration))

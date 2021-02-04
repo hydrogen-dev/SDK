@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**get_aggregation_account_transaction_all_using_get**](AggregationApi.md#get_aggregation_account_transaction_all_using_get) | **GET** /aggregation/transaction | Fetch all aggregation account balance details with for the given aggregation accounts 
 [**get_aggregation_account_transaction_using_get**](AggregationApi.md#get_aggregation_account_transaction_using_get) | **GET** /aggregation/transaction/{nucleus_aggregation_account_id} | Fetch aggregation account transaction details with the mapping created in POST endpoint
 [**get_aggregation_account_using_get**](AggregationApi.md#get_aggregation_account_using_get) | **GET** /aggregation/account/{nucleus_aggregation_account_id} | Fetch aggregation account details with the mapping created in POST endpoint
+[**get_property_value**](AggregationApi.md#get_property_value) | **GET** /property_value | Get Value of the given property
 
 
 # **create_aggregation_account_using_post**
@@ -39,7 +40,6 @@ IntegrationApi.configure do |config|
 # Creating a token using client token
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = IntegrationApi::AggregationApi.new
 
@@ -99,7 +99,6 @@ IntegrationApi.configure do |config|
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
-
 api_instance = IntegrationApi::AggregationApi.new
 
 aggregation_request_object = IntegrationApi::AggregationRequestObject.new # AggregationRequestObject | aggregationRequestObject
@@ -158,7 +157,6 @@ IntegrationApi.configure do |config|
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
-
 api_instance = IntegrationApi::AggregationApi.new
 
 nucleus_aggregation_account_id = 'nucleus_aggregation_account_id_example' # String | nucleus_aggregation_account_id
@@ -215,7 +213,6 @@ IntegrationApi.configure do |config|
 # Creating a token using client token
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = IntegrationApi::AggregationApi.new
 
@@ -275,7 +272,6 @@ IntegrationApi.configure do |config|
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
-
 api_instance = IntegrationApi::AggregationApi.new
 
 aggregation_account_id_list = ['aggregation_account_id_list_example'] # Array<String> | aggregation_account_id_list
@@ -333,7 +329,6 @@ IntegrationApi.configure do |config|
 # Creating a token using client token
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = IntegrationApi::AggregationApi.new
 
@@ -393,7 +388,6 @@ IntegrationApi.configure do |config|
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
-
 api_instance = IntegrationApi::AggregationApi.new
 
 aggregation_account_id_list = ['aggregation_account_id_list_example'] # Array<String> | aggregation_account_id_list
@@ -451,7 +445,6 @@ IntegrationApi.configure do |config|
 # Creating a token using client token
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = IntegrationApi::AggregationApi.new
 
@@ -511,7 +504,6 @@ IntegrationApi.configure do |config|
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
-
 api_instance = IntegrationApi::AggregationApi.new
 
 aggregation_account_id_list = ['aggregation_account_id_list_example'] # Array<String> | aggregation_account_id_list
@@ -569,7 +561,6 @@ IntegrationApi.configure do |config|
 # Creating a token using client token
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = IntegrationApi::AggregationApi.new
 
@@ -629,7 +620,6 @@ IntegrationApi.configure do |config|
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
-
 api_instance = IntegrationApi::AggregationApi.new
 
 nucleus_aggregation_account_id = 'nucleus_aggregation_account_id_example' # String | nucleus_aggregation_account_id
@@ -662,6 +652,71 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: */*
+
+
+
+# **get_property_value**
+> PropertyValueResponseVO get_property_value(nucleus_aggregation_account_id, nucleus_client_id, opts)
+
+Get Value of the given property
+
+Get Value of the given property
+
+### Example
+```ruby
+# load the gem
+require 'integration_api'
+
+# Setup authorization
+IntegrationApi.configure do |config|
+# Use one of the below method to generate oauth token        
+# Creating a token for grant_type=client_credentials
+ config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+# Creating a token for grant_type=password
+ config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
+end
+
+api_instance = IntegrationApi::AggregationApi.new
+
+nucleus_aggregation_account_id = 'nucleus_aggregation_account_id_example' # String | nucleus_aggregation_account_id
+
+nucleus_client_id = 'nucleus_client_id_example' # String | nucleus_client_id
+
+opts = { 
+  product: 'atom' # String | product
+}
+
+begin
+  #Get Value of the given property
+  result = api_instance.get_property_value(nucleus_aggregation_account_id, nucleus_client_id, opts)
+  p result
+rescue IntegrationApi::ApiError => e
+  puts "Exception when calling AggregationApi->get_property_value: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nucleus_aggregation_account_id** | [**String**](.md)| nucleus_aggregation_account_id | 
+ **nucleus_client_id** | [**String**](.md)| nucleus_client_id | 
+ **product** | **String**| product | [optional] [default to atom]
+
+### Return type
+
+[**PropertyValueResponseVO**](PropertyValueResponseVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 

@@ -1,6 +1,6 @@
 # com\hydrogen\integration\MarketDataApi
 
-All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1/*
+All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,7 +17,6 @@ Create historical market data
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -83,7 +82,6 @@ Create quote market data
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials

@@ -25,11 +25,8 @@ import java.util.UUID;
 /**
  * CardTransactionResponseVO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class CardTransactionResponseVO {
-  @SerializedName("card_status")
-  private String cardStatus = null;
-
   @SerializedName("message")
   private String message = null;
 
@@ -47,24 +44,6 @@ public class CardTransactionResponseVO {
 
   @SerializedName("vendor_response")
   private Object vendorResponse = null;
-
-  public CardTransactionResponseVO cardStatus(String cardStatus) {
-    this.cardStatus = cardStatus;
-    return this;
-  }
-
-   /**
-   * Get cardStatus
-   * @return cardStatus
-  **/
-  @ApiModelProperty(value = "")
-  public String getCardStatus() {
-    return cardStatus;
-  }
-
-  public void setCardStatus(String cardStatus) {
-    this.cardStatus = cardStatus;
-  }
 
   public CardTransactionResponseVO message(String message) {
     this.message = message;
@@ -200,8 +179,7 @@ public class CardTransactionResponseVO {
       return false;
     }
     CardTransactionResponseVO cardTransactionResponseVO = (CardTransactionResponseVO) o;
-    return Objects.equals(this.cardStatus, cardTransactionResponseVO.cardStatus) &&
-        Objects.equals(this.message, cardTransactionResponseVO.message) &&
+    return Objects.equals(this.message, cardTransactionResponseVO.message) &&
         Objects.equals(this.nucleusCardId, cardTransactionResponseVO.nucleusCardId) &&
         Objects.equals(this.nucleusTransactionsPosted, cardTransactionResponseVO.nucleusTransactionsPosted) &&
         Objects.equals(this.nucleusTransactionsUpdated, cardTransactionResponseVO.nucleusTransactionsUpdated) &&
@@ -211,7 +189,7 @@ public class CardTransactionResponseVO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardStatus, message, nucleusCardId, nucleusTransactionsPosted, nucleusTransactionsUpdated, vendorName, vendorResponse);
+    return Objects.hash(message, nucleusCardId, nucleusTransactionsPosted, nucleusTransactionsUpdated, vendorName, vendorResponse);
   }
 
 
@@ -220,7 +198,6 @@ public class CardTransactionResponseVO {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardTransactionResponseVO {\n");
     
-    sb.append("    cardStatus: ").append(toIndentedString(cardStatus)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    nucleusCardId: ").append(toIndentedString(nucleusCardId)).append("\n");
     sb.append("    nucleusTransactionsPosted: ").append(toIndentedString(nucleusTransactionsPosted)).append("\n");

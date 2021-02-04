@@ -23,15 +23,49 @@ Allocate based on an accumulation goal
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenProtonApi.GoalsApi();
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
 
-var goalAccumulationAllocationRequest = new HydrogenProtonApi.GoalAccumulationAllocationRequest(); // GoalAccumulationAllocationRequest | Request payload for Goal Accumulation Allocation
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createGoalAccumulationAllocationRequest();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -41,7 +75,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.goalAccumulationAllocation(goalAccumulationAllocationRequest, callback);
+const createGoalAccumulationAllocationRequest = () => {
+    var apiInstance = new HydrogenProtonApi.GoalsApi();
+    var goalAccumulationAllocationRequest = new HydrogenProtonApi.GoalAccumulationAllocationRequest(); // GoalAccumulationAllocationRequest | Request payload for Goal Accumulation Allocation
+    apiInstance.goalAccumulationAllocation(goalAccumulationAllocationRequest, callback);
+}
 ```
 
 ### Parameters
@@ -74,15 +112,49 @@ Generate recommendations to achieve an accumulation goal
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenProtonApi.GoalsApi();
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
 
-var goalAccumulationRecommendationRequest = new HydrogenProtonApi.GoalAccumulationRecommendationRequest(); // GoalAccumulationRecommendationRequest | Request payload for Goal Accumulation Recommendation
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createGoalAccumulationAllocationRequest();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -92,7 +164,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.goalAccumulationRecommendation(goalAccumulationRecommendationRequest, callback);
+const createGoalAccumulationAllocationRequest = () => {
+    var apiInstance = new HydrogenProtonApi.GoalsApi();
+    var goalAccumulationAllocationRequest = new HydrogenProtonApi.GoalAccumulationAllocationRequest(); // GoalAccumulationAllocationRequest | Request payload for Goal Accumulation Allocation
+    apiInstance.goalAccumulationAllocation(goalAccumulationAllocationRequest, callback);
+}
 ```
 
 ### Parameters
@@ -125,15 +201,49 @@ Track the status of an accumulation goal
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenProtonApi.GoalsApi();
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
 
-var goalAccumulationStatusRequest = new HydrogenProtonApi.GoalAccumulationStatusRequest(); // GoalAccumulationStatusRequest | Request payload for Goal Accumulation Status
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createGoalAccumulationStatusRequest();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -143,7 +253,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.goalAccumulationStatus(goalAccumulationStatusRequest, callback);
+const createGoalAccumulationStatusRequest = () => {
+    var apiInstance = new HydrogenProtonApi.GoalsApi();
+    var goalAccumulationStatusRequest = new HydrogenProtonApi.GoalAccumulationStatusRequest(); // GoalAccumulationStatusRequest | Request payload for Goal Accumulation Status
+    apiInstance.goalAccumulationStatus(goalAccumulationStatusRequest, callback);
+}
 ```
 
 ### Parameters
@@ -176,15 +290,49 @@ Allocate based on a decumulation goal
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenProtonApi.GoalsApi();
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
 
-var goalDecumulationAllocationRequest = new HydrogenProtonApi.GoalDecumulationAllocationRequest(); // GoalDecumulationAllocationRequest | Request payload for Goal Decumulation Allocation
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createGoalDecumulationAllocationRequest();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -194,7 +342,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.goalDecumulationAllocation(goalDecumulationAllocationRequest, callback);
+const createGoalDecumulationAllocationRequest = () => {
+    var apiInstance = new HydrogenProtonApi.GoalsApi();
+    var goalDecumulationAllocationRequest = new HydrogenProtonApi.GoalDecumulationAllocationRequest(); // GoalDecumulationAllocationRequest | Request payload for Goal Decumulation Allocation
+    apiInstance.goalDecumulationAllocation(goalDecumulationAllocationRequest, callback);
+}
 ```
 
 ### Parameters
@@ -227,15 +379,49 @@ Generate recommendations to achieve a decumulation goal
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenProtonApi.GoalsApi();
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
 
-var goalDecumulationRecommendationRequest = new HydrogenProtonApi.GoalDecumulationRecommendationRequest(); // GoalDecumulationRecommendationRequest | Request payload for Goal Decumulation Recommendation
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createGoalDecumulationRecommendationRequest();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -245,7 +431,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.goalDecumulationRecommendation(goalDecumulationRecommendationRequest, callback);
+const createGoalDecumulationRecommendationRequest = () => {
+    var apiInstance = new HydrogenProtonApi.GoalsApi();
+    var goalDecumulationRecommendationRequest = new HydrogenProtonApi.GoalDecumulationRecommendationRequest(); // GoalDecumulationRecommendationRequest | Request payload for Goal Decumulation Recommendation
+    apiInstance.goalDecumulationRecommendation(goalDecumulationRecommendationRequest, callback);
+}
 ```
 
 ### Parameters
@@ -278,15 +468,49 @@ Track the status of a decumulation goal
 ### Example
 ```javascript
 var HydrogenProtonApi = require('hydrogen_proton_api');
+
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
-oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new HydrogenProtonApi.GoalsApi();
+// Create an instance of the Auth API class
+var api = new HydrogenProtonApi.AuthApi();
 
-var goalDecumulationStatusRequest = new HydrogenProtonApi.GoalDecumulationStatusRequest(); // GoalDecumulationStatusRequest | Request payload for Goal Decumulation Status
+// Callback function definition
+var tokenGenerationCallback = function (error, data, response) {
+    if (error) {
+        console.error(error);
+        process.exit(1);
+    } else {
+        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
+        oauth2.accessToken = data.access_token;
+        createGoalDecumulationStatusRequest();
+    }
+};
+//          Use one of the below method to generate oauth token        
+// Token Generation for grant_type = client_credentials
+api.createUsingPostClientCredentials({
+    'grant_type': 'client_credentials',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+// Token Generation for grant_type = password
+api.createUsingPostPassword({
+    'grant_type': 'password',
+    'username' : 'MYUSERNAME',
+    'password' : 'MYPASSWORD',
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET'
+}, tokenGenerationCallback);
+
+//Token Generation using client token
+api.createUsingPostClientTokenCredentials({
+    'client_id': 'MYCLIENTID',
+    'client_secret': 'MYCLIENTSECRET',
+    'client_token' : 'CLIENT_TOKEN'
+}, tokenGenerationCallback);
 
 
 var callback = function(error, data, response) {
@@ -296,7 +520,11 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.goalDecumulationStatus(goalDecumulationStatusRequest, callback);
+const createGoalDecumulationStatusRequest = () => {
+    var apiInstance = new HydrogenProtonApi.GoalsApi();
+    var goalDecumulationStatusRequest = new HydrogenProtonApi.GoalDecumulationStatusRequest(); // GoalDecumulationStatusRequest | Request payload for Goal Decumulation Status
+    apiInstance.goalDecumulationStatus(goalDecumulationStatusRequest, callback);
+}
 ```
 
 ### Parameters

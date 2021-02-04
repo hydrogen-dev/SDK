@@ -15,11 +15,7 @@ package com.hydrogen.nucleus.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -33,14 +29,11 @@ import org.threeten.bp.OffsetDateTime;
  * Card Object
  */
 @ApiModel(description = "Card Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-12T11:03:26.704Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-28T16:21:02.928Z")
 
 
 
 public class Card {
-  @SerializedName("account_id")
-  private UUID accountId = null;
-
   @SerializedName("address")
   private List<CardAddress> address = null;
 
@@ -92,6 +85,9 @@ public class Card {
   @SerializedName("is_active")
   private Boolean isActive = null;
 
+  @SerializedName("is_active")
+  private Boolean isPinSet = null;
+
   @SerializedName("is_primary")
   private Boolean isPrimary = null;
 
@@ -116,38 +112,11 @@ public class Card {
   @SerializedName("secondary_id")
   private String secondaryId = null;
 
-  @SerializedName("spending_limit_atm")
-  private Double spendingLimitAtm = null;
-
-  @SerializedName("spending_limit_purchase")
-  private Double spendingLimitPurchase = null;
-
   @SerializedName("status")
   private String status = null;
 
-  @SerializedName("transaction_limit")
-  private Integer transactionLimit = null;
-
   @SerializedName("update_date")
   private OffsetDateTime updateDate = null;
-
-  public Card accountId(UUID accountId) {
-    this.accountId = accountId;
-    return this;
-  }
-
-   /**
-   * accountId
-   * @return accountId
-  **/
-  @ApiModelProperty(example = "000183ac-2288-4564-a76b-119f4694be98", value = "accountId")
-  public UUID getAccountId() {
-    return accountId;
-  }
-
-  public void setAccountId(UUID accountId) {
-    this.accountId = accountId;
-  }
 
    /**
    * Get address
@@ -428,6 +397,24 @@ public class Card {
     this.isActive = isActive;
   }
 
+  public Card isPinSet(Boolean isPinSet) {
+    this.isPinSet = isPinSet;
+    return this;
+  }
+
+   /**
+   * is_active
+   * @return isActive
+  **/
+  @ApiModelProperty(example = "true", value = "is_active")
+  public Boolean isIsPinSet() {
+    return isActive;
+  }
+
+  public void setIsPinSet(Boolean isActive) {
+    this.isActive = isActive;
+  }
+
   public Card isPrimary(Boolean isPrimary) {
     this.isPrimary = isPrimary;
     return this;
@@ -518,7 +505,7 @@ public class Card {
    * portfolioId
    * @return portfolioId
   **/
-  @ApiModelProperty(example = "000183ac-2288-4564-a76b-119f4694be98", value = "portfolioId")
+  @ApiModelProperty(example = "000183ac-2288-4564-a76b-119f4694be98", required = true, value = "portfolioId")
   public UUID getPortfolioId() {
     return portfolioId;
   }
@@ -554,42 +541,6 @@ public class Card {
     return secondaryId;
   }
 
-  public Card spendingLimitAtm(Double spendingLimitAtm) {
-    this.spendingLimitAtm = spendingLimitAtm;
-    return this;
-  }
-
-   /**
-   * spendingLimitAtm
-   * @return spendingLimitAtm
-  **/
-  @ApiModelProperty(example = "100000.0", value = "spendingLimitAtm")
-  public Double getSpendingLimitAtm() {
-    return spendingLimitAtm;
-  }
-
-  public void setSpendingLimitAtm(Double spendingLimitAtm) {
-    this.spendingLimitAtm = spendingLimitAtm;
-  }
-
-  public Card spendingLimitPurchase(Double spendingLimitPurchase) {
-    this.spendingLimitPurchase = spendingLimitPurchase;
-    return this;
-  }
-
-   /**
-   * spendingLimitPurchase
-   * @return spendingLimitPurchase
-  **/
-  @ApiModelProperty(example = "100000.0", value = "spendingLimitPurchase")
-  public Double getSpendingLimitPurchase() {
-    return spendingLimitPurchase;
-  }
-
-  public void setSpendingLimitPurchase(Double spendingLimitPurchase) {
-    this.spendingLimitPurchase = spendingLimitPurchase;
-  }
-
   public Card status(String status) {
     this.status = status;
     return this;
@@ -606,24 +557,6 @@ public class Card {
 
   public void setStatus(String status) {
     this.status = status;
-  }
-
-  public Card transactionLimit(Integer transactionLimit) {
-    this.transactionLimit = transactionLimit;
-    return this;
-  }
-
-   /**
-   * transactionLimit
-   * @return transactionLimit
-  **/
-  @ApiModelProperty(example = "100000", value = "transactionLimit")
-  public Integer getTransactionLimit() {
-    return transactionLimit;
-  }
-
-  public void setTransactionLimit(Integer transactionLimit) {
-    this.transactionLimit = transactionLimit;
   }
 
    /**
@@ -645,8 +578,7 @@ public class Card {
       return false;
     }
     Card card = (Card) o;
-    return Objects.equals(this.accountId, card.accountId) &&
-        Objects.equals(this.address, card.address) &&
+    return Objects.equals(this.address, card.address) &&
         Objects.equals(this.cardHolderName, card.cardHolderName) &&
         Objects.equals(this.cardImage, card.cardImage) &&
         Objects.equals(this.cardIssuance, card.cardIssuance) &&
@@ -663,6 +595,7 @@ public class Card {
         Objects.equals(this.id, card.id) &&
         Objects.equals(this.institutionName, card.institutionName) &&
         Objects.equals(this.isActive, card.isActive) &&
+        Objects.equals(this.isPinSet, card.isPinSet) &&
         Objects.equals(this.isPrimary, card.isPrimary) &&
         Objects.equals(this.isReloadable, card.isReloadable) &&
         Objects.equals(this.mask, card.mask) &&
@@ -671,16 +604,13 @@ public class Card {
         Objects.equals(this.portfolioId, card.portfolioId) &&
         Objects.equals(this.prepaidAmount, card.prepaidAmount) &&
         Objects.equals(this.secondaryId, card.secondaryId) &&
-        Objects.equals(this.spendingLimitAtm, card.spendingLimitAtm) &&
-        Objects.equals(this.spendingLimitPurchase, card.spendingLimitPurchase) &&
         Objects.equals(this.status, card.status) &&
-        Objects.equals(this.transactionLimit, card.transactionLimit) &&
         Objects.equals(this.updateDate, card.updateDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, address, cardHolderName, cardImage, cardIssuance, cardName, cardNetwork, cardProgramId, cardType, clientId, createDate, creditLimit, currencyCode, expiryDate, fulfillment, id, institutionName, isActive, isPrimary, isReloadable, mask, metadata, phoneNumber, portfolioId, prepaidAmount, secondaryId, spendingLimitAtm, spendingLimitPurchase, status, transactionLimit, updateDate);
+    return Objects.hash(address, cardHolderName, cardImage, cardIssuance, cardName, cardNetwork, cardProgramId, cardType, clientId, createDate, creditLimit, currencyCode, expiryDate, fulfillment, id, institutionName, isActive, isPinSet, isPrimary, isReloadable, mask, metadata, phoneNumber, portfolioId, prepaidAmount, secondaryId, status, updateDate);
   }
 
 
@@ -689,7 +619,6 @@ public class Card {
     StringBuilder sb = new StringBuilder();
     sb.append("class Card {\n");
     
-    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    cardHolderName: ").append(toIndentedString(cardHolderName)).append("\n");
     sb.append("    cardImage: ").append(toIndentedString(cardImage)).append("\n");
@@ -707,6 +636,7 @@ public class Card {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    institutionName: ").append(toIndentedString(institutionName)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
+    sb.append("    isPinSet: ").append(toIndentedString(isPinSet)).append("\n");
     sb.append("    isPrimary: ").append(toIndentedString(isPrimary)).append("\n");
     sb.append("    isReloadable: ").append(toIndentedString(isReloadable)).append("\n");
     sb.append("    mask: ").append(toIndentedString(mask)).append("\n");
@@ -715,10 +645,7 @@ public class Card {
     sb.append("    portfolioId: ").append(toIndentedString(portfolioId)).append("\n");
     sb.append("    prepaidAmount: ").append(toIndentedString(prepaidAmount)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
-    sb.append("    spendingLimitAtm: ").append(toIndentedString(spendingLimitAtm)).append("\n");
-    sb.append("    spendingLimitPurchase: ").append(toIndentedString(spendingLimitPurchase)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    transactionLimit: ").append(toIndentedString(transactionLimit)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");
     return sb.toString();

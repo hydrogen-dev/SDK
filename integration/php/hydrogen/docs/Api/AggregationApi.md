@@ -1,6 +1,6 @@
 # com\hydrogen\integration\AggregationApi
 
-All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1/*
+All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**getAggregationAccountTransactionAllUsingGet**](AggregationApi.md#getAggregationAccountTransactionAllUsingGet) | **GET** /aggregation/transaction | Fetch all aggregation account balance details with for the given aggregation accounts
 [**getAggregationAccountTransactionUsingGet**](AggregationApi.md#getAggregationAccountTransactionUsingGet) | **GET** /aggregation/transaction/{nucleus_aggregation_account_id} | Fetch aggregation account transaction details with the mapping created in POST endpoint
 [**getAggregationAccountUsingGet**](AggregationApi.md#getAggregationAccountUsingGet) | **GET** /aggregation/account/{nucleus_aggregation_account_id} | Fetch aggregation account details with the mapping created in POST endpoint
+[**getPropertyValue**](AggregationApi.md#getPropertyValue) | **GET** /property_value | Get Value of the given property
 
 
 # **createAggregationAccountUsingPost**
@@ -28,7 +29,6 @@ Create mapping between client,vendor,tenant
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -96,7 +96,6 @@ Create mapping between client,vendor,tenant for property
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -164,7 +163,6 @@ De-Link mapping between client,vendor,tenant
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -231,7 +229,6 @@ Fetch all aggregation account(s) details with the mapping created in POST endpoi
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -299,7 +296,6 @@ Fetch all aggregation account balance details with for the given aggregation acc
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -367,7 +363,6 @@ Fetch aggregation account balance details with the mapping created in POST endpo
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -435,7 +430,6 @@ Fetch all aggregation account(s) holding details with the mapping created in POS
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -503,7 +497,6 @@ Fetch aggregation account holding details with the mapping created in POST endpo
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -571,7 +564,6 @@ Fetch all aggregation account balance details with for the given aggregation acc
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -639,7 +631,6 @@ Fetch aggregation account transaction details with the mapping created in POST e
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -707,7 +698,6 @@ Fetch aggregation account details with the mapping created in POST endpoint
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -761,6 +751,77 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getPropertyValue**
+> \com\hydrogen\integration\Model\PropertyValueResponseVO getPropertyValue($nucleus_aggregation_account_id, $nucleus_client_id, $product)
+
+Get Value of the given property
+
+Get Value of the given property
+
+### Example
+```php
+<?php
+require_once('../vendor/autoload.php');
+try {
+// Use one of the below method to generate oauth token
+// 1) Generate Token for client credentials
+$config =
+        \com\hydrogen\integration\AuthApiClient::getDefaultConfiguration()
+            ->createClientCredential("MYCLIENTID",
+             "MYCLIENTSECRET");
+// 2) Generate Token for password credentials
+$config =
+        \com\hydrogen\integration\AuthApiClient::
+        getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
+                      ,"MYUSERNAME", "MYPASSWORD");
+// 3) Generate Token for client_token
+$config = \com\hydrogen\integration\AuthApiClient::getDefaultConfiguration()
+                ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
+} catch (\com\hydrogen\integration\ApiException $e) {
+    print_r($e);
+}
+$apiInstance = new com\hydrogen\integration\Api\AggregationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$nucleus_aggregation_account_id = "nucleus_aggregation_account_id_example"; // string | nucleus_aggregation_account_id
+$nucleus_client_id = "nucleus_client_id_example"; // string | nucleus_client_id
+$product = "atom"; // string | product
+
+try {
+    $result = $apiInstance->getPropertyValue($nucleus_aggregation_account_id, $nucleus_client_id, $product);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AggregationApi->getPropertyValue: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nucleus_aggregation_account_id** | [**string**](../Model/.md)| nucleus_aggregation_account_id |
+ **nucleus_client_id** | [**string**](../Model/.md)| nucleus_client_id |
+ **product** | **string**| product | [optional] [default to atom]
+
+### Return type
+
+[**\com\hydrogen\integration\Model\PropertyValueResponseVO**](../Model/PropertyValueResponseVO.md)
+
+### Authorization
+
+[oauth2](../../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

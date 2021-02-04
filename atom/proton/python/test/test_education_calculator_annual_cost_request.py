@@ -32,7 +32,7 @@ class TestEducationCalculatorAnnualCostRequest(unittest.TestCase):
     def testEducationCalculatorAnnualCostRequest(self):
         """Test EducationCalculatorAnnualCostRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.education_calculator_annual_cost_request.EducationCalculatorAnnualCostRequest()  # noqa: E501
+        # model = proton_api.models.education_calculator_annual_cost_request.EducationCalculatorAnnualCostRequest()  # noqa: E501
         pass
 
 

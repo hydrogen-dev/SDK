@@ -18,13 +18,13 @@ Name | Type | Description | Notes
 ## Enum: TypeEnum
 Name | Value
 ---- | -----
-HOME | &quot;HOME&quot;
-WORK | &quot;WORK&quot;
-BILLING | &quot;BILLING&quot;
-MAILING | &quot;MAILING&quot;
-LEGAL | &quot;LEGAL&quot;
-RESIDENCE | &quot;RESIDENCE&quot;
-UNKNOWN | &quot;UNKNOWN&quot;
+HOME | &quot;home&quot;
+WORK | &quot;work&quot;
+BILLING | &quot;billing&quot;
+MAILING | &quot;mailing&quot;
+LEGAL | &quot;legal&quot;
+RESIDENCE | &quot;residence&quot;
+NULL | &quot;null&quot;
 
 
 

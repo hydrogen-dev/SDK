@@ -4,18 +4,18 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**scope** | [**ScopeEnum**](#ScopeEnum) |  |  [optional]
-**amountDeviationThreshold** | **Float** |  |  [optional]
-**analyzeTransactions** | **Boolean** |  |  [optional]
-**intervalDeviationThreshold** | **Integer** |  |  [optional]
-**clientId** | [**UUID**](UUID.md) |  |  [optional]
-**currencyConversion** | **String** |  |  [optional]
-**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
 **aggregationAccountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
 **endDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
-**showRecurringDetails** | **Boolean** |  |  [optional]
-**currencyCode** | **String** |  |  [optional]
+**clientId** | [**UUID**](UUID.md) |  |  [optional]
 **accountIds** | [**List&lt;UUID&gt;**](UUID.md) |  |  [optional]
+**intervalDeviationThreshold** | **Integer** |  |  [optional]
+**analyzeTransactions** | **Boolean** |  |  [optional]
+**currencyConversion** | **String** |  |  [optional]
+**startDate** | [**LocalDate**](LocalDate.md) |  |  [optional]
+**currencyCode** | **String** |  |  [optional]
+**showRecurringDetails** | **Boolean** |  |  [optional]
+**scope** | [**ScopeEnum**](#ScopeEnum) |  |  [optional]
+**amountDeviationThreshold** | **Float** |  |  [optional]
 
 
 <a name="ScopeEnum"></a>

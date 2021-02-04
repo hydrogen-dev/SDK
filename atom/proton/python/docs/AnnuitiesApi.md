@@ -1,4 +1,4 @@
-# swagger_client.AnnuitiesApi
+# proton_api.AnnuitiesApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/proton/v1*
 
@@ -43,7 +43,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.AnnuitiesApi(proton_api.ApiClient(configuration))
@@ -110,7 +109,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 
-
 # create an instance of the API class
 api_instance = proton_api.AnnuitiesApi(proton_api.ApiClient(configuration))
 annuity_calculator_annuity_amount_request = proton_api.AnnuityCalculatorAnnuityAmountRequest() # AnnuityCalculatorAnnuityAmountRequest | Request payload for Annuity Calculator - Annuity Amount
@@ -175,7 +173,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.AnnuitiesApi(proton_api.ApiClient(configuration))
@@ -242,7 +239,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 
-
 # create an instance of the API class
 api_instance = proton_api.AnnuitiesApi(proton_api.ApiClient(configuration))
 annuity_calculator_deposit_amount_request = proton_api.AnnuityCalculatorDepositAmountRequest() # AnnuityCalculatorDepositAmountRequest | Request payload for Annuity Calculator - Deposit Amount
@@ -308,7 +304,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 
-
 # create an instance of the API class
 api_instance = proton_api.AnnuitiesApi(proton_api.ApiClient(configuration))
 annuity_calculator_initial_balance_request = proton_api.AnnuityCalculatorInitialBalanceRequest() # AnnuityCalculatorInitialBalanceRequest | Request payload for Annuity Calculator - Initial Balance
@@ -373,7 +368,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.AnnuitiesApi(proton_api.ApiClient(configuration))

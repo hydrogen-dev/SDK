@@ -30,7 +30,6 @@ Create a new cardProgram request.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CardApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -47,8 +46,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CardApi apiInstance = new CardApi();
 CardProgram cardProgramRequest = new CardProgram(); // CardProgram | cardProgramRequest
 try {
@@ -91,7 +88,6 @@ Create a new card request.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CardApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -108,8 +104,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CardApi apiInstance = new CardApi();
 Card cardRequest = new Card(); // Card | cardRequest
 try {
@@ -152,7 +146,6 @@ Permanently delete an cardProgram.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CardApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -169,8 +162,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CardApi apiInstance = new CardApi();
 UUID cardProgramId = new UUID(); // UUID | UUID card_program_id
 try {
@@ -212,7 +203,6 @@ Permanently delete a card request.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CardApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -229,8 +219,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CardApi apiInstance = new CardApi();
 UUID cardId = new UUID(); // UUID | UUID card_id
 try {
@@ -272,7 +260,6 @@ Get the information for all card requests.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CardApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -289,8 +276,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CardApi apiInstance = new CardApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -341,7 +326,6 @@ Get a list of asset sizes by date for an card.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CardApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -358,8 +342,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CardApi apiInstance = new CardApi();
 UUID cardId = new UUID(); // UUID | Card Id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -412,7 +394,6 @@ Get information for all cardProgram.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CardApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -429,8 +410,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CardApi apiInstance = new CardApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -481,7 +460,6 @@ Retrieve the information for a specific cardProgram.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CardApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -498,8 +476,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CardApi apiInstance = new CardApi();
 UUID cardProgramId = new UUID(); // UUID | UUID card_program_id
 try {
@@ -542,7 +518,6 @@ Get the information for all transactions for an card.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CardApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -559,8 +534,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CardApi apiInstance = new CardApi();
 UUID cardId = new UUID(); // UUID | UUID card_id
 Boolean ascending = false; // Boolean | ascending
@@ -617,7 +590,6 @@ Retrieve the information for a card request.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CardApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -634,8 +606,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CardApi apiInstance = new CardApi();
 UUID cardId = new UUID(); // UUID | UUID card_id
 try {
@@ -678,7 +648,6 @@ Update the information for an cardProgram.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CardApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -695,10 +664,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CardApi apiInstance = new CardApi();
-CardProgram cardProgram = new CardProgram(); // CardProgram | card_program
+Object cardProgram = null; // Object | card_program
 UUID cardProgramId = new UUID(); // UUID | UUID card_program_id
 try {
     CardProgram result = apiInstance.updateCardProgramUsingPut(cardProgram, cardProgramId);
@@ -713,7 +680,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cardProgram** | [**CardProgram**](CardProgram.md)| card_program |
+ **cardProgram** | **Object**| card_program |
  **cardProgramId** | [**UUID**](.md)| UUID card_program_id |
 
 ### Return type
@@ -741,7 +708,6 @@ Update the information for a card request.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CardApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -758,10 +724,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CardApi apiInstance = new CardApi();
-Card card = new Card(); // Card | card
+Object card = null; // Object | card
 UUID cardId = new UUID(); // UUID | UUID card_id
 try {
     Card result = apiInstance.updateCardUsingPut(card, cardId);
@@ -776,7 +740,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **card** | [**Card**](Card.md)| card |
+ **card** | **Object**| card |
  **cardId** | [**UUID**](.md)| UUID card_id |
 
 ### Return type

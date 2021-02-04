@@ -31,52 +31,26 @@ class BrokerageAccountCO(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'electron_document_id': 'list[str]',
         'nucleus_account_id': 'str',
-        'nucleus_account_type_id': 'str'
+        'nucleus_document_ids': 'list[str]'
     }
 
     attribute_map = {
-        'electron_document_id': 'electron_document_id',
         'nucleus_account_id': 'nucleus_account_id',
-        'nucleus_account_type_id': 'nucleus_account_type_id'
+        'nucleus_document_ids': 'nucleus_document_ids'
     }
 
-    def __init__(self, electron_document_id=None, nucleus_account_id=None, nucleus_account_type_id=None):  # noqa: E501
+    def __init__(self, nucleus_account_id=None, nucleus_document_ids=None):  # noqa: E501
         """BrokerageAccountCO - a model defined in Swagger"""  # noqa: E501
 
-        self._electron_document_id = None
         self._nucleus_account_id = None
-        self._nucleus_account_type_id = None
+        self._nucleus_document_ids = None
         self.discriminator = None
 
-        if electron_document_id is not None:
-            self.electron_document_id = electron_document_id
         if nucleus_account_id is not None:
             self.nucleus_account_id = nucleus_account_id
-        if nucleus_account_type_id is not None:
-            self.nucleus_account_type_id = nucleus_account_type_id
-
-    @property
-    def electron_document_id(self):
-        """Gets the electron_document_id of this BrokerageAccountCO.  # noqa: E501
-
-
-        :return: The electron_document_id of this BrokerageAccountCO.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._electron_document_id
-
-    @electron_document_id.setter
-    def electron_document_id(self, electron_document_id):
-        """Sets the electron_document_id of this BrokerageAccountCO.
-
-
-        :param electron_document_id: The electron_document_id of this BrokerageAccountCO.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._electron_document_id = electron_document_id
+        if nucleus_document_ids is not None:
+            self.nucleus_document_ids = nucleus_document_ids
 
     @property
     def nucleus_account_id(self):
@@ -100,25 +74,25 @@ class BrokerageAccountCO(object):
         self._nucleus_account_id = nucleus_account_id
 
     @property
-    def nucleus_account_type_id(self):
-        """Gets the nucleus_account_type_id of this BrokerageAccountCO.  # noqa: E501
+    def nucleus_document_ids(self):
+        """Gets the nucleus_document_ids of this BrokerageAccountCO.  # noqa: E501
 
 
-        :return: The nucleus_account_type_id of this BrokerageAccountCO.  # noqa: E501
-        :rtype: str
+        :return: The nucleus_document_ids of this BrokerageAccountCO.  # noqa: E501
+        :rtype: list[str]
         """
-        return self._nucleus_account_type_id
+        return self._nucleus_document_ids
 
-    @nucleus_account_type_id.setter
-    def nucleus_account_type_id(self, nucleus_account_type_id):
-        """Sets the nucleus_account_type_id of this BrokerageAccountCO.
+    @nucleus_document_ids.setter
+    def nucleus_document_ids(self, nucleus_document_ids):
+        """Sets the nucleus_document_ids of this BrokerageAccountCO.
 
 
-        :param nucleus_account_type_id: The nucleus_account_type_id of this BrokerageAccountCO.  # noqa: E501
-        :type: str
+        :param nucleus_document_ids: The nucleus_document_ids of this BrokerageAccountCO.  # noqa: E501
+        :type: list[str]
         """
 
-        self._nucleus_account_type_id = nucleus_account_type_id
+        self._nucleus_document_ids = nucleus_document_ids
 
     def to_dict(self):
         """Returns the model properties as a dict"""

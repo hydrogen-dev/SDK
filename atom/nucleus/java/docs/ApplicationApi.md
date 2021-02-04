@@ -23,7 +23,6 @@ Create an application
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ApplicationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -40,8 +39,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ApplicationApi apiInstance = new ApplicationApi();
 Application application = new Application(); // Application | application
 try {
@@ -84,7 +81,6 @@ Permanently delete an Application.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ApplicationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -101,8 +97,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ApplicationApi apiInstance = new ApplicationApi();
 UUID applicationId = new UUID(); // UUID | UUID application_id
 try {
@@ -144,7 +138,6 @@ Get details for all Application.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ApplicationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -161,8 +154,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ApplicationApi apiInstance = new ApplicationApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -213,7 +204,6 @@ Retrieve the information for an Application.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ApplicationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -230,8 +220,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ApplicationApi apiInstance = new ApplicationApi();
 UUID applicationId = new UUID(); // UUID | UUID application_id
 try {
@@ -274,7 +262,6 @@ Update the information for an Application
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import ApplicationApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -291,10 +278,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 ApplicationApi apiInstance = new ApplicationApi();
-Application application = new Application(); // Application | application
+Object application = null; // Object | application
 UUID applicationId = new UUID(); // UUID | UUID application_id
 try {
     Application result = apiInstance.updateApplicationUsingPut(application, applicationId);
@@ -309,7 +294,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application** | [**Application**](Application.md)| application |
+ **application** | **Object**| application |
  **applicationId** | [**UUID**](.md)| UUID application_id |
 
 ### Return type

@@ -30,16 +30,16 @@ import org.threeten.bp.OffsetDateTime;
  * BankLink Object
  */
 @ApiModel(description = "BankLink Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class BankLink {
   @SerializedName("account_id")
   private UUID accountId = null;
 
   @SerializedName("available_balance")
-  private String availableBalance = null;
+  private Double availableBalance = null;
 
   @SerializedName("balance")
-  private String balance = null;
+  private Double balance = null;
 
   @SerializedName("bank_account_holder")
   private String bankAccountHolder = null;
@@ -116,7 +116,7 @@ public class BankLink {
     this.accountId = accountId;
   }
 
-  public BankLink availableBalance(String availableBalance) {
+  public BankLink availableBalance(Double availableBalance) {
     this.availableBalance = availableBalance;
     return this;
   }
@@ -125,16 +125,16 @@ public class BankLink {
    * available_balance
    * @return availableBalance
   **/
-  @ApiModelProperty(example = "1000", value = "available_balance")
-  public String getAvailableBalance() {
+  @ApiModelProperty(example = "1000.0", value = "available_balance")
+  public Double getAvailableBalance() {
     return availableBalance;
   }
 
-  public void setAvailableBalance(String availableBalance) {
+  public void setAvailableBalance(Double availableBalance) {
     this.availableBalance = availableBalance;
   }
 
-  public BankLink balance(String balance) {
+  public BankLink balance(Double balance) {
     this.balance = balance;
     return this;
   }
@@ -144,11 +144,11 @@ public class BankLink {
    * @return balance
   **/
   @ApiModelProperty(example = "1000.12", value = "balance")
-  public String getBalance() {
+  public Double getBalance() {
     return balance;
   }
 
-  public void setBalance(String balance) {
+  public void setBalance(Double balance) {
     this.balance = balance;
   }
 

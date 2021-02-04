@@ -32,7 +32,7 @@ class TestVariableAnnuityRequest(unittest.TestCase):
     def testVariableAnnuityRequest(self):
         """Test VariableAnnuityRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.variable_annuity_request.VariableAnnuityRequest()  # noqa: E501
+        # model = proton_api.models.variable_annuity_request.VariableAnnuityRequest()  # noqa: E501
         pass
 
 

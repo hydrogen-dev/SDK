@@ -14,14 +14,13 @@
 package com.hydrogen.integration.api;
 
 import com.hydrogen.integration.ApiException;
+import com.hydrogen.integration.model.AggregationAccountResponseVO;
 import com.hydrogen.integration.model.AggregationAccountBalanceResponseVO;
 import com.hydrogen.integration.model.AggregationAccountHoldingResponseVO;
-import com.hydrogen.integration.model.AggregationAccountResponseVO;
 import com.hydrogen.integration.model.AggregationAccountTransactionResponseVO;
+import com.hydrogen.integration.model.AggregationAccountsResponseVO;
 import com.hydrogen.integration.model.AggregationRequestObject;
 import com.hydrogen.integration.model.PropertyValueResponseVO;
-import com.hydrogen.integration.model.AggregationAccountsResponseVO;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -209,6 +208,24 @@ public class AggregationApiTest {
     public void getAggregationAccountUsingGetTest() throws ApiException {
         UUID nucleusAggregationAccountId = null;
         AggregationAccountResponseVO response = api.getAggregationAccountUsingGet(nucleusAggregationAccountId);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get Value of the given property
+     *
+     * Get Value of the given property
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getPropertyValueTest() throws ApiException {
+        UUID nucleusAggregationAccountId = null;
+        UUID nucleusClientId = null;
+        String product = null;
+        PropertyValueResponseVO response = api.getPropertyValue(nucleusAggregationAccountId, nucleusClientId, product);
 
         // TODO: test validations
     }

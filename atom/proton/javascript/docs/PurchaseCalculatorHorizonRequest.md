@@ -3,13 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**inflationRate** | **Number** |  | [optional] [default to 0.0]
-**investmentTax** | **Number** |  | [optional] [default to 0.0]
-**portfolioReturn** | **Number** |  | 
+**purchaseAmount** | **Number** |  | 
 **aggregationAccountIds** | **[String]** |  | [optional] 
 **currentSavings** | **Number** |  | [optional] [default to 0.0]
-**depositSchedule** | [**CalculatorDepositSchedule1**](CalculatorDepositSchedule1.md) |  | [optional] 
-**purchaseAmount** | **Number** |  | 
 **accountIds** | **[String]** |  | [optional] 
+**investmentTax** | **Number** |  | [optional] [default to 0.0]
+**inflationRate** | **Number** |  | [optional] [default to 0.0]
+**portfolioReturn** | **Number** |  | 
+**depositSchedule** | [**CalculatorDepositSchedule1**](CalculatorDepositSchedule1.md) |  | [optional] 
 
 

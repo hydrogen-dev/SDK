@@ -4,10 +4,8 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/nucleus/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_client_hydro_using_post**](ClientApi.md#create_client_hydro_using_post) | **POST** /client_hydro | Create a client-hydro relationship
 [**create_client_status_using_post**](ClientApi.md#create_client_status_using_post) | **POST** /client_status | Create an client status
 [**create_client_using_post**](ClientApi.md#create_client_using_post) | **POST** /client | Create a client
-[**delete_client_hydro_using_delete**](ClientApi.md#delete_client_hydro_using_delete) | **DELETE** /client_hydro/{client_hydro_id} | Delete a client-hydro relationship
 [**delete_client_status_using_delete**](ClientApi.md#delete_client_status_using_delete) | **DELETE** /client_status/{client_status_id} | Delete an client status
 [**delete_client_using_delete**](ClientApi.md#delete_client_using_delete) | **DELETE** /client/{client_id} | Delete a client
 [**get_client_account_overview_using_get**](ClientApi.md#get_client_account_overview_using_get) | **GET** /client/{client_id}/account_overview | List all client Account overview
@@ -16,72 +14,12 @@ Method | HTTP request | Description
 [**get_client_asset_size_using_get**](ClientApi.md#get_client_asset_size_using_get) | **GET** /client/{client_id}/asset_size | List all client asset sizes
 [**get_client_goal_overview_using_get**](ClientApi.md#get_client_goal_overview_using_get) | **GET** /client/{client_id}/goal_overview | Retrieve client&#39;s goal details 
 [**get_client_holding_using_get**](ClientApi.md#get_client_holding_using_get) | **GET** /client/{client_id}/holding | List all client holdings
-[**get_client_hydro_all_using_get**](ClientApi.md#get_client_hydro_all_using_get) | **GET** /client_hydro | List all client-hydro relationship
-[**get_client_hydro_using_get**](ClientApi.md#get_client_hydro_using_get) | **GET** /client_hydro/{client_hydro_id} | Retrieve a client-hydro relationship
 [**get_client_status_all_using_get**](ClientApi.md#get_client_status_all_using_get) | **GET** /client_status | List all client statuses
 [**get_client_status_using_get**](ClientApi.md#get_client_status_using_get) | **GET** /client_status/{client_status_id} | Retrieve an client status
 [**get_client_transaction_all_using_get**](ClientApi.md#get_client_transaction_all_using_get) | **GET** /client/{client_id}/transaction | List all client transactions
 [**get_client_using_get**](ClientApi.md#get_client_using_get) | **GET** /client/{client_id} | Retrieve a client
-[**update_client_hydro_using_put**](ClientApi.md#update_client_hydro_using_put) | **PUT** /client_hydro/{client_hydro_id} | Update a client-hydro relationship
 [**update_client_status_using_put**](ClientApi.md#update_client_status_using_put) | **PUT** /client_status/{client_status_id} | Update an client status
 [**update_client_using_put**](ClientApi.md#update_client_using_put) | **PUT** /client/{client_id} | Update a client
-
-
-# **create_client_hydro_using_post**
-> ClientHydro create_client_hydro_using_post(client_hydro)
-
-Create a client-hydro relationship
-
-Create an client-hydro relationship under a client.
-
-### Example
-```ruby
-# load the gem
-require 'nucleus_api'
-# Setup authorization
-NucleusApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
-# Creating a token using client token
- config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
-end
-
-api_instance = NucleusApi::ClientApi.new
-
-client_hydro = NucleusApi::ClientHydro.new # ClientHydro | clientHydro
-
-
-begin
-  #Create a client-hydro relationship
-  result = api_instance.create_client_hydro_using_post(client_hydro)
-  p result
-rescue NucleusApi::ApiError => e
-  puts "Exception when calling ClientApi->create_client_hydro_using_post: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **client_hydro** | [**ClientHydro**](ClientHydro.md)| clientHydro | 
-
-### Return type
-
-[**ClientHydro**](ClientHydro.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: */*
-
 
 
 # **create_client_status_using_post**
@@ -194,62 +132,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: */*
-
-
-
-# **delete_client_hydro_using_delete**
-> delete_client_hydro_using_delete(client_hydro_id)
-
-Delete a client-hydro relationship
-
-Permanently delete a client-hydro relationship for a Hydro ID and a client.
-
-### Example
-```ruby
-# load the gem
-require 'nucleus_api'
-# Setup authorization
-NucleusApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
-# Creating a token using client token
- config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
-end
-
-api_instance = NucleusApi::ClientApi.new
-
-client_hydro_id = 'client_hydro_id_example' # String | UUID client_hydro_id
-
-
-begin
-  #Delete a client-hydro relationship
-  api_instance.delete_client_hydro_using_delete(client_hydro_id)
-rescue NucleusApi::ApiError => e
-  puts "Exception when calling ClientApi->delete_client_hydro_using_delete: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **client_hydro_id** | [**String**](.md)| UUID client_hydro_id | 
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: */*
 
 
@@ -751,129 +633,6 @@ Name | Type | Description  | Notes
 
 
 
-# **get_client_hydro_all_using_get**
-> PageClientHydro get_client_hydro_all_using_get(opts)
-
-List all client-hydro relationship
-
-Get information for all client-hydro relationships for all clients defined for your firm.
-
-### Example
-```ruby
-# load the gem
-require 'nucleus_api'
-# Setup authorization
-NucleusApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
-# Creating a token using client token
- config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
-end
-
-api_instance = NucleusApi::ClientApi.new
-
-opts = { 
-  ascending: false, # BOOLEAN | ascending
-  filter: 'filter_example', # String | filter
-  order_by: 'update_date', # String | order_by
-  page: 0, # Integer | page
-  size: 25 # Integer | size
-}
-
-begin
-  #List all client-hydro relationship
-  result = api_instance.get_client_hydro_all_using_get(opts)
-  p result
-rescue NucleusApi::ApiError => e
-  puts "Exception when calling ClientApi->get_client_hydro_all_using_get: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ascending** | **BOOLEAN**| ascending | [optional] [default to false]
- **filter** | **String**| filter | [optional] 
- **order_by** | **String**| order_by | [optional] [default to update_date]
- **page** | **Integer**| page | [optional] [default to 0]
- **size** | **Integer**| size | [optional] [default to 25]
-
-### Return type
-
-[**PageClientHydro**](PageClientHydro.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-
-
-# **get_client_hydro_using_get**
-> ClientHydro get_client_hydro_using_get(client_hydro_id)
-
-Retrieve a client-hydro relationship
-
-Retrieve the information for a specific client-hydro relationship.
-
-### Example
-```ruby
-# load the gem
-require 'nucleus_api'
-# Setup authorization
-NucleusApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
-# Creating a token using client token
- config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
-end
-
-api_instance = NucleusApi::ClientApi.new
-
-client_hydro_id = 'client_hydro_id_example' # String | UUID client_hydro_id
-
-
-begin
-  #Retrieve a client-hydro relationship
-  result = api_instance.get_client_hydro_using_get(client_hydro_id)
-  p result
-rescue NucleusApi::ApiError => e
-  puts "Exception when calling ClientApi->get_client_hydro_using_get: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **client_hydro_id** | [**String**](.md)| UUID client_hydro_id | 
-
-### Return type
-
-[**ClientHydro**](ClientHydro.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: */*
-
-
-
 # **get_client_status_all_using_get**
 > PageClientStatus get_client_status_all_using_get(opts)
 
@@ -1127,66 +886,6 @@ Name | Type | Description  | Notes
 
 
 
-# **update_client_hydro_using_put**
-> ClientHydro update_client_hydro_using_put(client_hydro, client_hydro_id)
-
-Update a client-hydro relationship
-
-Update the information for a client-hydro relationship.
-
-### Example
-```ruby
-# load the gem
-require 'nucleus_api'
-# Setup authorization
-NucleusApi.configure do |config|
-# Use one of the below method to generate oauth token        
-# Creating a token for grant_type=client_credentials
- config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-# Creating a token for grant_type=password
- config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
-# Creating a token using client token
- config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
-end
-
-api_instance = NucleusApi::ClientApi.new
-
-client_hydro = NucleusApi::ClientHydro.new # ClientHydro | client_hydro
-
-client_hydro_id = 'client_hydro_id_example' # String | UUID client_hydro_id
-
-
-begin
-  #Update a client-hydro relationship
-  result = api_instance.update_client_hydro_using_put(client_hydro, client_hydro_id)
-  p result
-rescue NucleusApi::ApiError => e
-  puts "Exception when calling ClientApi->update_client_hydro_using_put: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **client_hydro** | [**ClientHydro**](ClientHydro.md)| client_hydro | 
- **client_hydro_id** | [**String**](.md)| UUID client_hydro_id | 
-
-### Return type
-
-[**ClientHydro**](ClientHydro.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: */*
-
-
-
 # **update_client_status_using_put**
 > ClientStatus update_client_status_using_put(client_status, client_status_id)
 
@@ -1211,7 +910,7 @@ end
 
 api_instance = NucleusApi::ClientApi.new
 
-client_status = NucleusApi::ClientStatus.new # ClientStatus | client_status
+client_status = nil # Object | client_status
 
 client_status_id = 'client_status_id_example' # String | UUID client_status_id
 
@@ -1229,7 +928,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client_status** | [**ClientStatus**](ClientStatus.md)| client_status | 
+ **client_status** | **Object**| client_status | 
  **client_status_id** | [**String**](.md)| UUID client_status_id | 
 
 ### Return type
@@ -1271,7 +970,7 @@ end
 
 api_instance = NucleusApi::ClientApi.new
 
-client = NucleusApi::Client.new # Client | client
+client = nil # Object | client
 
 client_id = 'client_id_example' # String | UUID client_id
 
@@ -1289,7 +988,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **client** | [**Client**](Client.md)| client | 
+ **client** | **Object**| client | 
  **client_id** | [**String**](.md)| UUID client_id | 
 
 ### Return type

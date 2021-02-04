@@ -33,7 +33,7 @@ class CardBaseRequestCO(object):
     swagger_types = {
         'nucleus_card_id': 'str',
         'reason': 'str',
-        'vendor_request': 'dict(str, str)'
+        'vendor_request': 'object'
     }
 
     attribute_map = {
@@ -105,7 +105,7 @@ class CardBaseRequestCO(object):
 
 
         :return: The vendor_request of this CardBaseRequestCO.  # noqa: E501
-        :rtype: dict(str, str)
+        :rtype: object
         """
         return self._vendor_request
 
@@ -115,7 +115,7 @@ class CardBaseRequestCO(object):
 
 
         :param vendor_request: The vendor_request of this CardBaseRequestCO.  # noqa: E501
-        :type: dict(str, str)
+        :type: object
         """
 
         self._vendor_request = vendor_request

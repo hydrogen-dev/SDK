@@ -32,13 +32,15 @@ class Security(object):
     """
     swagger_types = {
         'asset_class': 'str',
-        'broker': 'str',
+        'brokers': 'list[Brokers]',
         'category': 'str',
         'create_date': 'datetime',
         'currency_code': 'str',
         'cusip': 'str',
+        'description': 'str',
         'exchange': 'str',
         'id': 'str',
+        'image': 'str',
         'industry': 'str',
         'is_active': 'bool',
         'isin': 'str',
@@ -58,13 +60,15 @@ class Security(object):
 
     attribute_map = {
         'asset_class': 'asset_class',
-        'broker': 'broker',
+        'brokers': 'brokers',
         'category': 'category',
         'create_date': 'create_date',
         'currency_code': 'currency_code',
         'cusip': 'cusip',
+        'description': 'description',
         'exchange': 'exchange',
         'id': 'id',
+        'image': 'image',
         'industry': 'industry',
         'is_active': 'is_active',
         'isin': 'isin',
@@ -82,17 +86,19 @@ class Security(object):
         'update_date': 'update_date'
     }
 
-    def __init__(self, asset_class=None, broker=None, category=None, create_date=None, currency_code=None, cusip=None, exchange=None, id=None, industry=None, is_active=None, isin=None, metadata=None, name=None, proxy_id=None, secondary_id=None, sector=None, security_class=None, security_composition=None, security_country=None, ticker=None, total_expense_ratio=None, type=None, update_date=None):  # noqa: E501
+    def __init__(self, asset_class=None, brokers=None, category=None, create_date=None, currency_code=None, cusip=None, description=None, exchange=None, id=None, image=None, industry=None, is_active=None, isin=None, metadata=None, name=None, proxy_id=None, secondary_id=None, sector=None, security_class=None, security_composition=None, security_country=None, ticker=None, total_expense_ratio=None, type=None, update_date=None):  # noqa: E501
         """Security - a model defined in Swagger"""  # noqa: E501
 
         self._asset_class = None
-        self._broker = None
+        self._brokers = None
         self._category = None
         self._create_date = None
         self._currency_code = None
         self._cusip = None
+        self._description = None
         self._exchange = None
         self._id = None
+        self._image = None
         self._industry = None
         self._is_active = None
         self._isin = None
@@ -112,8 +118,8 @@ class Security(object):
 
         if asset_class is not None:
             self.asset_class = asset_class
-        if broker is not None:
-            self.broker = broker
+        if brokers is not None:
+            self.brokers = brokers
         if category is not None:
             self.category = category
         if create_date is not None:
@@ -122,10 +128,14 @@ class Security(object):
             self.currency_code = currency_code
         if cusip is not None:
             self.cusip = cusip
+        if description is not None:
+            self.description = description
         if exchange is not None:
             self.exchange = exchange
         if id is not None:
             self.id = id
+        if image is not None:
+            self.image = image
         if industry is not None:
             self.industry = industry
         if is_active is not None:
@@ -179,27 +189,27 @@ class Security(object):
         self._asset_class = asset_class
 
     @property
-    def broker(self):
-        """Gets the broker of this Security.  # noqa: E501
+    def brokers(self):
+        """Gets the brokers of this Security.  # noqa: E501
 
-        Security broker  # noqa: E501
+        brokers  # noqa: E501
 
-        :return: The broker of this Security.  # noqa: E501
-        :rtype: str
+        :return: The brokers of this Security.  # noqa: E501
+        :rtype: list[Brokers]
         """
-        return self._broker
+        return self._brokers
 
-    @broker.setter
-    def broker(self, broker):
-        """Sets the broker of this Security.
+    @brokers.setter
+    def brokers(self, brokers):
+        """Sets the brokers of this Security.
 
-        Security broker  # noqa: E501
+        brokers  # noqa: E501
 
-        :param broker: The broker of this Security.  # noqa: E501
-        :type: str
+        :param brokers: The brokers of this Security.  # noqa: E501
+        :type: list[Brokers]
         """
 
-        self._broker = broker
+        self._brokers = brokers
 
     @property
     def category(self):
@@ -292,6 +302,29 @@ class Security(object):
         self._cusip = cusip
 
     @property
+    def description(self):
+        """Gets the description of this Security.  # noqa: E501
+
+        description  # noqa: E501
+
+        :return: The description of this Security.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this Security.
+
+        description  # noqa: E501
+
+        :param description: The description of this Security.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
     def exchange(self):
         """Gets the exchange of this Security.  # noqa: E501
 
@@ -334,6 +367,29 @@ class Security(object):
         """
 
         self._id = id
+
+    @property
+    def image(self):
+        """Gets the image of this Security.  # noqa: E501
+
+        image  # noqa: E501
+
+        :return: The image of this Security.  # noqa: E501
+        :rtype: str
+        """
+        return self._image
+
+    @image.setter
+    def image(self, image):
+        """Sets the image of this Security.
+
+        image  # noqa: E501
+
+        :param image: The image of this Security.  # noqa: E501
+        :type: str
+        """
+
+        self._image = image
 
     @property
     def industry(self):

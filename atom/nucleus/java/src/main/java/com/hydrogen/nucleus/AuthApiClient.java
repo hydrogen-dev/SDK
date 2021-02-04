@@ -1,13 +1,7 @@
 package com.hydrogen.nucleus;
 
 import com.google.gson.Gson;
-import com.squareup.okhttp.Call;
-import com.squareup.okhttp.Credentials;
-import com.squareup.okhttp.HttpUrl;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.Response;
+import com.squareup.okhttp.*;
 
 import java.io.IOException;
 import java.util.Map;
@@ -25,7 +19,7 @@ public class AuthApiClient extends ApiClient {
     private String USERNAME = "username";
     private String MESSAGE = "message";
     private String ACCESS_TOKEN = "access_token";
-    private String CLIENT_TOKEN = "client_token";
+    private String CLIENT_TOKEN = "Client-Token";
     private final String clientAccessTokenUri;
     private ApiClient defaultApiClient = Configuration.getDefaultApiClient();
     private String accessToken;
@@ -50,25 +44,24 @@ public class AuthApiClient extends ApiClient {
     }
 
     public void createClientTokenCredential(String clientId, String clientSecret, String clientToken) throws ApiException {
-        Request request = createRequest(createHttpUrl(CLIENT_CREDENTIAL), clientId, clientSecret);
-        String accessToken = getAuthRequestAccessToken(request);
         Request clientTokenRequest = createClientTokenRequest(createClientTokenUrl(),
-                accessToken, clientToken);
+                clientId, clientSecret,
+                clientToken);
         String token = getAuthRequestAccessToken(clientTokenRequest);
         setAccessToken(token);
     }
-    
-    private Request createClientTokenRequest (HttpUrl createHttpUrl, String accessToken, String clientToken) {
+
+    private Request createClientTokenRequest (HttpUrl createHttpUrl, String clientId, String clientSecret, String clientToken) {
         return new Request.Builder()
                 .url(createHttpUrl)
                 .post(RequestBody.create(null, new byte[0]))
-                .addHeader(AUTHORIZATION, BEARER + accessToken)
+                .addHeader(AUTHORIZATION, Credentials.basic(clientId, clientSecret))
                 .addHeader(CLIENT_TOKEN, BEARER + clientToken)
                 .build();
     }
 
     private Request createRequest(HttpUrl createHttpUrl, String clientId, String clientSecret) {
-       return new Request.Builder()
+        return new Request.Builder()
                 .url(createHttpUrl)
                 .post(RequestBody.create(null, new byte[0]))
                 .addHeader(AUTHORIZATION, Credentials.basic(clientId, clientSecret))
@@ -85,7 +78,7 @@ public class AuthApiClient extends ApiClient {
                 .newBuilder()
                 .addQueryParameter(GRANT_TYPE_KEY, grantType)
                 .addQueryParameter(USERNAME, userName)
-            .addQueryParameter(PASSWORD, password).build();
+                .addQueryParameter(PASSWORD, password).build();
     }
 
     private HttpUrl createHttpUrl(String grantType) {

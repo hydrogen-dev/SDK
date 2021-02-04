@@ -213,7 +213,7 @@ class ApiClient(object):
             # model definition for request.
             obj_dict = {obj.attribute_map[attr]: getattr(obj, attr)
                         for attr, _ in six.iteritems(obj.swagger_types)
-                        #if getattr(obj, attr) is not None
+                        # if getattr(obj, attr) is not None
                         }
 
         return {key: self.sanitize_for_serialization(val)
@@ -569,7 +569,7 @@ class ApiClient(object):
         """
         try:
             from dateutil.parser import parse
-            return parse(string).date()
+            return (string)
         except ImportError:
             return string
         except ValueError:
@@ -588,7 +588,7 @@ class ApiClient(object):
         """
         try:
             from dateutil.parser import parse
-            return string
+            return (string)
         except ImportError:
             return string
         except ValueError:

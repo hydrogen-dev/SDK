@@ -881,7 +881,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\UtilsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$reason_code = new \com\hydrogen\nucleus\Model\ReasonCode(); // \com\hydrogen\nucleus\Model\ReasonCode | reason_code
+$reason_code = new \stdClass; // object | reason_code
 $reason_code_id = "reason_code_id_example"; // string | UUID reason_code_id
 
 try {
@@ -897,7 +897,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **reason_code** | [**\com\hydrogen\nucleus\Model\ReasonCode**](../Model/ReasonCode.md)| reason_code |
+ **reason_code** | **object**| reason_code |
  **reason_code_id** | [**string**](../Model/.md)| UUID reason_code_id |
 
 ### Return type
@@ -950,7 +950,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\UtilsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$stage = new \com\hydrogen\nucleus\Model\Stage(); // \com\hydrogen\nucleus\Model\Stage | stage
+$stage = new \stdClass; // object | stage
 $stage_id = "stage_id_example"; // string | UUID stage_id
 
 try {
@@ -966,7 +966,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stage** | [**\com\hydrogen\nucleus\Model\Stage**](../Model/Stage.md)| stage |
+ **stage** | **object**| stage |
  **stage_id** | [**string**](../Model/.md)| UUID stage_id |
 
 ### Return type
@@ -1019,7 +1019,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\UtilsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$transaction_code = new \com\hydrogen\nucleus\Model\TransactionCode(); // \com\hydrogen\nucleus\Model\TransactionCode | transaction_code
+$transaction_code = new \stdClass; // object | transaction_code
 $transaction_code_id = "transaction_code_id_example"; // string | UUID transaction_code_id
 
 try {
@@ -1035,7 +1035,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transaction_code** | [**\com\hydrogen\nucleus\Model\TransactionCode**](../Model/TransactionCode.md)| transaction_code |
+ **transaction_code** | **object**| transaction_code |
  **transaction_code_id** | [**string**](../Model/.md)| UUID transaction_code_id |
 
 ### Return type

@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accountId** | **String** | accountId | [optional] 
 **address** | [**[CardAddress]**](CardAddress.md) |  | [optional] 
 **cardHolderName** | **String** | cardHolderName | 
 **cardImage** | **String** | card_image | [optional] 
@@ -21,18 +20,16 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **institutionName** | **String** | institutionName | 
 **isActive** | **Boolean** | is_active | [optional] 
+**isPinSet** | **Boolean** | is_pin_set | [optional] 
 **isPrimary** | **Boolean** | is_primary | [optional] 
 **isReloadable** | **Boolean** | is_reloadable | [optional] 
 **mask** | **String** | mask | [optional] 
 **metadata** | **{String: String}** |  | [optional] 
 **phoneNumber** | **String** | phoneNumber | [optional] 
-**portfolioId** | **String** | portfolioId | [optional] 
+**portfolioId** | **String** | portfolioId | 
 **prepaidAmount** | **Number** | prepaidAmount | [optional] 
 **secondaryId** | **String** |  | [optional] 
-**spendingLimitAtm** | **Number** | spendingLimitAtm | [optional] 
-**spendingLimitPurchase** | **Number** | spendingLimitPurchase | [optional] 
 **status** | **String** | status | [optional] 
-**transactionLimit** | **Number** | transactionLimit | [optional] 
 **updateDate** | **Date** |  | [optional] 
 
 

@@ -38,7 +38,6 @@ Create a new answer for question.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -55,8 +54,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 QuestionnaireApi apiInstance = new QuestionnaireApi();
 Answer answer = new Answer(); // Answer | answer
 try {
@@ -99,7 +96,6 @@ Create a new client response for a question as part of a questionnaires.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -116,8 +112,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 QuestionnaireApi apiInstance = new QuestionnaireApi();
 ClientResponse clientResponse = new ClientResponse(); // ClientResponse | clientResponse
 try {
@@ -160,7 +154,6 @@ Create a new question for questionnaire.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -177,8 +170,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 QuestionnaireApi apiInstance = new QuestionnaireApi();
 Question question = new Question(); // Question | question
 try {
@@ -221,7 +212,6 @@ Create a new questionnaire for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -238,8 +228,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 QuestionnaireApi apiInstance = new QuestionnaireApi();
 Questionnaire questionnaire = new Questionnaire(); // Questionnaire | questionnaire
 try {
@@ -282,7 +270,6 @@ Delete an answer for the question
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -299,8 +286,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 QuestionnaireApi apiInstance = new QuestionnaireApi();
 UUID answerId = new UUID(); // UUID | UUID answer_id
 try {
@@ -342,7 +327,6 @@ Permanently delete a client response for a client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -359,8 +343,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 QuestionnaireApi apiInstance = new QuestionnaireApi();
 UUID clientResponseId = new UUID(); // UUID | UUID client_response_id
 try {
@@ -402,7 +384,6 @@ Delete an answer for the question
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -419,8 +400,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 QuestionnaireApi apiInstance = new QuestionnaireApi();
 UUID questionId = new UUID(); // UUID | UUID question_id
 try {
@@ -462,7 +441,6 @@ Permanently delete a questionnaire for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -479,8 +457,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 QuestionnaireApi apiInstance = new QuestionnaireApi();
 UUID questionnaireId = new UUID(); // UUID | UUID questionnaire_id
 try {
@@ -522,7 +498,6 @@ Get information for all Answers
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -539,8 +514,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 QuestionnaireApi apiInstance = new QuestionnaireApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -591,7 +564,6 @@ Retrieve the information for an answer for question
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -608,8 +580,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 QuestionnaireApi apiInstance = new QuestionnaireApi();
 UUID answerId = new UUID(); // UUID | UUID answer_id
 try {
@@ -652,7 +622,6 @@ Get all the client responses for questions as part of a questionnaire defined by
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -669,8 +638,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 QuestionnaireApi apiInstance = new QuestionnaireApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -721,7 +688,6 @@ Retrieve the information for a client response for a client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -738,8 +704,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 QuestionnaireApi apiInstance = new QuestionnaireApi();
 UUID clientResponseId = new UUID(); // UUID | UUID client_response_id
 try {
@@ -782,7 +746,6 @@ Get information for all Questions
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -799,8 +762,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 QuestionnaireApi apiInstance = new QuestionnaireApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -851,7 +812,6 @@ Retrieve the information for a question for questionnaire
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -868,8 +828,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 QuestionnaireApi apiInstance = new QuestionnaireApi();
 UUID questionId = new UUID(); // UUID | UUID question_id
 try {
@@ -912,7 +870,6 @@ Get the information for all questionnaires defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -929,8 +886,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 QuestionnaireApi apiInstance = new QuestionnaireApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -981,7 +936,6 @@ Retrieve the information for a questionnaire for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -998,8 +952,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 QuestionnaireApi apiInstance = new QuestionnaireApi();
 UUID questionnaireId = new UUID(); // UUID | UUID questionnaire_id
 try {
@@ -1042,7 +994,6 @@ Update a answer for question.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1059,10 +1010,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 QuestionnaireApi apiInstance = new QuestionnaireApi();
-Answer answer = new Answer(); // Answer | answer
+Object answer = null; // Object | answer
 UUID answerId = new UUID(); // UUID | UUID answer_id
 try {
     Answer result = apiInstance.updateAnswerUsingPut(answer, answerId);
@@ -1077,7 +1026,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **answer** | [**Answer**](Answer.md)| answer |
+ **answer** | **Object**| answer |
  **answerId** | [**UUID**](.md)| UUID answer_id |
 
 ### Return type
@@ -1105,7 +1054,6 @@ Update a client response for a client.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1122,10 +1070,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 QuestionnaireApi apiInstance = new QuestionnaireApi();
-ClientResponse clientResponse = new ClientResponse(); // ClientResponse | client_response
+Object clientResponse = null; // Object | client_response
 UUID clientResponseId = new UUID(); // UUID | UUID client_response_id
 try {
     ClientResponse result = apiInstance.updateClientResponseUsingPut(clientResponse, clientResponseId);
@@ -1140,7 +1086,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clientResponse** | [**ClientResponse**](ClientResponse.md)| client_response |
+ **clientResponse** | **Object**| client_response |
  **clientResponseId** | [**UUID**](.md)| UUID client_response_id |
 
 ### Return type
@@ -1168,7 +1114,6 @@ Update a question for questionnaire.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1185,10 +1130,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 QuestionnaireApi apiInstance = new QuestionnaireApi();
-Question question = new Question(); // Question | question
+Object question = null; // Object | question
 UUID questionId = new UUID(); // UUID | UUID question_id
 try {
     Question result = apiInstance.updateQuestionUsingPut(question, questionId);
@@ -1203,7 +1146,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **question** | [**Question**](Question.md)| question |
+ **question** | **Object**| question |
  **questionId** | [**UUID**](.md)| UUID question_id |
 
 ### Return type
@@ -1231,7 +1174,6 @@ Update a questionnaire for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import QuestionnaireApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -1248,10 +1190,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 QuestionnaireApi apiInstance = new QuestionnaireApi();
-Questionnaire questionnaire = new Questionnaire(); // Questionnaire | questionnaire
+Object questionnaire = null; // Object | questionnaire
 UUID questionnaireId = new UUID(); // UUID | UUID questionnaire_id
 try {
     Questionnaire result = apiInstance.updateQuestionnaireUsingPut(questionnaire, questionnaireId);
@@ -1266,7 +1206,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **questionnaire** | [**Questionnaire**](Questionnaire.md)| questionnaire |
+ **questionnaire** | **Object**| questionnaire |
  **questionnaireId** | [**UUID**](.md)| UUID questionnaire_id |
 
 ### Return type

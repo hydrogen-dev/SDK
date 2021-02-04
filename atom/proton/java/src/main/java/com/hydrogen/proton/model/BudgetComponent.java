@@ -15,12 +15,7 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.math.BigDecimal;
@@ -28,7 +23,7 @@ import java.math.BigDecimal;
 /**
  * BudgetComponent
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
@@ -36,11 +31,11 @@ public class BudgetComponent {
   @SerializedName("subcategory")
   private String subcategory = null;
 
-  @SerializedName("value")
-  private BigDecimal value = null;
-
   @SerializedName("category")
   private String category = null;
+
+  @SerializedName("value")
+  private BigDecimal value = null;
 
   public BudgetComponent subcategory(String subcategory) {
     this.subcategory = subcategory;
@@ -58,6 +53,24 @@ public class BudgetComponent {
 
   public void setSubcategory(String subcategory) {
     this.subcategory = subcategory;
+  }
+
+  public BudgetComponent category(String category) {
+    this.category = category;
+    return this;
+  }
+
+   /**
+   * Get category
+   * @return category
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getCategory() {
+    return category;
+  }
+
+  public void setCategory(String category) {
+    this.category = category;
   }
 
   public BudgetComponent value(BigDecimal value) {
@@ -79,24 +92,6 @@ public class BudgetComponent {
     this.value = value;
   }
 
-  public BudgetComponent category(String category) {
-    this.category = category;
-    return this;
-  }
-
-   /**
-   * Get category
-   * @return category
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getCategory() {
-    return category;
-  }
-
-  public void setCategory(String category) {
-    this.category = category;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -108,13 +103,13 @@ public class BudgetComponent {
     }
     BudgetComponent budgetComponent = (BudgetComponent) o;
     return Objects.equals(this.subcategory, budgetComponent.subcategory) &&
-        Objects.equals(this.value, budgetComponent.value) &&
-        Objects.equals(this.category, budgetComponent.category);
+        Objects.equals(this.category, budgetComponent.category) &&
+        Objects.equals(this.value, budgetComponent.value);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(subcategory, value, category);
+    return Objects.hash(subcategory, category, value);
   }
 
 
@@ -124,8 +119,8 @@ public class BudgetComponent {
     sb.append("class BudgetComponent {\n");
     
     sb.append("    subcategory: ").append(toIndentedString(subcategory)).append("\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("}");
     return sb.toString();
   }

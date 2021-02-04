@@ -1,6 +1,6 @@
 # IavApi
 
-All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1/*
+All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -37,7 +37,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 IavApi apiInstance = new IavApi();
 IavRequestCO iavRequestCO = new IavRequestCO(); // IavRequestCO | iavRequestCO
 try {
@@ -97,7 +96,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 IavApi apiInstance = new IavApi();
 UUID nucleusBankLinkId = new UUID(); // UUID | nucleus_bank_link_id
 try {

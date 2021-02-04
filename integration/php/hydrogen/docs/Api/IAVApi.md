@@ -1,6 +1,6 @@
 # com\hydrogen\integration\IAVApi
 
-All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1/*
+All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,7 +19,6 @@ Endpoint is used to verify account.
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
@@ -44,7 +43,7 @@ $apiInstance = new com\hydrogen\integration\Api\IAVApi(
     new GuzzleHttp\Client(),
     $config
 );
-$iav_request_co = new \com\hydrogen\integration\Model\IavRequestCO(); IavRequestCO
+$iav_request_co = new \com\hydrogen\integration\Model\IavRequestCO(); // \com\hydrogen\integration\Model\IavRequestCO | iavRequestCO
 
 try {
     $result = $apiInstance->createIAVUsingPost($iav_request_co);
@@ -87,7 +86,6 @@ Get verified account based on id.
 ```php
 <?php
 require_once('../vendor/autoload.php');
-
 try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials

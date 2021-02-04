@@ -15,11 +15,7 @@ package com.hydrogen.nucleus.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -32,7 +28,7 @@ import org.threeten.bp.OffsetDateTime;
  * Funding Object
  */
 @ApiModel(description = "Funding Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-12T11:03:26.704Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-28T16:21:02.928Z")
 
 
 
@@ -307,7 +303,7 @@ public class Funding {
    * fundingStatus
    * @return fundingStatus
   **/
-  @ApiModelProperty(example = "request_received", required = true, value = "fundingStatus")
+  @ApiModelProperty(example = "received", required = true, value = "fundingStatus")
   public String getFundingStatus() {
     return fundingStatus;
   }

@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,11 +30,47 @@ import org.threeten.bp.LocalDate;
 /**
  * CashFlowAnalysisRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class CashFlowAnalysisRequest {
+  @SerializedName("aggregation_account_ids")
+  private List<UUID> aggregationAccountIds = null;
+
+  @SerializedName("end_date")
+  private LocalDate endDate = null;
+
+  @SerializedName("benchmark_end_date")
+  private LocalDate benchmarkEndDate = null;
+
+  @SerializedName("client_id")
+  private UUID clientId = null;
+
+  @SerializedName("account_ids")
+  private List<UUID> accountIds = null;
+
+  @SerializedName("show_income_details")
+  private Boolean showIncomeDetails = false;
+
+  @SerializedName("show_history")
+  private Boolean showHistory = false;
+
+  @SerializedName("start_date")
+  private LocalDate startDate = null;
+
+  @SerializedName("currency_conversion")
+  private String currencyConversion = null;
+
+  @SerializedName("currency_code")
+  private String currencyCode = null;
+
+  @SerializedName("benchmark_start_date")
+  private LocalDate benchmarkStartDate = null;
+
+  @SerializedName("show_spending_details")
+  private Boolean showSpendingDetails = false;
+
   /**
    * Gets or Sets scope
    */
@@ -88,150 +123,6 @@ public class CashFlowAnalysisRequest {
   @SerializedName("scope")
   private ScopeEnum scope = ScopeEnum.ALL;
 
-  @SerializedName("benchmark_start_date")
-  private LocalDate benchmarkStartDate = null;
-
-  @SerializedName("show_spending_details")
-  private Boolean showSpendingDetails = false;
-
-  @SerializedName("client_id")
-  private UUID clientId = null;
-
-  @SerializedName("currency_conversion")
-  private String currencyConversion = null;
-
-  @SerializedName("start_date")
-  private LocalDate startDate = null;
-
-  @SerializedName("aggregation_account_ids")
-  private List<UUID> aggregationAccountIds = null;
-
-  @SerializedName("end_date")
-  private LocalDate endDate = null;
-
-  @SerializedName("show_income_details")
-  private Boolean showIncomeDetails = false;
-
-  @SerializedName("currency_code")
-  private String currencyCode = null;
-
-  @SerializedName("account_ids")
-  private List<UUID> accountIds = null;
-
-  @SerializedName("benchmark_end_date")
-  private LocalDate benchmarkEndDate = null;
-
-  @SerializedName("show_history")
-  private Boolean showHistory = false;
-
-  public CashFlowAnalysisRequest scope(ScopeEnum scope) {
-    this.scope = scope;
-    return this;
-  }
-
-   /**
-   * Get scope
-   * @return scope
-  **/
-  @ApiModelProperty(value = "")
-  public ScopeEnum getScope() {
-    return scope;
-  }
-
-  public void setScope(ScopeEnum scope) {
-    this.scope = scope;
-  }
-
-  public CashFlowAnalysisRequest benchmarkStartDate(LocalDate benchmarkStartDate) {
-    this.benchmarkStartDate = benchmarkStartDate;
-    return this;
-  }
-
-   /**
-   * Get benchmarkStartDate
-   * @return benchmarkStartDate
-  **/
-  @ApiModelProperty(value = "")
-  public LocalDate getBenchmarkStartDate() {
-    return benchmarkStartDate;
-  }
-
-  public void setBenchmarkStartDate(LocalDate benchmarkStartDate) {
-    this.benchmarkStartDate = benchmarkStartDate;
-  }
-
-  public CashFlowAnalysisRequest showSpendingDetails(Boolean showSpendingDetails) {
-    this.showSpendingDetails = showSpendingDetails;
-    return this;
-  }
-
-   /**
-   * Get showSpendingDetails
-   * @return showSpendingDetails
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isShowSpendingDetails() {
-    return showSpendingDetails;
-  }
-
-  public void setShowSpendingDetails(Boolean showSpendingDetails) {
-    this.showSpendingDetails = showSpendingDetails;
-  }
-
-  public CashFlowAnalysisRequest clientId(UUID clientId) {
-    this.clientId = clientId;
-    return this;
-  }
-
-   /**
-   * Get clientId
-   * @return clientId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getClientId() {
-    return clientId;
-  }
-
-  public void setClientId(UUID clientId) {
-    this.clientId = clientId;
-  }
-
-  public CashFlowAnalysisRequest currencyConversion(String currencyConversion) {
-    this.currencyConversion = currencyConversion;
-    return this;
-  }
-
-   /**
-   * Get currencyConversion
-   * @return currencyConversion
-  **/
-  @ApiModelProperty(value = "")
-  public String getCurrencyConversion() {
-    return currencyConversion;
-  }
-
-  public void setCurrencyConversion(String currencyConversion) {
-    this.currencyConversion = currencyConversion;
-  }
-
-  public CashFlowAnalysisRequest startDate(LocalDate startDate) {
-    this.startDate = startDate;
-    return this;
-  }
-
-   /**
-   * Get startDate
-   * @return startDate
-  **/
-  @ApiModelProperty(value = "")
-  public LocalDate getStartDate() {
-    return startDate;
-  }
-
-  public void setStartDate(LocalDate startDate) {
-    this.startDate = startDate;
-  }
-
   public CashFlowAnalysisRequest aggregationAccountIds(List<UUID> aggregationAccountIds) {
     this.aggregationAccountIds = aggregationAccountIds;
     return this;
@@ -276,40 +167,40 @@ public class CashFlowAnalysisRequest {
     this.endDate = endDate;
   }
 
-  public CashFlowAnalysisRequest showIncomeDetails(Boolean showIncomeDetails) {
-    this.showIncomeDetails = showIncomeDetails;
+  public CashFlowAnalysisRequest benchmarkEndDate(LocalDate benchmarkEndDate) {
+    this.benchmarkEndDate = benchmarkEndDate;
     return this;
   }
 
    /**
-   * Get showIncomeDetails
-   * @return showIncomeDetails
+   * Get benchmarkEndDate
+   * @return benchmarkEndDate
   **/
   @ApiModelProperty(value = "")
-  public Boolean isShowIncomeDetails() {
-    return showIncomeDetails;
+  public LocalDate getBenchmarkEndDate() {
+    return benchmarkEndDate;
   }
 
-  public void setShowIncomeDetails(Boolean showIncomeDetails) {
-    this.showIncomeDetails = showIncomeDetails;
+  public void setBenchmarkEndDate(LocalDate benchmarkEndDate) {
+    this.benchmarkEndDate = benchmarkEndDate;
   }
 
-  public CashFlowAnalysisRequest currencyCode(String currencyCode) {
-    this.currencyCode = currencyCode;
+  public CashFlowAnalysisRequest clientId(UUID clientId) {
+    this.clientId = clientId;
     return this;
   }
 
    /**
-   * Get currencyCode
-   * @return currencyCode
+   * Get clientId
+   * @return clientId
   **/
   @ApiModelProperty(value = "")
-  public String getCurrencyCode() {
-    return currencyCode;
+  public UUID getClientId() {
+    return clientId;
   }
 
-  public void setCurrencyCode(String currencyCode) {
-    this.currencyCode = currencyCode;
+  public void setClientId(UUID clientId) {
+    this.clientId = clientId;
   }
 
   public CashFlowAnalysisRequest accountIds(List<UUID> accountIds) {
@@ -338,22 +229,22 @@ public class CashFlowAnalysisRequest {
     this.accountIds = accountIds;
   }
 
-  public CashFlowAnalysisRequest benchmarkEndDate(LocalDate benchmarkEndDate) {
-    this.benchmarkEndDate = benchmarkEndDate;
+  public CashFlowAnalysisRequest showIncomeDetails(Boolean showIncomeDetails) {
+    this.showIncomeDetails = showIncomeDetails;
     return this;
   }
 
    /**
-   * Get benchmarkEndDate
-   * @return benchmarkEndDate
+   * Get showIncomeDetails
+   * @return showIncomeDetails
   **/
   @ApiModelProperty(value = "")
-  public LocalDate getBenchmarkEndDate() {
-    return benchmarkEndDate;
+  public Boolean isShowIncomeDetails() {
+    return showIncomeDetails;
   }
 
-  public void setBenchmarkEndDate(LocalDate benchmarkEndDate) {
-    this.benchmarkEndDate = benchmarkEndDate;
+  public void setShowIncomeDetails(Boolean showIncomeDetails) {
+    this.showIncomeDetails = showIncomeDetails;
   }
 
   public CashFlowAnalysisRequest showHistory(Boolean showHistory) {
@@ -374,6 +265,114 @@ public class CashFlowAnalysisRequest {
     this.showHistory = showHistory;
   }
 
+  public CashFlowAnalysisRequest startDate(LocalDate startDate) {
+    this.startDate = startDate;
+    return this;
+  }
+
+   /**
+   * Get startDate
+   * @return startDate
+  **/
+  @ApiModelProperty(value = "")
+  public LocalDate getStartDate() {
+    return startDate;
+  }
+
+  public void setStartDate(LocalDate startDate) {
+    this.startDate = startDate;
+  }
+
+  public CashFlowAnalysisRequest currencyConversion(String currencyConversion) {
+    this.currencyConversion = currencyConversion;
+    return this;
+  }
+
+   /**
+   * Get currencyConversion
+   * @return currencyConversion
+  **/
+  @ApiModelProperty(value = "")
+  public String getCurrencyConversion() {
+    return currencyConversion;
+  }
+
+  public void setCurrencyConversion(String currencyConversion) {
+    this.currencyConversion = currencyConversion;
+  }
+
+  public CashFlowAnalysisRequest currencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+    return this;
+  }
+
+   /**
+   * Get currencyCode
+   * @return currencyCode
+  **/
+  @ApiModelProperty(value = "")
+  public String getCurrencyCode() {
+    return currencyCode;
+  }
+
+  public void setCurrencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+  }
+
+  public CashFlowAnalysisRequest benchmarkStartDate(LocalDate benchmarkStartDate) {
+    this.benchmarkStartDate = benchmarkStartDate;
+    return this;
+  }
+
+   /**
+   * Get benchmarkStartDate
+   * @return benchmarkStartDate
+  **/
+  @ApiModelProperty(value = "")
+  public LocalDate getBenchmarkStartDate() {
+    return benchmarkStartDate;
+  }
+
+  public void setBenchmarkStartDate(LocalDate benchmarkStartDate) {
+    this.benchmarkStartDate = benchmarkStartDate;
+  }
+
+  public CashFlowAnalysisRequest showSpendingDetails(Boolean showSpendingDetails) {
+    this.showSpendingDetails = showSpendingDetails;
+    return this;
+  }
+
+   /**
+   * Get showSpendingDetails
+   * @return showSpendingDetails
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isShowSpendingDetails() {
+    return showSpendingDetails;
+  }
+
+  public void setShowSpendingDetails(Boolean showSpendingDetails) {
+    this.showSpendingDetails = showSpendingDetails;
+  }
+
+  public CashFlowAnalysisRequest scope(ScopeEnum scope) {
+    this.scope = scope;
+    return this;
+  }
+
+   /**
+   * Get scope
+   * @return scope
+  **/
+  @ApiModelProperty(value = "")
+  public ScopeEnum getScope() {
+    return scope;
+  }
+
+  public void setScope(ScopeEnum scope) {
+    this.scope = scope;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -384,24 +383,24 @@ public class CashFlowAnalysisRequest {
       return false;
     }
     CashFlowAnalysisRequest cashFlowAnalysisRequest = (CashFlowAnalysisRequest) o;
-    return Objects.equals(this.scope, cashFlowAnalysisRequest.scope) &&
+    return Objects.equals(this.aggregationAccountIds, cashFlowAnalysisRequest.aggregationAccountIds) &&
+        Objects.equals(this.endDate, cashFlowAnalysisRequest.endDate) &&
+        Objects.equals(this.benchmarkEndDate, cashFlowAnalysisRequest.benchmarkEndDate) &&
+        Objects.equals(this.clientId, cashFlowAnalysisRequest.clientId) &&
+        Objects.equals(this.accountIds, cashFlowAnalysisRequest.accountIds) &&
+        Objects.equals(this.showIncomeDetails, cashFlowAnalysisRequest.showIncomeDetails) &&
+        Objects.equals(this.showHistory, cashFlowAnalysisRequest.showHistory) &&
+        Objects.equals(this.startDate, cashFlowAnalysisRequest.startDate) &&
+        Objects.equals(this.currencyConversion, cashFlowAnalysisRequest.currencyConversion) &&
+        Objects.equals(this.currencyCode, cashFlowAnalysisRequest.currencyCode) &&
         Objects.equals(this.benchmarkStartDate, cashFlowAnalysisRequest.benchmarkStartDate) &&
         Objects.equals(this.showSpendingDetails, cashFlowAnalysisRequest.showSpendingDetails) &&
-        Objects.equals(this.clientId, cashFlowAnalysisRequest.clientId) &&
-        Objects.equals(this.currencyConversion, cashFlowAnalysisRequest.currencyConversion) &&
-        Objects.equals(this.startDate, cashFlowAnalysisRequest.startDate) &&
-        Objects.equals(this.aggregationAccountIds, cashFlowAnalysisRequest.aggregationAccountIds) &&
-        Objects.equals(this.endDate, cashFlowAnalysisRequest.endDate) &&
-        Objects.equals(this.showIncomeDetails, cashFlowAnalysisRequest.showIncomeDetails) &&
-        Objects.equals(this.currencyCode, cashFlowAnalysisRequest.currencyCode) &&
-        Objects.equals(this.accountIds, cashFlowAnalysisRequest.accountIds) &&
-        Objects.equals(this.benchmarkEndDate, cashFlowAnalysisRequest.benchmarkEndDate) &&
-        Objects.equals(this.showHistory, cashFlowAnalysisRequest.showHistory);
+        Objects.equals(this.scope, cashFlowAnalysisRequest.scope);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(scope, benchmarkStartDate, showSpendingDetails, clientId, currencyConversion, startDate, aggregationAccountIds, endDate, showIncomeDetails, currencyCode, accountIds, benchmarkEndDate, showHistory);
+    return Objects.hash(aggregationAccountIds, endDate, benchmarkEndDate, clientId, accountIds, showIncomeDetails, showHistory, startDate, currencyConversion, currencyCode, benchmarkStartDate, showSpendingDetails, scope);
   }
 
 
@@ -410,19 +409,19 @@ public class CashFlowAnalysisRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class CashFlowAnalysisRequest {\n");
     
-    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
-    sb.append("    benchmarkStartDate: ").append(toIndentedString(benchmarkStartDate)).append("\n");
-    sb.append("    showSpendingDetails: ").append(toIndentedString(showSpendingDetails)).append("\n");
-    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
-    sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
-    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    aggregationAccountIds: ").append(toIndentedString(aggregationAccountIds)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
-    sb.append("    showIncomeDetails: ").append(toIndentedString(showIncomeDetails)).append("\n");
-    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
-    sb.append("    accountIds: ").append(toIndentedString(accountIds)).append("\n");
     sb.append("    benchmarkEndDate: ").append(toIndentedString(benchmarkEndDate)).append("\n");
+    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
+    sb.append("    accountIds: ").append(toIndentedString(accountIds)).append("\n");
+    sb.append("    showIncomeDetails: ").append(toIndentedString(showIncomeDetails)).append("\n");
     sb.append("    showHistory: ").append(toIndentedString(showHistory)).append("\n");
+    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
+    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
+    sb.append("    benchmarkStartDate: ").append(toIndentedString(benchmarkStartDate)).append("\n");
+    sb.append("    showSpendingDetails: ").append(toIndentedString(showSpendingDetails)).append("\n");
+    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -29,7 +29,7 @@ import java.util.UUID;
 /**
  * MdQuoteRequestCO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class MdQuoteRequestCO {
   @SerializedName("nucleus_security_id")
   private List<UUID> nucleusSecurityId = null;
@@ -81,7 +81,7 @@ public class MdQuoteRequestCO {
 
       @Override
       public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        Object value = jsonReader.nextString();
         return TypeEnum.fromValue(String.valueOf(value));
       }
     }

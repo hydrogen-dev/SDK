@@ -41,7 +41,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.ApplicationApi(nucleus_api.ApiClient(configuration))
 application = nucleus_api.Application() # Application | application
@@ -105,7 +105,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.ApplicationApi(nucleus_api.ApiClient(configuration))
 application_id = 'application_id_example' # str | UUID application_id
@@ -168,7 +168,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.ApplicationApi(nucleus_api.ApiClient(configuration))
 ascending = false # bool | ascending (optional) (default to false)
@@ -240,7 +240,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.ApplicationApi(nucleus_api.ApiClient(configuration))
 application_id = 'application_id_example' # str | UUID application_id
@@ -304,10 +304,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.ApplicationApi(nucleus_api.ApiClient(configuration))
-application = nucleus_api.Application() # Application | application
+application = NULL # object | application
 application_id = 'application_id_example' # str | UUID application_id
 
 try:
@@ -322,7 +322,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **application** | [**Application**](Application.md)| application | 
+ **application** | **object**| application | 
  **application_id** | [**str**](.md)| UUID application_id | 
 
 ### Return type

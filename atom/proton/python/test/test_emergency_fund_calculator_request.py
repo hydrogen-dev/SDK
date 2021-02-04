@@ -32,7 +32,7 @@ class TestEmergencyFundCalculatorRequest(unittest.TestCase):
     def testEmergencyFundCalculatorRequest(self):
         """Test EmergencyFundCalculatorRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.emergency_fund_calculator_request.EmergencyFundCalculatorRequest()  # noqa: E501
+        # model = proton_api.models.emergency_fund_calculator_request.EmergencyFundCalculatorRequest()  # noqa: E501
         pass
 
 

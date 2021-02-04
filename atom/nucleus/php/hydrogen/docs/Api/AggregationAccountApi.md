@@ -1587,7 +1587,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$aggregation_account_balance = new \com\hydrogen\nucleus\Model\AggregationAccountBalance(); // \com\hydrogen\nucleus\Model\AggregationAccountBalance | aggregation_account_balance
+$aggregation_account_balance = new \stdClass; // object | aggregation_account_balance
 $aggregation_account_balance_id = "aggregation_account_balance_id_example"; // string | UUID aggregation_account_balance_id
 
 try {
@@ -1603,7 +1603,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_balance** | [**\com\hydrogen\nucleus\Model\AggregationAccountBalance**](../Model/AggregationAccountBalance.md)| aggregation_account_balance |
+ **aggregation_account_balance** | **object**| aggregation_account_balance |
  **aggregation_account_balance_id** | [**string**](../Model/.md)| UUID aggregation_account_balance_id |
 
 ### Return type
@@ -1656,7 +1656,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$aggregation_account_list = array(new \com\hydrogen\nucleus\Model\AggregationAccount()); // \com\hydrogen\nucleus\Model\AggregationAccount[] | aggregationAccountList
+$aggregation_account_list = array(new \com\hydrogen\nucleus\Model\object[]()); // object[] | aggregationAccountList
 
 try {
     $result = $apiInstance->updateAggregationAccountBulkUsingPut($aggregation_account_list);
@@ -1671,7 +1671,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_list** | [**\com\hydrogen\nucleus\Model\AggregationAccount[]**](../Model/AggregationAccount.md)| aggregationAccountList |
+ **aggregation_account_list** | **object[]**| aggregationAccountList |
 
 ### Return type
 
@@ -1723,7 +1723,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$aggregation_account_holding = array(new \com\hydrogen\nucleus\Model\AggregationAccountHolding()); // \com\hydrogen\nucleus\Model\AggregationAccountHolding[] | aggregationAccountHolding
+$aggregation_account_holding = array(new \com\hydrogen\nucleus\Model\object[]()); // object[] | aggregationAccountHolding
 
 try {
     $result = $apiInstance->updateAggregationAccountHoldingBulkUsingPut($aggregation_account_holding);
@@ -1738,7 +1738,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_holding** | [**\com\hydrogen\nucleus\Model\AggregationAccountHolding[]**](../Model/AggregationAccountHolding.md)| aggregationAccountHolding |
+ **aggregation_account_holding** | **object[]**| aggregationAccountHolding |
 
 ### Return type
 
@@ -1790,7 +1790,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$aggregation_account_holding = new \com\hydrogen\nucleus\Model\AggregationAccountHolding(); // \com\hydrogen\nucleus\Model\AggregationAccountHolding | aggregation_account_holding
+$aggregation_account_holding = new \stdClass; // object | aggregation_account_holding
 $aggregation_account_holding_id = "aggregation_account_holding_id_example"; // string | UUID aggregation_account_holding_id
 
 try {
@@ -1806,7 +1806,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_holding** | [**\com\hydrogen\nucleus\Model\AggregationAccountHolding**](../Model/AggregationAccountHolding.md)| aggregation_account_holding |
+ **aggregation_account_holding** | **object**| aggregation_account_holding |
  **aggregation_account_holding_id** | [**string**](../Model/.md)| UUID aggregation_account_holding_id |
 
 ### Return type
@@ -1859,7 +1859,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$aggregation_account_transaction = new \com\hydrogen\nucleus\Model\AggregationAccountTransaction(); // \com\hydrogen\nucleus\Model\AggregationAccountTransaction | aggregation_account_transaction
+$aggregation_account_transaction = new \stdClass; // object | aggregation_account_transaction
 $aggregation_account_transaction_id = "aggregation_account_transaction_id_example"; // string | UUID aggregation_account_transaction_id
 
 try {
@@ -1875,7 +1875,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_transaction** | [**\com\hydrogen\nucleus\Model\AggregationAccountTransaction**](../Model/AggregationAccountTransaction.md)| aggregation_account_transaction |
+ **aggregation_account_transaction** | **object**| aggregation_account_transaction |
  **aggregation_account_transaction_id** | [**string**](../Model/.md)| UUID aggregation_account_transaction_id |
 
 ### Return type
@@ -1928,7 +1928,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\AggregationAccountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$aggregation_account = new \com\hydrogen\nucleus\Model\AggregationAccount(); // \com\hydrogen\nucleus\Model\AggregationAccount | aggregation_account
+$aggregation_account = new \stdClass; // object | aggregation_account
 $aggregation_account_id = "aggregation_account_id_example"; // string | UUID aggregation_account_id
 
 try {
@@ -1944,7 +1944,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account** | [**\com\hydrogen\nucleus\Model\AggregationAccount**](../Model/AggregationAccount.md)| aggregation_account |
+ **aggregation_account** | **object**| aggregation_account |
  **aggregation_account_id** | [**string**](../Model/.md)| UUID aggregation_account_id |
 
 ### Return type

@@ -4,20 +4,20 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**alteredPortfolioWeights** | **List&lt;Float&gt;** |  | 
-**createLog** | **Boolean** |  |  [optional]
-**aggregationAccountId** | [**UUID**](UUID.md) |  |  [optional]
-**allocationId** | [**UUID**](UUID.md) |  |  [optional]
-**modelId** | [**UUID**](UUID.md) |  |  [optional]
-**endDate** | **String** |  |  [optional]
-**currentPortfolioTickers** | **List&lt;String&gt;** |  |  [optional]
-**useProxyData** | **Boolean** |  |  [optional]
-**alteredPortfolioTickers** | **List&lt;String&gt;** |  |  [optional]
-**startDate** | **String** |  |  [optional]
 **currentPortfolioWeights** | **List&lt;Float&gt;** |  |  [optional]
-**accountId** | [**UUID**](UUID.md) |  |  [optional]
-**marketDataSource** | [**MarketDataSourceEnum**](#MarketDataSourceEnum) |  |  [optional]
 **portfolioId** | [**UUID**](UUID.md) |  |  [optional]
+**endDate** | **String** |  |  [optional]
+**marketDataSource** | [**MarketDataSourceEnum**](#MarketDataSourceEnum) |  |  [optional]
+**modelId** | [**UUID**](UUID.md) |  |  [optional]
+**createLog** | **Boolean** |  |  [optional]
+**allocationId** | [**UUID**](UUID.md) |  |  [optional]
+**useProxyData** | **Boolean** |  |  [optional]
+**startDate** | **String** |  |  [optional]
+**accountId** | [**UUID**](UUID.md) |  |  [optional]
+**aggregationAccountId** | [**UUID**](UUID.md) |  |  [optional]
+**currentPortfolioTickers** | **List&lt;String&gt;** |  |  [optional]
+**alteredPortfolioWeights** | **List&lt;Float&gt;** |  | 
+**alteredPortfolioTickers** | **List&lt;String&gt;** |  |  [optional]
 
 
 <a name="MarketDataSourceEnum"></a>

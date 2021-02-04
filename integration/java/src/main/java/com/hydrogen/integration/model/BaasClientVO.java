@@ -25,54 +25,28 @@ import java.util.UUID;
 /**
  * BaasClientVO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class BaasClientVO {
-  @SerializedName("electron_document_id")
-  private List<UUID> electronDocumentId = null;
-
   @SerializedName("message")
   private String message = null;
 
   @SerializedName("nucleus_client_id")
   private UUID nucleusClientId = null;
 
+  @SerializedName("nucleus_document_id")
+  private List<UUID> nucleusDocumentId = null;
+
   @SerializedName("status")
   private String status = null;
 
   @SerializedName("vendor_name")
-  private Object vendorName = null;
+  private String vendorName = null;
 
   @SerializedName("vendor_request_data")
-  private BaasClientVendorDataVO vendorRequestData = null;
+  private ClientVendorRequestDataVO vendorRequestData = null;
 
   @SerializedName("vendor_response")
   private Object vendorResponse = null;
-
-  public BaasClientVO electronDocumentId(List<UUID> electronDocumentId) {
-    this.electronDocumentId = electronDocumentId;
-    return this;
-  }
-
-  public BaasClientVO addElectronDocumentIdItem(UUID electronDocumentIdItem) {
-    if (this.electronDocumentId == null) {
-      this.electronDocumentId = new ArrayList<UUID>();
-    }
-    this.electronDocumentId.add(electronDocumentIdItem);
-    return this;
-  }
-
-   /**
-   * Get electronDocumentId
-   * @return electronDocumentId
-  **/
-  @ApiModelProperty(value = "")
-  public List<UUID> getElectronDocumentId() {
-    return electronDocumentId;
-  }
-
-  public void setElectronDocumentId(List<UUID> electronDocumentId) {
-    this.electronDocumentId = electronDocumentId;
-  }
 
   public BaasClientVO message(String message) {
     this.message = message;
@@ -110,6 +84,32 @@ public class BaasClientVO {
     this.nucleusClientId = nucleusClientId;
   }
 
+  public BaasClientVO nucleusDocumentId(List<UUID> nucleusDocumentId) {
+    this.nucleusDocumentId = nucleusDocumentId;
+    return this;
+  }
+
+  public BaasClientVO addNucleusDocumentIdItem(UUID nucleusDocumentIdItem) {
+    if (this.nucleusDocumentId == null) {
+      this.nucleusDocumentId = new ArrayList<UUID>();
+    }
+    this.nucleusDocumentId.add(nucleusDocumentIdItem);
+    return this;
+  }
+
+   /**
+   * Get nucleusDocumentId
+   * @return nucleusDocumentId
+  **/
+  @ApiModelProperty(value = "")
+  public List<UUID> getNucleusDocumentId() {
+    return nucleusDocumentId;
+  }
+
+  public void setNucleusDocumentId(List<UUID> nucleusDocumentId) {
+    this.nucleusDocumentId = nucleusDocumentId;
+  }
+
   public BaasClientVO status(String status) {
     this.status = status;
     return this;
@@ -128,7 +128,7 @@ public class BaasClientVO {
     this.status = status;
   }
 
-  public BaasClientVO vendorName(Object vendorName) {
+  public BaasClientVO vendorName(String vendorName) {
     this.vendorName = vendorName;
     return this;
   }
@@ -138,15 +138,15 @@ public class BaasClientVO {
    * @return vendorName
   **/
   @ApiModelProperty(value = "")
-  public Object getVendorName() {
+  public String getVendorName() {
     return vendorName;
   }
 
-  public void setVendorName(Object vendorName) {
+  public void setVendorName(String vendorName) {
     this.vendorName = vendorName;
   }
 
-  public BaasClientVO vendorRequestData(BaasClientVendorDataVO vendorRequestData) {
+  public BaasClientVO vendorRequestData(ClientVendorRequestDataVO vendorRequestData) {
     this.vendorRequestData = vendorRequestData;
     return this;
   }
@@ -156,11 +156,11 @@ public class BaasClientVO {
    * @return vendorRequestData
   **/
   @ApiModelProperty(value = "")
-  public BaasClientVendorDataVO getVendorRequestData() {
+  public ClientVendorRequestDataVO getVendorRequestData() {
     return vendorRequestData;
   }
 
-  public void setVendorRequestData(BaasClientVendorDataVO vendorRequestData) {
+  public void setVendorRequestData(ClientVendorRequestDataVO vendorRequestData) {
     this.vendorRequestData = vendorRequestData;
   }
 
@@ -192,9 +192,9 @@ public class BaasClientVO {
       return false;
     }
     BaasClientVO baasClientVO = (BaasClientVO) o;
-    return Objects.equals(this.electronDocumentId, baasClientVO.electronDocumentId) &&
-        Objects.equals(this.message, baasClientVO.message) &&
+    return Objects.equals(this.message, baasClientVO.message) &&
         Objects.equals(this.nucleusClientId, baasClientVO.nucleusClientId) &&
+        Objects.equals(this.nucleusDocumentId, baasClientVO.nucleusDocumentId) &&
         Objects.equals(this.status, baasClientVO.status) &&
         Objects.equals(this.vendorName, baasClientVO.vendorName) &&
         Objects.equals(this.vendorRequestData, baasClientVO.vendorRequestData) &&
@@ -203,7 +203,7 @@ public class BaasClientVO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(electronDocumentId, message, nucleusClientId, status, vendorName, vendorRequestData, vendorResponse);
+    return Objects.hash(message, nucleusClientId, nucleusDocumentId, status, vendorName, vendorRequestData, vendorResponse);
   }
 
 
@@ -212,9 +212,9 @@ public class BaasClientVO {
     StringBuilder sb = new StringBuilder();
     sb.append("class BaasClientVO {\n");
     
-    sb.append("    electronDocumentId: ").append(toIndentedString(electronDocumentId)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    nucleusClientId: ").append(toIndentedString(nucleusClientId)).append("\n");
+    sb.append("    nucleusDocumentId: ").append(toIndentedString(nucleusDocumentId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    vendorName: ").append(toIndentedString(vendorName)).append("\n");
     sb.append("    vendorRequestData: ").append(toIndentedString(vendorRequestData)).append("\n");

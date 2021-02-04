@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**nucleus_card_id** | **string** |  | [optional] 
 **nucleus_client_id** | **string** |  | [optional] 
 **vendor_request** | **map[string,string]** |  | [optional] 
 

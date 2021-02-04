@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**nucleus_card_id** | **str** |  | [optional] 
 **nucleus_client_id** | **str** |  | [optional] 
 **vendor_request** | **dict(str, str)** |  | [optional] 
 

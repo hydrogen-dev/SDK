@@ -30,7 +30,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::FinancialHealthApi.new
 
 diversification_score_request = ProtonApi::DiversificationScoreRequest.new # DiversificationScoreRequest | Request payload for Diversification Score
@@ -86,7 +85,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::FinancialHealthApi.new
 
 emergency_fund_calculator_request = ProtonApi::EmergencyFundCalculatorRequest.new # EmergencyFundCalculatorRequest | Request payload for Emergency Fund Calculator
@@ -142,7 +140,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::FinancialHealthApi.new
 
 financial_health_check_request = ProtonApi::FinancialHealthCheckRequest.new # FinancialHealthCheckRequest | Request payload for Financial Health Check
@@ -198,7 +195,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::FinancialHealthApi.new
 
 portfolio_optimization_score_request = ProtonApi::PortfolioOptimizationScoreRequest.new # PortfolioOptimizationScoreRequest | Request payload for Portfolio Optimization Score

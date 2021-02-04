@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **description** | **string** | description | [optional] 
 **location** | [**\com\hydrogen\integration\Model\Location**](Location.md) |  | [optional] 
 **memo** | **string** | memo | [optional] 
-**merchant** | **string** | merchant | 
+**merchant** | **string** | merchant | [optional] 
 **subcategory** | **string** | subcategory | [optional] 
 **transaction_type** | **string** | transactionType | 
 

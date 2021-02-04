@@ -32,7 +32,7 @@ class TestGoalDecumulationStatusRequest(unittest.TestCase):
     def testGoalDecumulationStatusRequest(self):
         """Test GoalDecumulationStatusRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.goal_decumulation_status_request.GoalDecumulationStatusRequest()  # noqa: E501
+        # model = proton_api.models.goal_decumulation_status_request.GoalDecumulationStatusRequest()  # noqa: E501
         pass
 
 

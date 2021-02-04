@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **nucleusCardId** | [**UUID**](UUID.md) |  |  [optional]
 **reason** | **String** |  |  [optional]
-**vendorRequest** | **Map&lt;String, String&gt;** |  |  [optional]
+**vendorRequest** | **Object** |  |  [optional]
 **wallet** | [**WalletEnum**](#WalletEnum) |  |  [optional]
 
 
@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 ## Enum: WalletEnum
 Name | Value
 ---- | -----
-APPLE | &quot;apple&quot;
 GOOGLE | &quot;google&quot;
+APPLE | &quot;apple&quot;
 SAMSUNG | &quot;samsung&quot;
 
 

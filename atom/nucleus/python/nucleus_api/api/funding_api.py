@@ -2063,7 +2063,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[BankLink] bank_link_list: bankLinkList (required)
+        :param list[object] bank_link_list: bankLinkList (required)
         :return: list[BankLink]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2085,7 +2085,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[BankLink] bank_link_list: bankLinkList (required)
+        :param list[object] bank_link_list: bankLinkList (required)
         :return: list[BankLink]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2162,7 +2162,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param BankLink bank_link: bank_link (required)
+        :param object bank_link: bank_link (required)
         :param str bank_link_id: UUID bank_link_id (required)
         :return: BankLink
                  If the method is called asynchronously,
@@ -2185,7 +2185,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param BankLink bank_link: bank_link (required)
+        :param object bank_link: bank_link (required)
         :param str bank_link_id: UUID bank_link_id (required)
         :return: BankLink
                  If the method is called asynchronously,
@@ -2269,7 +2269,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param DailyDeposit deposit: deposit (required)
+        :param object deposit: deposit (required)
         :param str deposit_id: UUID deposit_id (required)
         :return: DailyDeposit
                  If the method is called asynchronously,
@@ -2292,7 +2292,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param DailyDeposit deposit: deposit (required)
+        :param object deposit: deposit (required)
         :param str deposit_id: UUID deposit_id (required)
         :return: DailyDeposit
                  If the method is called asynchronously,
@@ -2376,7 +2376,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Funding funding: funding (required)
+        :param object funding: funding (required)
         :param str funding_id: UUID funding_id (required)
         :return: Funding
                  If the method is called asynchronously,
@@ -2399,7 +2399,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Funding funding: funding (required)
+        :param object funding: funding (required)
         :param str funding_id: UUID funding_id (required)
         :return: Funding
                  If the method is called asynchronously,
@@ -2483,7 +2483,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ExternalAccountTransfer transfer: transfer (required)
+        :param object transfer: transfer (required)
         :param str transfer_id: UUID external_account_transfer_id (required)
         :return: ExternalAccountTransfer
                  If the method is called asynchronously,
@@ -2506,7 +2506,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ExternalAccountTransfer transfer: transfer (required)
+        :param object transfer: transfer (required)
         :param str transfer_id: UUID external_account_transfer_id (required)
         :return: ExternalAccountTransfer
                  If the method is called asynchronously,
@@ -2590,7 +2590,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param DailyWithdrawal withdrawal: withdrawal (required)
+        :param object withdrawal: withdrawal (required)
         :param str withdrawal_id: UUID withdrawal_id (required)
         :return: DailyWithdrawal
                  If the method is called asynchronously,
@@ -2613,7 +2613,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param DailyWithdrawal withdrawal: withdrawal (required)
+        :param object withdrawal: withdrawal (required)
         :param str withdrawal_id: UUID withdrawal_id (required)
         :return: DailyWithdrawal
                  If the method is called asynchronously,

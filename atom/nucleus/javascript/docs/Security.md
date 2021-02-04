@@ -4,12 +4,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assetClass** | **String** | Security asset class | [optional] 
+**brokers** | [**[Brokers]**](Brokers.md) | brokers | [optional] 
 **category** | **String** | Security category | [optional] 
 **createDate** | **Date** |  | [optional] 
 **currencyCode** | **String** | currency_code | [optional] 
 **cusip** | **String** | cusip | [optional] 
+**description** | **String** | description | [optional] 
 **exchange** | **String** | Security exchange | [optional] 
 **id** | **String** |  | [optional] 
+**image** | **String** | image | [optional] 
 **industry** | **String** | Security industry | [optional] 
 **isActive** | **Boolean** | Security is active | [optional] 
 **isin** | **String** | isin | [optional] 

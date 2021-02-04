@@ -15,12 +15,7 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.UUID;
@@ -29,54 +24,54 @@ import org.threeten.bp.LocalDate;
 /**
  * FinancialPictureRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class FinancialPictureRequest {
-  @SerializedName("show_category_breakdown")
-  private Boolean showCategoryBreakdown = true;
+  @SerializedName("end_date")
+  private LocalDate endDate = null;
 
   @SerializedName("client_id")
   private UUID clientId = null;
 
-  @SerializedName("currency_conversion")
-  private String currencyConversion = null;
-
   @SerializedName("create_log")
   private Boolean createLog = false;
 
-  @SerializedName("show_change")
-  private Boolean showChange = false;
-
-  @SerializedName("end_date")
-  private LocalDate endDate = null;
-
-  @SerializedName("currency_code")
-  private String currencyCode = null;
-
-  @SerializedName("start_date")
-  private LocalDate startDate = null;
+  @SerializedName("currency_conversion")
+  private String currencyConversion = null;
 
   @SerializedName("show_history")
   private Boolean showHistory = false;
 
-  public FinancialPictureRequest showCategoryBreakdown(Boolean showCategoryBreakdown) {
-    this.showCategoryBreakdown = showCategoryBreakdown;
+  @SerializedName("start_date")
+  private LocalDate startDate = null;
+
+  @SerializedName("currency_code")
+  private String currencyCode = null;
+
+  @SerializedName("show_category_breakdown")
+  private Boolean showCategoryBreakdown = true;
+
+  @SerializedName("show_change")
+  private Boolean showChange = false;
+
+  public FinancialPictureRequest endDate(LocalDate endDate) {
+    this.endDate = endDate;
     return this;
   }
 
    /**
-   * Get showCategoryBreakdown
-   * @return showCategoryBreakdown
+   * Get endDate
+   * @return endDate
   **/
   @ApiModelProperty(value = "")
-  public Boolean isShowCategoryBreakdown() {
-    return showCategoryBreakdown;
+  public LocalDate getEndDate() {
+    return endDate;
   }
 
-  public void setShowCategoryBreakdown(Boolean showCategoryBreakdown) {
-    this.showCategoryBreakdown = showCategoryBreakdown;
+  public void setEndDate(LocalDate endDate) {
+    this.endDate = endDate;
   }
 
   public FinancialPictureRequest clientId(UUID clientId) {
@@ -97,24 +92,6 @@ public class FinancialPictureRequest {
     this.clientId = clientId;
   }
 
-  public FinancialPictureRequest currencyConversion(String currencyConversion) {
-    this.currencyConversion = currencyConversion;
-    return this;
-  }
-
-   /**
-   * Get currencyConversion
-   * @return currencyConversion
-  **/
-  @ApiModelProperty(value = "")
-  public String getCurrencyConversion() {
-    return currencyConversion;
-  }
-
-  public void setCurrencyConversion(String currencyConversion) {
-    this.currencyConversion = currencyConversion;
-  }
-
   public FinancialPictureRequest createLog(Boolean createLog) {
     this.createLog = createLog;
     return this;
@@ -133,76 +110,22 @@ public class FinancialPictureRequest {
     this.createLog = createLog;
   }
 
-  public FinancialPictureRequest showChange(Boolean showChange) {
-    this.showChange = showChange;
+  public FinancialPictureRequest currencyConversion(String currencyConversion) {
+    this.currencyConversion = currencyConversion;
     return this;
   }
 
    /**
-   * Get showChange
-   * @return showChange
+   * Get currencyConversion
+   * @return currencyConversion
   **/
   @ApiModelProperty(value = "")
-  public Boolean isShowChange() {
-    return showChange;
+  public String getCurrencyConversion() {
+    return currencyConversion;
   }
 
-  public void setShowChange(Boolean showChange) {
-    this.showChange = showChange;
-  }
-
-  public FinancialPictureRequest endDate(LocalDate endDate) {
-    this.endDate = endDate;
-    return this;
-  }
-
-   /**
-   * Get endDate
-   * @return endDate
-  **/
-  @ApiModelProperty(value = "")
-  public LocalDate getEndDate() {
-    return endDate;
-  }
-
-  public void setEndDate(LocalDate endDate) {
-    this.endDate = endDate;
-  }
-
-  public FinancialPictureRequest currencyCode(String currencyCode) {
-    this.currencyCode = currencyCode;
-    return this;
-  }
-
-   /**
-   * Get currencyCode
-   * @return currencyCode
-  **/
-  @ApiModelProperty(value = "")
-  public String getCurrencyCode() {
-    return currencyCode;
-  }
-
-  public void setCurrencyCode(String currencyCode) {
-    this.currencyCode = currencyCode;
-  }
-
-  public FinancialPictureRequest startDate(LocalDate startDate) {
-    this.startDate = startDate;
-    return this;
-  }
-
-   /**
-   * Get startDate
-   * @return startDate
-  **/
-  @ApiModelProperty(value = "")
-  public LocalDate getStartDate() {
-    return startDate;
-  }
-
-  public void setStartDate(LocalDate startDate) {
-    this.startDate = startDate;
+  public void setCurrencyConversion(String currencyConversion) {
+    this.currencyConversion = currencyConversion;
   }
 
   public FinancialPictureRequest showHistory(Boolean showHistory) {
@@ -223,6 +146,78 @@ public class FinancialPictureRequest {
     this.showHistory = showHistory;
   }
 
+  public FinancialPictureRequest startDate(LocalDate startDate) {
+    this.startDate = startDate;
+    return this;
+  }
+
+   /**
+   * Get startDate
+   * @return startDate
+  **/
+  @ApiModelProperty(value = "")
+  public LocalDate getStartDate() {
+    return startDate;
+  }
+
+  public void setStartDate(LocalDate startDate) {
+    this.startDate = startDate;
+  }
+
+  public FinancialPictureRequest currencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+    return this;
+  }
+
+   /**
+   * Get currencyCode
+   * @return currencyCode
+  **/
+  @ApiModelProperty(value = "")
+  public String getCurrencyCode() {
+    return currencyCode;
+  }
+
+  public void setCurrencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+  }
+
+  public FinancialPictureRequest showCategoryBreakdown(Boolean showCategoryBreakdown) {
+    this.showCategoryBreakdown = showCategoryBreakdown;
+    return this;
+  }
+
+   /**
+   * Get showCategoryBreakdown
+   * @return showCategoryBreakdown
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isShowCategoryBreakdown() {
+    return showCategoryBreakdown;
+  }
+
+  public void setShowCategoryBreakdown(Boolean showCategoryBreakdown) {
+    this.showCategoryBreakdown = showCategoryBreakdown;
+  }
+
+  public FinancialPictureRequest showChange(Boolean showChange) {
+    this.showChange = showChange;
+    return this;
+  }
+
+   /**
+   * Get showChange
+   * @return showChange
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isShowChange() {
+    return showChange;
+  }
+
+  public void setShowChange(Boolean showChange) {
+    this.showChange = showChange;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -233,20 +228,20 @@ public class FinancialPictureRequest {
       return false;
     }
     FinancialPictureRequest financialPictureRequest = (FinancialPictureRequest) o;
-    return Objects.equals(this.showCategoryBreakdown, financialPictureRequest.showCategoryBreakdown) &&
+    return Objects.equals(this.endDate, financialPictureRequest.endDate) &&
         Objects.equals(this.clientId, financialPictureRequest.clientId) &&
-        Objects.equals(this.currencyConversion, financialPictureRequest.currencyConversion) &&
         Objects.equals(this.createLog, financialPictureRequest.createLog) &&
-        Objects.equals(this.showChange, financialPictureRequest.showChange) &&
-        Objects.equals(this.endDate, financialPictureRequest.endDate) &&
-        Objects.equals(this.currencyCode, financialPictureRequest.currencyCode) &&
+        Objects.equals(this.currencyConversion, financialPictureRequest.currencyConversion) &&
+        Objects.equals(this.showHistory, financialPictureRequest.showHistory) &&
         Objects.equals(this.startDate, financialPictureRequest.startDate) &&
-        Objects.equals(this.showHistory, financialPictureRequest.showHistory);
+        Objects.equals(this.currencyCode, financialPictureRequest.currencyCode) &&
+        Objects.equals(this.showCategoryBreakdown, financialPictureRequest.showCategoryBreakdown) &&
+        Objects.equals(this.showChange, financialPictureRequest.showChange);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(showCategoryBreakdown, clientId, currencyConversion, createLog, showChange, endDate, currencyCode, startDate, showHistory);
+    return Objects.hash(endDate, clientId, createLog, currencyConversion, showHistory, startDate, currencyCode, showCategoryBreakdown, showChange);
   }
 
 
@@ -255,15 +250,15 @@ public class FinancialPictureRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class FinancialPictureRequest {\n");
     
-    sb.append("    showCategoryBreakdown: ").append(toIndentedString(showCategoryBreakdown)).append("\n");
-    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
-    sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
-    sb.append("    createLog: ").append(toIndentedString(createLog)).append("\n");
-    sb.append("    showChange: ").append(toIndentedString(showChange)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
-    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
-    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
+    sb.append("    createLog: ").append(toIndentedString(createLog)).append("\n");
+    sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
     sb.append("    showHistory: ").append(toIndentedString(showHistory)).append("\n");
+    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
+    sb.append("    showCategoryBreakdown: ").append(toIndentedString(showCategoryBreakdown)).append("\n");
+    sb.append("    showChange: ").append(toIndentedString(showChange)).append("\n");
     sb.append("}");
     return sb.toString();
   }

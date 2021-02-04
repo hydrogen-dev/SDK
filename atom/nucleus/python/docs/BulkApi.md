@@ -40,7 +40,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.BulkApi(nucleus_api.ApiClient(configuration))
 data = nucleus_api.JsonNode() # JsonNode | data
@@ -106,7 +106,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.BulkApi(nucleus_api.ApiClient(configuration))
 data = nucleus_api.JsonNode() # JsonNode | data
@@ -172,7 +172,7 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.BulkApi(nucleus_api.ApiClient(configuration))
 id = 'id_example' # str | UUID Bulk Transaction Id
@@ -236,10 +236,10 @@ api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
-configuration.access_token = api_token_response.access_token
+
 # create an instance of the API class
 api_instance = nucleus_api.BulkApi(nucleus_api.ApiClient(configuration))
-data = nucleus_api.JsonNode() # JsonNode | data
+data = NULL # object | data
 entity_uri = 'entity_uri_example' # str | UUID entity_uri
 
 try:
@@ -254,7 +254,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**JsonNode**](JsonNode.md)| data | 
+ **data** | **object**| data | 
  **entity_uri** | **str**| UUID entity_uri | 
 
 ### Return type

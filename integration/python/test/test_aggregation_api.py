@@ -106,6 +106,13 @@ class TestAggregationApi(unittest.TestCase):
         """
         pass
 
+    def test_get_property_value(self):
+        """Test case for get_property_value
+
+        Get Value of the given property  # noqa: E501
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

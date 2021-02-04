@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**wMinMinor** | **Number** |  | 
-**wMaxMajor** | **Number** |  | 
 **wMinMajor** | **Number** |  | 
 **cashAmount** | **Number** |  | 
+**wMinMinor** | **Number** |  | 
 **wMaxMinor** | **Number** |  | 
+**wMaxMajor** | **Number** |  | 
 
 

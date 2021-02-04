@@ -22,7 +22,6 @@ Create a new bulk data for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import BulkApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -39,8 +38,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 BulkApi apiInstance = new BulkApi();
 JsonNode data = new JsonNode(); // JsonNode | data
 String entityUri = "entityUri_example"; // String | UUID entity_uri
@@ -85,7 +82,6 @@ Delete a bulk data for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import BulkApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -102,8 +98,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 BulkApi apiInstance = new BulkApi();
 JsonNode data = new JsonNode(); // JsonNode | data
 String entityUri = "entityUri_example"; // String | UUID entity_uri
@@ -148,7 +142,6 @@ Get the status of bulk transaction.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import BulkApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -165,8 +158,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 BulkApi apiInstance = new BulkApi();
 UUID id = new UUID(); // UUID | UUID Bulk Transaction Id
 try {
@@ -209,7 +200,6 @@ Update a bulk data for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import BulkApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -226,10 +216,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 BulkApi apiInstance = new BulkApi();
-JsonNode data = new JsonNode(); // JsonNode | data
+Object data = null; // Object | data
 String entityUri = "entityUri_example"; // String | UUID entity_uri
 try {
     BulkTransaction result = apiInstance.updateBulkUsingPut(data, entityUri);
@@ -244,7 +232,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**JsonNode**](JsonNode.md)| data |
+ **data** | **Object**| data |
  **entityUri** | **String**| UUID entity_uri |
 
 ### Return type

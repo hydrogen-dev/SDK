@@ -2,7 +2,7 @@
 
 Hydrogen Proton API
 - API version: 1.8.0
-  - Build date: 2020-10-08T03:59:30.964Z
+  - Build date: 2020-12-03T15:06:55.665Z
 
 Financial engineering module of Hydrogen Atom
 
@@ -81,7 +81,6 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-
 import com.hydrogen.proton.AuthApiClient;
 import com.hydrogen.proton.ApiException;
 import com.hydrogen.proton.model.AnnuityCalculatorAccumulationHorizonRequest;
@@ -139,6 +138,8 @@ Class | Method | HTTP request | Description
 *BusinessFinancialManagementApi* | [**customerAnalysis**](docs/BusinessFinancialManagementApi.md#customerAnalysis) | **POST** /business/customer_analysis | Customer Analysis
 *BusinessFinancialManagementApi* | [**financialStatementAnalysis**](docs/BusinessFinancialManagementApi.md#financialStatementAnalysis) | **POST** /business/financial_statement_analysis | Financial Statement Analysis
 *BusinessFinancialManagementApi* | [**invoiceAnalysis**](docs/BusinessFinancialManagementApi.md#invoiceAnalysis) | **POST** /business/invoice_analysis | Invoice Analysis
+*CardsApi* | [**cardLimitCheck**](docs/CardsApi.md#cardLimitCheck) | **POST** /card_limit_check | Card Limit Check
+*CardsApi* | [**cardTransactionAuthorization**](docs/CardsApi.md#cardTransactionAuthorization) | **POST** /card_authorization | Card Transaction Authorization
 *FinancialHealthApi* | [**diversificationScore**](docs/FinancialHealthApi.md#diversificationScore) | **POST** /diversification_score | Diversification Score
 *FinancialHealthApi* | [**emergencyFundCalculator**](docs/FinancialHealthApi.md#emergencyFundCalculator) | **POST** /emergency_fund_calculator | Emergency Fund Calculator
 *FinancialHealthApi* | [**financialHealthCheck**](docs/FinancialHealthApi.md#financialHealthCheck) | **POST** /financial_health_check | Financial Health Check
@@ -200,6 +201,8 @@ Class | Method | HTTP request | Description
  - [BusinessInvoiceAnalysisRequest](docs/BusinessInvoiceAnalysisRequest.md)
  - [CalculatorDepositSchedule](docs/CalculatorDepositSchedule.md)
  - [CalculatorDepositSchedule1](docs/CalculatorDepositSchedule1.md)
+ - [CardLimitCheckRequest](docs/CardLimitCheckRequest.md)
+ - [CardTransactionAuthorizationRequest](docs/CardTransactionAuthorizationRequest.md)
  - [CashAnalysisRequest](docs/CashAnalysisRequest.md)
  - [CashFlowAnalysisRequest](docs/CashFlowAnalysisRequest.md)
  - [ChildrenEducationConfig](docs/ChildrenEducationConfig.md)

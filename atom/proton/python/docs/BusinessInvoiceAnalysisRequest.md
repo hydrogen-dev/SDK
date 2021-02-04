@@ -3,19 +3,19 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**customer_id** | **str** |  | [optional] 
+**end_date** | **date** |  | [optional] 
 **overdue_periods** | [**list[Periods]**](Periods.md) |  | [optional] 
-**show_outstanding_invoices** | **bool** |  | [optional] [default to False]
-**show_history** | **bool** |  | [optional] [default to False]
 **client_id** | **str** |  | [optional] 
-**future_due_periods** | [**list[Periods]**](Periods.md) |  | [optional] 
+**response_limit** | **int** |  | [optional] [default to 10]
 **currency_conversion** | **str** |  | [optional] 
 **history_frequency_interval** | **str** |  | [optional] [default to 'month']
-**end_date** | **date** |  | [optional] 
-**currency_code** | **str** |  | [optional] 
 **start_date** | **date** |  | [optional] 
-**response_limit** | **int** |  | [optional] [default to 10]
+**show_history** | **bool** |  | [optional] [default to False]
+**currency_code** | **str** |  | [optional] 
 **invoice_ids** | **list[str]** |  | [optional] 
-**customer_id** | **str** |  | [optional] 
+**show_outstanding_invoices** | **bool** |  | [optional] [default to False]
+**future_due_periods** | [**list[Periods]**](Periods.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

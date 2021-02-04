@@ -1,6 +1,6 @@
 # KmsApi
 
-All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1/*
+All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -40,7 +40,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 KmsApi apiInstance = new KmsApi();
 KmsConfig kmsConfig = new KmsConfig(); // KmsConfig | kmsConfig
 try {
@@ -100,7 +99,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 KmsApi apiInstance = new KmsApi();
 UUID kmsId = new UUID(); // UUID | KMS Id
 try {
@@ -132,11 +130,11 @@ null (empty response body)
 
 <a name="getKMSAllUsingGet"></a>
 # **getKMSAllUsingGet**
-> PageKmsConfig getKMSAllUsingGet(ascending, orderBy, page, size)
+> PageKmsConfig getKMSAllUsingGet(ascending, filter, orderBy, page, size)
 
 List all KMS Clients
 
-Get details for all clients registered with your firm.
+Get details for all clients registered with your business.
 
 ### Example
 ```java
@@ -159,14 +157,14 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 KmsApi apiInstance = new KmsApi();
 Boolean ascending = false; // Boolean | ascending
+String filter = "filter_example"; // String | filter
 String orderBy = "update_date"; // String | order_by
 Integer page = 0; // Integer | page
 Integer size = 25; // Integer | size
 try {
-    PageKmsConfig result = apiInstance.getKMSAllUsingGet(ascending, orderBy, page, size);
+    PageKmsConfig result = apiInstance.getKMSAllUsingGet(ascending, filter, orderBy, page, size);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling KmsApi#getKMSAllUsingGet");
@@ -179,6 +177,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **Boolean**| ascending | [optional] [default to false]
+ **filter** | **String**| filter | [optional]
  **orderBy** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
  **size** | **Integer**| size | [optional] [default to 25]
@@ -225,7 +224,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 KmsApi apiInstance = new KmsApi();
 UUID kmsId = new UUID(); // UUID | KMS Id
 try {
@@ -285,7 +283,6 @@ authApiClient.createClientTokenCredential("CLIENT_ID", "CLIENT_SECRET",
 } catch (ApiException e) {
 e.printStackTrace();
 }
-
 KmsApi apiInstance = new KmsApi();
 KmsConfig kmsConfig = new KmsConfig(); // KmsConfig | kmsConfig
 UUID kmsId = new UUID(); // UUID | kms_id

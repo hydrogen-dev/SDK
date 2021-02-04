@@ -1370,7 +1370,7 @@ end
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
-aggregation_account_balance = NucleusApi::AggregationAccountBalance.new # AggregationAccountBalance | aggregation_account_balance
+aggregation_account_balance = nil # Object | aggregation_account_balance
 
 aggregation_account_balance_id = 'aggregation_account_balance_id_example' # String | UUID aggregation_account_balance_id
 
@@ -1388,7 +1388,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_balance** | [**AggregationAccountBalance**](AggregationAccountBalance.md)| aggregation_account_balance | 
+ **aggregation_account_balance** | **Object**| aggregation_account_balance | 
  **aggregation_account_balance_id** | [**String**](.md)| UUID aggregation_account_balance_id | 
 
 ### Return type
@@ -1430,7 +1430,7 @@ end
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
-aggregation_account_list = [NucleusApi::AggregationAccount.new] # Array<AggregationAccount> | aggregationAccountList
+aggregation_account_list = [NucleusApi::Array<Object>.new] # Array<Object> | aggregationAccountList
 
 
 begin
@@ -1446,7 +1446,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_list** | [**Array&lt;AggregationAccount&gt;**](AggregationAccount.md)| aggregationAccountList | 
+ **aggregation_account_list** | **Array&lt;Object&gt;**| aggregationAccountList | 
 
 ### Return type
 
@@ -1487,7 +1487,7 @@ end
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
-aggregation_account_holding = [NucleusApi::AggregationAccountHolding.new] # Array<AggregationAccountHolding> | aggregationAccountHolding
+aggregation_account_holding = [NucleusApi::Array<Object>.new] # Array<Object> | aggregationAccountHolding
 
 
 begin
@@ -1503,7 +1503,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_holding** | [**Array&lt;AggregationAccountHolding&gt;**](AggregationAccountHolding.md)| aggregationAccountHolding | 
+ **aggregation_account_holding** | **Array&lt;Object&gt;**| aggregationAccountHolding | 
 
 ### Return type
 
@@ -1544,7 +1544,7 @@ end
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
-aggregation_account_holding = NucleusApi::AggregationAccountHolding.new # AggregationAccountHolding | aggregation_account_holding
+aggregation_account_holding = nil # Object | aggregation_account_holding
 
 aggregation_account_holding_id = 'aggregation_account_holding_id_example' # String | UUID aggregation_account_holding_id
 
@@ -1562,7 +1562,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_holding** | [**AggregationAccountHolding**](AggregationAccountHolding.md)| aggregation_account_holding | 
+ **aggregation_account_holding** | **Object**| aggregation_account_holding | 
  **aggregation_account_holding_id** | [**String**](.md)| UUID aggregation_account_holding_id | 
 
 ### Return type
@@ -1604,7 +1604,7 @@ end
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
-aggregation_account_transaction = NucleusApi::AggregationAccountTransaction.new # AggregationAccountTransaction | aggregation_account_transaction
+aggregation_account_transaction = nil # Object | aggregation_account_transaction
 
 aggregation_account_transaction_id = 'aggregation_account_transaction_id_example' # String | UUID aggregation_account_transaction_id
 
@@ -1622,7 +1622,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account_transaction** | [**AggregationAccountTransaction**](AggregationAccountTransaction.md)| aggregation_account_transaction | 
+ **aggregation_account_transaction** | **Object**| aggregation_account_transaction | 
  **aggregation_account_transaction_id** | [**String**](.md)| UUID aggregation_account_transaction_id | 
 
 ### Return type
@@ -1664,7 +1664,7 @@ end
 
 api_instance = NucleusApi::AggregationAccountApi.new
 
-aggregation_account = NucleusApi::AggregationAccount.new # AggregationAccount | aggregation_account
+aggregation_account = nil # Object | aggregation_account
 
 aggregation_account_id = 'aggregation_account_id_example' # String | UUID aggregation_account_id
 
@@ -1682,7 +1682,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aggregation_account** | [**AggregationAccount**](AggregationAccount.md)| aggregation_account | 
+ **aggregation_account** | **Object**| aggregation_account | 
  **aggregation_account_id** | [**String**](.md)| UUID aggregation_account_id | 
 
 ### Return type

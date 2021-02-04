@@ -15,12 +15,7 @@ package com.hydrogen.nucleus.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.ArrayList;
@@ -32,7 +27,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * Security
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-12T11:03:26.704Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-28T16:21:02.928Z")
 
 
 
@@ -55,11 +50,17 @@ public class Security {
   @SerializedName("cusip")
   private String cusip = null;
 
+  @SerializedName("description")
+  private String description = null;
+
   @SerializedName("exchange")
   private String exchange = null;
 
   @SerializedName("id")
   private UUID id = null;
+
+  @SerializedName("image")
+  private String image = null;
 
   @SerializedName("industry")
   private String industry = null;
@@ -213,6 +214,24 @@ public class Security {
     this.cusip = cusip;
   }
 
+  public Security description(String description) {
+    this.description = description;
+    return this;
+  }
+
+   /**
+   * description
+   * @return description
+  **/
+  @ApiModelProperty(example = "Security description", value = "description")
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
   public Security exchange(String exchange) {
     this.exchange = exchange;
     return this;
@@ -238,6 +257,24 @@ public class Security {
   @ApiModelProperty(example = "000183ac-2288-4564-a76b-119f4694be98", value = "")
   public UUID getId() {
     return id;
+  }
+
+  public Security image(String image) {
+    this.image = image;
+    return this;
+  }
+
+   /**
+   * image
+   * @return image
+  **/
+  @ApiModelProperty(example = "/sample.png", value = "image")
+  public String getImage() {
+    return image;
+  }
+
+  public void setImage(String image) {
+    this.image = image;
   }
 
   public Security industry(String industry) {
@@ -515,8 +552,10 @@ public class Security {
         Objects.equals(this.createDate, security.createDate) &&
         Objects.equals(this.currencyCode, security.currencyCode) &&
         Objects.equals(this.cusip, security.cusip) &&
+        Objects.equals(this.description, security.description) &&
         Objects.equals(this.exchange, security.exchange) &&
         Objects.equals(this.id, security.id) &&
+        Objects.equals(this.image, security.image) &&
         Objects.equals(this.industry, security.industry) &&
         Objects.equals(this.isActive, security.isActive) &&
         Objects.equals(this.isin, security.isin) &&
@@ -536,7 +575,7 @@ public class Security {
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetClass, brokers, category, createDate, currencyCode, cusip, exchange, id, industry, isActive, isin, metadata, name, proxyId, secondaryId, sector, securityClass, securityComposition, securityCountry, ticker, totalExpenseRatio, type, updateDate);
+    return Objects.hash(assetClass, brokers, category, createDate, currencyCode, cusip, description, exchange, id, image, industry, isActive, isin, metadata, name, proxyId, secondaryId, sector, securityClass, securityComposition, securityCountry, ticker, totalExpenseRatio, type, updateDate);
   }
 
 
@@ -551,8 +590,10 @@ public class Security {
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
     sb.append("    cusip: ").append(toIndentedString(cusip)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    exchange: ").append(toIndentedString(exchange)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    industry: ").append(toIndentedString(industry)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    isin: ").append(toIndentedString(isin)).append("\n");

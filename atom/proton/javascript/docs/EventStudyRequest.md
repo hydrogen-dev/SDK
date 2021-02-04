@@ -4,16 +4,27 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **portfolioTickers** | **[String]** |  | [optional] 
-**events** | **[String]** |  | [optional] 
-**createLog** | **Boolean** |  | [optional] [default to false]
-**aggregationAccountId** | **String** |  | [optional] 
-**allocationId** | **String** |  | [optional] 
-**modelId** | **String** |  | [optional] 
-**portfolioWeights** | **[Number]** |  | [optional] 
-**useProxyData** | **Boolean** |  | [optional] [default to false]
-**accountId** | **String** |  | [optional] 
 **marketDataSource** | **String** |  | [optional] [default to 'nucleus']
 **portfolioId** | **String** |  | [optional] 
+**modelId** | **String** |  | [optional] 
+**createLog** | **Boolean** |  | [optional] [default to false]
+**allocationId** | **String** |  | [optional] 
+**events** | **[String]** |  | [optional] 
+**useProxyData** | **Boolean** |  | [optional] [default to false]
+**accountId** | **String** |  | [optional] 
+**aggregationAccountId** | **String** |  | [optional] 
+**portfolioWeights** | **[Number]** |  | [optional] 
+
+
+<a name="MarketDataSourceEnum"></a>
+## Enum: MarketDataSourceEnum
+
+
+* `nucleus` (value: `"nucleus"`)
+
+* `integration` (value: `"integration"`)
+
+
 
 
 <a name="[EventsEnum]"></a>
@@ -35,17 +46,6 @@ Name | Type | Description | Notes
 * `_1992BlackWednesday` (value: `"1992_black_wednesday"`)
 
 * `_1997AsianFinancialCrisis` (value: `"1997_asian_financial_crisis"`)
-
-
-
-
-<a name="MarketDataSourceEnum"></a>
-## Enum: MarketDataSourceEnum
-
-
-* `nucleus` (value: `"nucleus"`)
-
-* `integration` (value: `"integration"`)
 
 
 

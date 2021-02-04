@@ -15,12 +15,7 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.ArrayList;
@@ -30,139 +25,64 @@ import java.util.UUID;
 /**
  * RetirementCalculatorPercentCoveredRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class RetirementCalculatorPercentCoveredRequest {
-  @SerializedName("inflation_rate")
-  private Float inflationRate = 0.0f;
-
-  @SerializedName("current_age")
-  private Integer currentAge = null;
-
-  @SerializedName("deposit_schedule")
-  private CalculatorDepositSchedule1 depositSchedule = null;
-
-  @SerializedName("portfolio_return")
-  private Float portfolioReturn = null;
-
-  @SerializedName("retirement_income")
-  private Float retirementIncome = 0.0f;
+  @SerializedName("retirement_savings")
+  private Float retirementSavings = 0.0f;
 
   @SerializedName("aggregation_account_ids")
   private List<UUID> aggregationAccountIds = null;
 
+  @SerializedName("retirement_age")
+  private Integer retirementAge = 65;
+
+  @SerializedName("retirement_income")
+  private Float retirementIncome = 0.0f;
+
   @SerializedName("retirement_expenses")
   private Float retirementExpenses = null;
 
-  @SerializedName("retirement_tax")
-  private Float retirementTax = 0.0f;
+  @SerializedName("current_age")
+  private Integer currentAge = null;
 
   @SerializedName("account_ids")
   private List<UUID> accountIds = null;
 
-  @SerializedName("retirement_age")
-  private Integer retirementAge = 65;
+  @SerializedName("retirement_tax")
+  private Float retirementTax = 0.0f;
+
+  @SerializedName("inflation_rate")
+  private Float inflationRate = 0.0f;
 
   @SerializedName("death_age")
   private Integer deathAge = null;
 
-  @SerializedName("retirement_savings")
-  private Float retirementSavings = 0.0f;
+  @SerializedName("portfolio_return")
+  private Float portfolioReturn = null;
 
-  public RetirementCalculatorPercentCoveredRequest inflationRate(Float inflationRate) {
-    this.inflationRate = inflationRate;
+  @SerializedName("deposit_schedule")
+  private CalculatorDepositSchedule1 depositSchedule = null;
+
+  public RetirementCalculatorPercentCoveredRequest retirementSavings(Float retirementSavings) {
+    this.retirementSavings = retirementSavings;
     return this;
   }
 
    /**
-   * Get inflationRate
-   * minimum: -1
-   * @return inflationRate
-  **/
-  @ApiModelProperty(value = "")
-  public Float getInflationRate() {
-    return inflationRate;
-  }
-
-  public void setInflationRate(Float inflationRate) {
-    this.inflationRate = inflationRate;
-  }
-
-  public RetirementCalculatorPercentCoveredRequest currentAge(Integer currentAge) {
-    this.currentAge = currentAge;
-    return this;
-  }
-
-   /**
-   * Get currentAge
+   * Get retirementSavings
    * minimum: 0
-   * @return currentAge
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getCurrentAge() {
-    return currentAge;
-  }
-
-  public void setCurrentAge(Integer currentAge) {
-    this.currentAge = currentAge;
-  }
-
-  public RetirementCalculatorPercentCoveredRequest depositSchedule(CalculatorDepositSchedule1 depositSchedule) {
-    this.depositSchedule = depositSchedule;
-    return this;
-  }
-
-   /**
-   * Get depositSchedule
-   * @return depositSchedule
+   * @return retirementSavings
   **/
   @ApiModelProperty(value = "")
-  public CalculatorDepositSchedule1 getDepositSchedule() {
-    return depositSchedule;
+  public Float getRetirementSavings() {
+    return retirementSavings;
   }
 
-  public void setDepositSchedule(CalculatorDepositSchedule1 depositSchedule) {
-    this.depositSchedule = depositSchedule;
-  }
-
-  public RetirementCalculatorPercentCoveredRequest portfolioReturn(Float portfolioReturn) {
-    this.portfolioReturn = portfolioReturn;
-    return this;
-  }
-
-   /**
-   * Get portfolioReturn
-   * minimum: -1
-   * @return portfolioReturn
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Float getPortfolioReturn() {
-    return portfolioReturn;
-  }
-
-  public void setPortfolioReturn(Float portfolioReturn) {
-    this.portfolioReturn = portfolioReturn;
-  }
-
-  public RetirementCalculatorPercentCoveredRequest retirementIncome(Float retirementIncome) {
-    this.retirementIncome = retirementIncome;
-    return this;
-  }
-
-   /**
-   * Get retirementIncome
-   * minimum: 0
-   * @return retirementIncome
-  **/
-  @ApiModelProperty(value = "")
-  public Float getRetirementIncome() {
-    return retirementIncome;
-  }
-
-  public void setRetirementIncome(Float retirementIncome) {
-    this.retirementIncome = retirementIncome;
+  public void setRetirementSavings(Float retirementSavings) {
+    this.retirementSavings = retirementSavings;
   }
 
   public RetirementCalculatorPercentCoveredRequest aggregationAccountIds(List<UUID> aggregationAccountIds) {
@@ -191,6 +111,44 @@ public class RetirementCalculatorPercentCoveredRequest {
     this.aggregationAccountIds = aggregationAccountIds;
   }
 
+  public RetirementCalculatorPercentCoveredRequest retirementAge(Integer retirementAge) {
+    this.retirementAge = retirementAge;
+    return this;
+  }
+
+   /**
+   * Get retirementAge
+   * minimum: 0
+   * @return retirementAge
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getRetirementAge() {
+    return retirementAge;
+  }
+
+  public void setRetirementAge(Integer retirementAge) {
+    this.retirementAge = retirementAge;
+  }
+
+  public RetirementCalculatorPercentCoveredRequest retirementIncome(Float retirementIncome) {
+    this.retirementIncome = retirementIncome;
+    return this;
+  }
+
+   /**
+   * Get retirementIncome
+   * minimum: 0
+   * @return retirementIncome
+  **/
+  @ApiModelProperty(value = "")
+  public Float getRetirementIncome() {
+    return retirementIncome;
+  }
+
+  public void setRetirementIncome(Float retirementIncome) {
+    this.retirementIncome = retirementIncome;
+  }
+
   public RetirementCalculatorPercentCoveredRequest retirementExpenses(Float retirementExpenses) {
     this.retirementExpenses = retirementExpenses;
     return this;
@@ -210,24 +168,23 @@ public class RetirementCalculatorPercentCoveredRequest {
     this.retirementExpenses = retirementExpenses;
   }
 
-  public RetirementCalculatorPercentCoveredRequest retirementTax(Float retirementTax) {
-    this.retirementTax = retirementTax;
+  public RetirementCalculatorPercentCoveredRequest currentAge(Integer currentAge) {
+    this.currentAge = currentAge;
     return this;
   }
 
    /**
-   * Get retirementTax
+   * Get currentAge
    * minimum: 0
-   * maximum: 1
-   * @return retirementTax
+   * @return currentAge
   **/
-  @ApiModelProperty(value = "")
-  public Float getRetirementTax() {
-    return retirementTax;
+  @ApiModelProperty(required = true, value = "")
+  public Integer getCurrentAge() {
+    return currentAge;
   }
 
-  public void setRetirementTax(Float retirementTax) {
-    this.retirementTax = retirementTax;
+  public void setCurrentAge(Integer currentAge) {
+    this.currentAge = currentAge;
   }
 
   public RetirementCalculatorPercentCoveredRequest accountIds(List<UUID> accountIds) {
@@ -256,23 +213,43 @@ public class RetirementCalculatorPercentCoveredRequest {
     this.accountIds = accountIds;
   }
 
-  public RetirementCalculatorPercentCoveredRequest retirementAge(Integer retirementAge) {
-    this.retirementAge = retirementAge;
+  public RetirementCalculatorPercentCoveredRequest retirementTax(Float retirementTax) {
+    this.retirementTax = retirementTax;
     return this;
   }
 
    /**
-   * Get retirementAge
+   * Get retirementTax
    * minimum: 0
-   * @return retirementAge
+   * maximum: 1
+   * @return retirementTax
   **/
   @ApiModelProperty(value = "")
-  public Integer getRetirementAge() {
-    return retirementAge;
+  public Float getRetirementTax() {
+    return retirementTax;
   }
 
-  public void setRetirementAge(Integer retirementAge) {
-    this.retirementAge = retirementAge;
+  public void setRetirementTax(Float retirementTax) {
+    this.retirementTax = retirementTax;
+  }
+
+  public RetirementCalculatorPercentCoveredRequest inflationRate(Float inflationRate) {
+    this.inflationRate = inflationRate;
+    return this;
+  }
+
+   /**
+   * Get inflationRate
+   * minimum: -1
+   * @return inflationRate
+  **/
+  @ApiModelProperty(value = "")
+  public Float getInflationRate() {
+    return inflationRate;
+  }
+
+  public void setInflationRate(Float inflationRate) {
+    this.inflationRate = inflationRate;
   }
 
   public RetirementCalculatorPercentCoveredRequest deathAge(Integer deathAge) {
@@ -294,23 +271,41 @@ public class RetirementCalculatorPercentCoveredRequest {
     this.deathAge = deathAge;
   }
 
-  public RetirementCalculatorPercentCoveredRequest retirementSavings(Float retirementSavings) {
-    this.retirementSavings = retirementSavings;
+  public RetirementCalculatorPercentCoveredRequest portfolioReturn(Float portfolioReturn) {
+    this.portfolioReturn = portfolioReturn;
     return this;
   }
 
    /**
-   * Get retirementSavings
-   * minimum: 0
-   * @return retirementSavings
+   * Get portfolioReturn
+   * minimum: -1
+   * @return portfolioReturn
   **/
-  @ApiModelProperty(value = "")
-  public Float getRetirementSavings() {
-    return retirementSavings;
+  @ApiModelProperty(required = true, value = "")
+  public Float getPortfolioReturn() {
+    return portfolioReturn;
   }
 
-  public void setRetirementSavings(Float retirementSavings) {
-    this.retirementSavings = retirementSavings;
+  public void setPortfolioReturn(Float portfolioReturn) {
+    this.portfolioReturn = portfolioReturn;
+  }
+
+  public RetirementCalculatorPercentCoveredRequest depositSchedule(CalculatorDepositSchedule1 depositSchedule) {
+    this.depositSchedule = depositSchedule;
+    return this;
+  }
+
+   /**
+   * Get depositSchedule
+   * @return depositSchedule
+  **/
+  @ApiModelProperty(value = "")
+  public CalculatorDepositSchedule1 getDepositSchedule() {
+    return depositSchedule;
+  }
+
+  public void setDepositSchedule(CalculatorDepositSchedule1 depositSchedule) {
+    this.depositSchedule = depositSchedule;
   }
 
 
@@ -323,23 +318,23 @@ public class RetirementCalculatorPercentCoveredRequest {
       return false;
     }
     RetirementCalculatorPercentCoveredRequest retirementCalculatorPercentCoveredRequest = (RetirementCalculatorPercentCoveredRequest) o;
-    return Objects.equals(this.inflationRate, retirementCalculatorPercentCoveredRequest.inflationRate) &&
-        Objects.equals(this.currentAge, retirementCalculatorPercentCoveredRequest.currentAge) &&
-        Objects.equals(this.depositSchedule, retirementCalculatorPercentCoveredRequest.depositSchedule) &&
-        Objects.equals(this.portfolioReturn, retirementCalculatorPercentCoveredRequest.portfolioReturn) &&
-        Objects.equals(this.retirementIncome, retirementCalculatorPercentCoveredRequest.retirementIncome) &&
+    return Objects.equals(this.retirementSavings, retirementCalculatorPercentCoveredRequest.retirementSavings) &&
         Objects.equals(this.aggregationAccountIds, retirementCalculatorPercentCoveredRequest.aggregationAccountIds) &&
-        Objects.equals(this.retirementExpenses, retirementCalculatorPercentCoveredRequest.retirementExpenses) &&
-        Objects.equals(this.retirementTax, retirementCalculatorPercentCoveredRequest.retirementTax) &&
-        Objects.equals(this.accountIds, retirementCalculatorPercentCoveredRequest.accountIds) &&
         Objects.equals(this.retirementAge, retirementCalculatorPercentCoveredRequest.retirementAge) &&
+        Objects.equals(this.retirementIncome, retirementCalculatorPercentCoveredRequest.retirementIncome) &&
+        Objects.equals(this.retirementExpenses, retirementCalculatorPercentCoveredRequest.retirementExpenses) &&
+        Objects.equals(this.currentAge, retirementCalculatorPercentCoveredRequest.currentAge) &&
+        Objects.equals(this.accountIds, retirementCalculatorPercentCoveredRequest.accountIds) &&
+        Objects.equals(this.retirementTax, retirementCalculatorPercentCoveredRequest.retirementTax) &&
+        Objects.equals(this.inflationRate, retirementCalculatorPercentCoveredRequest.inflationRate) &&
         Objects.equals(this.deathAge, retirementCalculatorPercentCoveredRequest.deathAge) &&
-        Objects.equals(this.retirementSavings, retirementCalculatorPercentCoveredRequest.retirementSavings);
+        Objects.equals(this.portfolioReturn, retirementCalculatorPercentCoveredRequest.portfolioReturn) &&
+        Objects.equals(this.depositSchedule, retirementCalculatorPercentCoveredRequest.depositSchedule);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inflationRate, currentAge, depositSchedule, portfolioReturn, retirementIncome, aggregationAccountIds, retirementExpenses, retirementTax, accountIds, retirementAge, deathAge, retirementSavings);
+    return Objects.hash(retirementSavings, aggregationAccountIds, retirementAge, retirementIncome, retirementExpenses, currentAge, accountIds, retirementTax, inflationRate, deathAge, portfolioReturn, depositSchedule);
   }
 
 
@@ -348,18 +343,18 @@ public class RetirementCalculatorPercentCoveredRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class RetirementCalculatorPercentCoveredRequest {\n");
     
-    sb.append("    inflationRate: ").append(toIndentedString(inflationRate)).append("\n");
-    sb.append("    currentAge: ").append(toIndentedString(currentAge)).append("\n");
-    sb.append("    depositSchedule: ").append(toIndentedString(depositSchedule)).append("\n");
-    sb.append("    portfolioReturn: ").append(toIndentedString(portfolioReturn)).append("\n");
-    sb.append("    retirementIncome: ").append(toIndentedString(retirementIncome)).append("\n");
-    sb.append("    aggregationAccountIds: ").append(toIndentedString(aggregationAccountIds)).append("\n");
-    sb.append("    retirementExpenses: ").append(toIndentedString(retirementExpenses)).append("\n");
-    sb.append("    retirementTax: ").append(toIndentedString(retirementTax)).append("\n");
-    sb.append("    accountIds: ").append(toIndentedString(accountIds)).append("\n");
-    sb.append("    retirementAge: ").append(toIndentedString(retirementAge)).append("\n");
-    sb.append("    deathAge: ").append(toIndentedString(deathAge)).append("\n");
     sb.append("    retirementSavings: ").append(toIndentedString(retirementSavings)).append("\n");
+    sb.append("    aggregationAccountIds: ").append(toIndentedString(aggregationAccountIds)).append("\n");
+    sb.append("    retirementAge: ").append(toIndentedString(retirementAge)).append("\n");
+    sb.append("    retirementIncome: ").append(toIndentedString(retirementIncome)).append("\n");
+    sb.append("    retirementExpenses: ").append(toIndentedString(retirementExpenses)).append("\n");
+    sb.append("    currentAge: ").append(toIndentedString(currentAge)).append("\n");
+    sb.append("    accountIds: ").append(toIndentedString(accountIds)).append("\n");
+    sb.append("    retirementTax: ").append(toIndentedString(retirementTax)).append("\n");
+    sb.append("    inflationRate: ").append(toIndentedString(inflationRate)).append("\n");
+    sb.append("    deathAge: ").append(toIndentedString(deathAge)).append("\n");
+    sb.append("    portfolioReturn: ").append(toIndentedString(portfolioReturn)).append("\n");
+    sb.append("    depositSchedule: ").append(toIndentedString(depositSchedule)).append("\n");
     sb.append("}");
     return sb.toString();
   }

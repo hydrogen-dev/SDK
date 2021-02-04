@@ -3,9 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**electron_document_id** | **list[str]** |  | [optional] 
 **message** | **str** |  | [optional] 
-**nucleus_client_id** | **str** |  | [optional] 
+**nucleus_account_id** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
 **vendor_name** | **str** |  | [optional] 
 **vendor_response** | **object** |  | [optional] 

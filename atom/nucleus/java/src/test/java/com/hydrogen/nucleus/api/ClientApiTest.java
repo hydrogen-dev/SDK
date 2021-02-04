@@ -13,21 +13,17 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.AvailableDateDoubleVO;
 import com.hydrogen.nucleus.model.Client;
-import com.hydrogen.nucleus.model.ClientHydro;
 import com.hydrogen.nucleus.model.ClientStatus;
-import com.hydrogen.nucleus.model.PageClientHydro;
+import org.threeten.bp.LocalDate;
+import com.hydrogen.nucleus.model.PageClient;
 import com.hydrogen.nucleus.model.PageClientStatus;
 import com.hydrogen.nucleus.model.PagePortfolioTransaction;
 import com.hydrogen.nucleus.model.PortfolioHoldingAgg;
-import com.hydrogen.nucleus.model.VClientGoalViewData;
-import com.hydrogen.nucleus.ApiException;
-import org.threeten.bp.LocalDate;
-import com.hydrogen.nucleus.model.PageClient;
-
 import java.util.UUID;
-
+import com.hydrogen.nucleus.model.VClientGoalViewData;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -41,22 +37,6 @@ public class ClientApiTest {
 
     private final ClientApi api = new ClientApi();
 
-    
-    /**
-     * Create a client-hydro relationship
-     *
-     * Create an client-hydro relationship under a client.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void createClientHydroUsingPostTest() throws ApiException {
-        ClientHydro clientHydro = null;
-        ClientHydro response = api.createClientHydroUsingPost(clientHydro);
-
-        // TODO: test validations
-    }
     
     /**
      * Create an client status
@@ -86,22 +66,6 @@ public class ClientApiTest {
     public void createClientUsingPostTest() throws ApiException {
         Client clientRequest = null;
         Client response = api.createClientUsingPost(clientRequest);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Delete a client-hydro relationship
-     *
-     * Permanently delete a client-hydro relationship for a Hydro ID and a client.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void deleteClientHydroUsingDeleteTest() throws ApiException {
-        UUID clientHydroId = null;
-        api.deleteClientHydroUsingDelete(clientHydroId);
 
         // TODO: test validations
     }
@@ -253,42 +217,6 @@ public class ClientApiTest {
     }
     
     /**
-     * List all client-hydro relationship
-     *
-     * Get information for all client-hydro relationships for all clients defined for your firm.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getClientHydroAllUsingGetTest() throws ApiException {
-        Boolean ascending = null;
-        String filter = null;
-        String orderBy = null;
-        Integer page = null;
-        Integer size = null;
-        PageClientHydro response = api.getClientHydroAllUsingGet(ascending, filter, orderBy, page, size);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Retrieve a client-hydro relationship
-     *
-     * Retrieve the information for a specific client-hydro relationship.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getClientHydroUsingGetTest() throws ApiException {
-        UUID clientHydroId = null;
-        ClientHydro response = api.getClientHydroUsingGet(clientHydroId);
-
-        // TODO: test validations
-    }
-    
-    /**
      * List all client statuses
      *
      * Get the client status history information for all clients.
@@ -364,23 +292,6 @@ public class ClientApiTest {
     }
     
     /**
-     * Update a client-hydro relationship
-     *
-     * Update the information for a client-hydro relationship.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void updateClientHydroUsingPutTest() throws ApiException {
-        ClientHydro clientHydro = null;
-        UUID clientHydroId = null;
-        ClientHydro response = api.updateClientHydroUsingPut(clientHydro, clientHydroId);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Update an client status
      *
      * Update an client status record for an client.
@@ -390,7 +301,7 @@ public class ClientApiTest {
      */
     @Test
     public void updateClientStatusUsingPutTest() throws ApiException {
-        ClientStatus clientStatus = null;
+        Object clientStatus = null;
         UUID clientStatusId = null;
         ClientStatus response = api.updateClientStatusUsingPut(clientStatus, clientStatusId);
 
@@ -407,7 +318,7 @@ public class ClientApiTest {
      */
     @Test
     public void updateClientUsingPutTest() throws ApiException {
-        Client client = null;
+        Object client = null;
         UUID clientId = null;
         Client response = api.updateClientUsingPut(client, clientId);
 

@@ -454,7 +454,7 @@ end
 
 api_instance = NucleusApi::RoundupApi.new
 
-roundup_setting = NucleusApi::RoundupSettings.new # RoundupSettings | roundup_setting
+roundup_setting = nil # Object | roundup_setting
 
 roundup_setting_id = 'roundup_setting_id_example' # String | UUID roundup_setting_id
 
@@ -472,7 +472,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roundup_setting** | [**RoundupSettings**](RoundupSettings.md)| roundup_setting | 
+ **roundup_setting** | **Object**| roundup_setting | 
  **roundup_setting_id** | [**String**](.md)| UUID roundup_setting_id | 
 
 ### Return type

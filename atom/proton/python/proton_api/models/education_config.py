@@ -31,53 +31,53 @@ class EducationConfig(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'start_age': 'int',
+        'end_age': 'int',
         'total_annual_cost': 'float',
-        'end_age': 'int'
+        'start_age': 'int'
     }
 
     attribute_map = {
-        'start_age': 'start_age',
+        'end_age': 'end_age',
         'total_annual_cost': 'total_annual_cost',
-        'end_age': 'end_age'
+        'start_age': 'start_age'
     }
 
-    def __init__(self, start_age=None, total_annual_cost=None, end_age=None):  # noqa: E501
+    def __init__(self, end_age=None, total_annual_cost=None, start_age=None):  # noqa: E501
         """EducationConfig - a model defined in Swagger"""  # noqa: E501
 
-        self._start_age = None
-        self._total_annual_cost = None
         self._end_age = None
+        self._total_annual_cost = None
+        self._start_age = None
         self.discriminator = None
 
-        self.start_age = start_age
-        self.total_annual_cost = total_annual_cost
         self.end_age = end_age
+        self.total_annual_cost = total_annual_cost
+        self.start_age = start_age
 
     @property
-    def start_age(self):
-        """Gets the start_age of this EducationConfig.  # noqa: E501
+    def end_age(self):
+        """Gets the end_age of this EducationConfig.  # noqa: E501
 
 
-        :return: The start_age of this EducationConfig.  # noqa: E501
+        :return: The end_age of this EducationConfig.  # noqa: E501
         :rtype: int
         """
-        return self._start_age
+        return self._end_age
 
-    @start_age.setter
-    def start_age(self, start_age):
-        """Sets the start_age of this EducationConfig.
+    @end_age.setter
+    def end_age(self, end_age):
+        """Sets the end_age of this EducationConfig.
 
 
-        :param start_age: The start_age of this EducationConfig.  # noqa: E501
+        :param end_age: The end_age of this EducationConfig.  # noqa: E501
         :type: int
         """
-        if start_age is None:
-            raise ValueError("Invalid value for `start_age`, must not be `None`")  # noqa: E501
-        if start_age is not None and start_age < 0:  # noqa: E501
-            raise ValueError("Invalid value for `start_age`, must be a value greater than or equal to `0`")  # noqa: E501
+        if end_age is None:
+            raise ValueError("Invalid value for `end_age`, must not be `None`")  # noqa: E501
+        if end_age is not None and end_age < 0:  # noqa: E501
+            raise ValueError("Invalid value for `end_age`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._start_age = start_age
+        self._end_age = end_age
 
     @property
     def total_annual_cost(self):
@@ -105,29 +105,29 @@ class EducationConfig(object):
         self._total_annual_cost = total_annual_cost
 
     @property
-    def end_age(self):
-        """Gets the end_age of this EducationConfig.  # noqa: E501
+    def start_age(self):
+        """Gets the start_age of this EducationConfig.  # noqa: E501
 
 
-        :return: The end_age of this EducationConfig.  # noqa: E501
+        :return: The start_age of this EducationConfig.  # noqa: E501
         :rtype: int
         """
-        return self._end_age
+        return self._start_age
 
-    @end_age.setter
-    def end_age(self, end_age):
-        """Sets the end_age of this EducationConfig.
+    @start_age.setter
+    def start_age(self, start_age):
+        """Sets the start_age of this EducationConfig.
 
 
-        :param end_age: The end_age of this EducationConfig.  # noqa: E501
+        :param start_age: The start_age of this EducationConfig.  # noqa: E501
         :type: int
         """
-        if end_age is None:
-            raise ValueError("Invalid value for `end_age`, must not be `None`")  # noqa: E501
-        if end_age is not None and end_age < 0:  # noqa: E501
-            raise ValueError("Invalid value for `end_age`, must be a value greater than or equal to `0`")  # noqa: E501
+        if start_age is None:
+            raise ValueError("Invalid value for `start_age`, must not be `None`")  # noqa: E501
+        if start_age is not None and start_age < 0:  # noqa: E501
+            raise ValueError("Invalid value for `start_age`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._end_age = end_age
+        self._start_age = start_age
 
     def to_dict(self):
         """Returns the model properties as a dict"""

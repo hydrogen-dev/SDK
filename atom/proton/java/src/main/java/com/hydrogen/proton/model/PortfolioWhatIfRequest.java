@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -30,46 +29,19 @@ import java.util.UUID;
 /**
  * PortfolioWhatIfRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class PortfolioWhatIfRequest {
-  @SerializedName("altered_portfolio_weights")
-  private List<Float> alteredPortfolioWeights = new ArrayList<Float>();
-
-  @SerializedName("create_log")
-  private Boolean createLog = false;
-
-  @SerializedName("aggregation_account_id")
-  private UUID aggregationAccountId = null;
-
-  @SerializedName("allocation_id")
-  private UUID allocationId = null;
-
-  @SerializedName("model_id")
-  private UUID modelId = null;
-
-  @SerializedName("end_date")
-  private String endDate = null;
-
-  @SerializedName("current_portfolio_tickers")
-  private List<String> currentPortfolioTickers = null;
-
-  @SerializedName("use_proxy_data")
-  private Boolean useProxyData = false;
-
-  @SerializedName("altered_portfolio_tickers")
-  private List<String> alteredPortfolioTickers = null;
-
-  @SerializedName("start_date")
-  private String startDate = null;
-
   @SerializedName("current_portfolio_weights")
   private List<Float> currentPortfolioWeights = null;
 
-  @SerializedName("account_id")
-  private UUID accountId = null;
+  @SerializedName("portfolio_id")
+  private UUID portfolioId = null;
+
+  @SerializedName("end_date")
+  private String endDate = null;
 
   /**
    * Gets or Sets marketDataSource
@@ -121,84 +93,114 @@ public class PortfolioWhatIfRequest {
   @SerializedName("market_data_source")
   private MarketDataSourceEnum marketDataSource = MarketDataSourceEnum.NUCLEUS;
 
-  @SerializedName("portfolio_id")
-  private UUID portfolioId = null;
+  @SerializedName("model_id")
+  private UUID modelId = null;
 
-  public PortfolioWhatIfRequest alteredPortfolioWeights(List<Float> alteredPortfolioWeights) {
-    this.alteredPortfolioWeights = alteredPortfolioWeights;
+  @SerializedName("create_log")
+  private Boolean createLog = false;
+
+  @SerializedName("allocation_id")
+  private UUID allocationId = null;
+
+  @SerializedName("use_proxy_data")
+  private Boolean useProxyData = false;
+
+  @SerializedName("start_date")
+  private String startDate = null;
+
+  @SerializedName("account_id")
+  private UUID accountId = null;
+
+  @SerializedName("aggregation_account_id")
+  private UUID aggregationAccountId = null;
+
+  @SerializedName("current_portfolio_tickers")
+  private List<String> currentPortfolioTickers = null;
+
+  @SerializedName("altered_portfolio_weights")
+  private List<Float> alteredPortfolioWeights = new ArrayList<Float>();
+
+  @SerializedName("altered_portfolio_tickers")
+  private List<String> alteredPortfolioTickers = null;
+
+  public PortfolioWhatIfRequest currentPortfolioWeights(List<Float> currentPortfolioWeights) {
+    this.currentPortfolioWeights = currentPortfolioWeights;
     return this;
   }
 
-  public PortfolioWhatIfRequest addAlteredPortfolioWeightsItem(Float alteredPortfolioWeightsItem) {
-    this.alteredPortfolioWeights.add(alteredPortfolioWeightsItem);
-    return this;
-  }
-
-   /**
-   * Get alteredPortfolioWeights
-   * @return alteredPortfolioWeights
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public List<Float> getAlteredPortfolioWeights() {
-    return alteredPortfolioWeights;
-  }
-
-  public void setAlteredPortfolioWeights(List<Float> alteredPortfolioWeights) {
-    this.alteredPortfolioWeights = alteredPortfolioWeights;
-  }
-
-  public PortfolioWhatIfRequest createLog(Boolean createLog) {
-    this.createLog = createLog;
-    return this;
-  }
-
-   /**
-   * Get createLog
-   * @return createLog
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isCreateLog() {
-    return createLog;
-  }
-
-  public void setCreateLog(Boolean createLog) {
-    this.createLog = createLog;
-  }
-
-  public PortfolioWhatIfRequest aggregationAccountId(UUID aggregationAccountId) {
-    this.aggregationAccountId = aggregationAccountId;
+  public PortfolioWhatIfRequest addCurrentPortfolioWeightsItem(Float currentPortfolioWeightsItem) {
+    if (this.currentPortfolioWeights == null) {
+      this.currentPortfolioWeights = new ArrayList<Float>();
+    }
+    this.currentPortfolioWeights.add(currentPortfolioWeightsItem);
     return this;
   }
 
    /**
-   * Get aggregationAccountId
-   * @return aggregationAccountId
+   * Get currentPortfolioWeights
+   * @return currentPortfolioWeights
   **/
   @ApiModelProperty(value = "")
-  public UUID getAggregationAccountId() {
-    return aggregationAccountId;
+  public List<Float> getCurrentPortfolioWeights() {
+    return currentPortfolioWeights;
   }
 
-  public void setAggregationAccountId(UUID aggregationAccountId) {
-    this.aggregationAccountId = aggregationAccountId;
+  public void setCurrentPortfolioWeights(List<Float> currentPortfolioWeights) {
+    this.currentPortfolioWeights = currentPortfolioWeights;
   }
 
-  public PortfolioWhatIfRequest allocationId(UUID allocationId) {
-    this.allocationId = allocationId;
+  public PortfolioWhatIfRequest portfolioId(UUID portfolioId) {
+    this.portfolioId = portfolioId;
     return this;
   }
 
    /**
-   * Get allocationId
-   * @return allocationId
+   * Get portfolioId
+   * @return portfolioId
   **/
   @ApiModelProperty(value = "")
-  public UUID getAllocationId() {
-    return allocationId;
+  public UUID getPortfolioId() {
+    return portfolioId;
   }
 
-  public void setAllocationId(UUID allocationId) {
-    this.allocationId = allocationId;
+  public void setPortfolioId(UUID portfolioId) {
+    this.portfolioId = portfolioId;
+  }
+
+  public PortfolioWhatIfRequest endDate(String endDate) {
+    this.endDate = endDate;
+    return this;
+  }
+
+   /**
+   * Get endDate
+   * @return endDate
+  **/
+  @ApiModelProperty(value = "")
+  public String getEndDate() {
+    return endDate;
+  }
+
+  public void setEndDate(String endDate) {
+    this.endDate = endDate;
+  }
+
+  public PortfolioWhatIfRequest marketDataSource(MarketDataSourceEnum marketDataSource) {
+    this.marketDataSource = marketDataSource;
+    return this;
+  }
+
+   /**
+   * Get marketDataSource
+   * @return marketDataSource
+  **/
+  @ApiModelProperty(value = "")
+  public MarketDataSourceEnum getMarketDataSource() {
+    return marketDataSource;
+  }
+
+  public void setMarketDataSource(MarketDataSourceEnum marketDataSource) {
+    this.marketDataSource = marketDataSource;
   }
 
   public PortfolioWhatIfRequest modelId(UUID modelId) {
@@ -219,22 +221,112 @@ public class PortfolioWhatIfRequest {
     this.modelId = modelId;
   }
 
-  public PortfolioWhatIfRequest endDate(String endDate) {
-    this.endDate = endDate;
+  public PortfolioWhatIfRequest createLog(Boolean createLog) {
+    this.createLog = createLog;
     return this;
   }
 
    /**
-   * Get endDate
-   * @return endDate
+   * Get createLog
+   * @return createLog
   **/
   @ApiModelProperty(value = "")
-  public String getEndDate() {
-    return endDate;
+  public Boolean isCreateLog() {
+    return createLog;
   }
 
-  public void setEndDate(String endDate) {
-    this.endDate = endDate;
+  public void setCreateLog(Boolean createLog) {
+    this.createLog = createLog;
+  }
+
+  public PortfolioWhatIfRequest allocationId(UUID allocationId) {
+    this.allocationId = allocationId;
+    return this;
+  }
+
+   /**
+   * Get allocationId
+   * @return allocationId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getAllocationId() {
+    return allocationId;
+  }
+
+  public void setAllocationId(UUID allocationId) {
+    this.allocationId = allocationId;
+  }
+
+  public PortfolioWhatIfRequest useProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+    return this;
+  }
+
+   /**
+   * Get useProxyData
+   * @return useProxyData
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isUseProxyData() {
+    return useProxyData;
+  }
+
+  public void setUseProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+  }
+
+  public PortfolioWhatIfRequest startDate(String startDate) {
+    this.startDate = startDate;
+    return this;
+  }
+
+   /**
+   * Get startDate
+   * @return startDate
+  **/
+  @ApiModelProperty(value = "")
+  public String getStartDate() {
+    return startDate;
+  }
+
+  public void setStartDate(String startDate) {
+    this.startDate = startDate;
+  }
+
+  public PortfolioWhatIfRequest accountId(UUID accountId) {
+    this.accountId = accountId;
+    return this;
+  }
+
+   /**
+   * Get accountId
+   * @return accountId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getAccountId() {
+    return accountId;
+  }
+
+  public void setAccountId(UUID accountId) {
+    this.accountId = accountId;
+  }
+
+  public PortfolioWhatIfRequest aggregationAccountId(UUID aggregationAccountId) {
+    this.aggregationAccountId = aggregationAccountId;
+    return this;
+  }
+
+   /**
+   * Get aggregationAccountId
+   * @return aggregationAccountId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getAggregationAccountId() {
+    return aggregationAccountId;
+  }
+
+  public void setAggregationAccountId(UUID aggregationAccountId) {
+    this.aggregationAccountId = aggregationAccountId;
   }
 
   public PortfolioWhatIfRequest currentPortfolioTickers(List<String> currentPortfolioTickers) {
@@ -263,22 +355,27 @@ public class PortfolioWhatIfRequest {
     this.currentPortfolioTickers = currentPortfolioTickers;
   }
 
-  public PortfolioWhatIfRequest useProxyData(Boolean useProxyData) {
-    this.useProxyData = useProxyData;
+  public PortfolioWhatIfRequest alteredPortfolioWeights(List<Float> alteredPortfolioWeights) {
+    this.alteredPortfolioWeights = alteredPortfolioWeights;
+    return this;
+  }
+
+  public PortfolioWhatIfRequest addAlteredPortfolioWeightsItem(Float alteredPortfolioWeightsItem) {
+    this.alteredPortfolioWeights.add(alteredPortfolioWeightsItem);
     return this;
   }
 
    /**
-   * Get useProxyData
-   * @return useProxyData
+   * Get alteredPortfolioWeights
+   * @return alteredPortfolioWeights
   **/
-  @ApiModelProperty(value = "")
-  public Boolean isUseProxyData() {
-    return useProxyData;
+  @ApiModelProperty(required = true, value = "")
+  public List<Float> getAlteredPortfolioWeights() {
+    return alteredPortfolioWeights;
   }
 
-  public void setUseProxyData(Boolean useProxyData) {
-    this.useProxyData = useProxyData;
+  public void setAlteredPortfolioWeights(List<Float> alteredPortfolioWeights) {
+    this.alteredPortfolioWeights = alteredPortfolioWeights;
   }
 
   public PortfolioWhatIfRequest alteredPortfolioTickers(List<String> alteredPortfolioTickers) {
@@ -307,104 +404,6 @@ public class PortfolioWhatIfRequest {
     this.alteredPortfolioTickers = alteredPortfolioTickers;
   }
 
-  public PortfolioWhatIfRequest startDate(String startDate) {
-    this.startDate = startDate;
-    return this;
-  }
-
-   /**
-   * Get startDate
-   * @return startDate
-  **/
-  @ApiModelProperty(value = "")
-  public String getStartDate() {
-    return startDate;
-  }
-
-  public void setStartDate(String startDate) {
-    this.startDate = startDate;
-  }
-
-  public PortfolioWhatIfRequest currentPortfolioWeights(List<Float> currentPortfolioWeights) {
-    this.currentPortfolioWeights = currentPortfolioWeights;
-    return this;
-  }
-
-  public PortfolioWhatIfRequest addCurrentPortfolioWeightsItem(Float currentPortfolioWeightsItem) {
-    if (this.currentPortfolioWeights == null) {
-      this.currentPortfolioWeights = new ArrayList<Float>();
-    }
-    this.currentPortfolioWeights.add(currentPortfolioWeightsItem);
-    return this;
-  }
-
-   /**
-   * Get currentPortfolioWeights
-   * @return currentPortfolioWeights
-  **/
-  @ApiModelProperty(value = "")
-  public List<Float> getCurrentPortfolioWeights() {
-    return currentPortfolioWeights;
-  }
-
-  public void setCurrentPortfolioWeights(List<Float> currentPortfolioWeights) {
-    this.currentPortfolioWeights = currentPortfolioWeights;
-  }
-
-  public PortfolioWhatIfRequest accountId(UUID accountId) {
-    this.accountId = accountId;
-    return this;
-  }
-
-   /**
-   * Get accountId
-   * @return accountId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getAccountId() {
-    return accountId;
-  }
-
-  public void setAccountId(UUID accountId) {
-    this.accountId = accountId;
-  }
-
-  public PortfolioWhatIfRequest marketDataSource(MarketDataSourceEnum marketDataSource) {
-    this.marketDataSource = marketDataSource;
-    return this;
-  }
-
-   /**
-   * Get marketDataSource
-   * @return marketDataSource
-  **/
-  @ApiModelProperty(value = "")
-  public MarketDataSourceEnum getMarketDataSource() {
-    return marketDataSource;
-  }
-
-  public void setMarketDataSource(MarketDataSourceEnum marketDataSource) {
-    this.marketDataSource = marketDataSource;
-  }
-
-  public PortfolioWhatIfRequest portfolioId(UUID portfolioId) {
-    this.portfolioId = portfolioId;
-    return this;
-  }
-
-   /**
-   * Get portfolioId
-   * @return portfolioId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getPortfolioId() {
-    return portfolioId;
-  }
-
-  public void setPortfolioId(UUID portfolioId) {
-    this.portfolioId = portfolioId;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -415,25 +414,25 @@ public class PortfolioWhatIfRequest {
       return false;
     }
     PortfolioWhatIfRequest portfolioWhatIfRequest = (PortfolioWhatIfRequest) o;
-    return Objects.equals(this.alteredPortfolioWeights, portfolioWhatIfRequest.alteredPortfolioWeights) &&
-        Objects.equals(this.createLog, portfolioWhatIfRequest.createLog) &&
-        Objects.equals(this.aggregationAccountId, portfolioWhatIfRequest.aggregationAccountId) &&
-        Objects.equals(this.allocationId, portfolioWhatIfRequest.allocationId) &&
-        Objects.equals(this.modelId, portfolioWhatIfRequest.modelId) &&
+    return Objects.equals(this.currentPortfolioWeights, portfolioWhatIfRequest.currentPortfolioWeights) &&
+        Objects.equals(this.portfolioId, portfolioWhatIfRequest.portfolioId) &&
         Objects.equals(this.endDate, portfolioWhatIfRequest.endDate) &&
-        Objects.equals(this.currentPortfolioTickers, portfolioWhatIfRequest.currentPortfolioTickers) &&
-        Objects.equals(this.useProxyData, portfolioWhatIfRequest.useProxyData) &&
-        Objects.equals(this.alteredPortfolioTickers, portfolioWhatIfRequest.alteredPortfolioTickers) &&
-        Objects.equals(this.startDate, portfolioWhatIfRequest.startDate) &&
-        Objects.equals(this.currentPortfolioWeights, portfolioWhatIfRequest.currentPortfolioWeights) &&
-        Objects.equals(this.accountId, portfolioWhatIfRequest.accountId) &&
         Objects.equals(this.marketDataSource, portfolioWhatIfRequest.marketDataSource) &&
-        Objects.equals(this.portfolioId, portfolioWhatIfRequest.portfolioId);
+        Objects.equals(this.modelId, portfolioWhatIfRequest.modelId) &&
+        Objects.equals(this.createLog, portfolioWhatIfRequest.createLog) &&
+        Objects.equals(this.allocationId, portfolioWhatIfRequest.allocationId) &&
+        Objects.equals(this.useProxyData, portfolioWhatIfRequest.useProxyData) &&
+        Objects.equals(this.startDate, portfolioWhatIfRequest.startDate) &&
+        Objects.equals(this.accountId, portfolioWhatIfRequest.accountId) &&
+        Objects.equals(this.aggregationAccountId, portfolioWhatIfRequest.aggregationAccountId) &&
+        Objects.equals(this.currentPortfolioTickers, portfolioWhatIfRequest.currentPortfolioTickers) &&
+        Objects.equals(this.alteredPortfolioWeights, portfolioWhatIfRequest.alteredPortfolioWeights) &&
+        Objects.equals(this.alteredPortfolioTickers, portfolioWhatIfRequest.alteredPortfolioTickers);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(alteredPortfolioWeights, createLog, aggregationAccountId, allocationId, modelId, endDate, currentPortfolioTickers, useProxyData, alteredPortfolioTickers, startDate, currentPortfolioWeights, accountId, marketDataSource, portfolioId);
+    return Objects.hash(currentPortfolioWeights, portfolioId, endDate, marketDataSource, modelId, createLog, allocationId, useProxyData, startDate, accountId, aggregationAccountId, currentPortfolioTickers, alteredPortfolioWeights, alteredPortfolioTickers);
   }
 
 
@@ -442,20 +441,20 @@ public class PortfolioWhatIfRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class PortfolioWhatIfRequest {\n");
     
-    sb.append("    alteredPortfolioWeights: ").append(toIndentedString(alteredPortfolioWeights)).append("\n");
-    sb.append("    createLog: ").append(toIndentedString(createLog)).append("\n");
-    sb.append("    aggregationAccountId: ").append(toIndentedString(aggregationAccountId)).append("\n");
-    sb.append("    allocationId: ").append(toIndentedString(allocationId)).append("\n");
-    sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
-    sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
-    sb.append("    currentPortfolioTickers: ").append(toIndentedString(currentPortfolioTickers)).append("\n");
-    sb.append("    useProxyData: ").append(toIndentedString(useProxyData)).append("\n");
-    sb.append("    alteredPortfolioTickers: ").append(toIndentedString(alteredPortfolioTickers)).append("\n");
-    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    currentPortfolioWeights: ").append(toIndentedString(currentPortfolioWeights)).append("\n");
-    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-    sb.append("    marketDataSource: ").append(toIndentedString(marketDataSource)).append("\n");
     sb.append("    portfolioId: ").append(toIndentedString(portfolioId)).append("\n");
+    sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
+    sb.append("    marketDataSource: ").append(toIndentedString(marketDataSource)).append("\n");
+    sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
+    sb.append("    createLog: ").append(toIndentedString(createLog)).append("\n");
+    sb.append("    allocationId: ").append(toIndentedString(allocationId)).append("\n");
+    sb.append("    useProxyData: ").append(toIndentedString(useProxyData)).append("\n");
+    sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
+    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
+    sb.append("    aggregationAccountId: ").append(toIndentedString(aggregationAccountId)).append("\n");
+    sb.append("    currentPortfolioTickers: ").append(toIndentedString(currentPortfolioTickers)).append("\n");
+    sb.append("    alteredPortfolioWeights: ").append(toIndentedString(alteredPortfolioWeights)).append("\n");
+    sb.append("    alteredPortfolioTickers: ").append(toIndentedString(alteredPortfolioTickers)).append("\n");
     sb.append("}");
     return sb.toString();
   }

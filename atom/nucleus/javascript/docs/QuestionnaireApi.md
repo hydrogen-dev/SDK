@@ -249,7 +249,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.QuestionnaireApi();
 
-var answerId = "29fa5156-cd89-4056-9125-ce2428b05f11"; // String | UUID answer_id
+var answerId = "\"29fa5156-cd89-4056-9125-ce2428b05f11\""; // String | UUID answer_id
 
 
 var callback = function(error, data, response) {
@@ -266,7 +266,7 @@ apiInstance.deleteAnswerUsingDelete(answerId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **answerId** | **String**| UUID answer_id | 
+ **answerId** | [**String**](.md)| UUID answer_id | 
 
 ### Return type
 
@@ -300,7 +300,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.QuestionnaireApi();
 
-var clientResponseId = "7960419c-c098-4450-8cc5-866b7385230b"; // String | UUID client_response_id
+var clientResponseId = "\"7960419c-c098-4450-8cc5-866b7385230b\""; // String | UUID client_response_id
 
 
 var callback = function(error, data, response) {
@@ -317,7 +317,7 @@ apiInstance.deleteClientResponseUsingDelete(clientResponseId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clientResponseId** | **String**| UUID client_response_id | 
+ **clientResponseId** | [**String**](.md)| UUID client_response_id | 
 
 ### Return type
 
@@ -351,7 +351,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.QuestionnaireApi();
 
-var questionId = "29fa5156-cd89-4056-9125-ce2428b05f11"; // String | UUID question_id
+var questionId = "\"29fa5156-cd89-4056-9125-ce2428b05f11\""; // String | UUID question_id
 
 
 var callback = function(error, data, response) {
@@ -368,7 +368,7 @@ apiInstance.deleteQuestionUsingDelete(questionId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **questionId** | **String**| UUID question_id | 
+ **questionId** | [**String**](.md)| UUID question_id | 
 
 ### Return type
 
@@ -402,7 +402,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.QuestionnaireApi();
 
-var questionnaireId = "29fa5156-cd89-4056-9125-ce2428b05f11"; // String | UUID questionnaire_id
+var questionnaireId = "\"29fa5156-cd89-4056-9125-ce2428b05f11\""; // String | UUID questionnaire_id
 
 
 var callback = function(error, data, response) {
@@ -419,7 +419,7 @@ apiInstance.deleteQuestionnaireUsingDelete(questionnaireId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **questionnaireId** | **String**| UUID questionnaire_id | 
+ **questionnaireId** | [**String**](.md)| UUID questionnaire_id | 
 
 ### Return type
 
@@ -513,7 +513,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.QuestionnaireApi();
 
-var answerId = "29fa5156-cd89-4056-9125-ce2428b05f11"; // String | UUID answer_id
+var answerId = "\"29fa5156-cd89-4056-9125-ce2428b05f11\""; // String | UUID answer_id
 
 
 var callback = function(error, data, response) {
@@ -530,7 +530,7 @@ apiInstance.getAnswerUsingGet(answerId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **answerId** | **String**| UUID answer_id | 
+ **answerId** | [**String**](.md)| UUID answer_id | 
 
 ### Return type
 
@@ -624,7 +624,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.QuestionnaireApi();
 
-var clientResponseId = "7960419c-c098-4450-8cc5-866b7385230b"; // String | UUID client_response_id
+var clientResponseId = "\"7960419c-c098-4450-8cc5-866b7385230b\""; // String | UUID client_response_id
 
 
 var callback = function(error, data, response) {
@@ -641,7 +641,7 @@ apiInstance.getClientResponseUsingGet(clientResponseId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clientResponseId** | **String**| UUID client_response_id | 
+ **clientResponseId** | [**String**](.md)| UUID client_response_id | 
 
 ### Return type
 
@@ -735,7 +735,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.QuestionnaireApi();
 
-var questionId = "29fa5156-cd89-4056-9125-ce2428b05f11"; // String | UUID question_id
+var questionId = "\"29fa5156-cd89-4056-9125-ce2428b05f11\""; // String | UUID question_id
 
 
 var callback = function(error, data, response) {
@@ -752,7 +752,7 @@ apiInstance.getQuestionUsingGet(questionId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **questionId** | **String**| UUID question_id | 
+ **questionId** | [**String**](.md)| UUID question_id | 
 
 ### Return type
 
@@ -846,7 +846,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.QuestionnaireApi();
 
-var questionnaireId = "29fa5156-cd89-4056-9125-ce2428b05f11"; // String | UUID questionnaire_id
+var questionnaireId = "\"29fa5156-cd89-4056-9125-ce2428b05f11\""; // String | UUID questionnaire_id
 
 
 var callback = function(error, data, response) {
@@ -863,7 +863,7 @@ apiInstance.getQuestionnaireUsingGet(questionnaireId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **questionnaireId** | **String**| UUID questionnaire_id | 
+ **questionnaireId** | [**String**](.md)| UUID questionnaire_id | 
 
 ### Return type
 
@@ -897,9 +897,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.QuestionnaireApi();
 
-var answer = new HydrogenNucleusApi.Answer(); // Answer | answer
+var answer = null; // Object | answer
 
-var answerId = "29fa5156-cd89-4056-9125-ce2428b05f11"; // String | UUID answer_id
+var answerId = "\"29fa5156-cd89-4056-9125-ce2428b05f11\""; // String | UUID answer_id
 
 
 var callback = function(error, data, response) {
@@ -916,8 +916,8 @@ apiInstance.updateAnswerUsingPut(answer, answerId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **answer** | [**Answer**](Answer.md)| answer | 
- **answerId** | **String**| UUID answer_id | 
+ **answer** | **Object**| answer | 
+ **answerId** | [**String**](.md)| UUID answer_id | 
 
 ### Return type
 
@@ -951,9 +951,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.QuestionnaireApi();
 
-var clientResponse = new HydrogenNucleusApi.ClientResponse(); // ClientResponse | client_response
+var clientResponse = null; // Object | client_response
 
-var clientResponseId = "7960419c-c098-4450-8cc5-866b7385230b"; // String | UUID client_response_id
+var clientResponseId = "\"7960419c-c098-4450-8cc5-866b7385230b\""; // String | UUID client_response_id
 
 
 var callback = function(error, data, response) {
@@ -970,8 +970,8 @@ apiInstance.updateClientResponseUsingPut(clientResponse, clientResponseId, callb
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clientResponse** | [**ClientResponse**](ClientResponse.md)| client_response | 
- **clientResponseId** | **String**| UUID client_response_id | 
+ **clientResponse** | **Object**| client_response | 
+ **clientResponseId** | [**String**](.md)| UUID client_response_id | 
 
 ### Return type
 
@@ -1005,9 +1005,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.QuestionnaireApi();
 
-var question = new HydrogenNucleusApi.Question(); // Question | question
+var question = null; // Object | question
 
-var questionId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID question_id
+var questionId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID question_id
 
 
 var callback = function(error, data, response) {
@@ -1024,8 +1024,8 @@ apiInstance.updateQuestionUsingPut(question, questionId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **question** | [**Question**](Question.md)| question | 
- **questionId** | **String**| UUID question_id | 
+ **question** | **Object**| question | 
+ **questionId** | [**String**](.md)| UUID question_id | 
 
 ### Return type
 
@@ -1059,9 +1059,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.QuestionnaireApi();
 
-var questionnaire = new HydrogenNucleusApi.Questionnaire(); // Questionnaire | questionnaire
+var questionnaire = null; // Object | questionnaire
 
-var questionnaireId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID questionnaire_id
+var questionnaireId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID questionnaire_id
 
 
 var callback = function(error, data, response) {
@@ -1078,8 +1078,8 @@ apiInstance.updateQuestionnaireUsingPut(questionnaire, questionnaireId, callback
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **questionnaire** | [**Questionnaire**](Questionnaire.md)| questionnaire | 
- **questionnaireId** | **String**| UUID questionnaire_id | 
+ **questionnaire** | **Object**| questionnaire | 
+ **questionnaireId** | [**String**](.md)| UUID questionnaire_id | 
 
 ### Return type
 

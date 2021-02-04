@@ -135,7 +135,7 @@ class WebhookApi(object):
     def delete_webhook_using_delete(self, webhook_id, **kwargs):  # noqa: E501
         """Delete a webhook  # noqa: E501
 
-        Permanently delete a webhook for your firm. The webhook_id must be provided.  # noqa: E501
+        Permanently delete a webhook for your business. The webhook_id must be provided.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_webhook_using_delete(webhook_id, async_req=True)
@@ -157,7 +157,7 @@ class WebhookApi(object):
     def delete_webhook_using_delete_with_http_info(self, webhook_id, **kwargs):  # noqa: E501
         """Delete a webhook  # noqa: E501
 
-        Permanently delete a webhook for your firm. The webhook_id must be provided.  # noqa: E501
+        Permanently delete a webhook for your business. The webhook_id must be provided.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.delete_webhook_using_delete_with_http_info(webhook_id, async_req=True)
@@ -230,7 +230,7 @@ class WebhookApi(object):
     def get_webhook_all_using_get(self, **kwargs):  # noqa: E501
         """List all webhooks  # noqa: E501
 
-        Get information for all webhooks defined for your firm.  # noqa: E501
+        Get information for all webhooks defined for your business.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_webhook_all_using_get(async_req=True)
@@ -256,7 +256,7 @@ class WebhookApi(object):
     def get_webhook_all_using_get_with_http_info(self, **kwargs):  # noqa: E501
         """List all webhooks  # noqa: E501
 
-        Get information for all webhooks defined for your firm.  # noqa: E501
+        Get information for all webhooks defined for your business.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_webhook_all_using_get_with_http_info(async_req=True)
@@ -432,14 +432,14 @@ class WebhookApi(object):
     def update_webhook_using_put(self, webhook, webhook_id, **kwargs):  # noqa: E501
         """Update a webhook  # noqa: E501
 
-        Update a webhook for your firm. The webhook_id must be provided  # noqa: E501
+        Update a webhook for your business. The webhook_id must be provided  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_webhook_using_put(webhook, webhook_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Webhook webhook: webhook (required)
+        :param object webhook: webhook (required)
         :param str webhook_id: UUID webhook_id (required)
         :return: Webhook
                  If the method is called asynchronously,
@@ -455,14 +455,14 @@ class WebhookApi(object):
     def update_webhook_using_put_with_http_info(self, webhook, webhook_id, **kwargs):  # noqa: E501
         """Update a webhook  # noqa: E501
 
-        Update a webhook for your firm. The webhook_id must be provided  # noqa: E501
+        Update a webhook for your business. The webhook_id must be provided  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.update_webhook_using_put_with_http_info(webhook, webhook_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Webhook webhook: webhook (required)
+        :param object webhook: webhook (required)
         :param str webhook_id: UUID webhook_id (required)
         :return: Webhook
                  If the method is called asynchronously,

@@ -28,7 +28,6 @@ Create a new invoicePayment, for tracking invoice status.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import InvoiceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -45,8 +44,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 InvoiceApi apiInstance = new InvoiceApi();
 InvoicePayment invoicePayment = new InvoicePayment(); // InvoicePayment | invoicePayment
 try {
@@ -89,7 +86,6 @@ Create a new invoice, with your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import InvoiceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -106,8 +102,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 InvoiceApi apiInstance = new InvoiceApi();
 Invoice invoice = new Invoice(); // Invoice | invoice
 try {
@@ -150,7 +144,6 @@ Delete a invoicePayment.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import InvoiceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -167,8 +160,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 InvoiceApi apiInstance = new InvoiceApi();
 UUID invoicePaymentId = new UUID(); // UUID | UUID invoice_payment_id
 try {
@@ -210,7 +201,6 @@ Delete a invoice.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import InvoiceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -227,8 +217,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 InvoiceApi apiInstance = new InvoiceApi();
 UUID invoiceId = new UUID(); // UUID | UUID invoice_id
 try {
@@ -270,7 +258,6 @@ List all invoice.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import InvoiceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -287,8 +274,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 InvoiceApi apiInstance = new InvoiceApi();
 Boolean ascending = false; // Boolean | ascending
 String currencyConversion = "currencyConversion_example"; // String | currency_conversion
@@ -341,7 +326,6 @@ List all invoicePayment.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import InvoiceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -358,8 +342,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 InvoiceApi apiInstance = new InvoiceApi();
 Boolean ascending = false; // Boolean | ascending
 String currencyConversion = "currencyConversion_example"; // String | currency_conversion
@@ -412,7 +394,6 @@ Retrieve a invoicePayment.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import InvoiceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -429,8 +410,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 InvoiceApi apiInstance = new InvoiceApi();
 UUID invoicePaymentId = new UUID(); // UUID | UUID invoice_payment_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -475,7 +454,6 @@ Retrieve a invoice.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import InvoiceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -492,8 +470,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 InvoiceApi apiInstance = new InvoiceApi();
 UUID invoiceId = new UUID(); // UUID | UUID invoice_idd
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -538,7 +514,6 @@ Update a invoicePayment.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import InvoiceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -555,10 +530,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 InvoiceApi apiInstance = new InvoiceApi();
-InvoicePayment invoicePayment = new InvoicePayment(); // InvoicePayment | invoice_payment
+Object invoicePayment = null; // Object | invoice_payment
 UUID invoicePaymentId = new UUID(); // UUID | UUID invoice_payment_id
 try {
     InvoicePayment result = apiInstance.updateInvoicePaymentUsingPut(invoicePayment, invoicePaymentId);
@@ -573,7 +546,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoicePayment** | [**InvoicePayment**](InvoicePayment.md)| invoice_payment |
+ **invoicePayment** | **Object**| invoice_payment |
  **invoicePaymentId** | [**UUID**](.md)| UUID invoice_payment_id |
 
 ### Return type
@@ -601,7 +574,6 @@ Update a invoice.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import InvoiceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -618,10 +590,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 InvoiceApi apiInstance = new InvoiceApi();
-Invoice invoice = new Invoice(); // Invoice | invoice
+Object invoice = null; // Object | invoice
 UUID invoiceId = new UUID(); // UUID | UUID invoice_id
 try {
     Invoice result = apiInstance.updateInvoiceUsingPut(invoice, invoiceId);
@@ -636,7 +606,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoice** | [**Invoice**](Invoice.md)| invoice |
+ **invoice** | **Object**| invoice |
  **invoiceId** | [**UUID**](.md)| UUID invoice_id |
 
 ### Return type

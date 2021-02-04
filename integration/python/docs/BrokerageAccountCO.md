@@ -3,9 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**electron_document_id** | **list[str]** |  | [optional] 
 **nucleus_account_id** | **str** |  | [optional] 
-**nucleus_account_type_id** | **str** |  | [optional] 
+**nucleus_document_ids** | **list[str]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

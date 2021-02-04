@@ -5,12 +5,14 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_baas_account_using_post**](BaasApi.md#create_baas_account_using_post) | **POST** /baas/account | create a Baas account
+[**create_baas_business_using_post**](BaasApi.md#create_baas_business_using_post) | **POST** /baas/business | Create a Baas Business
 [**create_baas_client_using_post**](BaasApi.md#create_baas_client_using_post) | **POST** /baas/client | Create a Baas Client
 [**create_baas_sub_account_using_post**](BaasApi.md#create_baas_sub_account_using_post) | **POST** /baas/subaccount | create a Baas subaccount
 [**get_baas_account_statement_using_get**](BaasApi.md#get_baas_account_statement_using_get) | **GET** /baas/statement/{nucleus_account_id} | Get a Baas account statement
 [**get_baas_portfolio_balance_using_get**](BaasApi.md#get_baas_portfolio_balance_using_get) | **GET** /baas/balance/{nucleus_portfolio_id} | Get a Baas portfolio balance
 [**get_baas_portfolio_transaction_using_get**](BaasApi.md#get_baas_portfolio_transaction_using_get) | **GET** /baas/transaction/{nucleus_portfolio_id} | Get a Baas portfolio transaction
-[**update_baas_client_using_put**](BaasApi.md#update_baas_client_using_put) | **PUT** /baas/client | Update a Baas client
+[**update_baas_business_using_put**](BaasApi.md#update_baas_business_using_put) | **PUT** /baas/business/{nucleus_business_id} | Update a Baas business
+[**update_baas_client_using_put**](BaasApi.md#update_baas_client_using_put) | **PUT** /baas/client/{nucleus_client_id} | Update a Baas client
 
 
 # **create_baas_account_using_post**
@@ -33,7 +35,6 @@ IntegrationApi.configure do |config|
 # Creating a token using client token
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = IntegrationApi::BaasApi.new
 
@@ -70,6 +71,62 @@ Name | Type | Description  | Notes
 
 
 
+# **create_baas_business_using_post**
+> BaasBusinessVO create_baas_business_using_post(baas_business_co)
+
+Create a Baas Business
+
+### Example
+```ruby
+# load the gem
+require 'integration_api'
+
+# Setup authorization
+IntegrationApi.configure do |config|
+# Use one of the below method to generate oauth token        
+# Creating a token for grant_type=client_credentials
+ config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+# Creating a token for grant_type=password
+ config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
+end
+
+api_instance = IntegrationApi::BaasApi.new
+
+baas_business_co = IntegrationApi::CreateBaasBusinessCO.new # CreateBaasBusinessCO | baasBusinessCO
+
+
+begin
+  #Create a Baas Business
+  result = api_instance.create_baas_business_using_post(baas_business_co)
+  p result
+rescue IntegrationApi::ApiError => e
+  puts "Exception when calling BaasApi->create_baas_business_using_post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **baas_business_co** | [**CreateBaasBusinessCO**](CreateBaasBusinessCO.md)| baasBusinessCO | 
+
+### Return type
+
+[**BaasBusinessVO**](BaasBusinessVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+
+
 # **create_baas_client_using_post**
 > BaasClientVO create_baas_client_using_post(baas_client_co)
 
@@ -91,10 +148,9 @@ IntegrationApi.configure do |config|
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
-
 api_instance = IntegrationApi::BaasApi.new
 
-baas_client_co = IntegrationApi::BaasClientCO.new # BaasClientCO | baasClientCO
+baas_client_co = IntegrationApi::CreateBaasClientCO.new # CreateBaasClientCO | baasClientCO
 
 
 begin
@@ -110,7 +166,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **baas_client_co** | [**BaasClientCO**](BaasClientCO.md)| baasClientCO | 
+ **baas_client_co** | [**CreateBaasClientCO**](CreateBaasClientCO.md)| baasClientCO | 
 
 ### Return type
 
@@ -147,7 +203,6 @@ IntegrationApi.configure do |config|
 # Creating a token using client token
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = IntegrationApi::BaasApi.new
 
@@ -204,7 +259,6 @@ IntegrationApi.configure do |config|
 # Creating a token using client token
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = IntegrationApi::BaasApi.new
 
@@ -272,7 +326,6 @@ IntegrationApi.configure do |config|
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
-
 api_instance = IntegrationApi::BaasApi.new
 
 nucleus_portfolio_id = 'nucleus_portfolio_id_example' # String | nucleus_portfolio_id
@@ -335,7 +388,6 @@ IntegrationApi.configure do |config|
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
-
 api_instance = IntegrationApi::BaasApi.new
 
 nucleus_portfolio_id = 'nucleus_portfolio_id_example' # String | nucleus_portfolio_id
@@ -377,8 +429,68 @@ Name | Type | Description  | Notes
 
 
 
+# **update_baas_business_using_put**
+> BaasBusinessVO update_baas_business_using_put(nucleus_business_id, opts)
+
+Update a Baas business
+
+### Example
+```ruby
+# load the gem
+require 'integration_api'
+
+# Setup authorization
+IntegrationApi.configure do |config|
+# Use one of the below method to generate oauth token        
+# Creating a token for grant_type=client_credentials
+ config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
+# Creating a token for grant_type=password
+ config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
+# Creating a token using client token
+ config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
+end
+
+api_instance = IntegrationApi::BaasApi.new
+
+nucleus_business_id = 'nucleus_business_id_example' # String | nucleus_business_id
+
+opts = { 
+  baas_business_co: IntegrationApi::UpdateBaasBusinessCO.new # UpdateBaasBusinessCO | baasBusinessCO
+}
+
+begin
+  #Update a Baas business
+  result = api_instance.update_baas_business_using_put(nucleus_business_id, opts)
+  p result
+rescue IntegrationApi::ApiError => e
+  puts "Exception when calling BaasApi->update_baas_business_using_put: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nucleus_business_id** | [**String**](.md)| nucleus_business_id | 
+ **baas_business_co** | [**UpdateBaasBusinessCO**](UpdateBaasBusinessCO.md)| baasBusinessCO | [optional] 
+
+### Return type
+
+[**BaasBusinessVO**](BaasBusinessVO.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+
+
 # **update_baas_client_using_put**
-> BaasClientVO update_baas_client_using_put(baas_client_co)
+> BaasClientVO update_baas_client_using_put(nucleus_client_id, opts)
 
 Update a Baas client
 
@@ -398,15 +510,17 @@ IntegrationApi.configure do |config|
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
-
 api_instance = IntegrationApi::BaasApi.new
 
-baas_client_co = IntegrationApi::BaasClientCO.new # BaasClientCO | baasClientCO
+nucleus_client_id = 'nucleus_client_id_example' # String | nucleus_client_id
 
+opts = { 
+  baas_client_co: IntegrationApi::UpdateBaasClientCO.new # UpdateBaasClientCO | baasClientCO
+}
 
 begin
   #Update a Baas client
-  result = api_instance.update_baas_client_using_put(baas_client_co)
+  result = api_instance.update_baas_client_using_put(nucleus_client_id, opts)
   p result
 rescue IntegrationApi::ApiError => e
   puts "Exception when calling BaasApi->update_baas_client_using_put: #{e}"
@@ -417,7 +531,8 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **baas_client_co** | [**BaasClientCO**](BaasClientCO.md)| baasClientCO | 
+ **nucleus_client_id** | [**String**](.md)| nucleus_client_id | 
+ **baas_client_co** | [**UpdateBaasClientCO**](UpdateBaasClientCO.md)| baasClientCO | [optional] 
 
 ### Return type
 

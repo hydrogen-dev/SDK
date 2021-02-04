@@ -559,7 +559,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\HouseholdApi(
     new GuzzleHttp\Client(),
     $config
 );
-$household = new \com\hydrogen\nucleus\Model\Household(); // \com\hydrogen\nucleus\Model\Household | household
+$household = new \stdClass; // object | household
 $household_id = "household_id_example"; // string | UUID household_id
 
 try {
@@ -575,7 +575,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **household** | [**\com\hydrogen\nucleus\Model\Household**](../Model/Household.md)| household |
+ **household** | **object**| household |
  **household_id** | [**string**](../Model/.md)| UUID household_id |
 
 ### Return type

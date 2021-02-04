@@ -23,7 +23,6 @@ Create a new Document for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DocumentApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -40,8 +39,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DocumentApi apiInstance = new DocumentApi();
 Document documentRequest = new Document(); // Document | documentRequest
 try {
@@ -84,7 +81,6 @@ Permanently delete a tenant document by Id
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DocumentApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -101,8 +97,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DocumentApi apiInstance = new DocumentApi();
 UUID documentId = new UUID(); // UUID | UUID document_id
 try {
@@ -144,7 +138,6 @@ Get the information for all Documents
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DocumentApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -161,8 +154,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DocumentApi apiInstance = new DocumentApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -213,7 +204,6 @@ Retrieve the information for a Tenant Document by Document Id
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DocumentApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -230,8 +220,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DocumentApi apiInstance = new DocumentApi();
 UUID documentId = new UUID(); // UUID | UUID document_id
 try {
@@ -274,7 +262,6 @@ Updated the information for a Tenant Documents
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DocumentApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -291,10 +278,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DocumentApi apiInstance = new DocumentApi();
-Document document = new Document(); // Document | document
+Object document = null; // Object | document
 UUID documentId = new UUID(); // UUID | UUID document_id
 try {
     Document result = apiInstance.updateDocumentUsingPut(document, documentId);
@@ -309,7 +294,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **document** | [**Document**](Document.md)| document |
+ **document** | **Object**| document |
  **documentId** | [**UUID**](.md)| UUID document_id |
 
 ### Return type

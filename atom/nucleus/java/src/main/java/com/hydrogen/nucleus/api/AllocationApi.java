@@ -21,20 +21,20 @@ import com.hydrogen.nucleus.Configuration;
 import com.hydrogen.nucleus.Pair;
 import com.hydrogen.nucleus.ProgressRequestBody;
 import com.hydrogen.nucleus.ProgressResponseBody;
-import com.hydrogen.nucleus.model.Allocation;
-import com.hydrogen.nucleus.model.AllocationAggregatedVO;
-import com.hydrogen.nucleus.model.AllocationComposition;
-import com.hydrogen.nucleus.model.DateDoubleVO;
-import com.hydrogen.nucleus.model.ModelHoldingVO;
-import com.hydrogen.nucleus.model.PageAllocation;
-import com.hydrogen.nucleus.model.PageAllocationComposition;
 
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
 
+import com.hydrogen.nucleus.model.Allocation;
+import com.hydrogen.nucleus.model.AllocationAggregatedVO;
+import com.hydrogen.nucleus.model.AllocationComposition;
+import com.hydrogen.nucleus.model.DateDoubleVO;
 import org.threeten.bp.LocalDate;
+import com.hydrogen.nucleus.model.ModelHoldingVO;
+import com.hydrogen.nucleus.model.PageAllocation;
+import com.hydrogen.nucleus.model.PageAllocationComposition;
 import com.hydrogen.nucleus.model.PageModelTransaction;
 import java.util.UUID;
 
@@ -1656,7 +1656,7 @@ public class AllocationApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateAllocationCompositionUsingPutCall(AllocationComposition allocationComposition, UUID allocationCompositionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateAllocationCompositionUsingPutCall(Object allocationComposition, UUID allocationCompositionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = allocationComposition;
 
         // create path and map variables
@@ -1699,7 +1699,7 @@ public class AllocationApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateAllocationCompositionUsingPutValidateBeforeCall(AllocationComposition allocationComposition, UUID allocationCompositionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateAllocationCompositionUsingPutValidateBeforeCall(Object allocationComposition, UUID allocationCompositionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'allocationComposition' is set
         if (allocationComposition == null) {
@@ -1725,7 +1725,7 @@ public class AllocationApi {
      * @return AllocationComposition
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AllocationComposition updateAllocationCompositionUsingPut(AllocationComposition allocationComposition, UUID allocationCompositionId) throws ApiException {
+    public AllocationComposition updateAllocationCompositionUsingPut(Object allocationComposition, UUID allocationCompositionId) throws ApiException {
         ApiResponse<AllocationComposition> resp = updateAllocationCompositionUsingPutWithHttpInfo(allocationComposition, allocationCompositionId);
         return resp.getData();
     }
@@ -1738,7 +1738,7 @@ public class AllocationApi {
      * @return ApiResponse&lt;AllocationComposition&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AllocationComposition> updateAllocationCompositionUsingPutWithHttpInfo(AllocationComposition allocationComposition, UUID allocationCompositionId) throws ApiException {
+    public ApiResponse<AllocationComposition> updateAllocationCompositionUsingPutWithHttpInfo(Object allocationComposition, UUID allocationCompositionId) throws ApiException {
         com.squareup.okhttp.Call call = updateAllocationCompositionUsingPutValidateBeforeCall(allocationComposition, allocationCompositionId, null, null);
         Type localVarReturnType = new TypeToken<AllocationComposition>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1753,7 +1753,7 @@ public class AllocationApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateAllocationCompositionUsingPutAsync(AllocationComposition allocationComposition, UUID allocationCompositionId, final ApiCallback<AllocationComposition> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateAllocationCompositionUsingPutAsync(Object allocationComposition, UUID allocationCompositionId, final ApiCallback<AllocationComposition> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1788,7 +1788,7 @@ public class AllocationApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateAllocationUsingPutCall(Allocation allocation, UUID allocationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateAllocationUsingPutCall(Object allocation, UUID allocationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = allocation;
 
         // create path and map variables
@@ -1831,7 +1831,7 @@ public class AllocationApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateAllocationUsingPutValidateBeforeCall(Allocation allocation, UUID allocationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateAllocationUsingPutValidateBeforeCall(Object allocation, UUID allocationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'allocation' is set
         if (allocation == null) {
@@ -1857,7 +1857,7 @@ public class AllocationApi {
      * @return Allocation
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Allocation updateAllocationUsingPut(Allocation allocation, UUID allocationId) throws ApiException {
+    public Allocation updateAllocationUsingPut(Object allocation, UUID allocationId) throws ApiException {
         ApiResponse<Allocation> resp = updateAllocationUsingPutWithHttpInfo(allocation, allocationId);
         return resp.getData();
     }
@@ -1870,7 +1870,7 @@ public class AllocationApi {
      * @return ApiResponse&lt;Allocation&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Allocation> updateAllocationUsingPutWithHttpInfo(Allocation allocation, UUID allocationId) throws ApiException {
+    public ApiResponse<Allocation> updateAllocationUsingPutWithHttpInfo(Object allocation, UUID allocationId) throws ApiException {
         com.squareup.okhttp.Call call = updateAllocationUsingPutValidateBeforeCall(allocation, allocationId, null, null);
         Type localVarReturnType = new TypeToken<Allocation>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1885,7 +1885,7 @@ public class AllocationApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateAllocationUsingPutAsync(Allocation allocation, UUID allocationId, final ApiCallback<Allocation> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateAllocationUsingPutAsync(Object allocation, UUID allocationId, final ApiCallback<Allocation> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

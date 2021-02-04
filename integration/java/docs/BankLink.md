@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **accountId** | [**UUID**](UUID.md) | accountId |  [optional]
-**availableBalance** | **String** | available_balance |  [optional]
-**balance** | **String** | balance |  [optional]
+**availableBalance** | **Double** | available_balance |  [optional]
+**balance** | **Double** | balance |  [optional]
 **bankAccountHolder** | **String** | bankAccountHolder | 
 **bankAccountName** | **String** | bankAccountName |  [optional]
 **bankAccountNumber** | **String** | bankAccountNumber | 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **isActive** | **Boolean** | isActive |  [optional]
 **isDefault** | **Boolean** | isDefault |  [optional]
 **isLinkVerified** | **Boolean** | isLinkVerified |  [optional]
-**linkVerifiedDate** | [**LocalDate**](LocalDate.md) | linkVerifiedDate |  [optional]
+**linkVerifiedDate** | [**OffsetDateTime**](OffsetDateTime.md) | linkVerifiedDate |  [optional]
 **mask** | **String** | mask |  [optional]
 **metadata** | **Map&lt;String, String&gt;** | metadata |  [optional]
 **name** | **String** | name | 

@@ -211,7 +211,7 @@ end
 
 api_instance = NucleusApi::BulkApi.new
 
-data = NucleusApi::JsonNode.new # JsonNode | data
+data = nil # Object | data
 
 entity_uri = 'entity_uri_example' # String | UUID entity_uri
 
@@ -229,7 +229,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**JsonNode**](JsonNode.md)| data | 
+ **data** | **Object**| data | 
  **entity_uri** | **String**| UUID entity_uri | 
 
 ### Return type

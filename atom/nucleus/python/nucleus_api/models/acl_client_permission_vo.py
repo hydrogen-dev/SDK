@@ -123,8 +123,8 @@ class AclClientPermissionVO(object):
         :param permission_type: The permission_type of this AclClientPermissionVO.  # noqa: E501
         :type: str
         """
-        allowed_values = ["[INQUIRY_ACCESS", "LIMITED_AUTHORITY", "FULL_AUTHORITY", "POWER_OF_ATTORNEY]"]  # noqa: E501
-        if permission_type is not None and permission_type.upper() not in allowed_values:
+        allowed_values = ["INQUIRY_ACCESS", "LIMITED_AUTHORITY", "FULL_AUTHORITY", "POWER_OF_ATTORNEY"]  # noqa: E501
+        if permission_type not in allowed_values:
             raise ValueError(
                 "Invalid value for `permission_type` ({0}), must be one of {1}"  # noqa: E501
                 .format(permission_type, allowed_values)

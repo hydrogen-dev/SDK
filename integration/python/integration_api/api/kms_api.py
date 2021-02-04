@@ -230,7 +230,7 @@ class KMSApi(object):
     def get_kms_all_using_get(self, **kwargs):  # noqa: E501
         """List all KMS Clients  # noqa: E501
 
-        Get details for all clients registered with your firm.  # noqa: E501
+        Get details for all clients registered with your business.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_kms_all_using_get(async_req=True)
@@ -238,6 +238,7 @@ class KMSApi(object):
 
         :param async_req bool
         :param bool ascending: ascending
+        :param str filter: filter
         :param str order_by: order_by
         :param int page: page
         :param int size: size
@@ -255,7 +256,7 @@ class KMSApi(object):
     def get_kms_all_using_get_with_http_info(self, **kwargs):  # noqa: E501
         """List all KMS Clients  # noqa: E501
 
-        Get details for all clients registered with your firm.  # noqa: E501
+        Get details for all clients registered with your business.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_kms_all_using_get_with_http_info(async_req=True)
@@ -263,6 +264,7 @@ class KMSApi(object):
 
         :param async_req bool
         :param bool ascending: ascending
+        :param str filter: filter
         :param str order_by: order_by
         :param int page: page
         :param int size: size
@@ -271,7 +273,7 @@ class KMSApi(object):
                  returns the request thread.
         """
 
-        all_params = ['ascending', 'order_by', 'page', 'size']  # noqa: E501
+        all_params = ['ascending', 'filter', 'order_by', 'page', 'size']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -294,6 +296,8 @@ class KMSApi(object):
         query_params = []
         if 'ascending' in params:
             query_params.append(('ascending', params['ascending']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
         if 'order_by' in params:
             query_params.append(('order_by', params['order_by']))  # noqa: E501
         if 'page' in params:

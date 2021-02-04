@@ -32,7 +32,7 @@ class TestBacktestRequest(unittest.TestCase):
     def testBacktestRequest(self):
         """Test BacktestRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.backtest_request.BacktestRequest()  # noqa: E501
+        # model = proton_api.models.backtest_request.BacktestRequest()  # noqa: E501
         pass
 
 

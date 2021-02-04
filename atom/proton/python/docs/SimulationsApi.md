@@ -1,4 +1,4 @@
-# swagger_client.SimulationsApi
+# proton_api.SimulationsApi
 
 All URIs are relative to *https://sandbox.hydrogenplatform.com/proton/v1*
 
@@ -44,7 +44,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.SimulationsApi(proton_api.ApiClient(configuration))
@@ -111,7 +110,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 
-
 # create an instance of the API class
 api_instance = proton_api.SimulationsApi(proton_api.ApiClient(configuration))
 event_study_request = proton_api.EventStudyRequest() # EventStudyRequest | Request payload for Event Study
@@ -176,7 +174,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.SimulationsApi(proton_api.ApiClient(configuration))
@@ -243,7 +240,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 
-
 # create an instance of the API class
 api_instance = proton_api.SimulationsApi(proton_api.ApiClient(configuration))
 portfolio_what_if_request = proton_api.PortfolioWhatIfRequest() # PortfolioWhatIfRequest | Request payload for Portfolio What-If
@@ -308,7 +304,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.SimulationsApi(proton_api.ApiClient(configuration))
@@ -375,7 +370,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 
 configuration.access_token = api_token_response.access_token
 
-
 # create an instance of the API class
 api_instance = proton_api.SimulationsApi(proton_api.ApiClient(configuration))
 scneario_analysis_request = proton_api.ScenarioAnalysisRequest() # ScenarioAnalysisRequest | Request payload for Scenario Analysis
@@ -440,7 +434,6 @@ api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
 
 configuration.access_token = api_token_response.access_token
-
 
 # create an instance of the API class
 api_instance = proton_api.SimulationsApi(proton_api.ApiClient(configuration))

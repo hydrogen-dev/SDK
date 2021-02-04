@@ -15,51 +15,47 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * MortgageCalculatorPeriodicPaymentRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class MortgageCalculatorPeriodicPaymentRequest {
-  @SerializedName("down_payment")
-  private Float downPayment = null;
+  @SerializedName("mortgage_term")
+  private Integer mortgageTerm = 360;
 
   @SerializedName("home_price")
   private Float homePrice = null;
 
-  @SerializedName("mortgage_term")
-  private Integer mortgageTerm = 360;
+  @SerializedName("down_payment")
+  private Float downPayment = null;
 
   @SerializedName("interest_rate")
   private Float interestRate = 0.04f;
 
-  public MortgageCalculatorPeriodicPaymentRequest downPayment(Float downPayment) {
-    this.downPayment = downPayment;
+  public MortgageCalculatorPeriodicPaymentRequest mortgageTerm(Integer mortgageTerm) {
+    this.mortgageTerm = mortgageTerm;
     return this;
   }
 
    /**
-   * Get downPayment
+   * Get mortgageTerm
    * minimum: 0
-   * @return downPayment
+   * maximum: 600
+   * @return mortgageTerm
   **/
-  @ApiModelProperty(required = true, value = "")
-  public Float getDownPayment() {
-    return downPayment;
+  @ApiModelProperty(value = "")
+  public Integer getMortgageTerm() {
+    return mortgageTerm;
   }
 
-  public void setDownPayment(Float downPayment) {
-    this.downPayment = downPayment;
+  public void setMortgageTerm(Integer mortgageTerm) {
+    this.mortgageTerm = mortgageTerm;
   }
 
   public MortgageCalculatorPeriodicPaymentRequest homePrice(Float homePrice) {
@@ -81,24 +77,23 @@ public class MortgageCalculatorPeriodicPaymentRequest {
     this.homePrice = homePrice;
   }
 
-  public MortgageCalculatorPeriodicPaymentRequest mortgageTerm(Integer mortgageTerm) {
-    this.mortgageTerm = mortgageTerm;
+  public MortgageCalculatorPeriodicPaymentRequest downPayment(Float downPayment) {
+    this.downPayment = downPayment;
     return this;
   }
 
    /**
-   * Get mortgageTerm
+   * Get downPayment
    * minimum: 0
-   * maximum: 600
-   * @return mortgageTerm
+   * @return downPayment
   **/
-  @ApiModelProperty(value = "")
-  public Integer getMortgageTerm() {
-    return mortgageTerm;
+  @ApiModelProperty(required = true, value = "")
+  public Float getDownPayment() {
+    return downPayment;
   }
 
-  public void setMortgageTerm(Integer mortgageTerm) {
-    this.mortgageTerm = mortgageTerm;
+  public void setDownPayment(Float downPayment) {
+    this.downPayment = downPayment;
   }
 
   public MortgageCalculatorPeriodicPaymentRequest interestRate(Float interestRate) {
@@ -130,15 +125,15 @@ public class MortgageCalculatorPeriodicPaymentRequest {
       return false;
     }
     MortgageCalculatorPeriodicPaymentRequest mortgageCalculatorPeriodicPaymentRequest = (MortgageCalculatorPeriodicPaymentRequest) o;
-    return Objects.equals(this.downPayment, mortgageCalculatorPeriodicPaymentRequest.downPayment) &&
+    return Objects.equals(this.mortgageTerm, mortgageCalculatorPeriodicPaymentRequest.mortgageTerm) &&
         Objects.equals(this.homePrice, mortgageCalculatorPeriodicPaymentRequest.homePrice) &&
-        Objects.equals(this.mortgageTerm, mortgageCalculatorPeriodicPaymentRequest.mortgageTerm) &&
+        Objects.equals(this.downPayment, mortgageCalculatorPeriodicPaymentRequest.downPayment) &&
         Objects.equals(this.interestRate, mortgageCalculatorPeriodicPaymentRequest.interestRate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(downPayment, homePrice, mortgageTerm, interestRate);
+    return Objects.hash(mortgageTerm, homePrice, downPayment, interestRate);
   }
 
 
@@ -147,9 +142,9 @@ public class MortgageCalculatorPeriodicPaymentRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class MortgageCalculatorPeriodicPaymentRequest {\n");
     
-    sb.append("    downPayment: ").append(toIndentedString(downPayment)).append("\n");
-    sb.append("    homePrice: ").append(toIndentedString(homePrice)).append("\n");
     sb.append("    mortgageTerm: ").append(toIndentedString(mortgageTerm)).append("\n");
+    sb.append("    homePrice: ").append(toIndentedString(homePrice)).append("\n");
+    sb.append("    downPayment: ").append(toIndentedString(downPayment)).append("\n");
     sb.append("    interestRate: ").append(toIndentedString(interestRate)).append("\n");
     sb.append("}");
     return sb.toString();

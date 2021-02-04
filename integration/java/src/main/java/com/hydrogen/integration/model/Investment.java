@@ -24,10 +24,13 @@ import org.threeten.bp.OffsetDateTime;
  * Investment Object
  */
 @ApiModel(description = "Investment Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class Investment {
   @SerializedName("fee")
   private Double fee = null;
+
+  @SerializedName("investment_type")
+  private String investmentType = null;
 
   @SerializedName("price")
   private Double price = null;
@@ -66,6 +69,24 @@ public class Investment {
 
   public void setFee(Double fee) {
     this.fee = fee;
+  }
+
+  public Investment investmentType(String investmentType) {
+    this.investmentType = investmentType;
+    return this;
+  }
+
+   /**
+   * investmentType
+   * @return investmentType
+  **/
+  @ApiModelProperty(example = "investmentType", value = "investmentType")
+  public String getInvestmentType() {
+    return investmentType;
+  }
+
+  public void setInvestmentType(String investmentType) {
+    this.investmentType = investmentType;
   }
 
   public Investment price(Double price) {
@@ -205,6 +226,7 @@ public class Investment {
     }
     Investment investment = (Investment) o;
     return Objects.equals(this.fee, investment.fee) &&
+        Objects.equals(this.investmentType, investment.investmentType) &&
         Objects.equals(this.price, investment.price) &&
         Objects.equals(this.quantity, investment.quantity) &&
         Objects.equals(this.settleDate, investment.settleDate) &&
@@ -216,7 +238,7 @@ public class Investment {
 
   @Override
   public int hashCode() {
-    return Objects.hash(fee, price, quantity, settleDate, ticker, tickerName, tradeSignal, value);
+    return Objects.hash(fee, investmentType, price, quantity, settleDate, ticker, tickerName, tradeSignal, value);
   }
 
 
@@ -226,6 +248,7 @@ public class Investment {
     sb.append("class Investment {\n");
     
     sb.append("    fee: ").append(toIndentedString(fee)).append("\n");
+    sb.append("    investmentType: ").append(toIndentedString(investmentType)).append("\n");
     sb.append("    price: ").append(toIndentedString(price)).append("\n");
     sb.append("    quantity: ").append(toIndentedString(quantity)).append("\n");
     sb.append("    settleDate: ").append(toIndentedString(settleDate)).append("\n");

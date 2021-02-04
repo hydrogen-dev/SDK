@@ -271,7 +271,7 @@ end
 
 api_instance = NucleusApi::RiskProfileApi.new
 
-risk_profile = NucleusApi::RiskProfile.new # RiskProfile | risk_profile
+risk_profile = nil # Object | risk_profile
 
 risk_profile_id = 'risk_profile_id_example' # String | UUID risk_profile_id
 
@@ -289,7 +289,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **risk_profile** | [**RiskProfile**](RiskProfile.md)| risk_profile | 
+ **risk_profile** | **Object**| risk_profile | 
  **risk_profile_id** | [**String**](.md)| UUID risk_profile_id | 
 
 ### Return type

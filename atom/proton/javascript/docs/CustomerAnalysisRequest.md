@@ -3,15 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**customerIds** | **[String]** |  | [optional] 
-**benchmarkStartDate** | **Date** |  | [optional] 
-**clientId** | **String** |  | [optional] 
-**currencyConversion** | **String** |  | [optional] 
-**responseLimit** | **Number** |  | [optional] [default to 10]
 **endDate** | **Date** |  | [optional] 
-**currencyCode** | **String** |  | [optional] 
-**startDate** | **Date** |  | [optional] 
 **benchmarkEndDate** | **Date** |  | [optional] 
+**customerIds** | **[String]** |  | [optional] 
+**clientId** | **String** |  | [optional] 
+**responseLimit** | **Number** |  | [optional] [default to 10]
+**currencyConversion** | **String** |  | [optional] 
+**startDate** | **Date** |  | [optional] 
+**currencyCode** | **String** |  | [optional] 
 **onlyActiveCustomers** | **Boolean** |  | [optional] [default to false]
+**benchmarkStartDate** | **Date** |  | [optional] 
 
 

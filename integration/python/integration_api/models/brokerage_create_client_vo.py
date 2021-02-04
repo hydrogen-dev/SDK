@@ -35,7 +35,7 @@ class BrokerageCreateClientVO(object):
         'nucleus_client_id': 'str',
         'status': 'str',
         'vendor_name': 'str',
-        'vendor_response': 'CreateClientResponse'
+        'vendor_response': 'object'
     }
 
     attribute_map = {
@@ -157,7 +157,7 @@ class BrokerageCreateClientVO(object):
 
 
         :return: The vendor_response of this BrokerageCreateClientVO.  # noqa: E501
-        :rtype: CreateClientResponse
+        :rtype: object
         """
         return self._vendor_response
 
@@ -167,7 +167,7 @@ class BrokerageCreateClientVO(object):
 
 
         :param vendor_response: The vendor_response of this BrokerageCreateClientVO.  # noqa: E501
-        :type: CreateClientResponse
+        :type: object
         """
 
         self._vendor_response = vendor_response

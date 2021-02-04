@@ -32,31 +32,26 @@ class ResponseEntity(object):
     """
     swagger_types = {
         'body': 'object',
-        'status': 'object',
         'status_code': 'str',
         'status_code_value': 'int'
     }
 
     attribute_map = {
         'body': 'body',
-        'status': 'status',
         'status_code': 'status_code',
         'status_code_value': 'status_code_value'
     }
 
-    def __init__(self, body=None, status=None, status_code=None, status_code_value=None):  # noqa: E501
+    def __init__(self, body=None, status_code=None, status_code_value=None):  # noqa: E501
         """ResponseEntity - a model defined in Swagger"""  # noqa: E501
 
         self._body = None
-        self._status = None
         self._status_code = None
         self._status_code_value = None
         self.discriminator = None
 
         if body is not None:
             self.body = body
-        if status is not None:
-            self.status = status
         if status_code is not None:
             self.status_code = status_code
         if status_code_value is not None:
@@ -82,27 +77,6 @@ class ResponseEntity(object):
         """
 
         self._body = body
-
-    @property
-    def status(self):
-        """Gets the status of this ResponseEntity.  # noqa: E501
-
-
-        :return: The status of this ResponseEntity.  # noqa: E501
-        :rtype: object
-        """
-        return self._status
-
-    @status.setter
-    def status(self, status):
-        """Sets the status of this ResponseEntity.
-
-
-        :param status: The status of this ResponseEntity.  # noqa: E501
-        :type: object
-        """
-
-        self._status = status
 
     @property
     def status_code(self):

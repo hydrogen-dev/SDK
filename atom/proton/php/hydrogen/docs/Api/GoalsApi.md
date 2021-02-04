@@ -40,7 +40,8 @@ $config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
                 ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
+}
+$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -106,7 +107,8 @@ $config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
                 ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
+}
+$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -172,7 +174,8 @@ $config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
                 ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
+}
+$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -238,7 +241,8 @@ $config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
                 ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
+}
+$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -304,7 +308,8 @@ $config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
                 ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
+}
+$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -370,7 +375,8 @@ $config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
                 ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);
-}$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
+}
+$apiInstance = new com\hydrogen\proton\Api\GoalsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),

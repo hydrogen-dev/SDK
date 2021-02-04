@@ -26,19 +26,19 @@ import org.threeten.bp.OffsetDateTime;
  * Aggregation Account Balance Object
  */
 @ApiModel(description = "Aggregation Account Balance Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class AggregationAccountBalance {
   @SerializedName("aggregation_account_id")
   private UUID aggregationAccountId = null;
 
   @SerializedName("available_balance")
-  private String availableBalance = null;
+  private Double availableBalance = null;
 
   @SerializedName("available_credit")
-  private String availableCredit = null;
+  private Double availableCredit = null;
 
   @SerializedName("balance")
-  private String balance = null;
+  private Double balance = null;
 
   @SerializedName("balance_time_stamp")
   private OffsetDateTime balanceTimeStamp = null;
@@ -79,7 +79,7 @@ public class AggregationAccountBalance {
     this.aggregationAccountId = aggregationAccountId;
   }
 
-  public AggregationAccountBalance availableBalance(String availableBalance) {
+  public AggregationAccountBalance availableBalance(Double availableBalance) {
     this.availableBalance = availableBalance;
     return this;
   }
@@ -88,16 +88,16 @@ public class AggregationAccountBalance {
    * availableBalance
    * @return availableBalance
   **/
-  @ApiModelProperty(example = "10000", value = "availableBalance")
-  public String getAvailableBalance() {
+  @ApiModelProperty(example = "10000.0", value = "availableBalance")
+  public Double getAvailableBalance() {
     return availableBalance;
   }
 
-  public void setAvailableBalance(String availableBalance) {
+  public void setAvailableBalance(Double availableBalance) {
     this.availableBalance = availableBalance;
   }
 
-  public AggregationAccountBalance availableCredit(String availableCredit) {
+  public AggregationAccountBalance availableCredit(Double availableCredit) {
     this.availableCredit = availableCredit;
     return this;
   }
@@ -106,16 +106,16 @@ public class AggregationAccountBalance {
    * availableCredit
    * @return availableCredit
   **/
-  @ApiModelProperty(example = "10000", value = "availableCredit")
-  public String getAvailableCredit() {
+  @ApiModelProperty(example = "10000.0", value = "availableCredit")
+  public Double getAvailableCredit() {
     return availableCredit;
   }
 
-  public void setAvailableCredit(String availableCredit) {
+  public void setAvailableCredit(Double availableCredit) {
     this.availableCredit = availableCredit;
   }
 
-  public AggregationAccountBalance balance(String balance) {
+  public AggregationAccountBalance balance(Double balance) {
     this.balance = balance;
     return this;
   }
@@ -124,12 +124,12 @@ public class AggregationAccountBalance {
    * balance
    * @return balance
   **/
-  @ApiModelProperty(example = "9000", value = "balance")
-  public String getBalance() {
+  @ApiModelProperty(example = "9000.0", value = "balance")
+  public Double getBalance() {
     return balance;
   }
 
-  public void setBalance(String balance) {
+  public void setBalance(Double balance) {
     this.balance = balance;
   }
 

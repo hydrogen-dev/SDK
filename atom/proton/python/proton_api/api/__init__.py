@@ -5,6 +5,7 @@ from __future__ import absolute_import
 # import apis into api package
 from proton_api.api.annuities_api import AnnuitiesApi
 from proton_api.api.business_financial_management_api import BusinessFinancialManagementApi
+from proton_api.api.cards_api import CardsApi
 from proton_api.api.financial_health_api import FinancialHealthApi
 from proton_api.api.financial_planning_api import FinancialPlanningApi
 from proton_api.api.goals_api import GoalsApi

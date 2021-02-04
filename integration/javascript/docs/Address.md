@@ -17,19 +17,19 @@ Name | Type | Description | Notes
 ## Enum: TypeEnum
 
 
-* `HOME` (value: `"HOME"`)
+* `home` (value: `"home"`)
 
-* `WORK` (value: `"WORK"`)
+* `work` (value: `"work"`)
 
-* `BILLING` (value: `"BILLING"`)
+* `billing` (value: `"billing"`)
 
-* `MAILING` (value: `"MAILING"`)
+* `mailing` (value: `"mailing"`)
 
-* `LEGAL` (value: `"LEGAL"`)
+* `legal` (value: `"legal"`)
 
-* `RESIDENCE` (value: `"RESIDENCE"`)
+* `residence` (value: `"residence"`)
 
-* `UNKNOWN` (value: `"UNKNOWN"`)
+* `null` (value: `"null"`)
 
 
 

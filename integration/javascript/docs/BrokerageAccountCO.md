@@ -3,8 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**electronDocumentId** | **[String]** |  | [optional] 
 **nucleusAccountId** | **String** |  | [optional] 
-**nucleusAccountTypeId** | **String** |  | [optional] 
+**nucleusDocumentIds** | **[String]** |  | [optional] 
 
 

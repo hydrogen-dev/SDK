@@ -843,7 +843,7 @@ class CustomerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param CustomerRevenue customer_revenue: customer_revenue (required)
+        :param object customer_revenue: customer_revenue (required)
         :param str customer_revenue_id: UUID customer_revenue_id (required)
         :return: CustomerRevenue
                  If the method is called asynchronously,
@@ -866,7 +866,7 @@ class CustomerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param CustomerRevenue customer_revenue: customer_revenue (required)
+        :param object customer_revenue: customer_revenue (required)
         :param str customer_revenue_id: UUID customer_revenue_id (required)
         :return: CustomerRevenue
                  If the method is called asynchronously,
@@ -950,7 +950,7 @@ class CustomerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Customer customer: customer (required)
+        :param object customer: customer (required)
         :param str customer_id: UUID customer_id (required)
         :return: Customer
                  If the method is called asynchronously,
@@ -973,7 +973,7 @@ class CustomerApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Customer customer: customer (required)
+        :param object customer: customer (required)
         :param str customer_id: UUID customer_id (required)
         :return: Customer
                  If the method is called asynchronously,

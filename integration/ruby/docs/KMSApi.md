@@ -34,7 +34,6 @@ IntegrationApi.configure do |config|
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
-
 api_instance = IntegrationApi::KMSApi.new
 
 kms_config = IntegrationApi::KmsConfig.new # KmsConfig | kmsConfig
@@ -93,7 +92,6 @@ IntegrationApi.configure do |config|
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
-
 api_instance = IntegrationApi::KMSApi.new
 
 kms_id = 'kms_id_example' # String | KMS Id
@@ -133,7 +131,7 @@ nil (empty response body)
 
 List all KMS Clients
 
-Get details for all clients registered with your firm.
+Get details for all clients registered with your business.
 
 ### Example
 ```ruby
@@ -151,11 +149,11 @@ IntegrationApi.configure do |config|
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
 
-
 api_instance = IntegrationApi::KMSApi.new
 
 opts = { 
   ascending: false, # BOOLEAN | ascending
+  filter: 'filter_example', # String | filter
   order_by: 'update_date', # String | order_by
   page: 0, # Integer | page
   size: 25 # Integer | size
@@ -175,6 +173,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ascending** | **BOOLEAN**| ascending | [optional] [default to false]
+ **filter** | **String**| filter | [optional] 
  **order_by** | **String**| order_by | [optional] [default to update_date]
  **page** | **Integer**| page | [optional] [default to 0]
  **size** | **Integer**| size | [optional] [default to 25]
@@ -216,7 +215,6 @@ IntegrationApi.configure do |config|
 # Creating a token using client token
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = IntegrationApi::KMSApi.new
 
@@ -275,7 +273,6 @@ IntegrationApi.configure do |config|
 # Creating a token using client token
  config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 
 api_instance = IntegrationApi::KMSApi.new
 

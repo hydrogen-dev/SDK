@@ -15,12 +15,7 @@ package com.hydrogen.proton.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.math.BigDecimal;
@@ -31,7 +26,7 @@ import java.util.UUID;
 /**
  * DimensionalRiskScoreRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
@@ -39,29 +34,29 @@ public class DimensionalRiskScoreRequest {
   @SerializedName("post_score")
   private Boolean postScore = false;
 
-  @SerializedName("questionnaire_id")
-  private UUID questionnaireId = null;
-
-  @SerializedName("dims")
-  private List<String> dims = new ArrayList<String>();
-
   @SerializedName("max_answers")
   private List<BigDecimal> maxAnswers = new ArrayList<BigDecimal>();
-
-  @SerializedName("client_id")
-  private UUID clientId = null;
 
   @SerializedName("answer_weights")
   private List<Float> answerWeights = null;
 
+  @SerializedName("dims")
+  private List<String> dims = new ArrayList<String>();
+
+  @SerializedName("client_id")
+  private UUID clientId = null;
+
   @SerializedName("answers")
   private List<BigDecimal> answers = null;
 
-  @SerializedName("answer_dims")
-  private List<List<String>> answerDims = new ArrayList<List<String>>();
-
   @SerializedName("dim_weights")
   private List<Float> dimWeights = null;
+
+  @SerializedName("questionnaire_id")
+  private UUID questionnaireId = null;
+
+  @SerializedName("answer_dims")
+  private List<List<String>> answerDims = new ArrayList<List<String>>();
 
   public DimensionalRiskScoreRequest postScore(Boolean postScore) {
     this.postScore = postScore;
@@ -79,47 +74,6 @@ public class DimensionalRiskScoreRequest {
 
   public void setPostScore(Boolean postScore) {
     this.postScore = postScore;
-  }
-
-  public DimensionalRiskScoreRequest questionnaireId(UUID questionnaireId) {
-    this.questionnaireId = questionnaireId;
-    return this;
-  }
-
-   /**
-   * Get questionnaireId
-   * @return questionnaireId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getQuestionnaireId() {
-    return questionnaireId;
-  }
-
-  public void setQuestionnaireId(UUID questionnaireId) {
-    this.questionnaireId = questionnaireId;
-  }
-
-  public DimensionalRiskScoreRequest dims(List<String> dims) {
-    this.dims = dims;
-    return this;
-  }
-
-  public DimensionalRiskScoreRequest addDimsItem(String dimsItem) {
-    this.dims.add(dimsItem);
-    return this;
-  }
-
-   /**
-   * Get dims
-   * @return dims
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public List<String> getDims() {
-    return dims;
-  }
-
-  public void setDims(List<String> dims) {
-    this.dims = dims;
   }
 
   public DimensionalRiskScoreRequest maxAnswers(List<BigDecimal> maxAnswers) {
@@ -143,24 +97,6 @@ public class DimensionalRiskScoreRequest {
 
   public void setMaxAnswers(List<BigDecimal> maxAnswers) {
     this.maxAnswers = maxAnswers;
-  }
-
-  public DimensionalRiskScoreRequest clientId(UUID clientId) {
-    this.clientId = clientId;
-    return this;
-  }
-
-   /**
-   * Get clientId
-   * @return clientId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getClientId() {
-    return clientId;
-  }
-
-  public void setClientId(UUID clientId) {
-    this.clientId = clientId;
   }
 
   public DimensionalRiskScoreRequest answerWeights(List<Float> answerWeights) {
@@ -189,6 +125,47 @@ public class DimensionalRiskScoreRequest {
     this.answerWeights = answerWeights;
   }
 
+  public DimensionalRiskScoreRequest dims(List<String> dims) {
+    this.dims = dims;
+    return this;
+  }
+
+  public DimensionalRiskScoreRequest addDimsItem(String dimsItem) {
+    this.dims.add(dimsItem);
+    return this;
+  }
+
+   /**
+   * Get dims
+   * @return dims
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public List<String> getDims() {
+    return dims;
+  }
+
+  public void setDims(List<String> dims) {
+    this.dims = dims;
+  }
+
+  public DimensionalRiskScoreRequest clientId(UUID clientId) {
+    this.clientId = clientId;
+    return this;
+  }
+
+   /**
+   * Get clientId
+   * @return clientId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getClientId() {
+    return clientId;
+  }
+
+  public void setClientId(UUID clientId) {
+    this.clientId = clientId;
+  }
+
   public DimensionalRiskScoreRequest answers(List<BigDecimal> answers) {
     this.answers = answers;
     return this;
@@ -213,29 +190,6 @@ public class DimensionalRiskScoreRequest {
 
   public void setAnswers(List<BigDecimal> answers) {
     this.answers = answers;
-  }
-
-  public DimensionalRiskScoreRequest answerDims(List<List<String>> answerDims) {
-    this.answerDims = answerDims;
-    return this;
-  }
-
-  public DimensionalRiskScoreRequest addAnswerDimsItem(List<String> answerDimsItem) {
-    this.answerDims.add(answerDimsItem);
-    return this;
-  }
-
-   /**
-   * Get answerDims
-   * @return answerDims
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public List<List<String>> getAnswerDims() {
-    return answerDims;
-  }
-
-  public void setAnswerDims(List<List<String>> answerDims) {
-    this.answerDims = answerDims;
   }
 
   public DimensionalRiskScoreRequest dimWeights(List<Float> dimWeights) {
@@ -264,6 +218,47 @@ public class DimensionalRiskScoreRequest {
     this.dimWeights = dimWeights;
   }
 
+  public DimensionalRiskScoreRequest questionnaireId(UUID questionnaireId) {
+    this.questionnaireId = questionnaireId;
+    return this;
+  }
+
+   /**
+   * Get questionnaireId
+   * @return questionnaireId
+  **/
+  @ApiModelProperty(value = "")
+  public UUID getQuestionnaireId() {
+    return questionnaireId;
+  }
+
+  public void setQuestionnaireId(UUID questionnaireId) {
+    this.questionnaireId = questionnaireId;
+  }
+
+  public DimensionalRiskScoreRequest answerDims(List<List<String>> answerDims) {
+    this.answerDims = answerDims;
+    return this;
+  }
+
+  public DimensionalRiskScoreRequest addAnswerDimsItem(List<String> answerDimsItem) {
+    this.answerDims.add(answerDimsItem);
+    return this;
+  }
+
+   /**
+   * Get answerDims
+   * @return answerDims
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public List<List<String>> getAnswerDims() {
+    return answerDims;
+  }
+
+  public void setAnswerDims(List<List<String>> answerDims) {
+    this.answerDims = answerDims;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -275,19 +270,19 @@ public class DimensionalRiskScoreRequest {
     }
     DimensionalRiskScoreRequest dimensionalRiskScoreRequest = (DimensionalRiskScoreRequest) o;
     return Objects.equals(this.postScore, dimensionalRiskScoreRequest.postScore) &&
-        Objects.equals(this.questionnaireId, dimensionalRiskScoreRequest.questionnaireId) &&
-        Objects.equals(this.dims, dimensionalRiskScoreRequest.dims) &&
         Objects.equals(this.maxAnswers, dimensionalRiskScoreRequest.maxAnswers) &&
-        Objects.equals(this.clientId, dimensionalRiskScoreRequest.clientId) &&
         Objects.equals(this.answerWeights, dimensionalRiskScoreRequest.answerWeights) &&
+        Objects.equals(this.dims, dimensionalRiskScoreRequest.dims) &&
+        Objects.equals(this.clientId, dimensionalRiskScoreRequest.clientId) &&
         Objects.equals(this.answers, dimensionalRiskScoreRequest.answers) &&
-        Objects.equals(this.answerDims, dimensionalRiskScoreRequest.answerDims) &&
-        Objects.equals(this.dimWeights, dimensionalRiskScoreRequest.dimWeights);
+        Objects.equals(this.dimWeights, dimensionalRiskScoreRequest.dimWeights) &&
+        Objects.equals(this.questionnaireId, dimensionalRiskScoreRequest.questionnaireId) &&
+        Objects.equals(this.answerDims, dimensionalRiskScoreRequest.answerDims);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(postScore, questionnaireId, dims, maxAnswers, clientId, answerWeights, answers, answerDims, dimWeights);
+    return Objects.hash(postScore, maxAnswers, answerWeights, dims, clientId, answers, dimWeights, questionnaireId, answerDims);
   }
 
 
@@ -297,14 +292,14 @@ public class DimensionalRiskScoreRequest {
     sb.append("class DimensionalRiskScoreRequest {\n");
     
     sb.append("    postScore: ").append(toIndentedString(postScore)).append("\n");
-    sb.append("    questionnaireId: ").append(toIndentedString(questionnaireId)).append("\n");
-    sb.append("    dims: ").append(toIndentedString(dims)).append("\n");
     sb.append("    maxAnswers: ").append(toIndentedString(maxAnswers)).append("\n");
-    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
     sb.append("    answerWeights: ").append(toIndentedString(answerWeights)).append("\n");
+    sb.append("    dims: ").append(toIndentedString(dims)).append("\n");
+    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
     sb.append("    answers: ").append(toIndentedString(answers)).append("\n");
-    sb.append("    answerDims: ").append(toIndentedString(answerDims)).append("\n");
     sb.append("    dimWeights: ").append(toIndentedString(dimWeights)).append("\n");
+    sb.append("    questionnaireId: ").append(toIndentedString(questionnaireId)).append("\n");
+    sb.append("    answerDims: ").append(toIndentedString(answerDims)).append("\n");
     sb.append("}");
     return sb.toString();
   }

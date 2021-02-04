@@ -2558,7 +2558,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PortfolioAssetSizeLog portfolio_asset_size: portfolio_asset_size (required)
+        :param object portfolio_asset_size: portfolio_asset_size (required)
         :param str portfolio_asset_size_id: UUID portfolio_asset_size_id (required)
         :return: PortfolioAssetSizeLog
                  If the method is called asynchronously,
@@ -2581,7 +2581,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PortfolioAssetSizeLog portfolio_asset_size: portfolio_asset_size (required)
+        :param object portfolio_asset_size: portfolio_asset_size (required)
         :param str portfolio_asset_size_id: UUID portfolio_asset_size_id (required)
         :return: PortfolioAssetSizeLog
                  If the method is called asynchronously,
@@ -2665,7 +2665,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PortfolioComment portfolio_comment: portfolio_comment (required)
+        :param object portfolio_comment: portfolio_comment (required)
         :param str portfolio_comment_id: UUID portfolio_comment_id (required)
         :return: PortfolioComment
                  If the method is called asynchronously,
@@ -2688,7 +2688,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PortfolioComment portfolio_comment: portfolio_comment (required)
+        :param object portfolio_comment: portfolio_comment (required)
         :param str portfolio_comment_id: UUID portfolio_comment_id (required)
         :return: PortfolioComment
                  If the method is called asynchronously,
@@ -2772,7 +2772,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PortfolioGoal portfolio_goal: portfolio_goal (required)
+        :param object portfolio_goal: portfolio_goal (required)
         :param str portfolio_goal_id: UUID portfolio_goal_id (required)
         :return: PortfolioGoal
                  If the method is called asynchronously,
@@ -2795,7 +2795,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PortfolioGoal portfolio_goal: portfolio_goal (required)
+        :param object portfolio_goal: portfolio_goal (required)
         :param str portfolio_goal_id: UUID portfolio_goal_id (required)
         :return: PortfolioGoal
                  If the method is called asynchronously,
@@ -2879,7 +2879,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PortfolioHoldingLog portfolio_holding: portfolio_holding (required)
+        :param object portfolio_holding: portfolio_holding (required)
         :param str portfolio_holding_id: UUID portfolio_holding_id (required)
         :return: PortfolioHoldingLog
                  If the method is called asynchronously,
@@ -2902,7 +2902,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PortfolioHoldingLog portfolio_holding: portfolio_holding (required)
+        :param object portfolio_holding: portfolio_holding (required)
         :param str portfolio_holding_id: UUID portfolio_holding_id (required)
         :return: PortfolioHoldingLog
                  If the method is called asynchronously,
@@ -2986,7 +2986,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PortfolioTransaction portfolio_transaction: portfolio_transaction (required)
+        :param object portfolio_transaction: portfolio_transaction (required)
         :param str portfolio_transaction_id: UUID portfolio_transaction_id (required)
         :return: PortfolioTransaction
                  If the method is called asynchronously,
@@ -3009,7 +3009,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PortfolioTransaction portfolio_transaction: portfolio_transaction (required)
+        :param object portfolio_transaction: portfolio_transaction (required)
         :param str portfolio_transaction_id: UUID portfolio_transaction_id (required)
         :return: PortfolioTransaction
                  If the method is called asynchronously,
@@ -3093,7 +3093,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Portfolio portfolio: portfolio (required)
+        :param object portfolio: portfolio (required)
         :param str portfolio_id: UUID portfolio_id (required)
         :return: Portfolio
                  If the method is called asynchronously,
@@ -3116,7 +3116,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Portfolio portfolio: portfolio (required)
+        :param object portfolio: portfolio (required)
         :param str portfolio_id: UUID portfolio_id (required)
         :return: Portfolio
                  If the method is called asynchronously,

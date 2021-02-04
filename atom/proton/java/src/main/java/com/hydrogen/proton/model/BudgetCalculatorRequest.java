@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.IOException;
@@ -30,11 +29,35 @@ import org.threeten.bp.LocalDate;
 /**
  * BudgetCalculatorRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class BudgetCalculatorRequest {
+  @SerializedName("as_of_date")
+  private LocalDate asOfDate = null;
+
+  @SerializedName("show_budget_track")
+  private Boolean showBudgetTrack = true;
+
+  @SerializedName("budget_id")
+  private UUID budgetId = null;
+
+  @SerializedName("currency_conversion")
+  private String currencyConversion = null;
+
+  @SerializedName("lookback_periods")
+  private Integer lookbackPeriods = 1;
+
+  @SerializedName("show_average_spend")
+  private Boolean showAverageSpend = false;
+
+  @SerializedName("budget_details")
+  private BudgetDetails budgetDetails = null;
+
+  @SerializedName("relative_lookback")
+  private Boolean relativeLookback = true;
+
   /**
    * Gets or Sets scope
    */
@@ -87,102 +110,6 @@ public class BudgetCalculatorRequest {
   @SerializedName("scope")
   private ScopeEnum scope = ScopeEnum.ALL;
 
-  @SerializedName("budget_details")
-  private BudgetDetails budgetDetails = null;
-
-  @SerializedName("currency_conversion")
-  private String currencyConversion = null;
-
-  @SerializedName("budget_id")
-  private UUID budgetId = null;
-
-  @SerializedName("as_of_date")
-  private LocalDate asOfDate = null;
-
-  @SerializedName("show_average_spend")
-  private Boolean showAverageSpend = false;
-
-  @SerializedName("show_budget_track")
-  private Boolean showBudgetTrack = true;
-
-  @SerializedName("relative_lookback")
-  private Boolean relativeLookback = true;
-
-  @SerializedName("lookback_periods")
-  private Integer lookbackPeriods = 1;
-
-  public BudgetCalculatorRequest scope(ScopeEnum scope) {
-    this.scope = scope;
-    return this;
-  }
-
-   /**
-   * Get scope
-   * @return scope
-  **/
-  @ApiModelProperty(value = "")
-  public ScopeEnum getScope() {
-    return scope;
-  }
-
-  public void setScope(ScopeEnum scope) {
-    this.scope = scope;
-  }
-
-  public BudgetCalculatorRequest budgetDetails(BudgetDetails budgetDetails) {
-    this.budgetDetails = budgetDetails;
-    return this;
-  }
-
-   /**
-   * Get budgetDetails
-   * @return budgetDetails
-  **/
-  @ApiModelProperty(value = "")
-  public BudgetDetails getBudgetDetails() {
-    return budgetDetails;
-  }
-
-  public void setBudgetDetails(BudgetDetails budgetDetails) {
-    this.budgetDetails = budgetDetails;
-  }
-
-  public BudgetCalculatorRequest currencyConversion(String currencyConversion) {
-    this.currencyConversion = currencyConversion;
-    return this;
-  }
-
-   /**
-   * Get currencyConversion
-   * @return currencyConversion
-  **/
-  @ApiModelProperty(value = "")
-  public String getCurrencyConversion() {
-    return currencyConversion;
-  }
-
-  public void setCurrencyConversion(String currencyConversion) {
-    this.currencyConversion = currencyConversion;
-  }
-
-  public BudgetCalculatorRequest budgetId(UUID budgetId) {
-    this.budgetId = budgetId;
-    return this;
-  }
-
-   /**
-   * Get budgetId
-   * @return budgetId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getBudgetId() {
-    return budgetId;
-  }
-
-  public void setBudgetId(UUID budgetId) {
-    this.budgetId = budgetId;
-  }
-
   public BudgetCalculatorRequest asOfDate(LocalDate asOfDate) {
     this.asOfDate = asOfDate;
     return this;
@@ -199,24 +126,6 @@ public class BudgetCalculatorRequest {
 
   public void setAsOfDate(LocalDate asOfDate) {
     this.asOfDate = asOfDate;
-  }
-
-  public BudgetCalculatorRequest showAverageSpend(Boolean showAverageSpend) {
-    this.showAverageSpend = showAverageSpend;
-    return this;
-  }
-
-   /**
-   * Get showAverageSpend
-   * @return showAverageSpend
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isShowAverageSpend() {
-    return showAverageSpend;
-  }
-
-  public void setShowAverageSpend(Boolean showAverageSpend) {
-    this.showAverageSpend = showAverageSpend;
   }
 
   public BudgetCalculatorRequest showBudgetTrack(Boolean showBudgetTrack) {
@@ -237,22 +146,40 @@ public class BudgetCalculatorRequest {
     this.showBudgetTrack = showBudgetTrack;
   }
 
-  public BudgetCalculatorRequest relativeLookback(Boolean relativeLookback) {
-    this.relativeLookback = relativeLookback;
+  public BudgetCalculatorRequest budgetId(UUID budgetId) {
+    this.budgetId = budgetId;
     return this;
   }
 
    /**
-   * Get relativeLookback
-   * @return relativeLookback
+   * Get budgetId
+   * @return budgetId
   **/
   @ApiModelProperty(value = "")
-  public Boolean isRelativeLookback() {
-    return relativeLookback;
+  public UUID getBudgetId() {
+    return budgetId;
   }
 
-  public void setRelativeLookback(Boolean relativeLookback) {
-    this.relativeLookback = relativeLookback;
+  public void setBudgetId(UUID budgetId) {
+    this.budgetId = budgetId;
+  }
+
+  public BudgetCalculatorRequest currencyConversion(String currencyConversion) {
+    this.currencyConversion = currencyConversion;
+    return this;
+  }
+
+   /**
+   * Get currencyConversion
+   * @return currencyConversion
+  **/
+  @ApiModelProperty(value = "")
+  public String getCurrencyConversion() {
+    return currencyConversion;
+  }
+
+  public void setCurrencyConversion(String currencyConversion) {
+    this.currencyConversion = currencyConversion;
   }
 
   public BudgetCalculatorRequest lookbackPeriods(Integer lookbackPeriods) {
@@ -274,6 +201,78 @@ public class BudgetCalculatorRequest {
     this.lookbackPeriods = lookbackPeriods;
   }
 
+  public BudgetCalculatorRequest showAverageSpend(Boolean showAverageSpend) {
+    this.showAverageSpend = showAverageSpend;
+    return this;
+  }
+
+   /**
+   * Get showAverageSpend
+   * @return showAverageSpend
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isShowAverageSpend() {
+    return showAverageSpend;
+  }
+
+  public void setShowAverageSpend(Boolean showAverageSpend) {
+    this.showAverageSpend = showAverageSpend;
+  }
+
+  public BudgetCalculatorRequest budgetDetails(BudgetDetails budgetDetails) {
+    this.budgetDetails = budgetDetails;
+    return this;
+  }
+
+   /**
+   * Get budgetDetails
+   * @return budgetDetails
+  **/
+  @ApiModelProperty(value = "")
+  public BudgetDetails getBudgetDetails() {
+    return budgetDetails;
+  }
+
+  public void setBudgetDetails(BudgetDetails budgetDetails) {
+    this.budgetDetails = budgetDetails;
+  }
+
+  public BudgetCalculatorRequest relativeLookback(Boolean relativeLookback) {
+    this.relativeLookback = relativeLookback;
+    return this;
+  }
+
+   /**
+   * Get relativeLookback
+   * @return relativeLookback
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isRelativeLookback() {
+    return relativeLookback;
+  }
+
+  public void setRelativeLookback(Boolean relativeLookback) {
+    this.relativeLookback = relativeLookback;
+  }
+
+  public BudgetCalculatorRequest scope(ScopeEnum scope) {
+    this.scope = scope;
+    return this;
+  }
+
+   /**
+   * Get scope
+   * @return scope
+  **/
+  @ApiModelProperty(value = "")
+  public ScopeEnum getScope() {
+    return scope;
+  }
+
+  public void setScope(ScopeEnum scope) {
+    this.scope = scope;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -284,20 +283,20 @@ public class BudgetCalculatorRequest {
       return false;
     }
     BudgetCalculatorRequest budgetCalculatorRequest = (BudgetCalculatorRequest) o;
-    return Objects.equals(this.scope, budgetCalculatorRequest.scope) &&
-        Objects.equals(this.budgetDetails, budgetCalculatorRequest.budgetDetails) &&
-        Objects.equals(this.currencyConversion, budgetCalculatorRequest.currencyConversion) &&
-        Objects.equals(this.budgetId, budgetCalculatorRequest.budgetId) &&
-        Objects.equals(this.asOfDate, budgetCalculatorRequest.asOfDate) &&
-        Objects.equals(this.showAverageSpend, budgetCalculatorRequest.showAverageSpend) &&
+    return Objects.equals(this.asOfDate, budgetCalculatorRequest.asOfDate) &&
         Objects.equals(this.showBudgetTrack, budgetCalculatorRequest.showBudgetTrack) &&
+        Objects.equals(this.budgetId, budgetCalculatorRequest.budgetId) &&
+        Objects.equals(this.currencyConversion, budgetCalculatorRequest.currencyConversion) &&
+        Objects.equals(this.lookbackPeriods, budgetCalculatorRequest.lookbackPeriods) &&
+        Objects.equals(this.showAverageSpend, budgetCalculatorRequest.showAverageSpend) &&
+        Objects.equals(this.budgetDetails, budgetCalculatorRequest.budgetDetails) &&
         Objects.equals(this.relativeLookback, budgetCalculatorRequest.relativeLookback) &&
-        Objects.equals(this.lookbackPeriods, budgetCalculatorRequest.lookbackPeriods);
+        Objects.equals(this.scope, budgetCalculatorRequest.scope);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(scope, budgetDetails, currencyConversion, budgetId, asOfDate, showAverageSpend, showBudgetTrack, relativeLookback, lookbackPeriods);
+    return Objects.hash(asOfDate, showBudgetTrack, budgetId, currencyConversion, lookbackPeriods, showAverageSpend, budgetDetails, relativeLookback, scope);
   }
 
 
@@ -306,15 +305,15 @@ public class BudgetCalculatorRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class BudgetCalculatorRequest {\n");
     
-    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
-    sb.append("    budgetDetails: ").append(toIndentedString(budgetDetails)).append("\n");
-    sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
-    sb.append("    budgetId: ").append(toIndentedString(budgetId)).append("\n");
     sb.append("    asOfDate: ").append(toIndentedString(asOfDate)).append("\n");
-    sb.append("    showAverageSpend: ").append(toIndentedString(showAverageSpend)).append("\n");
     sb.append("    showBudgetTrack: ").append(toIndentedString(showBudgetTrack)).append("\n");
-    sb.append("    relativeLookback: ").append(toIndentedString(relativeLookback)).append("\n");
+    sb.append("    budgetId: ").append(toIndentedString(budgetId)).append("\n");
+    sb.append("    currencyConversion: ").append(toIndentedString(currencyConversion)).append("\n");
     sb.append("    lookbackPeriods: ").append(toIndentedString(lookbackPeriods)).append("\n");
+    sb.append("    showAverageSpend: ").append(toIndentedString(showAverageSpend)).append("\n");
+    sb.append("    budgetDetails: ").append(toIndentedString(budgetDetails)).append("\n");
+    sb.append("    relativeLookback: ").append(toIndentedString(relativeLookback)).append("\n");
+    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
     sb.append("}");
     return sb.toString();
   }

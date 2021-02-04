@@ -31,224 +31,111 @@ class LifeInsuranceNeedsCalculatorRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'existing_life_insurance': 'float',
-        'mortgage_balance': 'float',
-        'general_inflation_rate': 'float',
-        'education_inflation_rate': 'float',
-        'client_id': 'str',
-        'beneficiary_bequest_config': 'list[BeneficiaryBequestConfig]',
-        'liquid_assets': 'float',
-        'end_of_life_expenses': 'float',
-        'interest_rate': 'float',
         'children_education_config': 'list[ChildrenEducationConfig]',
-        'income_config': 'list[IncomeConfig]',
+        'liquid_assets': 'float',
+        'other_debt': 'float',
+        'client_id': 'str',
         'tax_rate': 'float',
+        'end_of_life_expenses': 'float',
+        'mortgage_balance': 'float',
+        'income_config': 'list[IncomeConfig]',
+        'beneficiary_bequest_config': 'list[BeneficiaryBequestConfig]',
         'margin_of_error': 'float',
+        'education_inflation_rate': 'float',
+        'interest_rate': 'float',
+        'existing_life_insurance': 'float',
         'benefit_amount_rounding': 'int',
-        'other_debt': 'float'
+        'general_inflation_rate': 'float'
     }
 
     attribute_map = {
-        'existing_life_insurance': 'existing_life_insurance',
-        'mortgage_balance': 'mortgage_balance',
-        'general_inflation_rate': 'general_inflation_rate',
-        'education_inflation_rate': 'education_inflation_rate',
-        'client_id': 'client_id',
-        'beneficiary_bequest_config': 'beneficiary_bequest_config',
-        'liquid_assets': 'liquid_assets',
-        'end_of_life_expenses': 'end_of_life_expenses',
-        'interest_rate': 'interest_rate',
         'children_education_config': 'children_education_config',
-        'income_config': 'income_config',
+        'liquid_assets': 'liquid_assets',
+        'other_debt': 'other_debt',
+        'client_id': 'client_id',
         'tax_rate': 'tax_rate',
+        'end_of_life_expenses': 'end_of_life_expenses',
+        'mortgage_balance': 'mortgage_balance',
+        'income_config': 'income_config',
+        'beneficiary_bequest_config': 'beneficiary_bequest_config',
         'margin_of_error': 'margin_of_error',
+        'education_inflation_rate': 'education_inflation_rate',
+        'interest_rate': 'interest_rate',
+        'existing_life_insurance': 'existing_life_insurance',
         'benefit_amount_rounding': 'benefit_amount_rounding',
-        'other_debt': 'other_debt'
+        'general_inflation_rate': 'general_inflation_rate'
     }
 
-    def __init__(self, existing_life_insurance=None, mortgage_balance=None, general_inflation_rate=0.0, education_inflation_rate=0.0, client_id=None, beneficiary_bequest_config=None, liquid_assets=None, end_of_life_expenses=None, interest_rate=None, children_education_config=None, income_config=None, tax_rate=0.0, margin_of_error=0.0, benefit_amount_rounding=0, other_debt=None):  # noqa: E501
+    def __init__(self, children_education_config=None, liquid_assets=None, other_debt=None, client_id=None, tax_rate=0.0, end_of_life_expenses=None, mortgage_balance=None, income_config=None, beneficiary_bequest_config=None, margin_of_error=0.0, education_inflation_rate=0.0, interest_rate=None, existing_life_insurance=None, benefit_amount_rounding=0, general_inflation_rate=0.0):  # noqa: E501
         """LifeInsuranceNeedsCalculatorRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._existing_life_insurance = None
-        self._mortgage_balance = None
-        self._general_inflation_rate = None
-        self._education_inflation_rate = None
-        self._client_id = None
-        self._beneficiary_bequest_config = None
-        self._liquid_assets = None
-        self._end_of_life_expenses = None
-        self._interest_rate = None
         self._children_education_config = None
-        self._income_config = None
-        self._tax_rate = None
-        self._margin_of_error = None
-        self._benefit_amount_rounding = None
+        self._liquid_assets = None
         self._other_debt = None
+        self._client_id = None
+        self._tax_rate = None
+        self._end_of_life_expenses = None
+        self._mortgage_balance = None
+        self._income_config = None
+        self._beneficiary_bequest_config = None
+        self._margin_of_error = None
+        self._education_inflation_rate = None
+        self._interest_rate = None
+        self._existing_life_insurance = None
+        self._benefit_amount_rounding = None
+        self._general_inflation_rate = None
         self.discriminator = None
 
-        if existing_life_insurance is not None:
-            self.existing_life_insurance = existing_life_insurance
-        if mortgage_balance is not None:
-            self.mortgage_balance = mortgage_balance
-        if general_inflation_rate is not None:
-            self.general_inflation_rate = general_inflation_rate
-        if education_inflation_rate is not None:
-            self.education_inflation_rate = education_inflation_rate
-        if client_id is not None:
-            self.client_id = client_id
-        if beneficiary_bequest_config is not None:
-            self.beneficiary_bequest_config = beneficiary_bequest_config
-        if liquid_assets is not None:
-            self.liquid_assets = liquid_assets
-        if end_of_life_expenses is not None:
-            self.end_of_life_expenses = end_of_life_expenses
-        self.interest_rate = interest_rate
         if children_education_config is not None:
             self.children_education_config = children_education_config
-        if income_config is not None:
-            self.income_config = income_config
-        if tax_rate is not None:
-            self.tax_rate = tax_rate
-        if margin_of_error is not None:
-            self.margin_of_error = margin_of_error
-        if benefit_amount_rounding is not None:
-            self.benefit_amount_rounding = benefit_amount_rounding
+        if liquid_assets is not None:
+            self.liquid_assets = liquid_assets
         if other_debt is not None:
             self.other_debt = other_debt
+        if client_id is not None:
+            self.client_id = client_id
+        if tax_rate is not None:
+            self.tax_rate = tax_rate
+        if end_of_life_expenses is not None:
+            self.end_of_life_expenses = end_of_life_expenses
+        if mortgage_balance is not None:
+            self.mortgage_balance = mortgage_balance
+        if income_config is not None:
+            self.income_config = income_config
+        if beneficiary_bequest_config is not None:
+            self.beneficiary_bequest_config = beneficiary_bequest_config
+        if margin_of_error is not None:
+            self.margin_of_error = margin_of_error
+        if education_inflation_rate is not None:
+            self.education_inflation_rate = education_inflation_rate
+        self.interest_rate = interest_rate
+        if existing_life_insurance is not None:
+            self.existing_life_insurance = existing_life_insurance
+        if benefit_amount_rounding is not None:
+            self.benefit_amount_rounding = benefit_amount_rounding
+        if general_inflation_rate is not None:
+            self.general_inflation_rate = general_inflation_rate
 
     @property
-    def existing_life_insurance(self):
-        """Gets the existing_life_insurance of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+    def children_education_config(self):
+        """Gets the children_education_config of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
 
 
-        :return: The existing_life_insurance of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-        :rtype: float
+        :return: The children_education_config of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :rtype: list[ChildrenEducationConfig]
         """
-        return self._existing_life_insurance
+        return self._children_education_config
 
-    @existing_life_insurance.setter
-    def existing_life_insurance(self, existing_life_insurance):
-        """Sets the existing_life_insurance of this LifeInsuranceNeedsCalculatorRequest.
-
-
-        :param existing_life_insurance: The existing_life_insurance of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-        :type: float
-        """
-        if existing_life_insurance is not None and existing_life_insurance < 0:  # noqa: E501
-            raise ValueError("Invalid value for `existing_life_insurance`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._existing_life_insurance = existing_life_insurance
-
-    @property
-    def mortgage_balance(self):
-        """Gets the mortgage_balance of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+    @children_education_config.setter
+    def children_education_config(self, children_education_config):
+        """Sets the children_education_config of this LifeInsuranceNeedsCalculatorRequest.
 
 
-        :return: The mortgage_balance of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._mortgage_balance
-
-    @mortgage_balance.setter
-    def mortgage_balance(self, mortgage_balance):
-        """Sets the mortgage_balance of this LifeInsuranceNeedsCalculatorRequest.
-
-
-        :param mortgage_balance: The mortgage_balance of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-        :type: float
-        """
-        if mortgage_balance is not None and mortgage_balance < 0:  # noqa: E501
-            raise ValueError("Invalid value for `mortgage_balance`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._mortgage_balance = mortgage_balance
-
-    @property
-    def general_inflation_rate(self):
-        """Gets the general_inflation_rate of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-
-
-        :return: The general_inflation_rate of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._general_inflation_rate
-
-    @general_inflation_rate.setter
-    def general_inflation_rate(self, general_inflation_rate):
-        """Sets the general_inflation_rate of this LifeInsuranceNeedsCalculatorRequest.
-
-
-        :param general_inflation_rate: The general_inflation_rate of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-        :type: float
-        """
-        if general_inflation_rate is not None and general_inflation_rate < -1:  # noqa: E501
-            raise ValueError("Invalid value for `general_inflation_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
-
-        self._general_inflation_rate = general_inflation_rate
-
-    @property
-    def education_inflation_rate(self):
-        """Gets the education_inflation_rate of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-
-
-        :return: The education_inflation_rate of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._education_inflation_rate
-
-    @education_inflation_rate.setter
-    def education_inflation_rate(self, education_inflation_rate):
-        """Sets the education_inflation_rate of this LifeInsuranceNeedsCalculatorRequest.
-
-
-        :param education_inflation_rate: The education_inflation_rate of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-        :type: float
-        """
-        if education_inflation_rate is not None and education_inflation_rate < -1:  # noqa: E501
-            raise ValueError("Invalid value for `education_inflation_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
-
-        self._education_inflation_rate = education_inflation_rate
-
-    @property
-    def client_id(self):
-        """Gets the client_id of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-
-
-        :return: The client_id of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._client_id
-
-    @client_id.setter
-    def client_id(self, client_id):
-        """Sets the client_id of this LifeInsuranceNeedsCalculatorRequest.
-
-
-        :param client_id: The client_id of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-        :type: str
+        :param children_education_config: The children_education_config of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :type: list[ChildrenEducationConfig]
         """
 
-        self._client_id = client_id
-
-    @property
-    def beneficiary_bequest_config(self):
-        """Gets the beneficiary_bequest_config of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-
-
-        :return: The beneficiary_bequest_config of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-        :rtype: list[BeneficiaryBequestConfig]
-        """
-        return self._beneficiary_bequest_config
-
-    @beneficiary_bequest_config.setter
-    def beneficiary_bequest_config(self, beneficiary_bequest_config):
-        """Sets the beneficiary_bequest_config of this LifeInsuranceNeedsCalculatorRequest.
-
-
-        :param beneficiary_bequest_config: The beneficiary_bequest_config of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-        :type: list[BeneficiaryBequestConfig]
-        """
-
-        self._beneficiary_bequest_config = beneficiary_bequest_config
+        self._children_education_config = children_education_config
 
     @property
     def liquid_assets(self):
@@ -274,94 +161,48 @@ class LifeInsuranceNeedsCalculatorRequest(object):
         self._liquid_assets = liquid_assets
 
     @property
-    def end_of_life_expenses(self):
-        """Gets the end_of_life_expenses of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+    def other_debt(self):
+        """Gets the other_debt of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
 
 
-        :return: The end_of_life_expenses of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :return: The other_debt of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
         :rtype: float
         """
-        return self._end_of_life_expenses
+        return self._other_debt
 
-    @end_of_life_expenses.setter
-    def end_of_life_expenses(self, end_of_life_expenses):
-        """Sets the end_of_life_expenses of this LifeInsuranceNeedsCalculatorRequest.
+    @other_debt.setter
+    def other_debt(self, other_debt):
+        """Sets the other_debt of this LifeInsuranceNeedsCalculatorRequest.
 
 
-        :param end_of_life_expenses: The end_of_life_expenses of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :param other_debt: The other_debt of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
         :type: float
         """
-        if end_of_life_expenses is not None and end_of_life_expenses < 0:  # noqa: E501
-            raise ValueError("Invalid value for `end_of_life_expenses`, must be a value greater than or equal to `0`")  # noqa: E501
+        if other_debt is not None and other_debt < 0:  # noqa: E501
+            raise ValueError("Invalid value for `other_debt`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._end_of_life_expenses = end_of_life_expenses
-
-    @property
-    def interest_rate(self):
-        """Gets the interest_rate of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-
-
-        :return: The interest_rate of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-        :rtype: float
-        """
-        return self._interest_rate
-
-    @interest_rate.setter
-    def interest_rate(self, interest_rate):
-        """Sets the interest_rate of this LifeInsuranceNeedsCalculatorRequest.
-
-
-        :param interest_rate: The interest_rate of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-        :type: float
-        """
-        if interest_rate is None:
-            raise ValueError("Invalid value for `interest_rate`, must not be `None`")  # noqa: E501
-        if interest_rate is not None and interest_rate < -1:  # noqa: E501
-            raise ValueError("Invalid value for `interest_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
-
-        self._interest_rate = interest_rate
+        self._other_debt = other_debt
 
     @property
-    def children_education_config(self):
-        """Gets the children_education_config of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+    def client_id(self):
+        """Gets the client_id of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
 
 
-        :return: The children_education_config of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-        :rtype: list[ChildrenEducationConfig]
+        :return: The client_id of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :rtype: str
         """
-        return self._children_education_config
+        return self._client_id
 
-    @children_education_config.setter
-    def children_education_config(self, children_education_config):
-        """Sets the children_education_config of this LifeInsuranceNeedsCalculatorRequest.
-
-
-        :param children_education_config: The children_education_config of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-        :type: list[ChildrenEducationConfig]
-        """
-
-        self._children_education_config = children_education_config
-
-    @property
-    def income_config(self):
-        """Gets the income_config of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+    @client_id.setter
+    def client_id(self, client_id):
+        """Sets the client_id of this LifeInsuranceNeedsCalculatorRequest.
 
 
-        :return: The income_config of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-        :rtype: list[IncomeConfig]
-        """
-        return self._income_config
-
-    @income_config.setter
-    def income_config(self, income_config):
-        """Sets the income_config of this LifeInsuranceNeedsCalculatorRequest.
-
-
-        :param income_config: The income_config of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
-        :type: list[IncomeConfig]
+        :param client_id: The client_id of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :type: str
         """
 
-        self._income_config = income_config
+        self._client_id = client_id
 
     @property
     def tax_rate(self):
@@ -389,6 +230,94 @@ class LifeInsuranceNeedsCalculatorRequest(object):
         self._tax_rate = tax_rate
 
     @property
+    def end_of_life_expenses(self):
+        """Gets the end_of_life_expenses of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+
+
+        :return: The end_of_life_expenses of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._end_of_life_expenses
+
+    @end_of_life_expenses.setter
+    def end_of_life_expenses(self, end_of_life_expenses):
+        """Sets the end_of_life_expenses of this LifeInsuranceNeedsCalculatorRequest.
+
+
+        :param end_of_life_expenses: The end_of_life_expenses of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :type: float
+        """
+        if end_of_life_expenses is not None and end_of_life_expenses < 0:  # noqa: E501
+            raise ValueError("Invalid value for `end_of_life_expenses`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._end_of_life_expenses = end_of_life_expenses
+
+    @property
+    def mortgage_balance(self):
+        """Gets the mortgage_balance of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+
+
+        :return: The mortgage_balance of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._mortgage_balance
+
+    @mortgage_balance.setter
+    def mortgage_balance(self, mortgage_balance):
+        """Sets the mortgage_balance of this LifeInsuranceNeedsCalculatorRequest.
+
+
+        :param mortgage_balance: The mortgage_balance of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :type: float
+        """
+        if mortgage_balance is not None and mortgage_balance < 0:  # noqa: E501
+            raise ValueError("Invalid value for `mortgage_balance`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._mortgage_balance = mortgage_balance
+
+    @property
+    def income_config(self):
+        """Gets the income_config of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+
+
+        :return: The income_config of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :rtype: list[IncomeConfig]
+        """
+        return self._income_config
+
+    @income_config.setter
+    def income_config(self, income_config):
+        """Sets the income_config of this LifeInsuranceNeedsCalculatorRequest.
+
+
+        :param income_config: The income_config of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :type: list[IncomeConfig]
+        """
+
+        self._income_config = income_config
+
+    @property
+    def beneficiary_bequest_config(self):
+        """Gets the beneficiary_bequest_config of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+
+
+        :return: The beneficiary_bequest_config of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :rtype: list[BeneficiaryBequestConfig]
+        """
+        return self._beneficiary_bequest_config
+
+    @beneficiary_bequest_config.setter
+    def beneficiary_bequest_config(self, beneficiary_bequest_config):
+        """Sets the beneficiary_bequest_config of this LifeInsuranceNeedsCalculatorRequest.
+
+
+        :param beneficiary_bequest_config: The beneficiary_bequest_config of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :type: list[BeneficiaryBequestConfig]
+        """
+
+        self._beneficiary_bequest_config = beneficiary_bequest_config
+
+    @property
     def margin_of_error(self):
         """Gets the margin_of_error of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
 
@@ -410,6 +339,77 @@ class LifeInsuranceNeedsCalculatorRequest(object):
             raise ValueError("Invalid value for `margin_of_error`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._margin_of_error = margin_of_error
+
+    @property
+    def education_inflation_rate(self):
+        """Gets the education_inflation_rate of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+
+
+        :return: The education_inflation_rate of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._education_inflation_rate
+
+    @education_inflation_rate.setter
+    def education_inflation_rate(self, education_inflation_rate):
+        """Sets the education_inflation_rate of this LifeInsuranceNeedsCalculatorRequest.
+
+
+        :param education_inflation_rate: The education_inflation_rate of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :type: float
+        """
+        if education_inflation_rate is not None and education_inflation_rate < -1:  # noqa: E501
+            raise ValueError("Invalid value for `education_inflation_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
+
+        self._education_inflation_rate = education_inflation_rate
+
+    @property
+    def interest_rate(self):
+        """Gets the interest_rate of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+
+
+        :return: The interest_rate of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._interest_rate
+
+    @interest_rate.setter
+    def interest_rate(self, interest_rate):
+        """Sets the interest_rate of this LifeInsuranceNeedsCalculatorRequest.
+
+
+        :param interest_rate: The interest_rate of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :type: float
+        """
+        if interest_rate is None:
+            raise ValueError("Invalid value for `interest_rate`, must not be `None`")  # noqa: E501
+        if interest_rate is not None and interest_rate < -1:  # noqa: E501
+            raise ValueError("Invalid value for `interest_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
+
+        self._interest_rate = interest_rate
+
+    @property
+    def existing_life_insurance(self):
+        """Gets the existing_life_insurance of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+
+
+        :return: The existing_life_insurance of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :rtype: float
+        """
+        return self._existing_life_insurance
+
+    @existing_life_insurance.setter
+    def existing_life_insurance(self, existing_life_insurance):
+        """Sets the existing_life_insurance of this LifeInsuranceNeedsCalculatorRequest.
+
+
+        :param existing_life_insurance: The existing_life_insurance of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :type: float
+        """
+        if existing_life_insurance is not None and existing_life_insurance < 0:  # noqa: E501
+            raise ValueError("Invalid value for `existing_life_insurance`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._existing_life_insurance = existing_life_insurance
 
     @property
     def benefit_amount_rounding(self):
@@ -437,27 +437,27 @@ class LifeInsuranceNeedsCalculatorRequest(object):
         self._benefit_amount_rounding = benefit_amount_rounding
 
     @property
-    def other_debt(self):
-        """Gets the other_debt of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+    def general_inflation_rate(self):
+        """Gets the general_inflation_rate of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
 
 
-        :return: The other_debt of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :return: The general_inflation_rate of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
         :rtype: float
         """
-        return self._other_debt
+        return self._general_inflation_rate
 
-    @other_debt.setter
-    def other_debt(self, other_debt):
-        """Sets the other_debt of this LifeInsuranceNeedsCalculatorRequest.
+    @general_inflation_rate.setter
+    def general_inflation_rate(self, general_inflation_rate):
+        """Sets the general_inflation_rate of this LifeInsuranceNeedsCalculatorRequest.
 
 
-        :param other_debt: The other_debt of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
+        :param general_inflation_rate: The general_inflation_rate of this LifeInsuranceNeedsCalculatorRequest.  # noqa: E501
         :type: float
         """
-        if other_debt is not None and other_debt < 0:  # noqa: E501
-            raise ValueError("Invalid value for `other_debt`, must be a value greater than or equal to `0`")  # noqa: E501
+        if general_inflation_rate is not None and general_inflation_rate < -1:  # noqa: E501
+            raise ValueError("Invalid value for `general_inflation_rate`, must be a value greater than or equal to `-1`")  # noqa: E501
 
-        self._other_debt = other_debt
+        self._general_inflation_rate = general_inflation_rate
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -4,12 +4,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | [**list[ClientAddress]**](ClientAddress.md) |  | [optional] 
+**business_id** | **str** | business_id | [optional] 
 **citizenship_status** | **str** | citizenshipStatus | [optional] 
 **client_type** | **str** | clientTypeId | 
 **country_of_citizenship** | **list[str]** | countryOfCitizenship | [optional] 
 **country_of_residence** | **str** | countryOfResidence | [optional] 
 **create_date** | **datetime** |  | [optional] 
-**date_of_birth** | **date** | dateOfBirth | [optional] 
+**date_of_birth** | **str** | dateOfBirth | [optional] 
 **email** | **str** | email | [optional] 
 **employment** | [**Employment**](Employment.md) |  | [optional] 
 **firm_name** | **str** | firmName | [optional] 
@@ -38,5 +39,3 @@ Name | Type | Description | Notes
 **username** | **str** | username | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

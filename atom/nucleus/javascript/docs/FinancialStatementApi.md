@@ -81,7 +81,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FinancialStatementApi();
 
-var financialStatementId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID financialStatement_id
+var financialStatementId = "\"f96fad3e-a8cf-4915-bc0c-da4d9693ab83\""; // String | UUID financialStatement_id
 
 
 var callback = function(error, data, response) {
@@ -98,7 +98,7 @@ apiInstance.deleteFinancialStatementUsingDelete(financialStatementId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **financialStatementId** | **String**| UUID financialStatement_id | 
+ **financialStatementId** | [**String**](.md)| UUID financialStatement_id | 
 
 ### Return type
 
@@ -194,7 +194,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FinancialStatementApi();
 
-var financialStatementId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID financial_statement_id
+var financialStatementId = "\"f96fad3e-a8cf-4915-bc0c-da4d9693ab83\""; // String | UUID financial_statement_id
 
 var opts = { 
   'currencyConversion': "currencyConversion_example" // String | USD
@@ -214,7 +214,7 @@ apiInstance.getFinancialStatementUsingGet(financialStatementId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **financialStatementId** | **String**| UUID financial_statement_id | 
+ **financialStatementId** | [**String**](.md)| UUID financial_statement_id | 
  **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
@@ -249,9 +249,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FinancialStatementApi();
 
-var financialStatement = new HydrogenNucleusApi.FinancialStatement(); // FinancialStatement | financialStatement
+var financialStatement = null; // Object | financialStatement
 
-var financialStatementId = "f96fad3e-a8cf-4915-bc0c-da4d9693ab83"; // String | UUID financialStatement_id
+var financialStatementId = "\"f96fad3e-a8cf-4915-bc0c-da4d9693ab83\""; // String | UUID financialStatement_id
 
 
 var callback = function(error, data, response) {
@@ -268,8 +268,8 @@ apiInstance.updateFinancialStatementUsingPut(financialStatement, financialStatem
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **financialStatement** | [**FinancialStatement**](FinancialStatement.md)| financialStatement | 
- **financialStatementId** | **String**| UUID financialStatement_id | 
+ **financialStatement** | **Object**| financialStatement | 
+ **financialStatementId** | [**String**](.md)| UUID financialStatement_id | 
 
 ### Return type
 

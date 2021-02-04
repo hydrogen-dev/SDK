@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **nucleusAccountId** | [**UUID**](UUID.md) |  |  [optional]
 **nucleusClientId** | [**UUID**](UUID.md) |  |  [optional]
 **status** | **String** |  |  [optional]
-**vendorName** | **Object** |  |  [optional]
+**vendorName** | **String** |  |  [optional]
 **vendorResponse** | **Object** |  |  [optional]
 
 

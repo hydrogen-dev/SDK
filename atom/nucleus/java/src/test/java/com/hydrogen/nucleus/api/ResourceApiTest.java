@@ -13,19 +13,21 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
+import com.hydrogen.nucleus.model.*;
+import com.hydrogen.nucleus.model.CategoryResponseVO;
 import com.hydrogen.nucleus.model.Country;
 import com.hydrogen.nucleus.model.Currency;
-import com.hydrogen.nucleus.model.FxRate;
 import com.hydrogen.nucleus.model.FxRateView;
+import com.hydrogen.nucleus.model.MXMerchantRes;
 import com.hydrogen.nucleus.model.MerchantCategoryCode;
-import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.State;
-import com.hydrogen.nucleus.model.StatisticResourceVO;
 import org.junit.Test;
 import org.junit.Ignore;
 
 import java.util.List;
 import java.util.Map;
+
 
 /**
  * API tests for ResourceApi
@@ -35,27 +37,43 @@ public class ResourceApiTest {
 
     private final ResourceApi api = new ResourceApi();
 
-    
+
     /**
-     * Create a bulk fxRate
+     * Get All Aggregation Account Category mapping
      *
-     * Create a bulk fxRate.
+     * Get All Aggregation Account Category mapping.
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void createFxRateBulkUsingPostTest() throws ApiException {
-        List<FxRate> fxRateList = null;
-        List<FxRate> response = api.createFxRateBulkUsingPost(fxRateList);
+    public void getAggregationAccountCategoryMappingUsingGetTest() throws ApiException {
+        String tenantName = null;
+        List<CategoryResponseVO> response = api.getAggregationAccountCategoryMappingUsingGet(tenantName);
 
         // TODO: test validations
     }
-    
+
+    /**
+     * Get All Aggregation Account Transaction Category mapping
+     *
+     * Get All Aggregation Account Transaction Category mapping.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getAggregationAccountTransactionCategoryMappingUsingGetTest() throws ApiException {
+        String tenantName = null;
+        List<CategoryResponseVO> response = api.getAggregationAccountTransactionCategoryMappingUsingGet(tenantName);
+
+        // TODO: test validations
+    }
+
     /**
      * Get All Countries
      *
-     * Get All Countries. 
+     * Get All Countries.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -66,11 +84,11 @@ public class ResourceApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * Get All Currencies
      *
-     * Get All Currencies. 
+     * Get All Currencies.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -81,7 +99,7 @@ public class ResourceApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * Get All Merchant Category Codes
      *
@@ -92,11 +110,12 @@ public class ResourceApiTest {
      */
     @Test
     public void getAllMerchantCategoryCodeUsingGetTest() throws ApiException {
-        List<MerchantCategoryCode> response = api.getAllMerchantCategoryCodeUsingGet();
+        String filter = null;
+        List<MerchantCategoryCode> response = api.getAllMerchantCategoryCodeUsingGet(filter);
 
         // TODO: test validations
     }
-    
+
     /**
      * List all state resource
      *
@@ -112,7 +131,7 @@ public class ResourceApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * List all statistic resource
      *
@@ -127,7 +146,7 @@ public class ResourceApiTest {
 
         // TODO: test validations
     }
-    
+
     /**
      * List all fxRates
      *
@@ -143,5 +162,25 @@ public class ResourceApiTest {
 
         // TODO: test validations
     }
-    
+
+    /**
+     * Get all merchants
+     *
+     * List all merchants.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getMerchantsAllUsingGetTest() throws ApiException {
+        Boolean ascending = null;
+        String filter = null;
+        String orderBy = null;
+        Integer page = null;
+        Integer size = null;
+        MXMerchantRes response = api.getMerchantsAllUsingGet(ascending, filter, orderBy, page, size);
+
+        // TODO: test validations
+    }
+
 }

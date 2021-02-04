@@ -27,7 +27,6 @@ Get information on the performance of an account using IRR (Internal Rate of Ret
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PerformanceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -44,8 +43,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PerformanceApi apiInstance = new PerformanceApi();
 UUID accountId = new UUID(); // UUID | Account Id -/account
 String activePremiumPeriod = "activePremiumPeriod_example"; // String | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D')
@@ -134,7 +131,6 @@ Get information on the performance of an allocation using TWR (Time Weighted Ret
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PerformanceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -151,8 +147,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PerformanceApi apiInstance = new PerformanceApi();
 UUID allocationId = new UUID(); // UUID | Allocation Id -/allocation
 String activePremiumPeriod = "activePremiumPeriod_example"; // String | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D')
@@ -243,7 +237,6 @@ Get information on the performance of a benchmark using TWR (Time Weighted Retur
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PerformanceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -260,8 +253,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PerformanceApi apiInstance = new PerformanceApi();
 UUID benchmarkId = new UUID(); // UUID | Benchmark Id - /benchmark
 String activePremiumPeriod = "activePremiumPeriod_example"; // String | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D')
@@ -350,7 +341,6 @@ Get information on the performance of a client using IRR (Internal Rate of Retur
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PerformanceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -367,8 +357,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PerformanceApi apiInstance = new PerformanceApi();
 UUID clientId = new UUID(); // UUID | Client Id -/client
 String activePremiumPeriod = "activePremiumPeriod_example"; // String | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D')
@@ -457,7 +445,6 @@ Get information on the performance of a goal using IRR (Internal Rate of Return)
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PerformanceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -474,8 +461,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PerformanceApi apiInstance = new PerformanceApi();
 UUID clientId = new UUID(); // UUID | client_id
 UUID goalId = new UUID(); // UUID | Goal Id - /account
@@ -568,7 +553,6 @@ Get information on the performance of a Household using IRR (Internal Rate of Re
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PerformanceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -585,8 +569,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PerformanceApi apiInstance = new PerformanceApi();
 UUID householdId = new UUID(); // UUID | Household Id -/household
 String activePremiumPeriod = "activePremiumPeriod_example"; // String | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D')
@@ -675,7 +657,6 @@ Get information on the performance of a model using TWR (Time Weighted Return). 
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PerformanceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -692,8 +673,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PerformanceApi apiInstance = new PerformanceApi();
 UUID modelId = new UUID(); // UUID | Model Id - /model
 String activePremiumPeriod = "activePremiumPeriod_example"; // String | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D')
@@ -782,7 +761,6 @@ Get information on the performance of a portfolio using IRR (Internal Rate of Re
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PerformanceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -799,8 +777,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PerformanceApi apiInstance = new PerformanceApi();
 UUID portfolioId = new UUID(); // UUID | Portfolio Id -/portoflio
 String activePremiumPeriod = "activePremiumPeriod_example"; // String | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D')
@@ -889,7 +865,6 @@ Get performance statistics for a security using TWR (Time Weighted Return). You 
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import PerformanceApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -906,8 +881,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 PerformanceApi apiInstance = new PerformanceApi();
 UUID securityId = new UUID(); // UUID | security_id
 String activePremiumPeriod = "activePremiumPeriod_example"; // String | Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: 'D')

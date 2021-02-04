@@ -27,7 +27,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::PortfolioManagementApi.new
 
 rebalancing_signal_request = ProtonApi::RebalancingSignalRequest.new # RebalancingSignalRequest | Request payload for Rebalancing Signal

@@ -447,7 +447,7 @@ class FinancialStatementApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param FinancialStatement financial_statement: financialStatement (required)
+        :param object financial_statement: financialStatement (required)
         :param str financial_statement_id: UUID financialStatement_id (required)
         :return: FinancialStatement
                  If the method is called asynchronously,
@@ -470,7 +470,7 @@ class FinancialStatementApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param FinancialStatement financial_statement: financialStatement (required)
+        :param object financial_statement: financialStatement (required)
         :param str financial_statement_id: UUID financialStatement_id (required)
         :return: FinancialStatement
                  If the method is called asynchronously,

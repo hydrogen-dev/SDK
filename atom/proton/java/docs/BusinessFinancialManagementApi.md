@@ -21,6 +21,7 @@ Calculate a series of financial ratios to assess business financial health
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
@@ -81,6 +82,7 @@ Analyze cash activity over time
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
@@ -141,6 +143,7 @@ Analyze customer revenues over a time period
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
@@ -201,6 +204,7 @@ Analyze financial statement accounting data for a business
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
@@ -261,6 +265,7 @@ Analyze invoices to understand the context of money owed and paid to a business
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;

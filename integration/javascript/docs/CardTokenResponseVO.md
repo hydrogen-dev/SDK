@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **applePayload** | [**ApplePayload**](ApplePayload.md) |  | [optional] 
-**cardStatus** | **String** |  | [optional] 
 **googlePayload** | [**GooglePayload**](GooglePayload.md) |  | [optional] 
 **message** | **String** |  | [optional] 
 **nucleusCardId** | **String** |  | [optional] 
@@ -18,9 +17,9 @@ Name | Type | Description | Notes
 ## Enum: WalletEnum
 
 
-* `apple` (value: `"apple"`)
-
 * `google` (value: `"google"`)
+
+* `apple` (value: `"apple"`)
 
 * `samsung` (value: `"samsung"`)
 

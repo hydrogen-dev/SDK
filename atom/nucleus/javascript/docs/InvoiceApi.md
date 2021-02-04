@@ -137,7 +137,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.InvoiceApi();
 
-var invoicePaymentId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID invoice_payment_id
+var invoicePaymentId = "\"2035f52d-2c5b-4e07-8904-cb037bad7aff\""; // String | UUID invoice_payment_id
 
 
 var callback = function(error, data, response) {
@@ -154,7 +154,7 @@ apiInstance.deleteInvoicePaymentUsingDelete(invoicePaymentId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoicePaymentId** | **String**| UUID invoice_payment_id | 
+ **invoicePaymentId** | [**String**](.md)| UUID invoice_payment_id | 
 
 ### Return type
 
@@ -188,7 +188,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.InvoiceApi();
 
-var invoiceId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID invoice_id
+var invoiceId = "\"2035f52d-2c5b-4e07-8904-cb037bad7aff\""; // String | UUID invoice_id
 
 
 var callback = function(error, data, response) {
@@ -205,7 +205,7 @@ apiInstance.deleteInvoiceUsingDelete(invoiceId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoiceId** | **String**| UUID invoice_id | 
+ **invoiceId** | [**String**](.md)| UUID invoice_id | 
 
 ### Return type
 
@@ -363,7 +363,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.InvoiceApi();
 
-var invoicePaymentId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID invoice_payment_id
+var invoicePaymentId = "\"2035f52d-2c5b-4e07-8904-cb037bad7aff\""; // String | UUID invoice_payment_id
 
 var opts = { 
   'currencyConversion': "currencyConversion_example" // String | USD
@@ -383,7 +383,7 @@ apiInstance.getInvoicePaymentUsingGet(invoicePaymentId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoicePaymentId** | **String**| UUID invoice_payment_id | 
+ **invoicePaymentId** | [**String**](.md)| UUID invoice_payment_id | 
  **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
@@ -418,7 +418,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.InvoiceApi();
 
-var invoiceId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID invoice_idd
+var invoiceId = "\"2035f52d-2c5b-4e07-8904-cb037bad7aff\""; // String | UUID invoice_idd
 
 var opts = { 
   'currencyConversion': "currencyConversion_example" // String | USD
@@ -438,7 +438,7 @@ apiInstance.getInvoiceUsingGet(invoiceId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoiceId** | **String**| UUID invoice_idd | 
+ **invoiceId** | [**String**](.md)| UUID invoice_idd | 
  **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
@@ -473,9 +473,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.InvoiceApi();
 
-var invoicePayment = new HydrogenNucleusApi.InvoicePayment(); // InvoicePayment | invoice_payment
+var invoicePayment = null; // Object | invoice_payment
 
-var invoicePaymentId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID invoice_payment_id
+var invoicePaymentId = "\"2035f52d-2c5b-4e07-8904-cb037bad7aff\""; // String | UUID invoice_payment_id
 
 
 var callback = function(error, data, response) {
@@ -492,8 +492,8 @@ apiInstance.updateInvoicePaymentUsingPut(invoicePayment, invoicePaymentId, callb
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoicePayment** | [**InvoicePayment**](InvoicePayment.md)| invoice_payment | 
- **invoicePaymentId** | **String**| UUID invoice_payment_id | 
+ **invoicePayment** | **Object**| invoice_payment | 
+ **invoicePaymentId** | [**String**](.md)| UUID invoice_payment_id | 
 
 ### Return type
 
@@ -527,9 +527,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.InvoiceApi();
 
-var invoice = new HydrogenNucleusApi.Invoice(); // Invoice | invoice
+var invoice = null; // Object | invoice
 
-var invoiceId = "bab849d6-de96-4dc7-a5ea-19be45c52a4e"; // String | UUID invoice_id
+var invoiceId = "\"bab849d6-de96-4dc7-a5ea-19be45c52a4e\""; // String | UUID invoice_id
 
 
 var callback = function(error, data, response) {
@@ -546,8 +546,8 @@ apiInstance.updateInvoiceUsingPut(invoice, invoiceId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invoice** | [**Invoice**](Invoice.md)| invoice | 
- **invoiceId** | **String**| UUID invoice_id | 
+ **invoice** | **Object**| invoice | 
+ **invoiceId** | [**String**](.md)| UUID invoice_id | 
 
 ### Return type
 

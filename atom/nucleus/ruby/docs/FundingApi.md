@@ -1266,7 +1266,7 @@ end
 
 api_instance = NucleusApi::FundingApi.new
 
-bank_link_list = [NucleusApi::BankLink.new] # Array<BankLink> | bankLinkList
+bank_link_list = [NucleusApi::Array<Object>.new] # Array<Object> | bankLinkList
 
 
 begin
@@ -1282,7 +1282,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bank_link_list** | [**Array&lt;BankLink&gt;**](BankLink.md)| bankLinkList | 
+ **bank_link_list** | **Array&lt;Object&gt;**| bankLinkList | 
 
 ### Return type
 
@@ -1323,7 +1323,7 @@ end
 
 api_instance = NucleusApi::FundingApi.new
 
-bank_link = NucleusApi::BankLink.new # BankLink | bank_link
+bank_link = nil # Object | bank_link
 
 bank_link_id = 'bank_link_id_example' # String | UUID bank_link_id
 
@@ -1341,7 +1341,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bank_link** | [**BankLink**](BankLink.md)| bank_link | 
+ **bank_link** | **Object**| bank_link | 
  **bank_link_id** | [**String**](.md)| UUID bank_link_id | 
 
 ### Return type
@@ -1383,7 +1383,7 @@ end
 
 api_instance = NucleusApi::FundingApi.new
 
-deposit = NucleusApi::DailyDeposit.new # DailyDeposit | deposit
+deposit = nil # Object | deposit
 
 deposit_id = 'deposit_id_example' # String | UUID deposit_id
 
@@ -1401,7 +1401,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **deposit** | [**DailyDeposit**](DailyDeposit.md)| deposit | 
+ **deposit** | **Object**| deposit | 
  **deposit_id** | [**String**](.md)| UUID deposit_id | 
 
 ### Return type
@@ -1443,7 +1443,7 @@ end
 
 api_instance = NucleusApi::FundingApi.new
 
-funding = NucleusApi::Funding.new # Funding | funding
+funding = nil # Object | funding
 
 funding_id = 'funding_id_example' # String | UUID funding_id
 
@@ -1461,7 +1461,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **funding** | [**Funding**](Funding.md)| funding | 
+ **funding** | **Object**| funding | 
  **funding_id** | [**String**](.md)| UUID funding_id | 
 
 ### Return type
@@ -1503,7 +1503,7 @@ end
 
 api_instance = NucleusApi::FundingApi.new
 
-transfer = NucleusApi::ExternalAccountTransfer.new # ExternalAccountTransfer | transfer
+transfer = nil # Object | transfer
 
 transfer_id = 'transfer_id_example' # String | UUID external_account_transfer_id
 
@@ -1521,7 +1521,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transfer** | [**ExternalAccountTransfer**](ExternalAccountTransfer.md)| transfer | 
+ **transfer** | **Object**| transfer | 
  **transfer_id** | [**String**](.md)| UUID external_account_transfer_id | 
 
 ### Return type
@@ -1563,7 +1563,7 @@ end
 
 api_instance = NucleusApi::FundingApi.new
 
-withdrawal = NucleusApi::DailyWithdrawal.new # DailyWithdrawal | withdrawal
+withdrawal = nil # Object | withdrawal
 
 withdrawal_id = 'withdrawal_id_example' # String | UUID withdrawal_id
 
@@ -1581,7 +1581,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **withdrawal** | [**DailyWithdrawal**](DailyWithdrawal.md)| withdrawal | 
+ **withdrawal** | **Object**| withdrawal | 
  **withdrawal_id** | [**String**](.md)| UUID withdrawal_id | 
 
 ### Return type

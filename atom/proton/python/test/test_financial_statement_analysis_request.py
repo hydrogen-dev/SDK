@@ -32,7 +32,7 @@ class TestFinancialStatementAnalysisRequest(unittest.TestCase):
     def testFinancialStatementAnalysisRequest(self):
         """Test FinancialStatementAnalysisRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.financial_statement_analysis_request.FinancialStatementAnalysisRequest()  # noqa: E501
+        # model = proton_api.models.financial_statement_analysis_request.FinancialStatementAnalysisRequest()  # noqa: E501
         pass
 
 

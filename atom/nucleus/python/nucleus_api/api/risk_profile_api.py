@@ -439,7 +439,7 @@ class RiskProfileApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param RiskProfile risk_profile: risk_profile (required)
+        :param object risk_profile: risk_profile (required)
         :param str risk_profile_id: UUID risk_profile_id (required)
         :return: RiskProfile
                  If the method is called asynchronously,
@@ -462,7 +462,7 @@ class RiskProfileApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param RiskProfile risk_profile: risk_profile (required)
+        :param object risk_profile: risk_profile (required)
         :param str risk_profile_id: UUID risk_profile_id (required)
         :return: RiskProfile
                  If the method is called asynchronously,

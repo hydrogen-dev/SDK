@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.IOException;
@@ -32,26 +31,23 @@ import java.util.UUID;
 /**
  * GoalDecumulationAllocationRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class GoalDecumulationAllocationRequest {
-  @SerializedName("goal_id")
-  private UUID goalId = null;
-
   /**
-   * Gets or Sets allocationMethod
+   * Gets or Sets threshType
    */
-  @JsonAdapter(AllocationMethodEnum.Adapter.class)
-  public enum AllocationMethodEnum {
-    SELECT("select"),
+  @JsonAdapter(ThreshTypeEnum.Adapter.class)
+  public enum ThreshTypeEnum {
+    AMNT("amnt"),
     
-    CREATE("create");
+    PERC("perc");
 
     private String value;
 
-    AllocationMethodEnum(String value) {
+    ThreshTypeEnum(String value) {
       this.value = value;
     }
 
@@ -64,8 +60,8 @@ public class GoalDecumulationAllocationRequest {
       return String.valueOf(value);
     }
 
-    public static AllocationMethodEnum fromValue(String text) {
-      for (AllocationMethodEnum b : AllocationMethodEnum.values()) {
+    public static ThreshTypeEnum fromValue(String text) {
+      for (ThreshTypeEnum b : ThreshTypeEnum.values()) {
         if (String.valueOf(b.value).equals(text)) {
           return b;
         }
@@ -73,34 +69,37 @@ public class GoalDecumulationAllocationRequest {
       return null;
     }
 
-    public static class Adapter extends TypeAdapter<AllocationMethodEnum> {
+    public static class Adapter extends TypeAdapter<ThreshTypeEnum> {
       @Override
-      public void write(final JsonWriter jsonWriter, final AllocationMethodEnum enumeration) throws IOException {
+      public void write(final JsonWriter jsonWriter, final ThreshTypeEnum enumeration) throws IOException {
         jsonWriter.value(enumeration.getValue());
       }
 
       @Override
-      public AllocationMethodEnum read(final JsonReader jsonReader) throws IOException {
+      public ThreshTypeEnum read(final JsonReader jsonReader) throws IOException {
         String value = jsonReader.nextString();
-        return AllocationMethodEnum.fromValue(String.valueOf(value));
+        return ThreshTypeEnum.fromValue(String.valueOf(value));
       }
     }
   }
 
-  @SerializedName("allocation_method")
-  private AllocationMethodEnum allocationMethod = null;
+  @SerializedName("thresh_type")
+  private ThreshTypeEnum threshType = ThreshTypeEnum.PERC;
 
-  @SerializedName("curr_inv")
-  private BigDecimal currInv = null;
+  @SerializedName("goal_id")
+  private UUID goalId = null;
+
+  @SerializedName("client_id")
+  private UUID clientId = null;
+
+  @SerializedName("conf_tgt")
+  private Float confTgt = 0.9f;
 
   @SerializedName("risk_score")
   private BigDecimal riskScore = null;
 
-  @SerializedName("d_horizon")
-  private Integer dHorizon = null;
-
-  @SerializedName("n")
-  private Integer n = 1000;
+  @SerializedName("remove_outliers")
+  private Boolean removeOutliers = true;
 
   /**
    * Gets or Sets allocationPriority
@@ -151,6 +150,80 @@ public class GoalDecumulationAllocationRequest {
 
   @SerializedName("allocation_priority")
   private AllocationPriorityEnum allocationPriority = null;
+
+  @SerializedName("a_horizon")
+  private Integer aHorizon = null;
+
+  @SerializedName("withdrawal_config")
+  private List<GoalWithdrawalConfig> withdrawalConfig = null;
+
+  /**
+   * Gets or Sets marketDataSource
+   */
+  @JsonAdapter(MarketDataSourceEnum.Adapter.class)
+  public enum MarketDataSourceEnum {
+    NUCLEUS("nucleus"),
+    
+    INTEGRATION("integration");
+
+    private String value;
+
+    MarketDataSourceEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static MarketDataSourceEnum fromValue(String text) {
+      for (MarketDataSourceEnum b : MarketDataSourceEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<MarketDataSourceEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final MarketDataSourceEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public MarketDataSourceEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return MarketDataSourceEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
+  @SerializedName("market_data_source")
+  private MarketDataSourceEnum marketDataSource = MarketDataSourceEnum.NUCLEUS;
+
+  @SerializedName("compounding_rate")
+  private Float compoundingRate = 0.0f;
+
+  @SerializedName("adjust_for_compounding")
+  private Boolean adjustForCompounding = false;
+
+  @SerializedName("opt_config")
+  private OptConfig optConfig = null;
+
+  @SerializedName("deposit_config")
+  private List<DecumulationGoalDepositConfig> depositConfig = null;
+
+  @SerializedName("use_proxy_data")
+  private Boolean useProxyData = false;
+
+  @SerializedName("thresh")
+  private BigDecimal thresh = null;
 
   /**
    * Gets or Sets horizonFrequency
@@ -212,138 +285,11 @@ public class GoalDecumulationAllocationRequest {
   @SerializedName("horizon_frequency")
   private HorizonFrequencyEnum horizonFrequency = HorizonFrequencyEnum.YEAR;
 
-  @SerializedName("allocations")
-  private List<UUID> allocations = null;
-
-  @SerializedName("client_id")
-  private UUID clientId = null;
-
-  @SerializedName("remove_outliers")
-  private Boolean removeOutliers = true;
-
-  @SerializedName("withdrawal_config")
-  private List<GoalWithdrawalConfig> withdrawalConfig = null;
-
-  @SerializedName("a_horizon")
-  private Integer aHorizon = null;
-
-  @SerializedName("use_proxy_data")
-  private Boolean useProxyData = false;
-
-  @SerializedName("conf_tgt")
-  private Float confTgt = 0.9f;
-
-  /**
-   * Gets or Sets threshType
-   */
-  @JsonAdapter(ThreshTypeEnum.Adapter.class)
-  public enum ThreshTypeEnum {
-    AMNT("amnt"),
-    
-    PERC("perc");
-
-    private String value;
-
-    ThreshTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static ThreshTypeEnum fromValue(String text) {
-      for (ThreshTypeEnum b : ThreshTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<ThreshTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ThreshTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ThreshTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return ThreshTypeEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
-  @SerializedName("thresh_type")
-  private ThreshTypeEnum threshType = ThreshTypeEnum.PERC;
-
-  @SerializedName("thresh")
-  private BigDecimal thresh = null;
-
-  @SerializedName("deposit_config")
-  private List<DecumulationGoalDepositConfig> depositConfig = null;
-
-  /**
-   * Gets or Sets marketDataSource
-   */
-  @JsonAdapter(MarketDataSourceEnum.Adapter.class)
-  public enum MarketDataSourceEnum {
-    NUCLEUS("nucleus"),
-    
-    INTEGRATION("integration");
-
-    private String value;
-
-    MarketDataSourceEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static MarketDataSourceEnum fromValue(String text) {
-      for (MarketDataSourceEnum b : MarketDataSourceEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-
-    public static class Adapter extends TypeAdapter<MarketDataSourceEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final MarketDataSourceEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public MarketDataSourceEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
-        return MarketDataSourceEnum.fromValue(String.valueOf(value));
-      }
-    }
-  }
-
-  @SerializedName("market_data_source")
-  private MarketDataSourceEnum marketDataSource = MarketDataSourceEnum.NUCLEUS;
-
   @SerializedName("recommendation_config")
   private RecommendationConfig recommendationConfig = null;
 
-  @SerializedName("opt_config")
-  private OptConfig optConfig = null;
+  @SerializedName("create_log")
+  private Boolean createLog = false;
 
   @SerializedName("withdrawal_tax")
   private Float withdrawalTax = 0.0f;
@@ -351,14 +297,17 @@ public class GoalDecumulationAllocationRequest {
   @SerializedName("trading_days_per_year")
   private Integer tradingDaysPerYear = 252;
 
-  @SerializedName("compounding_rate")
-  private Float compoundingRate = 0.0f;
+  @SerializedName("allocations")
+  private List<UUID> allocations = null;
 
-  @SerializedName("adjust_for_compounding")
-  private Boolean adjustForCompounding = false;
+  @SerializedName("n")
+  private Integer n = 1000;
 
-  @SerializedName("create_log")
-  private Boolean createLog = false;
+  @SerializedName("d_horizon")
+  private Integer dHorizon = null;
+
+  @SerializedName("curr_inv")
+  private BigDecimal currInv = null;
 
   /**
    * Gets or Sets recommendType
@@ -414,6 +363,74 @@ public class GoalDecumulationAllocationRequest {
   @SerializedName("recommend_type")
   private RecommendTypeEnum recommendType = RecommendTypeEnum.HORIZON;
 
+  /**
+   * Gets or Sets allocationMethod
+   */
+  @JsonAdapter(AllocationMethodEnum.Adapter.class)
+  public enum AllocationMethodEnum {
+    SELECT("select"),
+    
+    CREATE("create");
+
+    private String value;
+
+    AllocationMethodEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static AllocationMethodEnum fromValue(String text) {
+      for (AllocationMethodEnum b : AllocationMethodEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<AllocationMethodEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final AllocationMethodEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public AllocationMethodEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return AllocationMethodEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
+  @SerializedName("allocation_method")
+  private AllocationMethodEnum allocationMethod = null;
+
+  public GoalDecumulationAllocationRequest threshType(ThreshTypeEnum threshType) {
+    this.threshType = threshType;
+    return this;
+  }
+
+   /**
+   * Get threshType
+   * @return threshType
+  **/
+  @ApiModelProperty(value = "")
+  public ThreshTypeEnum getThreshType() {
+    return threshType;
+  }
+
+  public void setThreshType(ThreshTypeEnum threshType) {
+    this.threshType = threshType;
+  }
+
   public GoalDecumulationAllocationRequest goalId(UUID goalId) {
     this.goalId = goalId;
     return this;
@@ -432,41 +449,42 @@ public class GoalDecumulationAllocationRequest {
     this.goalId = goalId;
   }
 
-  public GoalDecumulationAllocationRequest allocationMethod(AllocationMethodEnum allocationMethod) {
-    this.allocationMethod = allocationMethod;
+  public GoalDecumulationAllocationRequest clientId(UUID clientId) {
+    this.clientId = clientId;
     return this;
   }
 
    /**
-   * Get allocationMethod
-   * @return allocationMethod
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public AllocationMethodEnum getAllocationMethod() {
-    return allocationMethod;
-  }
-
-  public void setAllocationMethod(AllocationMethodEnum allocationMethod) {
-    this.allocationMethod = allocationMethod;
-  }
-
-  public GoalDecumulationAllocationRequest currInv(BigDecimal currInv) {
-    this.currInv = currInv;
-    return this;
-  }
-
-   /**
-   * Get currInv
-   * minimum: 0
-   * @return currInv
+   * Get clientId
+   * @return clientId
   **/
   @ApiModelProperty(value = "")
-  public BigDecimal getCurrInv() {
-    return currInv;
+  public UUID getClientId() {
+    return clientId;
   }
 
-  public void setCurrInv(BigDecimal currInv) {
-    this.currInv = currInv;
+  public void setClientId(UUID clientId) {
+    this.clientId = clientId;
+  }
+
+  public GoalDecumulationAllocationRequest confTgt(Float confTgt) {
+    this.confTgt = confTgt;
+    return this;
+  }
+
+   /**
+   * Get confTgt
+   * minimum: 0
+   * maximum: 1
+   * @return confTgt
+  **/
+  @ApiModelProperty(value = "")
+  public Float getConfTgt() {
+    return confTgt;
+  }
+
+  public void setConfTgt(Float confTgt) {
+    this.confTgt = confTgt;
   }
 
   public GoalDecumulationAllocationRequest riskScore(BigDecimal riskScore) {
@@ -489,44 +507,22 @@ public class GoalDecumulationAllocationRequest {
     this.riskScore = riskScore;
   }
 
-  public GoalDecumulationAllocationRequest dHorizon(Integer dHorizon) {
-    this.dHorizon = dHorizon;
+  public GoalDecumulationAllocationRequest removeOutliers(Boolean removeOutliers) {
+    this.removeOutliers = removeOutliers;
     return this;
   }
 
    /**
-   * Get dHorizon
-   * minimum: 0
-   * maximum: 350
-   * @return dHorizon
+   * Get removeOutliers
+   * @return removeOutliers
   **/
   @ApiModelProperty(value = "")
-  public Integer getDHorizon() {
-    return dHorizon;
+  public Boolean isRemoveOutliers() {
+    return removeOutliers;
   }
 
-  public void setDHorizon(Integer dHorizon) {
-    this.dHorizon = dHorizon;
-  }
-
-  public GoalDecumulationAllocationRequest n(Integer n) {
-    this.n = n;
-    return this;
-  }
-
-   /**
-   * Get n
-   * minimum: 1
-   * maximum: 10000
-   * @return n
-  **/
-  @ApiModelProperty(value = "")
-  public Integer getN() {
-    return n;
-  }
-
-  public void setN(Integer n) {
-    this.n = n;
+  public void setRemoveOutliers(Boolean removeOutliers) {
+    this.removeOutliers = removeOutliers;
   }
 
   public GoalDecumulationAllocationRequest allocationPriority(AllocationPriorityEnum allocationPriority) {
@@ -547,84 +543,24 @@ public class GoalDecumulationAllocationRequest {
     this.allocationPriority = allocationPriority;
   }
 
-  public GoalDecumulationAllocationRequest horizonFrequency(HorizonFrequencyEnum horizonFrequency) {
-    this.horizonFrequency = horizonFrequency;
+  public GoalDecumulationAllocationRequest aHorizon(Integer aHorizon) {
+    this.aHorizon = aHorizon;
     return this;
   }
 
    /**
-   * Get horizonFrequency
-   * @return horizonFrequency
+   * Get aHorizon
+   * minimum: 0
+   * maximum: 350
+   * @return aHorizon
   **/
   @ApiModelProperty(value = "")
-  public HorizonFrequencyEnum getHorizonFrequency() {
-    return horizonFrequency;
+  public Integer getAHorizon() {
+    return aHorizon;
   }
 
-  public void setHorizonFrequency(HorizonFrequencyEnum horizonFrequency) {
-    this.horizonFrequency = horizonFrequency;
-  }
-
-  public GoalDecumulationAllocationRequest allocations(List<UUID> allocations) {
-    this.allocations = allocations;
-    return this;
-  }
-
-  public GoalDecumulationAllocationRequest addAllocationsItem(UUID allocationsItem) {
-    if (this.allocations == null) {
-      this.allocations = new ArrayList<UUID>();
-    }
-    this.allocations.add(allocationsItem);
-    return this;
-  }
-
-   /**
-   * Get allocations
-   * @return allocations
-  **/
-  @ApiModelProperty(value = "")
-  public List<UUID> getAllocations() {
-    return allocations;
-  }
-
-  public void setAllocations(List<UUID> allocations) {
-    this.allocations = allocations;
-  }
-
-  public GoalDecumulationAllocationRequest clientId(UUID clientId) {
-    this.clientId = clientId;
-    return this;
-  }
-
-   /**
-   * Get clientId
-   * @return clientId
-  **/
-  @ApiModelProperty(value = "")
-  public UUID getClientId() {
-    return clientId;
-  }
-
-  public void setClientId(UUID clientId) {
-    this.clientId = clientId;
-  }
-
-  public GoalDecumulationAllocationRequest removeOutliers(Boolean removeOutliers) {
-    this.removeOutliers = removeOutliers;
-    return this;
-  }
-
-   /**
-   * Get removeOutliers
-   * @return removeOutliers
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isRemoveOutliers() {
-    return removeOutliers;
-  }
-
-  public void setRemoveOutliers(Boolean removeOutliers) {
-    this.removeOutliers = removeOutliers;
+  public void setAHorizon(Integer aHorizon) {
+    this.aHorizon = aHorizon;
   }
 
   public GoalDecumulationAllocationRequest withdrawalConfig(List<GoalWithdrawalConfig> withdrawalConfig) {
@@ -653,99 +589,77 @@ public class GoalDecumulationAllocationRequest {
     this.withdrawalConfig = withdrawalConfig;
   }
 
-  public GoalDecumulationAllocationRequest aHorizon(Integer aHorizon) {
-    this.aHorizon = aHorizon;
+  public GoalDecumulationAllocationRequest marketDataSource(MarketDataSourceEnum marketDataSource) {
+    this.marketDataSource = marketDataSource;
     return this;
   }
 
    /**
-   * Get aHorizon
-   * minimum: 0
-   * maximum: 350
-   * @return aHorizon
+   * Get marketDataSource
+   * @return marketDataSource
   **/
   @ApiModelProperty(value = "")
-  public Integer getAHorizon() {
-    return aHorizon;
+  public MarketDataSourceEnum getMarketDataSource() {
+    return marketDataSource;
   }
 
-  public void setAHorizon(Integer aHorizon) {
-    this.aHorizon = aHorizon;
+  public void setMarketDataSource(MarketDataSourceEnum marketDataSource) {
+    this.marketDataSource = marketDataSource;
   }
 
-  public GoalDecumulationAllocationRequest useProxyData(Boolean useProxyData) {
-    this.useProxyData = useProxyData;
+  public GoalDecumulationAllocationRequest compoundingRate(Float compoundingRate) {
+    this.compoundingRate = compoundingRate;
     return this;
   }
 
    /**
-   * Get useProxyData
-   * @return useProxyData
+   * Get compoundingRate
+   * minimum: -1
+   * @return compoundingRate
   **/
   @ApiModelProperty(value = "")
-  public Boolean isUseProxyData() {
-    return useProxyData;
+  public Float getCompoundingRate() {
+    return compoundingRate;
   }
 
-  public void setUseProxyData(Boolean useProxyData) {
-    this.useProxyData = useProxyData;
+  public void setCompoundingRate(Float compoundingRate) {
+    this.compoundingRate = compoundingRate;
   }
 
-  public GoalDecumulationAllocationRequest confTgt(Float confTgt) {
-    this.confTgt = confTgt;
+  public GoalDecumulationAllocationRequest adjustForCompounding(Boolean adjustForCompounding) {
+    this.adjustForCompounding = adjustForCompounding;
     return this;
   }
 
    /**
-   * Get confTgt
-   * minimum: 0
-   * maximum: 1
-   * @return confTgt
+   * Get adjustForCompounding
+   * @return adjustForCompounding
   **/
   @ApiModelProperty(value = "")
-  public Float getConfTgt() {
-    return confTgt;
+  public Boolean isAdjustForCompounding() {
+    return adjustForCompounding;
   }
 
-  public void setConfTgt(Float confTgt) {
-    this.confTgt = confTgt;
+  public void setAdjustForCompounding(Boolean adjustForCompounding) {
+    this.adjustForCompounding = adjustForCompounding;
   }
 
-  public GoalDecumulationAllocationRequest threshType(ThreshTypeEnum threshType) {
-    this.threshType = threshType;
+  public GoalDecumulationAllocationRequest optConfig(OptConfig optConfig) {
+    this.optConfig = optConfig;
     return this;
   }
 
    /**
-   * Get threshType
-   * @return threshType
+   * Get optConfig
+   * @return optConfig
   **/
   @ApiModelProperty(value = "")
-  public ThreshTypeEnum getThreshType() {
-    return threshType;
+  public OptConfig getOptConfig() {
+    return optConfig;
   }
 
-  public void setThreshType(ThreshTypeEnum threshType) {
-    this.threshType = threshType;
-  }
-
-  public GoalDecumulationAllocationRequest thresh(BigDecimal thresh) {
-    this.thresh = thresh;
-    return this;
-  }
-
-   /**
-   * Get thresh
-   * minimum: 0
-   * @return thresh
-  **/
-  @ApiModelProperty(value = "")
-  public BigDecimal getThresh() {
-    return thresh;
-  }
-
-  public void setThresh(BigDecimal thresh) {
-    this.thresh = thresh;
+  public void setOptConfig(OptConfig optConfig) {
+    this.optConfig = optConfig;
   }
 
   public GoalDecumulationAllocationRequest depositConfig(List<DecumulationGoalDepositConfig> depositConfig) {
@@ -774,22 +688,59 @@ public class GoalDecumulationAllocationRequest {
     this.depositConfig = depositConfig;
   }
 
-  public GoalDecumulationAllocationRequest marketDataSource(MarketDataSourceEnum marketDataSource) {
-    this.marketDataSource = marketDataSource;
+  public GoalDecumulationAllocationRequest useProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
     return this;
   }
 
    /**
-   * Get marketDataSource
-   * @return marketDataSource
+   * Get useProxyData
+   * @return useProxyData
   **/
   @ApiModelProperty(value = "")
-  public MarketDataSourceEnum getMarketDataSource() {
-    return marketDataSource;
+  public Boolean isUseProxyData() {
+    return useProxyData;
   }
 
-  public void setMarketDataSource(MarketDataSourceEnum marketDataSource) {
-    this.marketDataSource = marketDataSource;
+  public void setUseProxyData(Boolean useProxyData) {
+    this.useProxyData = useProxyData;
+  }
+
+  public GoalDecumulationAllocationRequest thresh(BigDecimal thresh) {
+    this.thresh = thresh;
+    return this;
+  }
+
+   /**
+   * Get thresh
+   * minimum: 0
+   * @return thresh
+  **/
+  @ApiModelProperty(value = "")
+  public BigDecimal getThresh() {
+    return thresh;
+  }
+
+  public void setThresh(BigDecimal thresh) {
+    this.thresh = thresh;
+  }
+
+  public GoalDecumulationAllocationRequest horizonFrequency(HorizonFrequencyEnum horizonFrequency) {
+    this.horizonFrequency = horizonFrequency;
+    return this;
+  }
+
+   /**
+   * Get horizonFrequency
+   * @return horizonFrequency
+  **/
+  @ApiModelProperty(value = "")
+  public HorizonFrequencyEnum getHorizonFrequency() {
+    return horizonFrequency;
+  }
+
+  public void setHorizonFrequency(HorizonFrequencyEnum horizonFrequency) {
+    this.horizonFrequency = horizonFrequency;
   }
 
   public GoalDecumulationAllocationRequest recommendationConfig(RecommendationConfig recommendationConfig) {
@@ -810,22 +761,22 @@ public class GoalDecumulationAllocationRequest {
     this.recommendationConfig = recommendationConfig;
   }
 
-  public GoalDecumulationAllocationRequest optConfig(OptConfig optConfig) {
-    this.optConfig = optConfig;
+  public GoalDecumulationAllocationRequest createLog(Boolean createLog) {
+    this.createLog = createLog;
     return this;
   }
 
    /**
-   * Get optConfig
-   * @return optConfig
+   * Get createLog
+   * @return createLog
   **/
   @ApiModelProperty(value = "")
-  public OptConfig getOptConfig() {
-    return optConfig;
+  public Boolean isCreateLog() {
+    return createLog;
   }
 
-  public void setOptConfig(OptConfig optConfig) {
-    this.optConfig = optConfig;
+  public void setCreateLog(Boolean createLog) {
+    this.createLog = createLog;
   }
 
   public GoalDecumulationAllocationRequest withdrawalTax(Float withdrawalTax) {
@@ -868,59 +819,89 @@ public class GoalDecumulationAllocationRequest {
     this.tradingDaysPerYear = tradingDaysPerYear;
   }
 
-  public GoalDecumulationAllocationRequest compoundingRate(Float compoundingRate) {
-    this.compoundingRate = compoundingRate;
+  public GoalDecumulationAllocationRequest allocations(List<UUID> allocations) {
+    this.allocations = allocations;
+    return this;
+  }
+
+  public GoalDecumulationAllocationRequest addAllocationsItem(UUID allocationsItem) {
+    if (this.allocations == null) {
+      this.allocations = new ArrayList<UUID>();
+    }
+    this.allocations.add(allocationsItem);
     return this;
   }
 
    /**
-   * Get compoundingRate
-   * minimum: -1
-   * @return compoundingRate
+   * Get allocations
+   * @return allocations
   **/
   @ApiModelProperty(value = "")
-  public Float getCompoundingRate() {
-    return compoundingRate;
+  public List<UUID> getAllocations() {
+    return allocations;
   }
 
-  public void setCompoundingRate(Float compoundingRate) {
-    this.compoundingRate = compoundingRate;
+  public void setAllocations(List<UUID> allocations) {
+    this.allocations = allocations;
   }
 
-  public GoalDecumulationAllocationRequest adjustForCompounding(Boolean adjustForCompounding) {
-    this.adjustForCompounding = adjustForCompounding;
+  public GoalDecumulationAllocationRequest n(Integer n) {
+    this.n = n;
     return this;
   }
 
    /**
-   * Get adjustForCompounding
-   * @return adjustForCompounding
+   * Get n
+   * minimum: 1
+   * maximum: 10000
+   * @return n
   **/
   @ApiModelProperty(value = "")
-  public Boolean isAdjustForCompounding() {
-    return adjustForCompounding;
+  public Integer getN() {
+    return n;
   }
 
-  public void setAdjustForCompounding(Boolean adjustForCompounding) {
-    this.adjustForCompounding = adjustForCompounding;
+  public void setN(Integer n) {
+    this.n = n;
   }
 
-  public GoalDecumulationAllocationRequest createLog(Boolean createLog) {
-    this.createLog = createLog;
+  public GoalDecumulationAllocationRequest dHorizon(Integer dHorizon) {
+    this.dHorizon = dHorizon;
     return this;
   }
 
    /**
-   * Get createLog
-   * @return createLog
+   * Get dHorizon
+   * minimum: 0
+   * maximum: 350
+   * @return dHorizon
   **/
   @ApiModelProperty(value = "")
-  public Boolean isCreateLog() {
-    return createLog;
+  public Integer getDHorizon() {
+    return dHorizon;
   }
 
-  public void setCreateLog(Boolean createLog) {
-    this.createLog = createLog;
+  public void setDHorizon(Integer dHorizon) {
+    this.dHorizon = dHorizon;
+  }
+
+  public GoalDecumulationAllocationRequest currInv(BigDecimal currInv) {
+    this.currInv = currInv;
+    return this;
+  }
+
+   /**
+   * Get currInv
+   * minimum: 0
+   * @return currInv
+  **/
+  @ApiModelProperty(value = "")
+  public BigDecimal getCurrInv() {
+    return currInv;
+  }
+
+  public void setCurrInv(BigDecimal currInv) {
+    this.currInv = currInv;
   }
 
   public GoalDecumulationAllocationRequest recommendType(RecommendTypeEnum recommendType) {
@@ -941,6 +922,24 @@ public class GoalDecumulationAllocationRequest {
     this.recommendType = recommendType;
   }
 
+  public GoalDecumulationAllocationRequest allocationMethod(AllocationMethodEnum allocationMethod) {
+    this.allocationMethod = allocationMethod;
+    return this;
+  }
+
+   /**
+   * Get allocationMethod
+   * @return allocationMethod
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public AllocationMethodEnum getAllocationMethod() {
+    return allocationMethod;
+  }
+
+  public void setAllocationMethod(AllocationMethodEnum allocationMethod) {
+    this.allocationMethod = allocationMethod;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -951,38 +950,38 @@ public class GoalDecumulationAllocationRequest {
       return false;
     }
     GoalDecumulationAllocationRequest goalDecumulationAllocationRequest = (GoalDecumulationAllocationRequest) o;
-    return Objects.equals(this.goalId, goalDecumulationAllocationRequest.goalId) &&
-        Objects.equals(this.allocationMethod, goalDecumulationAllocationRequest.allocationMethod) &&
-        Objects.equals(this.currInv, goalDecumulationAllocationRequest.currInv) &&
-        Objects.equals(this.riskScore, goalDecumulationAllocationRequest.riskScore) &&
-        Objects.equals(this.dHorizon, goalDecumulationAllocationRequest.dHorizon) &&
-        Objects.equals(this.n, goalDecumulationAllocationRequest.n) &&
-        Objects.equals(this.allocationPriority, goalDecumulationAllocationRequest.allocationPriority) &&
-        Objects.equals(this.horizonFrequency, goalDecumulationAllocationRequest.horizonFrequency) &&
-        Objects.equals(this.allocations, goalDecumulationAllocationRequest.allocations) &&
+    return Objects.equals(this.threshType, goalDecumulationAllocationRequest.threshType) &&
+        Objects.equals(this.goalId, goalDecumulationAllocationRequest.goalId) &&
         Objects.equals(this.clientId, goalDecumulationAllocationRequest.clientId) &&
-        Objects.equals(this.removeOutliers, goalDecumulationAllocationRequest.removeOutliers) &&
-        Objects.equals(this.withdrawalConfig, goalDecumulationAllocationRequest.withdrawalConfig) &&
-        Objects.equals(this.aHorizon, goalDecumulationAllocationRequest.aHorizon) &&
-        Objects.equals(this.useProxyData, goalDecumulationAllocationRequest.useProxyData) &&
         Objects.equals(this.confTgt, goalDecumulationAllocationRequest.confTgt) &&
-        Objects.equals(this.threshType, goalDecumulationAllocationRequest.threshType) &&
-        Objects.equals(this.thresh, goalDecumulationAllocationRequest.thresh) &&
-        Objects.equals(this.depositConfig, goalDecumulationAllocationRequest.depositConfig) &&
+        Objects.equals(this.riskScore, goalDecumulationAllocationRequest.riskScore) &&
+        Objects.equals(this.removeOutliers, goalDecumulationAllocationRequest.removeOutliers) &&
+        Objects.equals(this.allocationPriority, goalDecumulationAllocationRequest.allocationPriority) &&
+        Objects.equals(this.aHorizon, goalDecumulationAllocationRequest.aHorizon) &&
+        Objects.equals(this.withdrawalConfig, goalDecumulationAllocationRequest.withdrawalConfig) &&
         Objects.equals(this.marketDataSource, goalDecumulationAllocationRequest.marketDataSource) &&
-        Objects.equals(this.recommendationConfig, goalDecumulationAllocationRequest.recommendationConfig) &&
-        Objects.equals(this.optConfig, goalDecumulationAllocationRequest.optConfig) &&
-        Objects.equals(this.withdrawalTax, goalDecumulationAllocationRequest.withdrawalTax) &&
-        Objects.equals(this.tradingDaysPerYear, goalDecumulationAllocationRequest.tradingDaysPerYear) &&
         Objects.equals(this.compoundingRate, goalDecumulationAllocationRequest.compoundingRate) &&
         Objects.equals(this.adjustForCompounding, goalDecumulationAllocationRequest.adjustForCompounding) &&
+        Objects.equals(this.optConfig, goalDecumulationAllocationRequest.optConfig) &&
+        Objects.equals(this.depositConfig, goalDecumulationAllocationRequest.depositConfig) &&
+        Objects.equals(this.useProxyData, goalDecumulationAllocationRequest.useProxyData) &&
+        Objects.equals(this.thresh, goalDecumulationAllocationRequest.thresh) &&
+        Objects.equals(this.horizonFrequency, goalDecumulationAllocationRequest.horizonFrequency) &&
+        Objects.equals(this.recommendationConfig, goalDecumulationAllocationRequest.recommendationConfig) &&
         Objects.equals(this.createLog, goalDecumulationAllocationRequest.createLog) &&
-        Objects.equals(this.recommendType, goalDecumulationAllocationRequest.recommendType);
+        Objects.equals(this.withdrawalTax, goalDecumulationAllocationRequest.withdrawalTax) &&
+        Objects.equals(this.tradingDaysPerYear, goalDecumulationAllocationRequest.tradingDaysPerYear) &&
+        Objects.equals(this.allocations, goalDecumulationAllocationRequest.allocations) &&
+        Objects.equals(this.n, goalDecumulationAllocationRequest.n) &&
+        Objects.equals(this.dHorizon, goalDecumulationAllocationRequest.dHorizon) &&
+        Objects.equals(this.currInv, goalDecumulationAllocationRequest.currInv) &&
+        Objects.equals(this.recommendType, goalDecumulationAllocationRequest.recommendType) &&
+        Objects.equals(this.allocationMethod, goalDecumulationAllocationRequest.allocationMethod);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(goalId, allocationMethod, currInv, riskScore, dHorizon, n, allocationPriority, horizonFrequency, allocations, clientId, removeOutliers, withdrawalConfig, aHorizon, useProxyData, confTgt, threshType, thresh, depositConfig, marketDataSource, recommendationConfig, optConfig, withdrawalTax, tradingDaysPerYear, compoundingRate, adjustForCompounding, createLog, recommendType);
+    return Objects.hash(threshType, goalId, clientId, confTgt, riskScore, removeOutliers, allocationPriority, aHorizon, withdrawalConfig, marketDataSource, compoundingRate, adjustForCompounding, optConfig, depositConfig, useProxyData, thresh, horizonFrequency, recommendationConfig, createLog, withdrawalTax, tradingDaysPerYear, allocations, n, dHorizon, currInv, recommendType, allocationMethod);
   }
 
 
@@ -991,33 +990,33 @@ public class GoalDecumulationAllocationRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class GoalDecumulationAllocationRequest {\n");
     
-    sb.append("    goalId: ").append(toIndentedString(goalId)).append("\n");
-    sb.append("    allocationMethod: ").append(toIndentedString(allocationMethod)).append("\n");
-    sb.append("    currInv: ").append(toIndentedString(currInv)).append("\n");
-    sb.append("    riskScore: ").append(toIndentedString(riskScore)).append("\n");
-    sb.append("    dHorizon: ").append(toIndentedString(dHorizon)).append("\n");
-    sb.append("    n: ").append(toIndentedString(n)).append("\n");
-    sb.append("    allocationPriority: ").append(toIndentedString(allocationPriority)).append("\n");
-    sb.append("    horizonFrequency: ").append(toIndentedString(horizonFrequency)).append("\n");
-    sb.append("    allocations: ").append(toIndentedString(allocations)).append("\n");
-    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
-    sb.append("    removeOutliers: ").append(toIndentedString(removeOutliers)).append("\n");
-    sb.append("    withdrawalConfig: ").append(toIndentedString(withdrawalConfig)).append("\n");
-    sb.append("    aHorizon: ").append(toIndentedString(aHorizon)).append("\n");
-    sb.append("    useProxyData: ").append(toIndentedString(useProxyData)).append("\n");
-    sb.append("    confTgt: ").append(toIndentedString(confTgt)).append("\n");
     sb.append("    threshType: ").append(toIndentedString(threshType)).append("\n");
-    sb.append("    thresh: ").append(toIndentedString(thresh)).append("\n");
-    sb.append("    depositConfig: ").append(toIndentedString(depositConfig)).append("\n");
+    sb.append("    goalId: ").append(toIndentedString(goalId)).append("\n");
+    sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
+    sb.append("    confTgt: ").append(toIndentedString(confTgt)).append("\n");
+    sb.append("    riskScore: ").append(toIndentedString(riskScore)).append("\n");
+    sb.append("    removeOutliers: ").append(toIndentedString(removeOutliers)).append("\n");
+    sb.append("    allocationPriority: ").append(toIndentedString(allocationPriority)).append("\n");
+    sb.append("    aHorizon: ").append(toIndentedString(aHorizon)).append("\n");
+    sb.append("    withdrawalConfig: ").append(toIndentedString(withdrawalConfig)).append("\n");
     sb.append("    marketDataSource: ").append(toIndentedString(marketDataSource)).append("\n");
-    sb.append("    recommendationConfig: ").append(toIndentedString(recommendationConfig)).append("\n");
-    sb.append("    optConfig: ").append(toIndentedString(optConfig)).append("\n");
-    sb.append("    withdrawalTax: ").append(toIndentedString(withdrawalTax)).append("\n");
-    sb.append("    tradingDaysPerYear: ").append(toIndentedString(tradingDaysPerYear)).append("\n");
     sb.append("    compoundingRate: ").append(toIndentedString(compoundingRate)).append("\n");
     sb.append("    adjustForCompounding: ").append(toIndentedString(adjustForCompounding)).append("\n");
+    sb.append("    optConfig: ").append(toIndentedString(optConfig)).append("\n");
+    sb.append("    depositConfig: ").append(toIndentedString(depositConfig)).append("\n");
+    sb.append("    useProxyData: ").append(toIndentedString(useProxyData)).append("\n");
+    sb.append("    thresh: ").append(toIndentedString(thresh)).append("\n");
+    sb.append("    horizonFrequency: ").append(toIndentedString(horizonFrequency)).append("\n");
+    sb.append("    recommendationConfig: ").append(toIndentedString(recommendationConfig)).append("\n");
     sb.append("    createLog: ").append(toIndentedString(createLog)).append("\n");
+    sb.append("    withdrawalTax: ").append(toIndentedString(withdrawalTax)).append("\n");
+    sb.append("    tradingDaysPerYear: ").append(toIndentedString(tradingDaysPerYear)).append("\n");
+    sb.append("    allocations: ").append(toIndentedString(allocations)).append("\n");
+    sb.append("    n: ").append(toIndentedString(n)).append("\n");
+    sb.append("    dHorizon: ").append(toIndentedString(dHorizon)).append("\n");
+    sb.append("    currInv: ").append(toIndentedString(currInv)).append("\n");
     sb.append("    recommendType: ").append(toIndentedString(recommendType)).append("\n");
+    sb.append("    allocationMethod: ").append(toIndentedString(allocationMethod)).append("\n");
     sb.append("}");
     return sb.toString();
   }

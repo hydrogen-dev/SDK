@@ -19,6 +19,7 @@ Calculate a dimensional risk score based on questionnaire responses
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
@@ -79,6 +80,7 @@ Allocate based on a risk score
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;
@@ -139,6 +141,7 @@ Calculate a risk score based on questionnaire responses
 
 ### Example
 ```java
+// Import classes:
 //import com.hydrogen.proton.AuthApiClient;
 //import com.hydrogen.proton.ApiException;
 //import com.hydrogen.proton.auth.*;

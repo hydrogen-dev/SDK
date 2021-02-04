@@ -271,7 +271,7 @@ end
 
 api_instance = NucleusApi::ScoreApi.new
 
-score = NucleusApi::Score.new # Score | score
+score = nil # Object | score
 
 score_id = 'score_id_example' # String | UUID score_id
 
@@ -289,7 +289,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **score** | [**Score**](Score.md)| score | 
+ **score** | **Object**| score | 
  **score_id** | [**String**](.md)| UUID score_id | 
 
 ### Return type

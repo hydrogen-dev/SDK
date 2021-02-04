@@ -28,7 +28,6 @@ Create a new customer revenue, with your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CustomerApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -45,8 +44,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CustomerApi apiInstance = new CustomerApi();
 CustomerRevenue customerRevenue = new CustomerRevenue(); // CustomerRevenue | customerRevenue
 try {
@@ -89,7 +86,6 @@ Create a new customer, with your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CustomerApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -106,8 +102,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CustomerApi apiInstance = new CustomerApi();
 Customer customer = new Customer(); // Customer | customer
 try {
@@ -150,7 +144,6 @@ Delete a customer revenue.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CustomerApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -167,8 +160,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CustomerApi apiInstance = new CustomerApi();
 UUID customerRevenueId = new UUID(); // UUID | UUID customer_revenue_id
 try {
@@ -210,7 +201,6 @@ Delete a customer.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CustomerApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -227,8 +217,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CustomerApi apiInstance = new CustomerApi();
 UUID customerId = new UUID(); // UUID | UUID customer_id
 try {
@@ -270,7 +258,6 @@ List all customer.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CustomerApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -287,8 +274,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CustomerApi apiInstance = new CustomerApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -339,7 +324,6 @@ List all customer revenue.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CustomerApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -356,8 +340,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CustomerApi apiInstance = new CustomerApi();
 Boolean ascending = false; // Boolean | ascending
 String currencyConversion = "currencyConversion_example"; // String | currency_conversion
@@ -410,7 +392,6 @@ Retrieve a customer revenue.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CustomerApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -427,8 +408,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CustomerApi apiInstance = new CustomerApi();
 UUID customerRevenueId = new UUID(); // UUID | UUID customer_revenue_id
 String currencyConversion = "currencyConversion_example"; // String | USD
@@ -473,7 +452,6 @@ Retrieve a customer.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CustomerApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -490,8 +468,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CustomerApi apiInstance = new CustomerApi();
 UUID customerId = new UUID(); // UUID | UUID customer_id
 try {
@@ -534,7 +510,6 @@ Update a customer revenue.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CustomerApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -551,10 +526,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CustomerApi apiInstance = new CustomerApi();
-CustomerRevenue customerRevenue = new CustomerRevenue(); // CustomerRevenue | customer_revenue
+Object customerRevenue = null; // Object | customer_revenue
 UUID customerRevenueId = new UUID(); // UUID | UUID customer_revenue_id
 try {
     CustomerRevenue result = apiInstance.updateCustomerRevenueUsingPut(customerRevenue, customerRevenueId);
@@ -569,7 +542,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerRevenue** | [**CustomerRevenue**](CustomerRevenue.md)| customer_revenue |
+ **customerRevenue** | **Object**| customer_revenue |
  **customerRevenueId** | [**UUID**](.md)| UUID customer_revenue_id |
 
 ### Return type
@@ -597,7 +570,6 @@ Update a customer.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import CustomerApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -614,10 +586,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 CustomerApi apiInstance = new CustomerApi();
-Customer customer = new Customer(); // Customer | customer
+Object customer = null; // Object | customer
 UUID customerId = new UUID(); // UUID | UUID customer_id
 try {
     Customer result = apiInstance.updateCustomerUsingPut(customer, customerId);
@@ -632,7 +602,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer** | [**Customer**](Customer.md)| customer |
+ **customer** | **Object**| customer |
  **customerId** | [**UUID**](.md)| UUID customer_id |
 
 ### Return type

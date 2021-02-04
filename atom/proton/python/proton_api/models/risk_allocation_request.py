@@ -31,71 +31,77 @@ class RiskAllocationRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'opt_config': 'OptConfig',
+        'market_data_source': 'str',
         'allocations': 'list[str]',
         'client_id': 'str',
-        'allocation_method': 'str',
+        'opt_config': 'OptConfig',
         'risk_score': 'float',
         'use_proxy_data': 'bool',
-        'market_data_source': 'str'
+        'allocation_method': 'str'
     }
 
     attribute_map = {
-        'opt_config': 'opt_config',
+        'market_data_source': 'market_data_source',
         'allocations': 'allocations',
         'client_id': 'client_id',
-        'allocation_method': 'allocation_method',
+        'opt_config': 'opt_config',
         'risk_score': 'risk_score',
         'use_proxy_data': 'use_proxy_data',
-        'market_data_source': 'market_data_source'
+        'allocation_method': 'allocation_method'
     }
 
-    def __init__(self, opt_config=None, allocations=None, client_id=None, allocation_method=None, risk_score=None, use_proxy_data=False, market_data_source='nucleus'):  # noqa: E501
+    def __init__(self, market_data_source='nucleus', allocations=None, client_id=None, opt_config=None, risk_score=None, use_proxy_data=False, allocation_method=None):  # noqa: E501
         """RiskAllocationRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._opt_config = None
+        self._market_data_source = None
         self._allocations = None
         self._client_id = None
-        self._allocation_method = None
+        self._opt_config = None
         self._risk_score = None
         self._use_proxy_data = None
-        self._market_data_source = None
+        self._allocation_method = None
         self.discriminator = None
 
-        if opt_config is not None:
-            self.opt_config = opt_config
+        if market_data_source is not None:
+            self.market_data_source = market_data_source
         if allocations is not None:
             self.allocations = allocations
         if client_id is not None:
             self.client_id = client_id
-        self.allocation_method = allocation_method
+        if opt_config is not None:
+            self.opt_config = opt_config
         if risk_score is not None:
             self.risk_score = risk_score
         if use_proxy_data is not None:
             self.use_proxy_data = use_proxy_data
-        if market_data_source is not None:
-            self.market_data_source = market_data_source
+        self.allocation_method = allocation_method
 
     @property
-    def opt_config(self):
-        """Gets the opt_config of this RiskAllocationRequest.  # noqa: E501
+    def market_data_source(self):
+        """Gets the market_data_source of this RiskAllocationRequest.  # noqa: E501
 
 
-        :return: The opt_config of this RiskAllocationRequest.  # noqa: E501
-        :rtype: OptConfig
+        :return: The market_data_source of this RiskAllocationRequest.  # noqa: E501
+        :rtype: str
         """
-        return self._opt_config
+        return self._market_data_source
 
-    @opt_config.setter
-    def opt_config(self, opt_config):
-        """Sets the opt_config of this RiskAllocationRequest.
+    @market_data_source.setter
+    def market_data_source(self, market_data_source):
+        """Sets the market_data_source of this RiskAllocationRequest.
 
 
-        :param opt_config: The opt_config of this RiskAllocationRequest.  # noqa: E501
-        :type: OptConfig
+        :param market_data_source: The market_data_source of this RiskAllocationRequest.  # noqa: E501
+        :type: str
         """
+        allowed_values = ["nucleus", "integration"]  # noqa: E501
+        if market_data_source not in allowed_values:
+            raise ValueError(
+                "Invalid value for `market_data_source` ({0}), must be one of {1}"  # noqa: E501
+                .format(market_data_source, allowed_values)
+            )
 
-        self._opt_config = opt_config
+        self._market_data_source = market_data_source
 
     @property
     def allocations(self):
@@ -140,33 +146,25 @@ class RiskAllocationRequest(object):
         self._client_id = client_id
 
     @property
-    def allocation_method(self):
-        """Gets the allocation_method of this RiskAllocationRequest.  # noqa: E501
+    def opt_config(self):
+        """Gets the opt_config of this RiskAllocationRequest.  # noqa: E501
 
 
-        :return: The allocation_method of this RiskAllocationRequest.  # noqa: E501
-        :rtype: str
+        :return: The opt_config of this RiskAllocationRequest.  # noqa: E501
+        :rtype: OptConfig
         """
-        return self._allocation_method
+        return self._opt_config
 
-    @allocation_method.setter
-    def allocation_method(self, allocation_method):
-        """Sets the allocation_method of this RiskAllocationRequest.
+    @opt_config.setter
+    def opt_config(self, opt_config):
+        """Sets the opt_config of this RiskAllocationRequest.
 
 
-        :param allocation_method: The allocation_method of this RiskAllocationRequest.  # noqa: E501
-        :type: str
+        :param opt_config: The opt_config of this RiskAllocationRequest.  # noqa: E501
+        :type: OptConfig
         """
-        if allocation_method is None:
-            raise ValueError("Invalid value for `allocation_method`, must not be `None`")  # noqa: E501
-        allowed_values = ["select", "create"]  # noqa: E501
-        if allocation_method not in allowed_values:
-            raise ValueError(
-                "Invalid value for `allocation_method` ({0}), must be one of {1}"  # noqa: E501
-                .format(allocation_method, allowed_values)
-            )
 
-        self._allocation_method = allocation_method
+        self._opt_config = opt_config
 
     @property
     def risk_score(self):
@@ -215,31 +213,33 @@ class RiskAllocationRequest(object):
         self._use_proxy_data = use_proxy_data
 
     @property
-    def market_data_source(self):
-        """Gets the market_data_source of this RiskAllocationRequest.  # noqa: E501
+    def allocation_method(self):
+        """Gets the allocation_method of this RiskAllocationRequest.  # noqa: E501
 
 
-        :return: The market_data_source of this RiskAllocationRequest.  # noqa: E501
+        :return: The allocation_method of this RiskAllocationRequest.  # noqa: E501
         :rtype: str
         """
-        return self._market_data_source
+        return self._allocation_method
 
-    @market_data_source.setter
-    def market_data_source(self, market_data_source):
-        """Sets the market_data_source of this RiskAllocationRequest.
+    @allocation_method.setter
+    def allocation_method(self, allocation_method):
+        """Sets the allocation_method of this RiskAllocationRequest.
 
 
-        :param market_data_source: The market_data_source of this RiskAllocationRequest.  # noqa: E501
+        :param allocation_method: The allocation_method of this RiskAllocationRequest.  # noqa: E501
         :type: str
         """
-        allowed_values = ["nucleus", "integration"]  # noqa: E501
-        if market_data_source not in allowed_values:
+        if allocation_method is None:
+            raise ValueError("Invalid value for `allocation_method`, must not be `None`")  # noqa: E501
+        allowed_values = ["select", "create"]  # noqa: E501
+        if allocation_method not in allowed_values:
             raise ValueError(
-                "Invalid value for `market_data_source` ({0}), must be one of {1}"  # noqa: E501
-                .format(market_data_source, allowed_values)
+                "Invalid value for `allocation_method` ({0}), must be one of {1}"  # noqa: E501
+                .format(allocation_method, allowed_values)
             )
 
-        self._market_data_source = market_data_source
+        self._allocation_method = allocation_method
 
     def to_dict(self):
         """Returns the model properties as a dict"""

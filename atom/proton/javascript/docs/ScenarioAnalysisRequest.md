@@ -3,21 +3,32 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tradingDaysPerYear** | **Number** |  | [optional] [default to 252]
 **portfolioTickers** | **[String]** |  | [optional] 
-**frequencyInterval** | **String** |  | 
-**createLog** | **Boolean** |  | [optional] [default to false]
-**aggregationAccountId** | **String** |  | [optional] 
-**allocationId** | **String** |  | [optional] 
-**modelId** | **String** |  | [optional] 
-**portfolioWeights** | **[Number]** |  | [optional] 
 **endDate** | **Date** |  | [optional] 
-**scenario** | [**[SensitivityFactor]**](SensitivityFactor.md) |  | 
-**startDate** | **Date** |  | [optional] 
-**useProxyData** | **Boolean** |  | [optional] [default to false]
-**accountId** | **String** |  | [optional] 
-**marketDataSource** | **String** |  | [optional] [default to 'nucleus']
 **portfolioId** | **String** |  | [optional] 
+**marketDataSource** | **String** |  | [optional] [default to 'nucleus']
+**modelId** | **String** |  | [optional] 
+**createLog** | **Boolean** |  | [optional] [default to false]
+**allocationId** | **String** |  | [optional] 
+**scenario** | [**[SensitivityFactor]**](SensitivityFactor.md) |  | 
+**useProxyData** | **Boolean** |  | [optional] [default to false]
+**startDate** | **Date** |  | [optional] 
+**accountId** | **String** |  | [optional] 
+**frequencyInterval** | **String** |  | 
+**aggregationAccountId** | **String** |  | [optional] 
+**tradingDaysPerYear** | **Number** |  | [optional] [default to 252]
+**portfolioWeights** | **[Number]** |  | [optional] 
+
+
+<a name="MarketDataSourceEnum"></a>
+## Enum: MarketDataSourceEnum
+
+
+* `nucleus` (value: `"nucleus"`)
+
+* `integration` (value: `"integration"`)
+
+
 
 
 <a name="FrequencyIntervalEnum"></a>
@@ -33,17 +44,6 @@ Name | Type | Description | Notes
 * `week` (value: `"week"`)
 
 * `day` (value: `"day"`)
-
-
-
-
-<a name="MarketDataSourceEnum"></a>
-## Enum: MarketDataSourceEnum
-
-
-* `nucleus` (value: `"nucleus"`)
-
-* `integration` (value: `"integration"`)
 
 
 

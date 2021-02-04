@@ -28,7 +28,7 @@ import org.threeten.bp.OffsetDateTime;
  * Aggregation Account Transaction Object
  */
 @ApiModel(description = "Aggregation Account Transaction Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T07:38:36.822Z")
 public class AggregationAccountTransaction {
   @SerializedName("aggregation_account_id")
   private UUID aggregationAccountId = null;
@@ -57,14 +57,23 @@ public class AggregationAccountTransaction {
   @SerializedName("is_excluded_analysis")
   private Boolean isExcludedAnalysis = null;
 
+  @SerializedName("is_fee")
+  private Boolean isFee = null;
+
   @SerializedName("is_recurring")
   private Boolean isRecurring = null;
+
+  @SerializedName("is_transfer")
+  private Boolean isTransfer = null;
 
   @SerializedName("metadata")
   private Map<String, String> metadata = null;
 
   @SerializedName("secondary_id")
   private String secondaryId = null;
+
+  @SerializedName("status")
+  private String status = null;
 
   @SerializedName("transaction_date")
   private OffsetDateTime transactionDate = null;
@@ -234,6 +243,15 @@ public class AggregationAccountTransaction {
     this.isExcludedAnalysis = isExcludedAnalysis;
   }
 
+   /**
+   * Get isFee
+   * @return isFee
+  **/
+  @ApiModelProperty(example = "false", value = "")
+  public Boolean isIsFee() {
+    return isFee;
+  }
+
   public AggregationAccountTransaction isRecurring(Boolean isRecurring) {
     this.isRecurring = isRecurring;
     return this;
@@ -243,13 +261,31 @@ public class AggregationAccountTransaction {
    * Get isRecurring
    * @return isRecurring
   **/
-  @ApiModelProperty(example = "false", value = "")
+  @ApiModelProperty(value = "")
   public Boolean isIsRecurring() {
     return isRecurring;
   }
 
   public void setIsRecurring(Boolean isRecurring) {
     this.isRecurring = isRecurring;
+  }
+
+  public AggregationAccountTransaction isTransfer(Boolean isTransfer) {
+    this.isTransfer = isTransfer;
+    return this;
+  }
+
+   /**
+   * Get isTransfer
+   * @return isTransfer
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isIsTransfer() {
+    return isTransfer;
+  }
+
+  public void setIsTransfer(Boolean isTransfer) {
+    this.isTransfer = isTransfer;
   }
 
   public AggregationAccountTransaction metadata(Map<String, String> metadata) {
@@ -294,6 +330,24 @@ public class AggregationAccountTransaction {
 
   public void setSecondaryId(String secondaryId) {
     this.secondaryId = secondaryId;
+  }
+
+  public AggregationAccountTransaction status(String status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * status
+   * @return status
+  **/
+  @ApiModelProperty(example = "active", value = "status")
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
   }
 
   public AggregationAccountTransaction transactionDate(OffsetDateTime transactionDate) {
@@ -351,16 +405,19 @@ public class AggregationAccountTransaction {
         Objects.equals(this.investment, aggregationAccountTransaction.investment) &&
         Objects.equals(this.isActive, aggregationAccountTransaction.isActive) &&
         Objects.equals(this.isExcludedAnalysis, aggregationAccountTransaction.isExcludedAnalysis) &&
+        Objects.equals(this.isFee, aggregationAccountTransaction.isFee) &&
         Objects.equals(this.isRecurring, aggregationAccountTransaction.isRecurring) &&
+        Objects.equals(this.isTransfer, aggregationAccountTransaction.isTransfer) &&
         Objects.equals(this.metadata, aggregationAccountTransaction.metadata) &&
         Objects.equals(this.secondaryId, aggregationAccountTransaction.secondaryId) &&
+        Objects.equals(this.status, aggregationAccountTransaction.status) &&
         Objects.equals(this.transactionDate, aggregationAccountTransaction.transactionDate) &&
         Objects.equals(this.updateDate, aggregationAccountTransaction.updateDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(aggregationAccountId, bankCredit, cash, createDate, currencyCode, id, investment, isActive, isExcludedAnalysis, isRecurring, metadata, secondaryId, transactionDate, updateDate);
+    return Objects.hash(aggregationAccountId, bankCredit, cash, createDate, currencyCode, id, investment, isActive, isExcludedAnalysis, isFee, isRecurring, isTransfer, metadata, secondaryId, status, transactionDate, updateDate);
   }
 
 
@@ -378,9 +435,12 @@ public class AggregationAccountTransaction {
     sb.append("    investment: ").append(toIndentedString(investment)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    isExcludedAnalysis: ").append(toIndentedString(isExcludedAnalysis)).append("\n");
+    sb.append("    isFee: ").append(toIndentedString(isFee)).append("\n");
     sb.append("    isRecurring: ").append(toIndentedString(isRecurring)).append("\n");
+    sb.append("    isTransfer: ").append(toIndentedString(isTransfer)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    transactionDate: ").append(toIndentedString(transactionDate)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");

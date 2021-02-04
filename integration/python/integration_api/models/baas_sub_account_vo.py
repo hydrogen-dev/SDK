@@ -34,9 +34,10 @@ class BaasSubAccountVO(object):
         'account_number': 'str',
         'account_status': 'str',
         'message': 'str',
+        'nucleus_client_id': 'str',
         'nucleus_portfolio_id': 'str',
         'status': 'str',
-        'vendor_name': 'object',
+        'vendor_name': 'str',
         'vendor_response': 'object'
     }
 
@@ -44,18 +45,20 @@ class BaasSubAccountVO(object):
         'account_number': 'account_number',
         'account_status': 'account_status',
         'message': 'message',
+        'nucleus_client_id': 'nucleus_client_id',
         'nucleus_portfolio_id': 'nucleus_portfolio_id',
         'status': 'status',
         'vendor_name': 'vendor_name',
         'vendor_response': 'vendor_response'
     }
 
-    def __init__(self, account_number=None, account_status=None, message=None, nucleus_portfolio_id=None, status=None, vendor_name=None, vendor_response=None):  # noqa: E501
+    def __init__(self, account_number=None, account_status=None, message=None, nucleus_client_id=None, nucleus_portfolio_id=None, status=None, vendor_name=None, vendor_response=None):  # noqa: E501
         """BaasSubAccountVO - a model defined in Swagger"""  # noqa: E501
 
         self._account_number = None
         self._account_status = None
         self._message = None
+        self._nucleus_client_id = None
         self._nucleus_portfolio_id = None
         self._status = None
         self._vendor_name = None
@@ -68,6 +71,8 @@ class BaasSubAccountVO(object):
             self.account_status = account_status
         if message is not None:
             self.message = message
+        if nucleus_client_id is not None:
+            self.nucleus_client_id = nucleus_client_id
         if nucleus_portfolio_id is not None:
             self.nucleus_portfolio_id = nucleus_portfolio_id
         if status is not None:
@@ -141,6 +146,27 @@ class BaasSubAccountVO(object):
         self._message = message
 
     @property
+    def nucleus_client_id(self):
+        """Gets the nucleus_client_id of this BaasSubAccountVO.  # noqa: E501
+
+
+        :return: The nucleus_client_id of this BaasSubAccountVO.  # noqa: E501
+        :rtype: str
+        """
+        return self._nucleus_client_id
+
+    @nucleus_client_id.setter
+    def nucleus_client_id(self, nucleus_client_id):
+        """Sets the nucleus_client_id of this BaasSubAccountVO.
+
+
+        :param nucleus_client_id: The nucleus_client_id of this BaasSubAccountVO.  # noqa: E501
+        :type: str
+        """
+
+        self._nucleus_client_id = nucleus_client_id
+
+    @property
     def nucleus_portfolio_id(self):
         """Gets the nucleus_portfolio_id of this BaasSubAccountVO.  # noqa: E501
 
@@ -188,7 +214,7 @@ class BaasSubAccountVO(object):
 
 
         :return: The vendor_name of this BaasSubAccountVO.  # noqa: E501
-        :rtype: object
+        :rtype: str
         """
         return self._vendor_name
 
@@ -198,7 +224,7 @@ class BaasSubAccountVO(object):
 
 
         :param vendor_name: The vendor_name of this BaasSubAccountVO.  # noqa: E501
-        :type: object
+        :type: str
         """
 
         self._vendor_name = vendor_name

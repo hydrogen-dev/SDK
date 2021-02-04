@@ -1265,7 +1265,7 @@ class AllocationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AllocationComposition allocation_composition: allocation_composition (required)
+        :param object allocation_composition: allocation_composition (required)
         :param str allocation_composition_id: UUID allocation_composition_id (required)
         :return: AllocationComposition
                  If the method is called asynchronously,
@@ -1288,7 +1288,7 @@ class AllocationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AllocationComposition allocation_composition: allocation_composition (required)
+        :param object allocation_composition: allocation_composition (required)
         :param str allocation_composition_id: UUID allocation_composition_id (required)
         :return: AllocationComposition
                  If the method is called asynchronously,
@@ -1372,7 +1372,7 @@ class AllocationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Allocation allocation: allocation (required)
+        :param object allocation: allocation (required)
         :param str allocation_id: UUID allocation_id (required)
         :return: Allocation
                  If the method is called asynchronously,
@@ -1395,7 +1395,7 @@ class AllocationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Allocation allocation: allocation (required)
+        :param object allocation: allocation (required)
         :param str allocation_id: UUID allocation_id (required)
         :return: Allocation
                  If the method is called asynchronously,

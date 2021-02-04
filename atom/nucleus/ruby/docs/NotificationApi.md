@@ -753,7 +753,7 @@ end
 
 api_instance = NucleusApi::NotificationApi.new
 
-notification_client = NucleusApi::NotificationClient.new # NotificationClient | notification_client
+notification_client = nil # Object | notification_client
 
 notification_client_id = 'notification_client_id_example' # String | UUID notification_client_id
 
@@ -771,7 +771,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification_client** | [**NotificationClient**](NotificationClient.md)| notification_client | 
+ **notification_client** | **Object**| notification_client | 
  **notification_client_id** | [**String**](.md)| UUID notification_client_id | 
 
 ### Return type
@@ -813,7 +813,7 @@ end
 
 api_instance = NucleusApi::NotificationApi.new
 
-notification_setting = NucleusApi::NotificationSetting.new # NotificationSetting | notification_setting
+notification_setting = nil # Object | notification_setting
 
 notification_setting_id = 'notification_setting_id_example' # String | UUID notification_setting_id
 
@@ -831,7 +831,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification_setting** | [**NotificationSetting**](NotificationSetting.md)| notification_setting | 
+ **notification_setting** | **Object**| notification_setting | 
  **notification_setting_id** | [**String**](.md)| UUID notification_setting_id | 
 
 ### Return type
@@ -873,7 +873,7 @@ end
 
 api_instance = NucleusApi::NotificationApi.new
 
-notification = NucleusApi::Notification.new # Notification | notification
+notification = nil # Object | notification
 
 notification_id = 'notification_id_example' # String | UUID notification_id
 
@@ -891,7 +891,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification** | [**Notification**](Notification.md)| notification | 
+ **notification** | **Object**| notification | 
  **notification_id** | [**String**](.md)| UUID notification_id | 
 
 ### Return type

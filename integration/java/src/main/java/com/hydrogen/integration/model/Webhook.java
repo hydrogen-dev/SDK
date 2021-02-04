@@ -13,8 +13,6 @@
 
 package com.hydrogen.integration.model;
 
-import java.util.Objects;
-
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,17 +20,19 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.threeten.bp.OffsetDateTime;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
-import org.threeten.bp.OffsetDateTime;
 
 /**
  * Webhook Object
  */
 @ApiModel(description = "Webhook Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-11T07:03:53.789Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-29T15:43:35.245Z")
 public class Webhook {
   @SerializedName("create_date")
   private OffsetDateTime createDate = null;
@@ -45,9 +45,23 @@ public class Webhook {
    */
   @JsonAdapter(IntegrationServiceEnum.Adapter.class)
   public enum IntegrationServiceEnum {
-    KYC("KYC"),
+    KYC("kyc"),
     
-    KYC_STATUS("KYC_STATUS");
+    KYC_STATUS("kyc_status"),
+    
+    ASYNC_ACCOUNTING_CUSTOMER("async_accounting_customer"),
+    
+    ASYNC_ACCOUNTING_CUSTOMER_REVENUE("async_accounting_customer_revenue"),
+    
+    ASYNC_ACCOUNTING_INVOICE("async_accounting_invoice"),
+    
+    ASYNC_ACCOUNTING_INVOICE_PAYMENT("async_accounting_invoice_payment"),
+    
+    ASYNC_AGGREGATION_ACCOUNT("async_aggregation_account"),
+    
+    ASYNC_AGGREGATION_ACCOUNT_TRANSACTION("async_aggregation_account_transaction"),
+    
+    ASYNC_AGGREGATION_ACCOUNT_HOLDING("async_aggregation_account_holding");
 
     private String value;
 
@@ -81,7 +95,7 @@ public class Webhook {
 
       @Override
       public IntegrationServiceEnum read(final JsonReader jsonReader) throws IOException {
-        String value = jsonReader.nextString();
+        Object value = jsonReader.nextString();
         return IntegrationServiceEnum.fromValue(String.valueOf(value));
       }
     }
@@ -241,7 +255,7 @@ public class Webhook {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -269,7 +283,7 @@ public class Webhook {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Webhook {\n");
-    
+
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    integrationService: ").append(toIndentedString(integrationService)).append("\n");
@@ -286,7 +300,7 @@ public class Webhook {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -250,7 +250,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\BulkApi(
     new GuzzleHttp\Client(),
     $config
 );
-$data = new \com\hydrogen\nucleus\Model\JsonNode(); // \com\hydrogen\nucleus\Model\JsonNode | data
+$data = new \stdClass; // object | data
 $entity_uri = "entity_uri_example"; // string | UUID entity_uri
 
 try {
@@ -266,7 +266,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\com\hydrogen\nucleus\Model\JsonNode**](../Model/JsonNode.md)| data |
+ **data** | **object**| data |
  **entity_uri** | **string**| UUID entity_uri |
 
 ### Return type

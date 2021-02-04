@@ -1606,7 +1606,7 @@ end
 
 api_instance = NucleusApi::OrderApi.new
 
-order_status = NucleusApi::OrderStatus.new # OrderStatus | order_status
+order_status = nil # Object | order_status
 
 order_status_id = 'order_status_id_example' # String | UUID order_status_id
 
@@ -1624,7 +1624,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_status** | [**OrderStatus**](OrderStatus.md)| order_status | 
+ **order_status** | **Object**| order_status | 
  **order_status_id** | [**String**](.md)| UUID order_status_id | 
 
 ### Return type
@@ -1666,7 +1666,7 @@ end
 
 api_instance = NucleusApi::OrderApi.new
 
-order_track = NucleusApi::OrderTrack.new # OrderTrack | order_track
+order_track = nil # Object | order_track
 
 order_track_id = 'order_track_id_example' # String | UUID order_track_id
 
@@ -1684,7 +1684,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order_track** | [**OrderTrack**](OrderTrack.md)| order_track | 
+ **order_track** | **Object**| order_track | 
  **order_track_id** | [**String**](.md)| UUID order_track_id | 
 
 ### Return type
@@ -1726,7 +1726,7 @@ end
 
 api_instance = NucleusApi::OrderApi.new
 
-order = NucleusApi::Order.new # Order | order
+order = nil # Object | order
 
 order_id = 'order_id_example' # String | UUID order_id
 
@@ -1744,7 +1744,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **order** | [**Order**](Order.md)| order | 
+ **order** | **Object**| order | 
  **order_id** | [**String**](.md)| UUID order_id | 
 
 ### Return type

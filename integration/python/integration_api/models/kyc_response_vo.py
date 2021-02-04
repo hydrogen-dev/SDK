@@ -32,10 +32,11 @@ class KycResponseVo(object):
     """
     swagger_types = {
         'create_date': 'datetime',
-        'electron_document_id': 'str',
         'kyc_status': 'str',
         'kyc_type': 'str',
+        'nucleus_business_id': 'str',
         'nucleus_client_id': 'str',
+        'nucleus_document_id': 'str',
         'product': 'str',
         'update_date': 'datetime',
         'vendor_name': 'str',
@@ -45,10 +46,11 @@ class KycResponseVo(object):
 
     attribute_map = {
         'create_date': 'create_date',
-        'electron_document_id': 'electron_document_id',
         'kyc_status': 'kyc_status',
         'kyc_type': 'kyc_type',
+        'nucleus_business_id': 'nucleus_business_id',
         'nucleus_client_id': 'nucleus_client_id',
+        'nucleus_document_id': 'nucleus_document_id',
         'product': 'product',
         'update_date': 'update_date',
         'vendor_name': 'vendor_name',
@@ -56,14 +58,15 @@ class KycResponseVo(object):
         'vendor_response': 'vendor_response'
     }
 
-    def __init__(self, create_date=None, electron_document_id=None, kyc_status=None, kyc_type=None, nucleus_client_id=None, product=None, update_date=None, vendor_name=None, vendor_request_data=None, vendor_response=None):  # noqa: E501
+    def __init__(self, create_date=None, kyc_status=None, kyc_type=None, nucleus_business_id=None, nucleus_client_id=None, nucleus_document_id=None, product=None, update_date=None, vendor_name=None, vendor_request_data=None, vendor_response=None):  # noqa: E501
         """KycResponseVo - a model defined in Swagger"""  # noqa: E501
 
         self._create_date = None
-        self._electron_document_id = None
         self._kyc_status = None
         self._kyc_type = None
+        self._nucleus_business_id = None
         self._nucleus_client_id = None
+        self._nucleus_document_id = None
         self._product = None
         self._update_date = None
         self._vendor_name = None
@@ -73,14 +76,16 @@ class KycResponseVo(object):
 
         if create_date is not None:
             self.create_date = create_date
-        if electron_document_id is not None:
-            self.electron_document_id = electron_document_id
         if kyc_status is not None:
             self.kyc_status = kyc_status
         if kyc_type is not None:
             self.kyc_type = kyc_type
+        if nucleus_business_id is not None:
+            self.nucleus_business_id = nucleus_business_id
         if nucleus_client_id is not None:
             self.nucleus_client_id = nucleus_client_id
+        if nucleus_document_id is not None:
+            self.nucleus_document_id = nucleus_document_id
         if product is not None:
             self.product = product
         if update_date is not None:
@@ -112,27 +117,6 @@ class KycResponseVo(object):
         """
 
         self._create_date = create_date
-
-    @property
-    def electron_document_id(self):
-        """Gets the electron_document_id of this KycResponseVo.  # noqa: E501
-
-
-        :return: The electron_document_id of this KycResponseVo.  # noqa: E501
-        :rtype: str
-        """
-        return self._electron_document_id
-
-    @electron_document_id.setter
-    def electron_document_id(self, electron_document_id):
-        """Sets the electron_document_id of this KycResponseVo.
-
-
-        :param electron_document_id: The electron_document_id of this KycResponseVo.  # noqa: E501
-        :type: str
-        """
-
-        self._electron_document_id = electron_document_id
 
     @property
     def kyc_status(self):
@@ -177,6 +161,27 @@ class KycResponseVo(object):
         self._kyc_type = kyc_type
 
     @property
+    def nucleus_business_id(self):
+        """Gets the nucleus_business_id of this KycResponseVo.  # noqa: E501
+
+
+        :return: The nucleus_business_id of this KycResponseVo.  # noqa: E501
+        :rtype: str
+        """
+        return self._nucleus_business_id
+
+    @nucleus_business_id.setter
+    def nucleus_business_id(self, nucleus_business_id):
+        """Sets the nucleus_business_id of this KycResponseVo.
+
+
+        :param nucleus_business_id: The nucleus_business_id of this KycResponseVo.  # noqa: E501
+        :type: str
+        """
+
+        self._nucleus_business_id = nucleus_business_id
+
+    @property
     def nucleus_client_id(self):
         """Gets the nucleus_client_id of this KycResponseVo.  # noqa: E501
 
@@ -196,6 +201,27 @@ class KycResponseVo(object):
         """
 
         self._nucleus_client_id = nucleus_client_id
+
+    @property
+    def nucleus_document_id(self):
+        """Gets the nucleus_document_id of this KycResponseVo.  # noqa: E501
+
+
+        :return: The nucleus_document_id of this KycResponseVo.  # noqa: E501
+        :rtype: str
+        """
+        return self._nucleus_document_id
+
+    @nucleus_document_id.setter
+    def nucleus_document_id(self, nucleus_document_id):
+        """Sets the nucleus_document_id of this KycResponseVo.
+
+
+        :param nucleus_document_id: The nucleus_document_id of this KycResponseVo.  # noqa: E501
+        :type: str
+        """
+
+        self._nucleus_document_id = nucleus_document_id
 
     @property
     def product(self):

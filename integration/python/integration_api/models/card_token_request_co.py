@@ -33,7 +33,7 @@ class CardTokenRequestCO(object):
     swagger_types = {
         'nucleus_card_id': 'str',
         'reason': 'str',
-        'vendor_request': 'dict(str, str)',
+        'vendor_request': 'object',
         'wallet': 'str'
     }
 
@@ -110,7 +110,7 @@ class CardTokenRequestCO(object):
 
 
         :return: The vendor_request of this CardTokenRequestCO.  # noqa: E501
-        :rtype: dict(str, str)
+        :rtype: object
         """
         return self._vendor_request
 
@@ -120,7 +120,7 @@ class CardTokenRequestCO(object):
 
 
         :param vendor_request: The vendor_request of this CardTokenRequestCO.  # noqa: E501
-        :type: dict(str, str)
+        :type: object
         """
 
         self._vendor_request = vendor_request
@@ -143,7 +143,7 @@ class CardTokenRequestCO(object):
         :param wallet: The wallet of this CardTokenRequestCO.  # noqa: E501
         :type: str
         """
-        allowed_values = ["apple", "google", "samsung"]  # noqa: E501
+        allowed_values = ["google", "apple", "samsung"]  # noqa: E501
         if wallet is not None and wallet.lower() not in allowed_values:
             raise ValueError(
                 "Invalid value for `wallet` ({0}), must be one of {1}"  # noqa: E501

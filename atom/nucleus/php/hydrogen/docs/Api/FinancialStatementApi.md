@@ -325,7 +325,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\FinancialStatementApi(
     new GuzzleHttp\Client(),
     $config
 );
-$financial_statement = new \com\hydrogen\nucleus\Model\FinancialStatement(); // \com\hydrogen\nucleus\Model\FinancialStatement | financialStatement
+$financial_statement = new \stdClass; // object | financialStatement
 $financial_statement_id = "financial_statement_id_example"; // string | UUID financialStatement_id
 
 try {
@@ -341,7 +341,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **financial_statement** | [**\com\hydrogen\nucleus\Model\FinancialStatement**](../Model/FinancialStatement.md)| financialStatement |
+ **financial_statement** | **object**| financialStatement |
  **financial_statement_id** | [**string**](../Model/.md)| UUID financialStatement_id |
 
 ### Return type

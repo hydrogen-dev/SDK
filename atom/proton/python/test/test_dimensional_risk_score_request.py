@@ -32,7 +32,7 @@ class TestDimensionalRiskScoreRequest(unittest.TestCase):
     def testDimensionalRiskScoreRequest(self):
         """Test DimensionalRiskScoreRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.dimensional_risk_score_request.DimensionalRiskScoreRequest()  # noqa: E501
+        # model = proton_api.models.dimensional_risk_score_request.DimensionalRiskScoreRequest()  # noqa: E501
         pass
 
 

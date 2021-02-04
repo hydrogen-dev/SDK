@@ -43,49 +43,16 @@ Create a new bank link for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.FundingApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        updateFinancialOffer();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var bankLinkInfoRequest = new HydrogenNucleusApi.BankLink(); // BankLink | bankLinkInfoRequest
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -94,11 +61,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const createBankLink = () => {   
-    var apiInstance = new HydrogenNucleusApi.FundingApi();
-    var bankLinkInfoRequest = new HydrogenNucleusApi.BankLink(); // BankLink | bankLinkInfoRequest
-    apiInstance.createBankLinkUsingPost(bankLinkInfoRequest, callback);
-}   
+apiInstance.createBankLinkUsingPost(bankLinkInfoRequest, callback);
 ```
 
 ### Parameters
@@ -131,49 +94,16 @@ Create a new deposit request for an account.
 ### Example
 ```javascript
 var HydrogenNucleusApi = require('hydrogen_nucleus_api');
-
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: oauth2
 var oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
-// Create an instance of the Auth API class
-var api = new HydrogenNucleusApi.AuthApi();
+var apiInstance = new HydrogenNucleusApi.FundingApi();
 
-// Callback function definition
-var tokenGenerationCallback = function (error, data, response) {
-    if (error) {
-        console.error(error);
-        process.exit(1);
-    } else {
-        console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
-        oauth2.accessToken = data.access_token;
-        createDeposit();
-    }
-};
-//          Use one of the below method to generate oauth token        
-// Token Generation for grant_type = client_credentials
-api.createUsingPostClientCredentials({
-    'grant_type': 'client_credentials',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
+var dailyDepositRequest = new HydrogenNucleusApi.DailyDeposit(); // DailyDeposit | dailyDepositRequest
 
-// Token Generation for grant_type = password
-api.createUsingPostPassword({
-    'grant_type': 'password',
-    'username' : 'MYUSERNAME',
-    'password' : 'MYPASSWORD',
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET'
-}, tokenGenerationCallback);
-
-//Token Generation using client token
-api.createUsingPostClientTokenCredentials({
-    'client_id': 'MYCLIENTID',
-    'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
-}, tokenGenerationCallback);
 
 var callback = function(error, data, response) {
   if (error) {
@@ -182,11 +112,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const createDeposit = () => {   
-    var apiInstance = new HydrogenNucleusApi.FundingApi();
-    var dailyDepositRequest = new HydrogenNucleusApi.DailyDeposit(); // DailyDeposit | dailyDepositRequest
-    apiInstance.createDepositUsingPost(dailyDepositRequest, callback);
-}   
+apiInstance.createDepositUsingPost(dailyDepositRequest, callback);
 ```
 
 ### Parameters
@@ -380,7 +306,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FundingApi();
 
-var bankLinkId = "4ff21db3-97ab-4bbd-9885-be6aec522c44"; // String | UUID bank_link_id
+var bankLinkId = "\"4ff21db3-97ab-4bbd-9885-be6aec522c44\""; // String | UUID bank_link_id
 
 
 var callback = function(error, data, response) {
@@ -397,7 +323,7 @@ apiInstance.deleteBankLinkUsingDelete(bankLinkId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bankLinkId** | **String**| UUID bank_link_id | 
+ **bankLinkId** | [**String**](.md)| UUID bank_link_id | 
 
 ### Return type
 
@@ -431,7 +357,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FundingApi();
 
-var depositId = "1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c"; // String | UUID deposit_id
+var depositId = "\"1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c\""; // String | UUID deposit_id
 
 
 var callback = function(error, data, response) {
@@ -448,7 +374,7 @@ apiInstance.deleteDepositUsingDelete(depositId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **depositId** | **String**| UUID deposit_id | 
+ **depositId** | [**String**](.md)| UUID deposit_id | 
 
 ### Return type
 
@@ -482,7 +408,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FundingApi();
 
-var fundingId = "708689ce-b0fd-4062-9954-6c8dd82707cf"; // String | UUID funding_id
+var fundingId = "\"708689ce-b0fd-4062-9954-6c8dd82707cf\""; // String | UUID funding_id
 
 
 var callback = function(error, data, response) {
@@ -499,7 +425,7 @@ apiInstance.deleteFundingUsingDelete(fundingId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fundingId** | **String**| UUID funding_id | 
+ **fundingId** | [**String**](.md)| UUID funding_id | 
 
 ### Return type
 
@@ -533,7 +459,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FundingApi();
 
-var transferId = "8397d8fd-e80d-48ea-bf79-81f32b12606e"; // String | UUID external_account_transfer_id
+var transferId = "\"8397d8fd-e80d-48ea-bf79-81f32b12606e\""; // String | UUID external_account_transfer_id
 
 
 var callback = function(error, data, response) {
@@ -550,7 +476,7 @@ apiInstance.deleteTransferUsingDelete(transferId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transferId** | **String**| UUID external_account_transfer_id | 
+ **transferId** | [**String**](.md)| UUID external_account_transfer_id | 
 
 ### Return type
 
@@ -584,7 +510,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FundingApi();
 
-var withdrawalId = "be07c93a-c0b0-4fb0-97e1-3a0f77b8c969"; // String | UUID withdrawal_id
+var withdrawalId = "\"be07c93a-c0b0-4fb0-97e1-3a0f77b8c969\""; // String | UUID withdrawal_id
 
 
 var callback = function(error, data, response) {
@@ -601,7 +527,7 @@ apiInstance.deleteWithdrawalUsingDelete(withdrawalId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **withdrawalId** | **String**| UUID withdrawal_id | 
+ **withdrawalId** | [**String**](.md)| UUID withdrawal_id | 
 
 ### Return type
 
@@ -697,7 +623,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FundingApi();
 
-var bankLinkId = "4ff21db3-97ab-4bbd-9885-be6aec522c44"; // String | UUID bank_link_id
+var bankLinkId = "\"4ff21db3-97ab-4bbd-9885-be6aec522c44\""; // String | UUID bank_link_id
 
 var opts = { 
   'currencyConversion': "currencyConversion_example" // String | USD
@@ -717,7 +643,7 @@ apiInstance.getBankLinkUsingGet(bankLinkId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bankLinkId** | **String**| UUID bank_link_id | 
+ **bankLinkId** | [**String**](.md)| UUID bank_link_id | 
  **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
@@ -814,7 +740,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FundingApi();
 
-var depositId = "1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c"; // String | UUID deposit_id
+var depositId = "\"1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c\""; // String | UUID deposit_id
 
 var opts = { 
   'currencyConversion': "currencyConversion_example" // String | USD
@@ -834,7 +760,7 @@ apiInstance.getDepositUsingGet(depositId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **depositId** | **String**| UUID deposit_id | 
+ **depositId** | [**String**](.md)| UUID deposit_id | 
  **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
@@ -931,7 +857,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FundingApi();
 
-var fundingId = "708689ce-b0fd-4062-9954-6c8dd82707cf"; // String | UUID funding_id
+var fundingId = "\"708689ce-b0fd-4062-9954-6c8dd82707cf\""; // String | UUID funding_id
 
 var opts = { 
   'currencyConversion': "currencyConversion_example" // String | USD
@@ -951,7 +877,7 @@ apiInstance.getFundingUsingGet(fundingId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fundingId** | **String**| UUID funding_id | 
+ **fundingId** | [**String**](.md)| UUID funding_id | 
  **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
@@ -1048,7 +974,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FundingApi();
 
-var transferId = "8397d8fd-e80d-48ea-bf79-81f32b12606e"; // String | UUID external_account_transfer_id
+var transferId = "\"8397d8fd-e80d-48ea-bf79-81f32b12606e\""; // String | UUID external_account_transfer_id
 
 var opts = { 
   'currencyConversion': "currencyConversion_example" // String | USD
@@ -1068,7 +994,7 @@ apiInstance.getTransferUsingGet(transferId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transferId** | **String**| UUID external_account_transfer_id | 
+ **transferId** | [**String**](.md)| UUID external_account_transfer_id | 
  **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
@@ -1165,7 +1091,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FundingApi();
 
-var withdrawalId = "be07c93a-c0b0-4fb0-97e1-3a0f77b8c969"; // String | UUID withdrawal_id
+var withdrawalId = "\"be07c93a-c0b0-4fb0-97e1-3a0f77b8c969\""; // String | UUID withdrawal_id
 
 var opts = { 
   'currencyConversion': "currencyConversion_example" // String | USD
@@ -1185,7 +1111,7 @@ apiInstance.getWithdrawalUsingGet(withdrawalId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **withdrawalId** | **String**| UUID withdrawal_id | 
+ **withdrawalId** | [**String**](.md)| UUID withdrawal_id | 
  **currencyConversion** | **String**| USD | [optional] 
 
 ### Return type
@@ -1220,7 +1146,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FundingApi();
 
-var bankLinkList = [new HydrogenNucleusApi.BankLink()]; // [BankLink] | bankLinkList
+var bankLinkList = [new HydrogenNucleusApi.[Object]()]; // [Object] | bankLinkList
 
 
 var callback = function(error, data, response) {
@@ -1237,7 +1163,7 @@ apiInstance.updateBankLinkBulkUsingPut(bankLinkList, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bankLinkList** | [**[BankLink]**](BankLink.md)| bankLinkList | 
+ **bankLinkList** | **[Object]**| bankLinkList | 
 
 ### Return type
 
@@ -1271,9 +1197,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FundingApi();
 
-var bankLink = new HydrogenNucleusApi.BankLink(); // BankLink | bank_link
+var bankLink = null; // Object | bank_link
 
-var bankLinkId = "29fa5156-cd89-4056-9125-ce2428b05f11"; // String | UUID bank_link_id
+var bankLinkId = "\"29fa5156-cd89-4056-9125-ce2428b05f11\""; // String | UUID bank_link_id
 
 
 var callback = function(error, data, response) {
@@ -1290,8 +1216,8 @@ apiInstance.updateBankLinkUsingPut(bankLink, bankLinkId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bankLink** | [**BankLink**](BankLink.md)| bank_link | 
- **bankLinkId** | **String**| UUID bank_link_id | 
+ **bankLink** | **Object**| bank_link | 
+ **bankLinkId** | [**String**](.md)| UUID bank_link_id | 
 
 ### Return type
 
@@ -1325,9 +1251,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FundingApi();
 
-var deposit = new HydrogenNucleusApi.DailyDeposit(); // DailyDeposit | deposit
+var deposit = null; // Object | deposit
 
-var depositId = "d79bb3a3-f259-430c-8fa8-a93f87cc3bdf"; // String | UUID deposit_id
+var depositId = "\"d79bb3a3-f259-430c-8fa8-a93f87cc3bdf\""; // String | UUID deposit_id
 
 
 var callback = function(error, data, response) {
@@ -1344,8 +1270,8 @@ apiInstance.updateDepositUsingPut(deposit, depositId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **deposit** | [**DailyDeposit**](DailyDeposit.md)| deposit | 
- **depositId** | **String**| UUID deposit_id | 
+ **deposit** | **Object**| deposit | 
+ **depositId** | [**String**](.md)| UUID deposit_id | 
 
 ### Return type
 
@@ -1379,9 +1305,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FundingApi();
 
-var funding = new HydrogenNucleusApi.Funding(); // Funding | funding
+var funding = null; // Object | funding
 
-var fundingId = "d79bb3a3-f259-430c-8fa8-a93f87cc3bdf"; // String | UUID funding_id
+var fundingId = "\"d79bb3a3-f259-430c-8fa8-a93f87cc3bdf\""; // String | UUID funding_id
 
 
 var callback = function(error, data, response) {
@@ -1398,8 +1324,8 @@ apiInstance.updateFundingUsingPut(funding, fundingId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **funding** | [**Funding**](Funding.md)| funding | 
- **fundingId** | **String**| UUID funding_id | 
+ **funding** | **Object**| funding | 
+ **fundingId** | [**String**](.md)| UUID funding_id | 
 
 ### Return type
 
@@ -1433,9 +1359,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FundingApi();
 
-var transfer = new HydrogenNucleusApi.ExternalAccountTransfer(); // ExternalAccountTransfer | transfer
+var transfer = null; // Object | transfer
 
-var transferId = "d79bb3a3-f259-430c-8fa8-a93f87cc3bdf"; // String | UUID external_account_transfer_id
+var transferId = "\"d79bb3a3-f259-430c-8fa8-a93f87cc3bdf\""; // String | UUID external_account_transfer_id
 
 
 var callback = function(error, data, response) {
@@ -1452,8 +1378,8 @@ apiInstance.updateTransferUsingPut(transfer, transferId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transfer** | [**ExternalAccountTransfer**](ExternalAccountTransfer.md)| transfer | 
- **transferId** | **String**| UUID external_account_transfer_id | 
+ **transfer** | **Object**| transfer | 
+ **transferId** | [**String**](.md)| UUID external_account_transfer_id | 
 
 ### Return type
 
@@ -1487,9 +1413,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.FundingApi();
 
-var withdrawal = new HydrogenNucleusApi.DailyWithdrawal(); // DailyWithdrawal | withdrawal
+var withdrawal = null; // Object | withdrawal
 
-var withdrawalId = "be07c93a-c0b0-4fb0-97e1-3a0f77b8c969"; // String | UUID withdrawal_id
+var withdrawalId = "\"be07c93a-c0b0-4fb0-97e1-3a0f77b8c969\""; // String | UUID withdrawal_id
 
 
 var callback = function(error, data, response) {
@@ -1506,8 +1432,8 @@ apiInstance.updateWithdrawalUsingPut(withdrawal, withdrawalId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **withdrawal** | [**DailyWithdrawal**](DailyWithdrawal.md)| withdrawal | 
- **withdrawalId** | **String**| UUID withdrawal_id | 
+ **withdrawal** | **Object**| withdrawal | 
+ **withdrawalId** | [**String**](.md)| UUID withdrawal_id | 
 
 ### Return type
 

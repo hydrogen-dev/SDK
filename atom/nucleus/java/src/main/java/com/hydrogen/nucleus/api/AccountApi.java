@@ -21,6 +21,12 @@ import com.hydrogen.nucleus.Configuration;
 import com.hydrogen.nucleus.Pair;
 import com.hydrogen.nucleus.ProgressRequestBody;
 import com.hydrogen.nucleus.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
 import com.hydrogen.nucleus.model.Account;
 import com.hydrogen.nucleus.model.AccountAllocationMapping;
 import com.hydrogen.nucleus.model.AccountPermissionVO;
@@ -28,6 +34,7 @@ import com.hydrogen.nucleus.model.AccountStatus;
 import com.hydrogen.nucleus.model.AccountType;
 import com.hydrogen.nucleus.model.AclClientPermissionVO;
 import com.hydrogen.nucleus.model.AvailableDateDoubleVO;
+import org.threeten.bp.LocalDate;
 import com.hydrogen.nucleus.model.PageAccount;
 import com.hydrogen.nucleus.model.PageAccountAllocationMapping;
 import com.hydrogen.nucleus.model.PageAccountPermissionVO;
@@ -37,14 +44,6 @@ import com.hydrogen.nucleus.model.PagePortfolioTransaction;
 import com.hydrogen.nucleus.model.PageVAccountAssetSize;
 import com.hydrogen.nucleus.model.Portfolio;
 import com.hydrogen.nucleus.model.PortfolioHoldingAgg;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
-import org.threeten.bp.LocalDate;
-
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -3501,7 +3500,7 @@ public class AccountApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateAccountAllocationMappingUsingPutCall(UUID accountAllocationId, AccountAllocationMapping accountAllocationMapping, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateAccountAllocationMappingUsingPutCall(UUID accountAllocationId, Object accountAllocationMapping, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = accountAllocationMapping;
 
         // create path and map variables
@@ -3544,7 +3543,7 @@ public class AccountApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateAccountAllocationMappingUsingPutValidateBeforeCall(UUID accountAllocationId, AccountAllocationMapping accountAllocationMapping, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateAccountAllocationMappingUsingPutValidateBeforeCall(UUID accountAllocationId, Object accountAllocationMapping, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'accountAllocationId' is set
         if (accountAllocationId == null) {
@@ -3565,7 +3564,7 @@ public class AccountApi {
      * @return AccountAllocationMapping
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AccountAllocationMapping updateAccountAllocationMappingUsingPut(UUID accountAllocationId, AccountAllocationMapping accountAllocationMapping) throws ApiException {
+    public AccountAllocationMapping updateAccountAllocationMappingUsingPut(UUID accountAllocationId, Object accountAllocationMapping) throws ApiException {
         ApiResponse<AccountAllocationMapping> resp = updateAccountAllocationMappingUsingPutWithHttpInfo(accountAllocationId, accountAllocationMapping);
         return resp.getData();
     }
@@ -3578,7 +3577,7 @@ public class AccountApi {
      * @return ApiResponse&lt;AccountAllocationMapping&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AccountAllocationMapping> updateAccountAllocationMappingUsingPutWithHttpInfo(UUID accountAllocationId, AccountAllocationMapping accountAllocationMapping) throws ApiException {
+    public ApiResponse<AccountAllocationMapping> updateAccountAllocationMappingUsingPutWithHttpInfo(UUID accountAllocationId, Object accountAllocationMapping) throws ApiException {
         com.squareup.okhttp.Call call = updateAccountAllocationMappingUsingPutValidateBeforeCall(accountAllocationId, accountAllocationMapping, null, null);
         Type localVarReturnType = new TypeToken<AccountAllocationMapping>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -3593,7 +3592,7 @@ public class AccountApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateAccountAllocationMappingUsingPutAsync(UUID accountAllocationId, AccountAllocationMapping accountAllocationMapping, final ApiCallback<AccountAllocationMapping> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateAccountAllocationMappingUsingPutAsync(UUID accountAllocationId, Object accountAllocationMapping, final ApiCallback<AccountAllocationMapping> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3628,7 +3627,7 @@ public class AccountApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateAccountStatusUsingPutCall(AccountStatus accountStatus, UUID accountStatusId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateAccountStatusUsingPutCall(Object accountStatus, UUID accountStatusId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = accountStatus;
 
         // create path and map variables
@@ -3671,7 +3670,7 @@ public class AccountApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateAccountStatusUsingPutValidateBeforeCall(AccountStatus accountStatus, UUID accountStatusId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateAccountStatusUsingPutValidateBeforeCall(Object accountStatus, UUID accountStatusId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'accountStatus' is set
         if (accountStatus == null) {
@@ -3697,7 +3696,7 @@ public class AccountApi {
      * @return AccountStatus
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AccountStatus updateAccountStatusUsingPut(AccountStatus accountStatus, UUID accountStatusId) throws ApiException {
+    public AccountStatus updateAccountStatusUsingPut(Object accountStatus, UUID accountStatusId) throws ApiException {
         ApiResponse<AccountStatus> resp = updateAccountStatusUsingPutWithHttpInfo(accountStatus, accountStatusId);
         return resp.getData();
     }
@@ -3710,7 +3709,7 @@ public class AccountApi {
      * @return ApiResponse&lt;AccountStatus&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AccountStatus> updateAccountStatusUsingPutWithHttpInfo(AccountStatus accountStatus, UUID accountStatusId) throws ApiException {
+    public ApiResponse<AccountStatus> updateAccountStatusUsingPutWithHttpInfo(Object accountStatus, UUID accountStatusId) throws ApiException {
         com.squareup.okhttp.Call call = updateAccountStatusUsingPutValidateBeforeCall(accountStatus, accountStatusId, null, null);
         Type localVarReturnType = new TypeToken<AccountStatus>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -3725,7 +3724,7 @@ public class AccountApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateAccountStatusUsingPutAsync(AccountStatus accountStatus, UUID accountStatusId, final ApiCallback<AccountStatus> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateAccountStatusUsingPutAsync(Object accountStatus, UUID accountStatusId, final ApiCallback<AccountStatus> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3760,7 +3759,7 @@ public class AccountApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateAccountTypeUsingPutCall(AccountType accountType, UUID accountTypeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateAccountTypeUsingPutCall(Object accountType, UUID accountTypeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = accountType;
 
         // create path and map variables
@@ -3803,7 +3802,7 @@ public class AccountApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateAccountTypeUsingPutValidateBeforeCall(AccountType accountType, UUID accountTypeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateAccountTypeUsingPutValidateBeforeCall(Object accountType, UUID accountTypeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'accountType' is set
         if (accountType == null) {
@@ -3829,7 +3828,7 @@ public class AccountApi {
      * @return AccountType
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AccountType updateAccountTypeUsingPut(AccountType accountType, UUID accountTypeId) throws ApiException {
+    public AccountType updateAccountTypeUsingPut(Object accountType, UUID accountTypeId) throws ApiException {
         ApiResponse<AccountType> resp = updateAccountTypeUsingPutWithHttpInfo(accountType, accountTypeId);
         return resp.getData();
     }
@@ -3842,7 +3841,7 @@ public class AccountApi {
      * @return ApiResponse&lt;AccountType&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AccountType> updateAccountTypeUsingPutWithHttpInfo(AccountType accountType, UUID accountTypeId) throws ApiException {
+    public ApiResponse<AccountType> updateAccountTypeUsingPutWithHttpInfo(Object accountType, UUID accountTypeId) throws ApiException {
         com.squareup.okhttp.Call call = updateAccountTypeUsingPutValidateBeforeCall(accountType, accountTypeId, null, null);
         Type localVarReturnType = new TypeToken<AccountType>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -3857,7 +3856,7 @@ public class AccountApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateAccountTypeUsingPutAsync(AccountType accountType, UUID accountTypeId, final ApiCallback<AccountType> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateAccountTypeUsingPutAsync(Object accountType, UUID accountTypeId, final ApiCallback<AccountType> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3892,7 +3891,7 @@ public class AccountApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateAccountUsingPutCall(Account account, UUID accountId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateAccountUsingPutCall(Object account, UUID accountId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = account;
 
         // create path and map variables
@@ -3935,7 +3934,7 @@ public class AccountApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateAccountUsingPutValidateBeforeCall(Account account, UUID accountId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateAccountUsingPutValidateBeforeCall(Object account, UUID accountId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'account' is set
         if (account == null) {
@@ -3961,7 +3960,7 @@ public class AccountApi {
      * @return Account
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Account updateAccountUsingPut(Account account, UUID accountId) throws ApiException {
+    public Account updateAccountUsingPut(Object account, UUID accountId) throws ApiException {
         ApiResponse<Account> resp = updateAccountUsingPutWithHttpInfo(account, accountId);
         return resp.getData();
     }
@@ -3974,7 +3973,7 @@ public class AccountApi {
      * @return ApiResponse&lt;Account&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Account> updateAccountUsingPutWithHttpInfo(Account account, UUID accountId) throws ApiException {
+    public ApiResponse<Account> updateAccountUsingPutWithHttpInfo(Object account, UUID accountId) throws ApiException {
         com.squareup.okhttp.Call call = updateAccountUsingPutValidateBeforeCall(account, accountId, null, null);
         Type localVarReturnType = new TypeToken<Account>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -3989,7 +3988,7 @@ public class AccountApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateAccountUsingPutAsync(Account account, UUID accountId, final ApiCallback<Account> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateAccountUsingPutAsync(Object account, UUID accountId, final ApiCallback<Account> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -4024,7 +4023,7 @@ public class AccountApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateClientAccountPermissionUsingPUTCall(UUID accountId, AclClientPermissionVO aclClientPermissionVO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateClientAccountPermissionUsingPUTCall(UUID accountId, Object aclClientPermissionVO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = aclClientPermissionVO;
 
         // create path and map variables
@@ -4067,7 +4066,7 @@ public class AccountApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateClientAccountPermissionUsingPUTValidateBeforeCall(UUID accountId, AclClientPermissionVO aclClientPermissionVO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateClientAccountPermissionUsingPUTValidateBeforeCall(UUID accountId, Object aclClientPermissionVO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'accountId' is set
         if (accountId == null) {
@@ -4093,7 +4092,7 @@ public class AccountApi {
      * @return AccountPermissionVO
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AccountPermissionVO updateClientAccountPermissionUsingPUT(UUID accountId, AclClientPermissionVO aclClientPermissionVO) throws ApiException {
+    public AccountPermissionVO updateClientAccountPermissionUsingPUT(UUID accountId, Object aclClientPermissionVO) throws ApiException {
         ApiResponse<AccountPermissionVO> resp = updateClientAccountPermissionUsingPUTWithHttpInfo(accountId, aclClientPermissionVO);
         return resp.getData();
     }
@@ -4106,7 +4105,7 @@ public class AccountApi {
      * @return ApiResponse&lt;AccountPermissionVO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AccountPermissionVO> updateClientAccountPermissionUsingPUTWithHttpInfo(UUID accountId, AclClientPermissionVO aclClientPermissionVO) throws ApiException {
+    public ApiResponse<AccountPermissionVO> updateClientAccountPermissionUsingPUTWithHttpInfo(UUID accountId, Object aclClientPermissionVO) throws ApiException {
         com.squareup.okhttp.Call call = updateClientAccountPermissionUsingPUTValidateBeforeCall(accountId, aclClientPermissionVO, null, null);
         Type localVarReturnType = new TypeToken<AccountPermissionVO>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -4121,7 +4120,7 @@ public class AccountApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateClientAccountPermissionUsingPUTAsync(UUID accountId, AclClientPermissionVO aclClientPermissionVO, final ApiCallback<AccountPermissionVO> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateClientAccountPermissionUsingPUTAsync(UUID accountId, Object aclClientPermissionVO, final ApiCallback<AccountPermissionVO> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

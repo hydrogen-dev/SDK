@@ -21,19 +21,18 @@ import com.hydrogen.nucleus.Configuration;
 import com.hydrogen.nucleus.Pair;
 import com.hydrogen.nucleus.ProgressRequestBody;
 import com.hydrogen.nucleus.ProgressResponseBody;
-import com.hydrogen.nucleus.model.Notification;
-import com.hydrogen.nucleus.model.NotificationClient;
-import com.hydrogen.nucleus.model.PageNotification;
-import com.hydrogen.nucleus.model.PageNotificationClient;
-import com.hydrogen.nucleus.model.PageNotificationSetting;
 
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
 
+import com.hydrogen.nucleus.model.Notification;
+import com.hydrogen.nucleus.model.NotificationClient;
 import com.hydrogen.nucleus.model.NotificationSetting;
-
+import com.hydrogen.nucleus.model.PageNotification;
+import com.hydrogen.nucleus.model.PageNotificationClient;
+import com.hydrogen.nucleus.model.PageNotificationSetting;
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -1591,7 +1590,7 @@ public class NotificationApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateNotificationClientUsingPutCall(NotificationClient notificationClient, UUID notificationClientId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateNotificationClientUsingPutCall(Object notificationClient, UUID notificationClientId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = notificationClient;
 
         // create path and map variables
@@ -1634,7 +1633,7 @@ public class NotificationApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateNotificationClientUsingPutValidateBeforeCall(NotificationClient notificationClient, UUID notificationClientId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateNotificationClientUsingPutValidateBeforeCall(Object notificationClient, UUID notificationClientId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'notificationClient' is set
         if (notificationClient == null) {
@@ -1660,7 +1659,7 @@ public class NotificationApi {
      * @return NotificationClient
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public NotificationClient updateNotificationClientUsingPut(NotificationClient notificationClient, UUID notificationClientId) throws ApiException {
+    public NotificationClient updateNotificationClientUsingPut(Object notificationClient, UUID notificationClientId) throws ApiException {
         ApiResponse<NotificationClient> resp = updateNotificationClientUsingPutWithHttpInfo(notificationClient, notificationClientId);
         return resp.getData();
     }
@@ -1673,7 +1672,7 @@ public class NotificationApi {
      * @return ApiResponse&lt;NotificationClient&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<NotificationClient> updateNotificationClientUsingPutWithHttpInfo(NotificationClient notificationClient, UUID notificationClientId) throws ApiException {
+    public ApiResponse<NotificationClient> updateNotificationClientUsingPutWithHttpInfo(Object notificationClient, UUID notificationClientId) throws ApiException {
         com.squareup.okhttp.Call call = updateNotificationClientUsingPutValidateBeforeCall(notificationClient, notificationClientId, null, null);
         Type localVarReturnType = new TypeToken<NotificationClient>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1688,7 +1687,7 @@ public class NotificationApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateNotificationClientUsingPutAsync(NotificationClient notificationClient, UUID notificationClientId, final ApiCallback<NotificationClient> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateNotificationClientUsingPutAsync(Object notificationClient, UUID notificationClientId, final ApiCallback<NotificationClient> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1723,7 +1722,7 @@ public class NotificationApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateNotificationSettingUsingPutCall(NotificationSetting notificationSetting, UUID notificationSettingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateNotificationSettingUsingPutCall(Object notificationSetting, UUID notificationSettingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = notificationSetting;
 
         // create path and map variables
@@ -1766,7 +1765,7 @@ public class NotificationApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateNotificationSettingUsingPutValidateBeforeCall(NotificationSetting notificationSetting, UUID notificationSettingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateNotificationSettingUsingPutValidateBeforeCall(Object notificationSetting, UUID notificationSettingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'notificationSetting' is set
         if (notificationSetting == null) {
@@ -1792,7 +1791,7 @@ public class NotificationApi {
      * @return NotificationSetting
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public NotificationSetting updateNotificationSettingUsingPut(NotificationSetting notificationSetting, UUID notificationSettingId) throws ApiException {
+    public NotificationSetting updateNotificationSettingUsingPut(Object notificationSetting, UUID notificationSettingId) throws ApiException {
         ApiResponse<NotificationSetting> resp = updateNotificationSettingUsingPutWithHttpInfo(notificationSetting, notificationSettingId);
         return resp.getData();
     }
@@ -1805,7 +1804,7 @@ public class NotificationApi {
      * @return ApiResponse&lt;NotificationSetting&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<NotificationSetting> updateNotificationSettingUsingPutWithHttpInfo(NotificationSetting notificationSetting, UUID notificationSettingId) throws ApiException {
+    public ApiResponse<NotificationSetting> updateNotificationSettingUsingPutWithHttpInfo(Object notificationSetting, UUID notificationSettingId) throws ApiException {
         com.squareup.okhttp.Call call = updateNotificationSettingUsingPutValidateBeforeCall(notificationSetting, notificationSettingId, null, null);
         Type localVarReturnType = new TypeToken<NotificationSetting>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1820,7 +1819,7 @@ public class NotificationApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateNotificationSettingUsingPutAsync(NotificationSetting notificationSetting, UUID notificationSettingId, final ApiCallback<NotificationSetting> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateNotificationSettingUsingPutAsync(Object notificationSetting, UUID notificationSettingId, final ApiCallback<NotificationSetting> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1855,7 +1854,7 @@ public class NotificationApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateNotificationUsingPutCall(Notification notification, UUID notificationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateNotificationUsingPutCall(Object notification, UUID notificationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = notification;
 
         // create path and map variables
@@ -1898,7 +1897,7 @@ public class NotificationApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateNotificationUsingPutValidateBeforeCall(Notification notification, UUID notificationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateNotificationUsingPutValidateBeforeCall(Object notification, UUID notificationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'notification' is set
         if (notification == null) {
@@ -1924,7 +1923,7 @@ public class NotificationApi {
      * @return Notification
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Notification updateNotificationUsingPut(Notification notification, UUID notificationId) throws ApiException {
+    public Notification updateNotificationUsingPut(Object notification, UUID notificationId) throws ApiException {
         ApiResponse<Notification> resp = updateNotificationUsingPutWithHttpInfo(notification, notificationId);
         return resp.getData();
     }
@@ -1937,7 +1936,7 @@ public class NotificationApi {
      * @return ApiResponse&lt;Notification&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Notification> updateNotificationUsingPutWithHttpInfo(Notification notification, UUID notificationId) throws ApiException {
+    public ApiResponse<Notification> updateNotificationUsingPutWithHttpInfo(Object notification, UUID notificationId) throws ApiException {
         com.squareup.okhttp.Call call = updateNotificationUsingPutValidateBeforeCall(notification, notificationId, null, null);
         Type localVarReturnType = new TypeToken<Notification>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1952,7 +1951,7 @@ public class NotificationApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateNotificationUsingPutAsync(Notification notification, UUID notificationId, final ApiCallback<Notification> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateNotificationUsingPutAsync(Object notification, UUID notificationId, final ApiCallback<Notification> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

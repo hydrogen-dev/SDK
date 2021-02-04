@@ -35,6 +35,7 @@ class BrokerageBankLinkVO(object):
         'nucleus_bank_link_id': 'str',
         'status': 'str',
         'vendor_name': 'str',
+        'vendor_request_data': 'object',
         'vendor_response': 'object'
     }
 
@@ -43,16 +44,18 @@ class BrokerageBankLinkVO(object):
         'nucleus_bank_link_id': 'nucleus_bank_link_id',
         'status': 'status',
         'vendor_name': 'vendor_name',
+        'vendor_request_data': 'vendor_request_data',
         'vendor_response': 'vendor_response'
     }
 
-    def __init__(self, message=None, nucleus_bank_link_id=None, status=None, vendor_name=None, vendor_response=None):  # noqa: E501
+    def __init__(self, message=None, nucleus_bank_link_id=None, status=None, vendor_name=None, vendor_request_data=None, vendor_response=None):  # noqa: E501
         """BrokerageBankLinkVO - a model defined in Swagger"""  # noqa: E501
 
         self._message = None
         self._nucleus_bank_link_id = None
         self._status = None
         self._vendor_name = None
+        self._vendor_request_data = None
         self._vendor_response = None
         self.discriminator = None
 
@@ -64,6 +67,8 @@ class BrokerageBankLinkVO(object):
             self.status = status
         if vendor_name is not None:
             self.vendor_name = vendor_name
+        if vendor_request_data is not None:
+            self.vendor_request_data = vendor_request_data
         if vendor_response is not None:
             self.vendor_response = vendor_response
 
@@ -150,6 +155,27 @@ class BrokerageBankLinkVO(object):
         """
 
         self._vendor_name = vendor_name
+
+    @property
+    def vendor_request_data(self):
+        """Gets the vendor_request_data of this BrokerageBankLinkVO.  # noqa: E501
+
+
+        :return: The vendor_request_data of this BrokerageBankLinkVO.  # noqa: E501
+        :rtype: object
+        """
+        return self._vendor_request_data
+
+    @vendor_request_data.setter
+    def vendor_request_data(self, vendor_request_data):
+        """Sets the vendor_request_data of this BrokerageBankLinkVO.
+
+
+        :param vendor_request_data: The vendor_request_data of this BrokerageBankLinkVO.  # noqa: E501
+        :type: object
+        """
+
+        self._vendor_request_data = vendor_request_data
 
     @property
     def vendor_response(self):

@@ -5,7 +5,7 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_kyc_using_post**](KYCApi.md#create_kyc_using_post) | **POST** /kyc | Do kyc for the client.
-[**get_kyc_status_using_get**](KYCApi.md#get_kyc_status_using_get) | **GET** /kyc_status/{nucleus_client_id} | Fetch kyc_status for the given nucleus_client_id
+[**get_kyc_status_using_get**](KYCApi.md#get_kyc_status_using_get) | **GET** /kyc_status | Fetch kyc_status for the given nucleus_client_id
 
 
 # **create_kyc_using_post**
@@ -39,8 +39,9 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.KYCApi(integration_api.ApiClient(configuration))
 kyc_request_co = integration_api.KycRequestCO() # KycRequestCO | kycRequestCO
@@ -75,7 +76,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_kyc_status_using_get**
-> list[KycResponseVo] get_kyc_status_using_get(nucleus_client_id, get_latest=get_latest, kyc_type=kyc_type, product=product)
+> list[KycResponseVo] get_kyc_status_using_get(get_latest=get_latest, kyc_type=kyc_type, nucleus_business_id=nucleus_business_id, nucleus_client_id=nucleus_client_id, product=product)
 
 Fetch kyc_status for the given nucleus_client_id
 
@@ -105,18 +106,20 @@ api_instance = integration_api.AuthApi(integration_api.ApiClient(configuration))
 # OR
 
 # api_token_response = api_instance.create_client_token_credentials("client_id", "password", "client_token");
-configuration.access_token = api_token_response.access_token
 
+
+configuration.access_token = api_token_response.access_token
 # create an instance of the API class
 api_instance = integration_api.KYCApi(integration_api.ApiClient(configuration))
-nucleus_client_id = 'nucleus_client_id_example' # str | nucleus_client_id
 get_latest = false # bool | get_latest (optional) (default to false)
 kyc_type = 'all' # str | kyc_type (optional) (default to all)
+nucleus_business_id = 'nucleus_business_id_example' # str | nucleus_business_id (optional)
+nucleus_client_id = 'nucleus_client_id_example' # str | nucleus_client_id (optional)
 product = 'atom' # str | product (optional) (default to atom)
 
 try:
     # Fetch kyc_status for the given nucleus_client_id
-    api_response = api_instance.get_kyc_status_using_get(nucleus_client_id, get_latest=get_latest, kyc_type=kyc_type, product=product)
+    api_response = api_instance.get_kyc_status_using_get(get_latest=get_latest, kyc_type=kyc_type, nucleus_business_id=nucleus_business_id, nucleus_client_id=nucleus_client_id, product=product)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling KYCApi->get_kyc_status_using_get: %s\n" % e)
@@ -126,9 +129,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **nucleus_client_id** | [**str**](.md)| nucleus_client_id | 
  **get_latest** | **bool**| get_latest | [optional] [default to false]
  **kyc_type** | **str**| kyc_type | [optional] [default to all]
+ **nucleus_business_id** | [**str**](.md)| nucleus_business_id | [optional] 
+ **nucleus_client_id** | [**str**](.md)| nucleus_client_id | [optional] 
  **product** | **str**| product | [optional] [default to atom]
 
 ### Return type

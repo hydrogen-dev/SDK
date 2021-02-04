@@ -33,7 +33,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::SimulationsApi.new
 
 backtest_request = ProtonApi::BacktestRequest.new # BacktestRequest | Request payload for Backtest
@@ -89,7 +88,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::SimulationsApi.new
 
 event_study_request = ProtonApi::EventStudyRequest.new # EventStudyRequest | Request payload for Event Study
@@ -145,7 +143,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::SimulationsApi.new
 
 monte_carlo_request = ProtonApi::MonteCarloRequest.new # MonteCarloRequest | Request payload for Monte Carlo
@@ -201,7 +198,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::SimulationsApi.new
 
 portfolio_what_if_request = ProtonApi::PortfolioWhatIfRequest.new # PortfolioWhatIfRequest | Request payload for Portfolio What-If
@@ -257,7 +253,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::SimulationsApi.new
 
 savings_calculator_request = ProtonApi::SavingsCalculatorRequest.new # SavingsCalculatorRequest | Request payload for Savings Calculator
@@ -313,7 +308,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::SimulationsApi.new
 
 scneario_analysis_request = ProtonApi::ScenarioAnalysisRequest.new # ScenarioAnalysisRequest | Request payload for Scenario Analysis
@@ -369,7 +363,6 @@ ProtonApi.configure do |config|
   # Creating a token using client token
    config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN");
 end
-
 api_instance = ProtonApi::SimulationsApi.new
 
 sensitivity_analysis_request = ProtonApi::SensitivityAnalysisRequest.new # SensitivityAnalysisRequest | Request payload for Sensitivity Analysis

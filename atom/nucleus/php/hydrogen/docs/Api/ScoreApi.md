@@ -321,7 +321,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\ScoreApi(
     new GuzzleHttp\Client(),
     $config
 );
-$score = new \com\hydrogen\nucleus\Model\Score(); // \com\hydrogen\nucleus\Model\Score | score
+$score = new \stdClass; // object | score
 $score_id = "score_id_example"; // string | UUID score_id
 
 try {
@@ -337,7 +337,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **score** | [**\com\hydrogen\nucleus\Model\Score**](../Model/Score.md)| score |
+ **score** | **object**| score |
  **score_id** | [**string**](../Model/.md)| UUID score_id |
 
 ### Return type

@@ -34,7 +34,6 @@ Decision tree result.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -51,8 +50,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DecisionTreeApi apiInstance = new DecisionTreeApi();
 DecisionTreeCO decisionTreeCO = new DecisionTreeCO(); // DecisionTreeCO | decisionTreeCO
 try {
@@ -95,7 +92,6 @@ Create a new decision tree for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -112,8 +108,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DecisionTreeApi apiInstance = new DecisionTreeApi();
 DecisionTree decisionTree = new DecisionTree(); // DecisionTree | decisionTree
 try {
@@ -156,7 +150,6 @@ Create a new node relationship for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -173,8 +166,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DecisionTreeApi apiInstance = new DecisionTreeApi();
 NodeRelationship node = new NodeRelationship(); // NodeRelationship | node
 try {
@@ -217,7 +208,6 @@ Create a new node for your firm that can be used in a decision tree and mapped t
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -234,8 +224,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DecisionTreeApi apiInstance = new DecisionTreeApi();
 Node node = new Node(); // Node | node
 try {
@@ -278,7 +266,6 @@ Permanently delete a decision tree.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -295,8 +282,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DecisionTreeApi apiInstance = new DecisionTreeApi();
 UUID decisionTreeId = new UUID(); // UUID | UUID decision_tree_id
 try {
@@ -338,7 +323,6 @@ Permanently delete a node relationship.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -355,8 +339,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DecisionTreeApi apiInstance = new DecisionTreeApi();
 UUID nodeRelationshipId = new UUID(); // UUID | UUID node_relationship_id
 try {
@@ -399,7 +381,6 @@ Permanently delete a node.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -416,8 +397,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DecisionTreeApi apiInstance = new DecisionTreeApi();
 UUID nodeId = new UUID(); // UUID | UUID node_id
 try {
@@ -460,7 +439,6 @@ Get the information for all decision trees defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -477,8 +455,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DecisionTreeApi apiInstance = new DecisionTreeApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -529,7 +505,6 @@ Retrieve the information for a decision tree.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -546,8 +521,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DecisionTreeApi apiInstance = new DecisionTreeApi();
 UUID decisionTreeId = new UUID(); // UUID | UUID decision_tree_id
 try {
@@ -590,7 +563,6 @@ List all nodes that are defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -607,8 +579,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DecisionTreeApi apiInstance = new DecisionTreeApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -659,7 +629,6 @@ Get the information for all the node relationships defined for your firm.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -676,8 +645,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DecisionTreeApi apiInstance = new DecisionTreeApi();
 Boolean ascending = false; // Boolean | ascending
 String filter = "filter_example"; // String | filter
@@ -728,7 +695,6 @@ Retrieve the information for a node relationship.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -745,8 +711,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DecisionTreeApi apiInstance = new DecisionTreeApi();
 UUID nodeRelationshipId = new UUID(); // UUID | UUID node_relationship_id
 try {
@@ -789,7 +753,6 @@ Retrieve the information for a node.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -806,8 +769,6 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DecisionTreeApi apiInstance = new DecisionTreeApi();
 UUID nodeId = new UUID(); // UUID | UUID node_id
 try {
@@ -850,7 +811,6 @@ Updated the information for a decision tree.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -867,10 +827,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DecisionTreeApi apiInstance = new DecisionTreeApi();
-DecisionTree decisionTree = new DecisionTree(); // DecisionTree | decision_tree
+Object decisionTree = null; // Object | decision_tree
 UUID decisionTreeId = new UUID(); // UUID | UUID decision_tree_id
 try {
     DecisionTree result = apiInstance.updateDecisionTreeUsingPut(decisionTree, decisionTreeId);
@@ -885,7 +843,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **decisionTree** | [**DecisionTree**](DecisionTree.md)| decision_tree |
+ **decisionTree** | **Object**| decision_tree |
  **decisionTreeId** | [**UUID**](.md)| UUID decision_tree_id |
 
 ### Return type
@@ -913,7 +871,6 @@ Update the information for a node relationship.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -930,10 +887,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DecisionTreeApi apiInstance = new DecisionTreeApi();
-JsonNode jsonNode = new JsonNode(); // JsonNode | jsonNode
+Object jsonNode = null; // Object | jsonNode
 UUID nodeRelationshipId = new UUID(); // UUID | UUID node_relationship_id
 try {
     NodeRelationship result = apiInstance.updateNodeRelationshipUsingPut(jsonNode, nodeRelationshipId);
@@ -948,7 +903,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **jsonNode** | [**JsonNode**](JsonNode.md)| jsonNode |
+ **jsonNode** | **Object**| jsonNode |
  **nodeRelationshipId** | [**UUID**](.md)| UUID node_relationship_id |
 
 ### Return type
@@ -976,7 +931,6 @@ Updated the information for a node.
 ```java
 //import com.hydrogen.nucleus.AuthApiClient;
 //import com.hydrogen.nucleus.ApiException;
-//import com.hydrogen.nucleus.auth.*;
 //import DecisionTreeApi;
 
 AuthApiClient authApiClient = new AuthApiClient();
@@ -993,10 +947,8 @@ try {
 } catch (ApiException e) {
     e.printStackTrace();
 }
-
-
 DecisionTreeApi apiInstance = new DecisionTreeApi();
-JsonNode jsonNode = new JsonNode(); // JsonNode | jsonNode
+Object jsonNode = null; // Object | jsonNode
 UUID nodeId = new UUID(); // UUID | UUID node_id
 try {
     Node result = apiInstance.updateNodeUsingPut(jsonNode, nodeId);
@@ -1011,7 +963,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **jsonNode** | [**JsonNode**](JsonNode.md)| jsonNode |
+ **jsonNode** | **Object**| jsonNode |
  **nodeId** | [**UUID**](.md)| UUID node_id |
 
 ### Return type

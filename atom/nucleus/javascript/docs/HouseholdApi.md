@@ -84,7 +84,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.HouseholdApi();
 
-var householdId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID household_id
+var householdId = "\"2035f52d-2c5b-4e07-8904-cb037bad7aff\""; // String | UUID household_id
 
 
 var callback = function(error, data, response) {
@@ -101,7 +101,7 @@ apiInstance.deleteHouseholdUsingDelete(householdId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **householdId** | **String**| UUID household_id | 
+ **householdId** | [**String**](.md)| UUID household_id | 
 
 ### Return type
 
@@ -195,7 +195,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.HouseholdApi();
 
-var householdId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID household_id
+var householdId = "\"2035f52d-2c5b-4e07-8904-cb037bad7aff\""; // String | UUID household_id
 
 var opts = { 
   'currencyConversion': "currencyConversion_example", // String | USD
@@ -220,7 +220,7 @@ apiInstance.getHouseholdClientAssetSizeUsingGet(householdId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **householdId** | **String**| UUID household_id | 
+ **householdId** | [**String**](.md)| UUID household_id | 
  **currencyConversion** | **String**| USD | [optional] 
  **endDate** | **Date**| end date | [optional] [default to null]
  **excludeSubledger** | **Boolean**| true or false | [optional] 
@@ -260,7 +260,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.HouseholdApi();
 
-var householdId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID household_id
+var householdId = "\"2035f52d-2c5b-4e07-8904-cb037bad7aff\""; // String | UUID household_id
 
 var opts = { 
   'currencyConversion': "currencyConversion_example", // String | USD
@@ -283,7 +283,7 @@ apiInstance.getHouseholdClientHoldingUsingGet(householdId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **householdId** | **String**| UUID household_id | 
+ **householdId** | [**String**](.md)| UUID household_id | 
  **currencyConversion** | **String**| USD | [optional] 
  **endDate** | **Date**| end date - yyyy-mm-dd | [optional] 
  **getLatest** | **Boolean**| true or false | [optional] 
@@ -321,7 +321,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.HouseholdApi();
 
-var householdId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID household_id
+var householdId = "\"2035f52d-2c5b-4e07-8904-cb037bad7aff\""; // String | UUID household_id
 
 var opts = { 
   'ascending': false, // Boolean | ascending
@@ -347,7 +347,7 @@ apiInstance.getHouseholdClientTransactionUsingGet(householdId, opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **householdId** | **String**| UUID household_id | 
+ **householdId** | [**String**](.md)| UUID household_id | 
  **ascending** | **Boolean**| ascending | [optional] [default to false]
  **currencyConversion** | **String**| USD | [optional] 
  **endDate** | **Date**| end date | [optional] 
@@ -388,7 +388,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.HouseholdApi();
 
-var householdId = "2035f52d-2c5b-4e07-8904-cb037bad7aff"; // String | UUID household_id
+var householdId = "\"2035f52d-2c5b-4e07-8904-cb037bad7aff\""; // String | UUID household_id
 
 
 var callback = function(error, data, response) {
@@ -405,7 +405,7 @@ apiInstance.getHouseholdUsingGet(householdId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **householdId** | **String**| UUID household_id | 
+ **householdId** | [**String**](.md)| UUID household_id | 
 
 ### Return type
 
@@ -439,9 +439,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenNucleusApi.HouseholdApi();
 
-var household = new HydrogenNucleusApi.Household(); // Household | household
+var household = null; // Object | household
 
-var householdId = "d79bb3a3-f259-430c-8fa8-a93f87cc3bdf"; // String | UUID household_id
+var householdId = "\"d79bb3a3-f259-430c-8fa8-a93f87cc3bdf\""; // String | UUID household_id
 
 
 var callback = function(error, data, response) {
@@ -458,8 +458,8 @@ apiInstance.updateHouseholdUsingPut(household, householdId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **household** | [**Household**](Household.md)| household | 
- **householdId** | **String**| UUID household_id | 
+ **household** | **Object**| household | 
+ **householdId** | [**String**](.md)| UUID household_id | 
 
 ### Return type
 

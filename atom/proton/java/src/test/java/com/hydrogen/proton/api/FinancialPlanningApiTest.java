@@ -13,7 +13,6 @@
 
 package com.hydrogen.proton.api;
 
-import com.hydrogen.proton.model.RetirementCalculatorExpensesRequest;
 import com.hydrogen.proton.ApiException;
 import com.hydrogen.proton.model.EducationCalculatorAnnualCostRequest;
 import com.hydrogen.proton.model.EducationCalculatorDepositAmountRequest;
@@ -25,6 +24,7 @@ import com.hydrogen.proton.model.PurchaseCalculatorAmountRequest;
 import com.hydrogen.proton.model.PurchaseCalculatorDepositAmountRequest;
 import com.hydrogen.proton.model.PurchaseCalculatorHorizonRequest;
 import com.hydrogen.proton.model.RetirementCalculatorDepositAmountRequest;
+import com.hydrogen.proton.model.RetirementCalculatorExpensesRequest;
 import com.hydrogen.proton.model.RetirementCalculatorPercentCoveredRequest;
 import org.junit.Test;
 import org.junit.Ignore;

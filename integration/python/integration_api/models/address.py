@@ -247,8 +247,8 @@ class Address(object):
         :param type: The type of this Address.  # noqa: E501
         :type: str
         """
-        allowed_values = ["HOME", "WORK", "BILLING", "MAILING", "LEGAL", "RESIDENCE", "UNKNOWN"]  # noqa: E501
-        if type is not None and type.upper() not in allowed_values:
+        allowed_values = ["home", "work", "billing", "mailing", "legal", "residence", "null"]  # noqa: E501
+        if type not in allowed_values:
             raise ValueError(
                 "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
                 .format(type, allowed_values)

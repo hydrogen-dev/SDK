@@ -325,7 +325,7 @@ $apiInstance = new com\hydrogen\nucleus\Api\BudgetApi(
     new GuzzleHttp\Client(),
     $config
 );
-$budget = new \com\hydrogen\nucleus\Model\Budget(); // \com\hydrogen\nucleus\Model\Budget | budget
+$budget = new \stdClass; // object | budget
 $budget_id = "budget_id_example"; // string | UUID budget_id
 
 try {
@@ -341,7 +341,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **budget** | [**\com\hydrogen\nucleus\Model\Budget**](../Model/Budget.md)| budget |
+ **budget** | **object**| budget |
  **budget_id** | [**string**](../Model/.md)| UUID budget_id |
 
 ### Return type

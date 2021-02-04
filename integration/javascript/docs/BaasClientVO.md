@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**electronDocumentId** | **[String]** |  | [optional] 
 **message** | **String** |  | [optional] 
 **nucleusClientId** | **String** |  | [optional] 
+**nucleusDocumentId** | **[String]** |  | [optional] 
 **status** | **String** |  | [optional] 
-**vendorName** | **Object** |  | [optional] 
-**vendorRequestData** | [**BaasClientVendorDataVO**](BaasClientVendorDataVO.md) |  | [optional] 
+**vendorName** | **String** |  | [optional] 
+**vendorRequestData** | [**ClientVendorRequestDataVO**](ClientVendorRequestDataVO.md) |  | [optional] 
 **vendorResponse** | **Object** |  | [optional] 
 
 

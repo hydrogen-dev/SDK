@@ -31,61 +31,231 @@ class BudgetCalculatorRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'scope': 'str',
-        'budget_details': 'BudgetDetails',
-        'currency_conversion': 'str',
-        'budget_id': 'str',
         'as_of_date': 'date',
-        'show_average_spend': 'bool',
         'show_budget_track': 'bool',
+        'budget_id': 'str',
+        'currency_conversion': 'str',
+        'lookback_periods': 'int',
+        'show_average_spend': 'bool',
+        'budget_details': 'BudgetDetails',
         'relative_lookback': 'bool',
-        'lookback_periods': 'int'
+        'scope': 'str'
     }
 
     attribute_map = {
-        'scope': 'scope',
-        'budget_details': 'budget_details',
-        'currency_conversion': 'currency_conversion',
-        'budget_id': 'budget_id',
         'as_of_date': 'as_of_date',
-        'show_average_spend': 'show_average_spend',
         'show_budget_track': 'show_budget_track',
+        'budget_id': 'budget_id',
+        'currency_conversion': 'currency_conversion',
+        'lookback_periods': 'lookback_periods',
+        'show_average_spend': 'show_average_spend',
+        'budget_details': 'budget_details',
         'relative_lookback': 'relative_lookback',
-        'lookback_periods': 'lookback_periods'
+        'scope': 'scope'
     }
 
-    def __init__(self, scope='all', budget_details=None, currency_conversion=None, budget_id=None, as_of_date=None, show_average_spend=False, show_budget_track=True, relative_lookback=True, lookback_periods=1):  # noqa: E501
+    def __init__(self, as_of_date=None, show_budget_track=True, budget_id=None, currency_conversion=None, lookback_periods=1, show_average_spend=False, budget_details=None, relative_lookback=True, scope='all'):  # noqa: E501
         """BudgetCalculatorRequest - a model defined in Swagger"""  # noqa: E501
 
-        self._scope = None
-        self._budget_details = None
-        self._currency_conversion = None
-        self._budget_id = None
         self._as_of_date = None
-        self._show_average_spend = None
         self._show_budget_track = None
-        self._relative_lookback = None
+        self._budget_id = None
+        self._currency_conversion = None
         self._lookback_periods = None
+        self._show_average_spend = None
+        self._budget_details = None
+        self._relative_lookback = None
+        self._scope = None
         self.discriminator = None
 
-        if scope is not None:
-            self.scope = scope
-        if budget_details is not None:
-            self.budget_details = budget_details
-        if currency_conversion is not None:
-            self.currency_conversion = currency_conversion
-        if budget_id is not None:
-            self.budget_id = budget_id
         if as_of_date is not None:
             self.as_of_date = as_of_date
-        if show_average_spend is not None:
-            self.show_average_spend = show_average_spend
         if show_budget_track is not None:
             self.show_budget_track = show_budget_track
-        if relative_lookback is not None:
-            self.relative_lookback = relative_lookback
+        if budget_id is not None:
+            self.budget_id = budget_id
+        if currency_conversion is not None:
+            self.currency_conversion = currency_conversion
         if lookback_periods is not None:
             self.lookback_periods = lookback_periods
+        if show_average_spend is not None:
+            self.show_average_spend = show_average_spend
+        if budget_details is not None:
+            self.budget_details = budget_details
+        if relative_lookback is not None:
+            self.relative_lookback = relative_lookback
+        if scope is not None:
+            self.scope = scope
+
+    @property
+    def as_of_date(self):
+        """Gets the as_of_date of this BudgetCalculatorRequest.  # noqa: E501
+
+
+        :return: The as_of_date of this BudgetCalculatorRequest.  # noqa: E501
+        :rtype: date
+        """
+        return self._as_of_date
+
+    @as_of_date.setter
+    def as_of_date(self, as_of_date):
+        """Sets the as_of_date of this BudgetCalculatorRequest.
+
+
+        :param as_of_date: The as_of_date of this BudgetCalculatorRequest.  # noqa: E501
+        :type: date
+        """
+
+        self._as_of_date = as_of_date
+
+    @property
+    def show_budget_track(self):
+        """Gets the show_budget_track of this BudgetCalculatorRequest.  # noqa: E501
+
+
+        :return: The show_budget_track of this BudgetCalculatorRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._show_budget_track
+
+    @show_budget_track.setter
+    def show_budget_track(self, show_budget_track):
+        """Sets the show_budget_track of this BudgetCalculatorRequest.
+
+
+        :param show_budget_track: The show_budget_track of this BudgetCalculatorRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._show_budget_track = show_budget_track
+
+    @property
+    def budget_id(self):
+        """Gets the budget_id of this BudgetCalculatorRequest.  # noqa: E501
+
+
+        :return: The budget_id of this BudgetCalculatorRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._budget_id
+
+    @budget_id.setter
+    def budget_id(self, budget_id):
+        """Sets the budget_id of this BudgetCalculatorRequest.
+
+
+        :param budget_id: The budget_id of this BudgetCalculatorRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._budget_id = budget_id
+
+    @property
+    def currency_conversion(self):
+        """Gets the currency_conversion of this BudgetCalculatorRequest.  # noqa: E501
+
+
+        :return: The currency_conversion of this BudgetCalculatorRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_conversion
+
+    @currency_conversion.setter
+    def currency_conversion(self, currency_conversion):
+        """Sets the currency_conversion of this BudgetCalculatorRequest.
+
+
+        :param currency_conversion: The currency_conversion of this BudgetCalculatorRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_conversion = currency_conversion
+
+    @property
+    def lookback_periods(self):
+        """Gets the lookback_periods of this BudgetCalculatorRequest.  # noqa: E501
+
+
+        :return: The lookback_periods of this BudgetCalculatorRequest.  # noqa: E501
+        :rtype: int
+        """
+        return self._lookback_periods
+
+    @lookback_periods.setter
+    def lookback_periods(self, lookback_periods):
+        """Sets the lookback_periods of this BudgetCalculatorRequest.
+
+
+        :param lookback_periods: The lookback_periods of this BudgetCalculatorRequest.  # noqa: E501
+        :type: int
+        """
+        if lookback_periods is not None and lookback_periods < 1:  # noqa: E501
+            raise ValueError("Invalid value for `lookback_periods`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._lookback_periods = lookback_periods
+
+    @property
+    def show_average_spend(self):
+        """Gets the show_average_spend of this BudgetCalculatorRequest.  # noqa: E501
+
+
+        :return: The show_average_spend of this BudgetCalculatorRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._show_average_spend
+
+    @show_average_spend.setter
+    def show_average_spend(self, show_average_spend):
+        """Sets the show_average_spend of this BudgetCalculatorRequest.
+
+
+        :param show_average_spend: The show_average_spend of this BudgetCalculatorRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._show_average_spend = show_average_spend
+
+    @property
+    def budget_details(self):
+        """Gets the budget_details of this BudgetCalculatorRequest.  # noqa: E501
+
+
+        :return: The budget_details of this BudgetCalculatorRequest.  # noqa: E501
+        :rtype: BudgetDetails
+        """
+        return self._budget_details
+
+    @budget_details.setter
+    def budget_details(self, budget_details):
+        """Sets the budget_details of this BudgetCalculatorRequest.
+
+
+        :param budget_details: The budget_details of this BudgetCalculatorRequest.  # noqa: E501
+        :type: BudgetDetails
+        """
+
+        self._budget_details = budget_details
+
+    @property
+    def relative_lookback(self):
+        """Gets the relative_lookback of this BudgetCalculatorRequest.  # noqa: E501
+
+
+        :return: The relative_lookback of this BudgetCalculatorRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._relative_lookback
+
+    @relative_lookback.setter
+    def relative_lookback(self, relative_lookback):
+        """Sets the relative_lookback of this BudgetCalculatorRequest.
+
+
+        :param relative_lookback: The relative_lookback of this BudgetCalculatorRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._relative_lookback = relative_lookback
 
     @property
     def scope(self):
@@ -113,176 +283,6 @@ class BudgetCalculatorRequest(object):
             )
 
         self._scope = scope
-
-    @property
-    def budget_details(self):
-        """Gets the budget_details of this BudgetCalculatorRequest.  # noqa: E501
-
-
-        :return: The budget_details of this BudgetCalculatorRequest.  # noqa: E501
-        :rtype: BudgetDetails
-        """
-        return self._budget_details
-
-    @budget_details.setter
-    def budget_details(self, budget_details):
-        """Sets the budget_details of this BudgetCalculatorRequest.
-
-
-        :param budget_details: The budget_details of this BudgetCalculatorRequest.  # noqa: E501
-        :type: BudgetDetails
-        """
-
-        self._budget_details = budget_details
-
-    @property
-    def currency_conversion(self):
-        """Gets the currency_conversion of this BudgetCalculatorRequest.  # noqa: E501
-
-
-        :return: The currency_conversion of this BudgetCalculatorRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._currency_conversion
-
-    @currency_conversion.setter
-    def currency_conversion(self, currency_conversion):
-        """Sets the currency_conversion of this BudgetCalculatorRequest.
-
-
-        :param currency_conversion: The currency_conversion of this BudgetCalculatorRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._currency_conversion = currency_conversion
-
-    @property
-    def budget_id(self):
-        """Gets the budget_id of this BudgetCalculatorRequest.  # noqa: E501
-
-
-        :return: The budget_id of this BudgetCalculatorRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._budget_id
-
-    @budget_id.setter
-    def budget_id(self, budget_id):
-        """Sets the budget_id of this BudgetCalculatorRequest.
-
-
-        :param budget_id: The budget_id of this BudgetCalculatorRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._budget_id = budget_id
-
-    @property
-    def as_of_date(self):
-        """Gets the as_of_date of this BudgetCalculatorRequest.  # noqa: E501
-
-
-        :return: The as_of_date of this BudgetCalculatorRequest.  # noqa: E501
-        :rtype: date
-        """
-        return self._as_of_date
-
-    @as_of_date.setter
-    def as_of_date(self, as_of_date):
-        """Sets the as_of_date of this BudgetCalculatorRequest.
-
-
-        :param as_of_date: The as_of_date of this BudgetCalculatorRequest.  # noqa: E501
-        :type: date
-        """
-
-        self._as_of_date = as_of_date
-
-    @property
-    def show_average_spend(self):
-        """Gets the show_average_spend of this BudgetCalculatorRequest.  # noqa: E501
-
-
-        :return: The show_average_spend of this BudgetCalculatorRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._show_average_spend
-
-    @show_average_spend.setter
-    def show_average_spend(self, show_average_spend):
-        """Sets the show_average_spend of this BudgetCalculatorRequest.
-
-
-        :param show_average_spend: The show_average_spend of this BudgetCalculatorRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._show_average_spend = show_average_spend
-
-    @property
-    def show_budget_track(self):
-        """Gets the show_budget_track of this BudgetCalculatorRequest.  # noqa: E501
-
-
-        :return: The show_budget_track of this BudgetCalculatorRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._show_budget_track
-
-    @show_budget_track.setter
-    def show_budget_track(self, show_budget_track):
-        """Sets the show_budget_track of this BudgetCalculatorRequest.
-
-
-        :param show_budget_track: The show_budget_track of this BudgetCalculatorRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._show_budget_track = show_budget_track
-
-    @property
-    def relative_lookback(self):
-        """Gets the relative_lookback of this BudgetCalculatorRequest.  # noqa: E501
-
-
-        :return: The relative_lookback of this BudgetCalculatorRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._relative_lookback
-
-    @relative_lookback.setter
-    def relative_lookback(self, relative_lookback):
-        """Sets the relative_lookback of this BudgetCalculatorRequest.
-
-
-        :param relative_lookback: The relative_lookback of this BudgetCalculatorRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._relative_lookback = relative_lookback
-
-    @property
-    def lookback_periods(self):
-        """Gets the lookback_periods of this BudgetCalculatorRequest.  # noqa: E501
-
-
-        :return: The lookback_periods of this BudgetCalculatorRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._lookback_periods
-
-    @lookback_periods.setter
-    def lookback_periods(self, lookback_periods):
-        """Sets the lookback_periods of this BudgetCalculatorRequest.
-
-
-        :param lookback_periods: The lookback_periods of this BudgetCalculatorRequest.  # noqa: E501
-        :type: int
-        """
-        if lookback_periods is not None and lookback_periods < 1:  # noqa: E501
-            raise ValueError("Invalid value for `lookback_periods`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._lookback_periods = lookback_periods
 
     def to_dict(self):
         """Returns the model properties as a dict"""

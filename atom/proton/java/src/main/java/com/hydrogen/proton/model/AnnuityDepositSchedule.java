@@ -20,21 +20,17 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
  * AnnuityDepositSchedule
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-08T03:59:30.964Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-03T15:06:55.665Z")
 
 
 
 public class AnnuityDepositSchedule {
-  @SerializedName("deposit_amount")
-  private Float depositAmount = 0.0f;
-
   @SerializedName("adjust_deposit_for_inflation")
   private Boolean adjustDepositForInflation = true;
 
@@ -94,24 +90,8 @@ public class AnnuityDepositSchedule {
   @SerializedName("deposit_frequency_interval")
   private DepositFrequencyIntervalEnum depositFrequencyInterval = DepositFrequencyIntervalEnum.YEAR;
 
-  public AnnuityDepositSchedule depositAmount(Float depositAmount) {
-    this.depositAmount = depositAmount;
-    return this;
-  }
-
-   /**
-   * Get depositAmount
-   * minimum: 0
-   * @return depositAmount
-  **/
-  @ApiModelProperty(value = "")
-  public Float getDepositAmount() {
-    return depositAmount;
-  }
-
-  public void setDepositAmount(Float depositAmount) {
-    this.depositAmount = depositAmount;
-  }
+  @SerializedName("deposit_amount")
+  private Float depositAmount = 0.0f;
 
   public AnnuityDepositSchedule adjustDepositForInflation(Boolean adjustDepositForInflation) {
     this.adjustDepositForInflation = adjustDepositForInflation;
@@ -149,6 +129,25 @@ public class AnnuityDepositSchedule {
     this.depositFrequencyInterval = depositFrequencyInterval;
   }
 
+  public AnnuityDepositSchedule depositAmount(Float depositAmount) {
+    this.depositAmount = depositAmount;
+    return this;
+  }
+
+   /**
+   * Get depositAmount
+   * minimum: 0
+   * @return depositAmount
+  **/
+  @ApiModelProperty(value = "")
+  public Float getDepositAmount() {
+    return depositAmount;
+  }
+
+  public void setDepositAmount(Float depositAmount) {
+    this.depositAmount = depositAmount;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -159,14 +158,14 @@ public class AnnuityDepositSchedule {
       return false;
     }
     AnnuityDepositSchedule annuityDepositSchedule = (AnnuityDepositSchedule) o;
-    return Objects.equals(this.depositAmount, annuityDepositSchedule.depositAmount) &&
-        Objects.equals(this.adjustDepositForInflation, annuityDepositSchedule.adjustDepositForInflation) &&
-        Objects.equals(this.depositFrequencyInterval, annuityDepositSchedule.depositFrequencyInterval);
+    return Objects.equals(this.adjustDepositForInflation, annuityDepositSchedule.adjustDepositForInflation) &&
+        Objects.equals(this.depositFrequencyInterval, annuityDepositSchedule.depositFrequencyInterval) &&
+        Objects.equals(this.depositAmount, annuityDepositSchedule.depositAmount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(depositAmount, adjustDepositForInflation, depositFrequencyInterval);
+    return Objects.hash(adjustDepositForInflation, depositFrequencyInterval, depositAmount);
   }
 
 
@@ -175,9 +174,9 @@ public class AnnuityDepositSchedule {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnnuityDepositSchedule {\n");
     
-    sb.append("    depositAmount: ").append(toIndentedString(depositAmount)).append("\n");
     sb.append("    adjustDepositForInflation: ").append(toIndentedString(adjustDepositForInflation)).append("\n");
     sb.append("    depositFrequencyInterval: ").append(toIndentedString(depositFrequencyInterval)).append("\n");
+    sb.append("    depositAmount: ").append(toIndentedString(depositAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }

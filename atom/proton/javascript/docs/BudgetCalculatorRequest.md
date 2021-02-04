@@ -3,15 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**scope** | **String** |  | [optional] [default to 'all']
-**budgetDetails** | [**BudgetDetails**](BudgetDetails.md) |  | [optional] 
-**currencyConversion** | **String** |  | [optional] 
-**budgetId** | **String** |  | [optional] 
 **asOfDate** | **Date** |  | [optional] 
-**showAverageSpend** | **Boolean** |  | [optional] [default to false]
 **showBudgetTrack** | **Boolean** |  | [optional] [default to true]
-**relativeLookback** | **Boolean** |  | [optional] [default to true]
+**budgetId** | **String** |  | [optional] 
+**currencyConversion** | **String** |  | [optional] 
 **lookbackPeriods** | **Number** |  | [optional] [default to 1]
+**showAverageSpend** | **Boolean** |  | [optional] [default to false]
+**budgetDetails** | [**BudgetDetails**](BudgetDetails.md) |  | [optional] 
+**relativeLookback** | **Boolean** |  | [optional] [default to true]
+**scope** | **String** |  | [optional] [default to 'all']
 
 
 <a name="ScopeEnum"></a>

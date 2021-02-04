@@ -32,40 +32,40 @@ class WConfig1(object):
     """
     swagger_types = {
         'w_min_minor': 'float',
-        'w_max_major': 'float',
-        'w_min_major': 'float',
         'cash_amount': 'float',
-        'w_max_minor': 'float'
+        'w_min_major': 'float',
+        'w_max_minor': 'float',
+        'w_max_major': 'float'
     }
 
     attribute_map = {
         'w_min_minor': 'w_min_minor',
-        'w_max_major': 'w_max_major',
-        'w_min_major': 'w_min_major',
         'cash_amount': 'cash_amount',
-        'w_max_minor': 'w_max_minor'
+        'w_min_major': 'w_min_major',
+        'w_max_minor': 'w_max_minor',
+        'w_max_major': 'w_max_major'
     }
 
-    def __init__(self, w_min_minor=0.05, w_max_major=1.0, w_min_major=0.05, cash_amount=0.0, w_max_minor=1.0):  # noqa: E501
+    def __init__(self, w_min_minor=0.05, cash_amount=0.0, w_min_major=0.05, w_max_minor=1.0, w_max_major=1.0):  # noqa: E501
         """WConfig1 - a model defined in Swagger"""  # noqa: E501
 
         self._w_min_minor = None
-        self._w_max_major = None
-        self._w_min_major = None
         self._cash_amount = None
+        self._w_min_major = None
         self._w_max_minor = None
+        self._w_max_major = None
         self.discriminator = None
 
         if w_min_minor is not None:
             self.w_min_minor = w_min_minor
-        if w_max_major is not None:
-            self.w_max_major = w_max_major
-        if w_min_major is not None:
-            self.w_min_major = w_min_major
         if cash_amount is not None:
             self.cash_amount = cash_amount
+        if w_min_major is not None:
+            self.w_min_major = w_min_major
         if w_max_minor is not None:
             self.w_max_minor = w_max_minor
+        if w_max_major is not None:
+            self.w_max_major = w_max_major
 
     @property
     def w_min_minor(self):
@@ -93,29 +93,29 @@ class WConfig1(object):
         self._w_min_minor = w_min_minor
 
     @property
-    def w_max_major(self):
-        """Gets the w_max_major of this WConfig1.  # noqa: E501
+    def cash_amount(self):
+        """Gets the cash_amount of this WConfig1.  # noqa: E501
 
 
-        :return: The w_max_major of this WConfig1.  # noqa: E501
+        :return: The cash_amount of this WConfig1.  # noqa: E501
         :rtype: float
         """
-        return self._w_max_major
+        return self._cash_amount
 
-    @w_max_major.setter
-    def w_max_major(self, w_max_major):
-        """Sets the w_max_major of this WConfig1.
+    @cash_amount.setter
+    def cash_amount(self, cash_amount):
+        """Sets the cash_amount of this WConfig1.
 
 
-        :param w_max_major: The w_max_major of this WConfig1.  # noqa: E501
+        :param cash_amount: The cash_amount of this WConfig1.  # noqa: E501
         :type: float
         """
-        if w_max_major is not None and w_max_major > 1:  # noqa: E501
-            raise ValueError("Invalid value for `w_max_major`, must be a value less than or equal to `1`")  # noqa: E501
-        if w_max_major is not None and w_max_major < 0:  # noqa: E501
-            raise ValueError("Invalid value for `w_max_major`, must be a value greater than or equal to `0`")  # noqa: E501
+        if cash_amount is not None and cash_amount > 1:  # noqa: E501
+            raise ValueError("Invalid value for `cash_amount`, must be a value less than or equal to `1`")  # noqa: E501
+        if cash_amount is not None and cash_amount < 0:  # noqa: E501
+            raise ValueError("Invalid value for `cash_amount`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._w_max_major = w_max_major
+        self._cash_amount = cash_amount
 
     @property
     def w_min_major(self):
@@ -143,31 +143,6 @@ class WConfig1(object):
         self._w_min_major = w_min_major
 
     @property
-    def cash_amount(self):
-        """Gets the cash_amount of this WConfig1.  # noqa: E501
-
-
-        :return: The cash_amount of this WConfig1.  # noqa: E501
-        :rtype: float
-        """
-        return self._cash_amount
-
-    @cash_amount.setter
-    def cash_amount(self, cash_amount):
-        """Sets the cash_amount of this WConfig1.
-
-
-        :param cash_amount: The cash_amount of this WConfig1.  # noqa: E501
-        :type: float
-        """
-        if cash_amount is not None and cash_amount > 1:  # noqa: E501
-            raise ValueError("Invalid value for `cash_amount`, must be a value less than or equal to `1`")  # noqa: E501
-        if cash_amount is not None and cash_amount < 0:  # noqa: E501
-            raise ValueError("Invalid value for `cash_amount`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._cash_amount = cash_amount
-
-    @property
     def w_max_minor(self):
         """Gets the w_max_minor of this WConfig1.  # noqa: E501
 
@@ -191,6 +166,31 @@ class WConfig1(object):
             raise ValueError("Invalid value for `w_max_minor`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._w_max_minor = w_max_minor
+
+    @property
+    def w_max_major(self):
+        """Gets the w_max_major of this WConfig1.  # noqa: E501
+
+
+        :return: The w_max_major of this WConfig1.  # noqa: E501
+        :rtype: float
+        """
+        return self._w_max_major
+
+    @w_max_major.setter
+    def w_max_major(self, w_max_major):
+        """Sets the w_max_major of this WConfig1.
+
+
+        :param w_max_major: The w_max_major of this WConfig1.  # noqa: E501
+        :type: float
+        """
+        if w_max_major is not None and w_max_major > 1:  # noqa: E501
+            raise ValueError("Invalid value for `w_max_major`, must be a value less than or equal to `1`")  # noqa: E501
+        if w_max_major is not None and w_max_major < 0:  # noqa: E501
+            raise ValueError("Invalid value for `w_max_major`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._w_max_major = w_max_major
 
     def to_dict(self):
         """Returns the model properties as a dict"""

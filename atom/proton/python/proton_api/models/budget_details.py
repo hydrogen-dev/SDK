@@ -31,86 +31,157 @@ class BudgetDetails(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'aggregation_accounts': 'list[BudgetAggregationAccount]',
-        'total_value': 'float',
-        'client_id': 'str',
-        'start_date': 'date',
-        'budget': 'list[BudgetComponent]',
+        'frequency_unit': 'str',
         'end_date': 'date',
+        'client_id': 'str',
+        'budget': 'list[BudgetComponent]',
+        'total_value': 'float',
+        'account_id': 'str',
+        'aggregation_accounts': 'list[BudgetAggregationAccount]',
         'currency_code': 'str',
         'frequency': 'int',
-        'account_id': 'str',
-        'frequency_unit': 'str'
+        'start_date': 'date'
     }
 
     attribute_map = {
-        'aggregation_accounts': 'aggregation_accounts',
-        'total_value': 'total_value',
-        'client_id': 'client_id',
-        'start_date': 'start_date',
-        'budget': 'budget',
+        'frequency_unit': 'frequency_unit',
         'end_date': 'end_date',
+        'client_id': 'client_id',
+        'budget': 'budget',
+        'total_value': 'total_value',
+        'account_id': 'account_id',
+        'aggregation_accounts': 'aggregation_accounts',
         'currency_code': 'currency_code',
         'frequency': 'frequency',
-        'account_id': 'account_id',
-        'frequency_unit': 'frequency_unit'
+        'start_date': 'start_date'
     }
 
-    def __init__(self, aggregation_accounts=None, total_value=None, client_id=None, start_date=None, budget=None, end_date=None, currency_code=None, frequency=1, account_id=None, frequency_unit=None):  # noqa: E501
+    def __init__(self, frequency_unit=None, end_date=None, client_id=None, budget=None, total_value=None, account_id=None, aggregation_accounts=None, currency_code=None, frequency=1, start_date=None):  # noqa: E501
         """BudgetDetails - a model defined in Swagger"""  # noqa: E501
 
-        self._aggregation_accounts = None
-        self._total_value = None
-        self._client_id = None
-        self._start_date = None
-        self._budget = None
+        self._frequency_unit = None
         self._end_date = None
+        self._client_id = None
+        self._budget = None
+        self._total_value = None
+        self._account_id = None
+        self._aggregation_accounts = None
         self._currency_code = None
         self._frequency = None
-        self._account_id = None
-        self._frequency_unit = None
+        self._start_date = None
         self.discriminator = None
 
-        if aggregation_accounts is not None:
-            self.aggregation_accounts = aggregation_accounts
-        if total_value is not None:
-            self.total_value = total_value
-        if client_id is not None:
-            self.client_id = client_id
-        if start_date is not None:
-            self.start_date = start_date
-        if budget is not None:
-            self.budget = budget
+        self.frequency_unit = frequency_unit
         if end_date is not None:
             self.end_date = end_date
+        if client_id is not None:
+            self.client_id = client_id
+        if budget is not None:
+            self.budget = budget
+        if total_value is not None:
+            self.total_value = total_value
+        if account_id is not None:
+            self.account_id = account_id
+        if aggregation_accounts is not None:
+            self.aggregation_accounts = aggregation_accounts
         if currency_code is not None:
             self.currency_code = currency_code
         if frequency is not None:
             self.frequency = frequency
-        if account_id is not None:
-            self.account_id = account_id
-        self.frequency_unit = frequency_unit
+        if start_date is not None:
+            self.start_date = start_date
 
     @property
-    def aggregation_accounts(self):
-        """Gets the aggregation_accounts of this BudgetDetails.  # noqa: E501
+    def frequency_unit(self):
+        """Gets the frequency_unit of this BudgetDetails.  # noqa: E501
 
 
-        :return: The aggregation_accounts of this BudgetDetails.  # noqa: E501
-        :rtype: list[BudgetAggregationAccount]
+        :return: The frequency_unit of this BudgetDetails.  # noqa: E501
+        :rtype: str
         """
-        return self._aggregation_accounts
+        return self._frequency_unit
 
-    @aggregation_accounts.setter
-    def aggregation_accounts(self, aggregation_accounts):
-        """Sets the aggregation_accounts of this BudgetDetails.
+    @frequency_unit.setter
+    def frequency_unit(self, frequency_unit):
+        """Sets the frequency_unit of this BudgetDetails.
 
 
-        :param aggregation_accounts: The aggregation_accounts of this BudgetDetails.  # noqa: E501
-        :type: list[BudgetAggregationAccount]
+        :param frequency_unit: The frequency_unit of this BudgetDetails.  # noqa: E501
+        :type: str
+        """
+        if frequency_unit is None:
+            raise ValueError("Invalid value for `frequency_unit`, must not be `None`")  # noqa: E501
+        allowed_values = ["daily", "weekly", "bi-weekly", "monthly", "quarterly", "annually"]  # noqa: E501
+        if frequency_unit not in allowed_values:
+            raise ValueError(
+                "Invalid value for `frequency_unit` ({0}), must be one of {1}"  # noqa: E501
+                .format(frequency_unit, allowed_values)
+            )
+
+        self._frequency_unit = frequency_unit
+
+    @property
+    def end_date(self):
+        """Gets the end_date of this BudgetDetails.  # noqa: E501
+
+
+        :return: The end_date of this BudgetDetails.  # noqa: E501
+        :rtype: date
+        """
+        return self._end_date
+
+    @end_date.setter
+    def end_date(self, end_date):
+        """Sets the end_date of this BudgetDetails.
+
+
+        :param end_date: The end_date of this BudgetDetails.  # noqa: E501
+        :type: date
         """
 
-        self._aggregation_accounts = aggregation_accounts
+        self._end_date = end_date
+
+    @property
+    def client_id(self):
+        """Gets the client_id of this BudgetDetails.  # noqa: E501
+
+
+        :return: The client_id of this BudgetDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._client_id
+
+    @client_id.setter
+    def client_id(self, client_id):
+        """Sets the client_id of this BudgetDetails.
+
+
+        :param client_id: The client_id of this BudgetDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._client_id = client_id
+
+    @property
+    def budget(self):
+        """Gets the budget of this BudgetDetails.  # noqa: E501
+
+
+        :return: The budget of this BudgetDetails.  # noqa: E501
+        :rtype: list[BudgetComponent]
+        """
+        return self._budget
+
+    @budget.setter
+    def budget(self, budget):
+        """Sets the budget of this BudgetDetails.
+
+
+        :param budget: The budget of this BudgetDetails.  # noqa: E501
+        :type: list[BudgetComponent]
+        """
+
+        self._budget = budget
 
     @property
     def total_value(self):
@@ -136,88 +207,46 @@ class BudgetDetails(object):
         self._total_value = total_value
 
     @property
-    def client_id(self):
-        """Gets the client_id of this BudgetDetails.  # noqa: E501
+    def account_id(self):
+        """Gets the account_id of this BudgetDetails.  # noqa: E501
 
 
-        :return: The client_id of this BudgetDetails.  # noqa: E501
+        :return: The account_id of this BudgetDetails.  # noqa: E501
         :rtype: str
         """
-        return self._client_id
+        return self._account_id
 
-    @client_id.setter
-    def client_id(self, client_id):
-        """Sets the client_id of this BudgetDetails.
+    @account_id.setter
+    def account_id(self, account_id):
+        """Sets the account_id of this BudgetDetails.
 
 
-        :param client_id: The client_id of this BudgetDetails.  # noqa: E501
+        :param account_id: The account_id of this BudgetDetails.  # noqa: E501
         :type: str
         """
 
-        self._client_id = client_id
+        self._account_id = account_id
 
     @property
-    def start_date(self):
-        """Gets the start_date of this BudgetDetails.  # noqa: E501
+    def aggregation_accounts(self):
+        """Gets the aggregation_accounts of this BudgetDetails.  # noqa: E501
 
 
-        :return: The start_date of this BudgetDetails.  # noqa: E501
-        :rtype: date
+        :return: The aggregation_accounts of this BudgetDetails.  # noqa: E501
+        :rtype: list[BudgetAggregationAccount]
         """
-        return self._start_date
+        return self._aggregation_accounts
 
-    @start_date.setter
-    def start_date(self, start_date):
-        """Sets the start_date of this BudgetDetails.
-
-
-        :param start_date: The start_date of this BudgetDetails.  # noqa: E501
-        :type: date
-        """
-
-        self._start_date = start_date
-
-    @property
-    def budget(self):
-        """Gets the budget of this BudgetDetails.  # noqa: E501
+    @aggregation_accounts.setter
+    def aggregation_accounts(self, aggregation_accounts):
+        """Sets the aggregation_accounts of this BudgetDetails.
 
 
-        :return: The budget of this BudgetDetails.  # noqa: E501
-        :rtype: list[BudgetComponent]
-        """
-        return self._budget
-
-    @budget.setter
-    def budget(self, budget):
-        """Sets the budget of this BudgetDetails.
-
-
-        :param budget: The budget of this BudgetDetails.  # noqa: E501
-        :type: list[BudgetComponent]
+        :param aggregation_accounts: The aggregation_accounts of this BudgetDetails.  # noqa: E501
+        :type: list[BudgetAggregationAccount]
         """
 
-        self._budget = budget
-
-    @property
-    def end_date(self):
-        """Gets the end_date of this BudgetDetails.  # noqa: E501
-
-
-        :return: The end_date of this BudgetDetails.  # noqa: E501
-        :rtype: date
-        """
-        return self._end_date
-
-    @end_date.setter
-    def end_date(self, end_date):
-        """Sets the end_date of this BudgetDetails.
-
-
-        :param end_date: The end_date of this BudgetDetails.  # noqa: E501
-        :type: date
-        """
-
-        self._end_date = end_date
+        self._aggregation_accounts = aggregation_accounts
 
     @property
     def currency_code(self):
@@ -264,54 +293,25 @@ class BudgetDetails(object):
         self._frequency = frequency
 
     @property
-    def account_id(self):
-        """Gets the account_id of this BudgetDetails.  # noqa: E501
+    def start_date(self):
+        """Gets the start_date of this BudgetDetails.  # noqa: E501
 
 
-        :return: The account_id of this BudgetDetails.  # noqa: E501
-        :rtype: str
+        :return: The start_date of this BudgetDetails.  # noqa: E501
+        :rtype: date
         """
-        return self._account_id
+        return self._start_date
 
-    @account_id.setter
-    def account_id(self, account_id):
-        """Sets the account_id of this BudgetDetails.
+    @start_date.setter
+    def start_date(self, start_date):
+        """Sets the start_date of this BudgetDetails.
 
 
-        :param account_id: The account_id of this BudgetDetails.  # noqa: E501
-        :type: str
+        :param start_date: The start_date of this BudgetDetails.  # noqa: E501
+        :type: date
         """
 
-        self._account_id = account_id
-
-    @property
-    def frequency_unit(self):
-        """Gets the frequency_unit of this BudgetDetails.  # noqa: E501
-
-
-        :return: The frequency_unit of this BudgetDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._frequency_unit
-
-    @frequency_unit.setter
-    def frequency_unit(self, frequency_unit):
-        """Sets the frequency_unit of this BudgetDetails.
-
-
-        :param frequency_unit: The frequency_unit of this BudgetDetails.  # noqa: E501
-        :type: str
-        """
-        if frequency_unit is None:
-            raise ValueError("Invalid value for `frequency_unit`, must not be `None`")  # noqa: E501
-        allowed_values = ["daily", "weekly", "bi-weekly", "monthly", "quarterly", "annually"]  # noqa: E501
-        if frequency_unit not in allowed_values:
-            raise ValueError(
-                "Invalid value for `frequency_unit` ({0}), must be one of {1}"  # noqa: E501
-                .format(frequency_unit, allowed_values)
-            )
-
-        self._frequency_unit = frequency_unit
+        self._start_date = start_date
 
     def to_dict(self):
         """Returns the model properties as a dict"""

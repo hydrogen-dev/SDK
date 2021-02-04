@@ -32,7 +32,7 @@ class TestSensitivityFactor(unittest.TestCase):
     def testSensitivityFactor(self):
         """Test SensitivityFactor"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.sensitivity_factor.SensitivityFactor()  # noqa: E501
+        # model = proton_api.models.sensitivity_factor.SensitivityFactor()  # noqa: E501
         pass
 
 

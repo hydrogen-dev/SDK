@@ -4,9 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cardIssuer** | **String** | cardIssuer | 
 **cardNetwork** | **String** | cardNetwork | 
-**cardProcessor** | **String** | cardProcessor | 
+**cardProcessor** | **String** | cardProcessor |  [optional]
 **cardType** | **String** | cardType | 
 **clientId** | [**UUID**](UUID.md) | clientId |  [optional]
 **code** | **String** | code |  [optional]
@@ -18,6 +17,7 @@ Name | Type | Description | Notes
 **issuingBank** | **String** | issuingBank | 
 **metadata** | **Map&lt;String, String&gt;** |  |  [optional]
 **name** | **String** | name | 
+**programManager** | **String** | programManager |  [optional]
 **secondaryId** | **String** |  |  [optional]
 **updateDate** | [**OffsetDateTime**](OffsetDateTime.md) |  |  [optional]
 

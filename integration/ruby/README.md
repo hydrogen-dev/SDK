@@ -13,15 +13,12 @@ For more information, please visit [https://www.hydrogenplatform.com/contact](ht
 
 ## Installation
 
-
 ### Update Base Path 
 Follow steps to verify the base URL path:
 1. Go to configuration file located under lib folder.
 2.  Search for @host and change/verify the URL according to the environment.
-
 **Sandbox Base URL**
 https://sandbox.hydrogenplatform.com/integration/v1
-
 **Production Base URL**
 https://api.hydrogenplatform.com/integration/v1
 
@@ -38,7 +35,7 @@ Then either install the gem locally:
 ```shell
 gem install ./integration_api-1.2.1.gem
 ```
-(for development, run `gem install --dev ./integration_api-1.0.0.gem` to install the development dependencies)
+(for development, run `gem install --dev ./integration_api-1.2.1.gem` to install the development dependencies)
 
 or publish the gem to a gem hosting service, e.g. [RubyGems](https://rubygems.org/).
 
@@ -79,17 +76,17 @@ IntegrationApi.configure do |config|
 end
 
 
-api_instance = IntegrationApi::AggregationApi.new
+api_instance = IntegrationApi::ACHApi.new
 
-aggregation_request_object = IntegrationApi::AggregationRequestObject.new # AggregationRequestObject | aggregationRequestObject
+nucleus_funding_id = 'nucleus_funding_id_example' # String | nucleus_funding_id
 
 
 begin
-  #Create mapping between client,vendor,tenant
-  result = api_instance.create_aggregation_account_using_post(aggregation_request_object)
+  #Cancel the ACH transfer
+  result = api_instance.cancel_ach_transfer_using_delete(nucleus_funding_id)
   p result
 rescue IntegrationApi::ApiError => e
-  puts "Exception when calling AggregationApi->create_aggregation_account_using_post: #{e}"
+  puts "Exception when calling ACHApi->cancel_ach_transfer_using_delete: #{e}"
 end
 
 ```
@@ -100,6 +97,31 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*IntegrationApi::ACHApi* | [**cancel_ach_transfer_using_delete**](docs/ACHApi.md#cancel_ach_transfer_using_delete) | **DELETE** /ach/{nucleus_funding_id} | Cancel the ACH transfer
+*IntegrationApi::ACHApi* | [**create_ach_card_link_using_post**](docs/ACHApi.md#create_ach_card_link_using_post) | **POST** /ach/card_link | Create an ACH card link
+*IntegrationApi::ACHApi* | [**create_bank_link_using_post**](docs/ACHApi.md#create_bank_link_using_post) | **POST** /ach/bank_link | Create bank link
+*IntegrationApi::ACHApi* | [**create_business_using_post**](docs/ACHApi.md#create_business_using_post) | **POST** /ach/business | Create a business
+*IntegrationApi::ACHApi* | [**create_client_using_post**](docs/ACHApi.md#create_client_using_post) | **POST** /ach/client | Create a client
+*IntegrationApi::ACHApi* | [**delete_bank_link_using_delete**](docs/ACHApi.md#delete_bank_link_using_delete) | **DELETE** /ach/bank_link/{nucleus_bank_link_id} | Delete bank link
+*IntegrationApi::ACHApi* | [**get_ach_transfer_using_get**](docs/ACHApi.md#get_ach_transfer_using_get) | **GET** /ach/{nucleus_funding_id} | Get the ACH transfer
+*IntegrationApi::ACHApi* | [**get_balance_using_get**](docs/ACHApi.md#get_balance_using_get) | **GET** /ach/balance/{portfolio_id} | Get balance
+*IntegrationApi::ACHApi* | [**get_bank_link_using_get**](docs/ACHApi.md#get_bank_link_using_get) | **GET** /ach/bank_link/{nucleus_bank_link_id} | Get bank link
+*IntegrationApi::ACHApi* | [**get_bank_links_for_reserve_account_using_get**](docs/ACHApi.md#get_bank_links_for_reserve_account_using_get) | **GET** /ach/bank_link/reserve | Get bank links for a reserve account
+*IntegrationApi::ACHApi* | [**get_client_bank_links_using_get**](docs/ACHApi.md#get_client_bank_links_using_get) | **GET** /ach/bank_link/client/{nucleus_client_id} | Get client bank links
+*IntegrationApi::ACHApi* | [**get_list_of_client_ach_transfers_using_get**](docs/ACHApi.md#get_list_of_client_ach_transfers_using_get) | **GET** /ach/client/{nucleus_client_id} | Get a list of client's ACH transfers
+*IntegrationApi::ACHApi* | [**get_list_of_tenant_ach_transfers_using_get**](docs/ACHApi.md#get_list_of_tenant_ach_transfers_using_get) | **GET** /ach | Get a list of tenant's ACH transfers
+*IntegrationApi::ACHApi* | [**submit_ach_transfer_using_post**](docs/ACHApi.md#submit_ach_transfer_using_post) | **POST** /ach | Submit an ACH transfer
+*IntegrationApi::ACHApi* | [**update_bank_link_using_put**](docs/ACHApi.md#update_bank_link_using_put) | **PUT** /ach/bank_link/{nucleus_bank_link_id} | Update bank link
+*IntegrationApi::AccountingApi* | [**create_or_update_customer**](docs/AccountingApi.md#create_or_update_customer) | **GET** /accounting/customer | Update/Create all customers in Nucleus for a given nucleus_client_id
+*IntegrationApi::AccountingApi* | [**create_or_update_customer_revenue**](docs/AccountingApi.md#create_or_update_customer_revenue) | **GET** /accounting/customer_revenue/{nucleus_customer_id} | Update/Create all customers revenue in Nucleus for a given nucleus_customer_id
+*IntegrationApi::AccountingApi* | [**create_or_update_invoice_payment**](docs/AccountingApi.md#create_or_update_invoice_payment) | **GET** /accounting/invoice_payment/{nucleus_invoice_id} | Create/Update invoice payment in Nucleus for a given nucleus_invoice_id
+*IntegrationApi::AccountingApi* | [**create_or_update_invoices**](docs/AccountingApi.md#create_or_update_invoices) | **GET** /accounting/invoice | Update/Create all invoices in Nucleus for a given nucleus_client_id
+*IntegrationApi::AccountingApi* | [**delete_accounting_vendor_access_config_is_active_by_id**](docs/AccountingApi.md#delete_accounting_vendor_access_config_is_active_by_id) | **DELETE** /accounting/vendor/{id} | Permanently delete relation with particular accounting vendor.
+*IntegrationApi::AccountingApi* | [**get_accounting_stats**](docs/AccountingApi.md#get_accounting_stats) | **GET** /accounting/report | Get accounting stats from financial statements at the vendor for the business provided
+*IntegrationApi::AccountingApi* | [**get_accounting_vendor_info_using_client_id**](docs/AccountingApi.md#get_accounting_vendor_info_using_client_id) | **GET** /accounting/vendor/{nucleus_client_id} | Get Accounting Vendor Config
+*IntegrationApi::AccountingApi* | [**update_accounting_vendor_access_config_is_active_by_id**](docs/AccountingApi.md#update_accounting_vendor_access_config_is_active_by_id) | **PUT** /accounting/vendor/{id} | Enable/Disable relation with particular accounting vendor.
+*IntegrationApi::AccountingApi* | [**update_customer**](docs/AccountingApi.md#update_customer) | **GET** /accounting/customer/{nucleus_customer_id} | Update customer in Nucleus for a given nucleus_customer_id
+*IntegrationApi::AccountingApi* | [**update_invoice**](docs/AccountingApi.md#update_invoice) | **GET** /accounting/invoice/{nucleus_invoice_id} | Update invoice in Nucleus for a given nucleus_invoice_id
 *IntegrationApi::AggregationApi* | [**create_aggregation_account_using_post**](docs/AggregationApi.md#create_aggregation_account_using_post) | **POST** /aggregation/account | Create mapping between client,vendor,tenant
 *IntegrationApi::AggregationApi* | [**create_property_value_using_post**](docs/AggregationApi.md#create_property_value_using_post) | **POST** /property_value | Create mapping between client,vendor,tenant for the property
 *IntegrationApi::AggregationApi* | [**delete_aggregation_account_using_delete**](docs/AggregationApi.md#delete_aggregation_account_using_delete) | **DELETE** /aggregation/account/{nucleus_aggregation_account_id} | De-Link mapping between client,vendor,tenant
@@ -111,43 +133,69 @@ Class | Method | HTTP request | Description
 *IntegrationApi::AggregationApi* | [**get_aggregation_account_transaction_all_using_get**](docs/AggregationApi.md#get_aggregation_account_transaction_all_using_get) | **GET** /aggregation/transaction | Fetch all aggregation account balance details with for the given aggregation accounts 
 *IntegrationApi::AggregationApi* | [**get_aggregation_account_transaction_using_get**](docs/AggregationApi.md#get_aggregation_account_transaction_using_get) | **GET** /aggregation/transaction/{nucleus_aggregation_account_id} | Fetch aggregation account transaction details with the mapping created in POST endpoint
 *IntegrationApi::AggregationApi* | [**get_aggregation_account_using_get**](docs/AggregationApi.md#get_aggregation_account_using_get) | **GET** /aggregation/account/{nucleus_aggregation_account_id} | Fetch aggregation account details with the mapping created in POST endpoint
-*IntegrationApi::AuditLogApi* | [**get_audit_log_all_using_get**](docs/AuditLogApi.md#get_audit_log_all_using_get) | **GET** /audit_log | Gel all audit log
+*IntegrationApi::AggregationApi* | [**get_property_value**](docs/AggregationApi.md#get_property_value) | **GET** /property_value | Get Value of the given property
+*IntegrationApi::AsyncApi* | [**get_async_data**](docs/AsyncApi.md#get_async_data) | **GET** /async/{integration_type}/{service} | Create async transaction for GET endpoints for bulk data
+*IntegrationApi::AsyncApi* | [**get_async_data1**](docs/AsyncApi.md#get_async_data1) | **GET** /async/{integration_type}/{service}/{id} | Create async transaction for GET endpoints for bulk data
+*IntegrationApi::AsyncApi* | [**get_async_data2**](docs/AsyncApi.md#get_async_data2) | **POST** /async/{integration_type}/{service} | Create async transaction for POST endpoints for bulk data
+*IntegrationApi::AsyncApi* | [**get_async_status**](docs/AsyncApi.md#get_async_status) | **GET** /async/status/{id} | Get Status of async transaction created through GET/POST endpoints
 *IntegrationApi::BaasApi* | [**create_baas_account_using_post**](docs/BaasApi.md#create_baas_account_using_post) | **POST** /baas/account | create a Baas account
+*IntegrationApi::BaasApi* | [**create_baas_business_using_post**](docs/BaasApi.md#create_baas_business_using_post) | **POST** /baas/business | Create a Baas Business
 *IntegrationApi::BaasApi* | [**create_baas_client_using_post**](docs/BaasApi.md#create_baas_client_using_post) | **POST** /baas/client | Create a Baas Client
 *IntegrationApi::BaasApi* | [**create_baas_sub_account_using_post**](docs/BaasApi.md#create_baas_sub_account_using_post) | **POST** /baas/subaccount | create a Baas subaccount
 *IntegrationApi::BaasApi* | [**get_baas_account_statement_using_get**](docs/BaasApi.md#get_baas_account_statement_using_get) | **GET** /baas/statement/{nucleus_account_id} | Get a Baas account statement
 *IntegrationApi::BaasApi* | [**get_baas_portfolio_balance_using_get**](docs/BaasApi.md#get_baas_portfolio_balance_using_get) | **GET** /baas/balance/{nucleus_portfolio_id} | Get a Baas portfolio balance
 *IntegrationApi::BaasApi* | [**get_baas_portfolio_transaction_using_get**](docs/BaasApi.md#get_baas_portfolio_transaction_using_get) | **GET** /baas/transaction/{nucleus_portfolio_id} | Get a Baas portfolio transaction
-*IntegrationApi::BaasApi* | [**update_baas_client_using_put**](docs/BaasApi.md#update_baas_client_using_put) | **PUT** /baas/client | Update a Baas client
-*IntegrationApi::BrokerageApi* | [**create_bank_link_using_post**](docs/BrokerageApi.md#create_bank_link_using_post) | **POST** /brokerage/bank_link | create a Bank Link
+*IntegrationApi::BaasApi* | [**update_baas_business_using_put**](docs/BaasApi.md#update_baas_business_using_put) | **PUT** /baas/business/{nucleus_business_id} | Update a Baas business
+*IntegrationApi::BaasApi* | [**update_baas_client_using_put**](docs/BaasApi.md#update_baas_client_using_put) | **PUT** /baas/client/{nucleus_client_id} | Update a Baas client
+*IntegrationApi::BrokerageApi* | [**cancel_order_using_put**](docs/BrokerageApi.md#cancel_order_using_put) | **PUT** /brokerage/order/{nucleus_order_id} | Cancel an Order
+*IntegrationApi::BrokerageApi* | [**create_bank_link_using_post1**](docs/BrokerageApi.md#create_bank_link_using_post1) | **POST** /brokerage/bank_link | create a Bank Link
 *IntegrationApi::BrokerageApi* | [**create_brokerage_account_using_post**](docs/BrokerageApi.md#create_brokerage_account_using_post) | **POST** /brokerage/account | create a Brokerage account
 *IntegrationApi::BrokerageApi* | [**create_brokerage_client_using_post**](docs/BrokerageApi.md#create_brokerage_client_using_post) | **POST** /brokerage/client | Create a Brokerage Client
+*IntegrationApi::BrokerageApi* | [**create_deposit_using_post**](docs/BrokerageApi.md#create_deposit_using_post) | **POST** /brokerage/deposit | Create a deposit
+*IntegrationApi::BrokerageApi* | [**create_document_using_post**](docs/BrokerageApi.md#create_document_using_post) | **POST** /brokerage/document | Create a Brokerage document
 *IntegrationApi::BrokerageApi* | [**create_order_using_post**](docs/BrokerageApi.md#create_order_using_post) | **POST** /brokerage/order | Create an Order
-*IntegrationApi::BrokerageApi* | [**delete_bank_link_using_delete**](docs/BrokerageApi.md#delete_bank_link_using_delete) | **DELETE** /brokerage/bank_link/{nucleus_bank_link_id} | Delete a Bank Link
-*IntegrationApi::BrokerageApi* | [**delete_order_using_delete**](docs/BrokerageApi.md#delete_order_using_delete) | **DELETE** /brokerage/order | Delete an Order
-*IntegrationApi::BrokerageApi* | [**get_bank_link_using_get**](docs/BrokerageApi.md#get_bank_link_using_get) | **GET** /brokerage/bank_link/{nucleus_bank_link_id} | Get a Bank Link
-*IntegrationApi::BrokerageApi* | [**get_brokerage_account_statement_using_get**](docs/BrokerageApi.md#get_brokerage_account_statement_using_get) | **GET** /brokerage/{nucleus_account_id}/statement | Get a Brokerage account statement
-*IntegrationApi::BrokerageApi* | [**get_order_using_get**](docs/BrokerageApi.md#get_order_using_get) | **GET** /brokerage/order | Get an Order
-*IntegrationApi::BrokerageApi* | [**update_bank_link_using_put**](docs/BrokerageApi.md#update_bank_link_using_put) | **PUT** /brokerage/bank_link/{nucleus_bank_link_id} | Update a Bank Link
+*IntegrationApi::BrokerageApi* | [**create_withdrawal_using_post**](docs/BrokerageApi.md#create_withdrawal_using_post) | **POST** /brokerage/withdrawal | Create a withdrawal
+*IntegrationApi::BrokerageApi* | [**delete_bank_link_using_delete1**](docs/BrokerageApi.md#delete_bank_link_using_delete1) | **DELETE** /brokerage/bank_link/{nucleus_bank_link_id} | Delete a Bank Link
+*IntegrationApi::BrokerageApi* | [**get_balance_using_get1**](docs/BrokerageApi.md#get_balance_using_get1) | **GET** /brokerage/balance/{nucleus_portfolio_id} | Get account balance
+*IntegrationApi::BrokerageApi* | [**get_bank_link_using_get1**](docs/BrokerageApi.md#get_bank_link_using_get1) | **GET** /brokerage/bank_link/{nucleus_bank_link_id} | Get a Bank Link
+*IntegrationApi::BrokerageApi* | [**get_brokerage_account_statement_using_get**](docs/BrokerageApi.md#get_brokerage_account_statement_using_get) | **GET** /brokerage/statement/{nucleus_account_id} | Get a Brokerage account statement
+*IntegrationApi::BrokerageApi* | [**get_document_using_get**](docs/BrokerageApi.md#get_document_using_get) | **GET** /brokerage/document/{nucleus_document_id} | Get a Brokerage document
+*IntegrationApi::BrokerageApi* | [**get_holding_performance_using_get**](docs/BrokerageApi.md#get_holding_performance_using_get) | **GET** /brokerage/holding/performance/{nucleus_portfolio_id} | Get portfolio holding performance
+*IntegrationApi::BrokerageApi* | [**get_holding_using_get**](docs/BrokerageApi.md#get_holding_using_get) | **GET** /brokerage/holding/{nucleus_portfolio_id} | Get portfolio holdings
+*IntegrationApi::BrokerageApi* | [**get_order_using_get**](docs/BrokerageApi.md#get_order_using_get) | **GET** /brokerage/order/{nucleus_order_id} | Get an Order
+*IntegrationApi::BrokerageApi* | [**get_securities_using_get**](docs/BrokerageApi.md#get_securities_using_get) | **GET** /brokerage/securities | Get securities information
+*IntegrationApi::BrokerageApi* | [**get_transactions_using_get**](docs/BrokerageApi.md#get_transactions_using_get) | **GET** /brokerage/transaction/{nucleus_portfolio_id} | Get account transactions
+*IntegrationApi::BrokerageApi* | [**update_bank_link_using_put1**](docs/BrokerageApi.md#update_bank_link_using_put1) | **PUT** /brokerage/bank_link/{nucleus_bank_link_id} | Update a Bank Link
 *IntegrationApi::BrokerageApi* | [**update_brokerage_client_using_put**](docs/BrokerageApi.md#update_brokerage_client_using_put) | **PUT** /brokerage/client | Update a Brokerage client
+*IntegrationApi::CardApi* | [**create_auto_reload_using_post**](docs/CardApi.md#create_auto_reload_using_post) | **POST** /card/auto_reload | Card auto reload
 *IntegrationApi::CardApi* | [**create_card_activate_using_post**](docs/CardApi.md#create_card_activate_using_post) | **POST** /card/activate | Activate card
+*IntegrationApi::CardApi* | [**create_card_business_using_post**](docs/CardApi.md#create_card_business_using_post) | **POST** /card/business | Create a card business
 *IntegrationApi::CardApi* | [**create_card_close_using_post**](docs/CardApi.md#create_card_close_using_post) | **POST** /card/close | close a card
 *IntegrationApi::CardApi* | [**create_card_issue_using_post**](docs/CardApi.md#create_card_issue_using_post) | **POST** /card/issue | issue a card
+*IntegrationApi::CardApi* | [**create_card_load_using_post**](docs/CardApi.md#create_card_load_using_post) | **POST** /card/load | Create a card load
 *IntegrationApi::CardApi* | [**create_card_pin_using_post**](docs/CardApi.md#create_card_pin_using_post) | **POST** /card/pin | pin card
 *IntegrationApi::CardApi* | [**create_card_reactivate_using_post**](docs/CardApi.md#create_card_reactivate_using_post) | **POST** /card/reactivate | reactivate card
 *IntegrationApi::CardApi* | [**create_card_reissue_using_post**](docs/CardApi.md#create_card_reissue_using_post) | **POST** /card/reissue | Reissue a card
-*IntegrationApi::CardApi* | [**create_card_reload_using_post**](docs/CardApi.md#create_card_reload_using_post) | **POST** /card/reload | Create a card reload
+*IntegrationApi::CardApi* | [**create_card_replace_using_post**](docs/CardApi.md#create_card_replace_using_post) | **POST** /card/replace | Create card replace
+*IntegrationApi::CardApi* | [**create_card_spending_control_using_post**](docs/CardApi.md#create_card_spending_control_using_post) | **POST** /card/spending_control | Create card spending control
 *IntegrationApi::CardApi* | [**create_card_suspend_using_post**](docs/CardApi.md#create_card_suspend_using_post) | **POST** /card/suspend | suspend card
 *IntegrationApi::CardApi* | [**create_card_token_using_post**](docs/CardApi.md#create_card_token_using_post) | **POST** /card/token | token card
-*IntegrationApi::CardApi* | [**create_card_transfer_using_post**](docs/CardApi.md#create_card_transfer_using_post) | **POST** /card/transfer | Create Card transfer
 *IntegrationApi::CardApi* | [**create_card_unload_using_post**](docs/CardApi.md#create_card_unload_using_post) | **POST** /card/unload | Create a card upload
 *IntegrationApi::CardApi* | [**create_client_card_using_post**](docs/CardApi.md#create_client_card_using_post) | **POST** /card/client | Create a card client
 *IntegrationApi::CardApi* | [**get_card_balance_using_get**](docs/CardApi.md#get_card_balance_using_get) | **GET** /card/balance/{id} | Get a Card Balance
+*IntegrationApi::CardApi* | [**get_card_image**](docs/CardApi.md#get_card_image) | **GET** /card/image/{card_id} | Get card image
+*IntegrationApi::CardApi* | [**get_card_pci_details**](docs/CardApi.md#get_card_pci_details) | **GET** /card/pci_details/{card_id} | Get card pci details
+*IntegrationApi::CardApi* | [**get_card_reserve_account_details_using_get**](docs/CardApi.md#get_card_reserve_account_details_using_get) | **GET** /card/reserve | Card reserve account
+*IntegrationApi::CardApi* | [**get_card_statement_using_get**](docs/CardApi.md#get_card_statement_using_get) | **GET** /card/statement/{card_id} | Get card statement
 *IntegrationApi::CardApi* | [**get_card_token_using_token**](docs/CardApi.md#get_card_token_using_token) | **GET** /card/token/{id} | Get a card token
 *IntegrationApi::CardApi* | [**get_card_transaction_using_get**](docs/CardApi.md#get_card_transaction_using_get) | **GET** /card/transaction/{id} | Get a card transaction
 *IntegrationApi::CardApi* | [**get_card_using_get**](docs/CardApi.md#get_card_using_get) | **GET** /card/{id} | Get a card information
+*IntegrationApi::CardApi* | [**update_card_business_using_put**](docs/CardApi.md#update_card_business_using_put) | **PUT** /card/business/{nucleus_business_id} | Update a card business
 *IntegrationApi::CardApi* | [**update_card_pin_using_post**](docs/CardApi.md#update_card_pin_using_post) | **PUT** /card/pin/{id} | update a pin card
+*IntegrationApi::CardApi* | [**update_card_spending_control_using_put**](docs/CardApi.md#update_card_spending_control_using_put) | **PUT** /card/spending_control/{nucleus_spending_control_id} | Update a card spending control
 *IntegrationApi::CardApi* | [**update_card_using_put**](docs/CardApi.md#update_card_using_put) | **PUT** /card/{id} | Update a card information
+*IntegrationApi::CardApi* | [**update_client_card_using_put**](docs/CardApi.md#update_client_card_using_put) | **PUT** /card/client/{id} | Update a card client
+*IntegrationApi::CardApi* | [**verify_card_pin_using_post**](docs/CardApi.md#verify_card_pin_using_post) | **POST** /card/pin/verify | verify card pin
 *IntegrationApi::IAVApi* | [**create_iav_using_post**](docs/IAVApi.md#create_iav_using_post) | **POST** /iav | Instant Account Verification of an account.
 *IntegrationApi::IAVApi* | [**get_iav_using_get**](docs/IAVApi.md#get_iav_using_get) | **GET** /iav/{nucleus_bank_link_id} | Get verified account based on id.
 *IntegrationApi::KMSApi* | [**create_kms_using_post**](docs/KMSApi.md#create_kms_using_post) | **POST** /kms | Create an secret key
@@ -156,21 +204,63 @@ Class | Method | HTTP request | Description
 *IntegrationApi::KMSApi* | [**get_kms_using_get**](docs/KMSApi.md#get_kms_using_get) | **GET** /kms/{kms_id} | Retrieve an secret key value
 *IntegrationApi::KMSApi* | [**update_kms_using_put**](docs/KMSApi.md#update_kms_using_put) | **PUT** /kms/{kms_id} | Update an Key Value
 *IntegrationApi::KYCApi* | [**create_kyc_using_post**](docs/KYCApi.md#create_kyc_using_post) | **POST** /kyc | Do kyc for the client.
-*IntegrationApi::KYCApi* | [**get_kyc_status_using_get**](docs/KYCApi.md#get_kyc_status_using_get) | **GET** /kyc_status/{nucleus_client_id} | Fetch kyc_status for the given nucleus_client_id
+*IntegrationApi::KYCApi* | [**get_kyc_status_using_get**](docs/KYCApi.md#get_kyc_status_using_get) | **GET** /kyc_status | Fetch kyc_status for the given nucleus_client_id
 *IntegrationApi::MarketDataApi* | [**create_market_data_historical_using_post**](docs/MarketDataApi.md#create_market_data_historical_using_post) | **POST** /market_data/historical | Create historical market data
 *IntegrationApi::MarketDataApi* | [**create_market_data_quote_using_post**](docs/MarketDataApi.md#create_market_data_quote_using_post) | **POST** /market_data/quote | Create quote market data
+*IntegrationApi::RTPApi* | [**cancel_rtp_transfer_using_delete**](docs/RTPApi.md#cancel_rtp_transfer_using_delete) | **DELETE** /rtp/{nucleus_funding_id} | Cancel the RTP transfer
+*IntegrationApi::RTPApi* | [**create_bank_link_using_post2**](docs/RTPApi.md#create_bank_link_using_post2) | **POST** /rtp/bank_link | Create bank link
+*IntegrationApi::RTPApi* | [**delete_bank_link_using_delete2**](docs/RTPApi.md#delete_bank_link_using_delete2) | **DELETE** /rtp/bank_link/{nucleus_bank_link_id} | Delete bank link
+*IntegrationApi::RTPApi* | [**get_bank_link_using_get2**](docs/RTPApi.md#get_bank_link_using_get2) | **GET** /rtp/bank_link/{nucleus_bank_link_id} | Get bank link
+*IntegrationApi::RTPApi* | [**get_client_bank_links_using_get1**](docs/RTPApi.md#get_client_bank_links_using_get1) | **GET** /rtp/bank_link/client/{nucleus_client_id} | Get client bank links
+*IntegrationApi::RTPApi* | [**get_list_of_rtp_transfers_using_get**](docs/RTPApi.md#get_list_of_rtp_transfers_using_get) | **GET** /rtp/client/{nucleus_client_id} | Get a list of Rtp transfers
+*IntegrationApi::RTPApi* | [**get_rtp_transfer_using_get**](docs/RTPApi.md#get_rtp_transfer_using_get) | **GET** /rtp/{nucleus_funding_id} | Get the RTP transfer
+*IntegrationApi::RTPApi* | [**submit_rtp_transfer_using_post**](docs/RTPApi.md#submit_rtp_transfer_using_post) | **POST** /rtp | Submit a RTP transfer
+*IntegrationApi::RTPApi* | [**update_bank_link_using_put2**](docs/RTPApi.md#update_bank_link_using_put2) | **PUT** /rtp/bank_link/{nucleus_bank_link_id} | Update bank link
+*IntegrationApi::SMSApi* | [**get_vendor_call_limit**](docs/SMSApi.md#get_vendor_call_limit) | **GET** /sms/status/{sms_id} | Fetch details for corresponding sms_id
+*IntegrationApi::SMSApi* | [**send_mail**](docs/SMSApi.md#send_mail) | **POST** /sms | Send SMS to recipient
+*IntegrationApi::SMTPApi* | [**get_email_details**](docs/SMTPApi.md#get_email_details) | **GET** /smtp/status/{email_id} | Fetch details for corresponding email_id
+*IntegrationApi::SMTPApi* | [**send_mail1**](docs/SMTPApi.md#send_mail1) | **POST** /smtp | Send Mail to recipient
 *IntegrationApi::UtilsApi* | [**create_token_exchange_using_post**](docs/UtilsApi.md#create_token_exchange_using_post) | **POST** /token_exchange | Retrieve token based on certain vendor specific value
 *IntegrationApi::UtilsApi* | [**create_user_using_post**](docs/UtilsApi.md#create_user_using_post) | **POST** /user | Create user in vendor
+*IntegrationApi::UtilsApi* | [**get_audit_log_all_using_get**](docs/UtilsApi.md#get_audit_log_all_using_get) | **GET** /audit_log | Gel all audit log
 *IntegrationApi::UtilsApi* | [**get_widget_link_using_get**](docs/UtilsApi.md#get_widget_link_using_get) | **GET** /widget_link/{nucleus_client_id} | Retrieve widget link
 *IntegrationApi::WebhookApi* | [**create_webhook_using_post**](docs/WebhookApi.md#create_webhook_using_post) | **POST** /webhook | Create a webhook
 *IntegrationApi::WebhookApi* | [**delete_webhook_using_delete**](docs/WebhookApi.md#delete_webhook_using_delete) | **DELETE** /webhook/{webhook_id} | Delete a webhook
 *IntegrationApi::WebhookApi* | [**get_webhook_all_using_get**](docs/WebhookApi.md#get_webhook_all_using_get) | **GET** /webhook | List all webhooks
 *IntegrationApi::WebhookApi* | [**get_webhook_using_get**](docs/WebhookApi.md#get_webhook_using_get) | **GET** /webhook/{webhook_id} | Retrieve a webhook
 *IntegrationApi::WebhookApi* | [**update_webhook_using_put**](docs/WebhookApi.md#update_webhook_using_put) | **PUT** /webhook/{webhook_id} | Update a webhook
+*IntegrationApi::WireApi* | [**cancel_wire_transfer_using_delete**](docs/WireApi.md#cancel_wire_transfer_using_delete) | **DELETE** /wire/{nucleus_funding_id} | Cancel the Wire transfer
+*IntegrationApi::WireApi* | [**create_bank_link_using_post3**](docs/WireApi.md#create_bank_link_using_post3) | **POST** /wire/bank_link | Create bank link
+*IntegrationApi::WireApi* | [**delete_bank_link_using_delete3**](docs/WireApi.md#delete_bank_link_using_delete3) | **DELETE** /wire/bank_link/{nucleus_bank_link_id} | Delete bank link
+*IntegrationApi::WireApi* | [**get_bank_link_using_get3**](docs/WireApi.md#get_bank_link_using_get3) | **GET** /wire/bank_link/{nucleus_bank_link_id} | Get bank link
+*IntegrationApi::WireApi* | [**get_client_bank_links_using_get2**](docs/WireApi.md#get_client_bank_links_using_get2) | **GET** /wire/bank_link/client/{nucleus_client_id} | Get client bank links
+*IntegrationApi::WireApi* | [**get_list_of_wire_transfers_using_get**](docs/WireApi.md#get_list_of_wire_transfers_using_get) | **GET** /wire/client/{nucleus_client_id} | Get a list of Wire transfers
+*IntegrationApi::WireApi* | [**get_wire_transfer_using_get**](docs/WireApi.md#get_wire_transfer_using_get) | **GET** /wire/{nucleus_funding_id} | Get the Wire transfer
+*IntegrationApi::WireApi* | [**submit_wire_transfer_using_post**](docs/WireApi.md#submit_wire_transfer_using_post) | **POST** /wire | Submit a Wire transfer
+*IntegrationApi::WireApi* | [**update_bank_link_using_put3**](docs/WireApi.md#update_bank_link_using_put3) | **PUT** /wire/bank_link/{nucleus_bank_link_id} | Update bank link
 
 
 ## Documentation for Models
 
+ - [IntegrationApi::AccountingCustomerResponseVO](docs/AccountingCustomerResponseVO.md)
+ - [IntegrationApi::AccountingCustomerRevenueResponseVO](docs/AccountingCustomerRevenueResponseVO.md)
+ - [IntegrationApi::AccountingFinalResponseVO](docs/AccountingFinalResponseVO.md)
+ - [IntegrationApi::AccountingInvoicePaymentResponseVO](docs/AccountingInvoicePaymentResponseVO.md)
+ - [IntegrationApi::AccountingInvoiceResponseVO](docs/AccountingInvoiceResponseVO.md)
+ - [IntegrationApi::AccountingStatsResponseVO](docs/AccountingStatsResponseVO.md)
+ - [IntegrationApi::AchBalanceResponseVO](docs/AchBalanceResponseVO.md)
+ - [IntegrationApi::AchBankLinkRequestCO](docs/AchBankLinkRequestCO.md)
+ - [IntegrationApi::AchBankLinkResponseVO](docs/AchBankLinkResponseVO.md)
+ - [IntegrationApi::AchBusinessRequestCO](docs/AchBusinessRequestCO.md)
+ - [IntegrationApi::AchBusinessResponseVO](docs/AchBusinessResponseVO.md)
+ - [IntegrationApi::AchCardLinkRequestCO](docs/AchCardLinkRequestCO.md)
+ - [IntegrationApi::AchCardLinkResponseVO](docs/AchCardLinkResponseVO.md)
+ - [IntegrationApi::AchClientRequestCO](docs/AchClientRequestCO.md)
+ - [IntegrationApi::AchClientResponseVO](docs/AchClientResponseVO.md)
+ - [IntegrationApi::AchTransferRequestCO](docs/AchTransferRequestCO.md)
+ - [IntegrationApi::AchTransferResponseVO](docs/AchTransferResponseVO.md)
+ - [IntegrationApi::Acquiree](docs/Acquiree.md)
+ - [IntegrationApi::Acquirer](docs/Acquirer.md)
  - [IntegrationApi::Address](docs/Address.md)
  - [IntegrationApi::AggregationAccount](docs/AggregationAccount.md)
  - [IntegrationApi::AggregationAccountBalance](docs/AggregationAccountBalance.md)
@@ -187,12 +277,13 @@ Class | Method | HTTP request | Description
  - [IntegrationApi::AggregationRequestObject](docs/AggregationRequestObject.md)
  - [IntegrationApi::AggregationVendorRequestCO](docs/AggregationVendorRequestCO.md)
  - [IntegrationApi::ApplePayload](docs/ApplePayload.md)
+ - [IntegrationApi::AsyncTransaction](docs/AsyncTransaction.md)
+ - [IntegrationApi::AsyncTransactionVO](docs/AsyncTransactionVO.md)
  - [IntegrationApi::BaasAccountCO](docs/BaasAccountCO.md)
  - [IntegrationApi::BaasAccountVO](docs/BaasAccountVO.md)
  - [IntegrationApi::BaasBalanceVO](docs/BaasBalanceVO.md)
- - [IntegrationApi::BaasClientCO](docs/BaasClientCO.md)
+ - [IntegrationApi::BaasBusinessVO](docs/BaasBusinessVO.md)
  - [IntegrationApi::BaasClientVO](docs/BaasClientVO.md)
- - [IntegrationApi::BaasClientVendorDataVO](docs/BaasClientVendorDataVO.md)
  - [IntegrationApi::BaasStatementVO](docs/BaasStatementVO.md)
  - [IntegrationApi::BaasStatementsVO](docs/BaasStatementsVO.md)
  - [IntegrationApi::BaasSubAccountCO](docs/BaasSubAccountCO.md)
@@ -201,40 +292,73 @@ Class | Method | HTTP request | Description
  - [IntegrationApi::BankCredit](docs/BankCredit.md)
  - [IntegrationApi::BankLink](docs/BankLink.md)
  - [IntegrationApi::BankLinkResponseInternalObjectVO](docs/BankLinkResponseInternalObjectVO.md)
- - [IntegrationApi::BaseDocument](docs/BaseDocument.md)
+ - [IntegrationApi::BankLinkVendorDataVO](docs/BankLinkVendorDataVO.md)
  - [IntegrationApi::BaseResponseVO](docs/BaseResponseVO.md)
  - [IntegrationApi::BrokerageAccountCO](docs/BrokerageAccountCO.md)
  - [IntegrationApi::BrokerageAccountVO](docs/BrokerageAccountVO.md)
+ - [IntegrationApi::BrokerageBalanceVO](docs/BrokerageBalanceVO.md)
  - [IntegrationApi::BrokerageBankLinkCO](docs/BrokerageBankLinkCO.md)
  - [IntegrationApi::BrokerageBankLinkVO](docs/BrokerageBankLinkVO.md)
  - [IntegrationApi::BrokerageClientCO](docs/BrokerageClientCO.md)
  - [IntegrationApi::BrokerageCreateClientVO](docs/BrokerageCreateClientVO.md)
+ - [IntegrationApi::BrokerageDepositCO](docs/BrokerageDepositCO.md)
+ - [IntegrationApi::BrokerageDepositVO](docs/BrokerageDepositVO.md)
+ - [IntegrationApi::BrokerageDocumentCO](docs/BrokerageDocumentCO.md)
+ - [IntegrationApi::BrokerageDocumentVO](docs/BrokerageDocumentVO.md)
+ - [IntegrationApi::BrokerageHoldingVO](docs/BrokerageHoldingVO.md)
+ - [IntegrationApi::BrokerageOrderCO](docs/BrokerageOrderCO.md)
+ - [IntegrationApi::BrokerageOrderVO](docs/BrokerageOrderVO.md)
+ - [IntegrationApi::BrokeragePerformanceVO](docs/BrokeragePerformanceVO.md)
+ - [IntegrationApi::BrokerageSecuritiesVO](docs/BrokerageSecuritiesVO.md)
  - [IntegrationApi::BrokerageStatementVO](docs/BrokerageStatementVO.md)
+ - [IntegrationApi::BrokerageTransactionVO](docs/BrokerageTransactionVO.md)
  - [IntegrationApi::BrokerageUpdateClientVO](docs/BrokerageUpdateClientVO.md)
+ - [IntegrationApi::BrokerageWithdrawalCO](docs/BrokerageWithdrawalCO.md)
+ - [IntegrationApi::BrokerageWithdrawalVO](docs/BrokerageWithdrawalVO.md)
+ - [IntegrationApi::BusinessAddress](docs/BusinessAddress.md)
+ - [IntegrationApi::BusinessVendorRequestDataVO](docs/BusinessVendorRequestDataVO.md)
+ - [IntegrationApi::CardAutoReloadRequestCO](docs/CardAutoReloadRequestCO.md)
+ - [IntegrationApi::CardAutoReloadResponseVO](docs/CardAutoReloadResponseVO.md)
  - [IntegrationApi::CardBalanceResponseVO](docs/CardBalanceResponseVO.md)
  - [IntegrationApi::CardBaseRequestCO](docs/CardBaseRequestCO.md)
+ - [IntegrationApi::CardBusinessRequestCO](docs/CardBusinessRequestCO.md)
  - [IntegrationApi::CardClientRequestCO](docs/CardClientRequestCO.md)
- - [IntegrationApi::CardClientResponseVO](docs/CardClientResponseVO.md)
+ - [IntegrationApi::CardLoadRequestCO](docs/CardLoadRequestCO.md)
+ - [IntegrationApi::CardLoadUnloadResponseVO](docs/CardLoadUnloadResponseVO.md)
  - [IntegrationApi::CardPinRequestCO](docs/CardPinRequestCO.md)
- - [IntegrationApi::CardReloadRequestCO](docs/CardReloadRequestCO.md)
- - [IntegrationApi::CardReloadUnloadResponseVO](docs/CardReloadUnloadResponseVO.md)
+ - [IntegrationApi::CardReplaceResponseVO](docs/CardReplaceResponseVO.md)
+ - [IntegrationApi::CardReserveAccountResponseVO](docs/CardReserveAccountResponseVO.md)
+ - [IntegrationApi::CardSpendingControlRequestCO](docs/CardSpendingControlRequestCO.md)
+ - [IntegrationApi::CardSpendingControlResponseVO](docs/CardSpendingControlResponseVO.md)
  - [IntegrationApi::CardTokenRequestCO](docs/CardTokenRequestCO.md)
  - [IntegrationApi::CardTokenResponseVO](docs/CardTokenResponseVO.md)
  - [IntegrationApi::CardTransactionResponseVO](docs/CardTransactionResponseVO.md)
- - [IntegrationApi::CardTransferRequestCO](docs/CardTransferRequestCO.md)
- - [IntegrationApi::CardTransferResponseVO](docs/CardTransferResponseVO.md)
  - [IntegrationApi::CardUnloadRequestCO](docs/CardUnloadRequestCO.md)
+ - [IntegrationApi::CardUpdatePinRequestCO](docs/CardUpdatePinRequestCO.md)
  - [IntegrationApi::Cash](docs/Cash.md)
  - [IntegrationApi::ClientAddress](docs/ClientAddress.md)
- - [IntegrationApi::CreateClientResponse](docs/CreateClientResponse.md)
- - [IntegrationApi::CreateOrderResponse](docs/CreateOrderResponse.md)
+ - [IntegrationApi::ClientVendorRequestDataVO](docs/ClientVendorRequestDataVO.md)
+ - [IntegrationApi::CreateBaasBusinessCO](docs/CreateBaasBusinessCO.md)
+ - [IntegrationApi::CreateBaasClientCO](docs/CreateBaasClientCO.md)
+ - [IntegrationApi::CreateBusinessResponseVO](docs/CreateBusinessResponseVO.md)
+ - [IntegrationApi::CreateCardClientResponseVO](docs/CreateCardClientResponseVO.md)
  - [IntegrationApi::CreateUserRequest](docs/CreateUserRequest.md)
- - [IntegrationApi::DigitalDocumentData](docs/DigitalDocumentData.md)
+ - [IntegrationApi::Customer](docs/Customer.md)
+ - [IntegrationApi::CustomerAddress](docs/CustomerAddress.md)
+ - [IntegrationApi::CustomerRevenue](docs/CustomerRevenue.md)
+ - [IntegrationApi::Dividend](docs/Dividend.md)
+ - [IntegrationApi::DividendTax](docs/DividendTax.md)
+ - [IntegrationApi::Email](docs/Email.md)
+ - [IntegrationApi::EmailClick](docs/EmailClick.md)
+ - [IntegrationApi::EmailOpen](docs/EmailOpen.md)
  - [IntegrationApi::ExchangePublicTokenVO](docs/ExchangePublicTokenVO.md)
  - [IntegrationApi::ExchangeTokenCO](docs/ExchangeTokenCO.md)
- - [IntegrationApi::ExpandedProperty](docs/ExpandedProperty.md)
+ - [IntegrationApi::FinancialStatement](docs/FinancialStatement.md)
+ - [IntegrationApi::GetCardImageResponseVO](docs/GetCardImageResponseVO.md)
+ - [IntegrationApi::GetCardPciDetailsResponseVO](docs/GetCardPciDetailsResponseVO.md)
+ - [IntegrationApi::GetCardStatementResponseVO](docs/GetCardStatementResponseVO.md)
  - [IntegrationApi::GetCardTokenResponseVO](docs/GetCardTokenResponseVO.md)
- - [IntegrationApi::GetOrderResponse](docs/GetOrderResponse.md)
+ - [IntegrationApi::GetTransactionsResponse](docs/GetTransactionsResponse.md)
  - [IntegrationApi::GooglePayload](docs/GooglePayload.md)
  - [IntegrationApi::IavAggregationResponseVo](docs/IavAggregationResponseVo.md)
  - [IntegrationApi::IavBankLinkResponseVo](docs/IavBankLinkResponseVo.md)
@@ -243,12 +367,16 @@ Class | Method | HTTP request | Description
  - [IntegrationApi::IavTokenExchangeVendorResponseVO](docs/IavTokenExchangeVendorResponseVO.md)
  - [IntegrationApi::IavVendorRequestCO](docs/IavVendorRequestCO.md)
  - [IntegrationApi::Identification](docs/Identification.md)
+ - [IntegrationApi::Instrument](docs/Instrument.md)
  - [IntegrationApi::Investment](docs/Investment.md)
+ - [IntegrationApi::Invoice](docs/Invoice.md)
+ - [IntegrationApi::InvoicePayment](docs/InvoicePayment.md)
  - [IntegrationApi::JsonNode](docs/JsonNode.md)
  - [IntegrationApi::KmsConfig](docs/KmsConfig.md)
  - [IntegrationApi::KycRequestCO](docs/KycRequestCO.md)
  - [IntegrationApi::KycResponseVo](docs/KycResponseVo.md)
  - [IntegrationApi::KycVendorRequestDataVO](docs/KycVendorRequestDataVO.md)
+ - [IntegrationApi::LineItems](docs/LineItems.md)
  - [IntegrationApi::Location](docs/Location.md)
  - [IntegrationApi::Mapstringobject](docs/Mapstringobject.md)
  - [IntegrationApi::MdHistoryItemVO](docs/MdHistoryItemVO.md)
@@ -257,23 +385,44 @@ Class | Method | HTTP request | Description
  - [IntegrationApi::MdQuoteItemVO](docs/MdQuoteItemVO.md)
  - [IntegrationApi::MdQuoteRequestCO](docs/MdQuoteRequestCO.md)
  - [IntegrationApi::MdQuoteResponseVO](docs/MdQuoteResponseVO.md)
+ - [IntegrationApi::MergerAcquisition](docs/MergerAcquisition.md)
  - [IntegrationApi::NucleusTransferFieldsCO](docs/NucleusTransferFieldsCO.md)
+ - [IntegrationApi::Ownership](docs/Ownership.md)
+ - [IntegrationApi::PageAchTransferResponseVO](docs/PageAchTransferResponseVO.md)
  - [IntegrationApi::PageKmsConfig](docs/PageKmsConfig.md)
  - [IntegrationApi::PageWebhook](docs/PageWebhook.md)
  - [IntegrationApi::Pageobject](docs/Pageobject.md)
- - [IntegrationApi::ParentIB](docs/ParentIB.md)
  - [IntegrationApi::PoliticallyExposedPersonDTO](docs/PoliticallyExposedPersonDTO.md)
+ - [IntegrationApi::PortfolioAssetSizeLog](docs/PortfolioAssetSizeLog.md)
  - [IntegrationApi::PropertyValueResponseVO](docs/PropertyValueResponseVO.md)
  - [IntegrationApi::ResponseEntity](docs/ResponseEntity.md)
+ - [IntegrationApi::RtpBankLinkRequestCO](docs/RtpBankLinkRequestCO.md)
+ - [IntegrationApi::RtpBankLinkResponseVO](docs/RtpBankLinkResponseVO.md)
+ - [IntegrationApi::RtpTransferRequestCO](docs/RtpTransferRequestCO.md)
+ - [IntegrationApi::RtpTransferResponseVO](docs/RtpTransferResponseVO.md)
+ - [IntegrationApi::SMS](docs/SMS.md)
+ - [IntegrationApi::SMSResponseVO](docs/SMSResponseVO.md)
+ - [IntegrationApi::SMSVO](docs/SMSVO.md)
  - [IntegrationApi::SamsungPayload](docs/SamsungPayload.md)
+ - [IntegrationApi::SmtpResponseVO](docs/SmtpResponseVO.md)
+ - [IntegrationApi::SmtpVO](docs/SmtpVO.md)
  - [IntegrationApi::Sort](docs/Sort.md)
- - [IntegrationApi::StatementModel](docs/StatementModel.md)
- - [IntegrationApi::StatusMessage](docs/StatusMessage.md)
- - [IntegrationApi::UpdateClientResponse](docs/UpdateClientResponse.md)
+ - [IntegrationApi::SpendingControlVendorRequestDataVO](docs/SpendingControlVendorRequestDataVO.md)
+ - [IntegrationApi::Stat](docs/Stat.md)
+ - [IntegrationApi::Transaction](docs/Transaction.md)
+ - [IntegrationApi::UpdateBaasBusinessCO](docs/UpdateBaasBusinessCO.md)
+ - [IntegrationApi::UpdateBaasClientCO](docs/UpdateBaasClientCO.md)
+ - [IntegrationApi::UpdateBusinessResponseVO](docs/UpdateBusinessResponseVO.md)
+ - [IntegrationApi::UpdateCardClientResponseVO](docs/UpdateCardClientResponseVO.md)
  - [IntegrationApi::UserResponseInterface](docs/UserResponseInterface.md)
  - [IntegrationApi::UserResponseVO](docs/UserResponseVO.md)
+ - [IntegrationApi::VendorAccessConfigVO](docs/VendorAccessConfigVO.md)
  - [IntegrationApi::Webhook](docs/Webhook.md)
  - [IntegrationApi::WidgetUrlVO](docs/WidgetUrlVO.md)
+ - [IntegrationApi::WireBankLinkRequestCO](docs/WireBankLinkRequestCO.md)
+ - [IntegrationApi::WireBankLinkResponseVO](docs/WireBankLinkResponseVO.md)
+ - [IntegrationApi::WireTransferRequestCO](docs/WireTransferRequestCO.md)
+ - [IntegrationApi::WireTransferResponseVO](docs/WireTransferResponseVO.md)
  - [IntegrationApi::ZillowPropertyVendorResponseVO](docs/ZillowPropertyVendorResponseVO.md)
 
 

@@ -15,11 +15,7 @@ package com.hydrogen.nucleus.model;
 
 import java.util.Objects;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -31,14 +27,11 @@ import org.threeten.bp.OffsetDateTime;
  * CardProgram Object
  */
 @ApiModel(description = "CardProgram Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-12T11:03:26.704Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-28T16:21:02.928Z")
 
 
 
 public class CardProgram {
-  @SerializedName("card_issuer")
-  private String cardIssuer = null;
-
   @SerializedName("card_network")
   private String cardNetwork = null;
 
@@ -78,29 +71,14 @@ public class CardProgram {
   @SerializedName("name")
   private String name = null;
 
+  @SerializedName("program_manager")
+  private String programManager = null;
+
   @SerializedName("secondary_id")
   private String secondaryId = null;
 
   @SerializedName("update_date")
   private OffsetDateTime updateDate = null;
-
-  public CardProgram cardIssuer(String cardIssuer) {
-    this.cardIssuer = cardIssuer;
-    return this;
-  }
-
-   /**
-   * cardIssuer
-   * @return cardIssuer
-  **/
-  @ApiModelProperty(example = "visa", required = true, value = "cardIssuer")
-  public String getCardIssuer() {
-    return cardIssuer;
-  }
-
-  public void setCardIssuer(String cardIssuer) {
-    this.cardIssuer = cardIssuer;
-  }
 
   public CardProgram cardNetwork(String cardNetwork) {
     this.cardNetwork = cardNetwork;
@@ -129,7 +107,7 @@ public class CardProgram {
    * cardProcessor
    * @return cardProcessor
   **/
-  @ApiModelProperty(example = "xyz", required = true, value = "cardProcessor")
+  @ApiModelProperty(example = "xyz", value = "cardProcessor")
   public String getCardProcessor() {
     return cardProcessor;
   }
@@ -309,6 +287,24 @@ public class CardProgram {
     this.name = name;
   }
 
+  public CardProgram programManager(String programManager) {
+    this.programManager = programManager;
+    return this;
+  }
+
+   /**
+   * programManager
+   * @return programManager
+  **/
+  @ApiModelProperty(example = "xyz", value = "programManager")
+  public String getProgramManager() {
+    return programManager;
+  }
+
+  public void setProgramManager(String programManager) {
+    this.programManager = programManager;
+  }
+
    /**
    * Get secondaryId
    * @return secondaryId
@@ -337,8 +333,7 @@ public class CardProgram {
       return false;
     }
     CardProgram cardProgram = (CardProgram) o;
-    return Objects.equals(this.cardIssuer, cardProgram.cardIssuer) &&
-        Objects.equals(this.cardNetwork, cardProgram.cardNetwork) &&
+    return Objects.equals(this.cardNetwork, cardProgram.cardNetwork) &&
         Objects.equals(this.cardProcessor, cardProgram.cardProcessor) &&
         Objects.equals(this.cardType, cardProgram.cardType) &&
         Objects.equals(this.clientId, cardProgram.clientId) &&
@@ -351,13 +346,14 @@ public class CardProgram {
         Objects.equals(this.issuingBank, cardProgram.issuingBank) &&
         Objects.equals(this.metadata, cardProgram.metadata) &&
         Objects.equals(this.name, cardProgram.name) &&
+        Objects.equals(this.programManager, cardProgram.programManager) &&
         Objects.equals(this.secondaryId, cardProgram.secondaryId) &&
         Objects.equals(this.updateDate, cardProgram.updateDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cardIssuer, cardNetwork, cardProcessor, cardType, clientId, code, createDate, description, id, isActive, isDelegatedAuthority, issuingBank, metadata, name, secondaryId, updateDate);
+    return Objects.hash(cardNetwork, cardProcessor, cardType, clientId, code, createDate, description, id, isActive, isDelegatedAuthority, issuingBank, metadata, name, programManager, secondaryId, updateDate);
   }
 
 
@@ -366,7 +362,6 @@ public class CardProgram {
     StringBuilder sb = new StringBuilder();
     sb.append("class CardProgram {\n");
     
-    sb.append("    cardIssuer: ").append(toIndentedString(cardIssuer)).append("\n");
     sb.append("    cardNetwork: ").append(toIndentedString(cardNetwork)).append("\n");
     sb.append("    cardProcessor: ").append(toIndentedString(cardProcessor)).append("\n");
     sb.append("    cardType: ").append(toIndentedString(cardType)).append("\n");
@@ -380,6 +375,7 @@ public class CardProgram {
     sb.append("    issuingBank: ").append(toIndentedString(issuingBank)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    programManager: ").append(toIndentedString(programManager)).append("\n");
     sb.append("    secondaryId: ").append(toIndentedString(secondaryId)).append("\n");
     sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
     sb.append("}");

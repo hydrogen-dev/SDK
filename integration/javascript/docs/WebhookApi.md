@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 Delete a webhook
 
-Permanently delete a webhook for your firm. The webhook_id must be provided.
+Permanently delete a webhook for your business. The webhook_id must be provided.
 
 ### Example
 ```javascript
@@ -119,7 +119,7 @@ null (empty response body)
 
 List all webhooks
 
-Get information for all webhooks defined for your firm.
+Get information for all webhooks defined for your business.
 
 ### Example
 ```javascript
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 Update a webhook
 
-Update a webhook for your firm. The webhook_id must be provided
+Update a webhook for your business. The webhook_id must be provided
 
 ### Example
 ```javascript
@@ -243,7 +243,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new HydrogenIntegrationApi.WebhookApi();
 
-var webhook = new HydrogenIntegrationApi.Webhook(); // Webhook | webhook
+var webhook = null; // Object | webhook
 
 var webhookId = "webhookId_example"; // String | UUID webhook_id
 
@@ -262,7 +262,7 @@ apiInstance.updateWebhookUsingPut(webhook, webhookId, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhook** | [**Webhook**](Webhook.md)| webhook | 
+ **webhook** | **Object**| webhook | 
  **webhookId** | [**String**](.md)| UUID webhook_id | 
 
 ### Return type

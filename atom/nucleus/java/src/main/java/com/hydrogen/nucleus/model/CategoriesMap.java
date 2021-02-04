@@ -13,23 +13,15 @@
 
 package com.hydrogen.nucleus.model;
 
-import java.util.Objects;
-
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+
+import java.util.Objects;
 
 /**
  * CategoriesMap
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-12T11:03:26.704Z")
-
-
-
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-12-30T23:14:41.249Z")
 public class CategoriesMap {
   @SerializedName("amount")
   private Integer amount = null;
@@ -75,7 +67,7 @@ public class CategoriesMap {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -97,7 +89,7 @@ public class CategoriesMap {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CategoriesMap {\n");
-    
+
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("}");
@@ -108,7 +100,7 @@ public class CategoriesMap {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

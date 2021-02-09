@@ -1,4 +1,4 @@
-# hydrogen-nucleus-api
+# hydrogen_nucleus_api
 
 Hydrogen Nucleus API
 - API version: 1.8.0

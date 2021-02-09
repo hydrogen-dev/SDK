@@ -1,4 +1,4 @@
-# nucleus_api
+# hydrogen_nucleus_api
 
 NucleusApi - the Ruby gem for the Hydrogen Nucleus API
 

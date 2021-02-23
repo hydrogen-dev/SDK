@@ -4288,7 +4288,7 @@ paths:
         - SMS
       summary: Fetch details for corresponding sms_id
       description: Fetch details for corresponding sms_id
-      operationId: getVendorCallLimit
+      operationId: getSmsStatus
       produces:
         - '*/*'
       parameters:
@@ -4352,7 +4352,7 @@ paths:
         - SMTP
       summary: Fetch details for corresponding email_id
       description: Fetch details for corresponding email_id
-      operationId: getEmailDetails
+      operationId: getSmtpStatus
       produces:
         - '*/*'
       parameters:

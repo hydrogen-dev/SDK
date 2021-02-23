@@ -24,8 +24,8 @@ module IntegrationApi
     # @param email_id email_id
     # @param [Hash] opts the optional parameters
     # @return [Email]
-    def get_email_details(email_id, opts = {})
-      data, _status_code, _headers = get_email_details_with_http_info(email_id, opts)
+    def get_smtp_status(email_id, opts = {})
+      data, _status_code, _headers = get_smtp_status_with_http_info(email_id, opts)
       data
     end
 
@@ -34,13 +34,13 @@ module IntegrationApi
     # @param email_id email_id
     # @param [Hash] opts the optional parameters
     # @return [Array<(Email, Fixnum, Hash)>] Email data, response status code and response headers
-    def get_email_details_with_http_info(email_id, opts = {})
+    def get_smtp_status_with_http_info(email_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SMTPApi.get_email_details ...'
+        @api_client.config.logger.debug 'Calling API: SMTPApi.get_smtp_status ...'
       end
       # verify the required parameter 'email_id' is set
       if @api_client.config.client_side_validation && email_id.nil?
-        fail ArgumentError, "Missing the required parameter 'email_id' when calling SMTPApi.get_email_details"
+        fail ArgumentError, "Missing the required parameter 'email_id' when calling SMTPApi.get_smtp_status"
       end
       # resource path
       local_var_path = '/smtp/status/{email_id}'.sub('{' + 'email_id' + '}', email_id.to_s)
@@ -67,7 +67,7 @@ module IntegrationApi
         :auth_names => auth_names,
         :return_type => 'Email')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SMTPApi#get_email_details\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SMTPApi#get_smtp_status\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

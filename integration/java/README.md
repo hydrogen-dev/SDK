@@ -243,9 +243,9 @@ Class | Method | HTTP request | Description
 *RtpApi* | [**getRtpTransferUsingGet**](docs/RtpApi.md#getRtpTransferUsingGet) | **GET** /rtp/{nucleus_funding_id} | Get the RTP transfer
 *RtpApi* | [**submitRtpTransferUsingPost**](docs/RtpApi.md#submitRtpTransferUsingPost) | **POST** /rtp | Submit a RTP transfer
 *RtpApi* | [**updateBankLinkUsingPut2**](docs/RtpApi.md#updateBankLinkUsingPut2) | **PUT** /rtp/bank_link/{nucleus_bank_link_id} | Update bank link
-*SmsApi* | [**getVendorCallLimit**](docs/SmsApi.md#getVendorCallLimit) | **GET** /sms/status/{sms_id} | Fetch details for corresponding sms_id
+*SmsApi* | [**getSmsStatus**](docs/SmsApi.md#getSmsStatus) | **GET** /sms/status/{sms_id} | Fetch details for corresponding sms_id
 *SmsApi* | [**sendMail**](docs/SmsApi.md#sendMail) | **POST** /sms | Send SMS to recipient
-*SmtpApi* | [**getEmailDetails**](docs/SmtpApi.md#getEmailDetails) | **GET** /smtp/status/{email_id} | Fetch details for corresponding email_id
+*SmtpApi* | [**getSmtpStatus**](docs/SmtpApi.md#getSmtpStatus) | **GET** /smtp/status/{email_id} | Fetch details for corresponding email_id
 *SmtpApi* | [**sendMail1**](docs/SmtpApi.md#sendMail1) | **POST** /smtp | Send Mail to recipient
 *UtilsApi* | [**createTokenExchangeUsingPost**](docs/UtilsApi.md#createTokenExchangeUsingPost) | **POST** /token_exchange | Retrieve token based on certain vendor specific value
 *UtilsApi* | [**createUserUsingPost**](docs/UtilsApi.md#createUserUsingPost) | **POST** /user | Create user in vendor

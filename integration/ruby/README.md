@@ -216,9 +216,9 @@ Class | Method | HTTP request | Description
 *IntegrationApi::RTPApi* | [**get_rtp_transfer_using_get**](docs/RTPApi.md#get_rtp_transfer_using_get) | **GET** /rtp/{nucleus_funding_id} | Get the RTP transfer
 *IntegrationApi::RTPApi* | [**submit_rtp_transfer_using_post**](docs/RTPApi.md#submit_rtp_transfer_using_post) | **POST** /rtp | Submit a RTP transfer
 *IntegrationApi::RTPApi* | [**update_bank_link_using_put2**](docs/RTPApi.md#update_bank_link_using_put2) | **PUT** /rtp/bank_link/{nucleus_bank_link_id} | Update bank link
-*IntegrationApi::SMSApi* | [**get_vendor_call_limit**](docs/SMSApi.md#get_vendor_call_limit) | **GET** /sms/status/{sms_id} | Fetch details for corresponding sms_id
+*IntegrationApi::SMSApi* | [**get_sms_status**](docs/SMSApi.md#get_vendor_call_limit) | **GET** /sms/status/{sms_id} | Fetch details for corresponding sms_id
 *IntegrationApi::SMSApi* | [**send_mail**](docs/SMSApi.md#send_mail) | **POST** /sms | Send SMS to recipient
-*IntegrationApi::SMTPApi* | [**get_email_details**](docs/SMTPApi.md#get_email_details) | **GET** /smtp/status/{email_id} | Fetch details for corresponding email_id
+*IntegrationApi::SMTPApi* | [**get_smtp_status**](docs/SMTPApi.md#get_email_details) | **GET** /smtp/status/{email_id} | Fetch details for corresponding email_id
 *IntegrationApi::SMTPApi* | [**send_mail1**](docs/SMTPApi.md#send_mail1) | **POST** /smtp | Send Mail to recipient
 *IntegrationApi::UtilsApi* | [**create_token_exchange_using_post**](docs/UtilsApi.md#create_token_exchange_using_post) | **POST** /token_exchange | Retrieve token based on certain vendor specific value
 *IntegrationApi::UtilsApi* | [**create_user_using_post**](docs/UtilsApi.md#create_user_using_post) | **POST** /user | Create user in vendor

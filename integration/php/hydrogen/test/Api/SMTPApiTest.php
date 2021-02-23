@@ -72,12 +72,12 @@ class SMTPApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for getEmailDetails
+     * Test case for getSmtpStatus
      *
      * Fetch details for corresponding email_id.
      *
      */
-    public function testGetEmailDetails()
+    public function testGetSmtpStatus()
     {
     }
 

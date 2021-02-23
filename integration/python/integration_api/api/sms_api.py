@@ -33,13 +33,13 @@ class SMSApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_vendor_call_limit(self, sms_id, **kwargs):  # noqa: E501
+    def get_sms_status(self, sms_id, **kwargs):  # noqa: E501
         """Fetch details for corresponding sms_id  # noqa: E501
 
         Fetch details for corresponding sms_id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_vendor_call_limit(sms_id, async_req=True)
+        >>> thread = api.get_sms_status(sms_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -50,18 +50,18 @@ class SMSApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_vendor_call_limit_with_http_info(sms_id, **kwargs)  # noqa: E501
+            return self.get_sms_status_with_http_info(sms_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_vendor_call_limit_with_http_info(sms_id, **kwargs)  # noqa: E501
+            (data) = self.get_sms_status_with_http_info(sms_id, **kwargs)  # noqa: E501
             return data
 
-    def get_vendor_call_limit_with_http_info(self, sms_id, **kwargs):  # noqa: E501
+    def get_sms_status_with_http_info(self, sms_id, **kwargs):  # noqa: E501
         """Fetch details for corresponding sms_id  # noqa: E501
 
         Fetch details for corresponding sms_id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_vendor_call_limit_with_http_info(sms_id, async_req=True)
+        >>> thread = api.get_sms_status_with_http_info(sms_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -82,14 +82,14 @@ class SMSApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_vendor_call_limit" % key
+                    " to method get_sms_status" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'sms_id' is set
         if ('sms_id' not in params or
                 params['sms_id'] is None):
-            raise ValueError("Missing the required parameter `sms_id` when calling `get_vendor_call_limit`")  # noqa: E501
+            raise ValueError("Missing the required parameter `sms_id` when calling `get_sms_status`")  # noqa: E501
 
         collection_formats = {}
 

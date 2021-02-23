@@ -40,9 +40,9 @@ public class SmtpApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getEmailDetailsTest() throws ApiException {
+    public void getSmtpStatusTest() throws ApiException {
         UUID emailId = null;
-        Email response = api.getEmailDetails(emailId);
+        Email response = api.getSmtpStatus(emailId);
 
         // TODO: test validations
     }

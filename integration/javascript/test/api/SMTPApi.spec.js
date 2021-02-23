@@ -51,10 +51,10 @@
   }
 
   describe('SMTPApi', function() {
-    describe('getEmailDetails', function() {
-      it('should call getEmailDetails successfully', function(done) {
-        //uncomment below and update the code to test getEmailDetails
-        //instance.getEmailDetails(function(error) {
+    describe('getSmtpStatus', function() {
+      it('should call getSmtpStatus successfully', function(done) {
+        //uncomment below and update the code to test getSmtpStatus
+        //instance.getSmtpStatus(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

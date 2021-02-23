@@ -72,12 +72,12 @@ class SMSApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for getVendorCallLimit
+     * Test case for getSmsStatus
      *
      * Fetch details for corresponding sms_id.
      *
      */
-    public function testGetVendorCallLimit()
+    public function testGetSmsStatus()
     {
     }
 

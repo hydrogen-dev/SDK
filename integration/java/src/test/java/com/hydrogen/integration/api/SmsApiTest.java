@@ -40,9 +40,9 @@ public class SmsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getVendorCallLimitTest() throws ApiException {
+    public void getSmsStatusTest() throws ApiException {
         UUID smsId = null;
-        SMS response = api.getVendorCallLimit(smsId);
+        SMS response = api.getSmsStatus(smsId);
 
         // TODO: test validations
     }

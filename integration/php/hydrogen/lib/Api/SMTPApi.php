@@ -88,7 +88,7 @@ class SMTPApi
     }
 
     /**
-     * Operation getEmailDetails
+     * Operation getSmtpStatus
      *
      * Fetch details for corresponding email_id
      *
@@ -98,14 +98,14 @@ class SMTPApi
      * @throws \InvalidArgumentException
      * @return \com\hydrogen\integration\Model\Email
      */
-    public function getEmailDetails($email_id)
+    public function getSmtpStatus($email_id)
     {
-        list($response) = $this->getEmailDetailsWithHttpInfo($email_id);
+        list($response) = $this->getSmtpStatusWithHttpInfo($email_id);
         return $response;
     }
 
     /**
-     * Operation getEmailDetailsWithHttpInfo
+     * Operation getSmtpStatusWithHttpInfo
      *
      * Fetch details for corresponding email_id
      *
@@ -115,10 +115,10 @@ class SMTPApi
      * @throws \InvalidArgumentException
      * @return array of \com\hydrogen\integration\Model\Email, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEmailDetailsWithHttpInfo($email_id)
+    public function getSmtpStatusWithHttpInfo($email_id)
     {
         $returnType = '\com\hydrogen\integration\Model\Email';
-        $request = $this->getEmailDetailsRequest($email_id);
+        $request = $this->getSmtpStatusRequest($email_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -180,7 +180,7 @@ class SMTPApi
     }
 
     /**
-     * Operation getEmailDetailsAsync
+     * Operation getSmtpStatusAsync
      *
      * Fetch details for corresponding email_id
      *
@@ -189,9 +189,9 @@ class SMTPApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailDetailsAsync($email_id)
+    public function getSmtpStatusAsync($email_id)
     {
-        return $this->getEmailDetailsAsyncWithHttpInfo($email_id)
+        return $this->getSmtpStatusAsyncWithHttpInfo($email_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -200,7 +200,7 @@ class SMTPApi
     }
 
     /**
-     * Operation getEmailDetailsAsyncWithHttpInfo
+     * Operation getSmtpStatusAsyncWithHttpInfo
      *
      * Fetch details for corresponding email_id
      *
@@ -209,10 +209,10 @@ class SMTPApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailDetailsAsyncWithHttpInfo($email_id)
+    public function getSmtpStatusAsyncWithHttpInfo($email_id)
     {
         $returnType = '\com\hydrogen\integration\Model\Email';
-        $request = $this->getEmailDetailsRequest($email_id);
+        $request = $this->getSmtpStatusRequest($email_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -252,19 +252,19 @@ class SMTPApi
     }
 
     /**
-     * Create request for operation 'getEmailDetails'
+     * Create request for operation 'getSmtpStatus'
      *
      * @param  string $email_id email_id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getEmailDetailsRequest($email_id)
+    protected function getSmtpStatusRequest($email_id)
     {
         // verify the required parameter 'email_id' is set
         if ($email_id === null || (is_array($email_id) && count($email_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $email_id when calling getEmailDetails'
+                'Missing the required parameter $email_id when calling getSmtpStatus'
             );
         }
 

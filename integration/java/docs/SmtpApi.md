@@ -4,13 +4,13 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getEmailDetails**](SmtpApi.md#getEmailDetails) | **GET** /smtp/status/{email_id} | Fetch details for corresponding email_id
+[**getSmtpStatus**](SmtpApi.md#getSmtpStatus) | **GET** /smtp/status/{email_id} | Fetch details for corresponding email_id
 [**sendMail1**](SmtpApi.md#sendMail1) | **POST** /smtp | Send Mail to recipient
 
 
-<a name="getEmailDetails"></a>
-# **getEmailDetails**
-> Email getEmailDetails(emailId)
+<a name="getSmtpStatus"></a>
+# **getSmtpStatus**
+> Email getSmtpStatus(emailId)
 
 Fetch details for corresponding email_id
 
@@ -42,10 +42,10 @@ e.printStackTrace();
 SmtpApi apiInstance = new SmtpApi();
 UUID emailId = new UUID(); // UUID | email_id
 try {
-    Email result = apiInstance.getEmailDetails(emailId);
+    Email result = apiInstance.getSmtpStatus(emailId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling SmtpApi#getEmailDetails");
+    System.err.println("Exception when calling SmtpApi#getSmtpStatus");
     e.printStackTrace();
 }
 ```

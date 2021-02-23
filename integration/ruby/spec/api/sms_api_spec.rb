@@ -32,13 +32,13 @@ describe 'SMSApi' do
     end
   end
 
-  # unit tests for get_vendor_call_limit
+  # unit tests for get_sms_status
   # Fetch details for corresponding sms_id
   # Fetch details for corresponding sms_id
   # @param sms_id sms_id
   # @param [Hash] opts the optional parameters
   # @return [SMS]
-  describe 'get_vendor_call_limit test' do
+  describe 'get_sms_status test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

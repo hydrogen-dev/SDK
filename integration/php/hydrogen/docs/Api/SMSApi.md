@@ -4,12 +4,12 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getVendorCallLimit**](SMSApi.md#getVendorCallLimit) | **GET** /sms/status/{sms_id} | Fetch details for corresponding sms_id
+[**getSmsStatus**](SMSApi.md#getSmsStatus) | **GET** /sms/status/{sms_id} | Fetch details for corresponding sms_id
 [**sendMail**](SMSApi.md#sendMail) | **POST** /sms | Send SMS to recipient
 
 
-# **getVendorCallLimit**
-> \com\hydrogen\integration\Model\SMS getVendorCallLimit($sms_id)
+# **getSmsStatus**
+> \com\hydrogen\integration\Model\SMS getSmsStatus($sms_id)
 
 Fetch details for corresponding sms_id
 
@@ -46,10 +46,10 @@ $apiInstance = new com\hydrogen\integration\Api\SMSApi(
 $sms_id = "sms_id_example"; // string | sms_id
 
 try {
-    $result = $apiInstance->getVendorCallLimit($sms_id);
+    $result = $apiInstance->getSmsStatus($sms_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SMSApi->getVendorCallLimit: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SMSApi->getSmsStatus: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

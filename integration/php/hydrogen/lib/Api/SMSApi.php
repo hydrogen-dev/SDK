@@ -88,7 +88,7 @@ class SMSApi
     }
 
     /**
-     * Operation getVendorCallLimit
+     * Operation getSmsStatus
      *
      * Fetch details for corresponding sms_id
      *
@@ -98,14 +98,14 @@ class SMSApi
      * @throws \InvalidArgumentException
      * @return \com\hydrogen\integration\Model\SMS
      */
-    public function getVendorCallLimit($sms_id)
+    public function getSmsStatus($sms_id)
     {
-        list($response) = $this->getVendorCallLimitWithHttpInfo($sms_id);
+        list($response) = $this->getSmsStatusWithHttpInfo($sms_id);
         return $response;
     }
 
     /**
-     * Operation getVendorCallLimitWithHttpInfo
+     * Operation getSmsStatusWithHttpInfo
      *
      * Fetch details for corresponding sms_id
      *
@@ -115,10 +115,10 @@ class SMSApi
      * @throws \InvalidArgumentException
      * @return array of \com\hydrogen\integration\Model\SMS, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getVendorCallLimitWithHttpInfo($sms_id)
+    public function getSmsStatusWithHttpInfo($sms_id)
     {
         $returnType = '\com\hydrogen\integration\Model\SMS';
-        $request = $this->getVendorCallLimitRequest($sms_id);
+        $request = $this->getSmsStatusRequest($sms_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -180,7 +180,7 @@ class SMSApi
     }
 
     /**
-     * Operation getVendorCallLimitAsync
+     * Operation getSmsStatusAsync
      *
      * Fetch details for corresponding sms_id
      *
@@ -189,9 +189,9 @@ class SMSApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVendorCallLimitAsync($sms_id)
+    public function getSmsStatusAsync($sms_id)
     {
-        return $this->getVendorCallLimitAsyncWithHttpInfo($sms_id)
+        return $this->getSmsStatusAsyncWithHttpInfo($sms_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -200,7 +200,7 @@ class SMSApi
     }
 
     /**
-     * Operation getVendorCallLimitAsyncWithHttpInfo
+     * Operation getSmsStatusAsyncWithHttpInfo
      *
      * Fetch details for corresponding sms_id
      *
@@ -209,10 +209,10 @@ class SMSApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getVendorCallLimitAsyncWithHttpInfo($sms_id)
+    public function getSmsStatusAsyncWithHttpInfo($sms_id)
     {
         $returnType = '\com\hydrogen\integration\Model\SMS';
-        $request = $this->getVendorCallLimitRequest($sms_id);
+        $request = $this->getSmsStatusRequest($sms_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -252,19 +252,19 @@ class SMSApi
     }
 
     /**
-     * Create request for operation 'getVendorCallLimit'
+     * Create request for operation 'getSmsStatus'
      *
      * @param  string $sms_id sms_id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getVendorCallLimitRequest($sms_id)
+    protected function getSmsStatusRequest($sms_id)
     {
         // verify the required parameter 'sms_id' is set
         if ($sms_id === null || (is_array($sms_id) && count($sms_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $sms_id when calling getVendorCallLimit'
+                'Missing the required parameter $sms_id when calling getSmsStatus'
             );
         }
 

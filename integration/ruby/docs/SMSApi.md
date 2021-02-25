@@ -4,12 +4,12 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_vendor_call_limit**](SMSApi.md#get_vendor_call_limit) | **GET** /sms/status/{sms_id} | Fetch details for corresponding sms_id
+[**get_sms_status**](SMSApi.md#get_sms_status) | **GET** /sms/status/{sms_id} | Fetch details for corresponding sms_id
 [**send_mail**](SMSApi.md#send_mail) | **POST** /sms | Send SMS to recipient
 
 
-# **get_vendor_call_limit**
-> SMS get_vendor_call_limit(sms_id)
+# **get_sms_status**
+> SMS get_sms_status(sms_id)
 
 Fetch details for corresponding sms_id
 
@@ -39,10 +39,10 @@ sms_id = 'sms_id_example' # String | sms_id
 
 begin
   #Fetch details for corresponding sms_id
-  result = api_instance.get_vendor_call_limit(sms_id)
+  result = api_instance.get_sms_status(sms_id)
   p result
 rescue IntegrationApi::ApiError => e
-  puts "Exception when calling SMSApi->get_vendor_call_limit: #{e}"
+  puts "Exception when calling SMSApi->get_sms_status: #{e}"
 end
 ```
 

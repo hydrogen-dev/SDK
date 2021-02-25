@@ -33,13 +33,13 @@ class SMTPApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_email_details(self, email_id, **kwargs):  # noqa: E501
+    def get_smtp_status(self, email_id, **kwargs):  # noqa: E501
         """Fetch details for corresponding email_id  # noqa: E501
 
         Fetch details for corresponding email_id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_email_details(email_id, async_req=True)
+        >>> thread = api.get_smtp_status(email_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -50,18 +50,18 @@ class SMTPApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_email_details_with_http_info(email_id, **kwargs)  # noqa: E501
+            return self.get_smtp_status_with_http_info(email_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_email_details_with_http_info(email_id, **kwargs)  # noqa: E501
+            (data) = self.get_smtp_status_with_http_info(email_id, **kwargs)  # noqa: E501
             return data
 
-    def get_email_details_with_http_info(self, email_id, **kwargs):  # noqa: E501
+    def get_smtp_status_with_http_info(self, email_id, **kwargs):  # noqa: E501
         """Fetch details for corresponding email_id  # noqa: E501
 
         Fetch details for corresponding email_id  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_email_details_with_http_info(email_id, async_req=True)
+        >>> thread = api.get_smtp_status_with_http_info(email_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -82,14 +82,14 @@ class SMTPApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_email_details" % key
+                    " to method get_smtp_status" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'email_id' is set
         if ('email_id' not in params or
                 params['email_id'] is None):
-            raise ValueError("Missing the required parameter `email_id` when calling `get_email_details`")  # noqa: E501
+            raise ValueError("Missing the required parameter `email_id` when calling `get_smtp_status`")  # noqa: E501
 
         collection_formats = {}
 

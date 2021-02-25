@@ -29,8 +29,8 @@ class TestSMTPApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_get_email_details(self):
-        """Test case for get_email_details
+    def test_get_smtp_status(self):
+        """Test case for get_smtp_status
 
         Fetch details for corresponding email_id  # noqa: E501
         """

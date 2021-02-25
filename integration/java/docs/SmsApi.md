@@ -4,13 +4,13 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getVendorCallLimit**](SmsApi.md#getVendorCallLimit) | **GET** /sms/status/{sms_id} | Fetch details for corresponding sms_id
+[**getSmsStatus**](SmsApi.md#getSmsStatus) | **GET** /sms/status/{sms_id} | Fetch details for corresponding sms_id
 [**sendMail**](SmsApi.md#sendMail) | **POST** /sms | Send SMS to recipient
 
 
-<a name="getVendorCallLimit"></a>
-# **getVendorCallLimit**
-> SMS getVendorCallLimit(smsId)
+<a name="getSmsStatus"></a>
+# **getSmsStatus**
+> SMS getSmsStatus(smsId)
 
 Fetch details for corresponding sms_id
 
@@ -42,10 +42,10 @@ e.printStackTrace();
 SmsApi apiInstance = new SmsApi();
 UUID smsId = new UUID(); // UUID | sms_id
 try {
-    SMS result = apiInstance.getVendorCallLimit(smsId);
+    SMS result = apiInstance.getSmsStatus(smsId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling SmsApi#getVendorCallLimit");
+    System.err.println("Exception when calling SmsApi#getSmsStatus");
     e.printStackTrace();
 }
 ```

@@ -43,14 +43,14 @@ public class SmsApi {
     }
 
     /**
-     * Build call for getVendorCallLimit
+     * Build call for getSmsStatus
      * @param smsId sms_id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getVendorCallLimitCall(UUID smsId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getSmsStatusCall(UUID smsId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -93,15 +93,15 @@ public class SmsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getVendorCallLimitValidateBeforeCall(UUID smsId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getSmsStatusValidateBeforeCall(UUID smsId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 
         // verify the required parameter 'smsId' is set
         if (smsId == null) {
-            throw new ApiException("Missing the required parameter 'smsId' when calling getVendorCallLimit(Async)");
+            throw new ApiException("Missing the required parameter 'smsId' when calling getSmsStatus(Async)");
         }
 
 
-        com.squareup.okhttp.Call call = getVendorCallLimitCall(smsId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getSmsStatusCall(smsId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -113,8 +113,8 @@ public class SmsApi {
      * @return SMS
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SMS getVendorCallLimit(UUID smsId) throws ApiException {
-        ApiResponse<SMS> resp = getVendorCallLimitWithHttpInfo(smsId);
+    public SMS getSmsStatus(UUID smsId) throws ApiException {
+        ApiResponse<SMS> resp = getSmsStatusWithHttpInfo(smsId);
         return resp.getData();
     }
 
@@ -125,8 +125,8 @@ public class SmsApi {
      * @return ApiResponse&lt;SMS&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SMS> getVendorCallLimitWithHttpInfo(UUID smsId) throws ApiException {
-        com.squareup.okhttp.Call call = getVendorCallLimitValidateBeforeCall(smsId, null, null);
+    public ApiResponse<SMS> getSmsStatusWithHttpInfo(UUID smsId) throws ApiException {
+        com.squareup.okhttp.Call call = getSmsStatusValidateBeforeCall(smsId, null, null);
         Type localVarReturnType = new TypeToken<SMS>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -139,7 +139,7 @@ public class SmsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getVendorCallLimitAsync(UUID smsId, final ApiCallback<SMS> callback) throws ApiException {
+    public com.squareup.okhttp.Call getSmsStatusAsync(UUID smsId, final ApiCallback<SMS> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -160,7 +160,7 @@ public class SmsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getVendorCallLimitValidateBeforeCall(smsId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getSmsStatusValidateBeforeCall(smsId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SMS>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

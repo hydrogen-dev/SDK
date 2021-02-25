@@ -32,13 +32,13 @@ describe 'SMTPApi' do
     end
   end
 
-  # unit tests for get_email_details
+  # unit tests for get_smtp_status
   # Fetch details for corresponding email_id
   # Fetch details for corresponding email_id
   # @param email_id email_id
   # @param [Hash] opts the optional parameters
   # @return [Email]
-  describe 'get_email_details test' do
+  describe 'get_smtp_status test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

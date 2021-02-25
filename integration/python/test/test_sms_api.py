@@ -29,8 +29,8 @@ class TestSMSApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_get_vendor_call_limit(self):
-        """Test case for get_vendor_call_limit
+    def test_get_sms_status(self):
+        """Test case for get_sms_status
 
         Fetch details for corresponding sms_id  # noqa: E501
         """

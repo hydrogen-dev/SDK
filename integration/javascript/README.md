@@ -289,9 +289,9 @@ Class | Method | HTTP request | Description
 *HydrogenIntegrationApi.RTPApi* | [**getRtpTransferUsingGet**](docs/RTPApi.md#getRtpTransferUsingGet) | **GET** /rtp/{nucleus_funding_id} | Get the RTP transfer
 *HydrogenIntegrationApi.RTPApi* | [**submitRtpTransferUsingPost**](docs/RTPApi.md#submitRtpTransferUsingPost) | **POST** /rtp | Submit a RTP transfer
 *HydrogenIntegrationApi.RTPApi* | [**updateBankLinkUsingPut2**](docs/RTPApi.md#updateBankLinkUsingPut2) | **PUT** /rtp/bank_link/{nucleus_bank_link_id} | Update bank link
-*HydrogenIntegrationApi.SMSApi* | [**getVendorCallLimit**](docs/SMSApi.md#getVendorCallLimit) | **GET** /sms/status/{sms_id} | Fetch details for corresponding sms_id
+*HydrogenIntegrationApi.SMSApi* | [**getSmsStatus**](docs/SMSApi.md#getSmsStatus) | **GET** /sms/status/{sms_id} | Fetch details for corresponding sms_id
 *HydrogenIntegrationApi.SMSApi* | [**sendMail**](docs/SMSApi.md#sendMail) | **POST** /sms | Send SMS to recipient
-*HydrogenIntegrationApi.SMTPApi* | [**getEmailDetails**](docs/SMTPApi.md#getEmailDetails) | **GET** /smtp/status/{email_id} | Fetch details for corresponding email_id
+*HydrogenIntegrationApi.SMTPApi* | [**getSmtpStatus**](docs/SMTPApi.md#getSmtpStatus) | **GET** /smtp/status/{email_id} | Fetch details for corresponding email_id
 *HydrogenIntegrationApi.SMTPApi* | [**sendMail1**](docs/SMTPApi.md#sendMail1) | **POST** /smtp | Send Mail to recipient
 *HydrogenIntegrationApi.UtilsApi* | [**createTokenExchangeUsingPost**](docs/UtilsApi.md#createTokenExchangeUsingPost) | **POST** /token_exchange | Retrieve token based on certain vendor specific value
 *HydrogenIntegrationApi.UtilsApi* | [**createUserUsingPost**](docs/UtilsApi.md#createUserUsingPost) | **POST** /user | Create user in vendor

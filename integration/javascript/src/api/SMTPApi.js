@@ -49,8 +49,8 @@
 
 
     /**
-     * Callback function to receive the result of the getEmailDetails operation.
-     * @callback module:api/SMTPApi~getEmailDetailsCallback
+     * Callback function to receive the result of the getSmtpStatus operation.
+     * @callback module:api/SMTPApi~getSmtpStatusCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Email} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -60,15 +60,15 @@
      * Fetch details for corresponding email_id
      * Fetch details for corresponding email_id
      * @param {String} emailId email_id
-     * @param {module:api/SMTPApi~getEmailDetailsCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/SMTPApi~getSmtpStatusCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Email}
      */
-    this.getEmailDetails = function(emailId, callback) {
+    this.getSmtpStatus = function(emailId, callback) {
       var postBody = null;
 
       // verify the required parameter 'emailId' is set
       if (emailId === undefined || emailId === null) {
-        throw new Error("Missing the required parameter 'emailId' when calling getEmailDetails");
+        throw new Error("Missing the required parameter 'emailId' when calling getSmtpStatus");
       }
 
 

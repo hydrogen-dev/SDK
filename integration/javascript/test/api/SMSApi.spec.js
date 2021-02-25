@@ -51,10 +51,10 @@
   }
 
   describe('SMSApi', function() {
-    describe('getVendorCallLimit', function() {
-      it('should call getVendorCallLimit successfully', function(done) {
-        //uncomment below and update the code to test getVendorCallLimit
-        //instance.getVendorCallLimit(function(error) {
+    describe('getSmsStatus', function() {
+      it('should call getSmsStatus successfully', function(done) {
+        //uncomment below and update the code to test getSmsStatus
+        //instance.getSmsStatus(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

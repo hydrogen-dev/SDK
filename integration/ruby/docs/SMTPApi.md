@@ -4,12 +4,12 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_email_details**](SMTPApi.md#get_email_details) | **GET** /smtp/status/{email_id} | Fetch details for corresponding email_id
+[**get_smtp_status**](SMTPApi.md#get_smtp_status) | **GET** /smtp/status/{email_id} | Fetch details for corresponding email_id
 [**send_mail1**](SMTPApi.md#send_mail1) | **POST** /smtp | Send Mail to recipient
 
 
-# **get_email_details**
-> Email get_email_details(email_id)
+# **get_smtp_status**
+> Email get_smtp_status(email_id)
 
 Fetch details for corresponding email_id
 
@@ -39,10 +39,10 @@ email_id = 'email_id_example' # String | email_id
 
 begin
   #Fetch details for corresponding email_id
-  result = api_instance.get_email_details(email_id)
+  result = api_instance.get_smtp_status(email_id)
   p result
 rescue IntegrationApi::ApiError => e
-  puts "Exception when calling SMTPApi->get_email_details: #{e}"
+  puts "Exception when calling SMTPApi->get_smtp_status: #{e}"
 end
 ```
 

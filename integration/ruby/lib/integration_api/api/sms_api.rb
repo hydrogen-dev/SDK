@@ -24,8 +24,8 @@ module IntegrationApi
     # @param sms_id sms_id
     # @param [Hash] opts the optional parameters
     # @return [SMS]
-    def get_vendor_call_limit(sms_id, opts = {})
-      data, _status_code, _headers = get_vendor_call_limit_with_http_info(sms_id, opts)
+    def get_sms_status(sms_id, opts = {})
+      data, _status_code, _headers = get_sms_status_with_http_info(sms_id, opts)
       data
     end
 
@@ -34,13 +34,13 @@ module IntegrationApi
     # @param sms_id sms_id
     # @param [Hash] opts the optional parameters
     # @return [Array<(SMS, Fixnum, Hash)>] SMS data, response status code and response headers
-    def get_vendor_call_limit_with_http_info(sms_id, opts = {})
+    def get_sms_status_with_http_info(sms_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SMSApi.get_vendor_call_limit ...'
+        @api_client.config.logger.debug 'Calling API: SMSApi.get_sms_status ...'
       end
       # verify the required parameter 'sms_id' is set
       if @api_client.config.client_side_validation && sms_id.nil?
-        fail ArgumentError, "Missing the required parameter 'sms_id' when calling SMSApi.get_vendor_call_limit"
+        fail ArgumentError, "Missing the required parameter 'sms_id' when calling SMSApi.get_sms_status"
       end
       # resource path
       local_var_path = '/sms/status/{sms_id}'.sub('{' + 'sms_id' + '}', sms_id.to_s)
@@ -67,7 +67,7 @@ module IntegrationApi
         :auth_names => auth_names,
         :return_type => 'SMS')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: SMSApi#get_vendor_call_limit\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: SMSApi#get_sms_status\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

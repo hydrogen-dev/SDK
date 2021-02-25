@@ -4,12 +4,12 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_vendor_call_limit**](SMSApi.md#get_vendor_call_limit) | **GET** /sms/status/{sms_id} | Fetch details for corresponding sms_id
+[**get_sms_status**](SMSApi.md#get_sms_status) | **GET** /sms/status/{sms_id} | Fetch details for corresponding sms_id
 [**send_mail**](SMSApi.md#send_mail) | **POST** /sms | Send SMS to recipient
 
 
-# **get_vendor_call_limit**
-> SMS get_vendor_call_limit(sms_id)
+# **get_sms_status**
+> SMS get_sms_status(sms_id)
 
 Fetch details for corresponding sms_id
 
@@ -45,10 +45,10 @@ sms_id = 'sms_id_example' # str | sms_id
 
 try:
     # Fetch details for corresponding sms_id
-    api_response = api_instance.get_vendor_call_limit(sms_id)
+    api_response = api_instance.get_sms_status(sms_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SMSApi->get_vendor_call_limit: %s\n" % e)
+    print("Exception when calling SMSApi->get_sms_status: %s\n" % e)
 ```
 
 ### Parameters

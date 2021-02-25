@@ -4,13 +4,13 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getEmailDetails**](SMTPApi.md#getEmailDetails) | **GET** /smtp/status/{email_id} | Fetch details for corresponding email_id
+[**getSmtpStatus**](SMTPApi.md#getSmtpStatus) | **GET** /smtp/status/{email_id} | Fetch details for corresponding email_id
 [**sendMail1**](SMTPApi.md#sendMail1) | **POST** /smtp | Send Mail to recipient
 
 
-<a name="getEmailDetails"></a>
-# **getEmailDetails**
-> Email getEmailDetails(emailId)
+<a name="getSmtpStatus"></a>
+# **getSmtpStatus**
+> Email getSmtpStatus(emailId)
 
 Fetch details for corresponding email_id
 
@@ -37,7 +37,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getEmailDetails(emailId, callback);
+apiInstance.getSmtpStatus(emailId, callback);
 ```
 
 ### Parameters

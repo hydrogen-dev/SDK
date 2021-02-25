@@ -4,13 +4,13 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getVendorCallLimit**](SMSApi.md#getVendorCallLimit) | **GET** /sms/status/{sms_id} | Fetch details for corresponding sms_id
+[**getSmsStatus**](SMSApi.md#getSmsStatus) | **GET** /sms/status/{sms_id} | Fetch details for corresponding sms_id
 [**sendMail**](SMSApi.md#sendMail) | **POST** /sms | Send SMS to recipient
 
 
-<a name="getVendorCallLimit"></a>
-# **getVendorCallLimit**
-> SMS getVendorCallLimit(smsId)
+<a name="getSmsStatus"></a>
+# **getSmsStatus**
+> SMS getSmsStatus(smsId)
 
 Fetch details for corresponding sms_id
 
@@ -37,7 +37,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.getVendorCallLimit(smsId, callback);
+apiInstance.getSmsStatus(smsId, callback);
 ```
 
 ### Parameters

@@ -4,12 +4,12 @@ All URIs are relative to *https://sandbox.hydrogenplatform.com/integration/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getEmailDetails**](SMTPApi.md#getEmailDetails) | **GET** /smtp/status/{email_id} | Fetch details for corresponding email_id
+[**getSmtpStatus**](SMTPApi.md#getSmtpStatus) | **GET** /smtp/status/{email_id} | Fetch details for corresponding email_id
 [**sendMail1**](SMTPApi.md#sendMail1) | **POST** /smtp | Send Mail to recipient
 
 
-# **getEmailDetails**
-> \com\hydrogen\integration\Model\Email getEmailDetails($email_id)
+# **getSmtpStatus**
+> \com\hydrogen\integration\Model\Email getSmtpStatus($email_id)
 
 Fetch details for corresponding email_id
 
@@ -46,10 +46,10 @@ $apiInstance = new com\hydrogen\integration\Api\SMTPApi(
 $email_id = "email_id_example"; // string | email_id
 
 try {
-    $result = $apiInstance->getEmailDetails($email_id);
+    $result = $apiInstance->getSmtpStatus($email_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SMTPApi->getEmailDetails: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SMTPApi->getSmtpStatus: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

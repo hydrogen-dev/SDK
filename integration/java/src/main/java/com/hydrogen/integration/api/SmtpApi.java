@@ -43,14 +43,14 @@ public class SmtpApi {
     }
 
     /**
-     * Build call for getEmailDetails
+     * Build call for getSmtpStatus
      * @param emailId email_id (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getEmailDetailsCall(UUID emailId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getSmtpStatusCall(UUID emailId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -93,15 +93,15 @@ public class SmtpApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getEmailDetailsValidateBeforeCall(UUID emailId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getSmtpStatusValidateBeforeCall(UUID emailId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 
         // verify the required parameter 'emailId' is set
         if (emailId == null) {
-            throw new ApiException("Missing the required parameter 'emailId' when calling getEmailDetails(Async)");
+            throw new ApiException("Missing the required parameter 'emailId' when calling getSmtpStatus(Async)");
         }
 
 
-        com.squareup.okhttp.Call call = getEmailDetailsCall(emailId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getSmtpStatusCall(emailId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -113,8 +113,8 @@ public class SmtpApi {
      * @return Email
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Email getEmailDetails(UUID emailId) throws ApiException {
-        ApiResponse<Email> resp = getEmailDetailsWithHttpInfo(emailId);
+    public Email getSmtpStatus(UUID emailId) throws ApiException {
+        ApiResponse<Email> resp = getSmtpStatusWithHttpInfo(emailId);
         return resp.getData();
     }
 
@@ -125,8 +125,8 @@ public class SmtpApi {
      * @return ApiResponse&lt;Email&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Email> getEmailDetailsWithHttpInfo(UUID emailId) throws ApiException {
-        com.squareup.okhttp.Call call = getEmailDetailsValidateBeforeCall(emailId, null, null);
+    public ApiResponse<Email> getSmtpStatusWithHttpInfo(UUID emailId) throws ApiException {
+        com.squareup.okhttp.Call call = getSmtpStatusValidateBeforeCall(emailId, null, null);
         Type localVarReturnType = new TypeToken<Email>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -139,7 +139,7 @@ public class SmtpApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getEmailDetailsAsync(UUID emailId, final ApiCallback<Email> callback) throws ApiException {
+    public com.squareup.okhttp.Call getSmtpStatusAsync(UUID emailId, final ApiCallback<Email> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -160,7 +160,7 @@ public class SmtpApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getEmailDetailsValidateBeforeCall(emailId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getSmtpStatusValidateBeforeCall(emailId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Email>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

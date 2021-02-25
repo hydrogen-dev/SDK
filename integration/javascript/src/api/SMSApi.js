@@ -49,8 +49,8 @@
 
 
     /**
-     * Callback function to receive the result of the getVendorCallLimit operation.
-     * @callback module:api/SMSApi~getVendorCallLimitCallback
+     * Callback function to receive the result of the getSmsStatus operation.
+     * @callback module:api/SMSApi~getSmsStatusCallback
      * @param {String} error Error message, if any.
      * @param {module:model/SMS} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -60,15 +60,15 @@
      * Fetch details for corresponding sms_id
      * Fetch details for corresponding sms_id
      * @param {String} smsId sms_id
-     * @param {module:api/SMSApi~getVendorCallLimitCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/SMSApi~getSmsStatusCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SMS}
      */
-    this.getVendorCallLimit = function(smsId, callback) {
+    this.getSmsStatus = function(smsId, callback) {
       var postBody = null;
 
       // verify the required parameter 'smsId' is set
       if (smsId === undefined || smsId === null) {
-        throw new Error("Missing the required parameter 'smsId' when calling getVendorCallLimit");
+        throw new Error("Missing the required parameter 'smsId' when calling getSmsStatus");
       }
 
 

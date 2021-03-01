@@ -299,6 +299,59 @@
           done();
         });
       });
+      describe('updateClientCredentialsUsingPOST', function() {
+        it('should call updateClientCredentialsUsingPOST successfully', function(done) {
+          // TODO: uncomment, update parameter values for updateClientCredentialsUsingPOST call and complete the assertions
+          /*
+          var client = new HydrogenAdminApi.AdminClient();
+          client.authorities = "";
+          client.id = "0";
+          client.isAccountNonExpired = false;
+          client.isAccountNonLocked = false;
+          client.isCredentialsNonExpired = false;
+          client.isEnabled = false;
+          client.password = "";
+          client.tenant = "";
+          client.updateDate = new Date();
+          client.username = "";
+
+          instance.updateClientCredentialsUsingPOST(client, function(error, data, response) {
+            if (error) {
+              done(error);
+              return;
+            }
+            // TODO: update response assertions
+            expect(data).to.be.a(HydrogenAdminApi.AdminClient);
+            expect(data.authorities).to.be.a('string');
+            expect(data.authorities).to.be("");
+            expect(data.createDate).to.be.a(Date);
+            expect(data.createDate).to.be(2018-06-28T18:17:23.579+0000);
+            expect(data.id).to.be.a('number');
+            expect(data.id).to.be("0");
+            expect(data.isAccountNonExpired).to.be.a('boolean');
+            expect(data.isAccountNonExpired).to.be(false);
+            expect(data.isAccountNonLocked).to.be.a('boolean');
+            expect(data.isAccountNonLocked).to.be(false);
+            expect(data.isCredentialsNonExpired).to.be.a('boolean');
+            expect(data.isCredentialsNonExpired).to.be(false);
+            expect(data.isEnabled).to.be.a('boolean');
+            expect(data.isEnabled).to.be(false);
+            expect(data.password).to.be.a('string');
+            expect(data.password).to.be("");
+            expect(data.tenant).to.be.a('string');
+            expect(data.tenant).to.be("");
+            expect(data.updateDate).to.be.a(Date);
+            expect(data.updateDate).to.be(new Date());
+            expect(data.username).to.be.a('string');
+            expect(data.username).to.be("");
+
+            done();
+          });
+          */
+          // TODO: uncomment and complete method invocation above, then delete this line and the next:
+          done();
+        });
+      });
     });
   });
 

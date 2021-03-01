@@ -296,6 +296,53 @@
         authNames, contentTypes, accepts, returnType, true, callback
       );
     }
+
+
+    /**
+     * Callback function to receive the result of the updateClientCredentialsUsingPOST operation.
+     * @callback module:api/ClientApi~updateClientCredentialsUsingPOSTCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/AdminClient} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * updateClientCredentials
+     * @param {module:model/AdminClient} client client
+     * @param {module:api/ClientApi~updateClientCredentialsUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/AdminClient}
+     */
+    this.updateClientCredentialsUsingPOST = function(client, callback) {
+      var postBody = client;
+
+      // verify the required parameter 'client' is set
+      if (client === undefined || client === null) {
+        throw new Error("Missing the required parameter 'client' when calling updateClientCredentialsUsingPOST");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2'];
+      var contentTypes = ['application/json'];
+      var accepts = ['*/*'];
+      var returnType = AdminClient;
+
+      return this.apiClient.adminCallApi(
+          '/client_credentials', 'POST',
+          pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, true, callback
+      );
+    }
   };
 
   return exports;

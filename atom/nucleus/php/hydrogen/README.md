@@ -25,8 +25,9 @@ Please run `composer require hydrogenplatform/nucleus`
 Please first follow the [installation](#installation) instructions. Then make sure you use the proper base URL:
 
 ### Base URL
-1. Go to ApiClient file located under src folder.
-2. Search for basePath, adminPath and change/verify the URL according to the environment.
+
+1. Go to Configuration file located under lib folder.
+2. Search for $host $adminHost and change/verify the URL according to the environment.  
 
 **Sandbox Base URL**
 https://sandbox.hydrogenplatform.com/nucleus/v1
@@ -34,7 +35,7 @@ https://sandbox.hydrogenplatform.com/nucleus/v1
 **Production Base URL**
 https://api.hydrogenplatform.com/nucleus/v1
 
-3. Search for adminPath and change/verify the URL according to the environment.
+3. Search for $adminHost and change/verify the URL according to the environment.
 
 **Sandbox Base URL**
 https://sandbox.hydrogenplatform.com/admin/v1

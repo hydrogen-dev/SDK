@@ -51,10 +51,6 @@ command above from.
 
 Please first follow the [installation](#installation) instructions. Then make sure you use the proper base URL:
 
-### Base URL
-1. Go to ApiClient file located under src folder.
-2. Search for basePath, adminPath and change/verify the URL according to the environment.
-
 **Sandbox Base URL**
 https://sandbox.hydrogenplatform.com/proton/v1
 

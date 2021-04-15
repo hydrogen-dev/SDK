@@ -72,21 +72,13 @@ Please first follow the [installation](#installation) instructions. Then make su
 
 ### Base URL
 1. Go to ApiClient file located under src folder.
-2. Search for basePath, adminPath and change/verify the URL according to the environment.
+2. Search for basePath and change/verify the URL according to the environment.
 
 **Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/nucleus/v1
+https://sandbox.hydrogenplatform.com/proton/v1
 
 **Production Base URL**
-https://api.hydrogenplatform.com/nucleus/v1
-
-3. Search for adminPath and change/verify the URL according to the environment.
-
-**Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/admin/v1
-
-**Production Base URL**
-https://api.hydrogenplatform.com/admin/v1
+https://api.hydrogenplatform.com/proton/v1
 
 ### Sample Code
 Now you are ready to execute the following Java code:

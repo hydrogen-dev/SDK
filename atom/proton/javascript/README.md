@@ -51,11 +51,16 @@ command above from.
 
 Please first follow the [installation](#installation) instructions. Then make sure you use the proper base URL:
 
+### Base URL
+
+1. Go to ApiClient file located under src folder.
+2. Search for **this.basePath** and change/verify the URL according to the environment.  
+
 **Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/proton/v1
+https://sandbox.hydrogenplatform.com/nucleus/v1
 
 **Production Base URL**
-https://api.hydrogenplatform.com/proton/v1
+https://api.hydrogenplatform.com/nucleus/v1
 
 ### Sample Code
 Now you are ready to execute the following Javascript code:

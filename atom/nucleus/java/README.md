@@ -88,7 +88,7 @@ https://sandbox.hydrogenplatform.com/admin/v1
 **Production Base URL**
 https://api.hydrogenplatform.com/admin/v1
 
-### Base URL
+### Sample Code
 Now you are ready to execute the following Java code:
 
 ```java

@@ -53,7 +53,6 @@ Please first follow the [installation](#installation) instructions. Then make su
 
 ### Base URL
 
-### Update Base Path 
 1. Go to ApiClient file located under src folder.
 2. Search for **this.basePath** and change/verify the URL according to the environment.  
 

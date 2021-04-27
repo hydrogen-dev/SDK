@@ -21,7 +21,7 @@ https://www.hydrogenplatform.com/docs/nucleus/v1
 ```
 pip install hydrogen-nucleus-api
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com//.git`)
+(you may need to run `pip` with root permission: `sudo pip install hydrogen-nucleus-api`)
 
 Then import the package:
 ```python

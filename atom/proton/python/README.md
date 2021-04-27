@@ -21,7 +21,7 @@ https://www.hydrogenplatform.com/docs/proton/v1
 ```
 pip install hydrogen-proton-api
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com//.git`)
+(you may need to run `pip` with root permission: `sudo pip install hydrogen-proton-api`)
 
 Then import the package:
 ```python

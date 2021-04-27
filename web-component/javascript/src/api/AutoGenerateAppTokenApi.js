@@ -97,13 +97,14 @@
                     }
                 } catch (err) {
                     console.log(err);
-                    process.exit(1);
+                    reject(err);
                 }
 
                 resolve(data)
-              }).catch(err => {
+              })
+              .catch(err => {
                 console.error(err);
-                process.exit(1);
+                reject(err);
              });
             });
         }
@@ -129,13 +130,14 @@
                     }
                 } catch (err) {
                     console.log(err);
-                    process.exit(1);
+                    reject(err);
                 }
 
                 resolve(data)
-              }).catch(err => {
+              })
+              .catch(err => {
                 console.error(err);
-                process.exit(1);
+                reject(err);
              });
             });
         }
@@ -158,13 +160,14 @@
                     }
                 } catch (err) {
                     console.log(err);
-                    process.exit(1);
+                    reject(err);
                 }
 
                 resolve(data)
-              }).catch(err => {
+              })
+              .catch(err => {
                 console.error(err);
-                process.exit(1);
+                reject(err);
              });
             });
         }
@@ -187,22 +190,28 @@
                     }
                 } catch (err) {
                     console.log(err);
-                    process.exit(1);
+                    reject(err);
                 }
 
                 resolve(data)
-              }).catch(err => {
+              })
+              .catch(err => {
                 console.error(err);
-                process.exit(1);
+                reject(err);
              });
             });
         }
 
+        try {
         (async () => {
-          const tokenData = await createUsingPostClientCredentials(this.apiClient, this.authApi);
+          const tokenData = await createUsingPostClientCredentials(this.apiClient, this.authApi).catch(e=>{
+            callback(e, null, null)
+          });
           oauth2.accessToken = tokenData.access_token;
 
-          const applicationsData = await getWhiteLabelApplication(this.apiClient, this.authApi);
+          const applicationsData = await getWhiteLabelApplication(this.apiClient, this.authApi).catch(e=>{
+            callback(e, null, null)
+          });
 
           let applicationMap = [];
           if(applicationsData && applicationsData.content){
@@ -220,17 +229,21 @@
                 const app = appNameQueryParam.value[param];
                 if(applicationMap && applicationMap[app]){
                   const authType = applicationMap[app];
-                  if(authType && authType.toLowerCase() === "client_credentials"){
+                  if(authType && authType.find(a=>a.toLowerCase() === "client_credentials")){
                     oauth2.accessToken = tokenData.access_token;
 
-                  }else if(authType && authType.toLowerCase() === "password_credentials"){
+                  }else if(authType && authType.find(a=>a.toLowerCase() === "password_credentials")){
                     oauth2.accessToken = appTokenConfig.userAccessToken;
                     if(appTokenConfig.isCredsPassed){
-                      const passwordTokenData = await createUsingPostPassword(this.apiClient, this.authApi, appTokenConfig.username, appTokenConfig.password);
+                      const passwordTokenData = await createUsingPostPassword(this.apiClient, this.authApi, appTokenConfig.username, appTokenConfig.password).catch(e=>{
+                        callback(e, null, null)
+                      });
                       oauth2.accessToken = passwordTokenData.access_token;
                     }
                   }
-                  const appTokenData = await getAppToken(this.apiClient, app);
+                  const appTokenData = await getAppToken(this.apiClient, app).catch(e=>{
+                    callback(e, null, null)
+                  });
                   const appTokenValue = appTokenData && appTokenData.length>0 ? appTokenData[0].app_token : '';
                   const tagValue = app.toLowerCase().replace(/_/g, '-');
                   const fillTemplateValue = template.replace(/tag/g, tagValue)
@@ -244,17 +257,20 @@
                   response.push(item);
                 }else{
                   console.log("application not found : " + app);
-                  process.exit(1);
+                  callback("application not found", response, response) ;
                 }
               }
             }
             callback(null, response, response) ;
           }else{
             console.log("Unble to get whitelabel applications");
-            process.exit(1);
+            callback("Unble to get whitelabel applications", response, response) ;
           }
 
         })();
+      }catch(e){
+        callback(e, null, null);
+      }
      }
   };
   

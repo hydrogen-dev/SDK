@@ -1,14 +1,14 @@
 swagger: '2.0'
 info:
   description: The Hydrogen Nucleus API
-  version: 1.8.0
+  version: 1.9.0
   title: Hydrogen Nucleus API
   termsOfService: 'https://www.hydrogenplatform.com/legal/terms'
   contact:
-    name: Hydrogen Technology Corporation
+    name: The Hydrogen Technology Corporation
     url: 'https://www.hydrogenplatform.com/contact'
     email: info@hydrogenplatform.com
-host: 'api.hydrogenplatform.com:8000'
+host: api.hydrogenplatform.com/nucleus/v1
 basePath: /
 tags:
   - name: Account
@@ -17,10 +17,6 @@ tags:
     description: AggregationAccount Controller
   - name: Allocation
     description: Allocation Controller
-  - name: Application
-    description: Application Controller
-  - name: AuditLog
-    description: AuditLog Controller
   - name: Benchmark
     description: Benchmark Controller
   - name: Budget
@@ -33,14 +29,12 @@ tags:
     description: Card Controller
   - name: Client
     description: Client Controller
-  - name: Customer
-    description: Customer Controller
+  - name: Contact
+    description: Contact Controller
   - name: DecisionTree
     description: DecisionTree Controller
   - name: Document
     description: Document Controller
-  - name: Feature
-    description: Feature Controller
   - name: FinancialStatement
     description: Financial Statement Controller
   - name: Funding
@@ -53,14 +47,10 @@ tags:
     description: Invoice Controller
   - name: Model
     description: Model Controller
-  - name: Notification
-    description: Notification Controller
   - name: Order
     description: Order Controller
   - name: Overflow
     description: Overflow Controller
-  - name: Performance
-    description: Performance Controller
   - name: Portfolio
     description: Portfolio Controller
   - name: Questionnaire
@@ -149,8 +139,8 @@ paths:
         - '*/*'
       parameters:
         - in: body
-          name: clientAccountRequest
-          description: clientAccountRequest
+          name: account
+          description: account
           required: true
           schema:
             $ref: '#/definitions/Account'
@@ -711,170 +701,6 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/account/{account_id}/performance':
-    get:
-      tags:
-        - Performance
-      summary: Account Performance
-      description: Get information on the performance of an account using IRR (Internal Rate of Return). You must provide the unique account_id.
-      operationId: getAccountPerformanceUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: account_id
-          in: path
-          description: Account Id -/account
-          required: true
-          type: string
-          format: uuid
-        - name: active_premium_period
-          in: query
-          description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
-          required: false
-          type: string
-        - name: annualized_return_period
-          in: query
-          description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
-          required: false
-          type: string
-        - name: benchmark_id
-          in: query
-          description: Client Benchmark or Tenant Benchmark id -/benchmark
-          required: false
-          type: string
-          format: uuid
-        - name: end_date
-          in: query
-          description: end date
-          required: false
-          type: string
-          format: date
-        - name: hist_factor
-          in: query
-          description: 'Histogram factor- (statId: 39, default: 5)'
-          required: false
-          type: number
-          format: double
-        - name: mar_down_side_deviation
-          in: query
-          description: 'minimum acceptable return for downside deviation - (statId: 58, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: max_percentile_monte_carlo
-          in: query
-          description: 'max percentile for monte carlo, i.entity. 80 - (statId: 62, default: 95)'
-          required: false
-          type: number
-          format: double
-        - name: mean_percentile_monte_carlo
-          in: query
-          description: 'mean percentile for monte carlo i.entity. 50- (statId: 62, default: 50)'
-          required: false
-          type: number
-          format: double
-        - name: min_percentile_monte_carlo
-          in: query
-          description: 'min percentile for monte carlo i.entity. 20 - (statId: 62, default: 5)'
-          required: false
-          type: number
-          format: double
-        - name: moving_average_n_day
-          in: query
-          description: 'number of days for moving average n-day - (statId: 18, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_day_returns
-          in: query
-          description: 'number of days for Rolling n-day returns - (statId: 2, default: 7)  '
-          required: false
-          type: integer
-          format: int32
-        - name: n_path_monte_carlo
-          in: query
-          description: 'number of points for a simulation- (statId: 62, default: 100)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_rolling_max_drawdown
-          in: query
-          description: 'number of days for Rolling n-day max drawdown- (statId: 46, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_rolling_volatility
-          in: query
-          description: 'number of days for Rolling n-day volatility- (statId: 34, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: num_sim_monte_carlo
-          in: query
-          description: 'number of simulations - (statId: 62, default: 1000) '
-          required: false
-          type: integer
-          format: int32
-        - name: period_type
-          in: query
-          description: ' Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () -Carries out stats on either daily, monthly, annually or quarterly dates (default: ''D'')'
-          required: false
-          type: string
-        - name: risk_free_alpha
-          in: query
-          description: 'risk free val alpha - (statId: 52, default: 0)'
-          required: false
-          type: number
-          format: double
-        - name: risk_free_sharpe
-          in: query
-          description: 'risk free val sharpe- (statId: 49, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: risk_free_sortino
-          in: query
-          description: 'risk free val sortino - (statId: 56, default: 0)'
-          required: false
-          type: number
-          format: double
-        - name: risk_free_treynor
-          in: query
-          description: 'risk free val treynor- (statId: 51, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: start_date
-          in: query
-          description: start date
-          required: false
-          type: string
-          format: date
-        - name: stat
-          in: query
-          description: A stat type - /statistics
-          required: false
-          type: string
-        - name: var_conf_interval
-          in: query
-          description: 'VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95)'
-          required: false
-          type: number
-          format: double
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
   '/account/{account_id}/subscribe':
     post:
       tags:
@@ -1180,61 +1006,6 @@ paths:
           description: Unauthorized
         '403':
           description: Forbidden
-      security:
-        - oauth2: []
-      deprecated: false
-  /account_asset_size:
-    get:
-      tags:
-        - Account
-      summary: List all account asset sizes
-      description: Get information for all account asset sizes
-      operationId: getAccountAssetSizeAllUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: ascending
-          in: query
-          description: ascending
-          required: false
-          type: boolean
-          default: false
-        - name: filter
-          in: query
-          description: filter
-          required: false
-          type: string
-        - name: order_by
-          in: query
-          description: order_by
-          required: false
-          type: string
-          default: date
-        - name: page
-          in: query
-          description: page
-          required: false
-          type: integer
-          default: 0
-          format: int32
-        - name: size
-          in: query
-          description: size
-          required: false
-          type: integer
-          default: 25
-          format: int32
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Page«VAccountAssetSize»'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
       security:
         - oauth2: []
       deprecated: false
@@ -2933,178 +2704,6 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/allocation/{allocation_id}/performance':
-    get:
-      tags:
-        - Performance
-      summary: Allocation Performance
-      description: Get information on the performance of an allocation using TWR (Time Weighted Return). You must provide the unique allocation_id.
-      operationId: getAllocationPerformanceUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: active_premium_period
-          in: query
-          description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
-          required: false
-          type: string
-        - name: allocation_id
-          in: path
-          description: Allocation Id -/allocation
-          required: true
-          type: string
-          format: uuid
-        - name: annualized_return_period
-          in: query
-          description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
-          required: false
-          type: string
-        - name: benchmark_id
-          in: query
-          description: Tenant Benchmark Id -/benchmark
-          required: false
-          type: string
-          format: uuid
-        - name: end_date
-          in: query
-          description: end date
-          required: false
-          type: string
-          format: date
-        - name: hist_factor
-          in: query
-          description: 'Histogram factor- (statId: 39, default: 5)'
-          required: false
-          type: number
-          format: double
-        - name: is_current_weight
-          in: query
-          description: is_current_weight
-          required: false
-          type: boolean
-          default: true
-        - name: mar_down_side_deviation
-          in: query
-          description: 'minimum acceptable return for downside deviation - (statId: 58, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: max_percentile_monte_carlo
-          in: query
-          description: 'max percentile for monte carlo, i.entity. 80 - (statId: 62, default: 95)'
-          required: false
-          type: number
-          format: double
-        - name: mean_percentile_monte_carlo
-          in: query
-          description: 'mean percentile for monte carlo i.entity. 50- (statId: 62, default: 50)'
-          required: false
-          type: number
-          format: double
-        - name: min_percentile_monte_carlo
-          in: query
-          description: 'min percentile for monte carlo i.entity. 20 - (statId: 62, default: 5)'
-          required: false
-          type: number
-          format: double
-        - name: moving_average_n_day
-          in: query
-          description: 'number of days for moving average n-day - (statId: 18, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_day_returns
-          in: query
-          description: 'number of days for Rolling n-day returns - (statId: 2, default: 7)  '
-          required: false
-          type: integer
-          format: int32
-        - name: n_path_monte_carlo
-          in: query
-          description: 'number of points for a simulation- (statId: 62, default: 100)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_rolling_max_drawdown
-          in: query
-          description: 'number of days for Rolling n-day max drawdown- (statId: 46, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_rolling_volatility
-          in: query
-          description: 'number of days for Rolling n-day volatility- (statId: 34, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: num_sim_monte_carlo
-          in: query
-          description: 'number of simulations - (statId: 62, default: 1000) '
-          required: false
-          type: integer
-          format: int32
-        - name: period_type
-          in: query
-          description: ' Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () -Carries out stats on either daily, monthly, annually or quarterly dates (default: ''D'')'
-          required: false
-          type: string
-        - name: risk_free_alpha
-          in: query
-          description: 'risk free val alpha - (statId: 52, default: 0)'
-          required: false
-          type: number
-          format: double
-        - name: risk_free_sharpe
-          in: query
-          description: 'risk free val sharpe- (statId: 49, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: risk_free_sortino
-          in: query
-          description: 'risk free val sortino - (statId: 56, default: 0)'
-          required: false
-          type: number
-          format: double
-        - name: risk_free_treynor
-          in: query
-          description: 'risk free val treynor- (statId: 51, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: start_date
-          in: query
-          description: start date
-          required: false
-          type: string
-          format: date
-        - name: stat
-          in: query
-          description: A stat type found under the Statistics banner
-          required: false
-          type: string
-        - name: var_conf_interval
-          in: query
-          description: 'VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95)'
-          required: false
-          type: number
-          format: double
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-            additionalProperties:
-              type: object
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
   '/allocation/{allocation_id}/transaction':
     get:
       tags:
@@ -3550,7 +3149,7 @@ paths:
   /application:
     get:
       tags:
-        - Application
+        - Utils
       summary: List all Application
       description: Get details for all Application.
       operationId: getApplicationAllUsingGet
@@ -3604,7 +3203,7 @@ paths:
       deprecated: false
     post:
       tags:
-        - Application
+        - Utils
       summary: Create an application
       description: Create an application
       operationId: createApplicationUsingPost
@@ -3638,7 +3237,7 @@ paths:
   '/application/{application_id}':
     get:
       tags:
-        - Application
+        - Utils
       summary: Retrieve an Application
       description: Retrieve the information for an Application.
       operationId: getApplicationUsingGet
@@ -3668,7 +3267,7 @@ paths:
       deprecated: false
     put:
       tags:
-        - Application
+        - Utils
       summary: Update an Application
       description: Update the information for an Application
       operationId: updateApplicationUsingPut
@@ -3708,7 +3307,7 @@ paths:
       deprecated: false
     delete:
       tags:
-        - Application
+        - Utils
       summary: Delete an Application
       description: Permanently delete an Application.
       operationId: deleteApplicationUsingDelete
@@ -3737,7 +3336,7 @@ paths:
   /audit_log:
     get:
       tags:
-        - AuditLog
+        - Utils
       summary: List all audit log
       description: Get details for all audit log.
       operationId: getAuditLogAllUsingGet
@@ -3791,7 +3390,7 @@ paths:
       deprecated: false
     post:
       tags:
-        - AuditLog
+        - Utils
       summary: Create a audit log
       description: Create a new audit log.
       operationId: createAuditLogUsingPost
@@ -3825,7 +3424,7 @@ paths:
   '/audit_log/{audit_log_id}':
     get:
       tags:
-        - AuditLog
+        - Utils
       summary: Retrieve a audit log
       description: Retrieve the information for a audit log.
       operationId: getAuditLogUsingGet
@@ -4278,170 +3877,6 @@ paths:
             type: array
             items:
               $ref: '#/definitions/DateDoubleVO'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/benchmark/{benchmark_id}/performance':
-    get:
-      tags:
-        - Performance
-      summary: Benchmark Performance
-      description: Get information on the performance of a benchmark using TWR (Time Weighted Return). You must provide the unique benchmark_id.
-      operationId: getBenchmarkPerformanceUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: active_premium_period
-          in: query
-          description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
-          required: false
-          type: string
-        - name: annualized_return_period
-          in: query
-          description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
-          required: false
-          type: string
-        - name: benchmark_id
-          in: path
-          description: Benchmark Id - /benchmark
-          required: true
-          type: string
-          format: uuid
-        - name: comparison_benchmark_id
-          in: query
-          description: comparison_benchmark_id
-          required: false
-          type: string
-          format: uuid
-        - name: end_date
-          in: query
-          description: end date
-          required: false
-          type: string
-          format: date
-        - name: hist_factor
-          in: query
-          description: 'Histogram factor- (statId: 39, default: 5)'
-          required: false
-          type: number
-          format: double
-        - name: mar_down_side_deviation
-          in: query
-          description: 'minimum acceptable return for downside deviation - (statId: 58, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: max_percentile_monte_carlo
-          in: query
-          description: 'max percentile for monte carlo, i.entity. 80 - (statId: 62, default: 95)'
-          required: false
-          type: number
-          format: double
-        - name: mean_percentile_monte_carlo
-          in: query
-          description: 'mean percentile for monte carlo i.entity. 50- (statId: 62, default: 50)'
-          required: false
-          type: number
-          format: double
-        - name: min_percentile_monte_carlo
-          in: query
-          description: 'min percentile for monte carlo i.entity. 20 - (statId: 62, default: 5)'
-          required: false
-          type: number
-          format: double
-        - name: moving_average_n_day
-          in: query
-          description: 'number of days for moving average n-day - (statId: 18, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_day_returns
-          in: query
-          description: 'number of days for Rolling n-day returns - (statId: 2, default: 7)  '
-          required: false
-          type: integer
-          format: int32
-        - name: n_path_monte_carlo
-          in: query
-          description: 'number of points for a simulation- (statId: 62, default: 100)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_rolling_max_drawdown
-          in: query
-          description: 'number of days for Rolling n-day max drawdown- (statId: 46, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_rolling_volatility
-          in: query
-          description: 'number of days for Rolling n-day volatility- (statId: 34, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: num_sim_monte_carlo
-          in: query
-          description: 'number of simulations - (statId: 62, default: 1000) '
-          required: false
-          type: integer
-          format: int32
-        - name: period_type
-          in: query
-          description: ' Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () -Carries out stats on either daily, monthly, annually or quarterly dates (default: ''D'')'
-          required: false
-          type: string
-        - name: risk_free_alpha
-          in: query
-          description: 'risk free val alpha - (statId: 52, default: 0)'
-          required: false
-          type: number
-          format: double
-        - name: risk_free_sharpe
-          in: query
-          description: 'risk free val sharpe- (statId: 49, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: risk_free_sortino
-          in: query
-          description: 'risk free val sortino - (statId: 56, default: 0)'
-          required: false
-          type: number
-          format: double
-        - name: risk_free_treynor
-          in: query
-          description: 'risk free val treynor- (statId: 51, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: start_date
-          in: query
-          description: start date
-          required: false
-          type: string
-          format: date
-        - name: stat
-          in: query
-          description: Stat type - /statistics endpoint
-          required: false
-          type: string
-        - name: var_conf_interval
-          in: query
-          description: 'VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95)'
-          required: false
-          type: number
-          format: double
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
         '401':
           description: Unauthorized
         '403':
@@ -5322,6 +4757,12 @@ paths:
       produces:
         - '*/*'
       parameters:
+        - name: ascending
+          in: query
+          description: ascending
+          required: false
+          type: boolean
+          default: false
         - name: business_id
           in: path
           description: UUID business_id
@@ -5339,11 +4780,36 @@ paths:
           description: end date - yyyy-mm-dd
           required: false
           type: string
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
         - name: get_latest
           in: query
           description: true or false
           required: false
           type: boolean
+        - name: order_by
+          in: query
+          description: order_by
+          required: false
+          type: string
+          default: date
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 25
+          format: int32
         - name: start_date
           in: query
           description: start date - yyyy-mm-dd
@@ -5521,6 +4987,66 @@ paths:
             $ref: '#/definitions/Card'
         '201':
           description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /card/cardholder_overview:
+    get:
+      tags:
+        - Card
+      summary: List all client cards
+      description: Get the information for all cards for an client.
+      operationId: getAllClientCardsUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: ascending
+          in: query
+          description: ascending
+          required: false
+          type: boolean
+          default: false
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          description: order_by
+          required: false
+          type: string
+          default: update_date
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 25
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Page«ClientCardVO»'
         '401':
           description: Unauthorized
         '403':
@@ -6370,6 +5896,12 @@ paths:
       produces:
         - '*/*'
       parameters:
+        - name: ascending
+          in: query
+          description: ascending
+          required: false
+          type: boolean
+          default: false
         - name: client_id
           in: path
           description: UUID client_id
@@ -6387,11 +5919,36 @@ paths:
           description: end date - yyyy-mm-dd
           required: false
           type: string
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
         - name: get_latest
           in: query
           description: true or false
           required: false
           type: boolean
+        - name: order_by
+          in: query
+          description: order_by
+          required: false
+          type: string
+          default: date
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 25
+          format: int32
         - name: start_date
           in: query
           description: start date - yyyy-mm-dd
@@ -6446,170 +6003,6 @@ paths:
               $ref: '#/definitions/Order'
         '201':
           description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/client/{client_id}/performance':
-    get:
-      tags:
-        - Performance
-      summary: Client Performance
-      description: Get information on the performance of a client using IRR (Internal Rate of Return). You must provide the unique client_id.
-      operationId: getClientPerformanceUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: active_premium_period
-          in: query
-          description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
-          required: false
-          type: string
-        - name: annualized_return_period
-          in: query
-          description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
-          required: false
-          type: string
-        - name: benchmark_id
-          in: query
-          description: Client Benchmark or Tenant Benchmark id -/benchmark
-          required: false
-          type: string
-          format: uuid
-        - name: client_id
-          in: path
-          description: Client Id -/client
-          required: true
-          type: string
-          format: uuid
-        - name: end_date
-          in: query
-          description: end date
-          required: false
-          type: string
-          format: date
-        - name: hist_factor
-          in: query
-          description: 'Histogram factor- (statId: 39, default: 5)'
-          required: false
-          type: number
-          format: double
-        - name: mar_down_side_deviation
-          in: query
-          description: 'minimum acceptable return for downside deviation - (statId: 58, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: max_percentile_monte_carlo
-          in: query
-          description: 'max percentile for monte carlo, i.entity. 80 - (statId: 62, default: 95)'
-          required: false
-          type: number
-          format: double
-        - name: mean_percentile_monte_carlo
-          in: query
-          description: 'mean percentile for monte carlo i.entity. 50- (statId: 62, default: 50)'
-          required: false
-          type: number
-          format: double
-        - name: min_percentile_monte_carlo
-          in: query
-          description: 'min percentile for monte carlo i.entity. 20 - (statId: 62, default: 5)'
-          required: false
-          type: number
-          format: double
-        - name: moving_average_n_day
-          in: query
-          description: 'number of days for moving average n-day - (statId: 18, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_day_returns
-          in: query
-          description: 'number of days for Rolling n-day returns - (statId: 2, default: 7)  '
-          required: false
-          type: integer
-          format: int32
-        - name: n_path_monte_carlo
-          in: query
-          description: 'number of points for a simulation- (statId: 62, default: 100)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_rolling_max_drawdown
-          in: query
-          description: 'number of days for Rolling n-day max drawdown- (statId: 46, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_rolling_volatility
-          in: query
-          description: 'number of days for Rolling n-day volatility- (statId: 34, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: num_sim_monte_carlo
-          in: query
-          description: 'number of simulations - (statId: 62, default: 1000) '
-          required: false
-          type: integer
-          format: int32
-        - name: period_type
-          in: query
-          description: ' Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () -Carries out stats on either daily, monthly, annually or quarterly dates (default: ''D'')'
-          required: false
-          type: string
-        - name: risk_free_alpha
-          in: query
-          description: 'risk free val alpha - (statId: 52, default: 0)'
-          required: false
-          type: number
-          format: double
-        - name: risk_free_sharpe
-          in: query
-          description: 'risk free val sharpe- (statId: 49, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: risk_free_sortino
-          in: query
-          description: 'risk free val sortino - (statId: 56, default: 0)'
-          required: false
-          type: number
-          format: double
-        - name: risk_free_treynor
-          in: query
-          description: 'risk free val treynor- (statId: 51, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: start_date
-          in: query
-          description: start date
-          required: false
-          type: string
-          format: date
-        - name: stat
-          in: query
-          description: A stat type -- /statistics
-          required: false
-          type: string
-        - name: var_conf_interval
-          in: query
-          description: 'VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95)'
-          required: false
-          type: number
-          format: double
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
         '401':
           description: Unauthorized
         '403':
@@ -6699,7 +6092,7 @@ paths:
   /client_response:
     get:
       tags:
-        - Questionnaire
+        - Client
       summary: List all client responses
       description: Get all the client responses for questions as part of a questionnaire defined by your firm.
       operationId: getClientResponseAllUsingGet
@@ -6753,7 +6146,7 @@ paths:
       deprecated: false
     post:
       tags:
-        - Questionnaire
+        - Client
       summary: Create a client response
       description: Create a new client response for a question as part of a questionnaires.
       operationId: createClientResponseUsingPost
@@ -6787,7 +6180,7 @@ paths:
   '/client_response/{client_response_id}':
     get:
       tags:
-        - Questionnaire
+        - Client
       summary: Retrieve a client response
       description: Retrieve the information for a client response for a client.
       operationId: getClientResponseUsingGet
@@ -6817,7 +6210,7 @@ paths:
       deprecated: false
     put:
       tags:
-        - Questionnaire
+        - Client
       summary: Update a client response
       description: Update a client response for a client.
       operationId: updateClientResponseUsingPut
@@ -6857,7 +6250,7 @@ paths:
       deprecated: false
     delete:
       tags:
-        - Questionnaire
+        - Client
       summary: Delete a client response
       description: Permanently delete a client response for a client.
       operationId: deleteClientResponseUsingDelete
@@ -7070,13 +6463,13 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /customer:
+  /contact:
     get:
       tags:
-        - Customer
-      summary: List all customer
-      description: 'List all customer. '
-      operationId: getCustomerAllUsingGet
+        - Contact
+      summary: List all contact
+      description: 'List all contact. '
+      operationId: getContactAllUsingGet
       produces:
         - '*/*'
       parameters:
@@ -7115,7 +6508,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/Page«Customer»'
+            $ref: '#/definitions/Page«Contact»'
         '401':
           description: Unauthorized
         '403':
@@ -7127,26 +6520,26 @@ paths:
       deprecated: false
     post:
       tags:
-        - Customer
-      summary: Create a customer
-      description: 'Create a new customer, with your firm.'
-      operationId: createCustomerUsingPost
+        - Contact
+      summary: Create a contact
+      description: 'Create a new contact, with your firm.'
+      operationId: createContactUsingPost
       consumes:
         - application/json
       produces:
         - '*/*'
       parameters:
         - in: body
-          name: customer
-          description: customer
+          name: contact
+          description: contact
           required: true
           schema:
-            $ref: '#/definitions/Customer'
+            $ref: '#/definitions/Contact'
       responses:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/Customer'
+            $ref: '#/definitions/Contact'
         '201':
           description: Created
         '401':
@@ -7158,19 +6551,19 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/customer/{customer_id}':
+  '/contact/{contact_id}':
     get:
       tags:
-        - Customer
-      summary: Retrieve a customer
-      description: 'Retrieve a customer. '
-      operationId: getCustomerUsingGet
+        - Contact
+      summary: Retrieve a contact
+      description: 'Retrieve a contact. '
+      operationId: getContactUsingGet
       produces:
         - '*/*'
       parameters:
-        - name: customer_id
+        - name: contact_id
           in: path
-          description: UUID customer_id
+          description: UUID contact_id
           required: true
           type: string
           format: uuid
@@ -7179,7 +6572,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/Customer'
+            $ref: '#/definitions/Contact'
         '401':
           description: Unauthorized
         '403':
@@ -7191,24 +6584,24 @@ paths:
       deprecated: false
     put:
       tags:
-        - Customer
-      summary: Update a customer
-      description: 'Update a customer. '
-      operationId: updateCustomerUsingPut
+        - Contact
+      summary: Update a contact
+      description: 'Update a contact. '
+      operationId: updateContactUsingPut
       consumes:
         - application/json
       produces:
         - '*/*'
       parameters:
         - in: body
-          name: customer
-          description: customer
+          name: contact
+          description: contact
           required: true
           schema:
-            $ref: '#/definitions/Customer'
-        - name: customer_id
+            $ref: '#/definitions/Contact'
+        - name: contact_id
           in: path
-          description: UUID customer_id
+          description: UUID contact_id
           required: true
           type: string
           format: uuid
@@ -7217,7 +6610,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/Customer'
+            $ref: '#/definitions/Contact'
         '201':
           description: Created
         '401':
@@ -7231,16 +6624,16 @@ paths:
       deprecated: false
     delete:
       tags:
-        - Customer
-      summary: Delete a customer
-      description: 'Delete a customer. '
-      operationId: deleteCustomerUsingDelete
+        - Contact
+      summary: Delete a contact
+      description: 'Delete a contact. '
+      operationId: deleteContactUsingDelete
       produces:
         - '*/*'
       parameters:
-        - name: customer_id
+        - name: contact_id
           in: path
-          description: UUID customer_id
+          description: UUID contact_id
           required: true
           type: string
           format: uuid
@@ -7260,7 +6653,7 @@ paths:
   /customer_revenue:
     get:
       tags:
-        - Customer
+        - Contact
       summary: List all customer revenue
       description: 'List all customer revenue. '
       operationId: getCustomerRevenueAllUsingGet
@@ -7319,7 +6712,7 @@ paths:
       deprecated: false
     post:
       tags:
-        - Customer
+        - Contact
       summary: Create a customer revenue
       description: 'Create a new customer revenue, with your firm.'
       operationId: createCustomerRevenueUsingPost
@@ -7353,7 +6746,7 @@ paths:
   '/customer_revenue/{customer_revenue_id}':
     get:
       tags:
-        - Customer
+        - Contact
       summary: Retrieve a customer revenue
       description: 'Retrieve a customer revenue. '
       operationId: getCustomerRevenueUsingGet
@@ -7388,7 +6781,7 @@ paths:
       deprecated: false
     put:
       tags:
-        - Customer
+        - Contact
       summary: Update a customer revenue
       description: 'Update a customer revenue. '
       operationId: updateCustomerRevenueUsingPut
@@ -7428,7 +6821,7 @@ paths:
       deprecated: false
     delete:
       tags:
-        - Customer
+        - Contact
       summary: Delete a customer revenue
       description: 'Delete a customer revenue. '
       operationId: deleteCustomerRevenueUsingDelete
@@ -7675,203 +7068,6 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /deposit:
-    get:
-      tags:
-        - Funding
-      summary: List all deposit requests
-      description: Get the information for all deposit requests for all clients.
-      operationId: getDepositAllUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: ascending
-          in: query
-          description: ascending
-          required: false
-          type: boolean
-          default: false
-        - name: currency_conversion
-          in: query
-          description: currency_conversion
-          required: false
-          type: string
-        - name: filter
-          in: query
-          description: filter
-          required: false
-          type: string
-        - name: order_by
-          in: query
-          description: order_by
-          required: false
-          type: string
-          default: update_date
-        - name: page
-          in: query
-          description: page
-          required: false
-          type: integer
-          default: 0
-          format: int32
-        - name: size
-          in: query
-          description: size
-          required: false
-          type: integer
-          default: 25
-          format: int32
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Page«DailyDeposit»'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    post:
-      tags:
-        - Funding
-      summary: Create a deposit request
-      description: Create a new deposit request for an account.
-      operationId: createDepositUsingPost
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: dailyDepositRequest
-          description: dailyDepositRequest
-          required: true
-          schema:
-            $ref: '#/definitions/DailyDeposit'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DailyDeposit'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/deposit/{deposit_id}':
-    get:
-      tags:
-        - Funding
-      summary: Retrieve a deposit request
-      description: Retrieve the information for a deposit request for an account.
-      operationId: getDepositUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: currency_conversion
-          in: query
-          description: USD
-          required: false
-          type: string
-        - name: deposit_id
-          in: path
-          description: UUID deposit_id
-          required: true
-          type: string
-          format: uuid
-          x-example: 1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DailyDeposit'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    put:
-      tags:
-        - Funding
-      summary: Update a deposit request
-      description: Update the information for a deposit request for an account.
-      operationId: updateDepositUsingPut
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: deposit
-          description: deposit
-          required: true
-          schema:
-            $ref: '#/definitions/DailyDeposit'
-        - name: deposit_id
-          in: path
-          description: UUID deposit_id
-          required: true
-          type: string
-          format: uuid
-          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DailyDeposit'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    delete:
-      tags:
-        - Funding
-      summary: Delete a deposit request
-      description: Permanently delete a deposit request for an account.
-      operationId: deleteDepositUsingDelete
-      produces:
-        - '*/*'
-      parameters:
-        - name: deposit_id
-          in: path
-          description: UUID deposit_id
-          required: true
-          type: string
-          format: uuid
-          x-example: 1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c
-      responses:
-        '200':
-          description: OK
-        '204':
-          description: No Content
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-      security:
-        - oauth2: []
-      deprecated: false
   /document:
     get:
       tags:
@@ -8062,7 +7258,7 @@ paths:
   /feature:
     get:
       tags:
-        - Feature
+        - Utils
       summary: List all Feature
       description: Get details for all features.
       operationId: getFeatureAllUsingGet
@@ -8116,7 +7312,7 @@ paths:
       deprecated: false
     post:
       tags:
-        - Feature
+        - Utils
       summary: Create a  Feature
       description: Create a new feature.
       operationId: createFeatureUsingPost
@@ -8150,7 +7346,7 @@ paths:
   '/feature/{feature_id}':
     get:
       tags:
-        - Feature
+        - Utils
       summary: Retrieve a Feature
       description: Retrieve the information for a Feature.
       operationId: getFeatureUsingGet
@@ -8180,7 +7376,7 @@ paths:
       deprecated: false
     put:
       tags:
-        - Feature
+        - Utils
       summary: Update a Feature
       description: Update the information for a Feature registered with your firm.
       operationId: updateFeatureUsingPut
@@ -8220,7 +7416,7 @@ paths:
       deprecated: false
     delete:
       tags:
-        - Feature
+        - Utils
       summary: Delete a Feature
       description: Permanently delete a  feature registered with your firm.
       operationId: deleteFeatureUsingDelete
@@ -8249,7 +7445,7 @@ paths:
   /feature_track:
     get:
       tags:
-        - Feature
+        - Utils
       summary: List all Feature track
       description: Get details for all feature track.
       operationId: getFeatureTrackAllUsingGet
@@ -8303,7 +7499,7 @@ paths:
       deprecated: false
     post:
       tags:
-        - Feature
+        - Utils
       summary: Create a Feature Track
       description: Create a new feature track.
       operationId: createFeatureTrackUsingPost
@@ -8337,7 +7533,7 @@ paths:
   '/feature_track/{feature_track_id}':
     get:
       tags:
-        - Feature
+        - Utils
       summary: Retrieve a Feature track
       description: Retrieve the information for a Feature track.
       operationId: getFeatureTrackUsingGet
@@ -8367,7 +7563,7 @@ paths:
       deprecated: false
     put:
       tags:
-        - Feature
+        - Utils
       summary: Update a Feature Track
       description: Update the information for a Feature track registered with your firm.
       operationId: updateFeatureTrackUsingPut
@@ -8407,7 +7603,7 @@ paths:
       deprecated: false
     delete:
       tags:
-        - Feature
+        - Utils
       summary: Delete a Feature Track
       description: Permanently delete a feature track registered with your firm.
       operationId: deleteFeatureTrackUsingDelete
@@ -8827,6 +8023,203 @@ paths:
       security:
         - oauth2: []
       deprecated: false
+  /funding_transaction:
+    get:
+      tags:
+        - Funding
+      summary: List all funding transaction requests
+      description: Get the information for all funding transaction requests for all clients.
+      operationId: getFundingTransactionAllUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: ascending
+          in: query
+          description: ascending
+          required: false
+          type: boolean
+          default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          description: order_by
+          required: false
+          type: string
+          default: update_date
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 25
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Page«FundingTransaction»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    post:
+      tags:
+        - Funding
+      summary: Create a funding transaction request
+      description: Create a new funding transaction request for an account.
+      operationId: createFundingTransactionUsingPost
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: fundingTransactionRequest
+          description: fundingTransactionRequest
+          required: true
+          schema:
+            $ref: '#/definitions/FundingTransaction'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/FundingTransaction'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/funding_transaction/{funding_transaction_id}':
+    get:
+      tags:
+        - Funding
+      summary: Retrieve a funding transaction request
+      description: Retrieve the information for a funding transaction request for an account.
+      operationId: getFundingTransactionUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
+        - name: funding_transaction_id
+          in: path
+          description: UUID funding_transaction_id
+          required: true
+          type: string
+          format: uuid
+          x-example: 1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/FundingTransaction'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    put:
+      tags:
+        - Funding
+      summary: Update a funding transaction request
+      description: Update the information for a funding transaction request for an account.
+      operationId: updateFundingTransactionUsingPut
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: fundingTransaction
+          description: fundingTransaction
+          required: true
+          schema:
+            $ref: '#/definitions/FundingTransaction'
+        - name: funding_transaction_id
+          in: path
+          description: UUID funding_transaction_id
+          required: true
+          type: string
+          format: uuid
+          x-example: d79bb3a3-f259-430c-8fa8-a93f87cc3bdf
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/FundingTransaction'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    delete:
+      tags:
+        - Funding
+      summary: Delete a funding transaction request
+      description: Permanently delete a funding transaction request for an account.
+      operationId: deleteFundingTransactionUsingDelete
+      produces:
+        - '*/*'
+      parameters:
+        - name: funding_transaction_id
+          in: path
+          description: UUID funding_transaction_id
+          required: true
+          type: string
+          format: uuid
+          x-example: 1a2bb85f-c1b4-41d5-9bf3-e23cce54b71c
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+        - oauth2: []
+      deprecated: false
   /goal:
     get:
       tags:
@@ -9097,6 +8490,12 @@ paths:
       produces:
         - '*/*'
       parameters:
+        - name: ascending
+          in: query
+          description: ascending
+          required: false
+          type: boolean
+          default: false
         - name: client_id
           in: query
           description: client_id
@@ -9114,6 +8513,11 @@ paths:
           required: false
           type: string
           format: date
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
         - name: goal_id
           in: path
           description: UUID goal_id
@@ -9121,12 +8525,32 @@ paths:
           type: string
           format: uuid
           x-example: bab849d6-de96-4dc7-a5ea-19be45c52a4e
+        - name: order_by
+          in: query
+          description: order_by
+          required: false
+          type: string
+          default: date
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
         - name: portfolio_goal
           in: query
           description: portfolio_goal
           required: false
           type: boolean
           default: false
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 25
+          format: int32
         - name: start_date
           in: query
           description: start date
@@ -9140,184 +8564,6 @@ paths:
             type: array
             items:
               $ref: '#/definitions/PortfolioHoldingAgg'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/goal/{goal_id}/performance':
-    get:
-      tags:
-        - Performance
-      summary: Goal Performance
-      description: Get information on the performance of a goal using IRR (Internal Rate of Return). You must provide the unique goal_id.
-      operationId: getGoalPerformanceUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: active_premium_period
-          in: query
-          description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
-          required: false
-          type: string
-        - name: annualized_return_period
-          in: query
-          description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
-          required: false
-          type: string
-        - name: benchmark_id
-          in: query
-          description: Client Benchmark or Tenant Benchmark id -/benchmark
-          required: false
-          type: string
-          format: uuid
-        - name: client_id
-          in: query
-          description: client_id
-          required: true
-          type: string
-          format: uuid
-        - name: end_date
-          in: query
-          description: end date
-          required: false
-          type: string
-          default: 'null'
-          format: date
-        - name: goal_id
-          in: path
-          description: Goal Id - /account
-          required: true
-          type: string
-          format: uuid
-        - name: hist_factor
-          in: query
-          description: 'Histogram factor- (statId: 39, default: 5)'
-          required: false
-          type: number
-          format: double
-        - name: mar_down_side_deviation
-          in: query
-          description: 'minimum acceptable return for downside deviation - (statId: 58, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: max_percentile_monte_carlo
-          in: query
-          description: 'max percentile for monte carlo, i.entity. 80 - (statId: 62, default: 95)'
-          required: false
-          type: number
-          format: double
-        - name: mean_percentile_monte_carlo
-          in: query
-          description: 'mean percentile for monte carlo i.entity. 50- (statId: 62, default: 50)'
-          required: false
-          type: number
-          format: double
-        - name: min_percentile_monte_carlo
-          in: query
-          description: 'min percentile for monte carlo i.entity. 20 - (statId: 62, default: 5)'
-          required: false
-          type: number
-          format: double
-        - name: moving_average_n_day
-          in: query
-          description: 'number of days for moving average n-day - (statId: 18, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_day_returns
-          in: query
-          description: 'number of days for Rolling n-day returns - (statId: 2, default: 7)  '
-          required: false
-          type: integer
-          format: int32
-        - name: n_path_monte_carlo
-          in: query
-          description: 'number of points for a simulation- (statId: 62, default: 100)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_rolling_max_drawdown
-          in: query
-          description: 'number of days for Rolling n-day max drawdown- (statId: 46, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_rolling_volatility
-          in: query
-          description: 'number of days for Rolling n-day volatility- (statId: 34, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: num_sim_monte_carlo
-          in: query
-          description: 'number of simulations - (statId: 62, default: 1000) '
-          required: false
-          type: integer
-          format: int32
-        - name: period_type
-          in: query
-          description: ' Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () -Carries out stats on either daily, monthly, annually or quarterly dates (default: ''D'')'
-          required: false
-          type: string
-        - name: portfolio_goal
-          in: query
-          description: portfolio_goal
-          required: false
-          type: boolean
-          default: false
-        - name: risk_free_alpha
-          in: query
-          description: 'risk free val alpha - (statId: 52, default: 0)'
-          required: false
-          type: number
-          format: double
-        - name: risk_free_sharpe
-          in: query
-          description: 'risk free val sharpe- (statId: 49, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: risk_free_sortino
-          in: query
-          description: 'risk free val sortino - (statId: 56, default: 0)'
-          required: false
-          type: number
-          format: double
-        - name: risk_free_treynor
-          in: query
-          description: 'risk free val treynor- (statId: 51, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: start_date
-          in: query
-          description: start date
-          required: false
-          type: string
-          default: 'null'
-          format: date
-        - name: stat
-          in: query
-          description: A stat type - /statistics
-          required: false
-          type: string
-        - name: var_conf_interval
-          in: query
-          description: 'VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95)'
-          required: false
-          type: number
-          format: double
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
         '401':
           description: Unauthorized
         '403':
@@ -9884,6 +9130,12 @@ paths:
       produces:
         - '*/*'
       parameters:
+        - name: ascending
+          in: query
+          description: ascending
+          required: false
+          type: boolean
+          default: false
         - name: currency_conversion
           in: query
           description: USD
@@ -9895,6 +9147,11 @@ paths:
           required: false
           type: string
           format: date
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
         - name: get_latest
           in: query
           description: true or false
@@ -9907,6 +9164,26 @@ paths:
           type: string
           format: uuid
           x-example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+        - name: order_by
+          in: query
+          description: order_by
+          required: false
+          type: string
+          default: date
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 25
+          format: int32
         - name: start_date
           in: query
           description: start date - yyyy-mm-dd
@@ -9920,170 +9197,6 @@ paths:
             type: array
             items:
               $ref: '#/definitions/PortfolioHoldingAgg'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/household/{household_id}/performance':
-    get:
-      tags:
-        - Performance
-      summary: Household Performance
-      description: Get information on the performance of a Household using IRR (Internal Rate of Return). You must provide the unique household_id.
-      operationId: getHouseholdClientPerformanceUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: active_premium_period
-          in: query
-          description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
-          required: false
-          type: string
-        - name: annualized_return_period
-          in: query
-          description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
-          required: false
-          type: string
-        - name: benchmark_id
-          in: query
-          description: Client Benchmark or Tenant Benchmark id -/benchmark
-          required: false
-          type: string
-          format: uuid
-        - name: end_date
-          in: query
-          description: end date
-          required: false
-          type: string
-          format: date
-        - name: hist_factor
-          in: query
-          description: 'Histogram factor- (statId: 39, default: 5)'
-          required: false
-          type: number
-          format: double
-        - name: household_id
-          in: path
-          description: Household Id -/household
-          required: true
-          type: string
-          format: uuid
-        - name: mar_down_side_deviation
-          in: query
-          description: 'minimum acceptable return for downside deviation - (statId: 58, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: max_percentile_monte_carlo
-          in: query
-          description: 'max percentile for monte carlo, i.entity. 80 - (statId: 62, default: 95)'
-          required: false
-          type: number
-          format: double
-        - name: mean_percentile_monte_carlo
-          in: query
-          description: 'mean percentile for monte carlo i.entity. 50- (statId: 62, default: 50)'
-          required: false
-          type: number
-          format: double
-        - name: min_percentile_monte_carlo
-          in: query
-          description: 'min percentile for monte carlo i.entity. 20 - (statId: 62, default: 5)'
-          required: false
-          type: number
-          format: double
-        - name: moving_average_n_day
-          in: query
-          description: 'number of days for moving average n-day - (statId: 18, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_day_returns
-          in: query
-          description: 'number of days for Rolling n-day returns - (statId: 2, default: 7)  '
-          required: false
-          type: integer
-          format: int32
-        - name: n_path_monte_carlo
-          in: query
-          description: 'number of points for a simulation- (statId: 62, default: 100)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_rolling_max_drawdown
-          in: query
-          description: 'number of days for Rolling n-day max drawdown- (statId: 46, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_rolling_volatility
-          in: query
-          description: 'number of days for Rolling n-day volatility- (statId: 34, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: num_sim_monte_carlo
-          in: query
-          description: 'number of simulations - (statId: 62, default: 1000) '
-          required: false
-          type: integer
-          format: int32
-        - name: period_type
-          in: query
-          description: ' Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () -Carries out stats on either daily, monthly, annually or quarterly dates (default: ''D'')'
-          required: false
-          type: string
-        - name: risk_free_alpha
-          in: query
-          description: 'risk free val alpha - (statId: 52, default: 0)'
-          required: false
-          type: number
-          format: double
-        - name: risk_free_sharpe
-          in: query
-          description: 'risk free val sharpe- (statId: 49, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: risk_free_sortino
-          in: query
-          description: 'risk free val sortino - (statId: 56, default: 0)'
-          required: false
-          type: number
-          format: double
-        - name: risk_free_treynor
-          in: query
-          description: 'risk free val treynor- (statId: 51, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: start_date
-          in: query
-          description: start date
-          required: false
-          type: string
-          format: date
-        - name: stat
-          in: query
-          description: A stat type -- /statistics
-          required: false
-          type: string
-        - name: var_conf_interval
-          in: query
-          description: 'VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95)'
-          required: false
-          type: number
-          format: double
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
         '401':
           description: Unauthorized
         '403':
@@ -10282,7 +9395,7 @@ paths:
           type: string
         - name: invoice_id
           in: path
-          description: UUID invoice_idd
+          description: UUID invoice_id
           required: true
           type: string
           format: uuid
@@ -10787,170 +9900,6 @@ paths:
               $ref: '#/definitions/ModelTransaction'
         '201':
           description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/model/{model_id}/performance':
-    get:
-      tags:
-        - Performance
-      summary: Model Performance
-      description: Get information on the performance of a model using TWR (Time Weighted Return). You must provide the unique model_id.
-      operationId: getModelPerformanceUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: active_premium_period
-          in: query
-          description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
-          required: false
-          type: string
-        - name: annualized_return_period
-          in: query
-          description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
-          required: false
-          type: string
-        - name: benchmark_id
-          in: query
-          description: Tenant Benchmark Id -/benchmark
-          required: false
-          type: string
-          format: uuid
-        - name: end_date
-          in: query
-          description: end date
-          required: false
-          type: string
-          format: date
-        - name: hist_factor
-          in: query
-          description: 'Histogram factor- (statId: 39, default: 5)'
-          required: false
-          type: number
-          format: double
-        - name: mar_down_side_deviation
-          in: query
-          description: 'minimum acceptable return for downside deviation - (statId: 58, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: max_percentile_monte_carlo
-          in: query
-          description: 'max percentile for monte carlo, i.entity. 80 - (statId: 62, default: 95)'
-          required: false
-          type: number
-          format: double
-        - name: mean_percentile_monte_carlo
-          in: query
-          description: 'mean percentile for monte carlo i.entity. 50- (statId: 62, default: 50)'
-          required: false
-          type: number
-          format: double
-        - name: min_percentile_monte_carlo
-          in: query
-          description: 'min percentile for monte carlo i.entity. 20 - (statId: 62, default: 5)'
-          required: false
-          type: number
-          format: double
-        - name: model_id
-          in: path
-          description: Model Id - /model
-          required: true
-          type: string
-          format: uuid
-        - name: moving_average_n_day
-          in: query
-          description: 'number of days for moving average n-day - (statId: 18, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_day_returns
-          in: query
-          description: 'number of days for Rolling n-day returns - (statId: 2, default: 7)  '
-          required: false
-          type: integer
-          format: int32
-        - name: n_path_monte_carlo
-          in: query
-          description: 'number of points for a simulation- (statId: 62, default: 100)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_rolling_max_drawdown
-          in: query
-          description: 'number of days for Rolling n-day max drawdown- (statId: 46, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_rolling_volatility
-          in: query
-          description: 'number of days for Rolling n-day volatility- (statId: 34, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: num_sim_monte_carlo
-          in: query
-          description: 'number of simulations - (statId: 62, default: 1000) '
-          required: false
-          type: integer
-          format: int32
-        - name: period_type
-          in: query
-          description: ' Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () -Carries out stats on either daily, monthly, annually or quarterly dates (default: ''D'')'
-          required: false
-          type: string
-        - name: risk_free_alpha
-          in: query
-          description: 'risk free val alpha - (statId: 52, default: 0)'
-          required: false
-          type: number
-          format: double
-        - name: risk_free_sharpe
-          in: query
-          description: 'risk free val sharpe- (statId: 49, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: risk_free_sortino
-          in: query
-          description: 'risk free val sortino - (statId: 56, default: 0)'
-          required: false
-          type: number
-          format: double
-        - name: risk_free_treynor
-          in: query
-          description: 'risk free val treynor- (statId: 51, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: start_date
-          in: query
-          description: start date
-          required: false
-          type: string
-          format: date
-        - name: stat
-          in: query
-          description: Stat Type
-          required: false
-          type: string
-        - name: var_conf_interval
-          in: query
-          description: 'VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95)'
-          required: false
-          type: number
-          format: double
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
         '401':
           description: Unauthorized
         '403':
@@ -12100,7 +11049,7 @@ paths:
   /notification:
     get:
       tags:
-        - Notification
+        - Utils
       summary: Get All Notifications
       description: 'Get All Notification. '
       operationId: getNotificationAllUsingGet
@@ -12154,7 +11103,7 @@ paths:
       deprecated: false
     post:
       tags:
-        - Notification
+        - Utils
       summary: Create a Notification
       description: 'Create a new Notification. '
       operationId: createNotificationUsingPost
@@ -12188,7 +11137,7 @@ paths:
   '/notification/{notification_id}':
     get:
       tags:
-        - Notification
+        - Utils
       summary: Get a Notification
       description: 'Get a Notification. '
       operationId: getNotificationUsingGet
@@ -12217,7 +11166,7 @@ paths:
       deprecated: false
     put:
       tags:
-        - Notification
+        - Utils
       summary: Update a Notification
       description: 'Update a Notification. '
       operationId: updateNotificationUsingPut
@@ -12257,7 +11206,7 @@ paths:
       deprecated: false
     delete:
       tags:
-        - Notification
+        - Utils
       summary: Delete a Notification
       description: 'Permanently Delete a Notification. '
       operationId: deleteNotificationUsingDelete
@@ -12286,7 +11235,7 @@ paths:
   /notification_client:
     get:
       tags:
-        - Notification
+        - Utils
       summary: List all Notification Client
       description: 'List all Notification Client. '
       operationId: getNotificationClientAllUsingGet
@@ -12340,7 +11289,7 @@ paths:
       deprecated: false
     post:
       tags:
-        - Notification
+        - Utils
       summary: Create a Notification Client
       description: 'Create a new Notification Client. '
       operationId: createNotificationClientUsingPost
@@ -12374,7 +11323,7 @@ paths:
   '/notification_client/{notification_client_id}':
     get:
       tags:
-        - Notification
+        - Utils
       summary: Retrieve a Notification Client
       description: 'Retrieve a  Notification Client. '
       operationId: getNotificationClientUsingGet
@@ -12403,7 +11352,7 @@ paths:
       deprecated: false
     put:
       tags:
-        - Notification
+        - Utils
       summary: Update a Notification Client
       description: 'Update a  Notification Client. '
       operationId: updateNotificationClientUsingPut
@@ -12443,7 +11392,7 @@ paths:
       deprecated: false
     delete:
       tags:
-        - Notification
+        - Utils
       summary: Delete a Notification Client
       description: Permanently Delete Notification Client.
       operationId: deleteNotificationClientUsingDelete
@@ -12471,7 +11420,7 @@ paths:
   /notification_setting:
     get:
       tags:
-        - Notification
+        - Utils
       summary: List all Notification Setting
       description: 'List all Notification Setting. '
       operationId: getNotificationSettingAllUsingGet
@@ -12525,7 +11474,7 @@ paths:
       deprecated: false
     post:
       tags:
-        - Notification
+        - Utils
       summary: Create a Notification Setting
       description: 'Create a new Notification Setting. '
       operationId: createNotificationSettingUsingPost
@@ -12559,7 +11508,7 @@ paths:
   '/notification_setting/{notification_setting_id}':
     get:
       tags:
-        - Notification
+        - Utils
       summary: Retrieve a Notification Setting
       description: 'Retrieve a  Notification Setting. '
       operationId: getNotificationSettingUsingGet
@@ -12588,7 +11537,7 @@ paths:
       deprecated: false
     put:
       tags:
-        - Notification
+        - Utils
       summary: Update a Notification Setting
       description: 'Update a  Notification Setting. '
       operationId: updateNotificationSettingUsingPut
@@ -12628,7 +11577,7 @@ paths:
       deprecated: false
     delete:
       tags:
-        - Notification
+        - Utils
       summary: Delete a Notification Setting
       description: 'Permanently Delete Notification Setting. '
       operationId: deleteNotificationSettingUsingDelete
@@ -14056,170 +13005,6 @@ paths:
               $ref: '#/definitions/OrderVoClone'
         '201':
           description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/portfolio/{portfolio_id}/performance':
-    get:
-      tags:
-        - Performance
-      summary: Portfolio Performance
-      description: Get information on the performance of a portfolio using IRR (Internal Rate of Return). You must provide the unique portfolio_id.
-      operationId: getPortfolioPerformanceUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: active_premium_period
-          in: query
-          description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
-          required: false
-          type: string
-        - name: annualized_return_period
-          in: query
-          description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
-          required: false
-          type: string
-        - name: benchmark_id
-          in: query
-          description: Benchmark Id - benchmarkId or clientBenchmarkId -/benchmark
-          required: false
-          type: string
-          format: uuid
-        - name: end_date
-          in: query
-          description: end date
-          required: false
-          type: string
-          format: date
-        - name: hist_factor
-          in: query
-          description: 'Histogram factor- (statId: 39, default: 5)'
-          required: false
-          type: number
-          format: double
-        - name: mar_down_side_deviation
-          in: query
-          description: 'minimum acceptable return for downside deviation - (statId: 58, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: max_percentile_monte_carlo
-          in: query
-          description: 'max percentile for monte carlo, i.entity. 80 - (statId: 62, default: 95)'
-          required: false
-          type: number
-          format: double
-        - name: mean_percentile_monte_carlo
-          in: query
-          description: 'mean percentile for monte carlo i.entity. 50- (statId: 62, default: 50)'
-          required: false
-          type: number
-          format: double
-        - name: min_percentile_monte_carlo
-          in: query
-          description: 'min percentile for monte carlo i.entity. 20 - (statId: 62, default: 5)'
-          required: false
-          type: number
-          format: double
-        - name: moving_average_n_day
-          in: query
-          description: 'number of days for moving average n-day - (statId: 18, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_day_returns
-          in: query
-          description: 'number of days for Rolling n-day returns - (statId: 2, default: 7)  '
-          required: false
-          type: integer
-          format: int32
-        - name: n_path_monte_carlo
-          in: query
-          description: 'number of points for a simulation- (statId: 62, default: 100)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_rolling_max_drawdown
-          in: query
-          description: 'number of days for Rolling n-day max drawdown- (statId: 46, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_rolling_volatility
-          in: query
-          description: 'number of days for Rolling n-day volatility- (statId: 34, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: num_sim_monte_carlo
-          in: query
-          description: 'number of simulations - (statId: 62, default: 1000) '
-          required: false
-          type: integer
-          format: int32
-        - name: period_type
-          in: query
-          description: ' Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () -Carries out stats on either daily, monthly, annually or quarterly dates (default: ''D'')'
-          required: false
-          type: string
-        - name: portfolio_id
-          in: path
-          description: Portfolio Id -/portoflio
-          required: true
-          type: string
-          format: uuid
-        - name: risk_free_alpha
-          in: query
-          description: 'risk free val alpha - (statId: 52, default: 0)'
-          required: false
-          type: number
-          format: double
-        - name: risk_free_sharpe
-          in: query
-          description: 'risk free val sharpe- (statId: 49, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: risk_free_sortino
-          in: query
-          description: 'risk free val sortino - (statId: 56, default: 0)'
-          required: false
-          type: number
-          format: double
-        - name: risk_free_treynor
-          in: query
-          description: 'risk free val treynor- (statId: 51, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: start_date
-          in: query
-          description: start date
-          required: false
-          type: string
-          format: date
-        - name: stat
-          in: query
-          description: A stat type - /statistics endpoint to get types
-          required: false
-          type: string
-        - name: var_conf_interval
-          in: query
-          description: 'VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95)'
-          required: false
-          type: number
-          format: double
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
         '401':
           description: Unauthorized
         '403':
@@ -15758,20 +14543,37 @@ paths:
     get:
       tags:
         - Resource
-      summary: Get All Aggregation Account Category mapping
-      description: Get All Aggregation Account Category mapping.
-      operationId: getAggregationAccountCategoryMappingUsingGet
+      summary: Get all account category mapping
+      description: Get all account category mapping
+      operationId: getAccountResultForMapping
       produces:
         - application/json
       parameters:
-        - name: categories
+        - name: filter
           in: query
-          description: categories
+          description: filter
           required: false
           type: string
+        - name: hydrogen_account_category_id
+          in: query
+          description: hydrogen_account_category_id
+          required: false
+          type: string
+          format: uuid
+        - name: match_primary
+          in: query
+          description: match_primary
+          required: false
+          type: boolean
+          default: false
         - name: tenant_name
           in: query
           description: tenant_name
+          required: false
+          type: string
+        - name: vendor_name
+          in: query
+          description: vendor_name
           required: false
           type: string
       responses:
@@ -15780,7 +14582,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: '#/definitions/CategoryResponseVO'
+              type: object
         '401':
           description: Unauthorized
         '403':
@@ -15908,6 +14710,193 @@ paths:
       security:
         - oauth2: []
       deprecated: false
+  /resource/institution:
+    get:
+      tags:
+        - Resource
+      summary: List all institutions
+      description: List all institution.
+      operationId: getInstitutionAllUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: ascending
+          in: query
+          description: ascending
+          required: false
+          type: boolean
+          default: false
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          description: order_by
+          required: false
+          type: string
+          default: update_date
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 25
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Page«Institution»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    post:
+      tags:
+        - Resource
+      summary: Create a institution
+      description: Create a new institution.
+      operationId: createInstitutionUsingPost
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: institution
+          description: institution
+          required: true
+          schema:
+            $ref: '#/definitions/Institution'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Institution'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/resource/institution/{institution_id}':
+    get:
+      tags:
+        - Resource
+      summary: Retrieve a institution
+      description: 'Retrieve a institution. '
+      operationId: getInstitutionUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: institution_id
+          in: path
+          description: UUID institution_id
+          required: true
+          type: string
+          format: uuid
+          x-example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Institution'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    put:
+      tags:
+        - Resource
+      summary: Update a institution
+      description: Update a institution.
+      operationId: updateInstitutionUsingPut
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: institution
+          description: institution
+          required: true
+          schema:
+            $ref: '#/definitions/Institution'
+        - name: institution_id
+          in: path
+          description: UUID institution_id
+          required: true
+          type: string
+          format: uuid
+          x-example: bab849d6-de96-4dc7-a5ea-19be45c52a4e
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Institution'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    delete:
+      tags:
+        - Resource
+      summary: Delete a institution
+      description: 'Delete a institution. '
+      operationId: deleteInstitutionUsingDelete
+      produces:
+        - '*/*'
+      parameters:
+        - name: institution_id
+          in: path
+          description: UUID institution_id
+          required: true
+          type: string
+          format: uuid
+          x-example: 2035f52d-2c5b-4e07-8904-cb037bad7aff
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+        - oauth2: []
+      deprecated: false
   /resource/merchant:
     get:
       tags:
@@ -15954,42 +14943,6 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/MXMerchantRes'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  /resource/merchant_category:
-    get:
-      tags:
-        - Resource
-      summary: Get All Aggregation Account Transaction Category mapping
-      description: Get All Aggregation Account Transaction Category mapping.
-      operationId: getAggregationAccountTransactionCategoryMappingUsingGet
-      produces:
-        - application/json
-      parameters:
-        - name: categories
-          in: query
-          description: categories
-          required: false
-          type: string
-        - name: tenant_name
-          in: query
-          description: tenant_name
-          required: false
-          type: string
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/CategoryResponseVO'
         '401':
           description: Unauthorized
         '403':
@@ -16080,6 +15033,59 @@ paths:
               type: array
               items:
                 $ref: '#/definitions/StatisticResourceVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /resource/transaction_category:
+    get:
+      tags:
+        - Resource
+      summary: Get all transaction category mapping
+      description: Get all transaction category mapping
+      operationId: getTransactionResultForMapping
+      produces:
+        - application/json
+      parameters:
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
+        - name: hydrogen_transaction_category_id
+          in: query
+          description: hydrogen_transaction_category_id
+          required: false
+          type: string
+          format: uuid
+        - name: match_primary
+          in: query
+          description: match_primary
+          required: false
+          type: boolean
+          default: false
+        - name: tenant_name
+          in: query
+          description: tenant_name
+          required: false
+          type: string
+        - name: vendor_name
+          in: query
+          description: vendor_name
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              type: object
         '401':
           description: Unauthorized
         '403':
@@ -16953,180 +15959,6 @@ paths:
           description: Unauthorized
         '403':
           description: Forbidden
-      security:
-        - oauth2: []
-      deprecated: false
-  '/security/{security_id}/performance':
-    get:
-      tags:
-        - Performance
-      summary: Security Performance
-      description: Get performance statistics for a security using TWR (Time Weighted Return). You must provide the unique security_id
-      operationId: getSecurityPerformanceUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: active_premium_period
-          in: query
-          description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
-          required: false
-          type: string
-        - name: annualized_return_period
-          in: query
-          description: 'Q (quarterly), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () - (statId: 19, default: ''D'')'
-          required: false
-          type: string
-        - name: benchTicker
-          in: query
-          description: 'Bench Ticker for security - (default: ^GSPC) '
-          required: false
-          type: string
-        - name: benchmark_id
-          in: query
-          description: benchmark_id
-          required: false
-          type: string
-          format: uuid
-        - name: end_date
-          in: query
-          description: Ending parameter for time window
-          required: false
-          type: string
-          format: date
-        - name: hist_factor
-          in: query
-          description: 'Histogram factor- (statId: 39, default: 5)'
-          required: false
-          type: number
-          format: double
-        - name: mar_down_side_deviation
-          in: query
-          description: 'minimum acceptable return for downside deviation - (statId: 58, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: max_percentile_monte_carlo
-          in: query
-          description: 'max percentile for monte carlo, i.entity. 80 - (statId: 62, default: 95)'
-          required: false
-          type: number
-          format: double
-        - name: mean_percentile_monte_carlo
-          in: query
-          description: 'mean percentile for monte carlo i.entity. 50- (statId: 62, default: 50)'
-          required: false
-          type: number
-          format: double
-        - name: min_percentile_monte_carlo
-          in: query
-          description: 'min percentile for monte carlo i.entity. 20 - (statId: 62, default: 5)'
-          required: false
-          type: number
-          format: double
-        - name: moving_average_n_day
-          in: query
-          description: 'number of days for moving average n-day - (statId: 18, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_day_returns
-          in: query
-          description: 'number of days for Rolling n-day returns - (statId: 2, default: 7)  '
-          required: false
-          type: integer
-          format: int32
-        - name: n_path_monte_carlo
-          in: query
-          description: 'number of points for a simulation- (statId: 62, default: 100)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_rolling_max_drawdown
-          in: query
-          description: 'number of days for Rolling n-day max drawdown- (statId: 46, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: n_rolling_volatility
-          in: query
-          description: 'number of days for Rolling n-day volatility- (statId: 34, default: 7)'
-          required: false
-          type: integer
-          format: int32
-        - name: num_sim_monte_carlo
-          in: query
-          description: 'number of simulations - (statId: 62, default: 1000) '
-          required: false
-          type: integer
-          format: int32
-        - name: period_type
-          in: query
-          description: ' Quarter (Q), Monthly (M) , Annually (Y), Daily (D) --caps matter, codes in () -Carries out stats on either daily, monthly, annually or quarterly dates (default: ''D'')'
-          required: false
-          type: string
-        - name: risk_free_alpha
-          in: query
-          description: 'risk free val alpha - (statId: 52, default: 0)'
-          required: false
-          type: number
-          format: double
-        - name: risk_free_sharpe
-          in: query
-          description: 'risk free val sharpe- (statId: 49, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: risk_free_sortino
-          in: query
-          description: 'risk free val sortino - (statId: 56, default: 0)'
-          required: false
-          type: number
-          format: double
-        - name: risk_free_treynor
-          in: query
-          description: 'risk free val treynor- (statId: 51, default: 0) '
-          required: false
-          type: number
-          format: double
-        - name: security_id
-          in: path
-          description: security_id
-          required: true
-          type: string
-          format: uuid
-        - name: start_date
-          in: query
-          description: Starting parameter for time window
-          required: false
-          type: string
-          format: date
-        - name: stat
-          in: query
-          description: A stat type - /statistics endpoint
-          required: false
-          type: string
-        - name: ticker
-          in: query
-          description: Ticker for security
-          required: false
-          type: string
-        - name: var_conf_interval
-          in: query
-          description: 'VaR Confidence Interval ( alpha ) i.entity 99, 95, etc - (statId: 40, default: 95)'
-          required: false
-          type: number
-          format: double
-      responses:
-        '200':
-          description: OK
-          schema:
-            type: object
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
       security:
         - oauth2: []
       deprecated: false
@@ -18456,207 +17288,10 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /withdrawal:
-    get:
-      tags:
-        - Funding
-      summary: List all withdrawal requests
-      description: Get the information for all withdrawal requests for all clients.
-      operationId: getWithdrawalAllUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: ascending
-          in: query
-          description: ascending
-          required: false
-          type: boolean
-          default: false
-        - name: currency_conversion
-          in: query
-          description: currency_conversion
-          required: false
-          type: string
-        - name: filter
-          in: query
-          description: filter
-          required: false
-          type: string
-        - name: order_by
-          in: query
-          description: order_by
-          required: false
-          type: string
-          default: update_date
-        - name: page
-          in: query
-          description: page
-          required: false
-          type: integer
-          default: 0
-          format: int32
-        - name: size
-          in: query
-          description: size
-          required: false
-          type: integer
-          default: 25
-          format: int32
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/Page«DailyWithdrawal»'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    post:
-      tags:
-        - Funding
-      summary: Create a withdrawal request
-      description: Create a new withdrawal request for an account.
-      operationId: createWithdrawalUsingPost
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: dailyWithdrawalRequest
-          description: dailyWithdrawalRequest
-          required: true
-          schema:
-            $ref: '#/definitions/DailyWithdrawal'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DailyWithdrawal'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-  '/withdrawal/{withdrawal_id}':
-    get:
-      tags:
-        - Funding
-      summary: Retrieve a withdrawal request
-      description: Retrieve the information for a withdrawal request for an account.
-      operationId: getWithdrawalUsingGet
-      produces:
-        - '*/*'
-      parameters:
-        - name: currency_conversion
-          in: query
-          description: USD
-          required: false
-          type: string
-        - name: withdrawal_id
-          in: path
-          description: UUID withdrawal_id
-          required: true
-          type: string
-          format: uuid
-          x-example: be07c93a-c0b0-4fb0-97e1-3a0f77b8c969
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DailyWithdrawal'
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    put:
-      tags:
-        - Funding
-      summary: Update a withdrawal request
-      description: Update the information for a withdrawal request for an account.
-      operationId: updateWithdrawalUsingPut
-      consumes:
-        - application/json
-      produces:
-        - '*/*'
-      parameters:
-        - in: body
-          name: withdrawal
-          description: withdrawal
-          required: true
-          schema:
-            $ref: '#/definitions/DailyWithdrawal'
-        - name: withdrawal_id
-          in: path
-          description: UUID withdrawal_id
-          required: true
-          type: string
-          format: uuid
-          x-example: be07c93a-c0b0-4fb0-97e1-3a0f77b8c969
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/DailyWithdrawal'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
-    delete:
-      tags:
-        - Funding
-      summary: Delete a withdrawal request
-      description: Permanently delete a withdrawal request from an account.
-      operationId: deleteWithdrawalUsingDelete
-      produces:
-        - '*/*'
-      parameters:
-        - name: withdrawal_id
-          in: path
-          description: UUID withdrawal_id
-          required: true
-          type: string
-          format: uuid
-          x-example: be07c93a-c0b0-4fb0-97e1-3a0f77b8c969
-      responses:
-        '200':
-          description: OK
-        '204':
-          description: No Content
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-      security:
-        - oauth2: []
-      deprecated: false
 securityDefinitions:
   oauth2:
     type: oauth2
-    tokenUrl: 'https://dev.hydrogenplatform.com/authorization/v1/oauth/token'
+    tokenUrl: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token'
     flow: application
 definitions:
   Account:
@@ -18900,7 +17535,6 @@ definitions:
     required:
       - account_id
       - stage_id
-      - status
     properties:
       account_id:
         type: string
@@ -19050,6 +17684,11 @@ definitions:
       - client_id
       - institution_name
     properties:
+      account_category_id:
+        type: string
+        format: uuid
+        example: 1c28dade-8679-4df5-9b9d-c508d04fcb0c
+        description: accountCategoryId
       account_holder:
         type: string
         description: accountHolder
@@ -19059,8 +17698,16 @@ definitions:
         description: accountName
       account_number:
         type: string
-        example: 566788991
-        description: accountNumber
+      apr:
+        type: number
+        format: float
+        example: 10
+        description: apr
+      apy:
+        type: number
+        format: float
+        example: 10
+        description: apy
       bank_link_id:
         type: string
         format: uuid
@@ -19080,10 +17727,20 @@ definitions:
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
         readOnly: true
+      credit_limit:
+        type: number
+        format: float
+        example: 10
+        description: creditLimit
       currency_code:
         type: string
         example: USD
         description: currencyCode
+      death_benefit:
+        type: number
+        format: float
+        example: 10
+        description: deathBenefit
       financial_offer_id:
         type: string
         format: uuid
@@ -19094,30 +17751,32 @@ definitions:
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
         readOnly: true
+      institution_id:
+        type: string
+        format: uuid
+        example: 1c28dade-8679-4df5-9b9d-c508d04fcb0c
+        description: institutionId
       institution_name:
         type: string
         example: Citywide Bank
         description: institutionName
+      interest_rate:
+        type: number
+        format: float
+        example: 10
+        description: interestRate
       is_active:
         type: boolean
         example: true
         description: isActive
       is_asset:
         type: boolean
-        example: true
-        description: isAsset
       is_business:
         type: boolean
-        example: false
-        description: isBusiness
       is_cash:
         type: boolean
-        example: true
-        description: isCash
       is_investment:
         type: boolean
-        example: false
-        description: isInvestment
       is_link_verified:
         type: boolean
         example: true
@@ -19126,15 +17785,40 @@ definitions:
         type: boolean
         example: false
         description: isManual
+      last_payment:
+        type: number
+        format: float
+        example: 10
+        description: lastPayment
+      last_payment_date:
+        type: string
+        format: date-time
+        example: '2018-01-09''T''12:00:00'
+        description: lastPaymentDate
       mask:
         type: string
         description: mask
+      maturity_date:
+        type: string
+        format: date-time
+        example: '2018-01-09''T''12:00:00'
+        description: maturityDate
       metadata:
         type: object
         example: {}
         readOnly: true
         additionalProperties:
           type: string
+      minimum_payment:
+        type: number
+        format: float
+        example: 10
+        description: minimumPayment
+      next_payment_date:
+        type: string
+        format: date-time
+        example: '2018-01-09''T''12:00:00'
+        description: nextPaymentDate
       secondary_id:
         type: string
         example: 7289243787238
@@ -19213,8 +17897,6 @@ definitions:
     type: object
     required:
       - shares
-      - ticker
-      - ticker_name
     properties:
       aggregation_account_id:
         type: string
@@ -19274,8 +17956,12 @@ definitions:
         format: double
       ticker:
         type: string
+        example: xyz
+        description: ticker
       ticker_name:
         type: string
+        example: xyz
+        description: tickerName
       update_date:
         type: string
         format: date-time
@@ -19627,6 +18313,11 @@ definitions:
     required:
       - value
     properties:
+      create_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        readOnly: true
       id:
         type: string
         format: uuid
@@ -19662,8 +18353,17 @@ definitions:
         format: uuid
         example: 2feae367-77be-4613-9cd0-f62fd5b3cff9
         description: questionId
+      secondary_id:
+        type: string
+        example: 7289243787238
+        readOnly: true
       tooltip:
         type: string
+      update_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        readOnly: true
       value:
         type: string
         example: 0-40
@@ -19872,6 +18572,35 @@ definitions:
         description: valuePending
     title: AvailableDateDoubleVO
     description: Available Date-Double Mapping Object
+  Balances:
+    type: object
+    properties:
+      currency_code:
+        type: string
+        example: USD
+        description: currencyCode
+      payable_outstanding:
+        type: number
+        format: double
+        example: 1233
+        description: payableOutstanding
+      payable_overdue:
+        type: number
+        format: double
+        example: 8752
+        description: payableOverdue
+      receivable_outstanding:
+        type: number
+        format: double
+        example: 1234
+        description: receivableOutstanding
+      receivable_overdue:
+        type: number
+        format: double
+        example: 2587
+        description: receivableOverdue
+    title: Balances
+    description: Balances Object
   BankCredit:
     type: object
     required:
@@ -19901,10 +18630,20 @@ definitions:
         type: string
         example: merchant
         description: merchant
+      merchant_id:
+        type: string
+        format: uuid
+        example: 1c28dade-8679-4df5-9b9d-c508d04fcb0c
+        description: merchantId
       subcategory:
         type: string
         example: subcategory
         description: subcategory
+      transaction_category_id:
+        type: string
+        format: uuid
+        example: 1c28dade-8679-4df5-9b9d-c508d04fcb0c
+        description: transactionCategoryId
       transaction_type:
         type: string
         example: Credit
@@ -19916,7 +18655,7 @@ definitions:
     required:
       - bank_account_holder
       - bank_account_number
-      - name
+      - institution_name
       - routing
     properties:
       account_id:
@@ -19965,6 +18704,15 @@ definitions:
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
         readOnly: true
+      institution_id:
+        type: string
+        format: uuid
+        example: 1c28dade-8679-4df5-9b9d-c508d04fcb0c
+        description: institutionId
+      institution_name:
+        type: string
+        example: xyz
+        description: institutionName
       is_active:
         type: boolean
         example: true
@@ -19991,10 +18739,6 @@ definitions:
         readOnly: true
         additionalProperties:
           type: string
-      name:
-        type: string
-        example: xyz
-        description: name
       routing:
         type: string
         example: 091000022
@@ -20144,6 +18888,11 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/BudgetObject'
+      card_id:
+        type: string
+        format: uuid
+        example: 000183ac-2288-4564-a76b-119f4694be98
+        description: cardId
       client_id:
         type: string
         format: uuid
@@ -20460,7 +19209,6 @@ definitions:
       - card_name
       - card_type
       - client_id
-      - institution_name
       - portfolio_id
     properties:
       address:
@@ -20531,6 +19279,11 @@ definitions:
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
         readOnly: true
+      institution_id:
+        type: string
+        format: uuid
+        example: 000183ac-2288-4564-a76b-119f4694be98
+        description: institutionId
       institution_name:
         type: string
         example: XYZ
@@ -20628,6 +19381,80 @@ definitions:
         description: type
     title: CardAddress
     description: CardAddress Object
+  CardBalanceVO:
+    type: object
+    properties:
+      balance:
+        type: number
+        format: double
+        example: 20000
+        description: balance
+      balance_available:
+        type: number
+        format: double
+        example: 20000
+        description: balanceAvailable
+      balance_timestamp:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        description: balanceTimestamp
+      currency_code:
+        type: string
+        example: AED
+        description: currencyCode
+    title: CardBalanceVO
+    description: CardBalance Mapping Object
+  CardDetailsVO:
+    type: object
+    properties:
+      balance:
+        description: balance
+        $ref: '#/definitions/CardBalanceVO'
+      card_holder_name:
+        type: string
+        example: XYZ
+        description: cardHolderName
+      card_id:
+        type: string
+        format: uuid
+        example: c34794e9-f927-468b-b47e-ea17c3d533c5
+        description: cardId
+      card_issuance:
+        type: string
+        example: virtual
+        description: cardIssuance
+      card_name:
+        type: string
+        example: Visa
+        description: cardName
+      card_network:
+        type: string
+        example: Discover
+        description: cardNetwork
+      card_type:
+        type: string
+        example: credit
+        description: cardType
+      expiry_date:
+        type: string
+        format: date
+        example: 06/28/2018
+        description: expiryDate
+      mask:
+        type: string
+        example: xyz
+        description: mask
+      prepaid_amount:
+        type: number
+        format: float
+        example: 100
+        description: prepaidAmount
+      status:
+        type: string
+        description: status
+    title: CardDetailsVO
+    description: Card Details Object
   CardProgram:
     type: object
     required:
@@ -20745,28 +19572,6 @@ definitions:
         example: Debit
         description: category
     title: CategoriesMap
-  CategoryInternalResponseVO:
-    type: object
-    properties:
-      category:
-        type: string
-      subcategories:
-        type: array
-        items:
-          type: string
-      tenant_name:
-        type: string
-    title: CategoryInternalResponseVO
-  CategoryResponseVO:
-    type: object
-    properties:
-      categories:
-        type: array
-        items:
-          $ref: '#/definitions/CategoryInternalResponseVO'
-      vendor_name:
-        type: string
-    title: CategoryResponseVO
   Check:
     type: object
     required:
@@ -21023,6 +19828,40 @@ definitions:
         description: type
     title: ClientAddress
     description: ClientAddress Object
+  ClientCardVO:
+    type: object
+    properties:
+      create_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        description: createDate
+      email:
+        type: string
+        example: sample@example.com
+        description: email
+      first_name:
+        type: string
+        example: Joe
+        description: firstName
+      last_name:
+        type: string
+        example: Smith
+        description: last_name
+      middle_name:
+        type: string
+        example: Joe
+        description: middleName
+      status:
+        type: string
+        example: xyz
+        description: status
+      title:
+        type: string
+        example: sample@example.com
+        description: email
+    title: ClientCardVO
+    description: Client Card Mapping Object
   ClientRelationship:
     type: object
     required:
@@ -21098,7 +19937,6 @@ definitions:
     required:
       - client_id
       - stage_id
-      - status
     properties:
       client_id:
         type: string
@@ -21143,6 +19981,25 @@ definitions:
         readOnly: true
     title: ClientStatus
     description: ClientStatus Object
+  ClientTotalCardBalanceVO:
+    type: object
+    properties:
+      currency_code:
+        type: string
+        example: AED
+        description: currencyCode
+      total_balance:
+        type: number
+        format: double
+        example: 20000
+        description: totalBalance
+      total_balance_available:
+        type: number
+        format: double
+        example: 20000
+        description: totalBalanceAvailable
+    title: ClientTotalCardBalanceVO
+    description: Client Total CardBalance Mapping Object
   ClientViewGoalData:
     type: object
     properties:
@@ -21187,59 +20044,7 @@ definitions:
         items:
           $ref: '#/definitions/VPortfolioVO'
     title: ClientViewGoalData
-  Country:
-    type: object
-    required:
-      - alpha2_code
-      - country
-    properties:
-      alpha2_code:
-        type: string
-        example: AE
-        description: alpha_2_code
-      alpha3_code:
-        type: string
-        example: ARE
-        description: alpha_3_code
-      country:
-        type: string
-        example: United Arab Emirates
-        description: country
-      latitude:
-        type: number
-        format: double
-        example: 23.424076
-        description: latitude
-      longitude:
-        type: number
-        format: double
-        example: 53.847818
-        description: longitude
-    title: Country
-    description: Country Object
-  Currency:
-    type: object
-    properties:
-      alphabetic_code:
-        type: string
-        example: AWG
-        description: alphabetic_code
-      currency:
-        type: string
-        example: Azerbaijan Manat
-        description: currency
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
-      numeric_code:
-        type: string
-        example: 944
-        description: numeric_code
-    title: Currency
-    description: Currency Object
-  Customer:
+  Contact:
     type: object
     required:
       - company_name
@@ -21247,7 +20052,14 @@ definitions:
       address:
         type: array
         items:
-          $ref: '#/definitions/CustomerAddress'
+          $ref: '#/definitions/ContactAddress'
+      balances:
+        $ref: '#/definitions/Balances'
+      business_id:
+        type: string
+        format: uuid
+        example: 50d76212-0fcd-4d36-8633-e4a52cbcb79f
+        description: businessId
       client_id:
         type: string
         format: uuid
@@ -21283,6 +20095,22 @@ definitions:
         type: boolean
         example: true
         description: isActive
+      is_customer:
+        type: string
+        example: false
+        description: isCustomer
+        enum:
+          - 'true'
+          - 'false'
+          - 'null'
+      is_supplier:
+        type: string
+        example: false
+        description: isSupplier
+        enum:
+          - 'true'
+          - 'false'
+          - 'null'
       last_name:
         type: string
         example: lastName
@@ -21307,9 +20135,9 @@ definitions:
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
         readOnly: true
-    title: Customer
-    description: Customer Object
-  CustomerAddress:
+    title: Contact
+    description: Contact Object
+  ContactAddress:
     type: object
     required:
       - address_line1
@@ -21346,14 +20174,72 @@ definitions:
         type: string
         example: Home
         description: type
-    title: CustomerAddress
-    description: CustomerAddress Object
+    title: ContactAddress
+    description: ContactAddress Object
+  Country:
+    type: object
+    required:
+      - alpha2_code
+      - country
+      - numeric_code
+    properties:
+      alpha2_code:
+        type: string
+        example: AE
+        description: alpha_2_code
+      alpha3_code:
+        type: string
+        example: ARE
+        description: alpha_3_code
+      country:
+        type: string
+        example: United Arab Emirates
+        description: country
+      latitude:
+        type: number
+        format: double
+        example: 23.424076
+        description: latitude
+      longitude:
+        type: number
+        format: double
+        example: 53.847818
+        description: longitude
+      numeric_code:
+        type: integer
+        format: int32
+        example: 4
+        description: numericCode
+    title: Country
+    description: Country Object
+  Currency:
+    type: object
+    properties:
+      alphabetic_code:
+        type: string
+        example: AWG
+        description: alphabetic_code
+      currency:
+        type: string
+        example: Azerbaijan Manat
+        description: currency
+      id:
+        type: string
+        format: uuid
+        example: 000183ac-2288-4564-a76b-119f4694be98
+        readOnly: true
+      numeric_code:
+        type: string
+        example: 944
+        description: numeric_code
+    title: Currency
+    description: Currency Object
   CustomerRevenue:
     type: object
     required:
       - accounting_method
+      - contact_id
       - currency_code
-      - customer_id
       - date
       - revenue
     properties:
@@ -21361,6 +20247,11 @@ definitions:
         type: string
         example: cash
         description: accounting_method
+      contact_id:
+        type: string
+        format: uuid
+        example: 50d76212-0fcd-4d36-8633-e4a52cbcb79f
+        description: contactId
       create_date:
         type: string
         format: date-time
@@ -21370,11 +20261,6 @@ definitions:
         type: string
         example: USD
         description: currency_code
-      customer_id:
-        type: string
-        format: uuid
-        example: 50d76212-0fcd-4d36-8633-e4a52cbcb79f
-        description: customerId
       date:
         type: string
         format: date
@@ -21385,6 +20271,13 @@ definitions:
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
         readOnly: true
+      metadata:
+        type: object
+        example: {}
+        description: metadata
+        readOnly: true
+        additionalProperties:
+          type: string
       revenue:
         type: number
         format: double
@@ -21401,220 +20294,6 @@ definitions:
         readOnly: true
     title: CustomerRevenue
     description: Customer Revenue Object
-  DailyDeposit:
-    type: object
-    required:
-      - account_id
-      - amount
-      - funding_id
-    properties:
-      account_id:
-        type: string
-        format: uuid
-        example: 1c28dade-8679-4df5-9b9d-c508d04fcb0c
-        description: accountId
-      account_number:
-        type: string
-        example: 569347
-        description: accountNumber
-      amount:
-        type: number
-        format: double
-        example: 1004
-        description: amount
-      comments:
-        type: string
-        example: Funded
-        description: comments
-      create_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      currency_code:
-        type: string
-        example: USD
-        description: currencyCode
-      direction:
-        type: string
-        example: Incoming
-        description: direction
-      funding_id:
-        type: string
-        format: uuid
-        example: ea30e8b7-3946-46ed-975a-4870a57d119s
-        description: fundingId
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
-      invested_date:
-        type: string
-        format: date
-        example: '2018-01-29'
-        description: investedDate
-      last_request_date:
-        type: string
-        format: date
-        example: '2018-01-29'
-        description: last_request_date
-      metadata:
-        type: object
-        additionalProperties:
-          type: string
-      notes:
-        type: string
-        example: Sample
-        description: notes
-      portfolio_id:
-        type: string
-        format: uuid
-        example: ea30e8b7-3946-46ed-975a-4870a57d119s
-        description: portfolio_id
-      portfolio_transaction_id:
-        type: string
-        format: uuid
-        example: 29c3f995-bd45-4346-aea2-fd4476568d4c
-        description: portfolioTransactionId
-      received_date:
-        type: string
-        format: date
-        example: '2018-01-29'
-        description: receivedDate
-      secondary_id:
-        type: string
-        example: 7289243787238
-        readOnly: true
-      status:
-        type: string
-        example: in process
-        description: status
-      status_time_stamp:
-        type: string
-        format: date-time
-        example: '2018-01-09''T''12:00:00'
-        description: statusTimeStamp
-      type:
-        type: string
-        example: one-time
-        description: type
-      update_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-    title: DailyDeposit
-    description: DailyDeposit Object
-  DailyWithdrawal:
-    type: object
-    required:
-      - account_id
-      - amount
-      - withdrawal_date
-    properties:
-      account_id:
-        type: string
-        format: uuid
-        example: 1c28dade-8679-4df5-9b9d-c508d04fcb0c
-        description: accountId
-      account_number:
-        type: string
-        example: bKU8LQ6gI
-        description: accountNumber
-      amount:
-        type: number
-        format: double
-        example: 100.5
-        description: amount
-      comments:
-        type: string
-        example: Funded
-        description: comments
-      create_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      currency_code:
-        type: string
-        example: USD
-        description: currencyCode
-      direction:
-        type: string
-        example: withdrawal
-        description: direction
-      fees:
-        type: string
-        example: 0
-        description: fees
-      funding_id:
-        type: string
-        format: uuid
-        example: ea30e8b7-3946-46ed-975a-4870a57d119s
-        description: fundingId
-      id:
-        type: string
-        format: uuid
-        example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
-      last_request_date:
-        type: string
-        format: date
-        example: '2018-01-29'
-        description: lastRequestDate
-      metadata:
-        type: object
-        additionalProperties:
-          type: string
-      notes:
-        type: string
-        example: Sample
-        description: notes
-      portfolio_id:
-        type: string
-        format: uuid
-        example: ea30e8b7-3946-46ed-975a-4870a57d119s
-        description: portfolio_id
-      portfolio_transaction_id:
-        type: string
-        format: uuid
-        example: 29c3f995-bd45-4346-aea2-fd4476568d4c
-        description: portfolioTransactionId
-      received_date:
-        type: string
-        format: date
-        example: '2018-01-29'
-        description: received_date
-      secondary_id:
-        type: string
-        example: 7289243787238
-        readOnly: true
-      status:
-        type: string
-        example: in process
-        description: status
-      status_time_stamp:
-        type: string
-        format: date-time
-        example: '2018-01-09''T''12:00:00'
-        description: statusTimeStamp
-      type:
-        type: string
-        example: Routine Withdrawal
-        description: type
-      update_date:
-        type: string
-        format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
-      withdrawal_date:
-        type: string
-        format: date
-        example: '2018-01-29'
-        description: withdrawalDate
-    title: DailyWithdrawal
-    description: DailyWithdrawal Object
   DateDoubleVO:
     type: object
     properties:
@@ -22057,6 +20736,11 @@ definitions:
         type: string
         example: cash
         description: accounting_method
+      business_id:
+        type: string
+        format: uuid
+        example: 50d76212-0fcd-4d36-8633-e4a52cbcb79f
+        description: businessId
       client_id:
         type: string
         format: uuid
@@ -22295,6 +20979,110 @@ definitions:
         example: 6e14259a-9a68-4593-9e6d-8fcd0d05cf44
         description: funding_id
     title: FundingRequestMap
+  FundingTransaction:
+    type: object
+    required:
+      - account_id
+      - amount
+      - currency_code
+      - funding_id
+      - is_deposit
+    properties:
+      account_id:
+        type: string
+        format: uuid
+        example: 1c28dade-8679-4df5-9b9d-c508d04fcb0c
+        description: accountId
+      amount:
+        type: number
+        format: double
+        example: 1004
+        description: amount
+      comments:
+        type: string
+        example: Funded
+        description: comments
+      create_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        readOnly: true
+      currency_code:
+        type: string
+        example: USD
+        description: currency_code
+      fees:
+        type: number
+        format: double
+        example: 0
+        description: fees
+      funding_id:
+        type: string
+        format: uuid
+        example: 1c28dade-8679-4df5-9b9d-c508d04fcb0c
+        description: fundingId
+      id:
+        type: string
+        format: uuid
+        example: 000183ac-2288-4564-a76b-119f4694be98
+        readOnly: true
+      invested_date:
+        type: string
+        format: date-time
+        example: '2018-01-09''T''12:00:00'
+        description: investedDate
+      is_deposit:
+        type: boolean
+        example: false
+        description: is deposit
+      last_request_date:
+        type: string
+        format: date-time
+        example: '2018-01-09''T''12:00:00'
+        description: lastRequestDate
+      metadata:
+        type: object
+        additionalProperties:
+          type: string
+      portfolio_id:
+        type: string
+        format: uuid
+        example: ea30e8b7-3946-46ed-975a-4870a57d119s
+        description: portfolio_id
+      portfolio_transaction_id:
+        type: string
+        format: uuid
+        example: 29c3f995-bd45-4346-aea2-fd4476568d4c
+        description: portfolioTransactionId
+      received_date:
+        type: string
+        format: date-time
+        example: '2018-01-09''T''12:00:00'
+        description: receivedDate
+      secondary_id:
+        type: string
+        example: 7289243787238
+        readOnly: true
+      status:
+        type: string
+        example: in process
+        description: status
+      status_time_stamp:
+        type: string
+        format: date-time
+        example: '2018-01-09''T''12:00:00'
+        description: statusTimeStamp
+      type:
+        type: string
+        example: one-time
+        description: type
+      update_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        readOnly: true
+    title: FundingTransaction
+    description: FundingTransaction Object
   FxRate:
     type: object
     required:
@@ -22622,12 +21410,53 @@ definitions:
         example: '2018-06-28T18:17:23.579+0000'
         readOnly: true
     title: Household
+  Institution:
+    type: object
+    required:
+      - name
+    properties:
+      code:
+        type: string
+        example: code
+        description: code
+      create_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        readOnly: true
+      id:
+        type: string
+        format: uuid
+        example: 000183ac-2288-4564-a76b-119f4694be98
+        readOnly: true
+      logo_url_medium:
+        type: string
+        example: 'https://domain.com/logo.png'
+        description: logo_url_medium
+      logo_url_small:
+        type: string
+        example: 'https://domain.com/logo.png'
+        description: logo_url_small
+      name:
+        type: string
+        example: Chase
+        description: name
+      update_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        readOnly: true
+      website_url:
+        type: string
+        example: 'https://domain.com'
+        description: website_url
+    title: Institution
+    description: Institution Object
   Investment:
     type: object
     required:
       - price
       - quantity
-      - ticker
       - trade_signal
     properties:
       fee:
@@ -22676,18 +21505,28 @@ definitions:
   Invoice:
     type: object
     required:
+      - contact_id
       - currency_code
-      - customer_id
       - due_date
       - invoice_date
       - invoice_number
       - total_amount
     properties:
+      business_id:
+        type: string
+        format: uuid
+        example: 50d76212-0fcd-4d36-8633-e4a52cbcb79f
+        description: businessId
       client_id:
         type: string
         format: uuid
         example: 5cc48294-5f28-41f2-8eb4-898e83932327
         description: client_id
+      contact_id:
+        type: string
+        format: uuid
+        example: 14566616-6846-4090-beae-5b1568b82370
+        description: contact_id
       create_date:
         type: string
         format: date-time
@@ -22697,11 +21536,6 @@ definitions:
         type: string
         example: USD
         description: currency_code
-      customer_id:
-        type: string
-        format: uuid
-        example: 14566616-6846-4090-beae-5b1568b82370
-        description: invoice_number
       department:
         type: string
         example: invoice department
@@ -22742,6 +21576,10 @@ definitions:
         type: boolean
         example: true
         description: is_active
+      is_bill:
+        type: boolean
+        example: false
+        description: is_bill
       line_items:
         type: array
         example: []
@@ -22829,6 +21667,13 @@ definitions:
         format: uuid
         example: 14566616-6846-4090-beae-5b1568b82370
         description: invoiceId
+      metadata:
+        type: object
+        example: {}
+        description: metadata
+        readOnly: true
+        additionalProperties:
+          type: string
       payment_amount:
         type: number
         format: float
@@ -22852,61 +21697,6 @@ definitions:
     description: InvoicePayment Object
   JsonNode:
     type: object
-    properties:
-      array:
-        type: boolean
-      big_decimal:
-        type: boolean
-      big_integer:
-        type: boolean
-      binary:
-        type: boolean
-      boolean:
-        type: boolean
-      container_node:
-        type: boolean
-      double:
-        type: boolean
-      empty:
-        type: boolean
-      float:
-        type: boolean
-      floating_point_number:
-        type: boolean
-      int:
-        type: boolean
-      integral_number:
-        type: boolean
-      long:
-        type: boolean
-      missing_node:
-        type: boolean
-      node_type:
-        type: string
-        enum:
-          - ARRAY
-          - BINARY
-          - BOOLEAN
-          - MISSING
-          - 'NULL'
-          - NUMBER
-          - OBJECT
-          - POJO
-          - STRING
-      'null':
-        type: boolean
-      number:
-        type: boolean
-      object:
-        type: boolean
-      pojo:
-        type: boolean
-      short:
-        type: boolean
-      textual:
-        type: boolean
-      value_node:
-        type: boolean
     title: JsonNode
   LineItems:
     type: object
@@ -23038,6 +21828,8 @@ definitions:
     title: Member
   MerchantCategoryCode:
     type: object
+    required:
+      - transaction_category_id
     properties:
       category:
         type: string
@@ -23056,6 +21848,11 @@ definitions:
         type: string
         example: Florists
         description: subcategory
+      transaction_category_id:
+        type: string
+        format: uuid
+        example: 29c3f995-bd45-4346-aea2-fd4476568d4c
+        description: TransactionCategory id
     title: MerchantCategoryCode
     description: MerchantCategoryCode Object
   MerchantsMap:
@@ -24216,6 +23013,11 @@ definitions:
         format: uuid
         example: 6e14259a-9a68-4593-9e6d-8fcd0d05cf44
         description: bankLinkId
+      max:
+        type: number
+        format: double
+        example: 100
+        description: max
     title: OverflowBankLinkMap
   OverflowSettings:
     type: object
@@ -24325,6 +23127,25 @@ definitions:
         description: role
     title: Ownership
     description: Ownership Object
+  Pageable:
+    type: object
+    properties:
+      offset:
+        type: integer
+        format: int64
+      page_number:
+        type: integer
+        format: int32
+      page_size:
+        type: integer
+        format: int32
+      paged:
+        type: boolean
+      sort:
+        $ref: '#/definitions/Sort'
+      unpaged:
+        type: boolean
+    title: Pageable
   Page«AccountAllocationMapping»:
     type: object
     properties:
@@ -24965,6 +23786,38 @@ definitions:
         format: int32
     title: Page«Card»
     description: Page Object
+  Page«ClientCardVO»:
+    type: object
+    properties:
+      content:
+        type: array
+        items:
+          $ref: '#/definitions/ClientCardVO'
+      first:
+        type: boolean
+      last:
+        type: boolean
+      number:
+        type: integer
+        format: int32
+      number_of_elements:
+        type: integer
+        format: int32
+      size:
+        type: integer
+        format: int32
+      sort:
+        type: array
+        items:
+          $ref: '#/definitions/Sort'
+      total_elements:
+        type: integer
+        format: int64
+      total_pages:
+        type: integer
+        format: int32
+    title: Page«ClientCardVO»
+    description: Page Object
   Page«ClientResponse»:
     type: object
     properties:
@@ -25061,6 +23914,38 @@ definitions:
         format: int32
     title: Page«Client»
     description: Page Object
+  Page«Contact»:
+    type: object
+    properties:
+      content:
+        type: array
+        items:
+          $ref: '#/definitions/Contact'
+      first:
+        type: boolean
+      last:
+        type: boolean
+      number:
+        type: integer
+        format: int32
+      number_of_elements:
+        type: integer
+        format: int32
+      size:
+        type: integer
+        format: int32
+      sort:
+        type: array
+        items:
+          $ref: '#/definitions/Sort'
+      total_elements:
+        type: integer
+        format: int64
+      total_pages:
+        type: integer
+        format: int32
+    title: Page«Contact»
+    description: Page Object
   Page«CustomerRevenue»:
     type: object
     properties:
@@ -25092,102 +23977,6 @@ definitions:
         type: integer
         format: int32
     title: Page«CustomerRevenue»
-    description: Page Object
-  Page«Customer»:
-    type: object
-    properties:
-      content:
-        type: array
-        items:
-          $ref: '#/definitions/Customer'
-      first:
-        type: boolean
-      last:
-        type: boolean
-      number:
-        type: integer
-        format: int32
-      number_of_elements:
-        type: integer
-        format: int32
-      size:
-        type: integer
-        format: int32
-      sort:
-        type: array
-        items:
-          $ref: '#/definitions/Sort'
-      total_elements:
-        type: integer
-        format: int64
-      total_pages:
-        type: integer
-        format: int32
-    title: Page«Customer»
-    description: Page Object
-  Page«DailyDeposit»:
-    type: object
-    properties:
-      content:
-        type: array
-        items:
-          $ref: '#/definitions/DailyDeposit'
-      first:
-        type: boolean
-      last:
-        type: boolean
-      number:
-        type: integer
-        format: int32
-      number_of_elements:
-        type: integer
-        format: int32
-      size:
-        type: integer
-        format: int32
-      sort:
-        type: array
-        items:
-          $ref: '#/definitions/Sort'
-      total_elements:
-        type: integer
-        format: int64
-      total_pages:
-        type: integer
-        format: int32
-    title: Page«DailyDeposit»
-    description: Page Object
-  Page«DailyWithdrawal»:
-    type: object
-    properties:
-      content:
-        type: array
-        items:
-          $ref: '#/definitions/DailyWithdrawal'
-      first:
-        type: boolean
-      last:
-        type: boolean
-      number:
-        type: integer
-        format: int32
-      number_of_elements:
-        type: integer
-        format: int32
-      size:
-        type: integer
-        format: int32
-      sort:
-        type: array
-        items:
-          $ref: '#/definitions/Sort'
-      total_elements:
-        type: integer
-        format: int64
-      total_pages:
-        type: integer
-        format: int32
-    title: Page«DailyWithdrawal»
     description: Page Object
   Page«DecisionTree»:
     type: object
@@ -25381,6 +24170,38 @@ definitions:
         format: int32
     title: Page«FinancialStatement»
     description: Page Object
+  Page«FundingTransaction»:
+    type: object
+    properties:
+      content:
+        type: array
+        items:
+          $ref: '#/definitions/FundingTransaction'
+      first:
+        type: boolean
+      last:
+        type: boolean
+      number:
+        type: integer
+        format: int32
+      number_of_elements:
+        type: integer
+        format: int32
+      size:
+        type: integer
+        format: int32
+      sort:
+        type: array
+        items:
+          $ref: '#/definitions/Sort'
+      total_elements:
+        type: integer
+        format: int64
+      total_pages:
+        type: integer
+        format: int32
+    title: Page«FundingTransaction»
+    description: Page Object
   Page«Funding»:
     type: object
     properties:
@@ -25509,6 +24330,38 @@ definitions:
         format: int32
     title: Page«Household»
     description: Page Object
+  Page«Institution»:
+    type: object
+    properties:
+      content:
+        type: array
+        items:
+          $ref: '#/definitions/Institution'
+      first:
+        type: boolean
+      last:
+        type: boolean
+      number:
+        type: integer
+        format: int32
+      number_of_elements:
+        type: integer
+        format: int32
+      size:
+        type: integer
+        format: int32
+      sort:
+        type: array
+        items:
+          $ref: '#/definitions/Sort'
+      total_elements:
+        type: integer
+        format: int64
+      total_pages:
+        type: integer
+        format: int32
+    title: Page«Institution»
+    description: Page Object
   Page«InvoicePayment»:
     type: object
     properties:
@@ -25580,6 +24433,8 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/MXMerchantRes'
+      empty:
+        type: boolean
       first:
         type: boolean
       last:
@@ -25590,6 +24445,8 @@ definitions:
       number_of_elements:
         type: integer
         format: int32
+      pageable:
+        $ref: '#/definitions/Pageable'
       size:
         type: integer
         format: int32
@@ -26754,38 +25611,6 @@ definitions:
         format: int32
     title: Page«TransactionCode»
     description: Page Object
-  Page«VAccountAssetSize»:
-    type: object
-    properties:
-      content:
-        type: array
-        items:
-          $ref: '#/definitions/VAccountAssetSize'
-      first:
-        type: boolean
-      last:
-        type: boolean
-      number:
-        type: integer
-        format: int32
-      number_of_elements:
-        type: integer
-        format: int32
-      size:
-        type: integer
-        format: int32
-      sort:
-        type: array
-        items:
-          $ref: '#/definitions/Sort'
-      total_elements:
-        type: integer
-        format: int64
-      total_pages:
-        type: integer
-        format: int32
-    title: Page«VAccountAssetSize»
-    description: Page Object
   Page«Webhook»:
     type: object
     properties:
@@ -26840,7 +25665,6 @@ definitions:
     type: object
     required:
       - account_id
-      - model_id
       - name
       - percentage
     properties:
@@ -27312,6 +26136,11 @@ definitions:
         format: int32
         example: 3099
         description: merchant_category_code
+      merchant_id:
+        type: string
+        format: uuid
+        example: 1c28dade-8679-4df5-9b9d-c508d04fcb0c
+        description: merchantId
       metadata:
         type: object
         example: {}
@@ -27356,6 +26185,11 @@ definitions:
         type: string
         example: subcategory
         description: subcategory
+      transaction_category_id:
+        type: string
+        format: uuid
+        example: 1c28dade-8679-4df5-9b9d-c508d04fcb0c
+        description: transactionCategoryId
       transaction_code_id:
         type: string
         format: uuid
@@ -27379,6 +26213,11 @@ definitions:
         type: string
         example: title
         description: category
+      create_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        readOnly: true
       description:
         type: string
         example: description
@@ -27422,6 +26261,10 @@ definitions:
         format: uuid
         example: 2feae367-77be-4613-9cd0-f62fd5b3cff9
         description: questionnaireId
+      secondary_id:
+        type: string
+        example: 7289243787238
+        readOnly: true
       subcategory:
         type: string
         example: subcategory
@@ -27434,6 +26277,11 @@ definitions:
         type: string
         example: label
         description: tooltip
+      update_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        readOnly: true
       weight:
         type: number
         format: double
@@ -27469,6 +26317,13 @@ definitions:
         type: boolean
         example: true
         description: is_active
+      metadata:
+        type: object
+        example: {}
+        description: metadata
+        readOnly: true
+        additionalProperties:
+          type: string
       name:
         type: string
         example: retirement
@@ -28236,7 +27091,7 @@ definitions:
         description: client_id
       control_scope:
         type: string
-        example: merchant_category
+        example: merchant
         description: controlScope
       control_type:
         type: string
@@ -28307,6 +27162,11 @@ definitions:
     required:
       - name
     properties:
+      application_id:
+        type: string
+        format: uuid
+        example: 04638eb3-d94d-45d6-b6f3-c685bb5a6009
+        description: application_id
       category:
         type: string
         example: xyz
@@ -28333,6 +27193,10 @@ definitions:
         type: boolean
         example: true
         description: is_active
+      is_business:
+        type: boolean
+        example: false
+        description: is_business
       is_client:
         type: boolean
         example: false
@@ -28480,6 +27344,14 @@ definitions:
           - 'true'
           - 'false'
           - 'null'
+      is_deposit:
+        type: string
+        example: false
+        readOnly: true
+        enum:
+          - 'true'
+          - 'false'
+          - 'null'
       is_fee:
         type: string
         example: false
@@ -28526,29 +27398,6 @@ definitions:
         example: '2018-06-28T18:17:23.579+0000'
         readOnly: true
     title: TransactionCode
-  VAccountAssetSize:
-    type: object
-    properties:
-      account_id:
-        type: string
-        format: uuid
-        example: 1c28dade-8679-4df5-9b9d-c508d04fcb0c
-        description: account_id
-      asset_size:
-        type: number
-        format: double
-        example: 1
-        description: asset_size
-      cash_flow:
-        type: number
-        format: double
-        example: 1
-        description: cash_flow
-      date:
-        type: string
-        format: date
-    title: VAccountAssetSize
-    description: VAccountAssetSize Object
   VAccountVO:
     type: object
     properties:

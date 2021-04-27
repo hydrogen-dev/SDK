@@ -1,7 +1,13 @@
 package com.hydrogen.nucleus;
 
 import com.google.gson.Gson;
-import com.squareup.okhttp.*;
+import com.squareup.okhttp.Call;
+import com.squareup.okhttp.Credentials;
+import com.squareup.okhttp.HttpUrl;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
 
 import java.io.IOException;
 import java.util.Map;
@@ -44,18 +50,19 @@ public class AuthApiClient extends ApiClient {
     }
 
     public void createClientTokenCredential(String clientId, String clientSecret, String clientToken) throws ApiException {
+        Request request = createRequest(createHttpUrl(CLIENT_CREDENTIAL), clientId, clientSecret);
+        String accessToken = getAuthRequestAccessToken(request);
         Request clientTokenRequest = createClientTokenRequest(createClientTokenUrl(),
-                clientId, clientSecret,
-                clientToken);
+                accessToken, clientToken);
         String token = getAuthRequestAccessToken(clientTokenRequest);
         setAccessToken(token);
     }
 
-    private Request createClientTokenRequest (HttpUrl createHttpUrl, String clientId, String clientSecret, String clientToken) {
+    private Request createClientTokenRequest (HttpUrl createHttpUrl, String accessToken, String clientToken) {
         return new Request.Builder()
                 .url(createHttpUrl)
                 .post(RequestBody.create(null, new byte[0]))
-                .addHeader(AUTHORIZATION, Credentials.basic(clientId, clientSecret))
+                .addHeader(AUTHORIZATION, BEARER + accessToken)
                 .addHeader(CLIENT_TOKEN, BEARER + clientToken)
                 .build();
     }

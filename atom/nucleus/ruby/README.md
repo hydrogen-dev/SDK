@@ -1,8 +1,8 @@
 # Hydrogen Nucleus API
 
 Hydrogen Nucleus API
-- API version: 1.8.0
-  - Build date: 12-28-2020
+- API version: 1.9.0
+  - Build date: 04-15-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 
@@ -25,7 +25,7 @@ gem install nucleus_api
 
 The add this to the Gemfile:
 
-    gem 'nucleus_api', '~> 1.8'
+    gem 'nucleus_api', '~> 1.9'
 
 ## Getting Started
 
@@ -37,21 +37,10 @@ Please first follow the [installation](#installation) instructions. Then make su
 2. Search for @host and change/verify the URL according to the environment.
 
 **Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/nucleus/v1
+https://sandbox.hydrogenplatform.com
 
 **Production Base URL**
-https://api.hydrogenplatform.com/nucleus/v1
-
-3. Search for admin and change/verify the URL according to the environment.
-
-**Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/admin/v1
-
-**Production Base URL**
-https://api.hydrogenplatform.com/admin/v1
-
-### Sample Code
-Now you are ready to execute the following Ruby code:
+https://api.hydrogenplatform.com
 
 ```ruby
 # Load the gem
@@ -80,9 +69,7 @@ begin
 rescue NucleusApi::ApiError => e
   puts "Exception when calling AccountApi->create_account_allocation_mapping_using_post: #{e}"
 end
-
 ```
-
 ## Author
 The Hydrogen Technology Corporation
 

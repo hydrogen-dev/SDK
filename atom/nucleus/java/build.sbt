@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "com.hydrogen",
     name := "hydrogen-nucleus-api",
-    version := "1.8.0",
+    version := "1.9.0",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     javacOptions in compile ++= Seq("-Xlint:deprecation"),
@@ -13,8 +13,8 @@ lazy val root = (project in file(".")).
       "com.squareup.okhttp" % "okhttp" % "2.7.5",
       "com.squareup.okhttp" % "logging-interceptor" % "2.7.5",
       "com.google.code.gson" % "gson" % "2.8.1",
-      "org.threeten" % "threetenbp" % "1.3.5" % "compile",
-      "io.gsonfire" % "gson-fire" % "1.8.0" % "compile",
+      "org.threeten" % "threetenbp" % "1.4.1" % "compile",
+      "io.gsonfire" % "gson-fire" % "1.8.3" % "compile",
       "junit" % "junit" % "4.12" % "test",
       "com.novocode" % "junit-interface" % "0.10" % "test"
     )

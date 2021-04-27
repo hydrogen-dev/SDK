@@ -1,8 +1,8 @@
 # Hydrogen Nucleus API
 
 Hydrogen Nucleus API
-- API version: 1.8.0
-  - Build date: 12-28-2020
+- API version: 1.9.0
+  - Build date: 04-15-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 
@@ -25,7 +25,7 @@ npm i @hydrogenplatform/hydrogen_nucleus_api --save
 
 ### Install Locally
 
-To use the library locally without pulling from the remote npm registry, first install the dependencies by changing 
+To use the library locally without pulling from the remote npm registry, first install the dependencies by changing
 into the directory containing `package.json` (and this README). Let's call this `JAVASCRIPT_CLIENT_DIR`. Then run:
 
 ```shell
@@ -44,7 +44,7 @@ Finally, switch to the directory you want to use your hydrogen_nucleus_api from,
 npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
 ```
 
-You should now be able to `require('@hydrogenplatform/hydrogen_nucleus_api')` in javascript files from the directory you ran the last 
+You should now be able to `require('@hydrogenplatform/hydrogen_nucleus_api')` in javascript files from the directory you ran the last
 command above from.
 
 ## Getting Started
@@ -57,18 +57,10 @@ Please first follow the [installation](#installation) instructions. Then make su
 2. Search for **this.basePath** and change/verify the URL according to the environment.  
 
 **Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/nucleus/v1
+https://sandbox.hydrogenplatform.com
 
 **Production Base URL**
-https://api.hydrogenplatform.com/nucleus/v1
-
-3. Search for **this.adminPath** and change/verify the URL according to the environment.  
-
-**Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/admin/v1
-
-**Production Base URL**
-https://api.hydrogenplatform.com/admin/v1
+https://api.hydrogenplatform.com
 
 ### Sample Code
 Now you are ready to execute the following Javascript code:

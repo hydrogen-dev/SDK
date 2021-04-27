@@ -1,8 +1,8 @@
 # Hydrogen Nucleus API
 
 Hydrogen Nucleus API
-- API version: 1.8.0
-  - Build date: 12-28-2020
+- API version: 1.9.0
+  - Build date: 04-15-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 
@@ -21,11 +21,11 @@ https://www.hydrogenplatform.com/docs/nucleus/v1
 ```
 pip install hydrogen-nucleus-api
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com//.git`)
+(you may need to run `pip` with root permission: `sudo pip install hydrogen-nucleus-api`)
 
 Then import the package:
 ```python
-import nucleus_api 
+import nucleus_api
 ```
 
 ## Getting Started
@@ -38,18 +38,10 @@ Please first follow the [installation](#installation) instructions. Then make su
 2. Search for self.host and change/verify the URL according to the environment.
 
 **Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/nucleus/v1
+https://sandbox.hydrogenplatform.com
 
 **Production Base URL**
-https://api.hydrogenplatform.com/nucleus/v1
-
-3. Search for self.admin_host and change/verify the URL according to the environment.
-
-**Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/admin/v1
-
-**Production Base URL**
-https://api.hydrogenplatform.com/admin/v1
+https://api.hydrogenplatform.com
 
 ### Sample Code
 Now you are ready to execute the following Python code:

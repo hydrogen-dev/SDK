@@ -1,8 +1,8 @@
 # Hydrogen Nucleus API
 
 Hydrogen Nucleus API
-- API version: 1.8.0
-  - Build date: 12-28-2020
+- API version: 1.9.0
+  - Build date: 04-15-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 
@@ -40,7 +40,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.hydrogen</groupId>
   <artifactId>hydrogen-nucleus-api</artifactId>
-  <version>1.8.0</version>
+  <version>1.9.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -50,7 +50,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.hydrogen:hydrogen-nucleus-api:1.8.0"
+compile "com.hydrogen:hydrogen-nucleus-api:1.9.0"
 ```
 
 ### Others
@@ -63,7 +63,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/hydrogen-nucleus-api-1.8.0.jar`
+* `target/hydrogen-nucleus-api-1.9.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -75,18 +75,10 @@ Please first follow the [installation](#installation) instructions. Then make su
 2. Search for basePath, adminPath and change/verify the URL according to the environment.
 
 **Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/nucleus/v1
+https://sandbox.hydrogenplatform.com
 
 **Production Base URL**
-https://api.hydrogenplatform.com/nucleus/v1
-
-3. Search for adminPath and change/verify the URL according to the environment.
-
-**Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/admin/v1
-
-**Production Base URL**
-https://api.hydrogenplatform.com/admin/v1
+https://api.hydrogenplatform.com
 
 ### Sample Code
 Now you are ready to execute the following Java code:

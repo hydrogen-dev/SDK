@@ -10401,8 +10401,7 @@ paths:
         '200':
           description: OK
           schema:
-            type: integer
-            format: int64
+            $ref: '#/definitions/ModelComment'
         '201':
           description: Created
         '401':

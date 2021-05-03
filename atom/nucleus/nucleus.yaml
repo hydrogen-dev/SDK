@@ -5,12 +5,14 @@ info:
   title: Hydrogen Nucleus API
   termsOfService: 'https://www.hydrogenplatform.com/legal/terms'
   contact:
-    name: The Hydrogen Technology Corporation
+    name: Hydrogen Technology Corporation
     url: 'https://www.hydrogenplatform.com/contact'
     email: info@hydrogenplatform.com
-host: api.hydrogenplatform.com/nucleus/v1
+host: api.hydrogenplatform.com
 basePath: /
 tags:
+  - name: AdminClient
+    description: Admin Client Controller
   - name: Account
     description: Account Controller
   - name: AggregationAccount
@@ -72,7 +74,224 @@ tags:
   - name: Webhook
     description: Webhook Controller
 paths:
-  /account:
+  /admin/v1/client:
+    get:
+      tags:
+        - AdminClient
+      summary: getAllAdminClient
+      operationId: getAllAdminClientUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: ascending
+          in: query
+          description: ascending
+          required: false
+          type: boolean
+          default: false
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          description: order_by
+          required: false
+          type: string
+          default: username
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 25
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Page«AdminClient»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    post:
+      tags:
+        - AdminClient
+      summary: create
+      operationId: createAdminClientUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: client
+          description: client
+          required: true
+          schema:
+            $ref: '#/definitions/AdminClient'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AdminClient'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/admin/v1/client/{client_id}':
+    get:
+      tags:
+        - AdminClient
+      summary: get
+      operationId: getAdminClientUsingGET
+      produces:
+        - '*/*'
+      parameters:
+        - name: client_id
+          in: path
+          description: client_id
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AdminClient'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    put:
+      tags:
+        - AdminClient
+      summary: update
+      operationId: updateAdminClientUsingPUT
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: client
+          description: client
+          required: true
+          schema:
+            type: object
+        - name: client_id
+          in: path
+          description: client_id
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AdminClient'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    delete:
+      tags:
+        - AdminClient
+      summary: delete
+      operationId: deleteAdminClientUsingDELETE
+      produces:
+        - '*/*'
+      parameters:
+        - name: client_id
+          in: path
+          description: client_id
+          required: true
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      security:
+        - oauth2: []
+      deprecated: false
+  /admin/v1/client_credentials:
+    post:
+      tags:
+        - AdminClient
+      summary: updateClientCredentials
+      operationId: updateClientCredentialsUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - in: body
+          name: clientCredentials
+          description: clientCredentials
+          required: true
+          schema:
+            $ref: '#/definitions/ClientCredentials'
+        - name: tenant-name
+          in: header
+          description: tenant-name
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AdminClient'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /nucleus/v1/account:
     get:
       tags:
         - Account
@@ -139,8 +358,8 @@ paths:
         - '*/*'
       parameters:
         - in: body
-          name: account
-          description: account
+          name: clientAccountRequest
+          description: clientAccountRequest
           required: true
           schema:
             $ref: '#/definitions/Account'
@@ -160,7 +379,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/account/{account_id}':
+  '/nucleus/v1/account/{account_id}':
     get:
       tags:
         - Account
@@ -207,7 +426,7 @@ paths:
           description: account
           required: true
           schema:
-            $ref: '#/definitions/Account'
+            type: object
         - name: account_id
           in: path
           description: UUID account_id
@@ -259,7 +478,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/account/{account_id}/account_overview':
+  '/nucleus/v1/account/{account_id}/account_overview':
     get:
       tags:
         - Account
@@ -301,7 +520,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/account/{account_id}/asset_size':
+  '/nucleus/v1/account/{account_id}/asset_size':
     get:
       tags:
         - Account
@@ -366,7 +585,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/account/{account_id}/holding':
+  '/nucleus/v1/account/{account_id}/holding':
     get:
       tags:
         - Account
@@ -452,7 +671,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/account/{account_id}/order_bulk':
+  '/nucleus/v1/account/{account_id}/order_bulk':
     post:
       tags:
         - Order
@@ -494,7 +713,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/account/{account_id}/order_buy_only':
+  '/nucleus/v1/account/{account_id}/order_buy_only':
     post:
       tags:
         - Order
@@ -536,7 +755,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/account/{account_id}/order_rebalance':
+  '/nucleus/v1/account/{account_id}/order_rebalance':
     post:
       tags:
         - Order
@@ -578,7 +797,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/account/{account_id}/order_reconciliation':
+  '/nucleus/v1/account/{account_id}/order_reconciliation':
     post:
       tags:
         - Order
@@ -617,7 +836,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/account/{account_id}/order_sell_all':
+  '/nucleus/v1/account/{account_id}/order_sell_all':
     post:
       tags:
         - Order
@@ -659,7 +878,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/account/{account_id}/order_sell_only':
+  '/nucleus/v1/account/{account_id}/order_sell_only':
     post:
       tags:
         - Order
@@ -701,7 +920,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/account/{account_id}/subscribe':
+  '/nucleus/v1/account/{account_id}/subscribe':
     post:
       tags:
         - Account
@@ -744,7 +963,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/account/{account_id}/transaction':
+  '/nucleus/v1/account/{account_id}/transaction':
     get:
       tags:
         - Account
@@ -822,7 +1041,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /account_allocation:
+  /nucleus/v1/account_allocation:
     get:
       tags:
         - Account
@@ -910,7 +1129,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/account_allocation/{account_allocation_id}':
+  '/nucleus/v1/account_allocation/{account_allocation_id}':
     get:
       tags:
         - Account
@@ -964,7 +1183,7 @@ paths:
           description: account_allocation_mapping
           required: false
           schema:
-            $ref: '#/definitions/AccountAllocationMapping'
+            type: object
       responses:
         '200':
           description: OK
@@ -1009,7 +1228,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /account_permission:
+  /nucleus/v1/account_permission:
     get:
       tags:
         - Account
@@ -1097,7 +1316,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/account_permission/{account_id}':
+  '/nucleus/v1/account_permission/{account_id}':
     get:
       tags:
         - Account
@@ -1149,7 +1368,7 @@ paths:
           description: aclClientPermissionVO
           required: true
           schema:
-            $ref: '#/definitions/AclClientPermissionVO'
+            type: object
       responses:
         '200':
           description: OK
@@ -1195,7 +1414,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /account_status:
+  /nucleus/v1/account_status:
     get:
       tags:
         - Account
@@ -1283,7 +1502,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/account_status/{account_status_id}':
+  '/nucleus/v1/account_status/{account_status_id}':
     get:
       tags:
         - Account
@@ -1330,7 +1549,7 @@ paths:
           description: account_status
           required: true
           schema:
-            $ref: '#/definitions/AccountStatus'
+            type: object
         - name: account_status_id
           in: path
           description: UUID account_status_id
@@ -1382,7 +1601,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /account_type:
+  /nucleus/v1/account_type:
     get:
       tags:
         - Account
@@ -1470,7 +1689,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/account_type/{account_type_id}':
+  '/nucleus/v1/account_type/{account_type_id}':
     get:
       tags:
         - Account
@@ -1517,7 +1736,7 @@ paths:
           description: account_type
           required: true
           schema:
-            $ref: '#/definitions/AccountType'
+            type: object
         - name: account_type_id
           in: path
           description: UUID account_type_id
@@ -1569,7 +1788,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /aggregation_account:
+  /nucleus/v1/aggregation_account:
     get:
       tags:
         - AggregationAccount
@@ -1657,7 +1876,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/aggregation_account/{aggregation_account_id}':
+  '/nucleus/v1/aggregation_account/{aggregation_account_id}':
     get:
       tags:
         - AggregationAccount
@@ -1704,7 +1923,7 @@ paths:
           description: aggregation_account
           required: true
           schema:
-            $ref: '#/definitions/AggregationAccount'
+            type: object
         - name: aggregation_account_id
           in: path
           description: UUID aggregation_account_id
@@ -1756,7 +1975,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/aggregation_account/{aggregation_account_id}/aggregate_data':
+  '/nucleus/v1/aggregation_account/{aggregation_account_id}/aggregate_data':
     get:
       tags:
         - AggregationAccount
@@ -1792,7 +2011,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /aggregation_account_balance:
+  /nucleus/v1/aggregation_account_balance:
     get:
       tags:
         - AggregationAccount
@@ -1885,7 +2104,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/aggregation_account_balance/{aggregation_account_balance_id}':
+  '/nucleus/v1/aggregation_account_balance/{aggregation_account_balance_id}':
     get:
       tags:
         - AggregationAccount
@@ -1937,7 +2156,7 @@ paths:
           description: aggregation_account_balance
           required: true
           schema:
-            $ref: '#/definitions/AggregationAccountBalance'
+            type: object
         - name: aggregation_account_balance_id
           in: path
           description: UUID aggregation_account_balance_id
@@ -1989,7 +2208,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /aggregation_account_holding:
+  /nucleus/v1/aggregation_account_holding:
     get:
       tags:
         - AggregationAccount
@@ -2082,7 +2301,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/aggregation_account_holding/{aggregation_account_holding_id}':
+  '/nucleus/v1/aggregation_account_holding/{aggregation_account_holding_id}':
     get:
       tags:
         - AggregationAccount
@@ -2134,7 +2353,7 @@ paths:
           description: aggregation_account_holding
           required: true
           schema:
-            $ref: '#/definitions/AggregationAccountHolding'
+            type: object
         - name: aggregation_account_holding_id
           in: path
           description: UUID aggregation_account_holding_id
@@ -2186,7 +2405,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /aggregation_account_transaction:
+  /nucleus/v1/aggregation_account_transaction:
     get:
       tags:
         - AggregationAccount
@@ -2279,7 +2498,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/aggregation_account_transaction/{aggregation_account_transaction_id}':
+  '/nucleus/v1/aggregation_account_transaction/{aggregation_account_transaction_id}':
     get:
       tags:
         - AggregationAccount
@@ -2331,7 +2550,7 @@ paths:
           description: aggregation_account_transaction
           required: true
           schema:
-            $ref: '#/definitions/AggregationAccountTransaction'
+            type: object
         - name: aggregation_account_transaction_id
           in: path
           description: UUID aggregation_account_transaction_id
@@ -2383,7 +2602,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /allocation:
+  /nucleus/v1/allocation:
     get:
       tags:
         - Allocation
@@ -2471,7 +2690,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/allocation/{allocation_id}':
+  '/nucleus/v1/allocation/{allocation_id}':
     get:
       tags:
         - Allocation
@@ -2518,7 +2737,7 @@ paths:
           description: allocation
           required: true
           schema:
-            $ref: '#/definitions/Allocation'
+            type: object
         - name: allocation_id
           in: path
           description: UUID allocation_id
@@ -2570,7 +2789,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/allocation/{allocation_id}/aggregate_data':
+  '/nucleus/v1/allocation/{allocation_id}/aggregate_data':
     get:
       tags:
         - Allocation
@@ -2600,7 +2819,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/allocation/{allocation_id}/asset_size':
+  '/nucleus/v1/allocation/{allocation_id}/asset_size':
     get:
       tags:
         - Allocation
@@ -2660,7 +2879,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/allocation/{allocation_id}/holding':
+  '/nucleus/v1/allocation/{allocation_id}/holding':
     get:
       tags:
         - Allocation
@@ -2704,7 +2923,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/allocation/{allocation_id}/transaction':
+  '/nucleus/v1/allocation/{allocation_id}/transaction':
     get:
       tags:
         - Allocation
@@ -2772,7 +2991,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /allocation_composition:
+  /nucleus/v1/allocation_composition:
     get:
       tags:
         - Allocation
@@ -2860,7 +3079,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/allocation_composition/{allocation_composition_id}':
+  '/nucleus/v1/allocation_composition/{allocation_composition_id}':
     get:
       tags:
         - Allocation
@@ -2907,7 +3126,7 @@ paths:
           description: allocation_composition
           required: true
           schema:
-            $ref: '#/definitions/AllocationComposition'
+            type: object
         - name: allocation_composition_id
           in: path
           description: UUID allocation_composition_id
@@ -2959,7 +3178,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /answer:
+  /nucleus/v1/answer:
     get:
       tags:
         - Questionnaire
@@ -3047,7 +3266,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/answer/{answer_id}':
+  '/nucleus/v1/answer/{answer_id}':
     get:
       tags:
         - Questionnaire
@@ -3094,7 +3313,7 @@ paths:
           description: answer
           required: true
           schema:
-            $ref: '#/definitions/Answer'
+            type: object
         - name: answer_id
           in: path
           description: UUID answer_id
@@ -3146,7 +3365,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /application:
+  /nucleus/v1/application:
     get:
       tags:
         - Utils
@@ -3234,7 +3453,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/application/{application_id}':
+  '/nucleus/v1/application/{application_id}':
     get:
       tags:
         - Utils
@@ -3281,7 +3500,7 @@ paths:
           description: application
           required: true
           schema:
-            $ref: '#/definitions/Application'
+            type: object
         - name: application_id
           in: path
           description: UUID application_id
@@ -3333,7 +3552,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /audit_log:
+  /nucleus/v1/audit_log:
     get:
       tags:
         - Utils
@@ -3421,7 +3640,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/audit_log/{audit_log_id}':
+  '/nucleus/v1/audit_log/{audit_log_id}':
     get:
       tags:
         - Utils
@@ -3452,7 +3671,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /bank_link:
+  /nucleus/v1/bank_link:
     get:
       tags:
         - Funding
@@ -3545,7 +3764,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/bank_link/{bank_link_id}':
+  '/nucleus/v1/bank_link/{bank_link_id}':
     get:
       tags:
         - Funding
@@ -3597,7 +3816,7 @@ paths:
           description: bank_link
           required: true
           schema:
-            $ref: '#/definitions/BankLink'
+            type: object
         - name: bank_link_id
           in: path
           description: UUID bank_link_id
@@ -3649,7 +3868,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /benchmark:
+  /nucleus/v1/benchmark:
     get:
       tags:
         - Benchmark
@@ -3737,7 +3956,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/benchmark/{benchmark_id}':
+  '/nucleus/v1/benchmark/{benchmark_id}':
     get:
       tags:
         - Benchmark
@@ -3784,7 +4003,7 @@ paths:
           description: benchmark
           required: true
           schema:
-            $ref: '#/definitions/Benchmark'
+            type: object
         - name: benchmark_id
           in: path
           description: UUID benchmark_id
@@ -3836,7 +4055,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/benchmark/{benchmark_id}/asset_size':
+  '/nucleus/v1/benchmark/{benchmark_id}/asset_size':
     get:
       tags:
         - Benchmark
@@ -3886,7 +4105,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /budget:
+  /nucleus/v1/budget:
     get:
       tags:
         - Budget
@@ -3979,7 +4198,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/budget/{budget_id}':
+  '/nucleus/v1/budget/{budget_id}':
     get:
       tags:
         - Budget
@@ -4031,7 +4250,7 @@ paths:
           description: budget
           required: true
           schema:
-            $ref: '#/definitions/Budget'
+            type: object
         - name: budget_id
           in: path
           description: UUID budget_id
@@ -4083,7 +4302,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/bulk/status/{id}':
+  '/nucleus/v1/bulk/status/{id}':
     get:
       tags:
         - Bulk
@@ -4114,7 +4333,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/bulk/{entity_uri}':
+  '/nucleus/v1/bulk/{entity_uri}':
     post:
       tags:
         - Bulk
@@ -4170,7 +4389,7 @@ paths:
           description: data
           required: true
           schema:
-            $ref: '#/definitions/JsonNode'
+            type: object
         - name: entity_uri
           in: path
           description: UUID entity_uri
@@ -4228,7 +4447,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /bulk_aggregation_account:
+  /nucleus/v1/bulk_aggregation_account:
     post:
       tags:
         - AggregationAccount
@@ -4284,7 +4503,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: '#/definitions/AggregationAccount'
+              type: object
       responses:
         '200':
           description: OK
@@ -4303,7 +4522,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /bulk_aggregation_account_balance:
+  /nucleus/v1/bulk_aggregation_account_balance:
     post:
       tags:
         - AggregationAccount
@@ -4341,7 +4560,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /bulk_aggregation_account_holding:
+  /nucleus/v1/bulk_aggregation_account_holding:
     post:
       tags:
         - AggregationAccount
@@ -4397,7 +4616,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: '#/definitions/AggregationAccountHolding'
+              type: object
       responses:
         '200':
           description: OK
@@ -4416,7 +4635,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /bulk_aggregation_account_transaction:
+  /nucleus/v1/bulk_aggregation_account_transaction:
     post:
       tags:
         - AggregationAccount
@@ -4454,7 +4673,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /bulk_bank_link:
+  /nucleus/v1/bulk_bank_link:
     put:
       tags:
         - Funding
@@ -4473,7 +4692,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: '#/definitions/BankLink'
+              type: object
       responses:
         '200':
           description: OK
@@ -4492,7 +4711,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /business:
+  /nucleus/v1/business:
     get:
       tags:
         - Business
@@ -4580,7 +4799,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/business/{business_id}':
+  '/nucleus/v1/business/{business_id}':
     get:
       tags:
         - Business
@@ -4627,7 +4846,7 @@ paths:
           description: business
           required: true
           schema:
-            $ref: '#/definitions/Business'
+            type: object
         - name: business_id
           in: path
           description: UUID business_id
@@ -4679,7 +4898,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/business/{business_id}/asset_size':
+  '/nucleus/v1/business/{business_id}/asset_size':
     get:
       tags:
         - Business
@@ -4747,7 +4966,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/business/{business_id}/holding':
+  '/nucleus/v1/business/{business_id}/holding':
     get:
       tags:
         - Business
@@ -4831,7 +5050,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/business/{business_id}/transaction':
+  '/nucleus/v1/business/{business_id}/transaction':
     get:
       tags:
         - Business
@@ -4908,7 +5127,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /card:
+  /nucleus/v1/card:
     get:
       tags:
         - Card
@@ -4996,7 +5215,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /card/cardholder_overview:
+  /nucleus/v1/card/cardholder_overview:
     get:
       tags:
         - Card
@@ -5056,7 +5275,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/card/{card_id}':
+  '/nucleus/v1/card/{card_id}':
     get:
       tags:
         - Card
@@ -5103,7 +5322,7 @@ paths:
           description: card
           required: true
           schema:
-            $ref: '#/definitions/Card'
+            type: object
         - name: card_id
           in: path
           description: UUID card_id
@@ -5155,7 +5374,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/card/{card_id}/asset_size':
+  '/nucleus/v1/card/{card_id}/asset_size':
     get:
       tags:
         - Card
@@ -5215,7 +5434,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/card/{card_id}/transaction':
+  '/nucleus/v1/card/{card_id}/transaction':
     get:
       tags:
         - Card
@@ -5293,7 +5512,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /card_program:
+  /nucleus/v1/card_program:
     get:
       tags:
         - Card
@@ -5381,7 +5600,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/card_program/{card_program_id}':
+  '/nucleus/v1/card_program/{card_program_id}':
     get:
       tags:
         - Card
@@ -5428,7 +5647,7 @@ paths:
           description: card_program
           required: true
           schema:
-            $ref: '#/definitions/CardProgram'
+            type: object
         - name: card_program_id
           in: path
           description: UUID card_program_id
@@ -5480,7 +5699,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /client:
+  /nucleus/v1/client:
     get:
       tags:
         - Client
@@ -5568,7 +5787,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/client/{client_id}':
+  '/nucleus/v1/client/{client_id}':
     get:
       tags:
         - Client
@@ -5615,7 +5834,7 @@ paths:
           description: client
           required: true
           schema:
-            $ref: '#/definitions/Client'
+            type: object
         - name: client_id
           in: path
           description: UUID client_id
@@ -5667,7 +5886,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/client/{client_id}/account_overview':
+  '/nucleus/v1/client/{client_id}/account_overview':
     get:
       tags:
         - Client
@@ -5709,7 +5928,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/client/{client_id}/advisor_overview':
+  '/nucleus/v1/client/{client_id}/advisor_overview':
     get:
       tags:
         - Client
@@ -5745,7 +5964,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/client/{client_id}/aggregation_account_overview':
+  '/nucleus/v1/client/{client_id}/aggregation_account_overview':
     get:
       tags:
         - AggregationAccount
@@ -5781,7 +6000,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/client/{client_id}/asset_size':
+  '/nucleus/v1/client/{client_id}/asset_size':
     get:
       tags:
         - Client
@@ -5849,7 +6068,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/client/{client_id}/goal_overview':
+  '/nucleus/v1/client/{client_id}/goal_overview':
     get:
       tags:
         - Client
@@ -5886,7 +6105,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/client/{client_id}/holding':
+  '/nucleus/v1/client/{client_id}/holding':
     get:
       tags:
         - Client
@@ -5970,7 +6189,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/client/{client_id}/order_bulk':
+  '/nucleus/v1/client/{client_id}/order_bulk':
     post:
       tags:
         - Order
@@ -6012,7 +6231,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/client/{client_id}/transaction':
+  '/nucleus/v1/client/{client_id}/transaction':
     get:
       tags:
         - Client
@@ -6089,7 +6308,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /client_response:
+  /nucleus/v1/client_response:
     get:
       tags:
         - Client
@@ -6177,7 +6396,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/client_response/{client_response_id}':
+  '/nucleus/v1/client_response/{client_response_id}':
     get:
       tags:
         - Client
@@ -6224,7 +6443,7 @@ paths:
           description: client_response
           required: true
           schema:
-            $ref: '#/definitions/ClientResponse'
+            type: object
         - name: client_response_id
           in: path
           description: UUID client_response_id
@@ -6276,7 +6495,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /client_status:
+  /nucleus/v1/client_status:
     get:
       tags:
         - Client
@@ -6364,7 +6583,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/client_status/{client_status_id}':
+  '/nucleus/v1/client_status/{client_status_id}':
     get:
       tags:
         - Client
@@ -6411,7 +6630,7 @@ paths:
           description: client_status
           required: true
           schema:
-            $ref: '#/definitions/ClientStatus'
+            type: object
         - name: client_status_id
           in: path
           description: UUID client_status_id
@@ -6463,7 +6682,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /contact:
+  /nucleus/v1/contact:
     get:
       tags:
         - Contact
@@ -6551,7 +6770,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/contact/{contact_id}':
+  '/nucleus/v1/contact/{contact_id}':
     get:
       tags:
         - Contact
@@ -6598,7 +6817,7 @@ paths:
           description: contact
           required: true
           schema:
-            $ref: '#/definitions/Contact'
+            type: object
         - name: contact_id
           in: path
           description: UUID contact_id
@@ -6650,7 +6869,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /customer_revenue:
+  /nucleus/v1/customer_revenue:
     get:
       tags:
         - Contact
@@ -6743,7 +6962,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/customer_revenue/{customer_revenue_id}':
+  '/nucleus/v1/customer_revenue/{customer_revenue_id}':
     get:
       tags:
         - Contact
@@ -6795,7 +7014,7 @@ paths:
           description: customer_revenue
           required: true
           schema:
-            $ref: '#/definitions/CustomerRevenue'
+            type: object
         - name: customer_revenue_id
           in: path
           description: UUID customer_revenue_id
@@ -6847,7 +7066,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /decision_tree:
+  /nucleus/v1/decision_tree:
     get:
       tags:
         - DecisionTree
@@ -6935,7 +7154,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/decision_tree/{decision_tree_id}':
+  '/nucleus/v1/decision_tree/{decision_tree_id}':
     get:
       tags:
         - DecisionTree
@@ -6982,7 +7201,7 @@ paths:
           description: decision_tree
           required: true
           schema:
-            $ref: '#/definitions/DecisionTree'
+            type: object
         - name: decision_tree_id
           in: path
           description: UUID decision_tree_id
@@ -7034,7 +7253,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /decision_tree_result:
+  /nucleus/v1/decision_tree_result:
     post:
       tags:
         - DecisionTree
@@ -7068,7 +7287,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /document:
+  /nucleus/v1/document:
     get:
       tags:
         - Document
@@ -7156,7 +7375,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/document/{document_id}':
+  '/nucleus/v1/document/{document_id}':
     get:
       tags:
         - Document
@@ -7203,7 +7422,7 @@ paths:
           description: document
           required: true
           schema:
-            $ref: '#/definitions/Document'
+            type: object
         - name: document_id
           in: path
           description: UUID document_id
@@ -7255,7 +7474,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /feature:
+  /nucleus/v1/feature:
     get:
       tags:
         - Utils
@@ -7343,7 +7562,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/feature/{feature_id}':
+  '/nucleus/v1/feature/{feature_id}':
     get:
       tags:
         - Utils
@@ -7390,7 +7609,7 @@ paths:
           description: feature
           required: true
           schema:
-            $ref: '#/definitions/Feature'
+            type: object
         - name: feature_id
           in: path
           description: UUID feature_id
@@ -7442,7 +7661,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /feature_track:
+  /nucleus/v1/feature_track:
     get:
       tags:
         - Utils
@@ -7530,7 +7749,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/feature_track/{feature_track_id}':
+  '/nucleus/v1/feature_track/{feature_track_id}':
     get:
       tags:
         - Utils
@@ -7577,7 +7796,7 @@ paths:
           description: feature_track
           required: true
           schema:
-            $ref: '#/definitions/FeatureTrack'
+            type: object
         - name: feature_track_id
           in: path
           description: UUID feature_track_id
@@ -7629,7 +7848,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /financial_statement:
+  /nucleus/v1/financial_statement:
     get:
       tags:
         - FinancialStatement
@@ -7722,7 +7941,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/financial_statement/{financial_statement_id}':
+  '/nucleus/v1/financial_statement/{financial_statement_id}':
     get:
       tags:
         - FinancialStatement
@@ -7774,7 +7993,7 @@ paths:
           description: financialStatement
           required: true
           schema:
-            $ref: '#/definitions/FinancialStatement'
+            type: object
         - name: financial_statement_id
           in: path
           description: UUID financialStatement_id
@@ -7826,7 +8045,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /funding:
+  /nucleus/v1/funding:
     get:
       tags:
         - Funding
@@ -7919,7 +8138,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/funding/{funding_id}':
+  '/nucleus/v1/funding/{funding_id}':
     get:
       tags:
         - Funding
@@ -7971,7 +8190,7 @@ paths:
           description: funding
           required: true
           schema:
-            $ref: '#/definitions/Funding'
+            type: object
         - name: funding_id
           in: path
           description: UUID funding_id
@@ -8023,7 +8242,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /funding_transaction:
+  /nucleus/v1/funding_transaction:
     get:
       tags:
         - Funding
@@ -8116,7 +8335,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/funding_transaction/{funding_transaction_id}':
+  '/nucleus/v1/funding_transaction/{funding_transaction_id}':
     get:
       tags:
         - Funding
@@ -8168,7 +8387,7 @@ paths:
           description: fundingTransaction
           required: true
           schema:
-            $ref: '#/definitions/FundingTransaction'
+            type: object
         - name: funding_transaction_id
           in: path
           description: UUID funding_transaction_id
@@ -8220,7 +8439,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /goal:
+  /nucleus/v1/goal:
     get:
       tags:
         - Goal
@@ -8308,7 +8527,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/goal/{goal_id}':
+  '/nucleus/v1/goal/{goal_id}':
     get:
       tags:
         - Goal
@@ -8355,7 +8574,7 @@ paths:
           description: goal
           required: true
           schema:
-            $ref: '#/definitions/Goal'
+            type: object
         - name: goal_id
           in: path
           description: UUID goal_id
@@ -8407,7 +8626,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/goal/{goal_id}/asset_size':
+  '/nucleus/v1/goal/{goal_id}/asset_size':
     get:
       tags:
         - Goal
@@ -8480,7 +8699,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/goal/{goal_id}/holding':
+  '/nucleus/v1/goal/{goal_id}/holding':
     get:
       tags:
         - Goal
@@ -8573,7 +8792,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/goal/{goal_id}/transaction':
+  '/nucleus/v1/goal/{goal_id}/transaction':
     get:
       tags:
         - Goal
@@ -8664,7 +8883,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /goal_track:
+  /nucleus/v1/goal_track:
     get:
       tags:
         - Goal
@@ -8767,7 +8986,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/goal_track/{goal_track_id}':
+  '/nucleus/v1/goal_track/{goal_track_id}':
     get:
       tags:
         - Goal
@@ -8814,7 +9033,7 @@ paths:
           description: goal_track
           required: true
           schema:
-            $ref: '#/definitions/GoalTrack'
+            type: object
         - name: goal_track_id
           in: path
           description: UUID goal_track_id
@@ -8866,7 +9085,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /household:
+  /nucleus/v1/household:
     get:
       tags:
         - Household
@@ -8954,7 +9173,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/household/{household_id}':
+  '/nucleus/v1/household/{household_id}':
     get:
       tags:
         - Household
@@ -9001,7 +9220,7 @@ paths:
           description: household
           required: true
           schema:
-            $ref: '#/definitions/Household'
+            type: object
         - name: household_id
           in: path
           description: UUID household_id
@@ -9053,7 +9272,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/household/{household_id}/asset_size':
+  '/nucleus/v1/household/{household_id}/asset_size':
     get:
       tags:
         - Household
@@ -9120,7 +9339,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/household/{household_id}/holding':
+  '/nucleus/v1/household/{household_id}/holding':
     get:
       tags:
         - Household
@@ -9206,7 +9425,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/household/{household_id}/transaction':
+  '/nucleus/v1/household/{household_id}/transaction':
     get:
       tags:
         - Household
@@ -9285,7 +9504,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /invoice:
+  /nucleus/v1/invoice:
     get:
       tags:
         - Invoice
@@ -9378,7 +9597,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/invoice/{invoice_id}':
+  '/nucleus/v1/invoice/{invoice_id}':
     get:
       tags:
         - Invoice
@@ -9430,7 +9649,7 @@ paths:
           description: invoice
           required: true
           schema:
-            $ref: '#/definitions/Invoice'
+            type: object
         - name: invoice_id
           in: path
           description: UUID invoice_id
@@ -9482,7 +9701,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /invoice_payment:
+  /nucleus/v1/invoice_payment:
     get:
       tags:
         - Invoice
@@ -9575,7 +9794,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/invoice_payment/{invoice_payment_id}':
+  '/nucleus/v1/invoice_payment/{invoice_payment_id}':
     get:
       tags:
         - Invoice
@@ -9627,7 +9846,7 @@ paths:
           description: invoice_payment
           required: true
           schema:
-            $ref: '#/definitions/InvoicePayment'
+            type: object
         - name: invoice_payment_id
           in: path
           description: UUID invoice_payment_id
@@ -9679,7 +9898,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /model:
+  /nucleus/v1/model:
     get:
       tags:
         - Model
@@ -9767,7 +9986,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/model/{model_id}':
+  '/nucleus/v1/model/{model_id}':
     get:
       tags:
         - Model
@@ -9814,7 +10033,7 @@ paths:
           description: model
           required: true
           schema:
-            $ref: '#/definitions/Model'
+            type: object
         - name: model_id
           in: path
           description: UUID model_id
@@ -9866,7 +10085,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/model/{model_id}/model_change':
+  '/nucleus/v1/model/{model_id}/model_change':
     post:
       tags:
         - Model
@@ -9909,7 +10128,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /model_asset_size:
+  /nucleus/v1/model_asset_size:
     get:
       tags:
         - Model
@@ -10002,7 +10221,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/model_asset_size/{model_asset_size_id}':
+  '/nucleus/v1/model_asset_size/{model_asset_size_id}':
     get:
       tags:
         - Model
@@ -10054,7 +10273,7 @@ paths:
           description: model_asset_size
           required: true
           schema:
-            $ref: '#/definitions/ModelAssetSize'
+            type: object
         - name: model_asset_size_id
           in: path
           description: UUID model_asset_size_id
@@ -10106,7 +10325,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /model_comment:
+  /nucleus/v1/model_comment:
     get:
       tags:
         - Model
@@ -10195,7 +10414,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/model_comment/{model_comment_id}':
+  '/nucleus/v1/model_comment/{model_comment_id}':
     get:
       tags:
         - Model
@@ -10242,7 +10461,7 @@ paths:
           description: model_comment
           required: true
           schema:
-            $ref: '#/definitions/ModelComment'
+            type: object
         - name: model_comment_id
           in: path
           description: UUID model_comment_id
@@ -10294,7 +10513,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /model_holding:
+  /nucleus/v1/model_holding:
     get:
       tags:
         - Model
@@ -10382,7 +10601,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/model_holding/{model_holding_id}':
+  '/nucleus/v1/model_holding/{model_holding_id}':
     get:
       tags:
         - Model
@@ -10429,7 +10648,7 @@ paths:
           description: model_holding
           required: true
           schema:
-            $ref: '#/definitions/ModelHolding'
+            type: object
         - name: model_holding_id
           in: path
           description: UUID model_holding_id
@@ -10481,7 +10700,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /model_transaction:
+  /nucleus/v1/model_transaction:
     get:
       tags:
         - Model
@@ -10569,7 +10788,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/model_transaction/{model_transaction_id}':
+  '/nucleus/v1/model_transaction/{model_transaction_id}':
     get:
       tags:
         - Model
@@ -10616,7 +10835,7 @@ paths:
           description: model_transaction
           required: true
           schema:
-            $ref: '#/definitions/ModelTransaction'
+            type: object
         - name: model_transaction_id
           in: path
           description: UUID model_transaction_id
@@ -10668,7 +10887,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /node:
+  /nucleus/v1/node:
     get:
       tags:
         - DecisionTree
@@ -10756,7 +10975,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/node/{node_id}':
+  '/nucleus/v1/node/{node_id}':
     get:
       tags:
         - DecisionTree
@@ -10803,7 +11022,7 @@ paths:
           description: jsonNode
           required: true
           schema:
-            $ref: '#/definitions/JsonNode'
+            type: object
         - name: node_id
           in: path
           description: UUID node_id
@@ -10857,7 +11076,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /node_relationship:
+  /nucleus/v1/node_relationship:
     get:
       tags:
         - DecisionTree
@@ -10945,7 +11164,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/node_relationship/{node_relationship_id}':
+  '/nucleus/v1/node_relationship/{node_relationship_id}':
     get:
       tags:
         - DecisionTree
@@ -10992,7 +11211,7 @@ paths:
           description: jsonNode
           required: true
           schema:
-            $ref: '#/definitions/JsonNode'
+            type: object
         - name: node_relationship_id
           in: path
           description: UUID node_relationship_id
@@ -11046,7 +11265,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /notification:
+  /nucleus/v1/notification:
     get:
       tags:
         - Utils
@@ -11134,7 +11353,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/notification/{notification_id}':
+  '/nucleus/v1/notification/{notification_id}':
     get:
       tags:
         - Utils
@@ -11180,7 +11399,7 @@ paths:
           description: notification
           required: true
           schema:
-            $ref: '#/definitions/Notification'
+            type: object
         - name: notification_id
           in: path
           description: UUID notification_id
@@ -11232,7 +11451,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /notification_client:
+  /nucleus/v1/notification_client:
     get:
       tags:
         - Utils
@@ -11320,7 +11539,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/notification_client/{notification_client_id}':
+  '/nucleus/v1/notification_client/{notification_client_id}':
     get:
       tags:
         - Utils
@@ -11366,7 +11585,7 @@ paths:
           description: notification_client
           required: true
           schema:
-            $ref: '#/definitions/NotificationClient'
+            type: object
         - name: notification_client_id
           in: path
           description: UUID notification_client_id
@@ -11417,7 +11636,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /notification_setting:
+  /nucleus/v1/notification_setting:
     get:
       tags:
         - Utils
@@ -11505,7 +11724,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/notification_setting/{notification_setting_id}':
+  '/nucleus/v1/notification_setting/{notification_setting_id}':
     get:
       tags:
         - Utils
@@ -11551,7 +11770,7 @@ paths:
           description: notification_setting
           required: true
           schema:
-            $ref: '#/definitions/NotificationSetting'
+            type: object
         - name: notification_setting_id
           in: path
           description: UUID notification_setting_id
@@ -11602,7 +11821,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /order:
+  /nucleus/v1/order:
     get:
       tags:
         - Order
@@ -11690,7 +11909,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/order/{order_id}':
+  '/nucleus/v1/order/{order_id}':
     get:
       tags:
         - Order
@@ -11737,7 +11956,7 @@ paths:
           description: order
           required: true
           schema:
-            $ref: '#/definitions/Order'
+            type: object
         - name: order_id
           in: path
           description: UUID order_id
@@ -11789,7 +12008,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /order_bulk:
+  /nucleus/v1/order_bulk:
     get:
       tags:
         - Order
@@ -11879,7 +12098,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /order_status:
+  /nucleus/v1/order_status:
     get:
       tags:
         - Order
@@ -11967,7 +12186,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/order_status/{order_status_id}':
+  '/nucleus/v1/order_status/{order_status_id}':
     get:
       tags:
         - Order
@@ -12014,7 +12233,7 @@ paths:
           description: order_status
           required: true
           schema:
-            $ref: '#/definitions/OrderStatus'
+            type: object
         - name: order_status_id
           in: path
           description: UUID order_status_id
@@ -12066,7 +12285,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /order_track:
+  /nucleus/v1/order_track:
     get:
       tags:
         - Order
@@ -12154,7 +12373,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/order_track/{order_track_id}':
+  '/nucleus/v1/order_track/{order_track_id}':
     get:
       tags:
         - Order
@@ -12201,7 +12420,7 @@ paths:
           description: order_track
           required: true
           schema:
-            $ref: '#/definitions/OrderTrack'
+            type: object
         - name: order_track_id
           in: path
           description: UUID order_track_id
@@ -12253,7 +12472,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /overflow:
+  /nucleus/v1/overflow:
     get:
       tags:
         - Overflow
@@ -12341,7 +12560,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/overflow/{overflow_id}':
+  '/nucleus/v1/overflow/{overflow_id}':
     get:
       tags:
         - Overflow
@@ -12372,7 +12591,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /overflow_setting:
+  /nucleus/v1/overflow_setting:
     get:
       tags:
         - Overflow
@@ -12460,7 +12679,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/overflow_setting/{overflow_settings_id}':
+  '/nucleus/v1/overflow_setting/{overflow_settings_id}':
     get:
       tags:
         - Overflow
@@ -12507,7 +12726,7 @@ paths:
           description: overflow_settings
           required: true
           schema:
-            $ref: '#/definitions/OverflowSettings'
+            type: object
         - name: overflow_settings_id
           in: path
           description: UUID overflow_settings_id
@@ -12559,7 +12778,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /portfolio:
+  /nucleus/v1/portfolio:
     get:
       tags:
         - Portfolio
@@ -12647,7 +12866,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/portfolio/{portfolio_id}':
+  '/nucleus/v1/portfolio/{portfolio_id}':
     get:
       tags:
         - Portfolio
@@ -12694,7 +12913,7 @@ paths:
           description: portfolio
           required: true
           schema:
-            $ref: '#/definitions/Portfolio'
+            type: object
         - name: portfolio_id
           in: path
           description: UUID portfolio_id
@@ -12746,7 +12965,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/portfolio/{portfolio_id}/aggregate_data':
+  '/nucleus/v1/portfolio/{portfolio_id}/aggregate_data':
     get:
       tags:
         - Portfolio
@@ -12807,7 +13026,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/portfolio/{portfolio_id}/order_buy_only':
+  '/nucleus/v1/portfolio/{portfolio_id}/order_buy_only':
     post:
       tags:
         - Order
@@ -12849,7 +13068,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/portfolio/{portfolio_id}/order_rebalance':
+  '/nucleus/v1/portfolio/{portfolio_id}/order_rebalance':
     post:
       tags:
         - Order
@@ -12891,7 +13110,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/portfolio/{portfolio_id}/order_reconciliation':
+  '/nucleus/v1/portfolio/{portfolio_id}/order_reconciliation':
     post:
       tags:
         - Order
@@ -12930,7 +13149,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/portfolio/{portfolio_id}/order_sell_all':
+  '/nucleus/v1/portfolio/{portfolio_id}/order_sell_all':
     post:
       tags:
         - Order
@@ -12972,7 +13191,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/portfolio/{portfolio_id}/order_sell_only':
+  '/nucleus/v1/portfolio/{portfolio_id}/order_sell_only':
     post:
       tags:
         - Order
@@ -13014,7 +13233,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /portfolio_asset_size:
+  /nucleus/v1/portfolio_asset_size:
     get:
       tags:
         - Portfolio
@@ -13107,7 +13326,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/portfolio_asset_size/{portfolio_asset_size_id}':
+  '/nucleus/v1/portfolio_asset_size/{portfolio_asset_size_id}':
     get:
       tags:
         - Portfolio
@@ -13158,7 +13377,7 @@ paths:
           description: portfolio_asset_size
           required: true
           schema:
-            $ref: '#/definitions/PortfolioAssetSizeLog'
+            type: object
         - name: portfolio_asset_size_id
           in: path
           description: UUID portfolio_asset_size_id
@@ -13210,7 +13429,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /portfolio_comment:
+  /nucleus/v1/portfolio_comment:
     get:
       tags:
         - Portfolio
@@ -13298,7 +13517,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/portfolio_comment/{portfolio_comment_id}':
+  '/nucleus/v1/portfolio_comment/{portfolio_comment_id}':
     get:
       tags:
         - Portfolio
@@ -13345,7 +13564,7 @@ paths:
           description: portfolio_comment
           required: true
           schema:
-            $ref: '#/definitions/PortfolioComment'
+            type: object
         - name: portfolio_comment_id
           in: path
           description: UUID portfolio_comment_id
@@ -13397,7 +13616,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /portfolio_goal:
+  /nucleus/v1/portfolio_goal:
     get:
       tags:
         - Portfolio
@@ -13485,7 +13704,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/portfolio_goal/{portfolio_goal_id}':
+  '/nucleus/v1/portfolio_goal/{portfolio_goal_id}':
     get:
       tags:
         - Portfolio
@@ -13532,7 +13751,7 @@ paths:
           description: portfolio_goal
           required: true
           schema:
-            $ref: '#/definitions/PortfolioGoal'
+            type: object
         - name: portfolio_goal_id
           in: path
           description: UUID portfolio_goal_id
@@ -13584,7 +13803,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /portfolio_holding:
+  /nucleus/v1/portfolio_holding:
     get:
       tags:
         - Portfolio
@@ -13677,7 +13896,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/portfolio_holding/{portfolio_holding_id}':
+  '/nucleus/v1/portfolio_holding/{portfolio_holding_id}':
     get:
       tags:
         - Portfolio
@@ -13729,7 +13948,7 @@ paths:
           description: portfolio_holding
           required: true
           schema:
-            $ref: '#/definitions/PortfolioHoldingLog'
+            type: object
         - name: portfolio_holding_id
           in: path
           description: UUID portfolio_holding_id
@@ -13781,7 +14000,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /portfolio_transaction:
+  /nucleus/v1/portfolio_transaction:
     get:
       tags:
         - Portfolio
@@ -13874,7 +14093,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/portfolio_transaction/{portfolio_transaction_id}':
+  '/nucleus/v1/portfolio_transaction/{portfolio_transaction_id}':
     get:
       tags:
         - Portfolio
@@ -13926,7 +14145,7 @@ paths:
           description: portfolio_transaction
           required: true
           schema:
-            $ref: '#/definitions/PortfolioTransaction'
+            type: object
         - name: portfolio_transaction_id
           in: path
           description: UUID portfolio_transaction_id
@@ -13978,7 +14197,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /question:
+  /nucleus/v1/question:
     get:
       tags:
         - Questionnaire
@@ -14066,7 +14285,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/question/{question_id}':
+  '/nucleus/v1/question/{question_id}':
     get:
       tags:
         - Questionnaire
@@ -14113,7 +14332,7 @@ paths:
           description: question
           required: true
           schema:
-            $ref: '#/definitions/Question'
+            type: object
         - name: question_id
           in: path
           description: UUID question_id
@@ -14165,7 +14384,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /questionnaire:
+  /nucleus/v1/questionnaire:
     get:
       tags:
         - Questionnaire
@@ -14253,7 +14472,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/questionnaire/{questionnaire_id}':
+  '/nucleus/v1/questionnaire/{questionnaire_id}':
     get:
       tags:
         - Questionnaire
@@ -14300,7 +14519,7 @@ paths:
           description: questionnaire
           required: true
           schema:
-            $ref: '#/definitions/Questionnaire'
+            type: object
         - name: questionnaire_id
           in: path
           description: UUID questionnaire_id
@@ -14352,7 +14571,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /reason_code:
+  /nucleus/v1/reason_code:
     get:
       tags:
         - Utils
@@ -14440,7 +14659,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/reason_code/{reason_code_id}':
+  '/nucleus/v1/reason_code/{reason_code_id}':
     get:
       tags:
         - Utils
@@ -14487,7 +14706,7 @@ paths:
           description: reason_code
           required: true
           schema:
-            $ref: '#/definitions/ReasonCode'
+            type: object
         - name: reason_code_id
           in: path
           description: UUID reason_code_id
@@ -14539,7 +14758,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /resource/account_category:
+  /nucleus/v1/resource/account_category:
     get:
       tags:
         - Resource
@@ -14554,18 +14773,6 @@ paths:
           description: filter
           required: false
           type: string
-        - name: hydrogen_account_category_id
-          in: query
-          description: hydrogen_account_category_id
-          required: false
-          type: string
-          format: uuid
-        - name: match_primary
-          in: query
-          description: match_primary
-          required: false
-          type: boolean
-          default: false
         - name: tenant_name
           in: query
           description: tenant_name
@@ -14592,7 +14799,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /resource/country:
+  /nucleus/v1/resource/country:
     get:
       tags:
         - Resource
@@ -14617,7 +14824,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /resource/currency:
+  /nucleus/v1/resource/currency:
     get:
       tags:
         - Resource
@@ -14642,7 +14849,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /resource/fx_rate:
+  /nucleus/v1/resource/fx_rate:
     get:
       tags:
         - Resource
@@ -14710,7 +14917,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /resource/institution:
+  /nucleus/v1/resource/institution:
     get:
       tags:
         - Resource
@@ -14798,7 +15005,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/resource/institution/{institution_id}':
+  '/nucleus/v1/resource/institution/{institution_id}':
     get:
       tags:
         - Resource
@@ -14845,7 +15052,7 @@ paths:
           description: institution
           required: true
           schema:
-            $ref: '#/definitions/Institution'
+            type: object
         - name: institution_id
           in: path
           description: UUID institution_id
@@ -14897,7 +15104,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /resource/merchant:
+  /nucleus/v1/resource/merchant:
     get:
       tags:
         - Resource
@@ -14952,7 +15159,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /resource/merchant_category_code:
+  /nucleus/v1/resource/merchant_category_code:
     get:
       tags:
         - Resource
@@ -14983,7 +15190,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /resource/state:
+  /nucleus/v1/resource/state:
     get:
       tags:
         - Resource
@@ -15015,7 +15222,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /resource/statistic:
+  /nucleus/v1/resource/statistic:
     get:
       tags:
         - Resource
@@ -15042,7 +15249,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /resource/transaction_category:
+  /nucleus/v1/resource/transaction_category:
     get:
       tags:
         - Resource
@@ -15057,18 +15264,6 @@ paths:
           description: filter
           required: false
           type: string
-        - name: hydrogen_transaction_category_id
-          in: query
-          description: hydrogen_transaction_category_id
-          required: false
-          type: string
-          format: uuid
-        - name: match_primary
-          in: query
-          description: match_primary
-          required: false
-          type: boolean
-          default: false
         - name: tenant_name
           in: query
           description: tenant_name
@@ -15095,7 +15290,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /risk_profile:
+  /nucleus/v1/risk_profile:
     get:
       tags:
         - RiskProfile
@@ -15183,7 +15378,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/risk_profile/{risk_profile_id}':
+  '/nucleus/v1/risk_profile/{risk_profile_id}':
     get:
       tags:
         - RiskProfile
@@ -15230,7 +15425,7 @@ paths:
           description: risk_profile
           required: true
           schema:
-            $ref: '#/definitions/RiskProfile'
+            type: object
         - name: risk_profile_id
           in: path
           description: UUID risk_profile_id
@@ -15282,7 +15477,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /roundup:
+  /nucleus/v1/roundup:
     get:
       tags:
         - Roundup
@@ -15370,7 +15565,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/roundup/{roundup_id}':
+  '/nucleus/v1/roundup/{roundup_id}':
     get:
       tags:
         - Roundup
@@ -15401,7 +15596,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /roundup_setting:
+  /nucleus/v1/roundup_setting:
     get:
       tags:
         - Roundup
@@ -15489,7 +15684,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/roundup_setting/{roundup_setting_id}':
+  '/nucleus/v1/roundup_setting/{roundup_setting_id}':
     get:
       tags:
         - Roundup
@@ -15536,7 +15731,7 @@ paths:
           description: roundup_setting
           required: true
           schema:
-            $ref: '#/definitions/RoundupSettings'
+            type: object
         - name: roundup_setting_id
           in: path
           description: UUID roundup_setting_id
@@ -15588,7 +15783,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /score:
+  /nucleus/v1/score:
     get:
       tags:
         - Score
@@ -15676,7 +15871,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/score/{score_id}':
+  '/nucleus/v1/score/{score_id}':
     get:
       tags:
         - Score
@@ -15723,7 +15918,7 @@ paths:
           description: score
           required: true
           schema:
-            $ref: '#/definitions/Score'
+            type: object
         - name: score_id
           in: path
           description: UUID score_id
@@ -15775,7 +15970,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /security:
+  /nucleus/v1/security:
     get:
       tags:
         - Securities
@@ -15863,7 +16058,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/security/{security_id}':
+  '/nucleus/v1/security/{security_id}':
     get:
       tags:
         - Securities
@@ -15910,7 +16105,7 @@ paths:
           description: security
           required: true
           schema:
-            $ref: '#/definitions/Security'
+            type: object
         - name: security_id
           in: path
           description: UUID security_id
@@ -15962,7 +16157,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /security_exclusion:
+  /nucleus/v1/security_exclusion:
     get:
       tags:
         - Securities
@@ -16050,7 +16245,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/security_exclusion/{security_exclusion_id}':
+  '/nucleus/v1/security_exclusion/{security_exclusion_id}':
     get:
       tags:
         - Securities
@@ -16097,7 +16292,7 @@ paths:
           description: security_exclusion
           required: true
           schema:
-            $ref: '#/definitions/SecurityExclusion'
+            type: object
         - name: security_exclusion_id
           in: path
           description: UUID security_exclusion_id
@@ -16149,7 +16344,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /security_price:
+  /nucleus/v1/security_price:
     get:
       tags:
         - Securities
@@ -16242,7 +16437,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/security_price/{security_price_id}':
+  '/nucleus/v1/security_price/{security_price_id}':
     get:
       tags:
         - Securities
@@ -16294,7 +16489,7 @@ paths:
           description: security_price
           required: true
           schema:
-            $ref: '#/definitions/SecurityPrice'
+            type: object
         - name: security_price_id
           in: path
           description: UUID security_price_id
@@ -16346,7 +16541,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /spending_control:
+  /nucleus/v1/spending_control:
     get:
       tags:
         - SpendingControl
@@ -16434,7 +16629,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/spending_control/{spending_control_id}':
+  '/nucleus/v1/spending_control/{spending_control_id}':
     get:
       tags:
         - SpendingControl
@@ -16480,7 +16675,7 @@ paths:
           description: spending_control
           required: true
           schema:
-            $ref: '#/definitions/SpendingControl'
+            type: object
         - name: spending_control_id
           in: path
           description: UUID spending_control_id
@@ -16531,7 +16726,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /stage:
+  /nucleus/v1/stage:
     get:
       tags:
         - Utils
@@ -16619,7 +16814,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/stage/{stage_id}':
+  '/nucleus/v1/stage/{stage_id}':
     get:
       tags:
         - Utils
@@ -16666,7 +16861,7 @@ paths:
           description: stage
           required: true
           schema:
-            $ref: '#/definitions/Stage'
+            type: object
         - name: stage_id
           in: path
           description: UUID stage_id
@@ -16717,7 +16912,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /transaction_code:
+  /nucleus/v1/transaction_code:
     get:
       tags:
         - Utils
@@ -16805,7 +17000,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/transaction_code/{transaction_code_id}':
+  '/nucleus/v1/transaction_code/{transaction_code_id}':
     get:
       tags:
         - Utils
@@ -16852,7 +17047,7 @@ paths:
           description: transaction_code
           required: true
           schema:
-            $ref: '#/definitions/TransactionCode'
+            type: object
         - name: transaction_code_id
           in: path
           description: UUID transaction_code_id
@@ -16904,7 +17099,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /transfer:
+  /nucleus/v1/transfer:
     get:
       tags:
         - Funding
@@ -16997,7 +17192,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/transfer/{transfer_id}':
+  '/nucleus/v1/transfer/{transfer_id}':
     get:
       tags:
         - Funding
@@ -17049,7 +17244,7 @@ paths:
           description: transfer
           required: true
           schema:
-            $ref: '#/definitions/ExternalAccountTransfer'
+            type: object
         - name: transfer_id
           in: path
           description: UUID external_account_transfer_id
@@ -17101,7 +17296,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /webhook:
+  /nucleus/v1/webhook:
     get:
       tags:
         - Webhook
@@ -17189,7 +17384,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  '/webhook/{webhook_id}':
+  '/nucleus/v1/webhook/{webhook_id}':
     get:
       tags:
         - Webhook
@@ -17236,7 +17431,7 @@ paths:
           description: webhook
           required: true
           schema:
-            $ref: '#/definitions/Webhook'
+            type: object
         - name: webhook_id
           in: path
           description: UUID webhook_id
@@ -17291,9 +17486,86 @@ paths:
 securityDefinitions:
   oauth2:
     type: oauth2
-    tokenUrl: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token'
+    tokenUrl: 'https://sandbox.hydrogenplatform.com/authorization/v1/oauth/token'
     flow: application
 definitions:
+  AdminClient:
+    type: object
+    properties:
+      authorities:
+        type: string
+      create_date:
+        type: string
+        format: date-time
+        example: '2018-06-28T18:17:23.579+0000'
+        readOnly: true
+      id:
+        type: integer
+        format: int64
+      is_2fa:
+        type: boolean
+      is_2fa_verified:
+        type: boolean
+      is_account_non_expired:
+        type: boolean
+      is_account_non_locked:
+        type: boolean
+      is_credentials_non_expired:
+        type: boolean
+      is_enabled:
+        type: boolean
+      password:
+        type: string
+      tenant:
+        type: string
+      update_date:
+        type: string
+        format: date-time
+      username:
+        type: string
+    title: Client
+  ClientCredentials:
+    type: object
+    properties:
+      current_password:
+        type: string
+      new_password:
+        type: string
+      username:
+        type: string
+    title: ClientCredentials
+  Page«AdminClient»:
+    type: object
+    properties:
+      content:
+        type: array
+        items:
+          $ref: '#/definitions/AdminClient'
+      first:
+        type: boolean
+      last:
+        type: boolean
+      number:
+        type: integer
+        format: int32
+      number_of_elements:
+        type: integer
+        format: int32
+      size:
+        type: integer
+        format: int32
+      sort:
+        type: array
+        items:
+          $ref: '#/definitions/Sort'
+      total_elements:
+        type: integer
+        format: int64
+      total_pages:
+        type: integer
+        format: int32
+    title: Page«AdminClient»
+    description: Page Object
   Account:
     type: object
     required:
@@ -18005,17 +18277,17 @@ definitions:
       is_fee:
         type: string
         enum:
-          - 'FALSE'
-          - 'TRUE'
-          - 'NULL'
+          - 'false'
+          - 'true'
+          - 'null'
       is_recurring:
         type: boolean
       is_transfer:
         type: string
         enum:
-          - 'FALSE'
-          - 'TRUE'
-          - 'NULL'
+          - 'false'
+          - 'true'
+          - 'null'
       metadata:
         type: object
         example: {}
@@ -19420,10 +19692,6 @@ definitions:
         format: uuid
         example: c34794e9-f927-468b-b47e-ea17c3d533c5
         description: cardId
-      card_issuance:
-        type: string
-        example: virtual
-        description: cardIssuance
       card_name:
         type: string
         example: Visa
@@ -20238,8 +20506,8 @@ definitions:
     type: object
     required:
       - accounting_method
-      - contact_id
       - currency_code
+      - customer_id
       - date
       - revenue
     properties:
@@ -20247,11 +20515,6 @@ definitions:
         type: string
         example: cash
         description: accounting_method
-      contact_id:
-        type: string
-        format: uuid
-        example: 50d76212-0fcd-4d36-8633-e4a52cbcb79f
-        description: contactId
       create_date:
         type: string
         format: date-time
@@ -20261,6 +20524,11 @@ definitions:
         type: string
         example: USD
         description: currency_code
+      customer_id:
+        type: string
+        format: uuid
+        example: 50d76212-0fcd-4d36-8633-e4a52cbcb79f
+        description: customerId
       date:
         type: string
         format: date

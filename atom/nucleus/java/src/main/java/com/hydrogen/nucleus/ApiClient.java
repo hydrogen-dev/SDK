@@ -53,7 +53,7 @@ import java.util.regex.Pattern;
 
 public class ApiClient {
 
-    private String basePath = "https://sandbox.hydrogenplatform.com";
+    private String basePath = "https://api.hydrogenplatform.com";
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private String tempFolderPath = null;
@@ -107,7 +107,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g https://sandbox.hydrogenplatform.com
+     * @param basePath Base path of the URL (e.g https://api.hydrogenplatform.com
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {

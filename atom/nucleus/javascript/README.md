@@ -2,7 +2,7 @@
 
 Hydrogen Nucleus API
 - API version: 1.9.0
-  - Build date: 04-15-2021
+  - Build date: 04-28-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 
@@ -25,7 +25,7 @@ npm i @hydrogenplatform/hydrogen_nucleus_api --save
 
 ### Install Locally
 
-To use the library locally without pulling from the remote npm registry, first install the dependencies by changing
+To use the library locally without pulling from the remote npm registry, first install the dependencies by changing 
 into the directory containing `package.json` (and this README). Let's call this `JAVASCRIPT_CLIENT_DIR`. Then run:
 
 ```shell
@@ -44,7 +44,7 @@ Finally, switch to the directory you want to use your hydrogen_nucleus_api from,
 npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
 ```
 
-You should now be able to `require('@hydrogenplatform/hydrogen_nucleus_api')` in javascript files from the directory you ran the last
+You should now be able to `require('@hydrogenplatform/hydrogen_nucleus_api')` in javascript files from the directory you ran the last 
 command above from.
 
 ## Getting Started
@@ -54,7 +54,7 @@ Please first follow the [installation](#installation) instructions. Then make su
 ### Base URL
 
 1. Go to ApiClient file located under src folder.
-2. Search for **this.basePath** and change/verify the URL according to the environment.  
+2. Search for **this.basePath** and change/verify the URL according to the environment.
 
 **Sandbox Base URL**
 https://sandbox.hydrogenplatform.com
@@ -87,7 +87,7 @@ var tokenGenerationCallback = function (error, data, response) {
         createAccountAllocationMapping();
     }
 };
-//          Use one of the below method to generate oauth token        
+//          Use one of the below method to generate oauth token
 // Token Generation for grant_type = client_credentials
 api.createUsingPostClientCredentials({
     'grant_type': 'client_credentials',

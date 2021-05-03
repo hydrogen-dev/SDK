@@ -6,13 +6,13 @@ info:
     url: 'https://www.hydrogenplatform.com/contact'
     email: info@hydrogenplatform.com
   title: Hydrogen Proton API
-  version: 1.8.0
+  version: 1.9.0
 host: api.hydrogenplatform.com
 basePath: /proton/v1
 securityDefinitions:
   oauth2:
     type: oauth2
-    tokenUrl: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token'
+    tokenUrl: 'https://qa.hydrogenplatform.com/authorization/v1/oauth/token'
     flow: application
 tags:
   - name: Annuities
@@ -27,6 +27,7 @@ tags:
   - name: Risk Scoring
   - name: Simulations
   - name: Cards
+  - name: Util
 paths:
   /variable_annuity:
     post:
@@ -1989,11 +1990,226 @@ paths:
         '500':
           description: Internal Server Error
       deprecated: false
+  /card_analysis:
+    post:
+      summary: Card Analysis
+      description: Analyze cardholder activity over time
+      tags:
+        - Cards
+      operationId: cardAnalysis
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: cardAnalysisRequest
+          schema:
+            $ref: '#/definitions/cardAnalysisRequest'
+          description: Request payload for Card Analysis
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /spending_analysis:
+    post:
+      summary: Spending Analysis
+      description: Analyze spending transaction activity
+      tags:
+        - Personal Financial Management
+      operationId: spendingAnalysis
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: spendingAnalysisRequest
+          schema:
+            $ref: '#/definitions/spendingAnalysisRequest'
+          description: Request payload for Spending Analysis
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /performance_calculator:
+    post:
+      summary: Performance Calculator
+      description: Calculate performance/risk metrics for a Nucleus entity
+      tags:
+        - Util
+      operationId: performanceCalculator
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: performanceCalculatorRequest
+          schema:
+            $ref: '#/definitions/performanceCalculatorRequest'
+          description: Request payload for Performance Calculator
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /order_rebalance:
+    post:
+      summary: Order Rebalance
+      description: Create orders to rebalance client accounts or portfolios
+      tags:
+        - Util
+      operationId: orderRebalance
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: orderRebalanceRequest
+          schema:
+            $ref: '#/definitions/orderRebalanceRequest'
+          description: Request payload for Order Rebalance
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
+  /decision_tree_result:
+    post:
+      summary: Decision Tree Result
+      description: Traverse a decision tree and find the resulting leaf node
+      tags:
+        - Util
+      operationId: decisionTreeResult
+      security:
+        - oauth2: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          required: true
+          name: decisionTreeResultRequest
+          schema:
+            $ref: '#/definitions/decisionTreeResultRequest'
+          description: Request payload for Decision Tree Result
+      responses:
+        '200':
+          description: Ok
+          schema:
+            type: object
+            additionalProperties: true
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      deprecated: false
 swagger: '2.0'
 definitions:
+  GuaranteedRateBenefit:
+    type: object
+    properties:
+      max_rate:
+        type: number
+        format: float
+        default: null
+        x-nullable: true
+        minimum: -1
+      end_period:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minimum: 1
+      min_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      start_period:
+        type: integer
+        format: int32
+        default: 1
+        minimum: 1
   AnnuityDepositSchedule:
     type: object
     properties:
+      deposit_amount:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
       deposit_frequency_interval:
         type: string
         default: year
@@ -2006,152 +2222,32 @@ definitions:
       adjust_deposit_for_inflation:
         type: boolean
         default: true
-      deposit_amount:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-  GuaranteedRateBenefit:
-    type: object
-    properties:
-      min_rate:
-        type: number
-        format: float
-        default: 0
-        minimum: -1
-      max_rate:
-        type: number
-        format: float
-        default: null
-        x-nullable: true
-        minimum: -1
-      start_period:
-        type: integer
-        format: int32
-        default: 1
-        minimum: 1
-      end_period:
-        type: integer
-        format: int32
-        default: null
-        x-nullable: true
-        minimum: 1
   variableAnnuityRequest:
     type: object
     properties:
-      use_proxy_data:
-        type: boolean
-        default: false
-      result_type:
-        type: string
-        default: median
-        enum:
-          - mean
-          - median
-          - custom
-      portfolio_weights:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: number
-          format: float
-          minimum: 0
-      market_data_source:
-        type: string
-        default: nucleus
-        enum:
-          - nucleus
-          - integration
-      initial_balance:
+      p:
         type: number
-        format: float
-        default: 0
+        default: 50
         minimum: 0
-      frequency_interval:
-        type: string
-        default: year
-        enum:
-          - year
-          - quarter
-          - month
-          - week
-          - day
-      decumulation_horizon:
-        type: integer
-        format: int32
-        minimum: 1
-      model_id:
-        type: string
-        format: uuid
-        default: null
-        x-nullable: true
-      create_log:
-        type: boolean
-        default: false
-      account_id:
-        type: string
-        format: uuid
-        default: null
-        x-nullable: true
-      accumulation_horizon:
-        type: integer
-        format: int32
-        minimum: 0
-      deposit_schedule:
-        $ref: '#/definitions/AnnuityDepositSchedule'
-      aggregation_account_id:
-        type: string
-        format: uuid
-        default: null
-        x-nullable: true
-      trading_days_per_year:
-        type: integer
-        format: int32
-        default: 252
-        minimum: 1
-      portfolio_tickers:
-        type: array
-        default: null
-        x-nullable: true
-        minimum: 1
-        minItems: 1
-        items:
-          type: string
-      tax_rate:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-        maximum: 1
-      end_date:
-        type: string
-      guaranteed_accumulation_benefit:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-      start_date:
-        type: string
-      annuitization_rate:
-        type: number
-        format: float
-        default: 0
-        minimum: -1
-      remove_outliers:
-        type: boolean
-        default: false
+        maximum: 100
       allocation_id:
         type: string
         format: uuid
         default: null
         x-nullable: true
-      'n':
+      decumulation_horizon:
         type: integer
         format: int32
-        default: 1000
         minimum: 1
+      accumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      annuitization_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
       guaranteed_rate_benefit:
         type: array
         default:
@@ -2162,29 +2258,102 @@ definitions:
         minItems: 1
         items:
           $ref: '#/definitions/GuaranteedRateBenefit'
-      p:
-        type: number
-        default: 50
-        minimum: 0
-        maximum: 100
+      model_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      portfolio_tickers:
+        type: array
+        default: null
+        x-nullable: true
+        minimum: 1
+        minItems: 1
+        items:
+          type: string
+      create_log:
+        type: boolean
+        default: false
       inflation_rate:
         type: number
         format: float
         default: 0
         minimum: -1
         maximum: 20
+      aggregation_account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      'n':
+        type: integer
+        format: int32
+        default: 1000
+        minimum: 1
+      guaranteed_accumulation_benefit:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      end_date:
+        type: string
+      tax_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+      start_date:
+        type: string
+      remove_outliers:
+        type: boolean
+        default: false
+      portfolio_weights:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: number
+          format: float
+          minimum: 0
       portfolio_id:
         type: string
         format: uuid
         default: null
         x-nullable: true
-    required:
-      - accumulation_horizon
-      - decumulation_horizon
-  annuityCalculatorDecumulationHorizonRequest:
-    type: object
-    properties:
-      annuity_frequency_interval:
+      result_type:
+        type: string
+        default: median
+        enum:
+          - mean
+          - median
+          - custom
+      account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      trading_days_per_year:
+        type: integer
+        format: int32
+        default: 252
+        minimum: 1
+      use_proxy_data:
+        type: boolean
+        default: false
+      initial_balance:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      market_data_source:
+        type: string
+        default: nucleus
+        enum:
+          - nucleus
+          - integration
+      frequency_interval:
         type: string
         default: year
         enum:
@@ -2193,42 +2362,24 @@ definitions:
           - month
           - week
           - day
-      decumulation_horizon:
-        type: integer
-        format: int32
-        minimum: 1
-      create_log:
-        type: boolean
-        default: false
-      annuity_amount:
-        type: number
-        format: float
-        minimum: 0
-      aggregation_account_ids:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: string
-          format: uuid
+      deposit_schedule:
+        $ref: '#/definitions/AnnuityDepositSchedule'
+    required:
+      - accumulation_horizon
+      - decumulation_horizon
+  annuityCalculatorDecumulationHorizonRequest:
+    type: object
+    properties:
       inflation_rate:
         type: number
         format: float
         default: 0
         minimum: -1
         maximum: 20
-      deposit_schedule:
-        $ref: '#/definitions/AnnuityDepositSchedule'
-      accumulation_horizon:
+      decumulation_horizon:
         type: integer
         format: int32
-        minimum: 0
-      initial_balance:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
+        minimum: 1
       account_ids:
         type: array
         default: null
@@ -2243,9 +2394,44 @@ definitions:
         default: 0
         minimum: 0
         maximum: 1
+      accumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      annuity_amount:
+        type: number
+        format: float
+        minimum: 0
       portfolio_return:
         type: number
         format: float
+      deposit_schedule:
+        $ref: '#/definitions/AnnuityDepositSchedule'
+      annuity_frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      initial_balance:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
+      create_log:
+        type: boolean
+        default: false
     required:
       - accumulation_horizon
       - annuity_amount
@@ -2253,51 +2439,16 @@ definitions:
   annuityCalculatorAccumulationHorizonRequest:
     type: object
     properties:
-      annuity_frequency_interval:
-        type: string
-        default: year
-        enum:
-          - year
-          - quarter
-          - month
-          - week
-          - day
-      decumulation_horizon:
-        type: integer
-        format: int32
-        minimum: 1
-      create_log:
-        type: boolean
-        default: false
-      annuity_amount:
-        type: number
-        format: float
-        minimum: 0
-      aggregation_account_ids:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: string
-          format: uuid
       inflation_rate:
         type: number
         format: float
         default: 0
         minimum: -1
         maximum: 20
-      deposit_schedule:
-        $ref: '#/definitions/AnnuityDepositSchedule'
-      accumulation_horizon:
+      decumulation_horizon:
         type: integer
         format: int32
-        minimum: 0
-      initial_balance:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
+        minimum: 1
       account_ids:
         type: array
         default: null
@@ -2312,9 +2463,44 @@ definitions:
         default: 0
         minimum: 0
         maximum: 1
+      accumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      annuity_amount:
+        type: number
+        format: float
+        minimum: 0
       portfolio_return:
         type: number
         format: float
+      deposit_schedule:
+        $ref: '#/definitions/AnnuityDepositSchedule'
+      annuity_frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      initial_balance:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
+      create_log:
+        type: boolean
+        default: false
     required:
       - annuity_amount
       - decumulation_horizon
@@ -2322,51 +2508,16 @@ definitions:
   annuityCalculatorInitialBalanceRequest:
     type: object
     properties:
-      annuity_frequency_interval:
-        type: string
-        default: year
-        enum:
-          - year
-          - quarter
-          - month
-          - week
-          - day
-      decumulation_horizon:
-        type: integer
-        format: int32
-        minimum: 1
-      create_log:
-        type: boolean
-        default: false
-      annuity_amount:
-        type: number
-        format: float
-        minimum: 0
-      aggregation_account_ids:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: string
-          format: uuid
       inflation_rate:
         type: number
         format: float
         default: 0
         minimum: -1
         maximum: 20
-      deposit_schedule:
-        $ref: '#/definitions/AnnuityDepositSchedule'
-      accumulation_horizon:
+      decumulation_horizon:
         type: integer
         format: int32
-        minimum: 0
-      initial_balance:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
+        minimum: 1
       account_ids:
         type: array
         default: null
@@ -2381,9 +2532,44 @@ definitions:
         default: 0
         minimum: 0
         maximum: 1
+      accumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      annuity_amount:
+        type: number
+        format: float
+        minimum: 0
       portfolio_return:
         type: number
         format: float
+      deposit_schedule:
+        $ref: '#/definitions/AnnuityDepositSchedule'
+      annuity_frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      initial_balance:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
+      create_log:
+        type: boolean
+        default: false
     required:
       - accumulation_horizon
       - annuity_amount
@@ -2392,51 +2578,16 @@ definitions:
   annuityCalculatorDepositAmountRequest:
     type: object
     properties:
-      annuity_frequency_interval:
-        type: string
-        default: year
-        enum:
-          - year
-          - quarter
-          - month
-          - week
-          - day
-      decumulation_horizon:
-        type: integer
-        format: int32
-        minimum: 1
-      create_log:
-        type: boolean
-        default: false
-      annuity_amount:
-        type: number
-        format: float
-        minimum: 0
-      aggregation_account_ids:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: string
-          format: uuid
       inflation_rate:
         type: number
         format: float
         default: 0
         minimum: -1
         maximum: 20
-      deposit_schedule:
-        $ref: '#/definitions/AnnuityDepositSchedule'
-      accumulation_horizon:
+      decumulation_horizon:
         type: integer
         format: int32
-        minimum: 0
-      initial_balance:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
+        minimum: 1
       account_ids:
         type: array
         default: null
@@ -2451,9 +2602,44 @@ definitions:
         default: 0
         minimum: 0
         maximum: 1
+      accumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      annuity_amount:
+        type: number
+        format: float
+        minimum: 0
       portfolio_return:
         type: number
         format: float
+      deposit_schedule:
+        $ref: '#/definitions/AnnuityDepositSchedule'
+      annuity_frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      initial_balance:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
+      create_log:
+        type: boolean
+        default: false
     required:
       - accumulation_horizon
       - annuity_amount
@@ -2462,52 +2648,16 @@ definitions:
   annuityCalculatorAnnuityAmountRequest:
     type: object
     properties:
-      annuity_frequency_interval:
-        type: string
-        default: year
-        enum:
-          - year
-          - quarter
-          - month
-          - week
-          - day
-      decumulation_horizon:
-        type: integer
-        format: int32
-        minimum: 1
-      create_log:
-        type: boolean
-        default: false
-      annuity_amount:
-        type: number
-        format: float
-        default: 1
-        minimum: 0
-      aggregation_account_ids:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: string
-          format: uuid
       inflation_rate:
         type: number
         format: float
         default: 0
         minimum: -1
         maximum: 20
-      deposit_schedule:
-        $ref: '#/definitions/AnnuityDepositSchedule'
-      accumulation_horizon:
+      decumulation_horizon:
         type: integer
         format: int32
-        minimum: 0
-      initial_balance:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
+        minimum: 1
       account_ids:
         type: array
         default: null
@@ -2522,9 +2672,45 @@ definitions:
         default: 0
         minimum: 0
         maximum: 1
+      accumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      annuity_amount:
+        type: number
+        format: float
+        default: 1
+        minimum: 0
       portfolio_return:
         type: number
         format: float
+      deposit_schedule:
+        $ref: '#/definitions/AnnuityDepositSchedule'
+      annuity_frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      initial_balance:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
+      create_log:
+        type: boolean
+        default: false
     required:
       - accumulation_horizon
       - decumulation_horizon
@@ -2532,25 +2718,29 @@ definitions:
   RecommendationConfig:
     type: object
     properties:
-      inv_max:
-        type: number
-        default: null
-        x-nullable: true
-        minimum: 0
       horizon_max:
         type: integer
         format: int32
         default: 64
         minimum: 0
-      inv_min:
+      dep_min:
         type: number
         default: 0
         minimum: 0
-      dep_max:
+      inv_max:
         type: number
         default: null
         x-nullable: true
         minimum: 0
+      inv_min:
+        type: number
+        default: 0
+        minimum: 0
+      recommended_inflation:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
       horizon_min:
         type: integer
         format: int32
@@ -2559,91 +2749,19 @@ definitions:
       recommend:
         type: boolean
         default: true
-      recommended_inflation:
+      dep_max:
         type: number
-        format: float
-        default: 0
-        minimum: -1
-      dep_min:
-        type: number
-        default: 0
+        default: null
+        x-nullable: true
         minimum: 0
-  DecumulationGoalDepositConfig:
-    type: object
-    properties:
-      dep_inflation:
-        type: number
-        format: float
-        default: 0
-        minimum: -1
-      dep_frequency:
-        type: string
-        default: year
-        enum:
-          - year
-          - six_months
-          - quarter
-          - month
-          - two_weeks
-          - week
-          - day
-      dep_end_reference:
-        type: string
-        default: a_end
-        enum:
-          - a_start
-          - a_end
-          - d_end
-      dep_start_reference:
-        type: string
-        default: a_start
-        enum:
-          - a_start
-          - a_end
-          - d_end
-      dep_start_period:
-        type: integer
-        format: int32
-        default: 0
-      dep_amount:
-        type: number
-        default: 0
-        minimum: 0
-      dep_end_period:
-        type: integer
-        format: int32
-        default: 0
   GoalWithdrawalConfig:
     type: object
     properties:
-      with_end_reference:
-        type: string
-        default: d_end
-        enum:
-          - a_end
-          - d_end
-      with_end_period:
-        type: integer
-        format: int32
-        default: 0
       with_inflation:
         type: number
         format: float
         default: 0
         minimum: -1
-      with_start_period:
-        type: integer
-        format: int32
-        default: 0
-      with_start_reference:
-        type: string
-        default: a_end
-        enum:
-          - a_end
-          - d_end
-      with_amount:
-        type: number
-        minimum: 0
       with_frequency:
         type: string
         default: year
@@ -2655,94 +2773,84 @@ definitions:
           - two_weeks
           - week
           - day
+      with_end_reference:
+        type: string
+        default: d_end
+        enum:
+          - a_end
+          - d_end
+      with_start_reference:
+        type: string
+        default: a_end
+        enum:
+          - a_end
+          - d_end
+      with_end_period:
+        type: integer
+        format: int32
+        default: 0
+      with_amount:
+        type: number
+        minimum: 0
+      with_start_period:
+        type: integer
+        format: int32
+        default: 0
+  DecumulationGoalDepositConfig:
+    type: object
+    properties:
+      dep_end_period:
+        type: integer
+        format: int32
+        default: 0
+      dep_amount:
+        type: number
+        default: 0
+        minimum: 0
+      dep_end_reference:
+        type: string
+        default: a_end
+        enum:
+          - a_start
+          - a_end
+          - d_end
+      dep_start_period:
+        type: integer
+        format: int32
+        default: 0
+      dep_frequency:
+        type: string
+        default: year
+        enum:
+          - year
+          - six_months
+          - quarter
+          - month
+          - two_weeks
+          - week
+          - day
+      dep_inflation:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      dep_start_reference:
+        type: string
+        default: a_start
+        enum:
+          - a_start
+          - a_end
+          - d_end
   goalDecumulationStatusRequest:
     type: object
     properties:
-      a_horizon:
-        type: integer
-        format: int32
-        default: null
-        x-nullable: true
-        minimum: 0
-        maximum: 350
       recommendation_config:
         $ref: '#/definitions/RecommendationConfig'
-      thresh_type:
-        type: string
-        default: perc
-        enum:
-          - amnt
-          - perc
-      curr_inv:
-        type: number
-        minimum: 0
-      deposit_config:
-        type: array
-        default:
-          - dep_start_reference: a_start
-            dep_start_period: 0
-            dep_end_reference: a_end
-            dep_end_period: 0
-            dep_amount: 0
-            dep_frequency: year
-            dep_inflation: 0
-        minItems: 1
-        items:
-          $ref: '#/definitions/DecumulationGoalDepositConfig'
-      create_log:
-        type: boolean
-        default: false
-      trading_days_per_year:
-        type: integer
-        format: int32
-        default: 252
-        minimum: 1
-        maximum: 365
       compounding_rate:
         type: number
         format: float
         default: 0
         minimum: -1
-      conf_tgt:
-        type: number
-        format: float
-        default: 0.9
-        minimum: 0
-        maximum: 1
-      goal_id:
-        type: string
-        format: uuid
-      p_risk:
-        type: array
-        items:
-          type: number
-          format: float
-          minimum: 0
-      withdrawal_tax:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-        maximum: 1
-      p_ret:
-        type: array
-        items:
-          type: number
-          format: float
-          minimum: -1
-      thresh:
-        type: number
-        default: 0
-        minimum: 0
-      remove_outliers:
-        type: boolean
-        default: true
-      'n':
-        type: integer
-        format: int32
-        default: 1000
-        minimum: 1
-        maximum: 10000
       recommend_type:
         type: string
         default: horizon
@@ -2751,12 +2859,75 @@ definitions:
           - one-time
           - combo
           - horizon
-      client_id:
-        type: string
-        format: uuid
+      create_log:
+        type: boolean
+        default: false
+      'n':
+        type: integer
+        format: int32
+        default: 1000
+        minimum: 1
+        maximum: 10000
+      a_horizon:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minimum: 0
+        maximum: 350
+      p_risk:
+        type: array
+        items:
+          type: number
+          format: float
+          minimum: 0
+      remove_outliers:
+        type: boolean
+        default: true
       adjust_for_compounding:
         type: boolean
         default: false
+      goal_id:
+        type: string
+        format: uuid
+      conf_tgt:
+        type: number
+        format: float
+        default: 0.9
+        minimum: 0
+        maximum: 1
+      trading_days_per_year:
+        type: integer
+        format: int32
+        default: 252
+        minimum: 1
+        maximum: 365
+      thresh:
+        type: number
+        default: 0
+        minimum: 0
+      withdrawal_tax:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+      d_horizon:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minimum: 0
+        maximum: 350
+      client_id:
+        type: string
+        format: uuid
+      thresh_type:
+        type: string
+        default: perc
+        enum:
+          - amnt
+          - perc
       horizon_frequency:
         type: string
         default: year
@@ -2773,140 +2944,77 @@ definitions:
         minItems: 1
         items:
           $ref: '#/definitions/GoalWithdrawalConfig'
-      d_horizon:
-        type: integer
-        format: int32
-        default: null
-        x-nullable: true
+      curr_inv:
+        type: number
         minimum: 0
-        maximum: 350
+      deposit_config:
+        type: array
+        default:
+          - dep_start_reference: a_start
+            dep_start_period: 0
+            dep_end_reference: a_end
+            dep_end_period: 0
+            dep_amount: 0
+            dep_frequency: year
+            dep_inflation: 0
+        minItems: 1
+        items:
+          $ref: '#/definitions/DecumulationGoalDepositConfig'
+      p_ret:
+        type: array
+        items:
+          type: number
+          format: float
+          minimum: -1
     required:
       - p_ret
       - p_risk
   RecommendationConfig1:
     type: object
     properties:
-      inv_max:
-        type: number
-        default: null
-        x-nullable: true
-        minimum: 0
       horizon_max:
         type: integer
         format: int32
         default: 64
         minimum: 0
-      inv_min:
+      dep_min:
         type: number
         default: 0
         minimum: 0
-      dep_max:
+      inv_max:
         type: number
         default: null
         x-nullable: true
         minimum: 0
-      horizon_min:
-        type: integer
-        format: int32
-        default: 1
+      inv_min:
+        type: number
+        default: 0
         minimum: 0
       recommended_inflation:
         type: number
         format: float
         default: 0
         minimum: -1
-      dep_min:
+      horizon_min:
+        type: integer
+        format: int32
+        default: 1
+        minimum: 0
+      dep_max:
         type: number
-        default: 0
+        default: null
+        x-nullable: true
         minimum: 0
   goalDecumulationRecommendationRequest:
     type: object
     properties:
-      a_horizon:
-        type: integer
-        format: int32
-        default: null
-        x-nullable: true
-        minimum: 0
-        maximum: 350
       recommendation_config:
         $ref: '#/definitions/RecommendationConfig1'
-      thresh_type:
-        type: string
-        default: perc
-        enum:
-          - amnt
-          - perc
-      curr_inv:
-        type: number
-        minimum: 0
-      deposit_config:
-        type: array
-        default:
-          - dep_start_reference: a_start
-            dep_start_period: 0
-            dep_end_reference: a_end
-            dep_end_period: 0
-            dep_amount: 0
-            dep_frequency: year
-            dep_inflation: 0
-        minItems: 1
-        items:
-          $ref: '#/definitions/DecumulationGoalDepositConfig'
-      create_log:
-        type: boolean
-        default: false
-      trading_days_per_year:
-        type: integer
-        format: int32
-        default: 252
-        minimum: 1
-        maximum: 365
       compounding_rate:
         type: number
         format: float
         default: 0
         minimum: -1
-      conf_tgt:
-        type: number
-        format: float
-        default: 0.9
-        minimum: 0
-        maximum: 1
-      goal_id:
-        type: string
-        format: uuid
-      p_risk:
-        type: array
-        items:
-          type: number
-          format: float
-          minimum: 0
-      withdrawal_tax:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-        maximum: 1
-      p_ret:
-        type: array
-        items:
-          type: number
-          format: float
-          minimum: -1
-      thresh:
-        type: number
-        default: 0
-        minimum: 0
-      remove_outliers:
-        type: boolean
-        default: true
-      'n':
-        type: integer
-        format: int32
-        default: 1000
-        minimum: 1
-        maximum: 10000
       recommend_type:
         type: string
         default: horizon
@@ -2915,12 +3023,75 @@ definitions:
           - one-time
           - combo
           - horizon
-      client_id:
-        type: string
-        format: uuid
+      create_log:
+        type: boolean
+        default: false
+      'n':
+        type: integer
+        format: int32
+        default: 1000
+        minimum: 1
+        maximum: 10000
+      a_horizon:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minimum: 0
+        maximum: 350
+      p_risk:
+        type: array
+        items:
+          type: number
+          format: float
+          minimum: 0
+      remove_outliers:
+        type: boolean
+        default: true
       adjust_for_compounding:
         type: boolean
         default: false
+      goal_id:
+        type: string
+        format: uuid
+      conf_tgt:
+        type: number
+        format: float
+        default: 0.9
+        minimum: 0
+        maximum: 1
+      trading_days_per_year:
+        type: integer
+        format: int32
+        default: 252
+        minimum: 1
+        maximum: 365
+      thresh:
+        type: number
+        default: 0
+        minimum: 0
+      withdrawal_tax:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+      d_horizon:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minimum: 0
+        maximum: 350
+      client_id:
+        type: string
+        format: uuid
+      thresh_type:
+        type: string
+        default: perc
+        enum:
+          - amnt
+          - perc
       horizon_frequency:
         type: string
         default: year
@@ -2937,35 +3108,50 @@ definitions:
         minItems: 1
         items:
           $ref: '#/definitions/GoalWithdrawalConfig'
-      d_horizon:
-        type: integer
-        format: int32
-        default: null
-        x-nullable: true
+      curr_inv:
+        type: number
         minimum: 0
-        maximum: 350
+      deposit_config:
+        type: array
+        default:
+          - dep_start_reference: a_start
+            dep_start_period: 0
+            dep_end_reference: a_end
+            dep_end_period: 0
+            dep_amount: 0
+            dep_frequency: year
+            dep_inflation: 0
+        minItems: 1
+        items:
+          $ref: '#/definitions/DecumulationGoalDepositConfig'
+      p_ret:
+        type: array
+        items:
+          type: number
+          format: float
+          minimum: -1
     required:
       - p_ret
       - p_risk
   WConfig:
     type: object
     properties:
-      cash_amount:
-        type: number
-        format: float
-        minimum: 0
-        maximum: 1
       w_min_minor:
         type: number
         format: float
         minimum: 0
         maximum: 1
-      w_max_major:
+      w_min_major:
         type: number
         format: float
         minimum: 0
         maximum: 1
-      w_min_major:
+      cash_amount:
+        type: number
+        format: float
+        minimum: 0
+        maximum: 1
+      w_max_major:
         type: number
         format: float
         minimum: 0
@@ -2990,14 +3176,20 @@ definitions:
         minItems: 1
         items:
           type: string
-      w_asset_config:
-        type: object
-        default: {}
+      w_config:
+        $ref: '#/definitions/WConfig'
+      min_assets:
+        type: integer
+        format: int32
+        minimum: 1
       end_date:
         type: string
         format: date
         default: null
         x-nullable: true
+      w_asset_config:
+        type: object
+        default: {}
       start_date:
         type: string
         format: date
@@ -3012,12 +3204,6 @@ definitions:
             - major
             - minor
             - cash
-      min_assets:
-        type: integer
-        format: int32
-        minimum: 1
-      w_config:
-        $ref: '#/definitions/WConfig'
     required:
       - min_assets
       - sec_types
@@ -3026,113 +3212,18 @@ definitions:
   goalDecumulationAllocationRequest:
     type: object
     properties:
-      use_proxy_data:
-        type: boolean
-        default: false
-      market_data_source:
-        type: string
-        default: nucleus
-        enum:
-          - nucleus
-          - integration
-      a_horizon:
-        type: integer
-        format: int32
-        default: null
-        x-nullable: true
-        minimum: 0
-        maximum: 350
-      risk_score:
-        type: number
-        default: 50
-        minimum: 0
-        maximum: 100
       recommendation_config:
         $ref: '#/definitions/RecommendationConfig'
-      thresh_type:
-        type: string
-        default: perc
-        enum:
-          - amnt
-          - perc
-      curr_inv:
-        type: number
-        minimum: 0
-      deposit_config:
-        type: array
-        default:
-          - dep_start_reference: a_start
-            dep_start_period: 0
-            dep_end_reference: a_end
-            dep_end_period: 0
-            dep_amount: 0
-            dep_frequency: year
-            dep_inflation: 0
-        minItems: 1
-        items:
-          $ref: '#/definitions/DecumulationGoalDepositConfig'
-      allocation_priority:
-        type: string
-        enum:
-          - goal
-          - risk
-      create_log:
-        type: boolean
-        default: false
-      opt_config:
-        $ref: '#/definitions/OptConfig'
-      trading_days_per_year:
-        type: integer
-        format: int32
-        default: 252
-        minimum: 1
-        maximum: 365
       compounding_rate:
         type: number
         format: float
         default: 0
         minimum: -1
-      conf_tgt:
+      risk_score:
         type: number
-        format: float
-        default: 0.9
+        default: 50
         minimum: 0
-        maximum: 1
-      goal_id:
-        type: string
-        format: uuid
-      withdrawal_tax:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-        maximum: 1
-      allocations:
-        type: array
-        items:
-          type: string
-          format: uuid
-      thresh:
-        type: number
-        default: 0
-        minimum: 0
-      remove_outliers:
-        type: boolean
-        default: true
-      'n':
-        type: integer
-        format: int32
-        default: 1000
-        minimum: 1
-        maximum: 10000
-      client_id:
-        type: string
-        format: uuid
-      allocation_method:
-        type: string
-        enum:
-          - select
-          - create
+        maximum: 100
       recommend_type:
         type: string
         default: horizon
@@ -3141,9 +3232,90 @@ definitions:
           - one-time
           - combo
           - horizon
+      create_log:
+        type: boolean
+        default: false
+      'n':
+        type: integer
+        format: int32
+        default: 1000
+        minimum: 1
+        maximum: 10000
+      a_horizon:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minimum: 0
+        maximum: 350
+      allocation_method:
+        type: string
+        enum:
+          - select
+          - create
+      allocation_priority:
+        type: string
+        enum:
+          - goal
+          - risk
+      remove_outliers:
+        type: boolean
+        default: true
       adjust_for_compounding:
         type: boolean
         default: false
+      goal_id:
+        type: string
+        format: uuid
+      conf_tgt:
+        type: number
+        format: float
+        default: 0.9
+        minimum: 0
+        maximum: 1
+      trading_days_per_year:
+        type: integer
+        format: int32
+        default: 252
+        minimum: 1
+        maximum: 365
+      use_proxy_data:
+        type: boolean
+        default: false
+      thresh:
+        type: number
+        default: 0
+        minimum: 0
+      withdrawal_tax:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+      d_horizon:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minimum: 0
+        maximum: 350
+      client_id:
+        type: string
+        format: uuid
+      opt_config:
+        $ref: '#/definitions/OptConfig'
+      market_data_source:
+        type: string
+        default: nucleus
+        enum:
+          - nucleus
+          - integration
+      thresh_type:
+        type: string
+        default: perc
+        enum:
+          - amnt
+          - perc
       horizon_frequency:
         type: string
         default: year
@@ -3160,24 +3332,62 @@ definitions:
         minItems: 1
         items:
           $ref: '#/definitions/GoalWithdrawalConfig'
-      d_horizon:
-        type: integer
-        format: int32
-        default: null
-        x-nullable: true
+      allocations:
+        type: array
+        items:
+          type: string
+          format: uuid
+      curr_inv:
+        type: number
         minimum: 0
-        maximum: 350
+      deposit_config:
+        type: array
+        default:
+          - dep_start_reference: a_start
+            dep_start_period: 0
+            dep_end_reference: a_end
+            dep_end_period: 0
+            dep_amount: 0
+            dep_frequency: year
+            dep_inflation: 0
+        minItems: 1
+        items:
+          $ref: '#/definitions/DecumulationGoalDepositConfig'
     required:
       - allocation_method
       - allocation_priority
-  AccumulationGoalDepositConfig:
+  GoalConfig:
     type: object
     properties:
-      dep_inflation:
+      goal_amount:
+        type: number
+        minimum: 0
+      goal_inflation:
         type: number
         format: float
         default: 0
         minimum: -1
+  AccumulationGoalDepositConfig:
+    type: object
+    properties:
+      dep_end_period:
+        type: integer
+        format: int32
+        default: 0
+      dep_amount:
+        type: number
+        default: 0
+        minimum: 0
+      dep_end_reference:
+        type: string
+        default: a_end
+        enum:
+          - a_start
+          - a_end
+      dep_start_period:
+        type: integer
+        format: int32
+        default: 0
       dep_frequency:
         type: string
         default: year
@@ -3189,145 +3399,92 @@ definitions:
           - two_weeks
           - week
           - day
-      dep_end_reference:
-        type: string
-        default: a_end
-        enum:
-          - a_start
-          - a_end
+      dep_inflation:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
       dep_start_reference:
         type: string
         default: a_start
         enum:
           - a_start
           - a_end
-      dep_start_period:
-        type: integer
-        format: int32
-        default: 0
-      dep_amount:
-        type: number
-        default: 0
-        minimum: 0
-      dep_end_period:
-        type: integer
-        format: int32
-        default: 0
-  GoalConfig:
-    type: object
-    properties:
-      goal_inflation:
-        type: number
-        format: float
-        default: 0
-        minimum: -1
-      goal_amount:
-        type: number
-        minimum: 0
   goalAccumulationRecommendationRequest:
     type: object
     properties:
       recommendation_config:
         $ref: '#/definitions/RecommendationConfig1'
-      thresh_type:
-        type: string
-        default: perc
-        enum:
-          - amnt
-          - perc
-      curr_inv:
-        type: number
-        minimum: 0
-      deposit_config:
-        type: array
-        default:
-          - dep_start_reference: a_start
-            dep_start_period: 0
-            dep_end_reference: a_end
-            dep_end_period: 0
-            dep_amount: 0
-            dep_frequency: year
-            dep_inflation: 0
-        minItems: 1
-        items:
-          $ref: '#/definitions/AccumulationGoalDepositConfig'
-      create_log:
-        type: boolean
-        default: false
-      trading_days_per_year:
-        type: integer
-        format: int32
-        default: 252
-        minimum: 1
-        maximum: 365
       compounding_rate:
         type: number
         format: float
         default: 0
         minimum: -1
-      conf_tgt:
-        type: number
-        format: float
-        default: 0.9
-        minimum: 0
-        maximum: 1
-      goal_id:
+      recommend_type:
         type: string
-        format: uuid
+        default: horizon
+        enum:
+          - recurring
+          - one-time
+          - combo
+          - horizon
+      create_log:
+        type: boolean
+        default: false
+      goal_config:
+        $ref: '#/definitions/GoalConfig'
+      'n':
+        type: integer
+        format: int32
+        default: 1000
+        minimum: 1
+        maximum: 10000
       p_risk:
         type: array
         items:
           type: number
           format: float
           minimum: 0
+      remove_outliers:
+        type: boolean
+        default: true
+      adjust_for_compounding:
+        type: boolean
+        default: false
+      goal_id:
+        type: string
+        format: uuid
+      conf_tgt:
+        type: number
+        format: float
+        default: 0.9
+        minimum: 0
+        maximum: 1
+      trading_days_per_year:
+        type: integer
+        format: int32
+        default: 252
+        minimum: 1
+        maximum: 365
+      thresh:
+        type: number
+        default: 0
+        minimum: 0
       withdrawal_tax:
         type: number
         format: float
         default: 0
         minimum: 0
         maximum: 1
-      goal_config:
-        $ref: '#/definitions/GoalConfig'
-      p_ret:
-        type: array
-        items:
-          type: number
-          format: float
-          minimum: -1
-      thresh:
-        type: number
-        default: 0
-        minimum: 0
-      remove_outliers:
-        type: boolean
-        default: true
-      'n':
-        type: integer
-        format: int32
-        default: 1000
-        minimum: 1
-        maximum: 10000
-      recommend_type:
-        type: string
-        default: horizon
-        enum:
-          - recurring
-          - one-time
-          - combo
-          - horizon
       client_id:
         type: string
         format: uuid
-      horizon:
-        type: integer
-        format: int32
-        default: null
-        x-nullable: true
-        minimum: 0
-        maximum: 350
-      adjust_for_compounding:
-        type: boolean
-        default: false
+      thresh_type:
+        type: string
+        default: perc
+        enum:
+          - amnt
+          - perc
       horizon_frequency:
         type: string
         default: year
@@ -3339,34 +3496,13 @@ definitions:
           - two_weeks
           - week
           - day
-    required:
-      - p_ret
-      - p_risk
-  goalAccumulationAllocationRequest:
-    type: object
-    properties:
-      use_proxy_data:
-        type: boolean
-        default: false
-      market_data_source:
-        type: string
-        default: nucleus
-        enum:
-          - nucleus
-          - integration
-      risk_score:
-        type: number
-        default: 50
+      horizon:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
         minimum: 0
-        maximum: 100
-      recommendation_config:
-        $ref: '#/definitions/RecommendationConfig'
-      thresh_type:
-        type: string
-        default: perc
-        enum:
-          - amnt
-          - perc
+        maximum: 350
       curr_inv:
         type: number
         minimum: 0
@@ -3383,70 +3519,30 @@ definitions:
         minItems: 1
         items:
           $ref: '#/definitions/AccumulationGoalDepositConfig'
-      allocation_priority:
-        type: string
-        enum:
-          - goal
-          - risk
-      create_log:
-        type: boolean
-        default: false
-      opt_config:
-        $ref: '#/definitions/OptConfig'
-      trading_days_per_year:
-        type: integer
-        format: int32
-        default: 252
-        minimum: 1
-        maximum: 365
+      p_ret:
+        type: array
+        items:
+          type: number
+          format: float
+          minimum: -1
+    required:
+      - p_ret
+      - p_risk
+  goalAccumulationAllocationRequest:
+    type: object
+    properties:
+      recommendation_config:
+        $ref: '#/definitions/RecommendationConfig'
       compounding_rate:
         type: number
         format: float
         default: 0
         minimum: -1
-      conf_tgt:
+      risk_score:
         type: number
-        format: float
-        default: 0.9
+        default: 50
         minimum: 0
-        maximum: 1
-      goal_id:
-        type: string
-        format: uuid
-      withdrawal_tax:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-        maximum: 1
-      allocations:
-        type: array
-        items:
-          type: string
-          format: uuid
-      goal_config:
-        $ref: '#/definitions/GoalConfig'
-      thresh:
-        type: number
-        default: 0
-        minimum: 0
-      remove_outliers:
-        type: boolean
-        default: true
-      'n':
-        type: integer
-        format: int32
-        default: 1000
-        minimum: 1
-        maximum: 10000
-      client_id:
-        type: string
-        format: uuid
-      allocation_method:
-        type: string
-        enum:
-          - select
-          - create
+        maximum: 100
       recommend_type:
         type: string
         default: horizon
@@ -3455,16 +3551,78 @@ definitions:
           - one-time
           - combo
           - horizon
-      horizon:
+      create_log:
+        type: boolean
+        default: false
+      goal_config:
+        $ref: '#/definitions/GoalConfig'
+      'n':
         type: integer
         format: int32
-        default: null
-        x-nullable: true
-        minimum: 0
-        maximum: 350
+        default: 1000
+        minimum: 1
+        maximum: 10000
+      allocation_method:
+        type: string
+        enum:
+          - select
+          - create
+      allocation_priority:
+        type: string
+        enum:
+          - goal
+          - risk
+      remove_outliers:
+        type: boolean
+        default: true
       adjust_for_compounding:
         type: boolean
         default: false
+      goal_id:
+        type: string
+        format: uuid
+      conf_tgt:
+        type: number
+        format: float
+        default: 0.9
+        minimum: 0
+        maximum: 1
+      trading_days_per_year:
+        type: integer
+        format: int32
+        default: 252
+        minimum: 1
+        maximum: 365
+      use_proxy_data:
+        type: boolean
+        default: false
+      thresh:
+        type: number
+        default: 0
+        minimum: 0
+      withdrawal_tax:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+      client_id:
+        type: string
+        format: uuid
+      opt_config:
+        $ref: '#/definitions/OptConfig'
+      market_data_source:
+        type: string
+        default: nucleus
+        enum:
+          - nucleus
+          - integration
+      thresh_type:
+        type: string
+        default: perc
+        enum:
+          - amnt
+          - perc
       horizon_frequency:
         type: string
         default: year
@@ -3476,6 +3634,34 @@ definitions:
           - two_weeks
           - week
           - day
+      horizon:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minimum: 0
+        maximum: 350
+      allocations:
+        type: array
+        items:
+          type: string
+          format: uuid
+      curr_inv:
+        type: number
+        minimum: 0
+      deposit_config:
+        type: array
+        default:
+          - dep_start_reference: a_start
+            dep_start_period: 0
+            dep_end_reference: a_end
+            dep_end_period: 0
+            dep_amount: 0
+            dep_frequency: year
+            dep_inflation: 0
+        minItems: 1
+        items:
+          $ref: '#/definitions/AccumulationGoalDepositConfig'
     required:
       - allocation_method
       - allocation_priority
@@ -3484,12 +3670,94 @@ definitions:
     properties:
       recommendation_config:
         $ref: '#/definitions/RecommendationConfig'
+      compounding_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      recommend_type:
+        type: string
+        default: horizon
+        enum:
+          - recurring
+          - one-time
+          - combo
+          - horizon
+      create_log:
+        type: boolean
+        default: false
+      goal_config:
+        $ref: '#/definitions/GoalConfig'
+      'n':
+        type: integer
+        format: int32
+        default: 1000
+        minimum: 1
+        maximum: 10000
+      p_risk:
+        type: array
+        items:
+          type: number
+          format: float
+          minimum: 0
+      remove_outliers:
+        type: boolean
+        default: true
+      adjust_for_compounding:
+        type: boolean
+        default: false
+      goal_id:
+        type: string
+        format: uuid
+      conf_tgt:
+        type: number
+        format: float
+        default: 0.9
+        minimum: 0
+        maximum: 1
+      trading_days_per_year:
+        type: integer
+        format: int32
+        default: 252
+        minimum: 1
+        maximum: 365
+      thresh:
+        type: number
+        default: 0
+        minimum: 0
+      withdrawal_tax:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+      client_id:
+        type: string
+        format: uuid
       thresh_type:
         type: string
         default: perc
         enum:
           - amnt
           - perc
+      horizon_frequency:
+        type: string
+        default: year
+        enum:
+          - year
+          - six_months
+          - quarter
+          - month
+          - two_weeks
+          - week
+          - day
+      horizon:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minimum: 0
+        maximum: 350
       curr_inv:
         type: number
         minimum: 0
@@ -3506,122 +3774,57 @@ definitions:
         minItems: 1
         items:
           $ref: '#/definitions/AccumulationGoalDepositConfig'
-      create_log:
-        type: boolean
-        default: false
-      trading_days_per_year:
-        type: integer
-        format: int32
-        default: 252
-        minimum: 1
-        maximum: 365
-      compounding_rate:
-        type: number
-        format: float
-        default: 0
-        minimum: -1
-      conf_tgt:
-        type: number
-        format: float
-        default: 0.9
-        minimum: 0
-        maximum: 1
-      goal_id:
-        type: string
-        format: uuid
-      p_risk:
-        type: array
-        items:
-          type: number
-          format: float
-          minimum: 0
-      withdrawal_tax:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-        maximum: 1
-      goal_config:
-        $ref: '#/definitions/GoalConfig'
       p_ret:
         type: array
         items:
           type: number
           format: float
           minimum: -1
-      thresh:
-        type: number
-        default: 0
-        minimum: 0
-      remove_outliers:
-        type: boolean
-        default: true
-      'n':
-        type: integer
-        format: int32
-        default: 1000
-        minimum: 1
-        maximum: 10000
-      recommend_type:
-        type: string
-        default: horizon
-        enum:
-          - recurring
-          - one-time
-          - combo
-          - horizon
-      client_id:
-        type: string
-        format: uuid
-      horizon:
-        type: integer
-        format: int32
-        default: null
-        x-nullable: true
-        minimum: 0
-        maximum: 350
-      adjust_for_compounding:
-        type: boolean
-        default: false
-      horizon_frequency:
-        type: string
-        default: year
-        enum:
-          - year
-          - six_months
-          - quarter
-          - month
-          - two_weeks
-          - week
-          - day
     required:
       - p_ret
       - p_risk
   mvoRequest:
     type: object
     properties:
-      use_proxy_data:
-        type: boolean
-        default: false
       tickers:
         type: array
         minimum: 1
         minItems: 1
         items:
           type: string
-      w_asset_config:
-        type: object
-        default: {}
+      w_config:
+        $ref: '#/definitions/WConfig'
+      min_assets:
+        type: integer
+        format: int32
+        minimum: 1
       end_date:
         type: string
         format: date
         default: null
         x-nullable: true
+      market_data_source:
+        type: string
+        default: nucleus
+        enum:
+          - nucleus
+          - integration
+      w_asset_config:
+        type: object
+        default: {}
       start_date:
         type: string
         format: date
         default: null
         x-nullable: true
+      tgt_type:
+        type: string
+        enum:
+          - risk
+          - return
+      use_proxy_data:
+        type: boolean
+        default: false
       tgt_val:
         type: number
         format: float
@@ -3635,23 +3838,6 @@ definitions:
             - major
             - minor
             - cash
-      market_data_source:
-        type: string
-        default: nucleus
-        enum:
-          - nucleus
-          - integration
-      min_assets:
-        type: integer
-        format: int32
-        minimum: 1
-      tgt_type:
-        type: string
-        enum:
-          - risk
-          - return
-      w_config:
-        $ref: '#/definitions/WConfig'
     required:
       - min_assets
       - sec_types
@@ -3660,14 +3846,12 @@ definitions:
   Settings:
     type: object
     properties:
-      drift_rebal:
-        type: boolean
-      period_rebal:
-        type: boolean
       default_drift_factor:
         type: number
         format: float
         minimum: 0
+      drift_rebal:
+        type: boolean
       downside:
         type: boolean
       tax_efficiency_id:
@@ -3679,6 +3863,8 @@ definitions:
           - 2
           - 3
           - 4
+      period_rebal:
+        type: boolean
       rebalance_period:
         type: integer
         format: int32
@@ -3691,31 +3877,37 @@ definitions:
   rebalancingSignalRequest:
     type: object
     properties:
-      model_id:
-        type: string
-        format: uuid
       end_date:
         type: string
         format: date
       update_model:
         type: boolean
         default: false
+      model_id:
+        type: string
+        format: uuid
       start_date:
         type: string
         format: date
-      settings:
-        $ref: '#/definitions/Settings'
       initial_weights:
         type: object
+      settings:
+        $ref: '#/definitions/Settings'
     required:
       - end_date
       - start_date
   riskScoreRequest:
     type: object
     properties:
+      questionnaire_id:
+        type: string
+        format: uuid
       client_id:
         type: string
         format: uuid
+      post_score:
+        type: boolean
+        default: false
       max_answers:
         type: array
         items:
@@ -3730,40 +3922,52 @@ definitions:
           type: number
           format: float
           minimum: 0
-      questionnaire_id:
-        type: string
-        format: uuid
       answers:
         type: array
         items:
           type: number
           minimum: 0
-      post_score:
-        type: boolean
-        default: false
     required:
       - max_answers
   dimensionalRiskScoreRequest:
     type: object
     properties:
+      questionnaire_id:
+        type: string
+        format: uuid
       client_id:
         type: string
         format: uuid
+      post_score:
+        type: boolean
+        default: false
       dims:
         type: array
         items:
           type: string
+      answer_weights:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: number
+          format: float
+          minimum: 0
       max_answers:
         type: array
         items:
           type: number
           minimum: 0
-      post_score:
-        type: boolean
-        default: false
-      questionnaire_id:
-        type: string
-        format: uuid
+      dim_weights:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: number
+          format: float
+          minimum: 0
       answers:
         type: array
         items:
@@ -3775,24 +3979,6 @@ definitions:
           type: array
           items:
             type: string
-      answer_weights:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: number
-          format: float
-          minimum: 0
-      dim_weights:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: number
-          format: float
-          minimum: 0
     required:
       - answer_dims
       - dims
@@ -3808,9 +3994,8 @@ definitions:
         enum:
           - select
           - create
-      use_proxy_data:
-        type: boolean
-        default: false
+      opt_config:
+        $ref: '#/definitions/OptConfig'
       market_data_source:
         type: string
         default: nucleus
@@ -3822,29 +4007,24 @@ definitions:
         default: 50
         minimum: 0
         maximum: 100
+      use_proxy_data:
+        type: boolean
+        default: false
       allocations:
         type: array
         items:
           type: string
           format: uuid
-      opt_config:
-        $ref: '#/definitions/OptConfig'
     required:
       - allocation_method
   eventStudyRequest:
     type: object
     properties:
-      use_proxy_data:
-        type: boolean
-        default: false
-      model_id:
+      allocation_id:
         type: string
         format: uuid
         default: null
         x-nullable: true
-      create_log:
-        type: boolean
-        default: false
       events:
         type: array
         default: null
@@ -3860,11 +4040,25 @@ definitions:
             - 1987_black_monday
             - 1992_black_wednesday
             - 1997_asian_financial_crisis
+      market_data_source:
+        type: string
+        default: nucleus
+        enum:
+          - nucleus
+          - integration
+      model_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
       account_id:
         type: string
         format: uuid
         default: null
         x-nullable: true
+      use_proxy_data:
+        type: boolean
+        default: false
       portfolio_weights:
         type: array
         default: null
@@ -3874,17 +4068,6 @@ definitions:
           type: number
           format: float
           minimum: 0
-      market_data_source:
-        type: string
-        default: nucleus
-        enum:
-          - nucleus
-          - integration
-      aggregation_account_id:
-        type: string
-        format: uuid
-        default: null
-        x-nullable: true
       portfolio_tickers:
         type: array
         default: null
@@ -3893,12 +4076,15 @@ definitions:
         minItems: 1
         items:
           type: string
-      portfolio_id:
+      create_log:
+        type: boolean
+        default: false
+      aggregation_account_id:
         type: string
         format: uuid
         default: null
         x-nullable: true
-      allocation_id:
+      portfolio_id:
         type: string
         format: uuid
         default: null
@@ -3906,15 +4092,27 @@ definitions:
   backtestRequest:
     type: object
     properties:
-      holdings:
+      end_date:
+        type: string
+        format: date
+      trades:
         type: boolean
         default: true
       model_id:
         type: string
         format: uuid
-      end_date:
+      start_date:
         type: string
         format: date
+      stats:
+        type: boolean
+        default: true
+      initial_weights:
+        type: object
+        default: null
+        x-nullable: true
+      settings:
+        $ref: '#/definitions/Settings'
       asset_size:
         type: number
         default: 1000
@@ -3922,19 +4120,7 @@ definitions:
       asset_sizes:
         type: boolean
         default: true
-      start_date:
-        type: string
-        format: date
-      trades:
-        type: boolean
-        default: true
-      settings:
-        $ref: '#/definitions/Settings'
-      initial_weights:
-        type: object
-        default: null
-        x-nullable: true
-      stats:
+      holdings:
         type: boolean
         default: true
     required:
@@ -3943,9 +4129,91 @@ definitions:
   monteCarloRequest:
     type: object
     properties:
-      use_proxy_data:
+      min_bal:
+        type: array
+        default:
+          - 0
+        items:
+          type: number
+      max_bal:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: number
+      p:
+        type: array
+        default:
+          - 50
+        items:
+          type: number
+          minimum: 0
+          maximum: 100
+      allocation_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      init_bal:
+        type: number
+        default: 100
+        minimum: 0
+      max_sample:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: number
+          format: float
+          minimum: -1
+      model_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      cf:
+        type: array
+        minItems: 1
+        items:
+          type: array
+          minItems: 2
+          maxItems: 2
+          items:
+            type: number
+      create_log:
         type: boolean
         default: false
+      aggregation_account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      'n':
+        type: integer
+        format: int32
+        default: 1000
+        minimum: 1
+        maximum: 10000
+      remove_outliers:
+        type: boolean
+        default: false
+      sigma:
+        type: array
+        items:
+          type: number
+          format: float
+          minimum: 0
+      mu:
+        type: array
+        items:
+          type: number
+          format: float
+          minimum: -1
+      portfolio_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
       result_type:
         type: string
         default: raw
@@ -3955,24 +4223,28 @@ definitions:
           - median
           - mean
           - tens
+      account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      use_proxy_data:
+        type: boolean
+        default: false
       market_data_source:
         type: string
         default: nucleus
         enum:
           - nucleus
           - integration
-      min_bal:
+      ret_mod:
         type: array
         default:
           - 0
         items:
           type: number
-      sigma:
-        type: array
-        items:
-          type: number
           format: float
-          minimum: 0
+          minimum: -1
       frequency_interval:
         type: string
         default: year
@@ -3984,96 +4256,10 @@ definitions:
           - two_weeks
           - week
           - day
-      max_bal:
-        type: array
-        default: null
-        x-nullable: true
-        items:
-          type: number
-      ret_mod:
-        type: array
-        default:
-          - 0
-        items:
-          type: number
-          format: float
-          minimum: -1
-      model_id:
-        type: string
-        format: uuid
-        default: null
-        x-nullable: true
-      create_log:
-        type: boolean
-        default: false
-      account_id:
-        type: string
-        format: uuid
-        default: null
-        x-nullable: true
-      aggregation_account_id:
-        type: string
-        format: uuid
-        default: null
-        x-nullable: true
-      max_sample:
-        type: array
-        default: null
-        x-nullable: true
-        items:
-          type: number
-          format: float
-          minimum: -1
-      cf:
-        type: array
-        minItems: 1
-        items:
-          type: array
-          minItems: 2
-          maxItems: 2
-          items:
-            type: number
-      portfolio_id:
-        type: string
-        format: uuid
-        default: null
-        x-nullable: true
-      remove_outliers:
-        type: boolean
-        default: false
-      init_bal:
-        type: number
-        default: 100
-        minimum: 0
-      allocation_id:
-        type: string
-        format: uuid
-        default: null
-        x-nullable: true
-      'n':
-        type: integer
-        format: int32
-        default: 1000
-        minimum: 1
-        maximum: 10000
-      p:
-        type: array
-        default:
-          - 50
-        items:
-          type: number
-          minimum: 0
-          maximum: 100
       min_sample:
         type: array
         default: null
         x-nullable: true
-        items:
-          type: number
-          format: float
-          minimum: -1
-      mu:
-        type: array
         items:
           type: number
           format: float
@@ -4083,12 +4269,12 @@ definitions:
   SensitivityFactor:
     type: object
     properties:
-      ticker:
-        type: string
       change_amount:
         type: number
         format: float
         minimum: -1
+      ticker:
+        type: string
       change_duration:
         type: integer
         format: int32
@@ -4105,20 +4291,25 @@ definitions:
   sensitivityAnalysisRequest:
     type: object
     properties:
-      use_proxy_data:
-        type: boolean
-        default: false
-      model_id:
+      allocation_id:
         type: string
         format: uuid
         default: null
         x-nullable: true
-      create_log:
-        type: boolean
-        default: false
       end_date:
         type: string
         format: date
+        default: null
+        x-nullable: true
+      market_data_source:
+        type: string
+        default: nucleus
+        enum:
+          - nucleus
+          - integration
+      model_id:
+        type: string
+        format: uuid
         default: null
         x-nullable: true
       account_id:
@@ -4126,6 +4317,30 @@ definitions:
         format: uuid
         default: null
         x-nullable: true
+      start_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      frequency_interval:
+        type: string
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      trading_days_per_year:
+        type: integer
+        format: int32
+        default: 252
+        minimum: 1
+        maximum: 365
+      sensitivity_factor:
+        $ref: '#/definitions/SensitivityFactor'
+      use_proxy_data:
+        type: boolean
+        default: false
       portfolio_weights:
         type: array
         default: null
@@ -4135,38 +4350,6 @@ definitions:
           type: number
           format: float
           minimum: 0
-      start_date:
-        type: string
-        format: date
-        default: null
-        x-nullable: true
-      sensitivity_factor:
-        $ref: '#/definitions/SensitivityFactor'
-      aggregation_account_id:
-        type: string
-        format: uuid
-        default: null
-        x-nullable: true
-      market_data_source:
-        type: string
-        default: nucleus
-        enum:
-          - nucleus
-          - integration
-      trading_days_per_year:
-        type: integer
-        format: int32
-        default: 252
-        minimum: 1
-        maximum: 365
-      frequency_interval:
-        type: string
-        enum:
-          - year
-          - quarter
-          - month
-          - week
-          - day
       portfolio_tickers:
         type: array
         default: null
@@ -4175,12 +4358,15 @@ definitions:
         minItems: 1
         items:
           type: string
-      portfolio_id:
+      create_log:
+        type: boolean
+        default: false
+      aggregation_account_id:
         type: string
         format: uuid
         default: null
         x-nullable: true
-      allocation_id:
+      portfolio_id:
         type: string
         format: uuid
         default: null
@@ -4191,20 +4377,30 @@ definitions:
   scenarioAnalysisRequest:
     type: object
     properties:
-      use_proxy_data:
-        type: boolean
-        default: false
-      model_id:
+      scenario:
+        type: array
+        minItems: 1
+        items:
+          $ref: '#/definitions/SensitivityFactor'
+      allocation_id:
         type: string
         format: uuid
         default: null
         x-nullable: true
-      create_log:
-        type: boolean
-        default: false
       end_date:
         type: string
         format: date
+        default: null
+        x-nullable: true
+      market_data_source:
+        type: string
+        default: nucleus
+        enum:
+          - nucleus
+          - integration
+      model_id:
+        type: string
+        format: uuid
         default: null
         x-nullable: true
       account_id:
@@ -4212,6 +4408,28 @@ definitions:
         format: uuid
         default: null
         x-nullable: true
+      start_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      frequency_interval:
+        type: string
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      trading_days_per_year:
+        type: integer
+        format: int32
+        default: 252
+        minimum: 1
+        maximum: 365
+      use_proxy_data:
+        type: boolean
+        default: false
       portfolio_weights:
         type: array
         default: null
@@ -4221,41 +4439,6 @@ definitions:
           type: number
           format: float
           minimum: 0
-      start_date:
-        type: string
-        format: date
-        default: null
-        x-nullable: true
-      scenario:
-        type: array
-        minItems: 1
-        items:
-          $ref: '#/definitions/SensitivityFactor'
-      aggregation_account_id:
-        type: string
-        format: uuid
-        default: null
-        x-nullable: true
-      market_data_source:
-        type: string
-        default: nucleus
-        enum:
-          - nucleus
-          - integration
-      trading_days_per_year:
-        type: integer
-        format: int32
-        default: 252
-        minimum: 1
-        maximum: 365
-      frequency_interval:
-        type: string
-        enum:
-          - year
-          - quarter
-          - month
-          - week
-          - day
       portfolio_tickers:
         type: array
         default: null
@@ -4264,12 +4447,15 @@ definitions:
         minItems: 1
         items:
           type: string
-      portfolio_id:
+      create_log:
+        type: boolean
+        default: false
+      aggregation_account_id:
         type: string
         format: uuid
         default: null
         x-nullable: true
-      allocation_id:
+      portfolio_id:
         type: string
         format: uuid
         default: null
@@ -4289,70 +4475,27 @@ definitions:
           - month
           - week
           - day
-      adjust_deposit_for_inflation:
-        type: boolean
-        default: true
+      deposit_amount:
+        type: number
+        default: 0
+        minimum: 0
       deposit_duration:
         type: integer
         format: int32
         default: null
         x-nullable: true
         minimum: 1
-      deposit_amount:
-        type: number
-        default: 0
-        minimum: 0
+      adjust_deposit_for_inflation:
+        type: boolean
+        default: true
   savingsCalculatorRequest:
     type: object
     properties:
-      return_schedule:
-        type: array
-        minItems: 1
-        items:
-          type: number
-          format: float
-          minimum: -1
-      create_log:
-        type: boolean
-        default: false
-      horizon:
-        type: integer
-        format: int32
-        minimum: 0
-      aggregation_account_ids:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: string
-          format: uuid
-      deposit_schedule:
-        type: array
-        default:
-          - deposit_amount: 0
-            deposit_frequency_interval: year
-            adjust_deposit_for_inflation: true
-        items:
-          $ref: '#/definitions/SavingsDepositSchedule'
-      horizon_frequency_interval:
-        type: string
-        default: year
-        enum:
-          - year
-          - quarter
-          - month
-          - week
-          - day
       inflation_rate:
         type: number
         format: float
         default: 0
         minimum: -1
-      initial_balance:
-        type: number
-        default: 0
-        minimum: 0
       account_ids:
         type: array
         default: null
@@ -4367,30 +4510,80 @@ definitions:
         default: 0
         minimum: 0
         maximum: 1
+      horizon_frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+          - day
+      deposit_schedule:
+        type: array
+        default:
+          - deposit_amount: 0
+            deposit_frequency_interval: year
+            adjust_deposit_for_inflation: true
+        items:
+          $ref: '#/definitions/SavingsDepositSchedule'
+      horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      return_schedule:
+        type: array
+        minItems: 1
+        items:
+          type: number
+          format: float
+          minimum: -1
+      create_log:
+        type: boolean
+        default: false
+      initial_balance:
+        type: number
+        default: 0
+        minimum: 0
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
     required:
       - horizon
       - return_schedule
   portfolioWhatIfRequest:
     type: object
     properties:
-      use_proxy_data:
-        type: boolean
-        default: false
+      allocation_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      end_date:
+        type: string
+      market_data_source:
+        type: string
+        default: nucleus
+        enum:
+          - nucleus
+          - integration
       model_id:
         type: string
         format: uuid
         default: null
         x-nullable: true
-      create_log:
-        type: boolean
-        default: false
-      end_date:
-        type: string
       account_id:
         type: string
         format: uuid
         default: null
         x-nullable: true
+      start_date:
+        type: string
       current_portfolio_weights:
         type: array
         default: null
@@ -4400,19 +4593,19 @@ definitions:
           type: number
           format: float
           minimum: 0
-      start_date:
-        type: string
-      market_data_source:
-        type: string
-        default: nucleus
-        enum:
-          - nucleus
-          - integration
-      aggregation_account_id:
-        type: string
-        format: uuid
-        default: null
-        x-nullable: true
+      use_proxy_data:
+        type: boolean
+        default: false
+      altered_portfolio_weights:
+        type: array
+        minItems: 1
+        items:
+          type: number
+          format: float
+          minimum: 0
+      create_log:
+        type: boolean
+        default: false
       current_portfolio_tickers:
         type: array
         default: null
@@ -4421,19 +4614,7 @@ definitions:
         minItems: 1
         items:
           type: string
-      altered_portfolio_weights:
-        type: array
-        minItems: 1
-        items:
-          type: number
-          format: float
-          minimum: 0
-      portfolio_id:
-        type: string
-        format: uuid
-        default: null
-        x-nullable: true
-      allocation_id:
+      aggregation_account_id:
         type: string
         format: uuid
         default: null
@@ -4446,11 +4627,19 @@ definitions:
         minItems: 1
         items:
           type: string
+      portfolio_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
     required:
       - altered_portfolio_weights
   BeneficiaryBequestConfig:
     type: object
     properties:
+      bequest_amount:
+        type: number
+        minimum: 0
       bequest_duration:
         type: integer
         format: int32
@@ -4461,11 +4650,27 @@ definitions:
         format: int32
         default: 0
         minimum: 0
-      bequest_amount:
-        type: number
-        minimum: 0
     required:
       - bequest_amount
+  IncomeConfig:
+    type: object
+    properties:
+      annual_net_take_home_pay:
+        type: number
+        minimum: 0
+      income_benefit_duration:
+        type: integer
+        format: int32
+        default: 10
+        minimum: 1
+      percentage_of_income_covered:
+        type: number
+        format: float
+        default: 1
+        minimum: 0
+        maximum: 1
+    required:
+      - annual_net_take_home_pay
   EducationConfig:
     type: object
     properties:
@@ -4499,83 +4704,28 @@ definitions:
     required:
       - current_age
       - education_config
-  IncomeConfig:
-    type: object
-    properties:
-      percentage_of_income_covered:
-        type: number
-        format: float
-        default: 1
-        minimum: 0
-        maximum: 1
-      income_benefit_duration:
-        type: integer
-        format: int32
-        default: 10
-        minimum: 1
-      annual_net_take_home_pay:
-        type: number
-        minimum: 0
-    required:
-      - annual_net_take_home_pay
   lifeInsuranceNeedsCalculatorRequest:
     type: object
     properties:
-      liquid_assets:
-        type: number
-        default: 0
-        minimum: 0
       client_id:
         type: string
         format: uuid
-      general_inflation_rate:
-        type: number
-        format: float
-        default: 0
-        minimum: -1
       beneficiary_bequest_config:
         type: array
         minItems: 1
         items:
           $ref: '#/definitions/BeneficiaryBequestConfig'
-      end_of_life_expenses:
-        type: number
-        default: 0
-        minimum: 0
-      other_debt:
-        type: number
-        default: 0
-        minimum: 0
-      margin_of_error:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-      interest_rate:
-        type: number
-        format: float
-        minimum: -1
-      children_education_config:
-        type: array
-        minItems: 1
-        items:
-          $ref: '#/definitions/ChildrenEducationConfig'
-      mortgage_balance:
-        type: number
-        default: 0
-        minimum: 0
       education_inflation_rate:
         type: number
         format: float
         default: 0
         minimum: -1
-      benefit_amount_rounding:
-        type: integer
-        format: int32
+      margin_of_error:
+        type: number
+        format: float
         default: 0
         minimum: 0
-        maximum: 12
-      existing_life_insurance:
+      liquid_assets:
         type: number
         default: 0
         minimum: 0
@@ -4585,11 +4735,47 @@ definitions:
         default: 0
         minimum: 0
         maximum: 1
+      other_debt:
+        type: number
+        default: 0
+        minimum: 0
+      end_of_life_expenses:
+        type: number
+        default: 0
+        minimum: 0
+      existing_life_insurance:
+        type: number
+        default: 0
+        minimum: 0
       income_config:
         type: array
         minItems: 1
         items:
           $ref: '#/definitions/IncomeConfig'
+      mortgage_balance:
+        type: number
+        default: 0
+        minimum: 0
+      benefit_amount_rounding:
+        type: integer
+        format: int32
+        default: 0
+        minimum: 0
+        maximum: 12
+      interest_rate:
+        type: number
+        format: float
+        minimum: -1
+      children_education_config:
+        type: array
+        minItems: 1
+        items:
+          $ref: '#/definitions/ChildrenEducationConfig'
+      general_inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
     required:
       - interest_rate
   CalculatorDepositSchedule:
@@ -4610,37 +4796,18 @@ definitions:
   educationCalculatorDepositAmountRequest:
     type: object
     properties:
-      general_inflation_rate:
+      education_inflation_rate:
         type: number
         format: float
-        default: 0
+        default: 0.05
         minimum: -1
       decumulation_horizon:
         type: integer
         format: int32
         minimum: 0
-      total_annual_cost:
-        type: number
-        format: float
-        minimum: 0
-      aggregation_account_ids:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: string
-          format: uuid
       accumulation_horizon:
         type: integer
         format: int32
-        minimum: 0
-      deposit_schedule:
-        $ref: '#/definitions/CalculatorDepositSchedule'
-      initial_balance:
-        type: number
-        format: float
-        default: 0
         minimum: 0
       account_ids:
         type: array
@@ -4650,27 +4817,46 @@ definitions:
         items:
           type: string
           format: uuid
-      percent_of_costs_covered:
-        type: number
-        format: float
-        default: 1
-        minimum: 0
-        maximum: 1
-      education_inflation_rate:
-        type: number
-        format: float
-        default: 0.05
-        minimum: -1
       tax_rate:
         type: number
         format: float
         default: 0
         minimum: 0
         maximum: 1
+      general_inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      total_annual_cost:
+        type: number
+        format: float
+        minimum: 0
       portfolio_return:
         type: number
         format: float
         minimum: -1
+      deposit_schedule:
+        $ref: '#/definitions/CalculatorDepositSchedule'
+      initial_balance:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      percent_of_costs_covered:
+        type: number
+        format: float
+        default: 1
+        minimum: 0
+        maximum: 1
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
     required:
       - accumulation_horizon
       - decumulation_horizon
@@ -4679,6 +4865,11 @@ definitions:
   CalculatorDepositSchedule1:
     type: object
     properties:
+      deposit_amount:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
       deposit_frequency_interval:
         type: string
         default: year
@@ -4691,45 +4882,21 @@ definitions:
       adjust_deposit_for_inflation:
         type: boolean
         default: true
-      deposit_amount:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
   educationCalculatorPercentCoveredRequest:
     type: object
     properties:
-      general_inflation_rate:
+      education_inflation_rate:
         type: number
         format: float
-        default: 0
+        default: 0.05
         minimum: -1
       decumulation_horizon:
         type: integer
         format: int32
         minimum: 0
-      total_annual_cost:
-        type: number
-        format: float
-        minimum: 0
-      aggregation_account_ids:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: string
-          format: uuid
       accumulation_horizon:
         type: integer
         format: int32
-        minimum: 0
-      deposit_schedule:
-        $ref: '#/definitions/CalculatorDepositSchedule1'
-      initial_balance:
-        type: number
-        format: float
-        default: 0
         minimum: 0
       account_ids:
         type: array
@@ -4739,21 +4906,40 @@ definitions:
         items:
           type: string
           format: uuid
-      education_inflation_rate:
-        type: number
-        format: float
-        default: 0.05
-        minimum: -1
       tax_rate:
         type: number
         format: float
         default: 0
         minimum: 0
         maximum: 1
+      general_inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      total_annual_cost:
+        type: number
+        format: float
+        minimum: 0
       portfolio_return:
         type: number
         format: float
         minimum: -1
+      deposit_schedule:
+        $ref: '#/definitions/CalculatorDepositSchedule1'
+      initial_balance:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
     required:
       - accumulation_horizon
       - decumulation_horizon
@@ -4762,16 +4948,20 @@ definitions:
   educationCalculatorAnnualCostRequest:
     type: object
     properties:
-      general_inflation_rate:
+      education_inflation_rate:
         type: number
         format: float
-        default: 0
+        default: 0.05
         minimum: -1
       decumulation_horizon:
         type: integer
         format: int32
         minimum: 0
-      aggregation_account_ids:
+      accumulation_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      account_ids:
         type: array
         default: null
         x-nullable: true
@@ -4779,10 +4969,21 @@ definitions:
         items:
           type: string
           format: uuid
-      accumulation_horizon:
-        type: integer
-        format: int32
+      tax_rate:
+        type: number
+        format: float
+        default: 0
         minimum: 0
+        maximum: 1
+      general_inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      portfolio_return:
+        type: number
+        format: float
+        minimum: -1
       deposit_schedule:
         $ref: '#/definitions/CalculatorDepositSchedule1'
       initial_balance:
@@ -4790,7 +4991,13 @@ definitions:
         format: float
         default: 0
         minimum: 0
-      account_ids:
+      percent_of_costs_covered:
+        type: number
+        format: float
+        default: 1
+        minimum: 0
+        maximum: 1
+      aggregation_account_ids:
         type: array
         default: null
         x-nullable: true
@@ -4798,27 +5005,6 @@ definitions:
         items:
           type: string
           format: uuid
-      percent_of_costs_covered:
-        type: number
-        format: float
-        default: 1
-        minimum: 0
-        maximum: 1
-      education_inflation_rate:
-        type: number
-        format: float
-        default: 0.05
-        minimum: -1
-      tax_rate:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-        maximum: 1
-      portfolio_return:
-        type: number
-        format: float
-        minimum: -1
     required:
       - accumulation_horizon
       - decumulation_horizon
@@ -4826,32 +5012,6 @@ definitions:
   purchaseCalculatorHorizonRequest:
     type: object
     properties:
-      current_savings:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-      aggregation_account_ids:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: string
-          format: uuid
-      deposit_schedule:
-        $ref: '#/definitions/CalculatorDepositSchedule1'
-      inflation_rate:
-        type: number
-        format: float
-        default: 0
-        minimum: -1
-      investment_tax:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-        maximum: 1
       account_ids:
         type: array
         default: null
@@ -4860,29 +5020,32 @@ definitions:
         items:
           type: string
           format: uuid
-      purchase_amount:
+      investment_tax:
         type: number
         format: float
+        default: 0
         minimum: 0
+        maximum: 1
       portfolio_return:
         type: number
         format: float
         minimum: -1
-    required:
-      - portfolio_return
-      - purchase_amount
-  purchaseCalculatorDepositAmountRequest:
-    type: object
-    properties:
+      deposit_schedule:
+        $ref: '#/definitions/CalculatorDepositSchedule1'
       current_savings:
         type: number
         format: float
         default: 0
         minimum: 0
-      purchase_horizon:
-        type: integer
-        format: int32
+      purchase_amount:
+        type: number
+        format: float
         minimum: 0
+      inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
       aggregation_account_ids:
         type: array
         default: null
@@ -4891,11 +5054,20 @@ definitions:
         items:
           type: string
           format: uuid
-      inflation_rate:
-        type: number
-        format: float
-        default: 0
-        minimum: -1
+    required:
+      - portfolio_return
+      - purchase_amount
+  purchaseCalculatorDepositAmountRequest:
+    type: object
+    properties:
+      account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
       horizon_frequency_interval:
         type: string
         default: year
@@ -4904,15 +5076,37 @@ definitions:
           - quarter
           - month
           - week
+      purchase_horizon:
+        type: integer
+        format: int32
+        minimum: 0
       investment_tax:
         type: number
         format: float
         default: 0
         minimum: 0
         maximum: 1
+      portfolio_return:
+        type: number
+        format: float
+        minimum: -1
       deposit_schedule:
         $ref: '#/definitions/CalculatorDepositSchedule'
-      account_ids:
+      current_savings:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      purchase_amount:
+        type: number
+        format: float
+        minimum: 0
+      inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      aggregation_account_ids:
         type: array
         default: null
         x-nullable: true
@@ -4920,14 +5114,6 @@ definitions:
         items:
           type: string
           format: uuid
-      purchase_amount:
-        type: number
-        format: float
-        minimum: 0
-      portfolio_return:
-        type: number
-        format: float
-        minimum: -1
     required:
       - portfolio_return
       - purchase_amount
@@ -4935,44 +5121,6 @@ definitions:
   purchaseCalculatorAmountRequest:
     type: object
     properties:
-      current_savings:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-      purchase_horizon:
-        type: integer
-        format: int32
-        minimum: 0
-      aggregation_account_ids:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: string
-          format: uuid
-      inflation_rate:
-        type: number
-        format: float
-        default: 0
-        minimum: -1
-      horizon_frequency_interval:
-        type: string
-        default: year
-        enum:
-          - year
-          - quarter
-          - month
-          - week
-      investment_tax:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-        maximum: 1
-      deposit_schedule:
-        $ref: '#/definitions/CalculatorDepositSchedule1'
       account_ids:
         type: array
         default: null
@@ -4981,10 +5129,48 @@ definitions:
         items:
           type: string
           format: uuid
+      horizon_frequency_interval:
+        type: string
+        default: year
+        enum:
+          - year
+          - quarter
+          - month
+          - week
+      purchase_horizon:
+        type: integer
+        format: int32
+        minimum: 0
+      investment_tax:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
       portfolio_return:
         type: number
         format: float
         minimum: -1
+      deposit_schedule:
+        $ref: '#/definitions/CalculatorDepositSchedule1'
+      current_savings:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
     required:
       - portfolio_return
       - purchase_horizon
@@ -4995,34 +5181,39 @@ definitions:
         type: number
         format: float
         minimum: 0
+      down_payment:
+        type: number
+        format: float
+        minimum: 0
+      interest_rate:
+        type: number
+        format: float
+        default: 0.04
+        minimum: 0
       mortgage_term:
         type: integer
         format: int32
         default: 360
         minimum: 0
         maximum: 600
-      interest_rate:
-        type: number
-        format: float
-        default: 0.04
-        minimum: 0
-      down_payment:
-        type: number
-        format: float
-        minimum: 0
     required:
       - down_payment
       - periodic_payment
   mortgageCalculatorDownPaymentRequest:
     type: object
     properties:
+      periodic_payment:
+        type: number
+        format: float
+        minimum: 0
       home_price:
         type: number
         format: float
         minimum: 0
-      periodic_payment:
+      interest_rate:
         type: number
         format: float
+        default: 0.04
         minimum: 0
       mortgage_term:
         type: integer
@@ -5030,17 +5221,21 @@ definitions:
         default: 360
         minimum: 0
         maximum: 600
-      interest_rate:
-        type: number
-        format: float
-        default: 0.04
-        minimum: 0
     required:
       - home_price
       - periodic_payment
   mortgageCalculatorPeriodicPaymentRequest:
     type: object
     properties:
+      down_payment:
+        type: number
+        format: float
+        minimum: 0
+      interest_rate:
+        type: number
+        format: float
+        default: 0.04
+        minimum: 0
       home_price:
         type: number
         format: float
@@ -5051,56 +5246,20 @@ definitions:
         default: 360
         minimum: 0
         maximum: 600
-      interest_rate:
-        type: number
-        format: float
-        default: 0.04
-        minimum: 0
-      down_payment:
-        type: number
-        format: float
-        minimum: 0
     required:
       - down_payment
       - home_price
   retirementCalculatorExpensesRequest:
     type: object
     properties:
-      retirement_age:
-        type: integer
-        format: int32
-        default: 65
-        minimum: 0
-      retirement_tax:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-        maximum: 1
       retirement_savings:
         type: number
         format: float
         default: 0
         minimum: 0
-      aggregation_account_ids:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: string
-          format: uuid
-      inflation_rate:
-        type: number
-        format: float
-        default: 0
-        minimum: -1
-      deposit_schedule:
-        $ref: '#/definitions/CalculatorDepositSchedule1'
-      retirement_income:
-        type: number
-        format: float
-        default: 0
+      current_age:
+        type: integer
+        format: int32
         minimum: 0
       account_ids:
         type: array
@@ -5110,24 +5269,51 @@ definitions:
         items:
           type: string
           format: uuid
-      percent_of_expenses_covered:
+      retirement_income:
         type: number
         format: float
-        default: 1
+        default: 0
+        minimum: 0
+      retirement_tax:
+        type: number
+        format: float
+        default: 0
         minimum: 0
         maximum: 1
       death_age:
         type: integer
         format: int32
         minimum: 0
+      retirement_age:
+        type: integer
+        format: int32
+        default: 65
+        minimum: 0
+      percent_of_expenses_covered:
+        type: number
+        format: float
+        default: 1
+        minimum: 0
+        maximum: 1
       portfolio_return:
         type: number
         format: float
         minimum: -1
-      current_age:
-        type: integer
-        format: int32
-        minimum: 0
+      deposit_schedule:
+        $ref: '#/definitions/CalculatorDepositSchedule1'
+      inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
     required:
       - current_age
       - death_age
@@ -5135,41 +5321,14 @@ definitions:
   retirementCalculatorDepositAmountRequest:
     type: object
     properties:
-      retirement_age:
-        type: integer
-        format: int32
-        default: 65
-        minimum: 0
-      retirement_tax:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-        maximum: 1
       retirement_savings:
         type: number
         format: float
         default: 0
         minimum: 0
-      aggregation_account_ids:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: string
-          format: uuid
-      inflation_rate:
-        type: number
-        format: float
-        default: 0
-        minimum: -1
-      deposit_schedule:
-        $ref: '#/definitions/CalculatorDepositSchedule'
-      retirement_income:
-        type: number
-        format: float
-        default: 0
+      current_age:
+        type: integer
+        format: int32
         minimum: 0
       account_ids:
         type: array
@@ -5179,28 +5338,55 @@ definitions:
         items:
           type: string
           format: uuid
-      percent_of_expenses_covered:
+      retirement_income:
         type: number
         format: float
-        default: 1
+        default: 0
+        minimum: 0
+      retirement_tax:
+        type: number
+        format: float
+        default: 0
         minimum: 0
         maximum: 1
       death_age:
         type: integer
         format: int32
         minimum: 0
-      retirement_expenses:
+      retirement_age:
+        type: integer
+        format: int32
+        default: 65
+        minimum: 0
+      percent_of_expenses_covered:
         type: number
         format: float
+        default: 1
         minimum: 0
+        maximum: 1
       portfolio_return:
         type: number
         format: float
         minimum: -1
-      current_age:
-        type: integer
-        format: int32
+      retirement_expenses:
+        type: number
+        format: float
         minimum: 0
+      deposit_schedule:
+        $ref: '#/definitions/CalculatorDepositSchedule'
+      inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
     required:
       - current_age
       - death_age
@@ -5209,41 +5395,14 @@ definitions:
   retirementCalculatorPercentCoveredRequest:
     type: object
     properties:
-      retirement_age:
-        type: integer
-        format: int32
-        default: 65
-        minimum: 0
-      retirement_tax:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-        maximum: 1
       retirement_savings:
         type: number
         format: float
         default: 0
         minimum: 0
-      aggregation_account_ids:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: string
-          format: uuid
-      inflation_rate:
-        type: number
-        format: float
-        default: 0
-        minimum: -1
-      deposit_schedule:
-        $ref: '#/definitions/CalculatorDepositSchedule1'
-      retirement_income:
-        type: number
-        format: float
-        default: 0
+      current_age:
+        type: integer
+        format: int32
         minimum: 0
       account_ids:
         type: array
@@ -5253,22 +5412,49 @@ definitions:
         items:
           type: string
           format: uuid
+      retirement_income:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      retirement_tax:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
       death_age:
         type: integer
         format: int32
         minimum: 0
-      retirement_expenses:
-        type: number
-        format: float
+      retirement_age:
+        type: integer
+        format: int32
+        default: 65
         minimum: 0
       portfolio_return:
         type: number
         format: float
         minimum: -1
-      current_age:
-        type: integer
-        format: int32
+      retirement_expenses:
+        type: number
+        format: float
         minimum: 0
+      deposit_schedule:
+        $ref: '#/definitions/CalculatorDepositSchedule1'
+      inflation_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: -1
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
     required:
       - current_age
       - death_age
@@ -5277,37 +5463,12 @@ definitions:
   diversificationScoreRequest:
     type: object
     properties:
-      use_proxy_data:
-        type: boolean
-        default: false
-      model_id:
+      allocation_id:
         type: string
         format: uuid
         default: null
         x-nullable: true
-      create_log:
-        type: boolean
-        default: false
       end_date:
-        type: string
-        format: date
-        default: null
-        x-nullable: true
-      account_id:
-        type: string
-        format: uuid
-        default: null
-        x-nullable: true
-      portfolio_weights:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: number
-          format: float
-          minimum: 0
-      start_date:
         type: string
         format: date
         default: null
@@ -5318,11 +5479,33 @@ definitions:
         enum:
           - nucleus
           - integration
-      aggregation_account_id:
+      model_id:
         type: string
         format: uuid
         default: null
         x-nullable: true
+      account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      start_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      use_proxy_data:
+        type: boolean
+        default: false
+      portfolio_weights:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: number
+          format: float
+          minimum: 0
       portfolio_tickers:
         type: array
         default: null
@@ -5331,12 +5514,15 @@ definitions:
         minItems: 1
         items:
           type: string
-      portfolio_id:
+      create_log:
+        type: boolean
+        default: false
+      aggregation_account_id:
         type: string
         format: uuid
         default: null
         x-nullable: true
-      allocation_id:
+      portfolio_id:
         type: string
         format: uuid
         default: null
@@ -5347,88 +5533,6 @@ definitions:
       client_id:
         type: string
         format: uuid
-      emergency_fund_duration:
-        type: integer
-        format: int32
-        minimum: 1
-      transportation_costs:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-      other_expenses:
-        type: object
-      current_emergency_fund_balance:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-      insurance_payments:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-      frequency_unit:
-        type: string
-        default: month
-        enum:
-          - year
-          - six_months
-          - quarter
-          - month
-          - two_weeks
-          - week
-      aggregation_account_ids:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: string
-          format: uuid
-      lookback_periods:
-        type: integer
-        format: int32
-        default: 3
-        minimum: 1
-      housing_cost:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-      interest_rate:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-      account_ids:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: string
-          format: uuid
-      telecom_payments:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-      food_costs:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-      debt_payments:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-      utility_payments:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
       savings_horizon:
         type: array
         default:
@@ -5444,33 +5548,115 @@ definitions:
           type: integer
           format: int32
           minimum: 0
+      housing_cost:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      other_expenses:
+        type: object
+      account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
+      utility_payments:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      food_costs:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      debt_payments:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      lookback_periods:
+        type: integer
+        format: int32
+        default: 3
+        minimum: 1
+      frequency_unit:
+        type: string
+        default: month
+        enum:
+          - year
+          - six_months
+          - quarter
+          - month
+          - two_weeks
+          - week
+      current_emergency_fund_balance:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      insurance_payments:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      telecom_payments:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      transportation_costs:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      interest_rate:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      emergency_fund_duration:
+        type: integer
+        format: int32
+        minimum: 1
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
     required:
       - emergency_fund_duration
   WConfig1:
     type: object
     properties:
-      cash_amount:
-        type: number
-        format: float
-        default: 0
-        minimum: 0
-        maximum: 1
       w_min_minor:
         type: number
         format: float
         default: 0.05
         minimum: 0
         maximum: 1
-      w_max_major:
-        type: number
-        format: float
-        default: 1
-        minimum: 0
-        maximum: 1
       w_min_major:
         type: number
         format: float
         default: 0.05
+        minimum: 0
+        maximum: 1
+      cash_amount:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+        maximum: 1
+      w_max_major:
+        type: number
+        format: float
+        default: 1
         minimum: 0
         maximum: 1
       w_max_minor:
@@ -5490,6 +5676,13 @@ definitions:
         minItems: 1
         items:
           type: string
+      w_config:
+        $ref: '#/definitions/WConfig1'
+      min_assets:
+        type: integer
+        format: int32
+        default: 1
+        minimum: 1
       w_asset_config:
         type: object
         default: {}
@@ -5502,47 +5695,17 @@ definitions:
             - major
             - minor
             - cash
-      min_assets:
-        type: integer
-        format: int32
-        default: 1
-        minimum: 1
-      w_config:
-        $ref: '#/definitions/WConfig1'
   portfolioOptimizationScoreRequest:
     type: object
     properties:
-      use_proxy_data:
-        type: boolean
-        default: false
-      model_id:
+      opt_config:
+        $ref: '#/definitions/OptConfig1'
+      allocation_id:
         type: string
         format: uuid
         default: null
         x-nullable: true
-      create_log:
-        type: boolean
-        default: false
       end_date:
-        type: string
-        format: date
-        default: null
-        x-nullable: true
-      account_id:
-        type: string
-        format: uuid
-        default: null
-        x-nullable: true
-      portfolio_weights:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: number
-          format: float
-          minimum: 0
-      start_date:
         type: string
         format: date
         default: null
@@ -5553,24 +5716,19 @@ definitions:
         enum:
           - nucleus
           - integration
-      aggregation_account_id:
+      model_id:
         type: string
         format: uuid
         default: null
         x-nullable: true
-      opt_config:
-        $ref: '#/definitions/OptConfig1'
-      portfolio_tickers:
-        type: array
-        default: null
-        x-nullable: true
-        minimum: 1
-        minItems: 1
-        items:
-          type: string
-      portfolio_id:
+      account_id:
         type: string
         format: uuid
+        default: null
+        x-nullable: true
+      start_date:
+        type: string
+        format: date
         default: null
         x-nullable: true
       tgt_type:
@@ -5579,7 +5737,35 @@ definitions:
         enum:
           - risk
           - return
-      allocation_id:
+      use_proxy_data:
+        type: boolean
+        default: false
+      portfolio_weights:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: number
+          format: float
+          minimum: 0
+      portfolio_tickers:
+        type: array
+        default: null
+        x-nullable: true
+        minimum: 1
+        minItems: 1
+        items:
+          type: string
+      create_log:
+        type: boolean
+        default: false
+      aggregation_account_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      portfolio_id:
         type: string
         format: uuid
         default: null
@@ -5588,16 +5774,6 @@ definitions:
     type: object
     properties:
       liquidity_ratio_liabilities:
-        type: number
-        format: float
-        default: 0.1
-        minimum: 0
-      savings_ratio_net:
-        type: number
-        format: float
-        default: 0.1
-        minimum: 0
-      savings_ratio_gross:
         type: number
         format: float
         default: 0.1
@@ -5612,6 +5788,16 @@ definitions:
         format: float
         default: 1.5
         minimum: 0
+      savings_ratio_net:
+        type: number
+        format: float
+        default: 0.1
+        minimum: 0
+      savings_ratio_gross:
+        type: number
+        format: float
+        default: 0.1
+        minimum: 0
       liquidity_ratio_expenses:
         type: number
         format: float
@@ -5620,26 +5806,23 @@ definitions:
   financialHealthCheckRequest:
     type: object
     properties:
+      client_id:
+        type: string
+        format: uuid
+      ratio_targets:
+        $ref: '#/definitions/RatioTargets'
       liquid_assets:
         type: number
         format: float
         default: null
         x-nullable: true
         minimum: 0
-      client_id:
-        type: string
-        format: uuid
-      non_liquid_assets:
+      total_liabilities:
         type: number
         format: float
         default: null
         x-nullable: true
         minimum: 0
-      lookback_periods:
-        type: integer
-        format: int32
-        default: 3
-        minimum: 1
       gross_annual_income:
         type: number
         format: float
@@ -5652,13 +5835,18 @@ definitions:
         default: null
         x-nullable: true
         minimum: 0
-      monthly_expenses:
+      lookback_periods:
+        type: integer
+        format: int32
+        default: 3
+        minimum: 1
+      non_liquid_assets:
         type: number
         format: float
         default: null
         x-nullable: true
         minimum: 0
-      total_liabilities:
+      monthly_expenses:
         type: number
         format: float
         default: null
@@ -5670,21 +5858,9 @@ definitions:
         default: null
         x-nullable: true
         minimum: 0
-      ratio_targets:
-        $ref: '#/definitions/RatioTargets'
   RatioTargets1:
     type: object
     properties:
-      asset_turnover:
-        type: number
-        format: float
-        default: 1
-        minimum: 0
-      debt_ratio:
-        type: number
-        format: float
-        default: 0.5
-        minimum: 0
       return_on_equity:
         type: number
         format: float
@@ -5705,18 +5881,38 @@ definitions:
         format: float
         default: 0.1
         minimum: 0
+      debt_ratio:
+        type: number
+        format: float
+        default: 0.5
+        minimum: 0
+      asset_turnover:
+        type: number
+        format: float
+        default: 1
+        minimum: 0
   businessFinancialHealthCheckRequest:
     type: object
     properties:
-      period_month:
-        type: integer
-        format: int32
-        minimum: 1
-        maximum: 12
+      currency_code:
+        type: string
       client_id:
         type: string
         format: uuid
-      total_equity:
+      ratio_targets:
+        $ref: '#/definitions/RatioTargets1'
+      accounting_method:
+        type: string
+        enum:
+          - accrual
+          - cash
+      total_liabilities:
+        type: number
+        format: float
+        default: null
+        x-nullable: true
+        minimum: 0
+      total_assets:
         type: number
         format: float
         default: null
@@ -5724,43 +5920,34 @@ definitions:
         minimum: 0
       currency_conversion:
         type: string
+      period_quarter:
+        type: integer
+        format: int32
+        minimum: 1
+        maximum: 4
+      period_month:
+        type: integer
+        format: int32
+        minimum: 1
+        maximum: 12
+      total_equity:
+        type: number
+        format: float
+        default: null
+        x-nullable: true
+        minimum: 0
+      business_id:
+        type: string
+        format: uuid
+      period_year:
+        type: integer
+        format: int32
       total_revenue:
         type: number
         format: float
         default: null
         x-nullable: true
         minimum: 0
-      period_year:
-        type: integer
-        format: int32
-      total_assets:
-        type: number
-        format: float
-        default: null
-        x-nullable: true
-        minimum: 0
-      accounting_method:
-        type: string
-        enum:
-          - accrual
-          - cash
-      net_income:
-        type: number
-        format: float
-        default: null
-        x-nullable: true
-      period_type:
-        type: string
-        enum:
-          - calendar
-          - fiscal
-      period_quarter:
-        type: integer
-        format: int32
-        minimum: 1
-        maximum: 4
-      currency_code:
-        type: string
       period_length:
         type: string
         default: quarterly
@@ -5771,14 +5958,16 @@ definitions:
           - ytd
           - qtd
           - mtd
-      total_liabilities:
+      net_income:
         type: number
         format: float
         default: null
         x-nullable: true
-        minimum: 0
-      ratio_targets:
-        $ref: '#/definitions/RatioTargets1'
+      period_type:
+        type: string
+        enum:
+          - calendar
+          - fiscal
   Periods:
     type: object
     properties:
@@ -5797,44 +5986,25 @@ definitions:
   businessInvoiceAnalysisRequest:
     type: object
     properties:
-      currency_conversion:
+      currency_code:
         type: string
       client_id:
         type: string
         format: uuid
-      overdue_periods:
-        type: array
-        default:
-          - start: 1
-            end: 30
-          - start: 31
-            end: 60
-          - start: 61
-            end: 90
-          - start: 91
-            end: null
-        minItems: 1
-        items:
-          $ref: '#/definitions/Periods'
-      customer_id:
-        type: string
-        format: uuid
-      invoice_ids:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: string
-          format: uuid
+      show_history:
+        type: boolean
+        default: false
+      show_outstanding_invoices:
+        type: boolean
+        default: false
+      response_limit:
+        type: integer
+        format: int32
+        default: 10
+        minimum: 1
       end_date:
         type: string
         format: date
-      start_date:
-        type: string
-        format: date
-        default: null
-        x-nullable: true
       history_frequency_interval:
         type: string
         default: month
@@ -5844,6 +6014,13 @@ definitions:
           - month
           - quarter
           - year
+      currency_conversion:
+        type: string
+      start_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
       future_due_periods:
         type: array
         default:
@@ -5858,30 +6035,47 @@ definitions:
         minItems: 1
         items:
           $ref: '#/definitions/Periods'
+      overdue_periods:
+        type: array
+        default:
+          - start: 1
+            end: 30
+          - start: 31
+            end: 60
+          - start: 61
+            end: 90
+          - start: 91
+            end: null
+        minItems: 1
+        items:
+          $ref: '#/definitions/Periods'
+      business_id:
+        type: string
+        format: uuid
+      invoice_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
+      customer_id:
+        type: string
+        format: uuid
+  customerAnalysisRequest:
+    type: object
+    properties:
+      currency_code:
+        type: string
+      client_id:
+        type: string
+        format: uuid
       response_limit:
         type: integer
         format: int32
         default: 10
         minimum: 1
-      show_outstanding_invoices:
-        type: boolean
-        default: false
-      currency_code:
-        type: string
-      show_history:
-        type: boolean
-        default: false
-  customerAnalysisRequest:
-    type: object
-    properties:
-      currency_conversion:
-        type: string
-      client_id:
-        type: string
-        format: uuid
-      only_active_customers:
-        type: boolean
-        default: false
       end_date:
         type: string
         format: date
@@ -5890,21 +6084,13 @@ definitions:
         format: date
         default: null
         x-nullable: true
+      currency_conversion:
+        type: string
       start_date:
         type: string
         format: date
         default: null
         x-nullable: true
-      benchmark_start_date:
-        type: string
-        format: date
-        default: null
-        x-nullable: true
-      response_limit:
-        type: integer
-        format: int32
-        default: 10
-        minimum: 1
       customer_ids:
         type: array
         default: null
@@ -5913,44 +6099,25 @@ definitions:
         items:
           type: string
           format: uuid
-      currency_code:
-        type: string
-  cashAnalysisRequest:
-    type: object
-    properties:
-      currency_conversion:
-        type: string
-      client_id:
+      business_id:
         type: string
         format: uuid
-      end_date:
-        type: string
-        format: date
-      show_inflow_details:
-        type: boolean
-        default: false
-      only_cleansed:
-        type: boolean
-        default: false
-      start_date:
+      benchmark_start_date:
         type: string
         format: date
         default: null
         x-nullable: true
-      history_frequency_interval:
-        type: string
-        default: month
-        enum:
-          - day
-          - week
-          - month
-          - quarter
-          - year
-      currency_code:
-        type: string
-      show_outflow_details:
+      only_active_customers:
         type: boolean
         default: false
+  cashAnalysisRequest:
+    type: object
+    properties:
+      currency_code:
+        type: string
+      client_id:
+        type: string
+        format: uuid
       show_history:
         type: boolean
         default: false
@@ -5961,37 +6128,9 @@ definitions:
           - all
           - external
           - internal
-  financialStatementAnalysisRequest:
-    type: object
-    properties:
-      statement_type:
-        type: string
-        default: all
-        enum:
-          - income_statement
-          - balance_sheet
-          - all
-      client_id:
-        type: string
-        format: uuid
-      period_month:
-        type: integer
-        format: int32
-        minimum: 1
-        maximum: 12
-      currency_conversion:
-        type: string
       end_date:
         type: string
         format: date
-      period_year:
-        type: integer
-        format: int32
-      start_date:
-        type: string
-        format: date
-        default: null
-        x-nullable: true
       history_frequency_interval:
         type: string
         default: month
@@ -6001,6 +6140,96 @@ definitions:
           - month
           - quarter
           - year
+      show_inflow_details:
+        type: boolean
+        default: false
+      currency_conversion:
+        type: string
+      start_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      transaction_status_scope:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+      show_outflow_details:
+        type: boolean
+        default: false
+      only_cleansed:
+        type: boolean
+        default: false
+  financialStatementAnalysisRequest:
+    type: object
+    properties:
+      currency_code:
+        type: string
+      client_id:
+        type: string
+        format: uuid
+      show_history:
+        type: boolean
+        default: false
+      accounting_method:
+        type: string
+        enum:
+          - accrual
+          - cash
+      end_date:
+        type: string
+        format: date
+      history_frequency_interval:
+        type: string
+        default: month
+        enum:
+          - day
+          - week
+          - month
+          - quarter
+          - year
+      currency_conversion:
+        type: string
+      period_quarter:
+        type: integer
+        format: int32
+        minimum: 1
+        maximum: 4
+      statement_type:
+        type: string
+        default: all
+        enum:
+          - income_statement
+          - balance_sheet
+          - all
+      period_month:
+        type: integer
+        format: int32
+        minimum: 1
+        maximum: 12
+      start_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      business_id:
+        type: string
+        format: uuid
+      period_year:
+        type: integer
+        format: int32
+      period_length:
+        type: string
+        default: quarterly
+        enum:
+          - annual
+          - quarterly
+          - monthly
+          - ytd
+          - qtd
+          - mtd
       stat_names:
         type: array
         minItems: 1
@@ -6020,38 +6249,26 @@ definitions:
             - gross_profit
             - net_income
             - ebitda
-      accounting_method:
-        type: string
-        enum:
-          - accrual
-          - cash
       period_type:
         type: string
         enum:
           - calendar
           - fiscal
-      period_quarter:
-        type: integer
-        format: int32
-        minimum: 1
-        maximum: 4
-      currency_code:
-        type: string
-      show_history:
-        type: boolean
-        default: false
-      period_length:
-        type: string
-        default: quarterly
-        enum:
-          - annual
-          - quarterly
-          - monthly
-          - ytd
-          - qtd
-          - mtd
     required:
       - accounting_method
+  BudgetComponent:
+    type: object
+    properties:
+      value:
+        type: number
+        minimum: 0
+      category:
+        type: string
+      subcategory:
+        type: string
+    required:
+      - category
+      - value
   BudgetAggregationAccount:
     type: object
     properties:
@@ -6060,34 +6277,45 @@ definitions:
         format: uuid
     required:
       - aggregation_account_id
-  BudgetComponent:
-    type: object
-    properties:
-      category:
-        type: string
-      value:
-        type: number
-        minimum: 0
-      subcategory:
-        type: string
-    required:
-      - category
-      - value
   BudgetDetails:
     type: object
     properties:
+      currency_code:
+        type: string
       client_id:
         type: string
         format: uuid
-      aggregation_accounts:
-        type: array
-        items:
-          $ref: '#/definitions/BudgetAggregationAccount'
+      frequency:
+        type: integer
+        format: int32
+        default: 1
+        minimum: 1
+      end_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      total_value:
+        type: number
+        format: float
+        minimum: 0
       budget:
         type: array
         minItems: 1
         items:
           $ref: '#/definitions/BudgetComponent'
+      account_id:
+        type: string
+        format: uuid
+      start_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      aggregation_accounts:
+        type: array
+        items:
+          $ref: '#/definitions/BudgetAggregationAccount'
       frequency_unit:
         type: string
         enum:
@@ -6097,40 +6325,30 @@ definitions:
           - monthly
           - quarterly
           - annually
-      end_date:
-        type: string
-        format: date
-        default: null
-        x-nullable: true
-      account_id:
-        type: string
-        format: uuid
-      start_date:
-        type: string
-        format: date
-        default: null
-        x-nullable: true
-      frequency:
-        type: integer
-        format: int32
-        default: 1
-        minimum: 1
-      total_value:
-        type: number
-        format: float
-        minimum: 0
-      currency_code:
-        type: string
     required:
       - frequency_unit
   budgetCalculatorRequest:
     type: object
     properties:
+      scope:
+        type: string
+        default: all
+        enum:
+          - all
+          - external
+          - internal
       currency_conversion:
         type: string
-      budget_details:
-        $ref: '#/definitions/BudgetDetails'
-      only_cleansed:
+      relative_lookback:
+        type: boolean
+        default: true
+      budget_id:
+        type: string
+        format: uuid
+      as_of_date:
+        type: string
+        format: date
+      show_average_spend:
         type: boolean
         default: false
       lookback_periods:
@@ -6138,66 +6356,29 @@ definitions:
         format: int32
         default: 1
         minimum: 1
-      budget_id:
-        type: string
-        format: uuid
-      relative_lookback:
+      budget_details:
+        $ref: '#/definitions/BudgetDetails'
+      transaction_status_scope:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+      only_cleansed:
         type: boolean
-        default: true
-      as_of_date:
-        type: string
-        format: date
+        default: false
       show_budget_track:
         type: boolean
         default: true
-      scope:
-        type: string
-        default: all
-        enum:
-          - all
-          - external
-          - internal
-      show_average_spend:
-        type: boolean
-        default: false
   cashFlowAnalysisRequest:
     type: object
     properties:
-      currency_conversion:
+      currency_code:
         type: string
       client_id:
         type: string
         format: uuid
-      end_date:
-        type: string
-        format: date
-        default: null
-        x-nullable: true
-      benchmark_end_date:
-        type: string
-        format: date
-        default: null
-        x-nullable: true
-      aggregation_account_ids:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: string
-          format: uuid
-      only_cleansed:
-        type: boolean
-        default: false
-      start_date:
-        type: string
-        format: date
-        default: null
-        x-nullable: true
-      show_income_details:
-        type: boolean
-        default: false
-      show_spending_details:
+      show_history:
         type: boolean
         default: false
       benchmark_start_date:
@@ -6205,6 +6386,18 @@ definitions:
         format: date
         default: null
         x-nullable: true
+      scope:
+        type: string
+        default: all
+        enum:
+          - all
+          - external
+          - internal
+      end_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
       account_ids:
         type: array
         default: null
@@ -6213,30 +6406,63 @@ definitions:
         items:
           type: string
           format: uuid
-      currency_code:
+      benchmark_end_date:
         type: string
-      show_history:
+        format: date
+        default: null
+        x-nullable: true
+      currency_conversion:
+        type: string
+      start_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      transaction_status_scope:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+      show_income_details:
         type: boolean
         default: false
-      scope:
+      only_cleansed:
+        type: boolean
+        default: false
+      household_id:
         type: string
-        default: all
-        enum:
-          - all
-          - external
-          - internal
+        format: uuid
+      show_spending_details:
+        type: boolean
+        default: false
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
   financialPictureRequest:
     type: object
     properties:
-      currency_conversion:
+      currency_code:
         type: string
       client_id:
         type: string
         format: uuid
-      create_log:
+      show_history:
         type: boolean
         default: false
       end_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      currency_conversion:
+        type: string
+      start_date:
         type: string
         format: date
         default: null
@@ -6244,56 +6470,33 @@ definitions:
       show_category_breakdown:
         type: boolean
         default: true
-      start_date:
-        type: string
-        format: date
-        default: null
-        x-nullable: true
-      currency_code:
-        type: string
-      show_history:
-        type: boolean
-        default: false
       show_change:
         type: boolean
         default: false
-    required:
-      - client_id
+      household_id:
+        type: string
+        format: uuid
+      create_log:
+        type: boolean
+        default: false
   recurringTransactionAnalysisRequest:
     type: object
     properties:
-      currency_conversion:
+      currency_code:
         type: string
       client_id:
         type: string
         format: uuid
+      scope:
+        type: string
+        default: all
+        enum:
+          - all
+          - external
+          - internal
       end_date:
         type: string
         format: date
-      amount_deviation_threshold:
-        type: number
-        format: float
-        default: 0.05
-        minimum: 0
-        maximum: 1
-      aggregation_account_ids:
-        type: array
-        default: null
-        x-nullable: true
-        minItems: 1
-        items:
-          type: string
-          format: uuid
-      start_date:
-        type: string
-        format: date
-        default: null
-        x-nullable: true
-      interval_deviation_threshold:
-        type: integer
-        format: int32
-        default: 3
-        minimum: 0
       account_ids:
         type: array
         default: null
@@ -6302,35 +6505,39 @@ definitions:
         items:
           type: string
           format: uuid
+      currency_conversion:
+        type: string
+      interval_deviation_threshold:
+        type: integer
+        format: int32
+        default: 3
+        minimum: 0
+      amount_deviation_threshold:
+        type: number
+        format: float
+        default: 0.05
+        minimum: 0
+        maximum: 1
       analyze_transactions:
         type: boolean
         default: true
-      currency_code:
+      start_date:
         type: string
+        format: date
+        default: null
+        x-nullable: true
+      flag_transactions:
+        type: boolean
+        default: false
+      transaction_status_scope:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
       only_cleansed:
         type: boolean
         default: false
-      scope:
-        type: string
-        default: all
-        enum:
-          - all
-          - external
-          - internal
-      show_recurring_details:
-        type: boolean
-        default: false
-  feeAnalysisRequest:
-    type: object
-    properties:
-      currency_conversion:
-        type: string
-      client_id:
-        type: string
-        format: uuid
-      end_date:
-        type: string
-        format: date
       aggregation_account_ids:
         type: array
         default: null
@@ -6339,22 +6546,57 @@ definitions:
         items:
           type: string
           format: uuid
+      show_recurring_details:
+        type: boolean
+        default: false
+  feeAnalysisRequest:
+    type: object
+    properties:
+      currency_code:
+        type: string
+      client_id:
+        type: string
+        format: uuid
+      end_date:
+        type: string
+        format: date
+      currency_conversion:
+        type: string
       start_date:
         type: string
         format: date
         default: null
         x-nullable: true
-      currency_code:
+      transaction_status_scope:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
+  Location:
+    type: object
+    properties:
+      country:
         type: string
+        default: null
+        x-nullable: true
   cardTransactionAuthorizationRequest:
     type: object
     properties:
-      amount:
-        type: number
-        format: float
-      card_id:
+      currency_code:
         type: string
-        format: uuid
+      memo:
+        type: string
+        default: null
+        x-nullable: true
       partial_auth:
         type: boolean
         default: false
@@ -6364,26 +6606,73 @@ definitions:
           - atm_withdrawal
           - purchase
           - other
-      currency_code:
+      description:
         type: string
+        default: null
+        x-nullable: true
+      transaction_category_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
+      use_audit_log:
+        type: boolean
+        default: false
+      merchant_category_code:
+        type: integer
+        format: int32
+        default: null
+        x-nullable: true
+        minLength: 4
+        maxLength: 4
+      card_id:
+        type: string
+        format: uuid
+      transaction_category:
+        type: string
+        default: null
+        x-nullable: true
+      cleanse_data:
+        type: boolean
+        default: false
       auth_type:
         type: array
+        default:
+          - spending_control
         minItems: 1
         items:
           type: string
           enum:
-            - balance
             - spending_control
-      merchant_category:
+      mid:
         type: string
         default: null
         x-nullable: true
+      transaction_status_scope:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+      location:
+        $ref: '#/definitions/Location'
+      merchant:
+        type: string
+        default: null
+        x-nullable: true
+      amount:
+        type: number
+        format: float
       date:
         type: string
         format: date-time
+      merchant_id:
+        type: string
+        format: uuid
+        default: null
+        x-nullable: true
     required:
       - amount
-      - auth_type
       - card_id
       - currency_code
       - date
@@ -6391,14 +6680,442 @@ definitions:
   cardLimitCheckRequest:
     type: object
     properties:
+      currency_code:
+        type: string
       client_id:
         type: string
         format: uuid
-      currency_code:
-        type: string
       as_of_date:
         type: string
         format: date-time
+      transaction_status_scope:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+      create_log:
+        type: boolean
+        default: false
     required:
       - client_id
       - currency_code
+  cardAnalysisRequest:
+    type: object
+    properties:
+      currency_code:
+        type: string
+      client_id:
+        type: string
+        format: uuid
+      show_history:
+        type: boolean
+        default: false
+      response_limit:
+        type: integer
+        format: int32
+        default: 10
+        minimum: 1
+      currency_conversion:
+        type: string
+      end_date:
+        type: string
+        format: date
+      history_frequency_interval:
+        type: string
+        default: month
+        enum:
+          - day
+          - week
+          - month
+          - quarter
+          - year
+      show_top_cards:
+        type: boolean
+        default: false
+      start_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      business_id:
+        type: string
+        format: uuid
+      transaction_status_scope:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+      card_status_scope:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+      show_top_cardholders:
+        type: boolean
+        default: false
+      card_program_id:
+        type: string
+        format: uuid
+      show_top_businesses:
+        type: boolean
+        default: false
+  spendingAnalysisRequest:
+    type: object
+    properties:
+      merchant_scope:
+        type: array
+        items:
+          type: string
+          format: uuid
+      account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
+      business_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
+      card_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
+      show_by_merchant:
+        type: boolean
+        default: false
+      show_by_period:
+        type: boolean
+        default: false
+      only_cleansed:
+        type: boolean
+        default: false
+      frequency:
+        type: integer
+        format: int32
+        default: 1
+        minimum: 1
+      end_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      as_of_date:
+        type: string
+        format: date
+      transaction_category_scope:
+        type: array
+        items:
+          type: string
+          format: uuid
+      start_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      card_status_scope:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+      only_active_clients:
+        type: boolean
+        default: false
+      lookback_periods:
+        type: integer
+        format: int32
+        default: 0
+        minimum: 0
+      frequency_unit:
+        type: string
+        enum:
+          - daily
+          - weekly
+          - bi-weekly
+          - monthly
+          - quarterly
+          - annually
+      household_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
+      aggregation_account_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
+      currency_code:
+        type: string
+      client_ids:
+        type: array
+        default: null
+        x-nullable: true
+        minItems: 1
+        items:
+          type: string
+          format: uuid
+      scope:
+        type: string
+        default: all
+        enum:
+          - all
+          - external
+          - internal
+          - cards
+      currency_conversion:
+        type: string
+      transaction_status_scope:
+        type: array
+        default: null
+        x-nullable: true
+        items:
+          type: string
+      show_by_category:
+        type: boolean
+        default: false
+    required:
+      - frequency_unit
+  performanceCalculatorRequest:
+    type: object
+    properties:
+      annualized_return_period:
+        type: string
+        default: D
+        enum:
+          - 'Y'
+          - Q
+          - M
+          - D
+      risk_free_alpha:
+        type: number
+        format: float
+        default: 0
+      allocation_id:
+        type: string
+        format: uuid
+      mean_percentile_monte_carlo:
+        type: number
+        format: float
+        default: 50
+        minimum: 0
+      model_id:
+        type: string
+        format: uuid
+      mar_downside_deviation:
+        type: number
+        format: float
+        default: 0
+      risk_free_sharpe:
+        type: number
+        format: float
+        default: 0
+      benchmark_id:
+        type: string
+        format: uuid
+      risk_free_sortino:
+        type: number
+        format: float
+        default: 0
+      household_id:
+        type: string
+        format: uuid
+      min_percentile_monte_carlo:
+        type: number
+        format: float
+        default: 20
+        minimum: 0
+      moving_average_n_day:
+        type: integer
+        format: int32
+        default: 7
+        minimum: 1
+      active_premium_period:
+        type: string
+        default: D
+        enum:
+          - 'Y'
+          - Q
+          - M
+          - D
+      stat_name:
+        type: string
+      end_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      start_date:
+        type: string
+        format: date
+        default: null
+        x-nullable: true
+      n_day_returns:
+        type: integer
+        format: int32
+        default: 7
+        minimum: 1
+      var_conf_interval:
+        type: number
+        format: float
+        default: 95
+      period_type:
+        type: string
+        default: D
+        enum:
+          - 'Y'
+          - Q
+          - M
+          - D
+      risk_free_treynor:
+        type: number
+        format: float
+        default: 0
+      n_rolling_max_drawdown:
+        type: integer
+        format: int32
+        default: 7
+        minimum: 1
+      portfolio_id:
+        type: string
+        format: uuid
+      num_sim_monte_carlo:
+        type: integer
+        format: int32
+        default: 1000
+        minimum: 1
+      goal_id:
+        type: string
+        format: uuid
+      account_id:
+        type: string
+        format: uuid
+      security_id:
+        type: string
+        format: uuid
+      n_path_monte_carlo:
+        type: integer
+        format: int32
+        default: 100
+        minimum: 1
+      client_id:
+        type: string
+        format: uuid
+      n_rolling_volatility:
+        type: integer
+        format: int32
+        default: 7
+        minimum: 1
+      hist_factor:
+        type: number
+        format: float
+        default: 5
+      max_percentile_monte_carlo:
+        type: number
+        format: float
+        default: 80
+        minimum: 0
+    required:
+      - stat_name
+  orderRebalanceRequest:
+    type: object
+    properties:
+      non_fractional:
+        type: boolean
+        default: false
+      order_scope:
+        type: string
+        enum:
+          - all
+          - buy_only
+          - sell_only
+      buy_threshold:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      commit_orders:
+        type: boolean
+        default: true
+      account_id:
+        type: string
+        format: uuid
+      port_threshold:
+        type: number
+        format: float
+        default: 0
+        minimum: 0
+      use_cash_available:
+        type: boolean
+        default: false
+      use_strategic:
+        type: boolean
+        default: false
+      sell_transaction_code_id:
+        type: string
+        format: uuid
+      buy_transaction_code_id:
+        type: string
+        format: uuid
+      cash_portfolio_id:
+        type: string
+        format: uuid
+      restrictions_on:
+        type: boolean
+        default: false
+      sell_threshold:
+        type: number
+        format: float
+        default: 0
+        minimum: 1
+      portfolio_id:
+        type: string
+        format: uuid
+    required:
+      - order_scope
+  Answer:
+    type: object
+    properties:
+      answer_id:
+        type: string
+        format: uuid
+    required:
+      - answer_id
+  decisionTreeResultRequest:
+    type: object
+    properties:
+      entity_type:
+        type: string
+        enum:
+          - model
+          - allocation
+          - insurance_quote
+          - financial_offer
+      answers:
+        type: array
+        minItems: 1
+        items:
+          $ref: '#/definitions/Answer'
+    required:
+      - answers
+      - entity_type

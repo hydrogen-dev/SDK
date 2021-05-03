@@ -129,7 +129,7 @@ module NucleusApi
 
     def initialize
       @scheme = 'https'
-      @host = 'sandbox.hydrogenplatform.com'
+      @host = 'api.hydrogenplatform.com'
       @base_path = '/'
       @api_key = {}
       @api_key_prefix = {}

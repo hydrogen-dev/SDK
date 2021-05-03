@@ -2,7 +2,7 @@
 
 Hydrogen Nucleus API
 - API version: 1.9.0
-  - Build date: 04-15-2021
+  - Build date: 04-28-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 
@@ -21,11 +21,11 @@ https://www.hydrogenplatform.com/docs/nucleus/v1
 ```
 pip install hydrogen-nucleus-api
 ```
-(you may need to run `pip` with root permission: `sudo pip install hydrogen-nucleus-api`)
+(you may need to run `pip` with root permission: `sudo pip install git+https://github.com//.git`)
 
 Then import the package:
 ```python
-import nucleus_api
+import nucleus_api 
 ```
 
 ## Getting Started

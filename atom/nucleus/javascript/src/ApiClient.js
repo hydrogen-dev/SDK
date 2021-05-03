@@ -47,9 +47,9 @@
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default https://sandbox.hydrogenplatform.com
+     * @default https://api.hydrogenplatform.com
      */
-    this.basePath = 'https://sandbox.hydrogenplatform.com'.replace(/\/+$/, '');
+    this.basePath = 'https://api.hydrogenplatform.com'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.

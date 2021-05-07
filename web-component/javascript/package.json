@@ -1,5 +1,5 @@
 {
-  "name": "app_token_api",
+  "name": "@hydrogenplatform/app_token_api",
   "version": "1.0.0",
   "description": "The_app_token_api",
   "license": "Unlicense",

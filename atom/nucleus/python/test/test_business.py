@@ -32,7 +32,7 @@ class TestBusiness(unittest.TestCase):
     def testBusiness(self):
         """Test Business"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.business.Business()  # noqa: E501
+        # model = nucleus_api.models.business.Business()  # noqa: E501
         pass
 
 

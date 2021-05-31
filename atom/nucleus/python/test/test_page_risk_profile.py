@@ -32,7 +32,7 @@ class TestPageRiskProfile(unittest.TestCase):
     def testPageRiskProfile(self):
         """Test PageRiskProfile"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_risk_profile.PageRiskProfile()  # noqa: E501
+        # model = nucleus_api.models.page_risk_profile.PageRiskProfile()  # noqa: E501
         pass
 
 

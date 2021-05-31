@@ -32,7 +32,7 @@ class TestScore(unittest.TestCase):
     def testScore(self):
         """Test Score"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.score.Score()  # noqa: E501
+        # model = nucleus_api.models.score.Score()  # noqa: E501
         pass
 
 

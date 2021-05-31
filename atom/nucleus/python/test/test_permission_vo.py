@@ -32,7 +32,7 @@ class TestPermissionVO(unittest.TestCase):
     def testPermissionVO(self):
         """Test PermissionVO"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.permission_vo.PermissionVO()  # noqa: E501
+        # model = nucleus_api.models.permission_vo.PermissionVO()  # noqa: E501
         pass
 
 

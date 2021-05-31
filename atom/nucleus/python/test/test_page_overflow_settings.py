@@ -32,7 +32,7 @@ class TestPageOverflowSettings(unittest.TestCase):
     def testPageOverflowSettings(self):
         """Test PageOverflowSettings"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_overflow_settings.PageOverflowSettings()  # noqa: E501
+        # model = nucleus_api.models.page_overflow_settings.PageOverflowSettings()  # noqa: E501
         pass
 
 

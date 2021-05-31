@@ -84,6 +84,13 @@ class CustomerRevenueTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "contact_id"
+     */
+    public function testPropertyContactId()
+    {
+    }
+
+    /**
      * Test attribute "create_date"
      */
     public function testPropertyCreateDate()
@@ -94,13 +101,6 @@ class CustomerRevenueTest extends \PHPUnit_Framework_TestCase
      * Test attribute "currency_code"
      */
     public function testPropertyCurrencyCode()
-    {
-    }
-
-    /**
-     * Test attribute "customer_id"
-     */
-    public function testPropertyCustomerId()
     {
     }
 

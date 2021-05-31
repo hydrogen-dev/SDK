@@ -32,7 +32,7 @@ class TestPageGoalTrack(unittest.TestCase):
     def testPageGoalTrack(self):
         """Test PageGoalTrack"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_goal_track.PageGoalTrack()  # noqa: E501
+        # model = nucleus_api.models.page_goal_track.PageGoalTrack()  # noqa: E501
         pass
 
 

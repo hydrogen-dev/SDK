@@ -126,6 +126,13 @@ class AggregationAccountTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "business_id"
+     */
+    public function testPropertyBusinessId()
+    {
+    }
+
+    /**
      * Test attribute "category"
      */
     public function testPropertyCategory()

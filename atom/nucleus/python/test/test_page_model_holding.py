@@ -32,7 +32,7 @@ class TestPageModelHolding(unittest.TestCase):
     def testPageModelHolding(self):
         """Test PageModelHolding"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_model_holding.PageModelHolding()  # noqa: E501
+        # model = nucleus_api.models.page_model_holding.PageModelHolding()  # noqa: E501
         pass
 
 

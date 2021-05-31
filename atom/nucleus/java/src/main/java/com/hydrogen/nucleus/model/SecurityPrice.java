@@ -14,17 +14,22 @@
 package com.hydrogen.nucleus.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
+import java.io.IOException;
 import java.util.UUID;
 import org.threeten.bp.OffsetDateTime;
 
 /**
  * SecurityPrice
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-12T05:33:30.744Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-24T10:39:20.203Z")
 public class SecurityPrice {
   @SerializedName("adjusted_price")
   private Double adjustedPrice = null;
@@ -83,6 +88,11 @@ public class SecurityPrice {
     this.adjustedPrice = adjustedPrice;
   }
 
+  public SecurityPrice createDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
+    return this;
+  }
+
    /**
    * Get createDate
    * @return createDate
@@ -90,6 +100,10 @@ public class SecurityPrice {
   @ApiModelProperty(example = "2018-06-28T18:17:23.579+0000", value = "")
   public OffsetDateTime getCreateDate() {
     return createDate;
+  }
+
+  public void setCreateDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
   }
 
   public SecurityPrice currencyCode(String currencyCode) {
@@ -146,6 +160,11 @@ public class SecurityPrice {
     this.high = high;
   }
 
+  public SecurityPrice id(UUID id) {
+    this.id = id;
+    return this;
+  }
+
    /**
    * Get id
    * @return id
@@ -153,6 +172,10 @@ public class SecurityPrice {
   @ApiModelProperty(example = "000183ac-2288-4564-a76b-119f4694be98", value = "")
   public UUID getId() {
     return id;
+  }
+
+  public void setId(UUID id) {
+    this.id = id;
   }
 
   public SecurityPrice low(Double low) {
@@ -209,6 +232,11 @@ public class SecurityPrice {
     this.price = price;
   }
 
+  public SecurityPrice secondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
+    return this;
+  }
+
    /**
    * Get secondaryId
    * @return secondaryId
@@ -216,6 +244,10 @@ public class SecurityPrice {
   @ApiModelProperty(example = "7289243787238", value = "")
   public String getSecondaryId() {
     return secondaryId;
+  }
+
+  public void setSecondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
   }
 
   public SecurityPrice securityId(UUID securityId) {
@@ -236,6 +268,11 @@ public class SecurityPrice {
     this.securityId = securityId;
   }
 
+  public SecurityPrice updateDate(OffsetDateTime updateDate) {
+    this.updateDate = updateDate;
+    return this;
+  }
+
    /**
    * Get updateDate
    * @return updateDate
@@ -243,6 +280,10 @@ public class SecurityPrice {
   @ApiModelProperty(example = "2018-06-28T18:17:23.579+0000", value = "")
   public OffsetDateTime getUpdateDate() {
     return updateDate;
+  }
+
+  public void setUpdateDate(OffsetDateTime updateDate) {
+    this.updateDate = updateDate;
   }
 
   public SecurityPrice volume(Double volume) {
@@ -265,7 +306,7 @@ public class SecurityPrice {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -320,7 +361,7 @@ public class SecurityPrice {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

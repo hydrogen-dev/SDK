@@ -32,7 +32,7 @@ class TestModelHolding(unittest.TestCase):
     def testModelHolding(self):
         """Test ModelHolding"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.model_holding.ModelHolding()  # noqa: E501
+        # model = nucleus_api.models.model_holding.ModelHolding()  # noqa: E501
         pass
 
 

@@ -73,6 +73,8 @@ describe 'ResourceApi' do
   # Get all account category mapping
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter filter
+  # @option opts [String] :hydrogen_account_category_id hydrogen_account_category_id
+  # @option opts [BOOLEAN] :match_primary match_primary
   # @option opts [String] :tenant_name tenant_name
   # @option opts [String] :vendor_name vendor_name
   # @return [Array<Object>]
@@ -200,6 +202,8 @@ describe 'ResourceApi' do
   # Get all transaction category mapping
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter filter
+  # @option opts [String] :hydrogen_transaction_category_id hydrogen_transaction_category_id
+  # @option opts [BOOLEAN] :match_primary match_primary
   # @option opts [String] :tenant_name tenant_name
   # @option opts [String] :vendor_name vendor_name
   # @return [Array<Object>]

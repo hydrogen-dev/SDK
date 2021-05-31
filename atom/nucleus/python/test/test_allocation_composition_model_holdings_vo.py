@@ -32,7 +32,7 @@ class TestAllocationCompositionModelHoldingsVO(unittest.TestCase):
     def testAllocationCompositionModelHoldingsVO(self):
         """Test AllocationCompositionModelHoldingsVO"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.allocation_composition_model_holdings_vo.AllocationCompositionModelHoldingsVO()  # noqa: E501
+        # model = nucleus_api.models.allocation_composition_model_holdings_vo.AllocationCompositionModelHoldingsVO()  # noqa: E501
         pass
 
 

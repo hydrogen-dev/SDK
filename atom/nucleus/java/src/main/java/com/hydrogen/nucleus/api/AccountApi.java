@@ -13,7 +13,6 @@
 
 package com.hydrogen.nucleus.api;
 
-import com.hydrogen.nucleus.model.AccountAllocationMapping;
 import com.hydrogen.nucleus.ApiCallback;
 import com.hydrogen.nucleus.ApiClient;
 import com.hydrogen.nucleus.ApiException;
@@ -29,6 +28,7 @@ import java.io.IOException;
 
 
 import com.hydrogen.nucleus.model.Account;
+import com.hydrogen.nucleus.model.AccountAllocationMapping;
 import com.hydrogen.nucleus.model.AccountPermissionVO;
 import com.hydrogen.nucleus.model.AccountStatus;
 import com.hydrogen.nucleus.model.AccountType;
@@ -106,7 +106,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -228,7 +228,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -350,7 +350,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -438,14 +438,14 @@ public class AccountApi {
     }
     /**
      * Build call for createAccountUsingPost
-     * @param clientAccountRequest clientAccountRequest (required)
+     * @param account account (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createAccountUsingPostCall(Account clientAccountRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = clientAccountRequest;
+    public com.squareup.okhttp.Call createAccountUsingPostCall(Account account, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = account;
 
         // create path and map variables
         String localVarPath = "/nucleus/v1/account";
@@ -472,7 +472,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -486,15 +486,15 @@ public class AccountApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createAccountUsingPostValidateBeforeCall(Account clientAccountRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createAccountUsingPostValidateBeforeCall(Account account, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'clientAccountRequest' is set
-        if (clientAccountRequest == null) {
-            throw new ApiException("Missing the required parameter 'clientAccountRequest' when calling createAccountUsingPost(Async)");
+        // verify the required parameter 'account' is set
+        if (account == null) {
+            throw new ApiException("Missing the required parameter 'account' when calling createAccountUsingPost(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = createAccountUsingPostCall(clientAccountRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createAccountUsingPostCall(account, progressListener, progressRequestListener);
         return call;
 
     }
@@ -502,24 +502,24 @@ public class AccountApi {
     /**
      * Create an account
      * Create an account under a client.
-     * @param clientAccountRequest clientAccountRequest (required)
+     * @param account account (required)
      * @return Account
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Account createAccountUsingPost(Account clientAccountRequest) throws ApiException {
-        ApiResponse<Account> resp = createAccountUsingPostWithHttpInfo(clientAccountRequest);
+    public Account createAccountUsingPost(Account account) throws ApiException {
+        ApiResponse<Account> resp = createAccountUsingPostWithHttpInfo(account);
         return resp.getData();
     }
 
     /**
      * Create an account
      * Create an account under a client.
-     * @param clientAccountRequest clientAccountRequest (required)
+     * @param account account (required)
      * @return ApiResponse&lt;Account&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Account> createAccountUsingPostWithHttpInfo(Account clientAccountRequest) throws ApiException {
-        com.squareup.okhttp.Call call = createAccountUsingPostValidateBeforeCall(clientAccountRequest, null, null);
+    public ApiResponse<Account> createAccountUsingPostWithHttpInfo(Account account) throws ApiException {
+        com.squareup.okhttp.Call call = createAccountUsingPostValidateBeforeCall(account, null, null);
         Type localVarReturnType = new TypeToken<Account>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -527,12 +527,12 @@ public class AccountApi {
     /**
      * Create an account (asynchronously)
      * Create an account under a client.
-     * @param clientAccountRequest clientAccountRequest (required)
+     * @param account account (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createAccountUsingPostAsync(Account clientAccountRequest, final ApiCallback<Account> callback) throws ApiException {
+    public com.squareup.okhttp.Call createAccountUsingPostAsync(Account account, final ApiCallback<Account> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -553,7 +553,7 @@ public class AccountApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createAccountUsingPostValidateBeforeCall(clientAccountRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createAccountUsingPostValidateBeforeCall(account, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Account>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -595,7 +595,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -714,7 +714,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -837,7 +837,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -956,7 +956,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1075,7 +1075,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1207,7 +1207,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1350,7 +1350,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1480,7 +1480,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1621,7 +1621,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1768,7 +1768,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1897,7 +1897,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -2033,7 +2033,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -2163,7 +2163,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -2299,7 +2299,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -2429,7 +2429,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -2552,7 +2552,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -2688,7 +2688,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -2845,7 +2845,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -3019,7 +3019,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -3165,7 +3165,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -3289,7 +3289,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -3392,7 +3392,7 @@ public class AccountApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateAccountAllocationMappingUsingPutCall(UUID accountAllocationId, AccountAllocationMapping accountAllocationMapping, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateAccountAllocationMappingUsingPutCall(UUID accountAllocationId, Object accountAllocationMapping, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = accountAllocationMapping;
 
         // create path and map variables
@@ -3421,7 +3421,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -3435,7 +3435,7 @@ public class AccountApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateAccountAllocationMappingUsingPutValidateBeforeCall(UUID accountAllocationId, AccountAllocationMapping accountAllocationMapping, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateAccountAllocationMappingUsingPutValidateBeforeCall(UUID accountAllocationId, Object accountAllocationMapping, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'accountAllocationId' is set
         if (accountAllocationId == null) {
@@ -3456,7 +3456,7 @@ public class AccountApi {
      * @return AccountAllocationMapping
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AccountAllocationMapping updateAccountAllocationMappingUsingPut(UUID accountAllocationId, AccountAllocationMapping accountAllocationMapping) throws ApiException {
+    public AccountAllocationMapping updateAccountAllocationMappingUsingPut(UUID accountAllocationId, Object accountAllocationMapping) throws ApiException {
         ApiResponse<AccountAllocationMapping> resp = updateAccountAllocationMappingUsingPutWithHttpInfo(accountAllocationId, accountAllocationMapping);
         return resp.getData();
     }
@@ -3469,7 +3469,7 @@ public class AccountApi {
      * @return ApiResponse&lt;AccountAllocationMapping&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AccountAllocationMapping> updateAccountAllocationMappingUsingPutWithHttpInfo(UUID accountAllocationId, AccountAllocationMapping accountAllocationMapping) throws ApiException {
+    public ApiResponse<AccountAllocationMapping> updateAccountAllocationMappingUsingPutWithHttpInfo(UUID accountAllocationId, Object accountAllocationMapping) throws ApiException {
         com.squareup.okhttp.Call call = updateAccountAllocationMappingUsingPutValidateBeforeCall(accountAllocationId, accountAllocationMapping, null, null);
         Type localVarReturnType = new TypeToken<AccountAllocationMapping>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -3484,7 +3484,7 @@ public class AccountApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateAccountAllocationMappingUsingPutAsync(UUID accountAllocationId, AccountAllocationMapping accountAllocationMapping, final ApiCallback<AccountAllocationMapping> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateAccountAllocationMappingUsingPutAsync(UUID accountAllocationId, Object accountAllocationMapping, final ApiCallback<AccountAllocationMapping> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3519,7 +3519,7 @@ public class AccountApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateAccountStatusUsingPutCall(AccountStatus accountStatus, UUID accountStatusId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateAccountStatusUsingPutCall(Object accountStatus, UUID accountStatusId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = accountStatus;
 
         // create path and map variables
@@ -3548,7 +3548,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -3562,7 +3562,7 @@ public class AccountApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateAccountStatusUsingPutValidateBeforeCall(AccountStatus accountStatus, UUID accountStatusId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateAccountStatusUsingPutValidateBeforeCall(Object accountStatus, UUID accountStatusId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'accountStatus' is set
         if (accountStatus == null) {
@@ -3588,7 +3588,7 @@ public class AccountApi {
      * @return AccountStatus
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AccountStatus updateAccountStatusUsingPut(AccountStatus accountStatus, UUID accountStatusId) throws ApiException {
+    public AccountStatus updateAccountStatusUsingPut(Object accountStatus, UUID accountStatusId) throws ApiException {
         ApiResponse<AccountStatus> resp = updateAccountStatusUsingPutWithHttpInfo(accountStatus, accountStatusId);
         return resp.getData();
     }
@@ -3601,7 +3601,7 @@ public class AccountApi {
      * @return ApiResponse&lt;AccountStatus&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AccountStatus> updateAccountStatusUsingPutWithHttpInfo(AccountStatus accountStatus, UUID accountStatusId) throws ApiException {
+    public ApiResponse<AccountStatus> updateAccountStatusUsingPutWithHttpInfo(Object accountStatus, UUID accountStatusId) throws ApiException {
         com.squareup.okhttp.Call call = updateAccountStatusUsingPutValidateBeforeCall(accountStatus, accountStatusId, null, null);
         Type localVarReturnType = new TypeToken<AccountStatus>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -3616,7 +3616,7 @@ public class AccountApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateAccountStatusUsingPutAsync(AccountStatus accountStatus, UUID accountStatusId, final ApiCallback<AccountStatus> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateAccountStatusUsingPutAsync(Object accountStatus, UUID accountStatusId, final ApiCallback<AccountStatus> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3651,7 +3651,7 @@ public class AccountApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateAccountTypeUsingPutCall(AccountType accountType, UUID accountTypeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateAccountTypeUsingPutCall(Object accountType, UUID accountTypeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = accountType;
 
         // create path and map variables
@@ -3680,7 +3680,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -3694,7 +3694,7 @@ public class AccountApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateAccountTypeUsingPutValidateBeforeCall(AccountType accountType, UUID accountTypeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateAccountTypeUsingPutValidateBeforeCall(Object accountType, UUID accountTypeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'accountType' is set
         if (accountType == null) {
@@ -3720,7 +3720,7 @@ public class AccountApi {
      * @return AccountType
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AccountType updateAccountTypeUsingPut(AccountType accountType, UUID accountTypeId) throws ApiException {
+    public AccountType updateAccountTypeUsingPut(Object accountType, UUID accountTypeId) throws ApiException {
         ApiResponse<AccountType> resp = updateAccountTypeUsingPutWithHttpInfo(accountType, accountTypeId);
         return resp.getData();
     }
@@ -3733,7 +3733,7 @@ public class AccountApi {
      * @return ApiResponse&lt;AccountType&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AccountType> updateAccountTypeUsingPutWithHttpInfo(AccountType accountType, UUID accountTypeId) throws ApiException {
+    public ApiResponse<AccountType> updateAccountTypeUsingPutWithHttpInfo(Object accountType, UUID accountTypeId) throws ApiException {
         com.squareup.okhttp.Call call = updateAccountTypeUsingPutValidateBeforeCall(accountType, accountTypeId, null, null);
         Type localVarReturnType = new TypeToken<AccountType>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -3748,7 +3748,7 @@ public class AccountApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateAccountTypeUsingPutAsync(AccountType accountType, UUID accountTypeId, final ApiCallback<AccountType> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateAccountTypeUsingPutAsync(Object accountType, UUID accountTypeId, final ApiCallback<AccountType> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3783,7 +3783,7 @@ public class AccountApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateAccountUsingPutCall(Account account, UUID accountId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateAccountUsingPutCall(Object account, UUID accountId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = account;
 
         // create path and map variables
@@ -3812,7 +3812,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -3826,7 +3826,7 @@ public class AccountApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateAccountUsingPutValidateBeforeCall(Account account, UUID accountId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateAccountUsingPutValidateBeforeCall(Object account, UUID accountId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'account' is set
         if (account == null) {
@@ -3852,7 +3852,7 @@ public class AccountApi {
      * @return Account
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Account updateAccountUsingPut(Account account, UUID accountId) throws ApiException {
+    public Account updateAccountUsingPut(Object account, UUID accountId) throws ApiException {
         ApiResponse<Account> resp = updateAccountUsingPutWithHttpInfo(account, accountId);
         return resp.getData();
     }
@@ -3865,7 +3865,7 @@ public class AccountApi {
      * @return ApiResponse&lt;Account&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Account> updateAccountUsingPutWithHttpInfo(Account account, UUID accountId) throws ApiException {
+    public ApiResponse<Account> updateAccountUsingPutWithHttpInfo(Object account, UUID accountId) throws ApiException {
         com.squareup.okhttp.Call call = updateAccountUsingPutValidateBeforeCall(account, accountId, null, null);
         Type localVarReturnType = new TypeToken<Account>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -3880,7 +3880,7 @@ public class AccountApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateAccountUsingPutAsync(Account account, UUID accountId, final ApiCallback<Account> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateAccountUsingPutAsync(Object account, UUID accountId, final ApiCallback<Account> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3915,7 +3915,7 @@ public class AccountApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateClientAccountPermissionUsingPUTCall(UUID accountId, AclClientPermissionVO aclClientPermissionVO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateClientAccountPermissionUsingPUTCall(UUID accountId, Object aclClientPermissionVO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = aclClientPermissionVO;
 
         // create path and map variables
@@ -3944,7 +3944,7 @@ public class AccountApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -3958,7 +3958,7 @@ public class AccountApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateClientAccountPermissionUsingPUTValidateBeforeCall(UUID accountId, AclClientPermissionVO aclClientPermissionVO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateClientAccountPermissionUsingPUTValidateBeforeCall(UUID accountId, Object aclClientPermissionVO, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'accountId' is set
         if (accountId == null) {
@@ -3984,7 +3984,7 @@ public class AccountApi {
      * @return AccountPermissionVO
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AccountPermissionVO updateClientAccountPermissionUsingPUT(UUID accountId, AclClientPermissionVO aclClientPermissionVO) throws ApiException {
+    public AccountPermissionVO updateClientAccountPermissionUsingPUT(UUID accountId, Object aclClientPermissionVO) throws ApiException {
         ApiResponse<AccountPermissionVO> resp = updateClientAccountPermissionUsingPUTWithHttpInfo(accountId, aclClientPermissionVO);
         return resp.getData();
     }
@@ -3997,7 +3997,7 @@ public class AccountApi {
      * @return ApiResponse&lt;AccountPermissionVO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AccountPermissionVO> updateClientAccountPermissionUsingPUTWithHttpInfo(UUID accountId, AclClientPermissionVO aclClientPermissionVO) throws ApiException {
+    public ApiResponse<AccountPermissionVO> updateClientAccountPermissionUsingPUTWithHttpInfo(UUID accountId, Object aclClientPermissionVO) throws ApiException {
         com.squareup.okhttp.Call call = updateClientAccountPermissionUsingPUTValidateBeforeCall(accountId, aclClientPermissionVO, null, null);
         Type localVarReturnType = new TypeToken<AccountPermissionVO>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -4012,7 +4012,7 @@ public class AccountApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateClientAccountPermissionUsingPUTAsync(UUID accountId, AclClientPermissionVO aclClientPermissionVO, final ApiCallback<AccountPermissionVO> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateClientAccountPermissionUsingPUTAsync(UUID accountId, Object aclClientPermissionVO, final ApiCallback<AccountPermissionVO> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

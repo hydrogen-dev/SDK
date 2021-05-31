@@ -30,7 +30,6 @@ import java.io.IOException;
 import com.hydrogen.nucleus.model.DecisionTree;
 import com.hydrogen.nucleus.model.DecisionTreeCO;
 import com.hydrogen.nucleus.model.DecisionTreeResultVO;
-import com.hydrogen.nucleus.model.JsonNode;
 import com.hydrogen.nucleus.model.Node;
 import com.hydrogen.nucleus.model.NodeRelationship;
 import com.hydrogen.nucleus.model.PageDecisionTree;
@@ -99,7 +98,7 @@ public class DecisionTreeApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -221,7 +220,7 @@ public class DecisionTreeApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -343,7 +342,7 @@ public class DecisionTreeApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -465,7 +464,7 @@ public class DecisionTreeApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -588,7 +587,7 @@ public class DecisionTreeApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -707,7 +706,7 @@ public class DecisionTreeApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -830,7 +829,7 @@ public class DecisionTreeApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -966,7 +965,7 @@ public class DecisionTreeApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1096,7 +1095,7 @@ public class DecisionTreeApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1232,7 +1231,7 @@ public class DecisionTreeApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1375,7 +1374,7 @@ public class DecisionTreeApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1505,7 +1504,7 @@ public class DecisionTreeApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1628,7 +1627,7 @@ public class DecisionTreeApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1723,7 +1722,7 @@ public class DecisionTreeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateDecisionTreeUsingPutCall(DecisionTree decisionTree, UUID decisionTreeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateDecisionTreeUsingPutCall(Object decisionTree, UUID decisionTreeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = decisionTree;
 
         // create path and map variables
@@ -1752,7 +1751,7 @@ public class DecisionTreeApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1766,7 +1765,7 @@ public class DecisionTreeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateDecisionTreeUsingPutValidateBeforeCall(DecisionTree decisionTree, UUID decisionTreeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateDecisionTreeUsingPutValidateBeforeCall(Object decisionTree, UUID decisionTreeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'decisionTree' is set
         if (decisionTree == null) {
@@ -1792,7 +1791,7 @@ public class DecisionTreeApi {
      * @return DecisionTree
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public DecisionTree updateDecisionTreeUsingPut(DecisionTree decisionTree, UUID decisionTreeId) throws ApiException {
+    public DecisionTree updateDecisionTreeUsingPut(Object decisionTree, UUID decisionTreeId) throws ApiException {
         ApiResponse<DecisionTree> resp = updateDecisionTreeUsingPutWithHttpInfo(decisionTree, decisionTreeId);
         return resp.getData();
     }
@@ -1805,7 +1804,7 @@ public class DecisionTreeApi {
      * @return ApiResponse&lt;DecisionTree&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<DecisionTree> updateDecisionTreeUsingPutWithHttpInfo(DecisionTree decisionTree, UUID decisionTreeId) throws ApiException {
+    public ApiResponse<DecisionTree> updateDecisionTreeUsingPutWithHttpInfo(Object decisionTree, UUID decisionTreeId) throws ApiException {
         com.squareup.okhttp.Call call = updateDecisionTreeUsingPutValidateBeforeCall(decisionTree, decisionTreeId, null, null);
         Type localVarReturnType = new TypeToken<DecisionTree>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1820,7 +1819,7 @@ public class DecisionTreeApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateDecisionTreeUsingPutAsync(DecisionTree decisionTree, UUID decisionTreeId, final ApiCallback<DecisionTree> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateDecisionTreeUsingPutAsync(Object decisionTree, UUID decisionTreeId, final ApiCallback<DecisionTree> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1855,7 +1854,7 @@ public class DecisionTreeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateNodeRelationshipUsingPutCall(JsonNode jsonNode, UUID nodeRelationshipId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateNodeRelationshipUsingPutCall(Object jsonNode, UUID nodeRelationshipId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = jsonNode;
 
         // create path and map variables
@@ -1884,7 +1883,7 @@ public class DecisionTreeApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1898,7 +1897,7 @@ public class DecisionTreeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateNodeRelationshipUsingPutValidateBeforeCall(JsonNode jsonNode, UUID nodeRelationshipId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateNodeRelationshipUsingPutValidateBeforeCall(Object jsonNode, UUID nodeRelationshipId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'jsonNode' is set
         if (jsonNode == null) {
@@ -1924,7 +1923,7 @@ public class DecisionTreeApi {
      * @return NodeRelationship
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public NodeRelationship updateNodeRelationshipUsingPut(JsonNode jsonNode, UUID nodeRelationshipId) throws ApiException {
+    public NodeRelationship updateNodeRelationshipUsingPut(Object jsonNode, UUID nodeRelationshipId) throws ApiException {
         ApiResponse<NodeRelationship> resp = updateNodeRelationshipUsingPutWithHttpInfo(jsonNode, nodeRelationshipId);
         return resp.getData();
     }
@@ -1937,7 +1936,7 @@ public class DecisionTreeApi {
      * @return ApiResponse&lt;NodeRelationship&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<NodeRelationship> updateNodeRelationshipUsingPutWithHttpInfo(JsonNode jsonNode, UUID nodeRelationshipId) throws ApiException {
+    public ApiResponse<NodeRelationship> updateNodeRelationshipUsingPutWithHttpInfo(Object jsonNode, UUID nodeRelationshipId) throws ApiException {
         com.squareup.okhttp.Call call = updateNodeRelationshipUsingPutValidateBeforeCall(jsonNode, nodeRelationshipId, null, null);
         Type localVarReturnType = new TypeToken<NodeRelationship>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1952,7 +1951,7 @@ public class DecisionTreeApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateNodeRelationshipUsingPutAsync(JsonNode jsonNode, UUID nodeRelationshipId, final ApiCallback<NodeRelationship> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateNodeRelationshipUsingPutAsync(Object jsonNode, UUID nodeRelationshipId, final ApiCallback<NodeRelationship> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1987,7 +1986,7 @@ public class DecisionTreeApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateNodeUsingPutCall(JsonNode jsonNode, UUID nodeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateNodeUsingPutCall(Object jsonNode, UUID nodeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = jsonNode;
 
         // create path and map variables
@@ -2016,7 +2015,7 @@ public class DecisionTreeApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -2030,7 +2029,7 @@ public class DecisionTreeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateNodeUsingPutValidateBeforeCall(JsonNode jsonNode, UUID nodeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateNodeUsingPutValidateBeforeCall(Object jsonNode, UUID nodeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'jsonNode' is set
         if (jsonNode == null) {
@@ -2056,7 +2055,7 @@ public class DecisionTreeApi {
      * @return Node
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Node updateNodeUsingPut(JsonNode jsonNode, UUID nodeId) throws ApiException {
+    public Node updateNodeUsingPut(Object jsonNode, UUID nodeId) throws ApiException {
         ApiResponse<Node> resp = updateNodeUsingPutWithHttpInfo(jsonNode, nodeId);
         return resp.getData();
     }
@@ -2069,7 +2068,7 @@ public class DecisionTreeApi {
      * @return ApiResponse&lt;Node&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Node> updateNodeUsingPutWithHttpInfo(JsonNode jsonNode, UUID nodeId) throws ApiException {
+    public ApiResponse<Node> updateNodeUsingPutWithHttpInfo(Object jsonNode, UUID nodeId) throws ApiException {
         com.squareup.okhttp.Call call = updateNodeUsingPutValidateBeforeCall(jsonNode, nodeId, null, null);
         Type localVarReturnType = new TypeToken<Node>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -2084,7 +2083,7 @@ public class DecisionTreeApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateNodeUsingPutAsync(JsonNode jsonNode, UUID nodeId, final ApiCallback<Node> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateNodeUsingPutAsync(Object jsonNode, UUID nodeId, final ApiCallback<Node> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

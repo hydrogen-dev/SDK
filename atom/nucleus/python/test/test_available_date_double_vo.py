@@ -32,7 +32,7 @@ class TestAvailableDateDoubleVO(unittest.TestCase):
     def testAvailableDateDoubleVO(self):
         """Test AvailableDateDoubleVO"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.available_date_double_vo.AvailableDateDoubleVO()  # noqa: E501
+        # model = nucleus_api.models.available_date_double_vo.AvailableDateDoubleVO()  # noqa: E501
         pass
 
 

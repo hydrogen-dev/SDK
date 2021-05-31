@@ -59,6 +59,7 @@
 
 
 
+
   };
 
   /**
@@ -80,6 +81,9 @@
       }
       if (data.hasOwnProperty('card_id')) {
         obj['card_id'] = ApiClient.convertToType(data['card_id'], 'String');
+      }
+      if (data.hasOwnProperty('card_issuance')) {
+        obj['card_issuance'] = ApiClient.convertToType(data['card_issuance'], 'String');
       }
       if (data.hasOwnProperty('card_name')) {
         obj['card_name'] = ApiClient.convertToType(data['card_name'], 'String');
@@ -121,6 +125,11 @@
    * @member {String} card_id
    */
   exports.prototype['card_id'] = undefined;
+  /**
+   * cardIssuance
+   * @member {String} card_issuance
+   */
+  exports.prototype['card_issuance'] = undefined;
   /**
    * cardName
    * @member {String} card_name

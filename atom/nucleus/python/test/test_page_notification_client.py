@@ -32,7 +32,7 @@ class TestPageNotificationClient(unittest.TestCase):
     def testPageNotificationClient(self):
         """Test PageNotificationClient"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_notification_client.PageNotificationClient()  # noqa: E501
+        # model = nucleus_api.models.page_notification_client.PageNotificationClient()  # noqa: E501
         pass
 
 

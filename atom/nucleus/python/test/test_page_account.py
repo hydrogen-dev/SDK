@@ -32,7 +32,7 @@ class TestPageAccount(unittest.TestCase):
     def testPageAccount(self):
         """Test PageAccount"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_account.PageAccount()  # noqa: E501
+        # model = nucleus_api.models.page_account.PageAccount()  # noqa: E501
         pass
 
 

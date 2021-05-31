@@ -896,15 +896,15 @@ class AccountApi
      *
      * Create an account
      *
-     * @param  \com\hydrogen\nucleus\Model\Account $client_account_request clientAccountRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Account $account account (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \com\hydrogen\nucleus\Model\Account
      */
-    public function createAccountUsingPost($client_account_request)
+    public function createAccountUsingPost($account)
     {
-        list($response) = $this->createAccountUsingPostWithHttpInfo($client_account_request);
+        list($response) = $this->createAccountUsingPostWithHttpInfo($account);
         return $response;
     }
 
@@ -913,16 +913,16 @@ class AccountApi
      *
      * Create an account
      *
-     * @param  \com\hydrogen\nucleus\Model\Account $client_account_request clientAccountRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Account $account account (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \com\hydrogen\nucleus\Model\Account, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createAccountUsingPostWithHttpInfo($client_account_request)
+    public function createAccountUsingPostWithHttpInfo($account)
     {
         $returnType = '\com\hydrogen\nucleus\Model\Account';
-        $request = $this->createAccountUsingPostRequest($client_account_request);
+        $request = $this->createAccountUsingPostRequest($account);
 
         try {
             $options = $this->createHttpClientOption();
@@ -988,14 +988,14 @@ class AccountApi
      *
      * Create an account
      *
-     * @param  \com\hydrogen\nucleus\Model\Account $client_account_request clientAccountRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Account $account account (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createAccountUsingPostAsync($client_account_request)
+    public function createAccountUsingPostAsync($account)
     {
-        return $this->createAccountUsingPostAsyncWithHttpInfo($client_account_request)
+        return $this->createAccountUsingPostAsyncWithHttpInfo($account)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1008,15 +1008,15 @@ class AccountApi
      *
      * Create an account
      *
-     * @param  \com\hydrogen\nucleus\Model\Account $client_account_request clientAccountRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Account $account account (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createAccountUsingPostAsyncWithHttpInfo($client_account_request)
+    public function createAccountUsingPostAsyncWithHttpInfo($account)
     {
         $returnType = '\com\hydrogen\nucleus\Model\Account';
-        $request = $this->createAccountUsingPostRequest($client_account_request);
+        $request = $this->createAccountUsingPostRequest($account);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1058,17 +1058,17 @@ class AccountApi
     /**
      * Create request for operation 'createAccountUsingPost'
      *
-     * @param  \com\hydrogen\nucleus\Model\Account $client_account_request clientAccountRequest (required)
+     * @param  \com\hydrogen\nucleus\Model\Account $account account (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createAccountUsingPostRequest($client_account_request)
+    protected function createAccountUsingPostRequest($account)
     {
-        // verify the required parameter 'client_account_request' is set
-        if ($client_account_request === null || (is_array($client_account_request) && count($client_account_request) === 0)) {
+        // verify the required parameter 'account' is set
+        if ($account === null || (is_array($account) && count($account) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $client_account_request when calling createAccountUsingPost'
+                'Missing the required parameter $account when calling createAccountUsingPost'
             );
         }
 
@@ -1083,8 +1083,8 @@ class AccountApi
 
         // body params
         $_tempBody = null;
-        if (isset($client_account_request)) {
-            $_tempBody = $client_account_request;
+        if (isset($account)) {
+            $_tempBody = $account;
         }
 
         if ($multipart) {
@@ -7114,7 +7114,7 @@ class AccountApi
      * Update an account allocation
      *
      * @param  string $account_allocation_id UUID account_allocation_id (required)
-     * @param  \com\hydrogen\nucleus\Model\AccountAllocationMapping $account_allocation_mapping account_allocation_mapping (optional)
+     * @param  object $account_allocation_mapping account_allocation_mapping (optional)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -7132,7 +7132,7 @@ class AccountApi
      * Update an account allocation
      *
      * @param  string $account_allocation_id UUID account_allocation_id (required)
-     * @param  \com\hydrogen\nucleus\Model\AccountAllocationMapping $account_allocation_mapping account_allocation_mapping (optional)
+     * @param  object $account_allocation_mapping account_allocation_mapping (optional)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -7208,7 +7208,7 @@ class AccountApi
      * Update an account allocation
      *
      * @param  string $account_allocation_id UUID account_allocation_id (required)
-     * @param  \com\hydrogen\nucleus\Model\AccountAllocationMapping $account_allocation_mapping account_allocation_mapping (optional)
+     * @param  object $account_allocation_mapping account_allocation_mapping (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7229,7 +7229,7 @@ class AccountApi
      * Update an account allocation
      *
      * @param  string $account_allocation_id UUID account_allocation_id (required)
-     * @param  \com\hydrogen\nucleus\Model\AccountAllocationMapping $account_allocation_mapping account_allocation_mapping (optional)
+     * @param  object $account_allocation_mapping account_allocation_mapping (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -7280,7 +7280,7 @@ class AccountApi
      * Create request for operation 'updateAccountAllocationMappingUsingPut'
      *
      * @param  string $account_allocation_id UUID account_allocation_id (required)
-     * @param  \com\hydrogen\nucleus\Model\AccountAllocationMapping $account_allocation_mapping account_allocation_mapping (optional)
+     * @param  object $account_allocation_mapping account_allocation_mapping (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -7394,7 +7394,7 @@ class AccountApi
      *
      * Update an account status
      *
-     * @param  \com\hydrogen\nucleus\Model\AccountStatus $account_status account_status (required)
+     * @param  object $account_status account_status (required)
      * @param  string $account_status_id UUID account_status_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -7412,7 +7412,7 @@ class AccountApi
      *
      * Update an account status
      *
-     * @param  \com\hydrogen\nucleus\Model\AccountStatus $account_status account_status (required)
+     * @param  object $account_status account_status (required)
      * @param  string $account_status_id UUID account_status_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -7488,7 +7488,7 @@ class AccountApi
      *
      * Update an account status
      *
-     * @param  \com\hydrogen\nucleus\Model\AccountStatus $account_status account_status (required)
+     * @param  object $account_status account_status (required)
      * @param  string $account_status_id UUID account_status_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7509,7 +7509,7 @@ class AccountApi
      *
      * Update an account status
      *
-     * @param  \com\hydrogen\nucleus\Model\AccountStatus $account_status account_status (required)
+     * @param  object $account_status account_status (required)
      * @param  string $account_status_id UUID account_status_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7560,7 +7560,7 @@ class AccountApi
     /**
      * Create request for operation 'updateAccountStatusUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\AccountStatus $account_status account_status (required)
+     * @param  object $account_status account_status (required)
      * @param  string $account_status_id UUID account_status_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7681,7 +7681,7 @@ class AccountApi
      *
      * Update an account type
      *
-     * @param  \com\hydrogen\nucleus\Model\AccountType $account_type account_type (required)
+     * @param  object $account_type account_type (required)
      * @param  string $account_type_id UUID account_type_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -7699,7 +7699,7 @@ class AccountApi
      *
      * Update an account type
      *
-     * @param  \com\hydrogen\nucleus\Model\AccountType $account_type account_type (required)
+     * @param  object $account_type account_type (required)
      * @param  string $account_type_id UUID account_type_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -7775,7 +7775,7 @@ class AccountApi
      *
      * Update an account type
      *
-     * @param  \com\hydrogen\nucleus\Model\AccountType $account_type account_type (required)
+     * @param  object $account_type account_type (required)
      * @param  string $account_type_id UUID account_type_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7796,7 +7796,7 @@ class AccountApi
      *
      * Update an account type
      *
-     * @param  \com\hydrogen\nucleus\Model\AccountType $account_type account_type (required)
+     * @param  object $account_type account_type (required)
      * @param  string $account_type_id UUID account_type_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7847,7 +7847,7 @@ class AccountApi
     /**
      * Create request for operation 'updateAccountTypeUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\AccountType $account_type account_type (required)
+     * @param  object $account_type account_type (required)
      * @param  string $account_type_id UUID account_type_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7968,7 +7968,7 @@ class AccountApi
      *
      * Update an account
      *
-     * @param  \com\hydrogen\nucleus\Model\Account $account account (required)
+     * @param  object $account account (required)
      * @param  string $account_id UUID account_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -7986,7 +7986,7 @@ class AccountApi
      *
      * Update an account
      *
-     * @param  \com\hydrogen\nucleus\Model\Account $account account (required)
+     * @param  object $account account (required)
      * @param  string $account_id UUID account_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -8062,7 +8062,7 @@ class AccountApi
      *
      * Update an account
      *
-     * @param  \com\hydrogen\nucleus\Model\Account $account account (required)
+     * @param  object $account account (required)
      * @param  string $account_id UUID account_id (required)
      *
      * @throws \InvalidArgumentException
@@ -8083,7 +8083,7 @@ class AccountApi
      *
      * Update an account
      *
-     * @param  \com\hydrogen\nucleus\Model\Account $account account (required)
+     * @param  object $account account (required)
      * @param  string $account_id UUID account_id (required)
      *
      * @throws \InvalidArgumentException
@@ -8134,7 +8134,7 @@ class AccountApi
     /**
      * Create request for operation 'updateAccountUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Account $account account (required)
+     * @param  object $account account (required)
      * @param  string $account_id UUID account_id (required)
      *
      * @throws \InvalidArgumentException
@@ -8256,7 +8256,7 @@ class AccountApi
      * Update an account permission
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\nucleus\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
+     * @param  object $acl_client_permission_vo aclClientPermissionVO (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -8274,7 +8274,7 @@ class AccountApi
      * Update an account permission
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\nucleus\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
+     * @param  object $acl_client_permission_vo aclClientPermissionVO (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -8350,7 +8350,7 @@ class AccountApi
      * Update an account permission
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\nucleus\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
+     * @param  object $acl_client_permission_vo aclClientPermissionVO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8371,7 +8371,7 @@ class AccountApi
      * Update an account permission
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\nucleus\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
+     * @param  object $acl_client_permission_vo aclClientPermissionVO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -8422,7 +8422,7 @@ class AccountApi
      * Create request for operation 'updateClientAccountPermissionUsingPUT'
      *
      * @param  string $account_id account_id (required)
-     * @param  \com\hydrogen\nucleus\Model\AclClientPermissionVO $acl_client_permission_vo aclClientPermissionVO (required)
+     * @param  object $acl_client_permission_vo aclClientPermissionVO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

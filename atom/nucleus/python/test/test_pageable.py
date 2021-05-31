@@ -32,7 +32,7 @@ class TestPageable(unittest.TestCase):
     def testPageable(self):
         """Test Pageable"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.pageable.Pageable()  # noqa: E501
+        # model = nucleus_api.models.pageable.Pageable()  # noqa: E501
         pass
 
 

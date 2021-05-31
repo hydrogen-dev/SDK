@@ -32,7 +32,7 @@ class TestOrderVoClone(unittest.TestCase):
     def testOrderVoClone(self):
         """Test OrderVoClone"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.order_vo_clone.OrderVoClone()  # noqa: E501
+        # model = nucleus_api.models.order_vo_clone.OrderVoClone()  # noqa: E501
         pass
 
 

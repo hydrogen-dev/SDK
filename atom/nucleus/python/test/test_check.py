@@ -32,7 +32,7 @@ class TestCheck(unittest.TestCase):
     def testCheck(self):
         """Test Check"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.check.Check()  # noqa: E501
+        # model = nucleus_api.models.check.Check()  # noqa: E501
         pass
 
 

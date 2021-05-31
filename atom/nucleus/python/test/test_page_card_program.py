@@ -32,7 +32,7 @@ class TestPageCardProgram(unittest.TestCase):
     def testPageCardProgram(self):
         """Test PageCardProgram"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_card_program.PageCardProgram()  # noqa: E501
+        # model = nucleus_api.models.page_card_program.PageCardProgram()  # noqa: E501
         pass
 
 

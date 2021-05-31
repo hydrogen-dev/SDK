@@ -1186,7 +1186,7 @@ class BudgetApi
      *
      * Update a budget request
      *
-     * @param  \com\hydrogen\nucleus\Model\Budget $budget budget (required)
+     * @param  object $budget budget (required)
      * @param  string $budget_id UUID budget_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -1204,7 +1204,7 @@ class BudgetApi
      *
      * Update a budget request
      *
-     * @param  \com\hydrogen\nucleus\Model\Budget $budget budget (required)
+     * @param  object $budget budget (required)
      * @param  string $budget_id UUID budget_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -1280,7 +1280,7 @@ class BudgetApi
      *
      * Update a budget request
      *
-     * @param  \com\hydrogen\nucleus\Model\Budget $budget budget (required)
+     * @param  object $budget budget (required)
      * @param  string $budget_id UUID budget_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1301,7 +1301,7 @@ class BudgetApi
      *
      * Update a budget request
      *
-     * @param  \com\hydrogen\nucleus\Model\Budget $budget budget (required)
+     * @param  object $budget budget (required)
      * @param  string $budget_id UUID budget_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1352,7 +1352,7 @@ class BudgetApi
     /**
      * Create request for operation 'updateBudgetUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Budget $budget budget (required)
+     * @param  object $budget budget (required)
      * @param  string $budget_id UUID budget_id (required)
      *
      * @throws \InvalidArgumentException

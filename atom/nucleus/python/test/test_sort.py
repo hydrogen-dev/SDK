@@ -32,7 +32,7 @@ class TestSort(unittest.TestCase):
     def testSort(self):
         """Test Sort"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.sort.Sort()  # noqa: E501
+        # model = nucleus_api.models.sort.Sort()  # noqa: E501
         pass
 
 

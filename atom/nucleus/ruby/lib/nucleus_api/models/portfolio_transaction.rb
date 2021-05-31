@@ -43,6 +43,9 @@ module NucleusApi
     # description
     attr_accessor :description
 
+    # fundingId
+    attr_accessor :funding_id
+
     attr_accessor :id
 
     # is_cleansed
@@ -74,6 +77,9 @@ module NucleusApi
 
     # metadata
     attr_accessor :metadata
+
+    # mid
+    attr_accessor :mid
 
     # modelId
     attr_accessor :model_id
@@ -119,6 +125,7 @@ module NucleusApi
         :'date' => :'date',
         :'date_available' => :'date_available',
         :'description' => :'description',
+        :'funding_id' => :'funding_id',
         :'id' => :'id',
         :'is_cleansed' => :'is_cleansed',
         :'is_disputed' => :'is_disputed',
@@ -130,6 +137,7 @@ module NucleusApi
         :'merchant_category_code' => :'merchant_category_code',
         :'merchant_id' => :'merchant_id',
         :'metadata' => :'metadata',
+        :'mid' => :'mid',
         :'model_id' => :'model_id',
         :'portfolio_id' => :'portfolio_id',
         :'price' => :'price',
@@ -157,6 +165,7 @@ module NucleusApi
         :'date' => :'DateTime',
         :'date_available' => :'DateTime',
         :'description' => :'String',
+        :'funding_id' => :'String',
         :'id' => :'String',
         :'is_cleansed' => :'BOOLEAN',
         :'is_disputed' => :'BOOLEAN',
@@ -168,6 +177,7 @@ module NucleusApi
         :'merchant_category_code' => :'Integer',
         :'merchant_id' => :'String',
         :'metadata' => :'Hash<String, String>',
+        :'mid' => :'String',
         :'model_id' => :'String',
         :'portfolio_id' => :'String',
         :'price' => :'Float',
@@ -230,6 +240,10 @@ module NucleusApi
         self.description = attributes[:'description']
       end
 
+      if attributes.has_key?(:'funding_id')
+        self.funding_id = attributes[:'funding_id']
+      end
+
       if attributes.has_key?(:'id')
         self.id = attributes[:'id']
       end
@@ -274,6 +288,10 @@ module NucleusApi
         if (value = attributes[:'metadata']).is_a?(Hash)
           self.metadata = value
         end
+      end
+
+      if attributes.has_key?(:'mid')
+        self.mid = attributes[:'mid']
       end
 
       if attributes.has_key?(:'model_id')
@@ -374,6 +392,7 @@ module NucleusApi
           date == o.date &&
           date_available == o.date_available &&
           description == o.description &&
+          funding_id == o.funding_id &&
           id == o.id &&
           is_cleansed == o.is_cleansed &&
           is_disputed == o.is_disputed &&
@@ -385,6 +404,7 @@ module NucleusApi
           merchant_category_code == o.merchant_category_code &&
           merchant_id == o.merchant_id &&
           metadata == o.metadata &&
+          mid == o.mid &&
           model_id == o.model_id &&
           portfolio_id == o.portfolio_id &&
           price == o.price &&
@@ -407,7 +427,7 @@ module NucleusApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_id, amount, balance, category, check, create_date, currency_code, date, date_available, description, id, is_cleansed, is_disputed, is_read, is_recurring, location, memo, merchant, merchant_category_code, merchant_id, metadata, model_id, portfolio_id, price, quantity, secondary_id, security_id, status, subcategory, transaction_category_id, transaction_code_id, update_date].hash
+      [account_id, amount, balance, category, check, create_date, currency_code, date, date_available, description, funding_id, id, is_cleansed, is_disputed, is_read, is_recurring, location, memo, merchant, merchant_category_code, merchant_id, metadata, mid, model_id, portfolio_id, price, quantity, secondary_id, security_id, status, subcategory, transaction_category_id, transaction_code_id, update_date].hash
     end
 
     # Builds the object from hash
@@ -469,7 +489,9 @@ module NucleusApi
         temp_model.build_from_hash(value)
       end
     end
-# Returns the string representation of the object
+
+
+    # Returns the string representation of the object
     # @return [String] String presentation of the object
     def to_s
       to_hash.to_s
@@ -491,7 +513,6 @@ module NucleusApi
       end
       hash
     end
-
 
     # Outputs non-array value in the form of hash
     # For object, use to_hash. Otherwise, just return the value

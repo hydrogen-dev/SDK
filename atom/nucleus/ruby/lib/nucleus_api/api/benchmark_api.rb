@@ -43,7 +43,7 @@ module NucleusApi
         fail ArgumentError, "Missing the required parameter 'benchmark' when calling BenchmarkApi.create_benchmark_using_post"
       end
       # resource path
-      local_var_path = '/nucleus/v1/benchmark'
+      local_var_path = '//nucleus/v1nucleus/v1/benchmark'
 
       # query parameters
       query_params = {}
@@ -152,7 +152,7 @@ module NucleusApi
         @api_client.config.logger.debug 'Calling API: BenchmarkApi.get_benchmark_all_using_get ...'
       end
       # resource path
-      local_var_path = '/nucleus/v1/benchmark'
+      local_var_path = '//nucleus/v1nucleus/v1/benchmark'
 
       # query parameters
       query_params = {}

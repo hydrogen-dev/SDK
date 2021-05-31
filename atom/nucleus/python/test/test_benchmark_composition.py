@@ -32,7 +32,7 @@ class TestBenchmarkComposition(unittest.TestCase):
     def testBenchmarkComposition(self):
         """Test BenchmarkComposition"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.benchmark_composition.BenchmarkComposition()  # noqa: E501
+        # model = nucleus_api.models.benchmark_composition.BenchmarkComposition()  # noqa: E501
         pass
 
 

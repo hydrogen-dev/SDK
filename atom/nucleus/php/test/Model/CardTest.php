@@ -84,6 +84,13 @@ class CardTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "business_id"
+     */
+    public function testPropertyBusinessId()
+    {
+    }
+
+    /**
      * Test attribute "card_holder_name"
      */
     public function testPropertyCardHolderName()

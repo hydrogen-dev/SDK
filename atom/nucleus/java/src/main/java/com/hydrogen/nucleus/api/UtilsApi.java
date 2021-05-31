@@ -13,7 +13,6 @@
 
 package com.hydrogen.nucleus.api;
 
-import com.google.gson.reflect.TypeToken;
 import com.hydrogen.nucleus.ApiCallback;
 import com.hydrogen.nucleus.ApiClient;
 import com.hydrogen.nucleus.ApiException;
@@ -22,6 +21,12 @@ import com.hydrogen.nucleus.Configuration;
 import com.hydrogen.nucleus.Pair;
 import com.hydrogen.nucleus.ProgressRequestBody;
 import com.hydrogen.nucleus.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
 import com.hydrogen.nucleus.model.Application;
 import com.hydrogen.nucleus.model.AuditLog;
 import com.hydrogen.nucleus.model.Feature;
@@ -42,14 +47,13 @@ import com.hydrogen.nucleus.model.PageTransactionCode;
 import com.hydrogen.nucleus.model.ReasonCode;
 import com.hydrogen.nucleus.model.Stage;
 import com.hydrogen.nucleus.model.TransactionCode;
+import java.util.UUID;
 
-import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 public class UtilsApi {
     private ApiClient apiClient;
@@ -5030,7 +5034,7 @@ public class UtilsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateApplicationUsingPutCall(Application application, UUID applicationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateApplicationUsingPutCall(Object application, UUID applicationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = application;
 
         // create path and map variables
@@ -5073,7 +5077,7 @@ public class UtilsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateApplicationUsingPutValidateBeforeCall(Application application, UUID applicationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateApplicationUsingPutValidateBeforeCall(Object application, UUID applicationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'application' is set
         if (application == null) {
@@ -5099,7 +5103,7 @@ public class UtilsApi {
      * @return Application
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Application updateApplicationUsingPut(Application application, UUID applicationId) throws ApiException {
+    public Application updateApplicationUsingPut(Object application, UUID applicationId) throws ApiException {
         ApiResponse<Application> resp = updateApplicationUsingPutWithHttpInfo(application, applicationId);
         return resp.getData();
     }
@@ -5112,7 +5116,7 @@ public class UtilsApi {
      * @return ApiResponse&lt;Application&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Application> updateApplicationUsingPutWithHttpInfo(Application application, UUID applicationId) throws ApiException {
+    public ApiResponse<Application> updateApplicationUsingPutWithHttpInfo(Object application, UUID applicationId) throws ApiException {
         com.squareup.okhttp.Call call = updateApplicationUsingPutValidateBeforeCall(application, applicationId, null, null);
         Type localVarReturnType = new TypeToken<Application>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -5127,7 +5131,7 @@ public class UtilsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateApplicationUsingPutAsync(Application application, UUID applicationId, final ApiCallback<Application> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateApplicationUsingPutAsync(Object application, UUID applicationId, final ApiCallback<Application> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -5162,7 +5166,7 @@ public class UtilsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateFeatureTrackUsingPutCall(FeatureTrack featureTrack, UUID featureTrackId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateFeatureTrackUsingPutCall(Object featureTrack, UUID featureTrackId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = featureTrack;
 
         // create path and map variables
@@ -5205,7 +5209,7 @@ public class UtilsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateFeatureTrackUsingPutValidateBeforeCall(FeatureTrack featureTrack, UUID featureTrackId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateFeatureTrackUsingPutValidateBeforeCall(Object featureTrack, UUID featureTrackId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'featureTrack' is set
         if (featureTrack == null) {
@@ -5231,7 +5235,7 @@ public class UtilsApi {
      * @return FeatureTrack
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public FeatureTrack updateFeatureTrackUsingPut(FeatureTrack featureTrack, UUID featureTrackId) throws ApiException {
+    public FeatureTrack updateFeatureTrackUsingPut(Object featureTrack, UUID featureTrackId) throws ApiException {
         ApiResponse<FeatureTrack> resp = updateFeatureTrackUsingPutWithHttpInfo(featureTrack, featureTrackId);
         return resp.getData();
     }
@@ -5244,7 +5248,7 @@ public class UtilsApi {
      * @return ApiResponse&lt;FeatureTrack&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<FeatureTrack> updateFeatureTrackUsingPutWithHttpInfo(FeatureTrack featureTrack, UUID featureTrackId) throws ApiException {
+    public ApiResponse<FeatureTrack> updateFeatureTrackUsingPutWithHttpInfo(Object featureTrack, UUID featureTrackId) throws ApiException {
         com.squareup.okhttp.Call call = updateFeatureTrackUsingPutValidateBeforeCall(featureTrack, featureTrackId, null, null);
         Type localVarReturnType = new TypeToken<FeatureTrack>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -5259,7 +5263,7 @@ public class UtilsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateFeatureTrackUsingPutAsync(FeatureTrack featureTrack, UUID featureTrackId, final ApiCallback<FeatureTrack> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateFeatureTrackUsingPutAsync(Object featureTrack, UUID featureTrackId, final ApiCallback<FeatureTrack> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -5294,7 +5298,7 @@ public class UtilsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateFeatureUsingPutCall(Feature feature, UUID featureId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateFeatureUsingPutCall(Object feature, UUID featureId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = feature;
 
         // create path and map variables
@@ -5337,7 +5341,7 @@ public class UtilsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateFeatureUsingPutValidateBeforeCall(Feature feature, UUID featureId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateFeatureUsingPutValidateBeforeCall(Object feature, UUID featureId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'feature' is set
         if (feature == null) {
@@ -5363,7 +5367,7 @@ public class UtilsApi {
      * @return Feature
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Feature updateFeatureUsingPut(Feature feature, UUID featureId) throws ApiException {
+    public Feature updateFeatureUsingPut(Object feature, UUID featureId) throws ApiException {
         ApiResponse<Feature> resp = updateFeatureUsingPutWithHttpInfo(feature, featureId);
         return resp.getData();
     }
@@ -5376,7 +5380,7 @@ public class UtilsApi {
      * @return ApiResponse&lt;Feature&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Feature> updateFeatureUsingPutWithHttpInfo(Feature feature, UUID featureId) throws ApiException {
+    public ApiResponse<Feature> updateFeatureUsingPutWithHttpInfo(Object feature, UUID featureId) throws ApiException {
         com.squareup.okhttp.Call call = updateFeatureUsingPutValidateBeforeCall(feature, featureId, null, null);
         Type localVarReturnType = new TypeToken<Feature>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -5391,7 +5395,7 @@ public class UtilsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateFeatureUsingPutAsync(Feature feature, UUID featureId, final ApiCallback<Feature> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateFeatureUsingPutAsync(Object feature, UUID featureId, final ApiCallback<Feature> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -5426,7 +5430,7 @@ public class UtilsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateNotificationClientUsingPutCall(NotificationClient notificationClient, UUID notificationClientId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateNotificationClientUsingPutCall(Object notificationClient, UUID notificationClientId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = notificationClient;
 
         // create path and map variables
@@ -5469,7 +5473,7 @@ public class UtilsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateNotificationClientUsingPutValidateBeforeCall(NotificationClient notificationClient, UUID notificationClientId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateNotificationClientUsingPutValidateBeforeCall(Object notificationClient, UUID notificationClientId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'notificationClient' is set
         if (notificationClient == null) {
@@ -5495,7 +5499,7 @@ public class UtilsApi {
      * @return NotificationClient
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public NotificationClient updateNotificationClientUsingPut(NotificationClient notificationClient, UUID notificationClientId) throws ApiException {
+    public NotificationClient updateNotificationClientUsingPut(Object notificationClient, UUID notificationClientId) throws ApiException {
         ApiResponse<NotificationClient> resp = updateNotificationClientUsingPutWithHttpInfo(notificationClient, notificationClientId);
         return resp.getData();
     }
@@ -5508,7 +5512,7 @@ public class UtilsApi {
      * @return ApiResponse&lt;NotificationClient&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<NotificationClient> updateNotificationClientUsingPutWithHttpInfo(NotificationClient notificationClient, UUID notificationClientId) throws ApiException {
+    public ApiResponse<NotificationClient> updateNotificationClientUsingPutWithHttpInfo(Object notificationClient, UUID notificationClientId) throws ApiException {
         com.squareup.okhttp.Call call = updateNotificationClientUsingPutValidateBeforeCall(notificationClient, notificationClientId, null, null);
         Type localVarReturnType = new TypeToken<NotificationClient>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -5523,7 +5527,7 @@ public class UtilsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateNotificationClientUsingPutAsync(NotificationClient notificationClient, UUID notificationClientId, final ApiCallback<NotificationClient> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateNotificationClientUsingPutAsync(Object notificationClient, UUID notificationClientId, final ApiCallback<NotificationClient> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -5558,7 +5562,7 @@ public class UtilsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateNotificationSettingUsingPutCall(NotificationSetting notificationSetting, UUID notificationSettingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateNotificationSettingUsingPutCall(Object notificationSetting, UUID notificationSettingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = notificationSetting;
 
         // create path and map variables
@@ -5601,7 +5605,7 @@ public class UtilsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateNotificationSettingUsingPutValidateBeforeCall(NotificationSetting notificationSetting, UUID notificationSettingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateNotificationSettingUsingPutValidateBeforeCall(Object notificationSetting, UUID notificationSettingId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'notificationSetting' is set
         if (notificationSetting == null) {
@@ -5627,7 +5631,7 @@ public class UtilsApi {
      * @return NotificationSetting
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public NotificationSetting updateNotificationSettingUsingPut(NotificationSetting notificationSetting, UUID notificationSettingId) throws ApiException {
+    public NotificationSetting updateNotificationSettingUsingPut(Object notificationSetting, UUID notificationSettingId) throws ApiException {
         ApiResponse<NotificationSetting> resp = updateNotificationSettingUsingPutWithHttpInfo(notificationSetting, notificationSettingId);
         return resp.getData();
     }
@@ -5640,7 +5644,7 @@ public class UtilsApi {
      * @return ApiResponse&lt;NotificationSetting&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<NotificationSetting> updateNotificationSettingUsingPutWithHttpInfo(NotificationSetting notificationSetting, UUID notificationSettingId) throws ApiException {
+    public ApiResponse<NotificationSetting> updateNotificationSettingUsingPutWithHttpInfo(Object notificationSetting, UUID notificationSettingId) throws ApiException {
         com.squareup.okhttp.Call call = updateNotificationSettingUsingPutValidateBeforeCall(notificationSetting, notificationSettingId, null, null);
         Type localVarReturnType = new TypeToken<NotificationSetting>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -5655,7 +5659,7 @@ public class UtilsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateNotificationSettingUsingPutAsync(NotificationSetting notificationSetting, UUID notificationSettingId, final ApiCallback<NotificationSetting> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateNotificationSettingUsingPutAsync(Object notificationSetting, UUID notificationSettingId, final ApiCallback<NotificationSetting> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -5690,7 +5694,7 @@ public class UtilsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateNotificationUsingPutCall(Notification notification, UUID notificationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateNotificationUsingPutCall(Object notification, UUID notificationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = notification;
 
         // create path and map variables
@@ -5733,7 +5737,7 @@ public class UtilsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateNotificationUsingPutValidateBeforeCall(Notification notification, UUID notificationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateNotificationUsingPutValidateBeforeCall(Object notification, UUID notificationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'notification' is set
         if (notification == null) {
@@ -5759,7 +5763,7 @@ public class UtilsApi {
      * @return Notification
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Notification updateNotificationUsingPut(Notification notification, UUID notificationId) throws ApiException {
+    public Notification updateNotificationUsingPut(Object notification, UUID notificationId) throws ApiException {
         ApiResponse<Notification> resp = updateNotificationUsingPutWithHttpInfo(notification, notificationId);
         return resp.getData();
     }
@@ -5772,7 +5776,7 @@ public class UtilsApi {
      * @return ApiResponse&lt;Notification&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Notification> updateNotificationUsingPutWithHttpInfo(Notification notification, UUID notificationId) throws ApiException {
+    public ApiResponse<Notification> updateNotificationUsingPutWithHttpInfo(Object notification, UUID notificationId) throws ApiException {
         com.squareup.okhttp.Call call = updateNotificationUsingPutValidateBeforeCall(notification, notificationId, null, null);
         Type localVarReturnType = new TypeToken<Notification>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -5787,7 +5791,7 @@ public class UtilsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateNotificationUsingPutAsync(Notification notification, UUID notificationId, final ApiCallback<Notification> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateNotificationUsingPutAsync(Object notification, UUID notificationId, final ApiCallback<Notification> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -5822,7 +5826,7 @@ public class UtilsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateReasonCodeUsingPutCall(ReasonCode reasonCode, UUID reasonCodeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateReasonCodeUsingPutCall(Object reasonCode, UUID reasonCodeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = reasonCode;
 
         // create path and map variables
@@ -5865,7 +5869,7 @@ public class UtilsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateReasonCodeUsingPutValidateBeforeCall(ReasonCode reasonCode, UUID reasonCodeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateReasonCodeUsingPutValidateBeforeCall(Object reasonCode, UUID reasonCodeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'reasonCode' is set
         if (reasonCode == null) {
@@ -5891,7 +5895,7 @@ public class UtilsApi {
      * @return ReasonCode
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ReasonCode updateReasonCodeUsingPut(ReasonCode reasonCode, UUID reasonCodeId) throws ApiException {
+    public ReasonCode updateReasonCodeUsingPut(Object reasonCode, UUID reasonCodeId) throws ApiException {
         ApiResponse<ReasonCode> resp = updateReasonCodeUsingPutWithHttpInfo(reasonCode, reasonCodeId);
         return resp.getData();
     }
@@ -5904,7 +5908,7 @@ public class UtilsApi {
      * @return ApiResponse&lt;ReasonCode&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReasonCode> updateReasonCodeUsingPutWithHttpInfo(ReasonCode reasonCode, UUID reasonCodeId) throws ApiException {
+    public ApiResponse<ReasonCode> updateReasonCodeUsingPutWithHttpInfo(Object reasonCode, UUID reasonCodeId) throws ApiException {
         com.squareup.okhttp.Call call = updateReasonCodeUsingPutValidateBeforeCall(reasonCode, reasonCodeId, null, null);
         Type localVarReturnType = new TypeToken<ReasonCode>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -5919,7 +5923,7 @@ public class UtilsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateReasonCodeUsingPutAsync(ReasonCode reasonCode, UUID reasonCodeId, final ApiCallback<ReasonCode> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateReasonCodeUsingPutAsync(Object reasonCode, UUID reasonCodeId, final ApiCallback<ReasonCode> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -5954,7 +5958,7 @@ public class UtilsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateStageUsingPutCall(Stage stage, UUID stageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateStageUsingPutCall(Object stage, UUID stageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = stage;
 
         // create path and map variables
@@ -5997,7 +6001,7 @@ public class UtilsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateStageUsingPutValidateBeforeCall(Stage stage, UUID stageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateStageUsingPutValidateBeforeCall(Object stage, UUID stageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'stage' is set
         if (stage == null) {
@@ -6023,7 +6027,7 @@ public class UtilsApi {
      * @return Stage
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Stage updateStageUsingPut(Stage stage, UUID stageId) throws ApiException {
+    public Stage updateStageUsingPut(Object stage, UUID stageId) throws ApiException {
         ApiResponse<Stage> resp = updateStageUsingPutWithHttpInfo(stage, stageId);
         return resp.getData();
     }
@@ -6036,7 +6040,7 @@ public class UtilsApi {
      * @return ApiResponse&lt;Stage&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Stage> updateStageUsingPutWithHttpInfo(Stage stage, UUID stageId) throws ApiException {
+    public ApiResponse<Stage> updateStageUsingPutWithHttpInfo(Object stage, UUID stageId) throws ApiException {
         com.squareup.okhttp.Call call = updateStageUsingPutValidateBeforeCall(stage, stageId, null, null);
         Type localVarReturnType = new TypeToken<Stage>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -6051,7 +6055,7 @@ public class UtilsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateStageUsingPutAsync(Stage stage, UUID stageId, final ApiCallback<Stage> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateStageUsingPutAsync(Object stage, UUID stageId, final ApiCallback<Stage> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -6086,7 +6090,7 @@ public class UtilsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateTransactionCodeUsingPutCall(TransactionCode transactionCode, UUID transactionCodeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateTransactionCodeUsingPutCall(Object transactionCode, UUID transactionCodeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = transactionCode;
 
         // create path and map variables
@@ -6129,7 +6133,7 @@ public class UtilsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateTransactionCodeUsingPutValidateBeforeCall(TransactionCode transactionCode, UUID transactionCodeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateTransactionCodeUsingPutValidateBeforeCall(Object transactionCode, UUID transactionCodeId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'transactionCode' is set
         if (transactionCode == null) {
@@ -6155,7 +6159,7 @@ public class UtilsApi {
      * @return TransactionCode
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TransactionCode updateTransactionCodeUsingPut(TransactionCode transactionCode, UUID transactionCodeId) throws ApiException {
+    public TransactionCode updateTransactionCodeUsingPut(Object transactionCode, UUID transactionCodeId) throws ApiException {
         ApiResponse<TransactionCode> resp = updateTransactionCodeUsingPutWithHttpInfo(transactionCode, transactionCodeId);
         return resp.getData();
     }
@@ -6168,7 +6172,7 @@ public class UtilsApi {
      * @return ApiResponse&lt;TransactionCode&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TransactionCode> updateTransactionCodeUsingPutWithHttpInfo(TransactionCode transactionCode, UUID transactionCodeId) throws ApiException {
+    public ApiResponse<TransactionCode> updateTransactionCodeUsingPutWithHttpInfo(Object transactionCode, UUID transactionCodeId) throws ApiException {
         com.squareup.okhttp.Call call = updateTransactionCodeUsingPutValidateBeforeCall(transactionCode, transactionCodeId, null, null);
         Type localVarReturnType = new TypeToken<TransactionCode>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -6183,7 +6187,7 @@ public class UtilsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateTransactionCodeUsingPutAsync(TransactionCode transactionCode, UUID transactionCodeId, final ApiCallback<TransactionCode> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateTransactionCodeUsingPutAsync(Object transactionCode, UUID transactionCodeId, final ApiCallback<TransactionCode> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

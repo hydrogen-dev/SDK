@@ -14,11 +14,18 @@
 package com.hydrogen.nucleus.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
+import com.hydrogen.nucleus.model.CardAddress;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -29,10 +36,13 @@ import org.threeten.bp.OffsetDateTime;
  * Card Object
  */
 @ApiModel(description = "Card Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-12T05:33:30.744Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-24T10:39:20.203Z")
 public class Card {
   @SerializedName("address")
   private List<CardAddress> address = null;
+
+  @SerializedName("business_id")
+  private UUID businessId = null;
 
   @SerializedName("card_holder_name")
   private String cardHolderName = null;
@@ -118,6 +128,19 @@ public class Card {
   @SerializedName("update_date")
   private OffsetDateTime updateDate = null;
 
+  public Card address(List<CardAddress> address) {
+    this.address = address;
+    return this;
+  }
+
+  public Card addAddressItem(CardAddress addressItem) {
+    if (this.address == null) {
+      this.address = new ArrayList<CardAddress>();
+    }
+    this.address.add(addressItem);
+    return this;
+  }
+
    /**
    * Get address
    * @return address
@@ -125,6 +148,28 @@ public class Card {
   @ApiModelProperty(example = "[]", value = "")
   public List<CardAddress> getAddress() {
     return address;
+  }
+
+  public void setAddress(List<CardAddress> address) {
+    this.address = address;
+  }
+
+  public Card businessId(UUID businessId) {
+    this.businessId = businessId;
+    return this;
+  }
+
+   /**
+   * businessId
+   * @return businessId
+  **/
+  @ApiModelProperty(example = "1c28dade-8679-4df5-9b9d-c508d04fcb0c", value = "businessId")
+  public UUID getBusinessId() {
+    return businessId;
+  }
+
+  public void setBusinessId(UUID businessId) {
+    this.businessId = businessId;
   }
 
   public Card cardHolderName(String cardHolderName) {
@@ -262,13 +307,18 @@ public class Card {
    * clientId
    * @return clientId
   **/
-  @ApiModelProperty(example = "000183ac-2288-4564-a76b-119f4694be98", required = true, value = "clientId")
+  @ApiModelProperty(example = "000183ac-2288-4564-a76b-119f4694be98", value = "clientId")
   public UUID getClientId() {
     return clientId;
   }
 
   public void setClientId(UUID clientId) {
     this.clientId = clientId;
+  }
+
+  public Card createDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
+    return this;
   }
 
    /**
@@ -278,6 +328,10 @@ public class Card {
   @ApiModelProperty(example = "2018-06-28T18:17:23.579+0000", value = "")
   public OffsetDateTime getCreateDate() {
     return createDate;
+  }
+
+  public void setCreateDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
   }
 
   public Card creditLimit(Double creditLimit) {
@@ -352,6 +406,11 @@ public class Card {
     this.fulfillment = fulfillment;
   }
 
+  public Card id(UUID id) {
+    this.id = id;
+    return this;
+  }
+
    /**
    * Get id
    * @return id
@@ -359,6 +418,10 @@ public class Card {
   @ApiModelProperty(example = "000183ac-2288-4564-a76b-119f4694be98", value = "")
   public UUID getId() {
     return id;
+  }
+
+  public void setId(UUID id) {
+    this.id = id;
   }
 
   public Card institutionId(UUID institutionId) {
@@ -487,6 +550,19 @@ public class Card {
     this.mask = mask;
   }
 
+  public Card metadata(Map<String, String> metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+  public Card putMetadataItem(String key, String metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<String, String>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
    /**
    * Get metadata
    * @return metadata
@@ -494,6 +570,10 @@ public class Card {
   @ApiModelProperty(example = "{}", value = "")
   public Map<String, String> getMetadata() {
     return metadata;
+  }
+
+  public void setMetadata(Map<String, String> metadata) {
+    this.metadata = metadata;
   }
 
   public Card phoneNumber(String phoneNumber) {
@@ -550,6 +630,11 @@ public class Card {
     this.prepaidAmount = prepaidAmount;
   }
 
+  public Card secondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
+    return this;
+  }
+
    /**
    * Get secondaryId
    * @return secondaryId
@@ -557,6 +642,10 @@ public class Card {
   @ApiModelProperty(example = "7289243787238", value = "")
   public String getSecondaryId() {
     return secondaryId;
+  }
+
+  public void setSecondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
   }
 
   public Card status(String status) {
@@ -577,6 +666,11 @@ public class Card {
     this.status = status;
   }
 
+  public Card updateDate(OffsetDateTime updateDate) {
+    this.updateDate = updateDate;
+    return this;
+  }
+
    /**
    * Get updateDate
    * @return updateDate
@@ -586,9 +680,13 @@ public class Card {
     return updateDate;
   }
 
+  public void setUpdateDate(OffsetDateTime updateDate) {
+    this.updateDate = updateDate;
+  }
+
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -597,6 +695,7 @@ public class Card {
     }
     Card card = (Card) o;
     return Objects.equals(this.address, card.address) &&
+        Objects.equals(this.businessId, card.businessId) &&
         Objects.equals(this.cardHolderName, card.cardHolderName) &&
         Objects.equals(this.cardImage, card.cardImage) &&
         Objects.equals(this.cardIssuance, card.cardIssuance) &&
@@ -629,7 +728,7 @@ public class Card {
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, cardHolderName, cardImage, cardIssuance, cardName, cardNetwork, cardProgramId, cardType, clientId, createDate, creditLimit, currencyCode, expiryDate, fulfillment, id, institutionId, institutionName, isActive, isPinSet, isPrimary, isReloadable, mask, metadata, phoneNumber, portfolioId, prepaidAmount, secondaryId, status, updateDate);
+    return Objects.hash(address, businessId, cardHolderName, cardImage, cardIssuance, cardName, cardNetwork, cardProgramId, cardType, clientId, createDate, creditLimit, currencyCode, expiryDate, fulfillment, id, institutionId, institutionName, isActive, isPinSet, isPrimary, isReloadable, mask, metadata, phoneNumber, portfolioId, prepaidAmount, secondaryId, status, updateDate);
   }
 
 
@@ -639,6 +738,7 @@ public class Card {
     sb.append("class Card {\n");
     
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    businessId: ").append(toIndentedString(businessId)).append("\n");
     sb.append("    cardHolderName: ").append(toIndentedString(cardHolderName)).append("\n");
     sb.append("    cardImage: ").append(toIndentedString(cardImage)).append("\n");
     sb.append("    cardIssuance: ").append(toIndentedString(cardIssuance)).append("\n");
@@ -675,7 +775,7 @@ public class Card {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

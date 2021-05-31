@@ -33,6 +33,9 @@ module NucleusApi
     # bankAccountNumber
     attr_accessor :bank_account_number
 
+    # businessId
+    attr_accessor :business_id
+
     # clientId
     attr_accessor :client_id
 
@@ -88,6 +91,7 @@ module NucleusApi
         :'bank_account_holder' => :'bank_account_holder',
         :'bank_account_name' => :'bank_account_name',
         :'bank_account_number' => :'bank_account_number',
+        :'business_id' => :'business_id',
         :'client_id' => :'client_id',
         :'create_date' => :'create_date',
         :'currency_code' => :'currency_code',
@@ -117,6 +121,7 @@ module NucleusApi
         :'bank_account_holder' => :'String',
         :'bank_account_name' => :'String',
         :'bank_account_number' => :'String',
+        :'business_id' => :'String',
         :'client_id' => :'String',
         :'create_date' => :'DateTime',
         :'currency_code' => :'String',
@@ -167,6 +172,10 @@ module NucleusApi
 
       if attributes.has_key?(:'bank_account_number')
         self.bank_account_number = attributes[:'bank_account_number']
+      end
+
+      if attributes.has_key?(:'business_id')
+        self.business_id = attributes[:'business_id']
       end
 
       if attributes.has_key?(:'client_id')
@@ -284,6 +293,7 @@ module NucleusApi
           bank_account_holder == o.bank_account_holder &&
           bank_account_name == o.bank_account_name &&
           bank_account_number == o.bank_account_number &&
+          business_id == o.business_id &&
           client_id == o.client_id &&
           create_date == o.create_date &&
           currency_code == o.currency_code &&
@@ -312,7 +322,7 @@ module NucleusApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_id, available_balance, balance, bank_account_holder, bank_account_name, bank_account_number, client_id, create_date, currency_code, id, institution_id, institution_name, is_active, is_default, is_link_verified, link_verified_date, mask, metadata, routing, routing_wire, secondary_id, type, update_date].hash
+      [account_id, available_balance, balance, bank_account_holder, bank_account_name, bank_account_number, business_id, client_id, create_date, currency_code, id, institution_id, institution_name, is_active, is_default, is_link_verified, link_verified_date, mask, metadata, routing, routing_wire, secondary_id, type, update_date].hash
     end
 
     # Builds the object from hash
@@ -374,7 +384,9 @@ module NucleusApi
         temp_model.build_from_hash(value)
       end
     end
-# Returns the string representation of the object
+
+
+    # Returns the string representation of the object
     # @return [String] String presentation of the object
     def to_s
       to_hash.to_s
@@ -396,7 +408,6 @@ module NucleusApi
       end
       hash
     end
-
 
     # Outputs non-array value in the form of hash
     # For object, use to_hash. Otherwise, just return the value

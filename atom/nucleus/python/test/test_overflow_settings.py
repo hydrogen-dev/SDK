@@ -32,7 +32,7 @@ class TestOverflowSettings(unittest.TestCase):
     def testOverflowSettings(self):
         """Test OverflowSettings"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.overflow_settings.OverflowSettings()  # noqa: E501
+        # model = nucleus_api.models.overflow_settings.OverflowSettings()  # noqa: E501
         pass
 
 

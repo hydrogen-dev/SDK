@@ -13,13 +13,17 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.PageSpendingControl;
 import com.hydrogen.nucleus.model.SpendingControl;
-import com.hydrogen.nucleus.ApiException;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for SpendingControlApi
@@ -108,7 +112,7 @@ public class SpendingControlApiTest {
      */
     @Test
     public void updateSpendingControlUsingPutTest() throws ApiException {
-        SpendingControl spendingControl = null;
+        Object spendingControl = null;
         UUID spendingControlId = null;
         SpendingControl response = api.updateSpendingControlUsingPut(spendingControl, spendingControlId);
 

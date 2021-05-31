@@ -209,15 +209,15 @@
    */
   exports.IsFeeEnum = {
     /**
-     * value: "false"
-     * @const
-     */
-    "false": "false",
-    /**
      * value: "true"
      * @const
      */
     "true": "true",
+    /**
+     * value: "false"
+     * @const
+     */
+    "false": "false",
     /**
      * value: "null"
      * @const
@@ -231,15 +231,15 @@
    */
   exports.IsTransferEnum = {
     /**
-     * value: "false"
-     * @const
-     */
-    "false": "false",
-    /**
      * value: "true"
      * @const
      */
     "true": "true",
+    /**
+     * value: "false"
+     * @const
+     */
+    "false": "false",
     /**
      * value: "null"
      * @const

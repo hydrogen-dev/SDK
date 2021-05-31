@@ -43,6 +43,7 @@ class PortfolioTransaction(object):
         '_date': 'datetime',
         'date_available': 'datetime',
         'description': 'str',
+        'funding_id': 'str',
         'id': 'str',
         'is_cleansed': 'bool',
         'is_disputed': 'bool',
@@ -54,6 +55,7 @@ class PortfolioTransaction(object):
         'merchant_category_code': 'int',
         'merchant_id': 'str',
         'metadata': 'dict(str, str)',
+        'mid': 'str',
         'model_id': 'str',
         'portfolio_id': 'str',
         'price': 'float',
@@ -78,6 +80,7 @@ class PortfolioTransaction(object):
         '_date': 'date',
         'date_available': 'date_available',
         'description': 'description',
+        'funding_id': 'funding_id',
         'id': 'id',
         'is_cleansed': 'is_cleansed',
         'is_disputed': 'is_disputed',
@@ -89,6 +92,7 @@ class PortfolioTransaction(object):
         'merchant_category_code': 'merchant_category_code',
         'merchant_id': 'merchant_id',
         'metadata': 'metadata',
+        'mid': 'mid',
         'model_id': 'model_id',
         'portfolio_id': 'portfolio_id',
         'price': 'price',
@@ -102,7 +106,7 @@ class PortfolioTransaction(object):
         'update_date': 'update_date'
     }
 
-    def __init__(self, account_id=None, amount=None, balance=None, category=None, check=None, create_date=None, currency_code=None, _date=None, date_available=None, description=None, id=None, is_cleansed=None, is_disputed=None, is_read=None, is_recurring=None, location=None, memo=None, merchant=None, merchant_category_code=None, merchant_id=None, metadata=None, model_id=None, portfolio_id=None, price=None, quantity=None, secondary_id=None, security_id=None, status=None, subcategory=None, transaction_category_id=None, transaction_code_id=None, update_date=None, _configuration=None):  # noqa: E501
+    def __init__(self, account_id=None, amount=None, balance=None, category=None, check=None, create_date=None, currency_code=None, _date=None, date_available=None, description=None, funding_id=None, id=None, is_cleansed=None, is_disputed=None, is_read=None, is_recurring=None, location=None, memo=None, merchant=None, merchant_category_code=None, merchant_id=None, metadata=None, mid=None, model_id=None, portfolio_id=None, price=None, quantity=None, secondary_id=None, security_id=None, status=None, subcategory=None, transaction_category_id=None, transaction_code_id=None, update_date=None, _configuration=None):  # noqa: E501
         """PortfolioTransaction - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -118,6 +122,7 @@ class PortfolioTransaction(object):
         self.__date = None
         self._date_available = None
         self._description = None
+        self._funding_id = None
         self._id = None
         self._is_cleansed = None
         self._is_disputed = None
@@ -129,6 +134,7 @@ class PortfolioTransaction(object):
         self._merchant_category_code = None
         self._merchant_id = None
         self._metadata = None
+        self._mid = None
         self._model_id = None
         self._portfolio_id = None
         self._price = None
@@ -160,6 +166,8 @@ class PortfolioTransaction(object):
             self.date_available = date_available
         if description is not None:
             self.description = description
+        if funding_id is not None:
+            self.funding_id = funding_id
         if id is not None:
             self.id = id
         if is_cleansed is not None:
@@ -182,6 +190,8 @@ class PortfolioTransaction(object):
             self.merchant_id = merchant_id
         if metadata is not None:
             self.metadata = metadata
+        if mid is not None:
+            self.mid = mid
         self.model_id = model_id
         self.portfolio_id = portfolio_id
         if price is not None:
@@ -433,6 +443,29 @@ class PortfolioTransaction(object):
         self._description = description
 
     @property
+    def funding_id(self):
+        """Gets the funding_id of this PortfolioTransaction.  # noqa: E501
+
+        fundingId  # noqa: E501
+
+        :return: The funding_id of this PortfolioTransaction.  # noqa: E501
+        :rtype: str
+        """
+        return self._funding_id
+
+    @funding_id.setter
+    def funding_id(self, funding_id):
+        """Sets the funding_id of this PortfolioTransaction.
+
+        fundingId  # noqa: E501
+
+        :param funding_id: The funding_id of this PortfolioTransaction.  # noqa: E501
+        :type: str
+        """
+
+        self._funding_id = funding_id
+
+    @property
     def id(self):
         """Gets the id of this PortfolioTransaction.  # noqa: E501
 
@@ -682,6 +715,29 @@ class PortfolioTransaction(object):
         """
 
         self._metadata = metadata
+
+    @property
+    def mid(self):
+        """Gets the mid of this PortfolioTransaction.  # noqa: E501
+
+        mid  # noqa: E501
+
+        :return: The mid of this PortfolioTransaction.  # noqa: E501
+        :rtype: str
+        """
+        return self._mid
+
+    @mid.setter
+    def mid(self, mid):
+        """Sets the mid of this PortfolioTransaction.
+
+        mid  # noqa: E501
+
+        :param mid: The mid of this PortfolioTransaction.  # noqa: E501
+        :type: str
+        """
+
+        self._mid = mid
 
     @property
     def model_id(self):

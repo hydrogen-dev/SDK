@@ -1168,7 +1168,7 @@ class ScoreApi
      *
      * Update a score
      *
-     * @param  \com\hydrogen\nucleus\Model\Score $score score (required)
+     * @param  object $score score (required)
      * @param  string $score_id UUID score_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -1186,7 +1186,7 @@ class ScoreApi
      *
      * Update a score
      *
-     * @param  \com\hydrogen\nucleus\Model\Score $score score (required)
+     * @param  object $score score (required)
      * @param  string $score_id UUID score_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -1262,7 +1262,7 @@ class ScoreApi
      *
      * Update a score
      *
-     * @param  \com\hydrogen\nucleus\Model\Score $score score (required)
+     * @param  object $score score (required)
      * @param  string $score_id UUID score_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1283,7 +1283,7 @@ class ScoreApi
      *
      * Update a score
      *
-     * @param  \com\hydrogen\nucleus\Model\Score $score score (required)
+     * @param  object $score score (required)
      * @param  string $score_id UUID score_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1334,7 +1334,7 @@ class ScoreApi
     /**
      * Create request for operation 'updateScoreUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Score $score score (required)
+     * @param  object $score score (required)
      * @param  string $score_id UUID score_id (required)
      *
      * @throws \InvalidArgumentException

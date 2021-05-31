@@ -32,7 +32,7 @@ class TestPagePortfolioHoldingAgg(unittest.TestCase):
     def testPagePortfolioHoldingAgg(self):
         """Test PagePortfolioHoldingAgg"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_portfolio_holding_agg.PagePortfolioHoldingAgg()  # noqa: E501
+        # model = nucleus_api.models.page_portfolio_holding_agg.PagePortfolioHoldingAgg()  # noqa: E501
         pass
 
 

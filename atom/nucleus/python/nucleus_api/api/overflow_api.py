@@ -740,7 +740,7 @@ class OverflowApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param OverflowSettings overflow_settings: overflow_settings (required)
+        :param object overflow_settings: overflow_settings (required)
         :param str overflow_settings_id: UUID overflow_settings_id (required)
         :return: OverflowSettings
                  If the method is called asynchronously,
@@ -763,7 +763,7 @@ class OverflowApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param OverflowSettings overflow_settings: overflow_settings (required)
+        :param object overflow_settings: overflow_settings (required)
         :param str overflow_settings_id: UUID overflow_settings_id (required)
         :return: OverflowSettings
                  If the method is called asynchronously,

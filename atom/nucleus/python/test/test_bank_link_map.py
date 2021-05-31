@@ -32,7 +32,7 @@ class TestBankLinkMap(unittest.TestCase):
     def testBankLinkMap(self):
         """Test BankLinkMap"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.bank_link_map.BankLinkMap()  # noqa: E501
+        # model = nucleus_api.models.bank_link_map.BankLinkMap()  # noqa: E501
         pass
 
 

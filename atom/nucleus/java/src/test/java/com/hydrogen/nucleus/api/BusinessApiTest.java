@@ -13,19 +13,21 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.AvailableDateDoubleVO;
 import com.hydrogen.nucleus.model.Business;
+import org.threeten.bp.LocalDate;
 import com.hydrogen.nucleus.model.PageBusiness;
 import com.hydrogen.nucleus.model.PagePortfolioTransaction;
 import com.hydrogen.nucleus.model.PortfolioHoldingAgg;
-import com.hydrogen.nucleus.ApiException;
-import org.threeten.bp.LocalDate;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for BusinessApi
@@ -185,7 +187,7 @@ public class BusinessApiTest {
      */
     @Test
     public void updateBusinessUsingPutTest() throws ApiException {
-        Business business = null;
+        Object business = null;
         UUID businessId = null;
         Business response = api.updateBusinessUsingPut(business, businessId);
 

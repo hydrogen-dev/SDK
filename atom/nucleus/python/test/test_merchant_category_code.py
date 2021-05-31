@@ -32,7 +32,7 @@ class TestMerchantCategoryCode(unittest.TestCase):
     def testMerchantCategoryCode(self):
         """Test MerchantCategoryCode"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.merchant_category_code.MerchantCategoryCode()  # noqa: E501
+        # model = nucleus_api.models.merchant_category_code.MerchantCategoryCode()  # noqa: E501
         pass
 
 

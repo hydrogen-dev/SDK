@@ -3453,7 +3453,7 @@ class AllocationApi
      *
      * Update an allocation composition
      *
-     * @param  \com\hydrogen\nucleus\Model\AllocationComposition $allocation_composition allocation_composition (required)
+     * @param  object $allocation_composition allocation_composition (required)
      * @param  string $allocation_composition_id UUID allocation_composition_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -3471,7 +3471,7 @@ class AllocationApi
      *
      * Update an allocation composition
      *
-     * @param  \com\hydrogen\nucleus\Model\AllocationComposition $allocation_composition allocation_composition (required)
+     * @param  object $allocation_composition allocation_composition (required)
      * @param  string $allocation_composition_id UUID allocation_composition_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -3547,7 +3547,7 @@ class AllocationApi
      *
      * Update an allocation composition
      *
-     * @param  \com\hydrogen\nucleus\Model\AllocationComposition $allocation_composition allocation_composition (required)
+     * @param  object $allocation_composition allocation_composition (required)
      * @param  string $allocation_composition_id UUID allocation_composition_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3568,7 +3568,7 @@ class AllocationApi
      *
      * Update an allocation composition
      *
-     * @param  \com\hydrogen\nucleus\Model\AllocationComposition $allocation_composition allocation_composition (required)
+     * @param  object $allocation_composition allocation_composition (required)
      * @param  string $allocation_composition_id UUID allocation_composition_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3619,7 +3619,7 @@ class AllocationApi
     /**
      * Create request for operation 'updateAllocationCompositionUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\AllocationComposition $allocation_composition allocation_composition (required)
+     * @param  object $allocation_composition allocation_composition (required)
      * @param  string $allocation_composition_id UUID allocation_composition_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3740,7 +3740,7 @@ class AllocationApi
      *
      * Update an allocation
      *
-     * @param  \com\hydrogen\nucleus\Model\Allocation $allocation allocation (required)
+     * @param  object $allocation allocation (required)
      * @param  string $allocation_id UUID allocation_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -3758,7 +3758,7 @@ class AllocationApi
      *
      * Update an allocation
      *
-     * @param  \com\hydrogen\nucleus\Model\Allocation $allocation allocation (required)
+     * @param  object $allocation allocation (required)
      * @param  string $allocation_id UUID allocation_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -3834,7 +3834,7 @@ class AllocationApi
      *
      * Update an allocation
      *
-     * @param  \com\hydrogen\nucleus\Model\Allocation $allocation allocation (required)
+     * @param  object $allocation allocation (required)
      * @param  string $allocation_id UUID allocation_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3855,7 +3855,7 @@ class AllocationApi
      *
      * Update an allocation
      *
-     * @param  \com\hydrogen\nucleus\Model\Allocation $allocation allocation (required)
+     * @param  object $allocation allocation (required)
      * @param  string $allocation_id UUID allocation_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3906,7 +3906,7 @@ class AllocationApi
     /**
      * Create request for operation 'updateAllocationUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Allocation $allocation allocation (required)
+     * @param  object $allocation allocation (required)
      * @param  string $allocation_id UUID allocation_id (required)
      *
      * @throws \InvalidArgumentException

@@ -13,20 +13,23 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.Card;
 import com.hydrogen.nucleus.model.CardProgram;
-import com.hydrogen.nucleus.model.PageCard;
-import com.hydrogen.nucleus.model.PageClientCardVO;
-import com.hydrogen.nucleus.model.PagePortfolioTransaction;
-import com.hydrogen.nucleus.ApiException;
 import org.threeten.bp.LocalDate;
+import org.threeten.bp.OffsetDateTime;
+import com.hydrogen.nucleus.model.PageCard;
 import com.hydrogen.nucleus.model.PageCardProgram;
-
+import com.hydrogen.nucleus.model.PageClientBusinessCardVO;
+import com.hydrogen.nucleus.model.PagePortfolioTransaction;
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for CardApi
@@ -117,7 +120,7 @@ public class CardApiTest {
         String orderBy = null;
         Integer page = null;
         Integer size = null;
-        PageClientCardVO response = api.getAllClientCardsUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
+        PageClientBusinessCardVO response = api.getAllClientCardsUsingGet(ascending, currencyConversion, filter, orderBy, page, size);
 
         // TODO: test validations
     }
@@ -224,6 +227,30 @@ public class CardApiTest {
     }
     
     /**
+     * List all card transactions
+     *
+     * Get the information for all transactions for an card.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getCardTransactionAggAllUsingGet1Test() throws ApiException {
+        UUID cardId = null;
+        Boolean ascending = null;
+        String currencyConversion = null;
+        OffsetDateTime endDate = null;
+        String filter = null;
+        String orderBy = null;
+        Integer page = null;
+        Integer size = null;
+        OffsetDateTime startDate = null;
+        PagePortfolioTransaction response = api.getCardTransactionAggAllUsingGet1(cardId, ascending, currencyConversion, endDate, filter, orderBy, page, size, startDate);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Retrieve a card request
      *
      * Retrieve the information for a card request.
@@ -249,7 +276,7 @@ public class CardApiTest {
      */
     @Test
     public void updateCardProgramUsingPutTest() throws ApiException {
-        CardProgram cardProgram = null;
+        Object cardProgram = null;
         UUID cardProgramId = null;
         CardProgram response = api.updateCardProgramUsingPut(cardProgram, cardProgramId);
 
@@ -266,7 +293,7 @@ public class CardApiTest {
      */
     @Test
     public void updateCardUsingPutTest() throws ApiException {
-        Card card = null;
+        Object card = null;
         UUID cardId = null;
         Card response = api.updateCardUsingPut(card, cardId);
 

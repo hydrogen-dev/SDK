@@ -13,12 +13,17 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.AdminClient;
 import com.hydrogen.nucleus.model.ClientCredentials;
 import com.hydrogen.nucleus.model.PageAdminClient;
-import com.hydrogen.nucleus.ApiException;
 import org.junit.Test;
 import org.junit.Ignore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for AdminClientApi
@@ -107,7 +112,7 @@ public class AdminClientApiTest {
      */
     @Test
     public void updateAdminClientUsingPUTTest() throws ApiException {
-        AdminClient client = null;
+        Object client = null;
         Long clientId = null;
         AdminClient response = api.updateAdminClientUsingPUT(client, clientId);
 

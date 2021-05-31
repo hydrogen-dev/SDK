@@ -32,7 +32,7 @@ class TestVAccountVO(unittest.TestCase):
     def testVAccountVO(self):
         """Test VAccountVO"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.v_account_vo.VAccountVO()  # noqa: E501
+        # model = nucleus_api.models.v_account_vo.VAccountVO()  # noqa: E501
         pass
 
 

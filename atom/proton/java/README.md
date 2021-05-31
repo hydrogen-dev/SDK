@@ -1,10 +1,11 @@
 # Hydrogen Proton API
 
 Hydrogen Proton API
-- API version: 1.8.0
-  - Build date: 12-03-2020
+- API version: 1.9.0
+  - Build date: 04-28-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
+
 
 ## Documentation
 
@@ -40,17 +41,16 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.hydrogen</groupId>
   <artifactId>hydrogen-proton-api</artifactId>
-  <version>1.8.0</version>
+  <version>1.9.0</version>
   <scope>compile</scope>
 </dependency>
 ```
-
 ### Gradle users
 
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.hydrogen:hydrogen-proton-api:1.8.0"
+compile "com.hydrogen:hydrogen-proton-api:1.9.0"
 ```
 
 ### Others
@@ -63,8 +63,9 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/hydrogen-proton-api-1.8.0.jar`
+* `target/hydrogen-proton-api-1.9.0.jar`
 * `target/lib/*.jar`
+
 
 ## Getting Started
 
@@ -84,11 +85,11 @@ https://api.hydrogenplatform.com/proton/v1
 Now you are ready to execute the following Java code:
 
 ```java
-import com.hydrogen.proton.AuthApiClient;
+
+import com.hydrogen.proton.ApiClient;
 import com.hydrogen.proton.ApiException;
 import com.hydrogen.proton.model.AnnuityCalculatorAccumulationHorizonRequest;
-import com.hydrogen.proton.*;
-import AnnuitiesApi;
+import com.hydrogen.proton.api.AnnuitiesApi;
 
 import java.util.*;
 
@@ -109,7 +110,6 @@ public class AnnuitiesApiExample {
         } catch (ApiException e) {
         e.printStackTrace();
         }
-
         AnnuitiesApi apiInstance = new AnnuitiesApi();
         AnnuityCalculatorAccumulationHorizonRequest annuityCalculatorAccumulationHorizonRequest = new AnnuityCalculatorAccumulationHorizonRequest(); // AnnuityCalculatorAccumulationHorizonRequest | Request payload for Annuity Calculator - Accumulation Horizon
         try {
@@ -123,6 +123,8 @@ public class AnnuitiesApiExample {
 }
 
 ```
+
+
 
 ## Author
 The Hydrogen Technology Corporation

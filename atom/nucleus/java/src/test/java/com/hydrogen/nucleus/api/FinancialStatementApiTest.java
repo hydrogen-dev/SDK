@@ -13,13 +13,17 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.FinancialStatement;
 import com.hydrogen.nucleus.model.PageFinancialStatement;
-import com.hydrogen.nucleus.ApiException;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for FinancialStatementApi
@@ -110,7 +114,7 @@ public class FinancialStatementApiTest {
      */
     @Test
     public void updateFinancialStatementUsingPutTest() throws ApiException {
-        FinancialStatement financialStatement = null;
+        Object financialStatement = null;
         UUID financialStatementId = null;
         FinancialStatement response = api.updateFinancialStatementUsingPut(financialStatement, financialStatementId);
 

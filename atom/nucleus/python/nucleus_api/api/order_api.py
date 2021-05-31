@@ -2717,7 +2717,7 @@ class OrderApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param OrderStatus order_status: order_status (required)
+        :param object order_status: order_status (required)
         :param str order_status_id: UUID order_status_id (required)
         :return: OrderStatus
                  If the method is called asynchronously,
@@ -2740,7 +2740,7 @@ class OrderApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param OrderStatus order_status: order_status (required)
+        :param object order_status: order_status (required)
         :param str order_status_id: UUID order_status_id (required)
         :return: OrderStatus
                  If the method is called asynchronously,
@@ -2824,7 +2824,7 @@ class OrderApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param OrderTrack order_track: order_track (required)
+        :param object order_track: order_track (required)
         :param str order_track_id: UUID order_track_id (required)
         :return: OrderTrack
                  If the method is called asynchronously,
@@ -2847,7 +2847,7 @@ class OrderApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param OrderTrack order_track: order_track (required)
+        :param object order_track: order_track (required)
         :param str order_track_id: UUID order_track_id (required)
         :return: OrderTrack
                  If the method is called asynchronously,
@@ -2931,7 +2931,7 @@ class OrderApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Order order: order (required)
+        :param object order: order (required)
         :param str order_id: UUID order_id (required)
         :return: Order
                  If the method is called asynchronously,
@@ -2954,7 +2954,7 @@ class OrderApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Order order: order (required)
+        :param object order: order (required)
         :param str order_id: UUID order_id (required)
         :return: Order
                  If the method is called asynchronously,

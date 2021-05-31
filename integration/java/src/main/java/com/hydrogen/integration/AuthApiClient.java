@@ -1,7 +1,13 @@
 package com.hydrogen.integration;
 
 import com.google.gson.Gson;
-import com.squareup.okhttp.*;
+import com.squareup.okhttp.Call;
+import com.squareup.okhttp.Credentials;
+import com.squareup.okhttp.HttpUrl;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
 
 import java.io.IOException;
 import java.util.Map;

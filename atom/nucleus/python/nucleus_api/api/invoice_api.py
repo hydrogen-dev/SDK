@@ -851,7 +851,7 @@ class InvoiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param InvoicePayment invoice_payment: invoice_payment (required)
+        :param object invoice_payment: invoice_payment (required)
         :param str invoice_payment_id: UUID invoice_payment_id (required)
         :return: InvoicePayment
                  If the method is called asynchronously,
@@ -874,7 +874,7 @@ class InvoiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param InvoicePayment invoice_payment: invoice_payment (required)
+        :param object invoice_payment: invoice_payment (required)
         :param str invoice_payment_id: UUID invoice_payment_id (required)
         :return: InvoicePayment
                  If the method is called asynchronously,
@@ -958,7 +958,7 @@ class InvoiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Invoice invoice: invoice (required)
+        :param object invoice: invoice (required)
         :param str invoice_id: UUID invoice_id (required)
         :return: Invoice
                  If the method is called asynchronously,
@@ -981,7 +981,7 @@ class InvoiceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Invoice invoice: invoice (required)
+        :param object invoice: invoice (required)
         :param str invoice_id: UUID invoice_id (required)
         :return: Invoice
                  If the method is called asynchronously,

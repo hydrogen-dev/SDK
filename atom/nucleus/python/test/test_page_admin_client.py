@@ -32,7 +32,7 @@ class TestPageAdminClient(unittest.TestCase):
     def testPageAdminClient(self):
         """Test PageAdminClient"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_admin_client.PageAdminClient()  # noqa: E501
+        # model = nucleus_api.models.page_admin_client.PageAdminClient()  # noqa: E501
         pass
 
 

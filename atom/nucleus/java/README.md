@@ -72,7 +72,7 @@ Please first follow the [installation](#installation) instructions. Then make su
 
 ### Base URL
 1. Go to ApiClient file located under src folder.
-2. Search for basePath, adminPath and change/verify the URL according to the environment.
+2. Search for basePath and change/verify the URL according to the environment.
 
 **Sandbox Base URL**
 https://sandbox.hydrogenplatform.com

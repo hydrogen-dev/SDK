@@ -46,18 +46,18 @@
    * @alias module:model/CustomerRevenue
    * @class
    * @param accountingMethod {String} accounting_method
+   * @param contactId {String} contactId
    * @param currencyCode {String} currency_code
-   * @param customerId {String} customerId
    * @param _date {Date} date
    * @param revenue {Number} revenue
    */
-  var exports = function(accountingMethod, currencyCode, customerId, _date, revenue) {
+  var exports = function(accountingMethod, contactId, currencyCode, _date, revenue) {
     var _this = this;
 
     _this['accounting_method'] = accountingMethod;
+    _this['contact_id'] = contactId;
 
     _this['currency_code'] = currencyCode;
-    _this['customer_id'] = customerId;
     _this['date'] = _date;
 
 
@@ -80,14 +80,14 @@
       if (data.hasOwnProperty('accounting_method')) {
         obj['accounting_method'] = ApiClient.convertToType(data['accounting_method'], 'String');
       }
+      if (data.hasOwnProperty('contact_id')) {
+        obj['contact_id'] = ApiClient.convertToType(data['contact_id'], 'String');
+      }
       if (data.hasOwnProperty('create_date')) {
         obj['create_date'] = ApiClient.convertToType(data['create_date'], 'Date');
       }
       if (data.hasOwnProperty('currency_code')) {
         obj['currency_code'] = ApiClient.convertToType(data['currency_code'], 'String');
-      }
-      if (data.hasOwnProperty('customer_id')) {
-        obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
       }
       if (data.hasOwnProperty('date')) {
         obj['date'] = ApiClient.convertToType(data['date'], 'Date');
@@ -117,6 +117,11 @@
    */
   exports.prototype['accounting_method'] = undefined;
   /**
+   * contactId
+   * @member {String} contact_id
+   */
+  exports.prototype['contact_id'] = undefined;
+  /**
    * @member {Date} create_date
    */
   exports.prototype['create_date'] = undefined;
@@ -125,11 +130,6 @@
    * @member {String} currency_code
    */
   exports.prototype['currency_code'] = undefined;
-  /**
-   * customerId
-   * @member {String} customer_id
-   */
-  exports.prototype['customer_id'] = undefined;
   /**
    * date
    * @member {Date} date

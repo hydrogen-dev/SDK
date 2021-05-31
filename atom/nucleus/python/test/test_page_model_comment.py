@@ -32,7 +32,7 @@ class TestPageModelComment(unittest.TestCase):
     def testPageModelComment(self):
         """Test PageModelComment"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_model_comment.PageModelComment()  # noqa: E501
+        # model = nucleus_api.models.page_model_comment.PageModelComment()  # noqa: E501
         pass
 
 

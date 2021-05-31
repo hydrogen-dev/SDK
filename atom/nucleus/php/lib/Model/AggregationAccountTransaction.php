@@ -234,11 +234,11 @@ class AggregationAccountTransaction implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const IS_FEE_FALSE = 'false';
     const IS_FEE_TRUE = 'true';
+    const IS_FEE_FALSE = 'false';
     const IS_FEE_NULL = 'null';
-    const IS_TRANSFER_FALSE = 'false';
     const IS_TRANSFER_TRUE = 'true';
+    const IS_TRANSFER_FALSE = 'false';
     const IS_TRANSFER_NULL = 'null';
     
 
@@ -251,8 +251,8 @@ class AggregationAccountTransaction implements ModelInterface, ArrayAccess
     public function getIsFeeAllowableValues()
     {
         return [
-            self::IS_FEE_FALSE,
             self::IS_FEE_TRUE,
+            self::IS_FEE_FALSE,
             self::IS_FEE_NULL,
         ];
     }
@@ -265,8 +265,8 @@ class AggregationAccountTransaction implements ModelInterface, ArrayAccess
     public function getIsTransferAllowableValues()
     {
         return [
-            self::IS_TRANSFER_FALSE,
             self::IS_TRANSFER_TRUE,
+            self::IS_TRANSFER_FALSE,
             self::IS_TRANSFER_NULL,
         ];
     }

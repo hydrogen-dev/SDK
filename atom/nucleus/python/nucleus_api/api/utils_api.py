@@ -3908,7 +3908,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Application application: application (required)
+        :param object application: application (required)
         :param str application_id: UUID application_id (required)
         :return: Application
                  If the method is called asynchronously,
@@ -3931,7 +3931,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Application application: application (required)
+        :param object application: application (required)
         :param str application_id: UUID application_id (required)
         :return: Application
                  If the method is called asynchronously,
@@ -4015,7 +4015,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param FeatureTrack feature_track: feature_track (required)
+        :param object feature_track: feature_track (required)
         :param str feature_track_id: UUID feature_track_id (required)
         :return: FeatureTrack
                  If the method is called asynchronously,
@@ -4038,7 +4038,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param FeatureTrack feature_track: feature_track (required)
+        :param object feature_track: feature_track (required)
         :param str feature_track_id: UUID feature_track_id (required)
         :return: FeatureTrack
                  If the method is called asynchronously,
@@ -4122,7 +4122,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Feature feature: feature (required)
+        :param object feature: feature (required)
         :param str feature_id: UUID feature_id (required)
         :return: Feature
                  If the method is called asynchronously,
@@ -4145,7 +4145,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Feature feature: feature (required)
+        :param object feature: feature (required)
         :param str feature_id: UUID feature_id (required)
         :return: Feature
                  If the method is called asynchronously,
@@ -4229,7 +4229,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param NotificationClient notification_client: notification_client (required)
+        :param object notification_client: notification_client (required)
         :param str notification_client_id: UUID notification_client_id (required)
         :return: NotificationClient
                  If the method is called asynchronously,
@@ -4252,7 +4252,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param NotificationClient notification_client: notification_client (required)
+        :param object notification_client: notification_client (required)
         :param str notification_client_id: UUID notification_client_id (required)
         :return: NotificationClient
                  If the method is called asynchronously,
@@ -4336,7 +4336,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param NotificationSetting notification_setting: notification_setting (required)
+        :param object notification_setting: notification_setting (required)
         :param str notification_setting_id: UUID notification_setting_id (required)
         :return: NotificationSetting
                  If the method is called asynchronously,
@@ -4359,7 +4359,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param NotificationSetting notification_setting: notification_setting (required)
+        :param object notification_setting: notification_setting (required)
         :param str notification_setting_id: UUID notification_setting_id (required)
         :return: NotificationSetting
                  If the method is called asynchronously,
@@ -4443,7 +4443,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Notification notification: notification (required)
+        :param object notification: notification (required)
         :param str notification_id: UUID notification_id (required)
         :return: Notification
                  If the method is called asynchronously,
@@ -4466,7 +4466,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Notification notification: notification (required)
+        :param object notification: notification (required)
         :param str notification_id: UUID notification_id (required)
         :return: Notification
                  If the method is called asynchronously,
@@ -4550,7 +4550,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ReasonCode reason_code: reason_code (required)
+        :param object reason_code: reason_code (required)
         :param str reason_code_id: UUID reason_code_id (required)
         :return: ReasonCode
                  If the method is called asynchronously,
@@ -4573,7 +4573,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ReasonCode reason_code: reason_code (required)
+        :param object reason_code: reason_code (required)
         :param str reason_code_id: UUID reason_code_id (required)
         :return: ReasonCode
                  If the method is called asynchronously,
@@ -4657,7 +4657,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Stage stage: stage (required)
+        :param object stage: stage (required)
         :param str stage_id: UUID stage_id (required)
         :return: Stage
                  If the method is called asynchronously,
@@ -4680,7 +4680,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Stage stage: stage (required)
+        :param object stage: stage (required)
         :param str stage_id: UUID stage_id (required)
         :return: Stage
                  If the method is called asynchronously,
@@ -4764,7 +4764,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param TransactionCode transaction_code: transaction_code (required)
+        :param object transaction_code: transaction_code (required)
         :param str transaction_code_id: UUID transaction_code_id (required)
         :return: TransactionCode
                  If the method is called asynchronously,
@@ -4787,7 +4787,7 @@ class UtilsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param TransactionCode transaction_code: transaction_code (required)
+        :param object transaction_code: transaction_code (required)
         :param str transaction_code_id: UUID transaction_code_id (required)
         :return: TransactionCode
                  If the method is called asynchronously,

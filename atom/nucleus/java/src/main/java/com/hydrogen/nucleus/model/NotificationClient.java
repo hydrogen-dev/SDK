@@ -14,11 +14,17 @@
 package com.hydrogen.nucleus.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import org.threeten.bp.OffsetDateTime;
@@ -27,7 +33,7 @@ import org.threeten.bp.OffsetDateTime;
  * Notification Client Object
  */
 @ApiModel(description = "Notification Client Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-12T05:33:30.744Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-24T10:39:20.203Z")
 public class NotificationClient {
   @SerializedName("client_id")
   private UUID clientId = null;
@@ -83,6 +89,11 @@ public class NotificationClient {
     this.clientId = clientId;
   }
 
+  public NotificationClient createDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
+    return this;
+  }
+
    /**
    * Get createDate
    * @return createDate
@@ -92,6 +103,15 @@ public class NotificationClient {
     return createDate;
   }
 
+  public void setCreateDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
+  }
+
+  public NotificationClient id(UUID id) {
+    this.id = id;
+    return this;
+  }
+
    /**
    * Get id
    * @return id
@@ -99,6 +119,10 @@ public class NotificationClient {
   @ApiModelProperty(example = "000183ac-2288-4564-a76b-119f4694be98", value = "")
   public UUID getId() {
     return id;
+  }
+
+  public void setId(UUID id) {
+    this.id = id;
   }
 
   public NotificationClient isRead(Boolean isRead) {
@@ -137,6 +161,19 @@ public class NotificationClient {
     this.isSent = isSent;
   }
 
+  public NotificationClient metadata(Map<String, String> metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+  public NotificationClient putMetadataItem(String key, String metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<String, String>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
    /**
    * metadata
    * @return metadata
@@ -144,6 +181,10 @@ public class NotificationClient {
   @ApiModelProperty(example = "{}", value = "metadata")
   public Map<String, String> getMetadata() {
     return metadata;
+  }
+
+  public void setMetadata(Map<String, String> metadata) {
+    this.metadata = metadata;
   }
 
   public NotificationClient notificationContent(String notificationContent) {
@@ -218,6 +259,11 @@ public class NotificationClient {
     this.notificationImage = notificationImage;
   }
 
+  public NotificationClient secondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
+    return this;
+  }
+
    /**
    * Get secondaryId
    * @return secondaryId
@@ -225,6 +271,15 @@ public class NotificationClient {
   @ApiModelProperty(example = "7289243787238", value = "")
   public String getSecondaryId() {
     return secondaryId;
+  }
+
+  public void setSecondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
+  }
+
+  public NotificationClient updateDate(OffsetDateTime updateDate) {
+    this.updateDate = updateDate;
+    return this;
   }
 
    /**
@@ -236,9 +291,13 @@ public class NotificationClient {
     return updateDate;
   }
 
+  public void setUpdateDate(OffsetDateTime updateDate) {
+    this.updateDate = updateDate;
+  }
+
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -291,7 +350,7 @@ public class NotificationClient {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

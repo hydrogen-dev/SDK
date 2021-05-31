@@ -32,7 +32,7 @@ class TestCountry(unittest.TestCase):
     def testCountry(self):
         """Test Country"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.country.Country()  # noqa: E501
+        # model = nucleus_api.models.country.Country()  # noqa: E501
         pass
 
 

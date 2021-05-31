@@ -14,11 +14,16 @@
 package com.hydrogen.nucleus.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
+import com.hydrogen.nucleus.model.CardBalanceVO;
+import java.io.IOException;
 import java.util.UUID;
 import org.threeten.bp.LocalDate;
 
@@ -26,7 +31,7 @@ import org.threeten.bp.LocalDate;
  * Card Details Object
  */
 @ApiModel(description = "Card Details Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-12T05:33:30.744Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-24T10:39:20.203Z")
 public class CardDetailsVO {
   @SerializedName("balance")
   private CardBalanceVO balance = null;
@@ -36,6 +41,9 @@ public class CardDetailsVO {
 
   @SerializedName("card_id")
   private UUID cardId = null;
+
+  @SerializedName("card_issuance")
+  private String cardIssuance = null;
 
   @SerializedName("card_name")
   private String cardName = null;
@@ -110,6 +118,24 @@ public class CardDetailsVO {
 
   public void setCardId(UUID cardId) {
     this.cardId = cardId;
+  }
+
+  public CardDetailsVO cardIssuance(String cardIssuance) {
+    this.cardIssuance = cardIssuance;
+    return this;
+  }
+
+   /**
+   * cardIssuance
+   * @return cardIssuance
+  **/
+  @ApiModelProperty(example = "virtual", value = "cardIssuance")
+  public String getCardIssuance() {
+    return cardIssuance;
+  }
+
+  public void setCardIssuance(String cardIssuance) {
+    this.cardIssuance = cardIssuance;
   }
 
   public CardDetailsVO cardName(String cardName) {
@@ -240,7 +266,7 @@ public class CardDetailsVO {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -251,6 +277,7 @@ public class CardDetailsVO {
     return Objects.equals(this.balance, cardDetailsVO.balance) &&
         Objects.equals(this.cardHolderName, cardDetailsVO.cardHolderName) &&
         Objects.equals(this.cardId, cardDetailsVO.cardId) &&
+        Objects.equals(this.cardIssuance, cardDetailsVO.cardIssuance) &&
         Objects.equals(this.cardName, cardDetailsVO.cardName) &&
         Objects.equals(this.cardNetwork, cardDetailsVO.cardNetwork) &&
         Objects.equals(this.cardType, cardDetailsVO.cardType) &&
@@ -262,7 +289,7 @@ public class CardDetailsVO {
 
   @Override
   public int hashCode() {
-    return Objects.hash(balance, cardHolderName, cardId, cardName, cardNetwork, cardType, expiryDate, mask, prepaidAmount, status);
+    return Objects.hash(balance, cardHolderName, cardId, cardIssuance, cardName, cardNetwork, cardType, expiryDate, mask, prepaidAmount, status);
   }
 
 
@@ -274,6 +301,7 @@ public class CardDetailsVO {
     sb.append("    balance: ").append(toIndentedString(balance)).append("\n");
     sb.append("    cardHolderName: ").append(toIndentedString(cardHolderName)).append("\n");
     sb.append("    cardId: ").append(toIndentedString(cardId)).append("\n");
+    sb.append("    cardIssuance: ").append(toIndentedString(cardIssuance)).append("\n");
     sb.append("    cardName: ").append(toIndentedString(cardName)).append("\n");
     sb.append("    cardNetwork: ").append(toIndentedString(cardNetwork)).append("\n");
     sb.append("    cardType: ").append(toIndentedString(cardType)).append("\n");
@@ -289,7 +317,7 @@ public class CardDetailsVO {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

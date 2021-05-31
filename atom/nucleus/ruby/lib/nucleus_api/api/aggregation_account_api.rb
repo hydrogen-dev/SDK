@@ -1010,6 +1010,61 @@ module NucleusApi
       return data, status_code, headers
     end
     # Retrieve an aggregation account aggregate data
+    # Retrieve the information for a specific aggregation account with aggregate data for a business.
+    # @param business_id UUID business_id
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :currency_conversion USD
+    # @return [Object]
+    def get_aggregation_account_overview_by_business_id_using_get(business_id, opts = {})
+      data, _status_code, _headers = get_aggregation_account_overview_by_business_id_using_get_with_http_info(business_id, opts)
+      data
+    end
+
+    # Retrieve an aggregation account aggregate data
+    # Retrieve the information for a specific aggregation account with aggregate data for a business.
+    # @param business_id UUID business_id
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :currency_conversion USD
+    # @return [Array<(Object, Fixnum, Hash)>] Object data, response status code and response headers
+    def get_aggregation_account_overview_by_business_id_using_get_with_http_info(business_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: AggregationAccountApi.get_aggregation_account_overview_by_business_id_using_get ...'
+      end
+      # verify the required parameter 'business_id' is set
+      if @api_client.config.client_side_validation && business_id.nil?
+        fail ArgumentError, "Missing the required parameter 'business_id' when calling AggregationAccountApi.get_aggregation_account_overview_by_business_id_using_get"
+      end
+      # resource path
+      local_var_path = '/nucleus/v1/business/{business_id}/aggregation_account_overview'.sub('{' + 'business_id' + '}', business_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'currency_conversion'] = opts[:'currency_conversion'] if !opts[:'currency_conversion'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Object')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: AggregationAccountApi#get_aggregation_account_overview_by_business_id_using_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Retrieve an aggregation account aggregate data
     # Retrieve the information for a specific aggregation account with aggregate data for a client.
     # @param client_id UUID client_id
     # @param [Hash] opts the optional parameters

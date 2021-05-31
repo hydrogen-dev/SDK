@@ -32,7 +32,7 @@ class TestClientCredentials(unittest.TestCase):
     def testClientCredentials(self):
         """Test ClientCredentials"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.client_credentials.ClientCredentials()  # noqa: E501
+        # model = nucleus_api.models.client_credentials.ClientCredentials()  # noqa: E501
         pass
 
 

@@ -1252,7 +1252,7 @@ class GoalApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GoalTrack goal_track: goal_track (required)
+        :param object goal_track: goal_track (required)
         :param str goal_track_id: UUID goal_track_id (required)
         :return: GoalTrack
                  If the method is called asynchronously,
@@ -1275,7 +1275,7 @@ class GoalApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param GoalTrack goal_track: goal_track (required)
+        :param object goal_track: goal_track (required)
         :param str goal_track_id: UUID goal_track_id (required)
         :return: GoalTrack
                  If the method is called asynchronously,
@@ -1359,7 +1359,7 @@ class GoalApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Goal goal: goal (required)
+        :param object goal: goal (required)
         :param str goal_id: UUID goal_id (required)
         :return: Goal
                  If the method is called asynchronously,
@@ -1382,7 +1382,7 @@ class GoalApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Goal goal: goal (required)
+        :param object goal: goal (required)
         :param str goal_id: UUID goal_id (required)
         :return: Goal
                  If the method is called asynchronously,

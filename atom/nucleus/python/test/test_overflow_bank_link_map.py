@@ -32,7 +32,7 @@ class TestOverflowBankLinkMap(unittest.TestCase):
     def testOverflowBankLinkMap(self):
         """Test OverflowBankLinkMap"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.overflow_bank_link_map.OverflowBankLinkMap()  # noqa: E501
+        # model = nucleus_api.models.overflow_bank_link_map.OverflowBankLinkMap()  # noqa: E501
         pass
 
 

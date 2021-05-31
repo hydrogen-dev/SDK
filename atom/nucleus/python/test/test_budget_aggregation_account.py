@@ -32,7 +32,7 @@ class TestBudgetAggregationAccount(unittest.TestCase):
     def testBudgetAggregationAccount(self):
         """Test BudgetAggregationAccount"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.budget_aggregation_account.BudgetAggregationAccount()  # noqa: E501
+        # model = nucleus_api.models.budget_aggregation_account.BudgetAggregationAccount()  # noqa: E501
         pass
 
 

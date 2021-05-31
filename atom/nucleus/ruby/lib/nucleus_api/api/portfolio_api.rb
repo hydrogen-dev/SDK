@@ -649,6 +649,70 @@ module NucleusApi
       end
       return data, status_code, headers
     end
+    # getAllPortfolioTransactionByPost
+    # @param [Hash] opts the optional parameters
+    # @option opts [BOOLEAN] :ascending ascending (default to false)
+    # @option opts [String] :currency_conversion currency_conversion
+    # @option opts [String] :filter filter
+    # @option opts [String] :order_by order_by (default to update_date)
+    # @option opts [Integer] :page page (default to 0)
+    # @option opts [Integer] :size size (default to 25)
+    # @return [PagePortfolioTransaction]
+    def get_all_portfolio_transaction_by_post_using_post(opts = {})
+      data, _status_code, _headers = get_all_portfolio_transaction_by_post_using_post_with_http_info(opts)
+      data
+    end
+
+    # getAllPortfolioTransactionByPost
+    # @param [Hash] opts the optional parameters
+    # @option opts [BOOLEAN] :ascending ascending
+    # @option opts [String] :currency_conversion currency_conversion
+    # @option opts [String] :filter filter
+    # @option opts [String] :order_by order_by
+    # @option opts [Integer] :page page
+    # @option opts [Integer] :size size
+    # @return [Array<(PagePortfolioTransaction, Fixnum, Hash)>] PagePortfolioTransaction data, response status code and response headers
+    def get_all_portfolio_transaction_by_post_using_post_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: PortfolioApi.get_all_portfolio_transaction_by_post_using_post ...'
+      end
+      # resource path
+      local_var_path = '/nucleus/v1/portfolio_transaction_by_post'
+
+      # query parameters
+      query_params = {}
+      query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+      query_params[:'currency_conversion'] = opts[:'currency_conversion'] if !opts[:'currency_conversion'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+      query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'PagePortfolioTransaction')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: PortfolioApi#get_all_portfolio_transaction_by_post_using_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Retrieve an portfolio aggregate data
     # Retrieve the information for a securities associated with a portfolio.
     # @param portfolio_id Portfolio Id

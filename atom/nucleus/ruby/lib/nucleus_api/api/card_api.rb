@@ -238,7 +238,7 @@ module NucleusApi
     # @option opts [String] :order_by order_by (default to update_date)
     # @option opts [Integer] :page page (default to 0)
     # @option opts [Integer] :size size (default to 25)
-    # @return [PageClientCardVO]
+    # @return [PageClientBusinessCardVO]
     def get_all_client_cards_using_get(opts = {})
       data, _status_code, _headers = get_all_client_cards_using_get_with_http_info(opts)
       data
@@ -253,7 +253,7 @@ module NucleusApi
     # @option opts [String] :order_by order_by
     # @option opts [Integer] :page page
     # @option opts [Integer] :size size
-    # @return [Array<(PageClientCardVO, Fixnum, Hash)>] PageClientCardVO data, response status code and response headers
+    # @return [Array<(PageClientBusinessCardVO, Fixnum, Hash)>] PageClientBusinessCardVO data, response status code and response headers
     def get_all_client_cards_using_get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CardApi.get_all_client_cards_using_get ...'
@@ -287,7 +287,7 @@ module NucleusApi
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'PageClientCardVO')
+        :return_type => 'PageClientBusinessCardVO')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#get_all_client_cards_using_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
@@ -607,6 +607,84 @@ module NucleusApi
         :return_type => 'PagePortfolioTransaction')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: CardApi#get_card_transaction_agg_all_using_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # List all card transactions
+    # Get the information for all transactions for an card.
+    # @param card_id card_id
+    # @param [Hash] opts the optional parameters
+    # @option opts [BOOLEAN] :ascending ascending (default to false)
+    # @option opts [String] :currency_conversion currency_conversion
+    # @option opts [DateTime] :end_date end_date (default to null)
+    # @option opts [String] :filter filter
+    # @option opts [String] :order_by order_by (default to update_date)
+    # @option opts [Integer] :page page (default to 0)
+    # @option opts [Integer] :size size (default to 25)
+    # @option opts [DateTime] :start_date start_date (default to null)
+    # @return [PagePortfolioTransaction]
+    def get_card_transaction_agg_all_using_get1(card_id, opts = {})
+      data, _status_code, _headers = get_card_transaction_agg_all_using_get1_with_http_info(card_id, opts)
+      data
+    end
+
+    # List all card transactions
+    # Get the information for all transactions for an card.
+    # @param card_id card_id
+    # @param [Hash] opts the optional parameters
+    # @option opts [BOOLEAN] :ascending ascending
+    # @option opts [String] :currency_conversion currency_conversion
+    # @option opts [DateTime] :end_date end_date
+    # @option opts [String] :filter filter
+    # @option opts [String] :order_by order_by
+    # @option opts [Integer] :page page
+    # @option opts [Integer] :size size
+    # @option opts [DateTime] :start_date start_date
+    # @return [Array<(PagePortfolioTransaction, Fixnum, Hash)>] PagePortfolioTransaction data, response status code and response headers
+    def get_card_transaction_agg_all_using_get1_with_http_info(card_id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: CardApi.get_card_transaction_agg_all_using_get1 ...'
+      end
+      # verify the required parameter 'card_id' is set
+      if @api_client.config.client_side_validation && card_id.nil?
+        fail ArgumentError, "Missing the required parameter 'card_id' when calling CardApi.get_card_transaction_agg_all_using_get1"
+      end
+      # resource path
+      local_var_path = '/nucleus/v1/card/{card_id}/transaction'.sub('{' + 'card_id' + '}', card_id.to_s)
+
+      # query parameters
+      query_params = {}
+      query_params[:'ascending'] = opts[:'ascending'] if !opts[:'ascending'].nil?
+      query_params[:'currency_conversion'] = opts[:'currency_conversion'] if !opts[:'currency_conversion'].nil?
+      query_params[:'end_date'] = opts[:'end_date'] if !opts[:'end_date'].nil?
+      query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+      query_params[:'order_by'] = opts[:'order_by'] if !opts[:'order_by'].nil?
+      query_params[:'page'] = opts[:'page'] if !opts[:'page'].nil?
+      query_params[:'size'] = opts[:'size'] if !opts[:'size'].nil?
+      query_params[:'start_date'] = opts[:'start_date'] if !opts[:'start_date'].nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = ['oauth2']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'PagePortfolioTransaction')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: CardApi#get_card_transaction_agg_all_using_get1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

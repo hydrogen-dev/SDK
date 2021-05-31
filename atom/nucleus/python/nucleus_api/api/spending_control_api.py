@@ -439,7 +439,7 @@ class SpendingControlApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param SpendingControl spending_control: spending_control (required)
+        :param object spending_control: spending_control (required)
         :param str spending_control_id: UUID spending_control_id (required)
         :return: SpendingControl
                  If the method is called asynchronously,
@@ -462,7 +462,7 @@ class SpendingControlApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param SpendingControl spending_control: spending_control (required)
+        :param object spending_control: spending_control (required)
         :param str spending_control_id: UUID spending_control_id (required)
         :return: SpendingControl
                  If the method is called asynchronously,

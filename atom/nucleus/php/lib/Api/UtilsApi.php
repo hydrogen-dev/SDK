@@ -10616,7 +10616,7 @@ class UtilsApi
      *
      * Update an Application
      *
-     * @param  \com\hydrogen\nucleus\Model\Application $application application (required)
+     * @param  object $application application (required)
      * @param  string $application_id UUID application_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -10634,7 +10634,7 @@ class UtilsApi
      *
      * Update an Application
      *
-     * @param  \com\hydrogen\nucleus\Model\Application $application application (required)
+     * @param  object $application application (required)
      * @param  string $application_id UUID application_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -10710,7 +10710,7 @@ class UtilsApi
      *
      * Update an Application
      *
-     * @param  \com\hydrogen\nucleus\Model\Application $application application (required)
+     * @param  object $application application (required)
      * @param  string $application_id UUID application_id (required)
      *
      * @throws \InvalidArgumentException
@@ -10731,7 +10731,7 @@ class UtilsApi
      *
      * Update an Application
      *
-     * @param  \com\hydrogen\nucleus\Model\Application $application application (required)
+     * @param  object $application application (required)
      * @param  string $application_id UUID application_id (required)
      *
      * @throws \InvalidArgumentException
@@ -10782,7 +10782,7 @@ class UtilsApi
     /**
      * Create request for operation 'updateApplicationUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Application $application application (required)
+     * @param  object $application application (required)
      * @param  string $application_id UUID application_id (required)
      *
      * @throws \InvalidArgumentException
@@ -10903,7 +10903,7 @@ class UtilsApi
      *
      * Update a Feature Track
      *
-     * @param  \com\hydrogen\nucleus\Model\FeatureTrack $feature_track feature_track (required)
+     * @param  object $feature_track feature_track (required)
      * @param  string $feature_track_id UUID feature_track_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -10921,7 +10921,7 @@ class UtilsApi
      *
      * Update a Feature Track
      *
-     * @param  \com\hydrogen\nucleus\Model\FeatureTrack $feature_track feature_track (required)
+     * @param  object $feature_track feature_track (required)
      * @param  string $feature_track_id UUID feature_track_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -10997,7 +10997,7 @@ class UtilsApi
      *
      * Update a Feature Track
      *
-     * @param  \com\hydrogen\nucleus\Model\FeatureTrack $feature_track feature_track (required)
+     * @param  object $feature_track feature_track (required)
      * @param  string $feature_track_id UUID feature_track_id (required)
      *
      * @throws \InvalidArgumentException
@@ -11018,7 +11018,7 @@ class UtilsApi
      *
      * Update a Feature Track
      *
-     * @param  \com\hydrogen\nucleus\Model\FeatureTrack $feature_track feature_track (required)
+     * @param  object $feature_track feature_track (required)
      * @param  string $feature_track_id UUID feature_track_id (required)
      *
      * @throws \InvalidArgumentException
@@ -11069,7 +11069,7 @@ class UtilsApi
     /**
      * Create request for operation 'updateFeatureTrackUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\FeatureTrack $feature_track feature_track (required)
+     * @param  object $feature_track feature_track (required)
      * @param  string $feature_track_id UUID feature_track_id (required)
      *
      * @throws \InvalidArgumentException
@@ -11190,7 +11190,7 @@ class UtilsApi
      *
      * Update a Feature
      *
-     * @param  \com\hydrogen\nucleus\Model\Feature $feature feature (required)
+     * @param  object $feature feature (required)
      * @param  string $feature_id UUID feature_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -11208,7 +11208,7 @@ class UtilsApi
      *
      * Update a Feature
      *
-     * @param  \com\hydrogen\nucleus\Model\Feature $feature feature (required)
+     * @param  object $feature feature (required)
      * @param  string $feature_id UUID feature_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -11284,7 +11284,7 @@ class UtilsApi
      *
      * Update a Feature
      *
-     * @param  \com\hydrogen\nucleus\Model\Feature $feature feature (required)
+     * @param  object $feature feature (required)
      * @param  string $feature_id UUID feature_id (required)
      *
      * @throws \InvalidArgumentException
@@ -11305,7 +11305,7 @@ class UtilsApi
      *
      * Update a Feature
      *
-     * @param  \com\hydrogen\nucleus\Model\Feature $feature feature (required)
+     * @param  object $feature feature (required)
      * @param  string $feature_id UUID feature_id (required)
      *
      * @throws \InvalidArgumentException
@@ -11356,7 +11356,7 @@ class UtilsApi
     /**
      * Create request for operation 'updateFeatureUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Feature $feature feature (required)
+     * @param  object $feature feature (required)
      * @param  string $feature_id UUID feature_id (required)
      *
      * @throws \InvalidArgumentException
@@ -11477,7 +11477,7 @@ class UtilsApi
      *
      * Update a Notification Client
      *
-     * @param  \com\hydrogen\nucleus\Model\NotificationClient $notification_client notification_client (required)
+     * @param  object $notification_client notification_client (required)
      * @param  string $notification_client_id UUID notification_client_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -11495,7 +11495,7 @@ class UtilsApi
      *
      * Update a Notification Client
      *
-     * @param  \com\hydrogen\nucleus\Model\NotificationClient $notification_client notification_client (required)
+     * @param  object $notification_client notification_client (required)
      * @param  string $notification_client_id UUID notification_client_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -11571,7 +11571,7 @@ class UtilsApi
      *
      * Update a Notification Client
      *
-     * @param  \com\hydrogen\nucleus\Model\NotificationClient $notification_client notification_client (required)
+     * @param  object $notification_client notification_client (required)
      * @param  string $notification_client_id UUID notification_client_id (required)
      *
      * @throws \InvalidArgumentException
@@ -11592,7 +11592,7 @@ class UtilsApi
      *
      * Update a Notification Client
      *
-     * @param  \com\hydrogen\nucleus\Model\NotificationClient $notification_client notification_client (required)
+     * @param  object $notification_client notification_client (required)
      * @param  string $notification_client_id UUID notification_client_id (required)
      *
      * @throws \InvalidArgumentException
@@ -11643,7 +11643,7 @@ class UtilsApi
     /**
      * Create request for operation 'updateNotificationClientUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\NotificationClient $notification_client notification_client (required)
+     * @param  object $notification_client notification_client (required)
      * @param  string $notification_client_id UUID notification_client_id (required)
      *
      * @throws \InvalidArgumentException
@@ -11764,7 +11764,7 @@ class UtilsApi
      *
      * Update a Notification Setting
      *
-     * @param  \com\hydrogen\nucleus\Model\NotificationSetting $notification_setting notification_setting (required)
+     * @param  object $notification_setting notification_setting (required)
      * @param  string $notification_setting_id UUID notification_setting_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -11782,7 +11782,7 @@ class UtilsApi
      *
      * Update a Notification Setting
      *
-     * @param  \com\hydrogen\nucleus\Model\NotificationSetting $notification_setting notification_setting (required)
+     * @param  object $notification_setting notification_setting (required)
      * @param  string $notification_setting_id UUID notification_setting_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -11858,7 +11858,7 @@ class UtilsApi
      *
      * Update a Notification Setting
      *
-     * @param  \com\hydrogen\nucleus\Model\NotificationSetting $notification_setting notification_setting (required)
+     * @param  object $notification_setting notification_setting (required)
      * @param  string $notification_setting_id UUID notification_setting_id (required)
      *
      * @throws \InvalidArgumentException
@@ -11879,7 +11879,7 @@ class UtilsApi
      *
      * Update a Notification Setting
      *
-     * @param  \com\hydrogen\nucleus\Model\NotificationSetting $notification_setting notification_setting (required)
+     * @param  object $notification_setting notification_setting (required)
      * @param  string $notification_setting_id UUID notification_setting_id (required)
      *
      * @throws \InvalidArgumentException
@@ -11930,7 +11930,7 @@ class UtilsApi
     /**
      * Create request for operation 'updateNotificationSettingUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\NotificationSetting $notification_setting notification_setting (required)
+     * @param  object $notification_setting notification_setting (required)
      * @param  string $notification_setting_id UUID notification_setting_id (required)
      *
      * @throws \InvalidArgumentException
@@ -12051,7 +12051,7 @@ class UtilsApi
      *
      * Update a Notification
      *
-     * @param  \com\hydrogen\nucleus\Model\Notification $notification notification (required)
+     * @param  object $notification notification (required)
      * @param  string $notification_id UUID notification_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -12069,7 +12069,7 @@ class UtilsApi
      *
      * Update a Notification
      *
-     * @param  \com\hydrogen\nucleus\Model\Notification $notification notification (required)
+     * @param  object $notification notification (required)
      * @param  string $notification_id UUID notification_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -12145,7 +12145,7 @@ class UtilsApi
      *
      * Update a Notification
      *
-     * @param  \com\hydrogen\nucleus\Model\Notification $notification notification (required)
+     * @param  object $notification notification (required)
      * @param  string $notification_id UUID notification_id (required)
      *
      * @throws \InvalidArgumentException
@@ -12166,7 +12166,7 @@ class UtilsApi
      *
      * Update a Notification
      *
-     * @param  \com\hydrogen\nucleus\Model\Notification $notification notification (required)
+     * @param  object $notification notification (required)
      * @param  string $notification_id UUID notification_id (required)
      *
      * @throws \InvalidArgumentException
@@ -12217,7 +12217,7 @@ class UtilsApi
     /**
      * Create request for operation 'updateNotificationUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Notification $notification notification (required)
+     * @param  object $notification notification (required)
      * @param  string $notification_id UUID notification_id (required)
      *
      * @throws \InvalidArgumentException
@@ -12338,7 +12338,7 @@ class UtilsApi
      *
      * Update a reason code
      *
-     * @param  \com\hydrogen\nucleus\Model\ReasonCode $reason_code reason_code (required)
+     * @param  object $reason_code reason_code (required)
      * @param  string $reason_code_id UUID reason_code_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -12356,7 +12356,7 @@ class UtilsApi
      *
      * Update a reason code
      *
-     * @param  \com\hydrogen\nucleus\Model\ReasonCode $reason_code reason_code (required)
+     * @param  object $reason_code reason_code (required)
      * @param  string $reason_code_id UUID reason_code_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -12432,7 +12432,7 @@ class UtilsApi
      *
      * Update a reason code
      *
-     * @param  \com\hydrogen\nucleus\Model\ReasonCode $reason_code reason_code (required)
+     * @param  object $reason_code reason_code (required)
      * @param  string $reason_code_id UUID reason_code_id (required)
      *
      * @throws \InvalidArgumentException
@@ -12453,7 +12453,7 @@ class UtilsApi
      *
      * Update a reason code
      *
-     * @param  \com\hydrogen\nucleus\Model\ReasonCode $reason_code reason_code (required)
+     * @param  object $reason_code reason_code (required)
      * @param  string $reason_code_id UUID reason_code_id (required)
      *
      * @throws \InvalidArgumentException
@@ -12504,7 +12504,7 @@ class UtilsApi
     /**
      * Create request for operation 'updateReasonCodeUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\ReasonCode $reason_code reason_code (required)
+     * @param  object $reason_code reason_code (required)
      * @param  string $reason_code_id UUID reason_code_id (required)
      *
      * @throws \InvalidArgumentException
@@ -12625,7 +12625,7 @@ class UtilsApi
      *
      * Update an account stage
      *
-     * @param  \com\hydrogen\nucleus\Model\Stage $stage stage (required)
+     * @param  object $stage stage (required)
      * @param  string $stage_id UUID stage_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -12643,7 +12643,7 @@ class UtilsApi
      *
      * Update an account stage
      *
-     * @param  \com\hydrogen\nucleus\Model\Stage $stage stage (required)
+     * @param  object $stage stage (required)
      * @param  string $stage_id UUID stage_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -12719,7 +12719,7 @@ class UtilsApi
      *
      * Update an account stage
      *
-     * @param  \com\hydrogen\nucleus\Model\Stage $stage stage (required)
+     * @param  object $stage stage (required)
      * @param  string $stage_id UUID stage_id (required)
      *
      * @throws \InvalidArgumentException
@@ -12740,7 +12740,7 @@ class UtilsApi
      *
      * Update an account stage
      *
-     * @param  \com\hydrogen\nucleus\Model\Stage $stage stage (required)
+     * @param  object $stage stage (required)
      * @param  string $stage_id UUID stage_id (required)
      *
      * @throws \InvalidArgumentException
@@ -12791,7 +12791,7 @@ class UtilsApi
     /**
      * Create request for operation 'updateStageUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Stage $stage stage (required)
+     * @param  object $stage stage (required)
      * @param  string $stage_id UUID stage_id (required)
      *
      * @throws \InvalidArgumentException
@@ -12912,7 +12912,7 @@ class UtilsApi
      *
      * Update a transaction code
      *
-     * @param  \com\hydrogen\nucleus\Model\TransactionCode $transaction_code transaction_code (required)
+     * @param  object $transaction_code transaction_code (required)
      * @param  string $transaction_code_id UUID transaction_code_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -12930,7 +12930,7 @@ class UtilsApi
      *
      * Update a transaction code
      *
-     * @param  \com\hydrogen\nucleus\Model\TransactionCode $transaction_code transaction_code (required)
+     * @param  object $transaction_code transaction_code (required)
      * @param  string $transaction_code_id UUID transaction_code_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -13006,7 +13006,7 @@ class UtilsApi
      *
      * Update a transaction code
      *
-     * @param  \com\hydrogen\nucleus\Model\TransactionCode $transaction_code transaction_code (required)
+     * @param  object $transaction_code transaction_code (required)
      * @param  string $transaction_code_id UUID transaction_code_id (required)
      *
      * @throws \InvalidArgumentException
@@ -13027,7 +13027,7 @@ class UtilsApi
      *
      * Update a transaction code
      *
-     * @param  \com\hydrogen\nucleus\Model\TransactionCode $transaction_code transaction_code (required)
+     * @param  object $transaction_code transaction_code (required)
      * @param  string $transaction_code_id UUID transaction_code_id (required)
      *
      * @throws \InvalidArgumentException
@@ -13078,7 +13078,7 @@ class UtilsApi
     /**
      * Create request for operation 'updateTransactionCodeUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\TransactionCode $transaction_code transaction_code (required)
+     * @param  object $transaction_code transaction_code (required)
      * @param  string $transaction_code_id UUID transaction_code_id (required)
      *
      * @throws \InvalidArgumentException

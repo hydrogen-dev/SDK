@@ -32,7 +32,7 @@ class TestAllocationComposition(unittest.TestCase):
     def testAllocationComposition(self):
         """Test AllocationComposition"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.allocation_composition.AllocationComposition()  # noqa: E501
+        # model = nucleus_api.models.allocation_composition.AllocationComposition()  # noqa: E501
         pass
 
 

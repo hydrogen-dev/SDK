@@ -32,7 +32,7 @@ class TestVPortfolioVO(unittest.TestCase):
     def testVPortfolioVO(self):
         """Test VPortfolioVO"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.v_portfolio_vo.VPortfolioVO()  # noqa: E501
+        # model = nucleus_api.models.v_portfolio_vo.VPortfolioVO()  # noqa: E501
         pass
 
 

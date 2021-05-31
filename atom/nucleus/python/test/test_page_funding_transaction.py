@@ -32,7 +32,7 @@ class TestPageFundingTransaction(unittest.TestCase):
     def testPageFundingTransaction(self):
         """Test PageFundingTransaction"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_funding_transaction.PageFundingTransaction()  # noqa: E501
+        # model = nucleus_api.models.page_funding_transaction.PageFundingTransaction()  # noqa: E501
         pass
 
 

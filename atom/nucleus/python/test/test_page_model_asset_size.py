@@ -32,7 +32,7 @@ class TestPageModelAssetSize(unittest.TestCase):
     def testPageModelAssetSize(self):
         """Test PageModelAssetSize"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_model_asset_size.PageModelAssetSize()  # noqa: E501
+        # model = nucleus_api.models.page_model_asset_size.PageModelAssetSize()  # noqa: E501
         pass
 
 

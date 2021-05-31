@@ -32,7 +32,7 @@ class TestAuditLog(unittest.TestCase):
     def testAuditLog(self):
         """Test AuditLog"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.audit_log.AuditLog()  # noqa: E501
+        # model = nucleus_api.models.audit_log.AuditLog()  # noqa: E501
         pass
 
 

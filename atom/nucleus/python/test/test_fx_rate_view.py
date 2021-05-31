@@ -32,7 +32,7 @@ class TestFxRateView(unittest.TestCase):
     def testFxRateView(self):
         """Test FxRateView"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.fx_rate_view.FxRateView()  # noqa: E501
+        # model = nucleus_api.models.fx_rate_view.FxRateView()  # noqa: E501
         pass
 
 

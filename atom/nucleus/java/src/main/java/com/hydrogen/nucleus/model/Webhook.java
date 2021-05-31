@@ -14,7 +14,7 @@
 package com.hydrogen.nucleus.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -32,7 +32,7 @@ import org.threeten.bp.OffsetDateTime;
  * Webhook Object
  */
 @ApiModel(description = "Webhook Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-12T05:33:30.744Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-24T10:39:20.203Z")
 public class Webhook {
   /**
    * Gets or Sets atomService
@@ -176,13 +176,18 @@ public class Webhook {
    * atom_service
    * @return atomService
   **/
-  @ApiModelProperty(example = "[\"client\",\"client_status\",\"account_status\",\"account\",\"card\",\"card_status\",\"portfolio_asset_size\",\"portfolio_transaction\",\"portfolio_transaction_status\",\"portfolio_holding\",\"aggregation_account\",\"aggregation_account_status\",\"notification_client\",\"aggregation_account_balance\",\"audit_log\",\"support_ticket\",\"feature_track\",\"aggregation_account_transaction\",\"aggregation_account_transaction_status\",\"aggregation_account_holding\",\"order_track\",\"funding\",\"funding_status\",\"budget\",\"document\",\"client_response\",\"client_verified\",\"document_verified\",\"bank_link_verified\"]", value = "atom_service")
+  @ApiModelProperty(example = "[\"client\",\"client_status\",\"account_status\",\"account\",\"card\",\"card_status\",\"portfolio_asset_size\",\"portfolio_transaction\",\"portfolio_transaction_status\",\"portfolio_holding\",\"aggregation_account\",\"aggregation_account_status\",\"notification_client\",\"aggregation_account_bala\",\"audit_log\",\"support_ticket\",\"feature_track\",\"aggregation_account_transaction\",\"aggregation_account_transaction_status\",\"aggregation_account_holding\",\"order_track\",\"funding\",\"funding_status\",\"budget\",\"document\",\"client_response\",\"client_verified\",\"document_verified\",\"bank_link_verified\"]", value = "atom_service")
   public List<AtomServiceEnum> getAtomService() {
     return atomService;
   }
 
   public void setAtomService(List<AtomServiceEnum> atomService) {
     this.atomService = atomService;
+  }
+
+  public Webhook createDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
+    return this;
   }
 
    /**
@@ -194,6 +199,15 @@ public class Webhook {
     return createDate;
   }
 
+  public void setCreateDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
+  }
+
+  public Webhook id(UUID id) {
+    this.id = id;
+    return this;
+  }
+
    /**
    * Get id
    * @return id
@@ -201,6 +215,10 @@ public class Webhook {
   @ApiModelProperty(example = "000183ac-2288-4564-a76b-119f4694be98", value = "")
   public UUID getId() {
     return id;
+  }
+
+  public void setId(UUID id) {
+    this.id = id;
   }
 
   public Webhook isActive(Boolean isActive) {
@@ -221,6 +239,11 @@ public class Webhook {
     this.isActive = isActive;
   }
 
+  public Webhook secondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
+    return this;
+  }
+
    /**
    * Get secondaryId
    * @return secondaryId
@@ -228,6 +251,15 @@ public class Webhook {
   @ApiModelProperty(example = "7289243787238", value = "")
   public String getSecondaryId() {
     return secondaryId;
+  }
+
+  public void setSecondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
+  }
+
+  public Webhook secret(String secret) {
+    this.secret = secret;
+    return this;
   }
 
    /**
@@ -239,6 +271,15 @@ public class Webhook {
     return secret;
   }
 
+  public void setSecret(String secret) {
+    this.secret = secret;
+  }
+
+  public Webhook updateDate(OffsetDateTime updateDate) {
+    this.updateDate = updateDate;
+    return this;
+  }
+
    /**
    * Get updateDate
    * @return updateDate
@@ -246,6 +287,10 @@ public class Webhook {
   @ApiModelProperty(example = "2018-06-28T18:17:23.579+0000", value = "")
   public OffsetDateTime getUpdateDate() {
     return updateDate;
+  }
+
+  public void setUpdateDate(OffsetDateTime updateDate) {
+    this.updateDate = updateDate;
   }
 
   public Webhook url(String url) {
@@ -268,7 +313,7 @@ public class Webhook {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -313,7 +358,7 @@ public class Webhook {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

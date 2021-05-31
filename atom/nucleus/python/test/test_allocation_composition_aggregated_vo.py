@@ -32,7 +32,7 @@ class TestAllocationCompositionAggregatedVO(unittest.TestCase):
     def testAllocationCompositionAggregatedVO(self):
         """Test AllocationCompositionAggregatedVO"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.allocation_composition_aggregated_vo.AllocationCompositionAggregatedVO()  # noqa: E501
+        # model = nucleus_api.models.allocation_composition_aggregated_vo.AllocationCompositionAggregatedVO()  # noqa: E501
         pass
 
 

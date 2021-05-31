@@ -1905,7 +1905,7 @@ class ClientApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ClientResponse client_response: client_response (required)
+        :param object client_response: client_response (required)
         :param str client_response_id: UUID client_response_id (required)
         :return: ClientResponse
                  If the method is called asynchronously,
@@ -1928,7 +1928,7 @@ class ClientApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ClientResponse client_response: client_response (required)
+        :param object client_response: client_response (required)
         :param str client_response_id: UUID client_response_id (required)
         :return: ClientResponse
                  If the method is called asynchronously,
@@ -2012,7 +2012,7 @@ class ClientApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ClientStatus client_status: client_status (required)
+        :param object client_status: client_status (required)
         :param str client_status_id: UUID client_status_id (required)
         :return: ClientStatus
                  If the method is called asynchronously,
@@ -2035,7 +2035,7 @@ class ClientApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ClientStatus client_status: client_status (required)
+        :param object client_status: client_status (required)
         :param str client_status_id: UUID client_status_id (required)
         :return: ClientStatus
                  If the method is called asynchronously,
@@ -2119,7 +2119,7 @@ class ClientApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Client client: client (required)
+        :param object client: client (required)
         :param str client_id: UUID client_id (required)
         :return: Client
                  If the method is called asynchronously,
@@ -2142,7 +2142,7 @@ class ClientApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Client client: client (required)
+        :param object client: client (required)
         :param str client_id: UUID client_id (required)
         :return: Client
                  If the method is called asynchronously,

@@ -55,6 +55,49 @@
      * @param {Array.<module:model/AggregationAccountBalance>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
+    /**
+     * Retrieve an aggregation account aggregate data
+     * Retrieve the information for a specific aggregation account with aggregate data for a business.
+     * @param {String} businessId UUID business_id
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.currencyConversion USD
+     * @param {module:api/AggregationAccountApi~getAggregationAccountOverviewByBusinessIdUsingGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Object}
+     */
+    this.getAggregationAccountOverviewByBusinessIdUsingGet = function(businessId, opts, callback) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'businessId' is set
+      if (businessId === undefined || businessId === null) {
+        throw new Error("Missing the required parameter 'businessId' when calling getAggregationAccountOverviewByBusinessIdUsingGet");
+      }
+
+
+      var pathParams = {
+        'business_id': businessId
+      };
+      var queryParams = {
+        'currency_conversion': opts['currencyConversion'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2'];
+      var contentTypes = [];
+      var accepts = ['*/*'];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+          '/nucleus/v1/business/{business_id}/aggregation_account_overview', 'GET',
+          pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+          authNames, contentTypes, accepts, returnType, callback
+      );
+    }
 
     /**
      * Create a bulk aggregation account balance

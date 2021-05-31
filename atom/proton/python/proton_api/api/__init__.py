@@ -15,3 +15,4 @@ from proton_api.api.portfolio_construction_api import PortfolioConstructionApi
 from proton_api.api.portfolio_management_api import PortfolioManagementApi
 from proton_api.api.risk_scoring_api import RiskScoringApi
 from proton_api.api.simulations_api import SimulationsApi
+from proton_api.api.util_api import UtilApi

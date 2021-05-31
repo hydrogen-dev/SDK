@@ -32,7 +32,7 @@ class TestVClientGoalViewData(unittest.TestCase):
     def testVClientGoalViewData(self):
         """Test VClientGoalViewData"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.v_client_goal_view_data.VClientGoalViewData()  # noqa: E501
+        # model = nucleus_api.models.v_client_goal_view_data.VClientGoalViewData()  # noqa: E501
         pass
 
 

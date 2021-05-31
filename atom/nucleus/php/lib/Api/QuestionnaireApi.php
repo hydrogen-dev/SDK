@@ -3320,7 +3320,7 @@ class QuestionnaireApi
      *
      * Update an answer
      *
-     * @param  \com\hydrogen\nucleus\Model\Answer $answer answer (required)
+     * @param  object $answer answer (required)
      * @param  string $answer_id UUID answer_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -3338,7 +3338,7 @@ class QuestionnaireApi
      *
      * Update an answer
      *
-     * @param  \com\hydrogen\nucleus\Model\Answer $answer answer (required)
+     * @param  object $answer answer (required)
      * @param  string $answer_id UUID answer_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -3414,7 +3414,7 @@ class QuestionnaireApi
      *
      * Update an answer
      *
-     * @param  \com\hydrogen\nucleus\Model\Answer $answer answer (required)
+     * @param  object $answer answer (required)
      * @param  string $answer_id UUID answer_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3435,7 +3435,7 @@ class QuestionnaireApi
      *
      * Update an answer
      *
-     * @param  \com\hydrogen\nucleus\Model\Answer $answer answer (required)
+     * @param  object $answer answer (required)
      * @param  string $answer_id UUID answer_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3486,7 +3486,7 @@ class QuestionnaireApi
     /**
      * Create request for operation 'updateAnswerUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Answer $answer answer (required)
+     * @param  object $answer answer (required)
      * @param  string $answer_id UUID answer_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3607,7 +3607,7 @@ class QuestionnaireApi
      *
      * Update a question.
      *
-     * @param  \com\hydrogen\nucleus\Model\Question $question question (required)
+     * @param  object $question question (required)
      * @param  string $question_id UUID question_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -3625,7 +3625,7 @@ class QuestionnaireApi
      *
      * Update a question.
      *
-     * @param  \com\hydrogen\nucleus\Model\Question $question question (required)
+     * @param  object $question question (required)
      * @param  string $question_id UUID question_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -3701,7 +3701,7 @@ class QuestionnaireApi
      *
      * Update a question.
      *
-     * @param  \com\hydrogen\nucleus\Model\Question $question question (required)
+     * @param  object $question question (required)
      * @param  string $question_id UUID question_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3722,7 +3722,7 @@ class QuestionnaireApi
      *
      * Update a question.
      *
-     * @param  \com\hydrogen\nucleus\Model\Question $question question (required)
+     * @param  object $question question (required)
      * @param  string $question_id UUID question_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3773,7 +3773,7 @@ class QuestionnaireApi
     /**
      * Create request for operation 'updateQuestionUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Question $question question (required)
+     * @param  object $question question (required)
      * @param  string $question_id UUID question_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3894,7 +3894,7 @@ class QuestionnaireApi
      *
      * Update a questionnaire
      *
-     * @param  \com\hydrogen\nucleus\Model\Questionnaire $questionnaire questionnaire (required)
+     * @param  object $questionnaire questionnaire (required)
      * @param  string $questionnaire_id UUID questionnaire_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -3912,7 +3912,7 @@ class QuestionnaireApi
      *
      * Update a questionnaire
      *
-     * @param  \com\hydrogen\nucleus\Model\Questionnaire $questionnaire questionnaire (required)
+     * @param  object $questionnaire questionnaire (required)
      * @param  string $questionnaire_id UUID questionnaire_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -3988,7 +3988,7 @@ class QuestionnaireApi
      *
      * Update a questionnaire
      *
-     * @param  \com\hydrogen\nucleus\Model\Questionnaire $questionnaire questionnaire (required)
+     * @param  object $questionnaire questionnaire (required)
      * @param  string $questionnaire_id UUID questionnaire_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4009,7 +4009,7 @@ class QuestionnaireApi
      *
      * Update a questionnaire
      *
-     * @param  \com\hydrogen\nucleus\Model\Questionnaire $questionnaire questionnaire (required)
+     * @param  object $questionnaire questionnaire (required)
      * @param  string $questionnaire_id UUID questionnaire_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4060,7 +4060,7 @@ class QuestionnaireApi
     /**
      * Create request for operation 'updateQuestionnaireUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Questionnaire $questionnaire questionnaire (required)
+     * @param  object $questionnaire questionnaire (required)
      * @param  string $questionnaire_id UUID questionnaire_id (required)
      *
      * @throws \InvalidArgumentException

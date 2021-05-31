@@ -14,11 +14,19 @@
 package com.hydrogen.nucleus.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
+import com.hydrogen.nucleus.model.Check;
+import com.hydrogen.nucleus.model.Location;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import org.threeten.bp.OffsetDateTime;
@@ -27,7 +35,7 @@ import org.threeten.bp.OffsetDateTime;
  * PortfolioTransaction Object
  */
 @ApiModel(description = "PortfolioTransaction Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-12T05:33:30.744Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-25T04:59:51.821Z")
 public class PortfolioTransaction {
   @SerializedName("account_id")
   private UUID accountId = null;
@@ -58,6 +66,9 @@ public class PortfolioTransaction {
 
   @SerializedName("description")
   private String description = null;
+
+  @SerializedName("funding_id")
+  private UUID fundingId = null;
 
   @SerializedName("id")
   private UUID id = null;
@@ -91,6 +102,9 @@ public class PortfolioTransaction {
 
   @SerializedName("metadata")
   private Map<String, String> metadata = null;
+
+  @SerializedName("mid")
+  private String mid = null;
 
   @SerializedName("model_id")
   private UUID modelId = null;
@@ -215,6 +229,11 @@ public class PortfolioTransaction {
     this.check = check;
   }
 
+  public PortfolioTransaction createDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
+    return this;
+  }
+
    /**
    * Get createDate
    * @return createDate
@@ -222,6 +241,10 @@ public class PortfolioTransaction {
   @ApiModelProperty(example = "2018-06-28T18:17:23.579+0000", value = "")
   public OffsetDateTime getCreateDate() {
     return createDate;
+  }
+
+  public void setCreateDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
   }
 
   public PortfolioTransaction currencyCode(String currencyCode) {
@@ -296,6 +319,29 @@ public class PortfolioTransaction {
     this.description = description;
   }
 
+  public PortfolioTransaction fundingId(UUID fundingId) {
+    this.fundingId = fundingId;
+    return this;
+  }
+
+   /**
+   * fundingId
+   * @return fundingId
+  **/
+  @ApiModelProperty(example = "ea30e8b7-3946-46ed-975a-4870a57d119s", value = "fundingId")
+  public UUID getFundingId() {
+    return fundingId;
+  }
+
+  public void setFundingId(UUID fundingId) {
+    this.fundingId = fundingId;
+  }
+
+  public PortfolioTransaction id(UUID id) {
+    this.id = id;
+    return this;
+  }
+
    /**
    * Get id
    * @return id
@@ -303,6 +349,10 @@ public class PortfolioTransaction {
   @ApiModelProperty(example = "000183ac-2288-4564-a76b-119f4694be98", value = "")
   public UUID getId() {
     return id;
+  }
+
+  public void setId(UUID id) {
+    this.id = id;
   }
 
   public PortfolioTransaction isCleansed(Boolean isCleansed) {
@@ -467,6 +517,19 @@ public class PortfolioTransaction {
     this.merchantId = merchantId;
   }
 
+  public PortfolioTransaction metadata(Map<String, String> metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+  public PortfolioTransaction putMetadataItem(String key, String metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<String, String>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
    /**
    * metadata
    * @return metadata
@@ -474,6 +537,28 @@ public class PortfolioTransaction {
   @ApiModelProperty(example = "{}", value = "metadata")
   public Map<String, String> getMetadata() {
     return metadata;
+  }
+
+  public void setMetadata(Map<String, String> metadata) {
+    this.metadata = metadata;
+  }
+
+  public PortfolioTransaction mid(String mid) {
+    this.mid = mid;
+    return this;
+  }
+
+   /**
+   * mid
+   * @return mid
+  **/
+  @ApiModelProperty(example = "3099", value = "mid")
+  public String getMid() {
+    return mid;
+  }
+
+  public void setMid(String mid) {
+    this.mid = mid;
   }
 
   public PortfolioTransaction modelId(UUID modelId) {
@@ -548,6 +633,11 @@ public class PortfolioTransaction {
     this.quantity = quantity;
   }
 
+  public PortfolioTransaction secondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
+    return this;
+  }
+
    /**
    * Get secondaryId
    * @return secondaryId
@@ -555,6 +645,10 @@ public class PortfolioTransaction {
   @ApiModelProperty(example = "7289243787238", value = "")
   public String getSecondaryId() {
     return secondaryId;
+  }
+
+  public void setSecondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
   }
 
   public PortfolioTransaction securityId(UUID securityId) {
@@ -647,6 +741,11 @@ public class PortfolioTransaction {
     this.transactionCodeId = transactionCodeId;
   }
 
+  public PortfolioTransaction updateDate(OffsetDateTime updateDate) {
+    this.updateDate = updateDate;
+    return this;
+  }
+
    /**
    * Get updateDate
    * @return updateDate
@@ -656,9 +755,13 @@ public class PortfolioTransaction {
     return updateDate;
   }
 
+  public void setUpdateDate(OffsetDateTime updateDate) {
+    this.updateDate = updateDate;
+  }
+
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -676,6 +779,7 @@ public class PortfolioTransaction {
         Objects.equals(this.date, portfolioTransaction.date) &&
         Objects.equals(this.dateAvailable, portfolioTransaction.dateAvailable) &&
         Objects.equals(this.description, portfolioTransaction.description) &&
+        Objects.equals(this.fundingId, portfolioTransaction.fundingId) &&
         Objects.equals(this.id, portfolioTransaction.id) &&
         Objects.equals(this.isCleansed, portfolioTransaction.isCleansed) &&
         Objects.equals(this.isDisputed, portfolioTransaction.isDisputed) &&
@@ -687,6 +791,7 @@ public class PortfolioTransaction {
         Objects.equals(this.merchantCategoryCode, portfolioTransaction.merchantCategoryCode) &&
         Objects.equals(this.merchantId, portfolioTransaction.merchantId) &&
         Objects.equals(this.metadata, portfolioTransaction.metadata) &&
+        Objects.equals(this.mid, portfolioTransaction.mid) &&
         Objects.equals(this.modelId, portfolioTransaction.modelId) &&
         Objects.equals(this.portfolioId, portfolioTransaction.portfolioId) &&
         Objects.equals(this.price, portfolioTransaction.price) &&
@@ -702,7 +807,7 @@ public class PortfolioTransaction {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, amount, balance, category, check, createDate, currencyCode, date, dateAvailable, description, id, isCleansed, isDisputed, isRead, isRecurring, location, memo, merchant, merchantCategoryCode, merchantId, metadata, modelId, portfolioId, price, quantity, secondaryId, securityId, status, subcategory, transactionCategoryId, transactionCodeId, updateDate);
+    return Objects.hash(accountId, amount, balance, category, check, createDate, currencyCode, date, dateAvailable, description, fundingId, id, isCleansed, isDisputed, isRead, isRecurring, location, memo, merchant, merchantCategoryCode, merchantId, metadata, mid, modelId, portfolioId, price, quantity, secondaryId, securityId, status, subcategory, transactionCategoryId, transactionCodeId, updateDate);
   }
 
 
@@ -721,6 +826,7 @@ public class PortfolioTransaction {
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    dateAvailable: ").append(toIndentedString(dateAvailable)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    fundingId: ").append(toIndentedString(fundingId)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    isCleansed: ").append(toIndentedString(isCleansed)).append("\n");
     sb.append("    isDisputed: ").append(toIndentedString(isDisputed)).append("\n");
@@ -732,6 +838,7 @@ public class PortfolioTransaction {
     sb.append("    merchantCategoryCode: ").append(toIndentedString(merchantCategoryCode)).append("\n");
     sb.append("    merchantId: ").append(toIndentedString(merchantId)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+    sb.append("    mid: ").append(toIndentedString(mid)).append("\n");
     sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
     sb.append("    portfolioId: ").append(toIndentedString(portfolioId)).append("\n");
     sb.append("    price: ").append(toIndentedString(price)).append("\n");
@@ -751,7 +858,7 @@ public class PortfolioTransaction {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

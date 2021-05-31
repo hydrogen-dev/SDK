@@ -32,7 +32,7 @@ class TestGoalTrack(unittest.TestCase):
     def testGoalTrack(self):
         """Test GoalTrack"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.goal_track.GoalTrack()  # noqa: E501
+        # model = nucleus_api.models.goal_track.GoalTrack()  # noqa: E501
         pass
 
 

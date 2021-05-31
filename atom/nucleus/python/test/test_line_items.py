@@ -32,7 +32,7 @@ class TestLineItems(unittest.TestCase):
     def testLineItems(self):
         """Test LineItems"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.line_items.LineItems()  # noqa: E501
+        # model = nucleus_api.models.line_items.LineItems()  # noqa: E501
         pass
 
 

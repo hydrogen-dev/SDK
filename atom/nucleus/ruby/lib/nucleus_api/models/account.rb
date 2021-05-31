@@ -245,8 +245,7 @@ module NucleusApi
 
       self
     end
-
-    # Deserializes the data based on type
+# Deserializes the data based on type
     # @param string type Data type
     # @param string value Value to be deserialized
     # @return [Object] Deserialized data
@@ -287,6 +286,7 @@ module NucleusApi
         temp_model.build_from_hash(value)
       end
     end
+
 
     # Returns the string representation of the object
     # @return [String] String presentation of the object

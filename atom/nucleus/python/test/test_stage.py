@@ -32,7 +32,7 @@ class TestStage(unittest.TestCase):
     def testStage(self):
         """Test Stage"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.stage.Stage()  # noqa: E501
+        # model = nucleus_api.models.stage.Stage()  # noqa: E501
         pass
 
 

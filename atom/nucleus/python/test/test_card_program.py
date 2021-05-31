@@ -32,7 +32,7 @@ class TestCardProgram(unittest.TestCase):
     def testCardProgram(self):
         """Test CardProgram"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.card_program.CardProgram()  # noqa: E501
+        # model = nucleus_api.models.card_program.CardProgram()  # noqa: E501
         pass
 
 

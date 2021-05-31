@@ -13,16 +13,20 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.PageRoundup;
 import com.hydrogen.nucleus.model.PageRoundupSettings;
 import com.hydrogen.nucleus.model.Roundup;
 import com.hydrogen.nucleus.model.RoundupCO;
 import com.hydrogen.nucleus.model.RoundupSettings;
-import com.hydrogen.nucleus.ApiException;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for RoundupApi
@@ -163,7 +167,7 @@ public class RoundupApiTest {
      */
     @Test
     public void updateRoundupSettingsUsingPutTest() throws ApiException {
-        RoundupSettings roundupSetting = null;
+        Object roundupSetting = null;
         UUID roundupSettingId = null;
         RoundupSettings response = api.updateRoundupSettingsUsingPut(roundupSetting, roundupSettingId);
 

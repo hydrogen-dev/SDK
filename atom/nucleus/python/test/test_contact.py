@@ -32,7 +32,7 @@ class TestContact(unittest.TestCase):
     def testContact(self):
         """Test Contact"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.contact.Contact()  # noqa: E501
+        # model = nucleus_api.models.contact.Contact()  # noqa: E501
         pass
 
 

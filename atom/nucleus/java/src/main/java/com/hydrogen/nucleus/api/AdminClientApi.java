@@ -92,7 +92,7 @@ public class AdminClientApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -215,7 +215,7 @@ public class AdminClientApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -334,7 +334,7 @@ public class AdminClientApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -470,7 +470,7 @@ public class AdminClientApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -572,7 +572,7 @@ public class AdminClientApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateAdminClientUsingPUTCall(AdminClient client, Long clientId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateAdminClientUsingPUTCall(Object client, Long clientId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = client;
 
         // create path and map variables
@@ -601,7 +601,7 @@ public class AdminClientApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -615,7 +615,7 @@ public class AdminClientApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateAdminClientUsingPUTValidateBeforeCall(AdminClient client, Long clientId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateAdminClientUsingPUTValidateBeforeCall(Object client, Long clientId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'client' is set
         if (client == null) {
@@ -641,7 +641,7 @@ public class AdminClientApi {
      * @return AdminClient
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AdminClient updateAdminClientUsingPUT(AdminClient client, Long clientId) throws ApiException {
+    public AdminClient updateAdminClientUsingPUT(Object client, Long clientId) throws ApiException {
         ApiResponse<AdminClient> resp = updateAdminClientUsingPUTWithHttpInfo(client, clientId);
         return resp.getData();
     }
@@ -654,7 +654,7 @@ public class AdminClientApi {
      * @return ApiResponse&lt;AdminClient&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AdminClient> updateAdminClientUsingPUTWithHttpInfo(AdminClient client, Long clientId) throws ApiException {
+    public ApiResponse<AdminClient> updateAdminClientUsingPUTWithHttpInfo(Object client, Long clientId) throws ApiException {
         com.squareup.okhttp.Call call = updateAdminClientUsingPUTValidateBeforeCall(client, clientId, null, null);
         Type localVarReturnType = new TypeToken<AdminClient>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -669,7 +669,7 @@ public class AdminClientApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateAdminClientUsingPUTAsync(AdminClient client, Long clientId, final ApiCallback<AdminClient> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateAdminClientUsingPUTAsync(Object client, Long clientId, final ApiCallback<AdminClient> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -734,7 +734,7 @@ public class AdminClientApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))

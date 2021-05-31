@@ -32,7 +32,7 @@ class TestOrderReconcileReturnObject(unittest.TestCase):
     def testOrderReconcileReturnObject(self):
         """Test OrderReconcileReturnObject"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.order_reconcile_return_object.OrderReconcileReturnObject()  # noqa: E501
+        # model = nucleus_api.models.order_reconcile_return_object.OrderReconcileReturnObject()  # noqa: E501
         pass
 
 

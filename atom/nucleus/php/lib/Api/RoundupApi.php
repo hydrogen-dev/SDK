@@ -2008,7 +2008,7 @@ class RoundupApi
      *
      * Update a roundup settings
      *
-     * @param  \com\hydrogen\nucleus\Model\RoundupSettings $roundup_setting roundup_setting (required)
+     * @param  object $roundup_setting roundup_setting (required)
      * @param  string $roundup_setting_id UUID roundup_setting_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -2026,7 +2026,7 @@ class RoundupApi
      *
      * Update a roundup settings
      *
-     * @param  \com\hydrogen\nucleus\Model\RoundupSettings $roundup_setting roundup_setting (required)
+     * @param  object $roundup_setting roundup_setting (required)
      * @param  string $roundup_setting_id UUID roundup_setting_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -2102,7 +2102,7 @@ class RoundupApi
      *
      * Update a roundup settings
      *
-     * @param  \com\hydrogen\nucleus\Model\RoundupSettings $roundup_setting roundup_setting (required)
+     * @param  object $roundup_setting roundup_setting (required)
      * @param  string $roundup_setting_id UUID roundup_setting_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2123,7 +2123,7 @@ class RoundupApi
      *
      * Update a roundup settings
      *
-     * @param  \com\hydrogen\nucleus\Model\RoundupSettings $roundup_setting roundup_setting (required)
+     * @param  object $roundup_setting roundup_setting (required)
      * @param  string $roundup_setting_id UUID roundup_setting_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2174,7 +2174,7 @@ class RoundupApi
     /**
      * Create request for operation 'updateRoundupSettingsUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\RoundupSettings $roundup_setting roundup_setting (required)
+     * @param  object $roundup_setting roundup_setting (required)
      * @param  string $roundup_setting_id UUID roundup_setting_id (required)
      *
      * @throws \InvalidArgumentException

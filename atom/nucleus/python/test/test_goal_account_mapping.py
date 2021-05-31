@@ -32,7 +32,7 @@ class TestGoalAccountMapping(unittest.TestCase):
     def testGoalAccountMapping(self):
         """Test GoalAccountMapping"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.goal_account_mapping.GoalAccountMapping()  # noqa: E501
+        # model = nucleus_api.models.goal_account_mapping.GoalAccountMapping()  # noqa: E501
         pass
 
 

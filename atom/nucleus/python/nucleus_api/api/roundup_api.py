@@ -740,7 +740,7 @@ class RoundupApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param RoundupSettings roundup_setting: roundup_setting (required)
+        :param object roundup_setting: roundup_setting (required)
         :param str roundup_setting_id: UUID roundup_setting_id (required)
         :return: RoundupSettings
                  If the method is called asynchronously,
@@ -763,7 +763,7 @@ class RoundupApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param RoundupSettings roundup_setting: roundup_setting (required)
+        :param object roundup_setting: roundup_setting (required)
         :param str roundup_setting_id: UUID roundup_setting_id (required)
         :return: RoundupSettings
                  If the method is called asynchronously,

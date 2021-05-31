@@ -14,12 +14,17 @@
 package com.hydrogen.nucleus.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import org.threeten.bp.OffsetDateTime;
@@ -28,7 +33,7 @@ import org.threeten.bp.OffsetDateTime;
  * Node Object
  */
 @ApiModel(description = "Node Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-12T05:33:30.744Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-24T10:39:20.203Z")
 public class Node {
   @SerializedName("create_date")
   private OffsetDateTime createDate = null;
@@ -54,6 +59,11 @@ public class Node {
   @SerializedName("update_date")
   private OffsetDateTime updateDate = null;
 
+  public Node createDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
+    return this;
+  }
+
    /**
    * Get createDate
    * @return createDate
@@ -63,6 +73,15 @@ public class Node {
     return createDate;
   }
 
+  public void setCreateDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
+  }
+
+  public Node id(UUID id) {
+    this.id = id;
+    return this;
+  }
+
    /**
    * Get id
    * @return id
@@ -70,6 +89,10 @@ public class Node {
   @ApiModelProperty(example = "000183ac-2288-4564-a76b-119f4694be98", value = "")
   public UUID getId() {
     return id;
+  }
+
+  public void setId(UUID id) {
+    this.id = id;
   }
 
   public Node isFirst(Boolean isFirst) {
@@ -152,6 +175,11 @@ public class Node {
     this.questionId = questionId;
   }
 
+  public Node secondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
+    return this;
+  }
+
    /**
    * Get secondaryId
    * @return secondaryId
@@ -159,6 +187,15 @@ public class Node {
   @ApiModelProperty(example = "7289243787238", value = "")
   public String getSecondaryId() {
     return secondaryId;
+  }
+
+  public void setSecondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
+  }
+
+  public Node updateDate(OffsetDateTime updateDate) {
+    this.updateDate = updateDate;
+    return this;
   }
 
    /**
@@ -170,9 +207,13 @@ public class Node {
     return updateDate;
   }
 
+  public void setUpdateDate(OffsetDateTime updateDate) {
+    this.updateDate = updateDate;
+  }
+
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -217,7 +258,7 @@ public class Node {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

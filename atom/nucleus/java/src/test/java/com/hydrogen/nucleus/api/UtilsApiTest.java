@@ -34,10 +34,14 @@ import com.hydrogen.nucleus.model.PageTransactionCode;
 import com.hydrogen.nucleus.model.ReasonCode;
 import com.hydrogen.nucleus.model.Stage;
 import com.hydrogen.nucleus.model.TransactionCode;
-import org.junit.Ignore;
-import org.junit.Test;
-
 import java.util.UUID;
+import org.junit.Test;
+import org.junit.Ignore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for UtilsApi
@@ -722,7 +726,7 @@ public class UtilsApiTest {
      */
     @Test
     public void updateApplicationUsingPutTest() throws ApiException {
-        Application application = null;
+        Object application = null;
         UUID applicationId = null;
         Application response = api.updateApplicationUsingPut(application, applicationId);
 
@@ -739,7 +743,7 @@ public class UtilsApiTest {
      */
     @Test
     public void updateFeatureTrackUsingPutTest() throws ApiException {
-        FeatureTrack featureTrack = null;
+        Object featureTrack = null;
         UUID featureTrackId = null;
         FeatureTrack response = api.updateFeatureTrackUsingPut(featureTrack, featureTrackId);
 
@@ -756,7 +760,7 @@ public class UtilsApiTest {
      */
     @Test
     public void updateFeatureUsingPutTest() throws ApiException {
-        Feature feature = null;
+        Object feature = null;
         UUID featureId = null;
         Feature response = api.updateFeatureUsingPut(feature, featureId);
 
@@ -773,7 +777,7 @@ public class UtilsApiTest {
      */
     @Test
     public void updateNotificationClientUsingPutTest() throws ApiException {
-        NotificationClient notificationClient = null;
+        Object notificationClient = null;
         UUID notificationClientId = null;
         NotificationClient response = api.updateNotificationClientUsingPut(notificationClient, notificationClientId);
 
@@ -790,7 +794,7 @@ public class UtilsApiTest {
      */
     @Test
     public void updateNotificationSettingUsingPutTest() throws ApiException {
-        NotificationSetting notificationSetting = null;
+        Object notificationSetting = null;
         UUID notificationSettingId = null;
         NotificationSetting response = api.updateNotificationSettingUsingPut(notificationSetting, notificationSettingId);
 
@@ -807,7 +811,7 @@ public class UtilsApiTest {
      */
     @Test
     public void updateNotificationUsingPutTest() throws ApiException {
-        Notification notification = null;
+        Object notification = null;
         UUID notificationId = null;
         Notification response = api.updateNotificationUsingPut(notification, notificationId);
 
@@ -824,7 +828,7 @@ public class UtilsApiTest {
      */
     @Test
     public void updateReasonCodeUsingPutTest() throws ApiException {
-        ReasonCode reasonCode = null;
+        Object reasonCode = null;
         UUID reasonCodeId = null;
         ReasonCode response = api.updateReasonCodeUsingPut(reasonCode, reasonCodeId);
 
@@ -841,7 +845,7 @@ public class UtilsApiTest {
      */
     @Test
     public void updateStageUsingPutTest() throws ApiException {
-        Stage stage = null;
+        Object stage = null;
         UUID stageId = null;
         Stage response = api.updateStageUsingPut(stage, stageId);
 
@@ -858,7 +862,7 @@ public class UtilsApiTest {
      */
     @Test
     public void updateTransactionCodeUsingPutTest() throws ApiException {
-        TransactionCode transactionCode = null;
+        Object transactionCode = null;
         UUID transactionCodeId = null;
         TransactionCode response = api.updateTransactionCodeUsingPut(transactionCode, transactionCodeId);
 

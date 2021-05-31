@@ -37,10 +37,10 @@ Please first follow the [installation](#installation) instructions. Then make su
 2. Search for @host and change/verify the URL according to the environment.
 
 **Sandbox Base URL**
-https://sandbox.hydrogenplatform.com
+sandbox.hydrogenplatform.com
 
 **Production Base URL**
-https://api.hydrogenplatform.com
+api.hydrogenplatform.com
 
 ```ruby
 # Load the gem

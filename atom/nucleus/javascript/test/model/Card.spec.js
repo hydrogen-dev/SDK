@@ -63,6 +63,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property businessId (base name: "business_id")', function() {
+      // uncomment below and update the code to test the property businessId
+      //var instane = new HydrogenNucleusApi.Card();
+      //expect(instance).to.be();
+    });
+
     it('should have the property cardHolderName (base name: "card_holder_name")', function() {
       // uncomment below and update the code to test the property cardHolderName
       //var instane = new HydrogenNucleusApi.Card();

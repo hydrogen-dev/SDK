@@ -32,7 +32,7 @@ class TestMerchantsMap(unittest.TestCase):
     def testMerchantsMap(self):
         """Test MerchantsMap"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.merchants_map.MerchantsMap()  # noqa: E501
+        # model = nucleus_api.models.merchants_map.MerchantsMap()  # noqa: E501
         pass
 
 

@@ -32,7 +32,7 @@ class TestRoundup(unittest.TestCase):
     def testRoundup(self):
         """Test Roundup"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.roundup.Roundup()  # noqa: E501
+        # model = nucleus_api.models.roundup.Roundup()  # noqa: E501
         pass
 
 

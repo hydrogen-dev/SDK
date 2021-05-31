@@ -1,6 +1,6 @@
 {
-  "name": "hydrogen_proton_api",
-  "version": "1.8.0",
+  "name": "@hydrogenplatform/hydrogen_proton_api",
+  "version": "1.9.0",
   "description": "Financial_engineering_module_of_Hydrogen_Atom",
   "license": "Unlicense",
   "main": "src/index.js",
@@ -15,8 +15,8 @@
     "querystring": "0.2.0"
   },
   "devDependencies": {
-    "mocha": "~2.3.4",
-    "sinon": "1.17.3",
-    "expect.js": "~0.3.1"
+    "expect.js": "~0.3.1",
+    "mocha": "^8.4.0",
+    "sinon": "1.17.3"
   }
 }

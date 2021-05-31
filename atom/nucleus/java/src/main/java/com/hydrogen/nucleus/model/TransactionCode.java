@@ -14,15 +14,17 @@
 package com.hydrogen.nucleus.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import org.threeten.bp.OffsetDateTime;
@@ -30,7 +32,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * TransactionCode
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-12T05:33:30.744Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-24T10:39:20.203Z")
 public class TransactionCode {
   @SerializedName("category")
   private String category = null;
@@ -288,6 +290,11 @@ public class TransactionCode {
     this.category = category;
   }
 
+  public TransactionCode createDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
+    return this;
+  }
+
    /**
    * Get createDate
    * @return createDate
@@ -295,6 +302,15 @@ public class TransactionCode {
   @ApiModelProperty(example = "2018-06-28T18:17:23.579+0000", value = "")
   public OffsetDateTime getCreateDate() {
     return createDate;
+  }
+
+  public void setCreateDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
+  }
+
+  public TransactionCode id(UUID id) {
+    this.id = id;
+    return this;
   }
 
    /**
@@ -306,6 +322,15 @@ public class TransactionCode {
     return id;
   }
 
+  public void setId(UUID id) {
+    this.id = id;
+  }
+
+  public TransactionCode isBuy(IsBuyEnum isBuy) {
+    this.isBuy = isBuy;
+    return this;
+  }
+
    /**
    * Get isBuy
    * @return isBuy
@@ -313,6 +338,15 @@ public class TransactionCode {
   @ApiModelProperty(example = "false", value = "")
   public IsBuyEnum getIsBuy() {
     return isBuy;
+  }
+
+  public void setIsBuy(IsBuyEnum isBuy) {
+    this.isBuy = isBuy;
+  }
+
+  public TransactionCode isDeposit(IsDepositEnum isDeposit) {
+    this.isDeposit = isDeposit;
+    return this;
   }
 
    /**
@@ -324,6 +358,15 @@ public class TransactionCode {
     return isDeposit;
   }
 
+  public void setIsDeposit(IsDepositEnum isDeposit) {
+    this.isDeposit = isDeposit;
+  }
+
+  public TransactionCode isFee(IsFeeEnum isFee) {
+    this.isFee = isFee;
+    return this;
+  }
+
    /**
    * Get isFee
    * @return isFee
@@ -333,6 +376,15 @@ public class TransactionCode {
     return isFee;
   }
 
+  public void setIsFee(IsFeeEnum isFee) {
+    this.isFee = isFee;
+  }
+
+  public TransactionCode isTransfer(IsTransferEnum isTransfer) {
+    this.isTransfer = isTransfer;
+    return this;
+  }
+
    /**
    * Get isTransfer
    * @return isTransfer
@@ -340,6 +392,10 @@ public class TransactionCode {
   @ApiModelProperty(example = "false", value = "")
   public IsTransferEnum getIsTransfer() {
     return isTransfer;
+  }
+
+  public void setIsTransfer(IsTransferEnum isTransfer) {
+    this.isTransfer = isTransfer;
   }
 
   public TransactionCode metadata(Map<String, String> metadata) {
@@ -368,6 +424,11 @@ public class TransactionCode {
     this.metadata = metadata;
   }
 
+  public TransactionCode secondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
+    return this;
+  }
+
    /**
    * Get secondaryId
    * @return secondaryId
@@ -375,6 +436,10 @@ public class TransactionCode {
   @ApiModelProperty(example = "7289243787238", value = "")
   public String getSecondaryId() {
     return secondaryId;
+  }
+
+  public void setSecondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
   }
 
   public TransactionCode subcategory(String subcategory) {
@@ -449,6 +514,11 @@ public class TransactionCode {
     this.transactionType = transactionType;
   }
 
+  public TransactionCode updateDate(OffsetDateTime updateDate) {
+    this.updateDate = updateDate;
+    return this;
+  }
+
    /**
    * Get updateDate
    * @return updateDate
@@ -458,9 +528,13 @@ public class TransactionCode {
     return updateDate;
   }
 
+  public void setUpdateDate(OffsetDateTime updateDate) {
+    this.updateDate = updateDate;
+  }
+
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -517,7 +591,7 @@ public class TransactionCode {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

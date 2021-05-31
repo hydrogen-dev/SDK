@@ -34,9 +34,9 @@ class CustomerRevenue(object):
     """
     swagger_types = {
         'accounting_method': 'str',
+        'contact_id': 'str',
         'create_date': 'datetime',
         'currency_code': 'str',
-        'customer_id': 'str',
         '_date': 'date',
         'id': 'str',
         'metadata': 'dict(str, str)',
@@ -47,9 +47,9 @@ class CustomerRevenue(object):
 
     attribute_map = {
         'accounting_method': 'accounting_method',
+        'contact_id': 'contact_id',
         'create_date': 'create_date',
         'currency_code': 'currency_code',
-        'customer_id': 'customer_id',
         '_date': 'date',
         'id': 'id',
         'metadata': 'metadata',
@@ -58,16 +58,16 @@ class CustomerRevenue(object):
         'update_date': 'update_date'
     }
 
-    def __init__(self, accounting_method=None, create_date=None, currency_code=None, customer_id=None, _date=None, id=None, metadata=None, revenue=None, secondary_id=None, update_date=None, _configuration=None):  # noqa: E501
+    def __init__(self, accounting_method=None, contact_id=None, create_date=None, currency_code=None, _date=None, id=None, metadata=None, revenue=None, secondary_id=None, update_date=None, _configuration=None):  # noqa: E501
         """CustomerRevenue - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
         self._accounting_method = None
+        self._contact_id = None
         self._create_date = None
         self._currency_code = None
-        self._customer_id = None
         self.__date = None
         self._id = None
         self._metadata = None
@@ -77,10 +77,10 @@ class CustomerRevenue(object):
         self.discriminator = None
 
         self.accounting_method = accounting_method
+        self.contact_id = contact_id
         if create_date is not None:
             self.create_date = create_date
         self.currency_code = currency_code
-        self.customer_id = customer_id
         self._date = _date
         if id is not None:
             self.id = id
@@ -116,6 +116,31 @@ class CustomerRevenue(object):
             raise ValueError("Invalid value for `accounting_method`, must not be `None`")  # noqa: E501
 
         self._accounting_method = accounting_method
+
+    @property
+    def contact_id(self):
+        """Gets the contact_id of this CustomerRevenue.  # noqa: E501
+
+        contactId  # noqa: E501
+
+        :return: The contact_id of this CustomerRevenue.  # noqa: E501
+        :rtype: str
+        """
+        return self._contact_id
+
+    @contact_id.setter
+    def contact_id(self, contact_id):
+        """Sets the contact_id of this CustomerRevenue.
+
+        contactId  # noqa: E501
+
+        :param contact_id: The contact_id of this CustomerRevenue.  # noqa: E501
+        :type: str
+        """
+        if self._configuration.client_side_validation and contact_id is None:
+            raise ValueError("Invalid value for `contact_id`, must not be `None`")  # noqa: E501
+
+        self._contact_id = contact_id
 
     @property
     def create_date(self):
@@ -162,31 +187,6 @@ class CustomerRevenue(object):
             raise ValueError("Invalid value for `currency_code`, must not be `None`")  # noqa: E501
 
         self._currency_code = currency_code
-
-    @property
-    def customer_id(self):
-        """Gets the customer_id of this CustomerRevenue.  # noqa: E501
-
-        customerId  # noqa: E501
-
-        :return: The customer_id of this CustomerRevenue.  # noqa: E501
-        :rtype: str
-        """
-        return self._customer_id
-
-    @customer_id.setter
-    def customer_id(self, customer_id):
-        """Sets the customer_id of this CustomerRevenue.
-
-        customerId  # noqa: E501
-
-        :param customer_id: The customer_id of this CustomerRevenue.  # noqa: E501
-        :type: str
-        """
-        if self._configuration.client_side_validation and customer_id is None:
-            raise ValueError("Invalid value for `customer_id`, must not be `None`")  # noqa: E501
-
-        self._customer_id = customer_id
 
     @property
     def _date(self):

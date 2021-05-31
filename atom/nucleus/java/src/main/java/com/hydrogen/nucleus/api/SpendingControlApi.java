@@ -92,7 +92,7 @@ public class SpendingControlApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -215,7 +215,7 @@ public class SpendingControlApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -347,7 +347,7 @@ public class SpendingControlApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -477,7 +477,7 @@ public class SpendingControlApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -572,7 +572,7 @@ public class SpendingControlApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateSpendingControlUsingPutCall(SpendingControl spendingControl, UUID spendingControlId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateSpendingControlUsingPutCall(Object spendingControl, UUID spendingControlId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = spendingControl;
 
         // create path and map variables
@@ -601,7 +601,7 @@ public class SpendingControlApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -615,7 +615,7 @@ public class SpendingControlApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateSpendingControlUsingPutValidateBeforeCall(SpendingControl spendingControl, UUID spendingControlId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateSpendingControlUsingPutValidateBeforeCall(Object spendingControl, UUID spendingControlId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'spendingControl' is set
         if (spendingControl == null) {
@@ -641,7 +641,7 @@ public class SpendingControlApi {
      * @return SpendingControl
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SpendingControl updateSpendingControlUsingPut(SpendingControl spendingControl, UUID spendingControlId) throws ApiException {
+    public SpendingControl updateSpendingControlUsingPut(Object spendingControl, UUID spendingControlId) throws ApiException {
         ApiResponse<SpendingControl> resp = updateSpendingControlUsingPutWithHttpInfo(spendingControl, spendingControlId);
         return resp.getData();
     }
@@ -654,7 +654,7 @@ public class SpendingControlApi {
      * @return ApiResponse&lt;SpendingControl&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SpendingControl> updateSpendingControlUsingPutWithHttpInfo(SpendingControl spendingControl, UUID spendingControlId) throws ApiException {
+    public ApiResponse<SpendingControl> updateSpendingControlUsingPutWithHttpInfo(Object spendingControl, UUID spendingControlId) throws ApiException {
         com.squareup.okhttp.Call call = updateSpendingControlUsingPutValidateBeforeCall(spendingControl, spendingControlId, null, null);
         Type localVarReturnType = new TypeToken<SpendingControl>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -669,7 +669,7 @@ public class SpendingControlApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateSpendingControlUsingPutAsync(SpendingControl spendingControl, UUID spendingControlId, final ApiCallback<SpendingControl> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateSpendingControlUsingPutAsync(Object spendingControl, UUID spendingControlId, final ApiCallback<SpendingControl> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

@@ -32,7 +32,7 @@ class TestLocation(unittest.TestCase):
     def testLocation(self):
         """Test Location"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.location.Location()  # noqa: E501
+        # model = nucleus_api.models.location.Location()  # noqa: E501
         pass
 
 

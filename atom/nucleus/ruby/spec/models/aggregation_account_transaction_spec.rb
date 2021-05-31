@@ -83,7 +83,7 @@ describe 'AggregationAccountTransaction' do
   describe 'test attribute "is_fee"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["false", "true", "null"])
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["true", "false", "null"])
       # validator.allowable_values.each do |value|
       #   expect { @instance.is_fee = value }.not_to raise_error
       # end
@@ -99,7 +99,7 @@ describe 'AggregationAccountTransaction' do
   describe 'test attribute "is_transfer"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["false", "true", "null"])
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["true", "false", "null"])
       # validator.allowable_values.each do |value|
       #   expect { @instance.is_transfer = value }.not_to raise_error
       # end

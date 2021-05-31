@@ -32,7 +32,7 @@ class TestState(unittest.TestCase):
     def testState(self):
         """Test State"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.state.State()  # noqa: E501
+        # model = nucleus_api.models.state.State()  # noqa: E501
         pass
 
 

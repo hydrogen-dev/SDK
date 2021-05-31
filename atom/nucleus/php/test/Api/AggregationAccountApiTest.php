@@ -252,6 +252,16 @@ class AggregationAccountApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for getAggregationAccountOverviewByBusinessIdUsingGet
+     *
+     * Retrieve an aggregation account aggregate data.
+     *
+     */
+    public function testGetAggregationAccountOverviewByBusinessIdUsingGet()
+    {
+    }
+
+    /**
      * Test case for getAggregationAccountOverviewUsingGet
      *
      * Retrieve an aggregation account aggregate data.

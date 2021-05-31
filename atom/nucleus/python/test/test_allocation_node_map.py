@@ -32,7 +32,7 @@ class TestAllocationNodeMap(unittest.TestCase):
     def testAllocationNodeMap(self):
         """Test AllocationNodeMap"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.allocation_node_map.AllocationNodeMap()  # noqa: E501
+        # model = nucleus_api.models.allocation_node_map.AllocationNodeMap()  # noqa: E501
         pass
 
 

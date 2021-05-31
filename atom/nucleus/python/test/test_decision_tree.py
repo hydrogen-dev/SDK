@@ -32,7 +32,7 @@ class TestDecisionTree(unittest.TestCase):
     def testDecisionTree(self):
         """Test DecisionTree"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.decision_tree.DecisionTree()  # noqa: E501
+        # model = nucleus_api.models.decision_tree.DecisionTree()  # noqa: E501
         pass
 
 

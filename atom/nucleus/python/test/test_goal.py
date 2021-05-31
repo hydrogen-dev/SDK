@@ -32,7 +32,7 @@ class TestGoal(unittest.TestCase):
     def testGoal(self):
         """Test Goal"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.goal.Goal()  # noqa: E501
+        # model = nucleus_api.models.goal.Goal()  # noqa: E501
         pass
 
 

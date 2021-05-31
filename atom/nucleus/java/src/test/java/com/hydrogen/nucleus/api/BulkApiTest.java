@@ -13,14 +13,18 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.BulkTransaction;
 import com.hydrogen.nucleus.model.BulkTransactionVO;
 import com.hydrogen.nucleus.model.JsonNode;
-import com.hydrogen.nucleus.ApiException;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for BulkApi
@@ -91,7 +95,7 @@ public class BulkApiTest {
      */
     @Test
     public void updateBulkUsingPutTest() throws ApiException {
-        JsonNode data = null;
+        Object data = null;
         String entityUri = null;
         BulkTransaction response = api.updateBulkUsingPut(data, entityUri);
 

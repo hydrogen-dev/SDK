@@ -1659,7 +1659,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[BankLink] bank_link_list: bankLinkList (required)
+        :param list[object] bank_link_list: bankLinkList (required)
         :return: list[BankLink]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1681,7 +1681,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param list[BankLink] bank_link_list: bankLinkList (required)
+        :param list[object] bank_link_list: bankLinkList (required)
         :return: list[BankLink]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1758,7 +1758,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param BankLink bank_link: bank_link (required)
+        :param object bank_link: bank_link (required)
         :param str bank_link_id: UUID bank_link_id (required)
         :return: BankLink
                  If the method is called asynchronously,
@@ -1781,7 +1781,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param BankLink bank_link: bank_link (required)
+        :param object bank_link: bank_link (required)
         :param str bank_link_id: UUID bank_link_id (required)
         :return: BankLink
                  If the method is called asynchronously,
@@ -1865,7 +1865,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param FundingTransaction funding_transaction: fundingTransaction (required)
+        :param object funding_transaction: fundingTransaction (required)
         :param str funding_transaction_id: UUID funding_transaction_id (required)
         :return: FundingTransaction
                  If the method is called asynchronously,
@@ -1888,7 +1888,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param FundingTransaction funding_transaction: fundingTransaction (required)
+        :param object funding_transaction: fundingTransaction (required)
         :param str funding_transaction_id: UUID funding_transaction_id (required)
         :return: FundingTransaction
                  If the method is called asynchronously,
@@ -1972,7 +1972,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Funding funding: funding (required)
+        :param object funding: funding (required)
         :param str funding_id: UUID funding_id (required)
         :return: Funding
                  If the method is called asynchronously,
@@ -1995,7 +1995,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Funding funding: funding (required)
+        :param object funding: funding (required)
         :param str funding_id: UUID funding_id (required)
         :return: Funding
                  If the method is called asynchronously,
@@ -2079,7 +2079,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ExternalAccountTransfer transfer: transfer (required)
+        :param object transfer: transfer (required)
         :param str transfer_id: UUID external_account_transfer_id (required)
         :return: ExternalAccountTransfer
                  If the method is called asynchronously,
@@ -2102,7 +2102,7 @@ class FundingApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ExternalAccountTransfer transfer: transfer (required)
+        :param object transfer: transfer (required)
         :param str transfer_id: UUID external_account_transfer_id (required)
         :return: ExternalAccountTransfer
                  If the method is called asynchronously,

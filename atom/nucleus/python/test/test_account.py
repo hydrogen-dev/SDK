@@ -32,7 +32,7 @@ class TestAccount(unittest.TestCase):
     def testAccount(self):
         """Test Account"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.account.Account()  # noqa: E501
+        # model = nucleus_api.models.account.Account()  # noqa: E501
         pass
 
 

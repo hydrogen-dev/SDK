@@ -32,7 +32,7 @@ class TestCheckImages(unittest.TestCase):
     def testCheckImages(self):
         """Test CheckImages"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.check_images.CheckImages()  # noqa: E501
+        # model = nucleus_api.models.check_images.CheckImages()  # noqa: E501
         pass
 
 

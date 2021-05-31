@@ -30,9 +30,10 @@ import java.io.IOException;
 import com.hydrogen.nucleus.model.Card;
 import com.hydrogen.nucleus.model.CardProgram;
 import org.threeten.bp.LocalDate;
+import org.threeten.bp.OffsetDateTime;
 import com.hydrogen.nucleus.model.PageCard;
 import com.hydrogen.nucleus.model.PageCardProgram;
-import com.hydrogen.nucleus.model.PageClientCardVO;
+import com.hydrogen.nucleus.model.PageClientBusinessCardVO;
 import com.hydrogen.nucleus.model.PagePortfolioTransaction;
 import java.util.UUID;
 
@@ -97,7 +98,7 @@ public class CardApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -219,7 +220,7 @@ public class CardApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -342,7 +343,7 @@ public class CardApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -461,7 +462,7 @@ public class CardApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -596,7 +597,7 @@ public class CardApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -627,11 +628,11 @@ public class CardApi {
      * @param orderBy order_by (optional, default to update_date)
      * @param page page (optional, default to 0)
      * @param size size (optional, default to 25)
-     * @return PageClientCardVO
+     * @return PageClientBusinessCardVO
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PageClientCardVO getAllClientCardsUsingGet(Boolean ascending, String currencyConversion, String filter, String orderBy, Integer page, Integer size) throws ApiException {
-        ApiResponse<PageClientCardVO> resp = getAllClientCardsUsingGetWithHttpInfo(ascending, currencyConversion, filter, orderBy, page, size);
+    public PageClientBusinessCardVO getAllClientCardsUsingGet(Boolean ascending, String currencyConversion, String filter, String orderBy, Integer page, Integer size) throws ApiException {
+        ApiResponse<PageClientBusinessCardVO> resp = getAllClientCardsUsingGetWithHttpInfo(ascending, currencyConversion, filter, orderBy, page, size);
         return resp.getData();
     }
 
@@ -644,12 +645,12 @@ public class CardApi {
      * @param orderBy order_by (optional, default to update_date)
      * @param page page (optional, default to 0)
      * @param size size (optional, default to 25)
-     * @return ApiResponse&lt;PageClientCardVO&gt;
+     * @return ApiResponse&lt;PageClientBusinessCardVO&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PageClientCardVO> getAllClientCardsUsingGetWithHttpInfo(Boolean ascending, String currencyConversion, String filter, String orderBy, Integer page, Integer size) throws ApiException {
+    public ApiResponse<PageClientBusinessCardVO> getAllClientCardsUsingGetWithHttpInfo(Boolean ascending, String currencyConversion, String filter, String orderBy, Integer page, Integer size) throws ApiException {
         com.squareup.okhttp.Call call = getAllClientCardsUsingGetValidateBeforeCall(ascending, currencyConversion, filter, orderBy, page, size, null, null);
-        Type localVarReturnType = new TypeToken<PageClientCardVO>(){}.getType();
+        Type localVarReturnType = new TypeToken<PageClientBusinessCardVO>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -666,7 +667,7 @@ public class CardApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllClientCardsUsingGetAsync(Boolean ascending, String currencyConversion, String filter, String orderBy, Integer page, Integer size, final ApiCallback<PageClientCardVO> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllClientCardsUsingGetAsync(Boolean ascending, String currencyConversion, String filter, String orderBy, Integer page, Integer size, final ApiCallback<PageClientBusinessCardVO> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -688,7 +689,7 @@ public class CardApi {
         }
 
         com.squareup.okhttp.Call call = getAllClientCardsUsingGetValidateBeforeCall(ascending, currencyConversion, filter, orderBy, page, size, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PageClientCardVO>(){}.getType();
+        Type localVarReturnType = new TypeToken<PageClientBusinessCardVO>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -742,7 +743,7 @@ public class CardApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -887,7 +888,7 @@ public class CardApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1038,7 +1039,7 @@ public class CardApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1168,7 +1169,7 @@ public class CardApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1315,7 +1316,7 @@ public class CardApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1426,6 +1427,177 @@ public class CardApi {
         return call;
     }
     /**
+     * Build call for getCardTransactionAggAllUsingGet1
+     * @param cardId card_id (required)
+     * @param ascending ascending (optional, default to false)
+     * @param currencyConversion currency_conversion (optional)
+     * @param endDate end_date (optional, default to null)
+     * @param filter filter (optional)
+     * @param orderBy order_by (optional, default to update_date)
+     * @param page page (optional, default to 0)
+     * @param size size (optional, default to 25)
+     * @param startDate start_date (optional, default to null)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getCardTransactionAggAllUsingGet1Call(UUID cardId, Boolean ascending, String currencyConversion, OffsetDateTime endDate, String filter, String orderBy, Integer page, Integer size, OffsetDateTime startDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/nucleus/v1/card/{card_id}/transaction"
+            .replaceAll("\\{" + "card_id" + "\\}", apiClient.escapeString(cardId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (ascending != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("ascending", ascending));
+        if (currencyConversion != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("currency_conversion", currencyConversion));
+        if (endDate != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("end_date", endDate));
+        if (filter != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+        if (orderBy != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("order_by", orderBy));
+        if (page != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("page", page));
+        if (size != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("size", size));
+        if (startDate != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("start_date", startDate));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "oauth2" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getCardTransactionAggAllUsingGet1ValidateBeforeCall(UUID cardId, Boolean ascending, String currencyConversion, OffsetDateTime endDate, String filter, String orderBy, Integer page, Integer size, OffsetDateTime startDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'cardId' is set
+        if (cardId == null) {
+            throw new ApiException("Missing the required parameter 'cardId' when calling getCardTransactionAggAllUsingGet1(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getCardTransactionAggAllUsingGet1Call(cardId, ascending, currencyConversion, endDate, filter, orderBy, page, size, startDate, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * List all card transactions
+     * Get the information for all transactions for an card.
+     * @param cardId card_id (required)
+     * @param ascending ascending (optional, default to false)
+     * @param currencyConversion currency_conversion (optional)
+     * @param endDate end_date (optional, default to null)
+     * @param filter filter (optional)
+     * @param orderBy order_by (optional, default to update_date)
+     * @param page page (optional, default to 0)
+     * @param size size (optional, default to 25)
+     * @param startDate start_date (optional, default to null)
+     * @return PagePortfolioTransaction
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PagePortfolioTransaction getCardTransactionAggAllUsingGet1(UUID cardId, Boolean ascending, String currencyConversion, OffsetDateTime endDate, String filter, String orderBy, Integer page, Integer size, OffsetDateTime startDate) throws ApiException {
+        ApiResponse<PagePortfolioTransaction> resp = getCardTransactionAggAllUsingGet1WithHttpInfo(cardId, ascending, currencyConversion, endDate, filter, orderBy, page, size, startDate);
+        return resp.getData();
+    }
+
+    /**
+     * List all card transactions
+     * Get the information for all transactions for an card.
+     * @param cardId card_id (required)
+     * @param ascending ascending (optional, default to false)
+     * @param currencyConversion currency_conversion (optional)
+     * @param endDate end_date (optional, default to null)
+     * @param filter filter (optional)
+     * @param orderBy order_by (optional, default to update_date)
+     * @param page page (optional, default to 0)
+     * @param size size (optional, default to 25)
+     * @param startDate start_date (optional, default to null)
+     * @return ApiResponse&lt;PagePortfolioTransaction&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PagePortfolioTransaction> getCardTransactionAggAllUsingGet1WithHttpInfo(UUID cardId, Boolean ascending, String currencyConversion, OffsetDateTime endDate, String filter, String orderBy, Integer page, Integer size, OffsetDateTime startDate) throws ApiException {
+        com.squareup.okhttp.Call call = getCardTransactionAggAllUsingGet1ValidateBeforeCall(cardId, ascending, currencyConversion, endDate, filter, orderBy, page, size, startDate, null, null);
+        Type localVarReturnType = new TypeToken<PagePortfolioTransaction>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * List all card transactions (asynchronously)
+     * Get the information for all transactions for an card.
+     * @param cardId card_id (required)
+     * @param ascending ascending (optional, default to false)
+     * @param currencyConversion currency_conversion (optional)
+     * @param endDate end_date (optional, default to null)
+     * @param filter filter (optional)
+     * @param orderBy order_by (optional, default to update_date)
+     * @param page page (optional, default to 0)
+     * @param size size (optional, default to 25)
+     * @param startDate start_date (optional, default to null)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getCardTransactionAggAllUsingGet1Async(UUID cardId, Boolean ascending, String currencyConversion, OffsetDateTime endDate, String filter, String orderBy, Integer page, Integer size, OffsetDateTime startDate, final ApiCallback<PagePortfolioTransaction> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getCardTransactionAggAllUsingGet1ValidateBeforeCall(cardId, ascending, currencyConversion, endDate, filter, orderBy, page, size, startDate, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PagePortfolioTransaction>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for getCardUsingGet
      * @param cardId UUID card_id (required)
      * @param progressListener Progress listener
@@ -1462,7 +1634,7 @@ public class CardApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1557,7 +1729,7 @@ public class CardApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateCardProgramUsingPutCall(CardProgram cardProgram, UUID cardProgramId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateCardProgramUsingPutCall(Object cardProgram, UUID cardProgramId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = cardProgram;
 
         // create path and map variables
@@ -1586,7 +1758,7 @@ public class CardApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1600,7 +1772,7 @@ public class CardApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateCardProgramUsingPutValidateBeforeCall(CardProgram cardProgram, UUID cardProgramId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateCardProgramUsingPutValidateBeforeCall(Object cardProgram, UUID cardProgramId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'cardProgram' is set
         if (cardProgram == null) {
@@ -1626,7 +1798,7 @@ public class CardApi {
      * @return CardProgram
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CardProgram updateCardProgramUsingPut(CardProgram cardProgram, UUID cardProgramId) throws ApiException {
+    public CardProgram updateCardProgramUsingPut(Object cardProgram, UUID cardProgramId) throws ApiException {
         ApiResponse<CardProgram> resp = updateCardProgramUsingPutWithHttpInfo(cardProgram, cardProgramId);
         return resp.getData();
     }
@@ -1639,7 +1811,7 @@ public class CardApi {
      * @return ApiResponse&lt;CardProgram&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CardProgram> updateCardProgramUsingPutWithHttpInfo(CardProgram cardProgram, UUID cardProgramId) throws ApiException {
+    public ApiResponse<CardProgram> updateCardProgramUsingPutWithHttpInfo(Object cardProgram, UUID cardProgramId) throws ApiException {
         com.squareup.okhttp.Call call = updateCardProgramUsingPutValidateBeforeCall(cardProgram, cardProgramId, null, null);
         Type localVarReturnType = new TypeToken<CardProgram>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1654,7 +1826,7 @@ public class CardApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateCardProgramUsingPutAsync(CardProgram cardProgram, UUID cardProgramId, final ApiCallback<CardProgram> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateCardProgramUsingPutAsync(Object cardProgram, UUID cardProgramId, final ApiCallback<CardProgram> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1689,7 +1861,7 @@ public class CardApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateCardUsingPutCall(Card card, UUID cardId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateCardUsingPutCall(Object card, UUID cardId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = card;
 
         // create path and map variables
@@ -1718,7 +1890,7 @@ public class CardApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1732,7 +1904,7 @@ public class CardApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateCardUsingPutValidateBeforeCall(Card card, UUID cardId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateCardUsingPutValidateBeforeCall(Object card, UUID cardId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'card' is set
         if (card == null) {
@@ -1758,7 +1930,7 @@ public class CardApi {
      * @return Card
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Card updateCardUsingPut(Card card, UUID cardId) throws ApiException {
+    public Card updateCardUsingPut(Object card, UUID cardId) throws ApiException {
         ApiResponse<Card> resp = updateCardUsingPutWithHttpInfo(card, cardId);
         return resp.getData();
     }
@@ -1771,7 +1943,7 @@ public class CardApi {
      * @return ApiResponse&lt;Card&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Card> updateCardUsingPutWithHttpInfo(Card card, UUID cardId) throws ApiException {
+    public ApiResponse<Card> updateCardUsingPutWithHttpInfo(Object card, UUID cardId) throws ApiException {
         com.squareup.okhttp.Call call = updateCardUsingPutValidateBeforeCall(card, cardId, null, null);
         Type localVarReturnType = new TypeToken<Card>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1786,7 +1958,7 @@ public class CardApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateCardUsingPutAsync(Card card, UUID cardId, final ApiCallback<Card> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateCardUsingPutAsync(Object card, UUID cardId, final ApiCallback<Card> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

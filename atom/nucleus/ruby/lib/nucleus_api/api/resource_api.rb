@@ -182,6 +182,8 @@ module NucleusApi
     # Get all account category mapping
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter filter
+    # @option opts [String] :hydrogen_account_category_id hydrogen_account_category_id
+    # @option opts [BOOLEAN] :match_primary match_primary (default to false)
     # @option opts [String] :tenant_name tenant_name
     # @option opts [String] :vendor_name vendor_name
     # @return [Array<Object>]
@@ -194,6 +196,8 @@ module NucleusApi
     # Get all account category mapping
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter filter
+    # @option opts [String] :hydrogen_account_category_id hydrogen_account_category_id
+    # @option opts [BOOLEAN] :match_primary match_primary
     # @option opts [String] :tenant_name tenant_name
     # @option opts [String] :vendor_name vendor_name
     # @return [Array<(Array<Object>, Fixnum, Hash)>] Array<Object> data, response status code and response headers
@@ -207,6 +211,8 @@ module NucleusApi
       # query parameters
       query_params = {}
       query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+      query_params[:'hydrogen_account_category_id'] = opts[:'hydrogen_account_category_id'] if !opts[:'hydrogen_account_category_id'].nil?
+      query_params[:'match_primary'] = opts[:'match_primary'] if !opts[:'match_primary'].nil?
       query_params[:'tenant_name'] = opts[:'tenant_name'] if !opts[:'tenant_name'].nil?
       query_params[:'vendor_name'] = opts[:'vendor_name'] if !opts[:'vendor_name'].nil?
 
@@ -696,6 +702,8 @@ module NucleusApi
     # Get all transaction category mapping
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter filter
+    # @option opts [String] :hydrogen_transaction_category_id hydrogen_transaction_category_id
+    # @option opts [BOOLEAN] :match_primary match_primary (default to false)
     # @option opts [String] :tenant_name tenant_name
     # @option opts [String] :vendor_name vendor_name
     # @return [Array<Object>]
@@ -708,6 +716,8 @@ module NucleusApi
     # Get all transaction category mapping
     # @param [Hash] opts the optional parameters
     # @option opts [String] :filter filter
+    # @option opts [String] :hydrogen_transaction_category_id hydrogen_transaction_category_id
+    # @option opts [BOOLEAN] :match_primary match_primary
     # @option opts [String] :tenant_name tenant_name
     # @option opts [String] :vendor_name vendor_name
     # @return [Array<(Array<Object>, Fixnum, Hash)>] Array<Object> data, response status code and response headers
@@ -721,6 +731,8 @@ module NucleusApi
       # query parameters
       query_params = {}
       query_params[:'filter'] = opts[:'filter'] if !opts[:'filter'].nil?
+      query_params[:'hydrogen_transaction_category_id'] = opts[:'hydrogen_transaction_category_id'] if !opts[:'hydrogen_transaction_category_id'].nil?
+      query_params[:'match_primary'] = opts[:'match_primary'] if !opts[:'match_primary'].nil?
       query_params[:'tenant_name'] = opts[:'tenant_name'] if !opts[:'tenant_name'].nil?
       query_params[:'vendor_name'] = opts[:'vendor_name'] if !opts[:'vendor_name'].nil?
 

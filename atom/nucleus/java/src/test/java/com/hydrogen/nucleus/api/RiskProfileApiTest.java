@@ -13,13 +13,17 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.PageRiskProfile;
 import com.hydrogen.nucleus.model.RiskProfile;
-import com.hydrogen.nucleus.ApiException;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for RiskProfileApi
@@ -108,7 +112,7 @@ public class RiskProfileApiTest {
      */
     @Test
     public void updateRiskProfileUsingPutTest() throws ApiException {
-        RiskProfile riskProfile = null;
+        Object riskProfile = null;
         UUID riskProfileId = null;
         RiskProfile response = api.updateRiskProfileUsingPut(riskProfile, riskProfileId);
 

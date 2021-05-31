@@ -1330,7 +1330,7 @@ class DecisionTreeApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param DecisionTree decision_tree: decision_tree (required)
+        :param object decision_tree: decision_tree (required)
         :param str decision_tree_id: UUID decision_tree_id (required)
         :return: DecisionTree
                  If the method is called asynchronously,
@@ -1353,7 +1353,7 @@ class DecisionTreeApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param DecisionTree decision_tree: decision_tree (required)
+        :param object decision_tree: decision_tree (required)
         :param str decision_tree_id: UUID decision_tree_id (required)
         :return: DecisionTree
                  If the method is called asynchronously,
@@ -1437,7 +1437,7 @@ class DecisionTreeApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param JsonNode json_node: jsonNode (required)
+        :param object json_node: jsonNode (required)
         :param str node_relationship_id: UUID node_relationship_id (required)
         :return: NodeRelationship
                  If the method is called asynchronously,
@@ -1460,7 +1460,7 @@ class DecisionTreeApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param JsonNode json_node: jsonNode (required)
+        :param object json_node: jsonNode (required)
         :param str node_relationship_id: UUID node_relationship_id (required)
         :return: NodeRelationship
                  If the method is called asynchronously,
@@ -1544,7 +1544,7 @@ class DecisionTreeApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param JsonNode json_node: jsonNode (required)
+        :param object json_node: jsonNode (required)
         :param str node_id: UUID node_id (required)
         :return: Node
                  If the method is called asynchronously,
@@ -1567,7 +1567,7 @@ class DecisionTreeApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param JsonNode json_node: jsonNode (required)
+        :param object json_node: jsonNode (required)
         :param str node_id: UUID node_id (required)
         :return: Node
                  If the method is called asynchronously,

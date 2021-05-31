@@ -32,7 +32,7 @@ class TestCurrency(unittest.TestCase):
     def testCurrency(self):
         """Test Currency"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.currency.Currency()  # noqa: E501
+        # model = nucleus_api.models.currency.Currency()  # noqa: E501
         pass
 
 

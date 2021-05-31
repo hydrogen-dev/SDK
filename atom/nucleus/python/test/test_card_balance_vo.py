@@ -32,7 +32,7 @@ class TestCardBalanceVO(unittest.TestCase):
     def testCardBalanceVO(self):
         """Test CardBalanceVO"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.card_balance_vo.CardBalanceVO()  # noqa: E501
+        # model = nucleus_api.models.card_balance_vo.CardBalanceVO()  # noqa: E501
         pass
 
 

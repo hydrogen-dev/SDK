@@ -430,7 +430,7 @@ class AdminClientApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AdminClient client: client (required)
+        :param object client: client (required)
         :param int client_id: client_id (required)
         :return: AdminClient
                  If the method is called asynchronously,
@@ -452,7 +452,7 @@ class AdminClientApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AdminClient client: client (required)
+        :param object client: client (required)
         :param int client_id: client_id (required)
         :return: AdminClient
                  If the method is called asynchronously,

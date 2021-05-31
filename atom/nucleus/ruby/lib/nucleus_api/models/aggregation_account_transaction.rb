@@ -211,9 +211,9 @@ module NucleusApi
     # @return true if the model is valid
     def valid?
       return false if @currency_code.nil?
-      is_fee_validator = EnumAttributeValidator.new('String', ['false', 'true', 'null'])
+      is_fee_validator = EnumAttributeValidator.new('String', ['true', 'false', 'null'])
       return false unless is_fee_validator.valid?(@is_fee)
-      is_transfer_validator = EnumAttributeValidator.new('String', ['false', 'true', 'null'])
+      is_transfer_validator = EnumAttributeValidator.new('String', ['true', 'false', 'null'])
       return false unless is_transfer_validator.valid?(@is_transfer)
       return false if @transaction_date.nil?
       true
@@ -222,7 +222,7 @@ module NucleusApi
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] is_fee Object to be assigned
     def is_fee=(is_fee)
-      validator = EnumAttributeValidator.new('String', ['false', 'true', 'null'])
+      validator = EnumAttributeValidator.new('String', ['true', 'false', 'null'])
       unless validator.valid?(is_fee)
         fail ArgumentError, 'invalid value for "is_fee", must be one of #{validator.allowable_values}.'
       end
@@ -232,7 +232,7 @@ module NucleusApi
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] is_transfer Object to be assigned
     def is_transfer=(is_transfer)
-      validator = EnumAttributeValidator.new('String', ['false', 'true', 'null'])
+      validator = EnumAttributeValidator.new('String', ['true', 'false', 'null'])
       unless validator.valid?(is_transfer)
         fail ArgumentError, 'invalid value for "is_transfer", must be one of #{validator.allowable_values}.'
       end
@@ -333,7 +333,9 @@ module NucleusApi
         temp_model.build_from_hash(value)
       end
     end
-# Returns the string representation of the object
+
+
+    # Returns the string representation of the object
     # @return [String] String presentation of the object
     def to_s
       to_hash.to_s
@@ -355,7 +357,6 @@ module NucleusApi
       end
       hash
     end
-
 
     # Outputs non-array value in the form of hash
     # For object, use to_hash. Otherwise, just return the value

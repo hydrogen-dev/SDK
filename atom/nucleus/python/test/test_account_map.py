@@ -32,7 +32,7 @@ class TestAccountMap(unittest.TestCase):
     def testAccountMap(self):
         """Test AccountMap"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.account_map.AccountMap()  # noqa: E501
+        # model = nucleus_api.models.account_map.AccountMap()  # noqa: E501
         pass
 
 

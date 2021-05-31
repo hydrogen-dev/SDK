@@ -32,7 +32,7 @@ class TestSecuritiesComposition(unittest.TestCase):
     def testSecuritiesComposition(self):
         """Test SecuritiesComposition"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.securities_composition.SecuritiesComposition()  # noqa: E501
+        # model = nucleus_api.models.securities_composition.SecuritiesComposition()  # noqa: E501
         pass
 
 

@@ -32,7 +32,7 @@ class TestOrderTrack(unittest.TestCase):
     def testOrderTrack(self):
         """Test OrderTrack"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.order_track.OrderTrack()  # noqa: E501
+        # model = nucleus_api.models.order_track.OrderTrack()  # noqa: E501
         pass
 
 

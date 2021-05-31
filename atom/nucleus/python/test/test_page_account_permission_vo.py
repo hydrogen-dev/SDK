@@ -32,7 +32,7 @@ class TestPageAccountPermissionVO(unittest.TestCase):
     def testPageAccountPermissionVO(self):
         """Test PageAccountPermissionVO"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_account_permission_vo.PageAccountPermissionVO()  # noqa: E501
+        # model = nucleus_api.models.page_account_permission_vo.PageAccountPermissionVO()  # noqa: E501
         pass
 
 

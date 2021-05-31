@@ -32,7 +32,7 @@ class TestSecurityCountryVO(unittest.TestCase):
     def testSecurityCountryVO(self):
         """Test SecurityCountryVO"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.security_country_vo.SecurityCountryVO()  # noqa: E501
+        # model = nucleus_api.models.security_country_vo.SecurityCountryVO()  # noqa: E501
         pass
 
 

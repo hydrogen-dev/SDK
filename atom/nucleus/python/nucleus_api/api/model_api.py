@@ -250,7 +250,7 @@ class ModelApi(object):
 
         :param async_req bool
         :param ModelComment model_comment_request: modelCommentRequest (required)
-        :return: int
+        :return: ModelComment
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -272,7 +272,7 @@ class ModelApi(object):
 
         :param async_req bool
         :param ModelComment model_comment_request: modelCommentRequest (required)
-        :return: int
+        :return: ModelComment
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -330,7 +330,7 @@ class ModelApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='int',  # noqa: E501
+            response_type='ModelComment',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2138,7 +2138,7 @@ class ModelApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ModelAssetSize model_asset_size: model_asset_size (required)
+        :param object model_asset_size: model_asset_size (required)
         :param str model_asset_size_id: UUID model_asset_size_id (required)
         :return: ModelAssetSize
                  If the method is called asynchronously,
@@ -2161,7 +2161,7 @@ class ModelApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ModelAssetSize model_asset_size: model_asset_size (required)
+        :param object model_asset_size: model_asset_size (required)
         :param str model_asset_size_id: UUID model_asset_size_id (required)
         :return: ModelAssetSize
                  If the method is called asynchronously,
@@ -2245,7 +2245,7 @@ class ModelApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ModelComment model_comment: model_comment (required)
+        :param object model_comment: model_comment (required)
         :param str model_comment_id: UUID model_comment_id (required)
         :return: ModelComment
                  If the method is called asynchronously,
@@ -2268,7 +2268,7 @@ class ModelApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ModelComment model_comment: model_comment (required)
+        :param object model_comment: model_comment (required)
         :param str model_comment_id: UUID model_comment_id (required)
         :return: ModelComment
                  If the method is called asynchronously,
@@ -2352,7 +2352,7 @@ class ModelApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ModelHolding model_holding: model_holding (required)
+        :param object model_holding: model_holding (required)
         :param str model_holding_id: UUID model_holding_id (required)
         :return: ModelHolding
                  If the method is called asynchronously,
@@ -2375,7 +2375,7 @@ class ModelApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ModelHolding model_holding: model_holding (required)
+        :param object model_holding: model_holding (required)
         :param str model_holding_id: UUID model_holding_id (required)
         :return: ModelHolding
                  If the method is called asynchronously,
@@ -2459,7 +2459,7 @@ class ModelApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ModelTransaction model_transaction: model_transaction (required)
+        :param object model_transaction: model_transaction (required)
         :param str model_transaction_id: UUID model_transaction_id (required)
         :return: ModelTransaction
                  If the method is called asynchronously,
@@ -2482,7 +2482,7 @@ class ModelApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param ModelTransaction model_transaction: model_transaction (required)
+        :param object model_transaction: model_transaction (required)
         :param str model_transaction_id: UUID model_transaction_id (required)
         :return: ModelTransaction
                  If the method is called asynchronously,
@@ -2566,7 +2566,7 @@ class ModelApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Model model: model (required)
+        :param object model: model (required)
         :param str model_id: UUID model_id (required)
         :return: Model
                  If the method is called asynchronously,
@@ -2589,7 +2589,7 @@ class ModelApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Model model: model (required)
+        :param object model: model (required)
         :param str model_id: UUID model_id (required)
         :return: Model
                  If the method is called asynchronously,

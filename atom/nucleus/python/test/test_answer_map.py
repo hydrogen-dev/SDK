@@ -32,7 +32,7 @@ class TestAnswerMap(unittest.TestCase):
     def testAnswerMap(self):
         """Test AnswerMap"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.answer_map.AnswerMap()  # noqa: E501
+        # model = nucleus_api.models.answer_map.AnswerMap()  # noqa: E501
         pass
 
 

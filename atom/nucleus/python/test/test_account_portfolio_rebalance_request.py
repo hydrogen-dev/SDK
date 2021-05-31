@@ -32,7 +32,7 @@ class TestAccountPortfolioRebalanceRequest(unittest.TestCase):
     def testAccountPortfolioRebalanceRequest(self):
         """Test AccountPortfolioRebalanceRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.account_portfolio_rebalance_request.AccountPortfolioRebalanceRequest()  # noqa: E501
+        # model = nucleus_api.models.account_portfolio_rebalance_request.AccountPortfolioRebalanceRequest()  # noqa: E501
         pass
 
 

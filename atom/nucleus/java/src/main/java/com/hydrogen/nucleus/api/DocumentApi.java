@@ -92,7 +92,7 @@ public class DocumentApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -215,7 +215,7 @@ public class DocumentApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -347,7 +347,7 @@ public class DocumentApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -477,7 +477,7 @@ public class DocumentApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -572,7 +572,7 @@ public class DocumentApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateDocumentUsingPutCall(Document document, UUID documentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateDocumentUsingPutCall(Object document, UUID documentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = document;
 
         // create path and map variables
@@ -601,7 +601,7 @@ public class DocumentApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -615,7 +615,7 @@ public class DocumentApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateDocumentUsingPutValidateBeforeCall(Document document, UUID documentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateDocumentUsingPutValidateBeforeCall(Object document, UUID documentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'document' is set
         if (document == null) {
@@ -641,7 +641,7 @@ public class DocumentApi {
      * @return Document
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Document updateDocumentUsingPut(Document document, UUID documentId) throws ApiException {
+    public Document updateDocumentUsingPut(Object document, UUID documentId) throws ApiException {
         ApiResponse<Document> resp = updateDocumentUsingPutWithHttpInfo(document, documentId);
         return resp.getData();
     }
@@ -654,7 +654,7 @@ public class DocumentApi {
      * @return ApiResponse&lt;Document&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Document> updateDocumentUsingPutWithHttpInfo(Document document, UUID documentId) throws ApiException {
+    public ApiResponse<Document> updateDocumentUsingPutWithHttpInfo(Object document, UUID documentId) throws ApiException {
         com.squareup.okhttp.Call call = updateDocumentUsingPutValidateBeforeCall(document, documentId, null, null);
         Type localVarReturnType = new TypeToken<Document>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -669,7 +669,7 @@ public class DocumentApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateDocumentUsingPutAsync(Document document, UUID documentId, final ApiCallback<Document> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateDocumentUsingPutAsync(Object document, UUID documentId, final ApiCallback<Document> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

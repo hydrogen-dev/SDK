@@ -5201,7 +5201,7 @@ class ClientApi
      *
      * Update a client response
      *
-     * @param  \com\hydrogen\nucleus\Model\ClientResponse $client_response client_response (required)
+     * @param  object $client_response client_response (required)
      * @param  string $client_response_id UUID client_response_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -5219,7 +5219,7 @@ class ClientApi
      *
      * Update a client response
      *
-     * @param  \com\hydrogen\nucleus\Model\ClientResponse $client_response client_response (required)
+     * @param  object $client_response client_response (required)
      * @param  string $client_response_id UUID client_response_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -5295,7 +5295,7 @@ class ClientApi
      *
      * Update a client response
      *
-     * @param  \com\hydrogen\nucleus\Model\ClientResponse $client_response client_response (required)
+     * @param  object $client_response client_response (required)
      * @param  string $client_response_id UUID client_response_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5316,7 +5316,7 @@ class ClientApi
      *
      * Update a client response
      *
-     * @param  \com\hydrogen\nucleus\Model\ClientResponse $client_response client_response (required)
+     * @param  object $client_response client_response (required)
      * @param  string $client_response_id UUID client_response_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5367,7 +5367,7 @@ class ClientApi
     /**
      * Create request for operation 'updateClientResponseUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\ClientResponse $client_response client_response (required)
+     * @param  object $client_response client_response (required)
      * @param  string $client_response_id UUID client_response_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5488,7 +5488,7 @@ class ClientApi
      *
      * Update an client status
      *
-     * @param  \com\hydrogen\nucleus\Model\ClientStatus $client_status client_status (required)
+     * @param  object $client_status client_status (required)
      * @param  string $client_status_id UUID client_status_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -5506,7 +5506,7 @@ class ClientApi
      *
      * Update an client status
      *
-     * @param  \com\hydrogen\nucleus\Model\ClientStatus $client_status client_status (required)
+     * @param  object $client_status client_status (required)
      * @param  string $client_status_id UUID client_status_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -5582,7 +5582,7 @@ class ClientApi
      *
      * Update an client status
      *
-     * @param  \com\hydrogen\nucleus\Model\ClientStatus $client_status client_status (required)
+     * @param  object $client_status client_status (required)
      * @param  string $client_status_id UUID client_status_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5603,7 +5603,7 @@ class ClientApi
      *
      * Update an client status
      *
-     * @param  \com\hydrogen\nucleus\Model\ClientStatus $client_status client_status (required)
+     * @param  object $client_status client_status (required)
      * @param  string $client_status_id UUID client_status_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5654,7 +5654,7 @@ class ClientApi
     /**
      * Create request for operation 'updateClientStatusUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\ClientStatus $client_status client_status (required)
+     * @param  object $client_status client_status (required)
      * @param  string $client_status_id UUID client_status_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5775,7 +5775,7 @@ class ClientApi
      *
      * Update a client
      *
-     * @param  \com\hydrogen\nucleus\Model\Client $client client (required)
+     * @param  object $client client (required)
      * @param  string $client_id UUID client_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -5793,7 +5793,7 @@ class ClientApi
      *
      * Update a client
      *
-     * @param  \com\hydrogen\nucleus\Model\Client $client client (required)
+     * @param  object $client client (required)
      * @param  string $client_id UUID client_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -5869,7 +5869,7 @@ class ClientApi
      *
      * Update a client
      *
-     * @param  \com\hydrogen\nucleus\Model\Client $client client (required)
+     * @param  object $client client (required)
      * @param  string $client_id UUID client_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5890,7 +5890,7 @@ class ClientApi
      *
      * Update a client
      *
-     * @param  \com\hydrogen\nucleus\Model\Client $client client (required)
+     * @param  object $client client (required)
      * @param  string $client_id UUID client_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5941,7 +5941,7 @@ class ClientApi
     /**
      * Create request for operation 'updateClientUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Client $client client (required)
+     * @param  object $client client (required)
      * @param  string $client_id UUID client_id (required)
      *
      * @throws \InvalidArgumentException

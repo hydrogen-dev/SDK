@@ -117,6 +117,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property fundingId (base name: "funding_id")', function() {
+      // uncomment below and update the code to test the property fundingId
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
+      //expect(instance).to.be();
+    });
+
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
       //var instane = new HydrogenNucleusApi.PortfolioTransaction();
@@ -179,6 +185,12 @@
 
     it('should have the property metadata (base name: "metadata")', function() {
       // uncomment below and update the code to test the property metadata
+      //var instane = new HydrogenNucleusApi.PortfolioTransaction();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property mid (base name: "mid")', function() {
+      // uncomment below and update the code to test the property mid
       //var instane = new HydrogenNucleusApi.PortfolioTransaction();
       //expect(instance).to.be();
     });

@@ -75,6 +75,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property cardIssuance (base name: "card_issuance")', function() {
+      // uncomment below and update the code to test the property cardIssuance
+      //var instane = new HydrogenNucleusApi.CardDetailsVO();
+      //expect(instance).to.be();
+    });
+
     it('should have the property cardName (base name: "card_name")', function() {
       // uncomment below and update the code to test the property cardName
       //var instane = new HydrogenNucleusApi.CardDetailsVO();

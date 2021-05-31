@@ -32,7 +32,7 @@ class TestAccountAllocationMapping(unittest.TestCase):
     def testAccountAllocationMapping(self):
         """Test AccountAllocationMapping"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.account_allocation_mapping.AccountAllocationMapping()  # noqa: E501
+        # model = nucleus_api.models.account_allocation_mapping.AccountAllocationMapping()  # noqa: E501
         pass
 
 

@@ -99,6 +99,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property businessId (base name: "business_id")', function() {
+      // uncomment below and update the code to test the property businessId
+      //var instane = new HydrogenNucleusApi.AggregationAccount();
+      //expect(instance).to.be();
+    });
+
     it('should have the property category (base name: "category")', function() {
       // uncomment below and update the code to test the property category
       //var instane = new HydrogenNucleusApi.AggregationAccount();

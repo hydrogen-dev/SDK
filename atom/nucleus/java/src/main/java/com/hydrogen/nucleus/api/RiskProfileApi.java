@@ -92,7 +92,7 @@ public class RiskProfileApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -215,7 +215,7 @@ public class RiskProfileApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -347,7 +347,7 @@ public class RiskProfileApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -477,7 +477,7 @@ public class RiskProfileApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -572,7 +572,7 @@ public class RiskProfileApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateRiskProfileUsingPutCall(RiskProfile riskProfile, UUID riskProfileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateRiskProfileUsingPutCall(Object riskProfile, UUID riskProfileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = riskProfile;
 
         // create path and map variables
@@ -601,7 +601,7 @@ public class RiskProfileApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -615,7 +615,7 @@ public class RiskProfileApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateRiskProfileUsingPutValidateBeforeCall(RiskProfile riskProfile, UUID riskProfileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateRiskProfileUsingPutValidateBeforeCall(Object riskProfile, UUID riskProfileId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'riskProfile' is set
         if (riskProfile == null) {
@@ -641,7 +641,7 @@ public class RiskProfileApi {
      * @return RiskProfile
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public RiskProfile updateRiskProfileUsingPut(RiskProfile riskProfile, UUID riskProfileId) throws ApiException {
+    public RiskProfile updateRiskProfileUsingPut(Object riskProfile, UUID riskProfileId) throws ApiException {
         ApiResponse<RiskProfile> resp = updateRiskProfileUsingPutWithHttpInfo(riskProfile, riskProfileId);
         return resp.getData();
     }
@@ -654,7 +654,7 @@ public class RiskProfileApi {
      * @return ApiResponse&lt;RiskProfile&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<RiskProfile> updateRiskProfileUsingPutWithHttpInfo(RiskProfile riskProfile, UUID riskProfileId) throws ApiException {
+    public ApiResponse<RiskProfile> updateRiskProfileUsingPutWithHttpInfo(Object riskProfile, UUID riskProfileId) throws ApiException {
         com.squareup.okhttp.Call call = updateRiskProfileUsingPutValidateBeforeCall(riskProfile, riskProfileId, null, null);
         Type localVarReturnType = new TypeToken<RiskProfile>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -669,7 +669,7 @@ public class RiskProfileApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateRiskProfileUsingPutAsync(RiskProfile riskProfile, UUID riskProfileId, final ApiCallback<RiskProfile> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateRiskProfileUsingPutAsync(Object riskProfile, UUID riskProfileId, final ApiCallback<RiskProfile> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

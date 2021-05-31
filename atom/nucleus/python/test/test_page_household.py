@@ -32,7 +32,7 @@ class TestPageHousehold(unittest.TestCase):
     def testPageHousehold(self):
         """Test PageHousehold"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_household.PageHousehold()  # noqa: E501
+        # model = nucleus_api.models.page_household.PageHousehold()  # noqa: E501
         pass
 
 

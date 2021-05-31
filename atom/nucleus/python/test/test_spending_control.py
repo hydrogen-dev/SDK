@@ -32,7 +32,7 @@ class TestSpendingControl(unittest.TestCase):
     def testSpendingControl(self):
         """Test SpendingControl"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.spending_control.SpendingControl()  # noqa: E501
+        # model = nucleus_api.models.spending_control.SpendingControl()  # noqa: E501
         pass
 
 

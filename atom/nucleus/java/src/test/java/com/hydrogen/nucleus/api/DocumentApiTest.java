@@ -13,13 +13,17 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.Document;
 import com.hydrogen.nucleus.model.PageDocument;
-import com.hydrogen.nucleus.ApiException;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for DocumentApi
@@ -108,7 +112,7 @@ public class DocumentApiTest {
      */
     @Test
     public void updateDocumentUsingPutTest() throws ApiException {
-        Document document = null;
+        Object document = null;
         UUID documentId = null;
         Document response = api.updateDocumentUsingPut(document, documentId);
 

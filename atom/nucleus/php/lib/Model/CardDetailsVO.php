@@ -61,6 +61,7 @@ class CardDetailsVO implements ModelInterface, ArrayAccess
         'balance' => '\com\hydrogen\nucleus\Model\CardBalanceVO',
         'card_holder_name' => 'string',
         'card_id' => 'string',
+        'card_issuance' => 'string',
         'card_name' => 'string',
         'card_network' => 'string',
         'card_type' => 'string',
@@ -79,6 +80,7 @@ class CardDetailsVO implements ModelInterface, ArrayAccess
         'balance' => null,
         'card_holder_name' => null,
         'card_id' => 'uuid',
+        'card_issuance' => null,
         'card_name' => null,
         'card_network' => null,
         'card_type' => null,
@@ -118,6 +120,7 @@ class CardDetailsVO implements ModelInterface, ArrayAccess
         'balance' => 'balance',
         'card_holder_name' => 'card_holder_name',
         'card_id' => 'card_id',
+        'card_issuance' => 'card_issuance',
         'card_name' => 'card_name',
         'card_network' => 'card_network',
         'card_type' => 'card_type',
@@ -136,6 +139,7 @@ class CardDetailsVO implements ModelInterface, ArrayAccess
         'balance' => 'setBalance',
         'card_holder_name' => 'setCardHolderName',
         'card_id' => 'setCardId',
+        'card_issuance' => 'setCardIssuance',
         'card_name' => 'setCardName',
         'card_network' => 'setCardNetwork',
         'card_type' => 'setCardType',
@@ -154,6 +158,7 @@ class CardDetailsVO implements ModelInterface, ArrayAccess
         'balance' => 'getBalance',
         'card_holder_name' => 'getCardHolderName',
         'card_id' => 'getCardId',
+        'card_issuance' => 'getCardIssuance',
         'card_name' => 'getCardName',
         'card_network' => 'getCardNetwork',
         'card_type' => 'getCardType',
@@ -226,6 +231,7 @@ class CardDetailsVO implements ModelInterface, ArrayAccess
         $this->container['balance'] = isset($data['balance']) ? $data['balance'] : null;
         $this->container['card_holder_name'] = isset($data['card_holder_name']) ? $data['card_holder_name'] : null;
         $this->container['card_id'] = isset($data['card_id']) ? $data['card_id'] : null;
+        $this->container['card_issuance'] = isset($data['card_issuance']) ? $data['card_issuance'] : null;
         $this->container['card_name'] = isset($data['card_name']) ? $data['card_name'] : null;
         $this->container['card_network'] = isset($data['card_network']) ? $data['card_network'] : null;
         $this->container['card_type'] = isset($data['card_type']) ? $data['card_type'] : null;
@@ -327,6 +333,30 @@ class CardDetailsVO implements ModelInterface, ArrayAccess
     public function setCardId($card_id)
     {
         $this->container['card_id'] = $card_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets card_issuance
+     *
+     * @return string
+     */
+    public function getCardIssuance()
+    {
+        return $this->container['card_issuance'];
+    }
+
+    /**
+     * Sets card_issuance
+     *
+     * @param string $card_issuance cardIssuance
+     *
+     * @return $this
+     */
+    public function setCardIssuance($card_issuance)
+    {
+        $this->container['card_issuance'] = $card_issuance;
 
         return $this;
     }

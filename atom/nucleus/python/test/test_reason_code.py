@@ -32,7 +32,7 @@ class TestReasonCode(unittest.TestCase):
     def testReasonCode(self):
         """Test ReasonCode"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.reason_code.ReasonCode()  # noqa: E501
+        # model = nucleus_api.models.reason_code.ReasonCode()  # noqa: E501
         pass
 
 

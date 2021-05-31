@@ -2262,7 +2262,7 @@ class ContactApi
      *
      * Update a contact
      *
-     * @param  \com\hydrogen\nucleus\Model\Contact $contact contact (required)
+     * @param  object $contact contact (required)
      * @param  string $contact_id UUID contact_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -2280,7 +2280,7 @@ class ContactApi
      *
      * Update a contact
      *
-     * @param  \com\hydrogen\nucleus\Model\Contact $contact contact (required)
+     * @param  object $contact contact (required)
      * @param  string $contact_id UUID contact_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -2356,7 +2356,7 @@ class ContactApi
      *
      * Update a contact
      *
-     * @param  \com\hydrogen\nucleus\Model\Contact $contact contact (required)
+     * @param  object $contact contact (required)
      * @param  string $contact_id UUID contact_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2377,7 +2377,7 @@ class ContactApi
      *
      * Update a contact
      *
-     * @param  \com\hydrogen\nucleus\Model\Contact $contact contact (required)
+     * @param  object $contact contact (required)
      * @param  string $contact_id UUID contact_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2428,7 +2428,7 @@ class ContactApi
     /**
      * Create request for operation 'updateContactUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Contact $contact contact (required)
+     * @param  object $contact contact (required)
      * @param  string $contact_id UUID contact_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2549,7 +2549,7 @@ class ContactApi
      *
      * Update a customer revenue
      *
-     * @param  \com\hydrogen\nucleus\Model\CustomerRevenue $customer_revenue customer_revenue (required)
+     * @param  object $customer_revenue customer_revenue (required)
      * @param  string $customer_revenue_id UUID customer_revenue_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -2567,7 +2567,7 @@ class ContactApi
      *
      * Update a customer revenue
      *
-     * @param  \com\hydrogen\nucleus\Model\CustomerRevenue $customer_revenue customer_revenue (required)
+     * @param  object $customer_revenue customer_revenue (required)
      * @param  string $customer_revenue_id UUID customer_revenue_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -2643,7 +2643,7 @@ class ContactApi
      *
      * Update a customer revenue
      *
-     * @param  \com\hydrogen\nucleus\Model\CustomerRevenue $customer_revenue customer_revenue (required)
+     * @param  object $customer_revenue customer_revenue (required)
      * @param  string $customer_revenue_id UUID customer_revenue_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2664,7 +2664,7 @@ class ContactApi
      *
      * Update a customer revenue
      *
-     * @param  \com\hydrogen\nucleus\Model\CustomerRevenue $customer_revenue customer_revenue (required)
+     * @param  object $customer_revenue customer_revenue (required)
      * @param  string $customer_revenue_id UUID customer_revenue_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2715,7 +2715,7 @@ class ContactApi
     /**
      * Create request for operation 'updateCustomerRevenueUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\CustomerRevenue $customer_revenue customer_revenue (required)
+     * @param  object $customer_revenue customer_revenue (required)
      * @param  string $customer_revenue_id UUID customer_revenue_id (required)
      *
      * @throws \InvalidArgumentException

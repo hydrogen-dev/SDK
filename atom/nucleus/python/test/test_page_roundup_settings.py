@@ -32,7 +32,7 @@ class TestPageRoundupSettings(unittest.TestCase):
     def testPageRoundupSettings(self):
         """Test PageRoundupSettings"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_roundup_settings.PageRoundupSettings()  # noqa: E501
+        # model = nucleus_api.models.page_roundup_settings.PageRoundupSettings()  # noqa: E501
         pass
 
 

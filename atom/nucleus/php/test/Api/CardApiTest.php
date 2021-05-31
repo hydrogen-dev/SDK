@@ -172,6 +172,16 @@ class CardApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for getCardTransactionAggAllUsingGet1
+     *
+     * List all card transactions.
+     *
+     */
+    public function testGetCardTransactionAggAllUsingGet1()
+    {
+    }
+
+    /**
      * Test case for getCardUsingGet
      *
      * Retrieve a card request.

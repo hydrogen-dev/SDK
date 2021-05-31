@@ -32,7 +32,7 @@ class TestOrderStatus(unittest.TestCase):
     def testOrderStatus(self):
         """Test OrderStatus"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.order_status.OrderStatus()  # noqa: E501
+        # model = nucleus_api.models.order_status.OrderStatus()  # noqa: E501
         pass
 
 

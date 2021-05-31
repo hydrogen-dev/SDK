@@ -59,6 +59,7 @@ class Card implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'address' => '\com\hydrogen\nucleus\Model\CardAddress[]',
+        'business_id' => 'string',
         'card_holder_name' => 'string',
         'card_image' => 'string',
         'card_issuance' => 'string',
@@ -96,6 +97,7 @@ class Card implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'address' => null,
+        'business_id' => 'uuid',
         'card_holder_name' => null,
         'card_image' => null,
         'card_issuance' => null,
@@ -154,6 +156,7 @@ class Card implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'address' => 'address',
+        'business_id' => 'business_id',
         'card_holder_name' => 'card_holder_name',
         'card_image' => 'card_image',
         'card_issuance' => 'card_issuance',
@@ -191,6 +194,7 @@ class Card implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'address' => 'setAddress',
+        'business_id' => 'setBusinessId',
         'card_holder_name' => 'setCardHolderName',
         'card_image' => 'setCardImage',
         'card_issuance' => 'setCardIssuance',
@@ -228,6 +232,7 @@ class Card implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'address' => 'getAddress',
+        'business_id' => 'getBusinessId',
         'card_holder_name' => 'getCardHolderName',
         'card_image' => 'getCardImage',
         'card_issuance' => 'getCardIssuance',
@@ -319,6 +324,7 @@ class Card implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
+        $this->container['business_id'] = isset($data['business_id']) ? $data['business_id'] : null;
         $this->container['card_holder_name'] = isset($data['card_holder_name']) ? $data['card_holder_name'] : null;
         $this->container['card_image'] = isset($data['card_image']) ? $data['card_image'] : null;
         $this->container['card_issuance'] = isset($data['card_issuance']) ? $data['card_issuance'] : null;
@@ -370,9 +376,6 @@ class Card implements ModelInterface, ArrayAccess
         if ($this->container['card_type'] === null) {
             $invalidProperties[] = "'card_type' can't be null";
         }
-        if ($this->container['client_id'] === null) {
-            $invalidProperties[] = "'client_id' can't be null";
-        }
         if ($this->container['portfolio_id'] === null) {
             $invalidProperties[] = "'portfolio_id' can't be null";
         }
@@ -411,6 +414,30 @@ class Card implements ModelInterface, ArrayAccess
     public function setAddress($address)
     {
         $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Gets business_id
+     *
+     * @return string
+     */
+    public function getBusinessId()
+    {
+        return $this->container['business_id'];
+    }
+
+    /**
+     * Sets business_id
+     *
+     * @param string $business_id businessId
+     *
+     * @return $this
+     */
+    public function setBusinessId($business_id)
+    {
+        $this->container['business_id'] = $business_id;
 
         return $this;
     }

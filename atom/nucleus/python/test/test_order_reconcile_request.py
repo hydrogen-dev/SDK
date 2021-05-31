@@ -32,7 +32,7 @@ class TestOrderReconcileRequest(unittest.TestCase):
     def testOrderReconcileRequest(self):
         """Test OrderReconcileRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.order_reconcile_request.OrderReconcileRequest()  # noqa: E501
+        # model = nucleus_api.models.order_reconcile_request.OrderReconcileRequest()  # noqa: E501
         pass
 
 

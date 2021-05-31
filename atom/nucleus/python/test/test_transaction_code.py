@@ -32,7 +32,7 @@ class TestTransactionCode(unittest.TestCase):
     def testTransactionCode(self):
         """Test TransactionCode"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.transaction_code.TransactionCode()  # noqa: E501
+        # model = nucleus_api.models.transaction_code.TransactionCode()  # noqa: E501
         pass
 
 

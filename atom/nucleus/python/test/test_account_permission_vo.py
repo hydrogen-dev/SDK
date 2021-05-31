@@ -32,7 +32,7 @@ class TestAccountPermissionVO(unittest.TestCase):
     def testAccountPermissionVO(self):
         """Test AccountPermissionVO"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.account_permission_vo.AccountPermissionVO()  # noqa: E501
+        # model = nucleus_api.models.account_permission_vo.AccountPermissionVO()  # noqa: E501
         pass
 
 

@@ -816,7 +816,7 @@ class BusinessApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Business business: business (required)
+        :param object business: business (required)
         :param str business_id: UUID business_id (required)
         :return: Business
                  If the method is called asynchronously,
@@ -839,7 +839,7 @@ class BusinessApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Business business: business (required)
+        :param object business: business (required)
         :param str business_id: UUID business_id (required)
         :return: Business
                  If the method is called asynchronously,

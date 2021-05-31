@@ -13,15 +13,19 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.Contact;
 import com.hydrogen.nucleus.model.CustomerRevenue;
 import com.hydrogen.nucleus.model.PageContact;
 import com.hydrogen.nucleus.model.PageCustomerRevenue;
-import com.hydrogen.nucleus.ApiException;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for ContactApi
@@ -180,7 +184,7 @@ public class ContactApiTest {
      */
     @Test
     public void updateContactUsingPutTest() throws ApiException {
-        Contact contact = null;
+        Object contact = null;
         UUID contactId = null;
         Contact response = api.updateContactUsingPut(contact, contactId);
 
@@ -197,7 +201,7 @@ public class ContactApiTest {
      */
     @Test
     public void updateCustomerRevenueUsingPutTest() throws ApiException {
-        CustomerRevenue customerRevenue = null;
+        Object customerRevenue = null;
         UUID customerRevenueId = null;
         CustomerRevenue response = api.updateCustomerRevenueUsingPut(customerRevenue, customerRevenueId);
 

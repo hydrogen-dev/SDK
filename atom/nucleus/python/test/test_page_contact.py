@@ -32,7 +32,7 @@ class TestPageContact(unittest.TestCase):
     def testPageContact(self):
         """Test PageContact"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_contact.PageContact()  # noqa: E501
+        # model = nucleus_api.models.page_contact.PageContact()  # noqa: E501
         pass
 
 

@@ -11,10 +11,10 @@ info:
 host: api.hydrogenplatform.com
 basePath: /
 tags:
-  - name: AdminClient
-    description: Admin Client Controller
   - name: Account
     description: Account Controller
+  - name: AdminClient
+    description: AdminClient Controller
   - name: AggregationAccount
     description: AggregationAccount Controller
   - name: Allocation
@@ -358,8 +358,8 @@ paths:
         - '*/*'
       parameters:
         - in: body
-          name: clientAccountRequest
-          description: clientAccountRequest
+          name: account
+          description: account
           required: true
           schema:
             $ref: '#/definitions/Account'
@@ -3868,7 +3868,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-  /nucleus/v1/benchmark:
+  //nucleus/v1nucleus/v1/benchmark:
     get:
       tags:
         - Benchmark
@@ -4898,6 +4898,42 @@ paths:
       security:
         - oauth2: []
       deprecated: false
+  '/nucleus/v1/business/{business_id}/aggregation_account_overview':
+    get:
+      tags:
+        - AggregationAccount
+      summary: Retrieve an aggregation account aggregate data
+      description: Retrieve the information for a specific aggregation account with aggregate data for a business.
+      operationId: getAggregationAccountOverviewByBusinessIdUsingGet
+      produces:
+        - '*/*'
+      parameters:
+        - name: business_id
+          in: path
+          description: UUID business_id
+          required: true
+          type: string
+          format: uuid
+          x-example: f96fad3e-a8cf-4915-bc0c-da4d9693ab83
+        - name: currency_conversion
+          in: query
+          description: USD
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
   '/nucleus/v1/business/{business_id}/asset_size':
     get:
       tags:
@@ -5265,7 +5301,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/Page«ClientCardVO»'
+            $ref: '#/definitions/Page«ClientBusinessCardVO»'
         '401':
           description: Unauthorized
         '403':
@@ -5503,6 +5539,89 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/Page«PortfolioTransaction»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+    post:
+      tags:
+        - Card
+      summary: List all card transactions
+      description: Get the information for all transactions for an card.
+      operationId: getCardTransactionAggAllUsingGet_1
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - name: ascending
+          in: query
+          description: ascending
+          required: false
+          type: boolean
+          default: false
+        - name: card_id
+          in: path
+          description: card_id
+          required: true
+          type: string
+          format: uuid
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
+        - name: end_date
+          in: query
+          description: end_date
+          required: false
+          type: string
+          default: 'null'
+          format: date-time
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          description: order_by
+          required: false
+          type: string
+          default: update_date
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 25
+          format: int32
+        - name: start_date
+          in: query
+          description: start_date
+          required: false
+          type: string
+          default: 'null'
+          format: date-time
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Page«PortfolioTransaction»'
+        '201':
+          description: Created
         '401':
           description: Unauthorized
         '403':
@@ -14196,6 +14315,69 @@ paths:
       security:
         - oauth2: []
       deprecated: false
+  /nucleus/v1/portfolio_transaction_by_post:
+    post:
+      tags:
+        - Portfolio
+      summary: getAllPortfolioTransactionByPost
+      operationId: getAllPortfolioTransactionByPostUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - '*/*'
+      parameters:
+        - name: ascending
+          in: query
+          description: ascending
+          required: false
+          type: boolean
+          default: false
+        - name: currency_conversion
+          in: query
+          description: currency_conversion
+          required: false
+          type: string
+        - name: filter
+          in: query
+          description: filter
+          required: false
+          type: string
+        - name: order_by
+          in: query
+          description: order_by
+          required: false
+          type: string
+          default: update_date
+        - name: page
+          in: query
+          description: page
+          required: false
+          type: integer
+          default: 0
+          format: int32
+        - name: size
+          in: query
+          description: size
+          required: false
+          type: integer
+          default: 25
+          format: int32
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Page«PortfolioTransaction»'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
   /nucleus/v1/question:
     get:
       tags:
@@ -14772,6 +14954,18 @@ paths:
           description: filter
           required: false
           type: string
+        - name: hydrogen_account_category_id
+          in: query
+          description: hydrogen_account_category_id
+          required: false
+          type: string
+          format: uuid
+        - name: match_primary
+          in: query
+          description: match_primary
+          required: false
+          type: boolean
+          default: false
         - name: tenant_name
           in: query
           description: tenant_name
@@ -15263,6 +15457,18 @@ paths:
           description: filter
           required: false
           type: string
+        - name: hydrogen_transaction_category_id
+          in: query
+          description: hydrogen_transaction_category_id
+          required: false
+          type: string
+          format: uuid
+        - name: match_primary
+          in: query
+          description: match_primary
+          required: false
+          type: boolean
+          default: false
         - name: tenant_name
           in: query
           description: tenant_name
@@ -17485,7 +17691,7 @@ paths:
 securityDefinitions:
   oauth2:
     type: oauth2
-    tokenUrl: 'https://sandbox.hydrogenplatform.com/authorization/v1/oauth/token'
+    tokenUrl: 'https://api.hydrogenplatform.com/authorization/v1/oauth/token'
     flow: application
 definitions:
   AdminClient:
@@ -17497,7 +17703,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       id:
         type: integer
         format: int64
@@ -17588,7 +17793,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         example: USD
@@ -17605,7 +17809,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_active:
         type: boolean
         example: true
@@ -17617,7 +17820,6 @@ definitions:
       metadata:
         type: object
         example: {}
-        readOnly: true
         additionalProperties:
           type: string
       name:
@@ -17627,7 +17829,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       status:
         type: string
         example: xyz
@@ -17636,7 +17837,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Account
     description: Account Object
   AccountAllocationMapping:
@@ -17662,7 +17862,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       current_weight:
         type: number
         format: double
@@ -17682,11 +17881,9 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       strategic_weight:
         type: number
         format: double
@@ -17696,7 +17893,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: AccountAllocationMapping
     description: AccountAllocationMapping Object
   AccountMap:
@@ -17820,12 +18016,10 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       id:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       metadata:
         type: object
         additionalProperties:
@@ -17833,7 +18027,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       stage_id:
         type: string
         format: uuid
@@ -17847,7 +18040,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: AccountStatus
     description: ClientAccountLevelDetail Object
   AccountType:
@@ -17867,12 +18059,10 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       id:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_active:
         type: boolean
         example: true
@@ -17908,7 +18098,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       short_name:
         type: string
         example: J
@@ -17921,7 +18110,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: AccountType
     description: AccountType Object
   AclClientPermissionVO:
@@ -17952,7 +18140,6 @@ definitions:
     required:
       - account_name
       - category
-      - client_id
       - institution_name
     properties:
       account_category_id:
@@ -17984,6 +18171,11 @@ definitions:
         format: uuid
         example: 02ec7d90-02fc-46c7-b201-def9b16ef65a
         description: bankLinkId
+      business_id:
+        type: string
+        format: uuid
+        example: 1c28dade-8679-4df5-9b9d-c508d04fcb0c
+        description: businessId
       category:
         type: string
         example: Bank Account
@@ -17997,7 +18189,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       credit_limit:
         type: number
         format: float
@@ -18021,7 +18212,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       institution_id:
         type: string
         format: uuid
@@ -18077,7 +18267,6 @@ definitions:
       metadata:
         type: object
         example: {}
-        readOnly: true
         additionalProperties:
           type: string
       minimum_payment:
@@ -18093,7 +18282,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       subcategory:
         type: string
         example: Checking Account
@@ -18102,7 +18290,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: AggregationAccount
     description: Aggregation Account Object
   AggregationAccountBalance:
@@ -18139,7 +18326,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         example: USD
@@ -18148,7 +18334,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_active:
         type: boolean
         example: true
@@ -18156,12 +18341,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: AggregationAccountBalance
     description: Aggregation Account Balance Object
   AggregationAccountHolding:
@@ -18186,7 +18369,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
       cusip:
@@ -18204,7 +18386,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       isin:
         type: string
         example: xyz
@@ -18212,7 +18393,6 @@ definitions:
       metadata:
         type: object
         example: {}
-        readOnly: true
         additionalProperties:
           type: string
       price:
@@ -18221,7 +18401,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       shares:
         type: number
         format: double
@@ -18237,7 +18416,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: AggregationAccountHolding
     description: Aggregation Account Holding Object
   AggregationAccountTransaction:
@@ -18259,7 +18437,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         example: USD
@@ -18268,7 +18445,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       investment:
         $ref: '#/definitions/Investment'
       is_excluded_analysis:
@@ -18276,27 +18452,25 @@ definitions:
       is_fee:
         type: string
         enum:
-          - 'false'
           - 'true'
+          - 'false'
           - 'null'
       is_recurring:
         type: boolean
       is_transfer:
         type: string
         enum:
-          - 'false'
           - 'true'
+          - 'false'
           - 'null'
       metadata:
         type: object
         example: {}
-        readOnly: true
         additionalProperties:
           type: string
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       status:
         type: string
         example: active
@@ -18310,7 +18484,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: AggregationAccountTransaction
     description: Aggregation Account Transaction Object
   AggregationAccountsMap:
@@ -18351,7 +18524,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       description:
         type: string
         example: Tech ETFs
@@ -18360,7 +18532,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       inception_date:
         type: string
         format: date
@@ -18373,7 +18544,6 @@ definitions:
       metadata:
         type: object
         example: {}
-        readOnly: true
         additionalProperties:
           type: string
       name:
@@ -18383,7 +18553,6 @@ definitions:
       node_map:
         type: array
         example: {}
-        readOnly: true
         items:
           $ref: '#/definitions/AllocationNodeMap'
       performance:
@@ -18394,12 +18563,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       volatility:
         type: number
         format: double
@@ -18448,7 +18615,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       current_weight:
         type: number
         format: double
@@ -18463,7 +18629,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       metadata:
         type: object
         additionalProperties:
@@ -18476,7 +18641,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       strategic_weight:
         type: number
         format: double
@@ -18486,7 +18650,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: AllocationComposition
   AllocationCompositionAggregatedVO:
     type: object
@@ -18588,12 +18751,10 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       id:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       image:
         type: string
         example: image
@@ -18610,7 +18771,6 @@ definitions:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       order_index:
@@ -18627,14 +18787,12 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       tooltip:
         type: string
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       value:
         type: string
         example: 0-40
@@ -18661,7 +18819,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       description:
         type: string
         example: description
@@ -18674,12 +18831,10 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       metadata:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       name:
@@ -18689,12 +18844,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Application
     description: Application
   AuditLog:
@@ -18739,7 +18892,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       goal_ids:
         type: array
         example:
@@ -18753,12 +18905,10 @@ definitions:
         format: uuid
         example: 1feae367-77be-4613-9cd0-f62fd5b3cff2
         description: id
-        readOnly: true
       metadata:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       model_ids:
@@ -18789,7 +18939,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       security_ids:
         type: array
         example:
@@ -18802,7 +18951,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: AuditLog
     description: AuditLog Object
   AvailableDateDoubleVO:
@@ -18956,6 +19104,11 @@ definitions:
         type: string
         example: 566788991
         description: bankAccountNumber
+      business_id:
+        type: string
+        format: uuid
+        example: 1c28dade-8679-4df5-9b9d-c508d04fcb0c
+        description: businessId
       client_id:
         type: string
         format: uuid
@@ -18965,7 +19118,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         example: USD
@@ -18974,7 +19126,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       institution_id:
         type: string
         format: uuid
@@ -19007,7 +19158,6 @@ definitions:
       metadata:
         type: object
         example: {}
-        readOnly: true
         additionalProperties:
           type: string
       routing:
@@ -19021,7 +19171,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       type:
         type: string
         example: saving
@@ -19030,7 +19179,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: BankLink
     description: BankLink Object
   BankLinkMap:
@@ -19070,7 +19218,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       description:
         type: string
         example: sample
@@ -19079,7 +19226,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_active:
         type: boolean
         example: true
@@ -19087,7 +19233,6 @@ definitions:
       metadata:
         type: object
         example: {}
-        readOnly: true
         additionalProperties:
           type: string
       name:
@@ -19097,12 +19242,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Benchmark
     description: Benchmark Object
   BenchmarkComposition:
@@ -19152,7 +19295,6 @@ definitions:
       aggregation_accounts:
         type: array
         example: {}
-        readOnly: true
         items:
           $ref: '#/definitions/BudgetAggregationAccount'
       budget:
@@ -19173,7 +19315,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         example: USD
@@ -19201,7 +19342,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_active:
         type: boolean
         example: true
@@ -19209,7 +19349,6 @@ definitions:
       metadata:
         type: object
         example: {}
-        readOnly: true
         additionalProperties:
           type: string
       name:
@@ -19219,7 +19358,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       start_date:
         type: string
         format: date
@@ -19234,7 +19372,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Budget
     description: Budget Object
   BudgetAggregationAccount:
@@ -19276,25 +19413,21 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       data:
         type: object
       id:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       status:
         type: string
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: BulkTransaction
   BulkTransactionVO:
     type: object
@@ -19319,7 +19452,6 @@ definitions:
       address:
         type: array
         example: []
-        readOnly: true
         items:
           $ref: '#/definitions/BusinessAddress'
       category:
@@ -19330,7 +19462,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       dba_name:
         type: string
         example: dba name
@@ -19343,7 +19474,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       identification_number:
         type: string
         example: 111-22-3333
@@ -19389,7 +19519,6 @@ definitions:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       ownership:
@@ -19405,7 +19534,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       status:
         type: string
         example: xyz
@@ -19422,7 +19550,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       website:
         type: string
         example: business website
@@ -19472,6 +19599,38 @@ definitions:
         description: type
     title: BusinessAddress
     description: BusinessAddress Object
+  BusinessDetailsVO:
+    type: object
+    properties:
+      address:
+        type: array
+        example: []
+        description: address
+        items:
+          $ref: '#/definitions/BusinessAddress'
+      business_id:
+        type: string
+        format: uuid
+        example: c34794e9-f927-468b-b47e-ea17c3d533c5
+        description: businessId
+      dba_name:
+        type: string
+        example: dba name
+        description: dbaName
+      email:
+        type: string
+        example: xyz@gmail.com
+        description: email
+      legal_name:
+        type: string
+        example: business legal name
+        description: legalName
+      website:
+        type: string
+        example: business website
+        description: website
+    title: BusinessDetailsVO
+    description: Business Details Mapping Object
   Card:
     type: object
     required:
@@ -19479,15 +19638,18 @@ definitions:
       - card_issuance
       - card_name
       - card_type
-      - client_id
       - portfolio_id
     properties:
       address:
         type: array
         example: []
-        readOnly: true
         items:
           $ref: '#/definitions/CardAddress'
+      business_id:
+        type: string
+        format: uuid
+        example: 1c28dade-8679-4df5-9b9d-c508d04fcb0c
+        description: businessId
       card_holder_name:
         type: string
         example: XYZ
@@ -19526,7 +19688,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       credit_limit:
         type: number
         format: double
@@ -19549,7 +19710,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       institution_id:
         type: string
         format: uuid
@@ -19582,7 +19742,6 @@ definitions:
       metadata:
         type: object
         example: {}
-        readOnly: true
         additionalProperties:
           type: string
       phone_number:
@@ -19602,7 +19761,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       status:
         type: string
         description: status
@@ -19610,7 +19768,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Card
     description: Card Object
   CardAddress:
@@ -19691,6 +19848,10 @@ definitions:
         format: uuid
         example: c34794e9-f927-468b-b47e-ea17c3d533c5
         description: cardId
+      card_issuance:
+        type: string
+        example: virtual
+        description: cardIssuance
       card_name:
         type: string
         example: Visa
@@ -19755,7 +19916,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       description:
         type: string
         example: XYZ
@@ -19764,7 +19924,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_active:
         type: boolean
         example: true
@@ -19780,7 +19939,6 @@ definitions:
       metadata:
         type: object
         example: {}
-        readOnly: true
         additionalProperties:
           type: string
       name:
@@ -19794,12 +19952,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: CardProgram
     description: CardProgram Object
   Cash:
@@ -19914,7 +20070,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       date_of_birth:
         type: string
         example: '1900-01-01'
@@ -19949,7 +20104,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       identification_number:
         type: string
         example: 111-22-3333
@@ -19988,7 +20142,6 @@ definitions:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       middle_name:
@@ -20002,7 +20155,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       status:
         type: string
         example: xyz
@@ -20024,7 +20176,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       username:
         type: string
         example: sample@example.com
@@ -20049,7 +20200,6 @@ definitions:
       signature_data:
         type: string
         example: _RtqHPsnMD
-        readOnly: true
     title: ClientAccountMapping
     description: ClientAccountMapping Object
   ClientAddress:
@@ -20095,6 +20245,50 @@ definitions:
         description: type
     title: ClientAddress
     description: ClientAddress Object
+  ClientBusinessCardVO:
+    type: object
+    properties:
+      business_details:
+        example: {}
+        description: businessDetails
+        $ref: '#/definitions/BusinessDetailsVO'
+      card_details:
+        type: array
+        example: []
+        description: cardDetails
+        items:
+          $ref: '#/definitions/CardDetailsVO'
+      client_details:
+        example: {}
+        description: clientDetails
+        $ref: '#/definitions/ClientCardVO'
+      total_balance:
+        type: array
+        example: []
+        description: totalBalance
+        items:
+          $ref: '#/definitions/ClientBusinessTotalCardBalanceVO'
+    title: ClientBusinessCardVO
+    description: Client/Business Card Mapping Object
+  ClientBusinessTotalCardBalanceVO:
+    type: object
+    properties:
+      currency_code:
+        type: string
+        example: AED
+        description: currencyCode
+      total_balance:
+        type: number
+        format: double
+        example: 20000
+        description: totalBalance
+      total_balance_available:
+        type: number
+        format: double
+        example: 20000
+        description: totalBalanceAvailable
+    title: ClientBusinessTotalCardBalanceVO
+    description: Client/Business Total CardBalance Mapping Object
   ClientCardVO:
     type: object
     properties:
@@ -20178,12 +20372,10 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       id:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       metadata:
         type: object
         additionalProperties:
@@ -20191,12 +20383,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: ClientResponse
     description: ClientResponse Object
   ClientStatus:
@@ -20218,12 +20408,10 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       id:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       metadata:
         type: object
         additionalProperties:
@@ -20231,7 +20419,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       stage_id:
         type: string
         format: uuid
@@ -20245,28 +20432,8 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: ClientStatus
     description: ClientStatus Object
-  ClientTotalCardBalanceVO:
-    type: object
-    properties:
-      currency_code:
-        type: string
-        example: AED
-        description: currencyCode
-      total_balance:
-        type: number
-        format: double
-        example: 20000
-        description: totalBalance
-      total_balance_available:
-        type: number
-        format: double
-        example: 20000
-        description: totalBalanceAvailable
-    title: ClientTotalCardBalanceVO
-    description: Client Total CardBalance Mapping Object
   ClientViewGoalData:
     type: object
     properties:
@@ -20340,7 +20507,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       description:
         type: string
         example: zgzIeci1iCzGYuqwNiFM
@@ -20353,7 +20519,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       identification_number:
         type: string
         example: vAh1e9nuzp5NHmM6derx
@@ -20386,13 +20551,11 @@ definitions:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       status:
         type: string
         example: Completed
@@ -20401,7 +20564,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Contact
     description: Contact Object
   ContactAddress:
@@ -20494,7 +20656,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       numeric_code:
         type: string
         example: 944
@@ -20505,8 +20666,8 @@ definitions:
     type: object
     required:
       - accounting_method
+      - contact_id
       - currency_code
-      - customer_id
       - date
       - revenue
     properties:
@@ -20514,20 +20675,19 @@ definitions:
         type: string
         example: cash
         description: accounting_method
+      contact_id:
+        type: string
+        format: uuid
+        example: 50d76212-0fcd-4d36-8633-e4a52cbcb79f
+        description: contactId
       create_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         example: USD
         description: currency_code
-      customer_id:
-        type: string
-        format: uuid
-        example: 50d76212-0fcd-4d36-8633-e4a52cbcb79f
-        description: customerId
       date:
         type: string
         format: date
@@ -20537,12 +20697,10 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       metadata:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       revenue:
@@ -20553,12 +20711,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: CustomerRevenue
     description: Customer Revenue Object
   DateDoubleVO:
@@ -20592,7 +20748,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       description:
         type: string
         example: This tree allocates clients taxable portfolios.
@@ -20601,7 +20756,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_active:
         type: boolean
         example: true
@@ -20617,7 +20771,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       subcategory:
         type: string
         description: subcategory
@@ -20625,7 +20778,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: DecisionTree
     description: DecisionTree Object
   DecisionTreeCO:
@@ -20680,7 +20832,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       doc_file:
         type: string
         example: qwerwerewq==
@@ -20719,7 +20870,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_active:
         type: boolean
         example: true
@@ -20741,13 +20891,11 @@ definitions:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       state_of_issue:
         type: string
         example: qwerwerewq==
@@ -20756,7 +20904,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       url_path:
         type: string
         example: /sample.pdf
@@ -20826,7 +20973,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         example: USD
@@ -20843,7 +20989,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       metadata:
         type: object
         additionalProperties:
@@ -20852,7 +20997,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       roth_five_year:
         type: integer
         format: int32
@@ -20861,7 +21005,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       status:
         type: string
         example: pending
@@ -20870,7 +21013,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       transfer_all_cash:
         type: boolean
         example: true
@@ -20887,7 +21029,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: ExternalAccountTransfer
   Feature:
     type: object
@@ -20907,7 +21048,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       feature_name:
         type: string
         example: link account
@@ -20916,7 +21056,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_active:
         type: boolean
         example: true
@@ -20925,7 +21064,6 @@ definitions:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       page_name:
@@ -20935,7 +21073,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       subcategory:
         type: string
         example: link account
@@ -20944,7 +21081,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Feature
     description: Track Feature Object
   FeatureTrack:
@@ -20962,7 +21098,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       feature_id:
         type: string
         format: uuid
@@ -20972,23 +21107,19 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       metadata:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: FeatureTrack
     description: Feature Track Object
   FinancialStatement:
@@ -21017,7 +21148,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         example: USD
@@ -21026,11 +21156,9 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       metadata:
         type: object
         example: {}
-        readOnly: true
         additionalProperties:
           type: string
       period_length:
@@ -21059,7 +21187,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       statement_date:
         type: string
         format: date
@@ -21079,7 +21206,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: FinancialStatement
     description: FinancialStatement Object
   Funding:
@@ -21115,7 +21241,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         example: USD
@@ -21150,7 +21275,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_active:
         type: boolean
         example: true
@@ -21168,7 +21292,6 @@ definitions:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       next_request_date:
@@ -21199,7 +21322,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       start_date:
         type: string
         format: date
@@ -21232,7 +21354,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Funding
     description: Funding Object
   FundingRequestMap:
@@ -21249,7 +21370,6 @@ definitions:
   FundingTransaction:
     type: object
     required:
-      - account_id
       - amount
       - currency_code
       - funding_id
@@ -21273,7 +21393,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         example: USD
@@ -21292,7 +21411,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       invested_date:
         type: string
         format: date-time
@@ -21329,7 +21447,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       status:
         type: string
         example: in process
@@ -21347,7 +21464,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: FundingTransaction
     description: FundingTransaction Object
   FxRate:
@@ -21425,7 +21541,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       decumulation_horizon:
         type: number
         format: double
@@ -21436,7 +21551,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       image:
         type: string
         example: image
@@ -21470,7 +21584,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       type:
         type: string
         example: type
@@ -21479,7 +21592,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Goal
   GoalAccountMapping:
     type: object
@@ -21532,7 +21644,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       current_investment:
         type: number
         format: double
@@ -21567,12 +21678,10 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       metadata:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       on_track:
@@ -21597,7 +21706,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       status_time_stamp:
         type: string
         format: date-time
@@ -21607,7 +21715,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: GoalTrack
     description: Goal Simulation Result Object
   GoalTrackAccounts:
@@ -21634,7 +21741,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       household_income:
         type: number
         format: double
@@ -21644,7 +21750,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_active:
         type: boolean
         example: true
@@ -21656,7 +21761,6 @@ definitions:
       metadata:
         type: object
         example: {}
-        readOnly: true
         additionalProperties:
           type: string
       name:
@@ -21666,7 +21770,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       subcategory:
         type: string
         example: subcategory
@@ -21675,7 +21778,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Household
   Institution:
     type: object
@@ -21690,12 +21792,10 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       id:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       logo_url_medium:
         type: string
         example: 'https://domain.com/logo.png'
@@ -21712,7 +21812,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       website_url:
         type: string
         example: 'https://domain.com'
@@ -21798,7 +21897,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         example: USD
@@ -21825,7 +21923,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       invoice_date:
         type: string
         format: date
@@ -21856,7 +21953,6 @@ definitions:
       metadata:
         type: object
         example: {}
-        readOnly: true
         additionalProperties:
           type: string
       payment_instructions:
@@ -21870,7 +21966,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       status:
         type: string
         example: '2020-03-18T18:17:23.579+0000'
@@ -21904,7 +21999,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Invoice
     description: Invoice Object
   InvoicePayment:
@@ -21919,7 +22013,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         example: USD
@@ -21928,7 +22021,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       invoice_id:
         type: string
         format: uuid
@@ -21938,7 +22030,6 @@ definitions:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       payment_amount:
@@ -21954,12 +22045,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: InvoicePayment
     description: InvoicePayment Object
   JsonNode:
@@ -22165,7 +22254,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         example: USD
@@ -22191,7 +22279,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_active:
         type: boolean
         example: true
@@ -22228,7 +22315,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       tax_efficiency_id:
         type: integer
         format: int64
@@ -22238,7 +22324,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Model
     description: Model Object
   ModelAssetSize:
@@ -22257,7 +22342,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         example: USD
@@ -22271,7 +22355,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_reconciled:
         type: boolean
         example: true
@@ -22284,12 +22367,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: ModelAssetSize
     description: Model Asset_Size Object
   ModelComment:
@@ -22307,7 +22388,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       date:
         type: string
         format: date
@@ -22317,7 +22397,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       metadata:
         type: object
         additionalProperties:
@@ -22330,12 +22409,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: ModelComment
   ModelHolding:
     type: object
@@ -22350,7 +22427,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       current_weight:
         type: number
         format: double
@@ -22370,7 +22446,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_cash:
         type: boolean
         example: true
@@ -22386,7 +22461,6 @@ definitions:
       metadata:
         type: object
         example: {}
-        readOnly: true
         additionalProperties:
           type: string
       model_description:
@@ -22407,7 +22481,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       security_id:
         type: string
         format: uuid
@@ -22422,7 +22495,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: ModelHolding
   ModelHoldingVO:
     type: object
@@ -22454,7 +22526,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       date:
         type: string
         format: date
@@ -22464,7 +22535,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       model_id:
         type: string
         format: uuid
@@ -22478,7 +22548,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       security_id:
         type: string
         format: uuid
@@ -22498,7 +22567,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: ModelTransaction
   Node:
     type: object
@@ -22510,12 +22578,10 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       id:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_first:
         type: boolean
         example: true
@@ -22536,12 +22602,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Node
     description: Node Object
   NodeRelationship:
@@ -22561,7 +22625,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       decision_tree_id:
         type: string
         format: uuid
@@ -22571,7 +22634,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_leaf:
         type: boolean
         example: true
@@ -22593,12 +22655,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       value:
         type: string
         example: 29 Years
@@ -22620,7 +22680,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       description:
         type: string
         example: notification desc
@@ -22641,7 +22700,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_active:
         type: boolean
         example: true
@@ -22650,7 +22708,6 @@ definitions:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       name:
@@ -22664,7 +22721,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       threshold_type:
         type: string
         example: false
@@ -22673,7 +22729,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Notification
     description: Notification Object
   NotificationClient:
@@ -22693,12 +22748,10 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       id:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_read:
         type: boolean
         example: true
@@ -22709,7 +22762,6 @@ definitions:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       notification_content:
@@ -22733,12 +22785,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: NotificationClient
     description: Notification Client Object
   NotificationSetting:
@@ -22756,7 +22806,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       frequency:
         type: integer
         format: int32
@@ -22770,7 +22819,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_receive:
         type: boolean
         example: true
@@ -22784,7 +22832,6 @@ definitions:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       notification_id:
@@ -22795,7 +22842,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       threshold_value:
         type: number
         format: double
@@ -22804,7 +22850,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: NotificationSetting
     description: Notification Setting Object
   Order:
@@ -22834,7 +22879,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       date:
         type: string
         format: date
@@ -22844,7 +22888,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_read:
         type: boolean
         example: true
@@ -22853,7 +22896,6 @@ definitions:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       model_id:
@@ -22893,7 +22935,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       security_id:
         type: string
         format: uuid
@@ -22911,7 +22952,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Order
     description: Order Object
   OrderBulk:
@@ -22933,7 +22973,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       date:
         type: string
         format: date
@@ -22943,7 +22982,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       metadata:
         type: object
         additionalProperties:
@@ -22971,12 +23009,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: OrderBulk
   OrderReconcileRequest:
     type: object
@@ -23038,7 +23074,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       description:
         type: string
         example: sample
@@ -23047,7 +23082,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       metadata:
         type: object
         additionalProperties:
@@ -23055,7 +23089,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       status:
         type: string
         example: complete
@@ -23064,7 +23097,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: OrderStatus
     description: OrderStatus Object
   OrderTrack:
@@ -23083,7 +23115,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       date:
         type: string
         format: date
@@ -23102,12 +23133,10 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       metadata:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       order_id:
@@ -23133,12 +23162,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: OrderTrack
     description: OrderTrack Object
   OrderVoClone:
@@ -23162,7 +23189,6 @@ definitions:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       model_id:
@@ -23231,18 +23257,15 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       funding_requests:
         type: array
         example: []
-        readOnly: true
         items:
           $ref: '#/definitions/FundingRequestMap'
       id:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       overflow_setting_id:
         type: string
         format: uuid
@@ -23261,7 +23284,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Overflow
     description: Overflow Object
   OverflowBankLinkMap:
@@ -23312,12 +23334,10 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       id:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_active:
         type: boolean
         example: true
@@ -23326,7 +23346,6 @@ definitions:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       portfolio_id:
@@ -23337,12 +23356,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: OverflowSettings
     description: Overflow Settings Object
   OverflowVO:
@@ -24053,13 +24070,13 @@ definitions:
         format: int32
     title: Page«Card»
     description: Page Object
-  Page«ClientCardVO»:
+  Page«ClientBusinessCardVO»:
     type: object
     properties:
       content:
         type: array
         items:
-          $ref: '#/definitions/ClientCardVO'
+          $ref: '#/definitions/ClientBusinessCardVO'
       first:
         type: boolean
       last:
@@ -24083,7 +24100,7 @@ definitions:
       total_pages:
         type: integer
         format: int32
-    title: Page«ClientCardVO»
+    title: Page«ClientBusinessCardVO»
     description: Page Object
   Page«ClientResponse»:
     type: object
@@ -25948,7 +25965,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         example: USD
@@ -25961,7 +25977,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_active:
         type: boolean
         example: true
@@ -25974,7 +25989,6 @@ definitions:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       model_id:
@@ -25994,7 +26008,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       status:
         type: string
         example: xyz
@@ -26003,7 +26016,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Portfolio
     description: Portfolio Object
   PortfolioAssetSizeLog:
@@ -26045,7 +26057,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         example: USD
@@ -26059,7 +26070,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       model_id:
         type: string
         format: uuid
@@ -26073,12 +26083,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: PortfolioAssetSizeLog
     description: PortfolioAssetSizeLog Object
   PortfolioComment:
@@ -26098,12 +26106,10 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       id:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_read:
         type: boolean
         example: true
@@ -26126,12 +26132,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: PortfolioComment
     description: PortfolioComment Object
   PortfolioGoal:
@@ -26145,7 +26149,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       date:
         type: string
         format: date
@@ -26160,7 +26163,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       portfolio_id:
         type: string
         format: uuid
@@ -26169,12 +26171,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: PortfolioGoal
     description: PortfolioGoal Object
   PortfolioGoalMap:
@@ -26262,7 +26262,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         description: currency_code
@@ -26275,7 +26274,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       model_id:
         type: string
         format: uuid
@@ -26289,7 +26287,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       security_id:
         type: string
         format: uuid
@@ -26304,7 +26301,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       weight:
         type: number
         format: double
@@ -26346,7 +26342,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         example: USD
@@ -26365,11 +26360,15 @@ definitions:
         type: string
         example: description
         description: description
+      funding_id:
+        type: string
+        format: uuid
+        example: ea30e8b7-3946-46ed-975a-4870a57d119s
+        description: fundingId
       id:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_cleansed:
         type: boolean
         example: false
@@ -26412,9 +26411,12 @@ definitions:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
+      mid:
+        type: string
+        example: 3099
+        description: mid
       model_id:
         type: string
         format: uuid
@@ -26438,7 +26440,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       security_id:
         type: string
         format: uuid
@@ -26466,7 +26467,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: PortfolioTransaction
     description: PortfolioTransaction Object
   Question:
@@ -26484,7 +26484,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       description:
         type: string
         example: description
@@ -26497,7 +26496,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       image:
         type: string
         example: image
@@ -26510,7 +26508,6 @@ definitions:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       order_index:
@@ -26531,7 +26528,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       subcategory:
         type: string
         example: subcategory
@@ -26548,7 +26544,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       weight:
         type: number
         format: double
@@ -26565,7 +26560,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       decision_tree_id:
         type: string
         format: uuid
@@ -26579,7 +26573,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_active:
         type: boolean
         example: true
@@ -26588,7 +26581,6 @@ definitions:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       name:
@@ -26602,7 +26594,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       type:
         type: string
         example: retirement plan
@@ -26611,7 +26602,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Questionnaire
     description: Questionnaire Object
   ReasonCode:
@@ -26627,12 +26617,10 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       id:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       metadata:
         type: object
         additionalProperties:
@@ -26652,7 +26640,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       subcategory:
         type: string
         example: Bank Deposit
@@ -26661,7 +26648,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: ReasonCode
   RiskProfile:
     type: object
@@ -26681,7 +26667,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       description:
         type: string
         example: risk profile desc
@@ -26690,12 +26675,10 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       metadata:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       name:
@@ -26715,12 +26698,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: RiskProfile
     description: RiskProfile Object
   Roundup:
@@ -26744,18 +26725,15 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       funding_requests:
         type: array
         example: {}
-        readOnly: true
         items:
           $ref: '#/definitions/FundingRequestMap'
       id:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       roundup_setting_id:
         type: string
         format: uuid
@@ -26770,7 +26748,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Roundup
     description: Roundup Object
   RoundupCO:
@@ -26810,13 +26787,11 @@ definitions:
       accounts:
         type: array
         example: {}
-        readOnly: true
         items:
           $ref: '#/definitions/AccountMap'
       aggregation_accounts:
         type: array
         example: {}
-        readOnly: true
         items:
           $ref: '#/definitions/AggregationAccountsMap'
       bank_links:
@@ -26827,7 +26802,6 @@ definitions:
       categories:
         type: array
         example: {}
-        readOnly: true
         items:
           $ref: '#/definitions/CategoriesMap'
       client_id:
@@ -26839,12 +26813,10 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       id:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_active:
         type: boolean
         example: true
@@ -26852,14 +26824,12 @@ definitions:
       merchants:
         type: array
         example: {}
-        readOnly: true
         items:
           $ref: '#/definitions/MerchantsMap'
       metadata:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       portfolio_id:
@@ -26870,12 +26840,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: RoundupSettings
     description: Roundup Settings Object
   Score:
@@ -26908,7 +26876,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       goal_id:
         type: string
         format: uuid
@@ -26918,12 +26885,10 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       metadata:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       model_id:
@@ -26958,7 +26923,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       security_id:
         type: string
         format: uuid
@@ -26968,7 +26932,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Score
     description: Score Object
   SecuritiesComposition:
@@ -27040,7 +27003,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         example: USD
@@ -27061,7 +27023,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       image:
         type: string
         example: /sample.png
@@ -27082,7 +27043,6 @@ definitions:
         type: object
         example: {}
         description: metadata
-        readOnly: true
         additionalProperties:
           type: string
       name:
@@ -27097,7 +27057,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       sector:
         type: string
         example: Industrial Goods
@@ -27131,7 +27090,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Security
   SecurityCompositionVO:
     type: object
@@ -27204,12 +27162,10 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       id:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_restrict_buy:
         type: boolean
         example: false
@@ -27230,7 +27186,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       security_id:
         type: string
         format: uuid
@@ -27240,7 +27195,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: SecurityExclusion
     description: SecurityExclusion Object
   SecurityPrice:
@@ -27259,7 +27213,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         example: USD
@@ -27278,7 +27231,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       low:
         type: number
         format: double
@@ -27297,7 +27249,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       security_id:
         type: string
         format: uuid
@@ -27307,7 +27258,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       volume:
         type: number
         format: double
@@ -27375,7 +27325,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       currency_code:
         type: string
         example: USD
@@ -27397,7 +27346,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_active:
         type: boolean
         example: true
@@ -27410,18 +27358,15 @@ definitions:
       metadata:
         type: object
         example: {}
-        readOnly: true
         additionalProperties:
           type: string
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: SpendingControl
     description: SpendingControl Object
   Stage:
@@ -27442,7 +27387,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       description:
         type: string
         example: Client has money fully invested
@@ -27451,7 +27395,6 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_account:
         type: boolean
         example: false
@@ -27496,12 +27439,10 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: Stage
     description: Stage Object
   Stat:
@@ -27597,16 +27538,13 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       id:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_buy:
         type: string
         example: false
-        readOnly: true
         enum:
           - 'true'
           - 'false'
@@ -27614,7 +27552,6 @@ definitions:
       is_deposit:
         type: string
         example: false
-        readOnly: true
         enum:
           - 'true'
           - 'false'
@@ -27622,7 +27559,6 @@ definitions:
       is_fee:
         type: string
         example: false
-        readOnly: true
         enum:
           - 'true'
           - 'false'
@@ -27630,7 +27566,6 @@ definitions:
       is_transfer:
         type: string
         example: false
-        readOnly: true
         enum:
           - 'true'
           - 'false'
@@ -27642,7 +27577,6 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       subcategory:
         type: string
         example: Bank Deposit
@@ -27663,7 +27597,6 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
     title: TransactionCode
   VAccountVO:
     type: object
@@ -27742,7 +27675,7 @@ definitions:
           - aggregation_account
           - aggregation_account_status
           - notification_client
-          - aggregation_account_balance
+          - aggregation_account_bala
           - audit_log
           - support_ticket
           - feature_track
@@ -27795,12 +27728,10 @@ definitions:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       id:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
-        readOnly: true
       is_active:
         type: boolean
         example: true
@@ -27808,16 +27739,13 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
-        readOnly: true
       secret:
         type: string
         example: MDAwMTgzYWMtMjI4OC00NTY0LWE3NmItMTE5ZjQ2OTRiZTk4
-        readOnly: true
       update_date:
         type: string
         format: date-time
         example: '2018-06-28T18:17:23.579+0000'
-        readOnly: true
       url:
         type: string
         example: 'http://localhost/url'

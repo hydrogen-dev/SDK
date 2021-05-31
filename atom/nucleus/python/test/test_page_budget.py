@@ -32,7 +32,7 @@ class TestPageBudget(unittest.TestCase):
     def testPageBudget(self):
         """Test PageBudget"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_budget.PageBudget()  # noqa: E501
+        # model = nucleus_api.models.page_budget.PageBudget()  # noqa: E501
         pass
 
 

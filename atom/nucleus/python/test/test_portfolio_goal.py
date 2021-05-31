@@ -32,7 +32,7 @@ class TestPortfolioGoal(unittest.TestCase):
     def testPortfolioGoal(self):
         """Test PortfolioGoal"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.portfolio_goal.PortfolioGoal()  # noqa: E501
+        # model = nucleus_api.models.portfolio_goal.PortfolioGoal()  # noqa: E501
         pass
 
 

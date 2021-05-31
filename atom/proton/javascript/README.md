@@ -1,8 +1,8 @@
 # Hydrogen Proton API
 
 Hydrogen Proton API
-- API version: 1.8.0
-  - Build date: 12-03-2020
+- API version: 1.9.0
+  - Build date: 05-07-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 
@@ -20,7 +20,7 @@ Building the API client library requires:
 ### Install via NPM
 
 ```shell
-npm install hydrogen_proton_api --save
+npm i @hydrogenplatform/hydrogen_proton_api --save
 ```
 
 ### Install Locally
@@ -38,13 +38,13 @@ Next, [link](https://docs.npmjs.com/cli/link) it globally in npm with the follow
 npm link
 ```
 
-Finally, switch to the directory you want to use your hydrogen_proton_api from, and run:
+Finally, switch to the directory you want to use your hydrogen_nucleus_api from, and run:
 
 ```shell
 npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
 ```
 
-You should now be able to `require('hydrogen_proton_api')` in javascript files from the directory you ran the last 
+You should now be able to `require('@hydrogenplatform/hydrogen_proton_api')` in javascript files from the directory you ran the last 
 command above from.
 
 ## Getting Started
@@ -52,21 +52,19 @@ command above from.
 Please first follow the [installation](#installation) instructions. Then make sure you use the proper base URL:
 
 ### Base URL
-
 1. Go to ApiClient file located under src folder.
-2. Search for **this.basePath** and change/verify the URL according to the environment.  
+2. Search for **this.basePath** and change/verify the URL according to the environment.
 
 **Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/nucleus/v1
+https://sandbox.hydrogenplatform.com/proton/v1
 
 **Production Base URL**
-https://api.hydrogenplatform.com/nucleus/v1
+https://api.hydrogenplatform.com/proton/v1
 
-### Sample Code
-Now you are ready to execute the following Javascript code:
+Please follow the [installation](#installation) instruction and execute the following JS code:
 
 ```javascript
-var HydrogenProtonApi = require('hydrogen_proton_api');
+var HydrogenProtonApi = require('@hydrogenplatform/hydrogen_proton_api');
 
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
@@ -84,10 +82,10 @@ var tokenGenerationCallback = function (error, data, response) {
     } else {
         console.log(response.request.method + ' : ' + response.request.url + '\n' + 'Output: ' + JSON.stringify(data, null, '\t') + '\n');
         oauth2.accessToken = data.access_token;
-        createAnnuityCalculatorAccumulationHorizon();
+        annuityCalculatorAccumulationHorizonRequest();
     }
 };
-//          Use one of the below method to generate oauth token        
+//          Use one of the below method to generate oauth token
 // Token Generation for grant_type = client_credentials
 api.createUsingPostClientCredentials({
     'grant_type': 'client_credentials',
@@ -108,7 +106,7 @@ api.createUsingPostPassword({
 api.createUsingPostClientTokenCredentials({
     'client_id': 'MYCLIENTID',
     'client_secret': 'MYCLIENTSECRET',
-    'client_token' : 'CLIENT_TOKEN'
+    'Client-Token' : 'Client-Token'
 }, tokenGenerationCallback);
 
 
@@ -119,7 +117,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-const createAnnuityCalculatorAccumulationHorizon = () => {
+const annuityCalculatorAccumulationHorizonRequest = () => {
     var api = new HydrogenProtonApi.AnnuitiesApi()
     var annuityCalculatorAccumulationHorizonRequest = new HydrogenProtonApi.AnnuityCalculatorAccumulationHorizonRequest(); // {AnnuityCalculatorAccumulationHorizonRequest} Request payload for Annuity Calculator - Accumulation Horizon
     api.annuityCalculatorAccumulationHorizon(annuityCalculatorAccumulationHorizonRequest, callback);

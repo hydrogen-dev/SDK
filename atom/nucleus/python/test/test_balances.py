@@ -32,7 +32,7 @@ class TestBalances(unittest.TestCase):
     def testBalances(self):
         """Test Balances"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.balances.Balances()  # noqa: E501
+        # model = nucleus_api.models.balances.Balances()  # noqa: E501
         pass
 
 

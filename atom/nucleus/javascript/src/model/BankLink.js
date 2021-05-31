@@ -64,6 +64,7 @@
 
 
 
+
     _this['institution_name'] = institutionName;
 
 
@@ -106,6 +107,9 @@
       }
       if (data.hasOwnProperty('bank_account_number')) {
         obj['bank_account_number'] = ApiClient.convertToType(data['bank_account_number'], 'String');
+      }
+      if (data.hasOwnProperty('business_id')) {
+        obj['business_id'] = ApiClient.convertToType(data['business_id'], 'String');
       }
       if (data.hasOwnProperty('client_id')) {
         obj['client_id'] = ApiClient.convertToType(data['client_id'], 'String');
@@ -192,6 +196,11 @@
    * @member {String} bank_account_number
    */
   exports.prototype['bank_account_number'] = undefined;
+  /**
+   * businessId
+   * @member {String} business_id
+   */
+  exports.prototype['business_id'] = undefined;
   /**
    * clientId
    * @member {String} client_id

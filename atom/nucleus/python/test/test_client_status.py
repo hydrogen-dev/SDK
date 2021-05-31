@@ -32,7 +32,7 @@ class TestClientStatus(unittest.TestCase):
     def testClientStatus(self):
         """Test ClientStatus"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.client_status.ClientStatus()  # noqa: E501
+        # model = nucleus_api.models.client_status.ClientStatus()  # noqa: E501
         pass
 
 

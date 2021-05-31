@@ -92,7 +92,7 @@ public class BudgetApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -215,7 +215,7 @@ public class BudgetApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -350,7 +350,7 @@ public class BudgetApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -486,7 +486,7 @@ public class BudgetApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -584,7 +584,7 @@ public class BudgetApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateBudgetUsingPutCall(Budget budget, UUID budgetId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateBudgetUsingPutCall(Object budget, UUID budgetId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = budget;
 
         // create path and map variables
@@ -613,7 +613,7 @@ public class BudgetApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -627,7 +627,7 @@ public class BudgetApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateBudgetUsingPutValidateBeforeCall(Budget budget, UUID budgetId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateBudgetUsingPutValidateBeforeCall(Object budget, UUID budgetId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'budget' is set
         if (budget == null) {
@@ -653,7 +653,7 @@ public class BudgetApi {
      * @return Budget
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Budget updateBudgetUsingPut(Budget budget, UUID budgetId) throws ApiException {
+    public Budget updateBudgetUsingPut(Object budget, UUID budgetId) throws ApiException {
         ApiResponse<Budget> resp = updateBudgetUsingPutWithHttpInfo(budget, budgetId);
         return resp.getData();
     }
@@ -666,7 +666,7 @@ public class BudgetApi {
      * @return ApiResponse&lt;Budget&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Budget> updateBudgetUsingPutWithHttpInfo(Budget budget, UUID budgetId) throws ApiException {
+    public ApiResponse<Budget> updateBudgetUsingPutWithHttpInfo(Object budget, UUID budgetId) throws ApiException {
         com.squareup.okhttp.Call call = updateBudgetUsingPutValidateBeforeCall(budget, budgetId, null, null);
         Type localVarReturnType = new TypeToken<Budget>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -681,7 +681,7 @@ public class BudgetApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateBudgetUsingPutAsync(Budget budget, UUID budgetId, final ApiCallback<Budget> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateBudgetUsingPutAsync(Object budget, UUID budgetId, final ApiCallback<Budget> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

@@ -98,7 +98,7 @@ public class GoalApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -220,7 +220,7 @@ public class GoalApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -343,7 +343,7 @@ public class GoalApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -462,7 +462,7 @@ public class GoalApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -594,7 +594,7 @@ public class GoalApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -745,7 +745,7 @@ public class GoalApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -924,7 +924,7 @@ public class GoalApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1104,7 +1104,7 @@ public class GoalApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1243,7 +1243,7 @@ public class GoalApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1396,7 +1396,7 @@ public class GoalApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1554,7 +1554,7 @@ public class GoalApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1649,7 +1649,7 @@ public class GoalApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateGoalTrackUsingPutCall(GoalTrack goalTrack, UUID goalTrackId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateGoalTrackUsingPutCall(Object goalTrack, UUID goalTrackId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = goalTrack;
 
         // create path and map variables
@@ -1678,7 +1678,7 @@ public class GoalApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1692,7 +1692,7 @@ public class GoalApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateGoalTrackUsingPutValidateBeforeCall(GoalTrack goalTrack, UUID goalTrackId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateGoalTrackUsingPutValidateBeforeCall(Object goalTrack, UUID goalTrackId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'goalTrack' is set
         if (goalTrack == null) {
@@ -1718,7 +1718,7 @@ public class GoalApi {
      * @return GoalTrack
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GoalTrack updateGoalTrackUsingPut(GoalTrack goalTrack, UUID goalTrackId) throws ApiException {
+    public GoalTrack updateGoalTrackUsingPut(Object goalTrack, UUID goalTrackId) throws ApiException {
         ApiResponse<GoalTrack> resp = updateGoalTrackUsingPutWithHttpInfo(goalTrack, goalTrackId);
         return resp.getData();
     }
@@ -1731,7 +1731,7 @@ public class GoalApi {
      * @return ApiResponse&lt;GoalTrack&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GoalTrack> updateGoalTrackUsingPutWithHttpInfo(GoalTrack goalTrack, UUID goalTrackId) throws ApiException {
+    public ApiResponse<GoalTrack> updateGoalTrackUsingPutWithHttpInfo(Object goalTrack, UUID goalTrackId) throws ApiException {
         com.squareup.okhttp.Call call = updateGoalTrackUsingPutValidateBeforeCall(goalTrack, goalTrackId, null, null);
         Type localVarReturnType = new TypeToken<GoalTrack>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1746,7 +1746,7 @@ public class GoalApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateGoalTrackUsingPutAsync(GoalTrack goalTrack, UUID goalTrackId, final ApiCallback<GoalTrack> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateGoalTrackUsingPutAsync(Object goalTrack, UUID goalTrackId, final ApiCallback<GoalTrack> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1781,7 +1781,7 @@ public class GoalApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateGoalUsingPutCall(Goal goal, UUID goalId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateGoalUsingPutCall(Object goal, UUID goalId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = goal;
 
         // create path and map variables
@@ -1810,7 +1810,7 @@ public class GoalApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1824,7 +1824,7 @@ public class GoalApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateGoalUsingPutValidateBeforeCall(Goal goal, UUID goalId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateGoalUsingPutValidateBeforeCall(Object goal, UUID goalId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'goal' is set
         if (goal == null) {
@@ -1850,7 +1850,7 @@ public class GoalApi {
      * @return Goal
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Goal updateGoalUsingPut(Goal goal, UUID goalId) throws ApiException {
+    public Goal updateGoalUsingPut(Object goal, UUID goalId) throws ApiException {
         ApiResponse<Goal> resp = updateGoalUsingPutWithHttpInfo(goal, goalId);
         return resp.getData();
     }
@@ -1863,7 +1863,7 @@ public class GoalApi {
      * @return ApiResponse&lt;Goal&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Goal> updateGoalUsingPutWithHttpInfo(Goal goal, UUID goalId) throws ApiException {
+    public ApiResponse<Goal> updateGoalUsingPutWithHttpInfo(Object goal, UUID goalId) throws ApiException {
         com.squareup.okhttp.Call call = updateGoalUsingPutValidateBeforeCall(goal, goalId, null, null);
         Type localVarReturnType = new TypeToken<Goal>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1878,7 +1878,7 @@ public class GoalApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateGoalUsingPutAsync(Goal goal, UUID goalId, final ApiCallback<Goal> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateGoalUsingPutAsync(Object goal, UUID goalId, final ApiCallback<Goal> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

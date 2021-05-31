@@ -117,7 +117,7 @@ class BenchmarkApi(object):
         auth_settings = ['oauth2']  # noqa: E501
 
         return self.api_client.call_api(
-            '/nucleus/v1/benchmark', 'POST',
+            '//nucleus/v1nucleus/v1/benchmark', 'POST',
             path_params,
             query_params,
             header_params,
@@ -319,7 +319,7 @@ class BenchmarkApi(object):
         auth_settings = ['oauth2']  # noqa: E501
 
         return self.api_client.call_api(
-            '/nucleus/v1/benchmark', 'GET',
+            '//nucleus/v1nucleus/v1/benchmark', 'GET',
             path_params,
             query_params,
             header_params,
@@ -546,7 +546,7 @@ class BenchmarkApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Benchmark benchmark: benchmark (required)
+        :param object benchmark: benchmark (required)
         :param str benchmark_id: UUID benchmark_id (required)
         :return: Benchmark
                  If the method is called asynchronously,
@@ -569,7 +569,7 @@ class BenchmarkApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Benchmark benchmark: benchmark (required)
+        :param object benchmark: benchmark (required)
         :param str benchmark_id: UUID benchmark_id (required)
         :return: Benchmark
                  If the method is called asynchronously,

@@ -176,6 +176,22 @@ describe 'PortfolioApi' do
     end
   end
 
+  # unit tests for get_all_portfolio_transaction_by_post_using_post
+  # getAllPortfolioTransactionByPost
+  # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :ascending ascending
+  # @option opts [String] :currency_conversion currency_conversion
+  # @option opts [String] :filter filter
+  # @option opts [String] :order_by order_by
+  # @option opts [Integer] :page page
+  # @option opts [Integer] :size size
+  # @return [PagePortfolioTransaction]
+  describe 'get_all_portfolio_transaction_by_post_using_post test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_portfolio_aggregated_data_using_get
   # Retrieve an portfolio aggregate data
   # Retrieve the information for a securities associated with a portfolio.

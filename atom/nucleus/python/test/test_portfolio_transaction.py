@@ -32,7 +32,7 @@ class TestPortfolioTransaction(unittest.TestCase):
     def testPortfolioTransaction(self):
         """Test PortfolioTransaction"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.portfolio_transaction.PortfolioTransaction()  # noqa: E501
+        # model = nucleus_api.models.portfolio_transaction.PortfolioTransaction()  # noqa: E501
         pass
 
 

@@ -47,10 +47,9 @@
    * @class
    * @param accountName {String} accountName
    * @param category {String} category
-   * @param clientId {String} clientId
    * @param institutionName {String} institutionName
    */
-  var exports = function(accountName, category, clientId, institutionName) {
+  var exports = function(accountName, category, institutionName) {
     var _this = this;
 
 
@@ -60,8 +59,9 @@
 
 
 
+
     _this['category'] = category;
-    _this['client_id'] = clientId;
+
 
 
 
@@ -121,6 +121,9 @@
       }
       if (data.hasOwnProperty('bank_link_id')) {
         obj['bank_link_id'] = ApiClient.convertToType(data['bank_link_id'], 'String');
+      }
+      if (data.hasOwnProperty('business_id')) {
+        obj['business_id'] = ApiClient.convertToType(data['business_id'], 'String');
       }
       if (data.hasOwnProperty('category')) {
         obj['category'] = ApiClient.convertToType(data['category'], 'String');
@@ -244,6 +247,11 @@
    * @member {String} bank_link_id
    */
   exports.prototype['bank_link_id'] = undefined;
+  /**
+   * businessId
+   * @member {String} business_id
+   */
+  exports.prototype['business_id'] = undefined;
   /**
    * category
    * @member {String} category

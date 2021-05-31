@@ -14,11 +14,17 @@
 package com.hydrogen.nucleus.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import org.threeten.bp.OffsetDateTime;
@@ -27,7 +33,7 @@ import org.threeten.bp.OffsetDateTime;
  * Aggregation Account Object
  */
 @ApiModel(description = "Aggregation Account Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-12T05:33:30.744Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-24T10:39:20.203Z")
 public class AggregationAccount {
   @SerializedName("account_category_id")
   private UUID accountCategoryId = null;
@@ -49,6 +55,9 @@ public class AggregationAccount {
 
   @SerializedName("bank_link_id")
   private UUID bankLinkId = null;
+
+  @SerializedName("business_id")
+  private UUID businessId = null;
 
   @SerializedName("category")
   private String category = null;
@@ -260,6 +269,24 @@ public class AggregationAccount {
     this.bankLinkId = bankLinkId;
   }
 
+  public AggregationAccount businessId(UUID businessId) {
+    this.businessId = businessId;
+    return this;
+  }
+
+   /**
+   * businessId
+   * @return businessId
+  **/
+  @ApiModelProperty(example = "1c28dade-8679-4df5-9b9d-c508d04fcb0c", value = "businessId")
+  public UUID getBusinessId() {
+    return businessId;
+  }
+
+  public void setBusinessId(UUID businessId) {
+    this.businessId = businessId;
+  }
+
   public AggregationAccount category(String category) {
     this.category = category;
     return this;
@@ -287,13 +314,18 @@ public class AggregationAccount {
    * clientId
    * @return clientId
   **/
-  @ApiModelProperty(example = "2035f52d-2c5b-4e07-8904-cb037bad7aff", required = true, value = "clientId")
+  @ApiModelProperty(example = "2035f52d-2c5b-4e07-8904-cb037bad7aff", value = "clientId")
   public UUID getClientId() {
     return clientId;
   }
 
   public void setClientId(UUID clientId) {
     this.clientId = clientId;
+  }
+
+  public AggregationAccount createDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
+    return this;
   }
 
    /**
@@ -303,6 +335,10 @@ public class AggregationAccount {
   @ApiModelProperty(example = "2018-06-28T18:17:23.579+0000", value = "")
   public OffsetDateTime getCreateDate() {
     return createDate;
+  }
+
+  public void setCreateDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
   }
 
   public AggregationAccount creditLimit(Float creditLimit) {
@@ -377,6 +413,11 @@ public class AggregationAccount {
     this.financialOfferId = financialOfferId;
   }
 
+  public AggregationAccount id(UUID id) {
+    this.id = id;
+    return this;
+  }
+
    /**
    * Get id
    * @return id
@@ -384,6 +425,10 @@ public class AggregationAccount {
   @ApiModelProperty(example = "000183ac-2288-4564-a76b-119f4694be98", value = "")
   public UUID getId() {
     return id;
+  }
+
+  public void setId(UUID id) {
+    this.id = id;
   }
 
   public AggregationAccount institutionId(UUID institutionId) {
@@ -638,6 +683,19 @@ public class AggregationAccount {
     this.maturityDate = maturityDate;
   }
 
+  public AggregationAccount metadata(Map<String, String> metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+  public AggregationAccount putMetadataItem(String key, String metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<String, String>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
    /**
    * Get metadata
    * @return metadata
@@ -645,6 +703,10 @@ public class AggregationAccount {
   @ApiModelProperty(example = "{}", value = "")
   public Map<String, String> getMetadata() {
     return metadata;
+  }
+
+  public void setMetadata(Map<String, String> metadata) {
+    this.metadata = metadata;
   }
 
   public AggregationAccount minimumPayment(Float minimumPayment) {
@@ -683,6 +745,11 @@ public class AggregationAccount {
     this.nextPaymentDate = nextPaymentDate;
   }
 
+  public AggregationAccount secondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
+    return this;
+  }
+
    /**
    * Get secondaryId
    * @return secondaryId
@@ -690,6 +757,10 @@ public class AggregationAccount {
   @ApiModelProperty(example = "7289243787238", value = "")
   public String getSecondaryId() {
     return secondaryId;
+  }
+
+  public void setSecondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
   }
 
   public AggregationAccount subcategory(String subcategory) {
@@ -710,6 +781,11 @@ public class AggregationAccount {
     this.subcategory = subcategory;
   }
 
+  public AggregationAccount updateDate(OffsetDateTime updateDate) {
+    this.updateDate = updateDate;
+    return this;
+  }
+
    /**
    * Get updateDate
    * @return updateDate
@@ -719,9 +795,13 @@ public class AggregationAccount {
     return updateDate;
   }
 
+  public void setUpdateDate(OffsetDateTime updateDate) {
+    this.updateDate = updateDate;
+  }
+
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -736,6 +816,7 @@ public class AggregationAccount {
         Objects.equals(this.apr, aggregationAccount.apr) &&
         Objects.equals(this.apy, aggregationAccount.apy) &&
         Objects.equals(this.bankLinkId, aggregationAccount.bankLinkId) &&
+        Objects.equals(this.businessId, aggregationAccount.businessId) &&
         Objects.equals(this.category, aggregationAccount.category) &&
         Objects.equals(this.clientId, aggregationAccount.clientId) &&
         Objects.equals(this.createDate, aggregationAccount.createDate) &&
@@ -768,7 +849,7 @@ public class AggregationAccount {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountCategoryId, accountHolder, accountName, accountNumber, apr, apy, bankLinkId, category, clientId, createDate, creditLimit, currencyCode, deathBenefit, financialOfferId, id, institutionId, institutionName, interestRate, isActive, isAsset, isBusiness, isCash, isInvestment, isLinkVerified, isManual, lastPayment, lastPaymentDate, mask, maturityDate, metadata, minimumPayment, nextPaymentDate, secondaryId, subcategory, updateDate);
+    return Objects.hash(accountCategoryId, accountHolder, accountName, accountNumber, apr, apy, bankLinkId, businessId, category, clientId, createDate, creditLimit, currencyCode, deathBenefit, financialOfferId, id, institutionId, institutionName, interestRate, isActive, isAsset, isBusiness, isCash, isInvestment, isLinkVerified, isManual, lastPayment, lastPaymentDate, mask, maturityDate, metadata, minimumPayment, nextPaymentDate, secondaryId, subcategory, updateDate);
   }
 
 
@@ -784,6 +865,7 @@ public class AggregationAccount {
     sb.append("    apr: ").append(toIndentedString(apr)).append("\n");
     sb.append("    apy: ").append(toIndentedString(apy)).append("\n");
     sb.append("    bankLinkId: ").append(toIndentedString(bankLinkId)).append("\n");
+    sb.append("    businessId: ").append(toIndentedString(businessId)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
@@ -820,7 +902,7 @@ public class AggregationAccount {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

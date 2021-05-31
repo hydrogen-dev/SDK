@@ -32,7 +32,7 @@ class TestBulkTransaction(unittest.TestCase):
     def testBulkTransaction(self):
         """Test BulkTransaction"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.bulk_transaction.BulkTransaction()  # noqa: E501
+        # model = nucleus_api.models.bulk_transaction.BulkTransaction()  # noqa: E501
         pass
 
 

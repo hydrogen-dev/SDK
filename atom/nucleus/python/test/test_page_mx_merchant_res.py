@@ -32,7 +32,7 @@ class TestPageMXMerchantRes(unittest.TestCase):
     def testPageMXMerchantRes(self):
         """Test PageMXMerchantRes"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_mx_merchant_res.PageMXMerchantRes()  # noqa: E501
+        # model = nucleus_api.models.page_mx_merchant_res.PageMXMerchantRes()  # noqa: E501
         pass
 
 

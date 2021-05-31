@@ -58,10 +58,8 @@ Please first follow the [installation](#installation) instructions. Then make su
 
 **Sandbox Base URL**
 https://sandbox.hydrogenplatform.com
-
 **Production Base URL**
 https://api.hydrogenplatform.com
-
 ### Sample Code
 Now you are ready to execute the following Javascript code:
 

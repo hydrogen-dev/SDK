@@ -1168,7 +1168,7 @@ class AdminClientApi
      *
      * update
      *
-     * @param  \com\hydrogen\nucleus\Model\AdminClient $client client (required)
+     * @param  object $client client (required)
      * @param  int $client_id client_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -1186,7 +1186,7 @@ class AdminClientApi
      *
      * update
      *
-     * @param  \com\hydrogen\nucleus\Model\AdminClient $client client (required)
+     * @param  object $client client (required)
      * @param  int $client_id client_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -1262,7 +1262,7 @@ class AdminClientApi
      *
      * update
      *
-     * @param  \com\hydrogen\nucleus\Model\AdminClient $client client (required)
+     * @param  object $client client (required)
      * @param  int $client_id client_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1283,7 +1283,7 @@ class AdminClientApi
      *
      * update
      *
-     * @param  \com\hydrogen\nucleus\Model\AdminClient $client client (required)
+     * @param  object $client client (required)
      * @param  int $client_id client_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1334,7 +1334,7 @@ class AdminClientApi
     /**
      * Create request for operation 'updateAdminClientUsingPUT'
      *
-     * @param  \com\hydrogen\nucleus\Model\AdminClient $client client (required)
+     * @param  object $client client (required)
      * @param  int $client_id client_id (required)
      *
      * @throws \InvalidArgumentException

@@ -2194,7 +2194,7 @@ class HouseholdApi
      *
      * Update a Household
      *
-     * @param  \com\hydrogen\nucleus\Model\Household $household household (required)
+     * @param  object $household household (required)
      * @param  string $household_id UUID household_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -2212,7 +2212,7 @@ class HouseholdApi
      *
      * Update a Household
      *
-     * @param  \com\hydrogen\nucleus\Model\Household $household household (required)
+     * @param  object $household household (required)
      * @param  string $household_id UUID household_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -2288,7 +2288,7 @@ class HouseholdApi
      *
      * Update a Household
      *
-     * @param  \com\hydrogen\nucleus\Model\Household $household household (required)
+     * @param  object $household household (required)
      * @param  string $household_id UUID household_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2309,7 +2309,7 @@ class HouseholdApi
      *
      * Update a Household
      *
-     * @param  \com\hydrogen\nucleus\Model\Household $household household (required)
+     * @param  object $household household (required)
      * @param  string $household_id UUID household_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2360,7 +2360,7 @@ class HouseholdApi
     /**
      * Create request for operation 'updateHouseholdUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Household $household household (required)
+     * @param  object $household household (required)
      * @param  string $household_id UUID household_id (required)
      *
      * @throws \InvalidArgumentException

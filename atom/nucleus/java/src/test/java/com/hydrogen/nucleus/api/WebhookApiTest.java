@@ -13,14 +13,17 @@
 
 package com.hydrogen.nucleus.api;
 
-import com.hydrogen.nucleus.model.PageWebhook;
-import com.hydrogen.nucleus.model.Webhook;
 import com.hydrogen.nucleus.ApiException;
-
+import com.hydrogen.nucleus.model.PageWebhook;
 import java.util.UUID;
-
+import com.hydrogen.nucleus.model.Webhook;
 import org.junit.Test;
 import org.junit.Ignore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for WebhookApi
@@ -109,7 +112,7 @@ public class WebhookApiTest {
      */
     @Test
     public void updateWebhookUsingPutTest() throws ApiException {
-        Webhook webhook = null;
+        Object webhook = null;
         UUID webhookId = null;
         Webhook response = api.updateWebhookUsingPut(webhook, webhookId);
 

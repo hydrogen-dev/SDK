@@ -32,7 +32,7 @@ class TestQuestionnaire(unittest.TestCase):
     def testQuestionnaire(self):
         """Test Questionnaire"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.questionnaire.Questionnaire()  # noqa: E501
+        # model = nucleus_api.models.questionnaire.Questionnaire()  # noqa: E501
         pass
 
 

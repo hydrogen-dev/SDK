@@ -337,6 +337,8 @@ class ResourceApi(object):
 
         :param async_req bool
         :param str filter: filter
+        :param str hydrogen_account_category_id: hydrogen_account_category_id
+        :param bool match_primary: match_primary
         :param str tenant_name: tenant_name
         :param str vendor_name: vendor_name
         :return: list[object]
@@ -361,6 +363,8 @@ class ResourceApi(object):
 
         :param async_req bool
         :param str filter: filter
+        :param str hydrogen_account_category_id: hydrogen_account_category_id
+        :param bool match_primary: match_primary
         :param str tenant_name: tenant_name
         :param str vendor_name: vendor_name
         :return: list[object]
@@ -368,7 +372,7 @@ class ResourceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['filter', 'tenant_name', 'vendor_name']  # noqa: E501
+        all_params = ['filter', 'hydrogen_account_category_id', 'match_primary', 'tenant_name', 'vendor_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -391,6 +395,10 @@ class ResourceApi(object):
         query_params = []
         if 'filter' in params:
             query_params.append(('filter', params['filter']))  # noqa: E501
+        if 'hydrogen_account_category_id' in params:
+            query_params.append(('hydrogen_account_category_id', params['hydrogen_account_category_id']))  # noqa: E501
+        if 'match_primary' in params:
+            query_params.append(('match_primary', params['match_primary']))  # noqa: E501
         if 'tenant_name' in params:
             query_params.append(('tenant_name', params['tenant_name']))  # noqa: E501
         if 'vendor_name' in params:
@@ -1279,6 +1287,8 @@ class ResourceApi(object):
 
         :param async_req bool
         :param str filter: filter
+        :param str hydrogen_transaction_category_id: hydrogen_transaction_category_id
+        :param bool match_primary: match_primary
         :param str tenant_name: tenant_name
         :param str vendor_name: vendor_name
         :return: list[object]
@@ -1303,6 +1313,8 @@ class ResourceApi(object):
 
         :param async_req bool
         :param str filter: filter
+        :param str hydrogen_transaction_category_id: hydrogen_transaction_category_id
+        :param bool match_primary: match_primary
         :param str tenant_name: tenant_name
         :param str vendor_name: vendor_name
         :return: list[object]
@@ -1310,7 +1322,7 @@ class ResourceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['filter', 'tenant_name', 'vendor_name']  # noqa: E501
+        all_params = ['filter', 'hydrogen_transaction_category_id', 'match_primary', 'tenant_name', 'vendor_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1333,6 +1345,10 @@ class ResourceApi(object):
         query_params = []
         if 'filter' in params:
             query_params.append(('filter', params['filter']))  # noqa: E501
+        if 'hydrogen_transaction_category_id' in params:
+            query_params.append(('hydrogen_transaction_category_id', params['hydrogen_transaction_category_id']))  # noqa: E501
+        if 'match_primary' in params:
+            query_params.append(('match_primary', params['match_primary']))  # noqa: E501
         if 'tenant_name' in params:
             query_params.append(('tenant_name', params['tenant_name']))  # noqa: E501
         if 'vendor_name' in params:
@@ -1377,7 +1393,7 @@ class ResourceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Institution institution: institution (required)
+        :param object institution: institution (required)
         :param str institution_id: UUID institution_id (required)
         :return: Institution
                  If the method is called asynchronously,
@@ -1400,7 +1416,7 @@ class ResourceApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Institution institution: institution (required)
+        :param object institution: institution (required)
         :param str institution_id: UUID institution_id (required)
         :return: Institution
                  If the method is called asynchronously,

@@ -40,6 +40,7 @@ class AggregationAccount(object):
         'apr': 'float',
         'apy': 'float',
         'bank_link_id': 'str',
+        'business_id': 'str',
         'category': 'str',
         'client_id': 'str',
         'create_date': 'datetime',
@@ -78,6 +79,7 @@ class AggregationAccount(object):
         'apr': 'apr',
         'apy': 'apy',
         'bank_link_id': 'bank_link_id',
+        'business_id': 'business_id',
         'category': 'category',
         'client_id': 'client_id',
         'create_date': 'create_date',
@@ -108,7 +110,7 @@ class AggregationAccount(object):
         'update_date': 'update_date'
     }
 
-    def __init__(self, account_category_id=None, account_holder=None, account_name=None, account_number=None, apr=None, apy=None, bank_link_id=None, category=None, client_id=None, create_date=None, credit_limit=None, currency_code=None, death_benefit=None, financial_offer_id=None, id=None, institution_id=None, institution_name=None, interest_rate=None, is_active=None, is_asset=None, is_business=None, is_cash=None, is_investment=None, is_link_verified=None, is_manual=None, last_payment=None, last_payment_date=None, mask=None, maturity_date=None, metadata=None, minimum_payment=None, next_payment_date=None, secondary_id=None, subcategory=None, update_date=None, _configuration=None):  # noqa: E501
+    def __init__(self, account_category_id=None, account_holder=None, account_name=None, account_number=None, apr=None, apy=None, bank_link_id=None, business_id=None, category=None, client_id=None, create_date=None, credit_limit=None, currency_code=None, death_benefit=None, financial_offer_id=None, id=None, institution_id=None, institution_name=None, interest_rate=None, is_active=None, is_asset=None, is_business=None, is_cash=None, is_investment=None, is_link_verified=None, is_manual=None, last_payment=None, last_payment_date=None, mask=None, maturity_date=None, metadata=None, minimum_payment=None, next_payment_date=None, secondary_id=None, subcategory=None, update_date=None, _configuration=None):  # noqa: E501
         """AggregationAccount - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -121,6 +123,7 @@ class AggregationAccount(object):
         self._apr = None
         self._apy = None
         self._bank_link_id = None
+        self._business_id = None
         self._category = None
         self._client_id = None
         self._create_date = None
@@ -164,8 +167,11 @@ class AggregationAccount(object):
             self.apy = apy
         if bank_link_id is not None:
             self.bank_link_id = bank_link_id
+        if business_id is not None:
+            self.business_id = business_id
         self.category = category
-        self.client_id = client_id
+        if client_id is not None:
+            self.client_id = client_id
         if create_date is not None:
             self.create_date = create_date
         if credit_limit is not None:
@@ -380,6 +386,29 @@ class AggregationAccount(object):
         self._bank_link_id = bank_link_id
 
     @property
+    def business_id(self):
+        """Gets the business_id of this AggregationAccount.  # noqa: E501
+
+        businessId  # noqa: E501
+
+        :return: The business_id of this AggregationAccount.  # noqa: E501
+        :rtype: str
+        """
+        return self._business_id
+
+    @business_id.setter
+    def business_id(self, business_id):
+        """Sets the business_id of this AggregationAccount.
+
+        businessId  # noqa: E501
+
+        :param business_id: The business_id of this AggregationAccount.  # noqa: E501
+        :type: str
+        """
+
+        self._business_id = business_id
+
+    @property
     def category(self):
         """Gets the category of this AggregationAccount.  # noqa: E501
 
@@ -424,8 +453,6 @@ class AggregationAccount(object):
         :param client_id: The client_id of this AggregationAccount.  # noqa: E501
         :type: str
         """
-        if self._configuration.client_side_validation and client_id is None:
-            raise ValueError("Invalid value for `client_id`, must not be `None`")  # noqa: E501
 
         self._client_id = client_id
 

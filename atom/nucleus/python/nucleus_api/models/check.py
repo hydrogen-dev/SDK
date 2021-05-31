@@ -127,9 +127,6 @@ class Check(object):
         :param check_number: The check_number of this Check.  # noqa: E501
         :type: str
         """
-        if self._configuration.client_side_validation and check_number is None:
-            raise ValueError("Invalid value for `check_number`, must not be `None`")  # noqa: E501
-
         self._check_number = check_number
 
     def to_dict(self):

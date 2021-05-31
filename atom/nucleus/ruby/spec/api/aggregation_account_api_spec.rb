@@ -265,6 +265,19 @@ describe 'AggregationAccountApi' do
     end
   end
 
+  # unit tests for get_aggregation_account_overview_by_business_id_using_get
+  # Retrieve an aggregation account aggregate data
+  # Retrieve the information for a specific aggregation account with aggregate data for a business.
+  # @param business_id UUID business_id
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :currency_conversion USD
+  # @return [Object]
+  describe 'get_aggregation_account_overview_by_business_id_using_get test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for get_aggregation_account_overview_using_get
   # Retrieve an aggregation account aggregate data
   # Retrieve the information for a specific aggregation account with aggregate data for a client.

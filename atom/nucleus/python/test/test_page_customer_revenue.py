@@ -32,7 +32,7 @@ class TestPageCustomerRevenue(unittest.TestCase):
     def testPageCustomerRevenue(self):
         """Test PageCustomerRevenue"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_customer_revenue.PageCustomerRevenue()  # noqa: E501
+        # model = nucleus_api.models.page_customer_revenue.PageCustomerRevenue()  # noqa: E501
         pass
 
 

@@ -32,7 +32,7 @@ class TestFinancialStatement(unittest.TestCase):
     def testFinancialStatement(self):
         """Test FinancialStatement"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.financial_statement.FinancialStatement()  # noqa: E501
+        # model = nucleus_api.models.financial_statement.FinancialStatement()  # noqa: E501
         pass
 
 

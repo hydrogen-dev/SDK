@@ -32,7 +32,7 @@ class TestSecurityExclusion(unittest.TestCase):
     def testSecurityExclusion(self):
         """Test SecurityExclusion"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.security_exclusion.SecurityExclusion()  # noqa: E501
+        # model = nucleus_api.models.security_exclusion.SecurityExclusion()  # noqa: E501
         pass
 
 

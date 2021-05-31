@@ -4468,7 +4468,7 @@ class FundingApi
      *
      * Update list of bank link
      *
-     * @param  \com\hydrogen\nucleus\Model\BankLink[] $bank_link_list bankLinkList (required)
+     * @param  object[] $bank_link_list bankLinkList (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4485,7 +4485,7 @@ class FundingApi
      *
      * Update list of bank link
      *
-     * @param  \com\hydrogen\nucleus\Model\BankLink[] $bank_link_list bankLinkList (required)
+     * @param  object[] $bank_link_list bankLinkList (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4560,7 +4560,7 @@ class FundingApi
      *
      * Update list of bank link
      *
-     * @param  \com\hydrogen\nucleus\Model\BankLink[] $bank_link_list bankLinkList (required)
+     * @param  object[] $bank_link_list bankLinkList (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4580,7 +4580,7 @@ class FundingApi
      *
      * Update list of bank link
      *
-     * @param  \com\hydrogen\nucleus\Model\BankLink[] $bank_link_list bankLinkList (required)
+     * @param  object[] $bank_link_list bankLinkList (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4630,7 +4630,7 @@ class FundingApi
     /**
      * Create request for operation 'updateBankLinkBulkUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\BankLink[] $bank_link_list bankLinkList (required)
+     * @param  object[] $bank_link_list bankLinkList (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -4736,7 +4736,7 @@ class FundingApi
      *
      * Update a bank link
      *
-     * @param  \com\hydrogen\nucleus\Model\BankLink $bank_link bank_link (required)
+     * @param  object $bank_link bank_link (required)
      * @param  string $bank_link_id UUID bank_link_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -4754,7 +4754,7 @@ class FundingApi
      *
      * Update a bank link
      *
-     * @param  \com\hydrogen\nucleus\Model\BankLink $bank_link bank_link (required)
+     * @param  object $bank_link bank_link (required)
      * @param  string $bank_link_id UUID bank_link_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -4830,7 +4830,7 @@ class FundingApi
      *
      * Update a bank link
      *
-     * @param  \com\hydrogen\nucleus\Model\BankLink $bank_link bank_link (required)
+     * @param  object $bank_link bank_link (required)
      * @param  string $bank_link_id UUID bank_link_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4851,7 +4851,7 @@ class FundingApi
      *
      * Update a bank link
      *
-     * @param  \com\hydrogen\nucleus\Model\BankLink $bank_link bank_link (required)
+     * @param  object $bank_link bank_link (required)
      * @param  string $bank_link_id UUID bank_link_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4902,7 +4902,7 @@ class FundingApi
     /**
      * Create request for operation 'updateBankLinkUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\BankLink $bank_link bank_link (required)
+     * @param  object $bank_link bank_link (required)
      * @param  string $bank_link_id UUID bank_link_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5023,7 +5023,7 @@ class FundingApi
      *
      * Update a funding transaction request
      *
-     * @param  \com\hydrogen\nucleus\Model\FundingTransaction $funding_transaction fundingTransaction (required)
+     * @param  object $funding_transaction fundingTransaction (required)
      * @param  string $funding_transaction_id UUID funding_transaction_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -5041,7 +5041,7 @@ class FundingApi
      *
      * Update a funding transaction request
      *
-     * @param  \com\hydrogen\nucleus\Model\FundingTransaction $funding_transaction fundingTransaction (required)
+     * @param  object $funding_transaction fundingTransaction (required)
      * @param  string $funding_transaction_id UUID funding_transaction_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -5117,7 +5117,7 @@ class FundingApi
      *
      * Update a funding transaction request
      *
-     * @param  \com\hydrogen\nucleus\Model\FundingTransaction $funding_transaction fundingTransaction (required)
+     * @param  object $funding_transaction fundingTransaction (required)
      * @param  string $funding_transaction_id UUID funding_transaction_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5138,7 +5138,7 @@ class FundingApi
      *
      * Update a funding transaction request
      *
-     * @param  \com\hydrogen\nucleus\Model\FundingTransaction $funding_transaction fundingTransaction (required)
+     * @param  object $funding_transaction fundingTransaction (required)
      * @param  string $funding_transaction_id UUID funding_transaction_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5189,7 +5189,7 @@ class FundingApi
     /**
      * Create request for operation 'updateFundingTransactionUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\FundingTransaction $funding_transaction fundingTransaction (required)
+     * @param  object $funding_transaction fundingTransaction (required)
      * @param  string $funding_transaction_id UUID funding_transaction_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5310,7 +5310,7 @@ class FundingApi
      *
      * Update a funding request
      *
-     * @param  \com\hydrogen\nucleus\Model\Funding $funding funding (required)
+     * @param  object $funding funding (required)
      * @param  string $funding_id UUID funding_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -5328,7 +5328,7 @@ class FundingApi
      *
      * Update a funding request
      *
-     * @param  \com\hydrogen\nucleus\Model\Funding $funding funding (required)
+     * @param  object $funding funding (required)
      * @param  string $funding_id UUID funding_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -5404,7 +5404,7 @@ class FundingApi
      *
      * Update a funding request
      *
-     * @param  \com\hydrogen\nucleus\Model\Funding $funding funding (required)
+     * @param  object $funding funding (required)
      * @param  string $funding_id UUID funding_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5425,7 +5425,7 @@ class FundingApi
      *
      * Update a funding request
      *
-     * @param  \com\hydrogen\nucleus\Model\Funding $funding funding (required)
+     * @param  object $funding funding (required)
      * @param  string $funding_id UUID funding_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5476,7 +5476,7 @@ class FundingApi
     /**
      * Create request for operation 'updateFundingUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Funding $funding funding (required)
+     * @param  object $funding funding (required)
      * @param  string $funding_id UUID funding_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5597,7 +5597,7 @@ class FundingApi
      *
      * Update a transfer request
      *
-     * @param  \com\hydrogen\nucleus\Model\ExternalAccountTransfer $transfer transfer (required)
+     * @param  object $transfer transfer (required)
      * @param  string $transfer_id UUID external_account_transfer_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -5615,7 +5615,7 @@ class FundingApi
      *
      * Update a transfer request
      *
-     * @param  \com\hydrogen\nucleus\Model\ExternalAccountTransfer $transfer transfer (required)
+     * @param  object $transfer transfer (required)
      * @param  string $transfer_id UUID external_account_transfer_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -5691,7 +5691,7 @@ class FundingApi
      *
      * Update a transfer request
      *
-     * @param  \com\hydrogen\nucleus\Model\ExternalAccountTransfer $transfer transfer (required)
+     * @param  object $transfer transfer (required)
      * @param  string $transfer_id UUID external_account_transfer_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5712,7 +5712,7 @@ class FundingApi
      *
      * Update a transfer request
      *
-     * @param  \com\hydrogen\nucleus\Model\ExternalAccountTransfer $transfer transfer (required)
+     * @param  object $transfer transfer (required)
      * @param  string $transfer_id UUID external_account_transfer_id (required)
      *
      * @throws \InvalidArgumentException
@@ -5763,7 +5763,7 @@ class FundingApi
     /**
      * Create request for operation 'updateTransferUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\ExternalAccountTransfer $transfer transfer (required)
+     * @param  object $transfer transfer (required)
      * @param  string $transfer_id UUID external_account_transfer_id (required)
      *
      * @throws \InvalidArgumentException

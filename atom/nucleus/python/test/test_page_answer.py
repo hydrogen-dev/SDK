@@ -32,7 +32,7 @@ class TestPageAnswer(unittest.TestCase):
     def testPageAnswer(self):
         """Test PageAnswer"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_answer.PageAnswer()  # noqa: E501
+        # model = nucleus_api.models.page_answer.PageAnswer()  # noqa: E501
         pass
 
 

@@ -3351,7 +3351,7 @@ class GoalApi
      *
      * Update a goal track record
      *
-     * @param  \com\hydrogen\nucleus\Model\GoalTrack $goal_track goal_track (required)
+     * @param  object $goal_track goal_track (required)
      * @param  string $goal_track_id UUID goal_track_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -3369,7 +3369,7 @@ class GoalApi
      *
      * Update a goal track record
      *
-     * @param  \com\hydrogen\nucleus\Model\GoalTrack $goal_track goal_track (required)
+     * @param  object $goal_track goal_track (required)
      * @param  string $goal_track_id UUID goal_track_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -3445,7 +3445,7 @@ class GoalApi
      *
      * Update a goal track record
      *
-     * @param  \com\hydrogen\nucleus\Model\GoalTrack $goal_track goal_track (required)
+     * @param  object $goal_track goal_track (required)
      * @param  string $goal_track_id UUID goal_track_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3466,7 +3466,7 @@ class GoalApi
      *
      * Update a goal track record
      *
-     * @param  \com\hydrogen\nucleus\Model\GoalTrack $goal_track goal_track (required)
+     * @param  object $goal_track goal_track (required)
      * @param  string $goal_track_id UUID goal_track_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3517,7 +3517,7 @@ class GoalApi
     /**
      * Create request for operation 'updateGoalTrackUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\GoalTrack $goal_track goal_track (required)
+     * @param  object $goal_track goal_track (required)
      * @param  string $goal_track_id UUID goal_track_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3638,7 +3638,7 @@ class GoalApi
      *
      * Update a goal
      *
-     * @param  \com\hydrogen\nucleus\Model\Goal $goal goal (required)
+     * @param  object $goal goal (required)
      * @param  string $goal_id UUID goal_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -3656,7 +3656,7 @@ class GoalApi
      *
      * Update a goal
      *
-     * @param  \com\hydrogen\nucleus\Model\Goal $goal goal (required)
+     * @param  object $goal goal (required)
      * @param  string $goal_id UUID goal_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -3732,7 +3732,7 @@ class GoalApi
      *
      * Update a goal
      *
-     * @param  \com\hydrogen\nucleus\Model\Goal $goal goal (required)
+     * @param  object $goal goal (required)
      * @param  string $goal_id UUID goal_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3753,7 +3753,7 @@ class GoalApi
      *
      * Update a goal
      *
-     * @param  \com\hydrogen\nucleus\Model\Goal $goal goal (required)
+     * @param  object $goal goal (required)
      * @param  string $goal_id UUID goal_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3804,7 +3804,7 @@ class GoalApi
     /**
      * Create request for operation 'updateGoalUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Goal $goal goal (required)
+     * @param  object $goal goal (required)
      * @param  string $goal_id UUID goal_id (required)
      *
      * @throws \InvalidArgumentException

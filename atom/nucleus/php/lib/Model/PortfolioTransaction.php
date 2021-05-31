@@ -68,6 +68,7 @@ class PortfolioTransaction implements ModelInterface, ArrayAccess
         'date' => '\DateTime',
         'date_available' => '\DateTime',
         'description' => 'string',
+        'funding_id' => 'string',
         'id' => 'string',
         'is_cleansed' => 'bool',
         'is_disputed' => 'bool',
@@ -79,6 +80,7 @@ class PortfolioTransaction implements ModelInterface, ArrayAccess
         'merchant_category_code' => 'int',
         'merchant_id' => 'string',
         'metadata' => 'map[string,string]',
+        'mid' => 'string',
         'model_id' => 'string',
         'portfolio_id' => 'string',
         'price' => 'double',
@@ -108,6 +110,7 @@ class PortfolioTransaction implements ModelInterface, ArrayAccess
         'date' => 'date-time',
         'date_available' => 'date-time',
         'description' => null,
+        'funding_id' => 'uuid',
         'id' => 'uuid',
         'is_cleansed' => null,
         'is_disputed' => null,
@@ -119,6 +122,7 @@ class PortfolioTransaction implements ModelInterface, ArrayAccess
         'merchant_category_code' => 'int32',
         'merchant_id' => 'uuid',
         'metadata' => null,
+        'mid' => null,
         'model_id' => 'uuid',
         'portfolio_id' => 'uuid',
         'price' => 'double',
@@ -169,6 +173,7 @@ class PortfolioTransaction implements ModelInterface, ArrayAccess
         'date' => 'date',
         'date_available' => 'date_available',
         'description' => 'description',
+        'funding_id' => 'funding_id',
         'id' => 'id',
         'is_cleansed' => 'is_cleansed',
         'is_disputed' => 'is_disputed',
@@ -180,6 +185,7 @@ class PortfolioTransaction implements ModelInterface, ArrayAccess
         'merchant_category_code' => 'merchant_category_code',
         'merchant_id' => 'merchant_id',
         'metadata' => 'metadata',
+        'mid' => 'mid',
         'model_id' => 'model_id',
         'portfolio_id' => 'portfolio_id',
         'price' => 'price',
@@ -209,6 +215,7 @@ class PortfolioTransaction implements ModelInterface, ArrayAccess
         'date' => 'setDate',
         'date_available' => 'setDateAvailable',
         'description' => 'setDescription',
+        'funding_id' => 'setFundingId',
         'id' => 'setId',
         'is_cleansed' => 'setIsCleansed',
         'is_disputed' => 'setIsDisputed',
@@ -220,6 +227,7 @@ class PortfolioTransaction implements ModelInterface, ArrayAccess
         'merchant_category_code' => 'setMerchantCategoryCode',
         'merchant_id' => 'setMerchantId',
         'metadata' => 'setMetadata',
+        'mid' => 'setMid',
         'model_id' => 'setModelId',
         'portfolio_id' => 'setPortfolioId',
         'price' => 'setPrice',
@@ -249,6 +257,7 @@ class PortfolioTransaction implements ModelInterface, ArrayAccess
         'date' => 'getDate',
         'date_available' => 'getDateAvailable',
         'description' => 'getDescription',
+        'funding_id' => 'getFundingId',
         'id' => 'getId',
         'is_cleansed' => 'getIsCleansed',
         'is_disputed' => 'getIsDisputed',
@@ -260,6 +269,7 @@ class PortfolioTransaction implements ModelInterface, ArrayAccess
         'merchant_category_code' => 'getMerchantCategoryCode',
         'merchant_id' => 'getMerchantId',
         'metadata' => 'getMetadata',
+        'mid' => 'getMid',
         'model_id' => 'getModelId',
         'portfolio_id' => 'getPortfolioId',
         'price' => 'getPrice',
@@ -343,6 +353,7 @@ class PortfolioTransaction implements ModelInterface, ArrayAccess
         $this->container['date'] = isset($data['date']) ? $data['date'] : null;
         $this->container['date_available'] = isset($data['date_available']) ? $data['date_available'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['funding_id'] = isset($data['funding_id']) ? $data['funding_id'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['is_cleansed'] = isset($data['is_cleansed']) ? $data['is_cleansed'] : null;
         $this->container['is_disputed'] = isset($data['is_disputed']) ? $data['is_disputed'] : null;
@@ -354,6 +365,7 @@ class PortfolioTransaction implements ModelInterface, ArrayAccess
         $this->container['merchant_category_code'] = isset($data['merchant_category_code']) ? $data['merchant_category_code'] : null;
         $this->container['merchant_id'] = isset($data['merchant_id']) ? $data['merchant_id'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
+        $this->container['mid'] = isset($data['mid']) ? $data['mid'] : null;
         $this->container['model_id'] = isset($data['model_id']) ? $data['model_id'] : null;
         $this->container['portfolio_id'] = isset($data['portfolio_id']) ? $data['portfolio_id'] : null;
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
@@ -647,6 +659,30 @@ class PortfolioTransaction implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets funding_id
+     *
+     * @return string
+     */
+    public function getFundingId()
+    {
+        return $this->container['funding_id'];
+    }
+
+    /**
+     * Sets funding_id
+     *
+     * @param string $funding_id fundingId
+     *
+     * @return $this
+     */
+    public function setFundingId($funding_id)
+    {
+        $this->container['funding_id'] = $funding_id;
+
+        return $this;
+    }
+
+    /**
      * Gets id
      *
      * @return string
@@ -906,6 +942,30 @@ class PortfolioTransaction implements ModelInterface, ArrayAccess
     public function setMetadata($metadata)
     {
         $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
+
+    /**
+     * Gets mid
+     *
+     * @return string
+     */
+    public function getMid()
+    {
+        return $this->container['mid'];
+    }
+
+    /**
+     * Sets mid
+     *
+     * @param string $mid mid
+     *
+     * @return $this
+     */
+    public function setMid($mid)
+    {
+        $this->container['mid'] = $mid;
 
         return $this;
     }

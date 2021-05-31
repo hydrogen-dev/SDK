@@ -32,7 +32,7 @@ class TestPageAggregationAccountBalance(unittest.TestCase):
     def testPageAggregationAccountBalance(self):
         """Test PageAggregationAccountBalance"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_aggregation_account_balance.PageAggregationAccountBalance()  # noqa: E501
+        # model = nucleus_api.models.page_aggregation_account_balance.PageAggregationAccountBalance()  # noqa: E501
         pass
 
 

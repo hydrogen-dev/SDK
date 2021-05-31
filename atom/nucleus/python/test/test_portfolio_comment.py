@@ -32,7 +32,7 @@ class TestPortfolioComment(unittest.TestCase):
     def testPortfolioComment(self):
         """Test PortfolioComment"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.portfolio_comment.PortfolioComment()  # noqa: E501
+        # model = nucleus_api.models.portfolio_comment.PortfolioComment()  # noqa: E501
         pass
 
 

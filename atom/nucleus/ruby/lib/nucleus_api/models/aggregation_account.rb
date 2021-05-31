@@ -35,6 +35,9 @@ module NucleusApi
     # bankLinkId
     attr_accessor :bank_link_id
 
+    # businessId
+    attr_accessor :business_id
+
     # category
     attr_accessor :category
 
@@ -120,6 +123,7 @@ module NucleusApi
         :'apr' => :'apr',
         :'apy' => :'apy',
         :'bank_link_id' => :'bank_link_id',
+        :'business_id' => :'business_id',
         :'category' => :'category',
         :'client_id' => :'client_id',
         :'create_date' => :'create_date',
@@ -161,6 +165,7 @@ module NucleusApi
         :'apr' => :'Float',
         :'apy' => :'Float',
         :'bank_link_id' => :'String',
+        :'business_id' => :'String',
         :'category' => :'String',
         :'client_id' => :'String',
         :'create_date' => :'DateTime',
@@ -226,6 +231,10 @@ module NucleusApi
 
       if attributes.has_key?(:'bank_link_id')
         self.bank_link_id = attributes[:'bank_link_id']
+      end
+
+      if attributes.has_key?(:'business_id')
+        self.business_id = attributes[:'business_id']
       end
 
       if attributes.has_key?(:'category')
@@ -355,10 +364,6 @@ module NucleusApi
         invalid_properties.push('invalid value for "category", category cannot be nil.')
       end
 
-      if @client_id.nil?
-        invalid_properties.push('invalid value for "client_id", client_id cannot be nil.')
-      end
-
       if @institution_name.nil?
         invalid_properties.push('invalid value for "institution_name", institution_name cannot be nil.')
       end
@@ -371,7 +376,6 @@ module NucleusApi
     def valid?
       return false if @account_name.nil?
       return false if @category.nil?
-      return false if @client_id.nil?
       return false if @institution_name.nil?
       true
     end
@@ -388,6 +392,7 @@ module NucleusApi
           apr == o.apr &&
           apy == o.apy &&
           bank_link_id == o.bank_link_id &&
+          business_id == o.business_id &&
           category == o.category &&
           client_id == o.client_id &&
           create_date == o.create_date &&
@@ -427,7 +432,7 @@ module NucleusApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [account_category_id, account_holder, account_name, account_number, apr, apy, bank_link_id, category, client_id, create_date, credit_limit, currency_code, death_benefit, financial_offer_id, id, institution_id, institution_name, interest_rate, is_active, is_asset, is_business, is_cash, is_investment, is_link_verified, is_manual, last_payment, last_payment_date, mask, maturity_date, metadata, minimum_payment, next_payment_date, secondary_id, subcategory, update_date].hash
+      [account_category_id, account_holder, account_name, account_number, apr, apy, bank_link_id, business_id, category, client_id, create_date, credit_limit, currency_code, death_benefit, financial_offer_id, id, institution_id, institution_name, interest_rate, is_active, is_asset, is_business, is_cash, is_investment, is_link_verified, is_manual, last_payment, last_payment_date, mask, maturity_date, metadata, minimum_payment, next_payment_date, secondary_id, subcategory, update_date].hash
     end
 
     # Builds the object from hash
@@ -489,7 +494,9 @@ module NucleusApi
         temp_model.build_from_hash(value)
       end
     end
-# Returns the string representation of the object
+
+
+    # Returns the string representation of the object
     # @return [String] String presentation of the object
     def to_s
       to_hash.to_s
@@ -511,7 +518,6 @@ module NucleusApi
       end
       hash
     end
-
 
     # Outputs non-array value in the form of hash
     # For object, use to_hash. Otherwise, just return the value

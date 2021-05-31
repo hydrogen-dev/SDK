@@ -32,7 +32,7 @@ class TestPageOrderBulk(unittest.TestCase):
     def testPageOrderBulk(self):
         """Test PageOrderBulk"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_order_bulk.PageOrderBulk()  # noqa: E501
+        # model = nucleus_api.models.page_order_bulk.PageOrderBulk()  # noqa: E501
         pass
 
 

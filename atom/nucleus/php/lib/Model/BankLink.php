@@ -64,6 +64,7 @@ class BankLink implements ModelInterface, ArrayAccess
         'bank_account_holder' => 'string',
         'bank_account_name' => 'string',
         'bank_account_number' => 'string',
+        'business_id' => 'string',
         'client_id' => 'string',
         'create_date' => '\DateTime',
         'currency_code' => 'string',
@@ -95,6 +96,7 @@ class BankLink implements ModelInterface, ArrayAccess
         'bank_account_holder' => null,
         'bank_account_name' => null,
         'bank_account_number' => null,
+        'business_id' => 'uuid',
         'client_id' => 'uuid',
         'create_date' => 'date-time',
         'currency_code' => null,
@@ -147,6 +149,7 @@ class BankLink implements ModelInterface, ArrayAccess
         'bank_account_holder' => 'bank_account_holder',
         'bank_account_name' => 'bank_account_name',
         'bank_account_number' => 'bank_account_number',
+        'business_id' => 'business_id',
         'client_id' => 'client_id',
         'create_date' => 'create_date',
         'currency_code' => 'currency_code',
@@ -178,6 +181,7 @@ class BankLink implements ModelInterface, ArrayAccess
         'bank_account_holder' => 'setBankAccountHolder',
         'bank_account_name' => 'setBankAccountName',
         'bank_account_number' => 'setBankAccountNumber',
+        'business_id' => 'setBusinessId',
         'client_id' => 'setClientId',
         'create_date' => 'setCreateDate',
         'currency_code' => 'setCurrencyCode',
@@ -209,6 +213,7 @@ class BankLink implements ModelInterface, ArrayAccess
         'bank_account_holder' => 'getBankAccountHolder',
         'bank_account_name' => 'getBankAccountName',
         'bank_account_number' => 'getBankAccountNumber',
+        'business_id' => 'getBusinessId',
         'client_id' => 'getClientId',
         'create_date' => 'getCreateDate',
         'currency_code' => 'getCurrencyCode',
@@ -294,6 +299,7 @@ class BankLink implements ModelInterface, ArrayAccess
         $this->container['bank_account_holder'] = isset($data['bank_account_holder']) ? $data['bank_account_holder'] : null;
         $this->container['bank_account_name'] = isset($data['bank_account_name']) ? $data['bank_account_name'] : null;
         $this->container['bank_account_number'] = isset($data['bank_account_number']) ? $data['bank_account_number'] : null;
+        $this->container['business_id'] = isset($data['business_id']) ? $data['business_id'] : null;
         $this->container['client_id'] = isset($data['client_id']) ? $data['client_id'] : null;
         $this->container['create_date'] = isset($data['create_date']) ? $data['create_date'] : null;
         $this->container['currency_code'] = isset($data['currency_code']) ? $data['currency_code'] : null;
@@ -489,6 +495,30 @@ class BankLink implements ModelInterface, ArrayAccess
     public function setBankAccountNumber($bank_account_number)
     {
         $this->container['bank_account_number'] = $bank_account_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets business_id
+     *
+     * @return string
+     */
+    public function getBusinessId()
+    {
+        return $this->container['business_id'];
+    }
+
+    /**
+     * Sets business_id
+     *
+     * @param string $business_id businessId
+     *
+     * @return $this
+     */
+    public function setBusinessId($business_id)
+    {
+        $this->container['business_id'] = $business_id;
 
         return $this;
     }

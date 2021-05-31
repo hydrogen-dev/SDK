@@ -24,6 +24,9 @@ module NucleusApi
     # cardId
     attr_accessor :card_id
 
+    # cardIssuance
+    attr_accessor :card_issuance
+
     # cardName
     attr_accessor :card_name
 
@@ -51,6 +54,7 @@ module NucleusApi
         :'balance' => :'balance',
         :'card_holder_name' => :'card_holder_name',
         :'card_id' => :'card_id',
+        :'card_issuance' => :'card_issuance',
         :'card_name' => :'card_name',
         :'card_network' => :'card_network',
         :'card_type' => :'card_type',
@@ -67,6 +71,7 @@ module NucleusApi
         :'balance' => :'CardBalanceVO',
         :'card_holder_name' => :'String',
         :'card_id' => :'String',
+        :'card_issuance' => :'String',
         :'card_name' => :'String',
         :'card_network' => :'String',
         :'card_type' => :'String',
@@ -95,6 +100,10 @@ module NucleusApi
 
       if attributes.has_key?(:'card_id')
         self.card_id = attributes[:'card_id']
+      end
+
+      if attributes.has_key?(:'card_issuance')
+        self.card_issuance = attributes[:'card_issuance']
       end
 
       if attributes.has_key?(:'card_name')
@@ -147,6 +156,7 @@ module NucleusApi
           balance == o.balance &&
           card_holder_name == o.card_holder_name &&
           card_id == o.card_id &&
+          card_issuance == o.card_issuance &&
           card_name == o.card_name &&
           card_network == o.card_network &&
           card_type == o.card_type &&
@@ -165,7 +175,7 @@ module NucleusApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [balance, card_holder_name, card_id, card_name, card_network, card_type, expiry_date, mask, prepaid_amount, status].hash
+      [balance, card_holder_name, card_id, card_issuance, card_name, card_network, card_type, expiry_date, mask, prepaid_amount, status].hash
     end
 
     # Builds the object from hash
@@ -227,7 +237,9 @@ module NucleusApi
         temp_model.build_from_hash(value)
       end
     end
-# Returns the string representation of the object
+
+
+    # Returns the string representation of the object
     # @return [String] String presentation of the object
     def to_s
       to_hash.to_s
@@ -249,7 +261,6 @@ module NucleusApi
       end
       hash
     end
-
 
     # Outputs non-array value in the form of hash
     # For object, use to_hash. Otherwise, just return the value

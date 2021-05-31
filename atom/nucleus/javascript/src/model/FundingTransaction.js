@@ -45,16 +45,15 @@
    * FundingTransaction Object
    * @alias module:model/FundingTransaction
    * @class
-   * @param accountId {String} accountId
    * @param amount {Number} amount
    * @param currencyCode {String} currency_code
    * @param fundingId {String} fundingId
    * @param isDeposit {Boolean} is deposit
    */
-  var exports = function(accountId, amount, currencyCode, fundingId, isDeposit) {
+  var exports = function(amount, currencyCode, fundingId, isDeposit) {
     var _this = this;
 
-    _this['account_id'] = accountId;
+
     _this['amount'] = amount;
 
 

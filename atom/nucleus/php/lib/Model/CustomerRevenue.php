@@ -59,9 +59,9 @@ class CustomerRevenue implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'accounting_method' => 'string',
+        'contact_id' => 'string',
         'create_date' => '\DateTime',
         'currency_code' => 'string',
-        'customer_id' => 'string',
         'date' => '\DateTime',
         'id' => 'string',
         'metadata' => 'map[string,string]',
@@ -77,9 +77,9 @@ class CustomerRevenue implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'accounting_method' => null,
+        'contact_id' => 'uuid',
         'create_date' => 'date-time',
         'currency_code' => null,
-        'customer_id' => 'uuid',
         'date' => 'date',
         'id' => 'uuid',
         'metadata' => null,
@@ -116,9 +116,9 @@ class CustomerRevenue implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'accounting_method' => 'accounting_method',
+        'contact_id' => 'contact_id',
         'create_date' => 'create_date',
         'currency_code' => 'currency_code',
-        'customer_id' => 'customer_id',
         'date' => 'date',
         'id' => 'id',
         'metadata' => 'metadata',
@@ -134,9 +134,9 @@ class CustomerRevenue implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'accounting_method' => 'setAccountingMethod',
+        'contact_id' => 'setContactId',
         'create_date' => 'setCreateDate',
         'currency_code' => 'setCurrencyCode',
-        'customer_id' => 'setCustomerId',
         'date' => 'setDate',
         'id' => 'setId',
         'metadata' => 'setMetadata',
@@ -152,9 +152,9 @@ class CustomerRevenue implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'accounting_method' => 'getAccountingMethod',
+        'contact_id' => 'getContactId',
         'create_date' => 'getCreateDate',
         'currency_code' => 'getCurrencyCode',
-        'customer_id' => 'getCustomerId',
         'date' => 'getDate',
         'id' => 'getId',
         'metadata' => 'getMetadata',
@@ -224,9 +224,9 @@ class CustomerRevenue implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['accounting_method'] = isset($data['accounting_method']) ? $data['accounting_method'] : null;
+        $this->container['contact_id'] = isset($data['contact_id']) ? $data['contact_id'] : null;
         $this->container['create_date'] = isset($data['create_date']) ? $data['create_date'] : null;
         $this->container['currency_code'] = isset($data['currency_code']) ? $data['currency_code'] : null;
-        $this->container['customer_id'] = isset($data['customer_id']) ? $data['customer_id'] : null;
         $this->container['date'] = isset($data['date']) ? $data['date'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
@@ -247,11 +247,11 @@ class CustomerRevenue implements ModelInterface, ArrayAccess
         if ($this->container['accounting_method'] === null) {
             $invalidProperties[] = "'accounting_method' can't be null";
         }
+        if ($this->container['contact_id'] === null) {
+            $invalidProperties[] = "'contact_id' can't be null";
+        }
         if ($this->container['currency_code'] === null) {
             $invalidProperties[] = "'currency_code' can't be null";
-        }
-        if ($this->container['customer_id'] === null) {
-            $invalidProperties[] = "'customer_id' can't be null";
         }
         if ($this->container['date'] === null) {
             $invalidProperties[] = "'date' can't be null";
@@ -294,6 +294,30 @@ class CustomerRevenue implements ModelInterface, ArrayAccess
     public function setAccountingMethod($accounting_method)
     {
         $this->container['accounting_method'] = $accounting_method;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact_id
+     *
+     * @return string
+     */
+    public function getContactId()
+    {
+        return $this->container['contact_id'];
+    }
+
+    /**
+     * Sets contact_id
+     *
+     * @param string $contact_id contactId
+     *
+     * @return $this
+     */
+    public function setContactId($contact_id)
+    {
+        $this->container['contact_id'] = $contact_id;
 
         return $this;
     }
@@ -342,30 +366,6 @@ class CustomerRevenue implements ModelInterface, ArrayAccess
     public function setCurrencyCode($currency_code)
     {
         $this->container['currency_code'] = $currency_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets customer_id
-     *
-     * @return string
-     */
-    public function getCustomerId()
-    {
-        return $this->container['customer_id'];
-    }
-
-    /**
-     * Sets customer_id
-     *
-     * @param string $customer_id customerId
-     *
-     * @return $this
-     */
-    public function setCustomerId($customer_id)
-    {
-        $this->container['customer_id'] = $customer_id;
 
         return $this;
     }

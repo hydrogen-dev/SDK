@@ -32,7 +32,7 @@ class TestPortfolioHoldingAgg(unittest.TestCase):
     def testPortfolioHoldingAgg(self):
         """Test PortfolioHoldingAgg"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.portfolio_holding_agg.PortfolioHoldingAgg()  # noqa: E501
+        # model = nucleus_api.models.portfolio_holding_agg.PortfolioHoldingAgg()  # noqa: E501
         pass
 
 

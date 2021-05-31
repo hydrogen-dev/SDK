@@ -93,6 +93,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property businessId (base name: "business_id")', function() {
+      // uncomment below and update the code to test the property businessId
+      //var instane = new HydrogenNucleusApi.BankLink();
+      //expect(instance).to.be();
+    });
+
     it('should have the property clientId (base name: "client_id")', function() {
       // uncomment below and update the code to test the property clientId
       //var instane = new HydrogenNucleusApi.BankLink();

@@ -32,7 +32,7 @@ class TestClientCardVO(unittest.TestCase):
     def testClientCardVO(self):
         """Test ClientCardVO"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.client_card_vo.ClientCardVO()  # noqa: E501
+        # model = nucleus_api.models.client_card_vo.ClientCardVO()  # noqa: E501
         pass
 
 

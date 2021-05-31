@@ -939,7 +939,7 @@ class BulkApi
      *
      * Update a bulk data
      *
-     * @param  \com\hydrogen\nucleus\Model\JsonNode $data data (required)
+     * @param  object $data data (required)
      * @param  string $entity_uri UUID entity_uri (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -957,7 +957,7 @@ class BulkApi
      *
      * Update a bulk data
      *
-     * @param  \com\hydrogen\nucleus\Model\JsonNode $data data (required)
+     * @param  object $data data (required)
      * @param  string $entity_uri UUID entity_uri (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -1033,7 +1033,7 @@ class BulkApi
      *
      * Update a bulk data
      *
-     * @param  \com\hydrogen\nucleus\Model\JsonNode $data data (required)
+     * @param  object $data data (required)
      * @param  string $entity_uri UUID entity_uri (required)
      *
      * @throws \InvalidArgumentException
@@ -1054,7 +1054,7 @@ class BulkApi
      *
      * Update a bulk data
      *
-     * @param  \com\hydrogen\nucleus\Model\JsonNode $data data (required)
+     * @param  object $data data (required)
      * @param  string $entity_uri UUID entity_uri (required)
      *
      * @throws \InvalidArgumentException
@@ -1105,7 +1105,7 @@ class BulkApi
     /**
      * Create request for operation 'updateBulkUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\JsonNode $data data (required)
+     * @param  object $data data (required)
      * @param  string $entity_uri UUID entity_uri (required)
      *
      * @throws \InvalidArgumentException

@@ -32,7 +32,7 @@ class TestFeatureTrack(unittest.TestCase):
     def testFeatureTrack(self):
         """Test FeatureTrack"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.feature_track.FeatureTrack()  # noqa: E501
+        # model = nucleus_api.models.feature_track.FeatureTrack()  # noqa: E501
         pass
 
 

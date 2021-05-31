@@ -865,6 +865,8 @@ class ResourceApi
      * Get all account category mapping
      *
      * @param  string $filter filter (optional)
+     * @param  string $hydrogen_account_category_id hydrogen_account_category_id (optional)
+     * @param  bool $match_primary match_primary (optional, default to false)
      * @param  string $tenant_name tenant_name (optional)
      * @param  string $vendor_name vendor_name (optional)
      *
@@ -872,9 +874,9 @@ class ResourceApi
      * @throws \InvalidArgumentException
      * @return object[]
      */
-    public function getAccountResultForMapping($filter = null, $tenant_name = null, $vendor_name = null)
+    public function getAccountResultForMapping($filter = null, $hydrogen_account_category_id = null, $match_primary = 'false', $tenant_name = null, $vendor_name = null)
     {
-        list($response) = $this->getAccountResultForMappingWithHttpInfo($filter, $tenant_name, $vendor_name);
+        list($response) = $this->getAccountResultForMappingWithHttpInfo($filter, $hydrogen_account_category_id, $match_primary, $tenant_name, $vendor_name);
         return $response;
     }
 
@@ -884,6 +886,8 @@ class ResourceApi
      * Get all account category mapping
      *
      * @param  string $filter filter (optional)
+     * @param  string $hydrogen_account_category_id hydrogen_account_category_id (optional)
+     * @param  bool $match_primary match_primary (optional, default to false)
      * @param  string $tenant_name tenant_name (optional)
      * @param  string $vendor_name vendor_name (optional)
      *
@@ -891,10 +895,10 @@ class ResourceApi
      * @throws \InvalidArgumentException
      * @return array of object[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAccountResultForMappingWithHttpInfo($filter = null, $tenant_name = null, $vendor_name = null)
+    public function getAccountResultForMappingWithHttpInfo($filter = null, $hydrogen_account_category_id = null, $match_primary = 'false', $tenant_name = null, $vendor_name = null)
     {
         $returnType = 'object[]';
-        $request = $this->getAccountResultForMappingRequest($filter, $tenant_name, $vendor_name);
+        $request = $this->getAccountResultForMappingRequest($filter, $hydrogen_account_category_id, $match_primary, $tenant_name, $vendor_name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -961,15 +965,17 @@ class ResourceApi
      * Get all account category mapping
      *
      * @param  string $filter filter (optional)
+     * @param  string $hydrogen_account_category_id hydrogen_account_category_id (optional)
+     * @param  bool $match_primary match_primary (optional, default to false)
      * @param  string $tenant_name tenant_name (optional)
      * @param  string $vendor_name vendor_name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAccountResultForMappingAsync($filter = null, $tenant_name = null, $vendor_name = null)
+    public function getAccountResultForMappingAsync($filter = null, $hydrogen_account_category_id = null, $match_primary = 'false', $tenant_name = null, $vendor_name = null)
     {
-        return $this->getAccountResultForMappingAsyncWithHttpInfo($filter, $tenant_name, $vendor_name)
+        return $this->getAccountResultForMappingAsyncWithHttpInfo($filter, $hydrogen_account_category_id, $match_primary, $tenant_name, $vendor_name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -983,16 +989,18 @@ class ResourceApi
      * Get all account category mapping
      *
      * @param  string $filter filter (optional)
+     * @param  string $hydrogen_account_category_id hydrogen_account_category_id (optional)
+     * @param  bool $match_primary match_primary (optional, default to false)
      * @param  string $tenant_name tenant_name (optional)
      * @param  string $vendor_name vendor_name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAccountResultForMappingAsyncWithHttpInfo($filter = null, $tenant_name = null, $vendor_name = null)
+    public function getAccountResultForMappingAsyncWithHttpInfo($filter = null, $hydrogen_account_category_id = null, $match_primary = 'false', $tenant_name = null, $vendor_name = null)
     {
         $returnType = 'object[]';
-        $request = $this->getAccountResultForMappingRequest($filter, $tenant_name, $vendor_name);
+        $request = $this->getAccountResultForMappingRequest($filter, $hydrogen_account_category_id, $match_primary, $tenant_name, $vendor_name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1035,13 +1043,15 @@ class ResourceApi
      * Create request for operation 'getAccountResultForMapping'
      *
      * @param  string $filter filter (optional)
+     * @param  string $hydrogen_account_category_id hydrogen_account_category_id (optional)
+     * @param  bool $match_primary match_primary (optional, default to false)
      * @param  string $tenant_name tenant_name (optional)
      * @param  string $vendor_name vendor_name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getAccountResultForMappingRequest($filter = null, $tenant_name = null, $vendor_name = null)
+    protected function getAccountResultForMappingRequest($filter = null, $hydrogen_account_category_id = null, $match_primary = 'false', $tenant_name = null, $vendor_name = null)
     {
 
         $resourcePath = '/nucleus/v1/resource/account_category';
@@ -1054,6 +1064,14 @@ class ResourceApi
         // query params
         if ($filter !== null) {
             $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
+        // query params
+        if ($hydrogen_account_category_id !== null) {
+            $queryParams['hydrogen_account_category_id'] = ObjectSerializer::toQueryValue($hydrogen_account_category_id);
+        }
+        // query params
+        if ($match_primary !== null) {
+            $queryParams['match_primary'] = ObjectSerializer::toQueryValue($match_primary);
         }
         // query params
         if ($tenant_name !== null) {
@@ -3568,6 +3586,8 @@ class ResourceApi
      * Get all transaction category mapping
      *
      * @param  string $filter filter (optional)
+     * @param  string $hydrogen_transaction_category_id hydrogen_transaction_category_id (optional)
+     * @param  bool $match_primary match_primary (optional, default to false)
      * @param  string $tenant_name tenant_name (optional)
      * @param  string $vendor_name vendor_name (optional)
      *
@@ -3575,9 +3595,9 @@ class ResourceApi
      * @throws \InvalidArgumentException
      * @return object[]
      */
-    public function getTransactionResultForMapping($filter = null, $tenant_name = null, $vendor_name = null)
+    public function getTransactionResultForMapping($filter = null, $hydrogen_transaction_category_id = null, $match_primary = 'false', $tenant_name = null, $vendor_name = null)
     {
-        list($response) = $this->getTransactionResultForMappingWithHttpInfo($filter, $tenant_name, $vendor_name);
+        list($response) = $this->getTransactionResultForMappingWithHttpInfo($filter, $hydrogen_transaction_category_id, $match_primary, $tenant_name, $vendor_name);
         return $response;
     }
 
@@ -3587,6 +3607,8 @@ class ResourceApi
      * Get all transaction category mapping
      *
      * @param  string $filter filter (optional)
+     * @param  string $hydrogen_transaction_category_id hydrogen_transaction_category_id (optional)
+     * @param  bool $match_primary match_primary (optional, default to false)
      * @param  string $tenant_name tenant_name (optional)
      * @param  string $vendor_name vendor_name (optional)
      *
@@ -3594,10 +3616,10 @@ class ResourceApi
      * @throws \InvalidArgumentException
      * @return array of object[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTransactionResultForMappingWithHttpInfo($filter = null, $tenant_name = null, $vendor_name = null)
+    public function getTransactionResultForMappingWithHttpInfo($filter = null, $hydrogen_transaction_category_id = null, $match_primary = 'false', $tenant_name = null, $vendor_name = null)
     {
         $returnType = 'object[]';
-        $request = $this->getTransactionResultForMappingRequest($filter, $tenant_name, $vendor_name);
+        $request = $this->getTransactionResultForMappingRequest($filter, $hydrogen_transaction_category_id, $match_primary, $tenant_name, $vendor_name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3664,15 +3686,17 @@ class ResourceApi
      * Get all transaction category mapping
      *
      * @param  string $filter filter (optional)
+     * @param  string $hydrogen_transaction_category_id hydrogen_transaction_category_id (optional)
+     * @param  bool $match_primary match_primary (optional, default to false)
      * @param  string $tenant_name tenant_name (optional)
      * @param  string $vendor_name vendor_name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransactionResultForMappingAsync($filter = null, $tenant_name = null, $vendor_name = null)
+    public function getTransactionResultForMappingAsync($filter = null, $hydrogen_transaction_category_id = null, $match_primary = 'false', $tenant_name = null, $vendor_name = null)
     {
-        return $this->getTransactionResultForMappingAsyncWithHttpInfo($filter, $tenant_name, $vendor_name)
+        return $this->getTransactionResultForMappingAsyncWithHttpInfo($filter, $hydrogen_transaction_category_id, $match_primary, $tenant_name, $vendor_name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3686,16 +3710,18 @@ class ResourceApi
      * Get all transaction category mapping
      *
      * @param  string $filter filter (optional)
+     * @param  string $hydrogen_transaction_category_id hydrogen_transaction_category_id (optional)
+     * @param  bool $match_primary match_primary (optional, default to false)
      * @param  string $tenant_name tenant_name (optional)
      * @param  string $vendor_name vendor_name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransactionResultForMappingAsyncWithHttpInfo($filter = null, $tenant_name = null, $vendor_name = null)
+    public function getTransactionResultForMappingAsyncWithHttpInfo($filter = null, $hydrogen_transaction_category_id = null, $match_primary = 'false', $tenant_name = null, $vendor_name = null)
     {
         $returnType = 'object[]';
-        $request = $this->getTransactionResultForMappingRequest($filter, $tenant_name, $vendor_name);
+        $request = $this->getTransactionResultForMappingRequest($filter, $hydrogen_transaction_category_id, $match_primary, $tenant_name, $vendor_name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3738,13 +3764,15 @@ class ResourceApi
      * Create request for operation 'getTransactionResultForMapping'
      *
      * @param  string $filter filter (optional)
+     * @param  string $hydrogen_transaction_category_id hydrogen_transaction_category_id (optional)
+     * @param  bool $match_primary match_primary (optional, default to false)
      * @param  string $tenant_name tenant_name (optional)
      * @param  string $vendor_name vendor_name (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getTransactionResultForMappingRequest($filter = null, $tenant_name = null, $vendor_name = null)
+    protected function getTransactionResultForMappingRequest($filter = null, $hydrogen_transaction_category_id = null, $match_primary = 'false', $tenant_name = null, $vendor_name = null)
     {
 
         $resourcePath = '/nucleus/v1/resource/transaction_category';
@@ -3757,6 +3785,14 @@ class ResourceApi
         // query params
         if ($filter !== null) {
             $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
+        // query params
+        if ($hydrogen_transaction_category_id !== null) {
+            $queryParams['hydrogen_transaction_category_id'] = ObjectSerializer::toQueryValue($hydrogen_transaction_category_id);
+        }
+        // query params
+        if ($match_primary !== null) {
+            $queryParams['match_primary'] = ObjectSerializer::toQueryValue($match_primary);
         }
         // query params
         if ($tenant_name !== null) {
@@ -3848,7 +3884,7 @@ class ResourceApi
      *
      * Update a institution
      *
-     * @param  \com\hydrogen\nucleus\Model\Institution $institution institution (required)
+     * @param  object $institution institution (required)
      * @param  string $institution_id UUID institution_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -3866,7 +3902,7 @@ class ResourceApi
      *
      * Update a institution
      *
-     * @param  \com\hydrogen\nucleus\Model\Institution $institution institution (required)
+     * @param  object $institution institution (required)
      * @param  string $institution_id UUID institution_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -3942,7 +3978,7 @@ class ResourceApi
      *
      * Update a institution
      *
-     * @param  \com\hydrogen\nucleus\Model\Institution $institution institution (required)
+     * @param  object $institution institution (required)
      * @param  string $institution_id UUID institution_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3963,7 +3999,7 @@ class ResourceApi
      *
      * Update a institution
      *
-     * @param  \com\hydrogen\nucleus\Model\Institution $institution institution (required)
+     * @param  object $institution institution (required)
      * @param  string $institution_id UUID institution_id (required)
      *
      * @throws \InvalidArgumentException
@@ -4014,7 +4050,7 @@ class ResourceApi
     /**
      * Create request for operation 'updateInstitutionUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Institution $institution institution (required)
+     * @param  object $institution institution (required)
      * @param  string $institution_id UUID institution_id (required)
      *
      * @throws \InvalidArgumentException

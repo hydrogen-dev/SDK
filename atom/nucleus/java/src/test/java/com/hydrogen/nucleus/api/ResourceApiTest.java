@@ -13,6 +13,7 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.Country;
 import com.hydrogen.nucleus.model.Currency;
 import com.hydrogen.nucleus.model.FxRate;
@@ -22,14 +23,14 @@ import com.hydrogen.nucleus.model.MXMerchantRes;
 import com.hydrogen.nucleus.model.MerchantCategoryCode;
 import com.hydrogen.nucleus.model.PageInstitution;
 import com.hydrogen.nucleus.model.State;
-import com.hydrogen.nucleus.ApiException;
-
 import java.util.UUID;
 
 import com.hydrogen.nucleus.model.StatisticResourceVO;
 import org.junit.Test;
 import org.junit.Ignore;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -101,9 +102,11 @@ public class ResourceApiTest {
     @Test
     public void getAccountResultForMappingTest() throws ApiException {
         String filter = null;
+        UUID hydrogenAccountCategoryId = null;
+        Boolean matchPrimary = null;
         String tenantName = null;
         String vendorName = null;
-        List<Object> response = api.getAccountResultForMapping(filter, tenantName, vendorName);
+        List<Object> response = api.getAccountResultForMapping(filter, hydrogenAccountCategoryId, matchPrimary, tenantName, vendorName);
 
         // TODO: test validations
     }
@@ -268,9 +271,11 @@ public class ResourceApiTest {
     @Test
     public void getTransactionResultForMappingTest() throws ApiException {
         String filter = null;
+        UUID hydrogenTransactionCategoryId = null;
+        Boolean matchPrimary = null;
         String tenantName = null;
         String vendorName = null;
-        List<Object> response = api.getTransactionResultForMapping(filter, tenantName, vendorName);
+        List<Object> response = api.getTransactionResultForMapping(filter, hydrogenTransactionCategoryId, matchPrimary, tenantName, vendorName);
 
         // TODO: test validations
     }
@@ -285,7 +290,7 @@ public class ResourceApiTest {
      */
     @Test
     public void updateInstitutionUsingPutTest() throws ApiException {
-        Institution institution = null;
+        Object institution = null;
         UUID institutionId = null;
         Institution response = api.updateInstitutionUsingPut(institution, institutionId);
 

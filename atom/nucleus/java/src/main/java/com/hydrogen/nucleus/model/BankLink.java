@@ -14,11 +14,17 @@
 package com.hydrogen.nucleus.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import org.threeten.bp.LocalDate;
@@ -28,7 +34,7 @@ import org.threeten.bp.OffsetDateTime;
  * BankLink Object
  */
 @ApiModel(description = "BankLink Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-12T05:33:30.744Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-24T10:39:20.203Z")
 public class BankLink {
   @SerializedName("account_id")
   private UUID accountId = null;
@@ -47,6 +53,9 @@ public class BankLink {
 
   @SerializedName("bank_account_number")
   private String bankAccountNumber = null;
+
+  @SerializedName("business_id")
+  private UUID businessId = null;
 
   @SerializedName("client_id")
   private UUID clientId = null;
@@ -207,6 +216,24 @@ public class BankLink {
     this.bankAccountNumber = bankAccountNumber;
   }
 
+  public BankLink businessId(UUID businessId) {
+    this.businessId = businessId;
+    return this;
+  }
+
+   /**
+   * businessId
+   * @return businessId
+  **/
+  @ApiModelProperty(example = "1c28dade-8679-4df5-9b9d-c508d04fcb0c", value = "businessId")
+  public UUID getBusinessId() {
+    return businessId;
+  }
+
+  public void setBusinessId(UUID businessId) {
+    this.businessId = businessId;
+  }
+
   public BankLink clientId(UUID clientId) {
     this.clientId = clientId;
     return this;
@@ -225,6 +252,11 @@ public class BankLink {
     this.clientId = clientId;
   }
 
+  public BankLink createDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
+    return this;
+  }
+
    /**
    * Get createDate
    * @return createDate
@@ -232,6 +264,10 @@ public class BankLink {
   @ApiModelProperty(example = "2018-06-28T18:17:23.579+0000", value = "")
   public OffsetDateTime getCreateDate() {
     return createDate;
+  }
+
+  public void setCreateDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
   }
 
   public BankLink currencyCode(String currencyCode) {
@@ -252,6 +288,11 @@ public class BankLink {
     this.currencyCode = currencyCode;
   }
 
+  public BankLink id(UUID id) {
+    this.id = id;
+    return this;
+  }
+
    /**
    * Get id
    * @return id
@@ -259,6 +300,10 @@ public class BankLink {
   @ApiModelProperty(example = "000183ac-2288-4564-a76b-119f4694be98", value = "")
   public UUID getId() {
     return id;
+  }
+
+  public void setId(UUID id) {
+    this.id = id;
   }
 
   public BankLink institutionId(UUID institutionId) {
@@ -387,6 +432,19 @@ public class BankLink {
     this.mask = mask;
   }
 
+  public BankLink metadata(Map<String, String> metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+  public BankLink putMetadataItem(String key, String metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<String, String>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
    /**
    * Get metadata
    * @return metadata
@@ -394,6 +452,10 @@ public class BankLink {
   @ApiModelProperty(example = "{}", value = "")
   public Map<String, String> getMetadata() {
     return metadata;
+  }
+
+  public void setMetadata(Map<String, String> metadata) {
+    this.metadata = metadata;
   }
 
   public BankLink routing(String routing) {
@@ -432,6 +494,11 @@ public class BankLink {
     this.routingWire = routingWire;
   }
 
+  public BankLink secondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
+    return this;
+  }
+
    /**
    * Get secondaryId
    * @return secondaryId
@@ -439,6 +506,10 @@ public class BankLink {
   @ApiModelProperty(example = "7289243787238", value = "")
   public String getSecondaryId() {
     return secondaryId;
+  }
+
+  public void setSecondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
   }
 
   public BankLink type(String type) {
@@ -459,6 +530,11 @@ public class BankLink {
     this.type = type;
   }
 
+  public BankLink updateDate(OffsetDateTime updateDate) {
+    this.updateDate = updateDate;
+    return this;
+  }
+
    /**
    * Get updateDate
    * @return updateDate
@@ -468,9 +544,13 @@ public class BankLink {
     return updateDate;
   }
 
+  public void setUpdateDate(OffsetDateTime updateDate) {
+    this.updateDate = updateDate;
+  }
+
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -484,6 +564,7 @@ public class BankLink {
         Objects.equals(this.bankAccountHolder, bankLink.bankAccountHolder) &&
         Objects.equals(this.bankAccountName, bankLink.bankAccountName) &&
         Objects.equals(this.bankAccountNumber, bankLink.bankAccountNumber) &&
+        Objects.equals(this.businessId, bankLink.businessId) &&
         Objects.equals(this.clientId, bankLink.clientId) &&
         Objects.equals(this.createDate, bankLink.createDate) &&
         Objects.equals(this.currencyCode, bankLink.currencyCode) &&
@@ -505,7 +586,7 @@ public class BankLink {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, availableBalance, balance, bankAccountHolder, bankAccountName, bankAccountNumber, clientId, createDate, currencyCode, id, institutionId, institutionName, isActive, isDefault, isLinkVerified, linkVerifiedDate, mask, metadata, routing, routingWire, secondaryId, type, updateDate);
+    return Objects.hash(accountId, availableBalance, balance, bankAccountHolder, bankAccountName, bankAccountNumber, businessId, clientId, createDate, currencyCode, id, institutionId, institutionName, isActive, isDefault, isLinkVerified, linkVerifiedDate, mask, metadata, routing, routingWire, secondaryId, type, updateDate);
   }
 
 
@@ -520,6 +601,7 @@ public class BankLink {
     sb.append("    bankAccountHolder: ").append(toIndentedString(bankAccountHolder)).append("\n");
     sb.append("    bankAccountName: ").append(toIndentedString(bankAccountName)).append("\n");
     sb.append("    bankAccountNumber: ").append(toIndentedString(bankAccountNumber)).append("\n");
+    sb.append("    businessId: ").append(toIndentedString(businessId)).append("\n");
     sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
     sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
     sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
@@ -545,7 +627,7 @@ public class BankLink {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

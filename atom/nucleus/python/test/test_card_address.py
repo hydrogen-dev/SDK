@@ -32,7 +32,7 @@ class TestCardAddress(unittest.TestCase):
     def testCardAddress(self):
         """Test CardAddress"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.card_address.CardAddress()  # noqa: E501
+        # model = nucleus_api.models.card_address.CardAddress()  # noqa: E501
         pass
 
 

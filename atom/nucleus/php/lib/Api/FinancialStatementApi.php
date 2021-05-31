@@ -1186,7 +1186,7 @@ class FinancialStatementApi
      *
      * Update an financialStatement
      *
-     * @param  \com\hydrogen\nucleus\Model\FinancialStatement $financial_statement financialStatement (required)
+     * @param  object $financial_statement financialStatement (required)
      * @param  string $financial_statement_id UUID financialStatement_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -1204,7 +1204,7 @@ class FinancialStatementApi
      *
      * Update an financialStatement
      *
-     * @param  \com\hydrogen\nucleus\Model\FinancialStatement $financial_statement financialStatement (required)
+     * @param  object $financial_statement financialStatement (required)
      * @param  string $financial_statement_id UUID financialStatement_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -1280,7 +1280,7 @@ class FinancialStatementApi
      *
      * Update an financialStatement
      *
-     * @param  \com\hydrogen\nucleus\Model\FinancialStatement $financial_statement financialStatement (required)
+     * @param  object $financial_statement financialStatement (required)
      * @param  string $financial_statement_id UUID financialStatement_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1301,7 +1301,7 @@ class FinancialStatementApi
      *
      * Update an financialStatement
      *
-     * @param  \com\hydrogen\nucleus\Model\FinancialStatement $financial_statement financialStatement (required)
+     * @param  object $financial_statement financialStatement (required)
      * @param  string $financial_statement_id UUID financialStatement_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1352,7 +1352,7 @@ class FinancialStatementApi
     /**
      * Create request for operation 'updateFinancialStatementUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\FinancialStatement $financial_statement financialStatement (required)
+     * @param  object $financial_statement financialStatement (required)
      * @param  string $financial_statement_id UUID financialStatement_id (required)
      *
      * @throws \InvalidArgumentException

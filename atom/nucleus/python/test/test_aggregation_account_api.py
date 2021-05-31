@@ -155,6 +155,13 @@ class TestAggregationAccountApi(unittest.TestCase):
         """
         pass
 
+    def test_get_aggregation_account_overview_by_business_id_using_get(self):
+        """Test case for get_aggregation_account_overview_by_business_id_using_get
+
+        Retrieve an aggregation account aggregate data  # noqa: E501
+        """
+        pass
+
     def test_get_aggregation_account_overview_using_get(self):
         """Test case for get_aggregation_account_overview_using_get
 

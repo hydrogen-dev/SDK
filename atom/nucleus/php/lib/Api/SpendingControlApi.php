@@ -1168,7 +1168,7 @@ class SpendingControlApi
      *
      * Update a Spending Control
      *
-     * @param  \com\hydrogen\nucleus\Model\SpendingControl $spending_control spending_control (required)
+     * @param  object $spending_control spending_control (required)
      * @param  string $spending_control_id UUID spending_control_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -1186,7 +1186,7 @@ class SpendingControlApi
      *
      * Update a Spending Control
      *
-     * @param  \com\hydrogen\nucleus\Model\SpendingControl $spending_control spending_control (required)
+     * @param  object $spending_control spending_control (required)
      * @param  string $spending_control_id UUID spending_control_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -1262,7 +1262,7 @@ class SpendingControlApi
      *
      * Update a Spending Control
      *
-     * @param  \com\hydrogen\nucleus\Model\SpendingControl $spending_control spending_control (required)
+     * @param  object $spending_control spending_control (required)
      * @param  string $spending_control_id UUID spending_control_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1283,7 +1283,7 @@ class SpendingControlApi
      *
      * Update a Spending Control
      *
-     * @param  \com\hydrogen\nucleus\Model\SpendingControl $spending_control spending_control (required)
+     * @param  object $spending_control spending_control (required)
      * @param  string $spending_control_id UUID spending_control_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1334,7 +1334,7 @@ class SpendingControlApi
     /**
      * Create request for operation 'updateSpendingControlUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\SpendingControl $spending_control spending_control (required)
+     * @param  object $spending_control spending_control (required)
      * @param  string $spending_control_id UUID spending_control_id (required)
      *
      * @throws \InvalidArgumentException

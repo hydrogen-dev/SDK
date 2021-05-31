@@ -32,7 +32,7 @@ class TestEmployment(unittest.TestCase):
     def testEmployment(self):
         """Test Employment"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.employment.Employment()  # noqa: E501
+        # model = nucleus_api.models.employment.Employment()  # noqa: E501
         pass
 
 

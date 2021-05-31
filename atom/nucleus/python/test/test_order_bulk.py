@@ -32,7 +32,7 @@ class TestOrderBulk(unittest.TestCase):
     def testOrderBulk(self):
         """Test OrderBulk"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.order_bulk.OrderBulk()  # noqa: E501
+        # model = nucleus_api.models.order_bulk.OrderBulk()  # noqa: E501
         pass
 
 

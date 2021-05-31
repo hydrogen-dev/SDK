@@ -304,9 +304,6 @@ class FundingTransaction implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['account_id'] === null) {
-            $invalidProperties[] = "'account_id' can't be null";
-        }
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
         }

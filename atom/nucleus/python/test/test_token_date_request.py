@@ -32,7 +32,7 @@ class TestTokenDateRequest(unittest.TestCase):
     def testTokenDateRequest(self):
         """Test TokenDateRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.token_date_request.TokenDateRequest()  # noqa: E501
+        # model = nucleus_api.models.token_date_request.TokenDateRequest()  # noqa: E501
         pass
 
 

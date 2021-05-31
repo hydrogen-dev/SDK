@@ -32,7 +32,7 @@ class TestStatisticResourceVO(unittest.TestCase):
     def testStatisticResourceVO(self):
         """Test StatisticResourceVO"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.statistic_resource_vo.StatisticResourceVO()  # noqa: E501
+        # model = nucleus_api.models.statistic_resource_vo.StatisticResourceVO()  # noqa: E501
         pass
 
 

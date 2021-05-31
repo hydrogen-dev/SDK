@@ -119,6 +119,13 @@ class BankLinkTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "business_id"
+     */
+    public function testPropertyBusinessId()
+    {
+    }
+
+    /**
      * Test attribute "client_id"
      */
     public function testPropertyClientId()

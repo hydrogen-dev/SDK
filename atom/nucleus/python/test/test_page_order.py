@@ -32,7 +32,7 @@ class TestPageOrder(unittest.TestCase):
     def testPageOrder(self):
         """Test PageOrder"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_order.PageOrder()  # noqa: E501
+        # model = nucleus_api.models.page_order.PageOrder()  # noqa: E501
         pass
 
 

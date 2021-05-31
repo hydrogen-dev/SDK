@@ -13,6 +13,7 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.AggregationAccount;
 import com.hydrogen.nucleus.model.AggregationAccountBalance;
 import com.hydrogen.nucleus.model.AggregationAccountHolding;
@@ -21,13 +22,14 @@ import com.hydrogen.nucleus.model.PageAggregationAccount;
 import com.hydrogen.nucleus.model.PageAggregationAccountBalance;
 import com.hydrogen.nucleus.model.PageAggregationAccountHolding;
 import com.hydrogen.nucleus.model.PageAggregationAccountTransaction;
-import com.hydrogen.nucleus.ApiException;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for AggregationAccountApi
@@ -346,6 +348,23 @@ public class AggregationAccountApiTest {
     /**
      * Retrieve an aggregation account aggregate data
      *
+     * Retrieve the information for a specific aggregation account with aggregate data for a business.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getAggregationAccountOverviewByBusinessIdUsingGetTest() throws ApiException {
+        UUID businessId = null;
+        String currencyConversion = null;
+        Object response = api.getAggregationAccountOverviewByBusinessIdUsingGet(businessId, currencyConversion);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Retrieve an aggregation account aggregate data
+     *
      * Retrieve the information for a specific aggregation account with aggregate data for a client.
      *
      * @throws ApiException
@@ -424,7 +443,7 @@ public class AggregationAccountApiTest {
      */
     @Test
     public void updateAggregationAccountBalanceUsingPutTest() throws ApiException {
-        AggregationAccountBalance aggregationAccountBalance = null;
+        Object aggregationAccountBalance = null;
         UUID aggregationAccountBalanceId = null;
         AggregationAccountBalance response = api.updateAggregationAccountBalanceUsingPut(aggregationAccountBalance, aggregationAccountBalanceId);
 
@@ -441,7 +460,7 @@ public class AggregationAccountApiTest {
      */
     @Test
     public void updateAggregationAccountBulkUsingPutTest() throws ApiException {
-        List<AggregationAccount> aggregationAccountList = null;
+        List<Object> aggregationAccountList = null;
         List<AggregationAccount> response = api.updateAggregationAccountBulkUsingPut(aggregationAccountList);
 
         // TODO: test validations
@@ -457,7 +476,7 @@ public class AggregationAccountApiTest {
      */
     @Test
     public void updateAggregationAccountHoldingBulkUsingPutTest() throws ApiException {
-        List<AggregationAccountHolding> aggregationAccountHolding = null;
+        List<Object> aggregationAccountHolding = null;
         List<AggregationAccountHolding> response = api.updateAggregationAccountHoldingBulkUsingPut(aggregationAccountHolding);
 
         // TODO: test validations
@@ -473,7 +492,7 @@ public class AggregationAccountApiTest {
      */
     @Test
     public void updateAggregationAccountHoldingUsingPutTest() throws ApiException {
-        AggregationAccountHolding aggregationAccountHolding = null;
+        Object aggregationAccountHolding = null;
         UUID aggregationAccountHoldingId = null;
         AggregationAccountHolding response = api.updateAggregationAccountHoldingUsingPut(aggregationAccountHolding, aggregationAccountHoldingId);
 
@@ -490,7 +509,7 @@ public class AggregationAccountApiTest {
      */
     @Test
     public void updateAggregationAccountTransactionUsingPutTest() throws ApiException {
-        AggregationAccountTransaction aggregationAccountTransaction = null;
+        Object aggregationAccountTransaction = null;
         UUID aggregationAccountTransactionId = null;
         AggregationAccountTransaction response = api.updateAggregationAccountTransactionUsingPut(aggregationAccountTransaction, aggregationAccountTransactionId);
 
@@ -507,7 +526,7 @@ public class AggregationAccountApiTest {
      */
     @Test
     public void updateAggregationAccountUsingPutTest() throws ApiException {
-        AggregationAccount aggregationAccount = null;
+        Object aggregationAccount = null;
         UUID aggregationAccountId = null;
         AggregationAccount response = api.updateAggregationAccountUsingPut(aggregationAccount, aggregationAccountId);
 

@@ -32,7 +32,7 @@ class TestPageBankLink(unittest.TestCase):
     def testPageBankLink(self):
         """Test PageBankLink"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_bank_link.PageBankLink()  # noqa: E501
+        # model = nucleus_api.models.page_bank_link.PageBankLink()  # noqa: E501
         pass
 
 

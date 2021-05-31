@@ -32,7 +32,7 @@ class TestBudgetObject(unittest.TestCase):
     def testBudgetObject(self):
         """Test BudgetObject"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.budget_object.BudgetObject()  # noqa: E501
+        # model = nucleus_api.models.budget_object.BudgetObject()  # noqa: E501
         pass
 
 

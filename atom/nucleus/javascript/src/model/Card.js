@@ -49,11 +49,11 @@
    * @param cardIssuance {String} cardIssuance
    * @param cardName {String} cardName
    * @param cardType {String} cardType
-   * @param clientId {String} clientId
    * @param portfolioId {String} portfolioId
    */
-  var exports = function(cardHolderName, cardIssuance, cardName, cardType, clientId, portfolioId) {
+  var exports = function(cardHolderName, cardIssuance, cardName, cardType, portfolioId) {
     var _this = this;
+
 
 
     _this['card_holder_name'] = cardHolderName;
@@ -63,7 +63,7 @@
 
 
     _this['card_type'] = cardType;
-    _this['client_id'] = clientId;
+
 
 
 
@@ -99,6 +99,9 @@
 
       if (data.hasOwnProperty('address')) {
         obj['address'] = ApiClient.convertToType(data['address'], [CardAddress]);
+      }
+      if (data.hasOwnProperty('business_id')) {
+        obj['business_id'] = ApiClient.convertToType(data['business_id'], 'String');
       }
       if (data.hasOwnProperty('card_holder_name')) {
         obj['card_holder_name'] = ApiClient.convertToType(data['card_holder_name'], 'String');
@@ -192,6 +195,11 @@
    * @member {Array.<module:model/CardAddress>} address
    */
   exports.prototype['address'] = undefined;
+  /**
+   * businessId
+   * @member {String} business_id
+   */
+  exports.prototype['business_id'] = undefined;
   /**
    * cardHolderName
    * @member {String} card_holder_name

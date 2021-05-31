@@ -32,7 +32,7 @@ class TestInvoicePayment(unittest.TestCase):
     def testInvoicePayment(self):
         """Test InvoicePayment"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.invoice_payment.InvoicePayment()  # noqa: E501
+        # model = nucleus_api.models.invoice_payment.InvoicePayment()  # noqa: E501
         pass
 
 

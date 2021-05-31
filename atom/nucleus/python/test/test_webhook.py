@@ -32,7 +32,7 @@ class TestWebhook(unittest.TestCase):
     def testWebhook(self):
         """Test Webhook"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.webhook.Webhook()  # noqa: E501
+        # model = nucleus_api.models.webhook.Webhook()  # noqa: E501
         pass
 
 

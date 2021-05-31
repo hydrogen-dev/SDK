@@ -13,21 +13,23 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.AvailableDateDoubleVO;
 import com.hydrogen.nucleus.model.Goal;
 import com.hydrogen.nucleus.model.GoalTrack;
+import org.threeten.bp.LocalDate;
 import com.hydrogen.nucleus.model.PageGoal;
 import com.hydrogen.nucleus.model.PageGoalTrack;
 import com.hydrogen.nucleus.model.PagePortfolioTransaction;
 import com.hydrogen.nucleus.model.PortfolioHoldingAgg;
-import com.hydrogen.nucleus.ApiException;
-import org.threeten.bp.LocalDate;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for GoalApi
@@ -262,7 +264,7 @@ public class GoalApiTest {
      */
     @Test
     public void updateGoalTrackUsingPutTest() throws ApiException {
-        GoalTrack goalTrack = null;
+        Object goalTrack = null;
         UUID goalTrackId = null;
         GoalTrack response = api.updateGoalTrackUsingPut(goalTrack, goalTrackId);
 
@@ -279,7 +281,7 @@ public class GoalApiTest {
      */
     @Test
     public void updateGoalUsingPutTest() throws ApiException {
-        Goal goal = null;
+        Object goal = null;
         UUID goalId = null;
         Goal response = api.updateGoalUsingPut(goal, goalId);
 

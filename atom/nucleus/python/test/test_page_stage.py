@@ -32,7 +32,7 @@ class TestPageStage(unittest.TestCase):
     def testPageStage(self):
         """Test PageStage"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_stage.PageStage()  # noqa: E501
+        # model = nucleus_api.models.page_stage.PageStage()  # noqa: E501
         pass
 
 

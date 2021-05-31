@@ -317,7 +317,7 @@ class AggregationAccountTransaction(object):
         :param is_fee: The is_fee of this AggregationAccountTransaction.  # noqa: E501
         :type: str
         """
-        allowed_values = ["false", "true", "null"]  # noqa: E501
+        allowed_values = ["true", "false", "null"]  # noqa: E501
         if (self._configuration.client_side_validation and
                 is_fee not in allowed_values):
             raise ValueError(
@@ -366,7 +366,7 @@ class AggregationAccountTransaction(object):
         :param is_transfer: The is_transfer of this AggregationAccountTransaction.  # noqa: E501
         :type: str
         """
-        allowed_values = ["false", "true", "null"]  # noqa: E501
+        allowed_values = ["true", "false", "null"]  # noqa: E501
         if (self._configuration.client_side_validation and
                 is_transfer not in allowed_values):
             raise ValueError(

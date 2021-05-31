@@ -95,7 +95,7 @@ public class OverflowApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -217,7 +217,7 @@ public class OverflowApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -340,7 +340,7 @@ public class OverflowApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -472,7 +472,7 @@ public class OverflowApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -615,7 +615,7 @@ public class OverflowApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -745,7 +745,7 @@ public class OverflowApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -868,7 +868,7 @@ public class OverflowApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -963,7 +963,7 @@ public class OverflowApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateOverflowSettingsUsingPutCall(OverflowSettings overflowSettings, UUID overflowSettingsId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateOverflowSettingsUsingPutCall(Object overflowSettings, UUID overflowSettingsId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = overflowSettings;
 
         // create path and map variables
@@ -992,7 +992,7 @@ public class OverflowApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1006,7 +1006,7 @@ public class OverflowApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateOverflowSettingsUsingPutValidateBeforeCall(OverflowSettings overflowSettings, UUID overflowSettingsId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateOverflowSettingsUsingPutValidateBeforeCall(Object overflowSettings, UUID overflowSettingsId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'overflowSettings' is set
         if (overflowSettings == null) {
@@ -1032,7 +1032,7 @@ public class OverflowApi {
      * @return OverflowSettings
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public OverflowSettings updateOverflowSettingsUsingPut(OverflowSettings overflowSettings, UUID overflowSettingsId) throws ApiException {
+    public OverflowSettings updateOverflowSettingsUsingPut(Object overflowSettings, UUID overflowSettingsId) throws ApiException {
         ApiResponse<OverflowSettings> resp = updateOverflowSettingsUsingPutWithHttpInfo(overflowSettings, overflowSettingsId);
         return resp.getData();
     }
@@ -1045,7 +1045,7 @@ public class OverflowApi {
      * @return ApiResponse&lt;OverflowSettings&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<OverflowSettings> updateOverflowSettingsUsingPutWithHttpInfo(OverflowSettings overflowSettings, UUID overflowSettingsId) throws ApiException {
+    public ApiResponse<OverflowSettings> updateOverflowSettingsUsingPutWithHttpInfo(Object overflowSettings, UUID overflowSettingsId) throws ApiException {
         com.squareup.okhttp.Call call = updateOverflowSettingsUsingPutValidateBeforeCall(overflowSettings, overflowSettingsId, null, null);
         Type localVarReturnType = new TypeToken<OverflowSettings>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1060,7 +1060,7 @@ public class OverflowApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateOverflowSettingsUsingPutAsync(OverflowSettings overflowSettings, UUID overflowSettingsId, final ApiCallback<OverflowSettings> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateOverflowSettingsUsingPutAsync(Object overflowSettings, UUID overflowSettingsId, final ApiCallback<OverflowSettings> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

@@ -75,6 +75,8 @@
 
 
 
+
+
     _this['model_id'] = modelId;
     _this['portfolio_id'] = portfolioId;
 
@@ -129,6 +131,9 @@
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
       }
+      if (data.hasOwnProperty('funding_id')) {
+        obj['funding_id'] = ApiClient.convertToType(data['funding_id'], 'String');
+      }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
       }
@@ -161,6 +166,9 @@
       }
       if (data.hasOwnProperty('metadata')) {
         obj['metadata'] = ApiClient.convertToType(data['metadata'], {'String': 'String'});
+      }
+      if (data.hasOwnProperty('mid')) {
+        obj['mid'] = ApiClient.convertToType(data['mid'], 'String');
       }
       if (data.hasOwnProperty('model_id')) {
         obj['model_id'] = ApiClient.convertToType(data['model_id'], 'String');
@@ -248,6 +256,11 @@
    */
   exports.prototype['description'] = undefined;
   /**
+   * fundingId
+   * @member {String} funding_id
+   */
+  exports.prototype['funding_id'] = undefined;
+  /**
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
@@ -301,6 +314,11 @@
    * @member {Object.<String, String>} metadata
    */
   exports.prototype['metadata'] = undefined;
+  /**
+   * mid
+   * @member {String} mid
+   */
+  exports.prototype['mid'] = undefined;
   /**
    * modelId
    * @member {String} model_id

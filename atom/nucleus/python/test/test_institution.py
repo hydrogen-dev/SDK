@@ -32,7 +32,7 @@ class TestInstitution(unittest.TestCase):
     def testInstitution(self):
         """Test Institution"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.institution.Institution()  # noqa: E501
+        # model = nucleus_api.models.institution.Institution()  # noqa: E501
         pass
 
 

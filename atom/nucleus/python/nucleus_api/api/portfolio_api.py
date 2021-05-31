@@ -1197,6 +1197,119 @@ class PortfolioApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_all_portfolio_transaction_by_post_using_post(self, **kwargs):  # noqa: E501
+        """getAllPortfolioTransactionByPost  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_portfolio_transaction_by_post_using_post(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param bool ascending: ascending
+        :param str currency_conversion: currency_conversion
+        :param str filter: filter
+        :param str order_by: order_by
+        :param int page: page
+        :param int size: size
+        :return: PagePortfolioTransaction
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_all_portfolio_transaction_by_post_using_post_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_all_portfolio_transaction_by_post_using_post_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_all_portfolio_transaction_by_post_using_post_with_http_info(self, **kwargs):  # noqa: E501
+        """getAllPortfolioTransactionByPost  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_all_portfolio_transaction_by_post_using_post_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param bool ascending: ascending
+        :param str currency_conversion: currency_conversion
+        :param str filter: filter
+        :param str order_by: order_by
+        :param int page: page
+        :param int size: size
+        :return: PagePortfolioTransaction
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['ascending', 'currency_conversion', 'filter', 'order_by', 'page', 'size']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_all_portfolio_transaction_by_post_using_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'ascending' in params:
+            query_params.append(('ascending', params['ascending']))  # noqa: E501
+        if 'currency_conversion' in params:
+            query_params.append(('currency_conversion', params['currency_conversion']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+        if 'order_by' in params:
+            query_params.append(('order_by', params['order_by']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'size' in params:
+            query_params.append(('size', params['size']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['*/*'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['oauth2']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/nucleus/v1/portfolio_transaction_by_post', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='PagePortfolioTransaction',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_portfolio_aggregated_data_using_get(self, portfolio_id, **kwargs):  # noqa: E501
         """Retrieve an portfolio aggregate data  # noqa: E501
 
@@ -2558,7 +2671,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PortfolioAssetSizeLog portfolio_asset_size: portfolio_asset_size (required)
+        :param object portfolio_asset_size: portfolio_asset_size (required)
         :param str portfolio_asset_size_id: UUID portfolio_asset_size_id (required)
         :return: PortfolioAssetSizeLog
                  If the method is called asynchronously,
@@ -2581,7 +2694,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PortfolioAssetSizeLog portfolio_asset_size: portfolio_asset_size (required)
+        :param object portfolio_asset_size: portfolio_asset_size (required)
         :param str portfolio_asset_size_id: UUID portfolio_asset_size_id (required)
         :return: PortfolioAssetSizeLog
                  If the method is called asynchronously,
@@ -2665,7 +2778,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PortfolioComment portfolio_comment: portfolio_comment (required)
+        :param object portfolio_comment: portfolio_comment (required)
         :param str portfolio_comment_id: UUID portfolio_comment_id (required)
         :return: PortfolioComment
                  If the method is called asynchronously,
@@ -2688,7 +2801,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PortfolioComment portfolio_comment: portfolio_comment (required)
+        :param object portfolio_comment: portfolio_comment (required)
         :param str portfolio_comment_id: UUID portfolio_comment_id (required)
         :return: PortfolioComment
                  If the method is called asynchronously,
@@ -2772,7 +2885,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PortfolioGoal portfolio_goal: portfolio_goal (required)
+        :param object portfolio_goal: portfolio_goal (required)
         :param str portfolio_goal_id: UUID portfolio_goal_id (required)
         :return: PortfolioGoal
                  If the method is called asynchronously,
@@ -2795,7 +2908,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PortfolioGoal portfolio_goal: portfolio_goal (required)
+        :param object portfolio_goal: portfolio_goal (required)
         :param str portfolio_goal_id: UUID portfolio_goal_id (required)
         :return: PortfolioGoal
                  If the method is called asynchronously,
@@ -2879,7 +2992,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PortfolioHoldingLog portfolio_holding: portfolio_holding (required)
+        :param object portfolio_holding: portfolio_holding (required)
         :param str portfolio_holding_id: UUID portfolio_holding_id (required)
         :return: PortfolioHoldingLog
                  If the method is called asynchronously,
@@ -2902,7 +3015,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PortfolioHoldingLog portfolio_holding: portfolio_holding (required)
+        :param object portfolio_holding: portfolio_holding (required)
         :param str portfolio_holding_id: UUID portfolio_holding_id (required)
         :return: PortfolioHoldingLog
                  If the method is called asynchronously,
@@ -2986,7 +3099,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PortfolioTransaction portfolio_transaction: portfolio_transaction (required)
+        :param object portfolio_transaction: portfolio_transaction (required)
         :param str portfolio_transaction_id: UUID portfolio_transaction_id (required)
         :return: PortfolioTransaction
                  If the method is called asynchronously,
@@ -3009,7 +3122,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param PortfolioTransaction portfolio_transaction: portfolio_transaction (required)
+        :param object portfolio_transaction: portfolio_transaction (required)
         :param str portfolio_transaction_id: UUID portfolio_transaction_id (required)
         :return: PortfolioTransaction
                  If the method is called asynchronously,
@@ -3093,7 +3206,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Portfolio portfolio: portfolio (required)
+        :param object portfolio: portfolio (required)
         :param str portfolio_id: UUID portfolio_id (required)
         :return: Portfolio
                  If the method is called asynchronously,
@@ -3116,7 +3229,7 @@ class PortfolioApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Portfolio portfolio: portfolio (required)
+        :param object portfolio: portfolio (required)
         :param str portfolio_id: UUID portfolio_id (required)
         :return: Portfolio
                  If the method is called asynchronously,

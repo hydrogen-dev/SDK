@@ -1109,7 +1109,7 @@ class CardApi
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \com\hydrogen\nucleus\Model\PageClientCardVO_
+     * @return \com\hydrogen\nucleus\Model\PageClientBusinessCardVO_
      */
     public function getAllClientCardsUsingGet($ascending = 'false', $currency_conversion = null, $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
@@ -1131,11 +1131,11 @@ class CardApi
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \com\hydrogen\nucleus\Model\PageClientCardVO_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \com\hydrogen\nucleus\Model\PageClientBusinessCardVO_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllClientCardsUsingGetWithHttpInfo($ascending = 'false', $currency_conversion = null, $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\nucleus\Model\PageClientCardVO_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageClientBusinessCardVO_';
         $request = $this->getAllClientCardsUsingGetRequest($ascending, $currency_conversion, $filter, $order_by, $page, $size);
 
         try {
@@ -1187,7 +1187,7 @@ class CardApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\com\hydrogen\nucleus\Model\PageClientCardVO_',
+                        '\com\hydrogen\nucleus\Model\PageClientBusinessCardVO_',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1239,7 +1239,7 @@ class CardApi
      */
     public function getAllClientCardsUsingGetAsyncWithHttpInfo($ascending = 'false', $currency_conversion = null, $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
-        $returnType = '\com\hydrogen\nucleus\Model\PageClientCardVO_';
+        $returnType = '\com\hydrogen\nucleus\Model\PageClientBusinessCardVO_';
         $request = $this->getAllClientCardsUsingGetRequest($ascending, $currency_conversion, $filter, $order_by, $page, $size);
 
         return $this->client
@@ -2938,6 +2938,351 @@ class CardApi
     }
 
     /**
+     * Operation getCardTransactionAggAllUsingGet1
+     *
+     * List all card transactions
+     *
+     * @param  string $card_id card_id (required)
+     * @param  bool $ascending ascending (optional, default to false)
+     * @param  string $currency_conversion currency_conversion (optional)
+     * @param  \DateTime $end_date end_date (optional, default to null)
+     * @param  string $filter filter (optional)
+     * @param  string $order_by order_by (optional, default to update_date)
+     * @param  int $page page (optional, default to 0)
+     * @param  int $size size (optional, default to 25)
+     * @param  \DateTime $start_date start_date (optional, default to null)
+     *
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \com\hydrogen\nucleus\Model\PagePortfolioTransaction_
+     */
+    public function getCardTransactionAggAllUsingGet1($card_id, $ascending = 'false', $currency_conversion = null, $end_date = 'null', $filter = null, $order_by = 'update_date', $page = '0', $size = '25', $start_date = 'null')
+    {
+        list($response) = $this->getCardTransactionAggAllUsingGet1WithHttpInfo($card_id, $ascending, $currency_conversion, $end_date, $filter, $order_by, $page, $size, $start_date);
+        return $response;
+    }
+
+    /**
+     * Operation getCardTransactionAggAllUsingGet1WithHttpInfo
+     *
+     * List all card transactions
+     *
+     * @param  string $card_id card_id (required)
+     * @param  bool $ascending ascending (optional, default to false)
+     * @param  string $currency_conversion currency_conversion (optional)
+     * @param  \DateTime $end_date end_date (optional, default to null)
+     * @param  string $filter filter (optional)
+     * @param  string $order_by order_by (optional, default to update_date)
+     * @param  int $page page (optional, default to 0)
+     * @param  int $size size (optional, default to 25)
+     * @param  \DateTime $start_date start_date (optional, default to null)
+     *
+     * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \com\hydrogen\nucleus\Model\PagePortfolioTransaction_, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getCardTransactionAggAllUsingGet1WithHttpInfo($card_id, $ascending = 'false', $currency_conversion = null, $end_date = 'null', $filter = null, $order_by = 'update_date', $page = '0', $size = '25', $start_date = 'null')
+    {
+        $returnType = '\com\hydrogen\nucleus\Model\PagePortfolioTransaction_';
+        $request = $this->getCardTransactionAggAllUsingGet1Request($card_id, $ascending, $currency_conversion, $end_date, $filter, $order_by, $page, $size, $start_date);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\com\hydrogen\nucleus\Model\PagePortfolioTransaction_',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getCardTransactionAggAllUsingGet1Async
+     *
+     * List all card transactions
+     *
+     * @param  string $card_id card_id (required)
+     * @param  bool $ascending ascending (optional, default to false)
+     * @param  string $currency_conversion currency_conversion (optional)
+     * @param  \DateTime $end_date end_date (optional, default to null)
+     * @param  string $filter filter (optional)
+     * @param  string $order_by order_by (optional, default to update_date)
+     * @param  int $page page (optional, default to 0)
+     * @param  int $size size (optional, default to 25)
+     * @param  \DateTime $start_date start_date (optional, default to null)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCardTransactionAggAllUsingGet1Async($card_id, $ascending = 'false', $currency_conversion = null, $end_date = 'null', $filter = null, $order_by = 'update_date', $page = '0', $size = '25', $start_date = 'null')
+    {
+        return $this->getCardTransactionAggAllUsingGet1AsyncWithHttpInfo($card_id, $ascending, $currency_conversion, $end_date, $filter, $order_by, $page, $size, $start_date)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getCardTransactionAggAllUsingGet1AsyncWithHttpInfo
+     *
+     * List all card transactions
+     *
+     * @param  string $card_id card_id (required)
+     * @param  bool $ascending ascending (optional, default to false)
+     * @param  string $currency_conversion currency_conversion (optional)
+     * @param  \DateTime $end_date end_date (optional, default to null)
+     * @param  string $filter filter (optional)
+     * @param  string $order_by order_by (optional, default to update_date)
+     * @param  int $page page (optional, default to 0)
+     * @param  int $size size (optional, default to 25)
+     * @param  \DateTime $start_date start_date (optional, default to null)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCardTransactionAggAllUsingGet1AsyncWithHttpInfo($card_id, $ascending = 'false', $currency_conversion = null, $end_date = 'null', $filter = null, $order_by = 'update_date', $page = '0', $size = '25', $start_date = 'null')
+    {
+        $returnType = '\com\hydrogen\nucleus\Model\PagePortfolioTransaction_';
+        $request = $this->getCardTransactionAggAllUsingGet1Request($card_id, $ascending, $currency_conversion, $end_date, $filter, $order_by, $page, $size, $start_date);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getCardTransactionAggAllUsingGet1'
+     *
+     * @param  string $card_id card_id (required)
+     * @param  bool $ascending ascending (optional, default to false)
+     * @param  string $currency_conversion currency_conversion (optional)
+     * @param  \DateTime $end_date end_date (optional, default to null)
+     * @param  string $filter filter (optional)
+     * @param  string $order_by order_by (optional, default to update_date)
+     * @param  int $page page (optional, default to 0)
+     * @param  int $size size (optional, default to 25)
+     * @param  \DateTime $start_date start_date (optional, default to null)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getCardTransactionAggAllUsingGet1Request($card_id, $ascending = 'false', $currency_conversion = null, $end_date = 'null', $filter = null, $order_by = 'update_date', $page = '0', $size = '25', $start_date = 'null')
+    {
+        // verify the required parameter 'card_id' is set
+        if ($card_id === null || (is_array($card_id) && count($card_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $card_id when calling getCardTransactionAggAllUsingGet1'
+            );
+        }
+
+        $resourcePath = '/nucleus/v1/card/{card_id}/transaction';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($ascending !== null) {
+            $queryParams['ascending'] = ObjectSerializer::toQueryValue($ascending);
+        }
+        // query params
+        if ($currency_conversion !== null) {
+            $queryParams['currency_conversion'] = ObjectSerializer::toQueryValue($currency_conversion);
+        }
+        // query params
+        if ($end_date !== null) {
+            $queryParams['end_date'] = ObjectSerializer::toQueryValue($end_date);
+        }
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
+        // query params
+        if ($order_by !== null) {
+            $queryParams['order_by'] = ObjectSerializer::toQueryValue($order_by);
+        }
+        // query params
+        if ($page !== null) {
+            $queryParams['page'] = ObjectSerializer::toQueryValue($page);
+        }
+        // query params
+        if ($size !== null) {
+            $queryParams['size'] = ObjectSerializer::toQueryValue($size);
+        }
+        // query params
+        if ($start_date !== null) {
+            $queryParams['start_date'] = ObjectSerializer::toQueryValue($start_date);
+        }
+
+        // path params
+        if ($card_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'card_id' . '}',
+                ObjectSerializer::toPathValue($card_id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['*/*']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['*/*'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            
+            if($headers['Content-Type'] === 'application/json') {
+                // \stdClass has no __toString(), so we should encode it manually
+                if ($httpBody instanceof \stdClass) {
+                    $httpBody = \GuzzleHttp\json_encode($httpBody);
+                }
+                // array has no __toString(), so we should encode it manually
+                if(is_array($httpBody)) {
+                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
+                }
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires OAuth (access token)
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getCardUsingGet
      *
      * Retrieve a card request
@@ -3215,7 +3560,7 @@ class CardApi
      *
      * Update an cardProgram
      *
-     * @param  \com\hydrogen\nucleus\Model\CardProgram $card_program card_program (required)
+     * @param  object $card_program card_program (required)
      * @param  string $card_program_id UUID card_program_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -3233,7 +3578,7 @@ class CardApi
      *
      * Update an cardProgram
      *
-     * @param  \com\hydrogen\nucleus\Model\CardProgram $card_program card_program (required)
+     * @param  object $card_program card_program (required)
      * @param  string $card_program_id UUID card_program_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -3309,7 +3654,7 @@ class CardApi
      *
      * Update an cardProgram
      *
-     * @param  \com\hydrogen\nucleus\Model\CardProgram $card_program card_program (required)
+     * @param  object $card_program card_program (required)
      * @param  string $card_program_id UUID card_program_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3330,7 +3675,7 @@ class CardApi
      *
      * Update an cardProgram
      *
-     * @param  \com\hydrogen\nucleus\Model\CardProgram $card_program card_program (required)
+     * @param  object $card_program card_program (required)
      * @param  string $card_program_id UUID card_program_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3381,7 +3726,7 @@ class CardApi
     /**
      * Create request for operation 'updateCardProgramUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\CardProgram $card_program card_program (required)
+     * @param  object $card_program card_program (required)
      * @param  string $card_program_id UUID card_program_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3502,7 +3847,7 @@ class CardApi
      *
      * Update a card request
      *
-     * @param  \com\hydrogen\nucleus\Model\Card $card card (required)
+     * @param  object $card card (required)
      * @param  string $card_id UUID card_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -3520,7 +3865,7 @@ class CardApi
      *
      * Update a card request
      *
-     * @param  \com\hydrogen\nucleus\Model\Card $card card (required)
+     * @param  object $card card (required)
      * @param  string $card_id UUID card_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -3596,7 +3941,7 @@ class CardApi
      *
      * Update a card request
      *
-     * @param  \com\hydrogen\nucleus\Model\Card $card card (required)
+     * @param  object $card card (required)
      * @param  string $card_id UUID card_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3617,7 +3962,7 @@ class CardApi
      *
      * Update a card request
      *
-     * @param  \com\hydrogen\nucleus\Model\Card $card card (required)
+     * @param  object $card card (required)
      * @param  string $card_id UUID card_id (required)
      *
      * @throws \InvalidArgumentException
@@ -3668,7 +4013,7 @@ class CardApi
     /**
      * Create request for operation 'updateCardUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Card $card card (required)
+     * @param  object $card card (required)
      * @param  string $card_id UUID card_id (required)
      *
      * @throws \InvalidArgumentException

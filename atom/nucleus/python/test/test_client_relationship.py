@@ -32,7 +32,7 @@ class TestClientRelationship(unittest.TestCase):
     def testClientRelationship(self):
         """Test ClientRelationship"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.client_relationship.ClientRelationship()  # noqa: E501
+        # model = nucleus_api.models.client_relationship.ClientRelationship()  # noqa: E501
         pass
 
 

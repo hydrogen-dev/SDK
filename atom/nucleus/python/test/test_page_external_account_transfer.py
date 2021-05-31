@@ -32,7 +32,7 @@ class TestPageExternalAccountTransfer(unittest.TestCase):
     def testPageExternalAccountTransfer(self):
         """Test PageExternalAccountTransfer"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_external_account_transfer.PageExternalAccountTransfer()  # noqa: E501
+        # model = nucleus_api.models.page_external_account_transfer.PageExternalAccountTransfer()  # noqa: E501
         pass
 
 

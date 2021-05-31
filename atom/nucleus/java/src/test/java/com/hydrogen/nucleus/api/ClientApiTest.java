@@ -13,25 +13,26 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.AvailableDateDoubleVO;
 import com.hydrogen.nucleus.model.Client;
 import com.hydrogen.nucleus.model.ClientResponse;
 import com.hydrogen.nucleus.model.ClientStatus;
+import org.threeten.bp.LocalDate;
 import com.hydrogen.nucleus.model.PageClient;
 import com.hydrogen.nucleus.model.PageClientResponse;
 import com.hydrogen.nucleus.model.PageClientStatus;
 import com.hydrogen.nucleus.model.PagePortfolioTransaction;
 import com.hydrogen.nucleus.model.PortfolioHoldingAgg;
-import com.hydrogen.nucleus.model.VClientGoalViewData;
-import com.hydrogen.nucleus.ApiException;
-import org.threeten.bp.LocalDate;
-
 import java.util.UUID;
-
+import com.hydrogen.nucleus.model.VClientGoalViewData;
 import org.junit.Test;
 import org.junit.Ignore;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for ClientApi
@@ -379,7 +380,7 @@ public class ClientApiTest {
      */
     @Test
     public void updateClientResponseUsingPutTest() throws ApiException {
-        ClientResponse clientResponse = null;
+        Object clientResponse = null;
         UUID clientResponseId = null;
         ClientResponse response = api.updateClientResponseUsingPut(clientResponse, clientResponseId);
 
@@ -396,7 +397,7 @@ public class ClientApiTest {
      */
     @Test
     public void updateClientStatusUsingPutTest() throws ApiException {
-        ClientStatus clientStatus = null;
+        Object clientStatus = null;
         UUID clientStatusId = null;
         ClientStatus response = api.updateClientStatusUsingPut(clientStatus, clientStatusId);
 
@@ -413,7 +414,7 @@ public class ClientApiTest {
      */
     @Test
     public void updateClientUsingPutTest() throws ApiException {
-        Client client = null;
+        Object client = null;
         UUID clientId = null;
         Client response = api.updateClientUsingPut(client, clientId);
 

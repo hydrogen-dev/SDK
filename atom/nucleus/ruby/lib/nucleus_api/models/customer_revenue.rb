@@ -18,13 +18,13 @@ module NucleusApi
     # accounting_method
     attr_accessor :accounting_method
 
+    # contactId
+    attr_accessor :contact_id
+
     attr_accessor :create_date
 
     # currency_code
     attr_accessor :currency_code
-
-    # customerId
-    attr_accessor :customer_id
 
     # date
     attr_accessor :date
@@ -45,9 +45,9 @@ module NucleusApi
     def self.attribute_map
       {
         :'accounting_method' => :'accounting_method',
+        :'contact_id' => :'contact_id',
         :'create_date' => :'create_date',
         :'currency_code' => :'currency_code',
-        :'customer_id' => :'customer_id',
         :'date' => :'date',
         :'id' => :'id',
         :'metadata' => :'metadata',
@@ -61,9 +61,9 @@ module NucleusApi
     def self.swagger_types
       {
         :'accounting_method' => :'String',
+        :'contact_id' => :'String',
         :'create_date' => :'DateTime',
         :'currency_code' => :'String',
-        :'customer_id' => :'String',
         :'date' => :'Date',
         :'id' => :'String',
         :'metadata' => :'Hash<String, String>',
@@ -85,16 +85,16 @@ module NucleusApi
         self.accounting_method = attributes[:'accounting_method']
       end
 
+      if attributes.has_key?(:'contact_id')
+        self.contact_id = attributes[:'contact_id']
+      end
+
       if attributes.has_key?(:'create_date')
         self.create_date = attributes[:'create_date']
       end
 
       if attributes.has_key?(:'currency_code')
         self.currency_code = attributes[:'currency_code']
-      end
-
-      if attributes.has_key?(:'customer_id')
-        self.customer_id = attributes[:'customer_id']
       end
 
       if attributes.has_key?(:'date')
@@ -132,12 +132,12 @@ module NucleusApi
         invalid_properties.push('invalid value for "accounting_method", accounting_method cannot be nil.')
       end
 
-      if @currency_code.nil?
-        invalid_properties.push('invalid value for "currency_code", currency_code cannot be nil.')
+      if @contact_id.nil?
+        invalid_properties.push('invalid value for "contact_id", contact_id cannot be nil.')
       end
 
-      if @customer_id.nil?
-        invalid_properties.push('invalid value for "customer_id", customer_id cannot be nil.')
+      if @currency_code.nil?
+        invalid_properties.push('invalid value for "currency_code", currency_code cannot be nil.')
       end
 
       if @date.nil?
@@ -155,8 +155,8 @@ module NucleusApi
     # @return true if the model is valid
     def valid?
       return false if @accounting_method.nil?
+      return false if @contact_id.nil?
       return false if @currency_code.nil?
-      return false if @customer_id.nil?
       return false if @date.nil?
       return false if @revenue.nil?
       true
@@ -168,9 +168,9 @@ module NucleusApi
       return true if self.equal?(o)
       self.class == o.class &&
           accounting_method == o.accounting_method &&
+          contact_id == o.contact_id &&
           create_date == o.create_date &&
           currency_code == o.currency_code &&
-          customer_id == o.customer_id &&
           date == o.date &&
           id == o.id &&
           metadata == o.metadata &&
@@ -188,7 +188,7 @@ module NucleusApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [accounting_method, create_date, currency_code, customer_id, date, id, metadata, revenue, secondary_id, update_date].hash
+      [accounting_method, contact_id, create_date, currency_code, date, id, metadata, revenue, secondary_id, update_date].hash
     end
 
     # Builds the object from hash
@@ -250,7 +250,9 @@ module NucleusApi
         temp_model.build_from_hash(value)
       end
     end
-# Returns the string representation of the object
+
+
+    # Returns the string representation of the object
     # @return [String] String presentation of the object
     def to_s
       to_hash.to_s
@@ -272,7 +274,6 @@ module NucleusApi
       end
       hash
     end
-
 
     # Outputs non-array value in the form of hash
     # For object, use to_hash. Otherwise, just return the value

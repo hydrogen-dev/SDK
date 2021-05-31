@@ -92,7 +92,7 @@ public class WebhookApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -215,7 +215,7 @@ public class WebhookApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -347,7 +347,7 @@ public class WebhookApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -477,7 +477,7 @@ public class WebhookApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -572,7 +572,7 @@ public class WebhookApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateWebhookUsingPutCall(Webhook webhook, UUID webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateWebhookUsingPutCall(Object webhook, UUID webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = webhook;
 
         // create path and map variables
@@ -601,7 +601,7 @@ public class WebhookApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -615,7 +615,7 @@ public class WebhookApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateWebhookUsingPutValidateBeforeCall(Webhook webhook, UUID webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateWebhookUsingPutValidateBeforeCall(Object webhook, UUID webhookId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'webhook' is set
         if (webhook == null) {
@@ -641,7 +641,7 @@ public class WebhookApi {
      * @return Webhook
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Webhook updateWebhookUsingPut(Webhook webhook, UUID webhookId) throws ApiException {
+    public Webhook updateWebhookUsingPut(Object webhook, UUID webhookId) throws ApiException {
         ApiResponse<Webhook> resp = updateWebhookUsingPutWithHttpInfo(webhook, webhookId);
         return resp.getData();
     }
@@ -654,7 +654,7 @@ public class WebhookApi {
      * @return ApiResponse&lt;Webhook&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Webhook> updateWebhookUsingPutWithHttpInfo(Webhook webhook, UUID webhookId) throws ApiException {
+    public ApiResponse<Webhook> updateWebhookUsingPutWithHttpInfo(Object webhook, UUID webhookId) throws ApiException {
         com.squareup.okhttp.Call call = updateWebhookUsingPutValidateBeforeCall(webhook, webhookId, null, null);
         Type localVarReturnType = new TypeToken<Webhook>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -669,7 +669,7 @@ public class WebhookApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateWebhookUsingPutAsync(Webhook webhook, UUID webhookId, final ApiCallback<Webhook> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateWebhookUsingPutAsync(Object webhook, UUID webhookId, final ApiCallback<Webhook> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

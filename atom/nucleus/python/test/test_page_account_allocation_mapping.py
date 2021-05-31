@@ -32,7 +32,7 @@ class TestPageAccountAllocationMapping(unittest.TestCase):
     def testPageAccountAllocationMapping(self):
         """Test PageAccountAllocationMapping"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_account_allocation_mapping.PageAccountAllocationMapping()  # noqa: E501
+        # model = nucleus_api.models.page_account_allocation_mapping.PageAccountAllocationMapping()  # noqa: E501
         pass
 
 

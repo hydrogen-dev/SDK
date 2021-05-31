@@ -101,7 +101,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -223,7 +223,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -346,7 +346,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -431,6 +431,8 @@ public class ResourceApi {
     /**
      * Build call for getAccountResultForMapping
      * @param filter filter (optional)
+     * @param hydrogenAccountCategoryId hydrogen_account_category_id (optional)
+     * @param matchPrimary match_primary (optional, default to false)
      * @param tenantName tenant_name (optional)
      * @param vendorName vendor_name (optional)
      * @param progressListener Progress listener
@@ -438,7 +440,7 @@ public class ResourceApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getAccountResultForMappingCall(String filter, String tenantName, String vendorName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAccountResultForMappingCall(String filter, UUID hydrogenAccountCategoryId, Boolean matchPrimary, String tenantName, String vendorName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -448,6 +450,10 @@ public class ResourceApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         if (filter != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+        if (hydrogenAccountCategoryId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("hydrogen_account_category_id", hydrogenAccountCategoryId));
+        if (matchPrimary != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("match_primary", matchPrimary));
         if (tenantName != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("tenant_name", tenantName));
         if (vendorName != null)
@@ -472,7 +478,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -486,10 +492,10 @@ public class ResourceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAccountResultForMappingValidateBeforeCall(String filter, String tenantName, String vendorName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAccountResultForMappingValidateBeforeCall(String filter, UUID hydrogenAccountCategoryId, Boolean matchPrimary, String tenantName, String vendorName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getAccountResultForMappingCall(filter, tenantName, vendorName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAccountResultForMappingCall(filter, hydrogenAccountCategoryId, matchPrimary, tenantName, vendorName, progressListener, progressRequestListener);
         return call;
 
     }
@@ -498,13 +504,15 @@ public class ResourceApi {
      * Get all account category mapping
      * Get all account category mapping
      * @param filter filter (optional)
+     * @param hydrogenAccountCategoryId hydrogen_account_category_id (optional)
+     * @param matchPrimary match_primary (optional, default to false)
      * @param tenantName tenant_name (optional)
      * @param vendorName vendor_name (optional)
      * @return List&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<Object> getAccountResultForMapping(String filter, String tenantName, String vendorName) throws ApiException {
-        ApiResponse<List<Object>> resp = getAccountResultForMappingWithHttpInfo(filter, tenantName, vendorName);
+    public List<Object> getAccountResultForMapping(String filter, UUID hydrogenAccountCategoryId, Boolean matchPrimary, String tenantName, String vendorName) throws ApiException {
+        ApiResponse<List<Object>> resp = getAccountResultForMappingWithHttpInfo(filter, hydrogenAccountCategoryId, matchPrimary, tenantName, vendorName);
         return resp.getData();
     }
 
@@ -512,13 +520,15 @@ public class ResourceApi {
      * Get all account category mapping
      * Get all account category mapping
      * @param filter filter (optional)
+     * @param hydrogenAccountCategoryId hydrogen_account_category_id (optional)
+     * @param matchPrimary match_primary (optional, default to false)
      * @param tenantName tenant_name (optional)
      * @param vendorName vendor_name (optional)
      * @return ApiResponse&lt;List&lt;Object&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<Object>> getAccountResultForMappingWithHttpInfo(String filter, String tenantName, String vendorName) throws ApiException {
-        com.squareup.okhttp.Call call = getAccountResultForMappingValidateBeforeCall(filter, tenantName, vendorName, null, null);
+    public ApiResponse<List<Object>> getAccountResultForMappingWithHttpInfo(String filter, UUID hydrogenAccountCategoryId, Boolean matchPrimary, String tenantName, String vendorName) throws ApiException {
+        com.squareup.okhttp.Call call = getAccountResultForMappingValidateBeforeCall(filter, hydrogenAccountCategoryId, matchPrimary, tenantName, vendorName, null, null);
         Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -527,13 +537,15 @@ public class ResourceApi {
      * Get all account category mapping (asynchronously)
      * Get all account category mapping
      * @param filter filter (optional)
+     * @param hydrogenAccountCategoryId hydrogen_account_category_id (optional)
+     * @param matchPrimary match_primary (optional, default to false)
      * @param tenantName tenant_name (optional)
      * @param vendorName vendor_name (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAccountResultForMappingAsync(String filter, String tenantName, String vendorName, final ApiCallback<List<Object>> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAccountResultForMappingAsync(String filter, UUID hydrogenAccountCategoryId, Boolean matchPrimary, String tenantName, String vendorName, final ApiCallback<List<Object>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -554,7 +566,7 @@ public class ResourceApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getAccountResultForMappingValidateBeforeCall(filter, tenantName, vendorName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAccountResultForMappingValidateBeforeCall(filter, hydrogenAccountCategoryId, matchPrimary, tenantName, vendorName, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -594,7 +606,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -707,7 +719,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -823,7 +835,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -942,7 +954,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1058,7 +1070,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1174,7 +1186,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1305,7 +1317,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1435,7 +1447,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1571,7 +1583,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1667,6 +1679,8 @@ public class ResourceApi {
     /**
      * Build call for getTransactionResultForMapping
      * @param filter filter (optional)
+     * @param hydrogenTransactionCategoryId hydrogen_transaction_category_id (optional)
+     * @param matchPrimary match_primary (optional, default to false)
      * @param tenantName tenant_name (optional)
      * @param vendorName vendor_name (optional)
      * @param progressListener Progress listener
@@ -1674,7 +1688,7 @@ public class ResourceApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getTransactionResultForMappingCall(String filter, String tenantName, String vendorName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getTransactionResultForMappingCall(String filter, UUID hydrogenTransactionCategoryId, Boolean matchPrimary, String tenantName, String vendorName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1684,6 +1698,10 @@ public class ResourceApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         if (filter != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("filter", filter));
+        if (hydrogenTransactionCategoryId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("hydrogen_transaction_category_id", hydrogenTransactionCategoryId));
+        if (matchPrimary != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("match_primary", matchPrimary));
         if (tenantName != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("tenant_name", tenantName));
         if (vendorName != null)
@@ -1708,7 +1726,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1722,10 +1740,10 @@ public class ResourceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getTransactionResultForMappingValidateBeforeCall(String filter, String tenantName, String vendorName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getTransactionResultForMappingValidateBeforeCall(String filter, UUID hydrogenTransactionCategoryId, Boolean matchPrimary, String tenantName, String vendorName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getTransactionResultForMappingCall(filter, tenantName, vendorName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTransactionResultForMappingCall(filter, hydrogenTransactionCategoryId, matchPrimary, tenantName, vendorName, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1734,13 +1752,15 @@ public class ResourceApi {
      * Get all transaction category mapping
      * Get all transaction category mapping
      * @param filter filter (optional)
+     * @param hydrogenTransactionCategoryId hydrogen_transaction_category_id (optional)
+     * @param matchPrimary match_primary (optional, default to false)
      * @param tenantName tenant_name (optional)
      * @param vendorName vendor_name (optional)
      * @return List&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<Object> getTransactionResultForMapping(String filter, String tenantName, String vendorName) throws ApiException {
-        ApiResponse<List<Object>> resp = getTransactionResultForMappingWithHttpInfo(filter, tenantName, vendorName);
+    public List<Object> getTransactionResultForMapping(String filter, UUID hydrogenTransactionCategoryId, Boolean matchPrimary, String tenantName, String vendorName) throws ApiException {
+        ApiResponse<List<Object>> resp = getTransactionResultForMappingWithHttpInfo(filter, hydrogenTransactionCategoryId, matchPrimary, tenantName, vendorName);
         return resp.getData();
     }
 
@@ -1748,13 +1768,15 @@ public class ResourceApi {
      * Get all transaction category mapping
      * Get all transaction category mapping
      * @param filter filter (optional)
+     * @param hydrogenTransactionCategoryId hydrogen_transaction_category_id (optional)
+     * @param matchPrimary match_primary (optional, default to false)
      * @param tenantName tenant_name (optional)
      * @param vendorName vendor_name (optional)
      * @return ApiResponse&lt;List&lt;Object&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<Object>> getTransactionResultForMappingWithHttpInfo(String filter, String tenantName, String vendorName) throws ApiException {
-        com.squareup.okhttp.Call call = getTransactionResultForMappingValidateBeforeCall(filter, tenantName, vendorName, null, null);
+    public ApiResponse<List<Object>> getTransactionResultForMappingWithHttpInfo(String filter, UUID hydrogenTransactionCategoryId, Boolean matchPrimary, String tenantName, String vendorName) throws ApiException {
+        com.squareup.okhttp.Call call = getTransactionResultForMappingValidateBeforeCall(filter, hydrogenTransactionCategoryId, matchPrimary, tenantName, vendorName, null, null);
         Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1763,13 +1785,15 @@ public class ResourceApi {
      * Get all transaction category mapping (asynchronously)
      * Get all transaction category mapping
      * @param filter filter (optional)
+     * @param hydrogenTransactionCategoryId hydrogen_transaction_category_id (optional)
+     * @param matchPrimary match_primary (optional, default to false)
      * @param tenantName tenant_name (optional)
      * @param vendorName vendor_name (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getTransactionResultForMappingAsync(String filter, String tenantName, String vendorName, final ApiCallback<List<Object>> callback) throws ApiException {
+    public com.squareup.okhttp.Call getTransactionResultForMappingAsync(String filter, UUID hydrogenTransactionCategoryId, Boolean matchPrimary, String tenantName, String vendorName, final ApiCallback<List<Object>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1790,7 +1814,7 @@ public class ResourceApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getTransactionResultForMappingValidateBeforeCall(filter, tenantName, vendorName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getTransactionResultForMappingValidateBeforeCall(filter, hydrogenTransactionCategoryId, matchPrimary, tenantName, vendorName, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1804,7 +1828,7 @@ public class ResourceApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateInstitutionUsingPutCall(Institution institution, UUID institutionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateInstitutionUsingPutCall(Object institution, UUID institutionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = institution;
 
         // create path and map variables
@@ -1833,7 +1857,7 @@ public class ResourceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1847,7 +1871,7 @@ public class ResourceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateInstitutionUsingPutValidateBeforeCall(Institution institution, UUID institutionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateInstitutionUsingPutValidateBeforeCall(Object institution, UUID institutionId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'institution' is set
         if (institution == null) {
@@ -1873,7 +1897,7 @@ public class ResourceApi {
      * @return Institution
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Institution updateInstitutionUsingPut(Institution institution, UUID institutionId) throws ApiException {
+    public Institution updateInstitutionUsingPut(Object institution, UUID institutionId) throws ApiException {
         ApiResponse<Institution> resp = updateInstitutionUsingPutWithHttpInfo(institution, institutionId);
         return resp.getData();
     }
@@ -1886,7 +1910,7 @@ public class ResourceApi {
      * @return ApiResponse&lt;Institution&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Institution> updateInstitutionUsingPutWithHttpInfo(Institution institution, UUID institutionId) throws ApiException {
+    public ApiResponse<Institution> updateInstitutionUsingPutWithHttpInfo(Object institution, UUID institutionId) throws ApiException {
         com.squareup.okhttp.Call call = updateInstitutionUsingPutValidateBeforeCall(institution, institutionId, null, null);
         Type localVarReturnType = new TypeToken<Institution>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1901,7 +1925,7 @@ public class ResourceApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateInstitutionUsingPutAsync(Institution institution, UUID institutionId, final ApiCallback<Institution> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateInstitutionUsingPutAsync(Object institution, UUID institutionId, final ApiCallback<Institution> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

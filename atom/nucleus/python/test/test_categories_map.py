@@ -32,7 +32,7 @@ class TestCategoriesMap(unittest.TestCase):
     def testCategoriesMap(self):
         """Test CategoriesMap"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.categories_map.CategoriesMap()  # noqa: E501
+        # model = nucleus_api.models.categories_map.CategoriesMap()  # noqa: E501
         pass
 
 

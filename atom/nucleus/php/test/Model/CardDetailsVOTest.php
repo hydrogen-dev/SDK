@@ -98,6 +98,13 @@ class CardDetailsVOTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "card_issuance"
+     */
+    public function testPropertyCardIssuance()
+    {
+    }
+
+    /**
      * Test attribute "card_name"
      */
     public function testPropertyCardName()

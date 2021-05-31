@@ -32,7 +32,7 @@ class TestMember(unittest.TestCase):
     def testMember(self):
         """Test Member"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.member.Member()  # noqa: E501
+        # model = nucleus_api.models.member.Member()  # noqa: E501
         pass
 
 

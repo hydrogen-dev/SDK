@@ -32,7 +32,7 @@ class TestAggregationAccountTransaction(unittest.TestCase):
     def testAggregationAccountTransaction(self):
         """Test AggregationAccountTransaction"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.aggregation_account_transaction.AggregationAccountTransaction()  # noqa: E501
+        # model = nucleus_api.models.aggregation_account_transaction.AggregationAccountTransaction()  # noqa: E501
         pass
 
 

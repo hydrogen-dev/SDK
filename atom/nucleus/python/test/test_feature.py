@@ -32,7 +32,7 @@ class TestFeature(unittest.TestCase):
     def testFeature(self):
         """Test Feature"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.feature.Feature()  # noqa: E501
+        # model = nucleus_api.models.feature.Feature()  # noqa: E501
         pass
 
 

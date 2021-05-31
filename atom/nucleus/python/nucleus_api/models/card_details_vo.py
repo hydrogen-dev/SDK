@@ -36,6 +36,7 @@ class CardDetailsVO(object):
         'balance': 'CardBalanceVO',
         'card_holder_name': 'str',
         'card_id': 'str',
+        'card_issuance': 'str',
         'card_name': 'str',
         'card_network': 'str',
         'card_type': 'str',
@@ -49,6 +50,7 @@ class CardDetailsVO(object):
         'balance': 'balance',
         'card_holder_name': 'card_holder_name',
         'card_id': 'card_id',
+        'card_issuance': 'card_issuance',
         'card_name': 'card_name',
         'card_network': 'card_network',
         'card_type': 'card_type',
@@ -58,7 +60,7 @@ class CardDetailsVO(object):
         'status': 'status'
     }
 
-    def __init__(self, balance=None, card_holder_name=None, card_id=None, card_name=None, card_network=None, card_type=None, expiry_date=None, mask=None, prepaid_amount=None, status=None, _configuration=None):  # noqa: E501
+    def __init__(self, balance=None, card_holder_name=None, card_id=None, card_issuance=None, card_name=None, card_network=None, card_type=None, expiry_date=None, mask=None, prepaid_amount=None, status=None, _configuration=None):  # noqa: E501
         """CardDetailsVO - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -67,6 +69,7 @@ class CardDetailsVO(object):
         self._balance = None
         self._card_holder_name = None
         self._card_id = None
+        self._card_issuance = None
         self._card_name = None
         self._card_network = None
         self._card_type = None
@@ -82,6 +85,8 @@ class CardDetailsVO(object):
             self.card_holder_name = card_holder_name
         if card_id is not None:
             self.card_id = card_id
+        if card_issuance is not None:
+            self.card_issuance = card_issuance
         if card_name is not None:
             self.card_name = card_name
         if card_network is not None:
@@ -165,6 +170,29 @@ class CardDetailsVO(object):
         """
 
         self._card_id = card_id
+
+    @property
+    def card_issuance(self):
+        """Gets the card_issuance of this CardDetailsVO.  # noqa: E501
+
+        cardIssuance  # noqa: E501
+
+        :return: The card_issuance of this CardDetailsVO.  # noqa: E501
+        :rtype: str
+        """
+        return self._card_issuance
+
+    @card_issuance.setter
+    def card_issuance(self, card_issuance):
+        """Sets the card_issuance of this CardDetailsVO.
+
+        cardIssuance  # noqa: E501
+
+        :param card_issuance: The card_issuance of this CardDetailsVO.  # noqa: E501
+        :type: str
+        """
+
+        self._card_issuance = card_issuance
 
     @property
     def card_name(self):

@@ -32,7 +32,7 @@ class TestPageSecurityPrice(unittest.TestCase):
     def testPageSecurityPrice(self):
         """Test PageSecurityPrice"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_security_price.PageSecurityPrice()  # noqa: E501
+        # model = nucleus_api.models.page_security_price.PageSecurityPrice()  # noqa: E501
         pass
 
 

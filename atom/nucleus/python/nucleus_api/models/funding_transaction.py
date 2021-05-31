@@ -106,7 +106,8 @@ class FundingTransaction(object):
         self._update_date = None
         self.discriminator = None
 
-        self.account_id = account_id
+        if account_id is not None:
+            self.account_id = account_id
         self.amount = amount
         if comments is not None:
             self.comments = comments
@@ -162,8 +163,6 @@ class FundingTransaction(object):
         :param account_id: The account_id of this FundingTransaction.  # noqa: E501
         :type: str
         """
-        if self._configuration.client_side_validation and account_id is None:
-            raise ValueError("Invalid value for `account_id`, must not be `None`")  # noqa: E501
 
         self._account_id = account_id
 

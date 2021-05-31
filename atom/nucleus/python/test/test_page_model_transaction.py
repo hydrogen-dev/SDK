@@ -32,7 +32,7 @@ class TestPageModelTransaction(unittest.TestCase):
     def testPageModelTransaction(self):
         """Test PageModelTransaction"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_model_transaction.PageModelTransaction()  # noqa: E501
+        # model = nucleus_api.models.page_model_transaction.PageModelTransaction()  # noqa: E501
         pass
 
 

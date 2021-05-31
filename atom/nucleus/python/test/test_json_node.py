@@ -32,7 +32,7 @@ class TestJsonNode(unittest.TestCase):
     def testJsonNode(self):
         """Test JsonNode"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.json_node.JsonNode()  # noqa: E501
+        # model = nucleus_api.models.json_node.JsonNode()  # noqa: E501
         pass
 
 

@@ -7331,7 +7331,7 @@ class OrderApi
      *
      * Update an order status
      *
-     * @param  \com\hydrogen\nucleus\Model\OrderStatus $order_status order_status (required)
+     * @param  object $order_status order_status (required)
      * @param  string $order_status_id UUID order_status_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -7349,7 +7349,7 @@ class OrderApi
      *
      * Update an order status
      *
-     * @param  \com\hydrogen\nucleus\Model\OrderStatus $order_status order_status (required)
+     * @param  object $order_status order_status (required)
      * @param  string $order_status_id UUID order_status_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -7425,7 +7425,7 @@ class OrderApi
      *
      * Update an order status
      *
-     * @param  \com\hydrogen\nucleus\Model\OrderStatus $order_status order_status (required)
+     * @param  object $order_status order_status (required)
      * @param  string $order_status_id UUID order_status_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7446,7 +7446,7 @@ class OrderApi
      *
      * Update an order status
      *
-     * @param  \com\hydrogen\nucleus\Model\OrderStatus $order_status order_status (required)
+     * @param  object $order_status order_status (required)
      * @param  string $order_status_id UUID order_status_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7497,7 +7497,7 @@ class OrderApi
     /**
      * Create request for operation 'updateOrderStatusUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\OrderStatus $order_status order_status (required)
+     * @param  object $order_status order_status (required)
      * @param  string $order_status_id UUID order_status_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7618,7 +7618,7 @@ class OrderApi
      *
      * Update an order tracking record
      *
-     * @param  \com\hydrogen\nucleus\Model\OrderTrack $order_track order_track (required)
+     * @param  object $order_track order_track (required)
      * @param  string $order_track_id UUID order_track_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -7636,7 +7636,7 @@ class OrderApi
      *
      * Update an order tracking record
      *
-     * @param  \com\hydrogen\nucleus\Model\OrderTrack $order_track order_track (required)
+     * @param  object $order_track order_track (required)
      * @param  string $order_track_id UUID order_track_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -7712,7 +7712,7 @@ class OrderApi
      *
      * Update an order tracking record
      *
-     * @param  \com\hydrogen\nucleus\Model\OrderTrack $order_track order_track (required)
+     * @param  object $order_track order_track (required)
      * @param  string $order_track_id UUID order_track_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7733,7 +7733,7 @@ class OrderApi
      *
      * Update an order tracking record
      *
-     * @param  \com\hydrogen\nucleus\Model\OrderTrack $order_track order_track (required)
+     * @param  object $order_track order_track (required)
      * @param  string $order_track_id UUID order_track_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7784,7 +7784,7 @@ class OrderApi
     /**
      * Create request for operation 'updateOrderTrackUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\OrderTrack $order_track order_track (required)
+     * @param  object $order_track order_track (required)
      * @param  string $order_track_id UUID order_track_id (required)
      *
      * @throws \InvalidArgumentException
@@ -7905,7 +7905,7 @@ class OrderApi
      *
      * Update an order record
      *
-     * @param  \com\hydrogen\nucleus\Model\Order $order order (required)
+     * @param  object $order order (required)
      * @param  string $order_id UUID order_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -7923,7 +7923,7 @@ class OrderApi
      *
      * Update an order record
      *
-     * @param  \com\hydrogen\nucleus\Model\Order $order order (required)
+     * @param  object $order order (required)
      * @param  string $order_id UUID order_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -7999,7 +7999,7 @@ class OrderApi
      *
      * Update an order record
      *
-     * @param  \com\hydrogen\nucleus\Model\Order $order order (required)
+     * @param  object $order order (required)
      * @param  string $order_id UUID order_id (required)
      *
      * @throws \InvalidArgumentException
@@ -8020,7 +8020,7 @@ class OrderApi
      *
      * Update an order record
      *
-     * @param  \com\hydrogen\nucleus\Model\Order $order order (required)
+     * @param  object $order order (required)
      * @param  string $order_id UUID order_id (required)
      *
      * @throws \InvalidArgumentException
@@ -8071,7 +8071,7 @@ class OrderApi
     /**
      * Create request for operation 'updateOrderUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Order $order order (required)
+     * @param  object $order order (required)
      * @param  string $order_id UUID order_id (required)
      *
      * @throws \InvalidArgumentException

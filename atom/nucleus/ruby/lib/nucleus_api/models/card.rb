@@ -17,6 +17,9 @@ module NucleusApi
   class Card
     attr_accessor :address
 
+    # businessId
+    attr_accessor :business_id
+
     # cardHolderName
     attr_accessor :card_holder_name
 
@@ -100,6 +103,7 @@ module NucleusApi
     def self.attribute_map
       {
         :'address' => :'address',
+        :'business_id' => :'business_id',
         :'card_holder_name' => :'card_holder_name',
         :'card_image' => :'card_image',
         :'card_issuance' => :'card_issuance',
@@ -135,6 +139,7 @@ module NucleusApi
     def self.swagger_types
       {
         :'address' => :'Array<CardAddress>',
+        :'business_id' => :'String',
         :'card_holder_name' => :'String',
         :'card_image' => :'String',
         :'card_issuance' => :'String',
@@ -178,6 +183,10 @@ module NucleusApi
         if (value = attributes[:'address']).is_a?(Array)
           self.address = value
         end
+      end
+
+      if attributes.has_key?(:'business_id')
+        self.business_id = attributes[:'business_id']
       end
 
       if attributes.has_key?(:'card_holder_name')
@@ -315,10 +324,6 @@ module NucleusApi
         invalid_properties.push('invalid value for "card_type", card_type cannot be nil.')
       end
 
-      if @client_id.nil?
-        invalid_properties.push('invalid value for "client_id", client_id cannot be nil.')
-      end
-
       if @portfolio_id.nil?
         invalid_properties.push('invalid value for "portfolio_id", portfolio_id cannot be nil.')
       end
@@ -333,7 +338,6 @@ module NucleusApi
       return false if @card_issuance.nil?
       return false if @card_name.nil?
       return false if @card_type.nil?
-      return false if @client_id.nil?
       return false if @portfolio_id.nil?
       true
     end
@@ -344,6 +348,7 @@ module NucleusApi
       return true if self.equal?(o)
       self.class == o.class &&
           address == o.address &&
+          business_id == o.business_id &&
           card_holder_name == o.card_holder_name &&
           card_image == o.card_image &&
           card_issuance == o.card_issuance &&
@@ -383,7 +388,7 @@ module NucleusApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [address, card_holder_name, card_image, card_issuance, card_name, card_network, card_program_id, card_type, client_id, create_date, credit_limit, currency_code, expiry_date, fulfillment, id, institution_id, institution_name, is_active, is_pin_set, is_primary, is_reloadable, mask, metadata, phone_number, portfolio_id, prepaid_amount, secondary_id, status, update_date].hash
+      [address, business_id, card_holder_name, card_image, card_issuance, card_name, card_network, card_program_id, card_type, client_id, create_date, credit_limit, currency_code, expiry_date, fulfillment, id, institution_id, institution_name, is_active, is_pin_set, is_primary, is_reloadable, mask, metadata, phone_number, portfolio_id, prepaid_amount, secondary_id, status, update_date].hash
     end
 
     # Builds the object from hash
@@ -445,7 +450,9 @@ module NucleusApi
         temp_model.build_from_hash(value)
       end
     end
-# Returns the string representation of the object
+
+
+    # Returns the string representation of the object
     # @return [String] String presentation of the object
     def to_s
       to_hash.to_s
@@ -467,7 +474,6 @@ module NucleusApi
       end
       hash
     end
-
 
     # Outputs non-array value in the form of hash
     # For object, use to_hash. Otherwise, just return the value

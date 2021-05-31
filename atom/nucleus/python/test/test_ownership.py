@@ -32,7 +32,7 @@ class TestOwnership(unittest.TestCase):
     def testOwnership(self):
         """Test Ownership"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.ownership.Ownership()  # noqa: E501
+        # model = nucleus_api.models.ownership.Ownership()  # noqa: E501
         pass
 
 

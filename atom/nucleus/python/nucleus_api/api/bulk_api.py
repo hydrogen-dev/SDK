@@ -348,7 +348,7 @@ class BulkApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param JsonNode data: data (required)
+        :param object data: data (required)
         :param str entity_uri: UUID entity_uri (required)
         :return: BulkTransaction
                  If the method is called asynchronously,
@@ -371,7 +371,7 @@ class BulkApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param JsonNode data: data (required)
+        :param object data: data (required)
         :param str entity_uri: UUID entity_uri (required)
         :return: BulkTransaction
                  If the method is called asynchronously,

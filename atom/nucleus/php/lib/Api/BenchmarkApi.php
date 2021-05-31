@@ -268,7 +268,7 @@ class BenchmarkApi
             );
         }
 
-        $resourcePath = '/nucleus/v1/benchmark';
+        $resourcePath = '//nucleus/v1nucleus/v1/benchmark';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -786,7 +786,7 @@ class BenchmarkApi
     protected function getBenchmarkAllUsingGetRequest($ascending = 'false', $filter = null, $order_by = 'update_date', $page = '0', $size = '25')
     {
 
-        $resourcePath = '/nucleus/v1/benchmark';
+        $resourcePath = '//nucleus/v1nucleus/v1/benchmark';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1468,7 +1468,7 @@ class BenchmarkApi
      *
      * Update a benchmark
      *
-     * @param  \com\hydrogen\nucleus\Model\Benchmark $benchmark benchmark (required)
+     * @param  object $benchmark benchmark (required)
      * @param  string $benchmark_id UUID benchmark_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -1486,7 +1486,7 @@ class BenchmarkApi
      *
      * Update a benchmark
      *
-     * @param  \com\hydrogen\nucleus\Model\Benchmark $benchmark benchmark (required)
+     * @param  object $benchmark benchmark (required)
      * @param  string $benchmark_id UUID benchmark_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -1562,7 +1562,7 @@ class BenchmarkApi
      *
      * Update a benchmark
      *
-     * @param  \com\hydrogen\nucleus\Model\Benchmark $benchmark benchmark (required)
+     * @param  object $benchmark benchmark (required)
      * @param  string $benchmark_id UUID benchmark_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1583,7 +1583,7 @@ class BenchmarkApi
      *
      * Update a benchmark
      *
-     * @param  \com\hydrogen\nucleus\Model\Benchmark $benchmark benchmark (required)
+     * @param  object $benchmark benchmark (required)
      * @param  string $benchmark_id UUID benchmark_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1634,7 +1634,7 @@ class BenchmarkApi
     /**
      * Create request for operation 'updateBenchmarkUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Benchmark $benchmark benchmark (required)
+     * @param  object $benchmark benchmark (required)
      * @param  string $benchmark_id UUID benchmark_id (required)
      *
      * @throws \InvalidArgumentException

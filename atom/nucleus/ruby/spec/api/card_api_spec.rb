@@ -90,7 +90,7 @@ describe 'CardApi' do
   # @option opts [String] :order_by order_by
   # @option opts [Integer] :page page
   # @option opts [Integer] :size size
-  # @return [PageClientCardVO]
+  # @return [PageClientBusinessCardVO]
   describe 'get_all_client_cards_using_get test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -173,6 +173,26 @@ describe 'CardApi' do
   # @option opts [Date] :start_date start date
   # @return [PagePortfolioTransaction]
   describe 'get_card_transaction_agg_all_using_get test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for get_card_transaction_agg_all_using_get1
+  # List all card transactions
+  # Get the information for all transactions for an card.
+  # @param card_id card_id
+  # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :ascending ascending
+  # @option opts [String] :currency_conversion currency_conversion
+  # @option opts [DateTime] :end_date end_date
+  # @option opts [String] :filter filter
+  # @option opts [String] :order_by order_by
+  # @option opts [Integer] :page page
+  # @option opts [Integer] :size size
+  # @option opts [DateTime] :start_date start_date
+  # @return [PagePortfolioTransaction]
+  describe 'get_card_transaction_agg_all_using_get1 test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

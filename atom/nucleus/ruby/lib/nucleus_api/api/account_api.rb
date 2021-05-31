@@ -183,26 +183,26 @@ module NucleusApi
     end
     # Create an account
     # Create an account under a client.
-    # @param client_account_request clientAccountRequest
+    # @param account account
     # @param [Hash] opts the optional parameters
     # @return [Account]
-    def create_account_using_post(client_account_request, opts = {})
-      data, _status_code, _headers = create_account_using_post_with_http_info(client_account_request, opts)
+    def create_account_using_post(account, opts = {})
+      data, _status_code, _headers = create_account_using_post_with_http_info(account, opts)
       data
     end
 
     # Create an account
     # Create an account under a client.
-    # @param client_account_request clientAccountRequest
+    # @param account account
     # @param [Hash] opts the optional parameters
     # @return [Array<(Account, Fixnum, Hash)>] Account data, response status code and response headers
-    def create_account_using_post_with_http_info(client_account_request, opts = {})
+    def create_account_using_post_with_http_info(account, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: AccountApi.create_account_using_post ...'
       end
-      # verify the required parameter 'client_account_request' is set
-      if @api_client.config.client_side_validation && client_account_request.nil?
-        fail ArgumentError, "Missing the required parameter 'client_account_request' when calling AccountApi.create_account_using_post"
+      # verify the required parameter 'account' is set
+      if @api_client.config.client_side_validation && account.nil?
+        fail ArgumentError, "Missing the required parameter 'account' when calling AccountApi.create_account_using_post"
       end
       # resource path
       local_var_path = '/nucleus/v1/account'
@@ -221,7 +221,7 @@ module NucleusApi
       form_params = {}
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(client_account_request)
+      post_body = @api_client.object_to_http_body(account)
       auth_names = ['oauth2']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
         :header_params => header_params,
@@ -1455,7 +1455,7 @@ module NucleusApi
     # Update the information for an account-allocation mapping.
     # @param account_allocation_id UUID account_allocation_id
     # @param [Hash] opts the optional parameters
-    # @option opts [AccountAllocationMapping] :account_allocation_mapping account_allocation_mapping
+    # @option opts [Object] :account_allocation_mapping account_allocation_mapping
     # @return [AccountAllocationMapping]
     def update_account_allocation_mapping_using_put(account_allocation_id, opts = {})
       data, _status_code, _headers = update_account_allocation_mapping_using_put_with_http_info(account_allocation_id, opts)
@@ -1466,7 +1466,7 @@ module NucleusApi
     # Update the information for an account-allocation mapping.
     # @param account_allocation_id UUID account_allocation_id
     # @param [Hash] opts the optional parameters
-    # @option opts [AccountAllocationMapping] :account_allocation_mapping account_allocation_mapping
+    # @option opts [Object] :account_allocation_mapping account_allocation_mapping
     # @return [Array<(AccountAllocationMapping, Fixnum, Hash)>] AccountAllocationMapping data, response status code and response headers
     def update_account_allocation_mapping_using_put_with_http_info(account_allocation_id, opts = {})
       if @api_client.config.debugging

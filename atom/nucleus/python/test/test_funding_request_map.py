@@ -32,7 +32,7 @@ class TestFundingRequestMap(unittest.TestCase):
     def testFundingRequestMap(self):
         """Test FundingRequestMap"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.funding_request_map.FundingRequestMap()  # noqa: E501
+        # model = nucleus_api.models.funding_request_map.FundingRequestMap()  # noqa: E501
         pass
 
 

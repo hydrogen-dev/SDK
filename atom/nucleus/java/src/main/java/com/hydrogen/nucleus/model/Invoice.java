@@ -14,12 +14,18 @@
 package com.hydrogen.nucleus.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
+import com.hydrogen.nucleus.model.LineItems;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -30,7 +36,7 @@ import org.threeten.bp.OffsetDateTime;
  * Invoice Object
  */
 @ApiModel(description = "Invoice Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-12T05:33:30.744Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-24T10:39:20.203Z")
 public class Invoice {
   @SerializedName("business_id")
   private UUID businessId = null;
@@ -167,6 +173,11 @@ public class Invoice {
     this.contactId = contactId;
   }
 
+  public Invoice createDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
+    return this;
+  }
+
    /**
    * Get createDate
    * @return createDate
@@ -174,6 +185,10 @@ public class Invoice {
   @ApiModelProperty(example = "2018-06-28T18:17:23.579+0000", value = "")
   public OffsetDateTime getCreateDate() {
     return createDate;
+  }
+
+  public void setCreateDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
   }
 
   public Invoice currencyCode(String currencyCode) {
@@ -266,6 +281,11 @@ public class Invoice {
     this.dueDate = dueDate;
   }
 
+  public Invoice id(UUID id) {
+    this.id = id;
+    return this;
+  }
+
    /**
    * Get id
    * @return id
@@ -273,6 +293,10 @@ public class Invoice {
   @ApiModelProperty(example = "000183ac-2288-4564-a76b-119f4694be98", value = "")
   public UUID getId() {
     return id;
+  }
+
+  public void setId(UUID id) {
+    this.id = id;
   }
 
   public Invoice invoiceDate(LocalDate invoiceDate) {
@@ -391,6 +415,19 @@ public class Invoice {
     this.lineItems = lineItems;
   }
 
+  public Invoice metadata(Map<String, String> metadata) {
+    this.metadata = metadata;
+    return this;
+  }
+
+  public Invoice putMetadataItem(String key, String metadataItem) {
+    if (this.metadata == null) {
+      this.metadata = new HashMap<String, String>();
+    }
+    this.metadata.put(key, metadataItem);
+    return this;
+  }
+
    /**
    * Get metadata
    * @return metadata
@@ -398,6 +435,10 @@ public class Invoice {
   @ApiModelProperty(example = "{}", value = "")
   public Map<String, String> getMetadata() {
     return metadata;
+  }
+
+  public void setMetadata(Map<String, String> metadata) {
+    this.metadata = metadata;
   }
 
   public Invoice paymentInstructions(String paymentInstructions) {
@@ -436,6 +477,11 @@ public class Invoice {
     this.paymentTerms = paymentTerms;
   }
 
+  public Invoice secondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
+    return this;
+  }
+
    /**
    * Get secondaryId
    * @return secondaryId
@@ -443,6 +489,10 @@ public class Invoice {
   @ApiModelProperty(example = "7289243787238", value = "")
   public String getSecondaryId() {
     return secondaryId;
+  }
+
+  public void setSecondaryId(String secondaryId) {
+    this.secondaryId = secondaryId;
   }
 
   public Invoice status(String status) {
@@ -553,6 +603,11 @@ public class Invoice {
     this.totalTax = totalTax;
   }
 
+  public Invoice updateDate(OffsetDateTime updateDate) {
+    this.updateDate = updateDate;
+    return this;
+  }
+
    /**
    * Get updateDate
    * @return updateDate
@@ -562,9 +617,13 @@ public class Invoice {
     return updateDate;
   }
 
+  public void setUpdateDate(OffsetDateTime updateDate) {
+    this.updateDate = updateDate;
+  }
+
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
@@ -647,7 +706,7 @@ public class Invoice {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

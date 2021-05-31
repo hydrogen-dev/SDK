@@ -94,7 +94,7 @@ public class InvoiceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -216,7 +216,7 @@ public class InvoiceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -339,7 +339,7 @@ public class InvoiceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -458,7 +458,7 @@ public class InvoiceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -593,7 +593,7 @@ public class InvoiceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -742,7 +742,7 @@ public class InvoiceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -878,7 +878,7 @@ public class InvoiceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1007,7 +1007,7 @@ public class InvoiceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1105,7 +1105,7 @@ public class InvoiceApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateInvoicePaymentUsingPutCall(InvoicePayment invoicePayment, UUID invoicePaymentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateInvoicePaymentUsingPutCall(Object invoicePayment, UUID invoicePaymentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = invoicePayment;
 
         // create path and map variables
@@ -1134,7 +1134,7 @@ public class InvoiceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1148,7 +1148,7 @@ public class InvoiceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateInvoicePaymentUsingPutValidateBeforeCall(InvoicePayment invoicePayment, UUID invoicePaymentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateInvoicePaymentUsingPutValidateBeforeCall(Object invoicePayment, UUID invoicePaymentId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'invoicePayment' is set
         if (invoicePayment == null) {
@@ -1174,7 +1174,7 @@ public class InvoiceApi {
      * @return InvoicePayment
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InvoicePayment updateInvoicePaymentUsingPut(InvoicePayment invoicePayment, UUID invoicePaymentId) throws ApiException {
+    public InvoicePayment updateInvoicePaymentUsingPut(Object invoicePayment, UUID invoicePaymentId) throws ApiException {
         ApiResponse<InvoicePayment> resp = updateInvoicePaymentUsingPutWithHttpInfo(invoicePayment, invoicePaymentId);
         return resp.getData();
     }
@@ -1187,7 +1187,7 @@ public class InvoiceApi {
      * @return ApiResponse&lt;InvoicePayment&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InvoicePayment> updateInvoicePaymentUsingPutWithHttpInfo(InvoicePayment invoicePayment, UUID invoicePaymentId) throws ApiException {
+    public ApiResponse<InvoicePayment> updateInvoicePaymentUsingPutWithHttpInfo(Object invoicePayment, UUID invoicePaymentId) throws ApiException {
         com.squareup.okhttp.Call call = updateInvoicePaymentUsingPutValidateBeforeCall(invoicePayment, invoicePaymentId, null, null);
         Type localVarReturnType = new TypeToken<InvoicePayment>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1202,7 +1202,7 @@ public class InvoiceApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateInvoicePaymentUsingPutAsync(InvoicePayment invoicePayment, UUID invoicePaymentId, final ApiCallback<InvoicePayment> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateInvoicePaymentUsingPutAsync(Object invoicePayment, UUID invoicePaymentId, final ApiCallback<InvoicePayment> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1237,7 +1237,7 @@ public class InvoiceApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateInvoiceUsingPutCall(Invoice invoice, UUID invoiceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateInvoiceUsingPutCall(Object invoice, UUID invoiceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = invoice;
 
         // create path and map variables
@@ -1266,7 +1266,7 @@ public class InvoiceApi {
         if(progressListener != null) {
             apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
                     com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
@@ -1280,7 +1280,7 @@ public class InvoiceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateInvoiceUsingPutValidateBeforeCall(Invoice invoice, UUID invoiceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateInvoiceUsingPutValidateBeforeCall(Object invoice, UUID invoiceId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'invoice' is set
         if (invoice == null) {
@@ -1306,7 +1306,7 @@ public class InvoiceApi {
      * @return Invoice
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Invoice updateInvoiceUsingPut(Invoice invoice, UUID invoiceId) throws ApiException {
+    public Invoice updateInvoiceUsingPut(Object invoice, UUID invoiceId) throws ApiException {
         ApiResponse<Invoice> resp = updateInvoiceUsingPutWithHttpInfo(invoice, invoiceId);
         return resp.getData();
     }
@@ -1319,7 +1319,7 @@ public class InvoiceApi {
      * @return ApiResponse&lt;Invoice&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Invoice> updateInvoiceUsingPutWithHttpInfo(Invoice invoice, UUID invoiceId) throws ApiException {
+    public ApiResponse<Invoice> updateInvoiceUsingPutWithHttpInfo(Object invoice, UUID invoiceId) throws ApiException {
         com.squareup.okhttp.Call call = updateInvoiceUsingPutValidateBeforeCall(invoice, invoiceId, null, null);
         Type localVarReturnType = new TypeToken<Invoice>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -1334,7 +1334,7 @@ public class InvoiceApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateInvoiceUsingPutAsync(Invoice invoice, UUID invoiceId, final ApiCallback<Invoice> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateInvoiceUsingPutAsync(Object invoice, UUID invoiceId, final ApiCallback<Invoice> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

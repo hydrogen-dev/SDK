@@ -32,7 +32,7 @@ class TestBenchmark(unittest.TestCase):
     def testBenchmark(self):
         """Test Benchmark"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.benchmark.Benchmark()  # noqa: E501
+        # model = nucleus_api.models.benchmark.Benchmark()  # noqa: E501
         pass
 
 

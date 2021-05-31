@@ -1168,7 +1168,7 @@ class DocumentApi
      *
      * Update a Tenant Document
      *
-     * @param  \com\hydrogen\nucleus\Model\Document $document document (required)
+     * @param  object $document document (required)
      * @param  string $document_id UUID document_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -1186,7 +1186,7 @@ class DocumentApi
      *
      * Update a Tenant Document
      *
-     * @param  \com\hydrogen\nucleus\Model\Document $document document (required)
+     * @param  object $document document (required)
      * @param  string $document_id UUID document_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -1262,7 +1262,7 @@ class DocumentApi
      *
      * Update a Tenant Document
      *
-     * @param  \com\hydrogen\nucleus\Model\Document $document document (required)
+     * @param  object $document document (required)
      * @param  string $document_id UUID document_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1283,7 +1283,7 @@ class DocumentApi
      *
      * Update a Tenant Document
      *
-     * @param  \com\hydrogen\nucleus\Model\Document $document document (required)
+     * @param  object $document document (required)
      * @param  string $document_id UUID document_id (required)
      *
      * @throws \InvalidArgumentException
@@ -1334,7 +1334,7 @@ class DocumentApi
     /**
      * Create request for operation 'updateDocumentUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Document $document document (required)
+     * @param  object $document document (required)
      * @param  string $document_id UUID document_id (required)
      *
      * @throws \InvalidArgumentException

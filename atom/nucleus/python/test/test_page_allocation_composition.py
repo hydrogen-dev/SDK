@@ -32,7 +32,7 @@ class TestPageAllocationComposition(unittest.TestCase):
     def testPageAllocationComposition(self):
         """Test PageAllocationComposition"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_allocation_composition.PageAllocationComposition()  # noqa: E501
+        # model = nucleus_api.models.page_allocation_composition.PageAllocationComposition()  # noqa: E501
         pass
 
 

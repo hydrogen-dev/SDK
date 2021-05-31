@@ -99,6 +99,13 @@ class TestCardApi(unittest.TestCase):
         """
         pass
 
+    def test_get_card_transaction_agg_all_using_get1(self):
+        """Test case for get_card_transaction_agg_all_using_get1
+
+        List all card transactions  # noqa: E501
+        """
+        pass
+
     def test_get_card_using_get(self):
         """Test case for get_card_using_get
 

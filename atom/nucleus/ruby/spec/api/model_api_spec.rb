@@ -62,7 +62,7 @@ describe 'ModelApi' do
   # Create a new comment for a model available for your firm.
   # @param model_comment_request modelCommentRequest
   # @param [Hash] opts the optional parameters
-  # @return [Integer]
+  # @return [ModelComment]
   describe 'create_model_comment_using_post test' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers

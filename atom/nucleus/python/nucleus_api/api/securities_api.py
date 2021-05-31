@@ -1239,7 +1239,7 @@ class SecuritiesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param SecurityExclusion security_exclusion: security_exclusion (required)
+        :param object security_exclusion: security_exclusion (required)
         :param str security_exclusion_id: UUID security_exclusion_id (required)
         :return: SecurityExclusion
                  If the method is called asynchronously,
@@ -1262,7 +1262,7 @@ class SecuritiesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param SecurityExclusion security_exclusion: security_exclusion (required)
+        :param object security_exclusion: security_exclusion (required)
         :param str security_exclusion_id: UUID security_exclusion_id (required)
         :return: SecurityExclusion
                  If the method is called asynchronously,
@@ -1346,7 +1346,7 @@ class SecuritiesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param SecurityPrice security_price: security_price (required)
+        :param object security_price: security_price (required)
         :param str security_price_id: UUID security_price_id (required)
         :return: SecurityPrice
                  If the method is called asynchronously,
@@ -1369,7 +1369,7 @@ class SecuritiesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param SecurityPrice security_price: security_price (required)
+        :param object security_price: security_price (required)
         :param str security_price_id: UUID security_price_id (required)
         :return: SecurityPrice
                  If the method is called asynchronously,
@@ -1453,7 +1453,7 @@ class SecuritiesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Security security: security (required)
+        :param object security: security (required)
         :param str security_id: UUID security_id (required)
         :return: Security
                  If the method is called asynchronously,
@@ -1476,7 +1476,7 @@ class SecuritiesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Security security: security (required)
+        :param object security: security (required)
         :param str security_id: UUID security_id (required)
         :return: Security
                  If the method is called asynchronously,

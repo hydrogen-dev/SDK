@@ -65,6 +65,7 @@ class AggregationAccount implements ModelInterface, ArrayAccess
         'apr' => 'float',
         'apy' => 'float',
         'bank_link_id' => 'string',
+        'business_id' => 'string',
         'category' => 'string',
         'client_id' => 'string',
         'create_date' => '\DateTime',
@@ -108,6 +109,7 @@ class AggregationAccount implements ModelInterface, ArrayAccess
         'apr' => 'float',
         'apy' => 'float',
         'bank_link_id' => 'uuid',
+        'business_id' => 'uuid',
         'category' => null,
         'client_id' => 'uuid',
         'create_date' => 'date-time',
@@ -172,6 +174,7 @@ class AggregationAccount implements ModelInterface, ArrayAccess
         'apr' => 'apr',
         'apy' => 'apy',
         'bank_link_id' => 'bank_link_id',
+        'business_id' => 'business_id',
         'category' => 'category',
         'client_id' => 'client_id',
         'create_date' => 'create_date',
@@ -215,6 +218,7 @@ class AggregationAccount implements ModelInterface, ArrayAccess
         'apr' => 'setApr',
         'apy' => 'setApy',
         'bank_link_id' => 'setBankLinkId',
+        'business_id' => 'setBusinessId',
         'category' => 'setCategory',
         'client_id' => 'setClientId',
         'create_date' => 'setCreateDate',
@@ -258,6 +262,7 @@ class AggregationAccount implements ModelInterface, ArrayAccess
         'apr' => 'getApr',
         'apy' => 'getApy',
         'bank_link_id' => 'getBankLinkId',
+        'business_id' => 'getBusinessId',
         'category' => 'getCategory',
         'client_id' => 'getClientId',
         'create_date' => 'getCreateDate',
@@ -355,6 +360,7 @@ class AggregationAccount implements ModelInterface, ArrayAccess
         $this->container['apr'] = isset($data['apr']) ? $data['apr'] : null;
         $this->container['apy'] = isset($data['apy']) ? $data['apy'] : null;
         $this->container['bank_link_id'] = isset($data['bank_link_id']) ? $data['bank_link_id'] : null;
+        $this->container['business_id'] = isset($data['business_id']) ? $data['business_id'] : null;
         $this->container['category'] = isset($data['category']) ? $data['category'] : null;
         $this->container['client_id'] = isset($data['client_id']) ? $data['client_id'] : null;
         $this->container['create_date'] = isset($data['create_date']) ? $data['create_date'] : null;
@@ -399,9 +405,6 @@ class AggregationAccount implements ModelInterface, ArrayAccess
         }
         if ($this->container['category'] === null) {
             $invalidProperties[] = "'category' can't be null";
-        }
-        if ($this->container['client_id'] === null) {
-            $invalidProperties[] = "'client_id' can't be null";
         }
         if ($this->container['institution_name'] === null) {
             $invalidProperties[] = "'institution_name' can't be null";
@@ -585,6 +588,30 @@ class AggregationAccount implements ModelInterface, ArrayAccess
     public function setBankLinkId($bank_link_id)
     {
         $this->container['bank_link_id'] = $bank_link_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets business_id
+     *
+     * @return string
+     */
+    public function getBusinessId()
+    {
+        return $this->container['business_id'];
+    }
+
+    /**
+     * Sets business_id
+     *
+     * @param string $business_id businessId
+     *
+     * @return $this
+     */
+    public function setBusinessId($business_id)
+    {
+        $this->container['business_id'] = $business_id;
 
         return $this;
     }

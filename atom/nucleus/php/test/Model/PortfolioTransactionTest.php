@@ -147,6 +147,13 @@ class PortfolioTransactionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "funding_id"
+     */
+    public function testPropertyFundingId()
+    {
+    }
+
+    /**
      * Test attribute "id"
      */
     public function testPropertyId()
@@ -220,6 +227,13 @@ class PortfolioTransactionTest extends \PHPUnit_Framework_TestCase
      * Test attribute "metadata"
      */
     public function testPropertyMetadata()
+    {
+    }
+
+    /**
+     * Test attribute "mid"
+     */
+    public function testPropertyMid()
     {
     }
 

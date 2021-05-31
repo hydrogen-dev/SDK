@@ -32,7 +32,7 @@ class TestBrokers(unittest.TestCase):
     def testBrokers(self):
         """Test Brokers"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.brokers.Brokers()  # noqa: E501
+        # model = nucleus_api.models.brokers.Brokers()  # noqa: E501
         pass
 
 

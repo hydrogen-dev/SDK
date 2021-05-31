@@ -32,7 +32,7 @@ class TestPageSecurity(unittest.TestCase):
     def testPageSecurity(self):
         """Test PageSecurity"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.page_security.PageSecurity()  # noqa: E501
+        # model = nucleus_api.models.page_security.PageSecurity()  # noqa: E501
         pass
 
 

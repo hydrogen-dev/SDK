@@ -192,6 +192,16 @@ class PortfolioApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for getAllPortfolioTransactionByPostUsingPOST
+     *
+     * getAllPortfolioTransactionByPost.
+     *
+     */
+    public function testGetAllPortfolioTransactionByPostUsingPOST()
+    {
+    }
+
+    /**
      * Test case for getPortfolioAggregatedDataUsingGet
      *
      * Retrieve an portfolio aggregate data.

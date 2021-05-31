@@ -39,6 +39,7 @@ class BankLink(object):
         'bank_account_holder': 'str',
         'bank_account_name': 'str',
         'bank_account_number': 'str',
+        'business_id': 'str',
         'client_id': 'str',
         'create_date': 'datetime',
         'currency_code': 'str',
@@ -65,6 +66,7 @@ class BankLink(object):
         'bank_account_holder': 'bank_account_holder',
         'bank_account_name': 'bank_account_name',
         'bank_account_number': 'bank_account_number',
+        'business_id': 'business_id',
         'client_id': 'client_id',
         'create_date': 'create_date',
         'currency_code': 'currency_code',
@@ -84,7 +86,7 @@ class BankLink(object):
         'update_date': 'update_date'
     }
 
-    def __init__(self, account_id=None, available_balance=None, balance=None, bank_account_holder=None, bank_account_name=None, bank_account_number=None, client_id=None, create_date=None, currency_code=None, id=None, institution_id=None, institution_name=None, is_active=None, is_default=None, is_link_verified=None, link_verified_date=None, mask=None, metadata=None, routing=None, routing_wire=None, secondary_id=None, type=None, update_date=None, _configuration=None):  # noqa: E501
+    def __init__(self, account_id=None, available_balance=None, balance=None, bank_account_holder=None, bank_account_name=None, bank_account_number=None, business_id=None, client_id=None, create_date=None, currency_code=None, id=None, institution_id=None, institution_name=None, is_active=None, is_default=None, is_link_verified=None, link_verified_date=None, mask=None, metadata=None, routing=None, routing_wire=None, secondary_id=None, type=None, update_date=None, _configuration=None):  # noqa: E501
         """BankLink - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -96,6 +98,7 @@ class BankLink(object):
         self._bank_account_holder = None
         self._bank_account_name = None
         self._bank_account_number = None
+        self._business_id = None
         self._client_id = None
         self._create_date = None
         self._currency_code = None
@@ -125,6 +128,8 @@ class BankLink(object):
         if bank_account_name is not None:
             self.bank_account_name = bank_account_name
         self.bank_account_number = bank_account_number
+        if business_id is not None:
+            self.business_id = business_id
         if client_id is not None:
             self.client_id = client_id
         if create_date is not None:
@@ -299,6 +304,29 @@ class BankLink(object):
             raise ValueError("Invalid value for `bank_account_number`, must not be `None`")  # noqa: E501
 
         self._bank_account_number = bank_account_number
+
+    @property
+    def business_id(self):
+        """Gets the business_id of this BankLink.  # noqa: E501
+
+        businessId  # noqa: E501
+
+        :return: The business_id of this BankLink.  # noqa: E501
+        :rtype: str
+        """
+        return self._business_id
+
+    @business_id.setter
+    def business_id(self, business_id):
+        """Sets the business_id of this BankLink.
+
+        businessId  # noqa: E501
+
+        :param business_id: The business_id of this BankLink.  # noqa: E501
+        :type: str
+        """
+
+        self._business_id = business_id
 
     @property
     def client_id(self):

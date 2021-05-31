@@ -34,6 +34,7 @@ class Card(object):
     """
     swagger_types = {
         'address': 'list[CardAddress]',
+        'business_id': 'str',
         'card_holder_name': 'str',
         'card_image': 'str',
         'card_issuance': 'str',
@@ -66,6 +67,7 @@ class Card(object):
 
     attribute_map = {
         'address': 'address',
+        'business_id': 'business_id',
         'card_holder_name': 'card_holder_name',
         'card_image': 'card_image',
         'card_issuance': 'card_issuance',
@@ -96,13 +98,14 @@ class Card(object):
         'update_date': 'update_date'
     }
 
-    def __init__(self, address=None, card_holder_name=None, card_image=None, card_issuance=None, card_name=None, card_network=None, card_program_id=None, card_type=None, client_id=None, create_date=None, credit_limit=None, currency_code=None, expiry_date=None, fulfillment=None, id=None, institution_id=None, institution_name=None, is_active=None, is_pin_set=None, is_primary=None, is_reloadable=None, mask=None, metadata=None, phone_number=None, portfolio_id=None, prepaid_amount=None, secondary_id=None, status=None, update_date=None, _configuration=None):  # noqa: E501
+    def __init__(self, address=None, business_id=None, card_holder_name=None, card_image=None, card_issuance=None, card_name=None, card_network=None, card_program_id=None, card_type=None, client_id=None, create_date=None, credit_limit=None, currency_code=None, expiry_date=None, fulfillment=None, id=None, institution_id=None, institution_name=None, is_active=None, is_pin_set=None, is_primary=None, is_reloadable=None, mask=None, metadata=None, phone_number=None, portfolio_id=None, prepaid_amount=None, secondary_id=None, status=None, update_date=None, _configuration=None):  # noqa: E501
         """Card - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
         self._address = None
+        self._business_id = None
         self._card_holder_name = None
         self._card_image = None
         self._card_issuance = None
@@ -135,6 +138,8 @@ class Card(object):
 
         if address is not None:
             self.address = address
+        if business_id is not None:
+            self.business_id = business_id
         self.card_holder_name = card_holder_name
         if card_image is not None:
             self.card_image = card_image
@@ -145,7 +150,8 @@ class Card(object):
         if card_program_id is not None:
             self.card_program_id = card_program_id
         self.card_type = card_type
-        self.client_id = client_id
+        if client_id is not None:
+            self.client_id = client_id
         if create_date is not None:
             self.create_date = create_date
         if credit_limit is not None:
@@ -206,6 +212,29 @@ class Card(object):
         """
 
         self._address = address
+
+    @property
+    def business_id(self):
+        """Gets the business_id of this Card.  # noqa: E501
+
+        businessId  # noqa: E501
+
+        :return: The business_id of this Card.  # noqa: E501
+        :rtype: str
+        """
+        return self._business_id
+
+    @business_id.setter
+    def business_id(self, business_id):
+        """Sets the business_id of this Card.
+
+        businessId  # noqa: E501
+
+        :param business_id: The business_id of this Card.  # noqa: E501
+        :type: str
+        """
+
+        self._business_id = business_id
 
     @property
     def card_holder_name(self):
@@ -396,8 +425,6 @@ class Card(object):
         :param client_id: The client_id of this Card.  # noqa: E501
         :type: str
         """
-        if self._configuration.client_side_validation and client_id is None:
-            raise ValueError("Invalid value for `client_id`, must not be `None`")  # noqa: E501
 
         self._client_id = client_id
 

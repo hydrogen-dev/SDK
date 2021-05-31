@@ -63,6 +63,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property contactId (base name: "contact_id")', function() {
+      // uncomment below and update the code to test the property contactId
+      //var instane = new HydrogenNucleusApi.CustomerRevenue();
+      //expect(instance).to.be();
+    });
+
     it('should have the property createDate (base name: "create_date")', function() {
       // uncomment below and update the code to test the property createDate
       //var instane = new HydrogenNucleusApi.CustomerRevenue();
@@ -71,12 +77,6 @@
 
     it('should have the property currencyCode (base name: "currency_code")', function() {
       // uncomment below and update the code to test the property currencyCode
-      //var instane = new HydrogenNucleusApi.CustomerRevenue();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property customerId (base name: "customer_id")', function() {
-      // uncomment below and update the code to test the property customerId
       //var instane = new HydrogenNucleusApi.CustomerRevenue();
       //expect(instance).to.be();
     });

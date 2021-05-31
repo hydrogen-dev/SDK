@@ -2008,7 +2008,7 @@ class OverflowApi
      *
      * Update a overflow settings
      *
-     * @param  \com\hydrogen\nucleus\Model\OverflowSettings $overflow_settings overflow_settings (required)
+     * @param  object $overflow_settings overflow_settings (required)
      * @param  string $overflow_settings_id UUID overflow_settings_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -2026,7 +2026,7 @@ class OverflowApi
      *
      * Update a overflow settings
      *
-     * @param  \com\hydrogen\nucleus\Model\OverflowSettings $overflow_settings overflow_settings (required)
+     * @param  object $overflow_settings overflow_settings (required)
      * @param  string $overflow_settings_id UUID overflow_settings_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -2102,7 +2102,7 @@ class OverflowApi
      *
      * Update a overflow settings
      *
-     * @param  \com\hydrogen\nucleus\Model\OverflowSettings $overflow_settings overflow_settings (required)
+     * @param  object $overflow_settings overflow_settings (required)
      * @param  string $overflow_settings_id UUID overflow_settings_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2123,7 +2123,7 @@ class OverflowApi
      *
      * Update a overflow settings
      *
-     * @param  \com\hydrogen\nucleus\Model\OverflowSettings $overflow_settings overflow_settings (required)
+     * @param  object $overflow_settings overflow_settings (required)
      * @param  string $overflow_settings_id UUID overflow_settings_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2174,7 +2174,7 @@ class OverflowApi
     /**
      * Create request for operation 'updateOverflowSettingsUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\OverflowSettings $overflow_settings overflow_settings (required)
+     * @param  object $overflow_settings overflow_settings (required)
      * @param  string $overflow_settings_id UUID overflow_settings_id (required)
      *
      * @throws \InvalidArgumentException

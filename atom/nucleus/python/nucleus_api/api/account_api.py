@@ -330,45 +330,45 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_account_using_post(self, client_account_request, **kwargs):  # noqa: E501
+    def create_account_using_post(self, account, **kwargs):  # noqa: E501
         """Create an account  # noqa: E501
 
         Create an account under a client.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_account_using_post(client_account_request, async_req=True)
+        >>> thread = api.create_account_using_post(account, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Account client_account_request: clientAccountRequest (required)
+        :param Account account: account (required)
         :return: Account
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_account_using_post_with_http_info(client_account_request, **kwargs)  # noqa: E501
+            return self.create_account_using_post_with_http_info(account, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_account_using_post_with_http_info(client_account_request, **kwargs)  # noqa: E501
+            (data) = self.create_account_using_post_with_http_info(account, **kwargs)  # noqa: E501
             return data
 
-    def create_account_using_post_with_http_info(self, client_account_request, **kwargs):  # noqa: E501
+    def create_account_using_post_with_http_info(self, account, **kwargs):  # noqa: E501
         """Create an account  # noqa: E501
 
         Create an account under a client.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_account_using_post_with_http_info(client_account_request, async_req=True)
+        >>> thread = api.create_account_using_post_with_http_info(account, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Account client_account_request: clientAccountRequest (required)
+        :param Account account: account (required)
         :return: Account
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['client_account_request']  # noqa: E501
+        all_params = ['account']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -383,10 +383,10 @@ class AccountApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'client_account_request' is set
-        if self.api_client.client_side_validation and ('client_account_request' not in params or
-                                                       params['client_account_request'] is None):  # noqa: E501
-            raise ValueError("Missing the required parameter `client_account_request` when calling `create_account_using_post`")  # noqa: E501
+        # verify the required parameter 'account' is set
+        if self.api_client.client_side_validation and ('account' not in params or
+                                                       params['account'] is None):  # noqa: E501
+            raise ValueError("Missing the required parameter `account` when calling `create_account_using_post`")  # noqa: E501
 
         collection_formats = {}
 
@@ -400,8 +400,8 @@ class AccountApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'client_account_request' in params:
-            body_params = params['client_account_request']
+        if 'account' in params:
+            body_params = params['account']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['*/*'])  # noqa: E501
@@ -2609,7 +2609,7 @@ class AccountApi(object):
 
         :param async_req bool
         :param str account_allocation_id: UUID account_allocation_id (required)
-        :param AccountAllocationMapping account_allocation_mapping: account_allocation_mapping
+        :param object account_allocation_mapping: account_allocation_mapping
         :return: AccountAllocationMapping
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2632,7 +2632,7 @@ class AccountApi(object):
 
         :param async_req bool
         :param str account_allocation_id: UUID account_allocation_id (required)
-        :param AccountAllocationMapping account_allocation_mapping: account_allocation_mapping
+        :param object account_allocation_mapping: account_allocation_mapping
         :return: AccountAllocationMapping
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2711,7 +2711,7 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AccountStatus account_status: account_status (required)
+        :param object account_status: account_status (required)
         :param str account_status_id: UUID account_status_id (required)
         :return: AccountStatus
                  If the method is called asynchronously,
@@ -2734,7 +2734,7 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AccountStatus account_status: account_status (required)
+        :param object account_status: account_status (required)
         :param str account_status_id: UUID account_status_id (required)
         :return: AccountStatus
                  If the method is called asynchronously,
@@ -2818,7 +2818,7 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AccountType account_type: account_type (required)
+        :param object account_type: account_type (required)
         :param str account_type_id: UUID account_type_id (required)
         :return: AccountType
                  If the method is called asynchronously,
@@ -2841,7 +2841,7 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param AccountType account_type: account_type (required)
+        :param object account_type: account_type (required)
         :param str account_type_id: UUID account_type_id (required)
         :return: AccountType
                  If the method is called asynchronously,
@@ -2925,7 +2925,7 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Account account: account (required)
+        :param object account: account (required)
         :param str account_id: UUID account_id (required)
         :return: Account
                  If the method is called asynchronously,
@@ -2948,7 +2948,7 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param Account account: account (required)
+        :param object account: account (required)
         :param str account_id: UUID account_id (required)
         :return: Account
                  If the method is called asynchronously,
@@ -3033,7 +3033,7 @@ class AccountApi(object):
 
         :param async_req bool
         :param str account_id: account_id (required)
-        :param AclClientPermissionVO acl_client_permission_vo: aclClientPermissionVO (required)
+        :param object acl_client_permission_vo: aclClientPermissionVO (required)
         :return: AccountPermissionVO
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3056,7 +3056,7 @@ class AccountApi(object):
 
         :param async_req bool
         :param str account_id: account_id (required)
-        :param AclClientPermissionVO acl_client_permission_vo: aclClientPermissionVO (required)
+        :param object acl_client_permission_vo: aclClientPermissionVO (required)
         :return: AccountPermissionVO
                  If the method is called asynchronously,
                  returns the request thread.

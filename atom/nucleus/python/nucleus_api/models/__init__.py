@@ -54,6 +54,7 @@ from nucleus_api.models.bulk_transaction import BulkTransaction
 from nucleus_api.models.bulk_transaction_vo import BulkTransactionVO
 from nucleus_api.models.business import Business
 from nucleus_api.models.business_address import BusinessAddress
+from nucleus_api.models.business_details_vo import BusinessDetailsVO
 from nucleus_api.models.card import Card
 from nucleus_api.models.card_address import CardAddress
 from nucleus_api.models.card_balance_vo import CardBalanceVO
@@ -66,12 +67,13 @@ from nucleus_api.models.check_images import CheckImages
 from nucleus_api.models.client import Client
 from nucleus_api.models.client_account_mapping import ClientAccountMapping
 from nucleus_api.models.client_address import ClientAddress
+from nucleus_api.models.client_business_card_vo import ClientBusinessCardVO
+from nucleus_api.models.client_business_total_card_balance_vo import ClientBusinessTotalCardBalanceVO
 from nucleus_api.models.client_card_vo import ClientCardVO
 from nucleus_api.models.client_credentials import ClientCredentials
 from nucleus_api.models.client_relationship import ClientRelationship
 from nucleus_api.models.client_response import ClientResponse
 from nucleus_api.models.client_status import ClientStatus
-from nucleus_api.models.client_total_card_balance_vo import ClientTotalCardBalanceVO
 from nucleus_api.models.client_view_goal_data import ClientViewGoalData
 from nucleus_api.models.contact import Contact
 from nucleus_api.models.contact_address import ContactAddress
@@ -154,7 +156,7 @@ from nucleus_api.models.page_business import PageBusiness
 from nucleus_api.models.page_card import PageCard
 from nucleus_api.models.page_card_program import PageCardProgram
 from nucleus_api.models.page_client import PageClient
-from nucleus_api.models.page_client_card_vo import PageClientCardVO
+from nucleus_api.models.page_client_business_card_vo import PageClientBusinessCardVO
 from nucleus_api.models.page_client_response import PageClientResponse
 from nucleus_api.models.page_client_status import PageClientStatus
 from nucleus_api.models.page_contact import PageContact

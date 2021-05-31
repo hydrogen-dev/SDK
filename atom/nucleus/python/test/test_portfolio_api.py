@@ -113,6 +113,13 @@ class TestPortfolioApi(unittest.TestCase):
         """
         pass
 
+    def test_get_all_portfolio_transaction_by_post_using_post(self):
+        """Test case for get_all_portfolio_transaction_by_post_using_post
+
+        getAllPortfolioTransactionByPost  # noqa: E501
+        """
+        pass
+
     def test_get_portfolio_aggregated_data_using_get(self):
         """Test case for get_portfolio_aggregated_data_using_get
 

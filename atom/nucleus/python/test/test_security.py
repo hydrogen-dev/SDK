@@ -32,7 +32,7 @@ class TestSecurity(unittest.TestCase):
     def testSecurity(self):
         """Test Security"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.security.Security()  # noqa: E501
+        # model = nucleus_api.models.security.Security()  # noqa: E501
         pass
 
 

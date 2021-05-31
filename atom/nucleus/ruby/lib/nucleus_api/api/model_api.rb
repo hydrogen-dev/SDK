@@ -137,7 +137,7 @@ module NucleusApi
     # Create a new comment for a model available for your firm.
     # @param model_comment_request modelCommentRequest
     # @param [Hash] opts the optional parameters
-    # @return [Integer]
+    # @return [ModelComment]
     def create_model_comment_using_post(model_comment_request, opts = {})
       data, _status_code, _headers = create_model_comment_using_post_with_http_info(model_comment_request, opts)
       data
@@ -147,7 +147,7 @@ module NucleusApi
     # Create a new comment for a model available for your firm.
     # @param model_comment_request modelCommentRequest
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Integer, Fixnum, Hash)>] Integer data, response status code and response headers
+    # @return [Array<(ModelComment, Fixnum, Hash)>] ModelComment data, response status code and response headers
     def create_model_comment_using_post_with_http_info(model_comment_request, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: ModelApi.create_model_comment_using_post ...'
@@ -181,7 +181,7 @@ module NucleusApi
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Integer')
+        :return_type => 'ModelComment')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ModelApi#create_model_comment_using_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

@@ -32,7 +32,7 @@ class TestBankCredit(unittest.TestCase):
     def testBankCredit(self):
         """Test BankCredit"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.bank_credit.BankCredit()  # noqa: E501
+        # model = nucleus_api.models.bank_credit.BankCredit()  # noqa: E501
         pass
 
 

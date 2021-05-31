@@ -13,17 +13,21 @@
 
 package com.hydrogen.nucleus.api;
 
+import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.Answer;
 import com.hydrogen.nucleus.model.PageAnswer;
 import com.hydrogen.nucleus.model.PageQuestion;
 import com.hydrogen.nucleus.model.PageQuestionnaire;
 import com.hydrogen.nucleus.model.Question;
 import com.hydrogen.nucleus.model.Questionnaire;
-import com.hydrogen.nucleus.ApiException;
-
 import java.util.UUID;
 import org.junit.Test;
 import org.junit.Ignore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * API tests for QuestionnaireApi
@@ -248,7 +252,7 @@ public class QuestionnaireApiTest {
      */
     @Test
     public void updateAnswerUsingPutTest() throws ApiException {
-        Answer answer = null;
+        Object answer = null;
         UUID answerId = null;
         Answer response = api.updateAnswerUsingPut(answer, answerId);
 
@@ -265,7 +269,7 @@ public class QuestionnaireApiTest {
      */
     @Test
     public void updateQuestionUsingPutTest() throws ApiException {
-        Question question = null;
+        Object question = null;
         UUID questionId = null;
         Question response = api.updateQuestionUsingPut(question, questionId);
 
@@ -282,7 +286,7 @@ public class QuestionnaireApiTest {
      */
     @Test
     public void updateQuestionnaireUsingPutTest() throws ApiException {
-        Questionnaire questionnaire = null;
+        Object questionnaire = null;
         UUID questionnaireId = null;
         Questionnaire response = api.updateQuestionnaireUsingPut(questionnaire, questionnaireId);
 

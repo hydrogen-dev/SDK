@@ -2194,7 +2194,7 @@ class BusinessApi
      *
      * Update a business
      *
-     * @param  \com\hydrogen\nucleus\Model\Business $business business (required)
+     * @param  object $business business (required)
      * @param  string $business_id UUID business_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -2212,7 +2212,7 @@ class BusinessApi
      *
      * Update a business
      *
-     * @param  \com\hydrogen\nucleus\Model\Business $business business (required)
+     * @param  object $business business (required)
      * @param  string $business_id UUID business_id (required)
      *
      * @throws \com\hydrogen\nucleus\ApiException on non-2xx response
@@ -2288,7 +2288,7 @@ class BusinessApi
      *
      * Update a business
      *
-     * @param  \com\hydrogen\nucleus\Model\Business $business business (required)
+     * @param  object $business business (required)
      * @param  string $business_id UUID business_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2309,7 +2309,7 @@ class BusinessApi
      *
      * Update a business
      *
-     * @param  \com\hydrogen\nucleus\Model\Business $business business (required)
+     * @param  object $business business (required)
      * @param  string $business_id UUID business_id (required)
      *
      * @throws \InvalidArgumentException
@@ -2360,7 +2360,7 @@ class BusinessApi
     /**
      * Create request for operation 'updateBusinessUsingPut'
      *
-     * @param  \com\hydrogen\nucleus\Model\Business $business business (required)
+     * @param  object $business business (required)
      * @param  string $business_id UUID business_id (required)
      *
      * @throws \InvalidArgumentException

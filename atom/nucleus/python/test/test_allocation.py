@@ -32,7 +32,7 @@ class TestAllocation(unittest.TestCase):
     def testAllocation(self):
         """Test Allocation"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.allocation.Allocation()  # noqa: E501
+        # model = nucleus_api.models.allocation.Allocation()  # noqa: E501
         pass
 
 

@@ -27,7 +27,7 @@ Please first follow the [installation](#installation) instructions. Then make su
 ### Base URL
 
 1. Go to Configuration file located under lib folder.
-2. Search for $host $adminHost and change/verify the URL according to the environment.  
+2. Search for $host and change/verify the URL according to the environment.  
 
 **Sandbox Base URL**
 https://sandbox.hydrogenplatform.com

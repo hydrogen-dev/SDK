@@ -32,7 +32,7 @@ class TestNotificationSetting(unittest.TestCase):
     def testNotificationSetting(self):
         """Test NotificationSetting"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.notification_setting.NotificationSetting()  # noqa: E501
+        # model = nucleus_api.models.notification_setting.NotificationSetting()  # noqa: E501
         pass
 
 

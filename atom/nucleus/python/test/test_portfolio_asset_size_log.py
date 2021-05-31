@@ -32,7 +32,7 @@ class TestPortfolioAssetSizeLog(unittest.TestCase):
     def testPortfolioAssetSizeLog(self):
         """Test PortfolioAssetSizeLog"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.portfolio_asset_size_log.PortfolioAssetSizeLog()  # noqa: E501
+        # model = nucleus_api.models.portfolio_asset_size_log.PortfolioAssetSizeLog()  # noqa: E501
         pass
 
 

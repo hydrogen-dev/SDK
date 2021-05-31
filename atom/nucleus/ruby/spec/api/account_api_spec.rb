@@ -71,7 +71,7 @@ describe 'AccountApi' do
   # unit tests for create_account_using_post
   # Create an account
   # Create an account under a client.
-  # @param client_account_request clientAccountRequest
+  # @param account account
   # @param [Hash] opts the optional parameters
   # @return [Account]
   describe 'create_account_using_post test' do
@@ -382,7 +382,7 @@ describe 'AccountApi' do
   # Update the information for an account-allocation mapping.
   # @param account_allocation_id UUID account_allocation_id
   # @param [Hash] opts the optional parameters
-  # @option opts [AccountAllocationMapping] :account_allocation_mapping account_allocation_mapping
+  # @option opts [Object] :account_allocation_mapping account_allocation_mapping
   # @return [AccountAllocationMapping]
   describe 'update_account_allocation_mapping_using_put test' do
     it 'should work' do

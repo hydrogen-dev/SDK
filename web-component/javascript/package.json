@@ -1,5 +1,5 @@
 {
-  "name": "app_token_api",
+  "name": "@hydrogenplatform/app_token_api",
   "version": "1.0.0",
   "description": "The_app_token_api",
   "license": "Unlicense",
@@ -16,8 +16,8 @@
     "dotenv": "8.2.0"
   },
   "devDependencies": {
-    "mocha": "~2.3.4",
-    "sinon": "1.17.3",
-    "expect.js": "~0.3.1"
+    "expect.js": "~0.3.1",
+    "mocha": "^8.3.2",
+    "sinon": "1.17.3"
   }
 }

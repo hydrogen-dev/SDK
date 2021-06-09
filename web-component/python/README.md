@@ -46,7 +46,7 @@ attribMap = [{"name" : "public-key", "value" : "public_key"},{"name" : "client-i
 userAuthToken = "xxxx"
 
 appTokenConfig = {}
-appTokenConfig['appName'] = ['pfm_cash_flow']
+appTokenConfig['appName'] = [{'app_name':'pfm_cash_flow', 'auth_type':'password_credentials'}]
 appTokenConfig['userAccessToken'] = userAuthToken
 appTokenConfig['attribMap'] = attribMap
 appTokenConfig['isEmbed'] = True

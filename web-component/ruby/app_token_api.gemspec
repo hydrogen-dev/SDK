@@ -13,7 +13,7 @@ Swagger Codegen version: 2.4.15
 =end
 
 $:.push File.expand_path("../lib", __FILE__)
-require "app_token_api/version"
+require "admin_api/version"
 
 Gem::Specification.new do |s|
   s.name        = "app_token_api"

@@ -97,47 +97,6 @@ public class AutoGenerateAppTokenApi {
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
-    private com.squareup.okhttp.Call getWhiteLabelUsingGETCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/white_label/application?size=100000";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-                "*/*"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if (progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                            .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                            .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[]{"oauth2"};
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call getAppTokenUsingGETValidateBeforeCall(List<String> appName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
 
@@ -148,15 +107,6 @@ public class AutoGenerateAppTokenApi {
 
 
         com.squareup.okhttp.Call call = getAppTokenUsingGETCall(appName, progressListener, progressRequestListener);
-        return call;
-
-    }
-
-    private com.squareup.okhttp.Call getWhiteLabelUsingGETValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        if (appTokenConfig.getAppNames().isEmpty()) {
-            throw new ApiException("Missing the required parameter 'appName' when calling getAppTokenUsingGET(Async)");
-        }
-        com.squareup.okhttp.Call call = getWhiteLabelUsingGETCall(progressListener, progressRequestListener);
         return call;
 
     }
@@ -190,26 +140,10 @@ public class AutoGenerateAppTokenApi {
         String clientCredentialToken = authApiClient.createClientCredentialReturn(appTokenConfig.getClientId(), appTokenConfig.getClientSecret());
         apiClient.setAccessToken(clientCredentialToken);
 
-        //get all whitelabel applications
-        com.squareup.okhttp.Call whiteLabelCall = getWhiteLabelUsingGETValidateBeforeCall(null, null);
-        Type whiteLabelReturnType = new TypeToken<WhiteLabelClient>() {
-        }.getType();
-        ApiResponse<WhiteLabelClient> execute = apiClient.execute(whiteLabelCall, whiteLabelReturnType);
-        Map<String, String> authTypeMap = new HashMap<>();
-        if (execute != null) {
-            WhiteLabelClient data = execute.getData();
-            List<WhiteLabel> content = data.getContent();
-            for (WhiteLabel whiteLabel : content) {
-                authTypeMap.put(whiteLabel.getName(), whiteLabel.getAuthType());
-            }
-
-
-            for (String app : appTokenConfig.getAppNames()) {
-
-                String authType = authTypeMap.get(app);
-                if (authType != null && authType.equalsIgnoreCase("client_credentials")) {
+            for (AppConfig app : appTokenConfig.getAppNames()) {
+                if (app.getAuthType() != null && app.getAuthType().equalsIgnoreCase("client_credentials")) {
                     apiClient.setAccessToken(clientCredentialToken);
-                } else if (authType != null && authType.equalsIgnoreCase("password_credentials")) {
+                } else if (app.getAuthType() != null && app.getAuthType().equalsIgnoreCase("password_credentials")) {
                     apiClient.setAccessToken(appTokenConfig.getUserAccessToken());
                     if (appTokenConfig.getIsCredsPassed()) {
                         String passwordCredentialToken = authApiClient.createPasswordCredentialReturn(appTokenConfig.getClientId(), appTokenConfig.getClientSecret(), appTokenConfig.getUsername(), appTokenConfig.getPassword());
@@ -217,7 +151,7 @@ public class AutoGenerateAppTokenApi {
                     }
                 }
 
-                com.squareup.okhttp.Call call = getAppTokenUsingGETValidateBeforeCall(Collections.singletonList(app), null, null);
+                com.squareup.okhttp.Call call = getAppTokenUsingGETValidateBeforeCall(Collections.singletonList(app.getAppName()), null, null);
                 Type localVarReturnType = new TypeToken<List<AppToken>>() {
                 }.getType();
                 ApiResponse<List<AppToken>> appTokenExecute = apiClient.execute(call, localVarReturnType);
@@ -225,21 +159,20 @@ public class AutoGenerateAppTokenApi {
 
                     List<AppToken> appTokens = appTokenExecute.getData();
                     String appTokenValue = appTokens != null && appTokens.size() > 0 ? appTokens.get(0).getAppToken() : "";
-                    String tagValue = app.toLowerCase().replace("_", "-");
+                    String tagValue = app.getAppName().toLowerCase().replace("_", "-");
                     String fillTemplateValue = template.replace("tag", tagValue)
                             .replace("##app_token##", appTokenValue)
                             .replace("##attrib_map##", getAttribMapList(appTokenConfig) != null ? StringUtils.join(getAttribMapList(appTokenConfig), " ") : "");
 
                     Map<String, String> appMap = new HashMap<>();
-                    appMap.put(app, appTokenValue);
+                    appMap.put(app.getAppName(), appTokenValue);
 
                     if (appTokenConfig.getIsEmbed()) {
-                        appMap.put(app, fillTemplateValue);
+                        appMap.put(app.getAppName(), fillTemplateValue);
                     }
                     response.add(appMap);
                 }
             }
-        }
         return response;
     }
 

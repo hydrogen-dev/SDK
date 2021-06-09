@@ -11,20 +11,17 @@ Swagger Codegen version: 2.4.15
 =end
 
 # Common files
-require 'app_token_api/api_client'
-require 'app_token_api/api_error'
-require 'app_token_api/version'
-require 'app_token_api/configuration'
-require 'app_token_api/auth_configuration'
+require 'admin_api/api_client'
+require 'admin_api/api_error'
+require 'admin_api/version'
+require 'admin_api/configuration'
+require 'admin_api/auth_configuration'
 # Models
-require 'app_token_api/models/app_token'
-require 'app_token_api/models/client'
-require 'app_token_api/models/page_client'
-require 'app_token_api/models/sort'
+require 'admin_api/models/app_token'
 
 # APIs
-require 'app_token_api/api/app_token_api'
-require 'app_token_api/api/client_api'
+require 'admin_api/api/app_token_api'
+require 'admin_api/api/auto_generate_app_token_api'
 
 module AdminApi
   class << self

@@ -1,5 +1,5 @@
 {
-  "name": "@hydrogenplatform/app_token_api",
+  "name": "app_token_api",
   "version": "1.0.0",
   "description": "The_app_token_api",
   "license": "Unlicense",
@@ -11,9 +11,9 @@
     "fs": false
   },
   "dependencies": {
-    "superagent": "3.7.0",
+    "dotenv": "8.2.0",
     "querystring": "0.2.0",
-    "dotenv": "8.2.0"
+    "superagent": "3.7.0"
   },
   "devDependencies": {
     "expect.js": "~0.3.1",

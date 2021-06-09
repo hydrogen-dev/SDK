@@ -54,12 +54,12 @@ module AdminApi
     end
 
     def auth_url
-      url = "#{scheme}://#{[host, auth_uri].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '')
+      url = "#{scheme}://#{[@config.host, auth_uri].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '')
       URI.encode(url)
     end
 
     def client_token_auth_url
-      url = "#{scheme}://#{[host, client_token_auth_uri].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '')
+      url = "#{scheme}://#{[@config.host, client_token_auth_uri].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '')
       URI.encode(url)
     end
 
@@ -134,6 +134,45 @@ module AdminApi
       @config.access_token = body['access_token']
     end
 
+    def create_client_credential_return(client_id, client_secret)
+      @logger.debug auth_url
+      basic_cred = 'Basic ' + ["#{client_id}:#{client_secret}"].pack('m').delete("\r\n")
+      # Request Params
+      params = {}
+      params[@grant_type_key] = @client_credentials
+      # Header parameters
+      header_params = {}
+      header_params['Accept'] = '*/*'
+      header_params['Content-Type'] = 'application/json'
+      header_params[@authorization] = basic_cred
+      response = Typhoeus::Request.new(
+          auth_url,
+          :method => :post,
+          :headers => header_params,
+          :params => params
+      ).run
+
+ 
+      if @debugging
+        @logger.debug "HTTP response body ~BEGIN~\n#{response.body}\n~END~\n"
+      end
+      body = JSON.parse(response.body)
+      unless response.success?
+        if response.timed_out?
+          raise ApiError.new('Connection timed out')
+        elsif response.code == 0
+          # Errors from libcurl will be made visible here
+          raise ApiError.new(:code => 0,
+                             :message => response.return_message)
+        else
+          raise ApiError.new(:code => response.code,
+                             :response_headers => response.headers,
+                             :response_body => response.body), response.body
+        end
+      end
+      return body['access_token']
+    end
+
     def set_access_token(token)
       @config.access_token = token
     end
@@ -174,6 +213,44 @@ module AdminApi
         end
       end
       @config.access_token = body['access_token']
+    end
+
+    def create_password_credential_return(client_id, client_secret, username, password)
+      basic_cred = 'Basic ' + ["#{client_id}:#{client_secret}"].pack('m').delete("\r\n")
+      # Request Params
+      params = {}
+      params[@grant_type_key] = @password
+      params[@username] = username
+      params[@password] = password
+      # header parameters
+      header_params = {}
+      header_params['Accept'] = '*/*'
+      header_params['Content-Type'] = 'application/json'
+      header_params[@authorization] = basic_cred
+      response = Typhoeus::Request.new(
+          auth_url,
+          :method => :post,
+          :headers => header_params,
+          :params => params
+      ).run
+      if @debugging
+        @logger.debug "HTTP response body ~BEGIN~\n#{response.body}\n~END~\n"
+      end
+      body = JSON.parse(response.body)
+      unless response.success?
+        if response.timed_out?
+          raise ApiError.new('Connection timed out')
+        elsif response.code == 0
+          # Errors from libcurl will be made visible here
+          raise ApiError.new(:code => 0,
+                             :message => response.return_message)
+        else
+          raise ApiError.new(:code => response.code,
+                             :response_headers => response.headers,
+                             :response_body => response.body), body
+        end
+      end
+      return body['access_token']
     end
   end
 end

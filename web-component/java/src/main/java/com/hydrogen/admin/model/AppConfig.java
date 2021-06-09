@@ -13,25 +13,25 @@
 
 package com.hydrogen.admin.model;
 
-public class TagAttributes {
-    private String name;
-    private String value;
+public class AppConfig {
+    private String appName;
+    private String authType;
 
-    public String getName() {
-        return name;
+    public String getAppName() {
+        return appName;
     }
 
-    public TagAttributes setName(String name) {
-        this.name = name;
+    public AppConfig setAppName(String appName) {
+        this.appName = appName;
         return this;
     }
 
-    public String getValue() {
-        return value;
+    public String getAuthType() {
+        return authType;
     }
 
-    public TagAttributes setValue(String value) {
-        this.value = value;
+    public AppConfig setAuthType(String authType) {
+        this.authType = authType;
         return this;
     }
 }

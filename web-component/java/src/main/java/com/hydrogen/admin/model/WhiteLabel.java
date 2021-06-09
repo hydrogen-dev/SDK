@@ -3,6 +3,7 @@ package com.hydrogen.admin.model;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.UUID;
+import java.util.*;
 
 public class WhiteLabel {
 
@@ -13,7 +14,7 @@ public class WhiteLabel {
     private String description;
 
     @SerializedName("auth_type")
-    private String authType;
+    private List<String> authType;
 
     private Boolean isActive = true;
 
@@ -45,11 +46,11 @@ public class WhiteLabel {
         this.description = description;
     }
 
-    public String getAuthType() {
+    public List<String> getAuthType() {
         return authType;
     }
 
-    public void setAuthType(String authType) {
+    public void setAuthType(List<String> authType) {
         this.authType = authType;
     }
 

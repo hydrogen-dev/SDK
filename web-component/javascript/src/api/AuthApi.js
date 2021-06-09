@@ -46,11 +46,11 @@
      */
     var exports = function (apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
-        if(!process.env.BASE_PATH){
-            console.log("BASE_PATH is not defined");
+        if(!this.apiClient.basePath){
+            console.log("apiClient.basePath is not defined");
             process.exit(1);
           }
-        this.tokenUrl = process.env.BASE_PATH.replace(/.com.*/, '.com/authorization/v1');
+        this.tokenUrl = this.apiClient.basePath.replace(/.com.*/, '.com/authorization/v1');
 
         /**
          * Callback function to receive the result of the operation.

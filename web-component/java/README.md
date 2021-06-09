@@ -57,7 +57,7 @@ public class AppTokenApiExample {
                         .setUsername("xxxxx")
                         .setPassword("xxxxx")
                         .setPublicKey("xxxxx")
-                        .setAppNames(asList("pfm_cash_flow"))
+                        .setAppNames(asList(new AppConfig().setAppName("pfm_cash_flow").setAuthType("password_credentials")))
                         .setBasePath("https://api.hydrogenplatform.com/admin/v1")
                         .setAttributes(asList(
                                                 new TagAttributes().setName("card-id").setValue("xxxxx")

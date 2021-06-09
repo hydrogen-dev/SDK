@@ -124,120 +124,43 @@ class AutoGenerateAppTokenApi
 
         $client_credential_token = \com\hydrogen\admin\AuthApiClient::getDefaultConfiguration()->createClientCredential($app_token_config['clientId'],$app_token_config['clientSecret']);
         $this->config->setAccessToken($client_credential_token->getAccessToken());
-        $white_label_response = $this->getWhiteLabelUsingGETWithHttpInfo($app_token_config);
-        $content = $white_label_response[0]->content;
-        
         $applicationMap = array();
-        foreach ($content as $row) {
-            $applicationMap[$row->name] = $row->auth_type;
-        }
-        
         $response = [];
         if($app_token_config['appName']){
             foreach ($app_token_config['appName'] as $row) {
               $item = [];
               $app = $row;
-              if($applicationMap && $applicationMap[$app]){
-                $authType = $applicationMap[$app];
-                if($authType && strtolower($authType) === "client_credentials"){
+                if($app['auth_type'] && strtolower($app['auth_type']) === "client_credentials"){
                     $this->config->setAccessToken($client_credential_token->getAccessToken());
 
-                }else if($authType && strtolower($authType) === "password_credentials"){
-                  if(isset($app_token_config['userAccesstoken']))
-                    $this->config->setAccessToken($app_token_config['userAccesstoken']);
+                }else if($app['auth_type'] && strtolower($app['auth_type']) === "password_credentials") {
+                  if(isset($app_token_config['userAccessToken']))
+                    $this->config->setAccessToken($app_token_config['userAccessToken']);
                   if($app_token_config['isCredsPassed'] !== null && $app_token_config['isCredsPassed']){
                     $passwordTokenData = \com\hydrogen\admin\AuthApiClient::getDefaultConfiguration()->createPasswordCredential($app_token_config['clientId'],$app_token_config['clientSecret'], $app_token_config['username'], $app_token_config['password']);
                     $this->config->setAccessToken($passwordTokenData->getAccessToken());
                   }
                 }
-                $appTokenData =  $this->getAppTokenUsingGETWithHttpInfo($app_token_config, $app);
+                $appTokenData =  $this->getAppTokenUsingGETWithHttpInfo($app_token_config, $app['app_name']);
                 
 
                 foreach ($appTokenData[0] as $appTokenRow) {
                     
                     $appTokenValue = isset($appTokenRow)? $appTokenRow['app_token'] : '';
-                    $tagValue = str_replace("_", '-', strtolower($app));
+                    $tagValue = str_replace("_", '-', strtolower($app['app_name']));
                     $fillTemplateValue = str_replace("tag", $tagValue, $template);
                     $fillTemplateValue = str_replace("##app_token##", $appTokenValue, $fillTemplateValue);
                     $fillTemplateValue = str_replace("##attrib_map##", isset($finalAttribMap) ?  implode(' ', $finalAttribMap): '', $fillTemplateValue);
                     
-                    $item[$app] = $appTokenValue;
+                    $item[$app['app_name']] = $appTokenValue;
                     if($app_token_config['isEmbed']){
-                      $item[$app] = $fillTemplateValue;
+                      $item[$app['app_name']] = $fillTemplateValue;
                     }
                     array_push($response, $item);
                 }
-              }else{
-                console.log("application not found : " + app);
-                process.exit(1);
-              }
             }
           }
         return $response;
-    }
-
-    public function getWhiteLabelUsingGETWithHttpInfo($app_token_config)
-    {
-        $returnType = '\com\hydrogen\admin\Model\AppToken[]';
-        $request = $this->getWhiteLabelUsingGETRequest($app_token_config);
-       
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                $content,
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\com\hydrogen\admin\Model\AppToken[]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
     }
 
     /**

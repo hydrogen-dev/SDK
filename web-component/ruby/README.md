@@ -49,26 +49,28 @@ Now you are ready to execute the following Ruby code:
 # Load the gem
 require 'admin_api'
 
-#### Setup Authorization
-AdminApi.configure do |config|
-  # Use one of the below method to generate oauth token        
-  # Creating a token for grant_type=client_credentials
-   config.create_client_credential("CLIENT_ID", "CLIENT_SECRET");
-  # Creating a token for grant_type=password
-   config.create_password_credential("CLIENT_ID", "CLIENT_SECRET", "USERNAME", "PASSWORD");
-  # Creating a token using client token
-   config.create_client_token_credential("CLIENT_ID", "CLIENT_SECRET", "CLIENT_TOKEN")
-end
-
 #### Get App Token
 
-api_instance = AdminApi::AppTokenApi.new
+api_instance = AdminApi::AutoGenerateAppTokenApi.new
 
-app_name = ['app_name_example'] # Array<String> | app_name
+attribMap = [{"name" => "public-key", "value" => "xxxx"},{"name" => "client-id", "value" => "xxxx"}, {"name" => "card-id", "value" => "xxxx"}]
+
+appTokenConfig = {}
+appTokenConfig['appName'] = [{'app_name':'app_name_example', 'auth_type':'password_credentials'}]
+appTokenConfig['userAccessToken'] = userAuthToken
+appTokenConfig['attribMap'] = attribMap
+appTokenConfig['isEmbed'] = TRUE
+appTokenConfig['isCredsPassed'] = TRUE
+appTokenConfig['clientId'] = "xxxx"
+appTokenConfig['clientSecret'] = "xxxx"
+appTokenConfig['username'] = "xxxx"
+appTokenConfig['password'] = "xxxx"
+appTokenConfig['basePath'] = "xxxx"
+
 
 begin
   #getAppToken
-  result = api_instance.get_app_token_using_get(app_name)
+  result = api_instance.get_app_token_using_get(appTokenConfig)
   p result
 rescue AdminApi::ApiError => e
   puts "Exception when calling AppTokenApi->get_app_token_using_get: #{e}"

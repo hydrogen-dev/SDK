@@ -33,7 +33,7 @@ public class AppTokenConfig {
     private String basePath;
     private boolean isCredsPassed;
     private boolean isEmbed;
-    private List<String> appNames = new ArrayList<>();
+    private List<AppConfig> appNames = new ArrayList<>();
     private List<TagAttributes> attributes = new ArrayList<>();
 
     public String getClientId() {
@@ -108,11 +108,11 @@ public class AppTokenConfig {
         return this;
     }
 
-    public List<String> getAppNames() {
+    public List<AppConfig> getAppNames() {
         return appNames;
     }
 
-    public AppTokenConfig setAppNames(List<String> appNames) {
+    public AppTokenConfig setAppNames(List<AppConfig> appNames) {
         this.appNames = appNames;
         return this;
     }

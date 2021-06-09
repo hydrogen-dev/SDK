@@ -142,36 +142,6 @@
             });
         }
 
-        async function getWhiteLabelApplication (apiClient, authApi) {
-          const req = apiClient.callApi(
-                '/white_label/application?size=100000', 'GET',
-                pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-                authNames, contentTypes, accepts, Object, null
-              );
-
-          return new Promise(function(resolve, reject) {
-              req
-              .then(response => {
-                let data = null;
-                try {
-                    data = apiClient.deserialize(response, Object);
-                    if (apiClient.enableCookies && typeof window === 'undefined') {
-                        apiClient.agent.saveCookies(response);
-                    }
-                } catch (err) {
-                    console.log(err);
-                    reject(err);
-                }
-
-                resolve(data)
-              })
-              .catch(err => {
-                console.error(err);
-                reject(err);
-             });
-            });
-        }
-
         async function getAppToken (apiClient, appName) {
           const req = apiClient.callApi(
                     '/app_token?app_name=' + appName, 'GET',
@@ -208,31 +178,14 @@
             callback(e, null, null)
           });
           oauth2.accessToken = tokenData.access_token;
-
-          const applicationsData = await getWhiteLabelApplication(this.apiClient, this.authApi).catch(e=>{
-            callback(e, null, null)
-          });
-
-          let applicationMap = [];
-          if(applicationsData && applicationsData.content){
-            let content = applicationsData.content;
-            applicationMap = Array.from(content).reduce(function(map, obj) {
-              map[obj.name] = obj.auth_type;
-              return map;
-            }, {});
-
-            const appNameQueryParam = collectionQueryParams && collectionQueryParams['app_name'] ? collectionQueryParams['app_name'] : [];
             let response = [];
-            if(appNameQueryParam){
-              for (var param in appNameQueryParam.value) {
+              for (var appConfig in appTokenConfig.appName) {
+                var app =  appTokenConfig.appName[0];
                 let item = {};
-                const app = appNameQueryParam.value[param];
-                if(applicationMap && applicationMap[app]){
-                  const authType = applicationMap[app];
-                  if(authType && authType.find(a=>a.toLowerCase() === "client_credentials")){
+                  if(app.auth_type && app.auth_type.toLowerCase() === "client_credentials"){
                     oauth2.accessToken = tokenData.access_token;
 
-                  }else if(authType && authType.find(a=>a.toLowerCase() === "password_credentials")){
+                  }else if(app.auth_type && app.auth_type.toLowerCase() === "password_credentials"){
                     oauth2.accessToken = appTokenConfig.userAccessToken;
                     if(appTokenConfig.isCredsPassed){
                       const passwordTokenData = await createUsingPostPassword(this.apiClient, this.authApi, appTokenConfig.username, appTokenConfig.password).catch(e=>{
@@ -241,32 +194,22 @@
                       oauth2.accessToken = passwordTokenData.access_token;
                     }
                   }
-                  const appTokenData = await getAppToken(this.apiClient, app).catch(e=>{
+                  const appTokenData = await getAppToken(this.apiClient, app.app_name).catch(e=>{
                     callback(e, null, null)
                   });
                   const appTokenValue = appTokenData && appTokenData.length>0 ? appTokenData[0].app_token : '';
-                  const tagValue = app.toLowerCase().replace(/_/g, '-');
+                  const tagValue = app.app_name.toLowerCase().replace(/_/g, '-');
                   const fillTemplateValue = template.replace(/tag/g, tagValue)
                                             .replace(/##app_token##/g, appTokenValue)
                                             .replace(/##attrib_map##/g, finalAttribMap!=null ?  finalAttribMap.join(' ') : '');
                   
-                  item[app] = appTokenValue;
+                  item[app.app_name] = appTokenValue;
                   if(appTokenConfig.isEmbed){
-                    item[app] = fillTemplateValue;
+                    item[app.app_name] = fillTemplateValue;
                   }
                   response.push(item);
-                }else{
-                  console.log("application not found : " + app);
-                  callback("application not found", response, response) ;
-                }
               }
-            }
             callback(null, response, response) ;
-          }else{
-            console.log("Unble to get whitelabel applications");
-            callback("Unble to get whitelabel applications", response, response) ;
-          }
-
         })();
       }catch(e){
         callback(e, null, null);

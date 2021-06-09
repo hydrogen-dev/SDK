@@ -16,6 +16,3 @@ from __future__ import absolute_import
 
 # import models into model package
 from admin_api.models.app_token import AppToken
-from admin_api.models.client import Client
-from admin_api.models.page_client import PageClient
-from admin_api.models.sort import Sort

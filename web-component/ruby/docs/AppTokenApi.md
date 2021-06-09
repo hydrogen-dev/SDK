@@ -1,6 +1,6 @@
 # AdminApi::AppTokenApi
 
-All URIs are relative to *https://api.hydrogenplatform.com/admin/v1*
+All URIs are relative to *https://sandbox.hydrogenplatform.com/admin/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -46,7 +46,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_name** | [**Array&lt;String&gt;**](String.md)| app_name |
+ **app_name** | [**Array&lt;String&gt;**](String.md)| app_name | 
 
 ### Return type
 
@@ -60,3 +60,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: */*
+
+
+

@@ -86,7 +86,7 @@ let attribMap = [{"name" : "public-key", "value" : "xxxx"},{"name" : "client-id"
 const userAuthToken = "xxxx";
 
 let appTokenConfig = {};
-appTokenConfig['appName'] = ['pfm_cash_flow']
+appTokenConfig['appName'] = [{'app_name':'pfm_cash_flow', 'auth_type':'password_credentials'}]
 appTokenConfig['userAccessToken'] = userAuthToken
 appTokenConfig['attribMap'] = attribMap
 appTokenConfig['isEmbed'] = true

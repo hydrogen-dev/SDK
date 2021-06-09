@@ -122,40 +122,22 @@ class AutoGenerateAppTokenApi(object):
         
         auth_api_cc_response = self.auth_api.create_using_post_client_credentials(appTokenConfig['clientId'], appTokenConfig['clientSecret'])
         self.api_client.configuration.access_token = auth_api_cc_response.access_token
-        
-        white_label_response = self.api_client.call_api(
-            '/white_label/application?size=100000', 'GET',
-            [],
-            [],
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='object',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
 
-        #pprint(white_label_response['content'])
-        if white_label_response['content'] is not None:
-            applicationMap = dict((x['name'], x['auth_type']) for x in white_label_response['content'])
-            response = []
-            for app in appTokenConfig['appName']:
-                item = {}
-                authType = applicationMap[app]
-                if(authType is not None and authType.lower() == "client_credentials"):
-                    self.api_client.configuration.access_token = auth_api_cc_response.access_token
-                elif(authType is not None and authType.lower() == "password_credentials"):
-                    self.api_client.configuration.access_token = appTokenConfig['userAccessToken']
-                if appTokenConfig['isCredsPassed']:
-                    passwordTokenData = self.auth_api.create_using_post_password_credentials(appTokenConfig['clientId'], appTokenConfig['clientSecret'], appTokenConfig['username'], appTokenConfig['password'])
-                    self.api_client.configuration.access_token = passwordTokenData.access_token
+        response = []
+        for appConfig in appTokenConfig['appName']:
+            item = {}
+            app = appConfig
+            authType = app['auth_type']
+            if(authType is not None and authType.lower() == "client_credentials"):
+                self.api_client.configuration.access_token = auth_api_cc_response.access_token
+            elif(authType is not None and authType.lower() == "password_credentials"):
+                self.api_client.configuration.access_token = appTokenConfig['userAccessToken']
+            if appTokenConfig['isCredsPassed']:
+                passwordTokenData = self.auth_api.create_using_post_password_credentials(appTokenConfig['clientId'], appTokenConfig['clientSecret'], appTokenConfig['username'], appTokenConfig['password'])
+                self.api_client.configuration.access_token = passwordTokenData.access_token
                 
-                appTokenData = self.api_client.call_api(
-                                                    '/app_token?app_name='+app, 'GET',
+            appTokenData = self.api_client.call_api(
+                                                    '/app_token?app_name='+app['app_name'], 'GET',
                                                     path_params,
                                                     [],
                                                     header_params,
@@ -169,15 +151,15 @@ class AutoGenerateAppTokenApi(object):
                                                     _preload_content=params.get('_preload_content', True),
                                                     _request_timeout=params.get('_request_timeout'),
                                                     collection_formats=collection_formats)
-                appTokenValue = ""
-                if appTokenData is not None and len(appTokenData)>0 : 
-                   appTokenValue = appTokenData[0].app_token
-                tagValue = app.lower().replace("_", '-')
-                fillTemplateValue = template.replace("tag", tagValue).replace("##app_token##", appTokenValue).replace("##attrib_map##", ' '.join(finalAttribMap))
+            appTokenValue = ""
+            if appTokenData is not None and len(appTokenData)>0 :
+               appTokenValue = appTokenData[0].app_token
+            tagValue = app['app_name'].lower().replace("_", '-')
+            fillTemplateValue = template.replace("tag", tagValue).replace("##app_token##", appTokenValue).replace("##attrib_map##", ' '.join(finalAttribMap))
                   
-                item[app] = appTokenValue
-                if appTokenConfig['isEmbed'] :
-                    item[app] = fillTemplateValue
-                response.append(item)
+            item[app['app_name']] = appTokenValue
+            if appTokenConfig['isEmbed'] :
+                item[app['app_name']] = fillTemplateValue
+            response.append(item)
 
         return response

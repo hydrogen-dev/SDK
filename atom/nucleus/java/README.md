@@ -1,8 +1,8 @@
 # Hydrogen Nucleus API
 
 Hydrogen Nucleus API
-- API version: 1.9.0
-  - Build date: 04-28-2021
+- API version: 1.9.1
+  - Build date: 09-06-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 
@@ -40,7 +40,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.hydrogen</groupId>
   <artifactId>hydrogen-nucleus-api</artifactId>
-  <version>1.9.0</version>
+  <version>1.9.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -50,7 +50,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.hydrogen:hydrogen-nucleus-api:1.9.0"
+compile "com.hydrogen:hydrogen-nucleus-api:1.9.1"
 ```
 
 ### Others
@@ -63,7 +63,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/hydrogen-nucleus-api-1.9.0.jar`
+* `target/hydrogen-nucleus-api-1.9.1.jar`
 * `target/lib/*.jar`
 
 ## Getting Started

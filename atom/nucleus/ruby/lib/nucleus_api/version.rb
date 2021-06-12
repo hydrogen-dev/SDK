@@ -11,5 +11,5 @@ Swagger Codegen version: 2.4.19
 =end
 
 module NucleusApi
-  VERSION = '1.9.0'
+  VERSION = '1.9.1'
 end

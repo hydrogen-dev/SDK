@@ -10,7 +10,8 @@ For more information, please visit [https://www.hydrogenplatform.com/no-code](ht
 ### Install the gem locally:
 
 ```shell
-gem install ./app_token_api-1.0.0.gem
+gem build app_token_api.gemspec
+gem install app_token_api-1.0.0.gem
 ```
 (for development, run `gem install --dev ./app_token_api-1.0.0.gem` to install the development dependencies)
 
@@ -56,7 +57,7 @@ api_instance = AdminApi::AutoGenerateAppTokenApi.new
 attribMap = [{"name" => "public-key", "value" => "xxxx"},{"name" => "client-id", "value" => "xxxx"}, {"name" => "card-id", "value" => "xxxx"}]
 
 appTokenConfig = {}
-appTokenConfig['appName'] = [{'app_name':'app_name_example', 'auth_type':'password_credentials'}]
+appTokenConfig['appName'] = [{'app_name':'pfm_cash_flow', 'auth_type':'password_credentials'}]
 appTokenConfig['userAccessToken'] = userAuthToken
 appTokenConfig['attribMap'] = attribMap
 appTokenConfig['isEmbed'] = TRUE
@@ -65,7 +66,7 @@ appTokenConfig['clientId'] = "xxxx"
 appTokenConfig['clientSecret'] = "xxxx"
 appTokenConfig['username'] = "xxxx"
 appTokenConfig['password'] = "xxxx"
-appTokenConfig['basePath'] = "xxxx"
+appTokenConfig['basePath'] = "https://api.hydrogenplatform.com/admin/v1"
 
 
 begin

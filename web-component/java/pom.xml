@@ -2,9 +2,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.hydrogen</groupId>
-    <artifactId>hydrogen-app-token-api</artifactId>
+    <artifactId>app-token-api</artifactId>
     <packaging>jar</packaging>
-    <name>hydrogen-app-token-api</name>
+    <name>app-token-api</name>
     <version>1.0.0</version>
     <url>https://github.com/swagger-api/swagger-codegen</url>
     <description>Swagger Java</description>

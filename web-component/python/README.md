@@ -55,7 +55,7 @@ appTokenConfig['clientId'] = "xxxx"
 appTokenConfig['clientSecret'] = "xxxx"
 appTokenConfig['username'] = "xxxx"
 appTokenConfig['password'] = "xxxx"
-appTokenConfig['basePath'] = "xxxx"
+appTokenConfig['basePath'] = "https://api.hydrogenplatform.com/admin/v1"
 
 #pprint(appTokenConfig)
 

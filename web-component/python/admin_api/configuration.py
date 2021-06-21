@@ -40,7 +40,7 @@ class Configuration(object):
             return
 
         # Default Base url
-        self.host = "https://sandbox.hydrogenplatform.com/admin/v1"
+        self.host = "https://api.hydrogenplatform.com/admin/v1"
         # Temp file folder for downloading files
         self.temp_folder_path = None
 

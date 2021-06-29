@@ -1,6 +1,6 @@
 {
-  "name": "app_token_api",
-  "version": "1.0.0",
+  "name": "@hydrogenplatform/app_token_api",
+  "version": "1.0.1",
   "description": "The_app_token_api",
   "license": "Unlicense",
   "main": "src/index.js",

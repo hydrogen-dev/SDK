@@ -29,7 +29,7 @@ Finally, switch to the directory you want to use your app_token_api from, and ru
 npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
 ```
 
-You should now be able to `require('app_token_api')` in javascript files from the directory you ran the last
+You should now be able to `require('@hydrogenplatform/app_token_api')` in javascript files from the directory you ran the last
 command above from.
 
 ### Webpack Configuration
@@ -71,7 +71,7 @@ Now you are ready to execute the following Javascript code:
 
 ```javascript
 const dotenv = require('dotenv').config();
-const HydrogenAppTokenApi = require('app_token_api');
+const HydrogenAppTokenApi = require('@hydrogenplatform/app_token_api');
 
 var callback = function(error, data, response) {
     if (error) {

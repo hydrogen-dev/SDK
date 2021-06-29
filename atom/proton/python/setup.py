@@ -13,7 +13,7 @@
 
 from setuptools import setup, find_packages  # noqa: H301
 
-NAME = "proton_api"
+NAME = "hydrogen_proton_api"
 VERSION = "1.9.0"
 # To install the library, run the following
 #

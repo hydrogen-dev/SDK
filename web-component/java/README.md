@@ -19,7 +19,7 @@ Add this dependency to your project's POM:
 ```xml
 <dependency>
   <groupId>com.hydrogenplatform</groupId>
-  <artifactId>hydrogen-app-token-api</artifactId>
+  <artifactId>app-token-api</artifactId>
   <version>1.0.0</version>
   <scope>compile</scope>
 </dependency>

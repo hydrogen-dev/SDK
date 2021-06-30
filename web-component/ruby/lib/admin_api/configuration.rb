@@ -129,7 +129,7 @@ module AdminApi
 
     def initialize
       @scheme = 'https'
-      @host = 'sdk.hydrogenplatform.com'
+      @host = 'api.hydrogenplatform.com'
       @base_path = '/admin/v1'
       @api_key = {}
       @api_key_prefix = {}

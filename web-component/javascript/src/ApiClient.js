@@ -47,9 +47,9 @@
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default https://qa.hydrogenplatform.com
+     * @default https://api.hydrogenplatform.com
      */
-    this.basePath = 'https://sandbox.hydrogenplatform.com/admin/v1/'.replace(/\/+$/, '');
+    this.basePath = 'https://api.hydrogenplatform.com/admin/v1/'.replace(/\/+$/, '');
     if(!this.basePath){
       console.log("BASE_PATH is not defined");
       process.exit(1);

@@ -2,7 +2,7 @@
 
 Hydrogen Proton API
 - API version: 1.9.0
-  - Build date: 04-28-2021
+  - Build date: 06-29-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 
@@ -39,7 +39,7 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-  <groupId>com.hydrogen</groupId>
+  <groupId>com.hydrogenplatform</groupId>
   <artifactId>hydrogen-proton-api</artifactId>
   <version>1.9.0</version>
   <scope>compile</scope>
@@ -50,7 +50,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.hydrogen:hydrogen-proton-api:1.9.0"
+compile "com.hydrogenplatform:hydrogen-proton-api:1.9.0"
 ```
 
 ### Others
@@ -111,9 +111,11 @@ public class AnnuitiesApiExample {
         e.printStackTrace();
         }
         AnnuitiesApi apiInstance = new AnnuitiesApi();
-        AnnuityCalculatorAccumulationHorizonRequest annuityCalculatorAccumulationHorizonRequest = new AnnuityCalculatorAccumulationHorizonRequest(); // AnnuityCalculatorAccumulationHorizonRequest | Request payload for Annuity Calculator - Accumulation Horizon
+        AnnuityCalculatorAccumulationHorizonRequest annuityCalculatorAccumulationHorizonRequest =
+             new AnnuityCalculatorAccumulationHorizonRequest(); // AnnuityCalculatorAccumulationHorizonRequest | Request payload for Annuity Calculator - Accumulation Horizon
         try {
-            Map<String, Object> result = apiInstance.annuityCalculatorAccumulationHorizon(annuityCalculatorAccumulationHorizonRequest);
+            Map<String, Object> result = apiInstance
+                .annuityCalculatorAccumulationHorizon(annuityCalculatorAccumulationHorizonRequest);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AnnuitiesApi#annuityCalculatorAccumulationHorizon");

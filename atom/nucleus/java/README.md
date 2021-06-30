@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-  <groupId>com.hydrogen</groupId>
+  <groupId>com.hydrogenplatform</groupId>
   <artifactId>hydrogen-nucleus-api</artifactId>
   <version>1.9.1</version>
   <scope>compile</scope>
@@ -50,7 +50,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.hydrogen:hydrogen-nucleus-api:1.9.1"
+compile "com.hydrogenplatform:hydrogen-nucleus-api:1.9.1"
 ```
 
 ### Others

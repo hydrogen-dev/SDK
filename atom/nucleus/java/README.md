@@ -86,7 +86,7 @@ Now you are ready to execute the following Java code:
 import com.hydrogen.nucleus.AuthApiClient;
 import com.hydrogen.nucleus.ApiException;
 import com.hydrogen.nucleus.model.AccountAllocationMapping;
-
+import com.hydrogen.nucleus.Environment;
 public class AccountApiExample {
 
     public static void main(String[] args) {

@@ -1,8 +1,8 @@
 # Hydrogen Nucleus API
 
 Hydrogen Nucleus API
-- API version: 1.9.1
-  - Build date: 09-06-2021
+- API version: 1.9.2
+  - Build date: 01-07-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 
@@ -40,7 +40,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.hydrogenplatform</groupId>
   <artifactId>hydrogen-nucleus-api</artifactId>
-  <version>1.9.1</version>
+  <version>1.9.2</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -50,7 +50,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.hydrogenplatform:hydrogen-nucleus-api:1.9.1"
+compile "com.hydrogenplatform:hydrogen-nucleus-api:1.9.2"
 ```
 
 ### Others
@@ -63,7 +63,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/hydrogen-nucleus-api-1.9.1.jar`
+* `target/hydrogen-nucleus-api-1.9.2.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -71,14 +71,12 @@ Then manually install the following JARs:
 Please first follow the [installation](#installation) instructions. Then make sure you use the proper base URL:
 
 ### Base URL
-1. Go to ApiClient file located under src folder.
-2. Search for basePath and change/verify the URL according to the environment.
+1. Create an authentication object(AuthApiClient) with environment parameter.
 
-**Sandbox Base URL**
-https://sandbox.hydrogenplatform.com
-
-**Production Base URL**
-https://api.hydrogenplatform.com
+**Sandbox URL**
+AuthApiClient authApiClient = new AuthApiClient(Environment.SANDBOX);
+**Production URL**
+AuthApiClient authApiClient = new AuthApiClient(Environment.PRODUCTION);
 
 ### Sample Code
 Now you are ready to execute the following Java code:
@@ -92,7 +90,7 @@ import com.hydrogen.nucleus.model.AccountAllocationMapping;
 public class AccountApiExample {
 
     public static void main(String[] args) {
-        AuthApiClient authApiClient = new AuthApiClient();
+        AuthApiClient authApiClient = new AuthApiClient(Environment.PRODUCTION);
         try {
         //          Use one of the below method to generate oauth token        
         //          Creating a token for grant_type=client_credentials            

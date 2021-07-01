@@ -1,8 +1,8 @@
 # Hydrogen Nucleus API
 
 Hydrogen Nucleus API
-- API version: 1.9.1
-  - Build date: 09-06-2021
+- API version: 1.9.2
+  - Build date: 01-07-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 
@@ -18,7 +18,7 @@ https://www.hydrogenplatform.com/docs/nucleus/v1
 
 ### Install via Composer
 
-Please run `composer require hydrogenplatform/nucleus`
+Please run `composer require hydrogenplatform/hydrogen-nucleus-api`
 
 ## Getting Started
 
@@ -26,14 +26,15 @@ Please first follow the [installation](#installation) instructions. Then make su
 
 ### Base URL
 
-1. Go to Configuration file located under lib folder.
-2. Search for $host and change/verify the URL according to the environment.  
-
-**Sandbox Base URL**
-https://sandbox.hydrogenplatform.com
-
-**Production Base URL**
-https://api.hydrogenplatform.com
+1.Create an authentication object(AuthApiClient) and pass the getDefaultConfiguration method
+ with environment parameter.
+ 
+**Sandbox URL**
+\com\hydrogen\nucleus\AuthApiClient::
+        getDefaultConfiguration(\com\hydrogen\nucleus\Environment::SANDBOX)
+**Production URL**
+\com\hydrogen\nucleus\AuthApiClient::
+        getDefaultConfiguration(\com\hydrogen\nucleus\Environment::PRODUCTION)
 
 ### Sample Code
 Now you are ready to execute the following PHP code:
@@ -45,16 +46,16 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration(\com\hydrogen\nucleus\Environment::PRODUCTION)
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
         \com\hydrogen\nucleus\AuthApiClient::
-        getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
+        getDefaultConfiguration(\com\hydrogen\nucleus\Environment::PRODUCTION)->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
 // 3) Generate Token for client_token
-$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration()
+$config = \com\hydrogen\nucleus\AuthApiClient::getDefaultConfiguration(\com\hydrogen\nucleus\Environment::PRODUCTION)
                 ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\nucleus\ApiException $e) {
     print_r($e);

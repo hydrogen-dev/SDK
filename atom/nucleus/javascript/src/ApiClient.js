@@ -51,6 +51,8 @@
      */
     this.basePath = 'https://api.hydrogenplatform.com'.replace(/\/+$/, '');
 
+    this.SANDBOX  = 'https://sandbox.hydrogenplatform.com';
+    this.PRODUCTION = 'https://api.hydrogenplatform.com';
     /**
      * The authentication methods to be included for all API calls.
      * @type {Array.<String>}

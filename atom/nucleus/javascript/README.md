@@ -53,15 +53,14 @@ Please first follow the [installation](#installation) instructions. Then make su
 
 ### Base URL
 
-1. Go to ApiClient file located under src folder.
-2. Search for **this.basePath** and change/verify the URL according to the environment.
+1. Create an object of AuthApi and update the environment using setEnvironment method.
 
 **Sandbox Base URL**
-https://sandbox.hydrogenplatform.com
+var api = new HydrogenNucleusApi.AuthApi();
+api.setEnvironment(defaultClient.SANDBOX);
 **Production Base URL**
-https://api.hydrogenplatform.com
-### Sample Code
-Now you are ready to execute the following Javascript code:
+var api = new HydrogenNucleusApi.AuthApi();
+api.setEnvironment(defaultClient.PRODUCTION);
 
 ```javascript
 var HydrogenNucleusApi = require('@hydrogenplatform/hydrogen_nucleus_api');
@@ -73,6 +72,7 @@ var oauth2 = defaultClient.authentications['oauth2'];
 
 // Create an instance of the Auth API class
 var api = new HydrogenNucleusApi.AuthApi();
+api.setEnvironment(defaultClient.PRODUCTION);
 
 // Callback function definition
 var tokenGenerationCallback = function (error, data, response) {

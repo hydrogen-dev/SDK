@@ -1,8 +1,8 @@
 # Hydrogen Nucleus API
 
 Hydrogen Nucleus API
-- API version: 1.9.1
-  - Build date: 09-06-2021
+- API version: 1.9.2
+  - Build date: 01-07-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 
@@ -20,7 +20,7 @@ Building the API client library requires:
 ### Install via NPM
 
 ```shell
-npm i @hydrogenplatform/hydrogen_nucleus_api --save
+npm i @hydrogenplatform/hydrogen-nucleus-api --save
 ```
 
 ### Install Locally
@@ -44,7 +44,7 @@ Finally, switch to the directory you want to use your hydrogen_nucleus_api from,
 npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
 ```
 
-You should now be able to `require('@hydrogenplatform/hydrogen_nucleus_api')` in javascript files from the directory you ran the last 
+You should now be able to `require('@hydrogenplatform/hydrogen-nucleus-api')` in javascript files from the directory you ran the last 
 command above from.
 
 ## Getting Started
@@ -63,7 +63,7 @@ var api = new HydrogenNucleusApi.AuthApi();
 api.setEnvironment(defaultClient.PRODUCTION);
 
 ```javascript
-var HydrogenNucleusApi = require('@hydrogenplatform/hydrogen_nucleus_api');
+var HydrogenNucleusApi = require('@hydrogenplatform/hydrogen-nucleus-api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 

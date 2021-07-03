@@ -1,8 +1,8 @@
 # Hydrogen Nucleus API
 
 Hydrogen Nucleus API
-- API version: 1.9.1
-  - Build date: 09-06-2021
+- API version: 1.9.2
+  - Build date: 01-07-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 
@@ -34,14 +34,11 @@ Please first follow the [installation](#installation) instructions. Then make su
 
 ### Base URL
 
-1. Go to configuration.py file located under nucleus_api folder.
-2. Search for self.host and change/verify the URL according to the environment.
-
-**Sandbox Base URL**
-https://sandbox.hydrogenplatform.com
-
-**Production Base URL**
-https://api.hydrogenplatform.com
+1. Create an configuration object(Configuration) with environment parameter.
+**Sandbox URL**
+configuration = nucleus_api.Configuration(Environment.SANDBOX)
+**Production URL**
+configuration = nucleus_api.Configuration(Environment.PRODUCTION)
 
 ### Sample Code
 Now you are ready to execute the following Python code:
@@ -49,12 +46,13 @@ Now you are ready to execute the following Python code:
 ```python
 from __future__ import print_function
 import time
+from nucleus_api.environment import Environment
 import nucleus_api
 from nucleus_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = nucleus_api.Configuration()
+configuration = nucleus_api.Configuration(Environment.PRODUCTION)
 
 # create an instance of the API class
 api_instance = nucleus_api.AuthApi(nucleus_api.ApiClient(configuration))

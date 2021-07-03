@@ -1,8 +1,8 @@
 # Hydrogen Nucleus API
 
 Hydrogen Nucleus API
-- API version: 1.9.1
-  - Build date: 09-06-2021
+- API version: 1.9.2
+  - Build date: 01-07-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 
@@ -20,7 +20,7 @@ Building the API client library requires:
 ### Install via NPM
 
 ```shell
-npm i @hydrogenplatform/hydrogen_nucleus_api --save
+npm i @hydrogenplatform/hydrogen-nucleus-api --save
 ```
 
 ### Install Locally
@@ -44,7 +44,7 @@ Finally, switch to the directory you want to use your hydrogen_nucleus_api from,
 npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
 ```
 
-You should now be able to `require('@hydrogenplatform/hydrogen_nucleus_api')` in javascript files from the directory you ran the last 
+You should now be able to `require('@hydrogenplatform/hydrogen-nucleus-api')` in javascript files from the directory you ran the last 
 command above from.
 
 ## Getting Started
@@ -53,18 +53,17 @@ Please first follow the [installation](#installation) instructions. Then make su
 
 ### Base URL
 
-1. Go to ApiClient file located under src folder.
-2. Search for **this.basePath** and change/verify the URL according to the environment.
+1. Create an object of AuthApi and update the environment using setEnvironment method.
 
 **Sandbox Base URL**
-https://sandbox.hydrogenplatform.com
+var api = new HydrogenNucleusApi.AuthApi();
+api.setEnvironment(defaultClient.SANDBOX);
 **Production Base URL**
-https://api.hydrogenplatform.com
-### Sample Code
-Now you are ready to execute the following Javascript code:
+var api = new HydrogenNucleusApi.AuthApi();
+api.setEnvironment(defaultClient.PRODUCTION);
 
 ```javascript
-var HydrogenNucleusApi = require('@hydrogenplatform/hydrogen_nucleus_api');
+var HydrogenNucleusApi = require('@hydrogenplatform/hydrogen-nucleus-api');
 
 var defaultClient = HydrogenNucleusApi.ApiClient.instance;
 
@@ -73,6 +72,7 @@ var oauth2 = defaultClient.authentications['oauth2'];
 
 // Create an instance of the Auth API class
 var api = new HydrogenNucleusApi.AuthApi();
+api.setEnvironment(defaultClient.PRODUCTION);
 
 // Callback function definition
 var tokenGenerationCallback = function (error, data, response) {

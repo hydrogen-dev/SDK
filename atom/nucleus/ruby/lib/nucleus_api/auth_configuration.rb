@@ -28,7 +28,7 @@ module NucleusApi
     attr_accessor :client_token_auth_uri
     attr_accessor :config
     attr_accessor :bearer
-
+    attr_accessor :base_url
     def initialize
       super
       @authorization = 'Authorization'
@@ -53,12 +53,16 @@ module NucleusApi
       yield(self) if block_given?
     end
 
-    def auth_url
+    def set_base_url(base_url)
+      @config.host = base_url
+    end
+
+    def auth_url(host)
       url = "#{scheme}://#{[host, auth_uri].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '')
       URI.encode(url)
     end
 
-    def client_token_auth_url
+    def client_token_auth_url(host)
       url = "#{scheme}://#{[host, client_token_auth_uri].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '')
       URI.encode(url)
     end
@@ -69,7 +73,7 @@ module NucleusApi
       header_params[@authorization] = basic_cred;
       header_params[@client_token] = @bearer + client_token;
       response = Typhoeus::Request.new(
-          client_token_auth_url,
+          client_token_auth_url(@config.host),
           :method => :post,
           :headers => header_params,
           :params => nil
@@ -106,7 +110,7 @@ module NucleusApi
       header_params['Content-Type'] = 'application/json'
       header_params[@authorization] = basic_cred
       response = Typhoeus::Request.new(
-          auth_url,
+          auth_url(@config.host),
           :method => :post,
           :headers => header_params,
           :params => params
@@ -149,7 +153,7 @@ module NucleusApi
       header_params['Content-Type'] = 'application/json'
       header_params[@authorization] = basic_cred
       response = Typhoeus::Request.new(
-          auth_url,
+          auth_url(@config.host),
           :method => :post,
           :headers => header_params,
           :params => params

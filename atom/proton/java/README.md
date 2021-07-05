@@ -1,8 +1,8 @@
 # Hydrogen Proton API
 
 Hydrogen Proton API
-- API version: 1.9.0
-  - Build date: 06-29-2021
+- API version: 1.9.1
+  - Build date: 01-07-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.hydrogenplatform</groupId>
   <artifactId>hydrogen-proton-api</artifactId>
-  <version>1.9.0</version>
+  <version>1.9.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -50,7 +50,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.hydrogenplatform:hydrogen-proton-api:1.9.0"
+compile "com.hydrogenplatform:hydrogen-proton-api:1.9.1"
 ```
 
 ### Others
@@ -63,7 +63,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/hydrogen-proton-api-1.9.0.jar`
+* `target/hydrogen-proton-api-1.9.1.jar`
 * `target/lib/*.jar`
 
 

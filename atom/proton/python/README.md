@@ -1,8 +1,8 @@
 # Hydrogen Proton API
 
 Hydrogen Proton API
-- API version: 1.9.0
-  - Build date: 29-06-2021
+- API version: 1.9.1
+  - Build date: 01-07-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 
@@ -33,15 +33,11 @@ import proton_api
 Please first follow the [installation](#installation) instructions. Then make sure you use the proper base URL:
 
 ### Base URL
-
-1. Go to configuration.py file located under proton_api folder.
-2. Search for self.host and change/verify the URL according to the environment.
-
-**Sandbox Base URL**
-https://sandbox.hydrogenplatform.com
-
-**Production Base URL**
-https://api.hydrogenplatform.com
+1. Create an configuration object(Configuration) with environment parameter.
+**Sandbox URL**
+configuration = proton_api.Configuration(Environment.SANDBOX)
+**Production URL**
+configuration = proton_api.Configuration(Environment.PRODUCTION)
 
 ### Sample Code
 Now you are ready to execute the following Python code:
@@ -51,11 +47,12 @@ Now you are ready to execute the following Python code:
 from __future__ import print_function
 import time
 import proton_api
+from proton_api.environment import Environment
 from proton_api.rest import ApiException
 from pprint import pprint
 
 # Configure OAuth2 access token for authorization: oauth2
-configuration = proton_api.Configuration()
+configuration = proton_api.Configuration(Environment.PRODUCTION)
 
 # create an instance of the API class
 api_instance = proton_api.AuthApi(proton_api.ApiClient(configuration))

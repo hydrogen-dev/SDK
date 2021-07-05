@@ -1,8 +1,8 @@
 # Hydrogen Proton API
 
 Hydrogen Proton API
-- API version: 1.9.0
-  - Build date: 04-15-2021
+- API version: 1.9.1
+  - Build date: 01-07-2021
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 
 ## Documentation
@@ -17,7 +17,7 @@ https://www.hydrogenplatform.com/docs/proton/v1
 
 ### Install via Composer
 
-Please run `composer require hydrogenplatform/proton`
+Please run `composer require hydrogenplatform/hydrogen-proton-api`
 
 
 ## Getting Started
@@ -26,14 +26,16 @@ Please first follow the [installation](#installation) instructions. Then make su
 
 ### Base URL
 
-1. Go to Configuration file located under lib folder.
-2. Search for $host and change/verify the URL according to the environment.  
+1.Create an authentication object(AuthApiClient) and pass the getDefaultConfiguration method
+ with environment parameter.
+ 
+**Sandbox URL**
+\com\hydrogen\proton\AuthApiClient::
+        getDefaultConfiguration(\com\hydrogen\proton\Environment::SANDBOX)
+**Production URL**
+\com\hydrogen\proton\AuthApiClient::
+        getDefaultConfiguration(\com\hydrogen\proton\Environment::PRODUCTION)
 
-**Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/proton/v1
-
-**Production Base URL**
-https://api.hydrogenplatform.com/proton/v1
 
 ### Sample Code
 Now you are ready to execute the following PHP code:
@@ -45,16 +47,18 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+       \com\hydrogen\proton\AuthApiClient::
+               getDefaultConfiguration(\com\hydrogen\proton\Environment::PRODUCTION)
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
-        \com\hydrogen\proton\AuthApiClient::
-        getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
+      \com\hydrogen\proton\AuthApiClient::
+              getDefaultConfiguration(\com\hydrogen\proton\Environment::PRODUCTION)->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
 // 3) Generate Token for client_token
-$config = \com\hydrogen\proton\AuthApiClient::getDefaultConfiguration()
+$config = \com\hydrogen\proton\AuthApiClient::
+                  getDefaultConfiguration(\com\hydrogen\proton\Environment::PRODUCTION)
                 ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\proton\ApiException $e) {
     print_r($e);

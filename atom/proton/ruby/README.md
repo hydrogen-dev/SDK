@@ -1,8 +1,8 @@
 # Hydrogen Proton API
 
 Hydrogen Proton API
-- API version: 1.9.0
-  - Build date: 29-06-2021
+- API version: 1.9.1
+  - Build date: 01-07-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 
@@ -20,12 +20,12 @@ https://www.hydrogenplatform.com/docs/proton/v1
 Install the gem:
 
 ```shell
-gem install proton_api
+gem install hydrogen-proton-api
 ```
 
 The add this to the Gemfile:
 
-    gem 'proton_api', '~> 1.9'
+    gem 'hydrogen-proton-api', '~> 1.9.1'
 
 ## Getting Started
 
@@ -33,19 +33,19 @@ Please first follow the [installation](#installation) instructions. Then make su
 
 ### Base URL
 
-1. Go to configuration file located under lib folder.
-2. Search for @host and change/verify the URL according to the environment.
-
-**Sandbox Base URL**
-sandbox.hydrogenplatform.com
-
-**Production Base URL**
-api.hydrogenplatform.com
+1. Create an object of Environment and use the set_environment method to update the environment.
+**Sandbox URL**
+environment_config = ProtonApi::Environment.new
+environment_config.set_environment(environment_config.SANDBOX)
+**Production URL**
+environment_config = ProtonApi::Environment.new
+environment_config.set_environment(environment_config.PRODUCTION)
 
 ```ruby
 # Load the gem
 require 'proton_api'
-
+environment_config = ProtonApi::Environment.new
+environment_config.set_environment(environment_config.PRODUCTION)
 # Setup authorization
 ProtonApi.configure do |config|
 # Use one of the below method to generate oauth token        

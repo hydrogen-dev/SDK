@@ -2,7 +2,7 @@
 
 Hydrogen Proton API
 - API version: 1.9.1
-  - Build date: 06-29-2021
+  - Build date: 01-07-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 

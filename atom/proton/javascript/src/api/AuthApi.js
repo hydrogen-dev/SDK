@@ -106,6 +106,14 @@
         };
 
         /**
+         * Update the baseurl of the ApiClient
+         */
+        this.setEnvironment = function (env) {
+            this.apiClient.basePath = env.replace(/\/+$/, '');
+            this.tokenUrl = this.apiClient.basePath.replace(/.com.*/, '.com/authorization/v1');
+        }
+
+        /**
          * Create a authentication token using client-token
          * @param opts
          * @param callback

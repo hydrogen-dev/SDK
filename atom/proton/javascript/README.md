@@ -1,8 +1,8 @@
 # Hydrogen Proton API
 
 Hydrogen Proton API
-- API version: 1.9.0
-  - Build date: 29-06-2021
+- API version: 1.9.1
+  - Build date: 01-07-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 
@@ -20,7 +20,7 @@ Building the API client library requires:
 ### Install via NPM
 
 ```shell
-npm i @hydrogenplatform/hydrogen_proton_api --save
+npm i @hydrogenplatform/hydrogen-proton-api --save
 ```
 
 ### Install Locally
@@ -44,7 +44,7 @@ Finally, switch to the directory you want to use your hydrogen_nucleus_api from,
 npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
 ```
 
-You should now be able to `require('@hydrogenplatform/hydrogen_proton_api')` in javascript files from the directory you ran the last 
+You should now be able to `require('@hydrogenplatform/hydrogen-proton-api')` in javascript files from the directory you ran the last 
 command above from.
 
 ## Getting Started
@@ -52,19 +52,18 @@ command above from.
 Please first follow the [installation](#installation) instructions. Then make sure you use the proper base URL:
 
 ### Base URL
-1. Go to ApiClient file located under src folder.
-2. Search for **this.basePath** and change/verify the URL according to the environment.
-
+1. Create an object of AuthApi and update the environment using setEnvironment method.
 **Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/proton/v1
-
+var api = new HydrogenProtonApi.AuthApi();
+api.setEnvironment(defaultClient.SANDBOX);
 **Production Base URL**
-https://api.hydrogenplatform.com/proton/v1
+var api = new HydrogenProtonApi.AuthApi();
+api.setEnvironment(defaultClient.PRODUCTION);
 
 Please follow the [installation](#installation) instruction and execute the following JS code:
 
 ```javascript
-var HydrogenProtonApi = require('@hydrogenplatform/hydrogen_proton_api');
+var HydrogenProtonApi = require('@hydrogenplatform/hydrogen-proton-api');
 
 var defaultClient = HydrogenProtonApi.ApiClient.instance;
 
@@ -73,7 +72,7 @@ var oauth2 = defaultClient.authentications['oauth2'];
 
 // Create an instance of the Auth API class
 var api = new HydrogenProtonApi.AuthApi();
-
+api.setEnvironment(defaultClient.SANDBOX);
 // Callback function definition
 var tokenGenerationCallback = function (error, data, response) {
     if (error) {

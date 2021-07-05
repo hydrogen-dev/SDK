@@ -24,16 +24,17 @@ class AuthApiClient
     private $clientTokenUri = '';
     private $client_token = 'Client-Token';
 
-    public static function getDefaultConfiguration()
+    public static function getDefaultConfiguration($url)
     {
         if (self::$defaultConfiguration === null) {
-            self::$defaultConfiguration = new AuthApiClient();
+            self::$defaultConfiguration = new AuthApiClient($url);
         }
         return self::$defaultConfiguration;
     }
 
-    function __construct()
+    function __construct($url)
     {
+        Configuration::getDefaultConfiguration()->setHost($url);
         $uri = parse_url(Configuration::getDefaultConfiguration()->getHost());
         $this->authUri = $uri['scheme'] . "://" . $uri['host'] . '/authorization/v1/oauth/token';
         $this->clientTokenUri = $uri['scheme'] . "://" . $uri['host'] . '/authorization/v1/client-token';

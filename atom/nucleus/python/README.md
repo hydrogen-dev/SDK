@@ -34,10 +34,14 @@ Please first follow the [installation](#installation) instructions. Then make su
 
 ### Base URL
 
-1. Create an configuration object(Configuration) with environment parameter.
+Create an configuration object(Configuration) with environment parameter.
+
 **Sandbox URL**
+
 configuration = nucleus_api.Configuration(Environment.SANDBOX)
+
 **Production URL**
+
 configuration = nucleus_api.Configuration(Environment.PRODUCTION)
 
 ### Sample Code

@@ -72,14 +72,15 @@ Then manually install the following JARs:
 Please first follow the [installation](#installation) instructions. Then make sure you use the proper base URL:
 
 ### Base URL
-1. Go to ApiClient file located under src folder.
-2. Search for basePath and change/verify the URL according to the environment.
+Create an authentication object(**AuthApiClient**) with environment parameter.
 
-**Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/proton/v1
+**Sandbox URL**
 
-**Production Base URL**
-https://api.hydrogenplatform.com/proton/v1
+AuthApiClient authApiClient = new AuthApiClient(Environment.SANDBOX);
+
+**Production URL**
+
+AuthApiClient authApiClient = new AuthApiClient(Environment.PRODUCTION);
 
 ### Sample Code
 Now you are ready to execute the following Java code:
@@ -88,6 +89,7 @@ Now you are ready to execute the following Java code:
 
 import com.hydrogen.proton.ApiClient;
 import com.hydrogen.proton.ApiException;
+import com.hydrogen.proton.Environment;
 import com.hydrogen.proton.model.AnnuityCalculatorAccumulationHorizonRequest;
 import com.hydrogen.proton.api.AnnuitiesApi;
 
@@ -96,7 +98,7 @@ import java.util.*;
 public class AnnuitiesApiExample {
 
     public static void main(String[] args) {
-        AuthApiClient authApiClient = new AuthApiClient();
+        AuthApiClient authApiClient = new AuthApiClient(Environment.PRODUCTION);
         try {
         //          Use one of the below method to generate oauth token        
         //          Creating a token for grant_type=client_credentials            

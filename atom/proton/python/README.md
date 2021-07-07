@@ -33,10 +33,15 @@ import proton_api
 Please first follow the [installation](#installation) instructions. Then make sure you use the proper base URL:
 
 ### Base URL
-1. Create an configuration object(Configuration) with environment parameter.
+
+Create an configuration object(**Configuration**) with environment parameter.
+
 **Sandbox URL**
+
 configuration = proton_api.Configuration(Environment.SANDBOX)
+
 **Production URL**
+
 configuration = proton_api.Configuration(Environment.PRODUCTION)
 
 ### Sample Code

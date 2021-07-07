@@ -52,12 +52,18 @@ command above from.
 Please first follow the [installation](#installation) instructions. Then make sure you use the proper base URL:
 
 ### Base URL
-1. Create an object of AuthApi and update the environment using setEnvironment method.
+Create an object of **AuthApi** and update the environment using **setEnvironment** method.
+
 **Sandbox Base URL**
+
 var api = new HydrogenProtonApi.AuthApi();
+
 api.setEnvironment(defaultClient.SANDBOX);
+
 **Production Base URL**
+
 var api = new HydrogenProtonApi.AuthApi();
+
 api.setEnvironment(defaultClient.PRODUCTION);
 
 Please follow the [installation](#installation) instruction and execute the following JS code:

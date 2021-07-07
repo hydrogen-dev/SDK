@@ -71,11 +71,14 @@ Then manually install the following JARs:
 Please first follow the [installation](#installation) instructions. Then make sure you use the proper base URL:
 
 ### Base URL
-1. Create an authentication object(AuthApiClient) with environment parameter.
+Create an authentication object(**AuthApiClient**) with environment parameter.
 
 **Sandbox URL**
+
 AuthApiClient authApiClient = new AuthApiClient(Environment.SANDBOX);
+
 **Production URL**
+
 AuthApiClient authApiClient = new AuthApiClient(Environment.PRODUCTION);
 
 ### Sample Code

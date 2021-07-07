@@ -26,13 +26,16 @@ Please first follow the [installation](#installation) instructions. Then make su
 
 ### Base URL
 
-1.Create an authentication object(AuthApiClient) and pass the getDefaultConfiguration method
+Create an authentication object(**AuthApiClient**) and pass the **getDefaultConfiguration** method
  with environment parameter.
  
 **Sandbox URL**
+
 \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration(\com\hydrogen\nucleus\Environment::SANDBOX)
+        
 **Production URL**
+
 \com\hydrogen\nucleus\AuthApiClient::
         getDefaultConfiguration(\com\hydrogen\nucleus\Environment::PRODUCTION)
 

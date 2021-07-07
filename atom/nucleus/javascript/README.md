@@ -53,13 +53,18 @@ Please first follow the [installation](#installation) instructions. Then make su
 
 ### Base URL
 
-1. Create an object of AuthApi and update the environment using setEnvironment method.
+Create an object of **AuthApi** and update the environment using **setEnvironment** method.
 
-**Sandbox Base URL**
+**Sandbox URL**
+
 var api = new HydrogenNucleusApi.AuthApi();
+
 api.setEnvironment(defaultClient.SANDBOX);
-**Production Base URL**
+
+**Production URL**
+
 var api = new HydrogenNucleusApi.AuthApi();
+
 api.setEnvironment(defaultClient.PRODUCTION);
 
 ```javascript

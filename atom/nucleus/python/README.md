@@ -34,7 +34,7 @@ Please first follow the [installation](#installation) instructions. Then make su
 
 ### Base URL
 
-Create an configuration object(Configuration) with environment parameter.
+Create an configuration object(**Configuration**) with environment parameter.
 
 **Sandbox URL**
 

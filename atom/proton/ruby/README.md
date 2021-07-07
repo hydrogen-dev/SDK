@@ -33,12 +33,18 @@ Please first follow the [installation](#installation) instructions. Then make su
 
 ### Base URL
 
-1. Create an object of Environment and use the set_environment method to update the environment.
+Create an object of **Environment** and use the **set_environment** method to update the environment.
+
 **Sandbox URL**
+
 environment_config = ProtonApi::Environment.new
+
 environment_config.set_environment(environment_config.SANDBOX)
+
 **Production URL**
+
 environment_config = ProtonApi::Environment.new
+
 environment_config.set_environment(environment_config.PRODUCTION)
 
 ```ruby

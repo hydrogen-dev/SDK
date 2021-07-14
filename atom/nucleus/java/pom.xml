@@ -6,12 +6,12 @@
     <packaging>jar</packaging>
     <name>hydrogen-nucleus-api</name>
     <version>1.9.2</version>
-    <url>https://github.com/swagger-api/swagger-codegen</url>
+    <url>https://www.hydrogenplatform.com/</url>
     <description>Swagger Java</description>
     <scm>
-        <connection>scm:git:git@github.com:swagger-api/swagger-codegen.git</connection>
-        <developerConnection>scm:git:git@github.com:swagger-api/swagger-codegen.git</developerConnection>
-        <url>https://github.com/swagger-api/swagger-codegen</url>
+        <connection>scm:git:git@github.com:hydrogen-dev/SDK.git</connection>
+        <developerConnection>scm:git:git@github.com:hydrogen-dev/SDK.git</developerConnection>
+        <url>https://github.com/hydrogen-dev/SDK/tree/master/atom/nucleus/java</url>
     </scm>
 
     <licenses>

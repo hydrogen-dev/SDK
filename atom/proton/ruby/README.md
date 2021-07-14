@@ -25,7 +25,7 @@ gem install hydrogen-proton-api
 
 The add this to the Gemfile:
 
-    gem 'hydrogen-proton-api', '~> 1.9.1'
+    gem 'hydrogen-proton-api', '~> 1.9', '>= 1.9.1'
 
 ## Getting Started
 

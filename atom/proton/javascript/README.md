@@ -20,7 +20,7 @@ Building the API client library requires:
 ### Install via NPM
 
 ```shell
-npm i @hydrogenplatform/hydrogen-proton-api --save
+npm i @hydrogenplatform/hydrogen-proton-api@1.9.1 --save
 ```
 
 ### Install Locally

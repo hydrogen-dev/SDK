@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Swagger-Codegen"]
   s.email       = ["info@hydrogenplatform.com"]
-  s.homepage    = "https://github.com/swagger-api/swagger-codegen"
+  s.homepage    = "https://www.hydrogenplatform.com/"
   s.summary     = "Hydrogen Proton API Ruby Gem"
   s.description = "Financial engineering module of Hydrogen Atom"
   s.license     = "Unlicense"

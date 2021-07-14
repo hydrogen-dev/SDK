@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.name        = "hydrogen-nucleus-api"
   s.version     = NucleusApi::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Swagger-Codegen"]
+  s.authors     = ["Hydrogen Platform"]
   s.email       = ["info@hydrogenplatform.com"]
   s.homepage    = "https://www.hydrogenplatform.com/"
   s.summary     = "Hydrogen Nucleus API Ruby Gem"

@@ -7,7 +7,7 @@
     <name>hydrogen-proton-api</name>
     <version>1.9.1</version>
     <url>https://www.hydrogenplatform.com/</url>
-    <description>Swagger Java</description>
+    <description>Hydrogen Platform</description>
     <scm>
         <connection>scm:git:git@github.com:hydrogen-dev/SDK.git</connection>
         <developerConnection>scm:git:git@github.com:hydrogen-dev/SDK.git</developerConnection>

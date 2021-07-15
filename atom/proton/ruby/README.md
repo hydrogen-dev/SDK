@@ -1,7 +1,7 @@
 # Hydrogen Proton API
 
 Hydrogen Proton API
-- API version: 1.9.1
+- API version: 1.9.2
   - Build date: 01-07-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
@@ -25,7 +25,7 @@ gem install hydrogen-proton-api
 
 The add this to the Gemfile:
 
-    gem 'hydrogen-proton-api', '~> 1.9', '>= 1.9.1'
+    gem 'hydrogen-proton-api', '~> 1.9', '>= 1.9.2'
 
 ## Getting Started
 

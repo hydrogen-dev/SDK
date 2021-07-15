@@ -6,7 +6,7 @@ info:
     url: 'https://www.hydrogenplatform.com/contact'
     email: info@hydrogenplatform.com
   title: Hydrogen Proton API
-  version: 1.9.0
+  version: 1.9.2
 host: api.hydrogenplatform.com
 basePath: /proton/v1
 securityDefinitions:

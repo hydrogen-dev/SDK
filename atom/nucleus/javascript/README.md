@@ -1,7 +1,7 @@
 # Hydrogen Nucleus API
 
 Hydrogen Nucleus API
-- API version: 1.9.2
+- API version: 1.9.3
   - Build date: 01-07-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
@@ -20,7 +20,7 @@ Building the API client library requires:
 ### Install via NPM
 
 ```shell
-npm i @hydrogenplatform/hydrogen-nucleus-api@1.9.2 --save
+npm i @hydrogenplatform/hydrogen-nucleus-api@1.9.3 --save
 ```
 
 ### Install Locally

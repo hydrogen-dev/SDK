@@ -25,7 +25,7 @@ gem install nucleus_api
 
 The add this to the Gemfile:
 
-    gem 'nucleus_api', '~> 1.9'
+    gem 'nucleus_api', '~> 1.9', '>= 1.9.2'
 
 ## Getting Started
 

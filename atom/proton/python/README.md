@@ -19,7 +19,7 @@ https://www.hydrogenplatform.com/docs/proton/v1
 ### Install via Pip
 
 ```
-pip install hydrogen-proton-api
+pip install hydrogen-proton-api==1.9.1
 ```
 (you may need to run `pip` with root permission: `sudo pip install git+https://github.com//.git`)
 

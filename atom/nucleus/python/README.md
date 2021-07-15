@@ -19,7 +19,7 @@ https://www.hydrogenplatform.com/docs/nucleus/v1
 ### Install via Pip
 
 ```
-pip install hydrogen-nucleus-api
+pip install hydrogen-nucleus-api==1.9.2
 ```
 (you may need to run `pip` with root permission: `sudo pip install git+https://github.com//.git`)
 

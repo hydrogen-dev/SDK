@@ -1,7 +1,7 @@
 # Hydrogen Proton API
 
 Hydrogen Proton API
-- API version: 1.9.1
+- API version: 1.9.2
   - Build date: 01-07-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
@@ -20,7 +20,7 @@ Building the API client library requires:
 ### Install via NPM
 
 ```shell
-npm i @hydrogenplatform/hydrogen-proton-api@1.9.1 --save
+npm i @hydrogenplatform/hydrogen-proton-api@1.9.2 --save
 ```
 
 ### Install Locally

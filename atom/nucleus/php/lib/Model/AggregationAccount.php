@@ -403,9 +403,6 @@ class AggregationAccount implements ModelInterface, ArrayAccess
         if ($this->container['account_name'] === null) {
             $invalidProperties[] = "'account_name' can't be null";
         }
-        if ($this->container['category'] === null) {
-            $invalidProperties[] = "'category' can't be null";
-        }
         if ($this->container['institution_name'] === null) {
             $invalidProperties[] = "'institution_name' can't be null";
         }

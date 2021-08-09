@@ -18094,7 +18094,6 @@ definitions:
 		type: object
 		required:
 			- account_name
-			- category
 			- institution_name
 		properties:
 			account_category_id:

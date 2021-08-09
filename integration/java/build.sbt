@@ -1,8 +1,8 @@
 lazy val root = (project in file(".")).
   settings(
-    organization := "com.hydrogen",
+    organization := "com.hydrogenplatform",
     name := "hydrogen-integration-api",
-    version := "1.3.0",
+    version := "1.3.1",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     javacOptions in compile ++= Seq("-Xlint:deprecation"),

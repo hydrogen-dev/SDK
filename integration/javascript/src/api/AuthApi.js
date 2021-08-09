@@ -1,6 +1,6 @@
 /**
- * Hydrogen Integration API
- * The Hydrogen Integration API
+ * Hydrogen Atom API
+ * The Hydrogen Atom API
  *
  * OpenAPI spec version: 1.7.0
  * Contact: info@hydrogenplatform.com
@@ -46,7 +46,7 @@
      */
     var exports = function (apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
-        this.tokenUrl = this.apiClient.basePath.replace(/.com.*/, '.com/authorization/v1');
+        this.tokenUrl = null;
 
         /**
          * Callback function to receive the result of the operation.
@@ -105,6 +105,13 @@
             return request;
         };
 
+        /**
+         * Update the baseurl of the ApiClient
+         */
+        this.setEnvironment = function (env) {
+            this.apiClient.basePath = env.replace(/\/+$/, '');
+            this.tokenUrl = this.apiClient.basePath.replace(/.com.*/, '.com/authorization/v1');
+        }
         /**
          * Create a authentication token using client-token
          * @param opts

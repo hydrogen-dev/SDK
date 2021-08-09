@@ -1,7 +1,7 @@
 # Hydrogen Integration API
 The Hydrogen Integration API
-- API version: 1.3.0
-  - Build date: 05-20-2021
+- API version: 1.3.1
+  - Build date: 16-07-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 
@@ -17,7 +17,7 @@ PHP 5.5 and later
 
 ### Install via Composer
 
-Please run `composer require hydrogenplatform/integration`
+Please run `composer require hydrogenplatform/hydrogen-integration-api`
 
 
 ## Getting Started
@@ -25,16 +25,18 @@ Please run `composer require hydrogenplatform/integration`
 Please first follow the [installation](#installation) instructions. Then make sure you use the proper base URL:
 
 ### Base URL
+Create an authentication object(**AuthApiClient**) and pass the **getDefaultConfiguration** method
+ with environment parameter.
+ 
+**Sandbox URL**
 
-1. Go to Configuration file located under lib folder.
-2. Search for $host and change/verify the URL according to the environment.  
+\com\hydrogen\integration\AuthApiClient::
+        getDefaultConfiguration(\com\hydrogen\integration\Environment::SANDBOX)
+        
+**Production URL**
 
-**Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/integration/v1
-
-**Production Base URL**
-https://api.hydrogenplatform.com/integration/v1
-
+\com\hydrogen\integration\AuthApiClient::
+        getDefaultConfiguration(\com\hydrogen\integration\Environment::PRODUCTION)
 ### Sample Code
 Now you are ready to execute the following PHP code:
 
@@ -45,16 +47,16 @@ try {
 // Use one of the below method to generate oauth token
 // 1) Generate Token for client credentials
 $config =
-        \com\hydrogen\integration\AuthApiClient::getDefaultConfiguration()
+        \com\hydrogen\integration\AuthApiClient::getDefaultConfiguration(\com\hydrogen\integration\Environment::PRODUCTION)
             ->createClientCredential("MYCLIENTID",
              "MYCLIENTSECRET");
 // 2) Generate Token for password credentials
 $config =
         \com\hydrogen\integration\AuthApiClient::
-        getDefaultConfiguration()->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
+        getDefaultConfiguration(\com\hydrogen\integration\Environment::PRODUCTION)->createPasswordCredential("MYCLIENTID","MYCLIENTSECRET"
                       ,"MYUSERNAME", "MYPASSWORD");
 // 3) Generate Token for client_token
-$config = \com\hydrogen\integration\AuthApiClient::getDefaultConfiguration()
+$config = \com\hydrogen\integration\AuthApiClient::getDefaultConfiguration(\com\hydrogen\integration\Environment::PRODUCTION)
                 ->createClientTokenCredential("MYCLIENTID","MYCLIENTSECRET", "CLIENT_TOKEN");
 } catch (\com\hydrogen\integration\ApiException $e) {
     print_r($e);

@@ -27,14 +27,17 @@ public class AuthApiClient extends ApiClient {
     private String ACCESS_TOKEN = "access_token";
     private String CLIENT_TOKEN = "Client-Token";
     private final String clientAccessTokenUri;
-    private ApiClient defaultApiClient = Configuration.getDefaultApiClient();
+    private ApiClient defaultApiClient;
     private String accessToken;
 
-    public AuthApiClient() {
+    public AuthApiClient(Environment environmentURlEnum) {
+        defaultApiClient = Configuration.getDefaultApiClient(environmentURlEnum);
         String uri = defaultApiClient.getBasePath();
         String baseUri = uri.substring(0, uri.indexOf(".com")+4);
         authUri = baseUri + "/authorization/v1/oauth/token";
         clientAccessTokenUri = baseUri + "/authorization/v1/client-token";
+        if (defaultApiClient.getAccessToken() != null)
+            defaultApiClient.setAccessToken(null);
     }
 
     public void createClientCredential(String clientId, String clientSecret) throws ApiException {
@@ -50,18 +53,19 @@ public class AuthApiClient extends ApiClient {
     }
 
     public void createClientTokenCredential(String clientId, String clientSecret, String clientToken) throws ApiException {
+        Request request = createRequest(createHttpUrl(CLIENT_CREDENTIAL), clientId, clientSecret);
+        String accessToken = getAuthRequestAccessToken(request);
         Request clientTokenRequest = createClientTokenRequest(createClientTokenUrl(),
-                clientId, clientSecret,
-                clientToken);
+                accessToken, clientToken);
         String token = getAuthRequestAccessToken(clientTokenRequest);
         setAccessToken(token);
     }
 
-    private Request createClientTokenRequest (HttpUrl createHttpUrl, String clientId, String clientSecret, String clientToken) {
+    private Request createClientTokenRequest (HttpUrl createHttpUrl, String accessToken, String clientToken) {
         return new Request.Builder()
                 .url(createHttpUrl)
                 .post(RequestBody.create(null, new byte[0]))
-                .addHeader(AUTHORIZATION, Credentials.basic(clientId, clientSecret))
+                .addHeader(AUTHORIZATION, BEARER + accessToken)
                 .addHeader(CLIENT_TOKEN, BEARER + clientToken)
                 .build();
     }

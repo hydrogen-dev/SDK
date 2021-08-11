@@ -180,7 +180,7 @@
           oauth2.accessToken = tokenData.access_token;
             let response = [];
               for (var appConfig in appTokenConfig.appName) {
-                var app =  appTokenConfig.appName[0];
+                var app =  appTokenConfig.appName[appConfig];
                 let item = {};
                   if(app.auth_type && app.auth_type.toLowerCase() === "client_credentials"){
                     oauth2.accessToken = tokenData.access_token;

@@ -1,10 +1,11 @@
 # Hydrogen Integration API
 
 Hydrogen Integration API
-- API version: 1.3.0
-  - Build date: 05-21-2020
+- API version: 1.3.1
+  - Build date: 16-07-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
+
 ## Documentation
 
 https://www.hydrogenplatform.com/docs/integration/v1
@@ -19,7 +20,7 @@ Building the API client library requires:
 ### Install via NPM
 
 ```shell
-npm i @hydrogenplatform/hydrogen_integration_api --save
+npm i @hydrogenplatform/hydrogen-integration-api@1.3.1 --save
 ```
 
 ### Install Locally
@@ -43,7 +44,7 @@ Finally, switch to the directory you want to use your hydrogen_nucleus_api from,
 npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
 ```
 
-You should now be able to `require('@hydrogenplatform/hydrogen_integration_api')` in javascript files from the directory you ran the last 
+You should now be able to `require('@hydrogenplatform/hydrogen-integration-api')` in javascript files from the directory you ran the last 
 command above from.
 
 ## Getting Started
@@ -52,20 +53,22 @@ Please first follow the [installation](#installation) instructions. Then make su
 
 ### Base URL
 
-1. Go to ApiClient file located under src folder.
-2. Search for **this.basePath** and change/verify the URL according to the environment.  
+Create an object of **AuthApi** and update the environment using **setEnvironment** method.
 
-**Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/integration/v1
+**Sandbox URL**
 
-**Production Base URL**
-https://api.hydrogenplatform.com/integration/v1
+var api = new HydrogenIntegrationApi.AuthApi();
 
-### Sample Code
-Now you are ready to execute the following Javascript code:
+api.setEnvironment(defaultClient.SANDBOX);
+
+**Production URL**
+
+var api = new HydrogenIntegrationApi.AuthApi();
+
+api.setEnvironment(defaultClient.PRODUCTION);
 
 ```javascript
-var HydrogenIntegrationApi = require('@hydrogenplatform/hydrogen_integration_api');
+var HydrogenIntegrationApi = require('@hydrogenplatform/hydrogen-integration-api');
 
 var defaultClient = HydrogenIntegrationApi.ApiClient.instance;
 
@@ -74,6 +77,7 @@ var oauth2 = defaultClient.authentications['oauth2'];
 
 // Create an instance of the Auth API class
 var api = new HydrogenIntegrationApi.AuthApi();
+api.setEnvironment(defaultClient.PRODUCTION);
 
 // Callback function definition
 var tokenGenerationCallback = function (error, data, response) {
@@ -86,7 +90,7 @@ var tokenGenerationCallback = function (error, data, response) {
         cancelAchTransferUsingDelete();
     }
 };
-//          Use one of the below method to generate oauth token        
+//          Use one of the below method to generate oauth token
 // Token Generation for grant_type = client_credentials
 api.createUsingPostClientCredentials({
     'grant_type': 'client_credentials',

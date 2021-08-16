@@ -1,8 +1,8 @@
 # Hydrogen Integration API
 
 Hydrogen Integration API
-- API version: 1.3.0
-  - Build date: 05-18-2021
+- API version: 1.3.1
+  - Build date: 16-07-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
 ## Documentation
@@ -37,9 +37,9 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-  <groupId>com.hydrogen.integration</groupId>
+  <groupId>com.hydrogenplatform</groupId>
   <artifactId>hydrogen-integration-api</artifactId>
-  <version>1.3.0</version>
+  <version>1.3.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -49,7 +49,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.hydrogen.integration:hydrogen-integration-api:1.3.0"
+compile "com.hydrogen.integration:hydrogen-integration-api:1.3.1"
 ```
 
 ### Others
@@ -62,7 +62,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/hydrogen-integration-api-1.3.0.jar`
+* `target/hydrogen-integration-api-1.3.1.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -70,14 +70,16 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ### Base URL
-1. Go to ApiClient file located under src folder.
-2. Search for basePath and change/verify the URL according to the environment.
+Create an authentication object(**AuthApiClient**) with environment parameter.
 
-**Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/integration/v1
+**Sandbox URL**
 
-**Production Base URL**
-https://api.hydrogenplatform.com/integration/v1
+AuthApiClient authApiClient = new AuthApiClient(Environment.SANDBOX);
+
+**Production URL**
+
+AuthApiClient authApiClient = new AuthApiClient(Environment.PRODUCTION);
+
 
 ### Sample Code
 Now you are ready to execute the following Java code:
@@ -86,6 +88,7 @@ Now you are ready to execute the following Java code:
 
 import com.hydrogen.integration.ApiException;
 import com.hydrogen.integration.AuthApiClient;
+import com.hydrogen.integration.Environment;
 import com.hydrogen.integration.model.AccountingFinalResponseVO;
 import com.hydrogen.integration.api.AccountingApi;
 
@@ -93,7 +96,7 @@ import com.hydrogen.integration.api.AccountingApi;
 public class AccountingApiExample {
 
     public static void main(String[] args) {
-        AuthApiClient authApiClient = new AuthApiClient();
+        AuthApiClient authApiClient = new AuthApiClient(Environment.PRODUCTION);
         try {
             //          Use one of the below method to generate oauth token        
             //          Creating a token for grant_type=client_credentials            
@@ -108,12 +111,12 @@ public class AccountingApiExample {
             e.printStackTrace();
         }
         AccountingApi apiInstance = new AccountingApi();
-        UUID nucleusClientId = new UUID(); // UUID | nucleus_client_id
+        UUID nucleusInvoiceId = new UUID(); // UUID | nucleus_invoice_id
         try {
-            AccountingFinalResponseVO result = apiInstance.createOrUpdateCustomer(nucleusClientId);
+            AccountingFinalResponseVO result = apiInstance.createOrUpdateAccountingBillPayment(nucleusInvoiceId);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AccountingApi#createOrUpdateCustomer");
+            System.err.println("Exception when calling AccountingApi#createOrUpdateAccountingBillPayment");
             e.printStackTrace();
         }
     }

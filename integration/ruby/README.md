@@ -1,7 +1,7 @@
 # Hydrogen Integration API
 Hydrogen Integration API
-- API version: 1.3.0
-  - Build date: 05-21-2021
+- API version: 1.3.1
+  - Build date: 16-07-2021
 For more information, please visit [https://www.hydrogenplatform.com/contact](https://www.hydrogenplatform.com/contact)
 
 ## Documentation
@@ -18,12 +18,12 @@ https://www.hydrogenplatform.com/docs/integration/v1
 Install the gem:
 
 ```shell
-gem install integration_api
+gem install hydrogen-integration-api
 ```
 
 The add this to the Gemfile:
 
-    gem 'integration_api', '~> 1.3.0'
+    gem 'hydrogen-integration-api', '~> 1.3', '>= 1.3.1'
 
 
 ## Getting Started
@@ -31,18 +31,26 @@ The add this to the Gemfile:
 Please first follow the [installation](#installation) instructions. Then make sure you use the proper base URL:
 ### Base URL
 
-1. Go to configuration file located under lib folder.
-2. Search for @host and change/verify the URL according to the environment.
 
-**Sandbox Base URL**
-sandbox.hydrogenplatform.com
+Create an object of **Environment** and use the **set_environment** method to update the environment.
 
-**Production Base URL**
-api.hydrogenplatform.com
+**Sandbox URL**
+
+environment_config = IntegrationApi::Environment.new
+
+environment_config.set_environment(environment_config.SANDBOX)
+
+**Production URL**
+
+environment_config = IntegrationApi::Environment.new
+
+environment_config.set_environment(environment_config.PRODUCTION)
 
 ```ruby
 # Load the gem
 require 'integration_api'
+environment_config = IntegrationApi::Environment.new
+environment_config.set_environment(environment_config.PRODUCTION)
 
 # Setup authorization
 IntegrationApi.configure do |config|

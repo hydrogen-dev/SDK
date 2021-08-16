@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   description: The Hydrogen Integration API
-  version: 1.3.0
+  version: 1.3.1
   title: Hydrogen Integration API
   termsOfService: 'https://www.hydrogenplatform.com/legal/terms'
   contact:
@@ -52,7 +52,7 @@ paths:
         - Accounting
       summary: Update/Create all bills in Nucleus for a given nucleus_client_id
       description: Update/Create all bills in Nucleus for a given nucleus_client_id
-      operationId: createOrUpdateBills
+      operationId: createOrUpdateAccountingBills
       produces:
         - application/json
       parameters:
@@ -62,7 +62,7 @@ paths:
           required: false
           type: string
           default: 'null'
-          format: date-time
+          format: date
         - name: nucleus_contact_id
           in: query
           description: nucleus_contact_id
@@ -74,7 +74,7 @@ paths:
           description: start_date
           required: true
           type: string
-          format: date-time
+          format: date
       responses:
         '200':
           description: OK
@@ -95,7 +95,7 @@ paths:
         - Accounting
       summary: Update bill in Nucleus for a given nucleus_invoice_id
       description: Update bill in Nucleus for a given nucleus_invoice_id
-      operationId: updateBill
+      operationId: updateAccountingBill
       produces:
         - application/json
       parameters:
@@ -125,7 +125,7 @@ paths:
         - Accounting
       summary: Create/Update bill payment in Nucleus for a given nucleus_invoice_id
       description: Create/Update bill payment in Nucleus for a given nucleus_invoice_id
-      operationId: createOrUpdateBillPayment
+      operationId: createOrUpdateAccountingBillPayment
       produces:
         - application/json
       parameters:
@@ -155,7 +155,7 @@ paths:
         - Accounting
       summary: Update/Create all customers in Nucleus for a given nucleus_client_id
       description: Update/Create all customers in Nucleus for a given nucleus_client_id
-      operationId: createOrUpdateCustomer
+      operationId: createOrUpdateAccountingCustomer
       produces:
         - application/json
       parameters:
@@ -191,7 +191,7 @@ paths:
         - Accounting
       summary: Update customer in Nucleus for a given nucleus_contact_id
       description: Update customer in Nucleus for a given nucleus_contact_id
-      operationId: updateCustomer
+      operationId: updateAccountingCustomer
       produces:
         - application/json
       parameters:
@@ -221,7 +221,7 @@ paths:
         - Accounting
       summary: Update/Create all customers revenue in Nucleus for a given nucleus_contact_id
       description: Update/Create all customers revenue in Nucleus for a given nucleus_contact_id
-      operationId: createOrUpdateCustomerRevenue
+      operationId: createOrUpdateAccountingCustomerRevenue
       produces:
         - application/json
       parameters:
@@ -237,7 +237,7 @@ paths:
           required: false
           type: string
           default: 'null'
-          format: date-time
+          format: date
         - name: nucleus_contact_id
           in: path
           description: nucleus_contact_id
@@ -249,7 +249,7 @@ paths:
           description: start_date
           required: true
           type: string
-          format: date-time
+          format: date
       responses:
         '200':
           description: OK
@@ -270,7 +270,7 @@ paths:
         - Accounting
       summary: Update/Create all invoices in Nucleus for a given nucleus_client_id
       description: Update/Create all invoices in Nucleus for a given nucleus_client_id
-      operationId: createOrUpdateInvoices
+      operationId: createOrUpdateAccountingInvoice
       produces:
         - application/json
       parameters:
@@ -280,7 +280,7 @@ paths:
           required: false
           type: string
           default: 'null'
-          format: date-time
+          format: date
         - name: nucleus_contact_id
           in: query
           description: nucleus_contact_id
@@ -292,7 +292,7 @@ paths:
           description: start_date
           required: true
           type: string
-          format: date-time
+          format: date
       responses:
         '200':
           description: OK
@@ -313,7 +313,7 @@ paths:
         - Accounting
       summary: Update invoice in Nucleus for a given nucleus_invoice_id
       description: Update invoice in Nucleus for a given nucleus_invoice_id
-      operationId: updateInvoice
+      operationId: updateAccountingInvoice
       produces:
         - application/json
       parameters:
@@ -343,7 +343,7 @@ paths:
         - Accounting
       summary: Create/Update invoice payment in Nucleus for a given nucleus_invoice_id
       description: Create/Update invoice payment in Nucleus for a given nucleus_invoice_id
-      operationId: createOrUpdateInvoicePayment
+      operationId: createOrUpdateAccountingInvoicePayment
       produces:
         - application/json
       parameters:
@@ -383,6 +383,7 @@ paths:
           required: false
           type: string
           default: accrual
+          allowEmptyValue: false
         - name: nucleus_business_id
           in: query
           description: nucleus_business_id
@@ -433,7 +434,7 @@ paths:
           description: statement_date
           required: false
           type: string
-          format: date-time
+          format: date
       responses:
         '200':
           description: OK
@@ -454,7 +455,7 @@ paths:
         - Accounting
       summary: Update/Create all suppliers in Nucleus for a given nucleus_client_id
       description: Update/Create all suppliers in Nucleus for a given nucleus_client_id
-      operationId: createOrUpdateSupplier
+      operationId: createOrUpdateAccountingSupplier
       produces:
         - application/json
       parameters:
@@ -490,7 +491,7 @@ paths:
         - Accounting
       summary: Update supplier in Nucleus for a given nucleus_contact_id
       description: Update supplier in Nucleus for a given nucleus_contact_id
-      operationId: updateSupplier
+      operationId: updateAccountingSupplier
       produces:
         - application/json
       parameters:
@@ -580,6 +581,7 @@ paths:
       security:
         - oauth2: []
       deprecated: false
+  '/accounting/vendor/{nucleus_client_id}':
     get:
       tags:
         - Accounting
@@ -589,9 +591,9 @@ paths:
       produces:
         - '*/*'
       parameters:
-        - name: id
+        - name: nucleus_client_id
           in: path
-          description: id
+          description: nucleus_client_id
           required: true
           type: string
           format: uuid
@@ -599,7 +601,9 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/VendorAccessConfigVO'
+            type: array
+            items:
+              $ref: '#/definitions/VendorAccessConfigVO'
         '401':
           description: Unauthorized
         '403':
@@ -700,7 +704,7 @@ paths:
       tags:
         - ACH
       summary: Get balance
-      operationId: getBalanceUsingGet
+      operationId: getAchBalanceUsingGet
       produces:
         - application/json
       parameters:
@@ -741,7 +745,7 @@ paths:
       tags:
         - ACH
       summary: Create bank link
-      operationId: createBankLinkUsingPost
+      operationId: createAchBankLinkUsingPost
       consumes:
         - application/json
       produces:
@@ -774,7 +778,7 @@ paths:
       tags:
         - ACH
       summary: Get client bank links
-      operationId: getClientBankLinksUsingGet
+      operationId: getAchClientBankLinksUsingGet
       produces:
         - application/json
       parameters:
@@ -805,7 +809,7 @@ paths:
       tags:
         - ACH
       summary: Get bank links for a reserve account
-      operationId: getBankLinksForReserveAccountUsingGet
+      operationId: getAchBankLinksForReserveAccountUsingGet
       produces:
         - application/json
       responses:
@@ -829,7 +833,7 @@ paths:
       tags:
         - ACH
       summary: Get bank link
-      operationId: getBankLinkUsingGet
+      operationId: getAchBankLinkUsingGet
       produces:
         - application/json
       parameters:
@@ -857,7 +861,7 @@ paths:
       tags:
         - ACH
       summary: Update bank link
-      operationId: updateBankLinkUsingPut
+      operationId: updateAchBankLinkUsingPut
       consumes:
         - application/json
       produces:
@@ -889,7 +893,7 @@ paths:
       tags:
         - ACH
       summary: Delete bank link
-      operationId: deleteBankLinkUsingDelete
+      operationId: deleteAchBankLinkUsingDelete
       produces:
         - application/json
       parameters:
@@ -918,7 +922,7 @@ paths:
       tags:
         - ACH
       summary: Create a business
-      operationId: createBusinessUsingPost
+      operationId: createAchBusinessUsingPost
       consumes:
         - application/json
       produces:
@@ -934,7 +938,7 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/BaseResponseVO'
+            $ref: '#/definitions/AchBusinessResponseVO'
         '201':
           description: Created
         '401':
@@ -951,7 +955,7 @@ paths:
       tags:
         - ACH
       summary: Get business balance
-      operationId: getBusinessBalanceUsingGet
+      operationId: getAchBusinessBalanceUsingGet
       produces:
         - application/json
       parameters:
@@ -966,6 +970,72 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/AchBalanceResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /ach/business/beneficial_owner:
+    post:
+      tags:
+        - ACH
+      summary: Create a beneficial owner
+      operationId: createAchBeneficialOwnerUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: beneficialOwnerRequest
+          description: beneficialOwnerRequest
+          required: true
+          schema:
+            $ref: '#/definitions/AchBeneficialOwnerRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AchBeneficialOwnerResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /ach/card:
+    post:
+      tags:
+        - ACH
+      summary: Fund card
+      operationId: fundCardUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: achCardRequestCO
+          description: achCardRequestCO
+          required: true
+          schema:
+            $ref: '#/definitions/AchCardRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AchCardResponseVO'
+        '201':
+          description: Created
         '401':
           description: Unauthorized
         '403':
@@ -1046,7 +1116,7 @@ paths:
       tags:
         - ACH
       summary: Create a client
-      operationId: createClientUsingPost
+      operationId: createAchClientUsingPost
       consumes:
         - application/json
       produces:
@@ -1108,6 +1178,39 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/Page«AchTransferResponseVO»'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /ach/reserve_link:
+    post:
+      tags:
+        - ACH
+      summary: Create an ACH reserve link
+      operationId: createAchReserveLinkUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: reserveLinkRequestCO
+          description: reserveLinkRequestCO
+          required: true
+          schema:
+            $ref: '#/definitions/AchReserveLinkRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AchReserveLinkResponseVO'
+        '201':
+          description: Created
         '401':
           description: Unauthorized
         '403':
@@ -1316,6 +1419,7 @@ paths:
           required: false
           type: string
           default: delink
+          allowEmptyValue: false
         - name: nucleus_aggregation_account_id
           in: path
           description: nucleus_aggregation_account_id
@@ -1606,7 +1710,7 @@ paths:
         - Async
       summary: Create async transaction for POST endpoints for bulk data
       description: Create async transaction for POST endpoints for bulk data
-      operationId: getAsyncData_2
+      operationId: getAsyncDataBulkUsingPost
       consumes:
         - application/json
       produces:
@@ -1617,7 +1721,7 @@ paths:
           description: data
           required: true
           schema:
-            type: object
+            $ref: '#/definitions/JsonNode'
         - name: integration_type
           in: path
           description: String integration_type
@@ -1659,6 +1763,7 @@ paths:
         - name: id
           in: path
           description: UUID id
+          required: false
           type: string
           format: uuid
           x-example: 62fd0a9f-4bac-4b1d-94d2-2c5ea2adca3d
@@ -1709,7 +1814,7 @@ paths:
           required: false
           type: string
           default: 'null'
-          format: date-time
+          format: date
         - name: event
           in: query
           description: event
@@ -1769,7 +1874,7 @@ paths:
           required: false
           type: string
           default: 'null'
-          format: date-time
+          format: date
         - name: vendor_name
           in: query
           description: vendor_name
@@ -2165,7 +2270,7 @@ paths:
       tags:
         - Brokerage
       summary: Get account balance
-      operationId: getBalanceUsingGet_1
+      operationId: getBrokerageBalanceUsingGet
       produces:
         - '*/*'
       parameters:
@@ -2194,7 +2299,7 @@ paths:
       tags:
         - Brokerage
       summary: create a Bank Link
-      operationId: createBankLinkUsingPost_1
+      operationId: createBrokerageBankLinkUsingPost
       consumes:
         - application/json
       produces:
@@ -2227,7 +2332,7 @@ paths:
       tags:
         - Brokerage
       summary: Get a Bank Link
-      operationId: getBankLinkUsingGet_1
+      operationId: getBrokerageBankLinkUsingGet
       produces:
         - '*/*'
       parameters:
@@ -2255,7 +2360,7 @@ paths:
       tags:
         - Brokerage
       summary: Update a Bank Link
-      operationId: updateBankLinkUsingPut_1
+      operationId: updateBrokerageBankLinkUsingPut
       consumes:
         - application/json
       produces:
@@ -2287,7 +2392,7 @@ paths:
       tags:
         - Brokerage
       summary: Delete a Bank Link
-      operationId: deleteBankLinkUsingDelete_1
+      operationId: deleteBrokerageBankLinkUsingDelete
       produces:
         - '*/*'
       parameters:
@@ -2386,7 +2491,7 @@ paths:
       tags:
         - Brokerage
       summary: Create a deposit
-      operationId: createDepositUsingPost
+      operationId: createBrokerageDepositUsingPost
       consumes:
         - application/json
       produces:
@@ -2419,7 +2524,7 @@ paths:
       tags:
         - Brokerage
       summary: Create a Brokerage document
-      operationId: createDocumentUsingPost
+      operationId: createBrokerageDocumentUsingPost
       consumes:
         - application/json
       produces:
@@ -2452,7 +2557,7 @@ paths:
       tags:
         - Brokerage
       summary: Get a Brokerage document
-      operationId: getDocumentUsingGet
+      operationId: getBrokerageDocumentUsingGet
       produces:
         - '*/*'
       parameters:
@@ -2481,7 +2586,7 @@ paths:
       tags:
         - Brokerage
       summary: Get portfolio holding performance
-      operationId: getHoldingPerformanceUsingGet
+      operationId: getBrokerageHoldingPerformanceUsingGet
       produces:
         - '*/*'
       parameters:
@@ -2510,7 +2615,7 @@ paths:
       tags:
         - Brokerage
       summary: Get portfolio holdings
-      operationId: getHoldingUsingGet
+      operationId: getBrokerageHoldingUsingGet
       produces:
         - '*/*'
       parameters:
@@ -2539,7 +2644,7 @@ paths:
       tags:
         - Brokerage
       summary: Create an Order
-      operationId: createOrderUsingPost
+      operationId: createBrokerageOrderUsingPost
       consumes:
         - application/json
       produces:
@@ -2572,7 +2677,7 @@ paths:
       tags:
         - Brokerage
       summary: Get an Order
-      operationId: getOrderUsingGet
+      operationId: getBrokerageOrderUsingGet
       produces:
         - '*/*'
       parameters:
@@ -2600,7 +2705,7 @@ paths:
       tags:
         - Brokerage
       summary: Cancel an Order
-      operationId: cancelOrderUsingPut
+      operationId: cancelBrokerageOrderUsingPut
       consumes:
         - application/json
       produces:
@@ -2631,7 +2736,7 @@ paths:
       tags:
         - Brokerage
       summary: Get securities information
-      operationId: getSecuritiesUsingGet
+      operationId: getBrokerageSecuritiesUsingGet
       produces:
         - '*/*'
       parameters:
@@ -2680,7 +2785,7 @@ paths:
           description: end_date
           required: true
           type: string
-          format: date-time
+          format: date
         - name: nucleus_account_id
           in: path
           description: nucleus_account_id
@@ -2692,7 +2797,7 @@ paths:
           description: start_date
           required: true
           type: string
-          format: date-time
+          format: date
         - name: statement_type
           in: query
           description: statement_type
@@ -2717,7 +2822,7 @@ paths:
       tags:
         - Brokerage
       summary: Get account transactions
-      operationId: getTransactionsUsingGet
+      operationId: getBrokerageTransactionsUsingGet
       produces:
         - '*/*'
       parameters:
@@ -2764,7 +2869,7 @@ paths:
       tags:
         - Brokerage
       summary: Create a withdrawal
-      operationId: createWithdrawalUsingPost
+      operationId: createBrokerageWithdrawalUsingPost
       consumes:
         - application/json
       produces:
@@ -3259,7 +3364,7 @@ paths:
       tags:
         - Card
       summary: update a pin card
-      operationId: updateCardPinUsingPost
+      operationId: updateCardPinUsingPut
       consumes:
         - application/json
       produces:
@@ -3913,7 +4018,7 @@ paths:
         - IAV
       summary: 'De-Link mapping between client,vendor,tenant'
       description: 'De-Link mapping between client,vendor,tenant'
-      operationId: deleteBankLinkUsingDelete_2
+      operationId: deleteBankLinkUsingDelete
       produces:
         - application/json
       parameters:
@@ -4336,39 +4441,6 @@ paths:
       security:
         - oauth2: []
       deprecated: false
-    post:
-      tags:
-        - Aggregation
-      summary: 'Create mapping between client,vendor,tenant for the property'
-      description: 'Create mapping between client,vendor,tenant for property'
-      operationId: createPropertyValueUsingPost
-      consumes:
-        - application/json
-      produces:
-        - application/json
-      parameters:
-        - in: body
-          name: aggregationRequestObject
-          description: aggregationRequestObject
-          required: true
-          schema:
-            $ref: '#/definitions/AggregationRequestObject'
-      responses:
-        '200':
-          description: OK
-          schema:
-            $ref: '#/definitions/PropertyValueResponseVO'
-        '201':
-          description: Created
-        '401':
-          description: Unauthorized
-        '403':
-          description: Forbidden
-        '404':
-          description: Not Found
-      security:
-        - oauth2: []
-      deprecated: false
   /rtp:
     post:
       tags:
@@ -4407,7 +4479,7 @@ paths:
       tags:
         - RTP
       summary: Create bank link
-      operationId: createBankLinkUsingPost_2
+      operationId: createRTPBankLinkUsingPost
       consumes:
         - application/json
       produces:
@@ -4440,7 +4512,7 @@ paths:
       tags:
         - RTP
       summary: Get client bank links
-      operationId: getClientBankLinksUsingGet_1
+      operationId: getRTPClientBankLinksUsingGet
       produces:
         - application/json
       parameters:
@@ -4471,7 +4543,7 @@ paths:
       tags:
         - RTP
       summary: Get bank link
-      operationId: getBankLinkUsingGet_2
+      operationId: getRTPBankLinkUsingGet
       produces:
         - application/json
       parameters:
@@ -4499,7 +4571,7 @@ paths:
       tags:
         - RTP
       summary: Update bank link
-      operationId: updateBankLinkUsingPut_2
+      operationId: updateRTPBankLinkUsingPut
       consumes:
         - application/json
       produces:
@@ -4531,7 +4603,7 @@ paths:
       tags:
         - RTP
       summary: Delete bank link
-      operationId: deleteBankLinkUsingDelete_3
+      operationId: deleteRTPBankLinkUsingDelete
       produces:
         - application/json
       parameters:
@@ -5048,6 +5120,11 @@ paths:
           required: false
           type: boolean
           default: false
+        - name: member_id
+          in: query
+          description: member_id
+          required: false
+          type: string
         - name: message_version
           in: query
           description: message_version
@@ -5059,6 +5136,18 @@ paths:
           required: false
           type: string
           default: aggregation
+        - name: nucleus_aggregation_account_id
+          in: query
+          description: nucleus_aggregation_account_id
+          required: false
+          type: string
+          format: uuid
+        - name: nucleus_bank_link_id
+          in: query
+          description: nucleus_bank_link_id
+          required: false
+          type: string
+          format: uuid
         - name: nucleus_id
           in: path
           description: nucleus_id
@@ -5133,7 +5222,7 @@ paths:
       tags:
         - Wire
       summary: Create bank link
-      operationId: createBankLinkUsingPost_3
+      operationId: createWireBankLinkUsingPost
       consumes:
         - application/json
       produces:
@@ -5166,7 +5255,7 @@ paths:
       tags:
         - Wire
       summary: Get client bank links
-      operationId: getClientBankLinksUsingGet_2
+      operationId: getWireClientBankLinksUsingGet
       produces:
         - application/json
       parameters:
@@ -5197,7 +5286,7 @@ paths:
       tags:
         - Wire
       summary: Get bank link
-      operationId: getBankLinkUsingGet_3
+      operationId: getWireBankLinkUsingGet
       produces:
         - application/json
       parameters:
@@ -5225,7 +5314,7 @@ paths:
       tags:
         - Wire
       summary: Update bank link
-      operationId: updateBankLinkUsingPut_3
+      operationId: updateWireBankLinkUsingPut
       consumes:
         - application/json
       produces:
@@ -5257,7 +5346,7 @@ paths:
       tags:
         - Wire
       summary: Delete bank link
-      operationId: deleteBankLinkUsingDelete_4
+      operationId: deleteWireBankLinkUsingDelete
       produces:
         - application/json
       parameters:
@@ -5372,7 +5461,7 @@ paths:
 securityDefinitions:
   oauth2:
     type: oauth2
-    tokenUrl: 'https://qa.hydrogenplatform.com/authorization/v1/oauth/token'
+    tokenUrl: 'https://dev.hydrogenplatform.com/authorization/v1/oauth/token'
     flow: application
 definitions:
   AccountingCustomerResponseVO:
@@ -5380,6 +5469,8 @@ definitions:
     properties:
       body:
         $ref: '#/definitions/Contact'
+      message:
+        type: string
       status_code:
         type: integer
         format: int32
@@ -5389,6 +5480,8 @@ definitions:
     properties:
       body:
         $ref: '#/definitions/CustomerRevenue'
+      message:
+        type: string
       status_code:
         type: integer
         format: int32
@@ -5426,6 +5519,8 @@ definitions:
     properties:
       body:
         $ref: '#/definitions/InvoicePayment'
+      message:
+        type: string
       status_code:
         type: integer
         format: int32
@@ -5435,6 +5530,8 @@ definitions:
     properties:
       body:
         $ref: '#/definitions/Invoice'
+      message:
+        type: string
       status_code:
         type: integer
         format: int32
@@ -5444,6 +5541,8 @@ definitions:
     properties:
       body:
         $ref: '#/definitions/FinancialStatement'
+      message:
+        type: string
       status_code:
         type: integer
         format: int32
@@ -5500,6 +5599,28 @@ definitions:
       vendor_response:
         type: object
     title: AchBankLinkResponseVO
+  AchBeneficialOwnerRequestCO:
+    type: object
+    properties:
+      is_certified:
+        type: boolean
+      nucleus_business_id:
+        type: string
+        format: uuid
+    title: AchBeneficialOwnerRequestCO
+  AchBeneficialOwnerResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_business_id:
+        type: string
+        format: uuid
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: AchBeneficialOwnerResponseVO
   AchBusinessBalanceResponseVO:
     type: object
     properties:
@@ -5569,6 +5690,21 @@ definitions:
       vendor_response:
         type: object
     title: AchCardLinkResponseVO
+  AchCardResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_funding_id:
+        type: string
+        format: uuid
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: AchCardResponseVO
   AchCardLoadResponseVO:
     type: object
     properties:
@@ -5578,6 +5714,13 @@ definitions:
         type: integer
         format: int32
     title: AchCardLoadResponseVO
+  AchCardRequestCO: 
+    type: object
+    properties:
+      nucleus_funding_id:
+        type: string
+        format: uuid
+    title: AchCardRequestCO
   AchCardReserveRequestCO:
     type: object
     properties:
@@ -5626,16 +5769,45 @@ definitions:
       vendor_response:
         type: object
     title: AchClientResponseVO
-  AchStatusResponseVO:
+  AchReserveLinkRequestCO:
     type: object
     properties:
+      nucleus_business_id:
+        type: string
+        format: uuid
+    title: AchReserveLinkRequestCO
+  AchReserveLinkResponseVO:
+    type: object
+    properties:
+      funding_source_id:
+        type: array
+        items:
+          type: string
       message:
         type: string
       nucleus_business_id:
         type: string
         format: uuid
-      status:
+      vendor_name:
         type: string
+      vendor_response:
+        type: object
+    title: AchReserveLinkResponseVO
+  AchStatusResponseVO:
+    type: object
+    properties:
+      business_status:
+        type: string
+      message:
+        type: string
+      nucleus_business_id:
+        type: string
+        format: uuid
+      reserve_link_status:
+        type: string
+        enum:
+          - linked
+          - unlinked
       vendor_name:
         type: string
       vendor_response:
@@ -5714,16 +5886,17 @@ definitions:
         type: string
         enum:
           - home
-          - Home
-          - Work
-          - postal
           - work
           - billing
           - mailing
-          - Mailing
-          - Residence
           - legal
           - residence
+          - postal
+          - Mailing
+          - Residence
+          - Home
+          - Work
+          - Other
           - 'null'
     title: Address
   AggregationAccount:
@@ -5945,8 +6118,6 @@ definitions:
     type: object
     required:
       - shares
-      - ticker
-      - ticker_name
     properties:
       aggregation_account_id:
         type: string
@@ -6025,6 +6196,8 @@ definitions:
     properties:
       body:
         $ref: '#/definitions/AggregationAccountHolding'
+      message:
+        type: string
       status_code:
         type: integer
         format: int32
@@ -6049,6 +6222,8 @@ definitions:
     properties:
       body:
         $ref: '#/definitions/AggregationAccount'
+      message:
+        type: string
       status_code:
         type: integer
         format: int32
@@ -6136,6 +6311,8 @@ definitions:
     properties:
       body:
         $ref: '#/definitions/AggregationAccountTransaction'
+      message:
+        type: string
       status_code:
         type: integer
         format: int32
@@ -6617,6 +6794,8 @@ definitions:
   BankLinkResponseInternalObjectVO:
     type: object
     properties:
+      message:
+        type: string
       nucleus_bank_link:
         $ref: '#/definitions/BankLink'
       status_code:
@@ -7387,14 +7566,9 @@ definitions:
         type: string
         enum:
           - home
-          - Home
-          - Work
-          - postal
           - work
           - billing
           - mailing
-          - Mailing
-          - Residence
           - legal
           - residence
           - 'null'
@@ -7495,21 +7669,13 @@ definitions:
         example: true
         description: isActive
       is_customer:
-        type: string
+        type: boolean
         example: false
         description: isCustomer
-        enum:
-          - 'true'
-          - 'false'
-          - 'null'
       is_supplier:
-        type: string
+        type: boolean
         example: false
         description: isSupplier
-        enum:
-          - 'true'
-          - 'false'
-          - 'null'
       last_name:
         type: string
         example: lastName
@@ -7518,6 +7684,7 @@ definitions:
         type: object
         example: {}
         description: metadata
+        readOnly: true
         additionalProperties:
           type: string
       secondary_id:
@@ -7682,6 +7849,7 @@ definitions:
         type: object
         example: {}
         description: metadata
+        readOnly: true
         additionalProperties:
           type: string
       revenue:
@@ -7845,7 +8013,7 @@ definitions:
       vendor_name:
         type: string
       vendor_response:
-        $ref: '#/definitions/IavTokenExchangeVendorResponseVO'
+        type: object
     title: ExchangePublicTokenVO
   ExchangeTokenCO:
     type: object
@@ -7903,6 +8071,7 @@ definitions:
       metadata:
         type: object
         example: {}
+        readOnly: true
         additionalProperties:
           type: string
       period_length:
@@ -7992,14 +8161,21 @@ definitions:
       ending_balance:
         type: number
         format: double
+      first_name:
+        type: string
       initial_balance:
         type: number
         format: double
+      last_name:
+        type: string
       message:
         type: string
       nucleus_card_id:
         type: string
         format: uuid
+      period_fees:
+        type: number
+        format: double
       transactions:
         type: array
         items:
@@ -8008,6 +8184,9 @@ definitions:
         type: string
       vendor_response:
         type: object
+      ytd_fees:
+        type: number
+        format: double
     title: GetCardStatementResponseVO
   GetCardTokenResponseVO:
     type: object
@@ -8278,6 +8457,7 @@ definitions:
       metadata:
         type: object
         example: {}
+        readOnly: true
         additionalProperties:
           type: string
       payment_instructions:
@@ -9566,6 +9746,7 @@ definitions:
       secret:
         type: string
         example: MDAwMTgzYWMtMjI4OC00NTY0LWE3NmItMTE5ZjQ2OTRiZTk4
+        readOnly: true
       update_date:
         type: string
         format: date-time

@@ -360,10 +360,6 @@ module NucleusApi
         invalid_properties.push('invalid value for "account_name", account_name cannot be nil.')
       end
 
-      if @category.nil?
-        invalid_properties.push('invalid value for "category", category cannot be nil.')
-      end
-
       if @institution_name.nil?
         invalid_properties.push('invalid value for "institution_name", institution_name cannot be nil.')
       end

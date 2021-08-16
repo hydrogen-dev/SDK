@@ -421,16 +421,6 @@ class AggregationAccount(object):
 
     @category.setter
     def category(self, category):
-        """Sets the category of this AggregationAccount.
-
-        category  # noqa: E501
-
-        :param category: The category of this AggregationAccount.  # noqa: E501
-        :type: str
-        """
-        if self._configuration.client_side_validation and category is None:
-            raise ValueError("Invalid value for `category`, must not be `None`")  # noqa: E501
-
         self._category = category
 
     @property

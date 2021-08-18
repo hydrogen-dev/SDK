@@ -35,7 +35,7 @@ setup(
     version=VERSION,
     description="Hydrogen Proton API",
     author_email="info@hydrogenplatform.com",
-    url="",
+    url="https://www.hydrogenplatform.com",
     keywords=["Swagger", "Hydrogen Proton API"],
     install_requires=REQUIRES,
     packages=find_packages(),

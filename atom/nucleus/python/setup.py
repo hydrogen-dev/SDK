@@ -35,7 +35,7 @@ setup(
     version=VERSION,
     description="Hydrogen Nucleus API",
     author_email="info@hydrogenplatform.com",
-    url="",
+    url="https://www.hydrogenplatform.com",
     keywords=["Swagger", "Hydrogen Nucleus API"],
     install_requires=REQUIRES,
     packages=find_packages(),

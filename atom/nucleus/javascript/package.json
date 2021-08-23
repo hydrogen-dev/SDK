@@ -1,6 +1,6 @@
 {
   "name": "@hydrogenplatform/hydrogen-nucleus-api",
-  "version": "1.9.3",
+  "version": "1.9.4",
   "description": "The_Hydrogen_Nucleus_API",
   "license": "Unlicense",
   "main": "src/index.js",

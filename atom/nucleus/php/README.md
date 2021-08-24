@@ -1,7 +1,7 @@
 # Hydrogen Nucleus API
 
 Hydrogen Nucleus API
-- API version: 1.9.3
+- API version: 1.9.4
   - Build date: 01-07-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)

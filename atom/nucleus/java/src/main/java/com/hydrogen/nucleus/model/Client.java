@@ -36,7 +36,7 @@ import org.threeten.bp.OffsetDateTime;
  * Client Object
  */
 @ApiModel(description = "Client Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-08-23T10:29:50.096Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-09-07T06:50:58.184Z")
 public class Client {
   @SerializedName("address")
   private List<ClientAddress> address = null;

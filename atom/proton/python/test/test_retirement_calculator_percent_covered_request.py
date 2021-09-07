@@ -32,7 +32,7 @@ class TestRetirementCalculatorPercentCoveredRequest(unittest.TestCase):
     def testRetirementCalculatorPercentCoveredRequest(self):
         """Test RetirementCalculatorPercentCoveredRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.retirement_calculator_percent_covered_request.RetirementCalculatorPercentCoveredRequest()  # noqa: E501
+        # model = proton_api.models.retirement_calculator_percent_covered_request.RetirementCalculatorPercentCoveredRequest()  # noqa: E501
         pass
 
 

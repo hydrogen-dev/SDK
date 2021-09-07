@@ -52,7 +52,7 @@ class PortfolioTransaction(object):
         'location': 'Location',
         'memo': 'str',
         'merchant': 'str',
-        'merchant_category_code': 'int',
+        'merchant_category_code': 'str',
         'merchant_id': 'str',
         'metadata': 'dict(str, str)',
         'mid': 'str',
@@ -654,7 +654,7 @@ class PortfolioTransaction(object):
         merchant_category_code  # noqa: E501
 
         :return: The merchant_category_code of this PortfolioTransaction.  # noqa: E501
-        :rtype: int
+        :rtype: str
         """
         return self._merchant_category_code
 
@@ -665,7 +665,7 @@ class PortfolioTransaction(object):
         merchant_category_code  # noqa: E501
 
         :param merchant_category_code: The merchant_category_code of this PortfolioTransaction.  # noqa: E501
-        :type: int
+        :type: str
         """
 
         self._merchant_category_code = merchant_category_code

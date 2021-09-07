@@ -32,7 +32,7 @@ class TestAnnuityDepositSchedule(unittest.TestCase):
     def testAnnuityDepositSchedule(self):
         """Test AnnuityDepositSchedule"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.annuity_deposit_schedule.AnnuityDepositSchedule()  # noqa: E501
+        # model = proton_api.models.annuity_deposit_schedule.AnnuityDepositSchedule()  # noqa: E501
         pass
 
 

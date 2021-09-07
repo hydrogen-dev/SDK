@@ -32,7 +32,7 @@ class TestPeriods(unittest.TestCase):
     def testPeriods(self):
         """Test Periods"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.periods.Periods()  # noqa: E501
+        # model = proton_api.models.periods.Periods()  # noqa: E501
         pass
 
 

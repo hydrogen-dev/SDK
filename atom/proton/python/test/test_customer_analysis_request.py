@@ -32,7 +32,7 @@ class TestCustomerAnalysisRequest(unittest.TestCase):
     def testCustomerAnalysisRequest(self):
         """Test CustomerAnalysisRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.customer_analysis_request.CustomerAnalysisRequest()  # noqa: E501
+        # model = proton_api.models.customer_analysis_request.CustomerAnalysisRequest()  # noqa: E501
         pass
 
 

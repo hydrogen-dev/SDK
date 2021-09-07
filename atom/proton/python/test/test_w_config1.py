@@ -32,7 +32,7 @@ class TestWConfig1(unittest.TestCase):
     def testWConfig1(self):
         """Test WConfig1"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.w_config1.WConfig1()  # noqa: E501
+        # model = proton_api.models.w_config1.WConfig1()  # noqa: E501
         pass
 
 

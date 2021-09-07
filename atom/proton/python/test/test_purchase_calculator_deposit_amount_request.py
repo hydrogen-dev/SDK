@@ -32,7 +32,7 @@ class TestPurchaseCalculatorDepositAmountRequest(unittest.TestCase):
     def testPurchaseCalculatorDepositAmountRequest(self):
         """Test PurchaseCalculatorDepositAmountRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.purchase_calculator_deposit_amount_request.PurchaseCalculatorDepositAmountRequest()  # noqa: E501
+        # model = proton_api.models.purchase_calculator_deposit_amount_request.PurchaseCalculatorDepositAmountRequest()  # noqa: E501
         pass
 
 

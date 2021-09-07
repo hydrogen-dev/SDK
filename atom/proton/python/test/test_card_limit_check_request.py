@@ -32,7 +32,7 @@ class TestCardLimitCheckRequest(unittest.TestCase):
     def testCardLimitCheckRequest(self):
         """Test CardLimitCheckRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.card_limit_check_request.CardLimitCheckRequest()  # noqa: E501
+        # model = proton_api.models.card_limit_check_request.CardLimitCheckRequest()  # noqa: E501
         pass
 
 

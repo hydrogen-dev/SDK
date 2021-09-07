@@ -32,7 +32,7 @@ class TestSpendingAnalysisRequest(unittest.TestCase):
     def testSpendingAnalysisRequest(self):
         """Test SpendingAnalysisRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.spending_analysis_request.SpendingAnalysisRequest()  # noqa: E501
+        # model = proton_api.models.spending_analysis_request.SpendingAnalysisRequest()  # noqa: E501
         pass
 
 

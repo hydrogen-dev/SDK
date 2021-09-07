@@ -32,7 +32,7 @@ class TestCardAnalysisRequest(unittest.TestCase):
     def testCardAnalysisRequest(self):
         """Test CardAnalysisRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.card_analysis_request.CardAnalysisRequest()  # noqa: E501
+        # model = proton_api.models.card_analysis_request.CardAnalysisRequest()  # noqa: E501
         pass
 
 

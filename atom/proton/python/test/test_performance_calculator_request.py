@@ -32,7 +32,7 @@ class TestPerformanceCalculatorRequest(unittest.TestCase):
     def testPerformanceCalculatorRequest(self):
         """Test PerformanceCalculatorRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.performance_calculator_request.PerformanceCalculatorRequest()  # noqa: E501
+        # model = proton_api.models.performance_calculator_request.PerformanceCalculatorRequest()  # noqa: E501
         pass
 
 

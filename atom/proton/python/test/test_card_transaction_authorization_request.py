@@ -32,7 +32,7 @@ class TestCardTransactionAuthorizationRequest(unittest.TestCase):
     def testCardTransactionAuthorizationRequest(self):
         """Test CardTransactionAuthorizationRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.card_transaction_authorization_request.CardTransactionAuthorizationRequest()  # noqa: E501
+        # model = proton_api.models.card_transaction_authorization_request.CardTransactionAuthorizationRequest()  # noqa: E501
         pass
 
 

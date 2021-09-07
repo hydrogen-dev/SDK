@@ -32,7 +32,7 @@ class TestGoalWithdrawalConfig(unittest.TestCase):
     def testGoalWithdrawalConfig(self):
         """Test GoalWithdrawalConfig"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.goal_withdrawal_config.GoalWithdrawalConfig()  # noqa: E501
+        # model = proton_api.models.goal_withdrawal_config.GoalWithdrawalConfig()  # noqa: E501
         pass
 
 

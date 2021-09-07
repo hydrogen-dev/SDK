@@ -32,7 +32,7 @@ class TestBudgetCalculatorRequest(unittest.TestCase):
     def testBudgetCalculatorRequest(self):
         """Test BudgetCalculatorRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.budget_calculator_request.BudgetCalculatorRequest()  # noqa: E501
+        # model = proton_api.models.budget_calculator_request.BudgetCalculatorRequest()  # noqa: E501
         pass
 
 

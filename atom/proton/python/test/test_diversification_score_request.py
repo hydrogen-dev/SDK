@@ -32,7 +32,7 @@ class TestDiversificationScoreRequest(unittest.TestCase):
     def testDiversificationScoreRequest(self):
         """Test DiversificationScoreRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.diversification_score_request.DiversificationScoreRequest()  # noqa: E501
+        # model = proton_api.models.diversification_score_request.DiversificationScoreRequest()  # noqa: E501
         pass
 
 

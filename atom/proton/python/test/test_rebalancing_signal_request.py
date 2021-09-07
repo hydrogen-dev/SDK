@@ -32,7 +32,7 @@ class TestRebalancingSignalRequest(unittest.TestCase):
     def testRebalancingSignalRequest(self):
         """Test RebalancingSignalRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.rebalancing_signal_request.RebalancingSignalRequest()  # noqa: E501
+        # model = proton_api.models.rebalancing_signal_request.RebalancingSignalRequest()  # noqa: E501
         pass
 
 

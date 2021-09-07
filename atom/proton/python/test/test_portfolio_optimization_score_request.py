@@ -32,7 +32,7 @@ class TestPortfolioOptimizationScoreRequest(unittest.TestCase):
     def testPortfolioOptimizationScoreRequest(self):
         """Test PortfolioOptimizationScoreRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.portfolio_optimization_score_request.PortfolioOptimizationScoreRequest()  # noqa: E501
+        # model = proton_api.models.portfolio_optimization_score_request.PortfolioOptimizationScoreRequest()  # noqa: E501
         pass
 
 

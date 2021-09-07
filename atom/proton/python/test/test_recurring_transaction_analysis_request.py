@@ -32,7 +32,7 @@ class TestRecurringTransactionAnalysisRequest(unittest.TestCase):
     def testRecurringTransactionAnalysisRequest(self):
         """Test RecurringTransactionAnalysisRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.recurring_transaction_analysis_request.RecurringTransactionAnalysisRequest()  # noqa: E501
+        # model = proton_api.models.recurring_transaction_analysis_request.RecurringTransactionAnalysisRequest()  # noqa: E501
         pass
 
 

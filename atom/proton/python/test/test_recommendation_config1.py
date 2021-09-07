@@ -32,7 +32,7 @@ class TestRecommendationConfig1(unittest.TestCase):
     def testRecommendationConfig1(self):
         """Test RecommendationConfig1"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.recommendation_config1.RecommendationConfig1()  # noqa: E501
+        # model = proton_api.models.recommendation_config1.RecommendationConfig1()  # noqa: E501
         pass
 
 

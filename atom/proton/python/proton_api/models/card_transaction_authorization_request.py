@@ -40,7 +40,7 @@ class CardTransactionAuthorizationRequest(object):
         'description': 'str',
         'transaction_category_id': 'str',
         'use_audit_log': 'bool',
-        'merchant_category_code': 'int',
+        'merchant_category_code': 'str',
         'card_id': 'str',
         'transaction_category': 'str',
         'cleanse_data': 'bool',
@@ -301,7 +301,7 @@ class CardTransactionAuthorizationRequest(object):
 
 
         :return: The merchant_category_code of this CardTransactionAuthorizationRequest.  # noqa: E501
-        :rtype: int
+        :rtype: str
         """
         return self._merchant_category_code
 
@@ -311,7 +311,7 @@ class CardTransactionAuthorizationRequest(object):
 
 
         :param merchant_category_code: The merchant_category_code of this CardTransactionAuthorizationRequest.  # noqa: E501
-        :type: int
+        :type: str
         """
 
         self._merchant_category_code = merchant_category_code

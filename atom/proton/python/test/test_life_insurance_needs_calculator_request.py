@@ -32,7 +32,7 @@ class TestLifeInsuranceNeedsCalculatorRequest(unittest.TestCase):
     def testLifeInsuranceNeedsCalculatorRequest(self):
         """Test LifeInsuranceNeedsCalculatorRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.life_insurance_needs_calculator_request.LifeInsuranceNeedsCalculatorRequest()  # noqa: E501
+        # model = proton_api.models.life_insurance_needs_calculator_request.LifeInsuranceNeedsCalculatorRequest()  # noqa: E501
         pass
 
 

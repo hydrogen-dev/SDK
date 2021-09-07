@@ -32,7 +32,7 @@ class TestEventStudyRequest(unittest.TestCase):
     def testEventStudyRequest(self):
         """Test EventStudyRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.event_study_request.EventStudyRequest()  # noqa: E501
+        # model = proton_api.models.event_study_request.EventStudyRequest()  # noqa: E501
         pass
 
 

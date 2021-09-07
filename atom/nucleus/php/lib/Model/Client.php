@@ -72,7 +72,7 @@ class Client implements ModelInterface, ArrayAccess
         'firm_type' => 'string',
         'first_name' => 'string',
         'gender' => 'string',
-        'group' => 'string',
+        'group' => 'string[]',
         'hydro_id' => 'string',
         'id' => 'string',
         'identification_number' => 'string',
@@ -754,7 +754,7 @@ class Client implements ModelInterface, ArrayAccess
     /**
      * Gets group
      *
-     * @return string
+     * @return string[]
      */
     public function getGroup()
     {
@@ -764,7 +764,7 @@ class Client implements ModelInterface, ArrayAccess
     /**
      * Sets group
      *
-     * @param string $group group
+     * @param string[] $group group
      *
      * @return $this
      */

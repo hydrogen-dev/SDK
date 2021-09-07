@@ -32,7 +32,7 @@ class TestPurchaseCalculatorHorizonRequest(unittest.TestCase):
     def testPurchaseCalculatorHorizonRequest(self):
         """Test PurchaseCalculatorHorizonRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.purchase_calculator_horizon_request.PurchaseCalculatorHorizonRequest()  # noqa: E501
+        # model = proton_api.models.purchase_calculator_horizon_request.PurchaseCalculatorHorizonRequest()  # noqa: E501
         pass
 
 

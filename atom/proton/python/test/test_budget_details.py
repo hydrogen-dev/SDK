@@ -32,7 +32,7 @@ class TestBudgetDetails(unittest.TestCase):
     def testBudgetDetails(self):
         """Test BudgetDetails"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.budget_details.BudgetDetails()  # noqa: E501
+        # model = proton_api.models.budget_details.BudgetDetails()  # noqa: E501
         pass
 
 

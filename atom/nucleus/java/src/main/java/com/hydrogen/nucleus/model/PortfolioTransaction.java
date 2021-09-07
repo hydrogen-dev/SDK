@@ -35,7 +35,7 @@ import org.threeten.bp.OffsetDateTime;
  * PortfolioTransaction Object
  */
 @ApiModel(description = "PortfolioTransaction Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-05-25T04:59:51.821Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-09-07T06:50:58.184Z")
 public class PortfolioTransaction {
   @SerializedName("account_id")
   private UUID accountId = null;
@@ -95,7 +95,7 @@ public class PortfolioTransaction {
   private String merchant = null;
 
   @SerializedName("merchant_category_code")
-  private Integer merchantCategoryCode = null;
+  private String merchantCategoryCode = null;
 
   @SerializedName("merchant_id")
   private UUID merchantId = null;
@@ -481,7 +481,7 @@ public class PortfolioTransaction {
     this.merchant = merchant;
   }
 
-  public PortfolioTransaction merchantCategoryCode(Integer merchantCategoryCode) {
+  public PortfolioTransaction merchantCategoryCode(String merchantCategoryCode) {
     this.merchantCategoryCode = merchantCategoryCode;
     return this;
   }
@@ -490,12 +490,12 @@ public class PortfolioTransaction {
    * merchant_category_code
    * @return merchantCategoryCode
   **/
-  @ApiModelProperty(example = "3099", value = "merchant_category_code")
-  public Integer getMerchantCategoryCode() {
+  @ApiModelProperty(example = "merchant_category_code", value = "merchant_category_code")
+  public String getMerchantCategoryCode() {
     return merchantCategoryCode;
   }
 
-  public void setMerchantCategoryCode(Integer merchantCategoryCode) {
+  public void setMerchantCategoryCode(String merchantCategoryCode) {
     this.merchantCategoryCode = merchantCategoryCode;
   }
 
@@ -761,7 +761,7 @@ public class PortfolioTransaction {
 
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -858,7 +858,7 @@ public class PortfolioTransaction {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

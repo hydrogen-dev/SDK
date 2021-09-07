@@ -32,7 +32,7 @@ class TestBusinessInvoiceAnalysisRequest(unittest.TestCase):
     def testBusinessInvoiceAnalysisRequest(self):
         """Test BusinessInvoiceAnalysisRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.business_invoice_analysis_request.BusinessInvoiceAnalysisRequest()  # noqa: E501
+        # model = proton_api.models.business_invoice_analysis_request.BusinessInvoiceAnalysisRequest()  # noqa: E501
         pass
 
 

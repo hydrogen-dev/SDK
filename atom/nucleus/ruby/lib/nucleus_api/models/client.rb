@@ -172,7 +172,7 @@ module NucleusApi
         :'firm_type' => :'String',
         :'first_name' => :'String',
         :'gender' => :'String',
-        :'group' => :'String',
+        :'group' => :'Array<String>',
         :'hydro_id' => :'String',
         :'id' => :'String',
         :'identification_number' => :'String',
@@ -265,7 +265,9 @@ module NucleusApi
       end
 
       if attributes.has_key?(:'group')
-        self.group = attributes[:'group']
+        if (value = attributes[:'group']).is_a?(Array)
+          self.group = value
+        end
       end
 
       if attributes.has_key?(:'hydro_id')
@@ -432,6 +434,7 @@ module NucleusApi
     # @param [Hash] attributes Model attributes in the form of hash
     # @return [Object] Returns the model itself
     def build_from_hash(attributes)
+      return nil unless attributes.is_a?(Hash)
       self.class.swagger_types.each_pair do |key, type|
         if type =~ /\AArray<(.*)>/i
           # check to ensure the input is an array given that the attribute
@@ -454,9 +457,9 @@ module NucleusApi
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        value
+        DateTime.parse(value)
       when :Date
-        value
+        Date.parse(value)
       when :String
         value.to_s
       when :Integer
@@ -507,6 +510,7 @@ module NucleusApi
       hash = {}
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
+        next if value.nil?
         hash[param] = _to_hash(value)
       end
       hash

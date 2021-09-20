@@ -32,7 +32,7 @@ class TestGoalAccumulationRecommendationRequest(unittest.TestCase):
     def testGoalAccumulationRecommendationRequest(self):
         """Test GoalAccumulationRecommendationRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.goal_accumulation_recommendation_request.GoalAccumulationRecommendationRequest()  # noqa: E501
+        # model = proton_api.models.goal_accumulation_recommendation_request.GoalAccumulationRecommendationRequest()  # noqa: E501
         pass
 
 

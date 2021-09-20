@@ -32,7 +32,7 @@ class TestOrderRebalanceRequest(unittest.TestCase):
     def testOrderRebalanceRequest(self):
         """Test OrderRebalanceRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.order_rebalance_request.OrderRebalanceRequest()  # noqa: E501
+        # model = proton_api.models.order_rebalance_request.OrderRebalanceRequest()  # noqa: E501
         pass
 
 

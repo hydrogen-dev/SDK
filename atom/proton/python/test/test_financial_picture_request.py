@@ -32,7 +32,7 @@ class TestFinancialPictureRequest(unittest.TestCase):
     def testFinancialPictureRequest(self):
         """Test FinancialPictureRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.financial_picture_request.FinancialPictureRequest()  # noqa: E501
+        # model = proton_api.models.financial_picture_request.FinancialPictureRequest()  # noqa: E501
         pass
 
 

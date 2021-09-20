@@ -36,7 +36,7 @@ import org.threeten.bp.OffsetDateTime;
  * Client Object
  */
 @ApiModel(description = "Client Object")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-08-23T10:29:50.096Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-09-07T06:50:58.184Z")
 public class Client {
   @SerializedName("address")
   private List<ClientAddress> address = null;
@@ -81,7 +81,7 @@ public class Client {
   private String gender = null;
 
   @SerializedName("group")
-  private String group = null;
+  private List<String> group = null;
 
   @SerializedName("hydro_id")
   private String hydroId = null;
@@ -411,8 +411,16 @@ public class Client {
     this.gender = gender;
   }
 
-  public Client group(String group) {
+  public Client group(List<String> group) {
     this.group = group;
+    return this;
+  }
+
+  public Client addGroupItem(String groupItem) {
+    if (this.group == null) {
+      this.group = new ArrayList<String>();
+    }
+    this.group.add(groupItem);
     return this;
   }
 
@@ -420,12 +428,12 @@ public class Client {
    * group
    * @return group
   **/
-  @ApiModelProperty(example = "group", value = "group")
-  public String getGroup() {
+  @ApiModelProperty(example = "\"group\"", value = "group")
+  public List<String> getGroup() {
     return group;
   }
 
-  public void setGroup(String group) {
+  public void setGroup(List<String> group) {
     this.group = group;
   }
 
@@ -799,7 +807,7 @@ public class Client {
 
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -898,7 +906,7 @@ public class Client {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

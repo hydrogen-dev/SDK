@@ -20043,9 +20043,11 @@ definitions:
         example: male
         description: gender
       group:
-        type: string
+        type: array
         example: group
         description: group
+        items:
+          type: string
       hydro_id:
         type: string
         example: 10lm4nz
@@ -26345,9 +26347,8 @@ definitions:
         example: merchant
         description: merchant
       merchant_category_code:
-        type: integer
-        format: int32
-        example: 3099
+        type: string
+        example: merchant_category_code
         description: merchant_category_code
       merchant_id:
         type: string

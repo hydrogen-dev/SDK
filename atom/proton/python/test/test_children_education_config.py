@@ -32,7 +32,7 @@ class TestChildrenEducationConfig(unittest.TestCase):
     def testChildrenEducationConfig(self):
         """Test ChildrenEducationConfig"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.children_education_config.ChildrenEducationConfig()  # noqa: E501
+        # model = proton_api.models.children_education_config.ChildrenEducationConfig()  # noqa: E501
         pass
 
 

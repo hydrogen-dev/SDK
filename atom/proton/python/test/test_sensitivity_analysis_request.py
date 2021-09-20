@@ -32,7 +32,7 @@ class TestSensitivityAnalysisRequest(unittest.TestCase):
     def testSensitivityAnalysisRequest(self):
         """Test SensitivityAnalysisRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.sensitivity_analysis_request.SensitivityAnalysisRequest()  # noqa: E501
+        # model = proton_api.models.sensitivity_analysis_request.SensitivityAnalysisRequest()  # noqa: E501
         pass
 
 

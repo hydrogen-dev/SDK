@@ -32,7 +32,7 @@ class TestAnnuityCalculatorDepositAmountRequest(unittest.TestCase):
     def testAnnuityCalculatorDepositAmountRequest(self):
         """Test AnnuityCalculatorDepositAmountRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.annuity_calculator_deposit_amount_request.AnnuityCalculatorDepositAmountRequest()  # noqa: E501
+        # model = proton_api.models.annuity_calculator_deposit_amount_request.AnnuityCalculatorDepositAmountRequest()  # noqa: E501
         pass
 
 

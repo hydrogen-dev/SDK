@@ -159,7 +159,7 @@
         obj['merchant'] = ApiClient.convertToType(data['merchant'], 'String');
       }
       if (data.hasOwnProperty('merchant_category_code')) {
-        obj['merchant_category_code'] = ApiClient.convertToType(data['merchant_category_code'], 'Number');
+        obj['merchant_category_code'] = ApiClient.convertToType(data['merchant_category_code'], 'String');
       }
       if (data.hasOwnProperty('merchant_id')) {
         obj['merchant_id'] = ApiClient.convertToType(data['merchant_id'], 'String');
@@ -301,7 +301,7 @@
   exports.prototype['merchant'] = undefined;
   /**
    * merchant_category_code
-   * @member {Number} merchant_category_code
+   * @member {String} merchant_category_code
    */
   exports.prototype['merchant_category_code'] = undefined;
   /**

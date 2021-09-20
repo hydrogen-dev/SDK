@@ -14,14 +14,15 @@
 package com.hydrogen.proton.model;
 
 import java.util.Objects;
-
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
+import com.hydrogen.proton.model.Location;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +32,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * CardTransactionAuthorizationRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-04-28T09:20:08.129Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-09-07T07:17:38.722Z")
 public class CardTransactionAuthorizationRequest {
   @SerializedName("currency_code")
   private String currencyCode = null;
@@ -104,7 +105,7 @@ public class CardTransactionAuthorizationRequest {
   private Boolean useAuditLog = false;
 
   @SerializedName("merchant_category_code")
-  private Integer merchantCategoryCode = null;
+  private String merchantCategoryCode = null;
 
   @SerializedName("card_id")
   private UUID cardId = null;
@@ -310,7 +311,7 @@ public class CardTransactionAuthorizationRequest {
     this.useAuditLog = useAuditLog;
   }
 
-  public CardTransactionAuthorizationRequest merchantCategoryCode(Integer merchantCategoryCode) {
+  public CardTransactionAuthorizationRequest merchantCategoryCode(String merchantCategoryCode) {
     this.merchantCategoryCode = merchantCategoryCode;
     return this;
   }
@@ -320,11 +321,11 @@ public class CardTransactionAuthorizationRequest {
    * @return merchantCategoryCode
   **/
   @ApiModelProperty(value = "")
-  public Integer getMerchantCategoryCode() {
+  public String getMerchantCategoryCode() {
     return merchantCategoryCode;
   }
 
-  public void setMerchantCategoryCode(Integer merchantCategoryCode) {
+  public void setMerchantCategoryCode(String merchantCategoryCode) {
     this.merchantCategoryCode = merchantCategoryCode;
   }
 

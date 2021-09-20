@@ -142,7 +142,7 @@
         obj['gender'] = ApiClient.convertToType(data['gender'], 'String');
       }
       if (data.hasOwnProperty('group')) {
-        obj['group'] = ApiClient.convertToType(data['group'], 'String');
+        obj['group'] = ApiClient.convertToType(data['group'], ['String']);
       }
       if (data.hasOwnProperty('hydro_id')) {
         obj['hydro_id'] = ApiClient.convertToType(data['hydro_id'], 'String');
@@ -277,7 +277,7 @@
   exports.prototype['gender'] = undefined;
   /**
    * group
-   * @member {String} group
+   * @member {Array.<String>} group
    */
   exports.prototype['group'] = undefined;
   /**

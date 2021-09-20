@@ -47,7 +47,7 @@ class Client(object):
         'firm_type': 'str',
         'first_name': 'str',
         'gender': 'str',
-        'group': 'str',
+        'group': 'list[str]',
         'hydro_id': 'str',
         'id': 'str',
         'identification_number': 'str',
@@ -545,7 +545,7 @@ class Client(object):
         group  # noqa: E501
 
         :return: The group of this Client.  # noqa: E501
-        :rtype: str
+        :rtype: list[str]
         """
         return self._group
 
@@ -556,7 +556,7 @@ class Client(object):
         group  # noqa: E501
 
         :param group: The group of this Client.  # noqa: E501
-        :type: str
+        :type: list[str]
         """
 
         self._group = group

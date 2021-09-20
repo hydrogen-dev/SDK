@@ -32,7 +32,7 @@ class TestMortgageCalculatorHomePriceRequest(unittest.TestCase):
     def testMortgageCalculatorHomePriceRequest(self):
         """Test MortgageCalculatorHomePriceRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.mortgage_calculator_home_price_request.MortgageCalculatorHomePriceRequest()  # noqa: E501
+        # model = proton_api.models.mortgage_calculator_home_price_request.MortgageCalculatorHomePriceRequest()  # noqa: E501
         pass
 
 

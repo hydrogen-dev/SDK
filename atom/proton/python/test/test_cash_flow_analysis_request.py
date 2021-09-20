@@ -32,7 +32,7 @@ class TestCashFlowAnalysisRequest(unittest.TestCase):
     def testCashFlowAnalysisRequest(self):
         """Test CashFlowAnalysisRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.cash_flow_analysis_request.CashFlowAnalysisRequest()  # noqa: E501
+        # model = proton_api.models.cash_flow_analysis_request.CashFlowAnalysisRequest()  # noqa: E501
         pass
 
 

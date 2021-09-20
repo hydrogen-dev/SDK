@@ -32,7 +32,7 @@ class TestDecisionTreeResultRequest(unittest.TestCase):
     def testDecisionTreeResultRequest(self):
         """Test DecisionTreeResultRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.decision_tree_result_request.DecisionTreeResultRequest()  # noqa: E501
+        # model = proton_api.models.decision_tree_result_request.DecisionTreeResultRequest()  # noqa: E501
         pass
 
 

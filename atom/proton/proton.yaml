@@ -6619,12 +6619,7 @@ definitions:
         type: boolean
         default: false
       merchant_category_code:
-        type: integer
-        format: int32
-        default: null
-        x-nullable: true
-        minLength: 4
-        maxLength: 4
+        type: string
       card_id:
         type: string
         format: uuid

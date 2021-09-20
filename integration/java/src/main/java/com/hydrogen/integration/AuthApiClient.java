@@ -18,7 +18,7 @@ import java.util.Map;
 public class AuthApiClient extends ApiClient {
     private static final String BEARER = "Bearer ";
     private final String authUri;
-    private String AUTHORIZATION ="Authorization";
+    private String AUTHORIZATION = "Authorization";
     private String GRANT_TYPE_KEY = "grant_type";
     private String CLIENT_CREDENTIAL = "client_credentials";
     private String PASSWORD = "password";
@@ -33,7 +33,7 @@ public class AuthApiClient extends ApiClient {
     public AuthApiClient(Environment environmentURlEnum) {
         defaultApiClient = Configuration.getDefaultApiClient(environmentURlEnum);
         String uri = defaultApiClient.getBasePath();
-        String baseUri = uri.substring(0, uri.indexOf(".com")+4);
+        String baseUri = uri.substring(0, uri.indexOf(".com") + 4);
         authUri = baseUri + "/authorization/v1/oauth/token";
         clientAccessTokenUri = baseUri + "/authorization/v1/client-token";
         if (defaultApiClient.getAccessToken() != null)
@@ -53,19 +53,17 @@ public class AuthApiClient extends ApiClient {
     }
 
     public void createClientTokenCredential(String clientId, String clientSecret, String clientToken) throws ApiException {
-        Request request = createRequest(createHttpUrl(CLIENT_CREDENTIAL), clientId, clientSecret);
-        String accessToken = getAuthRequestAccessToken(request);
         Request clientTokenRequest = createClientTokenRequest(createClientTokenUrl(),
-                accessToken, clientToken);
+                clientId, clientSecret, clientToken);
         String token = getAuthRequestAccessToken(clientTokenRequest);
         setAccessToken(token);
     }
 
-    private Request createClientTokenRequest (HttpUrl createHttpUrl, String accessToken, String clientToken) {
+    private Request createClientTokenRequest(HttpUrl createHttpUrl, String clientId, String clientSecret, String clientToken) {
         return new Request.Builder()
                 .url(createHttpUrl)
                 .post(RequestBody.create(null, new byte[0]))
-                .addHeader(AUTHORIZATION, BEARER + accessToken)
+                .addHeader(AUTHORIZATION, Credentials.basic(clientId, clientSecret))
                 .addHeader(CLIENT_TOKEN, BEARER + clientToken)
                 .build();
     }
@@ -84,7 +82,7 @@ public class AuthApiClient extends ApiClient {
     }
 
     private HttpUrl createHttpUrl(String grantType, String userName, String password) {
-        return  HttpUrl.parse(authUri)
+        return HttpUrl.parse(authUri)
                 .newBuilder()
                 .addQueryParameter(GRANT_TYPE_KEY, grantType)
                 .addQueryParameter(USERNAME, userName)
@@ -111,6 +109,7 @@ public class AuthApiClient extends ApiClient {
             throw new ApiException(e);
         }
     }
+
     public void setAccessToken(String accessToken) {
         this.accessToken = accessToken;
         defaultApiClient.setAccessToken(accessToken);

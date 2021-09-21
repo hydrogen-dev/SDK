@@ -49,7 +49,7 @@
      * @type {String}
      * @default https://api.hydrogenplatform.com
      */
-    this.basePath = 'https://api.hydrogenplatform.com/admin/v1/'.replace(/\/+$/, '');
+    this.basePath = 'https://api.hydrogenplatform.com/component/v1/'.replace(/\/+$/, '');
     if(!this.basePath){
       console.log("BASE_PATH is not defined");
       process.exit(1);

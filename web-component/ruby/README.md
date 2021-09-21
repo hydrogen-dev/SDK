@@ -38,10 +38,10 @@ Follow steps to verify the base URL path:
 2. Search for @host and change/verify the URL according to the environment.
 
 **Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/admin/v1
+https://sandbox.hydrogenplatform.com/component/v1
 
 **Production Base URL**
-https://api.hydrogenplatform.com/admin/v1
+https://api.hydrogenplatform.com/component/v1
 
 ### Sample Code
 Now you are ready to execute the following Ruby code:
@@ -66,7 +66,7 @@ appTokenConfig['clientId'] = "xxxx"
 appTokenConfig['clientSecret'] = "xxxx"
 appTokenConfig['username'] = "xxxx"
 appTokenConfig['password'] = "xxxx"
-appTokenConfig['basePath'] = "https://api.hydrogenplatform.com/admin/v1"
+appTokenConfig['basePath'] = "https://api.hydrogenplatform.com/component/v1"
 
 
 begin

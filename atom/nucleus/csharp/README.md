@@ -82,7 +82,7 @@ namespace Example
         public void main()
         {
 
-            AuthApiClient api = new AuthApiClient(Nucleus.Client.EnumTest.SANDBOX);
+            AuthApiClient api = new AuthApiClient(Nucleus.Client.EnumTest.PRODUCTION);
             api.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 
             var apiInstance = new AccountApi();

@@ -1,4 +1,4 @@
-namespace Nucleus.Client
+namespace Integration.Client
 {
     public class EnvironmentEnum
     {

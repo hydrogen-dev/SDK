@@ -1,7 +1,7 @@
-# Hydrogen Nucleus API
+# Hydrogen Integration API
 
 Hydrogen Nucleus API
-- API version: 1.9.4
+- API version: 1.3.1
   - Build date: 01-07-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
@@ -9,7 +9,7 @@ For more information, please visit [https://www.hydrogenplatform.com/apis](https
 
 ## Documentation
 
-https://www.hydrogenplatform.com/docs/nucleus/v1
+https://www.hydrogenplatform.com/docs/integration/v1
 
 ## Requirements
 
@@ -46,24 +46,17 @@ Run the following command to generate the DLL
 - [Windows] `build.bat`
 
 Then include the DLL (under the `bin` folder) in the C# project, and use the namespaces:
-
-```csharp
-using Nucleus.Api;
-using Nucleus.Client;
-using Nucleus.ModelEntity;
-```
-
 ## Getting Started
 ### Base URL
 Create an authentication object(**AuthApiClient**) with environment parameter.
 
 **Sandbox URL**
 
-AuthApiClient api = new AuthApiClient(Nucleus.Client.EnumTest.SANDBOX);
+AuthApiClient api = new AuthApiClient(Integration.Client.EnumTest.SANDBOX);
 
 **Production URL**
 
-AuthApiClient api = new AuthApiClient(Nucleus.Client.EnumTest.PRODUCTION);
+AuthApiClient api = new AuthApiClient(Integration.Client.EnumTest.PRODUCTION);
 
 ### Sample Code
 Now you are ready to execute the following csharp code:
@@ -71,9 +64,9 @@ Now you are ready to execute the following csharp code:
 ```csharp
 using System;
 using System.Diagnostics;
-using Nucleus.Api;
-using Nucleus.Client;
-using Nucleus.ModelEntityEntity;
+using Integration.Api;
+using Integration.Client;
+using Integration.ModelEntity;
 
 namespace Example
 {
@@ -85,18 +78,18 @@ namespace Example
             AuthApiClient api = new AuthApiClient(Nucleus.Client.EnumTest.PRODUCTION);
             api.createClientCredential("CLIENT_ID", "CLIENT_SECRET");
 
-            var apiInstance = new AccountApi();
-            var allocRequest = new AccountAllocationMapping(); // AccountAllocationMapping | allocRequest
+            var apiInstance = new ACHApi();
+            var nucleusFundingId = new Guid?(); // Guid? | nucleus_funding_id
 
             try
             {
-                // Create an account allocation
-                AccountAllocationMapping result = apiInstance.CreateAccountAllocationMappingUsingPost(allocRequest);
+                // Cancel the ACH transfer
+                AchTransferResponseVO result = apiInstance.CancelAchTransferUsingDelete(nucleusFundingId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling AccountApi.CreateAccountAllocationMappingUsingPost: " + e.Message );
+                Debug.Print("Exception when calling ACHApi.CancelAchTransferUsingDelete: " + e.Message );
             }
 
         }
@@ -109,3 +102,4 @@ The Hydrogen Technology Corporation
 https://www.hydrogenplatform.com
 
 *Generated using [Swagger Codegen](https://github.com/swagger-api/swagger-codegen)*
+

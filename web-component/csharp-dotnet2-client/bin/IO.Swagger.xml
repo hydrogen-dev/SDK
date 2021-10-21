@@ -1,0 +1,501 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IO.Swagger</name>
+    </assembly>
+    <members>
+        <member name="T:IO.Swagger.Client.ApiClient">
+             <summary>
+             API client is mainly responible for making the HTTP call to the API backend.
+             </summary>
+            </member>
+        <member name="M:IO.Swagger.Client.ApiClient.#ctor(System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:IO.Swagger.Client.ApiClient" /> class.
+             </summary>
+             <param name="basePath">The base path.</param>
+            </member>
+        <member name="P:IO.Swagger.Client.ApiClient.BasePath">
+             <summary>
+             Gets or sets the base path.
+             </summary>
+             <value>The base path</value>
+            </member>
+        <member name="P:IO.Swagger.Client.ApiClient.RestClient">
+             <summary>
+             Gets or sets the RestClient.
+             </summary>
+             <value>An instance of the RestClient</value>
+            </member>
+        <member name="P:IO.Swagger.Client.ApiClient.DefaultHeader">
+             <summary>
+             Gets the default header.
+             </summary>
+            </member>
+        <member name="M:IO.Swagger.Client.ApiClient.CallApi(System.String,RestSharp.Method,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,RestSharp.FileParameter},System.String[])">
+             <summary>
+             Makes the HTTP request (Sync).
+             </summary>
+             <param name="path">URL path.</param>
+             <param name="method">HTTP method.</param>
+             <param name="queryParams">Query parameters.</param>
+             <param name="postBody">HTTP body (POST request).</param>
+             <param name="headerParams">Header parameters.</param>
+             <param name="formParams">Form parameters.</param>
+             <param name="fileParams">File parameters.</param>
+             <param name="authSettings">Authentication settings.</param>
+             <returns>Object</returns>
+            </member>
+        <member name="M:IO.Swagger.Client.ApiClient.AddDefaultHeader(System.String,System.String)">
+             <summary>
+             Add default header.
+             </summary>
+             <param name="key">Header field name.</param>
+             <param name="value">Header field value.</param>
+             <returns></returns>
+            </member>
+        <member name="M:IO.Swagger.Client.ApiClient.EscapeString(System.String)">
+             <summary>
+             Escape string (url-encoded).
+             </summary>
+             <param name="str">String to be escaped.</param>
+             <returns>Escaped string.</returns>
+            </member>
+        <member name="M:IO.Swagger.Client.ApiClient.ParameterToFile(System.String,System.IO.Stream)">
+             <summary>
+             Create FileParameter based on Stream.
+             </summary>
+             <param name="name">Parameter name.</param>
+             <param name="stream">Input stream.</param>
+             <returns>FileParameter.</returns>
+            </member>
+        <member name="M:IO.Swagger.Client.ApiClient.ParameterToString(System.Object)">
+             <summary>
+             If parameter is DateTime, output in a formatted string (default ISO 8601), customizable with Configuration.DateTime.
+             If parameter is a list of string, join the list with ",".
+             Otherwise just return the string.
+             </summary>
+             <param name="obj">The parameter (header, path, query, form).</param>
+             <returns>Formatted string.</returns>
+            </member>
+        <member name="M:IO.Swagger.Client.ApiClient.Deserialize(System.String,System.Type,System.Collections.Generic.IList{RestSharp.Parameter})">
+             <summary>
+             Deserialize the JSON string into a proper object.
+             </summary>
+             <param name="content">HTTP body (e.g. string, JSON).</param>
+             <param name="type">Object type.</param>
+             <param name="headers">HTTP headers.</param>
+             <returns>Object representation of the JSON string.</returns>
+            </member>
+        <member name="M:IO.Swagger.Client.ApiClient.Serialize(System.Object)">
+             <summary>
+             Serialize an object into JSON string.
+             </summary>
+             <param name="obj">Object.</param>
+             <returns>JSON string.</returns>
+            </member>
+        <member name="M:IO.Swagger.Client.ApiClient.GetApiKeyWithPrefix(System.String)">
+             <summary>
+             Get the API key with prefix.
+             </summary>
+             <param name="apiKeyIdentifier">API key identifier (authentication scheme).</param>
+             <returns>API key with prefix.</returns>
+            </member>
+        <member name="M:IO.Swagger.Client.ApiClient.UpdateParamsForAuth(System.Collections.Generic.Dictionary{System.String,System.String},System.Collections.Generic.Dictionary{System.String,System.String},System.String[])">
+             <summary>
+             Update parameters based on authentication.
+             </summary>
+             <param name="queryParams">Query parameters.</param>
+             <param name="headerParams">Header parameters.</param>
+             <param name="authSettings">Authentication settings.</param>
+            </member>
+        <member name="M:IO.Swagger.Client.ApiClient.Base64Encode(System.String)">
+             <summary>
+             Encode string in base64 format.
+             </summary>
+             <param name="text">String to be encoded.</param>
+             <returns>Encoded string.</returns>
+            </member>
+        <member name="M:IO.Swagger.Client.ApiClient.ConvertType(System.Object,System.Type)">
+             <summary>
+             Dynamically cast the object into target type.
+             </summary>
+             <param name="fromObject">Object to be casted</param>
+             <param name="toObject">Target type</param>
+             <returns>Casted object</returns>
+            </member>
+        <member name="T:IO.Swagger.Client.Configuration">
+             <summary>
+             Represents a set of configuration settings
+             </summary>
+            </member>
+        <member name="F:IO.Swagger.Client.Configuration.Version">
+             <summary>
+             Version of the package.
+             </summary>
+             <value>Version of the package.</value>
+            </member>
+        <member name="F:IO.Swagger.Client.Configuration.DefaultApiClient">
+             <summary>
+             Gets or sets the default API client for making HTTP calls.
+             </summary>
+             <value>The API client.</value>
+            </member>
+        <member name="P:IO.Swagger.Client.Configuration.Username">
+             <summary>
+             Gets or sets the username (HTTP basic authentication).
+             </summary>
+             <value>The username.</value>
+            </member>
+        <member name="P:IO.Swagger.Client.Configuration.Password">
+             <summary>
+             Gets or sets the password (HTTP basic authentication).
+             </summary>
+             <value>The password.</value>
+            </member>
+        <member name="F:IO.Swagger.Client.Configuration.ApiKey">
+             <summary>
+             Gets or sets the API key based on the authentication name.
+             </summary>
+             <value>The API key.</value>
+            </member>
+        <member name="F:IO.Swagger.Client.Configuration.ApiKeyPrefix">
+             <summary>
+             Gets or sets the prefix (e.g. Token) of the API key based on the authentication name.
+             </summary>
+             <value>The prefix of the API key.</value>
+            </member>
+        <member name="P:IO.Swagger.Client.Configuration.TempFolderPath">
+             <summary>
+             Gets or sets the temporary folder path to store the files downloaded from the server.
+             </summary>
+             <value>Folder path.</value>
+            </member>
+        <member name="P:IO.Swagger.Client.Configuration.DateTimeFormat">
+             <summary>
+             Gets or sets the date time format used when serializing in the ApiClient
+             By default, it's set to ISO 8601 - "o", for others see:
+             https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx
+             and https://msdn.microsoft.com/en-us/library/8kb3ddd4(v=vs.110).aspx
+             No validation is done to ensure that the string you're providing is valid
+             </summary>
+             <value>The DateTimeFormat string</value>
+            </member>
+        <member name="M:IO.Swagger.Client.Configuration.ToDebugReport">
+             <summary>
+             Returns a string with essential information for debugging.
+             </summary>
+            </member>
+        <member name="T:IO.Swagger.Client.ApiException">
+             <summary>
+             API Exception
+             </summary>
+            </member>
+        <member name="P:IO.Swagger.Client.ApiException.ErrorCode">
+             <summary>
+             Gets or sets the error code (HTTP status code)
+             </summary>
+             <value>The error code (HTTP status code).</value>
+            </member>
+        <member name="P:IO.Swagger.Client.ApiException.ErrorContent">
+             <summary>
+             Gets or sets the error content (body json object)
+             </summary>
+             <value>The error content (Http response body).</value>
+            </member>
+        <member name="M:IO.Swagger.Client.ApiException.#ctor">
+             <summary>
+             Initializes a new instance of the <see cref="T:IO.Swagger.Client.ApiException" /> class.
+             </summary>
+            </member>
+        <member name="M:IO.Swagger.Client.ApiException.#ctor(System.Int32,System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:IO.Swagger.Client.ApiException" /> class.
+             </summary>
+             <param name="errorCode">HTTP status code.</param>
+             <param name="message">Error message.</param>
+            </member>
+        <member name="M:IO.Swagger.Client.ApiException.#ctor(System.Int32,System.String,System.Object)">
+             <summary>
+             Initializes a new instance of the <see cref="T:IO.Swagger.Client.ApiException" /> class.
+             </summary>
+             <param name="errorCode">HTTP status code.</param>
+             <param name="message">Error message.</param>
+             <param name="errorContent">Error content.</param>
+            </member>
+        <member name="T:IO.Swagger.Api.IAutoGenerateAppTokenApi">
+             <summary>
+             Represents a collection of functions to interact with the API endpoints
+             </summary>
+            </member>
+        <member name="M:IO.Swagger.Api.IAutoGenerateAppTokenApi.GetAppTokenUsingGET">
+             <summary>
+             getAppToken 
+             </summary>
+            </member>
+        <member name="T:IO.Swagger.Api.AutoGenerateAppTokenApi">
+             <summary>
+             Represents a collection of functions to interact with the API endpoints
+             </summary>
+            </member>
+        <member name="M:IO.Swagger.Api.AutoGenerateAppTokenApi.#ctor(IO.Swagger.Model.AppTokenConfig)">
+             <summary>
+             Initializes a new instance of the <see cref="T:IO.Swagger.Api.AutoGenerateAppTokenApi" /> class.
+             </summary>
+             <param name="apiClient"> an instance of ApiClient (optional)</param>
+             <returns></returns>
+            </member>
+        <member name="M:IO.Swagger.Api.AutoGenerateAppTokenApi.SetBasePath(System.String)">
+             <summary>
+             Sets the base path of the API client.
+             </summary>
+             <param name="basePath">The base path</param>
+             <value>The base path</value>
+            </member>
+        <member name="M:IO.Swagger.Api.AutoGenerateAppTokenApi.GetBasePath(System.String)">
+             <summary>
+             Gets the base path of the API client.
+             </summary>
+             <param name="basePath">The base path</param>
+             <value>The base path</value>
+            </member>
+        <member name="P:IO.Swagger.Api.AutoGenerateAppTokenApi.ApiClient">
+             <summary>
+             Gets or sets the API client.
+             </summary>
+             <value>An instance of the ApiClient</value>
+            </member>
+        <member name="M:IO.Swagger.Api.AutoGenerateAppTokenApi.GetAppTokenUsingGET(System.Collections.Generic.List{System.String},System.String,System.String)">
+             <summary>
+             getAppToken 
+             </summary>
+             <param name="appName">app_name</param> 
+             <param name="tenantName">tenant-name</param> 
+             <returns>List&lt;AppToken&gt;</returns>            
+            </member>
+        <member name="T:IO.Swagger.Api.IAppTokenApi">
+             <summary>
+             Represents a collection of functions to interact with the API endpoints
+             </summary>
+            </member>
+        <member name="M:IO.Swagger.Api.IAppTokenApi.GetAppTokenUsingGET(System.Collections.Generic.List{System.String},System.String)">
+             <summary>
+             getAppToken 
+             </summary>
+             <param name="appName">app_name</param>
+             <param name="tenantName">tenant-name</param>
+             <returns>List&lt;AppToken&gt;</returns>
+            </member>
+        <member name="T:IO.Swagger.Api.AppTokenApi">
+             <summary>
+             Represents a collection of functions to interact with the API endpoints
+             </summary>
+            </member>
+        <member name="M:IO.Swagger.Api.AppTokenApi.#ctor(IO.Swagger.Client.ApiClient)">
+             <summary>
+             Initializes a new instance of the <see cref="T:IO.Swagger.Api.AppTokenApi" /> class.
+             </summary>
+             <param name="apiClient"> an instance of ApiClient (optional)</param>
+             <returns></returns>
+            </member>
+        <member name="M:IO.Swagger.Api.AppTokenApi.#ctor(System.String)">
+             <summary>
+             Initializes a new instance of the <see cref="T:IO.Swagger.Api.AppTokenApi" /> class.
+             </summary>
+             <returns></returns>
+            </member>
+        <member name="M:IO.Swagger.Api.AppTokenApi.SetBasePath(System.String)">
+             <summary>
+             Sets the base path of the API client.
+             </summary>
+             <param name="basePath">The base path</param>
+             <value>The base path</value>
+            </member>
+        <member name="M:IO.Swagger.Api.AppTokenApi.GetBasePath(System.String)">
+             <summary>
+             Gets the base path of the API client.
+             </summary>
+             <param name="basePath">The base path</param>
+             <value>The base path</value>
+            </member>
+        <member name="P:IO.Swagger.Api.AppTokenApi.ApiClient">
+             <summary>
+             Gets or sets the API client.
+             </summary>
+             <value>An instance of the ApiClient</value>
+            </member>
+        <member name="M:IO.Swagger.Api.AppTokenApi.GetAppTokenUsingGET(System.Collections.Generic.List{System.String},System.String)">
+             <summary>
+             getAppToken 
+             </summary>
+             <param name="appName">app_name</param> 
+             <param name="tenantName">tenant-name</param> 
+             <returns>List&lt;AppToken&gt;</returns>            
+            </member>
+        <member name="T:IO.Swagger.Model.ResponseEntity">
+             <summary>
+             
+             </summary>
+            </member>
+        <member name="P:IO.Swagger.Model.ResponseEntity.Body">
+             <summary>
+             Gets or Sets Body
+             </summary>
+            </member>
+        <member name="P:IO.Swagger.Model.ResponseEntity.StatusCode">
+             <summary>
+             Gets or Sets StatusCode
+             </summary>
+            </member>
+        <member name="P:IO.Swagger.Model.ResponseEntity.StatusCodeValue">
+             <summary>
+             Gets or Sets StatusCodeValue
+             </summary>
+            </member>
+        <member name="M:IO.Swagger.Model.ResponseEntity.ToString">
+             <summary>
+             Get the string presentation of the object
+             </summary>
+             <returns>String presentation of the object</returns>
+            </member>
+        <member name="M:IO.Swagger.Model.ResponseEntity.ToJson">
+             <summary>
+             Get the JSON string presentation of the object
+             </summary>
+             <returns>JSON string presentation of the object</returns>
+            </member>
+        <member name="T:IO.Swagger.Model.AppTokenConfig">
+             <summary>
+             AppTokenConfig
+             </summary>
+            </member>
+        <member name="P:IO.Swagger.Model.AppTokenConfig.clientId">
+            <Summary>
+             clientId
+            </Summary>
+            </member>
+        <member name="P:IO.Swagger.Model.AppTokenConfig.clientSecret">
+            <Summary>
+             clientSecret
+            </Summary>
+            </member>
+        <member name="P:IO.Swagger.Model.AppTokenConfig.username">
+            <Summary>
+             username
+            </Summary>
+            </member>
+        <member name="P:IO.Swagger.Model.AppTokenConfig.password">
+            <Summary>
+             password
+            </Summary>
+            </member>
+        <member name="P:IO.Swagger.Model.AppTokenConfig.publicKey">
+            <Summary>
+             publicKey
+            </Summary>
+            </member>
+        <member name="P:IO.Swagger.Model.AppTokenConfig.userAccessToken">
+            <Summary>
+             userAccessToken
+            </Summary>
+            </member>
+        <member name="P:IO.Swagger.Model.AppTokenConfig.basePath">
+            <Summary>
+             basePath
+            </Summary>
+            </member>
+        <member name="P:IO.Swagger.Model.AppTokenConfig.isCredsPassed">
+            <Summary>
+             isCredsPassed
+            </Summary>
+            </member>
+        <member name="P:IO.Swagger.Model.AppTokenConfig.isEmbed">
+            <Summary>
+             isEmbed
+            </Summary>
+            </member>
+        <member name="P:IO.Swagger.Model.AppTokenConfig.appNames">
+            <Summary>
+             appNames
+            </Summary>
+            </member>
+        <member name="P:IO.Swagger.Model.AppTokenConfig.attributes">
+            <Summary>
+             attributes
+            </Summary>
+            </member>
+        <member name="M:IO.Swagger.Model.AppTokenConfig.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Collections.Generic.List{IO.Swagger.Model.AppConfig},System.Collections.Generic.List{IO.Swagger.Model.TagAttributes})">
+             <summary>
+             Initializes a new instance of the <see cref="T:IO.Swagger.Model.AppTokenConfig" /> class.
+             </summary>
+             <param name="clientId">clientId.</param>
+             <param name="clientSecret">clientSecret.</param>
+             <param name="username">username.</param>
+             <param name="password">password.</param>
+             <param name="publicKey">publicKey.</param>
+             <param name="userAccessToken">userAccessToken.</param>
+             <param name="basePath">basePath.</param>
+             <param name="isCredsPassed">isCredsPassed.</param>
+             <param name="isEmbed">isEmbed.</param>
+             <param name="appNames">appNames.</param>
+             <param name="attributes">attributes.</param>
+            </member>
+        <member name="T:IO.Swagger.Model.AppToken">
+             <summary>
+             
+             </summary>
+            </member>
+        <member name="P:IO.Swagger.Model.AppToken.AppName">
+             <summary>
+             Gets or Sets AppName
+             </summary>
+            </member>
+        <member name="P:IO.Swagger.Model.AppToken._AppToken">
+             <summary>
+             Gets or Sets _AppToken
+             </summary>
+            </member>
+        <member name="P:IO.Swagger.Model.AppToken.CreateDate">
+             <summary>
+             Gets or Sets CreateDate
+             </summary>
+            </member>
+        <member name="P:IO.Swagger.Model.AppToken.Id">
+             <summary>
+             Gets or Sets Id
+             </summary>
+            </member>
+        <member name="P:IO.Swagger.Model.AppToken.IsValid">
+             <summary>
+             Gets or Sets IsValid
+             </summary>
+            </member>
+        <member name="P:IO.Swagger.Model.AppToken.TenantName">
+             <summary>
+             Gets or Sets TenantName
+             </summary>
+            </member>
+        <member name="P:IO.Swagger.Model.AppToken.UpdateDate">
+             <summary>
+             Gets or Sets UpdateDate
+             </summary>
+            </member>
+        <member name="P:IO.Swagger.Model.AppToken.Username">
+             <summary>
+             Gets or Sets Username
+             </summary>
+            </member>
+        <member name="M:IO.Swagger.Model.AppToken.ToString">
+             <summary>
+             Get the string presentation of the object
+             </summary>
+             <returns>String presentation of the object</returns>
+            </member>
+        <member name="M:IO.Swagger.Model.AppToken.ToJson">
+             <summary>
+             Get the JSON string presentation of the object
+             </summary>
+             <returns>JSON string presentation of the object</returns>
+            </member>
+    </members>
+</doc>

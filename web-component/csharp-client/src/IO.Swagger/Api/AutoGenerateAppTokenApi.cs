@@ -33,43 +33,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
          List<Dictionary<String, String>> GetAppTokenUsingGET ();
 
-        // /// <summary>
-        // /// getAppToken
-        // /// </summary>
-        // /// <remarks>
-        // /// 
-        // /// </remarks>
-        // /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        // /// <param name="appName">app_name</param>
-        // /// <param name="tenantName">tenant-name (optional)</param>
-        // /// <returns>ApiResponse of List&lt;AppToken&gt;</returns>
-        // ApiResponse<List<AppToken>> GetAppTokenUsingGETWithHttpInfo (List<string> appName, string tenantName = null);
          #endregion Synchronous Operations
-        // #region Asynchronous Operations
-        // /// <summary>
-        // /// getAppToken
-        // /// </summary>
-        // /// <remarks>
-        // /// 
-        // /// </remarks>
-        // /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        // /// <param name="appName">app_name</param>
-        // /// <param name="tenantName">tenant-name (optional)</param>
-        // /// <returns>Task of List&lt;AppToken&gt;</returns>
-        // //System.Threading.Tasks.Task<List<AppToken>> GetAppTokenUsingGETAsync (List<string> appName, string tenantName = null);
-
-        // /// <summary>
-        // /// getAppToken
-        // /// </summary>
-        // /// <remarks>
-        // /// 
-        // /// </remarks>
-        // /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        // /// <param name="appName">app_name</param>
-        // /// <param name="tenantName">tenant-name (optional)</param>
-        // /// <returns>Task of ApiResponse (List&lt;AppToken&gt;)</returns>
-        // System.Threading.Tasks.Task<ApiResponse<List<AppToken>>> GetAppTokenUsingGETAsyncWithHttpInfo ();
-        //#endregion Asynchronous Operations
     }
 
     /// <summary>
@@ -84,12 +48,7 @@ namespace IO.Swagger.Api
         /// Initializes a new instance of the <see cref="AutoGenerateAppTokenApi"/> class.
         /// </summary>
         /// <returns></returns>
-        // public AutoGenerateAppTokenApi(String basePath)
-        // {
-        //     this.Configuration = new IO.Swagger.Client.Configuration { BasePath = basePath };
-        //     ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
-        // }
-
+      
         public AutoGenerateAppTokenApi(AppTokenConfig appTokenConfig)
         {
             this.Configuration = new IO.Swagger.Client.Configuration { BasePath = appTokenConfig.basePath };
@@ -316,27 +275,25 @@ namespace IO.Swagger.Api
 
             AuthApiClient authApiClient = new AuthApiClient(this.Configuration);
             String clientCredentialToken = authApiClient.createClientCredential(appTokenConfig.clientId, appTokenConfig.clientSecret);
-            // apiClient.setAccessToken(clientCredentialToken);
+          
             this.Configuration.AccessToken = clientCredentialToken;
 
                 foreach (AppConfig app in appTokenConfig.appNames) {
                     if (app.authType != null && app.authType.ToLower()=="client_credentials") {
-                        // apiClient.setAccessToken(clientCredentialToken);
+                     
                         this.Configuration.AccessToken = clientCredentialToken;
                     } else if (app.authType != null && app.authType.ToLower() == "password_credentials") {
-                        // apiClient.setAccessToken(appTokenConfig.getUserAccessToken());
+                        
                         this.Configuration.AccessToken = appTokenConfig.userAccessToken;
                         if (appTokenConfig.isCredsPassed) {
                             String passwordCredentialToken = authApiClient.createPasswordCredential(appTokenConfig.clientId, appTokenConfig.clientSecret, appTokenConfig.username, appTokenConfig.password);
-                            // apiClient.setAccessToken(passwordCredentialToken);
+                          
                             this.Configuration.AccessToken = passwordCredentialToken;
                         }
                     }
 
                     ApiResponse<List<AppToken>> appTokenExecute = GetAppTokenUsingGETWithHttpInfo(new List<String> {app.appName}, null);
-                    // Type localVarReturnType = new TypeToken<List<AppToken>>() {
-                    // }.getType();
-                    // ApiResponse<List<AppToken>> appTokenExecute = apiClient.execute(call, localVarReturnType);
+                   
                     if (appTokenExecute != null) {
 
                         List<AppToken> appTokens = appTokenExecute.Data;

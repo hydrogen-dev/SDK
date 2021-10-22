@@ -361,10 +361,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (integrationType != null) localVarPathParams.Add("integration_type", this.Configuration.ApiClient.ParameterToString(integrationType)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (integrationType != null) localVarPathParams.Add("integration_type", this.Configuration.ApiClient.ParameterToString(integrationType)); // path parameter
             if (service != null) localVarPathParams.Add("service", this.Configuration.ApiClient.ParameterToString(service)); // path parameter
 
             // authentication (oauth2) required
@@ -440,10 +440,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (integrationType != null) localVarPathParams.Add("integration_type", this.Configuration.ApiClient.ParameterToString(integrationType)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (integrationType != null) localVarPathParams.Add("integration_type", this.Configuration.ApiClient.ParameterToString(integrationType)); // path parameter
             if (service != null) localVarPathParams.Add("service", this.Configuration.ApiClient.ParameterToString(service)); // path parameter
 
             // authentication (oauth2) required
@@ -524,10 +524,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (integrationType != null) localVarPathParams.Add("integration_type", this.Configuration.ApiClient.ParameterToString(integrationType)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (integrationType != null) localVarPathParams.Add("integration_type", this.Configuration.ApiClient.ParameterToString(integrationType)); // path parameter
             if (service != null) localVarPathParams.Add("service", this.Configuration.ApiClient.ParameterToString(service)); // path parameter
             if (data != null && data.GetType() != typeof(byte[]))
             {
@@ -617,10 +617,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (integrationType != null) localVarPathParams.Add("integration_type", this.Configuration.ApiClient.ParameterToString(integrationType)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (integrationType != null) localVarPathParams.Add("integration_type", this.Configuration.ApiClient.ParameterToString(integrationType)); // path parameter
             if (service != null) localVarPathParams.Add("service", this.Configuration.ApiClient.ParameterToString(service)); // path parameter
             if (data != null && data.GetType() != typeof(byte[]))
             {
@@ -708,10 +708,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (integrationType != null) localVarPathParams.Add("integration_type", this.Configuration.ApiClient.ParameterToString(integrationType)); // path parameter
             if (service != null) localVarPathParams.Add("service", this.Configuration.ApiClient.ParameterToString(service)); // path parameter
 
@@ -793,10 +793,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
             if (integrationType != null) localVarPathParams.Add("integration_type", this.Configuration.ApiClient.ParameterToString(integrationType)); // path parameter
             if (service != null) localVarPathParams.Add("service", this.Configuration.ApiClient.ParameterToString(service)); // path parameter
 
@@ -867,10 +867,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -940,10 +940,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required
             // oauth required

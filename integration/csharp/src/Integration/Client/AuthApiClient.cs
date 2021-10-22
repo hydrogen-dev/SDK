@@ -103,6 +103,7 @@ namespace Integration.Client
             }
             AuthResponse authResponse =  JsonConvert.DeserializeObject<AuthResponse>(localVarResponse.Content);
             this.Configuration.AccessToken = authResponse.access_token;
+            this.Configuration.BasePath = this.Configuration.BasePath + "/integration/v1";
         }
 
         public void createPasswordCredential(String clientId, String clientSecret, String userName, String password)
@@ -142,6 +143,7 @@ namespace Integration.Client
             }
             AuthResponse authResponse =  JsonConvert.DeserializeObject<AuthResponse>(localVarResponse.Content);
             this.Configuration.AccessToken = authResponse.access_token;
+            this.Configuration.BasePath = this.Configuration.BasePath + "/integration/v1";
         }
 
         public void createClientTokenCredential(String clientId, String clientSecret, String clientToken)
@@ -175,6 +177,7 @@ namespace Integration.Client
             }
             AuthResponse authResponse =  JsonConvert.DeserializeObject<AuthResponse>(localVarResponse.Content);
             this.Configuration.AccessToken = authResponse.access_token;
+            this.Configuration.BasePath = this.Configuration.BasePath + "/integration/v1";
         }
 
         public class AuthResponse

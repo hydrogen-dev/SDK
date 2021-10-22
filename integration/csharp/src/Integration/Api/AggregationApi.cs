@@ -651,10 +651,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (aggregationRequestObject != null && aggregationRequestObject.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (aggregationRequestObject != null && aggregationRequestObject.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(aggregationRequestObject); // http body (model) parameter
             }
@@ -732,10 +732,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (aggregationRequestObject != null && aggregationRequestObject.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (aggregationRequestObject != null && aggregationRequestObject.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(aggregationRequestObject); // http body (model) parameter
             }
@@ -814,10 +814,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusAggregationAccountId != null) localVarPathParams.Add("nucleus_aggregation_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAggregationAccountId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusAggregationAccountId != null) localVarPathParams.Add("nucleus_aggregation_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAggregationAccountId)); // path parameter
             if (deleteType != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "delete_type", deleteType)); // query parameter
             if (nucleusData != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "nucleus_data", nucleusData)); // query parameter
 
@@ -892,10 +892,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusAggregationAccountId != null) localVarPathParams.Add("nucleus_aggregation_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAggregationAccountId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusAggregationAccountId != null) localVarPathParams.Add("nucleus_aggregation_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAggregationAccountId)); // path parameter
             if (deleteType != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "delete_type", deleteType)); // query parameter
             if (nucleusData != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "nucleus_data", nucleusData)); // query parameter
 
@@ -966,10 +966,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (aggregationAccountIdList != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "aggregation_account_id_list", aggregationAccountIdList)); // query parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (aggregationAccountIdList != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "aggregation_account_id_list", aggregationAccountIdList)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1039,10 +1039,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (aggregationAccountIdList != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "aggregation_account_id_list", aggregationAccountIdList)); // query parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (aggregationAccountIdList != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "aggregation_account_id_list", aggregationAccountIdList)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1111,10 +1111,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (aggregationAccountIdList != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "aggregation_account_id_list", aggregationAccountIdList)); // query parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (aggregationAccountIdList != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "aggregation_account_id_list", aggregationAccountIdList)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1184,10 +1184,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (aggregationAccountIdList != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "aggregation_account_id_list", aggregationAccountIdList)); // query parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (aggregationAccountIdList != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "aggregation_account_id_list", aggregationAccountIdList)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1256,10 +1256,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusAggregationAccountId != null) localVarPathParams.Add("nucleus_aggregation_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAggregationAccountId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusAggregationAccountId != null) localVarPathParams.Add("nucleus_aggregation_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAggregationAccountId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1329,10 +1329,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusAggregationAccountId != null) localVarPathParams.Add("nucleus_aggregation_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAggregationAccountId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusAggregationAccountId != null) localVarPathParams.Add("nucleus_aggregation_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAggregationAccountId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1401,10 +1401,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (aggregationAccountIdList != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "aggregation_account_id_list", aggregationAccountIdList)); // query parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (aggregationAccountIdList != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "aggregation_account_id_list", aggregationAccountIdList)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1474,10 +1474,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (aggregationAccountIdList != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "aggregation_account_id_list", aggregationAccountIdList)); // query parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (aggregationAccountIdList != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "aggregation_account_id_list", aggregationAccountIdList)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1546,10 +1546,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusAggregationAccountId != null) localVarPathParams.Add("nucleus_aggregation_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAggregationAccountId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusAggregationAccountId != null) localVarPathParams.Add("nucleus_aggregation_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAggregationAccountId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1619,10 +1619,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusAggregationAccountId != null) localVarPathParams.Add("nucleus_aggregation_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAggregationAccountId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusAggregationAccountId != null) localVarPathParams.Add("nucleus_aggregation_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAggregationAccountId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1691,10 +1691,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (aggregationAccountIdList != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "aggregation_account_id_list", aggregationAccountIdList)); // query parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (aggregationAccountIdList != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "aggregation_account_id_list", aggregationAccountIdList)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1764,10 +1764,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (aggregationAccountIdList != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "aggregation_account_id_list", aggregationAccountIdList)); // query parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (aggregationAccountIdList != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "aggregation_account_id_list", aggregationAccountIdList)); // query parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1836,10 +1836,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusAggregationAccountId != null) localVarPathParams.Add("nucleus_aggregation_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAggregationAccountId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusAggregationAccountId != null) localVarPathParams.Add("nucleus_aggregation_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAggregationAccountId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1909,10 +1909,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusAggregationAccountId != null) localVarPathParams.Add("nucleus_aggregation_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAggregationAccountId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusAggregationAccountId != null) localVarPathParams.Add("nucleus_aggregation_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAggregationAccountId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1981,10 +1981,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusAggregationAccountId != null) localVarPathParams.Add("nucleus_aggregation_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAggregationAccountId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusAggregationAccountId != null) localVarPathParams.Add("nucleus_aggregation_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAggregationAccountId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -2054,10 +2054,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusAggregationAccountId != null) localVarPathParams.Add("nucleus_aggregation_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAggregationAccountId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusAggregationAccountId != null) localVarPathParams.Add("nucleus_aggregation_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAggregationAccountId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -2132,10 +2132,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusAggregationAccountId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "nucleus_aggregation_account_id", nucleusAggregationAccountId)); // query parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusAggregationAccountId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "nucleus_aggregation_account_id", nucleusAggregationAccountId)); // query parameter
             if (nucleusBusinessId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "nucleus_business_id", nucleusBusinessId)); // query parameter
             if (nucleusClientId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "nucleus_client_id", nucleusClientId)); // query parameter
             if (product != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "product", product)); // query parameter
@@ -2214,10 +2214,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusAggregationAccountId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "nucleus_aggregation_account_id", nucleusAggregationAccountId)); // query parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusAggregationAccountId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "nucleus_aggregation_account_id", nucleusAggregationAccountId)); // query parameter
             if (nucleusBusinessId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "nucleus_business_id", nucleusBusinessId)); // query parameter
             if (nucleusClientId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "nucleus_client_id", nucleusClientId)); // query parameter
             if (product != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "product", product)); // query parameter

@@ -874,9 +874,11 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (localVarHttpHeaderAccept != null) {
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (nucleusInvoiceId != null) localVarPathParams.Add("nucleus_invoice_id", this.Configuration.ApiClient.ParameterToString(nucleusInvoiceId)); // path parameter
 
             // authentication (oauth2) required

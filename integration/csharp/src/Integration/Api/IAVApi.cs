@@ -303,10 +303,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (iavRequestCO != null && iavRequestCO.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (iavRequestCO != null && iavRequestCO.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(iavRequestCO); // http body (model) parameter
             }
@@ -384,10 +384,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (iavRequestCO != null && iavRequestCO.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (iavRequestCO != null && iavRequestCO.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(iavRequestCO); // http body (model) parameter
             }
@@ -466,10 +466,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusBankLinkId != null) localVarPathParams.Add("nucleus_bank_link_id", this.Configuration.ApiClient.ParameterToString(nucleusBankLinkId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusBankLinkId != null) localVarPathParams.Add("nucleus_bank_link_id", this.Configuration.ApiClient.ParameterToString(nucleusBankLinkId)); // path parameter
             if (deleteType != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "delete_type", deleteType)); // query parameter
             if (nucleusData != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "nucleus_data", nucleusData)); // query parameter
 
@@ -544,10 +544,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusBankLinkId != null) localVarPathParams.Add("nucleus_bank_link_id", this.Configuration.ApiClient.ParameterToString(nucleusBankLinkId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusBankLinkId != null) localVarPathParams.Add("nucleus_bank_link_id", this.Configuration.ApiClient.ParameterToString(nucleusBankLinkId)); // path parameter
             if (deleteType != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "delete_type", deleteType)); // query parameter
             if (nucleusData != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "nucleus_data", nucleusData)); // query parameter
 
@@ -618,10 +618,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusBankLinkId != null) localVarPathParams.Add("nucleus_bank_link_id", this.Configuration.ApiClient.ParameterToString(nucleusBankLinkId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusBankLinkId != null) localVarPathParams.Add("nucleus_bank_link_id", this.Configuration.ApiClient.ParameterToString(nucleusBankLinkId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -691,10 +691,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusBankLinkId != null) localVarPathParams.Add("nucleus_bank_link_id", this.Configuration.ApiClient.ParameterToString(nucleusBankLinkId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusBankLinkId != null) localVarPathParams.Add("nucleus_bank_link_id", this.Configuration.ApiClient.ParameterToString(nucleusBankLinkId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required

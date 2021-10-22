@@ -252,10 +252,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (smsId != null) localVarPathParams.Add("sms_id", this.Configuration.ApiClient.ParameterToString(smsId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (smsId != null) localVarPathParams.Add("sms_id", this.Configuration.ApiClient.ParameterToString(smsId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -325,10 +325,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (smsId != null) localVarPathParams.Add("sms_id", this.Configuration.ApiClient.ParameterToString(smsId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (smsId != null) localVarPathParams.Add("sms_id", this.Configuration.ApiClient.ParameterToString(smsId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -398,10 +398,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (smsVO != null && smsVO.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (smsVO != null && smsVO.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(smsVO); // http body (model) parameter
             }
@@ -479,10 +479,10 @@ namespace Integration.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (smsVO != null && smsVO.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (smsVO != null && smsVO.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(smsVO); // http body (model) parameter
             }

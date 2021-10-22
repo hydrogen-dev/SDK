@@ -1044,10 +1044,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusOrderId != null) localVarPathParams.Add("nucleus_order_id", this.Configuration.ApiClient.ParameterToString(nucleusOrderId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusOrderId != null) localVarPathParams.Add("nucleus_order_id", this.Configuration.ApiClient.ParameterToString(nucleusOrderId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1117,10 +1117,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusOrderId != null) localVarPathParams.Add("nucleus_order_id", this.Configuration.ApiClient.ParameterToString(nucleusOrderId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusOrderId != null) localVarPathParams.Add("nucleus_order_id", this.Configuration.ApiClient.ParameterToString(nucleusOrderId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1190,10 +1190,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (brokerageAccountCO != null && brokerageAccountCO.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (brokerageAccountCO != null && brokerageAccountCO.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(brokerageAccountCO); // http body (model) parameter
             }
@@ -1271,10 +1271,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (brokerageAccountCO != null && brokerageAccountCO.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (brokerageAccountCO != null && brokerageAccountCO.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(brokerageAccountCO); // http body (model) parameter
             }
@@ -1351,10 +1351,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (brokerageBankLinkCO != null && brokerageBankLinkCO.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (brokerageBankLinkCO != null && brokerageBankLinkCO.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(brokerageBankLinkCO); // http body (model) parameter
             }
@@ -1432,10 +1432,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (brokerageBankLinkCO != null && brokerageBankLinkCO.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (brokerageBankLinkCO != null && brokerageBankLinkCO.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(brokerageBankLinkCO); // http body (model) parameter
             }
@@ -1512,10 +1512,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (clientCO != null && clientCO.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (clientCO != null && clientCO.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(clientCO); // http body (model) parameter
             }
@@ -1593,10 +1593,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (clientCO != null && clientCO.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (clientCO != null && clientCO.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(clientCO); // http body (model) parameter
             }
@@ -1673,10 +1673,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (brokerageDepositCO != null && brokerageDepositCO.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (brokerageDepositCO != null && brokerageDepositCO.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(brokerageDepositCO); // http body (model) parameter
             }
@@ -1754,10 +1754,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (brokerageDepositCO != null && brokerageDepositCO.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (brokerageDepositCO != null && brokerageDepositCO.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(brokerageDepositCO); // http body (model) parameter
             }
@@ -1834,10 +1834,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (documentCO != null && documentCO.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (documentCO != null && documentCO.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(documentCO); // http body (model) parameter
             }
@@ -1915,10 +1915,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (documentCO != null && documentCO.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (documentCO != null && documentCO.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(documentCO); // http body (model) parameter
             }
@@ -1995,10 +1995,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (brokerageOrderCO != null && brokerageOrderCO.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (brokerageOrderCO != null && brokerageOrderCO.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(brokerageOrderCO); // http body (model) parameter
             }
@@ -2076,10 +2076,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (brokerageOrderCO != null && brokerageOrderCO.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (brokerageOrderCO != null && brokerageOrderCO.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(brokerageOrderCO); // http body (model) parameter
             }
@@ -2156,10 +2156,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (brokerageWithdrawalCO != null && brokerageWithdrawalCO.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (brokerageWithdrawalCO != null && brokerageWithdrawalCO.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(brokerageWithdrawalCO); // http body (model) parameter
             }
@@ -2237,10 +2237,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (brokerageWithdrawalCO != null && brokerageWithdrawalCO.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (brokerageWithdrawalCO != null && brokerageWithdrawalCO.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(brokerageWithdrawalCO); // http body (model) parameter
             }
@@ -2315,10 +2315,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusBankLinkId != null) localVarPathParams.Add("nucleus_bank_link_id", this.Configuration.ApiClient.ParameterToString(nucleusBankLinkId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusBankLinkId != null) localVarPathParams.Add("nucleus_bank_link_id", this.Configuration.ApiClient.ParameterToString(nucleusBankLinkId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -2387,10 +2387,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusBankLinkId != null) localVarPathParams.Add("nucleus_bank_link_id", this.Configuration.ApiClient.ParameterToString(nucleusBankLinkId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusBankLinkId != null) localVarPathParams.Add("nucleus_bank_link_id", this.Configuration.ApiClient.ParameterToString(nucleusBankLinkId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -2474,10 +2474,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusAccountId != null) localVarPathParams.Add("nucleus_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAccountId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusAccountId != null) localVarPathParams.Add("nucleus_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAccountId)); // path parameter
             if (endDate != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "end_date", endDate)); // query parameter
             if (startDate != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start_date", startDate)); // query parameter
             if (statementType != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "statement_type", statementType)); // query parameter
@@ -2565,10 +2565,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusAccountId != null) localVarPathParams.Add("nucleus_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAccountId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusAccountId != null) localVarPathParams.Add("nucleus_account_id", this.Configuration.ApiClient.ParameterToString(nucleusAccountId)); // path parameter
             if (endDate != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "end_date", endDate)); // query parameter
             if (startDate != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start_date", startDate)); // query parameter
             if (statementType != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "statement_type", statementType)); // query parameter
@@ -2640,10 +2640,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusPortfolioId != null) localVarPathParams.Add("nucleus_portfolio_id", this.Configuration.ApiClient.ParameterToString(nucleusPortfolioId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusPortfolioId != null) localVarPathParams.Add("nucleus_portfolio_id", this.Configuration.ApiClient.ParameterToString(nucleusPortfolioId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -2713,10 +2713,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusPortfolioId != null) localVarPathParams.Add("nucleus_portfolio_id", this.Configuration.ApiClient.ParameterToString(nucleusPortfolioId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusPortfolioId != null) localVarPathParams.Add("nucleus_portfolio_id", this.Configuration.ApiClient.ParameterToString(nucleusPortfolioId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -2785,10 +2785,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusBankLinkId != null) localVarPathParams.Add("nucleus_bank_link_id", this.Configuration.ApiClient.ParameterToString(nucleusBankLinkId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusBankLinkId != null) localVarPathParams.Add("nucleus_bank_link_id", this.Configuration.ApiClient.ParameterToString(nucleusBankLinkId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -2858,10 +2858,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusBankLinkId != null) localVarPathParams.Add("nucleus_bank_link_id", this.Configuration.ApiClient.ParameterToString(nucleusBankLinkId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusBankLinkId != null) localVarPathParams.Add("nucleus_bank_link_id", this.Configuration.ApiClient.ParameterToString(nucleusBankLinkId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -2930,10 +2930,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusDocumentId != null) localVarPathParams.Add("nucleus_document_id", this.Configuration.ApiClient.ParameterToString(nucleusDocumentId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusDocumentId != null) localVarPathParams.Add("nucleus_document_id", this.Configuration.ApiClient.ParameterToString(nucleusDocumentId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -3003,10 +3003,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusDocumentId != null) localVarPathParams.Add("nucleus_document_id", this.Configuration.ApiClient.ParameterToString(nucleusDocumentId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusDocumentId != null) localVarPathParams.Add("nucleus_document_id", this.Configuration.ApiClient.ParameterToString(nucleusDocumentId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -3075,10 +3075,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusPortfolioId != null) localVarPathParams.Add("nucleus_portfolio_id", this.Configuration.ApiClient.ParameterToString(nucleusPortfolioId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusPortfolioId != null) localVarPathParams.Add("nucleus_portfolio_id", this.Configuration.ApiClient.ParameterToString(nucleusPortfolioId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -3148,10 +3148,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusPortfolioId != null) localVarPathParams.Add("nucleus_portfolio_id", this.Configuration.ApiClient.ParameterToString(nucleusPortfolioId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusPortfolioId != null) localVarPathParams.Add("nucleus_portfolio_id", this.Configuration.ApiClient.ParameterToString(nucleusPortfolioId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -3220,10 +3220,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusPortfolioId != null) localVarPathParams.Add("nucleus_portfolio_id", this.Configuration.ApiClient.ParameterToString(nucleusPortfolioId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusPortfolioId != null) localVarPathParams.Add("nucleus_portfolio_id", this.Configuration.ApiClient.ParameterToString(nucleusPortfolioId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -3293,10 +3293,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusPortfolioId != null) localVarPathParams.Add("nucleus_portfolio_id", this.Configuration.ApiClient.ParameterToString(nucleusPortfolioId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusPortfolioId != null) localVarPathParams.Add("nucleus_portfolio_id", this.Configuration.ApiClient.ParameterToString(nucleusPortfolioId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -3365,10 +3365,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusOrderId != null) localVarPathParams.Add("nucleus_order_id", this.Configuration.ApiClient.ParameterToString(nucleusOrderId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusOrderId != null) localVarPathParams.Add("nucleus_order_id", this.Configuration.ApiClient.ParameterToString(nucleusOrderId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -3438,10 +3438,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusOrderId != null) localVarPathParams.Add("nucleus_order_id", this.Configuration.ApiClient.ParameterToString(nucleusOrderId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusOrderId != null) localVarPathParams.Add("nucleus_order_id", this.Configuration.ApiClient.ParameterToString(nucleusOrderId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -3514,10 +3514,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (getFundamentals != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "get_fundamentals", getFundamentals)); // query parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (getFundamentals != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "get_fundamentals", getFundamentals)); // query parameter
             if (nucleusSecurityId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "nucleus_security_id", nucleusSecurityId)); // query parameter
             if (vendorName != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "vendor_name", vendorName)); // query parameter
 
@@ -3593,10 +3593,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (getFundamentals != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "get_fundamentals", getFundamentals)); // query parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (getFundamentals != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "get_fundamentals", getFundamentals)); // query parameter
             if (nucleusSecurityId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "nucleus_security_id", nucleusSecurityId)); // query parameter
             if (vendorName != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "vendor_name", vendorName)); // query parameter
 
@@ -3682,10 +3682,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusPortfolioId != null) localVarPathParams.Add("nucleus_portfolio_id", this.Configuration.ApiClient.ParameterToString(nucleusPortfolioId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusPortfolioId != null) localVarPathParams.Add("nucleus_portfolio_id", this.Configuration.ApiClient.ParameterToString(nucleusPortfolioId)); // path parameter
             if (endDate != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "end_date", endDate)); // query parameter
             if (startDate != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start_date", startDate)); // query parameter
             if (drivewealthResponse != null && drivewealthResponse.GetType() != typeof(byte[]))
@@ -3780,10 +3780,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusPortfolioId != null) localVarPathParams.Add("nucleus_portfolio_id", this.Configuration.ApiClient.ParameterToString(nucleusPortfolioId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusPortfolioId != null) localVarPathParams.Add("nucleus_portfolio_id", this.Configuration.ApiClient.ParameterToString(nucleusPortfolioId)); // path parameter
             if (endDate != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "end_date", endDate)); // query parameter
             if (startDate != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "start_date", startDate)); // query parameter
             if (drivewealthResponse != null && drivewealthResponse.GetType() != typeof(byte[]))
@@ -3863,10 +3863,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusBankLinkId != null) localVarPathParams.Add("nucleus_bank_link_id", this.Configuration.ApiClient.ParameterToString(nucleusBankLinkId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusBankLinkId != null) localVarPathParams.Add("nucleus_bank_link_id", this.Configuration.ApiClient.ParameterToString(nucleusBankLinkId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -3937,10 +3937,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusBankLinkId != null) localVarPathParams.Add("nucleus_bank_link_id", this.Configuration.ApiClient.ParameterToString(nucleusBankLinkId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusBankLinkId != null) localVarPathParams.Add("nucleus_bank_link_id", this.Configuration.ApiClient.ParameterToString(nucleusBankLinkId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -4012,10 +4012,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusClientId != null) localVarPathParams.Add("nucleus_client_id", this.Configuration.ApiClient.ParameterToString(nucleusClientId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusClientId != null) localVarPathParams.Add("nucleus_client_id", this.Configuration.ApiClient.ParameterToString(nucleusClientId)); // path parameter
             if (clientCO != null && clientCO.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(clientCO); // http body (model) parameter
@@ -4096,10 +4096,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (nucleusClientId != null) localVarPathParams.Add("nucleus_client_id", this.Configuration.ApiClient.ParameterToString(nucleusClientId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (nucleusClientId != null) localVarPathParams.Add("nucleus_client_id", this.Configuration.ApiClient.ParameterToString(nucleusClientId)); // path parameter
             if (clientCO != null && clientCO.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(clientCO); // http body (model) parameter

@@ -399,10 +399,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (webhookRequest != null && webhookRequest.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (webhookRequest != null && webhookRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(webhookRequest); // http body (model) parameter
             }
@@ -480,10 +480,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (webhookRequest != null && webhookRequest.GetType() != typeof(byte[]))
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (webhookRequest != null && webhookRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(webhookRequest); // http body (model) parameter
             }
@@ -558,10 +558,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (webhookId != null) localVarPathParams.Add("webhook_id", this.Configuration.ApiClient.ParameterToString(webhookId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (webhookId != null) localVarPathParams.Add("webhook_id", this.Configuration.ApiClient.ParameterToString(webhookId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -630,10 +630,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (webhookId != null) localVarPathParams.Add("webhook_id", this.Configuration.ApiClient.ParameterToString(webhookId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (webhookId != null) localVarPathParams.Add("webhook_id", this.Configuration.ApiClient.ParameterToString(webhookId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -707,10 +707,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (ascending != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "ascending", ascending)); // query parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (ascending != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "ascending", ascending)); // query parameter
             if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
             if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order_by", orderBy)); // query parameter
             if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
@@ -789,10 +789,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (ascending != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "ascending", ascending)); // query parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (ascending != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "ascending", ascending)); // query parameter
             if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
             if (orderBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "order_by", orderBy)); // query parameter
             if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
@@ -865,10 +865,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (webhookId != null) localVarPathParams.Add("webhook_id", this.Configuration.ApiClient.ParameterToString(webhookId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (webhookId != null) localVarPathParams.Add("webhook_id", this.Configuration.ApiClient.ParameterToString(webhookId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -938,10 +938,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (webhookId != null) localVarPathParams.Add("webhook_id", this.Configuration.ApiClient.ParameterToString(webhookId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (webhookId != null) localVarPathParams.Add("webhook_id", this.Configuration.ApiClient.ParameterToString(webhookId)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -1016,10 +1016,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (webhookId != null) localVarPathParams.Add("webhook_id", this.Configuration.ApiClient.ParameterToString(webhookId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (webhookId != null) localVarPathParams.Add("webhook_id", this.Configuration.ApiClient.ParameterToString(webhookId)); // path parameter
             if (webhook != null && webhook.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(webhook); // http body (model) parameter
@@ -1103,10 +1103,10 @@ namespace Integration.Api
                 "*/*"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (webhookId != null) localVarPathParams.Add("webhook_id", this.Configuration.ApiClient.ParameterToString(webhookId)); // path parameter
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }if (webhookId != null) localVarPathParams.Add("webhook_id", this.Configuration.ApiClient.ParameterToString(webhookId)); // path parameter
             if (webhook != null && webhook.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(webhook); // http body (model) parameter

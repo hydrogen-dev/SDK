@@ -29,7 +29,7 @@ namespace Proton.Client
         private const string MESSAGE = "message";
         private const string ACCESS_TOKEN = "access_token";
         private const string CLIENT_TOKEN = "Client-Token";
-
+        private bool isSandbox = false;
         public string AuthUri { get; set; }
         public string ClientAccessTokenUri { get; set; }
 
@@ -55,9 +55,11 @@ namespace Proton.Client
             {
                 case EnumTest.PRODUCTION:
                     basePath = EnvironmentEnum.PRODUCTION;
+                    isSandbox = false;
                     break;
                 case EnumTest.SANDBOX:
                     basePath = EnvironmentEnum.SANDBOX;
+                    isSandbox = true;
                     break;
             }
 
@@ -70,7 +72,7 @@ namespace Proton.Client
 
         public void createClientCredential(String clientId, String clientSecret)
         {
-
+            this.Configuration.BasePath = (isSandbox) ? EnvironmentEnum.SANDBOX : EnvironmentEnum.PRODUCTION;
             var localVarPathParams = new Dictionary<string, string>();
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
             var localVarHeaderParams = new Dictionary<string, string>();
@@ -103,10 +105,13 @@ namespace Proton.Client
             }
             AuthResponse authResponse =  JsonConvert.DeserializeObject<AuthResponse>(localVarResponse.Content);
             this.Configuration.AccessToken = authResponse.access_token;
+            this.Configuration.BasePath = this.Configuration.BasePath + "/proton/v1";
+
         }
 
         public void createPasswordCredential(String clientId, String clientSecret, String userName, String password)
         {
+            this.Configuration.BasePath = (isSandbox) ? EnvironmentEnum.SANDBOX : EnvironmentEnum.PRODUCTION;
 
             var localVarPathParams = new Dictionary<string, string>();
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
@@ -142,10 +147,14 @@ namespace Proton.Client
             }
             AuthResponse authResponse =  JsonConvert.DeserializeObject<AuthResponse>(localVarResponse.Content);
             this.Configuration.AccessToken = authResponse.access_token;
+            this.Configuration.BasePath = this.Configuration.BasePath + "/proton/v1";
+
         }
 
         public void createClientTokenCredential(String clientId, String clientSecret, String clientToken)
         {
+            this.Configuration.BasePath = (isSandbox) ? EnvironmentEnum.SANDBOX : EnvironmentEnum.PRODUCTION;
+
             var localVarPathParams = new Dictionary<string, string>();
             var localVarQueryParams = new List<KeyValuePair<string, string>>();
             var localVarHeaderParams = new Dictionary<string, string>();
@@ -175,6 +184,8 @@ namespace Proton.Client
             }
             AuthResponse authResponse =  JsonConvert.DeserializeObject<AuthResponse>(localVarResponse.Content);
             this.Configuration.AccessToken = authResponse.access_token;
+            this.Configuration.BasePath = this.Configuration.BasePath + "/proton/v1";
+
         }
 
         public class AuthResponse

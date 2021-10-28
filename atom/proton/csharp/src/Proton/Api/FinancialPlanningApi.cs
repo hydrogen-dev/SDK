@@ -673,9 +673,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (educationCalculatorAnnualCostRequest != null && educationCalculatorAnnualCostRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(educationCalculatorAnnualCostRequest); // http body (model) parameter
@@ -754,9 +755,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (educationCalculatorAnnualCostRequest != null && educationCalculatorAnnualCostRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(educationCalculatorAnnualCostRequest); // http body (model) parameter
@@ -834,9 +836,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (educationCalculatorDepositAmountRequest != null && educationCalculatorDepositAmountRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(educationCalculatorDepositAmountRequest); // http body (model) parameter
@@ -915,9 +918,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (educationCalculatorDepositAmountRequest != null && educationCalculatorDepositAmountRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(educationCalculatorDepositAmountRequest); // http body (model) parameter
@@ -995,9 +999,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (educationCalculatorPercentCoveredRequest != null && educationCalculatorPercentCoveredRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(educationCalculatorPercentCoveredRequest); // http body (model) parameter
@@ -1076,9 +1081,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (educationCalculatorPercentCoveredRequest != null && educationCalculatorPercentCoveredRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(educationCalculatorPercentCoveredRequest); // http body (model) parameter
@@ -1156,9 +1162,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (mortgageCalculatorDownPaymentRequest != null && mortgageCalculatorDownPaymentRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(mortgageCalculatorDownPaymentRequest); // http body (model) parameter
@@ -1237,9 +1244,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (mortgageCalculatorDownPaymentRequest != null && mortgageCalculatorDownPaymentRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(mortgageCalculatorDownPaymentRequest); // http body (model) parameter
@@ -1317,9 +1325,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (mortgageCalculatorHomePriceRequest != null && mortgageCalculatorHomePriceRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(mortgageCalculatorHomePriceRequest); // http body (model) parameter
@@ -1398,9 +1407,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (mortgageCalculatorHomePriceRequest != null && mortgageCalculatorHomePriceRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(mortgageCalculatorHomePriceRequest); // http body (model) parameter
@@ -1478,9 +1488,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (mortgageCalculatorPeriodicPaymentRequest != null && mortgageCalculatorPeriodicPaymentRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(mortgageCalculatorPeriodicPaymentRequest); // http body (model) parameter
@@ -1559,9 +1570,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (mortgageCalculatorPeriodicPaymentRequest != null && mortgageCalculatorPeriodicPaymentRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(mortgageCalculatorPeriodicPaymentRequest); // http body (model) parameter
@@ -1639,9 +1651,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (purchaseCalculatorAmountRequest != null && purchaseCalculatorAmountRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(purchaseCalculatorAmountRequest); // http body (model) parameter
@@ -1720,9 +1733,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (purchaseCalculatorAmountRequest != null && purchaseCalculatorAmountRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(purchaseCalculatorAmountRequest); // http body (model) parameter
@@ -1800,9 +1814,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (purchaseCalculatorDepositAmountRequest != null && purchaseCalculatorDepositAmountRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(purchaseCalculatorDepositAmountRequest); // http body (model) parameter
@@ -1881,9 +1896,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (purchaseCalculatorDepositAmountRequest != null && purchaseCalculatorDepositAmountRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(purchaseCalculatorDepositAmountRequest); // http body (model) parameter
@@ -1961,9 +1977,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (purchaseCalculatorHorizonRequest != null && purchaseCalculatorHorizonRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(purchaseCalculatorHorizonRequest); // http body (model) parameter
@@ -2042,9 +2059,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (purchaseCalculatorHorizonRequest != null && purchaseCalculatorHorizonRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(purchaseCalculatorHorizonRequest); // http body (model) parameter
@@ -2122,9 +2140,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (retirementCalculatorDepositAmountRequest != null && retirementCalculatorDepositAmountRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(retirementCalculatorDepositAmountRequest); // http body (model) parameter
@@ -2203,9 +2222,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (retirementCalculatorDepositAmountRequest != null && retirementCalculatorDepositAmountRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(retirementCalculatorDepositAmountRequest); // http body (model) parameter
@@ -2283,9 +2303,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (retirementCalculatorExpensesRequest != null && retirementCalculatorExpensesRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(retirementCalculatorExpensesRequest); // http body (model) parameter
@@ -2364,9 +2385,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (retirementCalculatorExpensesRequest != null && retirementCalculatorExpensesRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(retirementCalculatorExpensesRequest); // http body (model) parameter
@@ -2444,9 +2466,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (retirementCalculatorPercentCoveredRequest != null && retirementCalculatorPercentCoveredRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(retirementCalculatorPercentCoveredRequest); // http body (model) parameter
@@ -2525,9 +2548,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (retirementCalculatorPercentCoveredRequest != null && retirementCalculatorPercentCoveredRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(retirementCalculatorPercentCoveredRequest); // http body (model) parameter

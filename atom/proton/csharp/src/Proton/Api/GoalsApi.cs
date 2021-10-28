@@ -421,9 +421,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (goalAccumulationAllocationRequest != null && goalAccumulationAllocationRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(goalAccumulationAllocationRequest); // http body (model) parameter
@@ -502,9 +503,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (goalAccumulationAllocationRequest != null && goalAccumulationAllocationRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(goalAccumulationAllocationRequest); // http body (model) parameter
@@ -582,9 +584,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (goalAccumulationRecommendationRequest != null && goalAccumulationRecommendationRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(goalAccumulationRecommendationRequest); // http body (model) parameter
@@ -663,9 +666,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (goalAccumulationRecommendationRequest != null && goalAccumulationRecommendationRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(goalAccumulationRecommendationRequest); // http body (model) parameter
@@ -743,9 +747,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (goalAccumulationStatusRequest != null && goalAccumulationStatusRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(goalAccumulationStatusRequest); // http body (model) parameter
@@ -824,9 +829,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (goalAccumulationStatusRequest != null && goalAccumulationStatusRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(goalAccumulationStatusRequest); // http body (model) parameter
@@ -904,9 +910,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (goalDecumulationAllocationRequest != null && goalDecumulationAllocationRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(goalDecumulationAllocationRequest); // http body (model) parameter
@@ -985,9 +992,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (goalDecumulationAllocationRequest != null && goalDecumulationAllocationRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(goalDecumulationAllocationRequest); // http body (model) parameter
@@ -1065,9 +1073,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (goalDecumulationRecommendationRequest != null && goalDecumulationRecommendationRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(goalDecumulationRecommendationRequest); // http body (model) parameter
@@ -1146,9 +1155,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (goalDecumulationRecommendationRequest != null && goalDecumulationRecommendationRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(goalDecumulationRecommendationRequest); // http body (model) parameter
@@ -1226,9 +1236,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (goalDecumulationStatusRequest != null && goalDecumulationStatusRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(goalDecumulationStatusRequest); // http body (model) parameter
@@ -1307,9 +1318,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (goalDecumulationStatusRequest != null && goalDecumulationStatusRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(goalDecumulationStatusRequest); // http body (model) parameter

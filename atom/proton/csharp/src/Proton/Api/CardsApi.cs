@@ -295,9 +295,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (cardAnalysisRequest != null && cardAnalysisRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(cardAnalysisRequest); // http body (model) parameter
@@ -376,9 +377,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (cardAnalysisRequest != null && cardAnalysisRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(cardAnalysisRequest); // http body (model) parameter
@@ -456,9 +458,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (cardLimitCheckRequest != null && cardLimitCheckRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(cardLimitCheckRequest); // http body (model) parameter
@@ -537,9 +540,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (cardLimitCheckRequest != null && cardLimitCheckRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(cardLimitCheckRequest); // http body (model) parameter
@@ -617,9 +621,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (cardTransactionAuthorizationRequest != null && cardTransactionAuthorizationRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(cardTransactionAuthorizationRequest); // http body (model) parameter
@@ -698,9 +703,10 @@ namespace Proton.Api
                 "application/json"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
+            if (localVarHttpHeaderAccept != null) {
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
+                localVarHeaderParams.Add("Content-Type", localVarHttpHeaderAccept);
+            }
             if (cardTransactionAuthorizationRequest != null && cardTransactionAuthorizationRequest.GetType() != typeof(byte[]))
             {
                 localVarPostBody = this.Configuration.ApiClient.Serialize(cardTransactionAuthorizationRequest); // http body (model) parameter

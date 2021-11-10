@@ -45,7 +45,11 @@ func (a *BusinessApiService) CreateBusinessUsingPost(ctx context.Context, busine
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/business"
 
 	localVarHeaderParams := make(map[string]string)
@@ -133,7 +137,11 @@ func (a *BusinessApiService) DeleteBusinessUsingDelete(ctx context.Context, busi
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/business/{business_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"business_id"+"}", fmt.Sprintf("%v", businessId), -1)
 
@@ -218,7 +226,11 @@ func (a *BusinessApiService) GetBusinessAllUsingGet(ctx context.Context, localVa
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/business"
 
 	localVarHeaderParams := make(map[string]string)
@@ -337,7 +349,11 @@ func (a *BusinessApiService) GetBusinessAssetSizeUsingGet(ctx context.Context, b
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/business/{business_id}/asset_size"
 	localVarPath = strings.Replace(localVarPath, "{"+"business_id"+"}", fmt.Sprintf("%v", businessId), -1)
 
@@ -464,7 +480,11 @@ func (a *BusinessApiService) GetBusinessClientTransactionAllUsingGet(ctx context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/business/{business_id}/transaction"
 	localVarPath = strings.Replace(localVarPath, "{"+"business_id"+"}", fmt.Sprintf("%v", businessId), -1)
 
@@ -599,7 +619,11 @@ func (a *BusinessApiService) GetBusinessHoldingUsingGet(ctx context.Context, bus
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/business/{business_id}/holding"
 	localVarPath = strings.Replace(localVarPath, "{"+"business_id"+"}", fmt.Sprintf("%v", businessId), -1)
 
@@ -714,7 +738,11 @@ func (a *BusinessApiService) GetBusinessUsingGet(ctx context.Context, businessId
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/business/{business_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"business_id"+"}", fmt.Sprintf("%v", businessId), -1)
 
@@ -803,7 +831,11 @@ func (a *BusinessApiService) UpdateBusinessUsingPut(ctx context.Context, busines
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/business/{business_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"business_id"+"}", fmt.Sprintf("%v", businessId), -1)
 

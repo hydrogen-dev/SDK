@@ -45,7 +45,11 @@ func (a *DecisionTreeApiService) CreateDecisionTreeResultUsingPost(ctx context.C
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/decision_tree_result"
 
 	localVarHeaderParams := make(map[string]string)
@@ -134,7 +138,11 @@ func (a *DecisionTreeApiService) CreateDecisionTreeUsingPost(ctx context.Context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/decision_tree"
 
 	localVarHeaderParams := make(map[string]string)
@@ -223,7 +231,11 @@ func (a *DecisionTreeApiService) CreateNodeRelationshipUsingPost(ctx context.Con
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/node_relationship"
 
 	localVarHeaderParams := make(map[string]string)
@@ -312,7 +324,11 @@ func (a *DecisionTreeApiService) CreateNodeUsingPost(ctx context.Context, node N
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/node"
 
 	localVarHeaderParams := make(map[string]string)
@@ -400,7 +416,11 @@ func (a *DecisionTreeApiService) DeleteDecisionTreeUsingDelete(ctx context.Conte
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/decision_tree/{decision_tree_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"decision_tree_id"+"}", fmt.Sprintf("%v", decisionTreeId), -1)
 
@@ -470,7 +490,11 @@ func (a *DecisionTreeApiService) DeleteNodeRelationshipUsingDelete(ctx context.C
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/node_relationship/{node_relationship_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"node_relationship_id"+"}", fmt.Sprintf("%v", nodeRelationshipId), -1)
 
@@ -540,7 +564,11 @@ func (a *DecisionTreeApiService) DeleteNodeUsingDelete(ctx context.Context, node
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/node/{node_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"node_id"+"}", fmt.Sprintf("%v", nodeId), -1)
 
@@ -625,7 +653,11 @@ func (a *DecisionTreeApiService) GetDecisionTreeAllUsingGet(ctx context.Context,
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/decision_tree"
 
 	localVarHeaderParams := make(map[string]string)
@@ -727,7 +759,11 @@ func (a *DecisionTreeApiService) GetDecisionTreeUsingGet(ctx context.Context, de
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/decision_tree/{decision_tree_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"decision_tree_id"+"}", fmt.Sprintf("%v", decisionTreeId), -1)
 
@@ -829,7 +865,11 @@ func (a *DecisionTreeApiService) GetNodeAllUsingGet(ctx context.Context, localVa
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/node"
 
 	localVarHeaderParams := make(map[string]string)
@@ -945,7 +985,11 @@ func (a *DecisionTreeApiService) GetNodeRelationshipAllUsingGet(ctx context.Cont
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/node_relationship"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1047,7 +1091,11 @@ func (a *DecisionTreeApiService) GetNodeRelationshipUsingGet(ctx context.Context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/node_relationship/{node_relationship_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"node_relationship_id"+"}", fmt.Sprintf("%v", nodeRelationshipId), -1)
 
@@ -1135,7 +1183,11 @@ func (a *DecisionTreeApiService) GetNodeUsingGet(ctx context.Context, nodeId str
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/node/{node_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"node_id"+"}", fmt.Sprintf("%v", nodeId), -1)
 
@@ -1224,7 +1276,11 @@ func (a *DecisionTreeApiService) UpdateDecisionTreeUsingPut(ctx context.Context,
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/decision_tree/{decision_tree_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"decision_tree_id"+"}", fmt.Sprintf("%v", decisionTreeId), -1)
 
@@ -1315,7 +1371,11 @@ func (a *DecisionTreeApiService) UpdateNodeRelationshipUsingPut(ctx context.Cont
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/node_relationship/{node_relationship_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"node_relationship_id"+"}", fmt.Sprintf("%v", nodeRelationshipId), -1)
 
@@ -1406,7 +1466,11 @@ func (a *DecisionTreeApiService) UpdateNodeUsingPut(ctx context.Context, jsonNod
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/node/{node_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"node_id"+"}", fmt.Sprintf("%v", nodeId), -1)
 

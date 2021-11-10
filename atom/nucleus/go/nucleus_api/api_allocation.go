@@ -45,7 +45,11 @@ func (a *AllocationApiService) CreateAllocationCompositionUsingPost(ctx context.
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/allocation_composition"
 
 	localVarHeaderParams := make(map[string]string)
@@ -134,7 +138,11 @@ func (a *AllocationApiService) CreateAllocationUsingPost(ctx context.Context, al
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/allocation"
 
 	localVarHeaderParams := make(map[string]string)
@@ -222,7 +230,11 @@ func (a *AllocationApiService) DeleteAllocationCompositionUsingDelete(ctx contex
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/allocation_composition/{allocation_composition_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"allocation_composition_id"+"}", fmt.Sprintf("%v", allocationCompositionId), -1)
 
@@ -292,7 +304,11 @@ func (a *AllocationApiService) DeleteAllocationUsingDelete(ctx context.Context, 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/allocation/{allocation_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"allocation_id"+"}", fmt.Sprintf("%v", allocationId), -1)
 
@@ -362,7 +378,11 @@ func (a *AllocationApiService) GetAllocationAllAggregateDataUsingGet(ctx context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/allocation/{allocation_id}/aggregate_data"
 	localVarPath = strings.Replace(localVarPath, "{"+"allocation_id"+"}", fmt.Sprintf("%v", allocationId), -1)
 
@@ -465,7 +485,11 @@ func (a *AllocationApiService) GetAllocationAllAssetSizeAllUsingGet(ctx context.
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/allocation/{allocation_id}/asset_size"
 	localVarPath = strings.Replace(localVarPath, "{"+"allocation_id"+"}", fmt.Sprintf("%v", allocationId), -1)
 
@@ -577,7 +601,11 @@ func (a *AllocationApiService) GetAllocationAllHoldingAllUsingGet(ctx context.Co
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/allocation/{allocation_id}/holding"
 	localVarPath = strings.Replace(localVarPath, "{"+"allocation_id"+"}", fmt.Sprintf("%v", allocationId), -1)
 
@@ -688,7 +716,11 @@ func (a *AllocationApiService) GetAllocationAllTransactionAllUsingGet(ctx contex
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/allocation/{allocation_id}/transaction"
 	localVarPath = strings.Replace(localVarPath, "{"+"allocation_id"+"}", fmt.Sprintf("%v", allocationId), -1)
 
@@ -808,7 +840,11 @@ func (a *AllocationApiService) GetAllocationAllUsingGet(ctx context.Context, loc
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/allocation"
 
 	localVarHeaderParams := make(map[string]string)
@@ -924,7 +960,11 @@ func (a *AllocationApiService) GetAllocationCompositionAllUsingGet(ctx context.C
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/allocation_composition"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1026,7 +1066,11 @@ func (a *AllocationApiService) GetAllocationCompositionUsingGet(ctx context.Cont
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/allocation_composition/{allocation_composition_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"allocation_composition_id"+"}", fmt.Sprintf("%v", allocationCompositionId), -1)
 
@@ -1114,7 +1158,11 @@ func (a *AllocationApiService) GetAllocationUsingGet(ctx context.Context, alloca
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/allocation/{allocation_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"allocation_id"+"}", fmt.Sprintf("%v", allocationId), -1)
 
@@ -1203,7 +1251,11 @@ func (a *AllocationApiService) UpdateAllocationCompositionUsingPut(ctx context.C
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/allocation_composition/{allocation_composition_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"allocation_composition_id"+"}", fmt.Sprintf("%v", allocationCompositionId), -1)
 
@@ -1294,7 +1346,11 @@ func (a *AllocationApiService) UpdateAllocationUsingPut(ctx context.Context, all
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/allocation/{allocation_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"allocation_id"+"}", fmt.Sprintf("%v", allocationId), -1)
 

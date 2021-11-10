@@ -45,7 +45,11 @@ func (a *GoalApiService) CreateGoalTrackUsingPost(ctx context.Context, goalTrack
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/goal_track"
 
 	localVarHeaderParams := make(map[string]string)
@@ -134,7 +138,11 @@ func (a *GoalApiService) CreateGoalUsingPost(ctx context.Context, goalRequest Go
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/goal"
 
 	localVarHeaderParams := make(map[string]string)
@@ -222,7 +230,11 @@ func (a *GoalApiService) DeleteGoalTrackUsingDelete(ctx context.Context, goalTra
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/goal_track/{goal_track_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"goal_track_id"+"}", fmt.Sprintf("%v", goalTrackId), -1)
 
@@ -292,7 +304,11 @@ func (a *GoalApiService) DeleteGoalUsingDelete(ctx context.Context, goalId strin
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/goal/{goal_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"goal_id"+"}", fmt.Sprintf("%v", goalId), -1)
 
@@ -377,7 +393,11 @@ func (a *GoalApiService) GetGoalAllUsingGet(ctx context.Context, localVarOptiona
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/goal"
 
 	localVarHeaderParams := make(map[string]string)
@@ -497,7 +517,11 @@ func (a *GoalApiService) GetGoalAssetSizeAllUsingGet(ctx context.Context, client
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/goal/{goal_id}/asset_size"
 	localVarPath = strings.Replace(localVarPath, "{"+"goal_id"+"}", fmt.Sprintf("%v", goalId), -1)
 
@@ -628,7 +652,11 @@ func (a *GoalApiService) GetGoalHoldingAllUsingGet(ctx context.Context, clientId
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/goal/{goal_id}/holding"
 	localVarPath = strings.Replace(localVarPath, "{"+"goal_id"+"}", fmt.Sprintf("%v", goalId), -1)
 
@@ -764,7 +792,11 @@ func (a *GoalApiService) GetGoalTrackAllUsingGet(ctx context.Context, localVarOp
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/goal_track"
 
 	localVarHeaderParams := make(map[string]string)
@@ -875,7 +907,11 @@ func (a *GoalApiService) GetGoalTrackUsingGet(ctx context.Context, goalTrackId s
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/goal_track/{goal_track_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"goal_track_id"+"}", fmt.Sprintf("%v", goalTrackId), -1)
 
@@ -987,7 +1023,11 @@ func (a *GoalApiService) GetGoalTransactionAllUsingGet(ctx context.Context, clie
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/goal/{goal_id}/transaction"
 	localVarPath = strings.Replace(localVarPath, "{"+"goal_id"+"}", fmt.Sprintf("%v", goalId), -1)
 
@@ -1103,7 +1143,11 @@ func (a *GoalApiService) GetGoalUsingGet(ctx context.Context, goalId string) (Go
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/goal/{goal_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"goal_id"+"}", fmt.Sprintf("%v", goalId), -1)
 
@@ -1192,7 +1236,11 @@ func (a *GoalApiService) UpdateGoalTrackUsingPut(ctx context.Context, goalTrack 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/goal_track/{goal_track_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"goal_track_id"+"}", fmt.Sprintf("%v", goalTrackId), -1)
 
@@ -1283,7 +1331,11 @@ func (a *GoalApiService) UpdateGoalUsingPut(ctx context.Context, goal interface{
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/goal/{goal_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"goal_id"+"}", fmt.Sprintf("%v", goalId), -1)
 

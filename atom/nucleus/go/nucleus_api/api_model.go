@@ -45,7 +45,11 @@ func (a *ModelApiService) CreateModelAssetSizeUsingPost(ctx context.Context, req
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model_asset_size"
 
 	localVarHeaderParams := make(map[string]string)
@@ -135,7 +139,11 @@ func (a *ModelApiService) CreateModelChangeUsingPost(ctx context.Context, change
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model/{model_id}/model_change"
 	localVarPath = strings.Replace(localVarPath, "{"+"model_id"+"}", fmt.Sprintf("%v", modelId), -1)
 
@@ -225,7 +233,11 @@ func (a *ModelApiService) CreateModelCommentUsingPost(ctx context.Context, model
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model_comment"
 
 	localVarHeaderParams := make(map[string]string)
@@ -314,7 +326,11 @@ func (a *ModelApiService) CreateModelHoldingUsingPost(ctx context.Context, model
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model_holding"
 
 	localVarHeaderParams := make(map[string]string)
@@ -403,7 +419,11 @@ func (a *ModelApiService) CreateModelTransactionUsingPost(ctx context.Context, m
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model_transaction"
 
 	localVarHeaderParams := make(map[string]string)
@@ -492,7 +512,11 @@ func (a *ModelApiService) CreateModelUsingPost(ctx context.Context, modelInfoReq
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model"
 
 	localVarHeaderParams := make(map[string]string)
@@ -580,7 +604,11 @@ func (a *ModelApiService) DeleteModelAssetSizeUsingDelete(ctx context.Context, m
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model_asset_size/{model_asset_size_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"model_asset_size_id"+"}", fmt.Sprintf("%v", modelAssetSizeId), -1)
 
@@ -650,7 +678,11 @@ func (a *ModelApiService) DeleteModelCommentUsingDelete(ctx context.Context, mod
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model_comment/{model_comment_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"model_comment_id"+"}", fmt.Sprintf("%v", modelCommentId), -1)
 
@@ -720,7 +752,11 @@ func (a *ModelApiService) DeleteModelHoldingUsingDelete(ctx context.Context, mod
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model_holding/{model_holding_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"model_holding_id"+"}", fmt.Sprintf("%v", modelHoldingId), -1)
 
@@ -790,7 +826,11 @@ func (a *ModelApiService) DeleteModelTransactionUsingDelete(ctx context.Context,
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model_transaction/{model_transaction_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"model_transaction_id"+"}", fmt.Sprintf("%v", modelTransactionId), -1)
 
@@ -860,7 +900,11 @@ func (a *ModelApiService) DeleteModelUsingDelete(ctx context.Context, modelId st
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model/{model_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"model_id"+"}", fmt.Sprintf("%v", modelId), -1)
 
@@ -945,7 +989,11 @@ func (a *ModelApiService) GetModelAllUsingGet(ctx context.Context, localVarOptio
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1063,7 +1111,11 @@ func (a *ModelApiService) GetModelAssetSizeAllUsingGet(ctx context.Context, loca
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model_asset_size"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1175,7 +1227,11 @@ func (a *ModelApiService) GetModelAssetSizeUsingGet(ctx context.Context, modelAs
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model_asset_size/{model_asset_size_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"model_asset_size_id"+"}", fmt.Sprintf("%v", modelAssetSizeId), -1)
 
@@ -1280,7 +1336,11 @@ func (a *ModelApiService) GetModelCommentAllUsingGet(ctx context.Context, localV
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model_comment"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1382,7 +1442,11 @@ func (a *ModelApiService) GetModelCommentUsingGet(ctx context.Context, modelComm
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model_comment/{model_comment_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"model_comment_id"+"}", fmt.Sprintf("%v", modelCommentId), -1)
 
@@ -1484,7 +1548,11 @@ func (a *ModelApiService) GetModelHoldingAllUsingGet(ctx context.Context, localV
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model_holding"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1586,7 +1654,11 @@ func (a *ModelApiService) GetModelHoldingUsingGet(ctx context.Context, modelHold
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model_holding/{model_holding_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"model_holding_id"+"}", fmt.Sprintf("%v", modelHoldingId), -1)
 
@@ -1688,7 +1760,11 @@ func (a *ModelApiService) GetModelTransactionAllUsingGet(ctx context.Context, lo
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model_transaction"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1790,7 +1866,11 @@ func (a *ModelApiService) GetModelTransactionUsingGet(ctx context.Context, model
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model_transaction/{model_transaction_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"model_transaction_id"+"}", fmt.Sprintf("%v", modelTransactionId), -1)
 
@@ -1878,7 +1958,11 @@ func (a *ModelApiService) GetModelUsingGet(ctx context.Context, modelId string) 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model/{model_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"model_id"+"}", fmt.Sprintf("%v", modelId), -1)
 
@@ -1967,7 +2051,11 @@ func (a *ModelApiService) UpdateModelAssetSizeUsingPut(ctx context.Context, mode
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model_asset_size/{model_asset_size_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"model_asset_size_id"+"}", fmt.Sprintf("%v", modelAssetSizeId), -1)
 
@@ -2058,7 +2146,11 @@ func (a *ModelApiService) UpdateModelCommentUsingPut(ctx context.Context, modelC
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model_comment/{model_comment_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"model_comment_id"+"}", fmt.Sprintf("%v", modelCommentId), -1)
 
@@ -2149,7 +2241,11 @@ func (a *ModelApiService) UpdateModelHoldingUsingPut(ctx context.Context, modelH
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model_holding/{model_holding_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"model_holding_id"+"}", fmt.Sprintf("%v", modelHoldingId), -1)
 
@@ -2240,7 +2336,11 @@ func (a *ModelApiService) UpdateModelTransactionUsingPut(ctx context.Context, mo
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model_transaction/{model_transaction_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"model_transaction_id"+"}", fmt.Sprintf("%v", modelTransactionId), -1)
 
@@ -2331,7 +2431,11 @@ func (a *ModelApiService) UpdateModelUsingPut(ctx context.Context, model interfa
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/model/{model_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"model_id"+"}", fmt.Sprintf("%v", modelId), -1)
 

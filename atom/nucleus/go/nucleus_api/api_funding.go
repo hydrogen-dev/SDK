@@ -45,7 +45,11 @@ func (a *FundingApiService) CreateBankLinkUsingPost(ctx context.Context, bankLin
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/bank_link"
 
 	localVarHeaderParams := make(map[string]string)
@@ -134,7 +138,11 @@ func (a *FundingApiService) CreateFundingTransactionUsingPost(ctx context.Contex
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/funding_transaction"
 
 	localVarHeaderParams := make(map[string]string)
@@ -223,7 +231,11 @@ func (a *FundingApiService) CreateFundingUsingPost(ctx context.Context, fundingR
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/funding"
 
 	localVarHeaderParams := make(map[string]string)
@@ -312,7 +324,11 @@ func (a *FundingApiService) CreateTransferUsingPost(ctx context.Context, externa
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/transfer"
 
 	localVarHeaderParams := make(map[string]string)
@@ -400,7 +416,11 @@ func (a *FundingApiService) DeleteBankLinkUsingDelete(ctx context.Context, bankL
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/bank_link/{bank_link_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"bank_link_id"+"}", fmt.Sprintf("%v", bankLinkId), -1)
 
@@ -470,7 +490,11 @@ func (a *FundingApiService) DeleteFundingTransactionUsingDelete(ctx context.Cont
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/funding_transaction/{funding_transaction_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"funding_transaction_id"+"}", fmt.Sprintf("%v", fundingTransactionId), -1)
 
@@ -540,7 +564,11 @@ func (a *FundingApiService) DeleteFundingUsingDelete(ctx context.Context, fundin
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/funding/{funding_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"funding_id"+"}", fmt.Sprintf("%v", fundingId), -1)
 
@@ -610,7 +638,11 @@ func (a *FundingApiService) DeleteTransferUsingDelete(ctx context.Context, trans
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/transfer/{transfer_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"transfer_id"+"}", fmt.Sprintf("%v", transferId), -1)
 
@@ -697,7 +729,11 @@ func (a *FundingApiService) GetBankLinkAllUsingGet(ctx context.Context, localVar
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/bank_link"
 
 	localVarHeaderParams := make(map[string]string)
@@ -809,7 +845,11 @@ func (a *FundingApiService) GetBankLinkUsingGet(ctx context.Context, bankLinkId 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/bank_link/{bank_link_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"bank_link_id"+"}", fmt.Sprintf("%v", bankLinkId), -1)
 
@@ -916,7 +956,11 @@ func (a *FundingApiService) GetFundingAllUsingGet(ctx context.Context, localVarO
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/funding"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1037,7 +1081,11 @@ func (a *FundingApiService) GetFundingTransactionAllUsingGet(ctx context.Context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/funding_transaction"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1149,7 +1197,11 @@ func (a *FundingApiService) GetFundingTransactionUsingGet(ctx context.Context, f
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/funding_transaction/{funding_transaction_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"funding_transaction_id"+"}", fmt.Sprintf("%v", fundingTransactionId), -1)
 
@@ -1247,7 +1299,11 @@ func (a *FundingApiService) GetFundingUsingGet(ctx context.Context, fundingId st
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/funding/{funding_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"funding_id"+"}", fmt.Sprintf("%v", fundingId), -1)
 
@@ -1354,7 +1410,11 @@ func (a *FundingApiService) GetTransferAllUsingGet(ctx context.Context, localVar
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/transfer"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1466,7 +1526,11 @@ func (a *FundingApiService) GetTransferUsingGet(ctx context.Context, transferId 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/transfer/{transfer_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"transfer_id"+"}", fmt.Sprintf("%v", transferId), -1)
 
@@ -1557,7 +1621,11 @@ func (a *FundingApiService) UpdateBankLinkBulkUsingPut(ctx context.Context, bank
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/bulk_bank_link"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1647,7 +1715,11 @@ func (a *FundingApiService) UpdateBankLinkUsingPut(ctx context.Context, bankLink
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/bank_link/{bank_link_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"bank_link_id"+"}", fmt.Sprintf("%v", bankLinkId), -1)
 
@@ -1738,7 +1810,11 @@ func (a *FundingApiService) UpdateFundingTransactionUsingPut(ctx context.Context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/funding_transaction/{funding_transaction_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"funding_transaction_id"+"}", fmt.Sprintf("%v", fundingTransactionId), -1)
 
@@ -1829,7 +1905,11 @@ func (a *FundingApiService) UpdateFundingUsingPut(ctx context.Context, funding i
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/funding/{funding_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"funding_id"+"}", fmt.Sprintf("%v", fundingId), -1)
 
@@ -1920,7 +2000,11 @@ func (a *FundingApiService) UpdateTransferUsingPut(ctx context.Context, transfer
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/transfer/{transfer_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"transfer_id"+"}", fmt.Sprintf("%v", transferId), -1)
 

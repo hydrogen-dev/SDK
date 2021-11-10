@@ -45,7 +45,11 @@ func (a *BenchmarkApiService) CreateBenchmarkUsingPost(ctx context.Context, benc
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/benchmark"
 
 	localVarHeaderParams := make(map[string]string)
@@ -133,7 +137,11 @@ func (a *BenchmarkApiService) DeleteBenchmarkUsingDelete(ctx context.Context, be
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/benchmark/{benchmark_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"benchmark_id"+"}", fmt.Sprintf("%v", benchmarkId), -1)
 
@@ -218,7 +226,11 @@ func (a *BenchmarkApiService) GetBenchmarkAllUsingGet(ctx context.Context, local
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/benchmark"
 
 	localVarHeaderParams := make(map[string]string)
@@ -331,7 +343,11 @@ func (a *BenchmarkApiService) GetBenchmarkAssetSizeAllUsingGet(ctx context.Conte
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/benchmark/{benchmark_id}/asset_size"
 	localVarPath = strings.Replace(localVarPath, "{"+"benchmark_id"+"}", fmt.Sprintf("%v", benchmarkId), -1)
 
@@ -428,7 +444,11 @@ func (a *BenchmarkApiService) GetBenchmarkUsingGet(ctx context.Context, benchmar
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/benchmark/{benchmark_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"benchmark_id"+"}", fmt.Sprintf("%v", benchmarkId), -1)
 
@@ -517,7 +537,11 @@ func (a *BenchmarkApiService) UpdateBenchmarkUsingPut(ctx context.Context, bench
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/benchmark/{benchmark_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"benchmark_id"+"}", fmt.Sprintf("%v", benchmarkId), -1)
 

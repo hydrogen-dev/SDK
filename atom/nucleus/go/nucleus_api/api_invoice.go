@@ -45,7 +45,11 @@ func (a *InvoiceApiService) CreateInvoicePaymentUsingPost(ctx context.Context, i
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/invoice_payment"
 
 	localVarHeaderParams := make(map[string]string)
@@ -134,7 +138,11 @@ func (a *InvoiceApiService) CreateInvoiceUsingPost(ctx context.Context, invoice 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/invoice"
 
 	localVarHeaderParams := make(map[string]string)
@@ -222,7 +230,11 @@ func (a *InvoiceApiService) DeleteInvoicePaymentUsingDelete(ctx context.Context,
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/invoice_payment/{invoice_payment_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"invoice_payment_id"+"}", fmt.Sprintf("%v", invoicePaymentId), -1)
 
@@ -292,7 +304,11 @@ func (a *InvoiceApiService) DeleteInvoiceUsingDelete(ctx context.Context, invoic
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/invoice/{invoice_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"invoice_id"+"}", fmt.Sprintf("%v", invoiceId), -1)
 
@@ -379,7 +395,11 @@ func (a *InvoiceApiService) GetInvoiceAllUsingGet(ctx context.Context, localVarO
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/invoice"
 
 	localVarHeaderParams := make(map[string]string)
@@ -500,7 +520,11 @@ func (a *InvoiceApiService) GetInvoicePaymentAllUsingGet(ctx context.Context, lo
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/invoice_payment"
 
 	localVarHeaderParams := make(map[string]string)
@@ -612,7 +636,11 @@ func (a *InvoiceApiService) GetInvoicePaymentUsingGet(ctx context.Context, invoi
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/invoice_payment/{invoice_payment_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"invoice_payment_id"+"}", fmt.Sprintf("%v", invoicePaymentId), -1)
 
@@ -710,7 +738,11 @@ func (a *InvoiceApiService) GetInvoiceUsingGet(ctx context.Context, invoiceId st
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/invoice/{invoice_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"invoice_id"+"}", fmt.Sprintf("%v", invoiceId), -1)
 
@@ -802,7 +834,11 @@ func (a *InvoiceApiService) UpdateInvoicePaymentUsingPut(ctx context.Context, in
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/invoice_payment/{invoice_payment_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"invoice_payment_id"+"}", fmt.Sprintf("%v", invoicePaymentId), -1)
 
@@ -893,7 +929,11 @@ func (a *InvoiceApiService) UpdateInvoiceUsingPut(ctx context.Context, invoice i
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/invoice/{invoice_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"invoice_id"+"}", fmt.Sprintf("%v", invoiceId), -1)
 

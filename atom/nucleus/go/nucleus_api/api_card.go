@@ -45,7 +45,11 @@ func (a *CardApiService) CreateCardProgramUsingPost(ctx context.Context, cardPro
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/card_program"
 
 	localVarHeaderParams := make(map[string]string)
@@ -134,7 +138,11 @@ func (a *CardApiService) CreateCardUsingPost(ctx context.Context, cardRequest Ca
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/card"
 
 	localVarHeaderParams := make(map[string]string)
@@ -222,7 +230,11 @@ func (a *CardApiService) DeleteCardProgramUsingDelete(ctx context.Context, cardP
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/card_program/{card_program_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"card_program_id"+"}", fmt.Sprintf("%v", cardProgramId), -1)
 
@@ -292,7 +304,11 @@ func (a *CardApiService) DeleteCardUsingDelete(ctx context.Context, cardId strin
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/card/{card_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"card_id"+"}", fmt.Sprintf("%v", cardId), -1)
 
@@ -379,7 +395,11 @@ func (a *CardApiService) GetAllClientCardsUsingGet(ctx context.Context, localVar
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/card/cardholder_overview"
 
 	localVarHeaderParams := make(map[string]string)
@@ -498,7 +518,11 @@ func (a *CardApiService) GetCardAllUsingGet(ctx context.Context, localVarOptiona
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/card"
 
 	localVarHeaderParams := make(map[string]string)
@@ -615,7 +639,11 @@ func (a *CardApiService) GetCardAssetSizeAggAllUsingGet(ctx context.Context, car
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/card/{card_id}/asset_size"
 	localVarPath = strings.Replace(localVarPath, "{"+"card_id"+"}", fmt.Sprintf("%v", cardId), -1)
 
@@ -732,7 +760,11 @@ func (a *CardApiService) GetCardProgramAllUsingGet(ctx context.Context, localVar
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/card_program"
 
 	localVarHeaderParams := make(map[string]string)
@@ -834,7 +866,11 @@ func (a *CardApiService) GetCardProgramUsingGet(ctx context.Context, cardProgram
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/card_program/{card_program_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"card_program_id"+"}", fmt.Sprintf("%v", cardProgramId), -1)
 
@@ -943,7 +979,11 @@ func (a *CardApiService) GetCardTransactionAggAllUsingGet(ctx context.Context, c
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/card/{card_id}/transaction"
 	localVarPath = strings.Replace(localVarPath, "{"+"card_id"+"}", fmt.Sprintf("%v", cardId), -1)
 
@@ -1076,7 +1116,11 @@ func (a *CardApiService) GetCardTransactionAggAllUsingGet1(ctx context.Context, 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/card/{card_id}/transaction"
 	localVarPath = strings.Replace(localVarPath, "{"+"card_id"+"}", fmt.Sprintf("%v", cardId), -1)
 
@@ -1188,7 +1232,11 @@ func (a *CardApiService) GetCardUsingGet(ctx context.Context, cardId string) (Ca
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/card/{card_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"card_id"+"}", fmt.Sprintf("%v", cardId), -1)
 
@@ -1277,7 +1325,11 @@ func (a *CardApiService) UpdateCardProgramUsingPut(ctx context.Context, cardProg
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/card_program/{card_program_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"card_program_id"+"}", fmt.Sprintf("%v", cardProgramId), -1)
 
@@ -1368,7 +1420,11 @@ func (a *CardApiService) UpdateCardUsingPut(ctx context.Context, card interface{
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/card/{card_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"card_id"+"}", fmt.Sprintf("%v", cardId), -1)
 

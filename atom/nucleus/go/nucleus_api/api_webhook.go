@@ -45,7 +45,11 @@ func (a *WebhookApiService) CreateWebhookUsingPost(ctx context.Context, webhookR
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/webhook"
 
 	localVarHeaderParams := make(map[string]string)
@@ -133,7 +137,11 @@ func (a *WebhookApiService) DeleteWebhookUsingDelete(ctx context.Context, webhoo
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/webhook/{webhook_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"webhook_id"+"}", fmt.Sprintf("%v", webhookId), -1)
 
@@ -218,7 +226,11 @@ func (a *WebhookApiService) GetWebhookAllUsingGet(ctx context.Context, localVarO
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/webhook"
 
 	localVarHeaderParams := make(map[string]string)
@@ -320,7 +332,11 @@ func (a *WebhookApiService) GetWebhookUsingGet(ctx context.Context, webhookId st
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/webhook/{webhook_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"webhook_id"+"}", fmt.Sprintf("%v", webhookId), -1)
 
@@ -409,7 +425,11 @@ func (a *WebhookApiService) UpdateWebhookUsingPut(ctx context.Context, webhook i
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/webhook/{webhook_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"webhook_id"+"}", fmt.Sprintf("%v", webhookId), -1)
 

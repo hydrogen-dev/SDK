@@ -45,7 +45,11 @@ func (a *SpendingControlApiService) CreateSpendingControlUsingPost(ctx context.C
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/spending_control"
 
 	localVarHeaderParams := make(map[string]string)
@@ -133,7 +137,11 @@ func (a *SpendingControlApiService) DeleteSpendingControlUsingDelete(ctx context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/spending_control/{spending_control_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"spending_control_id"+"}", fmt.Sprintf("%v", spendingControlId), -1)
 
@@ -218,7 +226,11 @@ func (a *SpendingControlApiService) GetSpendingControlAllUsingGet(ctx context.Co
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/spending_control"
 
 	localVarHeaderParams := make(map[string]string)
@@ -320,7 +332,11 @@ func (a *SpendingControlApiService) GetSpendingControlUsingGet(ctx context.Conte
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/spending_control/{spending_control_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"spending_control_id"+"}", fmt.Sprintf("%v", spendingControlId), -1)
 
@@ -409,7 +425,11 @@ func (a *SpendingControlApiService) UpdateSpendingControlUsingPut(ctx context.Co
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/spending_control/{spending_control_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"spending_control_id"+"}", fmt.Sprintf("%v", spendingControlId), -1)
 

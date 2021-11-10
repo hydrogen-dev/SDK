@@ -45,7 +45,11 @@ func (a *BulkApiService) CreateBulkUsingPost(ctx context.Context, data JsonNode,
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/bulk/{entity_uri}"
 	localVarPath = strings.Replace(localVarPath, "{"+"entity_uri"+"}", fmt.Sprintf("%v", entityUri), -1)
 
@@ -136,7 +140,11 @@ func (a *BulkApiService) DeleteBulkUsingDelete(ctx context.Context, data JsonNod
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/bulk/{entity_uri}"
 	localVarPath = strings.Replace(localVarPath, "{"+"entity_uri"+"}", fmt.Sprintf("%v", entityUri), -1)
 
@@ -226,7 +234,11 @@ func (a *BulkApiService) GetBulkStatusUsingGet(ctx context.Context, id string) (
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/bulk/status/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
 
@@ -315,7 +327,11 @@ func (a *BulkApiService) UpdateBulkUsingPut(ctx context.Context, data interface{
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/bulk/{entity_uri}"
 	localVarPath = strings.Replace(localVarPath, "{"+"entity_uri"+"}", fmt.Sprintf("%v", entityUri), -1)
 

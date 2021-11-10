@@ -45,7 +45,11 @@ func (a *DocumentApiService) CreateDocumentUsingPost(ctx context.Context, docume
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/document"
 
 	localVarHeaderParams := make(map[string]string)
@@ -133,7 +137,11 @@ func (a *DocumentApiService) DeleteDocumentUsingDelete(ctx context.Context, docu
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/document/{document_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", fmt.Sprintf("%v", documentId), -1)
 
@@ -218,7 +226,11 @@ func (a *DocumentApiService) GetDocumentAllUsingGet(ctx context.Context, localVa
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/document"
 
 	localVarHeaderParams := make(map[string]string)
@@ -320,7 +332,11 @@ func (a *DocumentApiService) GetDocumentUsingGet(ctx context.Context, documentId
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/document/{document_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", fmt.Sprintf("%v", documentId), -1)
 
@@ -409,7 +425,11 @@ func (a *DocumentApiService) UpdateDocumentUsingPut(ctx context.Context, documen
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/document/{document_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"document_id"+"}", fmt.Sprintf("%v", documentId), -1)
 

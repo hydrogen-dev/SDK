@@ -45,7 +45,11 @@ func (a *UtilsApiService) CreateApplicationUsingPost(ctx context.Context, applic
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/application"
 
 	localVarHeaderParams := make(map[string]string)
@@ -134,7 +138,11 @@ func (a *UtilsApiService) CreateAuditLogUsingPost(ctx context.Context, auditLog 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/audit_log"
 
 	localVarHeaderParams := make(map[string]string)
@@ -223,7 +231,11 @@ func (a *UtilsApiService) CreateFeatureTrackUsingPost(ctx context.Context, featu
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/feature_track"
 
 	localVarHeaderParams := make(map[string]string)
@@ -312,7 +324,11 @@ func (a *UtilsApiService) CreateFeatureUsingPost(ctx context.Context, feature Fe
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/feature"
 
 	localVarHeaderParams := make(map[string]string)
@@ -401,7 +417,11 @@ func (a *UtilsApiService) CreateNotificationClientUsingPost(ctx context.Context,
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/notification_client"
 
 	localVarHeaderParams := make(map[string]string)
@@ -490,7 +510,11 @@ func (a *UtilsApiService) CreateNotificationSettingUsingPost(ctx context.Context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/notification_setting"
 
 	localVarHeaderParams := make(map[string]string)
@@ -579,7 +603,11 @@ func (a *UtilsApiService) CreateNotificationUsingPost(ctx context.Context, notif
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/notification"
 
 	localVarHeaderParams := make(map[string]string)
@@ -668,7 +696,11 @@ func (a *UtilsApiService) CreateReasonCodeUsingPost(ctx context.Context, reasonC
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/reason_code"
 
 	localVarHeaderParams := make(map[string]string)
@@ -757,7 +789,11 @@ func (a *UtilsApiService) CreateStageUsingPost(ctx context.Context, stageRequest
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/stage"
 
 	localVarHeaderParams := make(map[string]string)
@@ -846,7 +882,11 @@ func (a *UtilsApiService) CreateTransactionCodeUsingPost(ctx context.Context, tr
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/transaction_code"
 
 	localVarHeaderParams := make(map[string]string)
@@ -934,7 +974,11 @@ func (a *UtilsApiService) DeleteApplicationUsingDelete(ctx context.Context, appl
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/application/{application_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"application_id"+"}", fmt.Sprintf("%v", applicationId), -1)
 
@@ -1004,7 +1048,11 @@ func (a *UtilsApiService) DeleteFeatureTrackUsingDelete(ctx context.Context, fea
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/feature_track/{feature_track_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"feature_track_id"+"}", fmt.Sprintf("%v", featureTrackId), -1)
 
@@ -1074,7 +1122,11 @@ func (a *UtilsApiService) DeleteFeatureUsingDelete(ctx context.Context, featureI
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/feature/{feature_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"feature_id"+"}", fmt.Sprintf("%v", featureId), -1)
 
@@ -1144,7 +1196,11 @@ func (a *UtilsApiService) DeleteNotificationClientUsingDelete(ctx context.Contex
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/notification_client/{notification_client_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"notification_client_id"+"}", fmt.Sprintf("%v", notificationClientId), -1)
 
@@ -1214,7 +1270,11 @@ func (a *UtilsApiService) DeleteNotificationSettingUsingDelete(ctx context.Conte
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/notification_setting/{notification_setting_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"notification_setting_id"+"}", fmt.Sprintf("%v", notificationSettingId), -1)
 
@@ -1284,7 +1344,11 @@ func (a *UtilsApiService) DeleteNotificationUsingDelete(ctx context.Context, not
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/notification/{notification_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"notification_id"+"}", fmt.Sprintf("%v", notificationId), -1)
 
@@ -1354,7 +1418,11 @@ func (a *UtilsApiService) DeleteReasonCodeUsingDelete(ctx context.Context, reaso
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/reason_code/{reason_code_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"reason_code_id"+"}", fmt.Sprintf("%v", reasonCodeId), -1)
 
@@ -1424,7 +1492,11 @@ func (a *UtilsApiService) DeleteStageUsingDelete(ctx context.Context, stageId st
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/stage/{stage_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"stage_id"+"}", fmt.Sprintf("%v", stageId), -1)
 
@@ -1494,7 +1566,11 @@ func (a *UtilsApiService) DeleteTransactionCodeUsingDelete(ctx context.Context, 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/transaction_code/{transaction_code_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"transaction_code_id"+"}", fmt.Sprintf("%v", transactionCodeId), -1)
 
@@ -1579,7 +1655,11 @@ func (a *UtilsApiService) GetApplicationAllUsingGet(ctx context.Context, localVa
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/application"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1681,7 +1761,11 @@ func (a *UtilsApiService) GetApplicationUsingGet(ctx context.Context, applicatio
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/application/{application_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"application_id"+"}", fmt.Sprintf("%v", applicationId), -1)
 
@@ -1783,7 +1867,11 @@ func (a *UtilsApiService) GetAuditLogAllUsingGet(ctx context.Context, localVarOp
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/audit_log"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1885,7 +1973,11 @@ func (a *UtilsApiService) GetAuditLogUsingGet(ctx context.Context, auditLogId st
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/audit_log/{audit_log_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"audit_log_id"+"}", fmt.Sprintf("%v", auditLogId), -1)
 
@@ -1987,7 +2079,11 @@ func (a *UtilsApiService) GetFeatureAllUsingGet(ctx context.Context, localVarOpt
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/feature"
 
 	localVarHeaderParams := make(map[string]string)
@@ -2103,7 +2199,11 @@ func (a *UtilsApiService) GetFeatureTrackAllUsingGet(ctx context.Context, localV
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/feature_track"
 
 	localVarHeaderParams := make(map[string]string)
@@ -2205,7 +2305,11 @@ func (a *UtilsApiService) GetFeatureTrackUsingGet(ctx context.Context, featureTr
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/feature_track/{feature_track_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"feature_track_id"+"}", fmt.Sprintf("%v", featureTrackId), -1)
 
@@ -2293,7 +2397,11 @@ func (a *UtilsApiService) GetFeatureUsingGet(ctx context.Context, featureId stri
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/feature/{feature_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"feature_id"+"}", fmt.Sprintf("%v", featureId), -1)
 
@@ -2395,7 +2503,11 @@ func (a *UtilsApiService) GetNotificationAllUsingGet(ctx context.Context, localV
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/notification"
 
 	localVarHeaderParams := make(map[string]string)
@@ -2511,7 +2623,11 @@ func (a *UtilsApiService) GetNotificationClientAllUsingGet(ctx context.Context, 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/notification_client"
 
 	localVarHeaderParams := make(map[string]string)
@@ -2613,7 +2729,11 @@ func (a *UtilsApiService) GetNotificationClientUsingGet(ctx context.Context, not
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/notification_client/{notification_client_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"notification_client_id"+"}", fmt.Sprintf("%v", notificationClientId), -1)
 
@@ -2715,7 +2835,11 @@ func (a *UtilsApiService) GetNotificationSettingAllUsingGet(ctx context.Context,
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/notification_setting"
 
 	localVarHeaderParams := make(map[string]string)
@@ -2817,7 +2941,11 @@ func (a *UtilsApiService) GetNotificationSettingUsingGet(ctx context.Context, no
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/notification_setting/{notification_setting_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"notification_setting_id"+"}", fmt.Sprintf("%v", notificationSettingId), -1)
 
@@ -2905,7 +3033,11 @@ func (a *UtilsApiService) GetNotificationUsingGet(ctx context.Context, notificat
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/notification/{notification_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"notification_id"+"}", fmt.Sprintf("%v", notificationId), -1)
 
@@ -3007,7 +3139,11 @@ func (a *UtilsApiService) GetReasonCodeAllUsingGet(ctx context.Context, localVar
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/reason_code"
 
 	localVarHeaderParams := make(map[string]string)
@@ -3109,7 +3245,11 @@ func (a *UtilsApiService) GetReasonCodeUsingGet(ctx context.Context, reasonCodeI
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/reason_code/{reason_code_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"reason_code_id"+"}", fmt.Sprintf("%v", reasonCodeId), -1)
 
@@ -3211,7 +3351,11 @@ func (a *UtilsApiService) GetStageAllUsingGet(ctx context.Context, localVarOptio
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/stage"
 
 	localVarHeaderParams := make(map[string]string)
@@ -3313,7 +3457,11 @@ func (a *UtilsApiService) GetStageUsingGet(ctx context.Context, stageId string) 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/stage/{stage_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"stage_id"+"}", fmt.Sprintf("%v", stageId), -1)
 
@@ -3415,7 +3563,11 @@ func (a *UtilsApiService) GetTransactionCodeAllUsingGet(ctx context.Context, loc
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/transaction_code"
 
 	localVarHeaderParams := make(map[string]string)
@@ -3517,7 +3669,11 @@ func (a *UtilsApiService) GetTransactionCodeUsingGet(ctx context.Context, transa
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/transaction_code/{transaction_code_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"transaction_code_id"+"}", fmt.Sprintf("%v", transactionCodeId), -1)
 
@@ -3606,7 +3762,11 @@ func (a *UtilsApiService) UpdateApplicationUsingPut(ctx context.Context, applica
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/application/{application_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"application_id"+"}", fmt.Sprintf("%v", applicationId), -1)
 
@@ -3697,7 +3857,11 @@ func (a *UtilsApiService) UpdateFeatureTrackUsingPut(ctx context.Context, featur
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/feature_track/{feature_track_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"feature_track_id"+"}", fmt.Sprintf("%v", featureTrackId), -1)
 
@@ -3788,7 +3952,11 @@ func (a *UtilsApiService) UpdateFeatureUsingPut(ctx context.Context, feature int
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/feature/{feature_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"feature_id"+"}", fmt.Sprintf("%v", featureId), -1)
 
@@ -3879,7 +4047,11 @@ func (a *UtilsApiService) UpdateNotificationClientUsingPut(ctx context.Context, 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/notification_client/{notification_client_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"notification_client_id"+"}", fmt.Sprintf("%v", notificationClientId), -1)
 
@@ -3970,7 +4142,11 @@ func (a *UtilsApiService) UpdateNotificationSettingUsingPut(ctx context.Context,
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/notification_setting/{notification_setting_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"notification_setting_id"+"}", fmt.Sprintf("%v", notificationSettingId), -1)
 
@@ -4061,7 +4237,11 @@ func (a *UtilsApiService) UpdateNotificationUsingPut(ctx context.Context, notifi
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/notification/{notification_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"notification_id"+"}", fmt.Sprintf("%v", notificationId), -1)
 
@@ -4152,7 +4332,11 @@ func (a *UtilsApiService) UpdateReasonCodeUsingPut(ctx context.Context, reasonCo
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/reason_code/{reason_code_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"reason_code_id"+"}", fmt.Sprintf("%v", reasonCodeId), -1)
 
@@ -4243,7 +4427,11 @@ func (a *UtilsApiService) UpdateStageUsingPut(ctx context.Context, stage interfa
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/stage/{stage_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"stage_id"+"}", fmt.Sprintf("%v", stageId), -1)
 
@@ -4334,7 +4522,11 @@ func (a *UtilsApiService) UpdateTransactionCodeUsingPut(ctx context.Context, tra
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/transaction_code/{transaction_code_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"transaction_code_id"+"}", fmt.Sprintf("%v", transactionCodeId), -1)
 

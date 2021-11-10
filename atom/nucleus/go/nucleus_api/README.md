@@ -62,8 +62,9 @@ func main() {
 	var authConfigService = sw.AuthConfigurationService{};
 	auth := context.WithValue(context.Background(), sw.ContextAccessToken, nil)
 	r1, _, _ := authConfigService.CreateClientCredential(auth, "CLIENT_ID", "CLIENT_PASSWORD",
-		sw.SANDBOX)
+		sw.PRODUCTION)
 	tokenSettingAuth := context.WithValue(context.Background(), sw.ContextAccessToken, r1.AccessToken)
+    tokenSettingAuth = context.WithValue(tokenSettingAuth, "BasePath", sw.PRODUCTION)
 
 	//var authConfigurationService = sw.AuthConfigurationService{}
 	//r, res, err := authConfigurationService.

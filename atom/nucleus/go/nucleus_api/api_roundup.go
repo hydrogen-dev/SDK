@@ -45,7 +45,11 @@ func (a *RoundupApiService) CreateRoundupSettingsUsingPost(ctx context.Context, 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/roundup_setting"
 
 	localVarHeaderParams := make(map[string]string)
@@ -134,7 +138,11 @@ func (a *RoundupApiService) CreateRoundupUsingPost(ctx context.Context, roundupC
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/roundup"
 
 	localVarHeaderParams := make(map[string]string)
@@ -222,7 +230,11 @@ func (a *RoundupApiService) DeleteRoundupSettingsUsingDelete(ctx context.Context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/roundup_setting/{roundup_setting_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"roundup_setting_id"+"}", fmt.Sprintf("%v", roundupSettingId), -1)
 
@@ -307,7 +319,11 @@ func (a *RoundupApiService) GetRoundupAllUsingGet(ctx context.Context, localVarO
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/roundup"
 
 	localVarHeaderParams := make(map[string]string)
@@ -423,7 +439,11 @@ func (a *RoundupApiService) GetRoundupSettingsAllUsingGet(ctx context.Context, l
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/roundup_setting"
 
 	localVarHeaderParams := make(map[string]string)
@@ -525,7 +545,11 @@ func (a *RoundupApiService) GetRoundupSettingsUsingGet(ctx context.Context, roun
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/roundup_setting/{roundup_setting_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"roundup_setting_id"+"}", fmt.Sprintf("%v", roundupSettingId), -1)
 
@@ -613,7 +637,11 @@ func (a *RoundupApiService) GetRoundupUsingGet(ctx context.Context, roundupId st
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/roundup/{roundup_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"roundup_id"+"}", fmt.Sprintf("%v", roundupId), -1)
 
@@ -702,7 +730,11 @@ func (a *RoundupApiService) UpdateRoundupSettingsUsingPut(ctx context.Context, r
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/roundup_setting/{roundup_setting_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"roundup_setting_id"+"}", fmt.Sprintf("%v", roundupSettingId), -1)
 

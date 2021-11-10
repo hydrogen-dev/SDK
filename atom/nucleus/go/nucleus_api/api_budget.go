@@ -45,7 +45,11 @@ func (a *BudgetApiService) CreateBudgetUsingPost(ctx context.Context, budgetRequ
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/budget"
 
 	localVarHeaderParams := make(map[string]string)
@@ -133,7 +137,11 @@ func (a *BudgetApiService) DeleteBudgetUsingDelete(ctx context.Context, budgetId
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/budget/{budget_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"budget_id"+"}", fmt.Sprintf("%v", budgetId), -1)
 
@@ -220,7 +228,11 @@ func (a *BudgetApiService) GetBudgetAllUsingGet(ctx context.Context, localVarOpt
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/budget"
 
 	localVarHeaderParams := make(map[string]string)
@@ -332,7 +344,11 @@ func (a *BudgetApiService) GetBudgetUsingGet(ctx context.Context, budgetId strin
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/budget/{budget_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"budget_id"+"}", fmt.Sprintf("%v", budgetId), -1)
 
@@ -424,7 +440,11 @@ func (a *BudgetApiService) UpdateBudgetUsingPut(ctx context.Context, budget inte
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/budget/{budget_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"budget_id"+"}", fmt.Sprintf("%v", budgetId), -1)
 

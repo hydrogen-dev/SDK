@@ -45,7 +45,11 @@ func (a *AggregationAccountApiService) CreateAggregationAccountBalanceBulkUsingP
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/bulk_aggregation_account_balance"
 
 	localVarHeaderParams := make(map[string]string)
@@ -134,7 +138,11 @@ func (a *AggregationAccountApiService) CreateAggregationAccountBalanceUsingPost(
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account_balance"
 
 	localVarHeaderParams := make(map[string]string)
@@ -223,7 +231,11 @@ func (a *AggregationAccountApiService) CreateAggregationAccountBulkUsingPost(ctx
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/bulk_aggregation_account"
 
 	localVarHeaderParams := make(map[string]string)
@@ -312,7 +324,11 @@ func (a *AggregationAccountApiService) CreateAggregationAccountHoldingBulkUsingP
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/bulk_aggregation_account_holding"
 
 	localVarHeaderParams := make(map[string]string)
@@ -401,7 +417,11 @@ func (a *AggregationAccountApiService) CreateAggregationAccountHoldingUsingPost(
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account_holding"
 
 	localVarHeaderParams := make(map[string]string)
@@ -490,7 +510,11 @@ func (a *AggregationAccountApiService) CreateAggregationAccountTransactionBulkUs
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/bulk_aggregation_account_transaction"
 
 	localVarHeaderParams := make(map[string]string)
@@ -579,7 +603,11 @@ func (a *AggregationAccountApiService) CreateAggregationAccountTransactionUsingP
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account_transaction"
 
 	localVarHeaderParams := make(map[string]string)
@@ -668,7 +696,11 @@ func (a *AggregationAccountApiService) CreateAggregationAccountUsingPost(ctx con
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account"
 
 	localVarHeaderParams := make(map[string]string)
@@ -756,7 +788,11 @@ func (a *AggregationAccountApiService) DeleteAggregationAccountBalanceUsingDelet
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account_balance/{aggregation_account_balance_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"aggregation_account_balance_id"+"}", fmt.Sprintf("%v", aggregationAccountBalanceId), -1)
 
@@ -826,7 +862,11 @@ func (a *AggregationAccountApiService) DeleteAggregationAccountHoldingUsingDelet
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account_holding/{aggregation_account_holding_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"aggregation_account_holding_id"+"}", fmt.Sprintf("%v", aggregationAccountHoldingId), -1)
 
@@ -896,7 +936,11 @@ func (a *AggregationAccountApiService) DeleteAggregationAccountTransactionUsingD
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account_transaction/{aggregation_account_transaction_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"aggregation_account_transaction_id"+"}", fmt.Sprintf("%v", aggregationAccountTransactionId), -1)
 
@@ -966,7 +1010,11 @@ func (a *AggregationAccountApiService) DeleteAggregationAccountUsingDelete(ctx c
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account/{aggregation_account_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"aggregation_account_id"+"}", fmt.Sprintf("%v", aggregationAccountId), -1)
 
@@ -1044,7 +1092,11 @@ func (a *AggregationAccountApiService) GetAggregationAccountAggregateDataUsingGe
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account/{aggregation_account_id}/aggregate_data"
 	localVarPath = strings.Replace(localVarPath, "{"+"aggregation_account_id"+"}", fmt.Sprintf("%v", aggregationAccountId), -1)
 
@@ -1149,7 +1201,11 @@ func (a *AggregationAccountApiService) GetAggregationAccountAllUsingGet(ctx cont
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1267,7 +1323,11 @@ func (a *AggregationAccountApiService) GetAggregationAccountBalanceAllUsingGet(c
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account_balance"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1379,7 +1439,11 @@ func (a *AggregationAccountApiService) GetAggregationAccountBalanceUsingGet(ctx 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account_balance/{aggregation_account_balance_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"aggregation_account_balance_id"+"}", fmt.Sprintf("%v", aggregationAccountBalanceId), -1)
 
@@ -1486,7 +1550,11 @@ func (a *AggregationAccountApiService) GetAggregationAccountHoldingAllUsingGet(c
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account_holding"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1598,7 +1666,11 @@ func (a *AggregationAccountApiService) GetAggregationAccountHoldingUsingGet(ctx 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account_holding/{aggregation_account_holding_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"aggregation_account_holding_id"+"}", fmt.Sprintf("%v", aggregationAccountHoldingId), -1)
 
@@ -1696,7 +1768,11 @@ func (a *AggregationAccountApiService) GetAggregationAccountOverviewByBusinessId
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/business/{business_id}/aggregation_account_overview"
 	localVarPath = strings.Replace(localVarPath, "{"+"business_id"+"}", fmt.Sprintf("%v", businessId), -1)
 
@@ -1794,7 +1870,11 @@ func (a *AggregationAccountApiService) GetAggregationAccountOverviewUsingGet(ctx
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/client/{client_id}/aggregation_account_overview"
 	localVarPath = strings.Replace(localVarPath, "{"+"client_id"+"}", fmt.Sprintf("%v", clientId), -1)
 
@@ -1901,7 +1981,11 @@ func (a *AggregationAccountApiService) GetAggregationAccountTransactionAllUsingG
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account_transaction"
 
 	localVarHeaderParams := make(map[string]string)
@@ -2013,7 +2097,11 @@ func (a *AggregationAccountApiService) GetAggregationAccountTransactionUsingGet(
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account_transaction/{aggregation_account_transaction_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"aggregation_account_transaction_id"+"}", fmt.Sprintf("%v", aggregationAccountTransactionId), -1)
 
@@ -2104,7 +2192,11 @@ func (a *AggregationAccountApiService) GetAggregationAccountUsingGet(ctx context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account/{aggregation_account_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"aggregation_account_id"+"}", fmt.Sprintf("%v", aggregationAccountId), -1)
 
@@ -2193,7 +2285,11 @@ func (a *AggregationAccountApiService) UpdateAggregationAccountBalanceUsingPut(c
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account_balance/{aggregation_account_balance_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"aggregation_account_balance_id"+"}", fmt.Sprintf("%v", aggregationAccountBalanceId), -1)
 
@@ -2283,7 +2379,11 @@ func (a *AggregationAccountApiService) UpdateAggregationAccountBulkUsingPut(ctx 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/bulk_aggregation_account"
 
 	localVarHeaderParams := make(map[string]string)
@@ -2372,7 +2472,11 @@ func (a *AggregationAccountApiService) UpdateAggregationAccountHoldingBulkUsingP
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/bulk_aggregation_account_holding"
 
 	localVarHeaderParams := make(map[string]string)
@@ -2462,7 +2566,11 @@ func (a *AggregationAccountApiService) UpdateAggregationAccountHoldingUsingPut(c
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account_holding/{aggregation_account_holding_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"aggregation_account_holding_id"+"}", fmt.Sprintf("%v", aggregationAccountHoldingId), -1)
 
@@ -2553,7 +2661,11 @@ func (a *AggregationAccountApiService) UpdateAggregationAccountTransactionUsingP
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account_transaction/{aggregation_account_transaction_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"aggregation_account_transaction_id"+"}", fmt.Sprintf("%v", aggregationAccountTransactionId), -1)
 
@@ -2644,7 +2756,11 @@ func (a *AggregationAccountApiService) UpdateAggregationAccountUsingPut(ctx cont
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/aggregation_account/{aggregation_account_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"aggregation_account_id"+"}", fmt.Sprintf("%v", aggregationAccountId), -1)
 

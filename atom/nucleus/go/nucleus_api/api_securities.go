@@ -45,7 +45,11 @@ func (a *SecuritiesApiService) CreateSecurityExclusionUsingPost(ctx context.Cont
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/security_exclusion"
 
 	localVarHeaderParams := make(map[string]string)
@@ -134,7 +138,11 @@ func (a *SecuritiesApiService) CreateSecurityPriceUsingPost(ctx context.Context,
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/security_price"
 
 	localVarHeaderParams := make(map[string]string)
@@ -223,7 +231,11 @@ func (a *SecuritiesApiService) CreateSecurityUsingPost(ctx context.Context, secu
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/security"
 
 	localVarHeaderParams := make(map[string]string)
@@ -311,7 +323,11 @@ func (a *SecuritiesApiService) DeleteSecurityExclusionUsingDelete(ctx context.Co
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/security_exclusion/{security_exclusion_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"security_exclusion_id"+"}", fmt.Sprintf("%v", securityExclusionId), -1)
 
@@ -381,7 +397,11 @@ func (a *SecuritiesApiService) DeleteSecurityPriceUsingDelete(ctx context.Contex
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/security_price/{security_price_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"security_price_id"+"}", fmt.Sprintf("%v", securityPriceId), -1)
 
@@ -451,7 +471,11 @@ func (a *SecuritiesApiService) DeleteSecurityUsingDelete(ctx context.Context, se
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/security/{security_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"security_id"+"}", fmt.Sprintf("%v", securityId), -1)
 
@@ -536,7 +560,11 @@ func (a *SecuritiesApiService) GetSecurityAllUsingGet(ctx context.Context, local
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/security"
 
 	localVarHeaderParams := make(map[string]string)
@@ -652,7 +680,11 @@ func (a *SecuritiesApiService) GetSecurityExclusionAllUsingGet(ctx context.Conte
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/security_exclusion"
 
 	localVarHeaderParams := make(map[string]string)
@@ -754,7 +786,11 @@ func (a *SecuritiesApiService) GetSecurityExclusionUsingGet(ctx context.Context,
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/security_exclusion/{security_exclusion_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"security_exclusion_id"+"}", fmt.Sprintf("%v", securityExclusionId), -1)
 
@@ -858,7 +894,11 @@ func (a *SecuritiesApiService) GetSecurityPriceAllUsingGet(ctx context.Context, 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/security_price"
 
 	localVarHeaderParams := make(map[string]string)
@@ -970,7 +1010,11 @@ func (a *SecuritiesApiService) GetSecurityPriceUsingGet(ctx context.Context, sec
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/security_price/{security_price_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"security_price_id"+"}", fmt.Sprintf("%v", securityPriceId), -1)
 
@@ -1061,7 +1105,11 @@ func (a *SecuritiesApiService) GetSecurityUsingGet(ctx context.Context, security
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/security/{security_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"security_id"+"}", fmt.Sprintf("%v", securityId), -1)
 
@@ -1150,7 +1198,11 @@ func (a *SecuritiesApiService) UpdateSecurityExclusionUsingPut(ctx context.Conte
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/security_exclusion/{security_exclusion_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"security_exclusion_id"+"}", fmt.Sprintf("%v", securityExclusionId), -1)
 
@@ -1241,7 +1293,11 @@ func (a *SecuritiesApiService) UpdateSecurityPriceUsingPut(ctx context.Context, 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/security_price/{security_price_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"security_price_id"+"}", fmt.Sprintf("%v", securityPriceId), -1)
 
@@ -1332,7 +1388,11 @@ func (a *SecuritiesApiService) UpdateSecurityUsingPut(ctx context.Context, secur
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/security/{security_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"security_id"+"}", fmt.Sprintf("%v", securityId), -1)
 

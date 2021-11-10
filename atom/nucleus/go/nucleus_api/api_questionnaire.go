@@ -45,7 +45,11 @@ func (a *QuestionnaireApiService) CreateAnswerUsingPost(ctx context.Context, ans
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/answer"
 
 	localVarHeaderParams := make(map[string]string)
@@ -134,7 +138,11 @@ func (a *QuestionnaireApiService) CreateQuestionUsingPost(ctx context.Context, q
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/question"
 
 	localVarHeaderParams := make(map[string]string)
@@ -223,7 +231,11 @@ func (a *QuestionnaireApiService) CreateQuestionnaireUsingPost(ctx context.Conte
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/questionnaire"
 
 	localVarHeaderParams := make(map[string]string)
@@ -311,7 +323,11 @@ func (a *QuestionnaireApiService) DeleteAnswerUsingDelete(ctx context.Context, a
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/answer/{answer_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"answer_id"+"}", fmt.Sprintf("%v", answerId), -1)
 
@@ -381,7 +397,11 @@ func (a *QuestionnaireApiService) DeleteQuestionUsingDelete(ctx context.Context,
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/question/{question_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"question_id"+"}", fmt.Sprintf("%v", questionId), -1)
 
@@ -451,7 +471,11 @@ func (a *QuestionnaireApiService) DeleteQuestionnaireUsingDelete(ctx context.Con
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/questionnaire/{questionnaire_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"questionnaire_id"+"}", fmt.Sprintf("%v", questionnaireId), -1)
 
@@ -536,7 +560,11 @@ func (a *QuestionnaireApiService) GetAnswerAllUsingGet(ctx context.Context, loca
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/answer"
 
 	localVarHeaderParams := make(map[string]string)
@@ -638,7 +666,11 @@ func (a *QuestionnaireApiService) GetAnswerUsingGet(ctx context.Context, answerI
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/answer/{answer_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"answer_id"+"}", fmt.Sprintf("%v", answerId), -1)
 
@@ -740,7 +772,11 @@ func (a *QuestionnaireApiService) GetQuestionAllUsingGet(ctx context.Context, lo
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/question"
 
 	localVarHeaderParams := make(map[string]string)
@@ -842,7 +878,11 @@ func (a *QuestionnaireApiService) GetQuestionUsingGet(ctx context.Context, quest
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/question/{question_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"question_id"+"}", fmt.Sprintf("%v", questionId), -1)
 
@@ -944,7 +984,11 @@ func (a *QuestionnaireApiService) GetQuestionnaireAllUsingGet(ctx context.Contex
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/questionnaire"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1046,7 +1090,11 @@ func (a *QuestionnaireApiService) GetQuestionnaireUsingGet(ctx context.Context, 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/questionnaire/{questionnaire_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"questionnaire_id"+"}", fmt.Sprintf("%v", questionnaireId), -1)
 
@@ -1135,7 +1183,11 @@ func (a *QuestionnaireApiService) UpdateAnswerUsingPut(ctx context.Context, answ
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/answer/{answer_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"answer_id"+"}", fmt.Sprintf("%v", answerId), -1)
 
@@ -1226,7 +1278,11 @@ func (a *QuestionnaireApiService) UpdateQuestionUsingPut(ctx context.Context, qu
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/question/{question_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"question_id"+"}", fmt.Sprintf("%v", questionId), -1)
 
@@ -1317,7 +1373,11 @@ func (a *QuestionnaireApiService) UpdateQuestionnaireUsingPut(ctx context.Contex
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/questionnaire/{questionnaire_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"questionnaire_id"+"}", fmt.Sprintf("%v", questionnaireId), -1)
 

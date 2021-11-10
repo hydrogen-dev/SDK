@@ -44,7 +44,11 @@ func (a *AdminClientApiService) CreateAdminClientUsingPOST(ctx context.Context, 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/admin/v1/client"
 
 	localVarHeaderParams := make(map[string]string)
@@ -131,7 +135,11 @@ func (a *AdminClientApiService) DeleteAdminClientUsingDELETE(ctx context.Context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/admin/v1/client/{client_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"client_id"+"}", fmt.Sprintf("%v", clientId), -1)
 
@@ -201,7 +209,11 @@ func (a *AdminClientApiService) GetAdminClientUsingGET(ctx context.Context, clie
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/admin/v1/client/{client_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"client_id"+"}", fmt.Sprintf("%v", clientId), -1)
 
@@ -302,7 +314,11 @@ func (a *AdminClientApiService) GetAllAdminClientUsingGET(ctx context.Context, l
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/admin/v1/client"
 
 	localVarHeaderParams := make(map[string]string)
@@ -404,7 +420,11 @@ func (a *AdminClientApiService) UpdateAdminClientUsingPUT(ctx context.Context, c
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/admin/v1/client/{client_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"client_id"+"}", fmt.Sprintf("%v", clientId), -1)
 
@@ -500,7 +520,11 @@ func (a *AdminClientApiService) UpdateClientCredentialsUsingPOST(ctx context.Con
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/admin/v1/client_credentials"
 
 	localVarHeaderParams := make(map[string]string)

@@ -45,7 +45,11 @@ func (a *OverflowApiService) CreateOverflowSettingsUsingPost(ctx context.Context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/overflow_setting"
 
 	localVarHeaderParams := make(map[string]string)
@@ -134,7 +138,11 @@ func (a *OverflowApiService) CreateOverflowUsingPost(ctx context.Context, overfl
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/overflow"
 
 	localVarHeaderParams := make(map[string]string)
@@ -222,7 +230,11 @@ func (a *OverflowApiService) DeleteOverflowSettingsUsingDelete(ctx context.Conte
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/overflow_setting/{overflow_settings_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"overflow_settings_id"+"}", fmt.Sprintf("%v", overflowSettingsId), -1)
 
@@ -307,7 +319,11 @@ func (a *OverflowApiService) GetOverflowAllUsingGet(ctx context.Context, localVa
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/overflow"
 
 	localVarHeaderParams := make(map[string]string)
@@ -423,7 +439,11 @@ func (a *OverflowApiService) GetOverflowSettingsAllUsingGet(ctx context.Context,
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/overflow_setting"
 
 	localVarHeaderParams := make(map[string]string)
@@ -525,7 +545,11 @@ func (a *OverflowApiService) GetOverflowSettingsUsingGet(ctx context.Context, ov
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/overflow_setting/{overflow_settings_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"overflow_settings_id"+"}", fmt.Sprintf("%v", overflowSettingsId), -1)
 
@@ -613,7 +637,11 @@ func (a *OverflowApiService) GetOverflowUsingGet(ctx context.Context, overflowId
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/overflow/{overflow_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"overflow_id"+"}", fmt.Sprintf("%v", overflowId), -1)
 
@@ -702,7 +730,11 @@ func (a *OverflowApiService) UpdateOverflowSettingsUsingPut(ctx context.Context,
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/overflow_setting/{overflow_settings_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"overflow_settings_id"+"}", fmt.Sprintf("%v", overflowSettingsId), -1)
 

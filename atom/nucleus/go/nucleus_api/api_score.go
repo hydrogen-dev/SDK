@@ -45,7 +45,11 @@ func (a *ScoreApiService) CreateScoreUsingPost(ctx context.Context, score Score)
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/score"
 
 	localVarHeaderParams := make(map[string]string)
@@ -133,7 +137,11 @@ func (a *ScoreApiService) DeleteScoreUsingDelete(ctx context.Context, scoreId st
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/score/{score_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"score_id"+"}", fmt.Sprintf("%v", scoreId), -1)
 
@@ -218,7 +226,11 @@ func (a *ScoreApiService) GetScoreAllUsingGet(ctx context.Context, localVarOptio
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/score"
 
 	localVarHeaderParams := make(map[string]string)
@@ -320,7 +332,11 @@ func (a *ScoreApiService) GetScoreUsingGet(ctx context.Context, scoreId string) 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/score/{score_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"score_id"+"}", fmt.Sprintf("%v", scoreId), -1)
 
@@ -409,7 +425,11 @@ func (a *ScoreApiService) UpdateScoreUsingPut(ctx context.Context, score interfa
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/score/{score_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"score_id"+"}", fmt.Sprintf("%v", scoreId), -1)
 

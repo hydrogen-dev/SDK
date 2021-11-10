@@ -45,7 +45,11 @@ func (a *PortfolioApiService) CreatePortfolioAssetSizeUsingPost(ctx context.Cont
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_asset_size"
 
 	localVarHeaderParams := make(map[string]string)
@@ -134,7 +138,11 @@ func (a *PortfolioApiService) CreatePortfolioCommentUsingPost(ctx context.Contex
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_comment"
 
 	localVarHeaderParams := make(map[string]string)
@@ -223,7 +231,11 @@ func (a *PortfolioApiService) CreatePortfolioGoalUsingPost(ctx context.Context, 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_goal"
 
 	localVarHeaderParams := make(map[string]string)
@@ -312,7 +324,11 @@ func (a *PortfolioApiService) CreatePortfolioHoldingUsingPost(ctx context.Contex
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_holding"
 
 	localVarHeaderParams := make(map[string]string)
@@ -401,7 +417,11 @@ func (a *PortfolioApiService) CreatePortfolioTransactionUsingPost(ctx context.Co
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_transaction"
 
 	localVarHeaderParams := make(map[string]string)
@@ -490,7 +510,11 @@ func (a *PortfolioApiService) CreatePortfolioUsingPost(ctx context.Context, port
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio"
 
 	localVarHeaderParams := make(map[string]string)
@@ -578,7 +602,11 @@ func (a *PortfolioApiService) DeletePortfolioAssetSizeUsingDelete(ctx context.Co
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_asset_size/{portfolio_asset_size_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_asset_size_id"+"}", fmt.Sprintf("%v", portfolioAssetSizeId), -1)
 
@@ -648,7 +676,11 @@ func (a *PortfolioApiService) DeletePortfolioCommentUsingDelete(ctx context.Cont
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_comment/{portfolio_comment_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_comment_id"+"}", fmt.Sprintf("%v", portfolioCommentId), -1)
 
@@ -718,7 +750,11 @@ func (a *PortfolioApiService) DeletePortfolioGoalUsingDelete(ctx context.Context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_goal/{portfolio_goal_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_goal_id"+"}", fmt.Sprintf("%v", portfolioGoalId), -1)
 
@@ -788,7 +824,11 @@ func (a *PortfolioApiService) DeletePortfolioHoldingUsingDelete(ctx context.Cont
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_holding/{portfolio_holding_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_holding_id"+"}", fmt.Sprintf("%v", portfolioHoldingId), -1)
 
@@ -858,7 +898,11 @@ func (a *PortfolioApiService) DeletePortfolioTransactionUsingDelete(ctx context.
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_transaction/{portfolio_transaction_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_transaction_id"+"}", fmt.Sprintf("%v", portfolioTransactionId), -1)
 
@@ -928,7 +972,11 @@ func (a *PortfolioApiService) DeletePortfolioUsingDelete(ctx context.Context, po
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio/{portfolio_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_id"+"}", fmt.Sprintf("%v", portfolioId), -1)
 
@@ -1014,7 +1062,11 @@ func (a *PortfolioApiService) GetAllPortfolioTransactionByPostUsingPOST(ctx cont
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_transaction_by_post"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1134,7 +1186,11 @@ func (a *PortfolioApiService) GetPortfolioAggregatedDataUsingGet(ctx context.Con
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio/{portfolio_id}/aggregate_data"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_id"+"}", fmt.Sprintf("%v", portfolioId), -1)
 
@@ -1251,7 +1307,11 @@ func (a *PortfolioApiService) GetPortfolioAllUsingGet(ctx context.Context, local
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1369,7 +1429,11 @@ func (a *PortfolioApiService) GetPortfolioAssetSizeAllUsingGet(ctx context.Conte
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_asset_size"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1481,7 +1545,11 @@ func (a *PortfolioApiService) GetPortfolioAssetSizeUsingGet(ctx context.Context,
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_asset_size/{portfolio_asset_size_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_asset_size_id"+"}", fmt.Sprintf("%v", portfolioAssetSizeId), -1)
 
@@ -1586,7 +1654,11 @@ func (a *PortfolioApiService) GetPortfolioCommentAllUsingGet(ctx context.Context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_comment"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1688,7 +1760,11 @@ func (a *PortfolioApiService) GetPortfolioCommentUsingGet(ctx context.Context, p
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_comment/{portfolio_comment_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_comment_id"+"}", fmt.Sprintf("%v", portfolioCommentId), -1)
 
@@ -1790,7 +1866,11 @@ func (a *PortfolioApiService) GetPortfolioGoalAllUsingGet(ctx context.Context, l
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_goal"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1892,7 +1972,11 @@ func (a *PortfolioApiService) GetPortfolioGoalUsingGet(ctx context.Context, port
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_goal/{portfolio_goal_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_goal_id"+"}", fmt.Sprintf("%v", portfolioGoalId), -1)
 
@@ -1996,7 +2080,11 @@ func (a *PortfolioApiService) GetPortfolioHoldingAllUsingGet(ctx context.Context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_holding"
 
 	localVarHeaderParams := make(map[string]string)
@@ -2108,7 +2196,11 @@ func (a *PortfolioApiService) GetPortfolioHoldingUsingGet(ctx context.Context, p
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_holding/{portfolio_holding_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_holding_id"+"}", fmt.Sprintf("%v", portfolioHoldingId), -1)
 
@@ -2215,7 +2307,11 @@ func (a *PortfolioApiService) GetPortfolioTransactionAllUsingGet(ctx context.Con
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_transaction"
 
 	localVarHeaderParams := make(map[string]string)
@@ -2327,7 +2423,11 @@ func (a *PortfolioApiService) GetPortfolioTransactionUsingGet(ctx context.Contex
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_transaction/{portfolio_transaction_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_transaction_id"+"}", fmt.Sprintf("%v", portfolioTransactionId), -1)
 
@@ -2418,7 +2518,11 @@ func (a *PortfolioApiService) GetPortfolioUsingGet(ctx context.Context, portfoli
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio/{portfolio_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_id"+"}", fmt.Sprintf("%v", portfolioId), -1)
 
@@ -2507,7 +2611,11 @@ func (a *PortfolioApiService) UpdatePortfolioAssetSizeUsingPut(ctx context.Conte
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_asset_size/{portfolio_asset_size_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_asset_size_id"+"}", fmt.Sprintf("%v", portfolioAssetSizeId), -1)
 
@@ -2598,7 +2706,11 @@ func (a *PortfolioApiService) UpdatePortfolioCommentUsingPut(ctx context.Context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_comment/{portfolio_comment_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_comment_id"+"}", fmt.Sprintf("%v", portfolioCommentId), -1)
 
@@ -2689,7 +2801,11 @@ func (a *PortfolioApiService) UpdatePortfolioGoalUsingPut(ctx context.Context, p
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_goal/{portfolio_goal_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_goal_id"+"}", fmt.Sprintf("%v", portfolioGoalId), -1)
 
@@ -2780,7 +2896,11 @@ func (a *PortfolioApiService) UpdatePortfolioHoldingUsingPut(ctx context.Context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_holding/{portfolio_holding_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_holding_id"+"}", fmt.Sprintf("%v", portfolioHoldingId), -1)
 
@@ -2871,7 +2991,11 @@ func (a *PortfolioApiService) UpdatePortfolioTransactionUsingPut(ctx context.Con
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio_transaction/{portfolio_transaction_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_transaction_id"+"}", fmt.Sprintf("%v", portfolioTransactionId), -1)
 
@@ -2962,7 +3086,11 @@ func (a *PortfolioApiService) UpdatePortfolioUsingPut(ctx context.Context, portf
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio/{portfolio_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_id"+"}", fmt.Sprintf("%v", portfolioId), -1)
 

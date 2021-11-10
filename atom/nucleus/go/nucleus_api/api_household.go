@@ -45,7 +45,11 @@ func (a *HouseholdApiService) CreateHouseholdUsingPost(ctx context.Context, hous
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/household"
 
 	localVarHeaderParams := make(map[string]string)
@@ -133,7 +137,11 @@ func (a *HouseholdApiService) DeleteHouseholdUsingDelete(ctx context.Context, ho
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/household/{household_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"household_id"+"}", fmt.Sprintf("%v", householdId), -1)
 
@@ -218,7 +226,11 @@ func (a *HouseholdApiService) GetHouseholdAllUsingGet(ctx context.Context, local
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/household"
 
 	localVarHeaderParams := make(map[string]string)
@@ -337,7 +349,11 @@ func (a *HouseholdApiService) GetHouseholdClientAssetSizeUsingGet(ctx context.Co
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/household/{household_id}/asset_size"
 	localVarPath = strings.Replace(localVarPath, "{"+"household_id"+"}", fmt.Sprintf("%v", householdId), -1)
 
@@ -466,7 +482,11 @@ func (a *HouseholdApiService) GetHouseholdClientHoldingUsingGet(ctx context.Cont
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/household/{household_id}/holding"
 	localVarPath = strings.Replace(localVarPath, "{"+"household_id"+"}", fmt.Sprintf("%v", householdId), -1)
 
@@ -602,7 +622,11 @@ func (a *HouseholdApiService) GetHouseholdClientTransactionUsingGet(ctx context.
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/household/{household_id}/transaction"
 	localVarPath = strings.Replace(localVarPath, "{"+"household_id"+"}", fmt.Sprintf("%v", householdId), -1)
 
@@ -714,7 +738,11 @@ func (a *HouseholdApiService) GetHouseholdUsingGet(ctx context.Context, househol
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/household/{household_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"household_id"+"}", fmt.Sprintf("%v", householdId), -1)
 
@@ -803,7 +831,11 @@ func (a *HouseholdApiService) UpdateHouseholdUsingPut(ctx context.Context, house
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/household/{household_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"household_id"+"}", fmt.Sprintf("%v", householdId), -1)
 

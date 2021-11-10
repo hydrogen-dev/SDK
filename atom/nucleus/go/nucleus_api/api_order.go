@@ -46,7 +46,11 @@ func (a *OrderApiService) CreateAccountOrderBulkUsingPost(ctx context.Context, a
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account/{account_id}/order_bulk"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", fmt.Sprintf("%v", accountId), -1)
 
@@ -137,7 +141,11 @@ func (a *OrderApiService) CreateAccountOrderBuyOnlyUsingPost(ctx context.Context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account/{account_id}/order_buy_only"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", fmt.Sprintf("%v", accountId), -1)
 
@@ -228,7 +236,11 @@ func (a *OrderApiService) CreateAccountOrderRebalanceUsingPost(ctx context.Conte
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account/{account_id}/order_rebalance"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", fmt.Sprintf("%v", accountId), -1)
 
@@ -318,7 +330,11 @@ func (a *OrderApiService) CreateAccountOrderReconciliation(ctx context.Context, 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account/{account_id}/order_reconciliation"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", fmt.Sprintf("%v", accountId), -1)
 
@@ -409,7 +425,11 @@ func (a *OrderApiService) CreateAccountOrderSellAllUsingPost(ctx context.Context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account/{account_id}/order_sell_all"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", fmt.Sprintf("%v", accountId), -1)
 
@@ -500,7 +520,11 @@ func (a *OrderApiService) CreateAccountOrderSellOnlyUsingPost(ctx context.Contex
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account/{account_id}/order_sell_only"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", fmt.Sprintf("%v", accountId), -1)
 
@@ -591,7 +615,11 @@ func (a *OrderApiService) CreateClientOrderBulkUsingPost(ctx context.Context, cl
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/client/{client_id}/order_bulk"
 	localVarPath = strings.Replace(localVarPath, "{"+"client_id"+"}", fmt.Sprintf("%v", clientId), -1)
 
@@ -681,7 +709,11 @@ func (a *OrderApiService) CreateOrderBulkUsingPost(ctx context.Context, req Toke
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/order_bulk"
 
 	localVarHeaderParams := make(map[string]string)
@@ -770,7 +802,11 @@ func (a *OrderApiService) CreateOrderStatusUsingPost(ctx context.Context, orderS
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/order_status"
 
 	localVarHeaderParams := make(map[string]string)
@@ -859,7 +895,11 @@ func (a *OrderApiService) CreateOrderTrackUsingPost(ctx context.Context, orderTr
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/order_track"
 
 	localVarHeaderParams := make(map[string]string)
@@ -948,7 +988,11 @@ func (a *OrderApiService) CreateOrderUsingPost(ctx context.Context, orderInfoReq
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/order"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1038,7 +1082,11 @@ func (a *OrderApiService) CreatePortfolioOrderBuyOnlyUsingPost(ctx context.Conte
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio/{portfolio_id}/order_buy_only"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_id"+"}", fmt.Sprintf("%v", portfolioId), -1)
 
@@ -1129,7 +1177,11 @@ func (a *OrderApiService) CreatePortfolioOrderRebalanceUsingPost(ctx context.Con
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio/{portfolio_id}/order_rebalance"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_id"+"}", fmt.Sprintf("%v", portfolioId), -1)
 
@@ -1219,7 +1271,11 @@ func (a *OrderApiService) CreatePortfolioOrderReconciliation(ctx context.Context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio/{portfolio_id}/order_reconciliation"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_id"+"}", fmt.Sprintf("%v", portfolioId), -1)
 
@@ -1310,7 +1366,11 @@ func (a *OrderApiService) CreatePortfolioOrderSellAllUsingPost(ctx context.Conte
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio/{portfolio_id}/order_sell_all"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_id"+"}", fmt.Sprintf("%v", portfolioId), -1)
 
@@ -1401,7 +1461,11 @@ func (a *OrderApiService) CreatePortfolioOrderSellOnlyUsingPost(ctx context.Cont
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/portfolio/{portfolio_id}/order_sell_only"
 	localVarPath = strings.Replace(localVarPath, "{"+"portfolio_id"+"}", fmt.Sprintf("%v", portfolioId), -1)
 
@@ -1490,7 +1554,11 @@ func (a *OrderApiService) DeleteOrderStatusUsingDelete(ctx context.Context, orde
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/order_status/{order_status_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"order_status_id"+"}", fmt.Sprintf("%v", orderStatusId), -1)
 
@@ -1560,7 +1628,11 @@ func (a *OrderApiService) DeleteOrderTrackUsingDelete(ctx context.Context, order
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/order_track/{order_track_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"order_track_id"+"}", fmt.Sprintf("%v", orderTrackId), -1)
 
@@ -1630,7 +1702,11 @@ func (a *OrderApiService) DeleteOrderUsingDelete(ctx context.Context, orderId st
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/order/{order_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"order_id"+"}", fmt.Sprintf("%v", orderId), -1)
 
@@ -1715,7 +1791,11 @@ func (a *OrderApiService) GetOrderAllUsingGet(ctx context.Context, localVarOptio
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/order"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1831,7 +1911,11 @@ func (a *OrderApiService) GetOrderBulkAllUsingGet(ctx context.Context, localVarO
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/order_bulk"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1947,7 +2031,11 @@ func (a *OrderApiService) GetOrderStatusAllUsingGet(ctx context.Context, localVa
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/order_status"
 
 	localVarHeaderParams := make(map[string]string)
@@ -2049,7 +2137,11 @@ func (a *OrderApiService) GetOrderStatusUsingGet(ctx context.Context, orderStatu
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/order_status/{order_status_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"order_status_id"+"}", fmt.Sprintf("%v", orderStatusId), -1)
 
@@ -2151,7 +2243,11 @@ func (a *OrderApiService) GetOrderTrackAllUsingGet(ctx context.Context, localVar
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/order_track"
 
 	localVarHeaderParams := make(map[string]string)
@@ -2253,7 +2349,11 @@ func (a *OrderApiService) GetOrderTrackUsingGet(ctx context.Context, orderTrackI
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/order_track/{order_track_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"order_track_id"+"}", fmt.Sprintf("%v", orderTrackId), -1)
 
@@ -2341,7 +2441,11 @@ func (a *OrderApiService) GetOrderUsingGet(ctx context.Context, orderId string) 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/order/{order_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"order_id"+"}", fmt.Sprintf("%v", orderId), -1)
 
@@ -2430,7 +2534,11 @@ func (a *OrderApiService) UpdateOrderStatusUsingPut(ctx context.Context, orderSt
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/order_status/{order_status_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"order_status_id"+"}", fmt.Sprintf("%v", orderStatusId), -1)
 
@@ -2521,7 +2629,11 @@ func (a *OrderApiService) UpdateOrderTrackUsingPut(ctx context.Context, orderTra
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/order_track/{order_track_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"order_track_id"+"}", fmt.Sprintf("%v", orderTrackId), -1)
 
@@ -2612,7 +2724,11 @@ func (a *OrderApiService) UpdateOrderUsingPut(ctx context.Context, order interfa
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/order/{order_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"order_id"+"}", fmt.Sprintf("%v", orderId), -1)
 

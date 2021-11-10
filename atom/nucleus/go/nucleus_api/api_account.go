@@ -45,7 +45,11 @@ func (a *AccountApiService) CreateAccountAllocationMappingUsingPost(ctx context.
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account_allocation"
 
 	localVarHeaderParams := make(map[string]string)
@@ -134,7 +138,11 @@ func (a *AccountApiService) CreateAccountStatusUsingPost(ctx context.Context, ac
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account_status"
 
 	localVarHeaderParams := make(map[string]string)
@@ -223,7 +231,11 @@ func (a *AccountApiService) CreateAccountTypeUsingPost(ctx context.Context, acco
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account_type"
 
 	localVarHeaderParams := make(map[string]string)
@@ -312,7 +324,11 @@ func (a *AccountApiService) CreateAccountUsingPost(ctx context.Context, account 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account"
 
 	localVarHeaderParams := make(map[string]string)
@@ -400,7 +416,11 @@ func (a *AccountApiService) DeleteAccountAllocationMappingUsingDelete(ctx contex
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account_allocation/{account_allocation_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_allocation_id"+"}", fmt.Sprintf("%v", accountAllocationId), -1)
 
@@ -471,7 +491,11 @@ func (a *AccountApiService) DeleteAccountPermissionUsingDELETE(ctx context.Conte
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account_permission/{account_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", fmt.Sprintf("%v", accountId), -1)
 
@@ -558,7 +582,11 @@ func (a *AccountApiService) DeleteAccountStatusUsingDelete(ctx context.Context, 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account_status/{account_status_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_status_id"+"}", fmt.Sprintf("%v", accountStatusId), -1)
 
@@ -628,7 +656,11 @@ func (a *AccountApiService) DeleteAccountTypeUsingDelete(ctx context.Context, ac
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account_type/{account_type_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_type_id"+"}", fmt.Sprintf("%v", accountTypeId), -1)
 
@@ -698,7 +730,11 @@ func (a *AccountApiService) DeleteAccountUsingDelete(ctx context.Context, accoun
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account/{account_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", fmt.Sprintf("%v", accountId), -1)
 
@@ -783,7 +819,11 @@ func (a *AccountApiService) GetAccountAllUsingGet(ctx context.Context, localVarO
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account"
 
 	localVarHeaderParams := make(map[string]string)
@@ -899,7 +939,11 @@ func (a *AccountApiService) GetAccountAllocationMappingAllUsingGet(ctx context.C
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account_allocation"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1001,7 +1045,11 @@ func (a *AccountApiService) GetAccountAllocationMappingUsingGet(ctx context.Cont
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account_allocation/{account_allocation_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_allocation_id"+"}", fmt.Sprintf("%v", accountAllocationId), -1)
 
@@ -1106,7 +1154,11 @@ func (a *AccountApiService) GetAccountAssetSizeAggAllUsingGet(ctx context.Contex
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account/{account_id}/asset_size"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", fmt.Sprintf("%v", accountId), -1)
 
@@ -1220,7 +1272,11 @@ func (a *AccountApiService) GetAccountOverviewUsingGet(ctx context.Context, acco
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account/{account_id}/account_overview"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", fmt.Sprintf("%v", accountId), -1)
 
@@ -1314,7 +1370,11 @@ func (a *AccountApiService) GetAccountPermissionUsingGET(ctx context.Context, ac
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account_permission/{account_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", fmt.Sprintf("%v", accountId), -1)
 
@@ -1416,7 +1476,11 @@ func (a *AccountApiService) GetAccountStatusAllUsingGet(ctx context.Context, loc
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account_status"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1518,7 +1582,11 @@ func (a *AccountApiService) GetAccountStatusUsingGet(ctx context.Context, accoun
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account_status/{account_status_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_status_id"+"}", fmt.Sprintf("%v", accountStatusId), -1)
 
@@ -1620,7 +1688,11 @@ func (a *AccountApiService) GetAccountTypeAllUsingGet(ctx context.Context, local
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account_type"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1722,7 +1794,11 @@ func (a *AccountApiService) GetAccountTypeUsingGet(ctx context.Context, accountT
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account_type/{account_type_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_type_id"+"}", fmt.Sprintf("%v", accountTypeId), -1)
 
@@ -1810,7 +1886,11 @@ func (a *AccountApiService) GetAccountUsingGet(ctx context.Context, accountId st
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account/{account_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", fmt.Sprintf("%v", accountId), -1)
 
@@ -1912,7 +1992,11 @@ func (a *AccountApiService) GetAllAccountPermissionUsingGET(ctx context.Context,
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account_permission"
 
 	localVarHeaderParams := make(map[string]string)
@@ -2037,7 +2121,11 @@ func (a *AccountApiService) GetPortfolioHoldingAggAllUsingGet(ctx context.Contex
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account/{account_id}/holding"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", fmt.Sprintf("%v", accountId), -1)
 
@@ -2173,7 +2261,11 @@ func (a *AccountApiService) GetPortfolioTransactionAggAllUsingGet(ctx context.Co
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account/{account_id}/transaction"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", fmt.Sprintf("%v", accountId), -1)
 
@@ -2285,7 +2377,11 @@ func (a *AccountApiService) InsertAccountAndRelatedPermissionUsingPOST(ctx conte
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account_permission"
 
 	localVarHeaderParams := make(map[string]string)
@@ -2375,7 +2471,11 @@ func (a *AccountApiService) SubscribeAccountUsingPost(ctx context.Context, accou
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account/{account_id}/subscribe"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", fmt.Sprintf("%v", accountId), -1)
 
@@ -2466,7 +2566,11 @@ func (a *AccountApiService) UpdateAccountAllocationMappingUsingPut(ctx context.C
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account_allocation/{account_allocation_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_allocation_id"+"}", fmt.Sprintf("%v", accountAllocationId), -1)
 
@@ -2557,7 +2661,11 @@ func (a *AccountApiService) UpdateAccountStatusUsingPut(ctx context.Context, acc
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account_status/{account_status_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_status_id"+"}", fmt.Sprintf("%v", accountStatusId), -1)
 
@@ -2648,7 +2756,11 @@ func (a *AccountApiService) UpdateAccountTypeUsingPut(ctx context.Context, accou
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account_type/{account_type_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_type_id"+"}", fmt.Sprintf("%v", accountTypeId), -1)
 
@@ -2739,7 +2851,11 @@ func (a *AccountApiService) UpdateAccountUsingPut(ctx context.Context, account i
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account/{account_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", fmt.Sprintf("%v", accountId), -1)
 
@@ -2830,7 +2946,11 @@ func (a *AccountApiService) UpdateClientAccountPermissionUsingPUT(ctx context.Co
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/account_permission/{account_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", fmt.Sprintf("%v", accountId), -1)
 

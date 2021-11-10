@@ -45,7 +45,11 @@ func (a *FinancialStatementApiService) CreateFinancialStatementUsingPost(ctx con
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/financial_statement"
 
 	localVarHeaderParams := make(map[string]string)
@@ -133,7 +137,11 @@ func (a *FinancialStatementApiService) DeleteFinancialStatementUsingDelete(ctx c
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/financial_statement/{financial_statement_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"financial_statement_id"+"}", fmt.Sprintf("%v", financialStatementId), -1)
 
@@ -220,7 +228,11 @@ func (a *FinancialStatementApiService) GetFinancialStatementAllUsingGet(ctx cont
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/financial_statement"
 
 	localVarHeaderParams := make(map[string]string)
@@ -332,7 +344,11 @@ func (a *FinancialStatementApiService) GetFinancialStatementUsingGet(ctx context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/financial_statement/{financial_statement_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"financial_statement_id"+"}", fmt.Sprintf("%v", financialStatementId), -1)
 
@@ -424,7 +440,11 @@ func (a *FinancialStatementApiService) UpdateFinancialStatementUsingPut(ctx cont
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/financial_statement/{financial_statement_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"financial_statement_id"+"}", fmt.Sprintf("%v", financialStatementId), -1)
 

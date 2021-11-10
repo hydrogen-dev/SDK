@@ -45,7 +45,11 @@ func (a *RiskProfileApiService) CreateRiskProfileUsingPost(ctx context.Context, 
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/risk_profile"
 
 	localVarHeaderParams := make(map[string]string)
@@ -133,7 +137,11 @@ func (a *RiskProfileApiService) DeleteRiskProfileUsingDelete(ctx context.Context
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/risk_profile/{risk_profile_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"risk_profile_id"+"}", fmt.Sprintf("%v", riskProfileId), -1)
 
@@ -218,7 +226,11 @@ func (a *RiskProfileApiService) GetRiskProfileAllUsingGet(ctx context.Context, l
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/risk_profile"
 
 	localVarHeaderParams := make(map[string]string)
@@ -320,7 +332,11 @@ func (a *RiskProfileApiService) GetRiskProfileUsingGet(ctx context.Context, risk
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/risk_profile/{risk_profile_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"risk_profile_id"+"}", fmt.Sprintf("%v", riskProfileId), -1)
 
@@ -409,7 +425,11 @@ func (a *RiskProfileApiService) UpdateRiskProfileUsingPut(ctx context.Context, r
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/risk_profile/{risk_profile_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"risk_profile_id"+"}", fmt.Sprintf("%v", riskProfileId), -1)
 

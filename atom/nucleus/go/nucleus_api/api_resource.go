@@ -45,7 +45,11 @@ func (a *ResourceApiService) CreateFxRateBulkUsingPost(ctx context.Context, fxRa
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/resource/fx_rate"
 
 	localVarHeaderParams := make(map[string]string)
@@ -134,7 +138,11 @@ func (a *ResourceApiService) CreateInstitutionUsingPost(ctx context.Context, ins
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/resource/institution"
 
 	localVarHeaderParams := make(map[string]string)
@@ -222,7 +230,11 @@ func (a *ResourceApiService) DeleteInstitutionUsingDelete(ctx context.Context, i
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/resource/institution/{institution_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"institution_id"+"}", fmt.Sprintf("%v", institutionId), -1)
 
@@ -307,7 +319,11 @@ func (a *ResourceApiService) GetAccountResultForMapping(ctx context.Context, loc
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/resource/account_category"
 
 	localVarHeaderParams := make(map[string]string)
@@ -408,7 +424,11 @@ func (a *ResourceApiService) GetAllCountryUsingGet(ctx context.Context) ([]Count
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/resource/country"
 
 	localVarHeaderParams := make(map[string]string)
@@ -494,7 +514,11 @@ func (a *ResourceApiService) GetAllCurrencyUsingGet(ctx context.Context) ([]Curr
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/resource/currency"
 
 	localVarHeaderParams := make(map[string]string)
@@ -587,7 +611,11 @@ func (a *ResourceApiService) GetAllMerchantCategoryCodeUsingGet(ctx context.Cont
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/resource/merchant_category_code"
 
 	localVarHeaderParams := make(map[string]string)
@@ -683,7 +711,11 @@ func (a *ResourceApiService) GetAllStatesUsingGet(ctx context.Context, localVarO
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/resource/state"
 
 	localVarHeaderParams := make(map[string]string)
@@ -772,7 +804,11 @@ func (a *ResourceApiService) GetAllStatisticsUsingGet(ctx context.Context) (map[
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/resource/statistic"
 
 	localVarHeaderParams := make(map[string]string)
@@ -865,7 +901,11 @@ func (a *ResourceApiService) GetCurrencyExchangeRateAllUsingGet(ctx context.Cont
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/resource/fx_rate"
 
 	localVarHeaderParams := make(map[string]string)
@@ -969,7 +1009,11 @@ func (a *ResourceApiService) GetInstitutionAllUsingGet(ctx context.Context, loca
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/resource/institution"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1071,7 +1115,11 @@ func (a *ResourceApiService) GetInstitutionUsingGet(ctx context.Context, institu
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/resource/institution/{institution_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"institution_id"+"}", fmt.Sprintf("%v", institutionId), -1)
 
@@ -1173,7 +1221,11 @@ func (a *ResourceApiService) GetMerchantsAllUsingGet(ctx context.Context, localV
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/resource/merchant"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1289,7 +1341,11 @@ func (a *ResourceApiService) GetTransactionResultForMapping(ctx context.Context,
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/resource/transaction_category"
 
 	localVarHeaderParams := make(map[string]string)
@@ -1392,7 +1448,11 @@ func (a *ResourceApiService) UpdateInstitutionUsingPut(ctx context.Context, inst
 	)
 
 	// create path and map variables
-	a.client = NewAPIClient(NewConfiguration())
+	a.client = NewAPIClient(&Configuration{
+		BasePath:      ctx.Value("BasePath").(string),
+		DefaultHeader: make(map[string]string),
+		UserAgent:     "Swagger-Codegen/1.0.0/go",
+	})
 	localVarPath := a.client.cfg.BasePath + "/nucleus/v1/resource/institution/{institution_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"institution_id"+"}", fmt.Sprintf("%v", institutionId), -1)
 

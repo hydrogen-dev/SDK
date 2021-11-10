@@ -58,7 +58,7 @@ func (a *AuthConfigurationService) CreateClientCredential(ctx context.Context,
 		localVarReturnValue Auth
 	)
 	a.client = NewAPIClient(NewConfiguration())
-	if (environment2 == SANDBOX) {
+	if environment2 == SANDBOX {
 		a.client.cfg.BasePath = SANDBOX
 	} else {
 		a.client.cfg.BasePath = PRODUCTION
@@ -146,7 +146,7 @@ func (a *AuthConfigurationService) CreatePasswordCredential(ctx context.Context,
 		localVarReturnValue Auth
 	)
 	a.client = NewAPIClient(NewConfiguration())
-	if (environment2 == SANDBOX) {
+	if environment2 == SANDBOX {
 		a.client.cfg.BasePath = SANDBOX
 	} else {
 		a.client.cfg.BasePath = PRODUCTION
@@ -226,7 +226,7 @@ func (a *AuthConfigurationService) CreatePasswordCredential(ctx context.Context,
 	return localVarReturnValue, localVarHttpResponse, nil
 }
 
-func (a *AuthConfigurationService) CreateClientTokenCredential(ctx context.Context, clientId string, clientSecret string, client_token string, environment2 environment) (Auth, *http.Response, error){
+func (a *AuthConfigurationService) CreateClientTokenCredential(ctx context.Context, clientId string, clientSecret string, client_token string, environment2 environment) (Auth, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
@@ -235,7 +235,7 @@ func (a *AuthConfigurationService) CreateClientTokenCredential(ctx context.Conte
 		localVarReturnValue Auth
 	)
 	a.client = NewAPIClient(NewConfiguration())
-	if (environment2 == SANDBOX) {
+	if environment2 == SANDBOX {
 		a.client.cfg.BasePath = SANDBOX
 	} else {
 		a.client.cfg.BasePath = PRODUCTION

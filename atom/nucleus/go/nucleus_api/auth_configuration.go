@@ -57,11 +57,7 @@ func (a *AuthConfigurationService) CreateClientCredential(ctx context.Context,
 		localVarFileBytes   []byte
 		localVarReturnValue Auth
 	)
-	a.client = NewAPIClient(&Configuration{
-		BasePath:      ctx.Value("BasePath").(string),
-		DefaultHeader: make(map[string]string),
-		UserAgent:     "Swagger-Codegen/1.0.0/go",
-	})
+	a.client = NewAPIClient(NewConfiguration())
 	if environment2 == SANDBOX {
 		a.client.cfg.BasePath = SANDBOX
 	} else {
@@ -149,11 +145,7 @@ func (a *AuthConfigurationService) CreatePasswordCredential(ctx context.Context,
 		localVarFileBytes   []byte
 		localVarReturnValue Auth
 	)
-	a.client = NewAPIClient(&Configuration{
-		BasePath:      ctx.Value("BasePath").(string),
-		DefaultHeader: make(map[string]string),
-		UserAgent:     "Swagger-Codegen/1.0.0/go",
-	})
+	a.client = NewAPIClient(NewConfiguration())
 	if environment2 == SANDBOX {
 		a.client.cfg.BasePath = SANDBOX
 	} else {
@@ -242,11 +234,7 @@ func (a *AuthConfigurationService) CreateClientTokenCredential(ctx context.Conte
 		localVarFileBytes   []byte
 		localVarReturnValue Auth
 	)
-	a.client = NewAPIClient(&Configuration{
-		BasePath:      ctx.Value("BasePath").(string),
-		DefaultHeader: make(map[string]string),
-		UserAgent:     "Swagger-Codegen/1.0.0/go",
-	})
+	a.client = NewAPIClient(NewConfiguration())
 	if environment2 == SANDBOX {
 		a.client.cfg.BasePath = SANDBOX
 	} else {

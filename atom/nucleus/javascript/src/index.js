@@ -19,14 +19,14 @@
     // AMD. Register as an anonymous module.
     define(['ApiClient', 'api/AuthApi', 'model/Account', 'model/AccountAllocationMapping', 'model/AccountPermissionVO',
       'model/AccountPortfolioRebalanceRequest', 'model/AccountStatus', 'model/AccountType', 'model/AclClientPermissionVO',
-      'model/AdminClient', 'model/AggregationAccount', 'model/AggregationAccountBalance', 'model/AggregationAccountHolding',
+      'model/AggregationAccount', 'model/AggregationAccountBalance', 'model/AggregationAccountHolding',
       'model/AggregationAccountTransaction', 'model/Allocation', 'model/AllocationAggregatedVO', 'model/AllocationComposition',
       'model/AllocationCompositionAggregatedVO', 'model/AllocationCompositionModelHoldingsVO', 'model/AllocationNodeMap', 'model/Answer',
       'model/AnswerMap', 'model/Application', 'model/AuditLog', 'model/AvailableDateDoubleVO', 'model/BankCredit', 'model/BankLink',
       'model/Benchmark', 'model/BenchmarkComposition', 'model/Brokers', 'model/Budget', 'model/BudgetAggregationAccount', 'model/BudgetObject',
       'model/BulkTransaction', 'model/BulkTransactionVO', 'model/Business', 'model/BusinessAddress', 'model/Card', 'model/CardAddress',
       'model/CardBalanceVO', 'model/CardDetailsVO', 'model/CardProgram', 'model/Cash', 'model/Check', 'model/CheckImages', 'model/Client',
-      'model/ClientAccountMapping', 'model/ClientAddress', 'model/ClientCardVO', 'model/ClientCredentials', 'model/ClientRelationship',
+      'model/ClientAccountMapping', 'model/ClientAddress', 'model/ClientCardVO', 'model/ClientRelationship',
       'model/ClientResponse', 'model/ClientStatus', 'model/ClientTotalCardBalanceVO', 'model/ClientViewGoalData', 'model/Country', 'model/Currency',
       'model/DateDoubleVO', 'model/DecisionTree', 'model/DecisionTreeCO', 'model/DecisionTreeResultVO', 'model/Document', 'model/Employment',
       'model/ExternalAccountTransfer', 'model/Feature', 'model/FeatureTrack', 'model/Funding', 'model/FundingTransaction', 'model/FxRate',
@@ -36,7 +36,7 @@
       'model/ModelTransaction', 'model/Node', 'model/NodeRelationship', 'model/Notification', 'model/NotificationClient',
       'model/NotificationSetting', 'model/Order', 'model/OrderBulk', 'model/OrderReconcileRequest', 'model/OrderReconcileReturnObject',
       'model/OrderStatus', 'model/OrderTrack', 'model/OrderVoClone',  'model/Ownership', 'model/PageAccount', 'model/PageAccountAllocationMapping',
-      'model/PageAccountPermissionVO', 'model/PageAccountStatus', 'model/PageAccountType', 'model/PageAdminClient', 'model/PageAggregationAccount',
+      'model/PageAccountPermissionVO', 'model/PageAccountStatus', 'model/PageAccountType', 'model/PageAggregationAccount',
       'model/PageAggregationAccountBalance', 'model/PageAggregationAccountHolding', 'model/PageAggregationAccountTransaction', 'model/PageAllocation',
       'model/PageAllocationComposition', 'model/PageAnswer', 'model/PageApplication', 'model/PageAuditLog', 'model/PageBankLink', 'model/PageBenchmark',
       'model/PageBudget', 'model/PageBusiness', 'model/PageCard', 'model/PageCardProgram', 'model/PageClient', 'model/PageClientCardVO', 'model/PageClientResponse'
@@ -53,7 +53,7 @@
       'model/PortfolioHoldingLog', 'model/PortfolioTransaction', 'model/Question', 'model/Questionnaire', 'model/ReasonCode', 'model/RiskProfile',
       'model/Score', 'model/SecuritiesComposition', 'model/SecuritiesCountry', 'model/Security', 'model/SecurityCompositionVO', 'model/SecurityCountryVO',
       'model/SecurityExclusion', 'model/SecurityPrice', 'model/Sort', 'model/SpendingControl', 'model/Stage', 'model/State', 'model/StatisticResourceVO', 'model/TokenDateRequest', 'model/TransactionCode', 'model/VAccountVO', 'model/VClientGoalViewData', 'model/VPortfolioVO', 'model/Webhook',
-      'api/AccountApi', 'api/AdminClientApi', 'api/AggregationAccountApi', 'api/AllocationApi', 'api/BenchmarkApi', 'api/BudgetApi', 'api/BulkApi', 'api/BusinessApi', 'api/CardApi', 'api/ClientApi',
+      'api/AccountApi', 'api/AggregationAccountApi', 'api/AllocationApi', 'api/BenchmarkApi', 'api/BudgetApi', 'api/BulkApi', 'api/BusinessApi', 'api/CardApi', 'api/ClientApi',
       'api/DecisionTreeApi', 'api/DocumentApi', 'api/FundingApi', 'api/GoalApi', 'api/HouseholdApi',
       'api/ModelApi', 'api/OrderApi', 'api/PortfolioApi', 'api/QuestionnaireApi', 'api/ResourceApi', 'api/RiskProfileApi',
       'api/ScoreApi', 'api/SecuritiesApi', 'api/SpendingControlApi', 'api/UtilsApi', 'api/WebhookApi'], factory);
@@ -61,7 +61,7 @@
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('./ApiClient'), require('./api/AuthApi'), require('./model/Account'), require('./model/AccountAllocationMapping'),
          require('./model/AccountPermissionVO'), require('./model/AccountPortfolioRebalanceRequest'), require('./model/AccountStatus'),
-        require('./model/AccountType'), require('./model/AclClientPermissionVO'), require('./model/AdminClient'), require('./model/AggregationAccount'),
+        require('./model/AccountType'), require('./model/AclClientPermissionVO'), require('./model/AggregationAccount'),
         require('./model/AggregationAccountBalance'), require('./model/AggregationAccountHolding'), require('./model/AggregationAccountTransaction'),
         require('./model/Allocation'), require('./model/AllocationAggregatedVO'), require('./model/AllocationComposition'),
         require('./model/AllocationCompositionAggregatedVO'), require('./model/AllocationCompositionModelHoldingsVO'), require('./model/AllocationNodeMap'),
@@ -71,7 +71,7 @@
         require('./model/BulkTransaction'), require('./model/BulkTransactionVO'), require('./model/Business'), require('./model/BusinessAddress'),
         require('./model/Card'), require('./model/CardAddress'), require('./model/CardBalanceVO'), require('./model/CardDetailsVO'),
         require('./model/CardProgram'), require('./model/Cash'),  require('./model/Check'), require('./model/CheckImages'), require('./model/Client'),
-        require('./model/ClientAccountMapping'), require('./model/ClientAddress'), require('./model/ClientCardVO'), require('./model/ClientCredentials'),
+        require('./model/ClientAccountMapping'), require('./model/ClientAddress'), require('./model/ClientCardVO'),
         require('./model/ClientRelationship'), require('./model/ClientResponse'), require('./model/ClientStatus'), require('./model/ClientTotalCardBalanceVO'),
         require('./model/ClientViewGoalData'), require('./model/Country'), require('./model/Currency'), require('./model/DateDoubleVO'),
         require('./model/DecisionTree'), require('./model/DecisionTreeCO'), require('./model/DecisionTreeResultVO'), require('./model/Document'),
@@ -85,7 +85,7 @@
         require('./model/NotificationClient'), require('./model/NotificationSetting'), require('./model/Order'), require('./model/OrderBulk'),
         require('./model/OrderReconcileRequest'), require('./model/OrderReconcileReturnObject'), require('./model/OrderStatus'), require('./model/OrderTrack'),
         require('./model/OrderVoClone'),  require('./model/Ownership'), require('./model/PageAccount'), require('./model/PageAccountAllocationMapping'),
-        require('./model/PageAccountPermissionVO'), require('./model/PageAccountStatus'), require('./model/PageAccountType'), require('./model/PageAdminClient'),
+        require('./model/PageAccountPermissionVO'), require('./model/PageAccountStatus'), require('./model/PageAccountType'),
         require('./model/PageAggregationAccount'), require('./model/PageAggregationAccountBalance'), require('./model/PageAggregationAccountHolding'),
         require('./model/PageAggregationAccountTransaction'), require('./model/PageAllocation'), require('./model/PageAllocationComposition'),
         require('./model/PageAnswer'), require('./model/PageApplication'), require('./model/PageAuditLog'), require('./model/PageBankLink'),
@@ -102,7 +102,7 @@
         require('./model/PagePortfolioGoal'), require('./model/PagePortfolioHoldingAgg'), require('./model/PagePortfolioHoldingLog'),
         require('./model/PagePortfolioTransaction'), require('./model/PageQuestion'), require('./model/PageQuestionnaire'),
         require('./model/PageReasonCode'), require('./model/PageRiskProfile'), require('./model/PageScore'), require('./model/PageSecurity'), require('./model/PageSecurityExclusion'), require('./model/PageSecurityPrice'), require('./model/PageSpendingControl'), require('./model/PageStage'), require('./model/PageTransactionCode'), require('./model/PageWebhook'), require('./model/Pageable'), require('./model/PermissionVO'), require('./model/Portfolio'), require('./model/PortfolioAssetSizeLog'), require('./model/PortfolioComment'), require('./model/PortfolioGoal'), require('./model/PortfolioGoalMap'), require('./model/PortfolioHoldingAgg'), require('./model/PortfolioHoldingLog'), require('./model/PortfolioTransaction'), require('./model/Question'), require('./model/Questionnaire'), require('./model/ReasonCode'), require('./model/RiskProfile'), require('./model/Roundup'), require('./model/RoundupCO'), require('./model/RoundupSettings'), require('./model/Score'), require('./model/SecuritiesComposition'), require('./model/SecuritiesCountry'), require('./model/Security'), require('./model/SecurityCompositionVO'), require('./model/SecurityCountryVO'), require('./model/SecurityExclusion'), require('./model/SecurityPrice'), require('./model/Sort'), require('./model/SpendingControl'), require('./model/Stage'), require('./model/Stat'), require('./model/State'), require('./model/StatisticResourceVO'), require('./model/TokenDateRequest'), require('./model/TransactionCode'), require('./model/VAccountVO'), require('./model/VClientGoalViewData'), require('./model/VPortfolioVO'), require('./model/Webhook'),
-        require('./api/AccountApi'), require('./api/AdminClientApi'), require('./api/AggregationAccountApi'), require('./api/AllocationApi'),
+        require('./api/AccountApi'), require('./api/AggregationAccountApi'), require('./api/AllocationApi'),
         require('./api/BenchmarkApi'), require('./api/BudgetApi'), require('./api/BulkApi'), require('./api/BusinessApi'), require('./api/CardApi'),
         require('./api/ClientApi'), require('./api/DecisionTreeApi'), require('./api/DocumentApi'), require('./api/FundingApi'), require('./api/GoalApi'),
         require('./api/HouseholdApi'), require('./api/ModelApi'), require('./api/OrderApi'), require('./api/PortfolioApi'), require('./api/QuestionnaireApi'),
@@ -110,17 +110,17 @@
         require('./api/UtilsApi'), require('./api/WebhookApi'));
   }
 }(function(ApiClient, AuthApi, Account, AccountAllocationMapping, AccountPermissionVO, AccountPortfolioRebalanceRequest, AccountStatus, AccountType,
-           AclClientPermissionVO, AdminClient, AggregationAccount, AggregationAccountBalance, AggregationAccountHolding, AggregationAccountTransaction,
+           AclClientPermissionVO, AggregationAccount, AggregationAccountBalance, AggregationAccountHolding, AggregationAccountTransaction,
            Allocation, AllocationAggregatedVO, AllocationComposition, AllocationCompositionAggregatedVO, AllocationCompositionModelHoldingsVO, AllocationNodeMap,
            Answer, AnswerMap, Application, AuditLog, AvailableDateDoubleVO, BankCredit, BankLink, Benchmark, BenchmarkComposition, Brokers, Budget,
            BudgetAggregationAccount, BudgetObject, BulkTransaction, BulkTransactionVO, Business, BusinessAddress, Card, CardAddress, CardBalanceVO,
-           CardDetailsVO, CardProgram, Cash, Check, CheckImages, Client, ClientAccountMapping, ClientAddress, ClientCardVO, ClientCredentials, ClientRelationship,
+           CardDetailsVO, CardProgram, Cash, Check, CheckImages, Client, ClientAccountMapping, ClientAddress, ClientCardVO, ClientRelationship,
            ClientResponse, ClientStatus, ClientTotalCardBalanceVO, ClientViewGoalData, Country, Currency, DateDoubleVO, DecisionTree, DecisionTreeCO,
            DecisionTreeResultVO, Document, Employment, ExternalAccountTransfer, Feature, FeatureTrack, Funding, FundingTransaction, FxRate, FxRateView, Goal,
            GoalAccountMapping, GoalTrack, GoalTrackAccounts, Household, Institution, Investment, JsonNode, Location, MXMerchantRes, Member, MerchantCategoryCode,
            Model, ModelAssetSize, ModelComment, ModelHolding, ModelHoldingVO, ModelTransaction, Node, NodeRelationship, Notification, NotificationClient,
            NotificationSetting, Order, OrderBulk, OrderReconcileRequest, OrderReconcileReturnObject, OrderStatus, OrderTrack, OrderVoClone,
-           Ownership, PageAccount, PageAccountAllocationMapping, PageAccountPermissionVO, PageAccountStatus, PageAccountType, PageAdminClient,
+           Ownership, PageAccount, PageAccountAllocationMapping, PageAccountPermissionVO, PageAccountStatus, PageAccountType,
            PageAggregationAccount, PageAggregationAccountBalance, PageAggregationAccountHolding, PageAggregationAccountTransaction, PageAllocation,
            PageAllocationComposition, PageAnswer, PageApplication, PageAuditLog, PageBankLink, PageBenchmark, PageBudget, PageBusiness, PageCard,
            PageCardProgram, PageClient, PageClientCardVO, PageClientResponse, PageClientStatus, PageDecisionTree, PageDocument, PageExternalAccountTransfer,
@@ -133,7 +133,7 @@
            PortfolioComment, PortfolioGoal, PortfolioGoalMap, PortfolioHoldingAgg, PortfolioHoldingLog, PortfolioTransaction, Question, Questionnaire,
            ReasonCode, RiskProfile, Score, SecuritiesComposition, SecuritiesCountry, Security, SecurityCompositionVO, SecurityCountryVO, SecurityExclusion,
            SecurityPrice, Sort, SpendingControl, Stage, State, StatisticResourceVO, TokenDateRequest, TransactionCode, VAccountVO, VClientGoalViewData,
-           VPortfolioVO, Webhook, AccountApi, AdminClientApi, AggregationAccountApi, AllocationApi, BenchmarkApi, BudgetApi, BulkApi, BusinessApi, CardApi,
+           VPortfolioVO, Webhook, AccountApi, AggregationAccountApi, AllocationApi, BenchmarkApi, BudgetApi, BulkApi, BusinessApi, CardApi,
            ClientApi, DecisionTreeApi, DocumentApi, FundingApi, GoalApi, HouseholdApi, ModelApi, OrderApi, PortfolioApi, QuestionnaireApi, ResourceApi,
            RiskProfileApi, ScoreApi, SecuritiesApi, SpendingControlApi, UtilsApi, WebhookApi) {
   'use strict';
@@ -217,11 +217,6 @@
      * @property {module:model/AclClientPermissionVO}
      */
     AclClientPermissionVO: AclClientPermissionVO,
-    /**
-     * The AdminClient model constructor.
-     * @property {module:model/AdminClient}
-     */
-    AdminClient: AdminClient,
     /**
      * The AggregationAccount model constructor.
      * @property {module:model/AggregationAccount}
@@ -422,11 +417,6 @@
      * @property {module:model/ClientCardVO}
      */
     ClientCardVO: ClientCardVO,
-    /**
-     * The ClientCredentials model constructor.
-     * @property {module:model/ClientCredentials}
-     */
-    ClientCredentials: ClientCredentials,
     /**
      * The ClientRelationship model constructor.
      * @property {module:model/ClientRelationship}
@@ -712,11 +702,6 @@
      * @property {module:model/PageAccountType}
      */
     PageAccountType: PageAccountType,
-    /**
-     * The PageAdminClient model constructor.
-     * @property {module:model/PageAdminClient}
-     */
-    PageAdminClient: PageAdminClient,
     /**
      * The PageAggregationAccount model constructor.
      * @property {module:model/PageAggregationAccount}
@@ -1207,11 +1192,6 @@
      * @property {module:api/AccountApi}
      */
     AccountApi: AccountApi,
-    /**
-     * The AdminClientApi service constructor.
-     * @property {module:api/AdminClientApi}
-     */
-    AdminClientApi: AdminClientApi,
     /**
      * The AggregationAccountApi service constructor.
      * @property {module:api/AggregationAccountApi}

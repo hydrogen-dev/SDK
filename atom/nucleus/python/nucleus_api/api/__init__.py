@@ -4,7 +4,6 @@ from __future__ import absolute_import
 
 # import apis into api package
 from nucleus_api.api.account_api import AccountApi
-from nucleus_api.api.admin_client_api import AdminClientApi
 from nucleus_api.api.aggregation_account_api import AggregationAccountApi
 from nucleus_api.api.allocation_api import AllocationApi
 from nucleus_api.api.benchmark_api import BenchmarkApi

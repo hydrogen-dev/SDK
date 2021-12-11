@@ -48,8 +48,6 @@ type APIClient struct {
 
 	AccountApi *AccountApiService
 
-	AdminClientApi *AdminClientApiService
-
 	AggregationAccountApi *AggregationAccountApiService
 
 	AllocationApi *AllocationApiService
@@ -127,7 +125,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	// API Services
 	c.AuthConfiguration = (*AuthConfigurationService)(&c.common)
 	c.AccountApi = (*AccountApiService)(&c.common)
-	c.AdminClientApi = (*AdminClientApiService)(&c.common)
 	c.AggregationAccountApi = (*AggregationAccountApiService)(&c.common)
 	c.AllocationApi = (*AllocationApiService)(&c.common)
 	c.BenchmarkApi = (*BenchmarkApiService)(&c.common)

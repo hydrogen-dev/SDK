@@ -17,12 +17,17 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'api/AuthApi', 'api/AutoGenerateAppTokenApi'], factory);
+    define(['ApiClient', 'api/AuthApi', 'api/AutoGenerateAppTokenApi',
+      'model/Client', 'model/ClientAddress', 'model/Card', 'model/CardAddress', 'model/Employment', 'model/PageCard', 'model/PageClient', 'model/Sort', 'api/CardApi', 'api/ClientApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./api/AuthApi'), require('./api/AutoGenerateAppTokenApi'));
+    module.exports = factory(require('./ApiClient'), require('./api/AuthApi'),
+        require('./api/AutoGenerateAppTokenApi'),
+        require('./model/Client'), require('./model/ClientAddress'), require('./model/Employment'), require('./model/PageCard'), require('./model/PageClient'),
+        require('./model/Sort'), require('./model/Card'), require('./model/CardAddress') ,require('./api/CardApi'), require('./api/ClientApi')
+        );
   }
-}(function(ApiClient, AuthApi, AutoGenerateAppTokenApi) {
+}(function(ApiClient, AuthApi,  AutoGenerateAppTokenApi, Card, CardAddress, Client, ClientAddress, Employment, PageCard, PageClient, Sort, CardApi, ClientApi) {
   'use strict';
 
   /**
@@ -63,7 +68,58 @@
      */
     ApiClient: ApiClient,
     AuthApi : AuthApi,
-    AutoGenerateAppTokenApi: AutoGenerateAppTokenApi
+    AutoGenerateAppTokenApi: AutoGenerateAppTokenApi,
+    /**
+     * The Card model constructor.
+     * @property {module:model/Card}
+     */
+    Card: Card,
+    /**
+     * The CardAddress model constructor.
+     * @property {module:model/CardAddress}
+     */
+    CardAddress: CardAddress,
+    /**
+     * The Client model constructor.
+     * @property {module:model/Client}
+     */
+    Client: Client,
+    /**
+     * The ClientAddress model constructor.
+     * @property {module:model/ClientAddress}
+     */
+    ClientAddress: ClientAddress,
+    /**
+     * The Employment model constructor.
+     * @property {module:model/Employment}
+     */
+    Employment: Employment,
+    /**
+     * The PageCard model constructor.
+     * @property {module:model/PageCard}
+     */
+    PageCard: PageCard,
+    /**
+     * The PageClient model constructor.
+     * @property {module:model/PageClient}
+     */
+    PageClient: PageClient,
+    /**
+     * The Sort model constructor.
+     * @property {module:model/Sort}
+     */
+    Sort: Sort,
+    /**
+     * The CardApi service constructor.
+     * @property {module:api/CardApi}
+     */
+    CardApi: CardApi,
+    /**
+     * The ClientApi service constructor.
+     * @property {module:api/ClientApi}
+     */
+    ClientApi: ClientApi
+
   };
 
   return exports;

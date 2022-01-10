@@ -40,7 +40,7 @@ class Configuration(object):
             return
 
         # Default Base url
-        self.host = "https://api.hydrogenplatform.com/component/v1"
+        self.host = "https://api.hydrogenplatform.com"
         # Temp file folder for downloading files
         self.temp_folder_path = None
 

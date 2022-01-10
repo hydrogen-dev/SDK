@@ -35,12 +35,12 @@ setup(
     version=VERSION,
     description="Hydrogen App Token API",
     author_email="info@hydrogenplatform.com",
-    url="",
-    keywords=["Swagger", "Hydrogen App Token API"],
+    url="https://www.hydrogenplatform.com",
+    keywords=["Swagger", "Hydrogen Nucleus API"],
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,
     long_description="""\
-    The Ap p Token API  # noqa: E501
+    The App Token API  # noqa: E501
     """
 )

@@ -36,10 +36,10 @@ Follow steps to verify the base URL path:
 2. Search for basePath and change/verify the URL according to the environment.
 
 **Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/component/v1
+https://sandbox.hydrogenplatform.com
 
 **Production Base URL**
-https://api.hydrogenplatform.com/component/v1
+https://api.hydrogenplatform.com
 
 ### Sample Code
 Now you are ready to execute the following Java code:
@@ -58,7 +58,7 @@ public class AppTokenApiExample {
                         .setPassword("xxxxx")
                         .setPublicKey("xxxxx")
                         .setAppNames(asList(new AppConfig().setAppName("pfm_cash_flow").setAuthType("password_credentials")))
-                        .setBasePath("https://api.hydrogenplatform.com/component/v1")
+                        .setBasePath(Environment.PRODUCTION)
                         .setAttributes(asList(
                                                 new TagAttributes().setName("card-id").setValue("xxxxx")
                                                 ,new TagAttributes().setName("client-id").setValue("xxxxx"))

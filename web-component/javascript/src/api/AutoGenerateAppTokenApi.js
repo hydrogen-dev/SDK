@@ -144,7 +144,7 @@
 
         async function getAppToken (apiClient, appName) {
           const req = apiClient.callApi(
-                    '/app_token?app_name=' + appName, 'GET',
+                    '/component/v1/app_token?app_name=' + appName, 'GET',
                     pathParams, {}, {}, headerParams, formParams, postBody,
                     authNames, contentTypes, accepts, [AppToken], null
                   );

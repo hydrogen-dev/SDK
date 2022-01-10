@@ -75,7 +75,7 @@ class AppTokenApi
         HeaderSelector $selector = null
     ) {
         $this->client = $client ?: new Client();
-        $this->config = $config ?: new Configuration();
+        $this->config = $config ?: Configuration::getDefaultConfiguration();
         $this->headerSelector = $selector ?: new HeaderSelector();
     }
 
@@ -268,7 +268,7 @@ class AppTokenApi
             );
         }
 
-        $resourcePath = '/app_token';
+        $resourcePath = '/component/v1/app_token';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

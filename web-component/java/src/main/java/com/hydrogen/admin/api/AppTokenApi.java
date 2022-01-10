@@ -66,7 +66,7 @@ public class AppTokenApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/app_token";
+        String localVarPath = "/component/v1/app_token";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();

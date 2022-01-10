@@ -78,7 +78,7 @@ class AutoGenerateAppTokenApi
         HeaderSelector $selector = null
     ) {
         $this->client = $client ?: new Client();
-        $this->config = $config ?: new Configuration();
+        $this->config = $config ?: Configuration::getDefaultConfiguration();
         $this->headerSelector = $selector ?: new HeaderSelector();
         //$this->auth_client_api = new AuthApiClient();
     }
@@ -313,7 +313,7 @@ class AutoGenerateAppTokenApi
     protected function getWhiteLabelUsingGETRequest($app_token_config)
     {
        
-        $resourcePath = '/white_label/application?size=10000';
+        $resourcePath = '/component/v1/white_label/application?size=10000';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -414,7 +414,7 @@ class AutoGenerateAppTokenApi
             );
         }
 
-        $resourcePath = '/app_token';
+        $resourcePath = '/component/v1/app_token';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

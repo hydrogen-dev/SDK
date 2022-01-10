@@ -112,7 +112,7 @@ class AppTokenApi(object):
         auth_settings = ['oauth2']  # noqa: E501
 
         return self.api_client.call_api(
-            '/app_token', 'GET',
+            '/component/v1/app_token', 'GET',
             path_params,
             query_params,
             header_params,

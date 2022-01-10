@@ -198,7 +198,7 @@ namespace IO.Swagger.Api
             if (appName == null)
                 throw new ApiException(400, "Missing required parameter 'appName' when calling AppTokenApi->GetAppTokenUsingGET");
 
-            var localVarPath = "/app_token";
+            var localVarPath = "/component/v1/app_token";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -273,7 +273,7 @@ namespace IO.Swagger.Api
             if (appName == null)
                 throw new ApiException(400, "Missing required parameter 'appName' when calling AppTokenApi->GetAppTokenUsingGET");
 
-            var localVarPath = "/app_token";
+            var localVarPath = "/component/v1/app_token";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);

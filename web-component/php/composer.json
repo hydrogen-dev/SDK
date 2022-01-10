@@ -1,5 +1,5 @@
 {
-    "name": "admin",
+    "name": "hydrogenplatform/admin",
     "description": "",
     "keywords": [
         "swagger",
@@ -7,12 +7,12 @@
         "sdk",
         "api"
     ],
-    "homepage": "http://swagger.io",
+    "homepage": "https://www.hydrogenplatform.com",
     "license": "proprietary",
     "authors": [
         {
-            "name": "Swagger and contributors",
-            "homepage": "https://github.com/swagger-api/swagger-codegen"
+            "name": "Hydrogen Integration",
+            "homepage": "https://github.com/hydrogen-dev/web-component-sdk-php"
         }
     ],
     "require": {

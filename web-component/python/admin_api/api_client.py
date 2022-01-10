@@ -18,6 +18,7 @@ from multiprocessing.pool import ThreadPool
 import os
 import re
 import tempfile
+from pprint import pprint
 
 # python 2 and python 3 compatibility library
 import six
@@ -152,7 +153,8 @@ class ApiClient(object):
 
         # request url
         url = self.configuration.host + resource_path
-
+        pprint(url)
+        pprint(self.configuration.access_token)
         # perform request and return response
         response_data = self.request(
             method, url, query_params=query_params, headers=header_params,

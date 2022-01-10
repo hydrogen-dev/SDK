@@ -81,7 +81,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://sandbox.hydrogenplatform.com/component/v1';
+    protected $host = 'https://sandbox.hydrogenplatform.com';
 
     /**
      * User agent of the HTTP request, set to "PHP-Swagger" by default

@@ -45,6 +45,7 @@ class AuthApi(object):
             "Authorization": urllib3.util.make_headers(basic_auth=client_id + ':' + client_secret).get('authorization')
         }
 
+
         response = self.api_client.rest_client.POST(url,
                                                     query_params=query_params,
                                                     headers=header_params,

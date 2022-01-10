@@ -121,7 +121,7 @@ public class AutoGenerateAppTokenApi {
         if(appTokenConfig.getBasePath() == null){
             throw new ApiException("Missing the required parameter 'basePath' when calling getAppTokenUsingGET");
         }
-        apiClient.setBasePath(appTokenConfig.getBasePath());
+        apiClient.setBasePath(appTokenConfig.getBasePath().getUrl());
         List<Map<String, String>> resp = getAppTokenUsingGETWithHttpInfo();
         return resp;
     }

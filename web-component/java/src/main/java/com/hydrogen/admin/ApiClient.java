@@ -52,7 +52,7 @@ import com.hydrogen.admin.auth.OAuth;
 
 public class ApiClient {
 
-    private String basePath = "https://api.hydrogenplatform.com/component/v1";
+    private String basePath = "https://api.hydrogenplatform.com";
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
     private String tempFolderPath = null;
@@ -337,6 +337,14 @@ public class ApiClient {
             }
         }
         throw new RuntimeException("No OAuth2 authentication configured!");
+    }
+    public String getAccessToken() {
+        for (Authentication value : authentications.values()) {
+            if (value instanceof OAuth) {
+                return ((OAuth) value).getAccessToken();
+            }
+        }
+        return null;
     }
 
     /**

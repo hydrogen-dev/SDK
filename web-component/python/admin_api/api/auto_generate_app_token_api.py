@@ -137,7 +137,7 @@ class AutoGenerateAppTokenApi(object):
                 self.api_client.configuration.access_token = passwordTokenData.access_token
                 
             appTokenData = self.api_client.call_api(
-                                                    '/app_token?app_name='+app['app_name'], 'GET',
+                                                    '/component/v1/app_token?app_name='+app['app_name'], 'GET',
                                                     path_params,
                                                     [],
                                                     header_params,

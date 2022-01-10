@@ -14,6 +14,7 @@
 package com.hydrogen.admin.model;
 
 import com.google.gson.annotations.SerializedName;
+import com.hydrogen.admin.Environment;
 import io.swagger.annotations.ApiModelProperty;
 import org.threeten.bp.OffsetDateTime;
 
@@ -26,15 +27,17 @@ public class AppTokenConfig {
 
     private String clientId;
     private String clientSecret;
+    private String clientToken;
     private String username;
     private String password;
     private String publicKey;
     private String userAccessToken;
-    private String basePath;
+    private Environment basePath;
     private boolean isCredsPassed;
     private boolean isEmbed;
     private List<AppConfig> appNames = new ArrayList<>();
     private List<TagAttributes> attributes = new ArrayList<>();
+    private String authType;
 
     public String getClientId() {
         return clientId;
@@ -126,12 +129,30 @@ public class AppTokenConfig {
         return this;
     }
 
-    public String getBasePath() {
+    public Environment getBasePath() {
         return basePath;
     }
 
-    public AppTokenConfig setBasePath(String basePath) {
+    public AppTokenConfig setBasePath(Environment basePath) {
         this.basePath = basePath;
+        return this;
+    }
+
+    public String getAuthType() {
+        return authType;
+    }
+
+    public AppTokenConfig setAuthType(String authType) {
+        this.authType = authType;
+        return this;
+    }
+
+    public String getClientToken() {
+        return clientToken;
+    }
+
+    public AppTokenConfig setClientToken(String clientToken) {
+        this.clientToken = clientToken;
         return this;
     }
 }

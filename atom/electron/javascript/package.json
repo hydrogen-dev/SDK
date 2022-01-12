@@ -1,0 +1,22 @@
+{
+  "name": "@hydrogenplatform/hydrogen-electron-api",
+  "version": "1.3.1",
+  "description": "The_Hydrogen_Electron_API",
+  "license": "Unlicense",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "browser": {
+    "fs": false
+  },
+  "dependencies": {
+    "superagent": "^6.1.0",
+    "querystring": "0.2.0"
+  },
+  "devDependencies": {
+    "expect.js": "~0.3.1",
+    "mocha": "^9.1.3",
+    "sinon": "1.17.3"
+  }
+}

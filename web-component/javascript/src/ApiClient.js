@@ -182,7 +182,7 @@
    * @returns {Boolean} <code>true</code> if <code>param</code> represents a file.
    */
   exports.prototype.isFileParam = function(param) {
-    // fs.ReadStream in Node.js and Electron (but not in runtime like browserify)
+    // fs.ReadStream in Node.js and Admin (but not in runtime like browserify)
     if (typeof require === 'function') {
       var fs;
       try {

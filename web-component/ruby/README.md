@@ -67,7 +67,7 @@ appTokenConfig['clientSecret'] = "xxxx"
 appTokenConfig['username'] = "xxxx"
 appTokenConfig['password'] = "xxxx"
 appTokenConfig['basePath'] = "https://api.hydrogenplatform.com"
-
+appTokenConfig['authType'] = "client_credentials"
 
 begin
   #getAppToken

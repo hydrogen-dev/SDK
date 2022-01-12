@@ -1,7 +1,7 @@
 package com.hydrogen.admin;
 
 public enum Environment {
-    SANDBOX("https://dev.hydrogenplatform.com"),
+    SANDBOX("https://sandbox.hydrogenplatform.com"),
     PRODUCTION("https://api.hydrogenplatform.com");
 
     private String url;

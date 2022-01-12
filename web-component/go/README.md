@@ -74,7 +74,7 @@ func main() {
 	var tagAttributes = sw.TagAttributes{};
 	tagAttributes.Name = "<client_id>";
 	tagAttributes.Value = "<client_id_value>";
-	appTokenConfig.BasePath = "https://api.hydrogenplatform.com/admin/v1";
+	appTokenConfig.BasePath = "https://api.hydrogenplatform.com";
 	appTokenConfig.ClientId = "xxxx";
 	appTokenConfig.ClientSecret = "xxxx";
 	appTokenConfig.AppNames = []sw.AppConfig{appConfig}

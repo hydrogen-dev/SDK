@@ -35,10 +35,10 @@ Follow steps to verify the base URL path:
 2.  Search for $host and change/verify the URL according to the environment.
 
 **Sandbox Base URL**
-https://sandbox.hydrogenplatform.com/component/v1
+https://sandbox.hydrogenplatform.com
 
 **Production Base URL**
-https://api.hydrogenplatform.com/component/v1
+https://api.hydrogenplatform.com
 
 ### Sample Code
 Now you are ready to execute the following PHP code:
@@ -68,7 +68,7 @@ $attribMap = array (
 
 
 $appTokenConfig['appName'] = array(array('app_name'=>'pfm_cash_flow', 'auth_type'=>'password_credentials'))
-$appTokenConfig['basePath'] = "https://api.hydrogenplatform.com/component/v1";
+$appTokenConfig['basePath'] = \com\hydrogen\admin\Environment::PRODUCTION;
 $appTokenConfig['userAccessToken'] = '';
 $appTokenConfig['attribMap'] = $attribMap;
 $appTokenConfig['isEmbed'] = true;
@@ -77,7 +77,7 @@ $appTokenConfig['clientId'] = '****';
 $appTokenConfig['clientSecret'] = '****';
 $appTokenConfig['username'] = "****";
 $appTokenConfig['password'] = "****";
-
+$appTokenConfig['auth_type'] = 'client_credentials';
 
 try {
     $result = $apiInstance->getAppTokenUsingGET($appTokenConfig);

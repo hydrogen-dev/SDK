@@ -76,7 +76,7 @@ namespace csharp_demo
              TagAttributes tagAttributes = new IO.Swagger.Model.TagAttributes();
              tagAttributes.name = "client_id";
              tagAttributes.value = "client_id_value";
-             appTokenConfig.basePath = "https://api.hydrogenplatform.com/admin/v1";
+             appTokenConfig.basePath = "https://api.hydrogenplatform.com";
              appTokenConfig.clientId = "xxxxx";
              appTokenConfig.clientSecret = "xxxxx";
              appTokenConfig.appNames = new List<AppConfig>{appConfig};

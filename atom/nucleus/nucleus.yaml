@@ -18006,6 +18006,13 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/ClientAddress'
+      authorities:
+        type: array
+        example:
+          - ROLE_CLIENT
+        description: authorities
+        items:
+          type: string
       business_id:
         type: string
         format: uuid
@@ -18033,7 +18040,8 @@ definitions:
       create_date:
         type: string
         format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
+        example: 2018-06-28T18:17:23.579+0000
+        readOnly: true
       date_of_birth:
         type: string
         example: '1900-01-01'
@@ -18062,7 +18070,8 @@ definitions:
         description: gender
       group:
         type: array
-        example: group
+        example:
+          - Entertainment
         description: group
         items:
           type: string
@@ -18074,6 +18083,7 @@ definitions:
         type: string
         format: uuid
         example: 000183ac-2288-4564-a76b-119f4694be98
+        readOnly: true
       identification_number:
         type: string
         example: 111-22-3333
@@ -18112,12 +18122,17 @@ definitions:
         type: object
         example: {}
         description: metadata
+        readOnly: true
         additionalProperties:
           type: string
       middle_name:
         type: string
         example: Joe
         description: middleName
+      password:
+        type: string
+        example: admin@123
+        description: password
       phone_number:
         type: string
         example: 222-222-2222
@@ -18125,6 +18140,7 @@ definitions:
       secondary_id:
         type: string
         example: 7289243787238
+        readOnly: true
       status:
         type: string
         example: xyz
@@ -18145,7 +18161,8 @@ definitions:
       update_date:
         type: string
         format: date-time
-        example: '2018-06-28T18:17:23.579+0000'
+        example: 2018-06-28T18:17:23.579+0000
+        readOnly: true
       username:
         type: string
         example: sample@example.com

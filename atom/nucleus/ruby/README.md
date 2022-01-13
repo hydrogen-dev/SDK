@@ -1,7 +1,7 @@
 # Hydrogen Nucleus API
 
 Hydrogen Nucleus API
-- API version: 1.9.4
+- API version: 1.9.5
   - Build date: 01-07-2021
 
 For more information, please visit [https://www.hydrogenplatform.com/apis](https://www.hydrogenplatform.com/apis)
@@ -25,7 +25,7 @@ gem install hydrogen-nucleus-api
 
 The add this to the Gemfile:
 
-    gem 'hydrogen-nucleus-api', '~> 1.9', '>= 1.9.4'
+    gem 'hydrogen-nucleus-api', '~> 1.9', '>= 1.9.5'
 
 ## Getting Started
 

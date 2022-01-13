@@ -84,6 +84,13 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "authorities"
+     */
+    public function testPropertyAuthorities()
+    {
+    }
+
+    /**
      * Test attribute "business_id"
      */
     public function testPropertyBusinessId()
@@ -262,6 +269,13 @@ class ClientTest extends \PHPUnit_Framework_TestCase
      * Test attribute "middle_name"
      */
     public function testPropertyMiddleName()
+    {
+    }
+
+    /**
+     * Test attribute "password"
+     */
+    public function testPropertyPassword()
     {
     }
 

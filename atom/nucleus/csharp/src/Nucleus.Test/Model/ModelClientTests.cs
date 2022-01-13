@@ -75,6 +75,14 @@ namespace Nucleus.Test
             // TODO unit test for the property 'Address'
         }
         /// <summary>
+        /// Test the property 'Authorities'
+        /// </summary>
+        [Test]
+        public void AuthoritiesTest()
+        {
+            // TODO unit test for the property 'Authorities'
+        }
+        /// <summary>
         /// Test the property 'BusinessId'
         /// </summary>
         [Test]
@@ -281,6 +289,14 @@ namespace Nucleus.Test
         public void MiddleNameTest()
         {
             // TODO unit test for the property 'MiddleName'
+        }
+        /// <summary>
+        /// Test the property 'Password'
+        /// </summary>
+        [Test]
+        public void PasswordTest()
+        {
+            // TODO unit test for the property 'Password'
         }
         /// <summary>
         /// Test the property 'PhoneNumber'

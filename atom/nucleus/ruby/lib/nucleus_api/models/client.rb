@@ -17,6 +17,9 @@ module NucleusApi
   class Client
     attr_accessor :address
 
+    # authorities
+    attr_accessor :authorities
+
     # business_id
     attr_accessor :business_id
 
@@ -92,6 +95,9 @@ module NucleusApi
     # middleName
     attr_accessor :middle_name
 
+    # password
+    attr_accessor :password
+
     # phoneNumber
     attr_accessor :phone_number
 
@@ -118,6 +124,7 @@ module NucleusApi
     def self.attribute_map
       {
         :'address' => :'address',
+        :'authorities' => :'authorities',
         :'business_id' => :'business_id',
         :'citizenship_status' => :'citizenship_status',
         :'client_type' => :'client_type',
@@ -144,6 +151,7 @@ module NucleusApi
         :'liquid_net_worth' => :'liquid_net_worth',
         :'metadata' => :'metadata',
         :'middle_name' => :'middle_name',
+        :'password' => :'password',
         :'phone_number' => :'phone_number',
         :'secondary_id' => :'secondary_id',
         :'status' => :'status',
@@ -159,6 +167,7 @@ module NucleusApi
     def self.swagger_types
       {
         :'address' => :'Array<ClientAddress>',
+        :'authorities' => :'Array<String>',
         :'business_id' => :'String',
         :'citizenship_status' => :'String',
         :'client_type' => :'String',
@@ -185,6 +194,7 @@ module NucleusApi
         :'liquid_net_worth' => :'Float',
         :'metadata' => :'Hash<String, String>',
         :'middle_name' => :'String',
+        :'password' => :'String',
         :'phone_number' => :'String',
         :'secondary_id' => :'String',
         :'status' => :'String',
@@ -207,6 +217,12 @@ module NucleusApi
       if attributes.has_key?(:'address')
         if (value = attributes[:'address']).is_a?(Array)
           self.address = value
+        end
+      end
+
+      if attributes.has_key?(:'authorities')
+        if (value = attributes[:'authorities']).is_a?(Array)
+          self.authorities = value
         end
       end
 
@@ -320,6 +336,10 @@ module NucleusApi
         self.middle_name = attributes[:'middle_name']
       end
 
+      if attributes.has_key?(:'password')
+        self.password = attributes[:'password']
+      end
+
       if attributes.has_key?(:'phone_number')
         self.phone_number = attributes[:'phone_number']
       end
@@ -382,6 +402,7 @@ module NucleusApi
       return true if self.equal?(o)
       self.class == o.class &&
           address == o.address &&
+          authorities == o.authorities &&
           business_id == o.business_id &&
           citizenship_status == o.citizenship_status &&
           client_type == o.client_type &&
@@ -408,6 +429,7 @@ module NucleusApi
           liquid_net_worth == o.liquid_net_worth &&
           metadata == o.metadata &&
           middle_name == o.middle_name &&
+          password == o.password &&
           phone_number == o.phone_number &&
           secondary_id == o.secondary_id &&
           status == o.status &&
@@ -427,14 +449,13 @@ module NucleusApi
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [address, business_id, citizenship_status, client_type, country_of_citizenship, country_of_residence, create_date, date_of_birth, email, employment, firm_name, firm_type, first_name, gender, group, hydro_id, id, identification_number, identification_number_type, image, income, is_active, is_verified, last_name, liquid_net_worth, metadata, middle_name, phone_number, secondary_id, status, suffix, title, total_net_worth, update_date, username].hash
+      [address, authorities, business_id, citizenship_status, client_type, country_of_citizenship, country_of_residence, create_date, date_of_birth, email, employment, firm_name, firm_type, first_name, gender, group, hydro_id, id, identification_number, identification_number_type, image, income, is_active, is_verified, last_name, liquid_net_worth, metadata, middle_name, password, phone_number, secondary_id, status, suffix, title, total_net_worth, update_date, username].hash
     end
 
     # Builds the object from hash
     # @param [Hash] attributes Model attributes in the form of hash
     # @return [Object] Returns the model itself
     def build_from_hash(attributes)
-      return nil unless attributes.is_a?(Hash)
       self.class.swagger_types.each_pair do |key, type|
         if type =~ /\AArray<(.*)>/i
           # check to ensure the input is an array given that the attribute
@@ -457,9 +478,9 @@ module NucleusApi
     def _deserialize(type, value)
       case type.to_sym
       when :DateTime
-        DateTime.parse(value)
+        (value)
       when :Date
-        Date.parse(value)
+        (value)
       when :String
         value.to_s
       when :Integer
@@ -510,7 +531,6 @@ module NucleusApi
       hash = {}
       self.class.attribute_map.each_pair do |attr, param|
         value = self.send(attr)
-        next if value.nil?
         hash[param] = _to_hash(value)
       end
       hash

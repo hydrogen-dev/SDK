@@ -10,10 +10,11 @@
 
 package nucleus_api
 
-
 // Client Object
 type Client struct {
 	Address []ClientAddress `json:"address,omitempty"`
+	// authorities
+	Authorities []string `json:"authorities,omitempty"`
 	// business_id
 	BusinessId string `json:"business_id,omitempty"`
 	// citizenshipStatus
@@ -23,7 +24,7 @@ type Client struct {
 	// countryOfCitizenship
 	CountryOfCitizenship []string `json:"country_of_citizenship,omitempty"`
 	// countryOfResidence
-	CountryOfResidence string    `json:"country_of_residence,omitempty"`
+	CountryOfResidence string `json:"country_of_residence,omitempty"`
 	CreateDate         string `json:"create_date,omitempty"`
 	// dateOfBirth
 	DateOfBirth string `json:"date_of_birth,omitempty"`
@@ -39,7 +40,7 @@ type Client struct {
 	// gender
 	Gender string `json:"gender,omitempty"`
 	// group
-	Group string `json:"group,omitempty"`
+	Group []string `json:"group,omitempty"`
 	// hydroId
 	HydroId string `json:"hydro_id,omitempty"`
 	Id      string `json:"id,omitempty"`
@@ -63,6 +64,8 @@ type Client struct {
 	Metadata map[string]string `json:"metadata,omitempty"`
 	// middleName
 	MiddleName string `json:"middle_name,omitempty"`
+	// password
+	Password string `json:"password,omitempty"`
 	// phoneNumber
 	PhoneNumber string `json:"phone_number,omitempty"`
 	SecondaryId string `json:"secondary_id,omitempty"`
@@ -73,8 +76,8 @@ type Client struct {
 	// title
 	Title string `json:"title,omitempty"`
 	// totalNetWorth
-	TotalNetWorth float64   `json:"total_net_worth,omitempty"`
-	UpdateDate    string `json:"update_date,omitempty"`
+	TotalNetWorth float64 `json:"total_net_worth,omitempty"`
+	UpdateDate    string  `json:"update_date,omitempty"`
 	// username
 	Username string `json:"username"`
 }

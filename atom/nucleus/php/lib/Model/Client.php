@@ -59,6 +59,7 @@ class Client implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'address' => '\com\hydrogen\nucleus\Model\ClientAddress[]',
+        'authorities' => 'string[]',
         'business_id' => 'string',
         'citizenship_status' => 'string',
         'client_type' => 'string',
@@ -85,6 +86,7 @@ class Client implements ModelInterface, ArrayAccess
         'liquid_net_worth' => 'double',
         'metadata' => 'map[string,string]',
         'middle_name' => 'string',
+        'password' => 'string',
         'phone_number' => 'string',
         'secondary_id' => 'string',
         'status' => 'string',
@@ -102,6 +104,7 @@ class Client implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'address' => null,
+        'authorities' => null,
         'business_id' => 'uuid',
         'citizenship_status' => null,
         'client_type' => null,
@@ -128,6 +131,7 @@ class Client implements ModelInterface, ArrayAccess
         'liquid_net_worth' => 'double',
         'metadata' => null,
         'middle_name' => null,
+        'password' => null,
         'phone_number' => null,
         'secondary_id' => null,
         'status' => null,
@@ -166,6 +170,7 @@ class Client implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'address' => 'address',
+        'authorities' => 'authorities',
         'business_id' => 'business_id',
         'citizenship_status' => 'citizenship_status',
         'client_type' => 'client_type',
@@ -192,6 +197,7 @@ class Client implements ModelInterface, ArrayAccess
         'liquid_net_worth' => 'liquid_net_worth',
         'metadata' => 'metadata',
         'middle_name' => 'middle_name',
+        'password' => 'password',
         'phone_number' => 'phone_number',
         'secondary_id' => 'secondary_id',
         'status' => 'status',
@@ -209,6 +215,7 @@ class Client implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'address' => 'setAddress',
+        'authorities' => 'setAuthorities',
         'business_id' => 'setBusinessId',
         'citizenship_status' => 'setCitizenshipStatus',
         'client_type' => 'setClientType',
@@ -235,6 +242,7 @@ class Client implements ModelInterface, ArrayAccess
         'liquid_net_worth' => 'setLiquidNetWorth',
         'metadata' => 'setMetadata',
         'middle_name' => 'setMiddleName',
+        'password' => 'setPassword',
         'phone_number' => 'setPhoneNumber',
         'secondary_id' => 'setSecondaryId',
         'status' => 'setStatus',
@@ -252,6 +260,7 @@ class Client implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'address' => 'getAddress',
+        'authorities' => 'getAuthorities',
         'business_id' => 'getBusinessId',
         'citizenship_status' => 'getCitizenshipStatus',
         'client_type' => 'getClientType',
@@ -278,6 +287,7 @@ class Client implements ModelInterface, ArrayAccess
         'liquid_net_worth' => 'getLiquidNetWorth',
         'metadata' => 'getMetadata',
         'middle_name' => 'getMiddleName',
+        'password' => 'getPassword',
         'phone_number' => 'getPhoneNumber',
         'secondary_id' => 'getSecondaryId',
         'status' => 'getStatus',
@@ -349,6 +359,7 @@ class Client implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
+        $this->container['authorities'] = isset($data['authorities']) ? $data['authorities'] : null;
         $this->container['business_id'] = isset($data['business_id']) ? $data['business_id'] : null;
         $this->container['citizenship_status'] = isset($data['citizenship_status']) ? $data['citizenship_status'] : null;
         $this->container['client_type'] = isset($data['client_type']) ? $data['client_type'] : null;
@@ -375,6 +386,7 @@ class Client implements ModelInterface, ArrayAccess
         $this->container['liquid_net_worth'] = isset($data['liquid_net_worth']) ? $data['liquid_net_worth'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
         $this->container['middle_name'] = isset($data['middle_name']) ? $data['middle_name'] : null;
+        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['secondary_id'] = isset($data['secondary_id']) ? $data['secondary_id'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
@@ -435,6 +447,30 @@ class Client implements ModelInterface, ArrayAccess
     public function setAddress($address)
     {
         $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Gets authorities
+     *
+     * @return string[]
+     */
+    public function getAuthorities()
+    {
+        return $this->container['authorities'];
+    }
+
+    /**
+     * Sets authorities
+     *
+     * @param string[] $authorities authorities
+     *
+     * @return $this
+     */
+    public function setAuthorities($authorities)
+    {
+        $this->container['authorities'] = $authorities;
 
         return $this;
     }
@@ -1059,6 +1095,30 @@ class Client implements ModelInterface, ArrayAccess
     public function setMiddleName($middle_name)
     {
         $this->container['middle_name'] = $middle_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->container['password'];
+    }
+
+    /**
+     * Sets password
+     *
+     * @param string $password password
+     *
+     * @return $this
+     */
+    public function setPassword($password)
+    {
+        $this->container['password'] = $password;
 
         return $this;
     }

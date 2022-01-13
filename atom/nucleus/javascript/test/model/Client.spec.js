@@ -23,9 +23,9 @@
     factory(require('expect.js'), require('../../src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.HydrogenElectronApi);
+    factory(root.expect, root.HydrogenNucleusApi);
   }
-}(this, function(expect, HydrogenElectronApi) {
+}(this, function(expect, HydrogenNucleusApi) {
   'use strict';
 
   var instance;
@@ -33,12 +33,12 @@
   describe('(package)', function() {
     describe('Client', function() {
       beforeEach(function() {
-        instance = new HydrogenElectronApi.Client();
+        instance = new HydrogenNucleusApi.Client();
       });
 
       it('should create an instance of Client', function() {
         // TODO: update the code to test Client
-        expect(instance).to.be.a(HydrogenElectronApi.Client);
+        expect(instance).to.be.a(HydrogenNucleusApi.Client);
       });
 
       it('should have the property address (base name: "address")', function() {

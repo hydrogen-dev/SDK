@@ -14,7 +14,6 @@
  *
  */
 
-
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
@@ -63,6 +62,8 @@
       obj = obj || new exports();
       if (data.hasOwnProperty('address'))
         obj.address = ApiClient.convertToType(data['address'], [ClientAddress]);
+      if (data.hasOwnProperty('authorities'))
+        obj.authorities = ApiClient.convertToType(data['authorities'], ['String']);
       if (data.hasOwnProperty('business_id'))
         obj.businessId = ApiClient.convertToType(data['business_id'], 'String');
       if (data.hasOwnProperty('citizenship_status'))
@@ -115,6 +116,8 @@
         obj.metadata = ApiClient.convertToType(data['metadata'], {'String': 'String'});
       if (data.hasOwnProperty('middle_name'))
         obj.middleName = ApiClient.convertToType(data['middle_name'], 'String');
+      if (data.hasOwnProperty('password'))
+        obj.password = ApiClient.convertToType(data['password'], 'String');
       if (data.hasOwnProperty('phone_number'))
         obj.phoneNumber = ApiClient.convertToType(data['phone_number'], 'String');
       if (data.hasOwnProperty('secondary_id'))
@@ -139,6 +142,12 @@
    * @member {Array.<module:model/ClientAddress>} address
    */
   exports.prototype.address = undefined;
+
+  /**
+   * authorities
+   * @member {Array.<String>} authorities
+   */
+  exports.prototype.authorities = undefined;
 
   /**
    * business_id
@@ -292,6 +301,12 @@
    * @member {String} middleName
    */
   exports.prototype.middleName = undefined;
+
+  /**
+   * password
+   * @member {String} password
+   */
+  exports.prototype.password = undefined;
 
   /**
    * phoneNumber

@@ -6,12 +6,12 @@
     <packaging>jar</packaging>
     <name>app-token-api</name>
     <version>1.0.0</version>
-    <url>https://github.com/swagger-api/swagger-codegen</url>
-    <description>Swagger Java</description>
+    <url>https://www.hydrogenplatform.com</url>
+    <description>Hydrogen Platform</description>
     <scm>
-        <connection>scm:git:git@github.com:swagger-api/swagger-codegen.git</connection>
-        <developerConnection>scm:git:git@github.com:swagger-api/swagger-codegen.git</developerConnection>
-        <url>https://github.com/swagger-api/swagger-codegen</url>
+        <connection>scm:git:git@github.com:hydrogen-dev/SDK.git</connection>
+        <developerConnection>scm:git:git@github.com:hydrogen-dev/SDK.git</developerConnection>
+        <url>https://github.com/hydrogen-dev/SDK/tree/master/web-component/java</url>
     </scm>
     <distributionManagement>
         <snapshotRepository>

@@ -5,7 +5,7 @@
     <artifactId>hydrogen-nucleus-api</artifactId>
     <packaging>jar</packaging>
     <name>hydrogen-nucleus-api</name>
-    <version>1.9.4</version>
+    <version>1.9.5</version>
     <url>https://www.hydrogenplatform.com</url>
     <description>Hydrogen Platform</description>
     <scm>

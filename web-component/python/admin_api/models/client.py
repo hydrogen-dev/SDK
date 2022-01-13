@@ -1,5 +1,6 @@
 # coding: utf-8
 
+
 """
     Hydrogen Admin API
 
@@ -34,6 +35,7 @@ class Client(object):
     """
     swagger_types = {
         'address': 'list[ClientAddress]',
+        'authorities': 'list[str]',
         'business_id': 'str',
         'citizenship_status': 'str',
         'client_type': 'str',
@@ -60,6 +62,7 @@ class Client(object):
         'liquid_net_worth': 'float',
         'metadata': 'dict(str, str)',
         'middle_name': 'str',
+        'password': 'str',
         'phone_number': 'str',
         'secondary_id': 'str',
         'status': 'str',
@@ -72,6 +75,7 @@ class Client(object):
 
     attribute_map = {
         'address': 'address',
+        'authorities': 'authorities',
         'business_id': 'business_id',
         'citizenship_status': 'citizenship_status',
         'client_type': 'client_type',
@@ -98,6 +102,7 @@ class Client(object):
         'liquid_net_worth': 'liquid_net_worth',
         'metadata': 'metadata',
         'middle_name': 'middle_name',
+        'password': 'password',
         'phone_number': 'phone_number',
         'secondary_id': 'secondary_id',
         'status': 'status',
@@ -108,13 +113,14 @@ class Client(object):
         'username': 'username'
     }
 
-    def __init__(self, address=None, business_id=None, citizenship_status=None, client_type=None, country_of_citizenship=None, country_of_residence=None, create_date=None, date_of_birth=None, email=None, employment=None, firm_name=None, firm_type=None, first_name=None, gender=None, group=None, hydro_id=None, id=None, identification_number=None, identification_number_type=None, image=None, income=None, is_active=None, is_verified=None, last_name=None, liquid_net_worth=None, metadata=None, middle_name=None, phone_number=None, secondary_id=None, status=None, suffix=None, title=None, total_net_worth=None, update_date=None, username=None, _configuration=None):  # noqa: E501
+    def __init__(self, address=None, authorities=None, business_id=None, citizenship_status=None, client_type=None, country_of_citizenship=None, country_of_residence=None, create_date=None, date_of_birth=None, email=None, employment=None, firm_name=None, firm_type=None, first_name=None, gender=None, group=None, hydro_id=None, id=None, identification_number=None, identification_number_type=None, image=None, income=None, is_active=None, is_verified=None, last_name=None, liquid_net_worth=None, metadata=None, middle_name=None, password=None, phone_number=None, secondary_id=None, status=None, suffix=None, title=None, total_net_worth=None, update_date=None, username=None, _configuration=None):  # noqa: E501
         """Client - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
         self._address = None
+        self._authorities = None
         self._business_id = None
         self._citizenship_status = None
         self._client_type = None
@@ -141,6 +147,7 @@ class Client(object):
         self._liquid_net_worth = None
         self._metadata = None
         self._middle_name = None
+        self._password = None
         self._phone_number = None
         self._secondary_id = None
         self._status = None
@@ -153,6 +160,8 @@ class Client(object):
 
         if address is not None:
             self.address = address
+        if authorities is not None:
+            self.authorities = authorities
         if business_id is not None:
             self.business_id = business_id
         if citizenship_status is not None:
@@ -204,6 +213,8 @@ class Client(object):
             self.metadata = metadata
         if middle_name is not None:
             self.middle_name = middle_name
+        if password is not None:
+            self.password = password
         if phone_number is not None:
             self.phone_number = phone_number
         if secondary_id is not None:
@@ -240,6 +251,29 @@ class Client(object):
         """
 
         self._address = address
+
+    @property
+    def authorities(self):
+        """Gets the authorities of this Client.  # noqa: E501
+
+        authorities  # noqa: E501
+
+        :return: The authorities of this Client.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._authorities
+
+    @authorities.setter
+    def authorities(self, authorities):
+        """Sets the authorities of this Client.
+
+        authorities  # noqa: E501
+
+        :param authorities: The authorities of this Client.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._authorities = authorities
 
     @property
     def business_id(self):
@@ -833,6 +867,29 @@ class Client(object):
         self._middle_name = middle_name
 
     @property
+    def password(self):
+        """Gets the password of this Client.  # noqa: E501
+
+        password  # noqa: E501
+
+        :return: The password of this Client.  # noqa: E501
+        :rtype: str
+        """
+        return self._password
+
+    @password.setter
+    def password(self, password):
+        """Sets the password of this Client.
+
+        password  # noqa: E501
+
+        :param password: The password of this Client.  # noqa: E501
+        :type: str
+        """
+
+        self._password = password
+
+    @property
     def phone_number(self):
         """Gets the phone_number of this Client.  # noqa: E501
 
@@ -1009,6 +1066,7 @@ class Client(object):
         :param username: The username of this Client.  # noqa: E501
         :type: str
         """
+
         self._username = username
 
     def to_dict(self):

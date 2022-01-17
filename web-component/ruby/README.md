@@ -11,13 +11,13 @@ For more information, please visit [https://www.hydrogenplatform.com/no-code](ht
 
 ```shell
 gem build app_token_api.gemspec
-gem install app_token_api-1.0.0.gem
+gem install app_token_api-1.0.2.gem
 ```
-(for development, run `gem install --dev ./app_token_api-1.0.0.gem` to install the development dependencies)
+(for development, run `gem install --dev ./app_token_api-1.0.2.gem` to install the development dependencies)
 
 Finally add this to the Gemfile:
 
-    gem 'app_token_api', '~> 1.0.0'
+    gem 'app_token_api', '~> 1.0.2'
 
 ### Include the Ruby code directly
 

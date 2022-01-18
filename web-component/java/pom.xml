@@ -5,7 +5,7 @@
     <artifactId>app-token-api</artifactId>
     <packaging>jar</packaging>
     <name>app-token-api</name>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
     <url>https://www.hydrogenplatform.com</url>
     <description>Hydrogen Platform</description>
     <scm>

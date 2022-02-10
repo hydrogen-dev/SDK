@@ -77,7 +77,6 @@ $appTokenConfig['clientId'] = '****';
 $appTokenConfig['clientSecret'] = '****';
 $appTokenConfig['username'] = "****";
 $appTokenConfig['password'] = "****";
-$appTokenConfig['auth_type'] = 'client_credentials';
 
 try {
     $result = $apiInstance->getAppTokenUsingGET($appTokenConfig);

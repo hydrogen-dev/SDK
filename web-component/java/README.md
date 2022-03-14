@@ -57,7 +57,8 @@ public class AppTokenApiExample {
                         .setUsername("xxxxx")
                         .setPassword("xxxxx")
                         .setPublicKey("xxxxx")
-                        .setAppNames(asList(new AppConfig().setAppName("pfm_cash_flow").setAuthType("password_credentials")))
+                        .setAppNames(asList(new AppConfig().setAppName("card_balance")))
+                        .setAuthType("password_credentials")
                         .setBasePath(Environment.PRODUCTION)
                         .setAttributes(asList(
                                                 new TagAttributes().setName("card-id").setValue("xxxxx")

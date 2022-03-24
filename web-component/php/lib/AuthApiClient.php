@@ -31,7 +31,7 @@ class AuthApiClient
     protected $query = 'query';
     private $authUri = '';
     private $clientTokenUri = '';
-    private $client_token = 'client_token';
+    private $client_token = 'Client-Token';
 
     public static function getDefaultConfiguration()
     {
@@ -51,27 +51,11 @@ class AuthApiClient
     function createClientTokenCredential($clientId, $clientSecret, $clientToken) {
         $baseCred = base64_encode($clientId . ':' . $clientSecret);
         $client = new Client();
-        $params = [
-            $this->headers => [
-                $this->accept => $this->applicationJsonValue,
-                $this->authorization => 'Basic ' . $baseCred
-            ],
-            $this->query => [
-                $this->grantTypeKey => $this->clientCredential
-            ]
-        ];
         try {
-            $res = $client->request(
-                $this->requestPostMethod,
-                $this->authUri,
-                $params
-            );
-            $jsonDecode = json_decode($res->getBody()->__toString());
-            $accessToken = $jsonDecode->access_token;
             $params = [
                 $this->headers => [
                     $this->accept => $this->applicationJsonValue,
-                    $this->authorization => 'Bearer ' . $accessToken,
+                    $this->authorization => 'Basic ' . $baseCred,
                     $this->client_token => 'Bearer ' . $clientToken
                 ]
             ];
@@ -82,6 +66,7 @@ class AuthApiClient
             );
             $jsonDecode = json_decode($res->getBody()->__toString());
             $accessToken = $jsonDecode->access_token;
+            $this->accessToken = $accessToken;
             return Configuration::getDefaultConfiguration()->setAccessToken($accessToken);
         } catch (ClientException $e) {
             throw new ApiException($e->getMessage(), $e->getCode(), null, null);

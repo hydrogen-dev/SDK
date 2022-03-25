@@ -67,12 +67,13 @@ $attribMap = array (
 );
 
 
-$appTokenConfig['appName'] = array(array('app_name'=>'pfm_cash_flow', 'auth_type'=>'password_credentials'))
+$appTokenConfig['appName'] = array(array('app_name'=>'card_balance'));
+$appTokenConfig['auth_type'] = 'password_credentials';
 $appTokenConfig['basePath'] = \com\hydrogen\admin\Environment::PRODUCTION;
-$appTokenConfig['userAccessToken'] = '';
+$appTokenConfig['accessToken'] = '';
+$appTokenConfig['clientToken'] = '';
 $appTokenConfig['attribMap'] = $attribMap;
 $appTokenConfig['isEmbed'] = true;
-$appTokenConfig['isCredsPassed'] = true;
 $appTokenConfig['clientId'] = '****';
 $appTokenConfig['clientSecret'] = '****';
 $appTokenConfig['username'] = "****";

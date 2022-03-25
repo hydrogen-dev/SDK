@@ -127,12 +127,12 @@ class AutoGenerateAppTokenApi(object):
         for appConfig in appTokenConfig['appName']:
             item = {}
             app = appConfig
-            authType = app['auth_type']
+            authType = appTokenConfig['auth_type']
             if(authType is not None and authType.lower() == "client_credentials"):
                 self.api_client.configuration.access_token = auth_api_cc_response.access_token
             elif(authType is not None and authType.lower() == "password_credentials"):
-                self.api_client.configuration.access_token = appTokenConfig['userAccessToken']
-            if appTokenConfig['isCredsPassed']:
+                self.api_client.configuration.access_token = appTokenConfig['accessToken']
+            if appTokenConfig['accessToken'] is None:
                 passwordTokenData = self.auth_api.create_using_post_password_credentials(appTokenConfig['clientId'], appTokenConfig['clientSecret'], appTokenConfig['username'], appTokenConfig['password'])
                 self.api_client.configuration.access_token = passwordTokenData.access_token
                 

@@ -84,14 +84,13 @@ var callback = function(error, data, response) {
 let attribMap = [{"name" : "public-key", "value" : "xxxx"},{"name" : "client-id", "value" : "xxxx9"}]
 
 const userAuthToken = "xxxx";
-const clientToken = "xxxx";
 
 let appTokenConfig = {};
-appTokenConfig['appName'] = [{'app_name':'card_balance'}]
-appTokenConfig['accessToken'] = userAuthToken
-appTokenConfig['clientToken'] = clientToken
+appTokenConfig['appName'] = [{'app_name':'pfm_cash_flow', 'auth_type':'password_credentials'}]
+appTokenConfig['userAccessToken'] = userAuthToken
 appTokenConfig['attribMap'] = attribMap
 appTokenConfig['isEmbed'] = true
+appTokenConfig['isCredsPassed'] = true
 appTokenConfig['clientId'] = "xxxx"
 appTokenConfig['clientSecret'] = "xxxx"
 appTokenConfig['username'] = "xxxx"

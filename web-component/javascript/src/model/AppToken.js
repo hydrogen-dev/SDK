@@ -62,7 +62,7 @@
         obj.appToken = ApiClient.convertToType(data['app_token'], 'String');
       if (data.hasOwnProperty('create_date'))
         obj.createDate = ApiClient.convertToType(data['create_date'], 'Date');
-      if (data.hasOwnPrusernameoperty('id'))
+      if (data.hasOwnProperty('id'))
         obj.id = ApiClient.convertToType(data['id'], 'String');
       if (data.hasOwnProperty('is_valid'))
         obj.isValid = ApiClient.convertToType(data['is_valid'], 'Boolean');

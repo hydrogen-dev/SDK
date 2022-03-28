@@ -35,7 +35,7 @@ public class AuthApiClient extends ApiClient {
     private String USERNAME = "username";
     private String MESSAGE = "message";
     private String ACCESS_TOKEN = "access_token";
-    private String CLIENT_TOKEN = "Client-Token";
+    private String CLIENT_TOKEN = "client_token";
     private final String clientAccessTokenUri;
     private ApiClient defaultApiClient = Configuration.getDefaultApiClient();
     private String accessToken;

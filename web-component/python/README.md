@@ -43,14 +43,15 @@ from pprint import pprint
 
 attribMap = [{"name" : "public-key", "value" : "public_key"},{"name" : "client-id", "value" : "xxxx"}, {"name" : "card-id", "value" : "xxxx"}]
 
-userAuthToken = "xxxx"
+authToken = "xxxx"
+clientToken = "xxxx"
 
 appTokenConfig = {}
-appTokenConfig['appName'] = [{'app_name':'pfm_cash_flow', 'auth_type':'password_credentials'}]
-appTokenConfig['userAccessToken'] = userAuthToken
+appTokenConfig['appName'] = [{'app_name':'card_balance'}]
+appTokenConfig['accessToken'] = authToken
+appTokenConfig['clientToken'] = clientToken
 appTokenConfig['attribMap'] = attribMap
 appTokenConfig['isEmbed'] = True
-appTokenConfig['isCredsPassed'] = True
 appTokenConfig['clientId'] = "xxxx"
 appTokenConfig['clientSecret'] = "xxxx"
 appTokenConfig['username'] = "xxxx"

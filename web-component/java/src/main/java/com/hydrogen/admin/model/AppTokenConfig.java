@@ -32,8 +32,9 @@ public class AppTokenConfig {
     private String username;
     private String password;
     private String publicKey;
-    private String accessToken;
+    private String userAccessToken;
     private Environment basePath;
+    private boolean isCredsPassed;
     private boolean isEmbed;
     private List<AppConfig> appNames = new ArrayList<>();
     private List<TagAttributes> attributes = new ArrayList<>();
@@ -84,12 +85,21 @@ public class AppTokenConfig {
         return this;
     }
 
-    public String getAccessToken() {
-        return accessToken;
+    public String getUserAccessToken() {
+        return userAccessToken;
     }
 
-    public AppTokenConfig setAccessToken(String accessToken) {
-        this.accessToken = accessToken;
+    public AppTokenConfig setUserAccessToken(String userAccessToken) {
+        this.userAccessToken = userAccessToken;
+        return this;
+    }
+
+    public boolean getIsCredsPassed() {
+        return isCredsPassed;
+    }
+
+    public AppTokenConfig setIsCredsPassed(boolean credsPassed) {
+        isCredsPassed = credsPassed;
         return this;
     }
 

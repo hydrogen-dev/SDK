@@ -134,14 +134,12 @@ class AutoGenerateAppTokenApi
                     $this->config->setAccessToken($client_credential_token->getAccessToken());
 
                 }else if($app['auth_type'] && strtolower($app['auth_type']) === "password_credentials") {
-                  if(isset($app_token_config['accessToken']))
-                    $this->config->setAccessToken($app_token_config['accessToken']);
-                  if($app_token_config['accessToken'] === null){
+                  if(isset($app_token_config['userAccessToken']))
+                    $this->config->setAccessToken($app_token_config['userAccessToken']);
+                  if($app_token_config['isCredsPassed'] !== null && $app_token_config['isCredsPassed']){
                     $passwordTokenData = \com\hydrogen\admin\AuthApiClient::getDefaultConfiguration()->createPasswordCredential($app_token_config['clientId'],$app_token_config['clientSecret'], $app_token_config['username'], $app_token_config['password']);
                     $this->config->setAccessToken($passwordTokenData->getAccessToken());
                   }
-                }else if ($app['auth_type'] && strtolower($app['auth_type']) === "client_token_credentials") {
-                    \com\hydrogen\admin\AuthApiClient::getDefaultConfiguration()->createClientTokenCredential($app_token_config['clientId'],$app_token_config['clientSecret'], $app_token_config['clientToken']);
                 }
                 $appTokenData =  $this->getAppTokenUsingGETWithHttpInfo($app_token_config, $app['app_name']);
                 

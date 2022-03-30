@@ -72,19 +72,20 @@ namespace csharp_demo
              AppTokenConfig appTokenConfig = new IO.Swagger.Model.AppTokenConfig();
              AppConfig appConfig = new IO.Swagger.Model.AppConfig();
              appConfig.appName = "card_issuance";
-             appConfig.authType = "client_credentials";
              TagAttributes tagAttributes = new IO.Swagger.Model.TagAttributes();
              tagAttributes.name = "client_id";
              tagAttributes.value = "client_id_value";
              appTokenConfig.basePath = "https://api.hydrogenplatform.com";
              appTokenConfig.clientId = "xxxxx";
              appTokenConfig.clientSecret = "xxxxx";
+             appTokenConfig.authType = "client_credentials";
              appTokenConfig.appNames = new List<AppConfig>{appConfig};
              appTokenConfig.attributes = new List<TagAttributes>{tagAttributes};
              appTokenConfig.isEmbed = true;
-             appTokenConfig.isCredsPassed = false;
              appTokenConfig.username = null;
              appTokenConfig.password = null;
+             appTokenConfig.accessToken = "xxxx";
+             appTokenConfig.clientToken = "xxxxx";
              appTokenConfig.publicKey = "<public_key>";
              appTokenConfig.isEmbed = true;
 

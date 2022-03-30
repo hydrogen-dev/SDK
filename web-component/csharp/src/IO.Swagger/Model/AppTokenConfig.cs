@@ -62,10 +62,16 @@ namespace IO.Swagger.Model
         public string publicKey { get; set; }
 
         ///<Summary>
-        /// userAccessToken
+        /// accessToken
         ///</Summary>
-        [DataMember(Name="user_access_token", EmitDefaultValue=false)]
-        public string userAccessToken { get; set; }
+        [DataMember(Name="access_token", EmitDefaultValue=false)]
+        public string accessToken { get; set; }
+
+        ///<Summary>
+        /// clientToken
+        ///</Summary>
+        [DataMember(Name="client_token", EmitDefaultValue=false)]
+        public string clientToken { get; set; }
 
         ///<Summary>
         /// basePath
@@ -73,11 +79,11 @@ namespace IO.Swagger.Model
         [DataMember(Name="base_path", EmitDefaultValue=false)]
         public string basePath { get; set; }
 
-        ///<Summary>
-        /// isCredsPassed
+         ///<Summary>
+        /// authType
         ///</Summary>
-        [DataMember(Name="is_creds_passed", EmitDefaultValue=false)]
-        public bool isCredsPassed { get; set; }
+        [DataMember(Name="auth_type", EmitDefaultValue=false)]
+        public string authType { get; set; }
 
         ///<Summary>
         /// isEmbed
@@ -105,16 +111,17 @@ namespace IO.Swagger.Model
         /// <param name="username">username.</param>
         /// <param name="password">password.</param>
         /// <param name="publicKey">publicKey.</param>
-        /// <param name="userAccessToken">userAccessToken.</param>
+        /// <param name="accessToken">accessToken.</param>
+        /// <param name="clientToken">clientToken.</param>
         /// <param name="basePath">basePath.</param>
-        /// <param name="isCredsPassed">isCredsPassed.</param>
         /// <param name="isEmbed">isEmbed.</param>
         /// <param name="appNames">appNames.</param>
         /// <param name="attributes">attributes.</param>
         public AppTokenConfig(string clientId = default(string), string clientSecret = default(string)
         , string username = default(string), string password = default(string), string publicKey = default(string)
-        , string userAccessToken = default(string), string basePath = default(string), bool? isCredsPassed = default(bool?)
-        , bool? isEmbed = default(bool?), List<AppConfig> appNames = default(List<AppConfig>)
+        , string accessToken = default(string), string basePath = default(string), string clientToken = default(string)
+        , string authType = default(string), bool? isEmbed = default(bool?)
+        , List<AppConfig> appNames = default(List<AppConfig>)
         , List<TagAttributes> attributes = default(List<TagAttributes>))
         {
             this.clientId = clientId;
@@ -122,10 +129,11 @@ namespace IO.Swagger.Model
             this.username = username;
             this.password = password;
             this.publicKey = publicKey;
-            this.userAccessToken = userAccessToken;
+            this.accessToken = accessToken;
+            this.clientToken = client_token;
             this.basePath = basePath;
-            this.isCredsPassed = isCredsPassed?? false;
             this.isEmbed = isEmbed?? false;
+            this.authType = authType;
             this.appNames = appNames;
             this.attributes = attributes;
         }
@@ -143,9 +151,10 @@ namespace IO.Swagger.Model
             sb.Append("  username: ").Append(username).Append("\n");
             sb.Append("  password: ").Append(password).Append("\n");
             sb.Append("  publicKey: ").Append(publicKey).Append("\n");
-            sb.Append("  userAccessToken: ").Append(userAccessToken).Append("\n");
+            sb.Append("  accessToken: ").Append(accessToken).Append("\n");
+            sb.Append("  clientToken: ").Append(clientToken).Append("\n");
             sb.Append("  basePath: ").Append(basePath).Append("\n");
-            sb.Append("  isCredsPassed: ").Append(isCredsPassed).Append("\n");
+            sb.Append("  authType: ").Append(authType).Append("\n");
             sb.Append("  isEmbed: ").Append(isEmbed).Append("\n");
             sb.Append("  appNames: ").Append(appNames).Append("\n");
             sb.Append("  attributes: ").Append(attributes).Append("\n");
@@ -209,20 +218,25 @@ namespace IO.Swagger.Model
                     this.publicKey.Equals(input.publicKey))
                 ) && 
                 (
-                    this.userAccessToken == input.userAccessToken ||
-                    (this.userAccessToken != null &&
-                    this.userAccessToken.Equals(input.userAccessToken))
-                ) && 
+                    this.accessToken == input.accessToken ||
+                    (this.accessToken != null &&
+                    this.accessToken.Equals(input.accessToken))
+                ) &&
+                (
+                    this.clientToken == input.clientToken ||
+                    (this.clientToken != null &&
+                    this.clientToken.Equals(input.clientToken))
+                ) &&
                 (
                     this.basePath == input.basePath ||
                     (this.basePath != null &&
                     this.basePath.Equals(input.basePath))
-                ) && 
+                )  &&
                 (
-                    this.isCredsPassed == input.isCredsPassed ||
-                    (this.isCredsPassed != null &&
-                    this.isCredsPassed.Equals(input.isCredsPassed))
-                )&& 
+                    this.authType == input.authType ||
+                    (this.authType != null &&)
+                    this.authType.Equals(input.authType)
+                ) &&
                 (
                     this.isEmbed == input.isEmbed ||
                     (this.isEmbed != null &&
@@ -259,12 +273,14 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.password.GetHashCode();
                 if (this.publicKey != null)
                     hashCode = hashCode * 59 + this.publicKey.GetHashCode();
-                if (this.userAccessToken != null)
-                    hashCode = hashCode * 59 + this.userAccessToken.GetHashCode();
+                if (this.accessToken != null)
+                    hashCode = hashCode * 59 + this.accessToken.GetHashCode();
+                if (this.clientToken != null)
+                    hashCode = hashCode * 59 + this.clientToken.GetHashCode();
                 if (this.basePath != null)
                     hashCode = hashCode * 59 + this.basePath.GetHashCode();
-                if (this.isCredsPassed != null)
-                    hashCode = hashCode * 59 + this.isCredsPassed.GetHashCode();
+                if (this.authType != null)
+                    hashCode = hashCode * 59 + this.authType.GetHashCode();
                 if (this.isEmbed != null)
                     hashCode = hashCode * 59 + this.isEmbed.GetHashCode();
                 if (this.appNames != null)

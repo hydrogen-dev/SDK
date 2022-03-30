@@ -285,11 +285,13 @@ namespace IO.Swagger.Api
                     } else if (app.authType != null && app.authType.ToLower() == "password_credentials") {
                         
                         this.Configuration.AccessToken = appTokenConfig.userAccessToken;
-                        if (appTokenConfig.isCredsPassed) {
+                        if (appTokenConfig.accessToken) {
                             String passwordCredentialToken = authApiClient.createPasswordCredential(appTokenConfig.clientId, appTokenConfig.clientSecret, appTokenConfig.username, appTokenConfig.password);
                           
                             this.Configuration.AccessToken = passwordCredentialToken;
                         }
+                    } else if (app.authType != null && app.authType.ToLower() == "client_token_credentials") {
+                         authApiClient.createClientTokenCredential(appTokenConfig.clientId, appTokenConfig.clientSecret, appTokenConfig.clientToken);
                     }
 
                     ApiResponse<List<AppToken>> appTokenExecute = GetAppTokenUsingGETWithHttpInfo(new List<String> {app.appName}, null);

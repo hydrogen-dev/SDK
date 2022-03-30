@@ -285,7 +285,7 @@ namespace IO.Swagger.Api
                     } else if (app.authType != null && app.authType.ToLower() == "password_credentials") {
                         
                         this.Configuration.AccessToken = appTokenConfig.userAccessToken;
-                        if (appTokenConfig.accessToken) {
+                        if (appTokenConfig.accessToken == null) {
                             String passwordCredentialToken = authApiClient.createPasswordCredential(appTokenConfig.clientId, appTokenConfig.clientSecret, appTokenConfig.username, appTokenConfig.password);
                           
                             this.Configuration.AccessToken = passwordCredentialToken;

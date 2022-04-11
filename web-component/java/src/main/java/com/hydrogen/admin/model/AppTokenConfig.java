@@ -16,6 +16,7 @@ package com.hydrogen.admin.model;
 
 import com.google.gson.annotations.SerializedName;
 import com.hydrogen.admin.Environment;
+import com.hydrogen.admin.AuthType;
 import io.swagger.annotations.ApiModelProperty;
 import org.threeten.bp.OffsetDateTime;
 
@@ -37,7 +38,7 @@ public class AppTokenConfig {
     private boolean isEmbed;
     private List<AppConfig> appNames = new ArrayList<>();
     private List<TagAttributes> attributes = new ArrayList<>();
-    private String authType;
+    private AuthType authType;
 
     public String getClientId() {
         return clientId;

@@ -130,6 +130,8 @@ class AutoGenerateAppTokenApi(object):
             authType = appTokenConfig['auth_type']
             if(authType is not None and authType.lower() == "client_credentials"):
                 self.api_client.configuration.access_token = auth_api_cc_response.access_token
+            elif(authType is not None and authType.lower() == "client_token_credentials"):
+                self.auth_api.create_client_token_credentials(appTokenConfig['clientId'], appTokenConfig['clientSecret'], appTokenConfig['clientToken'])
             elif(authType is not None and authType.lower() == "password_credentials"):
                 self.api_client.configuration.access_token = appTokenConfig['accessToken']
             if appTokenConfig['accessToken'] is None:

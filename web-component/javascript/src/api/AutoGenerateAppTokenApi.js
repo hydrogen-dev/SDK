@@ -182,10 +182,10 @@
               for (var appConfig in appTokenConfig.appName) {
                 var app =  appTokenConfig.appName[appConfig];
                 let item = {};
-                  if(appTokenConfig.auth_type && appTokenConfig.auth_type.toLowerCase() === "client_credentials"){
+                  if(appTokenConfig.authType && appTokenConfig.authType.toLowerCase() === "client_credentials"){
                     oauth2.accessToken = tokenData.access_token;
 
-                  }else if(appTokenConfig.auth_type && appTokenConfig.auth_type.toLowerCase() === "password_credentials"){
+                  }else if(appTokenConfig.authType && appTokenConfig.authType.toLowerCase() === "password_credentials"){
                     oauth2.accessToken = appTokenConfig.accessToken;
                     if(appTokenConfig.accessToken === null){
                       const passwordTokenData = await createUsingPostPassword(this.apiClient, this.authApi, appTokenConfig.username, appTokenConfig.password).catch(e=>{
@@ -193,7 +193,7 @@
                       });
                       oauth2.accessToken = passwordTokenData.access_token;
                     }
-                  }else if(appTokenConfig.auth_type && appTokenConfig.auth_type.toLowerCase() === "client_token_credentials"){
+                  }else if(appTokenConfig.authType && appTokenConfig.authType.toLowerCase() === "client_token_credentials"){
                       app.createUsingPostClientTokenCredentials(appTokenConfig.username, appTokenConfig.password, appTokenConfig.clientToken);
                   }
                   const appTokenData = await getAppToken(this.apiClient, app.app_name).catch(e=>{

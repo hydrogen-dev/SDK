@@ -70,7 +70,7 @@ func main() {
 	var appTokenConfig = sw.AppTokenConfig{};
 	var appConfig = sw.AppConfig{};
 	appConfig.AppName = "card_issuance";
-	appConfig.AuthType = "client_credentials";
+	appTokenConfig.AuthType = "client_credentials";
 	var tagAttributes = sw.TagAttributes{};
 	tagAttributes.Name = "<client_id>";
 	tagAttributes.Value = "<client_id_value>";
@@ -80,7 +80,6 @@ func main() {
 	appTokenConfig.AppNames = []sw.AppConfig{appConfig}
 	appTokenConfig.Attributes = []sw.TagAttributes{tagAttributes}
 	appTokenConfig.IsEmbed = true;
-	appTokenConfig.IsCredsPassed = false;
 	// appTokenConfig.Username = nil;
 	// appTokenConfig.Password = nil;
 	appTokenConfig.IsEmbed = true;

@@ -18,9 +18,8 @@ type AppTokenConfig struct {
 	Username        string          `json:"username,omitempty"`
 	Password        string          `json:"password,omitempty"`
 	PublicKey       string          `json:"public_key,omitempty"`
-	UserAccessToken string          `json:"user_access_token,omitempty"`
+	AccessToken string              `json:"access_token,omitempty"`
 	BasePath        string          `json:"base_path,omitempty"`
-	IsCredsPassed   bool            `json:"is_creds_passed,omitempty"`
 	IsEmbed         bool            `json:"is_embed,omitempty"`
 	AppNames        []AppConfig     `json:"app_names,omitempty"`
 	Attributes      []TagAttributes `json:"attributes,omitempty"`

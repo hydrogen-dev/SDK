@@ -90,7 +90,7 @@ class AutoGenerateAppTokenApi(object):
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'app_name' is set
-        
+
         if (appTokenConfig['appName'] is None):
             raise ValueError("Missing the required parameter `app_name` when calling `get_app_token_using_get`")  # noqa: E501
 
@@ -119,7 +119,7 @@ class AutoGenerateAppTokenApi(object):
         finalAttribMap = []
         if appTokenConfig['attribMap']:
             finalAttribMap = list((x['name'] + "='" + x['value']+"'") for x in appTokenConfig['attribMap'])
-        
+
         auth_api_cc_response = self.auth_api.create_using_post_client_credentials(appTokenConfig['clientId'], appTokenConfig['clientSecret'])
         self.api_client.configuration.access_token = auth_api_cc_response.access_token
 
@@ -134,31 +134,33 @@ class AutoGenerateAppTokenApi(object):
                 self.auth_api.create_client_token_credentials(appTokenConfig['clientId'], appTokenConfig['clientSecret'], appTokenConfig['clientToken'])
             elif(authType is not None and authType.lower() == "password_credentials"):
                 self.api_client.configuration.access_token = appTokenConfig['accessToken']
-            if appTokenConfig['accessToken'] is None:
-                passwordTokenData = self.auth_api.create_using_post_password_credentials(appTokenConfig['clientId'], appTokenConfig['clientSecret'], appTokenConfig['username'], appTokenConfig['password'])
-                self.api_client.configuration.access_token = passwordTokenData.access_token
-                
+
+                if appTokenConfig['accessToken'] is None:
+
+                    passwordTokenData = self.auth_api.create_using_post_password_credentials(appTokenConfig['clientId'], appTokenConfig['clientSecret'], appTokenConfig['username'], appTokenConfig['password'])
+                    self.api_client.configuration.access_token = passwordTokenData.access_token
+
             appTokenData = self.api_client.call_api(
-                                                    '/component/v1/app_token?app_name='+app['app_name'], 'GET',
-                                                    path_params,
-                                                    [],
-                                                    header_params,
-                                                    body=body_params,
-                                                    post_params=form_params,
-                                                    files=local_var_files,
-                                                    response_type='list[AppToken]',  # noqa: E501
-                                                    auth_settings=auth_settings,
-                                                    async_req=params.get('async_req'),
-                                                    _return_http_data_only=params.get('_return_http_data_only'),
-                                                    _preload_content=params.get('_preload_content', True),
-                                                    _request_timeout=params.get('_request_timeout'),
-                                                    collection_formats=collection_formats)
+                '/component/v1/app_token?app_name='+app['app_name'], 'GET',
+                path_params,
+                [],
+                header_params,
+                body=body_params,
+                post_params=form_params,
+                files=local_var_files,
+                response_type='list[AppToken]',  # noqa: E501
+                auth_settings=auth_settings,
+                async_req=params.get('async_req'),
+                _return_http_data_only=params.get('_return_http_data_only'),
+                _preload_content=params.get('_preload_content', True),
+                _request_timeout=params.get('_request_timeout'),
+                collection_formats=collection_formats)
             appTokenValue = ""
             if appTokenData is not None and len(appTokenData)>0 :
-               appTokenValue = appTokenData[0].app_token
+                appTokenValue = appTokenData[0].app_token
             tagValue = app['app_name'].lower().replace("_", '-')
             fillTemplateValue = template.replace("tag", tagValue).replace("##app_token##", appTokenValue).replace("##attrib_map##", ' '.join(finalAttribMap))
-                  
+
             item[app['app_name']] = appTokenValue
             if appTokenConfig['isEmbed'] :
                 item[app['app_name']] = fillTemplateValue

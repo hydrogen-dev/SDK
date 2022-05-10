@@ -19,7 +19,7 @@ public enum AuthType {
 
     private String authType;
 
-    Environment(String authType) {
+    AuthType(String authType) {
         this.authType = authType;
     }
     public String getAuthType() {

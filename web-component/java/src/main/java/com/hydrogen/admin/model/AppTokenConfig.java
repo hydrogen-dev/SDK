@@ -130,11 +130,11 @@ public class AppTokenConfig {
         return this;
     }
 
-    public String getAuthType() {
+    public AuthType getAuthType() {
         return authType;
     }
 
-    public AppTokenConfig setAuthType(String authType) {
+    public AppTokenConfig setAuthType(AuthType authType) {
         this.authType = authType;
         return this;
     }

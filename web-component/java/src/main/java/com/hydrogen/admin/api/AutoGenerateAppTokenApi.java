@@ -142,15 +142,15 @@ public class AutoGenerateAppTokenApi {
         apiClient.setAccessToken(clientCredentialToken);
 
             for (AppConfig app : appTokenConfig.getAppNames()) {
-                if (appTokenConfig.getAuthType() != null && appTokenConfig.getAuthType().equalsIgnoreCase("client_credentials")) {
+                if (appTokenConfig.getAuthType() != null && appTokenConfig.getAuthType().getAuthType().toString().equalsIgnoreCase("client_credentials")) {
                     apiClient.setAccessToken(clientCredentialToken);
-                } else if (appTokenConfig.getAuthType() != null && appTokenConfig.getAuthType().equalsIgnoreCase("password_credentials")) {
+                } else if (appTokenConfig.getAuthType() != null && appTokenConfig.getAuthType().getAuthType().toString().equalsIgnoreCase("password_credentials")) {
                     apiClient.setAccessToken(appTokenConfig.getAccessToken());
                     if (appTokenConfig.getAccessToken() == null) {
                         String passwordCredentialToken = authApiClient.createPasswordCredentialReturn(appTokenConfig.getClientId(), appTokenConfig.getClientSecret(), appTokenConfig.getUsername(), appTokenConfig.getPassword());
                         apiClient.setAccessToken(passwordCredentialToken);
                     }
-                } else if (appTokenConfig.getAuthType() != null && appTokenConfig.getAuthType().equalsIgnoreCase("client_token_credentials")) {
+                } else if (appTokenConfig.getAuthType() != null && appTokenConfig.getAuthType().getAuthType().toString().equalsIgnoreCase("client_token_credentials")) {
                     authApiClient.createClientTokenCredential(appTokenConfig.getClientId(), appTokenConfig.getClientSecret(),appTokenConfig.getClientToken());
                 }
 

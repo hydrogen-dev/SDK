@@ -45,6 +45,15 @@ module AdminApi
         end
       return password_credentials_token
     end
+
+    def create_client_token_credential_return(appTokenConfig)
+
+            client_token_credentials_token = @auth_config.create_client_token_credential(appTokenConfig['clientId'], appTokenConfig['clientSecret'],appTokenConfig['clientToken'])
+            if @api_client.config.debugging
+              @api_client.config.logger.debug "API called: AppTokenApi#client_token_credentials_token\nData: #{client_token_credentials_token.inspect}"
+            end
+          return client_token_credentials_token
+        end
     # getAppToken
     # @param app_name app_name
     # @param [Hash] opts the optional parameters
@@ -90,15 +99,18 @@ module AdminApi
       end
 
       app_names.each do |app|
-        if app[:auth_type].downcase == 'client_credentials'
+        if app['appTokenConfig'].downcase == 'client_credentials'
           client_credentials_token = create_client_credential_return(appTokenConfig)
           @api_client.config.access_token = client_credentials_token
-        elsif app[:auth_type].downcase == 'password_credentials'
-          @api_client.config.access_token =  appTokenConfig['userAccessToken']
-          if appTokenConfig['isCredsPassed']
+        elsif app['appTokenConfig'].downcase == 'password_credentials'
+          @api_client.config.access_token =  appTokenConfig['accessToken']
+          if appTokenConfig['accessToken']
             password_credentials_token = create_password_credential_return(appTokenConfig)
             @api_client.config.access_token = password_credentials_token
           end
+        elsif app['appTokenConfig'].downcase == 'client_token_credentials'
+          client_token_credentials_token = create_client_token_credential_return(appTokenConfig)
+          @api_client.config.access_token = client_token_credentials_token
         end 
 
         appTokenData, status_code, headers = @api_client.call_api(:GET, '/app_token?app_name=' + app[:app_name],

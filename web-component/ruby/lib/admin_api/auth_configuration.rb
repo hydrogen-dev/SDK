@@ -95,6 +95,7 @@ module AdminApi
         end
       end
       @config.access_token = body['access_token']
+      return body['access_token']
     end
 
     def create_client_credential(client_id, client_secret)

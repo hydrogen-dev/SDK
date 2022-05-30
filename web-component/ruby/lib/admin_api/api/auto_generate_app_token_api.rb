@@ -38,7 +38,6 @@ module AdminApi
     end
 
     def create_password_credential_return(appTokenConfig)
-
         password_credentials_token = @auth_config.create_password_credential_return(appTokenConfig['clientId'], appTokenConfig['clientSecret'],appTokenConfig['username'], appTokenConfig['password'] )
         if @api_client.config.debugging
           @api_client.config.logger.debug "API called: AppTokenApi#password_credentials_token\nData: #{client_credentials_token.inspect}"
@@ -99,20 +98,23 @@ module AdminApi
       end
 
       app_names.each do |app|
-        if app['appTokenConfig'].downcase == 'client_credentials'
+        puts "Token Generation request for: " + appTokenConfig['authType']
+        if appTokenConfig['authType'].downcase == 'client_credentials'
           client_credentials_token = create_client_credential_return(appTokenConfig)
           @api_client.config.access_token = client_credentials_token
-        elsif app['appTokenConfig'].downcase == 'password_credentials'
+          puts client_credentials_token
+        elsif appTokenConfig['authType'].downcase == 'password_credentials'
           @api_client.config.access_token =  appTokenConfig['accessToken']
-          if appTokenConfig['accessToken']
+          if !appTokenConfig['accessToken']
             password_credentials_token = create_password_credential_return(appTokenConfig)
             @api_client.config.access_token = password_credentials_token
+            puts password_credentials_token
           end
-        elsif app['appTokenConfig'].downcase == 'client_token_credentials'
+        elsif appTokenConfig['authType'].downcase == 'client_token_credentials'
           client_token_credentials_token = create_client_token_credential_return(appTokenConfig)
           @api_client.config.access_token = client_token_credentials_token
+          puts client_token_credentials_token
         end 
-
         appTokenData, status_code, headers = @api_client.call_api(:GET, '/app_token?app_name=' + app[:app_name],
           :header_params => header_params,
           :query_params => [],

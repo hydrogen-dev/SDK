@@ -89,7 +89,6 @@ module AdminApi
     def build_request(http_method, path, opts = {})
       url = build_request_url(path)
       http_method = http_method.to_sym.downcase
-
       header_params = @default_headers.merge(opts[:header_params] || {})
       query_params = opts[:query_params] || {}
       form_params = opts[:form_params] || {}
@@ -173,7 +172,7 @@ module AdminApi
         end
       end
 
-      convert_to_type data, return_type
+      convert_to_type(data, return_type)
     end
 
     # Convert data to the given return type.
@@ -212,7 +211,7 @@ module AdminApi
         end
       else
         # models, e.g. Pet
-        AdminApi.const_get(return_type).new.tap do |model|
+        AdminApi::const_get(return_type).new.tap do |model|
           model.build_from_hash data
         end
       end
@@ -266,7 +265,7 @@ module AdminApi
     def build_request_url(path)
       # Add leading and trailing slashes to path
       path = "/#{path}".gsub(/\/+/, '/')
-      URI.encode(@config.base_url + path)
+      path = @config.base_url + "/component/v1" + path
     end
 
     # Builds the HTTP request body

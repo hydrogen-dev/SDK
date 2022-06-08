@@ -67,25 +67,24 @@ $attribMap = array (
 );
 
 
-$appTokenConfig['appName'] = array(array('app_name'=>'card_balance'));
-$appTokenConfig['auth_type'] = 'password_credentials';
-$appTokenConfig['basePath'] = \com\hydrogen\admin\Environment::PRODUCTION;
-$appTokenConfig['accessToken'] = '';
-$appTokenConfig['clientToken'] = '';
-$appTokenConfig['attribMap'] = $attribMap;
-$appTokenConfig['isEmbed'] = true;
-$appTokenConfig['clientId'] = '****';
-$appTokenConfig['clientSecret'] = '****';
-$appTokenConfig['username'] = "****";
-$appTokenConfig['password'] = "****";
+$app_token_config['appName'] = array('app_name'=>'card_balance');
+$app_token_config['authType'] = "password_credentials";
+$app_token_config['basePath'] = \com\hydrogen\admin\Environment::PRODUCTION;
+$app_token_config['accessToken'] = '';
+$app_token_config['clientToken'] = '';
+$app_token_config['attribMap'] = $attribMap;
+$app_token_config['isEmbed'] = true;
+$app_token_config['clientId'] = '****';
+$app_token_config['clientSecret'] = '****';
+$app_token_config['username'] = "****";
+$app_token_config['password'] = "****";
 
 try {
-    $result = $apiInstance->getAppTokenUsingGET($appTokenConfig);
+    $result = $apiInstance->getAppTokenUsingGET($app_token_config);
     print_r($result);
 } catch (Exception $e) {
     print_r($e->getMessage());
 }
-
 ?>
 ```
 

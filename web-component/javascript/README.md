@@ -97,7 +97,7 @@ appTokenConfig['clientSecret'] = "xxxx"
 appTokenConfig['username'] = "xxxx"
 appTokenConfig['password'] = "xxxx"
 appTokenConfig['authType'] = "client_credentials"
-appTokenConfig['basePath'] = "https://api.hydrogenplatform.com/component/v1"
+appTokenConfig['basePath'] = "https://api.hydrogenplatform.com/"
 
 var api = new HydrogenAppTokenApi.AutoGenerateAppTokenApi()
 api.getAppTokenUsingGET(appTokenConfig = appTokenConfig, callback);

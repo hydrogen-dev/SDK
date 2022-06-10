@@ -33,6 +33,20 @@ Class | Method | HTTP request | Description
 - **Authorization URL**: 
 - **Scopes**: N/A
 
+### Parameters Definition
+
+| Parameter |  Description |
+| ----------------------- | ----------------------------------------------- |
+| `ClientId` | This parameter is used to set the Client ID |
+| `ClientSecret` | This Parameter is used to set the Client Secret |
+| `Username` | This parameter is used to set the Username |
+| `Password` | This parameter is used to set the Password |
+| `AppName` | This parameter is used to set the list of App Names |
+| `AuthType` | This parameter is used to set the Auth type |
+| `BasePath` | This parameter is used to set the base path | 
+| `Attributes`| This parameter is used to set the Attributes |
+| `IsEmbed` | This parameter accepts boolean values, you can pass `true` or `false` |
+
 Example
 ```golang
 package main

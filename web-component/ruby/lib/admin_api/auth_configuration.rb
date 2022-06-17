@@ -55,12 +55,12 @@ module AdminApi
 
     def auth_url
       url = "#{scheme}://#{[@config.host, auth_uri].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '')
-      URI.encode(url)
+     # URI.encode(url)
     end
 
     def client_token_auth_url
       url = "#{scheme}://#{[@config.host, client_token_auth_uri].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '')
-      URI.encode(url)
+      #URI.encode(url)
     end
 
     def create_client_token_credential(client_id, client_secret, client_token)
@@ -95,6 +95,7 @@ module AdminApi
         end
       end
       @config.access_token = body['access_token']
+      return body['access_token']
     end
 
     def create_client_credential(client_id, client_secret)

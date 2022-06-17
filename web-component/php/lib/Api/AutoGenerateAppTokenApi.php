@@ -128,30 +128,32 @@ class AutoGenerateAppTokenApi
         $response = [];
         if($app_token_config['appName']){
             foreach ($app_token_config['appName'] as $row) {
-              $item = [];
-              $app = $row;
-                if($app['auth_type'] && strtolower($app['auth_type']) === "client_credentials"){
+                $item = [];
+                $app = $row;
+                if($app_token_config['authType'] && strtolower($app_token_config['authType']) === "client_credentials"){
                     $this->config->setAccessToken($client_credential_token->getAccessToken());
 
-                }else if($app['auth_type'] && strtolower($app['auth_type']) === "password_credentials") {
-                  if(isset($app_token_config['userAccessToken']))
-                    $this->config->setAccessToken($app_token_config['userAccessToken']);
-                  if($app_token_config['isCredsPassed'] !== null && $app_token_config['isCredsPassed']){
-                    $passwordTokenData = \com\hydrogen\admin\AuthApiClient::getDefaultConfiguration()->createPasswordCredential($app_token_config['clientId'],$app_token_config['clientSecret'], $app_token_config['username'], $app_token_config['password']);
-                    $this->config->setAccessToken($passwordTokenData->getAccessToken());
-                  }
+                }else if($app_token_config['authType'] && strtolower($app_token_config['authType']) === "password_credentials") {
+                    if(isset($app_token_config['accessToken']))
+                        $this->config->setAccessToken($app_token_config['accessToken']);
+                    if($app_token_config['accessToken'] === null){
+                        $passwordTokenData = \com\hydrogen\admin\AuthApiClient::getDefaultConfiguration()->createPasswordCredential($app_token_config['clientId'],$app_token_config['clientSecret'], $app_token_config['username'], $app_token_config['password']);
+                        $this->config->setAccessToken($passwordTokenData->getAccessToken());
+                    }
+                }else if ($app_token_config['authType'] && strtolower($app_token_config['authType']) === "client_token_credentials") {
+                    \com\hydrogen\admin\AuthApiClient::getDefaultConfiguration()->createClientTokenCredential($app_token_config['clientId'],$app_token_config['clientSecret'], $app_token_config['clientToken']);
                 }
                 $appTokenData =  $this->getAppTokenUsingGETWithHttpInfo($app_token_config, $app['app_name']);
-                
+
 
                 foreach ($appTokenData[0] as $appTokenRow) {
-                    
+
                     $appTokenValue = isset($appTokenRow)? $appTokenRow['app_token'] : '';
                     $tagValue = str_replace("_", '-', strtolower($app['app_name']));
                     $fillTemplateValue = str_replace("tag", $tagValue, $template);
                     $fillTemplateValue = str_replace("##app_token##", $appTokenValue, $fillTemplateValue);
                     $fillTemplateValue = str_replace("##attrib_map##", isset($finalAttribMap) ?  implode(' ', $finalAttribMap): '', $fillTemplateValue);
-                    
+
                     $item[$app['app_name']] = $appTokenValue;
                     if($app_token_config['isEmbed']){
                       $item[$app['app_name']] = $fillTemplateValue;
@@ -178,7 +180,7 @@ class AutoGenerateAppTokenApi
     {
         $returnType = '\com\hydrogen\admin\Model\AppToken[]';
         $request = $this->getAppTokenUsingGETRequest($app_token_config, $app);
-       
+
         try {
             $options = $this->createHttpClientOption();
             try {
@@ -312,7 +314,7 @@ class AutoGenerateAppTokenApi
 
     protected function getWhiteLabelUsingGETRequest($app_token_config)
     {
-       
+
         $resourcePath = '/component/v1/white_label/application?size=10000';
         $formParams = [];
         $queryParams = [];
@@ -320,7 +322,7 @@ class AutoGenerateAppTokenApi
         $httpBody = '';
         $multipart = false;
 
-    
+
         // body params
         $_tempBody = null;
 
@@ -339,7 +341,7 @@ class AutoGenerateAppTokenApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
+
             if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {
@@ -441,7 +443,7 @@ class AutoGenerateAppTokenApi
         if (isset($_tempBody)) {
             // $_tempBody is the method argument, if present
             $httpBody = $_tempBody;
-            
+
             if($headers['Content-Type'] === 'application/json') {
                 // \stdClass has no __toString(), so we should encode it manually
                 if ($httpBody instanceof \stdClass) {

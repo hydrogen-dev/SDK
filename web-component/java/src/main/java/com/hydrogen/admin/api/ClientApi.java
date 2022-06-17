@@ -52,11 +52,11 @@ public class ClientApi {
             apiClient.setBasePath(appTokenConfig.getBasePath().getUrl());
         AuthApiClient authApiClient = new AuthApiClient();
 
-        if (appTokenConfig.getAuthType() != null && appTokenConfig.getAuthType().equalsIgnoreCase("client_credentials")) {
+        if (appTokenConfig.getAuthType() != null && appTokenConfig.getAuthType().getAuthType().toString().equalsIgnoreCase("client_credentials")) {
             authApiClient.createClientCredential(appTokenConfig.getClientId(), appTokenConfig.getClientSecret());
-        } else if (appTokenConfig.getAuthType() != null && appTokenConfig.getAuthType().equalsIgnoreCase("password_credentials")) {
+        } else if (appTokenConfig.getAuthType() != null && appTokenConfig.getAuthType().getAuthType().toString().equalsIgnoreCase("password_credentials")) {
             authApiClient.createPasswordCredential(appTokenConfig.getClientId(), appTokenConfig.getClientSecret(), appTokenConfig.getUsername(), appTokenConfig.getPassword());
-        } else if (appTokenConfig.getAuthType() != null && appTokenConfig.getAuthType().equalsIgnoreCase("client_token_credentials")) {
+        } else if (appTokenConfig.getAuthType() != null && appTokenConfig.getAuthType().getAuthType().toString().equalsIgnoreCase("client_token_credentials")) {
             authApiClient.createClientTokenCredential(appTokenConfig.getClientId(), appTokenConfig.getClientSecret(), appTokenConfig.getClientToken());
         }
     }

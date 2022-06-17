@@ -131,37 +131,37 @@ namespace IO.Swagger.Client
             return authResponse.access_token;
         }
 
-        public String createClientTokenCredential(String clientId, String clientSecret, String clientToken)
+        public void createClientTokenCredential(String clientId, String clientSecret, String clientToken)
         {
             var localVarPathParams = new Dictionary<string, string>();
-            var localVarQueryParams = new List<KeyValuePair<string, string>>();
-            var localVarHeaderParams = new Dictionary<string, string>();
-            var localVarFormParams = new Dictionary<string, string>();
-            var localVarFileParams = new Dictionary<string, FileParameter>();
-            object localVarPostBody = null;
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] { };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+                        var localVarQueryParams = new List<KeyValuePair<string, string>>();
+                        var localVarHeaderParams = new Dictionary<string, string>();
+                        var localVarFormParams = new Dictionary<string, string>();
+                        var localVarFileParams = new Dictionary<string, FileParameter>();
+                        object localVarPostBody = null;
+                        // to determine the Content-Type header
+                        String[] localVarHttpContentTypes = new String[] { };
+                        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-               "*/*"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add(ACCEPT, localVarHttpHeaderAccept);
-            localVarHeaderParams[AUTHORIZATION] = BASIC + Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(clientId + ":" + clientSecret)); ;
-            localVarHeaderParams[CLIENT_TOKEN] = BEARER + clientToken;
-            IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(ClientAccessTokenUri,
-            Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-            localVarPathParams, localVarHttpContentType);
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("CreateClientTokenCredential", localVarResponse);
-                if (exception != null) throw exception;
-            }
-            AuthResponse authResponse =  JsonConvert.DeserializeObject<AuthResponse>(localVarResponse.Content);
-            return authResponse.access_token;
+                        // to determine the Accept header
+                        String[] localVarHttpHeaderAccepts = new String[] {
+                           "*/*"
+                        };
+                        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+                        if (localVarHttpHeaderAccept != null)
+                            localVarHeaderParams.Add(ACCEPT, localVarHttpHeaderAccept);
+                        localVarHeaderParams[AUTHORIZATION] = BASIC + Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(clientId + ":" + clientSecret)); ;
+                        localVarHeaderParams[CLIENT_TOKEN] = BEARER + clientToken;
+                        IRestResponse localVarResponse = (IRestResponse)this.Configuration.ApiClient.CallApi(ClientAccessTokenUri,
+                        Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                        localVarPathParams, localVarHttpContentType);
+                        if (ExceptionFactory != null)
+                        {
+                            Exception exception = ExceptionFactory("CreateClientTokenCredential", localVarResponse);
+                            if (exception != null) throw exception;
+                        }
+                        AuthResponse authResponse =  JsonConvert.DeserializeObject<AuthResponse>(localVarResponse.Content);
+                        this.Configuration.AccessToken = authResponse.access_token;
         }
 
         public class AuthResponse

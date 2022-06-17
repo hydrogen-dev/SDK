@@ -41,6 +41,23 @@ https://sandbox.hydrogenplatform.com
 **Production Base URL**
 https://api.hydrogenplatform.com
 
+### Parameters Definition
+
+| Parameter |  Description |
+| ----------------------- | ----------------------------------------------- |
+| `setClientId()` | This parameter is used to set the Client ID |
+| `setClientSecret()` | This Parameter is used to set the Client Secret |
+| `setUsername()` | This parameter is used to set the Username |
+| `setPassword()` | This parameter is used to set the Password |
+| `setAccessToken()` | This parameter is used to set the User Access Token  |
+| `setPublicKey()` | This parameter is used to set the Public Key |
+| `setClientToken()` | This parameter is used to set the Client Token |
+| `setAppNames()` | This parameter is used to set the list of App Names |
+| `setAuthType()` | This parameter is used to set the Auth type like `AuthType.PASSWORD` |
+| `setBasePath()` | This parameter is used to set the base path which should be enter in ENUM values like `Environment.PRODUCTION` |
+| `setAttributes()`| This parameter is used to set the Attributes |
+| `setIsEmbed()` | This parameter accepts boolean values, you can pass `true` or `false` |
+
 ### Sample Code
 Now you are ready to execute the following Java code:
 

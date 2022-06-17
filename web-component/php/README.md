@@ -40,6 +40,21 @@ https://sandbox.hydrogenplatform.com
 **Production Base URL**
 https://api.hydrogenplatform.com
 
+### Parameters Definition
+
+| Parameter |  Description |
+| ----------------------- | ----------------------------------------------- |
+| `clientId` | This parameter is used to set the Client ID |
+| `clientSecret` | This Parameter is used to set the Client Secret |
+| `username` | This parameter is used to set the Username |
+| `password` | This parameter is used to set the Password |
+| `userAccessToken` | This parameter is used to set the User Access Token  |
+| `appName` | This parameter is used to set the list of App Names |
+| `authType` | This parameter is used to set the Auth type |
+| `basePath` | This parameter is used to set the base path | 
+| `attribMap`| This parameter is used to set the Attributes |
+| `isEmbed` | This parameter accepts boolean values, you can pass `true` or `false` |
+
 ### Sample Code
 Now you are ready to execute the following PHP code:
 

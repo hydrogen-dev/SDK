@@ -57,6 +57,22 @@ Then, publish to a [local feed](https://docs.microsoft.com/en-us/nuget/hosting-p
 <a name="getting-started"></a>
 ## Getting Started
 
+### Parameters Definition
+
+| Parameter |  Description |
+| ----------------------- | ----------------------------------------------- |
+| `clientId` | This parameter is used to set the Client ID |
+| `clientSecret` | This Parameter is used to set the Client Secret |
+| `username` | This parameter is used to set the Username |
+| `password` | This parameter is used to set the Password |
+| `userAccessToken` | This parameter is used to set the User Access Token  |
+| `appNames` | This parameter is used to set the list of App Names |
+| `authType` | This parameter is used to set the Auth type |
+| `publicKey` | This parameter is used to set the Public Key | 
+| `basePath` | This parameter is used to set the base path | 
+| `attributes`| This parameter is used to set the Attributes |
+| `isEmbed` | This parameter accepts boolean values, you can pass `true` or `false` |
+
 ```csharp
 using System;
 using IO.Swagger.Api;

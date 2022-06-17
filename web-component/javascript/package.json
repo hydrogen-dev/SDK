@@ -1,0 +1,23 @@
+{
+  "name": "@hydrogenplatform/app_token_api",
+  "version": "1.0.2",
+  "description": "The_app_token_api",
+  "license": "Unlicense",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "browser": {
+    "fs": false
+  },
+  "dependencies": {
+    "dotenv": "8.2.0",
+    "querystring": "0.2.0",
+    "superagent": "3.7.0"
+  },
+  "devDependencies": {
+    "expect.js": "~0.3.1",
+    "mocha": "^9.1.3",
+    "sinon": "1.17.3"
+  }
+}

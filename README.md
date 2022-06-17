@@ -2,22 +2,32 @@
 
 Follow the individual SDK READMEs for information on installation, authorization, and parameters.
 
-## Atom
+## Web Components & Mobile WebViews
+* [C#](web-component/csharp)
+* [.NET](web-component/dotnet)
+* [Go](web-component/go)
+* [Java](web-component/java)
+* [Javascript](web-component/javascript)
+* [PHP](web-component/php)
+* [Python](web-component/python)
+* [Ruby](web-component/ruby)
 
-### Nucleus/Electron
-Hydrogen Nucleus/Electron SDKs are offered in:
+Please see the official [Web Component & WebView API documentation](https://www.hydrogenplatform.com/docs/web-component/v1/)
+
+## Atom APIs
+
+### Nucleus - Data Model
+
 * [Java](atom/nucleus/java)
 * [Javascript](atom/nucleus/javascript)
 * [PHP](atom/nucleus/php)
 * [Python](atom/nucleus/python)
 * [Ruby](atom/nucleus/ruby)
 
-Please see the official [Nucleus API documentation](https://www.hydrogenplatform.com/docs/nucleus/v1/) and [Electron API documentation](https://www.hydrogenplatform.com/docs/electron/v1/)
+Please see the official [Nucleus API documentation](https://www.hydrogenplatform.com/docs/nucleus/v1/)
 
-Nucleus SDKs are generated from the [Nucleus OpenAPI Specification](atom/nucleus/nucleus.yaml) using [Swagger CodeGen](https://swagger.io/tools/swagger-codegen/)
+### Proton - Business Logic
 
-### Proton
-Hydrogen Proton SDKs are offered in:
 * [Java](atom/proton/java)
 * [Javascript](atom/proton/javascript)
 * [PHP](atom/proton/php)
@@ -26,37 +36,12 @@ Hydrogen Proton SDKs are offered in:
 
 Please see the official [Proton API documentation](https://www.hydrogenplatform.com/docs/proton/v1/)
 
-Proton SDKs are generated from the [Proton OpenAPI Specification](atom/proton/proton.yaml) using [Swagger CodeGen](https://swagger.io/tools/swagger-codegen/)
+### Electron - Back Office (requires extra permission)
 
-## Molecule
-Molecule SDKs are offered in:
-* [Java](molecule/java)
-* [Javascript](molecule/javascript)
-* [PHP](molecule/php)
-* [Python](molecule/python)
-* [Ruby](molecule/ruby)
+* [Java](atom/electron/java)
+* [Javascript](atom/electron/javascript)
+* [PHP](atom/electron/php)
+* [Python](atom/electron/python)
+* [Ruby](atom/electron/ruby)
 
-Please see the official Molecule API documentation: [Molecule](https://www.hydrogenplatform.com/docs/molecule/v1/)
-
-Molecule SDKs are generated from the [Molecule OpenAPI specification](molecule/molecule.yaml) using [Swagger CodeGen](https://swagger.io/tools/swagger-codegen/)
-
-## Hydro - Raindrop
-Hydro Raindrop SDKs are offered in:
-* [Java](hydro/raindrop/java)
-* [Javascript](hydro/raindrop/javascript)
-* [PHP](hydro/raindrop/php)
-* [Python](hydro/raindrop/python)
-
-Please see the official Hydro API documentation: [Raindrop](https://www.hydrogenplatform.com/docs/hydro/v1/#Raindrop)
-
-## Integration
-Integration SDKs are offered in:
-* [Java](integration/java)
-* [Javascript](integration/javascript)
-* [PHP](integration/php)
-* [Python](integration/python)
-* [Ruby](integration/ruby)
-
-Please see the official Integration API documentation: [Integration](https://www.hydrogenplatform.com/docs/integration/v1/)
-
-Integration SDKs are generated from the [Integration OpenAPI specification](integration/integration.yaml) using [Swagger CodeGen](https://swagger.io/tools/swagger-codegen/)
+Please see the official [Electron API documentation](https://www.hydrogenplatform.com/docs/electron/v1/)

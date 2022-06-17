@@ -1,0 +1,655 @@
+swagger: '2.0'
+info:
+  description: The Hydrogen Electron API
+  version: 1.3.1
+  title: Hydrogen Electron API
+  termsOfService: 'https://www.hydrogenplatform.com/legal/terms'
+  contact:
+    name: Hydrogen Technology Corporation
+    url: 'https://www.hydrogenplatform.com/contact'
+    email: info@hydrogenplatform.com
+host: api.hydrogenplatform.com
+basePath: /electron/v1
+tags:
+  - name: ACH
+    description: Ach Controller
+  - name: Card
+    description: Card Controller
+paths:
+  /card/unload:
+    post:
+      tags:
+        - Card
+      summary: Create a card upload
+      operationId: createCardUnloadUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: reloadRequest
+          description: reloadRequest
+          required: true
+          schema:
+            $ref: '#/definitions/CardUnloadRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CardLoadUnloadResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /ach/card:
+    post:
+      tags:
+        - ACH
+      summary: Fund card
+      operationId: fundCardUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: achCardRequestCO
+          description: achCardRequestCO
+          required: true
+          schema:
+            $ref: '#/definitions/AchCardRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/AchCardResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /card/client:
+    post:
+      tags:
+        - Card
+      summary: Create a card client
+      operationId: createClientCardUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: cardClientRequestCO
+          description: cardClientRequestCO
+          required: true
+          schema:
+            $ref: '#/definitions/CardClientRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CreateCardClientResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/card/client/{nucleus_client_id}':
+    put:
+      tags:
+        - Card
+      summary: Update a card client
+      operationId: updateClientCardUsingPut
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_client_id
+          in: path
+          description: nucleus_client_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/UpdateCardClientResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /card/close:
+    post:
+      tags:
+        - Card
+      summary: close a card
+      operationId: createCardCloseUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: closeRequest
+          description: closeRequest
+          required: true
+          schema:
+            $ref: '#/definitions/CardBaseRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BaseResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /card/issue:
+    post:
+      tags:
+        - Card
+      summary: issue a card
+      operationId: createCardIssueUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: issueRequest
+          description: issueRequest
+          required: true
+          schema:
+            $ref: '#/definitions/CardBaseRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BaseResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /card/load:
+    post:
+      tags:
+        - Card
+      summary: Create a card load
+      operationId: createCardLoadUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: loadRequest
+          description: loadRequest
+          required: true
+          schema:
+            $ref: '#/definitions/CardLoadRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CardLoadUnloadResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /card/reactivate:
+    post:
+      tags:
+        - Card
+      summary: reactivate card
+      operationId: createCardReactivateUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: reactivateRequest
+          description: reactivateRequest
+          required: true
+          schema:
+            $ref: '#/definitions/CardBaseRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BaseResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /card/replace:
+    post:
+      tags:
+        - Card
+      summary: Create card replace
+      operationId: createCardReplaceUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: request
+          required: true
+          schema:
+            $ref: '#/definitions/CardBaseRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CardReplaceResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /card/reserve:
+    get:
+      tags:
+        - Card
+      summary: Card reserve account
+      operationId: getCardReserveAccountDetailsUsingGet
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CardReserveAccountResponseVO'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /card/spending_control:
+    post:
+      tags:
+        - Card
+      summary: Create card spending control
+      operationId: createCardSpendingControlUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: request
+          required: true
+          schema:
+            $ref: '#/definitions/CardSpendingControlRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CardSpendingControlResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  '/card/spending_control/{nucleus_spending_control_id}':
+    put:
+      tags:
+        - Card
+      summary: Update a card spending control
+      operationId: updateCardSpendingControlUsingPut
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: nucleus_spending_control_id
+          in: path
+          description: nucleus_spending_control_id
+          required: true
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CardSpendingControlResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+  /card/suspend:
+    post:
+      tags:
+        - Card
+      summary: suspend card
+      operationId: createCardSuspendUsingPost
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: suspendRequest
+          description: suspendRequest
+          required: true
+          schema:
+            $ref: '#/definitions/CardBaseRequestCO'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/BaseResponseVO'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+        - oauth2: []
+      deprecated: false
+securityDefinitions:
+  oauth2:
+    type: oauth2
+    tokenUrl: 'https://dev.hydrogenplatform.com/authorization/v1/oauth/token'
+    flow: application
+definitions:
+  CardUnloadRequestCO:
+    type: object
+    properties:
+      nucleus_funding_id:
+        type: string
+        format: uuid
+      reason:
+        type: string
+    title: CardUnloadRequestCO
+  CardLoadUnloadResponseVO:
+    type: object
+    properties:
+      amount:
+        type: number
+        format: double
+      card_status:
+        type: string
+      message:
+        type: string
+      nucleus_card_id:
+        type: string
+        format: uuid
+      nucleus_funding_id:
+        type: string
+        format: uuid
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: CardLoadUnloadResponseVO
+  AchCardRequestCO: 
+    type: object
+    properties:
+      nucleus_funding_id:
+        type: string
+        format: uuid
+    title: AchCardRequestCO
+  AchCardResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_funding_id:
+        type: string
+        format: uuid
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: AchCardResponseVO
+  CardClientRequestCO:
+    type: object
+    properties:
+      nucleus_client_id:
+        type: string
+        format: uuid
+      vendor_request:
+        type: object
+        additionalProperties:
+          type: string
+    title: CardClientRequestCO
+  CreateCardClientResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_client_id:
+        type: string
+        format: uuid
+      status:
+        type: string
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: CreateCardClientResponseVO
+  UpdateCardClientResponseVO:   
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_client_id:
+        type: string
+        format: uuid
+      vendor_name:
+        type: string
+      vendor_request_data:
+        type: object
+      vendor_response:
+        type: object
+    title: UpdateCardClientResponseVO
+  CardBaseRequestCO:
+    type: object
+    properties:
+      nucleus_card_id:
+        type: string
+        format: uuid
+      reason:
+        type: string
+      vendor_request:
+        type: object
+    title: CardBaseRequestCO
+  BaseResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: BaseResponseVO
+  CardLoadRequestCO:
+    type: object
+    properties:
+      nucleus_funding_id:
+        type: string
+        format: uuid
+      reason:
+        type: string
+    title: CardLoadRequestCO
+  CardReplaceResponseVO:
+    type: object
+    properties:
+      card_status:
+        type: string
+      message:
+        type: string
+      new_nucleus_card_id:
+        type: string
+        format: uuid
+      nucleus_card_id:
+        type: string
+        format: uuid
+      replaced_nucleus_card_id:
+        type: string
+        format: uuid
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+    title: CardReplaceResponseVO
+  CardReserveAccountResponseVO:
+    type: object
+    properties:
+      balance:
+        type: number
+        format: double
+      balance_available:
+        type: number
+        format: double
+      message:
+        type: string
+      overdraft_limit:
+        type: number
+        format: double
+      vendor_name:
+        type: string
+      vendor_response:
+        type: object
+      wallet_id:
+        type: string
+    title: CardReserveAccountResponseVO
+  CardSpendingControlRequestCO:
+    type: object
+    properties:
+      nucleus_spending_control_id:
+        type: string
+        format: uuid
+    title: CardSpendingControlRequestCO
+  CardSpendingControlResponseVO:
+    type: object
+    properties:
+      message:
+        type: string
+      nucleus_spending_control_id:
+        type: string
+        format: uuid
+      vendor_name:
+        type: string
+      vendor_request_data:
+        $ref: '#/definitions/SpendingControlVendorRequestDataVO'
+      vendor_response:
+        type: object
+    title: CardSpendingControlResponseVO
+  SpendingControlVendorRequestDataVO:
+    type: object
+    properties:
+      client_id:
+        type: string
+        format: uuid
+      control_scope:
+        type: string
+      control_type:
+        type: string
+      control_values:
+        type: array
+        items:
+          type: string
+      currency_code:
+        type: string
+      description:
+        type: string
+      frequency_unit:
+        type: string
+      is_active:
+        type: boolean
+      limit_value:
+        type: number
+        format: double
+    title: SpendingControlVendorRequestDataVO

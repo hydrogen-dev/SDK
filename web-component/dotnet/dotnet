@@ -1,0 +1,44 @@
+using System;
+using IO.Swagger.Api;
+using IO.Swagger.Model;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+namespace csharp_dotnet2_demo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+             AppTokenConfig appTokenConfig = new IO.Swagger.Model.AppTokenConfig();
+             AppConfig appConfig = new IO.Swagger.Model.AppConfig();
+             appConfig.appName = "card_issuance";
+             appConfig.authType = "client_credentials";
+             TagAttributes tagAttributes = new IO.Swagger.Model.TagAttributes();
+             tagAttributes.name = "IntegrationTest";
+             tagAttributes.value = "IntegrationTest";
+             appTokenConfig.basePath = "https://api.hydrogenplatform.com/admin/v1";
+             appTokenConfig.clientId = "IntegrationTest";
+             appTokenConfig.clientSecret = "IntegrationTest";
+             appTokenConfig.appNames = new List<AppConfig>{appConfig};
+             appTokenConfig.attributes = new List<TagAttributes>{tagAttributes};
+             appTokenConfig.isEmbed = true;
+             appTokenConfig.isCredsPassed = false;
+             appTokenConfig.username = null;
+             appTokenConfig.password = null;
+             appTokenConfig.isEmbed = true;
+
+            var apiInstance = new AutoGenerateAppTokenApi(appTokenConfig);
+            try
+            {
+                List<Dictionary<string, string>> result = apiInstance.GetAppTokenUsingGET();
+                Console.WriteLine(JsonConvert.SerializeObject(result));
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception when calling AutoGenerateAppTokenApi.GetAppTokenUsingGET: " + e);
+            }
+
+        }
+    }
+}

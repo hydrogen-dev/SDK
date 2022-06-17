@@ -319,15 +319,17 @@ func (a *AutoGenerateAppTokenApiService) GetAppTokenUsingGET(ctx context.Context
 
 	var token = ""
 	for _, app := range appTokenConfig.AppNames {
-		if strings.ToLower(app.AuthType) == "client_credentials" {
+		if strings.ToLower(appTokenConfig.AuthType) == "client_credentials" {
 			token = clientCredentialToken
-		} else if strings.ToLower(app.AuthType) == "password_credentials" {
+		} else if strings.ToLower(appTokenConfig.AuthType) == "password_credentials" {
 			token = appTokenConfig.UserAccessToken
-			if appTokenConfig.IsCredsPassed {
+			if appTokenConfig.AccessToken == nil{
 				r1, res1, err1 := a.CreatePasswordCredential(ctx, appTokenConfig.ClientId, appTokenConfig.ClientSecret, appTokenConfig.Username, appTokenConfig.Password)
 				token = r1.AccessToken
 				xulu.Use(res1, err1)
 			}
+		} else if strings.ToLower(appTokenConfig.AuthType) == "client_token_credentials" {
+		    a.CreateClientTokenCredential(ctx, appTokenConfig.ClientId, appTokenConfig.ClientSecret, appTokenConfig.ClientToken)
 		}
 
 		r2, res2, err2 := a.GetToken(ctx, []string{app.AppName}, nil, token)
@@ -356,3 +358,86 @@ func (a *AutoGenerateAppTokenApiService) GetAppTokenUsingGET(ctx context.Context
 	}
 	return localVarReturnValue, res, err
 }
+
+func (a *ClientApiService) CreateClientTokenCredential(ctx context.Context, clientId string, clientSecret string, client_token string) (Auth, *http.Response, error) {
+	var (
+		localVarHttpMethod  = strings.ToUpper("Post")
+		localVarPostBody    interface{}
+		localVarFileName    string
+		localVarFileBytes   []byte
+		localVarReturnValue Auth
+	)
+	a.client = NewAPIClient(NewConfiguration())
+	inputFmt := a.client.cfg.BasePath[0 : strings.Index(a.client.cfg.BasePath, ".com")+4]
+
+	localVarPath := inputFmt + "/authorization/v1/client-token"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	localVarQueryParams.Add("grant_type", "client_credentials")
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+	localVarHeaderParams["Authorization"] = "Basic " + b64.StdEncoding.EncodeToString([]byte(clientId+":"+clientSecret))
+	localVarHeaderParams["CLIENT_TOKEN"] = "Bearer " + client_token
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"*/*"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode < 300 {
+		// If we succeed, return the data, otherwise pass on to decode error.
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body:  localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+
+		if localVarHttpResponse.StatusCode == 200 {
+			var v interface{}
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHttpResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHttpResponse, newErr
+		}
+
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+

@@ -109,7 +109,7 @@ module AdminApi
       elsif appTokenConfig['authType'].downcase == 'password_credentials'
         password_credential_token = create_password_credential_return(appTokenConfig)
         @api_client.config.access_token = password_credential_token
-      elsif  appTokenConfig['authType'].downcase == 'password_credentials'
+      elsif  appTokenConfig['authType'].downcase == 'client_token_credentials'
         client_token_credential = create_client_token_credential_return(appTokenConfig)
         @api_client.config.access_token = client_token_credential
       end
@@ -192,7 +192,7 @@ module AdminApi
       elsif appTokenConfig['authType'].downcase == 'password_credentials'
         password_credential_token = create_password_credential_return(appTokenConfig)
         @api_client.config.access_token = password_credential_token
-      elsif  appTokenConfig['authType'].downcase == 'password_credentials'
+      elsif  appTokenConfig['authType'].downcase == 'client_token_credentials'
         client_token_credential = create_client_token_credential_return(appTokenConfig)
         @api_client.config.access_token = client_token_credential
       end
@@ -266,7 +266,7 @@ module AdminApi
       elsif appTokenConfig['authType'].downcase == 'password_credentials'
         password_credential_token = create_password_credential_return(appTokenConfig)
         @api_client.config.access_token = password_credential_token
-      elsif  appTokenConfig['authType'].downcase == 'password_credentials'
+      elsif  appTokenConfig['authType'].downcase == 'client_token_credentials'
         client_token_credential = create_client_token_credential_return(appTokenConfig)
         @api_client.config.access_token = client_token_credential
       end
@@ -348,7 +348,7 @@ module AdminApi
       elsif appTokenConfig['authType'].downcase == 'password_credentials'
         password_credential_token = create_password_credential_return(appTokenConfig)
         @api_client.config.access_token = password_credential_token
-      elsif  appTokenConfig['authType'].downcase == 'password_credentials'
+      elsif  appTokenConfig['authType'].downcase == 'client_token_credentials'
         client_token_credential = create_client_token_credential_return(appTokenConfig)
         @api_client.config.access_token = client_token_credential
       end

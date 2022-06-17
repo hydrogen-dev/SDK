@@ -57,11 +57,11 @@ api_instance = AdminApi::AutoGenerateAppTokenApi.new
 attribMap = [{"name" => "public-key", "value" => "xxxx"},{"name" => "client-id", "value" => "xxxx"}, {"name" => "card-id", "value" => "xxxx"}]
 
 appTokenConfig = {}
-appTokenConfig['appName'] = [{'app_name':'pfm_cash_flow', 'auth_type':'password_credentials'}]
-appTokenConfig['userAccessToken'] = userAuthToken
+appTokenConfig['appName'] = [{'app_name':'card_balance'}]
+appTokenConfig['accessToken'] = userAuthToken
+appTokenConfig['clientToken'] = clientToken
 appTokenConfig['attribMap'] = attribMap
 appTokenConfig['isEmbed'] = TRUE
-appTokenConfig['isCredsPassed'] = TRUE
 appTokenConfig['clientId'] = "xxxx"
 appTokenConfig['clientSecret'] = "xxxx"
 appTokenConfig['username'] = "xxxx"

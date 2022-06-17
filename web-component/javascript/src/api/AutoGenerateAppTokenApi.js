@@ -142,81 +142,134 @@
             });
         }
 
-        async function getAppToken (apiClient, appName) {
-          const req = apiClient.callApi(
+            async function createUsingPostClientTokenCredentials (apiClient, authApi,clientToken) {
+                // Token Generation for grant_type = Client-Token
+                const req = authApi.createUsingPostClientTokenCredentials({
+                    'grant_type': 'client-token',
+                    'client_id': appTokenConfig.clientId,
+                    'client_secret': appTokenConfig.clientSecret,
+                    'Client-Token' : clientToken
+                }, null);
+
+
+                return new Promise(function(resolve, reject) {
+                    req
+                        .then(response => {
+                            let data = null;
+                            try {
+                                data = apiClient.deserialize(response, Object);
+                                if (apiClient.enableCookies && typeof window === 'undefined') {
+                                    apiClient.agent.saveCookies(response);
+                                }
+                            } catch (err) {
+                                console.log("Error : "+err);
+                                reject(err);
+
+                            }
+
+                            resolve(data)
+                        })
+                        .catch(err => {
+                            console.log("Error : "+err);
+                            reject(err);
+                        });
+                });
+            }
+
+
+            async function getAppToken (apiClient, appName) {
+                const req = apiClient.callApi(
                     '/component/v1/app_token?app_name=' + appName, 'GET',
                     pathParams, {}, {}, headerParams, formParams, postBody,
                     authNames, contentTypes, accepts, [AppToken], null
-                  );
+                );
 
-          return new Promise(function(resolve, reject) {
-              req
-              .then(response => {
-                let data = null;
-                try {
-                    data = apiClient.deserialize(response, Object);
-                    if (apiClient.enableCookies && typeof window === 'undefined') {
-                        apiClient.agent.saveCookies(response);
-                    }
-                } catch (err) {
-                    console.log(err);
-                    reject(err);
-                }
+                return new Promise(function(resolve, reject) {
+                    req
+                        .then(response => {
+                            let data = null;
+                            try {
+                                data = apiClient.deserialize(response, Object);
+                                if (apiClient.enableCookies && typeof window === 'undefined') {
+                                    apiClient.agent.saveCookies(response);
+                                }
+                            } catch (err) {
+                                console.log(err);
+                                reject(err);
+                            }
 
-                resolve(data)
-              })
-              .catch(err => {
-                console.error(err);
-                reject(err);
-             });
-            });
-        }
+                            resolve(data)
+                        })
+                        .catch(err => {
+                            console.error(err);
+                            reject(err);
+                        });
+                });
+            }
 
-        try {
-        (async () => {
-          const tokenData = await createUsingPostClientCredentials(this.apiClient, this.authApi).catch(e=>{
-            callback(e, null, null)
-          });
-          oauth2.accessToken = tokenData.access_token;
-            let response = [];
-              for (var appConfig in appTokenConfig.appName) {
-                var app =  appTokenConfig.appName[appConfig];
-                let item = {};
-                  if(app.auth_type && app.auth_type.toLowerCase() === "client_credentials"){
+            try {
+                (async () => {
+                    const tokenData = await createUsingPostClientCredentials(this.apiClient, this.authApi).catch(e=>{
+                        callback(e, null, null)
+                    });
                     oauth2.accessToken = tokenData.access_token;
 
-                  }else if(app.auth_type && app.auth_type.toLowerCase() === "password_credentials"){
-                    oauth2.accessToken = appTokenConfig.userAccessToken;
-                    if(appTokenConfig.isCredsPassed){
-                      const passwordTokenData = await createUsingPostPassword(this.apiClient, this.authApi, appTokenConfig.username, appTokenConfig.password).catch(e=>{
-                        callback(e, null, null)
-                      });
-                      oauth2.accessToken = passwordTokenData.access_token;
+                    let response = [];
+                    for (var appConfig in appTokenConfig.appName) {
+                        var app =  appTokenConfig.appName[appConfig];
+                        let item = {};
+
+                        if(appTokenConfig.authType && appTokenConfig.authType.toLowerCase() === "client_credentials"){
+                            oauth2.accessToken = tokenData.access_token;
+
+                        }else if(appTokenConfig.authType && appTokenConfig.authType.toLowerCase() === "password_credentials"){
+                            oauth2.accessToken = appTokenConfig.accessToken;
+                            if(appTokenConfig.accessToken === undefined || appTokenConfig.accessToken === null){
+                                const passwordTokenData = await createUsingPostPassword(this.apiClient, this.authApi, appTokenConfig.username, appTokenConfig.password).catch(e=>{
+                                    callback(e, null, null)
+
+                                });
+                                oauth2.accessToken = passwordTokenData.access_token;
+                            }
+                        }else if(appTokenConfig.authType && appTokenConfig.authType.toLowerCase() === "client_token_credentials"){
+                            await createUsingPostClientTokenCredentials(this.apiClient, this.authApi, appTokenConfig.clientToken).catch(e=>{
+                                callback(e, null, null)
+
+                            });
+
+                        }
+                        const appTokenData = await getAppToken(this.apiClient, app.app_name).catch(e=>{
+                            callback(e, null, null)
+                        });
+                        const appTokenValue = appTokenData && appTokenData.length>0 ? appTokenData[0].app_token : '';
+                        const tagValue = app.app_name.toLowerCase().replace(/_/g, '-');
+                        const fillTemplateValue = template.replace(/tag/g, tagValue)
+                            .replace(/##app_token##/g, appTokenValue)
+                            .replace(/##attrib_map##/g, finalAttribMap!=null ?  finalAttribMap.join(' ') : '');
+
+                        item[app.app_name] = appTokenValue;
+                        if(appTokenConfig.isEmbed){
+                            item[app.app_name] = fillTemplateValue;
+                        }
+                        response.push(item);
                     }
-                  }
-                  const appTokenData = await getAppToken(this.apiClient, app.app_name).catch(e=>{
-                    callback(e, null, null)
-                  });
-                  const appTokenValue = appTokenData && appTokenData.length>0 ? appTokenData[0].app_token : '';
-                  const tagValue = app.app_name.toLowerCase().replace(/_/g, '-');
-                  const fillTemplateValue = template.replace(/tag/g, tagValue)
-                                            .replace(/##app_token##/g, appTokenValue)
-                                            .replace(/##attrib_map##/g, finalAttribMap!=null ?  finalAttribMap.join(' ') : '');
-                  
-                  item[app.app_name] = appTokenValue;
-                  if(appTokenConfig.isEmbed){
-                    item[app.app_name] = fillTemplateValue;
-                  }
-                  response.push(item);
-              }
-            callback(null, response, response) ;
-        })();
-      }catch(e){
-        callback(e, null, null);
-      }
-     }
-  };
-  
+                    callback(null, response, response) ;
+                })();
+            }catch(e){
+                callback(e, null, null);
+            }
+        }
+    };
+
     return exports;
-  }));
-  
+}));
+
+
+
+
+
+
+
+
+
+

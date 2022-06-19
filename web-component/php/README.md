@@ -2,7 +2,7 @@
 
 Installing this SDK in your project will give you the following functionality:
 
-- (OAuth 2.0 Authorization)(https://www.hydrogenplatform.com/docs/nucleus/v1/#OAuth-2-0-Authorization) of Web Components and WebViews
+- [OAuth 2.0 Authorization](https://www.hydrogenplatform.com/docs/nucleus/v1/#OAuth-2-0-Authorization) of Web Components and WebViews
 - Generate [App Tokens](https://www.hydrogenplatform.com/docs/web-component/v1/#App-Tokens) to authenticate Web Components and WebViews
 - Retrieve Nucleus [Client](https://www.hydrogenplatform.com/docs/nucleus/v1/#Client) and [Card](https://www.hydrogenplatform.com/docs/nucleus/v1/#Card) data used in Web Component and WebView embed codes as data attributes
 
@@ -43,7 +43,7 @@ Follow steps to verify the base URL path:
 **Base URL**
 https://api.hydrogenplatform.com
 
-### Parameters Definition
+### Parameters
 
 | Parameter |  Description |
 | ----------------------- | ----------------------------------------------- |

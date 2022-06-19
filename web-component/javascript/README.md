@@ -1,6 +1,12 @@
-# Hydrogen Web Components
+# Hydrogen Web Components - JS SDK
 
-For more information, please visit [https://www.hydrogenplatform.com/no-code](https://www.hydrogenplatform.com/no-code)
+Installing this SDK in your project will give you the following functionality:
+
+- (OAuth 2.0 Authorization)(https://www.hydrogenplatform.com/docs/nucleus/v1/#OAuth-2-0-Authorization) of Web Components and WebViews
+- Generate [App Tokens](https://www.hydrogenplatform.com/docs/web-component/v1/#App-Tokens) to authenticate Web Components and WebViews
+- Retrieve Nucleus [Client](https://www.hydrogenplatform.com/docs/nucleus/v1/#Client) and [Card](https://www.hydrogenplatform.com/docs/nucleus/v1/#Card) data used in Web Component and WebView embed codes as data attributes
+
+For more information, please visit our documentation [https://www.hydrogenplatform.com/docs/web-component/v1](https://www.hydrogenplatform.com/docs/web-component/v1)
 
 ## Requirements
 
@@ -29,14 +35,11 @@ Finally, switch to the directory you want to use your app_token_api from, and ru
 npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
 ```
 
-You should now be able to `require('@hydrogenplatform/app_token_api')` in javascript files from the directory you ran the last
-command above from.
+You should now be able to `require('@hydrogenplatform/app_token_api')` in javascript files from the directory you ran the last command above from.
 
 ### Webpack Configuration
 
-Using Webpack you may encounter the following error: "Module not found: Error:
-Cannot resolve module", most certainly you should disable AMD loader. Add/merge
-the following section to your webpack config:
+Using Webpack you may encounter the following error: "Module not found: Error: Cannot resolve module." You should disable AMD loader if you encounter this error. Add/merge the following section to your webpack config:
 
 ```javascript
 module: {
@@ -52,7 +55,7 @@ module: {
 
 ## Getting Started
 
-Please first follow the [installation](#installation) instructions. Then make sure you use the proper base URL:
+Please first follow the [installation](#installation) instructions. Then make sure you use the proper base URL.
 
 ### Base URL
 Follow steps to verify the base URL path:
@@ -60,26 +63,24 @@ Follow steps to verify the base URL path:
 1. Go to ApiClient file located under src folder.
 2. Search for **this.basePath** and change/verify the URL according to the environment.
 
-**Sandbox Base URL**
-https://sandbox.hydrogenplatform.com
-
-**Production Base URL**
+**Base URL**
 https://api.hydrogenplatform.com
 
-### Parameters Definition
+### Parameters
 
 | Parameter |  Description |
 | ----------------------- | ----------------------------------------------- |
-| `clientId` | This parameter is used to set the Client ID |
-| `clientSecret` | This Parameter is used to set the Client Secret |
-| `username` | This parameter is used to set the Username |
-| `password` | This parameter is used to set the Password |
-| `userAccessToken` | This parameter is used to set the User Access Token  |
-| `appName` | This parameter is used to set the list of App Names |
-| `authType` | This parameter is used to set the Auth type |
-| `basePath` | This parameter is used to set the base path | 
 | `attribMap`| This parameter is used to set the Attributes |
-| `isEmbed` | This parameter accepts boolean values, you can pass `true` or `false` |
+| `appName` | This parameter is used to set the list of apps you are retrieving a token for, such as `card_balance` or `card_issuance` |
+| `authType` | This parameter is used to set the OAuth grant type. Valid values are `client_credentials`, `password_credentials`, `client_token`  |
+| `basePath` | This parameter is used to set the base path. Valid values are `https://api.hydrogenplatform.com` |
+| `accessToken` | This parameter is used to pass in the JWT Access Token if you authenticate outside of the SDK |
+| `clientToken` | This parameter is used to pass in the JWT Access Token for Custom Client Token apps if you authenticate outside of the SDK |
+| `clientId` | This parameter is used to set your OAuth `client_id` to authenticate if you don't pass in the JWT Access Token |
+| `clientSecret` | This Parameter is used to set your OAuth `client_secret` to authenticate if you don't pass in the JWT Access Token |
+| `username` | This parameter is used to pass in the Nucleus Client `username` of the user to authenticate `password` grant apps |
+| `password` |  This parameter is used to pass in the Nucleus Client `password` of the user to authenticate `password` grant apps |
+| `isEmbed` | This parameter is used to return an HTML embed code in the response, including all passed data attributes. Valid values are `true` or `false` |
 
 ### Sample Code
 Now you are ready to execute the following Javascript code:
@@ -98,20 +99,18 @@ var callback = function(error, data, response) {
 
 let attribMap = [{"name" : "public-key", "value" : "xxxx"},{"name" : "client-id", "value" : "xxxx9"}]
 
-const userAuthToken = "xxxx";
-
 let appTokenConfig = {};
-appTokenConfig['appName'] = [{'app_name':'pfm_cash_flow', 'auth_type':'password_credentials'}]
-appTokenConfig['userAccessToken'] = userAuthToken
 appTokenConfig['attribMap'] = attribMap
-appTokenConfig['isEmbed'] = true
-appTokenConfig['isCredsPassed'] = true
+appTokenConfig['appName'] = [{'app_name':'card_balance'}]
+appTokenConfig['authType'] = "password_credentials"
+appTokenConfig['basePath'] = "https://api.hydrogenplatform.com/"
+appTokenConfig['accessToken'] = "xxxx";
+appTokenConfig['clientToken'] = "xxxx";
 appTokenConfig['clientId'] = "xxxx"
 appTokenConfig['clientSecret'] = "xxxx"
 appTokenConfig['username'] = "xxxx"
 appTokenConfig['password'] = "xxxx"
-appTokenConfig['authType'] = "client_credentials"
-appTokenConfig['basePath'] = "https://api.hydrogenplatform.com/"
+appTokenConfig['isEmbed'] = true
 
 var api = new HydrogenAppTokenApi.AutoGenerateAppTokenApi()
 api.getAppTokenUsingGET(appTokenConfig = appTokenConfig, callback);
@@ -121,5 +120,3 @@ api.getAppTokenUsingGET(appTokenConfig = appTokenConfig, callback);
 The Hydrogen Technology Corporation
 
 https://www.hydrogenplatform.com
-
-*Generated using [Swagger Codegen](https://github.com/swagger-api/swagger-codegen)*
